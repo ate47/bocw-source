@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_nuke;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd371e36a, Offset: 0x1d8
 // Size: 0xfc
 function private preinit() {
@@ -34,7 +33,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf3a53e5e, Offset: 0x2e0
 // Size: 0x188
 function grab_nuke(player) {
@@ -52,7 +51,7 @@ function grab_nuke(player) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a157d0, Offset: 0x470
 // Size: 0xea
 function function_8d3a47ed() {
@@ -70,7 +69,7 @@ function function_8d3a47ed() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7e663ac, Offset: 0x568
 // Size: 0x6f0
 function nuke_powerup(drop_item, player_team, var_264cf1f9) {
@@ -90,7 +89,7 @@ function nuke_powerup(drop_item, player_team, var_264cf1f9) {
     foreach (ai_enemy in a_enemies) {
         ai_enemy ai::stun(1.5);
     }
-    wait(0.5);
+    wait 0.5;
     if (zm_utility::is_survival()) {
         zombies = a_enemies;
         function_1eaaceab(zombies);
@@ -123,7 +122,7 @@ function nuke_powerup(drop_item, player_team, var_264cf1f9) {
         }
     }
     for (i = 0; i < zombies_nuked.size; i++) {
-        wait(randomfloatrange(0.1, 0.3));
+        wait randomfloatrange(0.1, 0.3);
         if (!isdefined(zombies_nuked[i])) {
             continue;
         }
@@ -158,7 +157,7 @@ function nuke_powerup(drop_item, player_team, var_264cf1f9) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbc951a1e, Offset: 0xc60
 // Size: 0x1f4
 function nuke_flash(team, location) {
@@ -178,7 +177,7 @@ function nuke_flash(team, location) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4313b55, Offset: 0xe60
 // Size: 0x16c
 function nuke_delay_spawning(n_spawn_delay) {
@@ -194,7 +193,7 @@ function nuke_delay_spawning(n_spawn_delay) {
         level flag::clear(#"hash_21921ed511559aa3");
         return;
     }
-    wait(n_spawn_delay);
+    wait n_spawn_delay;
     if (!is_true(level.disable_nuke_delay_spawning) && b_spawn_zombies_before_nuke) {
         level flag::set("spawn_zombies");
     }
@@ -202,7 +201,7 @@ function nuke_delay_spawning(n_spawn_delay) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51de6cb, Offset: 0xfd8
 // Size: 0x2c
 function function_406d206b(*var_c34665fc) {
@@ -210,7 +209,7 @@ function function_406d206b(*var_c34665fc) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4a60d3a2, Offset: 0x1010
 // Size: 0x2e
 function function_9a79647b(var_8de6cf73) {
@@ -219,12 +218,12 @@ function function_9a79647b(var_8de6cf73) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7b71f61d, Offset: 0x1048
 // Size: 0xa4
 function nuke_damage_func() {
     self endon(#"death");
-    wait(randomfloatrange(0.1, 0.7));
+    wait randomfloatrange(0.1, 0.7);
     self thread zombie_death::flame_death_fx();
     self playsound(#"evt_nuked");
     self dodamage(self.maxhealth * self.var_3b6e5508, self.origin);

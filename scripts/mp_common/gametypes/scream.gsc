@@ -1,31 +1,30 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_10a2f2b06daf3f04;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\perks.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\draft.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\callbacks.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\serverfield_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_44b0b8420eabacad;
 #using script_335d0650ed05d36d;
+#using script_44b0b8420eabacad;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\mp_common\callbacks;
+#using scripts\mp_common\draft;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\perks;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace scream;
 
@@ -212,10 +211,10 @@ function onspawned() {
         self clientfield::set_player_uimodel("hudItems.screamSlasherClientNum0", 64);
         self clientfield::set_player_uimodel("hudItems.screamSlasherClientNum1", 64);
     }
-    var_59fb30b2 = self.pers[#"hash_629f4666af73d943"];
-    if (!isdefined(var_59fb30b2)) {
+    original_role = self.pers[#"original_role"];
+    if (!isdefined(original_role)) {
         current_role = self getspecialistindex();
-        self.pers[#"hash_629f4666af73d943"] = current_role;
+        self.pers[#"original_role"] = current_role;
     }
     self.var_d2ede313 = 1;
     function_1ccf32e3();
@@ -229,7 +228,7 @@ function function_34d76906() {
     if (!isplayer(self) || self.var_4adf3a85 !== 1) {
         return;
     }
-    self draft::select_character(self.pers[#"hash_629f4666af73d943"], 1);
+    self draft::select_character(self.pers[#"original_role"], 1);
     self clientfield::set_to_player("scream_slasher_postfx", 0);
 }
 
@@ -277,7 +276,7 @@ function onroundswitch() {
         if (!isplayer(var_24153654)) {
             continue;
         }
-        var_24153654 draft::select_character(var_24153654.pers[#"hash_629f4666af73d943"], 1);
+        var_24153654 draft::select_character(var_24153654.pers[#"original_role"], 1);
         var_24153654 clientfield::set_to_player("scream_slasher_postfx", 0);
     }
     gametype::on_round_switch();
@@ -342,7 +341,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, *weapon
 // Size: 0xa4
 function private function_8f5272b2(player) {
     if (isdefined(player.team)) {
-        globallogic_audio::play_2d_on_team(#"hash_1fd7191be5ac6aa9", player.team);
+        globallogic_audio::play_2d_on_team(#"mpl_scream_survivor_enemy_score", player.team);
         otherteam = util::getotherteam(player.team);
         if (isdefined(otherteam) && otherteam != player.team) {
             globallogic_audio::play_2d_on_team(#"hash_23c0cacaa80dfb30", otherteam);
@@ -372,7 +371,7 @@ function function_36f8016e(winning_team) {
     if (level.var_17ccaafc === 1) {
         return;
     }
-    wait(1);
+    wait 1;
     level function_132f1087();
     var_c1e98979 = 1;
     if (winning_team === 1) {
@@ -380,7 +379,7 @@ function function_36f8016e(winning_team) {
     } else if (winning_team == 2) {
         survivors = function_eb6cbb5(level.var_826250a4);
         foreach (survivor in survivors) {
-            givescore(#"hash_3584bd609b2dec5a", survivor);
+            givescore(#"scream_escaped", survivor);
         }
         var_c1e98979 = 13;
     }
@@ -625,7 +624,7 @@ function private function_292de865() {
         self thread function_dc32021(#"hash_2de35adf3ecb4c48", 1);
     }
     self val::set(#"hash_49a0e5e1f4613b81", "freezecontrols_allowlook", 1);
-    wait(1.5);
+    wait 1.5;
     if (!isplayer(self)) {
         return;
     }
@@ -962,7 +961,7 @@ function function_2c0f551b() {
     if (level.screamheartbeatradius <= 0) {
         return;
     }
-    wait(3.6);
+    wait 3.6;
     var_56463c00 = 3;
     lastheartbeattime = 0;
     var_6c1334e1 = var_56463c00 / 4;
@@ -971,7 +970,7 @@ function function_2c0f551b() {
     while (isplayer(self) && self.var_ab02ca61 !== 1) {
         var_85efa2fd = function_eb6cbb5(level.var_c251edf0);
         if (var_85efa2fd.size == 0) {
-            wait(2);
+            wait 2;
             continue;
         }
         var_d89b54b2 = var_85efa2fd.size == 1 ? var_85efa2fd[0] : arraygetclosest(self.origin, var_85efa2fd);
@@ -993,12 +992,12 @@ function function_2c0f551b() {
                 currenttime = gettime();
                 if (currenttime - lastheartbeattime > int(var_2586180f * 1000)) {
                     self playsoundtoplayer(var_89dbab63, self);
-                    self function_bc82f900(#"hash_64d90f3b864ff23a");
+                    self function_bc82f900(#"heartbeat_low");
                     lastheartbeattime = currenttime;
                 }
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -1064,7 +1063,7 @@ function function_3c555e08() {
         foreach (player in getplayers()) {
             level.scream_deathmatch_timer scream_deathmatch_timer::function_302c4b81(player, time);
         }
-        wait(1);
+        wait 1;
         time--;
     }
     foreach (player in getplayers()) {
@@ -1078,7 +1077,7 @@ function function_3c555e08() {
 // Size: 0x130
 function function_d4adecf() {
     level endon(#"game_ended");
-    wait(1);
+    wait 1;
     while (true) {
         survivors = function_eb6cbb5(level.var_826250a4);
         foreach (survivor in survivors) {
@@ -1194,7 +1193,7 @@ function function_beb69c9(dialogkey, var_89cfcebd) {
     switch (dialogkey) {
     case #"startscreamdeathmatch":
     case #"screamorders":
-    case #"hash_64a6bdbd7637776b":
+    case #"screamSlasherKilled":
         return #"hash_6ee97311fb9fac80";
     default:
         return var_89cfcebd;
@@ -1209,7 +1208,7 @@ function function_dc32021(alias, delay) {
     level endon(#"game_ended");
     self endon(#"disconnect");
     if (isdefined(delay)) {
-        wait(delay);
+        wait delay;
     }
     if (!isplayer(self) || !isalive(self)) {
         return;
@@ -1219,7 +1218,7 @@ function function_dc32021(alias, delay) {
     }
     self.var_3f2a7500 = 1;
     self playsound(alias);
-    wait(6);
+    wait 6;
     self.var_3f2a7500 = 0;
 }
 
@@ -1229,7 +1228,7 @@ function function_dc32021(alias, delay) {
 // Size: 0xd0
 function function_d438ffed() {
     level endon(#"game_ended");
-    wait(6.1);
+    wait 6.1;
     var_85efa2fd = function_eb6cbb5(level.var_c251edf0);
     foreach (var_24153654 in var_85efa2fd) {
         var_24153654 thread function_dc32021(#"hash_145d1a8562618894");
@@ -1268,12 +1267,12 @@ function function_939e12fc() {
             } else {
                 var_24153654 thread function_dc32021(#"hash_5e2bfc7e4a21ffc4");
             }
-            wait(5);
+            wait 5;
         }
         waittime = int(randomintrange(25, 40) * 1000);
         var_427d13b9 = starttime + waittime - gettime();
         if (var_427d13b9 > 0) {
-            wait(float(var_427d13b9) / 1000);
+            wait float(var_427d13b9) / 1000;
             continue;
         }
         waitframe(1);

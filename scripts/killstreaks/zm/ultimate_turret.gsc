@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\throttle_shared.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\ultimate_turret_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\throttle_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\ultimate_turret_shared;
+#using scripts\weapons\deployable;
+#using scripts\zm_common\zm_utility;
 
 #namespace ultimate_turret;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdadf6f7a, Offset: 0x168
 // Size: 0x16c
 function private preinit() {
@@ -41,7 +40,7 @@ function private preinit() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x398c238, Offset: 0x2e0
 // Size: 0x54
 function function_634677dd() {
@@ -52,7 +51,7 @@ function function_634677dd() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa1091999, Offset: 0x340
 // Size: 0x9c
 function function_bf97d10(*params) {
@@ -65,7 +64,7 @@ function function_bf97d10(*params) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9d12146, Offset: 0x3e8
 // Size: 0x2c
 function function_4b645b3f(killstreaktype) {
@@ -73,7 +72,7 @@ function function_4b645b3f(killstreaktype) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x869e3056, Offset: 0x420
 // Size: 0x66
 function turret_destroyed(attacker, weapon) {
@@ -86,7 +85,7 @@ function turret_destroyed(attacker, weapon) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9595cda, Offset: 0x490
 // Size: 0xa8
 function function_53028023(v_origin, *v_angles, *player) {
@@ -97,13 +96,13 @@ function function_53028023(v_origin, *v_angles, *player) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97428d76, Offset: 0x540
 // Size: 0x220
 function turretscanning() {
     veh = self;
     veh endon(#"death", #"death_started", #"end_turret_scanning");
-    wait(0.8);
+    wait 0.8;
     veh playsound(#"mpl_turret_startup");
     veh playloopsound(#"hash_69240c6db92da5bf");
     s_bundle = killstreaks::get_script_bundle("ultimate_turret");
@@ -128,7 +127,7 @@ function turretscanning() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4afc0448, Offset: 0x768
 // Size: 0x1c
 function function_a76ab7f7() {

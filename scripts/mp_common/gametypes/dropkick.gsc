@@ -1,37 +1,36 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\recon_plane.gsc;
-#using scripts\killstreaks\mp\uav.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\spawning.gsc;
-#using scripts\mp_common\gametypes\globallogic_defaults.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\core_common\armor.gsc;
-#using script_3d703ef87a841fe4;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
+#using script_3d703ef87a841fe4;
+#using script_44b0b8420eabacad;
+#using scripts\core_common\armor;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\mp\uav;
+#using scripts\killstreaks\recon_plane;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_defaults;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\spawning;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
+#using scripts\weapons\weapon_utils;
 
 #namespace dropkick;
 
@@ -104,7 +103,7 @@ function end_round() {
     level childthread function_68f13f40();
     music::setmusicstate("dropkick_round_end");
     playsoundatposition(#"hash_31f07589beb0a02e", (0, 0, 0));
-    wait(11);
+    wait 11;
     globallogic_defaults::default_onscorelimit();
 }
 
@@ -267,7 +266,7 @@ function onscoreclosemusic() {
             level notify(#"hash_15b8b6edc4ed3032", {#var_7090bf53:0});
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -294,8 +293,8 @@ function function_4e92a5e8() {
     var_e9f2629a[0] setmodel(#"hash_2f3403e630d2a0f7");
     var_e9f2629a[0].angles = var_791ffffd.angles;
     var_4cabc96 = gameobjects::create_carry_object(#"neutral", trigger, var_e9f2629a, (0, 0, 0), #"dropkick_football");
-    var_4cabc96 gameobjects::allow_carry(#"hash_5ccfd7bbbf07c770");
-    var_4cabc96 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    var_4cabc96 gameobjects::allow_carry(#"group_all");
+    var_4cabc96 gameobjects::set_visible(#"group_all");
     var_4cabc96 gameobjects::set_use_time(level.var_8abcfbb8);
     var_4cabc96 gameobjects::set_objective_entity(var_4cabc96);
     var_4cabc96 gameobjects::function_a8c842d6(isdefined(getgametypesetting(#"carrier_manualdrop")) ? getgametypesetting(#"carrier_manualdrop") : 0, 1, 1);
@@ -323,7 +322,7 @@ function function_b256c6a7() {
     if (!isdefined(var_4cabc96)) {
         return;
     }
-    var_4cabc96 gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    var_4cabc96 gameobjects::set_visible(#"group_none");
     var_4cabc96.trigger setinvisibletoall();
     if (isdefined(var_4cabc96.droptrigger)) {
         var_4cabc96.droptrigger setinvisibletoall();
@@ -350,14 +349,14 @@ function function_3dbc9c80(player) {
         level.var_d0bebb68 = undefined;
     }
     if (isdefined(self.enemyobjid)) {
-        self gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
+        self gameobjects::set_visible(#"group_friendly");
         objective_setstate(self.enemyobjid, "active");
         objective_setteam(self.enemyobjid, ownerteam);
         function_c939fac4(self.enemyobjid, ownerteam);
         self thread function_6e8c149a();
         self thread function_96a10724();
     } else {
-        self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+        self gameobjects::set_visible(#"group_all");
     }
     if (isdefined(self.trigger)) {
         self.trigger triggerenable(0);
@@ -404,7 +403,7 @@ function function_279b8022(*player) {
     }
     self notify(#"hash_69b164cea4605785");
     self gameobjects::set_owner_team(#"neutral");
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::set_visible(#"group_all");
     self.visuals[0] solid();
     if (isdefined(self.enemyobjid)) {
         objective_setvisibletoall(self.enemyobjid);
@@ -465,7 +464,7 @@ function function_a7574777() {
     timeheld = 0;
     var_ec4f42f2 = 0;
     for (var_a14bc571 = 0; true; var_a14bc571 = 1) {
-        wait(1);
+        wait 1;
         hostmigration::waittillhostmigrationdone();
         team = self gameobjects::get_owner_team();
         if (!isdefined(team)) {
@@ -523,7 +522,7 @@ function function_6e8c149a() {
         }
         objectiveposition = carrier.origin + (0, 0, var_e000301a);
         objective_setposition(self.enemyobjid, objectiveposition);
-        wait(3);
+        wait 3;
     }
 }
 
@@ -541,16 +540,16 @@ function function_96a10724() {
         if (var_8afaec49) {
             if (!var_2c26f7e5) {
                 objective_setstate(self.enemyobjid, "invisible");
-                self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+                self gameobjects::set_visible(#"group_all");
                 var_2c26f7e5 = 1;
             }
         } else if (var_2c26f7e5) {
             self thread function_6e8c149a();
             objective_setstate(self.enemyobjid, "active");
-            self gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
+            self gameobjects::set_visible(#"group_friendly");
             var_2c26f7e5 = 0;
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 
@@ -617,7 +616,7 @@ function function_aa074770() {
         return;
     }
     self endon(#"hash_656fdc4ee4edf47c");
-    wait(level.var_6ecc0fa6);
+    wait level.var_6ecc0fa6;
     if (level.var_f2a67a5d === 1) {
         return;
     }
@@ -654,7 +653,7 @@ function function_1a67afed() {
 // Checksum 0x4f804518, Offset: 0x2910
 // Size: 0x164
 function private function_311e397d() {
-    wait(2.5);
+    wait 2.5;
     var_1c3c21f1 = function_ec196fb0();
     var_5ac13eb1 = struct::get_array(#"hash_4b493e0124411b31", "targetname");
     if (var_5ac13eb1.size == 0 && !isdefined(var_1c3c21f1)) {
@@ -690,18 +689,18 @@ function private function_ec196fb0() {
 // Checksum 0x119dc9da, Offset: 0x2af0
 // Size: 0x210
 function private function_f7c2fc80() {
-    wait(2);
+    wait 2;
     foreach (player in getplayers()) {
         player function_66337ef1(#"dropkick_nuke_rumble_first");
     }
     var_3b3fc42b = 4;
-    wait(var_3b3fc42b);
+    wait var_3b3fc42b;
     foreach (player in getplayers()) {
         player stoprumble(#"dropkick_nuke_rumble_first");
         player function_66337ef1(#"dropkick_nuke_rumble_second");
     }
     var_6972a090 = 3.4;
-    wait(var_6972a090);
+    wait var_6972a090;
     foreach (player in getplayers()) {
         player stoprumble(#"dropkick_nuke_rumble_second");
     }
@@ -712,12 +711,12 @@ function private function_f7c2fc80() {
 // Checksum 0xc5812740, Offset: 0x2d08
 // Size: 0x170
 function private function_68f13f40() {
-    wait(2.1);
+    wait 2.1;
     foreach (player in getplayers()) {
         player gestures::play_gesture(#"hash_6c5354e57d5054f6", undefined, 1);
     }
     duration = 6.9;
-    wait(duration);
+    wait duration;
     foreach (player in getplayers()) {
         if (player isgestureplaying(#"hash_6c5354e57d5054f6")) {
             player stopgestureviewmodel(#"hash_6c5354e57d5054f6");
@@ -730,7 +729,7 @@ function private function_68f13f40() {
 // Checksum 0xf839c03d, Offset: 0x2e80
 // Size: 0xb0
 function private function_86ca9275() {
-    wait(2);
+    wait 2;
     foreach (player in getplayers()) {
         player val::set(#"hash_31a56c396d195997", "show_hud", 0);
     }

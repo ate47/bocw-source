@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\util;
 
 #namespace namespace_5443b356;
 
@@ -19,16 +18,16 @@ function autoexec main() {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x6d6d9a89, Offset: 0x2b0
 // Size: 0x3ac
 function function_906e8496(einflictor, attacker, idamage, smeansofdeath, weapon, vdir, shitloc, *psoffsettime, *deathanimduration) {
     self endon(#"disconnect");
     while (self util::isusingremote()) {
-        wait(0.1);
+        wait 0.1;
     }
-    if (getdvarint(#"hash_1488e143f883c47d", 0) > 0) {
-        value = getdvarint(#"hash_1488e143f883c47d", 0);
+    if (getdvarint(#"test_cam", 0) > 0) {
+        value = getdvarint(#"test_cam", 0);
         if (value == 1) {
             vdir = "MOD_BULLET";
         } else if (value == 2) {
@@ -70,7 +69,7 @@ function function_906e8496(einflictor, attacker, idamage, smeansofdeath, weapon,
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x87d3f6c0, Offset: 0x668
 // Size: 0x2c
 function function_c6491fb8() {
@@ -86,15 +85,15 @@ function function_c6491fb8() {
     // Size: 0x5c
     function function_6f822dd3() {
         self endon(#"disconnect");
-        self thread util::function_b5d0a39e("<unknown string>", undefined, undefined, 200, 10000);
-        wait(3);
+        self thread util::function_b5d0a39e("<dev string:x38>", undefined, undefined, 200, 10000);
+        wait 3;
         self thread util::function_2e0c1f7d();
     }
 
 #/
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd1f16fbd, Offset: 0x708
 // Size: 0xa2
 function get_trace(old_position, new_position) {
@@ -107,7 +106,7 @@ function get_trace(old_position, new_position) {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3b9f1d4c, Offset: 0x7b8
 // Size: 0x46
 function function_26d91402(old_position, new_position) {
@@ -116,7 +115,7 @@ function function_26d91402(old_position, new_position) {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe5618f9c, Offset: 0x808
 // Size: 0x56
 function function_b7f367ed(old_position, new_position) {
@@ -128,7 +127,7 @@ function function_b7f367ed(old_position, new_position) {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdbfe6dd, Offset: 0x868
 // Size: 0x32
 function is_falling(position) {
@@ -136,7 +135,7 @@ function is_falling(position) {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0xabd776c1, Offset: 0x8a8
 // Size: 0x8c4
 function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, var_f2499291, var_dda415f2, lookdir, var_a571008b, var_eea7b52e) {
@@ -150,24 +149,24 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
     vector = position + forwarddir;
     if (isdefined(vdir)) {
         vdir *= -1;
-        var_1042ef32 = vectortoangles(vdir);
+        target_angles = vectortoangles(vdir);
     } else {
         vdir = (forwarddir[0], forwarddir[1], forwarddir[2]);
-        var_1042ef32 = vectortoangles(vdir);
+        target_angles = vectortoangles(vdir);
         vdir = (forwarddir[0], forwarddir[1], -1);
         vdir = vectornormalize(vdir);
     }
     if (isdefined(lookdir)) {
-        var_1042ef32 = vectortoangles(lookdir);
+        target_angles = vectortoangles(lookdir);
     }
     if (!isdefined(var_f2499291)) {
-        var_f2499291 = absangleclamp360(var_1042ef32[0]);
+        var_f2499291 = absangleclamp360(target_angles[0]);
     }
     if (!isdefined(var_dda415f2)) {
-        var_dda415f2 = absangleclamp360(var_1042ef32[2]);
+        var_dda415f2 = absangleclamp360(target_angles[2]);
     }
-    var_1042ef32 = (var_f2499291, absangleclamp360(var_1042ef32[1]), var_dda415f2);
-    angles = (absangleclamp360(var_1042ef32[0]), absangleclamp360(var_1042ef32[1]), angleclamp180(var_1042ef32[2]));
+    target_angles = (var_f2499291, absangleclamp360(target_angles[1]), var_dda415f2);
+    angles = (absangleclamp360(target_angles[0]), absangleclamp360(target_angles[1]), angleclamp180(target_angles[2]));
     if (isdefined(var_c69fe125) && vdir[0] != 0) {
         var_8abc8992 = 0;
     } else {
@@ -227,7 +226,7 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
         if (tweentime > 0) {
             self startcameratween(tweentime, 1);
             self camerasetposition(position, angles);
-            wait(tweentime);
+            wait tweentime;
         } else {
             thread function_992fb1fd(position, angles, var_eea7b52e);
         }
@@ -246,13 +245,13 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
         var_8c8446ec = var_3cd7b116 / var_74a88e20;
         self camerasetposition(var_4cd4f3fd, var_80600e54);
         self startcameratween(var_8c8446ec, 1);
-        wait(var_8c8446ec);
+        wait var_8c8446ec;
         function_eea7b52e(var_4cd4f3fd);
     }
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3c312854, Offset: 0x1178
 // Size: 0xbc
 function function_eea7b52e(position) {
@@ -263,7 +262,7 @@ function function_eea7b52e(position) {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1c77bfd, Offset: 0x1240
 // Size: 0x13c
 function function_992fb1fd(position, angles, var_eea7b52e) {
@@ -275,14 +274,14 @@ function function_992fb1fd(position, angles, var_eea7b52e) {
     var_be296d93 = getdvarfloat(#"hash_161f389ff9e2a549", 0.1);
     self camerasetposition(position, angles);
     self startcameratween(var_be296d93, 1);
-    wait(var_be296d93);
+    wait var_be296d93;
     if (is_true(var_eea7b52e)) {
         function_eea7b52e(position);
     }
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x48311cb4, Offset: 0x1388
 // Size: 0x5a
 function function_e9de215e() {
@@ -294,7 +293,7 @@ function function_e9de215e() {
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x268c5974, Offset: 0x13f0
 // Size: 0x1ee
 function function_feefffe4(*einflictor, *attacker, *idamage, *weapon, vdir, *shitloc) {
@@ -308,12 +307,12 @@ function function_feefffe4(*einflictor, *attacker, *idamage, *weapon, vdir, *shi
     sign = self function_e9de215e();
     thread function_33141024(shitloc, 0, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, undefined, 60 * sign, undefined, undefined, 1);
     self playrumbleonentity("damage_heavy");
-    wait(var_7240f970);
+    wait var_7240f970;
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x167d8869, Offset: 0x15e8
 // Size: 0x1e6
 function function_f8c107(*einflictor, *attacker, *idamage, *weapon, vdir, *shitloc) {
@@ -327,12 +326,12 @@ function function_f8c107(*einflictor, *attacker, *idamage, *weapon, vdir, *shitl
     sign = self function_e9de215e();
     self playrumbleonentity("damage_heavy");
     thread function_33141024(shitloc, 0, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, undefined, 60 * sign);
-    wait(var_7240f970);
+    wait var_7240f970;
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x844a5d0e, Offset: 0x17d8
 // Size: 0x1ee
 function function_6b51f704(*einflictor, *attacker, *idamage, *weapon, *vdir, *shitloc) {
@@ -346,12 +345,12 @@ function function_6b51f704(*einflictor, *attacker, *idamage, *weapon, *vdir, *sh
     var_7240f970 = getdvarfloat(#"hash_6261c9b56ae2db5d", 2.75);
     thread function_33141024(undefined, 0, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, undefined, 60 * sign, undefined, undefined, 1);
     self playrumbleonentity("damage_heavy");
-    wait(var_7240f970);
+    wait var_7240f970;
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x7c30485f, Offset: 0x19d0
 // Size: 0x35e
 function function_16679050(*einflictor, attacker, *idamage, *weapon, vdir, *shitloc) {
@@ -376,12 +375,12 @@ function function_16679050(*einflictor, attacker, *idamage, *weapon, vdir, *shit
     sign = self function_e9de215e();
     thread function_33141024(shitloc, 0, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, undefined, 60 * sign, lookdir, undefined, 1);
     self playrumbleonentity("damage_heavy");
-    wait(var_c80c7a11);
+    wait var_c80c7a11;
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x23d93bd9, Offset: 0x1d38
 // Size: 0x1b6
 function function_49f83e8a(*einflictor, *attacker, *idamage, *weapon, *vdir, *shitloc) {
@@ -393,15 +392,15 @@ function function_49f83e8a(*einflictor, *attacker, *idamage, *weapon, *vdir, *sh
     var_d7e15204 = getdvarfloat(#"hash_30765f3cd8aff8ef", 10);
     sign = self function_e9de215e();
     thread function_33141024(undefined, 0.2, 0, var_eebc8ec0, 0, var_d7e15204, undefined, 50 * sign, forwarddir);
-    wait(2);
+    wait 2;
     self.var_f0f3daef = 1;
     self thread lui::screen_fade(1, 1, 0, "white", 0);
-    wait(1);
+    wait 1;
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x672c721f, Offset: 0x1ef8
 // Size: 0x1a6
 function function_f4d74d85(*einflictor, *attacker, *idamage, *weapon, *vdir, *shitloc) {
@@ -413,13 +412,13 @@ function function_f4d74d85(*einflictor, *attacker, *idamage, *weapon, *vdir, *sh
     var_d7e15204 = getdvarfloat(#"hash_30765f3cd8aff8ef", 10);
     thread function_33141024(undefined, 3, 0, var_eebc8ec0, 0, var_d7e15204, undefined, undefined, forwarddir);
     var_94a9de4b = getdvarfloat(#"hash_227fa8da13da6e00", 3);
-    wait(var_94a9de4b);
+    wait var_94a9de4b;
     self clientfield::set_to_player("player_cam_bubbles", 0);
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x1bd5b88b, Offset: 0x20a8
 // Size: 0x186
 function function_3f6f166(*einflictor, *attacker, *idamage, *weapon, *vdir, *shitloc) {
@@ -430,12 +429,12 @@ function function_3f6f166(*einflictor, *attacker, *idamage, *weapon, *vdir, *shi
     var_c69fe125 = getdvarfloat(#"hash_61031e6aea993ad", 0);
     var_7240f970 = getdvarfloat(#"hash_319ec6563198ff7a", 2);
     thread function_33141024(undefined, 1, undefined, var_eebc8ec0, 0, var_d7e15204, -88, 1, undefined, 1, 1);
-    wait(var_7240f970);
+    wait var_7240f970;
     self notify(#"hash_eb0317ca3976bf9");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x267166c0, Offset: 0x2238
 // Size: 0x2e
 function function_f73fe25f() {

@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_cleanup_mgr.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
-#using scripts\zm_common\gametypes\globallogic_utils.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_utils;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_cleanup_mgr;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
 
 #namespace zgrief;
 

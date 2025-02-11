@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\struct.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace control;
 
@@ -29,18 +28,18 @@ function event_handler[gametype_init] main(*eventstruct) {
     clientfield::register("world", "warzone", 1, 5, "int", &warzone, 0, 0);
     clientfield::register("world", "warzonestate", 1, 10, "int", &warzone_state, 0, 0);
     clientfield::function_5b7d846d("hudItems.missions.captureMultiplierStatus", #"hash_410fe12a68d6e801", [#"missions", #"hash_2c267d320cc0909c"], 1, 2, "int", undefined, 0, 1);
-    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"hash_11ea1e04b846f98e", #"attackingteam", 1, 2, "int", undefined, 0, 1);
+    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"war_data", #"attackingteam", 1, 2, "int", undefined, 0, 1);
     clientfield::register("scriptmover", "scriptid", 1, 5, "int", &function_e116df6c, 0, 0);
     level.effect_scriptbundles = [];
     level.effect_scriptbundles[#"zoneedgemarker"] = getscriptbundle("teamcolorfx_koth_edge_marker");
     level.effect_scriptbundles[#"zoneedgemarkerwndw"] = getscriptbundle("teamcolorfx_koth_edge_marker_window");
     level._effect[#"zoneedgemarker"] = [];
-    level._effect[#"zoneedgemarker"][0] = #"hash_1f447aeb1973f7b6";
+    level._effect[#"zoneedgemarker"][0] = #"ui/fx8_infil_marker_neutral";
     level._effect[#"zoneedgemarker"][1] = #"hash_5c2ae9f4f331d4b9";
     level._effect[#"zoneedgemarker"][2] = #"hash_7d1b0f001ea88b82";
     level._effect[#"zoneedgemarker"][3] = #"hash_7981eb245ea536fc";
     level._effect[#"zoneedgemarkerwndw"] = [];
-    level._effect[#"zoneedgemarkerwndw"][0] = #"hash_35ab4f45bbfba6b3";
+    level._effect[#"zoneedgemarkerwndw"][0] = #"ui/fx8_infil_marker_neutral_window";
     level._effect[#"zoneedgemarkerwndw"][1] = #"hash_5565c3fc2c7742fe";
     level._effect[#"zoneedgemarkerwndw"][2] = #"hash_3283b765fe480df7";
     level._effect[#"zoneedgemarkerwndw"][3] = #"hash_6a512c225256a2e9";
@@ -48,7 +47,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.mission_bundle = getscriptbundle("mission_settings_control");
     callback::on_localclient_connect(&on_localclient_connect);
     callback::on_spawned(&function_6e3affdc);
-    callback::add_callback(#"hash_34e39ee0c9fa0092", &function_3022f6ba);
+    callback::add_callback(#"server_objective", &function_3022f6ba);
     fields = getmapfields();
     level.var_117b4a3a = [];
     level.var_117b4a3a[0] = isdefined(fields.var_306136ca) ? fields.var_306136ca : #"hash_280d5153e1276d";
@@ -374,11 +373,11 @@ function compare_zone_indicies(zone_a, zone_b) {
         return false;
     }
     if (!isdefined(script_index_a) && isdefined(script_index_b)) {
-        println("<unknown string>" + zone_a.origin);
+        println("<dev string:x38>" + zone_a.origin);
         return true;
     }
     if (isdefined(script_index_a) && !isdefined(script_index_b)) {
-        println("<unknown string>" + zone_b.origin);
+        println("<dev string:x38>" + zone_b.origin);
         return false;
     }
     if (script_index_a > script_index_b) {
@@ -523,7 +522,7 @@ function function_185b0894(localclientnum, *oldval, *newval) {
             }
             zone.lastprogress = progress;
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 

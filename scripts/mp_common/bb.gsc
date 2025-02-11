@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\system_shared;
 
 #namespace bb;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe6d3bca9, Offset: 0x160
 // Size: 0x54
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53a98d83, Offset: 0x1c0
 // Size: 0x84
 function on_player_spawned() {
@@ -38,7 +37,7 @@ function on_player_spawned() {
 }
 
 // Namespace bb/bb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ebc7a9f, Offset: 0x250
 // Size: 0x2ac
 function function_bf5cad4e(gamemodedata) {
@@ -74,7 +73,7 @@ function function_95a5b5c2(var_daec1817, label, team, origin, player) {
 }
 
 // Namespace bb/bb
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x2e058822, Offset: 0x6a8
 // Size: 0x1ec
 function function_c3b9e07f(eattacker, attackerorigin, attackerspecialist, attackerweapon, evictim, victimorigin, victimspecialist, victimweapon, idamage, smeansofdeath, shitloc, death, killstreak) {
@@ -112,7 +111,7 @@ function function_c3b9e07f(eattacker, attackerorigin, attackerspecialist, attack
 }
 
 // Namespace bb/bb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5735bbbd, Offset: 0x8a0
 // Size: 0x5c
 function on_player_death(*params) {
@@ -125,7 +124,7 @@ function on_player_death(*params) {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x40af9752, Offset: 0x908
 // Size: 0x71c
 function function_6661621a() {
@@ -195,7 +194,7 @@ function function_6661621a() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x17b600bb, Offset: 0x1030
 // Size: 0x1dc
 function commit_spawn_data() {
@@ -216,7 +215,7 @@ function commit_spawn_data() {
 }
 
 // Namespace bb/bb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7db3c879, Offset: 0x1218
 // Size: 0x296
 function function_285f8efd(weapon) {

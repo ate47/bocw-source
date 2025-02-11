@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\cp_common\dialogue.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\cp_common\dialogue;
 
 #namespace namespace_a64c0f5b;
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa55db971, Offset: 0x1b20
 // Size: 0x2c
 function main() {
@@ -14,7 +13,7 @@ function main() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1b58
 // Size: 0x4
 function function_1e311986() {
@@ -22,7 +21,7 @@ function function_1e311986() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9f578b4e, Offset: 0x1b68
 // Size: 0x4c
 function function_d7b0c8d8() {
@@ -34,7 +33,7 @@ function function_d7b0c8d8() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1f415527, Offset: 0x1bc0
 // Size: 0x9c
 function function_3f615c45() {
@@ -47,22 +46,22 @@ function function_3f615c45() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9c5eda0d, Offset: 0x1c68
 // Size: 0xaa
 function function_f35873e3() {
     level flag::wait_till("flag_vo_gearup_tent_1");
     level.vip endon(#"death");
     level.player endon(#"death");
-    wait(1);
+    wait 1;
     level.vip dialogue::queue("vox_guid0d55ef7938644952ac3bc1ebc42a4714");
-    wait(4);
+    wait 4;
     level.vip dialogue::queue("vox_guid8a4a50c5bdb749c0bcca8f1686f704fe");
-    wait(7);
+    wait 7;
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x29be5e4c, Offset: 0x1d20
 // Size: 0x174
 function function_62380b23() {
@@ -81,7 +80,7 @@ function function_62380b23() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfbfca6b5, Offset: 0x1ea0
 // Size: 0x1e0
 function function_29c5050c() {
@@ -98,13 +97,13 @@ function function_29c5050c() {
         } else {
             var_6aa6a4ac = ["vox_cp_armd_00002_adlr_stillwithmebell_e0", "vox_cp_armd_00002_adlr_comeonbellwegot_df"];
         }
-        wait(15);
+        wait 15;
         while (flag::get("flag_vo_intro_walk_and_talk_nags") && var_29a0fa27 < var_6aa6a4ac.size) {
             if (soundexists(var_6aa6a4ac[var_29a0fa27]) && !is_true(level.vip.istalking)) {
                 level.vip dialogue::queue(var_6aa6a4ac[var_29a0fa27]);
             }
             var_29a0fa27++;
-            wait(delay);
+            wait delay;
             delay *= 2;
         }
         level flag::wait_till_clear("flag_vo_intro_walk_and_talk_nags");
@@ -112,7 +111,7 @@ function function_29c5050c() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5ecd29b, Offset: 0x2088
 // Size: 0x124
 function function_d2c855c4() {
@@ -129,31 +128,31 @@ function function_d2c855c4() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73c56b7b, Offset: 0x21b8
 // Size: 0x18c
 function function_1be22957() {
     level.player endon(#"death");
     level flag::wait_till("flag_vo_chopper_chatter_1");
     level.player dialogue::queue("vox_cp_arma_gear_ctrl_allbirdscheckinwhenr");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_guide0723b18a432467aaadbe181eb8786b7");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_guidcf109981d1604468a2b623f7c660b854");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_guideb9c659f403b4255ae0df5ea1f8bded1");
     level flag::wait_till("flag_vo_chopper_chatter_2");
     level.player dialogue::queue("vox_guidcd1d9084043141379fdb6cb64d19a474");
-    wait(6);
+    wait 6;
     level.player dialogue::queue("vox_cp_arma_gear_nava_whadayaknowsims");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guid67745166784c4fbba4bb36b5933a05a1");
-    wait(0.5);
+    wait 0.5;
     level.gunner dialogue::queue("vox_cp_arma_gear_nava_rogerthat");
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf7a872cb, Offset: 0x2350
 // Size: 0x7c
 function function_76a4e36f() {
@@ -189,23 +188,23 @@ function function_7b81dbaa() {
     level.player dialogue::queue("vox_cp_arma_fbch_chp2_skyoutskyout");
     level flag::wait_till("flag_vo_firebase_arrival_stabilize");
     level.player dialogue::queue("vox_guidefa6428faae1410bbf01238a4c0e468c");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_arma_fbch_sims_wherethehellrethosec");
     level.player dialogue::queue("vox_cp_arma_fbch_chpt_lookslikenortheastbo");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_arma_fbch_adlr_canyougetusthere");
     level.player dialogue::queue("vox_cp_arma_fbch_chpt_yessir");
     level.player dialogue::queue("vox_cp_arma_fbch_adlr_ripcordwhatsyourstat");
     level.player dialogue::queue("vox_cp_arma_fbch_amc2_assetsbackinthebunke");
     level.player dialogue::queue("vox_guida30faf3b12434785a3b89c4b1cd1d180");
     level.player dialogue::queue("vox_guidc29b74bfd710458695eab62b4724a276");
-    wait(0.75);
+    wait 0.75;
     level.player dialogue::queue("vox_guid92c5e0e86009462c82527fc481ca72aa");
     level.player dialogue::queue("vox_guida3960afa27f749c89472cf2d8d1824cd");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guide1f9a5eeda874f628919db39871dbcfd");
     level.player dialogue::queue("vox_guidb31a969d47a84950969a620cb0268d56");
-    wait(1);
+    wait 1;
     level flag::set("flag_vo_firebase_arrival_stabilize_complete");
 }
 
@@ -225,7 +224,7 @@ function function_db399e7() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d656e72, Offset: 0x27e8
 // Size: 0x1bc
 function function_c2808184() {
@@ -250,13 +249,13 @@ function function_c2808184() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e6300b9, Offset: 0x29b0
 // Size: 0x3ce
 function function_1db51e3c() {
     level endon(#"hash_a3faf07853176cf");
     level.player endon(#"death");
-    level endon(#"hash_71558717b42e8dc1");
+    level endon(#"flag_vo_mortar_orbit_landing_requested");
     while (true) {
         level waittill(#"hash_3eb3c24dcfb40680");
         if (level.var_74bc4f87 == 1) {
@@ -295,7 +294,7 @@ function function_1db51e3c() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39124d42, Offset: 0x2d88
 // Size: 0x114
 function function_26af2826() {
@@ -313,7 +312,7 @@ function function_26af2826() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab15948e, Offset: 0x2ea8
 // Size: 0x9e
 function function_9a288202() {
@@ -322,7 +321,7 @@ function function_9a288202() {
     while (flag::get("flag_mortar_orbit_rappel_start")) {
         trig waittill(#"trigger");
         level.player dialogue::queue("vox_guidc74ff5e22c4048b9a8903e1a27fe402c");
-        wait(8);
+        wait 8;
     }
 }
 
@@ -350,7 +349,7 @@ function function_c3e6affa() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x3108
 // Size: 0x4
 function function_7cfd201b() {
@@ -358,7 +357,7 @@ function function_7cfd201b() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x100424b6, Offset: 0x3118
 // Size: 0xf4
 function function_c21dbdb6() {
@@ -375,7 +374,7 @@ function function_c21dbdb6() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6190c166, Offset: 0x3218
 // Size: 0x13c
 function function_5c799650() {
@@ -392,7 +391,7 @@ function function_5c799650() {
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x104e67d, Offset: 0x3360
 // Size: 0x1ec
 function function_6521d173() {
@@ -430,31 +429,31 @@ function function_fa2426a0() {
 // Size: 0x25c
 function function_8992adb2() {
     level.player endon(#"death");
-    level endon(#"hash_778e0038f69ff7be");
+    level endon(#"flag_vo_firebase_orbit_return_start");
     level flag::wait_till_any(["flag_vo_bamboo_firebase_start", "flag_vo_mortar_firebase_start"]);
     if (!level flag::get("flag_mortar_village_complete")) {
         return;
     }
     level.player dialogue::queue("vox_guide1bbca61b63342268117e60b887e85fa");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guid423a565786384dae9665c74dffa96979");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guidea1efdce6a284218a9b35f38ea0b898d");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guid5baf7a3a01d84bfd9493e4bdac942f25");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guid0868acc8edb84b729559c7f7600e532b");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guid0249abe5a5094b528a75433f8133729c");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guida49455032d554b4c9c694eeee07a93b3");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guide8596c149b834987a5dbe7620de96de3");
     level flag::wait_till("flag_vo_firebase_return_mid_point");
     level.player dialogue::queue("vox_guidf71215c125de46ed8129ae501cb0ac67");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guidfc1aa539957b49aa842d318f6ddaf986");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_guid077340e5bb6a42fe967ffc2ef5ef237a");
 }
 
@@ -465,17 +464,17 @@ function function_8992adb2() {
 function function_1a1a9bab() {
     level flag::wait_till("flag_vo_firebase_orbit_return_start");
     level thread function_c7676f8d();
-    wait(1);
+    wait 1;
     level.players[0] dialogue::queue("vox_guid692a7045854a4ba48697c2dbcca61d5d");
     level.players[0] dialogue::queue("vox_guidcd67f052c15c47fc96de92b3676c473e");
     level.players[0] dialogue::queue("vox_guida2a3ef6f5b5d48c3b24de59e9f92194f");
     level.players[0] dialogue::queue("vox_guid0b9e15780e71488ea12d96e4b847cc14");
     level.players[0] dialogue::queue("vox_guidb42a1504c0554dd4bd12da8b8f5e4b17");
-    wait(2);
+    wait 2;
 }
 
 // Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e4d3865, Offset: 0x38f0
 // Size: 0x1a4
 function function_c7676f8d() {
@@ -515,40 +514,40 @@ function add_dialogue_line(name, msg, var_733709e8, duration = 8) {
             update_dialogue_huds();
             var_5bae381a thread destroy_dialogue_hud();
         }
-        color = "vox_guida3960afa27f749c89472cf2d8d1824cd";
+        color = "<dev string:x38>";
         if (isdefined(var_733709e8)) {
             switch (var_733709e8) {
             case #"red":
             case #"r":
-                color = "flag_mortar_village_complete";
+                color = "<dev string:x3e>";
                 break;
             case #"green":
             case #"g":
-                color = "vox_guidf657fbb91fa448199f3d006f9c015c6c";
+                color = "<dev string:x44>";
                 break;
             case #"yellow":
             case #"y":
-                color = "vox_guida3960afa27f749c89472cf2d8d1824cd";
+                color = "<dev string:x38>";
                 break;
             case #"b":
             case #"blue":
-                color = "vox_guid209f24c873734908b0ad786d93b17272";
+                color = "<dev string:x4a>";
                 break;
             case #"c":
             case #"cyan":
-                color = "vox_guid6e4f40df7fb742c3a7359a9d031a83d9";
+                color = "<dev string:x50>";
                 break;
             case #"purple":
             case #"p":
-                color = "vox_guid11048d07bae54138a19db03026d08647";
+                color = "<dev string:x56>";
                 break;
             case #"w":
             case #"white":
-                color = "vox_guida41a493a444c4224b652d47531fc8fd4";
+                color = "<dev string:x5c>";
                 break;
             case #"bl":
             case #"black":
-                color = "mortar_orbit_building_upper_trig";
+                color = "<dev string:x62>";
                 break;
             }
         }
@@ -557,12 +556,12 @@ function add_dialogue_line(name, msg, var_733709e8, duration = 8) {
             scale = level.dialoguelinescale;
         }
         hud = newdebughudelem();
-        hud.elemtype = "vox_guid34fbba336c1347bea64d39e02ebe18b2";
-        hud.font = "vox_guidfb22606e4b0645db935d12aecd0128c3";
+        hud.elemtype = "<dev string:x68>";
+        hud.font = "<dev string:x70>";
         hud.fontscale = scale;
         hud.x = 0;
         hud.y = 0;
-        hud.horzalign = "vox_guid4e92b2d194754432b5685887f600f388";
+        hud.horzalign = "<dev string:x7b>";
         hud.width = 0;
         hud.height = int(level.fontheight * scale);
         hud.xoffset = 0;
@@ -573,12 +572,12 @@ function add_dialogue_line(name, msg, var_733709e8, duration = 8) {
         hud.sort = 20;
         hud.x = 20;
         hud.y = 260 + index * 12 * scale;
-        hud settext("flag_vo_mortar_firebase_start" + color + name + "vox_guidea1efdce6a284218a9b35f38ea0b898d" + msg);
+        hud settext("<dev string:x83>" + color + name + "<dev string:x87>" + msg);
         hud.alpha = 0;
         hud fadeovertime(0.2);
         hud.alpha = 1;
         hud endon(#"death");
-        wait(duration);
+        wait duration;
         arrayremovevalue(level.dialogue_huds, hud);
         update_dialogue_huds();
         hud thread destroy_dialogue_hud();
@@ -601,7 +600,7 @@ function add_dialogue_line(name, msg, var_733709e8, duration = 8) {
         self moveovertime(0.2);
         self.y -= 12 * scale;
         self.alpha = 0;
-        wait(0.2);
+        wait 0.2;
         self destroy();
     }
 

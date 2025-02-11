@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm\zm_gold.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\zm_common\zm_sq.gsc;
 #using script_2f560596a9a134ab;
 #using script_4ce5d94e8c797350;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_hud.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm\zm_gold;
+#using scripts\zm_common\zm_hud;
+#using scripts\zm_common\zm_sq;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_gold_zones;
 
@@ -28,7 +27,7 @@ function autoexec init() {
 }
 
 // Namespace zm_gold_zones/zm_gold_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe932ec9b, Offset: 0x1010
 // Size: 0x371a
 function zone_init() {
@@ -358,7 +357,7 @@ function zone_init() {
 }
 
 // Namespace zm_gold_zones/zm_gold_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8db878a, Offset: 0x4738
 // Size: 0x6c
 function function_2c6d81f9() {
@@ -390,7 +389,7 @@ function event_handler[hostmigration_playermigrated] codecallback_playermigrated
 }
 
 // Namespace zm_gold_zones/zm_gold_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6d8eed2f, Offset: 0x48a8
 // Size: 0x1c8
 function function_a2cfeff5() {
@@ -409,7 +408,7 @@ function function_a2cfeff5() {
 }
 
 // Namespace zm_gold_zones/zm_gold_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x340ad2e2, Offset: 0x4a78
 // Size: 0x248
 function function_44b1279a() {
@@ -441,7 +440,7 @@ function function_44b1279a() {
 }
 
 // Namespace zm_gold_zones/zm_gold_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5ab77097, Offset: 0x4cc8
 // Size: 0x13e
 function function_19f5e3fa() {
@@ -456,12 +455,12 @@ function function_19f5e3fa() {
                 break;
             }
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_gold_zones/zm_gold_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa5a42c88, Offset: 0x4e10
 // Size: 0x55e
 function function_27028b8e(str_zone) {

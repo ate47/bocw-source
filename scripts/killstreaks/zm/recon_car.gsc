@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\deployable.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreak_vehicle.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\killstreaks\remote_weapons.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreak_detect.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\killstreak_detect;
+#using scripts\killstreaks\killstreak_vehicle;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\remote_weapons;
+#using scripts\weapons\deployable;
+#using scripts\zm_common\zm_utility;
 
 #namespace recon_car;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8c05ce8, Offset: 0x230
 // Size: 0xf4
 function private preinit() {
@@ -42,7 +41,7 @@ function private preinit() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe31c5858, Offset: 0x330
 // Size: 0xd4
 function init_killstreak() {
@@ -54,7 +53,7 @@ function init_killstreak() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2da16b5e, Offset: 0x410
 // Size: 0xac
 function private function_93426c92(params) {
@@ -70,7 +69,7 @@ function private function_93426c92(params) {
 }
 
 // Namespace recon_car/recon_car
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb46c8bdf, Offset: 0x4c8
 // Size: 0x9e
 function function_b5006cfa(v_origin, *v_angles, *player) {
@@ -85,7 +84,7 @@ function function_b5006cfa(v_origin, *v_angles, *player) {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d9a6416, Offset: 0x570
 // Size: 0x30c
 function function_d1661ada() {
@@ -134,7 +133,7 @@ function function_d1661ada() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1081a2ba, Offset: 0x888
 // Size: 0x1f6
 function function_fdcfd41d() {
@@ -157,7 +156,7 @@ function function_fdcfd41d() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4408bb50, Offset: 0xa88
 // Size: 0x1ac
 function function_48170f5e(vehicle) {
@@ -171,7 +170,7 @@ function function_48170f5e(vehicle) {
         self sethintstring("");
         self val::reset(#"recon_car", "disable_weapon_cycling");
     }
-    wait(2);
+    wait 2;
     if (isplayer(self)) {
         self val::reset(#"recon_car", "ignoreme");
         self val::reset(#"recon_car", "takedamage");
@@ -179,28 +178,28 @@ function function_48170f5e(vehicle) {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae0b5636, Offset: 0xc40
 // Size: 0xd4
 function function_3f390797() {
     self endon(#"death", #"shutdown");
     if (isplayer(self.owner)) {
-        util::waittill_any_ents(self.owner, #"hash_217479a2ecb64b4", level, #"hash_345e9169ebba28fb");
+        util::waittill_any_ents(self.owner, #"hash_217479a2ecb64b4", level, #"portal_activated");
     } else {
-        level waittill(#"hash_345e9169ebba28fb", #"hash_23d445a634bedeae", #"in_dark_side");
+        level waittill(#"portal_activated", #"hash_23d445a634bedeae", #"in_dark_side");
     }
     self.selfdestruct = 1;
     self killstreak_vehicle::function_822e1f64();
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb6a14f0a, Offset: 0xd20
 // Size: 0x60
 function function_5d0ef633() {
     self endon(#"death", #"shutdown");
     while (true) {
-        wait(1.5);
+        wait 1.5;
         if (isdefined(self.owner)) {
             self function_86e8d9af();
         }
@@ -208,13 +207,13 @@ function function_5d0ef633() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x445797fb, Offset: 0xd88
 // Size: 0x28c
 function function_86e8d9af(n_radius = 200) {
     self endon(#"death", #"shutdown");
     if (is_true(self.var_38ae4622)) {
-        self notify(#"hash_2eef2b24309bc112");
+        self notify(#"pulse_red");
     }
     self clientfield::increment("" + #"hash_5b4b44738e08c9b9");
     a_zombies = self.owner getenemiesinradius(self.origin, n_radius);
@@ -234,7 +233,7 @@ function function_86e8d9af(n_radius = 200) {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1f433665, Offset: 0x1020
 // Size: 0x104
 function private function_584fb7a3() {
@@ -250,7 +249,7 @@ function private function_584fb7a3() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x56fb861c, Offset: 0x1130
 // Size: 0x12
 function function_d4789bf5() {
@@ -258,7 +257,7 @@ function function_d4789bf5() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x824e28b5, Offset: 0x1150
 // Size: 0x128
 function function_819fff9d() {
@@ -267,7 +266,7 @@ function function_819fff9d() {
         waitresult = self waittill(#"veh_predictedcollision");
         if ((isplayer(waitresult.target) || isai(waitresult.target)) && util::function_fbce7263(self.team, waitresult.target.team)) {
             if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
-                self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"hash_20e53d0989f408e6");
+                self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"auto_detonation");
             }
             self killstreak_vehicle::function_1f46c433();
         }
@@ -275,7 +274,7 @@ function function_819fff9d() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4640668e, Offset: 0x1280
 // Size: 0x128
 function function_f3170551() {
@@ -292,7 +291,7 @@ function function_f3170551() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4506fc9f, Offset: 0x13b0
 // Size: 0x164
 function function_2087b17f() {
@@ -311,17 +310,17 @@ function function_2087b17f() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x457cacb0, Offset: 0x1520
 // Size: 0x64
 function function_76817ccc() {
     if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
-        self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"hash_b7109f8dd0ceb9");
+        self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"manual_detonation");
     }
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd38fac98, Offset: 0x1590
 // Size: 0x72
 function function_8030f1bd(zombie) {

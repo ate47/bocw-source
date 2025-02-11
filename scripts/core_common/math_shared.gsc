@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
 
 #namespace math;
 
 // Namespace math/math_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x545b0c48, Offset: 0xa8
 // Size: 0x38
 function cointoss(n_chance = 50) {
@@ -12,7 +11,7 @@ function cointoss(n_chance = 50) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf5183c4b, Offset: 0xe8
 // Size: 0x54
 function clamp(val, val_min, val_max = val) {
@@ -40,7 +39,7 @@ function lag(desired, curr, k, dt) {
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa7acc2af, Offset: 0x1e8
 // Size: 0x66
 function find_box_center(mins, maxs) {
@@ -51,7 +50,7 @@ function find_box_center(mins, maxs) {
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2ee5fefd, Offset: 0x258
 // Size: 0xa4
 function expand_mins(mins, point) {
@@ -68,7 +67,7 @@ function expand_mins(mins, point) {
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1b5e9de3, Offset: 0x308
 // Size: 0xa4
 function expand_maxs(maxs, point) {
@@ -118,7 +117,7 @@ function random_vector(max_length) {
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x18144cb4, Offset: 0x618
 // Size: 0x68
 function angle_dif(oldangle, newangle) {
@@ -133,18 +132,18 @@ function angle_dif(oldangle, newangle) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xefbbe101, Offset: 0x688
 // Size: 0xc2
-function function_e673fc92(oldangle, newangle, var_f3747178) {
-    assert(var_f3747178 > 0, "<unknown string>");
+function function_e673fc92(oldangle, newangle, rotate_amount) {
+    assert(rotate_amount > 0, "<dev string:x38>");
     angle_diff = angleclamp180(newangle - oldangle);
-    angle_diff = sign(angle_diff) * min(abs(angle_diff), var_f3747178);
+    angle_diff = sign(angle_diff) * min(abs(angle_diff), rotate_amount);
     return absangleclamp360(oldangle + angle_diff);
 }
 
 // Namespace math/math_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b183196, Offset: 0x758
 // Size: 0x24
 function sign(x) {
@@ -152,7 +151,7 @@ function sign(x) {
 }
 
 // Namespace math/math_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb0d2fe11, Offset: 0x788
 // Size: 0x2e
 function randomsign() {
@@ -160,11 +159,11 @@ function randomsign() {
 }
 
 // Namespace math/math_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xda4ea03e, Offset: 0x7c0
 // Size: 0x35a
 function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_use_eye) {
-    assert(isdefined(v_point), "<unknown string>");
+    assert(isdefined(v_point), "<dev string:x5a>");
     if (!isdefined(b_ignore_z)) {
         b_ignore_z = 0;
     }
@@ -216,7 +215,7 @@ function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_us
         v_direction = anglestoup(v_angles) * -1;
         break;
     default:
-        assertmsg(str_direction + "<unknown string>");
+        assertmsg(str_direction + "<dev string:x89>");
         v_direction = anglestoforward(v_angles);
         break;
     }
@@ -233,7 +232,7 @@ function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_us
 // Checksum 0xfb40a90, Offset: 0xb28
 // Size: 0x6a
 function get_dot_right(v_point, b_ignore_z, b_normalize) {
-    assert(isdefined(v_point), "<unknown string>");
+    assert(isdefined(v_point), "<dev string:xb7>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, "right");
     return n_dot;
 }
@@ -243,7 +242,7 @@ function get_dot_right(v_point, b_ignore_z, b_normalize) {
 // Checksum 0x7d40b314, Offset: 0xba0
 // Size: 0x6a
 function get_dot_up(v_point, b_ignore_z, b_normalize) {
-    assert(isdefined(v_point), "<unknown string>");
+    assert(isdefined(v_point), "<dev string:xec>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, "up");
     return n_dot;
 }
@@ -253,7 +252,7 @@ function get_dot_up(v_point, b_ignore_z, b_normalize) {
 // Checksum 0x836e8b27, Offset: 0xc18
 // Size: 0x6a
 function get_dot_forward(v_point, b_ignore_z, b_normalize) {
-    assert(isdefined(v_point), "<unknown string>");
+    assert(isdefined(v_point), "<dev string:x11e>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, "forward");
     return n_dot;
 }
@@ -263,8 +262,8 @@ function get_dot_forward(v_point, b_ignore_z, b_normalize) {
 // Checksum 0xf2c98ffd, Offset: 0xc90
 // Size: 0xd2
 function get_dot_from_eye(v_point, b_ignore_z, b_normalize, str_direction) {
-    assert(isdefined(v_point), "<unknown string>");
-    assert(isplayer(self) || isai(self), "<unknown string>" + self.classname + "<unknown string>");
+    assert(isdefined(v_point), "<dev string:x11e>");
+    assert(isplayer(self) || isai(self), "<dev string:x155>" + self.classname + "<dev string:x178>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, 1);
     return n_dot;
 }
@@ -328,7 +327,7 @@ function random_normal_distribution(mean, std_deviation, lower_bound, upper_boun
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1df8adef, Offset: 0x1090
 // Size: 0x136
 function point_on_sphere_even_distribution(pitchrange, index, numberofpoints) {
@@ -342,7 +341,7 @@ function point_on_sphere_even_distribution(pitchrange, index, numberofpoints) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x8dbf051e, Offset: 0x11d0
 // Size: 0x18a
 function closest_point_on_line(point, linestart, lineend) {
@@ -363,7 +362,7 @@ function closest_point_on_line(point, linestart, lineend) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2fcff903, Offset: 0x1368
 // Size: 0xb8
 function function_8dd4c3c5(linestart, lineend, point) {
@@ -432,7 +431,7 @@ function function_f16fbd66(var_17a1aca9, var_9522f5ec, var_e5dbc91e, var_815dce6
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x65a194db, Offset: 0x1838
 // Size: 0x5a
 function get_2d_yaw(start, end) {
@@ -441,7 +440,7 @@ function get_2d_yaw(start, end) {
 }
 
 // Namespace math/math_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbbca39ca, Offset: 0x18a0
 // Size: 0xd0
 function vec_to_angles(vector) {
@@ -462,7 +461,7 @@ function vec_to_angles(vector) {
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x31a90fac, Offset: 0x1978
 // Size: 0x68
 function pow(base, exp) {
@@ -487,7 +486,7 @@ function function_b1820790(a, b, c, var_2bff268f) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa1e1e73f, Offset: 0x1a68
 // Size: 0xc2
 function normalize_value(clamp_a, clamp_b, var_7e18701b) {
@@ -501,13 +500,13 @@ function normalize_value(clamp_a, clamp_b, var_7e18701b) {
     } else if (var_7e18701b < clamp_a) {
         return 0;
     } else if (clamp_a == clamp_b) {
-        assertmsg("<unknown string>" + clamp_a + "<unknown string>" + clamp_b + "<unknown string>");
+        assertmsg("<dev string:x1b5>" + clamp_a + "<dev string:x1c2>" + clamp_b + "<dev string:x1cd>");
     }
     return (var_7e18701b - clamp_a) / (clamp_b - clamp_a);
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x43c70c53, Offset: 0x1b38
 // Size: 0x34
 function factor_value(min_val, max_val, factor_val) {

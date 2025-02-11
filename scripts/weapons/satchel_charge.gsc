@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace satchel_charge;
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c0cd22c, Offset: 0x148
 // Size: 0xa4
 function init_shared() {
@@ -25,7 +24,7 @@ function init_shared() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3452511, Offset: 0x1f8
 // Size: 0x1c2
 function function_a8a4341(watcher) {
@@ -57,7 +56,7 @@ function function_a8a4341(watcher) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7e5521fd, Offset: 0x3c8
 // Size: 0x214
 function function_af3365b5(watcher, owner) {
@@ -94,7 +93,7 @@ function function_af3365b5(watcher, owner) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xad7b4b8c, Offset: 0x5e8
 // Size: 0x2e
 function function_a0778d59() {
@@ -102,7 +101,7 @@ function function_a0778d59() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44f1318a, Offset: 0x620
 // Size: 0x24
 function function_a2f3d962() {
@@ -110,7 +109,7 @@ function function_a2f3d962() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2233cbae, Offset: 0x650
 // Size: 0x94
 function function_b96af076(attacker, weapon, target) {
@@ -124,7 +123,7 @@ function function_b96af076(attacker, weapon, target) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c85af65, Offset: 0x6f0
 // Size: 0x134
 function function_939d8a36(*watcher) {
@@ -135,13 +134,13 @@ function function_939d8a36(*watcher) {
     var_c4725fe8 = isdefined(level.var_ac78d00e.var_a74161cc.var_342ad32c) ? level.var_ac78d00e.var_a74161cc.var_342ad32c : 0;
     if (var_c4725fe8 > 0) {
         self playsound(isdefined(level.var_ac78d00e.var_a74161cc.var_f1c52016) ? level.var_ac78d00e.var_a74161cc.var_f1c52016 : "");
-        wait(var_c4725fe8);
+        wait var_c4725fe8;
     }
     flag::set("satchelIsArmed");
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe05e3aba, Offset: 0x830
 // Size: 0x130
 function function_a0a96965() {
@@ -157,7 +156,7 @@ function function_a0a96965() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbd5b1885, Offset: 0x968
 // Size: 0x284
 function function_acc500c4(watcher) {
@@ -172,7 +171,7 @@ function function_acc500c4(watcher) {
             var_5d0f385a = isdefined(level.var_ac78d00e.var_a74161cc.var_c932e2b0) ? level.var_ac78d00e.var_a74161cc.var_c932e2b0 : 0;
             assert(var_5d0f385a <= self.weapon.fusetime);
             var_d3839360 = float(self.weapon.fusetime) / 1000 - var_5d0f385a;
-            wait(var_d3839360);
+            wait var_d3839360;
             if (isdefined(level.var_ac78d00e.var_a74161cc.var_28f86309)) {
                 self stoploopsound(0.1);
             }
@@ -180,7 +179,7 @@ function function_acc500c4(watcher) {
             self playsound(var_1911997c);
             return;
         }
-        wait(float(self.weapon.fusetime) / 1000);
+        wait float(self.weapon.fusetime) / 1000;
         if (isdefined(level.var_ac78d00e.var_a74161cc.var_28f86309)) {
             self stoploopsound(0.1);
         }
@@ -188,7 +187,7 @@ function function_acc500c4(watcher) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd964d7a9, Offset: 0xbf8
 // Size: 0xb4
 function function_6db0705() {
@@ -208,7 +207,7 @@ function function_6db0705() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xabeca5cf, Offset: 0xcb8
 // Size: 0xd2
 function function_51108722() {
@@ -232,7 +231,7 @@ function function_51108722() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x127e1820, Offset: 0xd98
 // Size: 0x14a
 function function_542663a0() {
@@ -255,7 +254,7 @@ function function_542663a0() {
         return false;
     }
     function_a0a96965();
-    wait(0.5);
+    wait 0.5;
     if (isdefined(var_6e2c7396)) {
         self takeweapon(var_5d175791);
     }
@@ -264,7 +263,7 @@ function function_542663a0() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5f4c6487, Offset: 0xef0
 // Size: 0x3c
 function function_adee7bee() {
@@ -274,7 +273,7 @@ function function_adee7bee() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c781616, Offset: 0xf38
 // Size: 0x29e
 function function_521f546a(watcher) {
@@ -311,7 +310,7 @@ function function_521f546a(watcher) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94aecd2, Offset: 0x11e0
 // Size: 0x124
 function function_a39c62de(watcher) {
@@ -328,7 +327,7 @@ function function_a39c62de(watcher) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaae8c77b, Offset: 0x1310
 // Size: 0x18c
 function onplayerkilled(params) {
@@ -355,7 +354,7 @@ function onplayerkilled(params) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x47f23839, Offset: 0x14a8
 // Size: 0x1d4
 function function_9b8337c3(einflictor, eattacker, *idamage, *smeansofdeath, *weapon, *vdir, *shitloc, *psoffsettime, occupants) {
@@ -379,7 +378,7 @@ function function_9b8337c3(einflictor, eattacker, *idamage, *smeansofdeath, *wea
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xffc0ceaf, Offset: 0x1688
 // Size: 0x6c
 function function_af9b1762(eattacker) {
@@ -418,7 +417,7 @@ function event_handler[event_7f43a0d6] function_99514548(eventstruct) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x605df89, Offset: 0x1828
 // Size: 0x14
 function function_4ba658e5(*watcher, *player) {
@@ -434,7 +433,7 @@ function function_4ba658e5(*watcher, *player) {
     function function_335a9072(text) {
         if (level.weaponobjectdebug == 1) {
             entitynumber = self getentitynumber();
-            println("<unknown string>" + entitynumber + "<unknown string>" + text);
+            println("<dev string:x38>" + entitynumber + "<dev string:x4b>" + text);
         }
     }
 
@@ -447,7 +446,7 @@ function function_4ba658e5(*watcher, *player) {
         function_a0778d59();
         starttime = gettime();
         while (true) {
-            function_335a9072("<unknown string>" + float(self.weapon.fusetime - gettime() - starttime) / 1000);
+            function_335a9072("<dev string:x51>" + float(self.weapon.fusetime - gettime() - starttime) / 1000);
             waitframe(1);
         }
     }

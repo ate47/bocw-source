@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_5d18774f;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_5d18774f/namespace_5d18774f
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24631e7e, Offset: 0xf0
 // Size: 0x54
 function preload() {

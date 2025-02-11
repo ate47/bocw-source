@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_85cd2e9a28ea8a1;
-#using script_54412fb3a6fab34c;
-#using scripts\cp_common\snd_utility.gsc;
-#using script_3dc93ca9902a9cda;
-#using scripts\cp_common\snd.gsc;
 #using script_31e9b35aaacbbd93;
-#using script_6b47294865dc34b5;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\cp\cp_takedown.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\cp_common\dialogue.gsc;
 #using script_37f9ff47f340fbe8;
-#using scripts\core_common\easing.gsc;
-#using scripts\cp_common\skipto.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicleriders_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_3dc93ca9902a9cda;
+#using script_54412fb3a6fab34c;
+#using script_6b47294865dc34b5;
+#using script_85cd2e9a28ea8a1;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\easing;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicleriders_shared;
+#using scripts\cp\cp_takedown;
+#using scripts\cp_common\dialogue;
+#using scripts\cp_common\gametypes\globallogic_ui;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\snd;
+#using scripts\cp_common\snd_utility;
 
 #namespace tkdn_heli_intro;
 
@@ -46,18 +45,18 @@ function main(var_d3440450, *var_50cc0d4f) {
     player = getplayers()[0];
     player val::set("takedown_hit1_intro", "show_weapon_hud", 0);
     if (is_true(level.var_fc514951)) {
-        wait(0.1);
-        snd::function_7db65a93("intro_mockup");
+        wait 0.1;
+        snd::client_msg("intro_mockup");
         thread function_c6662dbb("intro_enemy_trucks", 1);
         scene::play("scene_tkd_hit1_intro_pre_fly_in");
         level lui::screen_fade_out(0, "black");
         level util::delay(0.4, undefined, &lui::screen_fade_in, 0.5);
     } else {
-        wait(3.5);
+        wait 3.5;
         thread function_c6662dbb("intro_enemy_trucks", 1);
-        wait(0.5);
+        wait 0.5;
     }
-    snd::function_7db65a93("intro_trans_out");
+    snd::client_msg("intro_trans_out");
     thread flyin();
     level flag::wait_till("heli_intro_complete");
     if (isdefined(var_50cc0d4f)) {
@@ -85,7 +84,7 @@ function cleanup(*name, *starting, *direct, *player) {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xa50
 // Size: 0x4
 function init_flags() {
@@ -93,7 +92,7 @@ function init_flags() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdb6ff145, Offset: 0xa60
 // Size: 0xf4
 function init_clientfields() {
@@ -105,7 +104,7 @@ function init_clientfields() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xb60
 // Size: 0x4
 function function_22b7fffd() {
@@ -113,7 +112,7 @@ function function_22b7fffd() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1255402c, Offset: 0xb70
 // Size: 0x10c
 function function_fbb0d73f() {
@@ -143,7 +142,7 @@ function function_bff76496(f) {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4fb2cb2, Offset: 0xcf8
 // Size: 0x6c
 function function_50c1c92b() {
@@ -154,7 +153,7 @@ function function_50c1c92b() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeb45f8ea, Offset: 0xd70
 // Size: 0x298
 function function_3b697267() {
@@ -163,7 +162,7 @@ function function_3b697267() {
     waitframe(3);
     player takeallweapons();
     player playerlinktodelta(level.fake_player, "tag_player", 1, 30, 15, 15, 30, 1, 1);
-    wait(0.1);
+    wait 0.1;
     player setlowready(1);
     level flag::wait_till("heli_player_gets_weapon");
     var_5ca6956f = getweapon(#"smg_standard_t9", array("reflex", "fastreload"));
@@ -174,7 +173,7 @@ function function_3b697267() {
     level flag::wait_till("heli_intro_complete");
     player playerlinktodelta(level.fake_player, "tag_player", 1, 0, 0, 0, 0, 1);
     player val::set("takedown_hit1_intro", "show_weapon_hud", 1);
-    wait(0.5);
+    wait 0.5;
     player setlowready(0);
     level.fake_player hide();
     player unlink();
@@ -183,7 +182,7 @@ function function_3b697267() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x88203e90, Offset: 0x1010
 // Size: 0x7e4
 function function_3d66ebcc(tname, var_5283a254, skipto_end = 0) {
@@ -219,7 +218,7 @@ function function_3d66ebcc(tname, var_5283a254, skipto_end = 0) {
     player = getplayers()[0];
     tag = "tag_origin";
     if (!is_true(level.var_fc514951)) {
-        wait(1);
+        wait 1;
     }
     mover = getent("intro_heli_assault_linked", "targetname");
     mover linkto(player_heli, tag, (0, 0, 0), (0, 0, 0));
@@ -263,31 +262,31 @@ function function_3d66ebcc(tname, var_5283a254, skipto_end = 0) {
         level flag::set("intro_takeout_driver");
         level flag::set("truck_front");
         level flag::delay_set(0.1, "heli_intro_path_ally");
-        wait(0.2);
+        wait 0.2;
         level.var_9a3944f4 thread vehicle::get_on_and_go_path("intro_ally_heli_post_scene");
     }
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5649713a, Offset: 0x1800
 // Size: 0x284
 function function_e826dfbb() {
     self endon(#"death");
     level endon(#"heli_convoy_aslt_complete");
-    wait(1);
+    wait 1;
     woods = undefined;
     while (!isdefined(woods)) {
         woods = getent("woods_chopper_from_scene", "script_noteworthy", 1);
         waitframe(2);
     }
-    wait(0.5);
+    wait 0.5;
     woods util::magic_bullet_shield();
     guys = [];
     guys[0] = getent("driver_woods_kills", "targetname", 1);
     guys[1] = getent("passenger_woods_kills", "targetname", 1);
     for (i = 0; i < 2; i++) {
-        woods waittill(#"hash_18f2e350ace238e0");
+        woods waittill(#"fire_gun");
         level flag::delay_set(0.05, "truck_front");
         level flag::delay_set(0.05, "heli_intro_complete");
         startpos = woods gettagorigin("tag_flash");
@@ -300,25 +299,25 @@ function function_e826dfbb() {
         }
         magicbullet(woods.weapon, startpos, endpos, woods);
     }
-    wait(1.5);
+    wait 1.5;
     level flag::set("heli_intro_path_ally");
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9c19543, Offset: 0x1a90
 // Size: 0x8c
 function function_72dfda8f() {
     self endon(#"death");
     level endon(#"heli_intro_complete");
     while (true) {
-        waitresult = level waittill(#"shake_low", #"shake_med", #"hash_7fbec71ff58f17be");
+        waitresult = level waittill(#"shake_low", #"shake_med", #"shake_high");
         level.var_8f8dc88e = waitresult._notify;
     }
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe0a1c201, Offset: 0x1b28
 // Size: 0x216
 function function_8227f24e() {
@@ -345,12 +344,12 @@ function function_8227f24e() {
         if (pitch + yaw > 0.025) {
             screenshake(source, pitch, yaw, roll, duration, 0, 0, 0, freqpitch, freqyaw);
         }
-        wait(duration);
+        wait duration;
     }
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc500ca42, Offset: 0x1d48
 // Size: 0x24
 function flyin() {
@@ -358,7 +357,7 @@ function flyin() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x979c33d5, Offset: 0x1d78
 // Size: 0x2d0
 function function_3cebcd1b() {
@@ -385,13 +384,13 @@ function function_3cebcd1b() {
             continue;
         }
         /#
-            iprintlnbold("hit1_truck_front" + var_87c48267);
+            iprintlnbold("<dev string:x38>" + var_87c48267);
         #/
     }
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc78b0efc, Offset: 0x2050
 // Size: 0x144
 function function_f97ce389(heli, tag, var_2d65f507, var_5525c0b0) {
@@ -405,7 +404,7 @@ function function_f97ce389(heli, tag, var_2d65f507, var_5525c0b0) {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xcd7db166, Offset: 0x21a0
 // Size: 0x1f4
 function heli_light(heli, tname, tag, var_2d65f507, var_ba240678, var_fa2357fe = 0, var_1a67724f = 0, var_5525c0b0 = 0) {
@@ -438,7 +437,7 @@ function heli_light(heli, tname, tag, var_2d65f507, var_ba240678, var_fa2357fe =
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa467f014, Offset: 0x23a0
 // Size: 0x9e
 function function_336e9e88() {
@@ -468,7 +467,7 @@ function function_833e9642(tag) {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x77a6282e, Offset: 0x24d8
 // Size: 0x9ea
 function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0, var_5525c0b0 = 0, var_2526f86c = 0) {
@@ -503,7 +502,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
     self.var_113b6995 = 2;
     self.var_35f26704 = 0;
     self.var_43643137 = (0, 0, 36);
-    self.var_71664ae5 = 128;
+    self.forward_scalar = 128;
     self.var_1a67724f = var_1a67724f;
     self.var_ba240678 endon(#"death");
     if (self.var_1a67724f || !isdefined(self.light)) {
@@ -549,7 +548,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
             }
         #/
         if (!(self.var_1a67724f || self.var_2526f86c)) {
-            end_point = self.var_ba240678.tracking.origin + self.var_43643137 + anglestoforward(self.var_ba240678.tracking.angles) * self.var_71664ae5;
+            end_point = self.var_ba240678.tracking.origin + self.var_43643137 + anglestoforward(self.var_ba240678.tracking.angles) * self.forward_scalar;
             dist = distance(self.var_ba240678.origin, end_point);
             if (!self.var_9fa13062 && !self.var_c7d51a18) {
                 if (dist > self.var_19a7fb91) {
@@ -571,7 +570,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
                 if (dist < self.var_19a7fb91) {
                     self.var_35f26704 = gettime() + self.var_113b6995 * 1000 / 3;
                     self.var_c7d51a18 = 1;
-                    end_point = self.var_ba240678.tracking.origin + self.var_43643137 + anglestoforward(self.var_ba240678.tracking.angles) * self.var_71664ae5;
+                    end_point = self.var_ba240678.tracking.origin + self.var_43643137 + anglestoforward(self.var_ba240678.tracking.angles) * self.forward_scalar;
                     /#
                         if (is_true(var_61bc4e7)) {
                             sphere(end_point, 4, (1, 0, 0), 1, 0, 10, 20);
@@ -617,7 +616,7 @@ function function_28090f23() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8b090b2f, Offset: 0x3018
 // Size: 0x1cc
 function function_c6662dbb(trucks, var_d9890e08) {
@@ -639,11 +638,11 @@ function function_c6662dbb(trucks, var_d9890e08) {
             level.var_aece851d[level.var_aece851d.size] = truck;
         }
     }
-    thread namespace_cb0d537d::function_149bd557();
+    thread tkdn_heli_convoy_aslt::function_149bd557();
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x40cf9929, Offset: 0x31f0
 // Size: 0x74
 function function_a01817ae() {
@@ -657,7 +656,7 @@ function function_a01817ae() {
 }
 
 // Namespace tkdn_heli_intro/namespace_6486858a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6c982df1, Offset: 0x3270
 // Size: 0x2ae
 function function_ccfab96() {
@@ -696,7 +695,7 @@ function function_ccfab96() {
                 curr = flappy_head;
                 self attach(curr);
             }
-            level notify(#"hash_7fbec71ff58f17be");
+            level notify(#"shake_high");
             level flag::delay_set(4, "heli_player_gets_weapon");
             self.var_f0087d61 = self.model;
             self setmodel("c_t9_cp_usa_hero_woods_body_flag");

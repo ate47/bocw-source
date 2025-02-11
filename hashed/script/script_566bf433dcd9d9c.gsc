@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
 #using script_22caeaa9257194b8;
-#using scripts\cp_common\gametypes\globallogic_utils.gsc;
-#using scripts\core_common\doors_shared.gsc;
 #using script_7cc5fb39b97494c4;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\doors_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\gametypes\globallogic_utils;
 
 #namespace namespace_4f6b19b0;
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x89b59b86, Offset: 0x120
 // Size: 0xc2
 function function_6249a416() {
@@ -35,7 +34,7 @@ function function_6249a416() {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x58984d35, Offset: 0x1f0
 // Size: 0x64
 function private open_door(c_door, t) {
@@ -47,7 +46,7 @@ function private open_door(c_door, t) {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3772840e, Offset: 0x260
 // Size: 0xe
 function private door_needs_to_close(*c_door) {
@@ -55,16 +54,16 @@ function private door_needs_to_close(*c_door) {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb5384ce3, Offset: 0x278
 // Size: 0x3c
 function private close_door(c_door) {
-    self endon(#"hash_6d9a59cc1ef486a8");
+    self endon(#"opening_door");
     c_door.m_e_door thread doors::close(undefined, undefined);
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd95fec73, Offset: 0x2c0
 // Size: 0x1e
 function private get_door_center(c_door) {
@@ -72,7 +71,7 @@ function private get_door_center(c_door) {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc50c069d, Offset: 0x2e8
 // Size: 0x46
 function private is_door_already_open(c_door) {
@@ -83,7 +82,7 @@ function private is_door_already_open(c_door) {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x90d31f89, Offset: 0x338
 // Size: 0x1c
 function function_6f0d502b() {
@@ -91,7 +90,7 @@ function function_6f0d502b() {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47836a50, Offset: 0x360
 // Size: 0x1c
 function function_28483c4a() {
@@ -99,7 +98,7 @@ function function_28483c4a() {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x54206131, Offset: 0x388
 // Size: 0x26
 function function_cd2d8ed8() {
@@ -108,7 +107,7 @@ function function_cd2d8ed8() {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd8ef0581, Offset: 0x3b8
 // Size: 0x96
 function private calcdooropenspeed() {
@@ -126,7 +125,7 @@ function private calcdooropenspeed() {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb511d06, Offset: 0x458
 // Size: 0x22e
 function private opendooratreasonabletime() {
@@ -155,13 +154,13 @@ function private opendooratreasonabletime() {
         waitframe(1);
     }
     t = calcdooropenspeed();
-    self notify(#"hash_6d9a59cc1ef486a8");
+    self notify(#"opening_door");
     self thread [[ fndooropen ]](door, t);
     return t;
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2f6869e2, Offset: 0x690
 // Size: 0x6e
 function private opendooratreasonabletime_waitforabort() {
@@ -173,7 +172,7 @@ function private opendooratreasonabletime_waitforabort() {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x73b05b5, Offset: 0x708
 // Size: 0x54
 function private closedoorifnecessary(door) {
@@ -184,7 +183,7 @@ function private closedoorifnecessary(door) {
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x841334a2, Offset: 0x768
 // Size: 0x4ec
 function private waitfordooropen(var_91fea62e) {
@@ -219,7 +218,7 @@ function private waitfordooropen(var_91fea62e) {
                     t = self opendooratreasonabletime();
                     if (isdefined(t)) {
                         self thread opendooratreasonabletime_waitforabort();
-                        wait(t);
+                        wait t;
                     }
                     self notify(#"hash_47b8208db121ca21");
                     if (isdefined(self.ai.doortoopen) && self.ai.doortoopen == door) {
@@ -248,7 +247,7 @@ function private waitfordooropen(var_91fea62e) {
                     t = self opendooratreasonabletime();
                     if (isdefined(t)) {
                         self thread opendooratreasonabletime_waitforabort();
-                        wait(t);
+                        wait t;
                     }
                     self notify(#"hash_47b8208db121ca21");
                     if (isdefined(self.ai.doortoopen) && self.ai.doortoopen == door) {

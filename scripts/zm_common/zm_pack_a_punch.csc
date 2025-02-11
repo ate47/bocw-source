@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\core_common\exploder_shared.csc;
-#using scripts\core_common\ai\systems\gib.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\scene_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\activecamo_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\activecamo_shared;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_pack_a_punch;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9d15bba6, Offset: 0x1b0
 // Size: 0x154
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xad21691c, Offset: 0x310
 // Size: 0x5c
 function function_5c574877(params) {
@@ -47,7 +46,7 @@ function function_5c574877(params) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa32bd144, Offset: 0x378
 // Size: 0xc4
 function on_localplayer_spawned(*localclientnum) {
@@ -66,7 +65,7 @@ function on_localplayer_spawned(*localclientnum) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6e69e24f, Offset: 0x448
 // Size: 0x174
 function pap_force_stream(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -95,7 +94,7 @@ function pap_force_stream(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x922c4dae, Offset: 0x5c8
 // Size: 0xd4
 function function_2a80c24d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -107,14 +106,14 @@ function function_2a80c24d(localclientnum, *oldval, newval, *bnewent, *binitials
         stopfx(fieldname, self.n_pap_idle_fx);
         self.n_pap_idle_fx = undefined;
     }
-    wait(1);
+    wait 1;
     if (isdefined(self.var_4d7e8438)) {
         self.var_4d7e8438 delete();
     }
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x9cbdda7f, Offset: 0x6a8
 // Size: 0x152
 function private function_f74ad2c1(localclientnum, n_piece_index, str_tag) {
@@ -132,7 +131,7 @@ function private function_f74ad2c1(localclientnum, n_piece_index, str_tag) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbc40a13b, Offset: 0x808
 // Size: 0xd4
 function pap_working_fx_handler(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -144,14 +143,14 @@ function pap_working_fx_handler(localclientnum, *oldval, newval, *bnewent, *bini
         stopfx(fieldname, self.n_pap_fx);
         self.n_pap_fx = undefined;
     }
-    wait(1);
+    wait 1;
     if (isdefined(self.mdl_fx)) {
         self.mdl_fx delete();
     }
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xe4d99359, Offset: 0x8e8
 // Size: 0x152
 function private pap_play_fx(localclientnum, n_piece_index, str_tag) {

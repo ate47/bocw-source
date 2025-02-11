@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
 
 #namespace mp_kgb;
 
@@ -21,7 +20,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_kgb/mp_kgb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9e459e6, Offset: 0x1c8
 // Size: 0x2c
 function on_gameplay_started(*localclientnum) {

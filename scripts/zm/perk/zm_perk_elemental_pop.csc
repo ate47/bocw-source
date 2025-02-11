@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_perks.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_perk_elemental_pop;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x64192226, Offset: 0x200
 // Size: 0x14
 function private preinit() {
@@ -24,11 +23,11 @@ function private preinit() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc5262b1f, Offset: 0x220
 // Size: 0x21c
 function function_27473e44() {
-    zm_perks::register_perk_clientfields(#"hash_51b6cc6dbafb7f31", &client_field_func, &function_f71e2d8f);
+    zm_perks::register_perk_clientfields(#"hash_51b6cc6dbafb7f31", &client_field_func, &callback_func);
     zm_perks::register_perk_effects(#"hash_51b6cc6dbafb7f31", "elemental_pop_light");
     zm_perks::register_perk_init_thread(#"hash_51b6cc6dbafb7f31", &init_perk);
     zm_perks::function_f3c80d73("zombie_perk_bottle_elemental_pop");
@@ -40,7 +39,7 @@ function function_27473e44() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x81723c94, Offset: 0x448
 // Size: 0x44
 function init_perk() {
@@ -50,7 +49,7 @@ function init_perk() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3eeeae33, Offset: 0x498
 // Size: 0xb4
 function client_field_func() {
@@ -59,15 +58,15 @@ function client_field_func() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x558
 // Size: 0x4
-function function_f71e2d8f() {
+function callback_func() {
     
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd6e0d967, Offset: 0x568
 // Size: 0xec
 function function_9717930f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -78,7 +77,7 @@ function function_9717930f(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x9e08b7b, Offset: 0x660
 // Size: 0x84
 function private function_2d190a32(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -88,7 +87,7 @@ function private function_2d190a32(localclientnum, *oldval, *newval, *bnewent, *
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x67b61505, Offset: 0x6f0
 // Size: 0x112
 function function_7f805dac(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -110,7 +109,7 @@ function function_7f805dac(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc0b7cbcc, Offset: 0x810
 // Size: 0x1ee
 function tesla_death_fx_callback(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -146,7 +145,7 @@ function tesla_death_fx_callback(localclientnum, *oldval, newval, *bnewent, *bin
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8fa025a2, Offset: 0xa08
 // Size: 0x29e
 function tesla_shock_eyes_fx_callback(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

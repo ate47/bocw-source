@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\gestures.gsc;
+#using scripts\core_common\gestures;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
 
 #namespace dev;
 
@@ -42,7 +41,7 @@
                     direction = player getplayerangles();
                     direction_vec = anglestoforward((0, direction[1], 0));
                     direction_vec = (direction_vec[0] * scale, direction_vec[1] * scale, direction_vec[2] * scale);
-                    level.test_chart_model = spawn("<unknown string>", player geteye() + direction_vec);
+                    level.test_chart_model = spawn("<dev string:x38>", player geteye() + direction_vec);
                     level.test_chart_model setmodel(#"test_chart_model");
                     level.test_chart_model.angles = (0, direction[1], 0) + (0, 90, 0);
                 }
@@ -95,7 +94,7 @@
                 players = getplayers();
                 if (players.size > 0) {
                     player = util::gethostplayer();
-                    corners = getentarray("<unknown string>", "<unknown string>");
+                    corners = getentarray("<dev string:x48>", "<dev string:x5a>");
                     if (corners.size == 2) {
                         viewpos = corners[0].origin + corners[1].origin;
                         viewpos = (viewpos[0] * 0.5, viewpos[1] * 0.5, viewpos[2] * 0.5);
@@ -185,7 +184,7 @@
                         setdvar(#"debug_show_viewpos", 0);
                         thread drawminimapbounds(viewpos, mincorner, maxcorner);
                     } else {
-                        println("<unknown string>");
+                        println("<dev string:x68>");
                     }
                     return;
                 }
@@ -232,7 +231,7 @@
             line(corner1, corner2);
             line(corner2, corner3);
             line(corner3, corner0);
-            print3d(toppos, "<unknown string>", (1, 1, 1), 1, textscale);
+            print3d(toppos, "<dev string:xb4>", (1, 1, 1), 1, textscale);
             waitframe(1);
         }
     }
@@ -252,13 +251,13 @@
     function function_e5746ec1() {
         host = util::gethostplayer();
         all_players = getplayers();
-        var_1645eaac = isdefined(host) && host getstance() == "<unknown string>";
+        var_1645eaac = isdefined(host) && host getstance() == "<dev string:xc4>";
         if (!isdefined(host) || var_1645eaac) {
             return all_players;
         }
         all_players = arraysort(all_players, host.origin);
         players = [];
-        if (all_players.size == 1 || host getstance() == "<unknown string>") {
+        if (all_players.size == 1 || host getstance() == "<dev string:xcd>") {
             players[0] = host;
         } else {
             players[0] = all_players[1];
@@ -284,7 +283,7 @@
     // Size: 0x298
     function function_f413b4d5(bodytype, outfitindex, var_c1154821, index) {
         players = function_e5746ec1();
-        if (var_c1154821 == "<unknown string>") {
+        if (var_c1154821 == "<dev string:xd6>") {
             function_5639909a(bodytype, outfitindex);
             var_9cf37283 = function_d7c3cf6c(bodytype, outfitindex, currentsessionmode());
             preset = var_9cf37283.presets[index];
@@ -298,7 +297,7 @@
             return;
         }
         foreach (player in players) {
-            if (var_c1154821 == "<unknown string>") {
+            if (var_c1154821 == "<dev string:xe0>") {
                 player setcharacterwarpaintoutfit(outfitindex);
             }
             player function_ab96a9b5(var_c1154821, index);
@@ -310,32 +309,32 @@
     // Checksum 0x6e84171b, Offset: 0x1818
     // Size: 0x3b2
     function body_customization_process_command(character_index) {
-        println("<unknown string>" + character_index + "<unknown string>");
-        split = strtok(character_index, "<unknown string>");
+        println("<dev string:xec>" + character_index + "<dev string:x114>");
+        split = strtok(character_index, "<dev string:x119>");
         switch (split.size) {
         case 1:
-            command0 = strtok(split[0], "<unknown string>");
+            command0 = strtok(split[0], "<dev string:x11e>");
             bodytype = int(command0[1]);
-            println("<unknown string>" + bodytype + "<unknown string>");
+            println("<dev string:x123>" + bodytype + "<dev string:x162>");
             function_5639909a(bodytype, 0);
             break;
         case 2:
-            command0 = strtok(split[0], "<unknown string>");
+            command0 = strtok(split[0], "<dev string:x11e>");
             bodytype = int(command0[1]);
-            command1 = strtok(split[1], "<unknown string>");
+            command1 = strtok(split[1], "<dev string:x11e>");
             outfitindex = int(command1[1]);
-            println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>");
+            println("<dev string:x123>" + bodytype + "<dev string:x167>" + outfitindex + "<dev string:x162>");
             function_5639909a(bodytype, outfitindex);
             break;
         case 3:
-            command0 = strtok(split[0], "<unknown string>");
+            command0 = strtok(split[0], "<dev string:x11e>");
             bodytype = int(command0[1]);
-            command1 = strtok(split[1], "<unknown string>");
+            command1 = strtok(split[1], "<dev string:x11e>");
             outfitindex = int(command1[1]);
-            var_e7f74d2b = strtok(split[2], "<unknown string>");
+            var_e7f74d2b = strtok(split[2], "<dev string:x11e>");
             var_c1154821 = var_e7f74d2b[0];
             index = int(var_e7f74d2b[1]);
-            println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>" + var_c1154821 + "<unknown string>" + index + "<unknown string>");
+            println("<dev string:x178>" + bodytype + "<dev string:x167>" + outfitindex + "<dev string:x1ae>" + var_c1154821 + "<dev string:x1b8>" + index + "<dev string:x162>");
             function_f413b4d5(bodytype, outfitindex, var_c1154821, index);
             break;
         default:
@@ -350,7 +349,7 @@
     function function_3cec5609(&arr, devgui_path, bodytype, outfitindex, optiontype) {
         foreach (index, option in arr) {
             if (option.isvalid) {
-                util::add_debug_command(devgui_path + index + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + bodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>" + optiontype + "<unknown string>" + index + "<unknown string>");
+                util::add_debug_command(devgui_path + index + "<dev string:x1bd>" + "<dev string:x1c8>" + "<dev string:x1b8>" + "<dev string:x1d7>" + bodytype + "<dev string:x119>" + "<dev string:x1e4>" + outfitindex + "<dev string:x119>" + optiontype + "<dev string:x11e>" + index + "<dev string:x1ef>");
             }
         }
     }
@@ -360,7 +359,7 @@
     // Checksum 0x471fd59d, Offset: 0x1d10
     // Size: 0x44
     function function_c807b11d(in_string) {
-        out_string = strreplace(in_string, "<unknown string>", "<unknown string>");
+        out_string = strreplace(in_string, "<dev string:x11e>", "<dev string:x1f6>");
         return out_string;
     }
 
@@ -369,7 +368,7 @@
     // Checksum 0x7b6eebba, Offset: 0x1d60
     // Size: 0x44
     function function_2c6232e5(in_string) {
-        out_string = strreplace(in_string, "<unknown string>", "<unknown string>");
+        out_string = strreplace(in_string, "<dev string:x11e>", "<dev string:x1fb>");
         return out_string;
     }
 
@@ -380,8 +379,8 @@
     function function_970d4891(mode) {
         bodies = getallcharacterbodies(mode);
         foreach (playerbodytype in bodies) {
-            body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<unknown string>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
-            util::add_devgui("<unknown string>" + body_name + "<unknown string>", "<unknown string>" + "<unknown string>" + "<unknown string>" + body_name);
+            body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<dev string:x1ff>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
+            util::add_devgui("<dev string:x204>" + body_name + "<dev string:x222>", "<dev string:x238>" + "<dev string:x240>" + "<dev string:x1b8>" + body_name);
         }
     }
 
@@ -391,27 +390,27 @@
     // Size: 0x828
     function body_customization_populate(mode, var_ef4940a5) {
         bodies = getallcharacterbodies(mode);
-        body_customization_devgui_base = "<unknown string>" + "<unknown string>";
-        level.var_1a409216 = [{#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}];
+        body_customization_devgui_base = "<dev string:x261>" + "<dev string:x204>";
+        level.var_1a409216 = [{#path:"<dev string:x271>", #field:"<dev string:x27d>"}, {#path:"<dev string:x285>", #field:"<dev string:x295>"}, {#path:"<dev string:x29e>", #field:"<dev string:x2ac>"}, {#path:"<dev string:x2b4>", #field:"<dev string:x2c7>"}, {#path:"<dev string:x2d3>", #field:"<dev string:x2df>"}, {#path:"<dev string:x2e7>", #field:"<dev string:x2fb>"}, {#path:"<dev string:x306>", #field:"<dev string:x316>"}, {#path:"<dev string:x31f>", #field:"<dev string:xe0>"}];
         foreach (playerbodytype in bodies) {
-            body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<unknown string>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
+            body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<dev string:x1ff>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
             if (isdefined(var_ef4940a5) && var_ef4940a5 != body_name) {
                 continue;
             }
-            util::add_debug_command(body_customization_devgui_base + body_name + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + playerbodytype + "<unknown string>");
+            util::add_debug_command(body_customization_devgui_base + body_name + "<dev string:x337>" + "<dev string:x1bd>" + "<dev string:x1c8>" + "<dev string:x1b8>" + "<dev string:x1d7>" + playerbodytype + "<dev string:x1ef>");
             var_13240050 = function_d299ef16(playerbodytype, mode);
             for (outfitindex = 0; outfitindex < var_13240050; outfitindex++) {
                 var_9cf37283 = function_d7c3cf6c(playerbodytype, outfitindex, mode);
                 if (var_9cf37283.valid) {
                     var_346660ac = function_2c6232e5(makelocalizedstring(var_9cf37283.var_74996050));
-                    var_1bf829f2 = outfitindex + "<unknown string>" + var_346660ac + "<unknown string>" + function_c807b11d(function_9e72a96(var_9cf37283.namehash)) + "<unknown string>" + outfitindex;
-                    var_a818c4e = body_customization_devgui_base + body_name + "<unknown string>" + var_1bf829f2;
-                    util::add_debug_command(var_a818c4e + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + playerbodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>");
+                    var_1bf829f2 = outfitindex + "<dev string:x1ff>" + var_346660ac + "<dev string:x1ff>" + function_c807b11d(function_9e72a96(var_9cf37283.namehash)) + "<dev string:x11e>" + outfitindex;
+                    var_a818c4e = body_customization_devgui_base + body_name + "<dev string:x343>" + var_1bf829f2;
+                    util::add_debug_command(var_a818c4e + "<dev string:x337>" + "<dev string:x1bd>" + "<dev string:x1c8>" + "<dev string:x1b8>" + "<dev string:x1d7>" + playerbodytype + "<dev string:x119>" + "<dev string:x1e4>" + outfitindex + "<dev string:x1ef>");
                     foreach (type, data in level.var_1a409216) {
                         foreach (index, option in var_9cf37283.options[type]) {
                             if (option.isvalid) {
                                 util::waittill_can_add_debug_command();
-                                util::add_debug_command(var_a818c4e + "<unknown string>" + data.path + "<unknown string>" + index + "<unknown string>" + index + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + playerbodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>" + data.field + "<unknown string>" + index + "<unknown string>");
+                                util::add_debug_command(var_a818c4e + "<dev string:x343>" + data.path + "<dev string:x1b8>" + index + "<dev string:x11e>" + index + "<dev string:x1bd>" + "<dev string:x1c8>" + "<dev string:x1b8>" + "<dev string:x1d7>" + playerbodytype + "<dev string:x119>" + "<dev string:x1e4>" + outfitindex + "<dev string:x119>" + data.field + "<dev string:x11e>" + index + "<dev string:x1ef>");
                             }
                         }
                     }
@@ -421,11 +420,11 @@
                             continue;
                         }
                         util::waittill_can_add_debug_command();
-                        util::add_debug_command(var_a818c4e + "<unknown string>" + "<unknown string>" + presetindex + "<unknown string>" + function_9e72a96(preset.lootid) + "<unknown string>" + "<unknown string>" + presetindex + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + playerbodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>" + "<unknown string>" + "<unknown string>" + presetindex + "<unknown string>");
+                        util::add_debug_command(var_a818c4e + "<dev string:x343>" + "<dev string:x348>" + presetindex + "<dev string:x35b>" + function_9e72a96(preset.lootid) + "<dev string:x114>" + "<dev string:x11e>" + presetindex + "<dev string:x1bd>" + "<dev string:x1c8>" + "<dev string:x1b8>" + "<dev string:x1d7>" + playerbodytype + "<dev string:x119>" + "<dev string:x1e4>" + outfitindex + "<dev string:x119>" + "<dev string:xd6>" + "<dev string:x11e>" + presetindex + "<dev string:x1ef>");
                     }
                 }
                 if (isdefined(var_ef4940a5)) {
-                    util::remove_devgui("<unknown string>" + body_name + "<unknown string>");
+                    util::remove_devgui("<dev string:x204>" + body_name + "<dev string:x361>");
                 }
             }
         }
@@ -459,7 +458,7 @@
                 namehash = v function_d4e2ed8a(roleindex);
                 if (isdefined(namehash)) {
                     pos = v.origin + (0, 0, 100);
-                    text = "<unknown string>" + roleindex + "<unknown string>" + function_9e72a96(namehash) + "<unknown string>";
+                    text = "<dev string:x375>" + roleindex + "<dev string:x380>" + function_9e72a96(namehash) + "<dev string:x386>";
                     color = (1, 1, 1);
                     alpha = 1;
                     scale = 1;
@@ -502,20 +501,20 @@
     // Size: 0x31c
     function body_customization_devgui(mode) {
         function_970d4891(mode);
-        wait(1);
+        wait 1;
         var_35383820 = 0;
-        adddebugcommand("<unknown string>" + "<unknown string>");
+        adddebugcommand("<dev string:x38b>" + "<dev string:x3c2>");
         var_a02b3930 = 0;
         for (;;) {
-            var_f12e4923 = getdvarstring(#"hash_2195b248bfe1371e", "<unknown string>");
-            if (var_f12e4923 != "<unknown string>") {
+            var_f12e4923 = getdvarstring(#"hash_2195b248bfe1371e", "<dev string:x1fb>");
+            if (var_f12e4923 != "<dev string:x1fb>") {
                 level thread body_customization_populate(mode, var_f12e4923);
-                setdvar(#"hash_2195b248bfe1371e", "<unknown string>");
+                setdvar(#"hash_2195b248bfe1371e", "<dev string:x1fb>");
             }
-            character_index = getdvarstring(#"char_devgui", "<unknown string>");
-            if (character_index != "<unknown string>") {
+            character_index = getdvarstring(#"char_devgui", "<dev string:x1fb>");
+            if (character_index != "<dev string:x1fb>") {
                 body_customization_process_command(character_index);
-                setdvar(#"char_devgui", "<unknown string>");
+                setdvar(#"char_devgui", "<dev string:x1fb>");
             }
             if (getdvarint(#"hash_50a9783feccc726d", 0)) {
                 function_986c93f0();
@@ -528,7 +527,7 @@
             var_32e0e50a = getdvarint(#"hash_4976075f146e1fa2", 0);
             if (var_35383820 != var_32e0e50a) {
                 players = getplayers();
-                iprintln("<unknown string>" + var_32e0e50a + "<unknown string>");
+                iprintln("<dev string:x3dc>" + var_32e0e50a + "<dev string:x386>");
                 foreach (player in players) {
                     if (!isdefined(player)) {
                         continue;
@@ -537,7 +536,7 @@
                 }
             }
             var_35383820 = var_32e0e50a;
-            wait(0.5);
+            wait 0.5;
         }
     }
 
@@ -546,10 +545,10 @@
     // Checksum 0x5c367c5a, Offset: 0x2df0
     // Size: 0xbc
     function add_perk_devgui(name, specialties) {
-        perk_devgui_base = "<unknown string>";
+        perk_devgui_base = "<dev string:x40c>";
         perk_name = name;
-        test = perk_devgui_base + perk_name + "<unknown string>" + "<unknown string>" + "<unknown string>" + specialties + "<unknown string>";
-        util::add_debug_command(perk_devgui_base + perk_name + "<unknown string>" + "<unknown string>" + "<unknown string>" + specialties + "<unknown string>");
+        test = perk_devgui_base + perk_name + "<dev string:x1bd>" + "<dev string:x433>" + "<dev string:x1b8>" + specialties + "<dev string:x1ef>";
+        util::add_debug_command(perk_devgui_base + perk_name + "<dev string:x1bd>" + "<dev string:x433>" + "<dev string:x1b8>" + specialties + "<dev string:x1ef>");
     }
 
     // Namespace dev/dev_shared
@@ -558,18 +557,18 @@
     // Size: 0xcc
     function function_373068ca(name, postfix) {
         if (!isdefined(postfix)) {
-            postfix = "<unknown string>";
+            postfix = "<dev string:x1fb>";
         }
         if (!isdefined(name)) {
             return;
         }
-        if (name == "<unknown string>") {
+        if (name == "<dev string:x1fb>") {
             return;
         }
         util::waittill_can_add_debug_command();
-        talentname = "<unknown string>" + name + postfix;
-        cmd = "<unknown string>" + "<unknown string>" + "<unknown string>" + talentname;
-        util::add_devgui("<unknown string>" + talentname, cmd);
+        talentname = "<dev string:x1fb>" + name + postfix;
+        cmd = "<dev string:x238>" + "<dev string:x443>" + "<dev string:x1b8>" + talentname;
+        util::add_devgui("<dev string:x455>" + talentname, cmd);
     }
 
     // Namespace dev/dev_shared
@@ -578,18 +577,18 @@
     // Size: 0xdc
     function function_8263c0d5(name, postfix) {
         if (!isdefined(postfix)) {
-            postfix = "<unknown string>";
+            postfix = "<dev string:x1fb>";
         }
         if (!isdefined(name)) {
             return;
         }
-        if (name == "<unknown string>") {
+        if (name == "<dev string:x1fb>") {
             return;
         }
         util::waittill_can_add_debug_command();
-        talentname = "<unknown string>" + getsubstr(name, 7) + postfix;
-        cmd = "<unknown string>" + "<unknown string>" + "<unknown string>" + talentname;
-        util::add_devgui("<unknown string>" + talentname, cmd);
+        talentname = "<dev string:x485>" + getsubstr(name, 7) + postfix;
+        cmd = "<dev string:x238>" + "<dev string:x48f>" + "<dev string:x1b8>" + talentname;
+        util::add_devgui("<dev string:x4a0>" + talentname, cmd);
     }
 
     // Namespace dev/dev_shared
@@ -598,7 +597,7 @@
     // Size: 0x184
     function function_a432e633() {
         gesture = getdvarstring(#"scr_givegesture");
-        if (isdefined(gesture) && gesture != "<unknown string>") {
+        if (isdefined(gesture) && gesture != "<dev string:x1fb>") {
             foreach (player in level.players) {
                 if (isbot(player)) {
                     continue;
@@ -610,7 +609,7 @@
                 }
             }
         }
-        setdvar(#"scr_givegesture", "<unknown string>");
+        setdvar(#"scr_givegesture", "<dev string:x1fb>");
     }
 
     // Namespace dev/dev_shared
@@ -620,11 +619,11 @@
     function function_487bf571() {
         for (;;) {
             gesture = getdvarstring(#"scr_givegesture");
-            if (gesture != "<unknown string>") {
+            if (gesture != "<dev string:x1fb>") {
                 function_a432e633();
             }
-            setdvar(#"scr_givegesture", "<unknown string>");
-            wait(0.5);
+            setdvar(#"scr_givegesture", "<dev string:x1fb>");
+            wait 0.5;
         }
     }
 
@@ -669,7 +668,7 @@
     // Checksum 0x11866367, Offset: 0x3438
     // Size: 0x20
     function draw_pathnodes_stop() {
-        wait(5);
+        wait 5;
         level notify(#"draw_pathnode_stop");
     }
 
@@ -685,9 +684,9 @@
             if (!isdefined(node)) {
                 continue;
             }
-            if (player buttonpressed("<unknown string>")) {
+            if (player buttonpressed("<dev string:x4ca>")) {
                 return node;
-            } else if (player buttonpressed("<unknown string>")) {
+            } else if (player buttonpressed("<dev string:x4d6>")) {
                 return undefined;
             }
             if (node.type == #"path") {
@@ -707,19 +706,19 @@
         start = undefined;
         while (!isdefined(start)) {
             start = node_get(player);
-            if (player buttonpressed("<unknown string>")) {
+            if (player buttonpressed("<dev string:x4d6>")) {
                 level notify(#"draw_pathnode_stop");
                 return undefined;
             }
         }
         level thread draw_pathnode_think(start, (0, 1, 0));
-        while (player buttonpressed("<unknown string>")) {
+        while (player buttonpressed("<dev string:x4ca>")) {
             waitframe(1);
         }
         end = undefined;
         while (!isdefined(end)) {
             end = node_get(player);
-            if (player buttonpressed("<unknown string>")) {
+            if (player buttonpressed("<dev string:x4d6>")) {
                 level notify(#"draw_pathnode_stop");
                 return undefined;
             }
@@ -751,9 +750,9 @@
         for (;;) {
             waitframe(1);
             origin = get_lookat_origin(player);
-            if (player buttonpressed("<unknown string>")) {
+            if (player buttonpressed("<dev string:x4ca>")) {
                 return origin;
-            } else if (player buttonpressed("<unknown string>")) {
+            } else if (player buttonpressed("<dev string:x4d6>")) {
                 return undefined;
             }
             draw_point(origin, (1, 0, 1));
@@ -774,7 +773,7 @@
                 return points;
             }
         }
-        while (player buttonpressed("<unknown string>")) {
+        while (player buttonpressed("<dev string:x4ca>")) {
             waitframe(1);
         }
         end = undefined;

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\killstreaks\planemortar_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\planemortar_shared;
 
 #namespace planemortar;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x98f1c0f8, Offset: 0x138
 // Size: 0x5c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace planemortar/planemortar
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x81a6b620, Offset: 0x1a0
 // Size: 0xf2
 function planemortar_contrail(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

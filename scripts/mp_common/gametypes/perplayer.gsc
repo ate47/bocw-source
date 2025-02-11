@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace perplayer;
 
 // Namespace perplayer/perplayer

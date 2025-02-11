@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\entityheadicons_shared.gsc;
-#using scripts\core_common\damage.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\entityheadicons_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weaponobjects;
 
 #namespace nightingale;
 
@@ -27,11 +26,11 @@ function private autoexec __init__system__() {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9a3e12b6, Offset: 0x1c0
 // Size: 0x21c
 function private preinit() {
-    clientfield::register("scriptmover", "" + #"hash_7cc71113338444c4", 1, 1, "int");
+    clientfield::register("scriptmover", "" + #"nightingale_deployed", 1, 1, "int");
     clientfield::register("scriptmover", "" + #"hash_7c2ee5bfa7cad803", 1, 1, "int");
     weapon_name = sessionmodeiszombiesgame() ? #"nightingale_zm" : #"nightingale";
     weapon = getweapon(weapon_name);
@@ -49,7 +48,7 @@ function private preinit() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1f3a3501, Offset: 0x3e8
 // Size: 0x6e
 function private function_713a08b(watcher) {
@@ -61,7 +60,7 @@ function private function_713a08b(watcher) {
 }
 
 // Namespace nightingale/nightingale
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x5ea23496, Offset: 0x460
 // Size: 0x5c
 function private function_81619d12(attacker, *data) {
@@ -72,7 +71,7 @@ function private function_81619d12(attacker, *data) {
 }
 
 // Namespace nightingale/nightingale
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x86fd9bbc, Offset: 0x4c8
 // Size: 0x34
 function private function_c4afd8d1(attacker, weapon, *target) {
@@ -80,13 +79,13 @@ function private function_c4afd8d1(attacker, weapon, *target) {
 }
 
 // Namespace nightingale/nightingale
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x14b76391, Offset: 0x508
 // Size: 0xdc
 function private function_1bda2316(attacker, weapon) {
     weaponobjects::function_b4793bda(self, self.weapon);
     if (isdefined(attacker) && self.owner util::isenemyplayer(attacker)) {
-        scoreevents::processscoreevent(#"hash_7e4bea54bce26c89", attacker, self.owner, weapon);
+        scoreevents::processscoreevent(#"destroyed_nightingale", attacker, self.owner, weapon);
         attacker challenges::destroyedequipment(weapon);
         self battlechatter::function_d2600afc(attacker, self.owner, self.weapon, weapon);
     }
@@ -94,7 +93,7 @@ function private function_1bda2316(attacker, weapon) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x300f2dff, Offset: 0x5f0
 // Size: 0x464
 function private function_acc36c55(watcher) {
@@ -137,7 +136,7 @@ function private function_acc36c55(watcher) {
         break;
     }
     if (level.weaponobjectexplodethisframe) {
-        wait(0.1 + randomfloat(0.4));
+        wait 0.1 + randomfloat(0.4);
     } else {
         waitframe(1);
     }
@@ -158,7 +157,7 @@ function private function_acc36c55(watcher) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcf39f7e6, Offset: 0xa60
 // Size: 0xc4
 function private function_6ab1797f(decoygrenade) {
@@ -174,7 +173,7 @@ function private function_6ab1797f(decoygrenade) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6e898a16, Offset: 0xb30
 // Size: 0xe4
 function private function_7dfb4daa(decoygrenade) {
@@ -226,7 +225,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0325fa7, Offset: 0xe78
 // Size: 0x2b4
 function function_db24f032() {
@@ -240,7 +239,7 @@ function function_db24f032() {
     if (isdefined(self.originalowner) && isplayer(self.originalowner)) {
         decoy setowner(self.originalowner);
     }
-    decoy clientfield::set("" + #"hash_7cc71113338444c4", 1);
+    decoy clientfield::set("" + #"nightingale_deployed", 1);
     self ghost();
     self notsolid();
     if (is_true(self.isjammed)) {
@@ -277,7 +276,7 @@ function function_29fbe24f(zombie) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb7642d6, Offset: 0x11d8
 // Size: 0x76
 function private function_400826e(*zombie) {
@@ -288,7 +287,7 @@ function private function_400826e(*zombie) {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x68bc832c, Offset: 0x1258
 // Size: 0x2aa
 function private function_65ee50ba() {
@@ -326,7 +325,7 @@ function private function_65ee50ba() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba273551, Offset: 0x1510
 // Size: 0x1cc
 function function_30a3d1d2(params) {
@@ -337,7 +336,7 @@ function function_30a3d1d2(params) {
         }
         owner = var_e5d834ab.owner;
         if (isdefined(owner) && isdefined(params.players[owner getentitynumber()]) && level.var_432fa05c.var_558ae5bc >= distancesquared(var_e5d834ab.origin, self.origin)) {
-            scoreevents::processscoreevent(#"hash_f114eaf6ee78991", owner);
+            scoreevents::processscoreevent(#"nightingale_assist", owner);
             owner stats::function_622feb0d(var_e5d834ab.weapon.name, #"nightingale_assists", 1);
             if (isdefined(level.var_b7bc3c75.var_e2298731)) {
                 owner [[ level.var_b7bc3c75.var_e2298731 ]]();
@@ -347,7 +346,7 @@ function function_30a3d1d2(params) {
 }
 
 // Namespace nightingale/nightingale
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x5c4ab218, Offset: 0x16e8
 // Size: 0x14e
 function function_dedc78a9(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
@@ -367,7 +366,7 @@ function function_dedc78a9(attacker, victim, *weapon, *attackerweapon, *meansofd
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30ffc28d, Offset: 0x1840
 // Size: 0x30
 function function_24e13681(params) {

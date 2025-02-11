@@ -1,64 +1,63 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5e96d104c70be5ac;
-#using scripts\zm_common\zm_aoe.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_traps.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_power.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_clone.gsc;
-#using scripts\zm_common\zm_blockers.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\callbacks.gsc;
-#using scripts\zm_common\bots\zm_bot.gsc;
-#using scripts\zm_common\art.gsc;
-#using scripts\weapons\zm\weaponobjects.gsc;
-#using scripts\zm_common\gametypes\spectating.gsc;
-#using scripts\zm_common\gametypes\shellshock.gsc;
-#using scripts\zm_common\gametypes\serversettings.gsc;
-#using scripts\zm_common\gametypes\clientids.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\spawnlogic.gsc;
-#using scripts\zm_common\zm.gsc;
 #using script_165beea08a63a243;
-#using scripts\core_common\item_supply_drop.gsc;
-#using script_d5e47f3a0e95613;
-#using script_54f593f5beb1464a;
-#using scripts\core_common\item_world_debug.gsc;
-#using scripts\core_common\item_world_cleanup.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\item_drop.gsc;
 #using script_2a30ac7aa0ee8988;
+#using script_54f593f5beb1464a;
+#using script_5e96d104c70be5ac;
 #using script_655e1025200f4d5b;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\turret_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\audio_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_d5e47f3a0e95613;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_supply_drop;
+#using scripts\core_common\item_world;
+#using scripts\core_common\item_world_cleanup;
+#using scripts\core_common\item_world_debug;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\turret_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\weapons\zm\weaponobjects;
+#using scripts\zm_common\art;
+#using scripts\zm_common\bots\zm_bot;
+#using scripts\zm_common\callbacks;
+#using scripts\zm_common\gametypes\clientids;
+#using scripts\zm_common\gametypes\serversettings;
+#using scripts\zm_common\gametypes\shellshock;
+#using scripts\zm_common\gametypes\spawnlogic;
+#using scripts\zm_common\gametypes\spectating;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_aoe;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_blockers;
+#using scripts\zm_common\zm_clone;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_power;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_traps;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace load;
 
 // Namespace load/createstruct
-// Params 1, eflags: 0x26 linked
+// Params 1, eflags: 0x24
 // Checksum 0xf0614eb2, Offset: 0x2b8
 // Size: 0x25c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_e7c98186, k in ["content_script_name", "content_key", "zombie_weapon_upgrade", "script_unitrigger_type"]) {
+    foreach (__k59, k in ["content_script_name", "content_key", "zombie_weapon_upgrade", "script_unitrigger_type"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -89,11 +88,11 @@ function autoexec function_aeb1baea() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a059c06, Offset: 0x568
 // Size: 0xfc
 function function_5e443ed1() {
-    assert(isdefined(level.first_frame), "<unknown string>");
+    assert(isdefined(level.first_frame), "<dev string:x38>");
     zm::init();
     level._loadstarted = 1;
     register_clientfields();
@@ -106,7 +105,7 @@ function function_5e443ed1() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb82c9c75, Offset: 0x670
 // Size: 0x92
 function start_intro_screen_zm() {
@@ -115,11 +114,11 @@ function start_intro_screen_zm() {
         players[i] lui::screen_fade_out(0, undefined);
         players[i] val::set(#"start_intro_screen_zm", "freezecontrols");
     }
-    wait(1);
+    wait 1;
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc773604c, Offset: 0x710
 // Size: 0x34
 function register_clientfields() {

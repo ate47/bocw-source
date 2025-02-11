@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\util;
 
 #namespace shellshock;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace shellshock/shellshock
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc0fff3e8, Offset: 0x170
 // Size: 0x3c
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace shellshock/shellshock
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1b8
 // Size: 0x4
 function init() {
@@ -33,7 +32,7 @@ function init() {
 }
 
 // Namespace shellshock/shellshock
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x8a2c0c47, Offset: 0x1c8
 // Size: 0x184
 function on_damage(eattacker, einflictor, weapon, smeansofdeath, idamage) {
@@ -75,7 +74,7 @@ function end_on_death() {
 // Size: 0x36
 function end_on_timer(timer) {
     self endon(#"disconnect");
-    wait(timer);
+    wait timer;
     self notify(#"end_on_timer");
 }
 
@@ -94,7 +93,7 @@ function rcbomb_earthquake(position) {
 // Size: 0x4e
 function reset_meleesnd() {
     self endon(#"death");
-    wait(6);
+    wait 6;
     self clientfield::set_to_player("sndMelee", 0);
     self notify(#"snd_melee_end");
 }

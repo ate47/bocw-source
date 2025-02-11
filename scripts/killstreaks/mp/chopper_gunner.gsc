@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_72d96920f15049b8;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\teams\teams;
+#using scripts\mp_common\util;
 
 #namespace chopper_gunner;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x828f0ac6, Offset: 0x138
 // Size: 0x5e
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe13769ec, Offset: 0x1a0
 // Size: 0x14
 function private function_3675de8b() {
@@ -38,7 +37,7 @@ function private function_3675de8b() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf9b1d86b, Offset: 0x1c0
 // Size: 0x118
 function private function_5160bb1e(killstreaktype) {
@@ -55,7 +54,7 @@ function private function_5160bb1e(killstreaktype) {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xbc9028c, Offset: 0x2e0
 // Size: 0xe4
 function function_d45a1f8d(einflictor, attacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -68,7 +67,7 @@ function function_d45a1f8d(einflictor, attacker, *idamage, *smeansofdeath, weapo
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x25a3ee11, Offset: 0x3d0
 // Size: 0x2a4
 function function_25d9a09f(vehicle) {
@@ -94,10 +93,10 @@ function function_25d9a09f(vehicle) {
             vehicle turretcleartarget(0);
             vehicle turretsettargetangles(0, (15, 0, 0));
             if (isdefined(enemy)) {
-                wait(2 + randomfloat(0.5));
+                wait 2 + randomfloat(0.5);
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 

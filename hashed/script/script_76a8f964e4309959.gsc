@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_cleanup_mgr.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_round_spawning.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using script_3819e7a1427df6d2;
 #using script_26cd04df32f6537a;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\zm_cleanup_mgr;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_round_spawning;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace namespace_abfee9ba;
 
@@ -91,7 +90,7 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
         } else {
             /#
                 if (getdvarint(#"hash_1f8efa579fee787c", 0)) {
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:x38>");
                 }
             #/
             return undefined;
@@ -173,12 +172,12 @@ function function_9f679c3c() {
 // Size: 0xc8
 function function_5e09bd0f() {
     self endon(#"death", #"entitydeleted", #"endambientvox");
-    wait(1.1);
+    wait 1.1;
     self playsoundontag(#"hash_65eb1e22e2f9a826", "j_head");
-    wait(2);
+    wait 2;
     while (true) {
         self playsoundontag(#"hash_a3c5d5d69e0fc95", "j_head");
-        wait(randomfloatrange(1.9, 2.4));
+        wait randomfloatrange(1.9, 2.4);
     }
 }
 
@@ -216,7 +215,7 @@ function function_55413772(s_spawn_loc) {
     level endon(#"end_game");
     var_c0ef5a0c = util::spawn_model("tag_origin", s_spawn_loc.origin, s_spawn_loc.angles);
     var_c0ef5a0c clientfield::increment("" + #"hash_3220b44880f1807c");
-    wait(5);
+    wait 5;
     if (isdefined(var_c0ef5a0c)) {
         var_c0ef5a0c delete();
     }
@@ -241,7 +240,7 @@ function function_dfa96d1f(var_199d73cc = undefined) {
 // Size: 0xe2
 function function_71f8127a(s_spawn_loc) {
     level thread function_55413772(s_spawn_loc);
-    wait(1);
+    wait 1;
     ai = spawnactor(#"hash_51edd7595ecda822", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
         earthquake(0.5, 0.75, ai.origin, 1000);
@@ -320,7 +319,7 @@ function function_a58fe5b7(var_199d73cc = undefined) {
                 #/
                 if (is_true(zm_zonemgr::zone_is_enabled(zone)) && is_true(level.zones[zone].is_active) && zm_utility::check_point_in_playable_area(spawn_loc)) {
                     /#
-                        iprintlnbold(spawn_loc[0] + "<unknown string>" + spawn_loc[1] + "<unknown string>" + spawn_loc[2]);
+                        iprintlnbold(spawn_loc[0] + "<dev string:x6d>" + spawn_loc[1] + "<dev string:x6d>" + spawn_loc[2]);
                     #/
                     s_spawn_loc = spawnstruct();
                     s_spawn_loc.origin = spawn_loc;
@@ -335,7 +334,7 @@ function function_a58fe5b7(var_199d73cc = undefined) {
     } else {
         /#
             if (getdvarint(#"hash_1f8efa579fee787c", 0)) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x38>");
             }
         #/
         return undefined;
@@ -355,7 +354,7 @@ function function_d8461453() {
     if (isdefined(self) && isentity(self)) {
         self endon(#"death");
         level thread function_55413772(s_spawn_loc);
-        wait(1);
+        wait 1;
         self zm_ai_utility::function_a8dc3363(s_spawn_loc);
         earthquake(0.5, 0.75, self.origin, 1000);
         self.no_powerups = 1;

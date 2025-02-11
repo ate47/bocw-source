@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\system_shared;
 
 #namespace visionset_mgr;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x30d54903, Offset: 0x1e0
 // Size: 0x1fc
 function private preinit() {
@@ -42,7 +41,7 @@ function private preinit() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x1fd27601, Offset: 0x3e8
 // Size: 0xf6
 function register_visionset_info(name, version, lerp_step_count, visionset_from, visionset_to, visionset_type = 0) {
@@ -55,7 +54,7 @@ function register_visionset_info(name, version, lerp_step_count, visionset_from,
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x73c69c4c, Offset: 0x4e8
 // Size: 0x6e
 function register_overlay_info_style_none(name, version, lerp_step_count) {
@@ -82,7 +81,7 @@ function register_overlay_info_style_burn(*name, *version, *lerp_step_count, *du
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0x6727f95f, Offset: 0x5d0
 // Size: 0x22e
 function register_overlay_info_style_speed_blur(name, version, lerp_step_count, amount, inner_radius, outer_radius, velocity_should_scale, velocity_scale, blur_in, blur_out, should_offset) {
@@ -101,7 +100,7 @@ function register_overlay_info_style_speed_blur(name, version, lerp_step_count, 
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc6f59760, Offset: 0x808
 // Size: 0xde
 function register_overlay_info_style_postfx_bundle(name, version, lerp_step_count, bundle, duration) {
@@ -130,7 +129,7 @@ function is_type_currently_default(localclientnum, type) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3e729cf2, Offset: 0x998
 // Size: 0x18a
 function register_type(type, cf_slot_cb, cf_lerp_cb, update_cb) {
@@ -149,7 +148,7 @@ function register_type(type, cf_slot_cb, cf_lerp_cb, update_cb) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xea42040f, Offset: 0xb30
 // Size: 0x1c
 function finalize_initialization(*localclientnum) {
@@ -157,7 +156,7 @@ function finalize_initialization(*localclientnum) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x767aa55c, Offset: 0xb58
 // Size: 0x94
 function finalize_clientfields() {
@@ -168,11 +167,11 @@ function finalize_clientfields() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x330eba43, Offset: 0xbf8
 // Size: 0x254
 function finalize_type_clientfields() {
-    println("<unknown string>" + self.type + "<unknown string>");
+    println("<dev string:x38>" + self.type + "<dev string:x4b>");
     if (1 >= self.info.size) {
         return;
     }
@@ -184,7 +183,7 @@ function finalize_type_clientfields() {
         if (self.info[self.sorted_name_keys[i]].lerp_bit_count > self.cf_lerp_bit_count) {
             self.cf_lerp_bit_count = self.info[self.sorted_name_keys[i]].lerp_bit_count;
         }
-        println("<unknown string>" + self.info[self.sorted_name_keys[i]].name + "<unknown string>" + self.info[self.sorted_name_keys[i]].version + "<unknown string>" + self.info[self.sorted_name_keys[i]].lerp_step_count + "<unknown string>");
+        println("<dev string:x66>" + self.info[self.sorted_name_keys[i]].name + "<dev string:x74>" + self.info[self.sorted_name_keys[i]].version + "<dev string:x83>" + self.info[self.sorted_name_keys[i]].lerp_step_count + "<dev string:x9a>");
     }
     clientfield::register("toplayer", self.cf_slot_name, self.highest_version, self.cf_slot_bit_count, "int", self.cf_slot_cb, 0, 1);
     if (1 < self.cf_lerp_bit_count) {
@@ -193,7 +192,7 @@ function finalize_type_clientfields() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x90f01b44, Offset: 0xe58
 // Size: 0x14c
 function validate_info(type, name, version) {
@@ -203,7 +202,7 @@ function validate_info(type, name, version) {
             break;
         }
     }
-    assert(i < keys.size, "<unknown string>" + type + "<unknown string>");
+    assert(i < keys.size, "<dev string:x9e>" + type + "<dev string:xba>");
     if (version > level.vsmgr[type].server_version) {
         return false;
     }
@@ -217,7 +216,7 @@ function validate_info(type, name, version) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x65dbb0d6, Offset: 0xfb0
 // Size: 0x94
 function add_sorted_name_key(type, name) {
@@ -230,7 +229,7 @@ function add_sorted_name_key(type, name) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc1658fb8, Offset: 0x1050
 // Size: 0x72
 function add_info(type, name, version, lerp_step_count) {
@@ -242,11 +241,11 @@ function add_info(type, name, version, lerp_step_count) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x83235ff3, Offset: 0x10d0
 // Size: 0x13a
 function register_info(type, name, version, lerp_step_count) {
-    assert(level.vsmgr_initializing, "<unknown string>");
+    assert(level.vsmgr_initializing, "<dev string:xc9>");
     lower_name = tolower(name);
     if (!validate_info(type, lower_name, version)) {
         return false;
@@ -261,7 +260,7 @@ function register_info(type, name, version, lerp_step_count) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x8b6678eb, Offset: 0x1218
 // Size: 0xd0
 function slot_cb(localclientnum, *oldval, newval, bnewent, binitialsnap, *fieldname, *bwastimejump, type) {
@@ -274,7 +273,7 @@ function slot_cb(localclientnum, *oldval, newval, bnewent, binitialsnap, *fieldn
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x5ac7f9c9, Offset: 0x12f0
 // Size: 0x6c
 function visionset_slot_cb(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -282,7 +281,7 @@ function visionset_slot_cb(localclientnum, oldval, newval, bnewent, binitialsnap
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdc6e456b, Offset: 0x1368
 // Size: 0x6c
 function overlay_slot_cb(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -290,7 +289,7 @@ function overlay_slot_cb(localclientnum, oldval, newval, bnewent, binitialsnap, 
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xadb25782, Offset: 0x13e0
 // Size: 0xd0
 function lerp_cb(localclientnum, *oldval, newval, bnewent, binitialsnap, *fieldname, *bwastimejump, type) {
@@ -303,7 +302,7 @@ function lerp_cb(localclientnum, *oldval, newval, bnewent, binitialsnap, *fieldn
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9a627b3d, Offset: 0x14b8
 // Size: 0x6c
 function visionset_lerp_cb(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -311,7 +310,7 @@ function visionset_lerp_cb(localclientnum, oldval, newval, bnewent, binitialsnap
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc0443f3e, Offset: 0x1530
 // Size: 0x6c
 function overlay_lerp_cb(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -319,7 +318,7 @@ function overlay_lerp_cb(localclientnum, oldval, newval, bnewent, binitialsnap, 
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9fd50446, Offset: 0x15a8
 // Size: 0x44
 function get_info(type, slot) {
@@ -327,7 +326,7 @@ function get_info(type, slot) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd4f51e9b, Offset: 0x15f8
 // Size: 0x4c
 function get_state(localclientnum, type) {
@@ -338,7 +337,7 @@ function get_state(localclientnum, type) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9c736e85, Offset: 0x1650
 // Size: 0x3a
 function should_update_state() {
@@ -346,7 +345,7 @@ function should_update_state() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb489b752, Offset: 0x1698
 // Size: 0x2e
 function transition_state() {
@@ -356,7 +355,7 @@ function transition_state() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3be22abe, Offset: 0x16d0
 // Size: 0x1a0
 function init_states(localclientnum) {
@@ -381,7 +380,7 @@ function init_states(localclientnum) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc19b0aaf, Offset: 0x1878
 // Size: 0x124
 function demo_jump_monitor() {
@@ -404,7 +403,7 @@ function demo_jump_monitor() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f0249e9, Offset: 0x19a8
 // Size: 0xbe
 function demo_spectate_monitor() {
@@ -428,7 +427,7 @@ function demo_spectate_monitor() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1bd95e7, Offset: 0x1a70
 // Size: 0x1a4
 function monitor() {
@@ -457,7 +456,7 @@ function monitor() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x49da9765, Offset: 0x1c20
 // Size: 0x4e
 function killcam_visionset_vehicle_mismatch(visionset_to, visionset_vehicle, vehicletype) {
@@ -470,7 +469,7 @@ function killcam_visionset_vehicle_mismatch(visionset_to, visionset_vehicle, veh
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb4c7914c, Offset: 0x1c78
 // Size: 0x3e
 function killcam_visionset_player_mismatch(visionset_to, visionset_vehicle) {
@@ -483,7 +482,7 @@ function killcam_visionset_player_mismatch(visionset_to, visionset_vehicle) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x50be6ecf, Offset: 0x1cc0
 // Size: 0x31c
 function visionset_update_cb(localclientnum, type) {
@@ -536,7 +535,7 @@ function visionset_update_cb(localclientnum, type) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4a1fffa3, Offset: 0x1fe8
 // Size: 0x552
 function overlay_update_cb(localclientnum, type) {

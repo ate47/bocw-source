@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_566bf433dcd9d9c;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
-#using scripts\cp_common\gametypes\globallogic_utils.gsc;
-#using scripts\core_common\doors_shared.gsc;
 #using script_7cc5fb39b97494c4;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\doors_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\gametypes\globallogic_utils;
 
-#namespace namespace_4fa53161;
+#namespace doors_ai;
 
-// Namespace namespace_4fa53161/namespace_4fa53161
+// Namespace doors_ai/doors_ai
 // Params 0, eflags: 0x5
 // Checksum 0xbd547e, Offset: 0x1b0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_4ad49805c423429d", &preinit, &postinit, undefined, undefined);
+    system::register(#"doors_ai", &preinit, &postinit, undefined, undefined);
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 0, eflags: 0x4
 // Checksum 0xab49320e, Offset: 0x208
 // Size: 0x94
 function private preinit() {
@@ -37,20 +36,20 @@ function private preinit() {
         spawner::add_archetype_spawn_function(#"human", &namespace_4f6b19b0::function_6249a416);
     }
     /#
-        function_5ac4dc99("<unknown string>", 0);
+        function_5ac4dc99("<dev string:x38>", 0);
     #/
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x2a8
 // Size: 0x4
 function private postinit() {
     
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 0, eflags: 0x4
 // Checksum 0xa51e552f, Offset: 0x2b8
 // Size: 0x1bc
 function private function_550f629a() {
@@ -70,8 +69,8 @@ function private function_550f629a() {
     return 0;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 1, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 1, eflags: 0x4
 // Checksum 0x842d0651, Offset: 0x480
 // Size: 0x3be
 function private door_manage_openers(c_door) {
@@ -121,8 +120,8 @@ function private door_manage_openers(c_door) {
     }
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 1, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 1, eflags: 0x4
 // Checksum 0x7daa6dbb, Offset: 0x848
 // Size: 0xb8
 function private door_manager_try_ai_opener(opener) {
@@ -138,8 +137,8 @@ function private door_manager_try_ai_opener(opener) {
     }
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 2, eflags: 0x2 linked
+// Namespace doors_ai/doors_ai
+// Params 2, eflags: 0x0
 // Checksum 0xd880025a, Offset: 0x908
 // Size: 0x68
 function function_50cd6f16(arrayref, str_notify) {
@@ -152,8 +151,8 @@ function function_50cd6f16(arrayref, str_notify) {
     }
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 1, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 1, eflags: 0x4
 // Checksum 0x5831bc01, Offset: 0x978
 // Size: 0x13a
 function private ai_open_try_animated(c_door) {
@@ -163,7 +162,7 @@ function private ai_open_try_animated(c_door) {
         self stop_waiting_for_door();
     }
     self.ai.doortoopen = c_door;
-    result = self waittilltimeout(6, #"hash_6d9a59cc1ef486a8");
+    result = self waittilltimeout(6, #"opening_door");
     bsuccess = result._notify != #"timeout";
     if (bsuccess) {
         self waittilltimeout(4, #"hash_47b8208db121ca21");
@@ -175,8 +174,8 @@ function private ai_open_try_animated(c_door) {
     return bsuccess;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 1, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 1, eflags: 0x4
 // Checksum 0x1bcccce0, Offset: 0xac0
 // Size: 0xa8
 function private door_add_opener(c_door) {
@@ -190,8 +189,8 @@ function private door_add_opener(c_door) {
     c_door.var_d0ca7119[c_door.var_d0ca7119.size] = self;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 0, eflags: 0x4
 // Checksum 0x41b2058c, Offset: 0xb70
 // Size: 0x52
 function private remove_as_opener() {
@@ -201,7 +200,7 @@ function private remove_as_opener() {
     }
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
+// Namespace doors_ai/doors_ai
 // Params 0, eflags: 0x4
 // Checksum 0x7da546ce, Offset: 0xbd0
 // Size: 0x44
@@ -214,8 +213,8 @@ function private function_a8a940ac() {
     return true;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 0, eflags: 0x4
 // Checksum 0xb3cc4f88, Offset: 0xc20
 // Size: 0x2e
 function private stop_waiting_for_door() {
@@ -227,7 +226,7 @@ function private stop_waiting_for_door() {
 
 /#
 
-    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Namespace doors_ai/doors_ai
     // Params 1, eflags: 0x4
     // Checksum 0x7a3c50f, Offset: 0xc58
     // Size: 0x16a
@@ -238,13 +237,13 @@ function private stop_waiting_for_door() {
             }
             line(self.m_e_door.origin, g geteye(), var_be457ed9, 1, 0, 1);
             if (i == 0) {
-                var_cab378c2 = "<unknown string>" + self.m_e_door getentnum();
-                self notify(#"hash_46fda91c613b40e5", {#msg:var_cab378c2});
+                var_cab378c2 = "<dev string:x4d>" + self.m_e_door getentnum();
+                self notify(#"door_debug", {#msg:var_cab378c2});
             }
         }
     }
 
-    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Namespace doors_ai/doors_ai
     // Params 3, eflags: 0x4
     // Checksum 0x4845998c, Offset: 0xdd0
     // Size: 0xa0
@@ -253,20 +252,20 @@ function private stop_waiting_for_door() {
         timer = gettime() + time * 1000;
         while (gettime() < timer) {
             line(self geteye(), node.origin, color, 0.5, 0, 1);
-            wait(0.05);
+            wait 0.05;
         }
     }
 
-    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Namespace doors_ai/doors_ai
     // Params 0, eflags: 0x4
     // Checksum 0x913cf68e, Offset: 0xe78
     // Size: 0xb0
     function private function_a07f8293() {
         self endon(#"death");
-        var_dc35cd8c = "<unknown string>";
-        var_e9968086 = "<unknown string>";
+        var_dc35cd8c = "<dev string:x63>";
+        var_e9968086 = "<dev string:x63>";
         while (true) {
-            result = self waittill(#"hash_46fda91c613b40e5");
+            result = self waittill(#"door_debug");
             msg = result.msg;
             var_e9968086 = msg;
             self childthread update_debug(var_e9968086, var_dc35cd8c);
@@ -274,13 +273,13 @@ function private stop_waiting_for_door() {
         }
     }
 
-    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Namespace doors_ai/doors_ai
     // Params 2, eflags: 0x4
     // Checksum 0x6a9480a1, Offset: 0xf30
     // Size: 0x18c
     function private update_debug(var_e9968086, var_dc35cd8c) {
-        self notify(#"hash_4a185a55bf47797f");
-        self endon(#"hash_4a185a55bf47797f");
+        self notify(#"new_msg");
+        self endon(#"new_msg");
         var_852f740c = 1;
         displaytime = 5;
         steps = displaytime * 20;
@@ -292,13 +291,13 @@ function private stop_waiting_for_door() {
                 print3d(self geteye() + (0, 0, 10), var_dc35cd8c, (0.7, 0.7, 0.7), var_852f740c, 0.3, 1);
             }
             var_852f740c -= var_18c3a98a;
-            wait(0.05);
+            wait 0.05;
         }
     }
 
 #/
 
-// Namespace namespace_4fa53161/namespace_4fa53161
+// Namespace doors_ai/doors_ai
 // Params 2, eflags: 0x0
 // Checksum 0x3fa715a9, Offset: 0x10c8
 // Size: 0x302
@@ -357,8 +356,8 @@ function function_b0731097(var_59e58a96, maxcheckdist) {
     return undefined;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 1, eflags: 0x2 linked
+// Namespace doors_ai/doors_ai
+// Params 1, eflags: 0x0
 // Checksum 0x7c29ec2b, Offset: 0x13d8
 // Size: 0xca
 function function_13f8cd4c(e_door) {
@@ -371,8 +370,8 @@ function function_13f8cd4c(e_door) {
     return undefined;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x6 linked
+// Namespace doors_ai/doors_ai
+// Params 0, eflags: 0x4
 // Checksum 0x780c0663, Offset: 0x14b0
 // Size: 0x368
 function private ai_monitor_doors() {
@@ -405,17 +404,17 @@ function private ai_monitor_doors() {
                     if (distancesquared(self.origin, doororigin) < 400) {
                         var_da7ac3f6 = vectornormalize(doororigin - self.origin);
                         if (vectordot(self.lookaheaddir, var_da7ac3f6) < -0.707) {
-                            wait(2);
+                            wait 2;
                             continue;
                         }
                     }
                     /#
-                        self notify(#"hash_46fda91c613b40e5", {#msg:"<unknown string>" + var_3e8fb6d0 getentnum()});
+                        self notify(#"door_debug", {#msg:"<dev string:x67>" + var_3e8fb6d0 getentnum()});
                     #/
                     var_88e76247 = 1;
                     break;
                 } else {
-                    wait(0.2);
+                    wait 0.2;
                     continue;
                 }
             } else {
@@ -424,7 +423,7 @@ function private ai_monitor_doors() {
             if (var_88e76247) {
                 break;
             }
-            wait(0.05);
+            wait 0.05;
         }
         if (!var_88e76247) {
             continue;

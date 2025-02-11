@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_insta_kill;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5613ebf0, Offset: 0x1b8
 // Size: 0x9c
 function private preinit() {
@@ -32,7 +31,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd2b39949, Offset: 0x260
 // Size: 0x8c
 function grab_insta_kill(player) {
@@ -45,7 +44,7 @@ function grab_insta_kill(player) {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8b65eec6, Offset: 0x2f8
 // Size: 0x180
 function function_d7a1e6a8(e_powerup, player) {
@@ -67,7 +66,7 @@ function function_d7a1e6a8(e_powerup, player) {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x11344271, Offset: 0x480
 // Size: 0x28a
 function insta_kill_powerup(drop_item, player) {
@@ -90,7 +89,7 @@ function insta_kill_powerup(drop_item, player) {
     if (bgb::is_team_enabled(#"zm_bgb_temporal_gift")) {
         n_wait_time += 30;
     }
-    wait(n_wait_time);
+    wait n_wait_time;
     zombie_utility::set_zombie_var_team(#"zombie_insta_kill", team, 0);
     players = getplayers(team);
     for (i = 0; i < players.size; i++) {

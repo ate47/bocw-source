@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm;
 
 #namespace zm_aoe;
 
@@ -19,7 +18,7 @@ class areaofeffect {
     var var_be1913ae;
 
     // Namespace areaofeffect/zm_aoe
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x5139b7bd, Offset: 0x170
     // Size: 0x2a
     constructor() {
@@ -37,7 +36,7 @@ class class_698343df {
     var var_9a08bb02;
 
     // Namespace class_698343df/zm_aoe
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x679170c9, Offset: 0x240
     // Size: 0xe
     constructor() {
@@ -55,7 +54,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf64ba1d4, Offset: 0x2f0
 // Size: 0x84
 function private preinit() {
@@ -64,7 +63,7 @@ function private preinit() {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x87e598be, Offset: 0x380
 // Size: 0x44
 function private postinit() {
@@ -72,7 +71,7 @@ function private postinit() {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf4543642, Offset: 0x3d0
 // Size: 0x98
 function private function_e969e75(type) {
@@ -85,7 +84,7 @@ function private function_e969e75(type) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x2bf9130d, Offset: 0x470
 // Size: 0x1c4
 function function_15dea507(aoeid, type, var_3a11a165, lifetime, var_f2cd3aad, damagemin, damagemax, radius, height) {
@@ -96,7 +95,7 @@ function function_15dea507(aoeid, type, var_3a11a165, lifetime, var_f2cd3aad, da
     assert(!isinarray(arraykeys, hash(type)));
     var_508aaded = new class_698343df();
     level.var_400ae143[type] = var_508aaded;
-    assert(damagemin <= damagemax, "<unknown string>");
+    assert(damagemin <= damagemax, "<dev string:x38>");
     var_508aaded.type = type;
     var_508aaded.var_3a11a165 = var_3a11a165;
     var_508aaded.lifetime = lifetime;
@@ -118,7 +117,7 @@ function function_15dea507(aoeid, type, var_3a11a165, lifetime, var_f2cd3aad, da
 // Size: 0x1c2
 function function_371b4147(aoeid, type, position, userdata, var_fb4d789f, var_6efc944c) {
     var_46f1b5eb = function_e969e75(type);
-    assert(isdefined(var_46f1b5eb), "<unknown string>");
+    assert(isdefined(var_46f1b5eb), "<dev string:x75>");
     if (var_46f1b5eb.var_9a08bb02.size >= var_46f1b5eb.var_3a11a165) {
         function_2c33d107(type);
     }
@@ -142,23 +141,23 @@ function function_371b4147(aoeid, type, position, userdata, var_fb4d789f, var_6e
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x15818f59, Offset: 0x810
 // Size: 0xa4
 function private function_668a9b2d(aoe, type) {
     var_46f1b5eb = function_e969e75(type);
-    assert(isdefined(var_46f1b5eb), "<unknown string>");
+    assert(isdefined(var_46f1b5eb), "<dev string:x75>");
     array::add(var_46f1b5eb.var_9a08bb02, aoe);
     assert(var_46f1b5eb.var_9a08bb02.size <= var_46f1b5eb.var_3a11a165);
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2a062cd9, Offset: 0x8c0
 // Size: 0x108
 function private function_87bbe4fc(type) {
     var_46f1b5eb = function_e969e75(type);
-    assert(isdefined(var_46f1b5eb), "<unknown string>");
+    assert(isdefined(var_46f1b5eb), "<dev string:x75>");
     if (var_46f1b5eb.var_9a08bb02.size) {
         oldest = var_46f1b5eb.var_9a08bb02[0];
         foreach (aoe in var_46f1b5eb.var_9a08bb02) {
@@ -171,7 +170,7 @@ function private function_87bbe4fc(type) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xaf79ebdb, Offset: 0x9d0
 // Size: 0x12c
 function private function_fa03204a(aoe, type) {
@@ -191,7 +190,7 @@ function private function_fa03204a(aoe, type) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x81d719e6, Offset: 0xb08
 // Size: 0x24
 function private function_4f0db8cf(entity) {
@@ -200,7 +199,7 @@ function private function_4f0db8cf(entity) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb4d366c0, Offset: 0xb38
 // Size: 0x84
 function private function_2c33d107(type) {
@@ -211,7 +210,7 @@ function private function_2c33d107(type) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9bc9e56b, Offset: 0xbc8
 // Size: 0x25a
 function private function_ccf8f659(aoe, forceend = 0) {
@@ -255,7 +254,7 @@ function private function_ccf8f659(aoe, forceend = 0) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x1f8aed2a, Offset: 0xe30
 // Size: 0xe8
 function private function_97d801ea(aoe, var_46f1b5eb, *var_a0739fc1) {
@@ -297,7 +296,7 @@ function function_389bf7bf(aoe, var_a0739fc1) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1509c571, Offset: 0x10c8
 // Size: 0x190
 function private function_e5950b1e(type) {
@@ -316,7 +315,7 @@ function private function_e5950b1e(type) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5e31ce, Offset: 0x1260
 // Size: 0x2f0
 function private function_bea2e288(type) {
@@ -339,14 +338,14 @@ function private function_bea2e288(type) {
             if (withinrange && var_c0af03ae) {
                 damage = mapfloat(0, var_46f1b5eb.radius, var_46f1b5eb.damagemin, var_46f1b5eb.damagemax, dist);
                 player dodamage(damage, aoe.entity.origin);
-                player notify(#"aoe_damage", {#var_159100b7:aoe.type, #origin:aoe.entity.origin});
+                player notify(#"aoe_damage", {#str_source:aoe.type, #origin:aoe.entity.origin});
             }
         }
     }
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x16bbd6e3, Offset: 0x1558
 // Size: 0xa6
 function private function_60bb02f3(type) {
@@ -381,9 +380,9 @@ function private function_60bb02f3(type) {
                         circle(aoe.position + (0, 0, var_46f1b5eb.height), var_46f1b5eb.radius, (1, 0.5, 0), 1, 1);
                         line(aoe.position, aoe.position + (0, 0, var_46f1b5eb.height), (1, 0.5, 0));
                         if (aoe == var_87bbe4fc) {
-                            print3d(aoe.position + (0, 0, var_46f1b5eb.height + 5), "<unknown string>" + var_46f1b5eb.type + "<unknown string>" + i + "<unknown string>", (1, 0, 0));
+                            print3d(aoe.position + (0, 0, var_46f1b5eb.height + 5), "<dev string:xaa>" + var_46f1b5eb.type + "<dev string:xb4>" + i + "<dev string:xb9>", (1, 0, 0));
                         } else {
-                            print3d(aoe.position + (0, 0, var_46f1b5eb.height + 5), "<unknown string>" + var_46f1b5eb.type + "<unknown string>" + i + "<unknown string>", (1, 0.5, 0));
+                            print3d(aoe.position + (0, 0, var_46f1b5eb.height + 5), "<dev string:xaa>" + var_46f1b5eb.type + "<dev string:xb4>" + i + "<dev string:xb9>", (1, 0.5, 0));
                         }
                         i++;
                     }

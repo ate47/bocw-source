@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace class_shared;
 
 // Namespace class_shared

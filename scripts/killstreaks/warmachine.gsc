@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace warmachine;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace warmachine/warmachine
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ec06adb, Offset: 0x100
 // Size: 0x3c
 function __init__() {

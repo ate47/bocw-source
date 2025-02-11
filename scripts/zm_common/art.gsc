@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace art;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace art/art
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6e4732a6, Offset: 0xf0
 // Size: 0x124
 function private preinit() {
@@ -51,7 +50,7 @@ function private preinit() {
 #/
 
 // Namespace art/art
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d598902, Offset: 0x270
 // Size: 0xaa
 function strtok_loc(string, *par1) {
@@ -104,7 +103,7 @@ function setfogsliders() {
         if (!isdefined(level.tweakfile)) {
             level.tweakfile = 0;
         }
-        if (getdvarstring(#"scr_fog_baseheight") == "<unknown string>") {
+        if (getdvarstring(#"scr_fog_baseheight") == "<dev string:x38>") {
             setdvar(#"scr_fog_exp_halfplane", 500);
             setdvar(#"scr_fog_exp_halfheight", 500);
             setdvar(#"scr_fog_nearplane", 0);
@@ -134,9 +133,9 @@ function setfogsliders() {
                 setdvar(#"scr_fog_exp_halfplane", fogsettings[1]);
                 setdvar(#"scr_fog_exp_halfheight", fogsettings[3]);
                 setdvar(#"scr_fog_baseheight", fogsettings[2]);
-                setdvar(#"scr_fog_color", fogsettings[4] + "<unknown string>" + fogsettings[5] + "<unknown string>" + fogsettings[6]);
+                setdvar(#"scr_fog_color", fogsettings[4] + "<dev string:x3c>" + fogsettings[5] + "<dev string:x3c>" + fogsettings[6]);
                 setdvar(#"scr_fog_color_scale", fogsettings[7]);
-                setdvar(#"scr_sun_fog_color", fogsettings[8] + "<unknown string>" + fogsettings[9] + "<unknown string>" + fogsettings[10]);
+                setdvar(#"scr_sun_fog_color", fogsettings[8] + "<dev string:x3c>" + fogsettings[9] + "<dev string:x3c>" + fogsettings[10]);
                 level.fogsundir = [];
                 level.fogsundir[0] = fogsettings[11];
                 level.fogsundir[1] = fogsettings[12];
@@ -149,12 +148,12 @@ function setfogsliders() {
             level.fogexphalfheight = getdvarfloat(#"scr_fog_exp_halfheight", 0);
             level.fognearplane = getdvarfloat(#"scr_fog_nearplane", 0);
             level.fogbaseheight = getdvarfloat(#"scr_fog_baseheight", 0);
-            colors = strtok(getdvarstring(#"scr_fog_color"), "<unknown string>");
+            colors = strtok(getdvarstring(#"scr_fog_color"), "<dev string:x3c>");
             level.fogcolorred = int(colors[0]);
             level.fogcolorgreen = int(colors[1]);
             level.fogcolorblue = int(colors[2]);
             level.fogcolorscale = getdvarfloat(#"scr_fog_color_scale", 0);
-            colors = strtok(getdvarstring(#"scr_sun_fog_color"), "<unknown string>");
+            colors = strtok(getdvarstring(#"scr_sun_fog_color"), "<dev string:x3c>");
             level.sunfogcolorred = int(colors[0]);
             level.sunfogcolorgreen = int(colors[1]);
             level.sunfogcolorblue = int(colors[2]);
@@ -163,7 +162,7 @@ function setfogsliders() {
             level.fogmaxopacity = getdvarfloat(#"scr_fog_max_opacity", 0);
             if (getdvarint(#"scr_art_sun_fog_dir_set", 0)) {
                 setdvar(#"scr_art_sun_fog_dir_set", 0);
-                println("<unknown string>");
+                println("<dev string:x41>");
                 players = getplayers();
                 dir = vectornormalize(anglestoforward(players[0] getplayerangles()));
                 level.fogsundir = [];
@@ -184,7 +183,7 @@ function setfogsliders() {
             } else {
                 setexpfog(100000000, 100000001, 0, 0, 0, 0);
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 
@@ -229,28 +228,28 @@ function fovslidercheck() {
     // Size: 0x40c
     function dumpsettings() {
         if (getdvar(#"scr_art_dump", 0)) {
-            println("<unknown string>" + level.fognearplane + "<unknown string>");
-            println("<unknown string>" + level.fogexphalfplane + "<unknown string>");
-            println("<unknown string>" + level.fogexphalfheight + "<unknown string>");
-            println("<unknown string>" + level.fogbaseheight + "<unknown string>");
-            println("<unknown string>" + level.fogcolorred + "<unknown string>");
-            println("<unknown string>" + level.fogcolorgreen + "<unknown string>");
-            println("<unknown string>" + level.fogcolorblue + "<unknown string>");
-            println("<unknown string>" + level.fogcolorscale + "<unknown string>");
-            println("<unknown string>" + level.sunfogcolorred + "<unknown string>");
-            println("<unknown string>" + level.sunfogcolorgreen + "<unknown string>");
-            println("<unknown string>" + level.sunfogcolorblue + "<unknown string>");
-            println("<unknown string>" + level.fogsundir[0] + "<unknown string>");
-            println("<unknown string>" + level.fogsundir[1] + "<unknown string>");
-            println("<unknown string>" + level.fogsundir[2] + "<unknown string>");
-            println("<unknown string>" + level.sunstartangle + "<unknown string>");
-            println("<unknown string>" + level.sunendangle + "<unknown string>");
-            println("<unknown string>");
-            println("<unknown string>" + level.fogmaxopacity + "<unknown string>");
-            println("<unknown string>");
-            println("<unknown string>");
-            println("<unknown string>");
-            println("<unknown string>");
+            println("<dev string:x72>" + level.fognearplane + "<dev string:x84>");
+            println("<dev string:x89>" + level.fogexphalfplane + "<dev string:x84>");
+            println("<dev string:x9a>" + level.fogexphalfheight + "<dev string:x84>");
+            println("<dev string:xad>" + level.fogbaseheight + "<dev string:x84>");
+            println("<dev string:xc0>" + level.fogcolorred + "<dev string:x84>");
+            println("<dev string:xcd>" + level.fogcolorgreen + "<dev string:x84>");
+            println("<dev string:xda>" + level.fogcolorblue + "<dev string:x84>");
+            println("<dev string:xe7>" + level.fogcolorscale + "<dev string:x84>");
+            println("<dev string:xf8>" + level.sunfogcolorred + "<dev string:x84>");
+            println("<dev string:x109>" + level.sunfogcolorgreen + "<dev string:x84>");
+            println("<dev string:x11a>" + level.sunfogcolorblue + "<dev string:x84>");
+            println("<dev string:x12b>" + level.fogsundir[0] + "<dev string:x84>");
+            println("<dev string:x13c>" + level.fogsundir[1] + "<dev string:x84>");
+            println("<dev string:x14d>" + level.fogsundir[2] + "<dev string:x84>");
+            println("<dev string:x15e>" + level.sunstartangle + "<dev string:x84>");
+            println("<dev string:x173>" + level.sunendangle + "<dev string:x84>");
+            println("<dev string:x187>");
+            println("<dev string:x195>" + level.fogmaxopacity + "<dev string:x84>");
+            println("<dev string:x38>");
+            println("<dev string:x1ac>");
+            println("<dev string:x20b>");
+            println("<dev string:x262>");
             setdvar(#"scr_art_dump", 0);
         }
     }

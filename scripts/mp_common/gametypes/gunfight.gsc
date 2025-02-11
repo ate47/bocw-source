@@ -1,35 +1,34 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\ability_util.gsc;
-#using scripts\mp_common\perks.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\callbacks.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic_defaults.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
 #using script_1435f3c9fc699e04;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
-#using script_335d0650ed05d36d;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_335d0650ed05d36d;
+#using script_44b0b8420eabacad;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\mp_common\callbacks;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_defaults;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\overtime;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\perks;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace gunfight;
 
@@ -175,7 +174,7 @@ function ongameplaying() {
     }
     foreach (zone in level.zones) {
         if (isdefined(zone.gameobject) && isdefined(zone.gameobject.objectiveid)) {
-            zone.gameobject gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+            zone.gameobject gameobjects::set_visible(#"group_none");
             zone.gameobject gameobjects::set_model_visibility(0, 1);
         }
     }
@@ -222,8 +221,8 @@ function private function_1f551f49() {
     var_4c0d0c4b = isdefined(game.var_96a8ff4a[game.var_b6beb735].var_4c0d0c4b) ? game.var_96a8ff4a[game.var_b6beb735].var_4c0d0c4b : -1;
     var_fe58c446 = isdefined(game.var_96a8ff4a[game.var_b6beb735].secondarygrenade) ? getitemindexfromref(game.var_96a8ff4a[game.var_b6beb735].secondarygrenade) : -1;
     var_312d49ec = isdefined(game.var_96a8ff4a[game.var_b6beb735].primarygrenade) ? getitemindexfromref(game.var_96a8ff4a[game.var_b6beb735].primarygrenade) : -1;
-    while (util::isfirstround() && !level flag::get(#"hash_321357f5b78401ef") || isdefined(self) && self clientfield::get_player_uimodel("closeLoadingMovie") == 0) {
-        wait(0.1);
+    while (util::isfirstround() && !level flag::get(#"hud_initialized") || isdefined(self) && self clientfield::get_player_uimodel("closeLoadingMovie") == 0) {
+        wait 0.1;
     }
     if (isdefined(self)) {
         self luinotifyevent(#"hash_76e8cddd9789122c", 6, var_838bcdf8, var_26b5c8ef + 1, var_91a71f65, var_4c0d0c4b + 1, var_fe58c446, var_312d49ec);
@@ -425,10 +424,10 @@ function function_d98e2783(loadout, loadoutslot) {
             weapon = getweapon(var_f2007a7, weaponattachments);
         }
     }
-    var_dc08e79b = {};
-    var_dc08e79b.weapon = weapon;
-    var_dc08e79b.var_f879230e = var_e91aba42;
-    return var_dc08e79b;
+    weapon_struct = {};
+    weapon_struct.weapon = weapon;
+    weapon_struct.var_f879230e = var_e91aba42;
+    return weapon_struct;
 }
 
 // Namespace gunfight/gunfight
@@ -536,7 +535,7 @@ function function_44244433(loadout) {
         self loadout::function_442539("secondarygrenade", var_a66b455e);
         if (var_a66b455e.gadget_type != 0) {
             if (var_a66b455e.gadget_type == 23) {
-                self ability_util::function_36a15b60(var_a66b455e);
+                self ability_util::gadget_power_full(var_a66b455e);
             } else {
                 self ability_util::gadget_reset(var_a66b455e, 1, 1, firstround, 0);
             }
@@ -629,7 +628,7 @@ function setupzones() {
         return false;
     }
     trigs = getentarray("gunfight_zone_trigger", "targetname");
-    assert(zones.size == trigs.size, "<unknown string>");
+    assert(zones.size == trigs.size, "<dev string:x38>");
     for (i = 0; i < zones.size; i++) {
         errored = 0;
         zone = zones[i];
@@ -665,13 +664,13 @@ function setupzones() {
             othervisuals[j] notsolid();
         }
         zone.gameobject = gameobjects::create_use_object(#"neutral", zone.trig, visuals, (0, 0, 0), #"hash_56c11247a60bfd3c");
-        zone.gameobject gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+        zone.gameobject gameobjects::allow_use(#"group_none");
         zone.gameobject gameobjects::set_model_visibility(0, 1);
         function_18fbab10(zone.gameobject.objectiveid, #"hash_5ccb65c83273cdc9");
         if (util::isfirstround()) {
-            zone.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+            zone.gameobject gameobjects::set_visible(#"group_all");
         } else {
-            zone.gameobject gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+            zone.gameobject gameobjects::set_visible(#"group_none");
         }
         zone.trig.useobj = zone.gameobject;
         setbombtimer("A", 0);
@@ -724,10 +723,10 @@ function overtime() {
         function_c4915ac();
         return;
     }
-    zone.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    zone.gameobject gameobjects::allow_use(#"group_all");
     zone.gameobject gameobjects::set_use_time(level.capturetime);
     zone.gameobject gameobjects::set_use_text(#"mp/capturing_objective");
-    zone.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    zone.gameobject gameobjects::set_visible(#"group_all");
     zone.gameobject gameobjects::set_model_visibility(1, 1);
     zone.gameobject gameobjects::must_maintain_claim(0);
     zone.gameobject gameobjects::can_contest_claim(1);
@@ -738,7 +737,7 @@ function overtime() {
     level clientfield::set("activeTrigger", 1);
     zone function_844322c9();
     globallogic_audio::leader_dialog("gnfOvertime", undefined, "gamemode_objective");
-    luinotifyevent(#"hash_12fdd5eec28f50ae");
+    luinotifyevent(#"hardpoint_unlocked");
     util::function_a3f7de13(29, #"none");
     if (level.var_1e347348 === 1) {
         function_d33c99f8();
@@ -948,8 +947,8 @@ function private function_3e53e79d(team, deadteam) {
     // Checksum 0x7dbdd8b3, Offset: 0x41a0
     // Size: 0xec
     function function_4d70ac20(loadout) {
-        primary = self loadout::function_18a77b37("<unknown string>");
-        secondary = self loadout::function_18a77b37("<unknown string>");
+        primary = self loadout::function_18a77b37("<dev string:x79>");
+        secondary = self loadout::function_18a77b37("<dev string:x84>");
         if (primary.name != loadout.primary || secondary.name != loadout.secondary) {
             return 0;
         }
@@ -975,7 +974,7 @@ function private function_3e53e79d(team, deadteam) {
             foreach (player in getplayers(#"axis")) {
                 var_f6718d9a += player.health;
             }
-            wait(dur);
+            wait dur;
         }
     }
 

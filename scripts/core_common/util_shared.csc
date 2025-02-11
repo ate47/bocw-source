@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_72d4466ce2e2cc7b;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace util;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc5547a45, Offset: 0x1c0
 // Size: 0x34
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x11171b29, Offset: 0x200
 // Size: 0x94
 function register_clientfields() {
@@ -43,7 +42,7 @@ function empty(*a, *b, *c, *d, *e) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf377e02e, Offset: 0x2d8
 // Size: 0x84
 function waitforallclients() {
@@ -63,7 +62,7 @@ function waitforallclients() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6eded8a7, Offset: 0x368
 // Size: 0x84
 function function_89a98f85() {
@@ -77,7 +76,7 @@ function function_89a98f85() {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x310a6aa0, Offset: 0x3f8
 // Size: 0x30
 function waitforclient(client) {
@@ -87,12 +86,12 @@ function waitforclient(client) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe1910eaf, Offset: 0x430
 // Size: 0x4c
 function function_35840de8(seconds) {
     if (isdefined(seconds) && float(seconds) > 0) {
-        wait(float(seconds));
+        wait float(seconds);
     }
 }
 
@@ -115,7 +114,7 @@ function get_dvar_int_default(str_dvar, default_val) {
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5454c365, Offset: 0x568
 // Size: 0x9e
 function spawn_model(n_client, str_model, origin = (0, 0, 0), angles = (0, 0, 0)) {
@@ -128,7 +127,7 @@ function spawn_model(n_client, str_model, origin = (0, 0, 0), angles = (0, 0, 0)
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xae632afb, Offset: 0x610
 // Size: 0x86
 function spawn_anim_model(n_client, model_name, origin, angles) {
@@ -154,7 +153,7 @@ function waittill_string(msg, ent) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x40
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x414c1f87, Offset: 0x728
 // Size: 0x9c
 function waittill_multiple(...) {
@@ -169,7 +168,7 @@ function waittill_multiple(...) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x40
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x6501c450, Offset: 0x7d0
 // Size: 0x1a4
 function waittill_multiple_ents(...) {
@@ -206,7 +205,7 @@ function waittill_multiple_ents(...) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x526987d3, Offset: 0x980
 // Size: 0xb0
 function _waitlogic(s_tracker, notifies) {
@@ -225,7 +224,7 @@ function _waitlogic(s_tracker, notifies) {
 }
 
 // Namespace util/util_shared
-// Params 14, eflags: 0x2 linked
+// Params 14, eflags: 0x0
 // Checksum 0xcb9a6c68, Offset: 0xa38
 // Size: 0x14a
 function waittill_any_ents(ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7) {
@@ -276,7 +275,7 @@ function function_e532f5da(n_timeout, ent1, string1, ent2, string2, ent3, string
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xe465b461, Offset: 0xcb8
 // Size: 0x78
 function waittill_any_ents_two(ent1, string1, ent2, string2) {
@@ -289,7 +288,7 @@ function waittill_any_ents_two(ent1, string1, ent2, string2) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x42 linked
+// Params 3, eflags: 0x40 variadic
 // Checksum 0xd03489dc, Offset: 0xd38
 // Size: 0x32
 function single_func(entity, func, ...) {
@@ -297,7 +296,7 @@ function single_func(entity, func, ...) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x74849dd4, Offset: 0xd78
 // Size: 0x32
 function single_func_argarray(entity, func, a_vars) {
@@ -305,7 +304,7 @@ function single_func_argarray(entity, func, a_vars) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3258893e, Offset: 0xdb8
 // Size: 0x48a
 function _single_func(entity, func, a_vars) {
@@ -375,13 +374,13 @@ function _single_func(entity, func, a_vars) {
         }
         break;
     default:
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         break;
     }
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x27b8d94b, Offset: 0x1250
 // Size: 0x64
 function _clean_up_arg_array(&a_vars) {
@@ -423,8 +422,8 @@ function call_func(s_func) {
 // Checksum 0xd450e083, Offset: 0x13e0
 // Size: 0x154
 function array_ent_thread(entities, func, arg1, arg2, arg3, arg4, arg5) {
-    assert(isdefined(entities), "<unknown string>");
-    assert(isdefined(func), "<unknown string>");
+    assert(isdefined(entities), "<dev string:x4a>");
+    assert(isdefined(func), "<dev string:x85>");
     if (isarray(entities)) {
         if (entities.size) {
             foreach (entity in entities) {
@@ -437,7 +436,7 @@ function array_ent_thread(entities, func, arg1, arg2, arg3, arg4, arg5) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x42 linked
+// Params 3, eflags: 0x40 variadic
 // Checksum 0x4004f4ac, Offset: 0x1540
 // Size: 0x3c
 function single_thread(entity, func, ...) {
@@ -469,12 +468,12 @@ function function_cf55c866(entity, func, arg1, arg2, &a_vars) {
 }
 
 // Namespace util/util_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x5682afd0, Offset: 0x1678
 // Size: 0x85a
 function _single_thread(entity, func, arg1, arg2, &a_vars) {
     _clean_up_arg_array(a_vars);
-    assert(isfunctionptr(func), "<unknown string>" + "<unknown string>");
+    assert(isfunctionptr(func), "<dev string:xbc>" + "<dev string:xd4>");
     if (!isfunctionptr(func)) {
         return;
     }
@@ -508,7 +507,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
             entity thread [[ func ]](arg1, arg2);
             break;
         default:
-            assertmsg("<unknown string>");
+            assertmsg("<dev string:x38>");
             break;
         }
         return;
@@ -543,7 +542,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
             entity thread [[ func ]](arg1);
             break;
         default:
-            assertmsg("<unknown string>");
+            assertmsg("<dev string:x38>");
             break;
         }
         return;
@@ -577,7 +576,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         entity thread [[ func ]]();
         break;
     default:
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         break;
     }
 }
@@ -591,7 +590,7 @@ function add_listen_thread(wait_till, func, param1, param2, param3, param4, para
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7308fd44, Offset: 0x1f50
 // Size: 0x70
 function add_listen_thread_internal(wait_till, func, param1, param2, param3, param4, param5) {
@@ -602,7 +601,7 @@ function add_listen_thread_internal(wait_till, func, param1, param2, param3, par
 }
 
 // Namespace util/util_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xe3a62d2e, Offset: 0x1fc8
 // Size: 0xcc
 function timeout(n_time, func, arg1, arg2, arg3, arg4, arg5, arg6) {
@@ -616,7 +615,7 @@ function timeout(n_time, func, arg1, arg2, arg3, arg4, arg5, arg6) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x29c389d8, Offset: 0x20a0
 // Size: 0x2a
 function create_flags_and_return_tokens(flags) {
@@ -624,7 +623,7 @@ function create_flags_and_return_tokens(flags) {
 }
 
 // Namespace util/util_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x87185480, Offset: 0x20d8
 // Size: 0x74
 function delay(time_or_notify, str_endon, func, arg1, arg2, arg3, arg4, arg5, arg6) {
@@ -632,7 +631,7 @@ function delay(time_or_notify, str_endon, func, arg1, arg2, arg3, arg4, arg5, ar
 }
 
 // Namespace util/util_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x670087a7, Offset: 0x2158
 // Size: 0xdc
 function _delay(time_or_notify, str_endon, func, arg1, arg2, arg3, arg4, arg5, arg6) {
@@ -643,13 +642,13 @@ function _delay(time_or_notify, str_endon, func, arg1, arg2, arg3, arg4, arg5, a
     if (ishash(time_or_notify) || isstring(time_or_notify)) {
         self waittill(time_or_notify);
     } else {
-        wait(time_or_notify);
+        wait time_or_notify;
     }
     single_func(self, func, arg1, arg2, arg3, arg4, arg5, arg6);
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xee16b8b0, Offset: 0x2240
 // Size: 0x34
 function delay_notify(time_or_notify, str_notify, str_endon) {
@@ -657,7 +656,7 @@ function delay_notify(time_or_notify, str_notify, str_endon) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1c1d31a, Offset: 0x2280
 // Size: 0x8e
 function _delay_notify(time_or_notify, str_notify, str_endon) {
@@ -668,13 +667,13 @@ function _delay_notify(time_or_notify, str_notify, str_endon) {
     if (ishash(time_or_notify) || isstring(time_or_notify)) {
         self waittill(time_or_notify);
     } else {
-        wait(time_or_notify);
+        wait time_or_notify;
     }
     self notify(str_notify);
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x615753a, Offset: 0x2318
 // Size: 0x42
 function new_timer(n_timer_length) {
@@ -685,7 +684,7 @@ function new_timer(n_timer_length) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x79cff0df, Offset: 0x2368
 // Size: 0x20
 function get_time() {
@@ -694,7 +693,7 @@ function get_time() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43b120f9, Offset: 0x2390
 // Size: 0x34
 function get_time_in_seconds() {
@@ -710,7 +709,7 @@ function get_time_frac(n_end_time = self.n_length) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x21d1bdc2, Offset: 0x2428
 // Size: 0x58
 function get_time_left() {
@@ -730,20 +729,20 @@ function is_time_left() {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4d676374, Offset: 0x24a8
 // Size: 0x62
 function timer_wait(n_wait) {
     if (isdefined(self.n_length)) {
         n_wait = min(n_wait, get_time_left());
     }
-    wait(n_wait);
+    wait n_wait;
     n_current_time = get_time_in_seconds();
     return n_current_time;
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdf3cfef1, Offset: 0x2518
 // Size: 0x84
 function add_remove_list(&a = [], on_off) {
@@ -757,7 +756,7 @@ function add_remove_list(&a = [], on_off) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc580579, Offset: 0x25a8
 // Size: 0x24
 function clean_deleted(&array) {
@@ -843,8 +842,8 @@ function is_valid_type_for_callback(type) {
 // Checksum 0x9501e214, Offset: 0x29a8
 // Size: 0xa8
 function wait_till_not_touching(e_to_check, e_to_touch) {
-    assert(isdefined(e_to_check), "<unknown string>");
-    assert(isdefined(e_to_touch), "<unknown string>");
+    assert(isdefined(e_to_check), "<dev string:xf1>");
+    assert(isdefined(e_to_touch), "<dev string:x132>");
     e_to_check endon(#"death");
     e_to_touch endon(#"death");
     while (e_to_check istouching(e_to_touch)) {
@@ -859,14 +858,14 @@ function wait_till_not_touching(e_to_check, e_to_touch) {
     // Checksum 0x45f299d0, Offset: 0x2a58
     // Size: 0x32
     function error(message) {
-        println("<unknown string>", message);
+        println("<dev string:x173>", message);
         waitframe(1);
     }
 
 #/
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x43d353db, Offset: 0x2a98
 // Size: 0xda
 function register_system(ssysname, cbfunc) {
@@ -875,13 +874,13 @@ function register_system(ssysname, cbfunc) {
     }
     if (level._systemstates.size >= 32) {
         /#
-            error("<unknown string>");
+            error("<dev string:x184>");
         #/
         return;
     }
     if (isdefined(level._systemstates[ssysname])) {
         /#
-            error("<unknown string>" + ssysname);
+            error("<dev string:x1a8>" + ssysname);
         #/
         return;
     }
@@ -889,19 +888,19 @@ function register_system(ssysname, cbfunc) {
     level._systemstates[ssysname].callback = cbfunc;
 }
 
-// Namespace util/event_42f3ada8
+// Namespace util/security_watcher
 // Params 1, eflags: 0x24
 // Checksum 0x341947e8, Offset: 0x2b80
 // Size: 0x7c
-function private event_handler[event_42f3ada8] function_9a464797(eventstruct) {
+function private event_handler[security_watcher] function_9a464797(eventstruct) {
     level endon(eventstruct.var_e81ce538);
-    wait(randomintrange(10, 30));
-    println("<unknown string>" + eventstruct.var_e81ce538);
+    wait randomintrange(10, 30);
+    println("<dev string:x1d3>" + eventstruct.var_e81ce538);
     function_17cf7de1(2);
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1c6da72, Offset: 0x2c08
 // Size: 0x48
 function field_set_lighting_ent(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -909,7 +908,7 @@ function field_set_lighting_ent(*localclientnum, *oldval, *newval, *bnewent, *bi
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x50da67c5, Offset: 0x2c58
 // Size: 0x3c
 function field_use_lighting_ent(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -917,7 +916,7 @@ function field_use_lighting_ent(*localclientnum, *oldval, *newval, *bnewent, *bi
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd71740b9, Offset: 0x2ca0
 // Size: 0x3c
 function waittill_dobj(localclientnum) {
@@ -927,7 +926,7 @@ function waittill_dobj(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x688679db, Offset: 0x2ce8
 // Size: 0x6e
 function playfxontag(localclientnum, effect, entity, tagname) {
@@ -938,7 +937,7 @@ function playfxontag(localclientnum, effect, entity, tagname) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1b2271, Offset: 0x2d60
 // Size: 0x34
 function function_6d0694af() {
@@ -948,7 +947,7 @@ function function_6d0694af() {
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x93abe15d, Offset: 0x2da0
 // Size: 0x174
 function server_wait(*localclientnum, seconds, waitbetweenchecks, level_endon) {
@@ -965,13 +964,13 @@ function server_wait(*localclientnum, seconds, waitbetweenchecks, level_endon) {
         endtime = starttime + int(seconds * 1000);
         while (getservertime(0) < endtime && getservertime(0) >= lasttime) {
             lasttime = getservertime(0);
-            wait(waitbetweenchecks);
+            wait waitbetweenchecks;
         }
         if (lasttime < getservertime(0)) {
             waitcompletedsuccessfully = 1;
         }
     } else {
-        wait(seconds);
+        wait seconds;
         waitcompletedsuccessfully = 1;
     }
     return waitcompletedsuccessfully;
@@ -989,11 +988,11 @@ function get_other_team(str_team) {
     } else {
         return #"allies";
     }
-    assertmsg("<unknown string>" + str_team);
+    assertmsg("<dev string:x1f9>" + str_team);
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2aca2639, Offset: 0x2fb8
 // Size: 0x42
 function function_fbce7263(team_a, team_b) {
@@ -1007,7 +1006,7 @@ function function_fbce7263(team_a, team_b) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef25d880, Offset: 0x3008
 // Size: 0x2a
 function isenemyteam(team) {
@@ -1058,7 +1057,7 @@ function function_50ed1561(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x41a97619, Offset: 0x31c0
 // Size: 0x4e
 function is_player_view_linked_to_entity(localclientnum) {
@@ -1072,7 +1071,7 @@ function is_player_view_linked_to_entity(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x37a44135, Offset: 0x3218
 // Size: 0x12
 function get_start_time() {
@@ -1091,7 +1090,7 @@ function get_start_time() {
             return;
         }
         elapsed_time *= 0.001;
-        msg = label + "<unknown string>" + elapsed_time + "<unknown string>";
+        msg = label + "<dev string:x218>" + elapsed_time + "<dev string:x22b>";
         profileprintln(msg);
         iprintlnbold(msg);
     }
@@ -1105,7 +1104,7 @@ function get_start_time() {
             return;
         }
         elapsed_time = var_43692bd4 * 0.001;
-        msg = label + "<unknown string>" + elapsed_time + "<unknown string>";
+        msg = label + "<dev string:x218>" + elapsed_time + "<dev string:x22b>";
         profileprintln(msg);
         iprintlnbold(msg);
     }
@@ -1113,7 +1112,7 @@ function get_start_time() {
 #/
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdb6a15cb, Offset: 0x33b8
 // Size: 0x92
 function record_elapsed_time(start_time, &elapsed_time_array) {
@@ -1129,7 +1128,7 @@ function record_elapsed_time(start_time, &elapsed_time_array) {
 /#
 
     // Namespace util/util_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x3f065d82, Offset: 0x3458
     // Size: 0x1bc
     function note_elapsed_times(&elapsed_time_array, label = "unspecified") {
@@ -1153,7 +1152,7 @@ function record_elapsed_time(start_time, &elapsed_time_array) {
             }
         }
         average_elapsed_time = total_elapsed_time / elapsed_time_array.size;
-        msg = label + "<unknown string>" + smallest_elapsed_time + "<unknown string>" + average_elapsed_time + "<unknown string>" + largest_elapsed_time + "<unknown string>" + elapsed_time_array.size;
+        msg = label + "<dev string:x232>" + smallest_elapsed_time + "<dev string:x253>" + average_elapsed_time + "<dev string:x253>" + largest_elapsed_time + "<dev string:x25a>" + elapsed_time_array.size;
         profileprintln(msg);
         iprintlnbold(msg);
     }
@@ -1181,7 +1180,7 @@ function record_elapsed_time(start_time, &elapsed_time_array) {
 #/
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6a8e6dcc, Offset: 0x3790
 // Size: 0x6c
 function get_elapsed_time(start_time, end_time = getmicrosecondsraw()) {
@@ -1196,7 +1195,7 @@ function get_elapsed_time(start_time, end_time = getmicrosecondsraw()) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9aa16894, Offset: 0x3808
 // Size: 0xcc
 function init_utility() {
@@ -1225,7 +1224,7 @@ function within_fov(start_origin, start_angles, end_origin, fov) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8757f2d, Offset: 0x3978
 // Size: 0x12
 function is_mature() {
@@ -1241,7 +1240,7 @@ function function_fa1da5cb() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x59cfae9f, Offset: 0x39b8
 // Size: 0x12
 function function_2c435484() {
@@ -1249,7 +1248,7 @@ function function_2c435484() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a645364, Offset: 0x39d8
 // Size: 0x38
 function is_gib_restricted_build() {
@@ -1305,7 +1304,7 @@ function function_f5b24d2d(localclientnum, entity, var_d0ada253, state) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x87b524fd, Offset: 0x3d78
 // Size: 0xda
 function registersystem(ssysname, cbfunc) {
@@ -1314,13 +1313,13 @@ function registersystem(ssysname, cbfunc) {
     }
     if (level._systemstates.size >= 32) {
         /#
-            error("<unknown string>");
+            error("<dev string:x184>");
         #/
         return;
     }
     if (isdefined(level._systemstates[ssysname])) {
         /#
-            error("<unknown string>" + ssysname);
+            error("<dev string:x1a8>" + ssysname);
         #/
         return;
     }
@@ -1329,7 +1328,7 @@ function registersystem(ssysname, cbfunc) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf6fa8f2c, Offset: 0x3e60
 // Size: 0x4c
 function add_trigger_to_ent(ent, trig) {
@@ -1340,7 +1339,7 @@ function add_trigger_to_ent(ent, trig) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4f7d503c, Offset: 0x3eb8
 // Size: 0x6c
 function remove_trigger_from_ent(ent, trig) {
@@ -1354,7 +1353,7 @@ function remove_trigger_from_ent(ent, trig) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd61be763, Offset: 0x3f30
 // Size: 0x70
 function ent_already_in_trigger(trig) {
@@ -1418,7 +1417,7 @@ function local_player_trigger_thread_always_exit(ent, on_enter_payload, on_exit_
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdc1f76ca, Offset: 0x41a0
 // Size: 0x8c
 function local_player_entity_thread(localclientnum, entity, func, arg1, arg2, arg3, arg4) {
@@ -1474,7 +1473,7 @@ function local_players_entity_thread(entity, func, arg1, arg2, arg3, arg4) {
 #/
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5e4fcbcd, Offset: 0x4450
 // Size: 0x11c
 function getnextobjid(localclientnum) {
@@ -1491,7 +1490,7 @@ function getnextobjid(localclientnum) {
     }
     /#
         if (nextid > 31) {
-            println("<unknown string>");
+            println("<dev string:x26c>");
         }
     #/
     if (nextid > 31) {
@@ -1501,7 +1500,7 @@ function getnextobjid(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x94569ec7, Offset: 0x4578
 // Size: 0xa2
 function releaseobjid(localclientnum, objid) {
@@ -1596,7 +1595,7 @@ function is_safehouse(str_next_map = get_map_name()) {
     // Checksum 0xaf424cc2, Offset: 0x48a8
     // Size: 0x46
     function up_button_pressed() {
-        return self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>");
+        return self buttonpressed("<dev string:x29a>") || self buttonpressed("<dev string:x2a5>");
     }
 
     // Namespace util/util_shared
@@ -1614,7 +1613,7 @@ function is_safehouse(str_next_map = get_map_name()) {
     // Checksum 0xfabfd5c0, Offset: 0x4928
     // Size: 0x46
     function down_button_pressed() {
-        return self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>");
+        return self buttonpressed("<dev string:x2b0>") || self buttonpressed("<dev string:x2bd>");
     }
 
     // Namespace util/util_shared
@@ -1630,7 +1629,7 @@ function is_safehouse(str_next_map = get_map_name()) {
 #/
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x567cb8d4, Offset: 0x49a8
 // Size: 0x6c
 function function_4c1656d5() {
@@ -1641,7 +1640,7 @@ function function_4c1656d5() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x514b6a3f, Offset: 0x4a20
 // Size: 0x124
 function function_16fb0a3b() {
@@ -1660,7 +1659,7 @@ function function_16fb0a3b() {
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x42 linked
+// Params 4, eflags: 0x40 variadic
 // Checksum 0xc7133911, Offset: 0x4b50
 // Size: 0x1f4
 function lerp_generic(localclientnum, duration, callback, ...) {
@@ -1700,17 +1699,17 @@ function lerp_generic(localclientnum, duration, callback, ...) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc36b2b83, Offset: 0x4d50
 // Size: 0x5c
 function function_c16f65a3(enemy_a, enemy_b) {
-    assert(enemy_a != enemy_b, "<unknown string>");
+    assert(enemy_a != enemy_b, "<dev string:x2ca>");
     level.team_enemy_mapping[enemy_a] = enemy_b;
     level.team_enemy_mapping[enemy_b] = enemy_a;
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2643a499, Offset: 0x4db8
 // Size: 0xb4
 function function_73fab74d() {
@@ -1724,7 +1723,7 @@ function function_73fab74d() {
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3796c168, Offset: 0x4e78
 // Size: 0x122
 function cf_team_mapping(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1742,7 +1741,7 @@ function cf_team_mapping(*localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe1a3bda, Offset: 0x4fa8
 // Size: 0x5c
 function preload_frontend(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1752,11 +1751,11 @@ function preload_frontend(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc2e4292e, Offset: 0x5010
 // Size: 0x1a4
 function set_team_mapping(str_team_for_sidea, str_team_for_sideb) {
-    assert(str_team_for_sidea != str_team_for_sideb, "<unknown string>");
+    assert(str_team_for_sidea != str_team_for_sideb, "<dev string:x312>");
     level.team_mapping[#"sidea"] = str_team_for_sidea;
     level.team_mapping[#"sideb"] = str_team_for_sideb;
     level.team_mapping[#"attacker"] = str_team_for_sidea;
@@ -1771,7 +1770,7 @@ function set_team_mapping(str_team_for_sidea, str_team_for_sideb) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb020a95e, Offset: 0x51c0
 // Size: 0x62
 function get_team_mapping(str_team) {
@@ -1786,7 +1785,7 @@ function get_team_mapping(str_team) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x680dd98e, Offset: 0x5230
 // Size: 0x7a
 function get_enemy_team(team) {
@@ -1835,7 +1834,7 @@ function function_35aed314(teama, teamb) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4cbbea8, Offset: 0x53f8
 // Size: 0x24
 function is_on_side(str_team) {
@@ -1843,7 +1842,7 @@ function is_on_side(str_team) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97ecb782, Offset: 0x5428
 // Size: 0x32
 function get_game_type() {
@@ -1851,7 +1850,7 @@ function get_game_type() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb41b8bab, Offset: 0x5468
 // Size: 0x32
 function get_map_name() {
@@ -1859,7 +1858,7 @@ function get_map_name() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x86c320c7, Offset: 0x54a8
 // Size: 0x1c
 function is_frontend_map() {
@@ -1944,7 +1943,7 @@ function function_4b93f9c2() {
 function script_wait() {
     n_time = gettime();
     if (isdefined(self.script_wait)) {
-        wait(self.script_wait);
+        wait self.script_wait;
         if (isdefined(self.script_wait_add)) {
             self.script_wait += self.script_wait_add;
         }
@@ -1952,11 +1951,11 @@ function script_wait() {
     n_min = isdefined(self.script_wait_min) ? self.script_wait_min : 0;
     n_max = isdefined(self.script_wait_max) ? self.script_wait_max : 0;
     if (n_max > n_min) {
-        wait(randomfloatrange(n_min, n_max));
+        wait randomfloatrange(n_min, n_max);
         self.script_wait_min += isdefined(self.script_wait_add) ? self.script_wait_add : 0;
         self.script_wait_max += isdefined(self.script_wait_add) ? self.script_wait_add : 0;
     } else if (n_min > 0) {
-        wait(n_min);
+        wait n_min;
         self.script_wait_min += isdefined(self.script_wait_add) ? self.script_wait_add : 0;
     }
     return gettime() - n_time;
@@ -2000,7 +1999,7 @@ function unlock_model(model) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60f266a8, Offset: 0x5970
 // Size: 0x1c6
 function function_48e57e36(var_1f1d12d8) {
@@ -2040,7 +2039,7 @@ function function_48e57e36(var_1f1d12d8) {
     // Checksum 0xbf039eec, Offset: 0x5b40
     // Size: 0x5c
     function add_devgui(localclientnum, menu_path, commands) {
-        adddebugcommand(localclientnum, "<unknown string>" + menu_path + "<unknown string>" + commands + "<unknown string>");
+        adddebugcommand(localclientnum, "<dev string:x360>" + menu_path + "<dev string:x370>" + commands + "<dev string:x377>");
     }
 
     // Namespace util/util_shared
@@ -2048,13 +2047,13 @@ function function_48e57e36(var_1f1d12d8) {
     // Checksum 0xe747f73, Offset: 0x5ba8
     // Size: 0x44
     function remove_devgui(localclientnum, menu_path) {
-        adddebugcommand(localclientnum, "<unknown string>" + menu_path + "<unknown string>");
+        adddebugcommand(localclientnum, "<dev string:x37d>" + menu_path + "<dev string:x377>");
     }
 
 #/
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1aea04fa, Offset: 0x5bf8
 // Size: 0x9e
 function function_b5338ccb(value, deadzone = 0.2) {
@@ -2066,7 +2065,7 @@ function function_b5338ccb(value, deadzone = 0.2) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1bf18197, Offset: 0x5ca0
 // Size: 0xac
 function function_63320ea1(vector, deadzone, var_edfc4672 = 0) {
@@ -2077,7 +2076,7 @@ function function_63320ea1(vector, deadzone, var_edfc4672 = 0) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9b9edf9d, Offset: 0x5d58
 // Size: 0x24
 function function_5ff170ee() {
@@ -2085,7 +2084,7 @@ function function_5ff170ee() {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc66f1db5, Offset: 0x5d88
 // Size: 0x9c
 function function_8d617b62(color, stops) {
@@ -2101,7 +2100,7 @@ function function_8d617b62(color, stops) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbde36314, Offset: 0x5e30
 // Size: 0x54
 function function_21aef83c() {
@@ -2110,7 +2109,7 @@ function function_21aef83c() {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d8d1bdb, Offset: 0x5e90
 // Size: 0x54
 function function_8eb5d4b0(var_b5b0042e, var_aba8f86c) {
@@ -2119,7 +2118,7 @@ function function_8eb5d4b0(var_b5b0042e, var_aba8f86c) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1e6931e8, Offset: 0x5ef0
 // Size: 0x44
 function function_3ec868ea(localclientnum, var_7bb490d6 = 1) {
@@ -2146,7 +2145,7 @@ function function_ca4b4e19(localclientnum, var_b5338ccb = 1, var_7bb490d6 = 1) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7c1a0548, Offset: 0x6138
 // Size: 0x32
 function function_11f127f0(localclientnum, var_b5338ccb) {
@@ -2162,13 +2161,13 @@ function function_17bf631a(localclientnum, var_b5338ccb) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xfd52295c, Offset: 0x61b0
 // Size: 0x16c
-function private function_3bb62fcf(localclientnum, var_89c3fd26 = 1, var_b5338ccb = 1) {
+function private function_3bb62fcf(localclientnum, right_stick = 1, var_b5338ccb = 1) {
     input = getcontrollerposition(localclientnum);
     var_2e35e6c1 = (0, 0, 0);
-    if (var_89c3fd26) {
+    if (right_stick) {
         var_2e35e6c1 = input[#"rightstick"];
     } else {
         var_2e35e6c1 = input[#"leftstick"];
@@ -2182,7 +2181,7 @@ function private function_3bb62fcf(localclientnum, var_89c3fd26 = 1, var_b5338cc
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x40051be4, Offset: 0x6328
 // Size: 0x2c
 function function_57f1ac46(localclientnum) {
@@ -2190,7 +2189,7 @@ function function_57f1ac46(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1d287590, Offset: 0x6360
 // Size: 0x2c
 function function_f35576c(localclientnum) {
@@ -2198,7 +2197,7 @@ function function_f35576c(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x77c3c5d, Offset: 0x6398
 // Size: 0x9a
 function init_dvar(str_dvar, default_val, func_callback) {
@@ -2210,13 +2209,13 @@ function init_dvar(str_dvar, default_val, func_callback) {
 }
 
 // Namespace util/util_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x15ba25ed, Offset: 0x6440
 // Size: 0x39e
 function function_6f326f49(hour, minute, second, day, month, year) {
     for (;;) {
         setdvar(#"hash_dfcfdb3bf28da5e", string(hour, 2) + ":" + string(minute, 2) + ":" + string(second, 2) + " " + string(month, 2) + "/" + string(day, 2) + "/" + string(year % 100, 2));
-        wait(1);
+        wait 1;
         second += 1;
         if (second > 59) {
             second = 0;

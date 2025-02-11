@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\sound_shared.gsc;
+#using scripts\core_common\sound_shared;
 
 #namespace zombie_shared;
 
 // Namespace zombie_shared/zombie_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xafc91147, Offset: 0x110
 // Size: 0x2da
 function handlenotetrack(note, *flagname, customfunction, var1) {
@@ -60,7 +59,7 @@ function handlenotetrack(note, *flagname, customfunction, var1) {
 }
 
 // Namespace zombie_shared/zombie_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3573c3ac, Offset: 0x3f8
 // Size: 0xa0
 function donotetracks(flagname, customfunction, var1) {
@@ -78,7 +77,7 @@ function donotetracks(flagname, customfunction, var1) {
 }
 
 // Namespace zombie_shared/zombie_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9a5dc1bc, Offset: 0x4a0
 // Size: 0x126
 function donotetracksforeverproc(notetracksfunc, flagname, killstring, customfunction, var1) {
@@ -94,15 +93,15 @@ function donotetracksforeverproc(notetracksfunc, flagname, killstring, customfun
             returnednote = [[ notetracksfunc ]](flagname, customfunction, var1);
             timetaken = gettime() - time;
             if (timetaken < 0.05) {
-                println(gettime() + "<unknown string>" + flagname + "<unknown string>" + returnednote + "<unknown string>");
-                wait(0.05 - timetaken);
+                println(gettime() + "<dev string:x38>" + flagname + "<dev string:x88>" + returnednote + "<dev string:x97>");
+                wait 0.05 - timetaken;
             }
         }
     }
 }
 
 // Namespace zombie_shared/zombie_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa2f3e72b, Offset: 0x5d0
 // Size: 0x4c
 function donotetracksforever(flagname, killstring, customfunction, var1) {
@@ -110,7 +109,7 @@ function donotetracksforever(flagname, killstring, customfunction, var1) {
 }
 
 // Namespace zombie_shared/zombie_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x9bafe8df, Offset: 0x628
 // Size: 0x5e
 function donotetracksfortimeproc(donotetracksforeverfunc, *time, flagname, customfunction, ent, var1) {
@@ -129,11 +128,11 @@ function donotetracksfortime(time, flagname, customfunction, var1) {
 }
 
 // Namespace zombie_shared/zombie_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x59538a21, Offset: 0x718
 // Size: 0x26
 function donotetracksfortimeendnotify(time) {
-    wait(time);
+    wait time;
     self notify(#"stop_notetracks");
 }
 

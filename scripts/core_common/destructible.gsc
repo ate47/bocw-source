@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace destructible;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace destructible/destructible
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1d6dba0c, Offset: 0x2d8
 // Size: 0x13c
 function private preinit() {
@@ -38,7 +37,7 @@ function private preinit() {
 }
 
 // Namespace destructible/destructible
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd5e092a5, Offset: 0x420
 // Size: 0xa4
 function physics_explosion_and_rumble(*origin, radius, physics_explosion) {
@@ -50,7 +49,7 @@ function physics_explosion_and_rumble(*origin, radius, physics_explosion) {
 }
 
 // Namespace destructible/destructible
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x76bea29b, Offset: 0x4d0
 // Size: 0x506
 function event_callback(destructible_event, attacker, weapon, piece_index, point, dir, mod) {
@@ -147,7 +146,7 @@ function event_callback(destructible_event, attacker, weapon, piece_index, point
 }
 
 // Namespace destructible/destructible
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x563458c5, Offset: 0x9e0
 // Size: 0x134
 function simple_explosion(attacker) {
@@ -166,7 +165,7 @@ function simple_explosion(attacker) {
 }
 
 // Namespace destructible/destructible
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf9258012, Offset: 0xb20
 // Size: 0x1b4
 function simple_timed_explosion(destructible_event, attacker) {
@@ -188,13 +187,13 @@ function simple_timed_explosion(destructible_event, attacker) {
             waitframe(1);
         }
     } else {
-        wait(time_interval);
+        wait time_interval;
     }
     simple_explosion(attacker);
 }
 
 // Namespace destructible/destructible
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xae6a44e2, Offset: 0xce0
 // Size: 0x10c
 function complex_explosion(attacker, max_radius) {
@@ -213,7 +212,7 @@ function complex_explosion(attacker, max_radius) {
 }
 
 // Namespace destructible/destructible
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x979ed60e, Offset: 0xdf8
 // Size: 0x204
 function car_explosion(attacker, physics_explosion) {
@@ -248,7 +247,7 @@ function car_explosion(attacker, physics_explosion) {
 }
 
 // Namespace destructible/destructible
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xff3edd6b, Offset: 0x1008
 // Size: 0xe8
 function tank_grenade_stuck_think() {
@@ -266,7 +265,7 @@ function tank_grenade_stuck_think() {
 }
 
 // Namespace destructible/destructible
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a62426d, Offset: 0x10f8
 // Size: 0x144
 function tank_grenade_stuck_explode(missile) {
@@ -286,7 +285,7 @@ function tank_grenade_stuck_explode(missile) {
 }
 
 // Namespace destructible/destructible
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x167bcc6, Offset: 0x1248
 // Size: 0x84
 function tank_hacked_c4(tank) {
@@ -298,7 +297,7 @@ function tank_hacked_c4(tank) {
 }
 
 // Namespace destructible/destructible
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8fd379f4, Offset: 0x12d8
 // Size: 0x84
 function car_death_think() {
@@ -312,7 +311,7 @@ function car_death_think() {
 }
 
 // Namespace destructible/destructible
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cd5ed46, Offset: 0x1368
 // Size: 0xf8
 function car_grenade_stuck_think() {
@@ -330,7 +329,7 @@ function car_grenade_stuck_think() {
 }
 
 // Namespace destructible/destructible
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc97edebd, Offset: 0x1468
 // Size: 0x154
 function car_grenade_stuck_explode(missile) {
@@ -350,7 +349,7 @@ function car_grenade_stuck_explode(missile) {
 }
 
 // Namespace destructible/destructible
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x85151075, Offset: 0x15c8
 // Size: 0x94
 function car_hacked_c4(car) {
@@ -362,7 +361,7 @@ function car_hacked_c4(car) {
 }
 
 // Namespace destructible/destructible
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa91f7b67, Offset: 0x1668
 // Size: 0x3e
 function car_death_notify() {
@@ -371,7 +370,7 @@ function car_death_notify() {
 }
 
 // Namespace destructible/destructible
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c3ac6f6, Offset: 0x16b0
 // Size: 0x164
 function car_fire_think(attacker) {
@@ -387,7 +386,7 @@ function car_fire_think(attacker) {
             waitframe(1);
         }
     } else {
-        wait(time_interval);
+        wait time_interval;
     }
     self thread car_explosion(attacker);
 }
@@ -412,7 +411,7 @@ function event_handler[destructible] codecallback_destructibleevent(eventstruct)
 }
 
 // Namespace destructible/destructible
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x841941b6, Offset: 0x1968
 // Size: 0x120
 function function_93f99ad9(damage, time_interval) {
@@ -430,13 +429,13 @@ function function_93f99ad9(damage, time_interval) {
         return;
     }
     while (true) {
-        wait(time_interval);
+        wait time_interval;
         self dodamage(damage, self.origin);
     }
 }
 
 // Namespace destructible/destructible
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc5c5eb3, Offset: 0x1a90
 // Size: 0xf4
 function breakafter(time, damage, *piece) {
@@ -448,7 +447,7 @@ function breakafter(time, damage, *piece) {
             waitframe(1);
         }
     } else {
-        wait(damage);
+        wait damage;
     }
     if (isdefined(self)) {
         self dodamage(piece, self.origin, undefined, undefined);
@@ -456,7 +455,7 @@ function breakafter(time, damage, *piece) {
 }
 
 // Namespace destructible/destructible
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xfa0f63a6, Offset: 0x1b90
 // Size: 0x174
 function explosive_incendiary_explosion(attacker, explosion_radius, physics_explosion) {
@@ -479,7 +478,7 @@ function explosive_incendiary_explosion(attacker, explosion_radius, physics_expl
 }
 
 // Namespace destructible/destructible
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x8cbac9b5, Offset: 0x1d10
 // Size: 0x154
 function explosive_electrical_explosion(attacker, explosion_radius, physics_explosion) {
@@ -502,7 +501,7 @@ function explosive_electrical_explosion(attacker, explosion_radius, physics_expl
 }
 
 // Namespace destructible/destructible
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9bbee7d1, Offset: 0x1e70
 // Size: 0x154
 function explosive_concussive_explosion(attacker, explosion_radius, physics_explosion) {

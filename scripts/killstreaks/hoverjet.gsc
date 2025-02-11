@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\killstreaks\killstreak_vehicle.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\remote_weapons.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreak_vehicle;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\remote_weapons;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace hoverjet;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3877fff6, Offset: 0x308
 // Size: 0x24c
 function private init_shared() {
@@ -45,7 +44,7 @@ function private init_shared() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8b24bae4, Offset: 0x560
 // Size: 0xb8
 function function_6bbdb500(killstreaktype) {
@@ -61,7 +60,7 @@ function function_6bbdb500(killstreaktype) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xdc399cc2, Offset: 0x620
 // Size: 0x2ca
 function function_747544ed(var_6ecb961c, var_46cd15af, var_f3828812, var_2a587e81) {
@@ -95,7 +94,7 @@ function function_747544ed(var_6ecb961c, var_46cd15af, var_f3828812, var_2a587e8
 }
 
 // Namespace hoverjet/hoverjet
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xf9b8a5a1, Offset: 0x8f8
 // Size: 0x50c
 function function_5398ca85(position, yaw, *team, killstreak_id, killstreaktype) {
@@ -153,7 +152,7 @@ function function_5398ca85(position, yaw, *team, killstreak_id, killstreaktype) 
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5b665230, Offset: 0xe10
 // Size: 0xd4
 function function_f3dff78b() {
@@ -170,7 +169,7 @@ function function_f3dff78b() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x23dca20a, Offset: 0xef0
 // Size: 0x5fc
 function function_3588c7d8(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, *vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, *vsurfacenormal) {
@@ -226,7 +225,7 @@ function function_3588c7d8(einflictor, eattacker, idamage, idflags, smeansofdeat
 }
 
 // Namespace hoverjet/hoverjet
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb05dac11, Offset: 0x14f8
 // Size: 0x1cc
 function function_830d6b7(point, dir, smeansofdeath) {
@@ -260,7 +259,7 @@ function function_830d6b7(point, dir, smeansofdeath) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf7ff8c23, Offset: 0x16d0
 // Size: 0x2c
 function stop_remote_weapon(*attacker, *weapon) {
@@ -268,7 +267,7 @@ function stop_remote_weapon(*attacker, *weapon) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe054b2e2, Offset: 0x1708
 // Size: 0x34
 function ontimecheck() {
@@ -276,7 +275,7 @@ function ontimecheck() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49280a9f, Offset: 0x1748
 // Size: 0x46
 function function_51a4b25a(target) {
@@ -287,7 +286,7 @@ function function_51a4b25a(target) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5def8956, Offset: 0x1798
 // Size: 0xa6
 function function_bde5e05f(target, weapon) {
@@ -307,7 +306,7 @@ function function_bde5e05f(target, weapon) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6eeb3562, Offset: 0x1848
 // Size: 0xcc
 function function_c077f369(weapon) {
@@ -326,7 +325,7 @@ function function_c077f369(weapon) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9e769ae6, Offset: 0x1920
 // Size: 0x6e
 function function_5c4dbcb4(jet) {
@@ -340,7 +339,7 @@ function function_5c4dbcb4(jet) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x587bc97c, Offset: 0x1998
 // Size: 0x5c
 function function_e6b2dc3e() {
@@ -350,7 +349,7 @@ function function_e6b2dc3e() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49895704, Offset: 0x1a00
 // Size: 0xcc
 function function_8a865fc8(jet) {
@@ -363,7 +362,7 @@ function function_8a865fc8(jet) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf3bcfca, Offset: 0x1ad8
 // Size: 0xcc
 function function_746680dc(jet) {
@@ -380,7 +379,7 @@ function function_746680dc(jet) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x601503df, Offset: 0x1bb0
 // Size: 0x5c
 function function_f40c9e73(jet, startnode) {
@@ -390,7 +389,7 @@ function function_f40c9e73(jet, startnode) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xab9874a3, Offset: 0x1c18
 // Size: 0x17c
 function function_58b50fe4(jet) {
@@ -413,7 +412,7 @@ function function_58b50fe4(jet) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdceb2bf, Offset: 0x1da0
 // Size: 0x74c
 function function_7725894b() {
@@ -494,7 +493,7 @@ function function_7725894b() {
         }
     }
     if (isdefined(self)) {
-        self killstreaks::function_3696d106();
+        self killstreaks::outro_scaling();
         self unlink();
     }
     mover delete();
@@ -514,7 +513,7 @@ function function_7725894b() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x27ec5d32, Offset: 0x24f8
 // Size: 0x3e4
 function function_80586c75(jet) {
@@ -563,7 +562,7 @@ function function_80586c75(jet) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf3ec5ad, Offset: 0x28e8
 // Size: 0x2c
 function function_cb79fdd4(jet, *exitrequestedbyowner) {
@@ -571,7 +570,7 @@ function function_cb79fdd4(jet, *exitrequestedbyowner) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47199812, Offset: 0x2920
 // Size: 0x224
 function function_c85eb0a9() {
@@ -610,12 +609,12 @@ function function_c85eb0a9() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c5e1cc6, Offset: 0x2b50
 // Size: 0x7e
 function function_e441d7fa() {
     self endon(#"death");
-    wait(sessionmodeiswarzonegame() ? 25 : 15);
+    wait sessionmodeiswarzonegame() ? 25 : 15;
     if (isalive(self)) {
         self helicopter::function_711c140b();
         self notify(#"death");
@@ -623,18 +622,18 @@ function function_e441d7fa() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5ebe9dc, Offset: 0x2bd8
 // Size: 0x64
 function waitthendelete(waittime) {
     self endon(#"delete", #"death");
-    wait(waittime);
+    wait waittime;
     self helicopter::function_711c140b();
     self delete();
 }
 
 // Namespace hoverjet/hoverjet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x677d6cee, Offset: 0x2c48
 // Size: 0xc4
 function function_8ae60573(*do_explosion) {
@@ -651,7 +650,7 @@ function function_8ae60573(*do_explosion) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5f8c8d3e, Offset: 0x2d18
 // Size: 0x6e
 function function_61c4894(ent, *weapon) {
@@ -668,7 +667,7 @@ function function_61c4894(ent, *weapon) {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfe8379fe, Offset: 0x2d90
 // Size: 0x74
 function function_e9a13002() {
@@ -679,7 +678,7 @@ function function_e9a13002() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab34279b, Offset: 0x2e10
 // Size: 0x74
 function function_bb75386c() {
@@ -690,7 +689,7 @@ function function_bb75386c() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x62f4ad01, Offset: 0x2e90
 // Size: 0x34
 function function_fa687280() {
@@ -698,7 +697,7 @@ function function_fa687280() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf05c30d2, Offset: 0x2ed0
 // Size: 0x2c
 function function_63ec1d12() {

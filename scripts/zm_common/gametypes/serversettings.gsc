@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_customgame;
 
 #namespace serversettings;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace serversettings/serversettings
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x397af101, Offset: 0xf8
 // Size: 0x24
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace serversettings/serversettings
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa224edd2, Offset: 0x128
 // Size: 0x47e
 function main() {
@@ -65,12 +64,12 @@ function main() {
     }
     for (;;) {
         updateserversettings();
-        wait(5);
+        wait 5;
     }
 }
 
 // Namespace serversettings/serversettings
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a6cd98e, Offset: 0x5b0
 // Size: 0x204
 function updateserversettings() {

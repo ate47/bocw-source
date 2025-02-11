@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace scythe;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace scythe/scythe
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbeeb5ce4, Offset: 0xf8
 // Size: 0x3c
 function __init__() {

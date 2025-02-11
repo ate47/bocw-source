@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
 
 #namespace rat;
 
@@ -21,42 +20,42 @@
             level.rat.var_cd4fd549 = 0;
             callback::on_player_killed(&function_cecf7c3d);
             level.rat.var_44083397 = [];
-            addratscriptcmd("<unknown string>", &function_5fd1a95b);
-            addratscriptcmd("<unknown string>", &rscteleport);
-            addratscriptcmd("<unknown string>", &function_51706559);
-            addratscriptcmd("<unknown string>", &function_b2fe8b5a);
-            addratscriptcmd("<unknown string>", &function_bff535fb);
-            addratscriptcmd("<unknown string>", &function_220d66d8);
-            addratscriptcmd("<unknown string>", &function_be6e2f9f);
-            addratscriptcmd("<unknown string>", &function_ff0fa082);
-            addratscriptcmd("<unknown string>", &function_aecb1023);
-            addratscriptcmd("<unknown string>", &function_90282828);
-            addratscriptcmd("<unknown string>", &function_3b51dc31);
-            addratscriptcmd("<unknown string>", &function_a6d4d86b);
-            addratscriptcmd("<unknown string>", &function_54b7f226);
-            addratscriptcmd("<unknown string>", &function_1b77bedd);
-            addratscriptcmd("<unknown string>", &rscsimulatescripterror);
-            addratscriptcmd("<unknown string>", &function_1f00a502);
-            addratscriptcmd("<unknown string>", &function_696e6dd3);
-            addratscriptcmd("<unknown string>", &function_dec22d87);
-            addratscriptcmd("<unknown string>", &function_e3ab4393);
-            addratscriptcmd("<unknown string>", &function_d5c8e330);
-            addratscriptcmd("<unknown string>", &function_dff6f575);
-            addratscriptcmd("<unknown string>", &function_d197a150);
-            addratscriptcmd("<unknown string>", &function_c4336b49);
-            addratscriptcmd("<unknown string>", &function_ccc178f3);
-            addratscriptcmd("<unknown string>", &function_2fa64525);
-            addratscriptcmd("<unknown string>", &function_6fb461e2);
-            addratscriptcmd("<unknown string>", &function_f52fc58b);
-            addratscriptcmd("<unknown string>", &function_dbc9b57c);
-            addratscriptcmd("<unknown string>", &function_4f3a7675);
-            addratscriptcmd("<unknown string>", &function_458913b0);
-            addratscriptcmd("<unknown string>", &function_191d6974);
-            addratscriptcmd("<unknown string>", &function_d1b632ff);
-            addratscriptcmd("<unknown string>", &function_7d9a084b);
-            addratscriptcmd("<unknown string>", &function_1ac5a32b);
-            addratscriptcmd("<unknown string>", &function_7992a479);
-            addratscriptcmd("<unknown string>", &function_9efe300c);
+            addratscriptcmd("<dev string:x38>", &function_5fd1a95b);
+            addratscriptcmd("<dev string:x4e>", &rscteleport);
+            addratscriptcmd("<dev string:x5a>", &function_51706559);
+            addratscriptcmd("<dev string:x6a>", &function_b2fe8b5a);
+            addratscriptcmd("<dev string:x77>", &function_bff535fb);
+            addratscriptcmd("<dev string:x87>", &function_220d66d8);
+            addratscriptcmd("<dev string:x94>", &function_be6e2f9f);
+            addratscriptcmd("<dev string:xa0>", &function_ff0fa082);
+            addratscriptcmd("<dev string:xb1>", &function_aecb1023);
+            addratscriptcmd("<dev string:xc6>", &function_90282828);
+            addratscriptcmd("<dev string:xda>", &function_3b51dc31);
+            addratscriptcmd("<dev string:xe9>", &function_a6d4d86b);
+            addratscriptcmd("<dev string:xfb>", &function_54b7f226);
+            addratscriptcmd("<dev string:x110>", &function_1b77bedd);
+            addratscriptcmd("<dev string:x124>", &rscsimulatescripterror);
+            addratscriptcmd("<dev string:x13b>", &function_1f00a502);
+            addratscriptcmd("<dev string:x150>", &function_696e6dd3);
+            addratscriptcmd("<dev string:x15d>", &function_dec22d87);
+            addratscriptcmd("<dev string:x174>", &function_e3ab4393);
+            addratscriptcmd("<dev string:x18d>", &function_d5c8e330);
+            addratscriptcmd("<dev string:x19f>", &function_dff6f575);
+            addratscriptcmd("<dev string:x1ab>", &function_d197a150);
+            addratscriptcmd("<dev string:x1be>", &function_c4336b49);
+            addratscriptcmd("<dev string:x1ce>", &function_ccc178f3);
+            addratscriptcmd("<dev string:x1e6>", &function_2fa64525);
+            addratscriptcmd("<dev string:x1f6>", &function_6fb461e2);
+            addratscriptcmd("<dev string:x20a>", &function_f52fc58b);
+            addratscriptcmd("<dev string:x21f>", &function_dbc9b57c);
+            addratscriptcmd("<dev string:x231>", &function_4f3a7675);
+            addratscriptcmd("<dev string:x241>", &function_458913b0);
+            addratscriptcmd("<dev string:x258>", &function_191d6974);
+            addratscriptcmd("<dev string:x265>", &function_d1b632ff);
+            addratscriptcmd("<dev string:x277>", &function_7d9a084b);
+            addratscriptcmd("<dev string:x28e>", &function_1ac5a32b);
+            addratscriptcmd("<dev string:x2a7>", &function_7992a479);
+            addratscriptcmd("<dev string:x2b5>", &function_9efe300c);
         }
     }
 
@@ -65,7 +64,7 @@
     // Checksum 0x6fdda161, Offset: 0x708
     // Size: 0x24
     function function_7d22c1c9() {
-        level flag::set("<unknown string>");
+        level flag::set("<dev string:x2c8>");
     }
 
     // Namespace rat/rat_shared
@@ -73,7 +72,7 @@
     // Checksum 0x34ebeffc, Offset: 0x738
     // Size: 0x24
     function function_65e13d0f() {
-        level flag::clear("<unknown string>");
+        level flag::clear("<dev string:x2c8>");
     }
 
     // Namespace rat/rat_shared
@@ -81,7 +80,7 @@
     // Checksum 0x4d78f2b3, Offset: 0x768
     // Size: 0x24
     function function_b4f2a076() {
-        level flag::set("<unknown string>");
+        level flag::set("<dev string:x2e6>");
     }
 
     // Namespace rat/rat_shared
@@ -89,7 +88,7 @@
     // Checksum 0x6690e7e7, Offset: 0x798
     // Size: 0x24
     function function_6aa20375() {
-        level flag::clear("<unknown string>");
+        level flag::clear("<dev string:x2e6>");
     }
 
     // Namespace rat/rat_shared
@@ -109,7 +108,7 @@
         init();
         assert(isdefined(params._cmd));
         assert(isdefined(params._id));
-        assert(isdefined(level.rat.script_command_list[params._cmd]), "<unknown string>" + params._cmd);
+        assert(isdefined(level.rat.script_command_list[params._cmd]), "<dev string:x302>" + params._cmd);
         callback = level.rat.script_command_list[params._cmd];
         ret = level [[ callback ]](params);
         ratreportcommandresult(params._id, 1, ret);
@@ -130,8 +129,8 @@
                     }
                 }
             }
-            ratreportcommandresult(params._id, 0, "<unknown string>");
-            wait(1);
+            ratreportcommandresult(params._id, 0, "<dev string:x321>");
+            wait 1;
             return;
         }
         return util::gethostplayer();
@@ -210,7 +209,7 @@
         level.rat.var_44083397[xuid] = 0;
         while (!level.rat.var_44083397[xuid]) {
             level.rat.var_44083397[xuid] = player ismeleeing();
-            wait(0.01);
+            wait 0.01;
         }
     }
 
@@ -274,7 +273,7 @@
     function function_ff0fa082(params) {
         player = getplayer(params);
         if (!isdefined(player)) {
-            return "<unknown string>";
+            return "<dev string:x349>";
         }
         currentweapon = player getcurrentweapon();
         if (isdefined(currentweapon.name)) {
@@ -441,7 +440,7 @@
                 return;
             }
         }
-        ratreportcommandresult(params._id, 0, "<unknown string>");
+        ratreportcommandresult(params._id, 0, "<dev string:x34d>");
     }
 
     // Namespace rat/rat_shared
@@ -520,9 +519,9 @@
     // Checksum 0xd8827e05, Offset: 0x1d48
     // Size: 0x64
     function function_d04e8397(name) {
-        level flag::set("<unknown string>");
+        level flag::set("<dev string:x37e>");
         level scene::play(name);
-        level flag::clear("<unknown string>");
+        level flag::clear("<dev string:x37e>");
     }
 
     // Namespace rat/rat_shared
@@ -534,7 +533,7 @@
             level thread function_d04e8397(params.name);
             return;
         }
-        ratreportcommandresult(params._id, 0, "<unknown string>");
+        ratreportcommandresult(params._id, 0, "<dev string:x38b>");
     }
 
     // Namespace rat/rat_shared
@@ -542,7 +541,7 @@
     // Checksum 0xdc3c8b72, Offset: 0x1e28
     // Size: 0x2c
     function function_d1b632ff(*params) {
-        return flag::get("<unknown string>");
+        return flag::get("<dev string:x37e>");
     }
 
     // Namespace rat/rat_shared
@@ -550,8 +549,8 @@
     // Checksum 0xaca5e08c, Offset: 0x1e60
     // Size: 0x5a
     function rscsimulatescripterror(params) {
-        if (params.errorlevel == "<unknown string>") {
-            assertmsg("<unknown string>");
+        if (params.errorlevel == "<dev string:x3a5>") {
+            assertmsg("<dev string:x3ae>");
             return;
         }
         thisdoesntexist.orthis = 0;
@@ -562,12 +561,12 @@
     // Checksum 0xcb89a518, Offset: 0x1ec8
     // Size: 0x154
     function rscrecteleport(*params) {
-        println("<unknown string>");
+        println("<dev string:x3ca>");
         player = [[ level.rat.common.gethostplayer ]]();
         pos = player getorigin();
         angles = player getplayerangles();
-        cmd = "<unknown string>" + pos[0] + "<unknown string>" + pos[1] + "<unknown string>" + pos[2] + "<unknown string>" + angles[0] + "<unknown string>" + angles[1] + "<unknown string>" + angles[2];
-        ratrecordmessage(0, "<unknown string>", cmd);
+        cmd = "<dev string:x3ef>" + pos[0] + "<dev string:x403>" + pos[1] + "<dev string:x40a>" + pos[2] + "<dev string:x411>" + angles[0] + "<dev string:x419>" + angles[1] + "<dev string:x421>" + angles[2];
+        ratrecordmessage(0, "<dev string:x429>", cmd);
         setdvar(#"rat_record_teleport_request", 0);
     }
 
@@ -583,7 +582,7 @@
             }
         }
         if (num > 0) {
-            adddebugcommand("<unknown string>" + num);
+            adddebugcommand("<dev string:x439>" + num);
         }
     }
 
@@ -599,7 +598,7 @@
             }
         }
         if (num > 0) {
-            adddebugcommand("<unknown string>" + num);
+            adddebugcommand("<dev string:x459>" + num);
         }
     }
 
@@ -619,7 +618,7 @@
     function function_9efe300c(params) {
         player = getplayer(params);
         spawn = 0;
-        team = "<unknown string>";
+        team = "<dev string:x476>";
         if (isdefined(params) && isdefined(params.spawn)) {
             if (isdefined(params.spawn)) {
                 spawn = int(params.spawn);

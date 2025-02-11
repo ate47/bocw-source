@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_309ce7f5a9a023de;
 #using script_644007a8c3885fc;
 
@@ -13,7 +12,7 @@ function autoexec function_88ff61e0() {
 }
 
 // Namespace namespace_2d440395/namespace_2d440395
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x82318c2d, Offset: 0xb0
 // Size: 0x70
 function function_45a212c0() {
@@ -34,10 +33,10 @@ function function_45a212c0() {
     // Size: 0x74
     function private function_205a8326(msg, var_9fb99f62) {
         if (isdefined(var_9fb99f62)) {
-            println("<unknown string>" + msg + "<unknown string>" + var_9fb99f62);
+            println("<dev string:x38>" + msg + "<dev string:x50>" + var_9fb99f62);
             return;
         }
-        println("<unknown string>" + msg);
+        println("<dev string:x38>" + msg);
     }
 
     // Namespace namespace_2d440395/namespace_2d440395
@@ -45,17 +44,17 @@ function function_45a212c0() {
     // Checksum 0x41ea0ebc, Offset: 0x1a8
     // Size: 0x124
     function private function_48b77dbf(customgame) {
-        var_9fb99f62 = "<unknown string>";
+        var_9fb99f62 = "<dev string:x5e>";
         if (!is_true(getgametypesetting(#"wzenablespraycans"))) {
-            var_9fb99f62 = "<unknown string>" + (isdefined(getgametypesetting(#"wzenablespraycans")) ? getgametypesetting(#"wzenablespraycans") : "<unknown string>");
+            var_9fb99f62 = "<dev string:x69>" + (isdefined(getgametypesetting(#"wzenablespraycans")) ? getgametypesetting(#"wzenablespraycans") : "<dev string:x81>");
         } else if (customgame) {
             if (gamemodeismode(1)) {
-                var_9fb99f62 = "<unknown string>";
+                var_9fb99f62 = "<dev string:x8e>";
             } else if (gamemodeismode(7)) {
-                var_9fb99f62 = "<unknown string>";
+                var_9fb99f62 = "<dev string:x9f>";
             }
         }
-        function_205a8326("<unknown string>", var_9fb99f62);
+        function_205a8326("<dev string:xb6>", var_9fb99f62);
     }
 
 #/

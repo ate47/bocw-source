@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicles\smart_bomb.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicles\smart_bomb;
 
 #namespace raps;
 
@@ -67,7 +66,7 @@ function slow_raps_trigger() {
         if (isvehicle(other) && isdefined(other.archetype) && other.archetype == "raps") {
             other thread slow_raps(self);
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -90,7 +89,7 @@ function slow_raps(trigger) {
     } else {
         self setspeed(0.5 * self.settings.defaultmovespeed);
     }
-    wait(1);
+    wait 1;
     self resumespeed();
     self.slow_trigger = undefined;
 }

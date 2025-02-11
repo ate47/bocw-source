@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace multi_extracam;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace multi_extracam/multi_extracam
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9245ff0, Offset: 0x120
 // Size: 0x24
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace multi_extracam/multi_extracam
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbb438448, Offset: 0x150
 // Size: 0x15c
 function multi_extracam_init(localclientnum) {

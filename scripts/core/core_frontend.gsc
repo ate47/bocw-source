@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core\core_frontend_sound.gsc;
-#using scripts\core\core_frontend_fx.gsc;
+#using scripts\core\core_frontend_fx;
+#using scripts\core\core_frontend_sound;
 
 #namespace core_frontend;
 
@@ -18,7 +17,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace core_frontend/core_frontend
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x108
 // Size: 0x4
 function precache() {

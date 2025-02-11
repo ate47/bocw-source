@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\bb.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\cp_common\bb;
 
 #namespace abilities;
 
@@ -80,7 +79,7 @@ function function_519ae1ed(origin, entarray, max) {
 }
 
 // Namespace abilities/namespace_c78c9cc2
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbfc1874, Offset: 0x4d0
 // Size: 0xc
 function function_f9b48b95(*name) {
@@ -162,7 +161,7 @@ function function_113a6123(name) {
 }
 
 // Namespace abilities/namespace_c78c9cc2
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6d6ec764, Offset: 0x7a8
 // Size: 0x52
 function function_6d4cf28e() {
@@ -175,7 +174,7 @@ function function_6d4cf28e() {
 }
 
 // Namespace abilities/namespace_c78c9cc2
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9f28d895, Offset: 0x808
 // Size: 0x5c
 function function_571f1a4b(note, animname) {
@@ -305,7 +304,7 @@ function function_566e25f9(*context) {
 // Size: 0x3a
 function function_eb47c624(note, seconds) {
     self endon(note, #"death");
-    wait(seconds);
+    wait seconds;
     self notify(note);
 }
 
@@ -332,11 +331,11 @@ function function_edf9c875(note, ent) {
 }
 
 // Namespace abilities/namespace_c78c9cc2
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5d5f3d38, Offset: 0xe50
 // Size: 0xb4
 function getentitypose() {
-    assert(isactor(self) || isplayer(self), "<unknown string>");
+    assert(isactor(self) || isplayer(self), "<dev string:x38>");
     if (isactor(self)) {
         return self getblackboardattribute("_stance");
     }
@@ -350,7 +349,7 @@ function getentitypose() {
 // Checksum 0xdd441647, Offset: 0xf10
 // Size: 0xa6
 function function_650c0f8f() {
-    assert(isactor(self) || isplayer(self), "<unknown string>");
+    assert(isactor(self) || isplayer(self), "<dev string:x38>");
     stance = self getentitypose();
     if (stance == "stand") {
         return "stn";
@@ -368,13 +367,13 @@ function function_650c0f8f() {
     // Checksum 0x2ea02505, Offset: 0xfc0
     // Size: 0x34
     function debugmsg(txt) {
-        println("<unknown string>" + txt);
+        println("<dev string:x62>" + txt);
     }
 
 #/
 
 // Namespace abilities/namespace_c78c9cc2
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf37d1211, Offset: 0x1000
 // Size: 0x74
 function function_4b870e5a(entity) {
@@ -409,7 +408,7 @@ function getyawtospot(spot) {
 }
 
 // Namespace abilities/namespace_c78c9cc2
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69f5adf, Offset: 0x1158
 // Size: 0x3e
 function getyaw(org) {
@@ -449,7 +448,7 @@ function function_cc83a141(eattacker, eplayer, idamage) {
 // Checksum 0x38ce00f4, Offset: 0x1308
 // Size: 0x6c
 function function_8107e1c2() {
-    if (isdefined(self.currentweapon) && (self.currentweapon == getweapon(#"hash_1e390e08e80d673f") || self.currentweapon == getweapon(#"hash_583cae2af0db7ab8"))) {
+    if (isdefined(self.currentweapon) && (self.currentweapon == getweapon(#"gadget_unstoppable_force") || self.currentweapon == getweapon(#"hash_583cae2af0db7ab8"))) {
         return true;
     }
     return false;

@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace animationstatenetwork;
 
 // Namespace animationstatenetwork/animation_state_machine_notetracks
@@ -21,7 +20,7 @@ function private event_handler[runnotetrackhandler] runnotetrackhandler(eventstr
 }
 
 // Namespace animationstatenetwork/animation_state_machine_notetracks
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x4f76da15, Offset: 0x130
 // Size: 0x84
 function private handlenotetrack(entity, notetrack) {
@@ -37,18 +36,18 @@ function private handlenotetrack(entity, notetrack) {
 }
 
 // Namespace animationstatenetwork/animation_state_machine_notetracks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd2a7c853, Offset: 0x1c0
 // Size: 0xc4
 function registernotetrackhandlerfunction(notetrackname, notetrackfuncptr) {
-    assert(isstring(notetrackname), "<unknown string>");
-    assert(isfunctionptr(notetrackfuncptr), "<unknown string>");
-    assert(!isdefined(level._notetrack_handler[notetrackname]), "<unknown string>" + notetrackname + "<unknown string>");
+    assert(isstring(notetrackname), "<dev string:x38>");
+    assert(isfunctionptr(notetrackfuncptr), "<dev string:x74>");
+    assert(!isdefined(level._notetrack_handler[notetrackname]), "<dev string:xbf>" + notetrackname + "<dev string:xe5>");
     level._notetrack_handler[notetrackname] = notetrackfuncptr;
 }
 
 // Namespace animationstatenetwork/animation_state_machine_notetracks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb6f83b8b, Offset: 0x290
 // Size: 0x5c
 function registerblackboardnotetrackhandler(notetrackname, blackboardattributename, blackboardvalue) {

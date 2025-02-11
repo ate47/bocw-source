@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_fcd611c3;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5717e838, Offset: 0x140
 // Size: 0x5c
 function private preinit() {
@@ -31,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xa6fa784c, Offset: 0x1a8
 // Size: 0x168
 function private on_begin(var_c8a36f90, var_a9dd1993, var_2953986a, var_3790b4e4, var_edc5a14f) {
@@ -47,7 +46,7 @@ function private on_begin(var_c8a36f90, var_a9dd1993, var_2953986a, var_3790b4e4
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xadb57e5a, Offset: 0x318
 // Size: 0x9e
 function private on_end(*round_reset) {
@@ -69,7 +68,7 @@ function is_active() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x67a7877f, Offset: 0x400
 // Size: 0x266
 function private function_1633056a(var_a9dd1993, var_2953986a, var_3790b4e4, var_edc5a14f) {
@@ -87,7 +86,7 @@ function private function_1633056a(var_a9dd1993, var_2953986a, var_3790b4e4, var
     if (isdefined(var_edc5a14f)) {
         var_df94cf3e = getweapon(var_edc5a14f);
     }
-    wait(1);
+    wait 1;
     var_407eb07 = 0;
     while (true) {
         if (self function_26f124d8() && var_407eb07) {
@@ -122,7 +121,7 @@ function private function_1633056a(var_a9dd1993, var_2953986a, var_3790b4e4, var
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfae13287, Offset: 0x670
 // Size: 0x118
 function function_936adaa1(weapon) {
@@ -139,7 +138,7 @@ function function_936adaa1(weapon) {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8c52c855, Offset: 0x790
 // Size: 0x20c
 function function_26f124d8() {
@@ -190,7 +189,7 @@ function function_26f124d8() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x886a2d56, Offset: 0x9a8
 // Size: 0x12c
 function private function_33f0ddd3(s_event) {

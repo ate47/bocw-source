@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\killstreaks\mp\killstreaks.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\mp\killstreaks;
+#using scripts\mp_common\util;
 
 #namespace player;
 
 // Namespace player/player_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc22b4d7d, Offset: 0x110
 // Size: 0xfe
 function figure_out_friendly_fire(victim, attacker) {
@@ -36,7 +35,7 @@ function figure_out_friendly_fire(victim, attacker) {
 }
 
 // Namespace player/player_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc62cd088, Offset: 0x218
 // Size: 0xc4
 function freeze_player_for_round_end() {
@@ -52,7 +51,7 @@ function freeze_player_for_round_end() {
 }
 
 // Namespace player/player_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3a93a75a, Offset: 0x2e8
 // Size: 0x19c
 function function_a074b96f(enabled) {
@@ -76,7 +75,7 @@ function function_a074b96f(enabled) {
 }
 
 // Namespace player/player_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x97d1dbf4, Offset: 0x490
 // Size: 0x17c
 function function_7be72477(enabled) {
@@ -98,7 +97,7 @@ function function_7be72477(enabled) {
 }
 
 // Namespace player/player_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba4742cc, Offset: 0x618
 // Size: 0x184
 function function_c49fc862(team) {
@@ -122,7 +121,7 @@ function function_c49fc862(team) {
 }
 
 // Namespace player/player_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5102e86, Offset: 0x7a8
 // Size: 0x64
 function function_cf3aa03d(func, threaded = 1) {
@@ -130,7 +129,7 @@ function function_cf3aa03d(func, threaded = 1) {
 }
 
 // Namespace player/player_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xee84ef1a, Offset: 0x818
 // Size: 0x64
 function function_3c5cc656(func, threaded = 1) {

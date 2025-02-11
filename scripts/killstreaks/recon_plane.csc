@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace recon_plane;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7eba145a, Offset: 0x1a0
 // Size: 0x160
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x53be41fe, Offset: 0x308
 // Size: 0x24
 function player_init(localclientnum) {
@@ -41,7 +40,7 @@ function player_init(localclientnum) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1af578c5, Offset: 0x338
 // Size: 0x4c
 function function_6a7f9809() {
@@ -53,7 +52,7 @@ function function_6a7f9809() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x89304e42, Offset: 0x390
 // Size: 0x1fc
 function function_1f842f91(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -85,7 +84,7 @@ function function_1f842f91(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x558c4ee5, Offset: 0x598
 // Size: 0x84
 function private function_4ee8c344(localclientnum) {
@@ -98,7 +97,7 @@ function private function_4ee8c344(localclientnum) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x22e2578f, Offset: 0x628
 // Size: 0x3c
 function private on_game_ended(localclientnum) {
@@ -107,7 +106,7 @@ function private on_game_ended(localclientnum) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xcdb20d4f, Offset: 0x670
 // Size: 0xec
 function recon_plane_reveal(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -124,7 +123,7 @@ function recon_plane_reveal(localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x679afe4c, Offset: 0x768
 // Size: 0x28e
 function private function_6f689c85(localclientnum) {
@@ -151,7 +150,7 @@ function private function_6f689c85(localclientnum) {
             player stoploopsound(player.var_59f39e8a);
             player.var_59f39e8a = undefined;
         }
-        wait(0.25);
+        wait 0.25;
         arrayremovevalue(level.var_d84f0c02, undefined);
     }
     player = function_27673a7(localclientnum);
@@ -162,7 +161,7 @@ function private function_6f689c85(localclientnum) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa634ba18, Offset: 0xa00
 // Size: 0x44
 function private function_af19a98(localclientnum, entnum) {
@@ -171,7 +170,7 @@ function private function_af19a98(localclientnum, entnum) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6379f8c1, Offset: 0xa50
 // Size: 0xbc
 function recon_plane_damage_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

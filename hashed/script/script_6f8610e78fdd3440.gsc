@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_7b68dad851540de;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
 
 #namespace namespace_5cd4acd8;
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x25e2a0f7, Offset: 0x158
 // Size: 0xca
 function init_hunt_regions() {
@@ -23,7 +22,7 @@ function init_hunt_regions() {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x65b53ac5, Offset: 0x230
 // Size: 0x386
 function findnextpointofinterest(curpos, region, var_5a990e80, bforward = 1) {
@@ -71,7 +70,7 @@ function findnextpointofinterest(curpos, region, var_5a990e80, bforward = 1) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdc16f00c, Offset: 0x5c0
 // Size: 0x280
 function findcurposonroute(curpos, route) {
@@ -112,7 +111,7 @@ function findcurposonroute(curpos, route) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3b98c8b, Offset: 0x848
 // Size: 0x16e
 function getregionforpos(pos) {
@@ -146,19 +145,19 @@ function getregionforpos(pos) {
     // Size: 0x12c
     function function_7a946650(msg, index, var_371132fe) {
         idx = string(index);
-        target = "<unknown string>";
-        targetname = "<unknown string>";
+        target = "<dev string:x38>";
+        targetname = "<dev string:x38>";
         if (isdefined(var_371132fe.target)) {
             target = var_371132fe.target;
         }
         if (isdefined(var_371132fe.targetname)) {
             targetname = var_371132fe.targetname;
         }
-        transition = "<unknown string>";
+        transition = "<dev string:x40>";
         if (var_371132fe.transitions.size > 0) {
-            transition = "<unknown string>";
+            transition = "<dev string:x44>";
         }
-        println("<unknown string>" + msg + "<unknown string>" + idx + "<unknown string>" + targetname + "<unknown string>" + target + "<unknown string>" + transition);
+        println("<dev string:x49>" + msg + "<dev string:x53>" + idx + "<dev string:x5a>" + targetname + "<dev string:x60>" + target + "<dev string:x6a>" + transition);
     }
 
     // Namespace namespace_5cd4acd8/namespace_1a229754
@@ -169,7 +168,7 @@ function getregionforpos(pos) {
         foreach (region in level.stealth.hunt_regions) {
             foreach (point in region.transition_points) {
                 foreach (transition in point.transitions) {
-                    println("<unknown string>" + point.index + "<unknown string>" + transition.index + "<unknown string>");
+                    println("<dev string:x70>" + point.index + "<dev string:x75>" + transition.index + "<dev string:x7e>");
                 }
             }
         }
@@ -178,13 +177,13 @@ function getregionforpos(pos) {
 #/
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbae41036, Offset: 0xca0
 // Size: 0x16a
 function gethuntstealthgroups(var_bbf5d56f) {
     var_9e7c8581 = [];
     foreach (volume in var_bbf5d56f) {
-        assert(isdefined(volume.script_stealth_region_group), "<unknown string>");
+        assert(isdefined(volume.script_stealth_region_group), "<dev string:x83>");
         var_86fb4fc6 = strtok(volume.script_stealth_region_group, " ");
         foreach (str in var_86fb4fc6) {
             var_9e7c8581[var_9e7c8581.size] = str;
@@ -195,7 +194,7 @@ function gethuntstealthgroups(var_bbf5d56f) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcf6cbc64, Offset: 0xe18
 // Size: 0xf8
 function gethuntroutepoints(*var_bbf5d56f) {
@@ -212,7 +211,7 @@ function gethuntroutepoints(*var_bbf5d56f) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x85292825, Offset: 0xf18
 // Size: 0x14e
 function gethuntstealthgroupvolumelists(var_9e7c8581, var_bbf5d56f) {
@@ -230,7 +229,7 @@ function gethuntstealthgroupvolumelists(var_9e7c8581, var_bbf5d56f) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x41992284, Offset: 0x1070
 // Size: 0x410
 function buildhuntstealthgrouptransitiondata() {
@@ -272,7 +271,7 @@ function buildhuntstealthgrouptransitiondata() {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x50187d0f, Offset: 0x1488
 // Size: 0x53a
 function buildhuntstealthgroupgraphdata() {
@@ -330,7 +329,7 @@ function buildhuntstealthgroupgraphdata() {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6cca6341, Offset: 0x19d0
 // Size: 0x182
 function cleanuphuntbuilddata(var_23471399) {
@@ -346,7 +345,7 @@ function cleanuphuntbuilddata(var_23471399) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8c780e81, Offset: 0x1b60
 // Size: 0xbf4
 function inithuntregiondata() {
@@ -411,7 +410,7 @@ function inithuntregiondata() {
                 }
             }
             if (region.route_points.size == 0) {
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:xcb>");
             }
             region.smart_objects = [];
             foreach (smart_object in level.smartobjectpoints) {
@@ -434,7 +433,7 @@ function inithuntregiondata() {
                 if (!isdefined(targetname)) {
                     if (startnode != -1) {
                         orig = point.origin;
-                        assertmsg("<unknown string>" + orig[0] + "<unknown string>" + orig[1] + "<unknown string>" + orig[2] + "<unknown string>");
+                        assertmsg("<dev string:xf2>" + orig[0] + "<dev string:x146>" + orig[1] + "<dev string:x146>" + orig[2] + "<dev string:x7e>");
                     }
                     startnode = i;
                     continue;
@@ -447,7 +446,7 @@ function inithuntregiondata() {
                 }
                 if (!isdefined(var_8bacc3fa)) {
                     if (startnode != -1) {
-                        assertmsg("<unknown string>" + targetname + "<unknown string>");
+                        assertmsg("<dev string:x14c>" + targetname + "<dev string:x7e>");
                     }
                     startnode = i;
                 }
@@ -473,7 +472,7 @@ function inithuntregiondata() {
                     j++;
                 }
                 if (!isdefined(var_e1c83c67)) {
-                    assertmsg("<unknown string>");
+                    assertmsg("<dev string:x183>");
                 }
                 buffer[i] = var_e1c83c67;
                 curidx = j;
@@ -484,7 +483,7 @@ function inithuntregiondata() {
     var_b8850d25 = undefined;
     foreach (var_371132fe in var_23471399) {
         if (!isdefined(var_371132fe.containing_regions)) {
-            assertmsg("<unknown string>" + var_371132fe.origin + "<unknown string>");
+            assertmsg("<dev string:x1ac>" + var_371132fe.origin + "<dev string:x1c2>");
         }
     }
     buildhuntstealthgrouptransitiondata();
@@ -494,7 +493,7 @@ function inithuntregiondata() {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9858520d, Offset: 0x2760
 // Size: 0x464
 function huntcomputeaiindependentregionscores(*group, group_data) {
@@ -566,7 +565,7 @@ function huntcomputeaiindependentregionscores(*group, group_data) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc1a65297, Offset: 0x2bd0
 // Size: 0x4c
 function huntassigntoregion(region) {
@@ -577,7 +576,7 @@ function huntassigntoregion(region) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x571564b, Offset: 0x2c28
 // Size: 0x5c
 function huntunassignfromregion(region) {
@@ -587,7 +586,7 @@ function huntunassignfromregion(region) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe252418d, Offset: 0x2c90
 // Size: 0x4c
 function huntincaiassignment(region) {
@@ -596,11 +595,11 @@ function huntincaiassignment(region) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaa5c3ab9, Offset: 0x2ce8
 // Size: 0xb6
 function huntdecaiassignment(region) {
-    assert(region.shared_data.bfs_assigned != 0, "<unknown string>");
+    assert(region.shared_data.bfs_assigned != 0, "<dev string:x1f3>");
     region.shared_data.bfs_assigned -= 1;
     self hunttrytoexitregionvolume(region);
     if (region.shared_data.in_region == 0) {
@@ -609,12 +608,12 @@ function huntdecaiassignment(region) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc4f33f0c, Offset: 0x2da8
 // Size: 0x13a
 function hunttrytoenterregionvolume(region) {
     if (!self.stealth.cleardata.isinregion && region.volume istouching(self.origin)) {
-        assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
+        assert(self.stealth.cleardata.curregion == region, "<dev string:x231>" + region.index + "<dev string:x24c>");
         region.shared_data.in_region += 1;
         self.stealth.cleardata.isinregion = 1;
         if (region.shared_data.player_in_region && region.shared_data.in_region == 1) {
@@ -625,11 +624,11 @@ function hunttrytoenterregionvolume(region) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x36974a85, Offset: 0x2ef0
 // Size: 0xb6
 function hunttrytoexitregionvolume(region) {
-    assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
+    assert(self.stealth.cleardata.curregion == region, "<dev string:x26b>" + region.index + "<dev string:x285>");
     if (self.stealth.cleardata.isinregion) {
         region.shared_data.in_region -= 1;
         self.stealth.cleardata.isinregion = 0;
@@ -637,7 +636,7 @@ function hunttrytoexitregionvolume(region) {
 }
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x159c7f27, Offset: 0x2fb0
 // Size: 0x370
 function huntgetnextregion(region) {

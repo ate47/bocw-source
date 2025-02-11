@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\archetype_cover_utility.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\vehicleriders_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\ai\archetype_cover_utility;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicleriders_shared;
 
 #namespace turret;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace turret/turret_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9836165a, Offset: 0x400
 // Size: 0x5c
 function private preinit() {
@@ -31,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace turret/turret_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x65f3e2f, Offset: 0x468
 // Size: 0x1a4
 function private registerbehaviorscriptfunctions() {
@@ -46,15 +45,15 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe805cfd5, Offset: 0x618
 // Size: 0x2a
 function private function_2c6be6cd(entity) {
-    return entity flag::get(#"hash_1b89f498c2647e6");
+    return entity flag::get(#"turret_pilot");
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc1fcda93, Offset: 0x650
 // Size: 0x2a
 function private function_90e78f70(entity) {
@@ -62,7 +61,7 @@ function private function_90e78f70(entity) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x73c0d7a2, Offset: 0x688
 // Size: 0x18
 function private function_38388863(entity) {
@@ -70,7 +69,7 @@ function private function_38388863(entity) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf5891498, Offset: 0x6a8
 // Size: 0x16
 function private function_3628f3da(entity) {
@@ -78,7 +77,7 @@ function private function_3628f3da(entity) {
 }
 
 // Namespace turret/turret_shared
-// Params 13, eflags: 0x6 linked
+// Params 13, eflags: 0x4
 // Checksum 0x7d898655, Offset: 0x6c8
 // Size: 0xce
 function private function_d72fcb0a(*einflictor, *eattacker, idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *modelindex) {
@@ -93,7 +92,7 @@ function private function_d72fcb0a(*einflictor, *eattacker, idamage, *idflags, *
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x641bd2fa, Offset: 0x7a0
 // Size: 0x5a
 function get_weapon(n_index = 0) {
@@ -113,7 +112,7 @@ function get_parent(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x34e7c6fa, Offset: 0x840
 // Size: 0x54
 function laser_death_watcher() {
@@ -142,7 +141,7 @@ function enable_laser(b_enable, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeade8a12, Offset: 0x950
 // Size: 0x158
 function emp_watcher(n_index) {
@@ -159,7 +158,7 @@ function emp_watcher(n_index) {
                 self laseroff();
             }
             stop(n_index, 1);
-            wait(randomfloatrange(5, 7));
+            wait randomfloatrange(5, 7);
             self.emped = undefined;
             if (isdefined(_get_turret_data(n_index).has_laser)) {
                 self laseron();
@@ -183,7 +182,7 @@ function enable_emp(b_enable, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7224f10f, Offset: 0xb40
 // Size: 0x3e
 function set_team(str_team, n_index) {
@@ -206,7 +205,7 @@ function get_team(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeff8ee7e, Offset: 0xbf8
 // Size: 0x2a
 function is_turret_enabled(n_index) {
@@ -214,7 +213,7 @@ function is_turret_enabled(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4631e8fc, Offset: 0xc30
 // Size: 0x3a
 function does_need_user(n_index) {
@@ -222,7 +221,7 @@ function does_need_user(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7e8fe450, Offset: 0xc78
 // Size: 0x32
 function does_have_user(n_index) {
@@ -230,7 +229,7 @@ function does_have_user(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x57d7e5b8, Offset: 0xcb8
 // Size: 0x22
 function get_user(n_index) {
@@ -238,7 +237,7 @@ function get_user(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x415e7920, Offset: 0xce8
 // Size: 0x42
 function _set_turret_needs_user(n_index, b_needs_user) {
@@ -268,7 +267,7 @@ function set_burst_parameters(n_fire_min, n_fire_max, n_wait_min, n_wait_max, n_
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x75d84496, Offset: 0xe20
 // Size: 0x52
 function set_torso_targetting(n_index, n_torso_targetting_offset = -12) {
@@ -277,7 +276,7 @@ function set_torso_targetting(n_index, n_torso_targetting_offset = -12) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x40f1a413, Offset: 0xe80
 // Size: 0x52
 function set_target_leading(n_index, n_target_leading_factor = 0.1) {
@@ -286,7 +285,7 @@ function set_target_leading(n_index, n_target_leading_factor = 0.1) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc1bfb609, Offset: 0xee0
 // Size: 0x3c
 function set_on_target_angle(n_angle, n_index = 0) {
@@ -294,7 +293,7 @@ function set_on_target_angle(n_angle, n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9ae7134e, Offset: 0xf28
 // Size: 0x19a
 function set_target(target, v_offset, n_index = 0, var_6bfa76e = 0, var_d55528ca = 0) {
@@ -321,7 +320,7 @@ function set_target(target, v_offset, n_index = 0, var_6bfa76e = 0, var_d55528ca
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x47053ba, Offset: 0x10d0
 // Size: 0x266
 function private _get_default_target_offset(e_target, n_index) {
@@ -357,7 +356,7 @@ function private _get_default_target_offset(e_target, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4a64a9f, Offset: 0x1340
 // Size: 0x36
 function get_target(n_index) {
@@ -366,7 +365,7 @@ function get_target(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc3b75f1d, Offset: 0x1380
 // Size: 0xae
 function is_target(target, n_index) {
@@ -378,7 +377,7 @@ function is_target(target, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x21f7a53e, Offset: 0x1438
 // Size: 0x8c
 function clear_target(n_index = 0) {
@@ -428,7 +427,7 @@ function set_min_target_distance_squared(n_distance_squared, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8e328540, Offset: 0x1618
 // Size: 0x98
 function function_9c04d437(var_6a56e517, n_index = 0) {
@@ -440,7 +439,7 @@ function function_9c04d437(var_6a56e517, n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdd37d303, Offset: 0x16b8
 // Size: 0x54
 function function_21827343(n_index = 0) {
@@ -462,18 +461,18 @@ function function_3e5395(n_seconds, n_index = 0) {
 // Checksum 0x626a8104, Offset: 0x1770
 // Size: 0x82
 function function_30a9811a(n_scale, n_index = 0) {
-    assert(isdefined(n_scale) && n_scale > 0, "<unknown string>");
+    assert(isdefined(n_scale) && n_scale > 0, "<dev string:x38>");
     s_turret = _get_turret_data(n_index);
     s_turret.var_72f4d1b7 = n_scale;
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xac9d1ed8, Offset: 0x1800
 // Size: 0x19e
 function fire(n_index) {
     s_turret = _get_turret_data(n_index);
-    assert(isdefined(n_index) && n_index >= 0, "<unknown string>");
+    assert(isdefined(n_index) && n_index >= 0, "<dev string:x83>");
     e_target = isentity(s_turret.target) ? s_turret.target : undefined;
     self.forcefire = is_true(s_turret.var_d55528ca);
     self.var_742d1a8f = is_true(s_turret.var_2890139c);
@@ -493,7 +492,7 @@ function fire(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3d087175, Offset: 0x19a8
 // Size: 0x1b6
 function fire_for_time(n_time, n_index = 0, var_7cd5e5c = "unused") {
@@ -511,12 +510,12 @@ function fire_for_time(n_time, n_index = 0, var_7cd5e5c = "unused") {
             n_shots++;
         }
         self fire(n_index);
-        wait(n_fire_time);
+        wait n_fire_time;
     }
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4e255b57, Offset: 0x1b68
 // Size: 0xc4
 function stop(n_index, b_clear_target = 0) {
@@ -532,45 +531,45 @@ function stop(n_index, b_clear_target = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb062be53, Offset: 0x1c38
 // Size: 0x224
-function get_in(var_34b21e8e, n_index = 0) {
-    if (isalive(var_34b21e8e) && !is_true(var_34b21e8e islinkedto(self))) {
+function get_in(ai_actor, n_index = 0) {
+    if (isalive(ai_actor) && !is_true(ai_actor islinkedto(self))) {
         s_turret = _get_turret_data(n_index);
-        self usevehicle(var_34b21e8e, n_index);
-        var_34b21e8e flag::set(#"hash_1b89f498c2647e6");
+        self usevehicle(ai_actor, n_index);
+        ai_actor flag::set(#"turret_pilot");
         if (is_true(s_turret.var_7394b9dc)) {
-            var_34b21e8e.allowpain = 0;
-            var_34b21e8e.blockingpain = 1;
+            ai_actor.allowpain = 0;
+            ai_actor.blockingpain = 1;
         }
         /#
-            if (!is_true(var_34b21e8e islinkedto(self))) {
-                var_34b21e8e linkto(self);
-                println("<unknown string>" + n_index + "<unknown string>" + self.model + "<unknown string>");
+            if (!is_true(ai_actor islinkedto(self))) {
+                ai_actor linkto(self);
+                println("<dev string:xb6>" + n_index + "<dev string:xf8>" + self.model + "<dev string:x104>");
             }
         #/
         self enable(n_index, 1);
-        var_34b21e8e.s_turret = s_turret;
-        var_34b21e8e.var_72f4d1b7 = s_turret.var_72f4d1b7;
-        var_34b21e8e.var_41adb97 = undefined;
-        aiutility::addaioverridedamagecallback(var_34b21e8e, &function_d72fcb0a);
-        self thread handle_rider_death(var_34b21e8e, n_index);
-        self thread function_2c718f9e(var_34b21e8e, n_index);
-        self thread function_738effc8(var_34b21e8e, n_index);
+        ai_actor.s_turret = s_turret;
+        ai_actor.var_72f4d1b7 = s_turret.var_72f4d1b7;
+        ai_actor.var_41adb97 = undefined;
+        aiutility::addaioverridedamagecallback(ai_actor, &function_d72fcb0a);
+        self thread handle_rider_death(ai_actor, n_index);
+        self thread function_2c718f9e(ai_actor, n_index);
+        self thread function_738effc8(ai_actor, n_index);
     }
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9dea9218, Offset: 0x1e68
 // Size: 0x298
-function private function_2c718f9e(var_34b21e8e, n_index) {
+function private function_2c718f9e(ai_actor, n_index) {
     self endon(#"death", "turret_disabled" + _index(n_index));
-    var_34b21e8e endon(#"death");
+    ai_actor endon(#"death");
     s_turret = _get_turret_data(n_index);
     while (true) {
-        var_34b21e8e waittill(#"pain");
+        ai_actor waittill(#"pain");
         if (is_true(s_turret.var_7394b9dc) || is_true(s_turret.var_aa100948)) {
             continue;
         }
@@ -586,7 +585,7 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
                 if (isdefined(s_turret.var_bf6d793d.var_81610bb0[i])) {
                     var_1e713ee7 = s_turret.var_bf6d793d.var_81610bb0[i].xanim;
                     if (isdefined(var_1e713ee7)) {
-                        anim_time = var_34b21e8e getanimtime(var_1e713ee7);
+                        anim_time = ai_actor getanimtime(var_1e713ee7);
                         if (anim_time > 0) {
                             var_73a9738e = getanimlength(var_1e713ee7);
                             var_d8c89de3 = (1 - anim_time) * var_73a9738e;
@@ -596,7 +595,7 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
                 }
             }
         }
-        wait(var_d8c89de3);
+        wait var_d8c89de3;
         s_turret.var_aa100948 = 0;
         unpause(n_index);
         set_target(s_turret.e_last_target);
@@ -604,13 +603,13 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xbcc215a8, Offset: 0x2108
 // Size: 0x94
-function private function_738effc8(var_34b21e8e, n_index) {
+function private function_738effc8(ai_actor, n_index) {
     self endon(#"death");
-    var_34b21e8e endon(#"death");
-    var_34b21e8e waittill(#"goal_changed");
+    ai_actor endon(#"death");
+    ai_actor waittill(#"goal_changed");
     /#
         if (getdvarint(#"hash_47a40f04e7c48117", 0)) {
             return;
@@ -620,46 +619,46 @@ function private function_738effc8(var_34b21e8e, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb1b5002e, Offset: 0x21a8
 // Size: 0x220
-function get_out(var_34b21e8e, n_index = 0) {
-    if (var_34b21e8e islinkedto(self)) {
-        self usevehicle(var_34b21e8e, n_index);
-        if (isalive(var_34b21e8e)) {
-            var_34b21e8e flag::clear(#"hash_1b89f498c2647e6");
-            var_34b21e8e.s_turret = undefined;
-            var_34b21e8e.var_72f4d1b7 = undefined;
-            var_34b21e8e.blockingpain = 0;
-            var_34b21e8e.allowpain = 1;
-            var_34b21e8e.ignoreme = 0;
-            aiutility::releaseclaimnode(var_34b21e8e);
-            aiutility::choosebestcovernodeasap(var_34b21e8e);
-            if (isdefined(var_34b21e8e.aioverridedamage)) {
-                aiutility::removeaioverridedamagecallback(var_34b21e8e, &function_d72fcb0a);
+function get_out(ai_actor, n_index = 0) {
+    if (ai_actor islinkedto(self)) {
+        self usevehicle(ai_actor, n_index);
+        if (isalive(ai_actor)) {
+            ai_actor flag::clear(#"turret_pilot");
+            ai_actor.s_turret = undefined;
+            ai_actor.var_72f4d1b7 = undefined;
+            ai_actor.blockingpain = 0;
+            ai_actor.allowpain = 1;
+            ai_actor.ignoreme = 0;
+            aiutility::releaseclaimnode(ai_actor);
+            aiutility::choosebestcovernodeasap(ai_actor);
+            if (isdefined(ai_actor.aioverridedamage)) {
+                aiutility::removeaioverridedamagecallback(ai_actor, &function_d72fcb0a);
             }
-            var_3b228fdf = isdefined(var_34b21e8e.node) && var_34b21e8e.node.type == "Turret";
-            var_3b228fdf |= isdefined(var_34b21e8e.covernode) && var_34b21e8e.covernode.type == "Turret";
+            var_3b228fdf = isdefined(ai_actor.node) && ai_actor.node.type == "Turret";
+            var_3b228fdf |= isdefined(ai_actor.covernode) && ai_actor.covernode.type == "Turret";
             if (var_3b228fdf) {
-                var_34b21e8e.var_41adb97 = gettime() + 4000;
-                var_34b21e8e setgoal(var_34b21e8e.origin, 0, var_34b21e8e.goalradius);
+                ai_actor.var_41adb97 = gettime() + 4000;
+                ai_actor setgoal(ai_actor.origin, 0, ai_actor.goalradius);
             }
         }
         self disable(n_index);
-        self notify(#"hash_65f91ce3e40736e8");
-        var_34b21e8e notify(#"hash_65f91ce3e40736e8");
+        self notify(#"exit_turret");
+        ai_actor notify(#"exit_turret");
     }
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcb2aabbb, Offset: 0x23d0
 // Size: 0xf4
 function handle_rider_death(ai_rider, n_index = 0) {
     self endon(#"death", "turret_disabled" + _index(n_index));
     ai_rider waittill(#"death");
-    if (ai_rider flag::get(#"hash_1b89f498c2647e6")) {
-        ai_rider flag::clear(#"hash_1b89f498c2647e6");
+    if (ai_rider flag::get(#"turret_pilot")) {
+        ai_rider flag::clear(#"turret_pilot");
         ai_rider flag::set(#"hash_79f73bc0bf703a5d");
     }
     self get_out(ai_rider, n_index);
@@ -671,7 +670,7 @@ function handle_rider_death(ai_rider, n_index = 0) {
 // Checksum 0xe539ac86, Offset: 0x24d0
 // Size: 0x154
 function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
-    assert(isdefined(target), "<unknown string>");
+    assert(isdefined(target), "<dev string:x11a>");
     function_9c04d437(1, n_index);
     self endon(#"drone_death", #"death", "_stop_turret" + _index(n_index), "turret_disabled" + _index(n_index), #"terminate_all_turrets_firing", #"exit_vehicle", "turret manual" + _index(n_index));
     function_14223170(n_index);
@@ -684,8 +683,8 @@ function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
 // Checksum 0x27b0995c, Offset: 0x2630
 // Size: 0x30c
 function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = undefined, var_702f0a7e = undefined) {
-    assert(isarray(var_502298b8), "<unknown string>");
-    assert(n_shots > 0, "<unknown string>");
+    assert(isarray(var_502298b8), "<dev string:x14b>");
+    assert(n_shots > 0, "<dev string:x180>");
     var_17b7891d = "1a325e0f6397cbea" + _index(n_index);
     self notify(var_17b7891d);
     self endon(var_17b7891d);
@@ -702,10 +701,10 @@ function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = und
         function_259e1449(n_index);
         for (shots = 0; shots < n_shots; shots++) {
             fire(n_index);
-            wait(n_fire_time);
+            wait n_fire_time;
         }
         if (isdefined(var_702f0a7e)) {
-            wait(var_702f0a7e);
+            wait var_702f0a7e;
         }
     }
     function_21827343(n_index);
@@ -716,7 +715,7 @@ function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = und
 // Checksum 0xda4b5ec6, Offset: 0x2948
 // Size: 0x204
 function function_d1ba6eb6(v_start, v_end, n_index = 0) {
-    assert(isdefined(v_start) && isdefined(v_end), "<unknown string>");
+    assert(isdefined(v_start) && isdefined(v_end), "<dev string:x1b8>");
     var_17b7891d = "286c7a50de00885f" + _index(n_index);
     self notify(var_17b7891d);
     self endon(var_17b7891d);
@@ -734,7 +733,7 @@ function function_d1ba6eb6(v_start, v_end, n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xb8662e4f, Offset: 0x2b58
 // Size: 0x3dc
 function private _shoot_turret_at_target(target, v_offset, n_index, b_just_once) {
@@ -751,7 +750,7 @@ function private _shoot_turret_at_target(target, v_offset, n_index, b_just_once)
     } else {
         n_time_since_last_shot = float(gettime() - s_turret.n_last_fire_time) / 1000;
         if (n_time_since_last_shot < s_turret.n_burst_wait) {
-            wait(s_turret.n_burst_wait - n_time_since_last_shot);
+            wait s_turret.n_burst_wait - n_time_since_last_shot;
         }
     }
     var_17b7891d = "19fef14e1a613d08" + _index(n_index);
@@ -775,7 +774,7 @@ function private _shoot_turret_at_target(target, v_offset, n_index, b_just_once)
             while (can_hit_target(target, n_index)) {
                 set_target(target, v_offset, n_index, s_turret.var_f351ad56, 0);
                 s_turret.var_50fbd548 = target.origin;
-                wait(s_turret.var_b52bbdba);
+                wait s_turret.var_b52bbdba;
             }
             if (isdefined(s_turret.var_50fbd548)) {
                 set_target(s_turret.var_50fbd548, v_offset, n_index, 0, 1);
@@ -784,13 +783,13 @@ function private _shoot_turret_at_target(target, v_offset, n_index, b_just_once)
                 angles = self function_bc2f1cb8(n_index);
                 self turretsettargetangles(n_index, angles);
             }
-            wait(s_turret.var_b52bbdba);
+            wait s_turret.var_b52bbdba;
         }
     }
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb9be1c5f, Offset: 0x2f40
 // Size: 0x32
 function private function_a8d258ca(n_index) {
@@ -801,16 +800,16 @@ function private function_a8d258ca(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd1d9b198, Offset: 0x2f80
 // Size: 0x6a
 function function_259e1449(n_index) {
-    wait(isdefined(self.waittill_turret_on_target_delay) ? self.waittill_turret_on_target_delay : float(function_60d95f53()) / 1000);
+    wait isdefined(self.waittill_turret_on_target_delay) ? self.waittill_turret_on_target_delay : float(function_60d95f53()) / 1000;
     self waittill(function_a8d258ca(n_index));
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7305690, Offset: 0x2ff8
 // Size: 0x52
 function function_38841344(e_target, n_index) {
@@ -820,7 +819,7 @@ function function_38841344(e_target, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3f3c045f, Offset: 0x3058
 // Size: 0xd8
 function enable(n_index, b_user_required, v_offset) {
@@ -849,7 +848,7 @@ function disable_ai_getoff(n_index, b_disable = 1) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2d540280, Offset: 0x31c0
 // Size: 0xe8
 function disable(n_index) {
@@ -866,7 +865,7 @@ function disable(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf5436b83, Offset: 0x32b0
 // Size: 0xb4
 function pause(time, n_index) {
@@ -884,7 +883,7 @@ function pause(time, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x10d9487b, Offset: 0x3370
 // Size: 0x58
 function unpause(n_index) {
@@ -894,7 +893,7 @@ function unpause(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x460f373c, Offset: 0x33d0
 // Size: 0x144
 function function_12269140(target, n_index = 0) {
@@ -911,7 +910,7 @@ function function_12269140(target, n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x181134d8, Offset: 0x3520
 // Size: 0x50e
 function _turret_think(n_index, v_offset) {
@@ -980,12 +979,12 @@ function _turret_think(n_index, v_offset) {
                 _drop_turret(n_index, !bwasplayertarget);
             }
         }
-        wait(turret_think_time);
+        wait turret_think_time;
     }
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdd513fde, Offset: 0x3a38
 // Size: 0x54
 function _turret_health_monitor(n_index) {
@@ -996,7 +995,7 @@ function _turret_health_monitor(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb38aeb6d, Offset: 0x3a98
 // Size: 0x88
 function _turret_health_monitor_loop(n_index) {
@@ -1010,7 +1009,7 @@ function _turret_health_monitor_loop(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8d1ffe35, Offset: 0x3b28
 // Size: 0x3cc
 function function_1358b930(n_index) {
@@ -1100,7 +1099,7 @@ function _waittill_user_change(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5882ec10, Offset: 0x40f8
 // Size: 0xb6
 function _check_for_paused(n_index) {
@@ -1123,7 +1122,7 @@ function _check_for_paused(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x529fd3ff, Offset: 0x41b8
 // Size: 0x12c
 function _drop_turret(n_index, bexitifautomatedonly) {
@@ -1146,7 +1145,7 @@ function does_have_target(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x16d35920, Offset: 0x4328
 // Size: 0x76
 function _user_check(n_index) {
@@ -1159,7 +1158,7 @@ function _user_check(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x41e866eb, Offset: 0x43a8
 // Size: 0x1f8
 function function_2a4a311(n_index) {
@@ -1174,20 +1173,20 @@ function function_2a4a311(n_index) {
     var_f449d788 = sqr(s_turret.var_43ce86ed);
     while (true) {
         s_notify = self waittill(#"hash_4ecf2bd2fb1d75d9");
-        var_34b21e8e = s_notify.entity;
-        if (isalive(var_34b21e8e) && !var_34b21e8e flag::get(#"hash_1b89f498c2647e6")) {
-            if (var_34b21e8e.isarriving) {
-                while (isalive(var_34b21e8e) && var_34b21e8e.isarriving) {
+        ai_actor = s_notify.entity;
+        if (isalive(ai_actor) && !ai_actor flag::get(#"turret_pilot")) {
+            if (ai_actor.isarriving) {
+                while (isalive(ai_actor) && ai_actor.isarriving) {
                     waitframe(1);
                 }
-                get_in(var_34b21e8e, n_index);
+                get_in(ai_actor, n_index);
                 continue;
             }
-            if (distance2dsquared(var_34b21e8e.origin, s_turret.node.origin) <= var_f449d788) {
-                if (isdefined(var_34b21e8e.var_41adb97) && gettime() < var_34b21e8e.var_41adb97) {
+            if (distance2dsquared(ai_actor.origin, s_turret.node.origin) <= var_f449d788) {
+                if (isdefined(ai_actor.var_41adb97) && gettime() < ai_actor.var_41adb97) {
                     continue;
                 }
-                get_in(var_34b21e8e, n_index);
+                get_in(ai_actor, n_index);
             }
         }
     }
@@ -1200,67 +1199,67 @@ function function_2a4a311(n_index) {
     // Checksum 0xabfaf438, Offset: 0x45a8
     // Size: 0x6de
     function _debug_turret_think(n_index) {
-        self endon(#"death", "<unknown string>" + _index(n_index), "<unknown string>" + _index(n_index));
+        self endon(#"death", "<dev string:x1ef>" + _index(n_index), "<dev string:x200>" + _index(n_index));
         s_turret = _get_turret_data(n_index);
         var_34c31abc = (1, 1, 0);
         n_spacing = (0, 0, -7);
         while (true) {
             if (!getdvarint(#"g_debugturrets", 0)) {
-                wait(0.2);
+                wait 0.2;
                 continue;
             }
             var_83570f5f = [];
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + self getentnum();
-            str_target = "<unknown string>";
+            var_83570f5f[var_83570f5f.size] = "<dev string:x213>" + self getentnum();
+            str_target = "<dev string:x227>";
             target = s_turret.target;
             if (isdefined(target)) {
                 if (isvec(target)) {
-                    str_target += "<unknown string>" + target;
+                    str_target += "<dev string:x234>" + target;
                 } else if (isactor(target)) {
-                    str_target += "<unknown string>" + target getentnum();
+                    str_target += "<dev string:x23c>" + target getentnum();
                 } else if (isplayer(target)) {
-                    str_target += "<unknown string>" + target getentnum();
+                    str_target += "<dev string:x243>" + target getentnum();
                 } else if (isvehicle(target)) {
-                    str_target += "<unknown string>" + target getentnum();
-                } else if (isdefined(target.targetname) && target.targetname == "<unknown string>") {
-                    str_target += "<unknown string>";
+                    str_target += "<dev string:x24e>" + target getentnum();
+                } else if (isdefined(target.targetname) && target.targetname == "<dev string:x25a>") {
+                    str_target += "<dev string:x25a>";
                 } else if (isdefined(target.classname)) {
                     str_target += target.classname;
                 }
             } else {
-                str_target += "<unknown string>";
+                str_target += "<dev string:x263>";
             }
             var_83570f5f[var_83570f5f.size] = str_target;
-            var_3be47a2d = "<unknown string>";
+            var_3be47a2d = "<dev string:x26b>";
             if (isdefined(s_turret.pause)) {
-                var_3be47a2d += "<unknown string>";
+                var_3be47a2d += "<dev string:x277>";
             } else if (s_turret.n_burst_time < s_turret.n_burst_fire_time) {
-                var_3be47a2d += "<unknown string>" + s_turret.n_burst_fire_time - s_turret.n_burst_time;
+                var_3be47a2d += "<dev string:x281>" + s_turret.n_burst_fire_time - s_turret.n_burst_time;
             } else {
-                var_3be47a2d += "<unknown string>";
+                var_3be47a2d += "<dev string:x28a>";
             }
             var_83570f5f[var_83570f5f.size] = var_3be47a2d;
-            var_c88d0be9 = "<unknown string>";
+            var_c88d0be9 = "<dev string:x296>";
             if (isdefined(s_turret.var_50fbd548) && isvec(s_turret.target) && s_turret.target == s_turret.var_50fbd548) {
-                var_c88d0be9 += "<unknown string>";
+                var_c88d0be9 += "<dev string:x2a5>";
             } else if (s_turret flag::get(#"turret manual")) {
-                var_c88d0be9 += "<unknown string>";
+                var_c88d0be9 += "<dev string:x2bb>";
             } else {
-                var_c88d0be9 += "<unknown string>";
+                var_c88d0be9 += "<dev string:x2ca>";
             }
             var_83570f5f[var_83570f5f.size] = var_c88d0be9;
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + (isdefined(s_turret.favoriteenemy) ? "<unknown string>" + s_turret.favoriteenemy getentnum() : "<unknown string>");
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + is_true(s_turret.var_cd8600bd);
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + is_true(s_turret.b_ignore_line_of_sight);
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + is_true(s_turret.var_f351ad56);
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + is_true(s_turret.perfectaim);
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + is_true(s_turret.var_d55528ca);
-            var_83570f5f[var_83570f5f.size] = "<unknown string>" + is_true(s_turret.var_2890139c);
+            var_83570f5f[var_83570f5f.size] = "<dev string:x2db>" + (isdefined(s_turret.favoriteenemy) ? "<dev string:x2f0>" + s_turret.favoriteenemy getentnum() : "<dev string:x263>");
+            var_83570f5f[var_83570f5f.size] = "<dev string:x2fb>" + is_true(s_turret.var_cd8600bd);
+            var_83570f5f[var_83570f5f.size] = "<dev string:x314>" + is_true(s_turret.b_ignore_line_of_sight);
+            var_83570f5f[var_83570f5f.size] = "<dev string:x325>" + is_true(s_turret.var_f351ad56);
+            var_83570f5f[var_83570f5f.size] = "<dev string:x339>" + is_true(s_turret.perfectaim);
+            var_83570f5f[var_83570f5f.size] = "<dev string:x34b>" + is_true(s_turret.var_d55528ca);
+            var_83570f5f[var_83570f5f.size] = "<dev string:x35c>" + is_true(s_turret.var_2890139c);
             if (s_turret.n_last_fire_time == gettime()) {
-                var_83570f5f[var_83570f5f.size] = "<unknown string>";
+                var_83570f5f[var_83570f5f.size] = "<dev string:x378>";
             }
             for (i = 0; i < var_83570f5f.size; i++) {
-                record3dtext(var_83570f5f[i], self.origin + n_spacing * i, var_34c31abc, "<unknown string>", self);
+                record3dtext(var_83570f5f[i], self.origin + n_spacing * i, var_34c31abc, "<dev string:x38c>", self);
             }
             if (isdefined(s_turret.target)) {
                 v_end = isvec(s_turret.target) ? s_turret.target : s_turret.target.origin;
@@ -1275,7 +1274,7 @@ function function_2a4a311(n_index) {
 #/
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6bcb0800, Offset: 0x4c90
 // Size: 0xa2
 function _get_turret_data(n_index = 0) {
@@ -1305,7 +1304,7 @@ function has_turret(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3e5dcea7, Offset: 0x4d80
 // Size: 0x8e
 function _update_turret_arcs(n_index) {
@@ -1317,14 +1316,14 @@ function _update_turret_arcs(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe614d8e3, Offset: 0x4e18
 // Size: 0x2d0
 function _init_turret(n_index = 0) {
     self endon(#"death");
     w_weapon = get_weapon(n_index);
     if (w_weapon.name == #"none") {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x396>");
         return;
     }
     util::waittill_asset_loaded("xmodel", self.model);
@@ -1368,11 +1367,11 @@ function _init_turret(n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe5a5c691, Offset: 0x50f0
 // Size: 0x220
 function _init_vehicle_turret(n_index) {
-    assert(isdefined(n_index) && n_index >= 0, "<unknown string>");
+    assert(isdefined(n_index) && n_index >= 0, "<dev string:x3c3>");
     s_turret = spawnstruct();
     switch (n_index) {
     case 0:
@@ -1413,7 +1412,7 @@ function _init_vehicle_turret(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x27a5abce, Offset: 0x5318
 // Size: 0x5a
 function function_14223170(n_index = 0) {
@@ -1424,7 +1423,7 @@ function function_14223170(n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9d77a933, Offset: 0x5380
 // Size: 0x1fc
 function _burst_fire(n_index) {
@@ -1441,15 +1440,15 @@ function _burst_fire(n_index) {
         s_turret.n_burst_time += n_fire_time;
         var_a2524721 = s_turret.n_burst_time >= s_turret.n_burst_fire_time;
         fire(n_index);
-        wait(n_fire_time);
+        wait n_fire_time;
     }
     if (var_a2524721) {
-        wait(s_turret.n_burst_wait);
+        wait s_turret.n_burst_wait;
     }
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb13a5acc, Offset: 0x5588
 // Size: 0xe2
 function _get_burst_fire_time(n_index) {
@@ -1468,7 +1467,7 @@ function _get_burst_fire_time(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8051eb24, Offset: 0x5678
 // Size: 0xe2
 function _get_burst_wait_time(n_index) {
@@ -1487,7 +1486,7 @@ function _get_burst_wait_time(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3563e7f7, Offset: 0x5768
 // Size: 0x2a
 function _index(n_index) {
@@ -1495,7 +1494,7 @@ function _index(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf11d33b0, Offset: 0x57a0
 // Size: 0x1ca
 function _get_best_target(n_index) {
@@ -1534,7 +1533,7 @@ function _get_best_target(n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x438a58e3, Offset: 0x5978
 // Size: 0x1aa
 function can_hit_target(e_target, n_index) {
@@ -1558,7 +1557,7 @@ function can_hit_target(e_target, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb4c6f8e6, Offset: 0x5b30
 // Size: 0x27e
 function trace_test(e_target, v_offset = (0, 0, 0), n_index) {
@@ -1656,7 +1655,7 @@ function set_occupy_no_target_time(time, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9def886d, Offset: 0x5fe8
 // Size: 0x2c
 function toggle_lensflare(bool) {
@@ -1683,12 +1682,12 @@ function track_lens_flare() {
                 self toggle_lensflare(0);
             }
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace turret/turret_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3bc5784, Offset: 0x6188
 // Size: 0xc2
 function _get_gunner_tag_for_turret_index(n_index) {
@@ -1704,7 +1703,7 @@ function _get_gunner_tag_for_turret_index(n_index) {
     case 4:
         return "tag_gunner4";
     default:
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x3fc>");
         break;
     }
 }

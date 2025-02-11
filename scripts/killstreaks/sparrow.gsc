@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapons.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\weapons\weapons;
 
 #namespace sparrow;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace sparrow/sparrow
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7b0fb7e7, Offset: 0x188
 // Size: 0x114
 function __init__() {
@@ -34,7 +33,7 @@ function __init__() {
 }
 
 // Namespace sparrow/sparrow
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xceb5aab, Offset: 0x2a8
 // Size: 0xe4
 function function_8ea68ead(eattacker, einflictor, weapon, meansofdeath, *damage) {
@@ -99,7 +98,7 @@ function event_handler[missile_fire] function_8cd77cf6(eventstruct) {
 }
 
 // Namespace sparrow/sparrow
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa348f48c, Offset: 0x638
 // Size: 0x2e
 function function_1bb4a86d() {
@@ -109,19 +108,19 @@ function function_1bb4a86d() {
 }
 
 // Namespace sparrow/sparrow
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc0817eb2, Offset: 0x670
 // Size: 0x7a
 function function_be16c377() {
     self endon(#"projectile_impact_explode", #"death");
     while (true) {
         self.var_59ba00f5 = self getvelocity();
-        wait(float(function_60d95f53()) / 1000);
+        wait float(function_60d95f53()) / 1000;
     }
 }
 
 // Namespace sparrow/sparrow
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xda9cbd30, Offset: 0x6f8
 // Size: 0x42
 function is_under_water(position) {
@@ -130,7 +129,7 @@ function is_under_water(position) {
 }
 
 // Namespace sparrow/sparrow
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe12c90b0, Offset: 0x748
 // Size: 0x20
 function private function_119a2a90(weapon) {

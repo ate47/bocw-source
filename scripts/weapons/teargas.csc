@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\sound_shared.csc;
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\player\player_stats.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\util_shared;
 
-#namespace namespace_8a3384f2;
+#namespace teargas;
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 0, eflags: 0x2 linked
+// Namespace teargas/teargas
+// Params 0, eflags: 0x0
 // Checksum 0xe6492820, Offset: 0xf0
 // Size: 0x4c
 function init_shared() {
     clientfield::register("toplayer", "in_tear_gas", 1, 2, "int", &function_9810ebc, 0, 0);
 }
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 7, eflags: 0x2 linked
+// Namespace teargas/teargas
+// Params 7, eflags: 0x0
 // Checksum 0x11147709, Offset: 0x148
 // Size: 0x1fe
 function function_9810ebc(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -56,8 +55,8 @@ function function_9810ebc(localclientnum, *oldval, newval, *bnewent, *binitialsn
     }
 }
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 8, eflags: 0x2 linked
+// Namespace teargas/teargas
+// Params 8, eflags: 0x0
 // Checksum 0x7a017367, Offset: 0x350
 // Size: 0xa4
 function function_3b08d399(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, constant, postfx) {

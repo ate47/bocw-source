@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\scene_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\character_customization.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\character_customization;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
 
 #namespace display_transition;
 
 // Namespace display_transition/display_transition
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38fad1d0, Offset: 0x190
 // Size: 0x2c
 function init_shared() {
@@ -18,7 +17,7 @@ function init_shared() {
 }
 
 // Namespace display_transition/display_transition
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc6aba25d, Offset: 0x1c8
 // Size: 0xfc
 function private registerclientfields() {
@@ -32,7 +31,7 @@ function private registerclientfields() {
 }
 
 // Namespace display_transition/display_transition
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xaa75fa73, Offset: 0x2d0
 // Size: 0xd4
 function function_c73ec9a(*local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -51,7 +50,7 @@ function function_c73ec9a(*local_client_num, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace display_transition/display_transition
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdfb83f4a, Offset: 0x3b0
 // Size: 0x1ac
 function function_57e7e78e() {
@@ -70,7 +69,7 @@ function function_57e7e78e() {
 }
 
 // Namespace display_transition/display_transition
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x2537e6bf, Offset: 0x568
 // Size: 0x9a
 function private function_d4f9edc8(character_index, session_mode) {
@@ -85,7 +84,7 @@ function private function_d4f9edc8(character_index, session_mode) {
 }
 
 // Namespace display_transition/display_transition
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x42f7be1a, Offset: 0x610
 // Size: 0xb8
 function private function_707c958c(local_client_num, var_23904c1d, target_name) {
@@ -117,7 +116,7 @@ function private function_c4ede3a8(local_client_num, target_name, session_mode) 
 }
 
 // Namespace display_transition/display_transition
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x81803a65, Offset: 0x7e0
 // Size: 0x62
 function private function_1b0611e0(local_client_num, xuid, target_name) {
@@ -127,7 +126,7 @@ function private function_1b0611e0(local_client_num, xuid, target_name) {
 }
 
 // Namespace display_transition/display_transition
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9635bab9, Offset: 0x850
 // Size: 0x68
 function private function_4259f9f8(local_client_num, target_name) {
@@ -138,7 +137,7 @@ function private function_4259f9f8(local_client_num, target_name) {
 }
 
 // Namespace display_transition/display_transition
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x199d8a18, Offset: 0x8c0
 // Size: 0x25c
 function function_7adce590(local_client_num, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -152,7 +151,7 @@ function function_7adce590(local_client_num, *oldval, *newval, *bnewent, *biniti
             }
             if (getdvarint(#"hash_6d98441d0465c104", 0)) {
                 /#
-                    custom_character = function_c4ede3a8(bwastimejump, "<unknown string>" + key, 1);
+                    custom_character = function_c4ede3a8(bwastimejump, "<dev string:x38>" + key, 1);
                     array::add(var_ec067cd3, [[ custom_character ]]->function_217b10ed());
                 #/
                 continue;
@@ -167,7 +166,7 @@ function function_7adce590(local_client_num, *oldval, *newval, *bnewent, *biniti
 }
 
 // Namespace display_transition/display_transition
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3ffc0dfc, Offset: 0xb28
 // Size: 0xcc
 function function_5628ce8(local_client_num, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace pip_menu;
 
@@ -12,7 +11,7 @@ class class_70ee35b1 : cluielem {
     var var_d5213cbb;
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x16440dfe, Offset: 0x408
     // Size: 0x44
     function set_moviename(player, value) {
@@ -20,7 +19,7 @@ class class_70ee35b1 : cluielem {
     }
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xa0d0d6b6, Offset: 0x390
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -28,7 +27,7 @@ class class_70ee35b1 : cluielem {
     }
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xcd2d4d53, Offset: 0x4f8
     // Size: 0x44
     function set_additive(player, value) {
@@ -36,7 +35,7 @@ class class_70ee35b1 : cluielem {
     }
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xeea0d326, Offset: 0x3d8
     // Size: 0x24
     function close(player) {
@@ -44,7 +43,7 @@ class class_70ee35b1 : cluielem {
     }
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xbde610bc, Offset: 0x4a8
     // Size: 0x44
     function set_looping(player, value) {
@@ -52,7 +51,7 @@ class class_70ee35b1 : cluielem {
     }
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xd4705e89, Offset: 0x458
     // Size: 0x44
     function set_showblackscreen(player, value) {
@@ -60,7 +59,7 @@ class class_70ee35b1 : cluielem {
     }
 
     // Namespace namespace_70ee35b1/pip_menu
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x6263552e, Offset: 0x2c8
     // Size: 0xbc
     function setup_clientfields() {
@@ -74,7 +73,7 @@ class class_70ee35b1 : cluielem {
 }
 
 // Namespace pip_menu/pip_menu
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x12bdb5, Offset: 0x118
 // Size: 0x34
 function register() {

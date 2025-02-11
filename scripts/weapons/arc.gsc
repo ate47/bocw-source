@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\damage.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\util_shared;
 
 #namespace arc;
 
@@ -34,7 +33,7 @@ function init_arc(weapon, var_26b2b1bb) {
     // Size: 0x48
     function update_dvars() {
         while (true) {
-            wait(1);
+            wait 1;
             level.var_6d3af47 = getdvarint(#"hash_6e465f7410cc100f", 0);
         }
     }
@@ -169,7 +168,7 @@ function function_33d5b9a6(var_26b2b1bb, eattacker, arc_source, arc_source_origi
     }
     if (var_4d3cc1a7 && !distancecheck(eattacker, target, self.origin, depth)) {
         /#
-            record3dtext("<unknown string>", self.origin - (0, 0, 20), (1, 0, 0), "<unknown string>", undefined, 0.4);
+            record3dtext("<dev string:x38>", self.origin - (0, 0, 20), (1, 0, 0), "<dev string:x48>", undefined, 0.4);
         #/
         return false;
     }
@@ -201,10 +200,10 @@ function find_arc_targets(var_26b2b1bb, eattacker, arc_source, arc_source_origin
         delay = 0;
     }
     allplayers = function_a1ef346b();
-    var_67dd5161 = arraysort(allplayers, arc_source_origin, 1);
+    closesttargets = arraysort(allplayers, arc_source_origin, 1);
     validtargets = 0;
-    for (i = 0; validtargets < var_26b2b1bb.var_755593b1 && i < var_67dd5161.size; i++) {
-        target = var_67dd5161[i];
+    for (i = 0; validtargets < var_26b2b1bb.var_755593b1 && i < closesttargets.size; i++) {
+        target = closesttargets[i];
         if (!function_33d5b9a6(var_26b2b1bb, eattacker, arc_source, arc_source_origin, depth, target, var_4d3cc1a7)) {
             continue;
         }
@@ -219,7 +218,7 @@ function find_arc_targets(var_26b2b1bb, eattacker, arc_source, arc_source_origin
 // Size: 0x1c2
 function function_30a9a6c1(var_26b2b1bb, delay, eattacker, arc_source, *var_9a099e60, arc_source_origin, *arc_source_pos, arc_target, *arc_target_pos, depth, var_4d3cc1a7 = 1) {
     if (var_9a099e60) {
-        wait(float(var_9a099e60) / 1000);
+        wait float(var_9a099e60) / 1000;
         if (!function_33d5b9a6(arc_source, arc_source_origin, arc_source_pos, arc_target, depth, arc_target_pos, var_4d3cc1a7)) {
             return;
         }

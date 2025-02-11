@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\debug_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\hud_shared.gsc;
 #using script_789f2367a00401d8;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\debug_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_cc727a3b;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe488cda4, Offset: 0x2a0
 // Size: 0x164
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1098b824, Offset: 0x410
 // Size: 0x8f8
 function function_4b462025(enemy, b_ignore_cleanup) {
@@ -65,8 +64,8 @@ function function_4b462025(enemy, b_ignore_cleanup) {
     if (time <= 0) {
         time = 1;
     }
-    var_813d38fa = (to_target[2] + 0.5 * getdvarint(#"bg_gravity", 800) * sqr(time)) / time;
-    var_578ee39a = var_813d38fa * var_813d38fa / 2 * getdvarint(#"bg_gravity", 800);
+    launch_speed = (to_target[2] + 0.5 * getdvarint(#"bg_gravity", 800) * sqr(time)) / time;
+    var_578ee39a = launch_speed * launch_speed / 2 * getdvarint(#"bg_gravity", 800);
     if (var_578ee39a > 100) {
         var_b0eeef83 = sqrt(2 * getdvarint(#"bg_gravity", 800) * 100);
         a = -0.5 * getdvarint(#"bg_gravity", 800);
@@ -75,19 +74,19 @@ function function_4b462025(enemy, b_ignore_cleanup) {
         var_b2ca2007 = (b * -1 - sqrt(sqr(b) - 4 * a * c)) / 2 * a;
         var_ea3a82ca = length((to_target[0], to_target[1], to_target[2])) / var_b2ca2007;
         velocity = dir * var_ea3a82ca;
-        var_813d38fa = var_b0eeef83;
+        launch_speed = var_b0eeef83;
         time = var_b2ca2007;
     }
-    velocity = (velocity[0], velocity[1], var_813d38fa);
+    velocity = (velocity[0], velocity[1], launch_speed);
     /#
         if (getdvarint(#"hash_23c79bd6109328a", 0)) {
             sphere(target_pos, 16, (1, 1, 0), 1, 1, 8, 300);
             thread debug::drawdebugline(var_8598bad6, target_pos, (1, 1, 0), 300);
-            println("<unknown string>" + enemy.origin + "<unknown string>" + target_pos);
+            println("<dev string:x38>" + enemy.origin + "<dev string:x65>" + target_pos);
             i = 0;
             last_pos = var_8598bad6;
             while (i <= time) {
-                height = var_8598bad6[2] + var_813d38fa * i - 0.5 * getdvarint(#"bg_gravity", 800) * sqr(i);
+                height = var_8598bad6[2] + launch_speed * i - 0.5 * getdvarint(#"bg_gravity", 800) * sqr(i);
                 debug_pos = (var_8598bad6[0] + velocity[0] * i, var_8598bad6[1] + velocity[1] * i, height);
                 sphere(debug_pos, 8, (0, 1, 0), 1, 1, 8, 300);
                 thread debug::drawdebugline(last_pos, debug_pos, (0, 1, 0), 300);
@@ -114,7 +113,7 @@ function function_4b462025(enemy, b_ignore_cleanup) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x3b45eb75, Offset: 0xd10
 // Size: 0x654
 function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda) {
@@ -191,12 +190,12 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb2768be7, Offset: 0x1370
 // Size: 0x44
 function private function_4f093018() {
     self endon(#"entitydeleted");
-    wait(5);
+    wait 5;
     if (isdefined(self)) {
         if (isdefined(self)) {
             self delete();
@@ -205,7 +204,7 @@ function private function_4f093018() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6c32526b, Offset: 0x13c0
 // Size: 0x112
 function private function_cf57c2cb(grenade) {
@@ -230,7 +229,7 @@ function private function_cf57c2cb(grenade) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0b90ddd, Offset: 0x14e0
 // Size: 0x400
 function function_23e153fb(var_bb13ffb2) {
@@ -266,7 +265,7 @@ function function_23e153fb(var_bb13ffb2) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x969f7c2d, Offset: 0x18e8
 // Size: 0x5c
 function private function_6b6fce46(target) {
@@ -276,7 +275,7 @@ function private function_6b6fce46(target) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x320f609a, Offset: 0x1950
 // Size: 0xf4
 function function_2d86c7c9() {
@@ -287,12 +286,12 @@ function function_2d86c7c9() {
     self.var_f01add23 += 1;
     for (i = 0; i < var_8214bfd5; i++) {
         self function_9fc2b867();
-        wait(0.25);
+        wait 0.25;
     }
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x42b2f678, Offset: 0x1a50
 // Size: 0xe
 function function_f2b0a2e1() {
@@ -300,7 +299,7 @@ function function_f2b0a2e1() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe4bdfd2d, Offset: 0x1a68
 // Size: 0x16c
 function private function_9fc2b867() {
@@ -322,7 +321,7 @@ function private function_9fc2b867() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7d04492, Offset: 0x1be0
 // Size: 0x94a
 function private function_187bcbe() {
@@ -332,11 +331,11 @@ function private function_187bcbe() {
     self.var_a7882c19 = 0;
     if (isdefined(self.var_66a3d186)) {
         var_b048de07 = vectorlerp(self.var_66a3d186 gettagorigin("j_head_mouth1"), self.var_66a3d186 gettagorigin("j_head_mouth5"), 0.5);
-        var_5846115f = vectornormalize(var_b048de07 - self.origin);
-        self moveto(self.origin + var_5846115f * 200, 0.25);
-        wait(0.25);
-        self moveto(self.origin + var_5846115f * 100, 0.25, 0, 0.1875);
-        wait(0.25);
+        launch_dir = vectornormalize(var_b048de07 - self.origin);
+        self moveto(self.origin + launch_dir * 200, 0.25);
+        wait 0.25;
+        self moveto(self.origin + launch_dir * 100, 0.25, 0, 0.1875);
+        wait 0.25;
     }
     while (true) {
         clockwise = 1;
@@ -410,7 +409,7 @@ function private function_187bcbe() {
             if (zombie_utility::is_player_valid(self.target_ent, 1, 1)) {
                 self moveto(self.target_ent geteye(), 0.2);
             }
-            wait(0.2);
+            wait 0.2;
         }
         self.var_88b20e7f = 60;
         var_2f769fb1 = (0, 0, 0);
@@ -434,7 +433,7 @@ function private function_187bcbe() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x7521228f, Offset: 0x2538
 // Size: 0x12a
 function private function_c9bcf1cb(var_2f769fb1, var_1f14bda8, var_4717cb50) {
@@ -455,7 +454,7 @@ function private function_c9bcf1cb(var_2f769fb1, var_1f14bda8, var_4717cb50) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x70d17e1c, Offset: 0x2670
 // Size: 0x280
 function private function_953cead6() {
@@ -493,7 +492,7 @@ function private function_953cead6() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x79be14b2, Offset: 0x28f8
 // Size: 0x52
 function private function_ae1ac363() {
@@ -505,7 +504,7 @@ function private function_ae1ac363() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x83f799c9, Offset: 0x2958
 // Size: 0x1c8
 function private function_d321dcc8(var_af0000ca, to_target) {
@@ -530,7 +529,7 @@ function private function_d321dcc8(var_af0000ca, to_target) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf97d845c, Offset: 0x2b28
 // Size: 0xb8
 function private function_4e15ba87(var_2f769fb1) {
@@ -546,7 +545,7 @@ function private function_4e15ba87(var_2f769fb1) {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x8679b8a0, Offset: 0x2be8
 // Size: 0x178
 function private function_3a260c9e(var_af0000ca, to_target, spawn_pos, var_93b101fe) {
@@ -569,7 +568,7 @@ function private function_3a260c9e(var_af0000ca, to_target, spawn_pos, var_93b10
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x87922bf6, Offset: 0x2d68
 // Size: 0xd8
 function function_e57b9f29() {
@@ -588,7 +587,7 @@ function function_e57b9f29() {
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2147fa39, Offset: 0x2e48
 // Size: 0x6e
 function private function_51d2e478() {
@@ -596,7 +595,7 @@ function private function_51d2e478() {
     while (isdefined(self)) {
         self.health -= 6;
         self util::damage_notify_wrapper(6, self);
-        wait(1);
+        wait 1;
     }
 }
 

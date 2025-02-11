@@ -1,40 +1,39 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_4611af4073d18808;
-#using script_2c9915120c137848;
-#using script_2474a362752098d2;
-#using script_77357b2d180aa2b8;
-#using script_683a55734f15d50e;
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_3bbf85ab4cb9f3c2;
-#using script_40f967ad5d18ea74;
-#using script_3faf478d5b0850fe;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_774302f762d76254;
-#using script_634ae70c663d1cc9;
-#using script_6b6510e124bad778;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
-#using script_74a56359b7d02ab6;
+#using script_2474a362752098d2;
+#using script_2a5bf5b4a00cee0d;
+#using script_2c9915120c137848;
+#using script_3bbf85ab4cb9f3c2;
+#using script_3faf478d5b0850fe;
+#using script_40f967ad5d18ea74;
+#using script_4611af4073d18808;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5549681e1669c11a;
-#using script_f38dc50f0e82277;
+#using script_5701633066d199f2;
+#using script_5f20d3b434d24884;
+#using script_634ae70c663d1cc9;
+#using script_683a55734f15d50e;
 #using script_68cdf0ca5df5e;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_6b6510e124bad778;
+#using script_74a56359b7d02ab6;
+#using script_77357b2d180aa2b8;
+#using script_774302f762d76254;
+#using script_f38dc50f0e82277;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace doa_wild;
 
@@ -68,7 +67,7 @@ class class_744b99c {
     var visited;
 
     // Namespace class_744b99c/doa_wild
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x29606e44, Offset: 0x6f8
     // Size: 0xce
     constructor() {
@@ -92,7 +91,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x82 linked class_linked
+    // Params 0, eflags: 0x80 class_linked
     // Checksum 0x56984df6, Offset: 0x7d0
     // Size: 0x14
     function destructor() {
@@ -100,7 +99,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa588bf22, Offset: 0x2d30
     // Size: 0xb0
     function function_1137c8bb() {
@@ -111,7 +110,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb470021c, Offset: 0xeb8
     // Size: 0xa
     function function_1e9525b8() {
@@ -119,7 +118,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa5b2f1bc, Offset: 0x3228
     // Size: 0x34
     function function_226986c2() {
@@ -128,7 +127,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xce938430, Offset: 0x3268
     // Size: 0x310
     function function_2a41670b() {
@@ -140,7 +139,7 @@ class class_744b99c {
             assert(var_e275e943.size);
             idx = 0;
             while (true) {
-                wait(0.25);
+                wait 0.25;
                 foreach (player in getplayers()) {
                     if (!is_true(player.laststand)) {
                         continue;
@@ -171,7 +170,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x76a7f25b, Offset: 0x36b8
     // Size: 0x28e
     function function_2c3a3e50(trigger) {
@@ -179,7 +178,7 @@ class class_744b99c {
             return;
         }
         self endon(#"disconnect");
-        assert(trigger.script_noteworthy == "<unknown string>");
+        assert(trigger.script_noteworthy == "<dev string:x121>");
         if (!isdefined(doa.var_bb4d9604)) {
             doa.var_bb4d9604 = [];
         } else if (!isarray(doa.var_bb4d9604)) {
@@ -205,7 +204,7 @@ class class_744b99c {
                     break;
                 }
             }
-            wait(0.5);
+            wait 0.5;
         }
         self notify(#"hash_7893364bd228d63e", {#var_cff8d1e:1});
         arrayremovevalue(doa.var_bb4d9604, trigger);
@@ -213,7 +212,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x72180e32, Offset: 0x29e8
     // Size: 0xa
     function getname() {
@@ -221,7 +220,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb1cb28f5, Offset: 0x2a18
     // Size: 0x32
     function function_31ca9ed1() {
@@ -230,7 +229,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x353ae97b, Offset: 0x3950
     // Size: 0x52c
     function function_33300d38() {
@@ -244,9 +243,9 @@ class class_744b99c {
                 self thread function_33300d38();
                 return;
             }
-            assert(isdefined(script_noteworthy), "<unknown string>");
+            assert(isdefined(script_noteworthy), "<dev string:x130>");
             room = namespace_5a917022::function_c8892b0f(script_noteworthy);
-            assert(isdefined(room), "<unknown string>" + script_noteworthy);
+            assert(isdefined(room), "<dev string:x14e>" + script_noteworthy);
             foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
                 player notify(#"hash_279998c5df86c04d");
                 player notify(#"hash_7893364bd228d63e");
@@ -269,7 +268,7 @@ class class_744b99c {
             level thread namespace_5a917022::function_898ca25f(room);
             level waittill(#"hash_7dd47c99b7707b1c");
             var_4200bfbf = struct::get_array(target);
-            assert(isdefined(var_4200bfbf) && var_4200bfbf.size >= 4, "<unknown string>");
+            assert(isdefined(var_4200bfbf) && var_4200bfbf.size >= 4, "<dev string:x16f>");
             players = namespace_7f5aeb59::function_23e1f90f();
             idx = 0;
             foreach (player in players) {
@@ -278,13 +277,13 @@ class class_744b99c {
                 player clientfield::increment_to_player("resetCamera");
                 idx++;
             }
-            wait(1);
+            wait 1;
             level thread namespace_7f5aeb59::function_836aeb74();
         }
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 6, eflags: 0x2 linked
+    // Params 6, eflags: 0x0
     // Checksum 0x494e0f44, Offset: 0x28a0
     // Size: 0xe4
     function function_39d2eb74(loc, var_c9d9522c, chance, count, permanent, scale = 1) {
@@ -301,7 +300,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x34439eb0, Offset: 0x2a58
     // Size: 0x32
     function function_39f259cc() {
@@ -310,7 +309,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb682499b, Offset: 0x2a98
     // Size: 0x290
     function function_40ee47dc(*section) {
@@ -341,7 +340,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa7ce70f9, Offset: 0x1500
     // Size: 0x64
     function function_411b63ca() {
@@ -352,14 +351,14 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x3a3423f9, Offset: 0x7f0
     // Size: 0x6be
     function initialize(var_96c645bc) {
         m_center = var_96c645bc;
         m_name = var_96c645bc.script_noteworthy;
         var_be31d6d6 = int(var_96c645bc.script_int);
-        assert(isdefined(m_name) && isdefined(var_be31d6d6), "doa_wild_section_j2_visited");
+        assert(isdefined(m_name) && isdefined(var_be31d6d6), "<dev string:x38>");
         var_6c9ec3e8 = undefined;
         m_sections = struct::get_array(var_96c645bc.target);
         assert(m_sections.size > 0);
@@ -388,7 +387,7 @@ class class_744b99c {
         var_2a0f52f3 = struct::get_array(m_name + "_wild_dungeons");
         foreach (dungeon in var_2a0f52f3) {
             params = strtok(dungeon.script_parameters, ";");
-            assert(params.size == 7, "<unknown string>" + m_name + "<unknown string>");
+            assert(params.size == 7, "<dev string:x5c>" + m_name + "<dev string:x8c>");
             dungeon.name = params[0];
             dungeon.type = params[1];
             dungeon.var_c9569a5c = params[2];
@@ -397,7 +396,7 @@ class class_744b99c {
             dungeon.var_efa6dcc2 = params[5];
             dungeon.var_7efce95 = params[6];
             dungeon.var_93ed3009 = struct::get_array(dungeon.name + "_dungeon_player_exits");
-            assert(dungeon.var_93ed3009.size >= 4, "<unknown string>");
+            assert(dungeon.var_93ed3009.size >= 4, "<dev string:x9e>");
         }
         var_da475035 = getentarray(m_name + "_wild_kill_player_vehicle", "targetname");
         var_7c1b05a1 = struct::get_array(m_name + "_wild_object");
@@ -410,13 +409,13 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xd61dc81a, Offset: 0x1130
     // Size: 0xc0
     function function_464d882c(var_71390dff = 0) {
         foreach (hazard in var_a1fa7529) {
             if (isdefined(hazard)) {
-                hazard notify(#"hash_3e251384a5400dce");
+                hazard notify(#"destroy_hazard");
             }
         }
         if (var_71390dff) {
@@ -425,7 +424,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x5a875fd9, Offset: 0x2ee0
     // Size: 0xce
     function function_4774f263(type, trigger) {
@@ -442,7 +441,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x331c4fb9, Offset: 0x30f8
     // Size: 0x128
     function function_4a266c60() {
@@ -462,7 +461,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2b993087, Offset: 0x30b8
     // Size: 0x34
     function function_53f0be18() {
@@ -471,7 +470,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xfcec0441, Offset: 0x29a8
     // Size: 0x32
     function function_5dfb6d67() {
@@ -480,7 +479,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x89495e1f, Offset: 0x11f8
     // Size: 0x94
     function function_60ca2154(id) {
@@ -493,7 +492,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x32d077ad, Offset: 0x2a00
     // Size: 0xa
     function getid() {
@@ -501,7 +500,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x3a4aeb8c, Offset: 0x1298
     // Size: 0x9c
     function function_70111aa4(id) {
@@ -514,7 +513,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x511d0272, Offset: 0x27c8
     // Size: 0x1a
     function function_774497ee(cb) {
@@ -522,7 +521,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1b45d084, Offset: 0x13e8
     // Size: 0xa
     function function_7c246362() {
@@ -530,7 +529,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x3282982, Offset: 0x2ea0
     // Size: 0x34
     function function_82fd5391() {
@@ -539,7 +538,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x12885ccf, Offset: 0xed0
     // Size: 0xc2
     function function_87f950c1(type) {
@@ -556,7 +555,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x23adbd59, Offset: 0xfa0
     // Size: 0x184
     function function_90de0b96() {
@@ -575,7 +574,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xabc8beba, Offset: 0x1400
     // Size: 0xf4
     function function_98a61f4e(section = 0) {
@@ -589,7 +588,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xdfaa08dd, Offset: 0x3580
     // Size: 0x34
     function function_9b22d331() {
@@ -598,7 +597,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa959fef7, Offset: 0x35c0
     // Size: 0xf0
     function function_a7380338() {
@@ -618,7 +617,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x3ac90931, Offset: 0x2990
     // Size: 0xa
     function function_a9d5a03d() {
@@ -626,7 +625,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x8c4754e1, Offset: 0x2238
     // Size: 0x560
     function deactivate() {
@@ -685,7 +684,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf88df70c, Offset: 0x27a0
     // Size: 0x1a
     function function_b6954aba(cb) {
@@ -693,7 +692,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x110db2d3, Offset: 0x17d0
     // Size: 0xa60
     function activate(section = 0) {
@@ -763,7 +762,7 @@ class class_744b99c {
             assert(isdefined(npc.script_parameters));
             if (isdefined(npc.script_parameters) && isdefined("wild_npc requires script_parameters <type>,[chance],[radius],[permanent],[boss],[notify]")) {
                 args = strtok(npc.script_parameters, ";");
-                assert(args.size > 0, "<unknown string>");
+                assert(args.size > 0, "<dev string:xc5>");
                 if (args.size > 0) {
                     npc.type = args[0];
                 }
@@ -806,7 +805,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x4f63d3, Offset: 0x1588
     // Size: 0x240
     function function_c4836f01() {
@@ -834,7 +833,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa6db65f9, Offset: 0x27f0
     // Size: 0xc
     function getnumsections() {
@@ -842,7 +841,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x80e503cd, Offset: 0x1340
     // Size: 0x9a
     function function_c8fbcc3f(id) {
@@ -855,7 +854,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2d753bbb, Offset: 0x2de8
     // Size: 0xb0
     function function_ce6bb21b() {
@@ -866,7 +865,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xe90a928b, Offset: 0x2820
     // Size: 0x74
     function addobject(loc) {
@@ -879,7 +878,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x77d9c8c, Offset: 0x2808
     // Size: 0xa
     function function_d9ad5c49() {
@@ -887,7 +886,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2d687d70, Offset: 0x2fb8
     // Size: 0xf8
     function function_e7bbc8d1() {
@@ -906,7 +905,7 @@ class class_744b99c {
     }
 
     // Namespace namespace_744b99c/doa_wild
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x67b2b2b9, Offset: 0x1570
     // Size: 0xa
     function function_ef5ade99() {
@@ -916,7 +915,7 @@ class class_744b99c {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb018218d, Offset: 0x46c0
 // Size: 0xf4
 function function_2828aa1() {
@@ -936,7 +935,7 @@ function function_2828aa1() {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa7598f20, Offset: 0x47c0
 // Size: 0x3e0
 function init() {
@@ -970,7 +969,7 @@ function init() {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd97bf9ee, Offset: 0x4ba8
 // Size: 0x1ce
 function main() {
@@ -992,7 +991,7 @@ function main() {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc741380a, Offset: 0x4d80
 // Size: 0x9c
 function function_e5e987ae(name) {
@@ -1012,7 +1011,7 @@ function function_e5e987ae(name) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd6c768b1, Offset: 0x4e28
 // Size: 0x9b0
 function function_7c5bc025(name, section) {
@@ -1021,7 +1020,7 @@ function function_7c5bc025(name, section) {
         level namespace_c85a46fe::function_edfcfa44();
     }
     level.doa.var_a77e6349 = function_d5e7454f(name);
-    assert(isdefined(level.doa.var_a77e6349), "<unknown string>" + name);
+    assert(isdefined(level.doa.var_a77e6349), "<dev string:x19c>" + name);
     [[ level.doa.var_a77e6349 ]]->activate(section);
     level.doa.var_fc8d8951 = gettime();
     level.doa.var_be3ad33f = 0;
@@ -1037,7 +1036,7 @@ function function_7c5bc025(name, section) {
     }
     util::wait_network_frame();
     level clientfield::set("setWildTOD", [[ level.doa.var_a77e6349 ]]->function_39f259cc());
-    level namespace_a6ddb172::function_7a0e5387();
+    level doa_banner::function_7a0e5387();
     util::wait_network_frame();
     level notify(#"hash_77a8f97f2648672", {#name:name, #section:section});
     level.doa.var_3902985f = &function_c6dcd966;
@@ -1064,7 +1063,7 @@ function function_7c5bc025(name, section) {
     level notify(#"hash_5c97c4241ba01be4");
     level thread namespace_7f5aeb59::function_836aeb74(4);
     level waittill(#"hash_58caf0ade03043bb");
-    level namespace_a6ddb172::function_7a0e5387(14);
+    level doa_banner::function_7a0e5387(14);
     level thread namespace_9fc66ac::announce(59);
     if (isdefined(level.doa.var_6b57e2f)) {
         level thread [[ level.doa.var_6b57e2f ]](name);
@@ -1074,7 +1073,7 @@ function function_7c5bc025(name, section) {
         level namespace_c85a46fe::function_edfcfa44();
         namespace_ec06fe4a::function_de70888a();
         banner = isdefined(result.banner) ? result.banner : 15;
-        level namespace_a6ddb172::function_7a0e5387(banner);
+        level doa_banner::function_7a0e5387(banner);
         if (!isdefined(result.banner)) {
             level thread namespace_9fc66ac::announce(60);
         }
@@ -1082,11 +1081,11 @@ function function_7c5bc025(name, section) {
             player giveachievement(#"doa_achievement_escapewild");
             player thread namespace_7f5aeb59::turnplayershieldon(0);
         }
-        wait(3.5);
+        wait 3.5;
         level thread namespace_7f5aeb59::function_67f054d7(1.5);
         level notify(#"hash_7893364bd228d63e");
-        wait(0.5);
-        level namespace_a6ddb172::function_7a0e5387();
+        wait 0.5;
+        level doa_banner::function_7a0e5387();
     }
     level waittill(#"hash_1b322de3d2e3e781");
     if (isdefined(level.doa.var_a77e6349)) {
@@ -1109,7 +1108,7 @@ function function_7c5bc025(name, section) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62810263, Offset: 0x57e0
 // Size: 0xa2
 function function_d5e7454f(name) {
@@ -1133,7 +1132,7 @@ function function_87922476(name, section) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3d44af19, Offset: 0x5960
 // Size: 0x76
 function function_c6dcd966(item) {
@@ -1147,7 +1146,7 @@ function function_c6dcd966(item) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x70c263cc, Offset: 0x59e0
 // Size: 0xba
 function function_a1832a08(item) {
@@ -1160,7 +1159,7 @@ function function_a1832a08(item) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51d4c576, Offset: 0x5aa8
 // Size: 0x3fa
 function spawnitem(item) {
@@ -1175,7 +1174,7 @@ function spawnitem(item) {
         despawndistance = 2400;
     }
     switch (item.script_noteworthy) {
-    case #"hash_717f51c8c82e526c":
+    case #"world_door":
         namespace_f63bdb08::function_2a1e5c1f(item.origin, item.angles, item.model, isdefined(item.script_int) ? int(item.script_int) : undefined, isdefined(item.script_objective) ? int(item.script_objective) : undefined, 1, item.script_parameters);
         if (is_true(level.doa.var_318aa67a)) {
             despawndistance = 2800;
@@ -1184,11 +1183,11 @@ function spawnitem(item) {
     case #"world_loot":
         namespace_41f5b853::spawnlootitem(item.origin, item.angles, item.script_string, item.radius, 1);
         break;
-    case #"hash_708bdcbf801445c6":
+    case #"treasure_blob":
         namespace_dfc652ee::function_68442ee7(item.origin, 20, isdefined(item.radius) ? item.radius : 200);
         break;
     case #"hash_6b07679758a7acc":
-        assert(isdefined(item.parameters), "<unknown string>");
+        assert(isdefined(item.parameters), "<dev string:x1b0>");
         def = namespace_dfc652ee::function_6265bde4(item.parameters[randomint(item.parameters.size)]);
     default:
         if (!isdefined(def)) {
@@ -1216,12 +1215,12 @@ function spawnitem(item) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x373e315, Offset: 0x5eb0
 // Size: 0x22a
 function function_612fa49c(item, distance = 1600) {
     while (item.activated && isdefined(level.doa.var_a77e6349)) {
-        wait(1);
+        wait 1;
         players = namespace_7f5aeb59::function_23e1f90f();
         active = 0;
         foreach (player in players) {
@@ -1249,7 +1248,7 @@ function function_612fa49c(item, distance = 1600) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x98bf3855, Offset: 0x60e8
 // Size: 0x26a
 function function_715ea8aa(wild) {
@@ -1279,7 +1278,7 @@ function function_715ea8aa(wild) {
             }
             level spawnitem(item);
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -1300,7 +1299,7 @@ function function_b3585fb7(origin, timeout) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x41836c6f, Offset: 0x6470
 // Size: 0xba
 function function_e5488243(npc) {
@@ -1321,7 +1320,7 @@ function function_e5488243(npc) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8daa9a34, Offset: 0x6538
 // Size: 0x230
 function function_d81916f4() {
@@ -1348,7 +1347,7 @@ function function_d81916f4() {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5236e426, Offset: 0x6770
 // Size: 0x15e
 function function_72405345(npc) {
@@ -1385,7 +1384,7 @@ function function_72405345(npc) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4067ab2a, Offset: 0x68d8
 // Size: 0x33c
 function function_7d406bae(npc, distance = 2400) {
@@ -1400,7 +1399,7 @@ function function_7d406bae(npc, distance = 2400) {
             }
         }
         npc.activated = active;
-        wait(1);
+        wait 1;
     }
     items = doa_enemy::function_924423d(npc);
     unspawned = 0;
@@ -1423,7 +1422,7 @@ function function_7d406bae(npc, distance = 2400) {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xea82ff93, Offset: 0x6c20
 // Size: 0x25a
 function function_3efbdeb3(wild) {
@@ -1449,24 +1448,24 @@ function function_3efbdeb3(wild) {
                 level function_72405345(npc);
             }
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace doa_wild/doa_wild
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae060c5a, Offset: 0x6e88
 // Size: 0x1b0
 function function_e8146c4c() {
     level endon(#"hash_325440d5433be263");
     level endon(#"game_over");
-    wait(5);
+    wait 5;
     foreach (player in getplayers()) {
         player namespace_6e90e490::showhint(12);
     }
-    wait(30);
+    wait 30;
     while (isdefined(level.doa.var_6f3d327)) {
-        wait(1);
+        wait 1;
     }
     if (!is_true(level.doa.var_318aa67a)) {
         foreach (player in getplayers()) {
@@ -1476,7 +1475,7 @@ function function_e8146c4c() {
 }
 
 // Namespace doa_wild/doa_wild
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8c5956ab, Offset: 0x7040
 // Size: 0x11a
 function function_271e0d71(name, section) {

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_fav_light;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc486b594, Offset: 0x108
 // Size: 0x34
 function private preinit(*localclientnum) {
@@ -23,7 +22,7 @@ function private preinit(*localclientnum) {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x867d0187, Offset: 0x148
 // Size: 0xc
 function private function_6e6e0d52(*localclientnum) {

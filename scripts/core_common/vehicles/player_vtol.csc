@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_vtol;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_vtol/player_vtol
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2d54d35d, Offset: 0xf0
 // Size: 0x34
 function private preinit(*localclientnum) {
@@ -21,7 +20,7 @@ function private preinit(*localclientnum) {
 }
 
 // Namespace player_vtol/player_vtol
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x648d149a, Offset: 0x130
 // Size: 0xc
 function private function_1b39ded0(*localclientnum) {

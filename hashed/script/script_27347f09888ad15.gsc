@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
 
 #namespace namespace_679a22ba;
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x84cce68c, Offset: 0x88
 // Size: 0x40
 function function_3ba2f5dd(var_693839ad, var_bc631e23) {
@@ -15,13 +14,13 @@ function function_3ba2f5dd(var_693839ad, var_bc631e23) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x453603f1, Offset: 0xd0
 // Size: 0x1ec
 function function_77be8a83(var_e98de867) {
-    assert(isdefined(var_e98de867), "<unknown string>");
+    assert(isdefined(var_e98de867), "<dev string:x38>");
     bundle = getscriptbundle(var_e98de867);
-    assert(isdefined(bundle), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
+    assert(isdefined(bundle), "<dev string:x73>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
     var_89592ba7 = {#var_7c88c117:[], #var_b0abb10e:isdefined(bundle.var_d961aeb3) ? bundle.var_d961aeb3 : 0};
     foreach (index, var_c1d870ac in bundle.var_210a8489) {
         var_89592ba7.var_7c88c117[index] = {#name:isdefined(level.var_ce15b8c9[var_c1d870ac.entryname]) ? level.var_ce15b8c9[var_c1d870ac.entryname] : var_c1d870ac.entryname, #spawned:0, #var_cffbc08:var_c1d870ac.var_a949845f};
@@ -30,14 +29,14 @@ function function_77be8a83(var_e98de867) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8a4d4aa3, Offset: 0x2c8
 // Size: 0x10c
 function function_ca209564(var_e98de867, var_ddb02c2b) {
-    assert(isdefined(var_e98de867), "<unknown string>");
+    assert(isdefined(var_e98de867), "<dev string:xa8>");
     if (isdefined(var_e98de867)) {
         var_3561dd4b = getscriptbundle(var_e98de867);
-        assert(isdefined(var_3561dd4b), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
+        assert(isdefined(var_3561dd4b), "<dev string:xe6>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
         if (isdefined(var_ddb02c2b)) {
             return function_15541865(var_3561dd4b.var_210a8489, var_ddb02c2b.var_7c88c117, 1, var_ddb02c2b.var_b0abb10e);
         }
@@ -46,20 +45,20 @@ function function_ca209564(var_e98de867, var_ddb02c2b) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x54933674, Offset: 0x3e0
 // Size: 0xd0
 function function_3e7317ca(var_e98de867) {
-    assert(isdefined(var_e98de867), "<unknown string>");
+    assert(isdefined(var_e98de867), "<dev string:xa8>");
     var_3561dd4b = getscriptbundle(var_e98de867);
-    assert(isdefined(var_3561dd4b), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
+    assert(isdefined(var_3561dd4b), "<dev string:xe6>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
     var_29556c1a = [];
     function_cbafbbab(var_3561dd4b.var_210a8489, var_29556c1a);
     return var_29556c1a;
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x291baa78, Offset: 0x4b8
 // Size: 0xe8
 function function_266ee075(var_8452bcb9, var_ddb02c2b) {
@@ -73,7 +72,7 @@ function function_266ee075(var_8452bcb9, var_ddb02c2b) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x857b1283, Offset: 0x5a8
 // Size: 0xbc
 function function_898aced0(var_8452bcb9, var_ddb02c2b) {
@@ -86,7 +85,7 @@ function function_898aced0(var_8452bcb9, var_ddb02c2b) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb07c754f, Offset: 0x670
 // Size: 0x134
 function function_ce65eab6(var_89592ba7) {
@@ -113,7 +112,7 @@ function function_f6a07949(var_89592ba7) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa8fd1e2f, Offset: 0x810
 // Size: 0x180
 function private function_15541865(&var_8def964, &var_fcfdb752, var_e1be5b85 = 0, var_b0abb10e = 0) {
@@ -123,7 +122,7 @@ function private function_15541865(&var_8def964, &var_fcfdb752, var_e1be5b85 = 0
     }
     var_74142af1 = getscriptbundle(var_8452bcb9);
     if (var_74142af1.type === #"survivalailistentry") {
-        return_struct = {#var_990b33df:var_74142af1.var_5fa96b51[randomint(var_74142af1.var_5fa96b51.size)].var_1b48d0fc};
+        return_struct = {#aitype_name:var_74142af1.var_5fa96b51[randomint(var_74142af1.var_5fa96b51.size)].var_1b48d0fc};
         if (var_e1be5b85) {
             return_struct.list_name = var_8452bcb9;
         }
@@ -140,7 +139,7 @@ function private function_15541865(&var_8def964, &var_fcfdb752, var_e1be5b85 = 0
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x96807745, Offset: 0x998
 // Size: 0x1f4
 function private function_cbafbbab(&var_8def964, &var_bcaf6518) {
@@ -152,7 +151,7 @@ function private function_cbafbbab(&var_8def964, &var_bcaf6518) {
         }
         var_74142af1 = getscriptbundle(var_8452bcb9);
         if (var_74142af1.type === #"survivalailistentry") {
-            assert(isdefined(var_74142af1.var_5fa96b51) && var_74142af1.var_5fa96b51.size > 0, "<unknown string>");
+            assert(isdefined(var_74142af1.var_5fa96b51) && var_74142af1.var_5fa96b51.size > 0, "<dev string:x139>");
             foreach (aitype in var_74142af1.var_5fa96b51) {
                 name = aitype.var_1b48d0fc;
                 array::add(var_bcaf6518, name, 0);
@@ -167,7 +166,7 @@ function private function_cbafbbab(&var_8def964, &var_bcaf6518) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xcd49bb63, Offset: 0xb98
 // Size: 0x218
 function private function_622c131e(&var_5c120708, &var_fcfdb752, var_e1be5b85, var_b0abb10e) {
@@ -195,7 +194,7 @@ function private function_622c131e(&var_5c120708, &var_fcfdb752, var_e1be5b85, v
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x22dfdf78, Offset: 0xdb8
 // Size: 0xba
 function function_b9ea4226(value, scale) {
@@ -225,7 +224,7 @@ function function_c60389b6(var_e3c68634, var_b0abb10e) {
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xed5ba24a, Offset: 0xf68
 // Size: 0x1c
 function function_9a90dff7(var_e3c68634) {

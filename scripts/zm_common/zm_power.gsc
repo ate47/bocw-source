@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_blockers.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_blockers;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_power;
 
@@ -30,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x903e964f, Offset: 0x2a8
 // Size: 0x1c
 function private preinit() {
@@ -39,7 +38,7 @@ function private preinit() {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf855d476, Offset: 0x2d0
 // Size: 0x44
 function private postinit() {
@@ -72,7 +71,7 @@ function private postinit() {
 #/
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5acf0231, Offset: 0x420
 // Size: 0x84
 function electric_switch_init() {
@@ -85,7 +84,7 @@ function electric_switch_init() {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x90e20191, Offset: 0x4b0
 // Size: 0x830
 function electric_switch() {
@@ -202,7 +201,7 @@ function electric_switch() {
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2e1e24c7, Offset: 0xce8
 // Size: 0xc4
 function elec_switch_on(master_switch, fx_pos) {
@@ -216,7 +215,7 @@ function elec_switch_on(master_switch, fx_pos) {
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe2e6654f, Offset: 0xdb8
 // Size: 0x44
 function elec_switch_off(master_switch) {
@@ -225,7 +224,7 @@ function elec_switch_off(master_switch) {
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6838c688, Offset: 0xe08
 // Size: 0x74
 function function_9d9892d2(master_switch) {
@@ -238,7 +237,7 @@ function function_9d9892d2(master_switch) {
 }
 
 // Namespace zm_power/zm_power
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x678b1e35, Offset: 0xe88
 // Size: 0x48
 function artifact_mind_on(*master_switch, *fx_pos, user) {
@@ -246,7 +245,7 @@ function artifact_mind_on(*master_switch, *fx_pos, user) {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe4496f80, Offset: 0xed8
 // Size: 0x80
 function watch_global_power() {
@@ -259,7 +258,7 @@ function watch_global_power() {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xce7fe636, Offset: 0xf60
 // Size: 0x384
 function standard_powered_items() {
@@ -292,7 +291,7 @@ function standard_powered_items() {
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x83abb33c, Offset: 0x12f0
 // Size: 0x90
 function zone_controlled_perk(zone) {
@@ -306,7 +305,7 @@ function zone_controlled_perk(zone) {
 }
 
 // Namespace zm_power/zm_power
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb709a8f6, Offset: 0x1388
 // Size: 0xec
 function add_powered_item(power_on_func, power_off_func, range_func, cost_func, power_sources, self_powered, target) {
@@ -326,7 +325,7 @@ function add_powered_item(power_on_func, power_off_func, range_func, cost_func, 
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2454fc0a, Offset: 0x1480
 // Size: 0x2c
 function remove_powered_item(powered) {
@@ -355,7 +354,7 @@ function add_temp_powered_item(power_on_func, power_off_func, range_func, cost_f
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6020297a, Offset: 0x1650
 // Size: 0x118
 function watch_temp_powered_item(powered) {
@@ -374,7 +373,7 @@ function watch_temp_powered_item(powered) {
 }
 
 // Namespace zm_power/zm_power
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x632f410, Offset: 0x1770
 // Size: 0xcc
 function change_power_in_radius(delta, origin, radius) {
@@ -390,7 +389,7 @@ function change_power_in_radius(delta, origin, radius) {
 }
 
 // Namespace zm_power/zm_power
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6206cb79, Offset: 0x1848
 // Size: 0xa8
 function change_power(delta, origin, radius) {
@@ -412,7 +411,7 @@ function change_power(delta, origin, radius) {
 }
 
 // Namespace zm_power/zm_power
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc9cdbc9d, Offset: 0x18f8
 // Size: 0x74
 function revert_power_to_list(delta, origin, radius, powered_list) {
@@ -423,13 +422,13 @@ function revert_power_to_list(delta, origin, radius, powered_list) {
 }
 
 // Namespace zm_power/zm_power
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x815e7b7a, Offset: 0x1978
 // Size: 0x130
 function revert_power(delta, origin, radius, *powered_list) {
     if (origin > 0) {
         self.depowered_count--;
-        assert(self.depowered_count >= 0, "<unknown string>");
+        assert(self.depowered_count >= 0, "<dev string:x38>");
         if (self.depowered_count == 0 && self.powered_count > 0 && !self.power) {
             self.power = 1;
             self [[ self.power_on_func ]](radius, powered_list);
@@ -438,7 +437,7 @@ function revert_power(delta, origin, radius, *powered_list) {
     }
     if (origin < 0) {
         self.powered_count--;
-        assert(self.powered_count >= 0, "<unknown string>");
+        assert(self.powered_count >= 0, "<dev string:x5d>");
         if (self.powered_count == 0 && self.power) {
             self.power = 0;
             self [[ self.power_off_func ]](radius, powered_list);
@@ -452,7 +451,7 @@ function revert_power(delta, origin, radius, *powered_list) {
 // Size: 0xc8
 function add_local_power(origin, radius) {
     localpower = spawnstruct();
-    println("<unknown string>" + origin + "<unknown string>" + radius + "<unknown string>");
+    println("<dev string:x82>" + origin + "<dev string:xa2>" + radius + "<dev string:xae>");
     localpower.origin = origin;
     localpower.radius = radius;
     localpower.enabled_list = change_power_in_radius(1, origin, radius);
@@ -492,7 +491,7 @@ function move_local_power(localpower, origin) {
 // Checksum 0x3c74a4b2, Offset: 0x1d30
 // Size: 0x104
 function end_local_power(localpower) {
-    println("<unknown string>" + localpower.origin + "<unknown string>" + localpower.radius + "<unknown string>");
+    println("<dev string:xb3>" + localpower.origin + "<dev string:xa2>" + localpower.radius + "<dev string:xae>");
     if (isdefined(localpower.enabled_list)) {
         revert_power_to_list(-1, localpower.origin, localpower.radius, localpower.enabled_list);
     }
@@ -520,7 +519,7 @@ function has_local_power(origin) {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x848864ec, Offset: 0x1f10
 // Size: 0xa0
 function get_powered_item_cost() {
@@ -558,7 +557,7 @@ function get_local_power_cost(localpower) {
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x216027e0, Offset: 0x2120
 // Size: 0xfc
 function set_global_power(on_off) {
@@ -575,12 +574,12 @@ function set_global_power(on_off) {
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe3b54c2b, Offset: 0x2228
 // Size: 0xfc
 function global_power(on_off) {
     if (on_off) {
-        println("<unknown string>");
+        println("<dev string:xd4>");
         if (!self.power) {
             self.power = 1;
             self [[ self.power_on_func ]]();
@@ -588,9 +587,9 @@ function global_power(on_off) {
         self.powered_count++;
         return;
     }
-    println("<unknown string>");
+    println("<dev string:xf2>");
     self.powered_count--;
-    assert(self.powered_count >= 0, "<unknown string>");
+    assert(self.powered_count >= 0, "<dev string:x5d>");
     if (self.powered_count == 0 && self.power) {
         self.power = 0;
         self [[ self.power_off_func ]]();
@@ -627,7 +626,7 @@ function cost_negligible() {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x26add0ac, Offset: 0x23b0
 // Size: 0x70
 function cost_low_if_local() {
@@ -656,7 +655,7 @@ function cost_high() {
 }
 
 // Namespace zm_power/zm_power
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbb7b928, Offset: 0x2468
 // Size: 0x5c
 function door_range(delta, origin, radius) {
@@ -670,47 +669,47 @@ function door_range(delta, origin, radius) {
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6392595e, Offset: 0x24d0
 // Size: 0x5c
 function door_power_on(*origin, *radius) {
-    println("<unknown string>");
+    println("<dev string:x111>");
     self.target.power_on = 1;
     self.target notify(#"power_on");
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x252934ba, Offset: 0x2538
 // Size: 0x5e
 function door_power_off(*origin, *radius) {
-    println("<unknown string>");
+    println("<dev string:x129>");
     self.target notify(#"power_off");
     self.target.power_on = 0;
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcf3e7741, Offset: 0x25a0
 // Size: 0x5c
 function door_local_power_on(*origin, *radius) {
-    println("<unknown string>");
+    println("<dev string:x142>");
     self.target.local_power_on = 1;
     self.target notify(#"local_power_on");
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6280d5af, Offset: 0x2608
 // Size: 0x5e
 function door_local_power_off(*origin, *radius) {
-    println("<unknown string>");
+    println("<dev string:x162>");
     self.target notify(#"local_power_off");
     self.target.local_power_on = 0;
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x169374d7, Offset: 0x2670
 // Size: 0x92
 function cost_door() {
@@ -750,7 +749,7 @@ function zombie_range(delta, origin, radius) {
 // Checksum 0xc48392d5, Offset: 0x2798
 // Size: 0x82
 function zombie_power_off(*origin, *radius) {
-    println("<unknown string>");
+    println("<dev string:x183>");
     for (i = 0; i < self.zombies.size; i++) {
         self.zombies[i] thread stun_zombie();
         waitframe(1);
@@ -758,7 +757,7 @@ function zombie_power_off(*origin, *radius) {
 }
 
 // Namespace zm_power/zm_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20875f0b, Offset: 0x2828
 // Size: 0x9e
 function stun_zombie() {
@@ -766,7 +765,7 @@ function stun_zombie() {
     self endon(#"death", #"stun_zombie");
     if (self.health <= 0) {
         /#
-            iprintln("<unknown string>");
+            iprintln("<dev string:x19f>");
         #/
         return;
     }
@@ -780,7 +779,7 @@ function stun_zombie() {
 }
 
 // Namespace zm_power/zm_power
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x94957c08, Offset: 0x28d0
 // Size: 0xdc
 function perk_range(*delta, origin, radius) {
@@ -799,22 +798,22 @@ function perk_range(*delta, origin, radius) {
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xeac6e09e, Offset: 0x29b8
 // Size: 0x9c
 function perk_power_on(*origin, *radius) {
-    println("<unknown string>" + self.target zm_perks::getvendingmachinenotify() + "<unknown string>");
+    println("<dev string:x1bf>" + self.target zm_perks::getvendingmachinenotify() + "<dev string:x1d4>");
     level notify(self.target zm_perks::getvendingmachinenotify() + "_on");
     zm_perks::perk_unpause(self.target.script_notify);
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc76a4434, Offset: 0x2a60
 // Size: 0x192
 function perk_power_off(*origin, *radius) {
     notify_name = self.target zm_perks::getvendingmachinenotify();
-    println("<unknown string>" + self.target zm_perks::getvendingmachinenotify() + "<unknown string>");
+    println("<dev string:x1bf>" + self.target zm_perks::getvendingmachinenotify() + "<dev string:x1dc>");
     self.target.unitrigger_stub notify(#"death");
     self.target.unitrigger_stub thread zm_perks::vending_trigger_think();
     if (isdefined(level._custom_perks[self.target.script_notify].var_4a48be24)) {
@@ -828,7 +827,7 @@ function perk_power_off(*origin, *radius) {
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x657bfb2a, Offset: 0x2c00
 // Size: 0x37c
 function turn_power_on_and_open_doors(power_zone, var_9d1c1c4a = 1) {
@@ -871,7 +870,7 @@ function turn_power_on_and_open_doors(power_zone, var_9d1c1c4a = 1) {
 }
 
 // Namespace zm_power/zm_power
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c040fc4, Offset: 0x2f88
 // Size: 0x2ec
 function turn_power_off_and_close_doors(power_zone) {
@@ -912,7 +911,7 @@ function turn_power_off_and_close_doors(power_zone) {
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8d55ee51, Offset: 0x3280
 // Size: 0x1bc
 function function_da4a8c05(hintstring, n_zone = 0) {
@@ -926,7 +925,7 @@ function function_da4a8c05(hintstring, n_zone = 0) {
         level.var_cef2e607[#"hash_1d6a2292435f5d0a"] = -1;
     }
     level.var_cef2e607[#"hash_1d6a2292435f5d0a"]++;
-    wait(float(function_60d95f53()) / 1000 * (level.var_cef2e607[#"hash_1d6a2292435f5d0a"] % int(0.5 / float(function_60d95f53()) / 1000) + 1));
+    wait float(function_60d95f53()) / 1000 * (level.var_cef2e607[#"hash_1d6a2292435f5d0a"] % int(0.5 / float(function_60d95f53()) / 1000) + 1);
     self.script_noteworthy = undefined;
     self.trigger sethintstring(hintstring);
     if (isdefined(self.var_49d94d8a)) {
@@ -936,7 +935,7 @@ function function_da4a8c05(hintstring, n_zone = 0) {
 }
 
 // Namespace zm_power/zm_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc46d957e, Offset: 0x3448
 // Size: 0xe4
 function function_1ae64b8c(hintstring, n_zone = 0) {

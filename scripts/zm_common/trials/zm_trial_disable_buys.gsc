@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_traps.gsc;
-#using scripts\zm_common\zm_pack_a_punch.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_pack_a_punch;
+#using scripts\zm_common\zm_traps;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_trial_disable_buys;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2e4ad78d, Offset: 0x430
 // Size: 0x1f4
 function private preinit() {
@@ -39,7 +38,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1fbfbd25, Offset: 0x630
 // Size: 0xdc
 function private on_begin(var_a29299fb) {
@@ -60,7 +59,7 @@ function private on_begin(var_a29299fb) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf4083439, Offset: 0x718
 // Size: 0xc4
 function private on_end(round_reset) {
@@ -78,7 +77,7 @@ function private on_end(round_reset) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa6c8ff5a, Offset: 0x7e8
 // Size: 0x32
 function is_active() {
@@ -87,7 +86,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x51455034, Offset: 0x828
 // Size: 0x176
 function function_8327d26e() {
@@ -114,12 +113,12 @@ function function_8327d26e() {
             self.zbarrier.weapon_model_dw notify(#"kill_weapon_movement");
         }
     }
-    wait(0.1);
+    wait 0.1;
     self notify(#"trigger", {#activator:level});
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x856bda7f, Offset: 0x9a8
 // Size: 0x2d8
 function private function_6fd56055() {
@@ -151,7 +150,7 @@ function private function_6fd56055() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x38d9f447, Offset: 0xc88
 // Size: 0x2b8
 function private function_fa70c8c4() {
@@ -183,7 +182,7 @@ function private function_fa70c8c4() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5b3711ad, Offset: 0xf48
 // Size: 0x58
 function private _open_arcs(blocker) {
@@ -194,7 +193,7 @@ function private _open_arcs(blocker) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x50775721, Offset: 0xfa8
 // Size: 0x26a
 function private function_fcf197fa(targetname, show) {
@@ -231,7 +230,7 @@ function private function_fcf197fa(targetname, show) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6a70d1e5, Offset: 0x1220
 // Size: 0x34
 function private function_a4284cb4() {
@@ -240,7 +239,7 @@ function private function_a4284cb4() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x51fcfc47, Offset: 0x1260
 // Size: 0x44
 function private function_c606ef4b() {
@@ -249,7 +248,7 @@ function private function_c606ef4b() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x58f73e03, Offset: 0x12b0
 // Size: 0x40
 function private function_4516d298() {
@@ -260,7 +259,7 @@ function private function_4516d298() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x532c074c, Offset: 0x12f8
 // Size: 0x40
 function private function_610df6d() {
@@ -271,7 +270,7 @@ function private function_610df6d() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb02c1071, Offset: 0x1340
 // Size: 0x74
 function private hide_magicbox() {
@@ -284,7 +283,7 @@ function private hide_magicbox() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf2b64c9b, Offset: 0x13c0
 // Size: 0x5c
 function private show_magicbox() {
@@ -296,7 +295,7 @@ function private show_magicbox() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xefa36d4c, Offset: 0x1428
 // Size: 0x5c
 function private function_d5e17413() {
@@ -307,7 +306,7 @@ function private function_d5e17413() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xab5fcba7, Offset: 0x1490
 // Size: 0x7c
 function private function_c348adcc() {
@@ -320,7 +319,7 @@ function private function_c348adcc() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1ad12f31, Offset: 0x1518
 // Size: 0xe0
 function private hide_traps() {
@@ -333,7 +332,7 @@ function private hide_traps() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcbb2be6, Offset: 0x1600
 // Size: 0xe8
 function private show_traps() {

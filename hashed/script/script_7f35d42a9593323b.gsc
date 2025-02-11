@@ -1,41 +1,40 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_ed50e9299d3e143;
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\weapons\mechz_firebomb.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\ai\archetype_mocomps_utility.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\ai\systems\debug.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
 #using script_2c5daa95f8fec03c;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\burnplayer.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_ed50e9299d3e143;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\archetype_mocomps_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai\systems\debug;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\burnplayer;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\mechz_firebomb;
+#using scripts\weapons\weaponobjects;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_spawner;
 
 #namespace namespace_3444cb7b;
 
@@ -48,7 +47,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53f46ab3, Offset: 0x9a0
 // Size: 0x27c
 function init() {
@@ -69,7 +68,7 @@ function init() {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc824d46a, Offset: 0xc28
 // Size: 0xe4
 function finalize() {
@@ -80,7 +79,7 @@ function finalize() {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6d31a3e7, Offset: 0xd18
 // Size: 0x100c
 function private function_eebf86a4() {
@@ -168,7 +167,7 @@ function private function_eebf86a4() {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4d159ae8, Offset: 0x1d30
 // Size: 0x32
 function private function_b19391ae() {
@@ -177,7 +176,7 @@ function private function_b19391ae() {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaf8f9c51, Offset: 0x1d70
 // Size: 0x2c
 function private function_dd01e0e4(entity) {
@@ -186,7 +185,7 @@ function private function_dd01e0e4(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd238f8df, Offset: 0x1da8
 // Size: 0x44
 function private function_d9de8431(entity) {
@@ -197,7 +196,7 @@ function private function_d9de8431(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6f06ae69, Offset: 0x1df8
 // Size: 0x28c
 function private function_e26728bc(entity) {
@@ -228,7 +227,7 @@ function private function_e26728bc(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb8f45527, Offset: 0x2090
 // Size: 0x2c
 function function_4e89924a(entity) {
@@ -236,7 +235,7 @@ function function_4e89924a(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa9a344b4, Offset: 0x20c8
 // Size: 0x2fc
 function mechztargetservice(entity) {
@@ -300,7 +299,7 @@ function mechztargetservice(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x65bd2f21, Offset: 0x23d0
 // Size: 0xce
 function private mechzgrenadeservice(entity) {
@@ -322,7 +321,7 @@ function private mechzgrenadeservice(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xae54d17c, Offset: 0x24a8
 // Size: 0x30
 function private function_424646a8(grenade, mechz) {
@@ -333,7 +332,7 @@ function private function_424646a8(grenade, mechz) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd5dd9a53, Offset: 0x24e0
 // Size: 0x3ce
 function private mechzberserkknockdownservice(entity) {
@@ -384,7 +383,7 @@ function private mechzberserkknockdownservice(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xee263f28, Offset: 0x28b8
 // Size: 0x178
 function private function_c01bcef(zombie, mechz, *predicted_pos) {
@@ -415,7 +414,7 @@ function private function_c01bcef(zombie, mechz, *predicted_pos) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfad5325, Offset: 0x2a38
 // Size: 0xca
 function mechzshouldmelee(entity) {
@@ -436,7 +435,7 @@ function mechzshouldmelee(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdea395d2, Offset: 0x2b10
 // Size: 0x28
 function private mechzshouldshowpain(entity) {
@@ -447,7 +446,7 @@ function private mechzshouldshowpain(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4cc28058, Offset: 0x2b40
 // Size: 0x28
 function private mechzshouldshowjetpackpain(entity) {
@@ -458,7 +457,7 @@ function private mechzshouldshowjetpackpain(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa716776f, Offset: 0x2b70
 // Size: 0x2e
 function private mechzenemyinaim(entity) {
@@ -469,7 +468,7 @@ function private mechzenemyinaim(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe775bf95, Offset: 0x2ba8
 // Size: 0x24
 function private mechzenemynotinaim(entity) {
@@ -477,7 +476,7 @@ function private mechzenemynotinaim(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc3c255b, Offset: 0x2bd8
 // Size: 0x21e
 function mechzshouldshootgrenade(entity) {
@@ -530,7 +529,7 @@ function mechzshouldshootgrenade(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1976176f, Offset: 0x2e00
 // Size: 0x2be
 function mechzshouldshootflame(entity) {
@@ -573,7 +572,7 @@ function mechzshouldshootflame(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2d381b2f, Offset: 0x30c8
 // Size: 0xb4
 function private mechzshouldshootflamesweep(entity) {
@@ -586,7 +585,7 @@ function private mechzshouldshootflamesweep(entity) {
     if (randomint(100) > 10) {
         return false;
     }
-    var_39156533 = 0;
+    near_players = 0;
     players = getplayers(undefined, entity.origin, 100);
     if (players.size < 2) {
         return false;
@@ -595,7 +594,7 @@ function private mechzshouldshootflamesweep(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8237d02c, Offset: 0x3188
 // Size: 0xa2
 function private mechzshouldturnberserk(entity) {
@@ -609,7 +608,7 @@ function private mechzshouldturnberserk(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf5997b86, Offset: 0x3238
 // Size: 0x2e
 function private mechzshouldstumble(entity) {
@@ -620,7 +619,7 @@ function private mechzshouldstumble(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf957fe77, Offset: 0x3270
 // Size: 0x80
 function mechzisinsafezone(entity) {
@@ -635,7 +634,7 @@ function mechzisinsafezone(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf4947d08, Offset: 0x32f8
 // Size: 0x76
 function mechzshouldturninplacebeforeidle(entity) {
@@ -671,7 +670,7 @@ function private function_d09ba7f5(entity, *asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x37f9ea3a, Offset: 0x3408
 // Size: 0x42
 function private function_db525b31(entity, asmstatename) {
@@ -681,7 +680,7 @@ function private function_db525b31(entity, asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb8ed64f3, Offset: 0x3458
 // Size: 0x2c
 function private function_c21030e3(entity, *asmstatename) {
@@ -692,7 +691,7 @@ function private function_c21030e3(entity, *asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x750a7cc9, Offset: 0x3490
 // Size: 0x32
 function private function_c13b8a0c(entity, *asmstatename) {
@@ -702,7 +701,7 @@ function private function_c13b8a0c(entity, *asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe0e422a, Offset: 0x34d0
 // Size: 0x56
 function function_5a7ad15e(entity, asmstatename) {
@@ -713,7 +712,7 @@ function function_5a7ad15e(entity, asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa8639e74, Offset: 0x3530
 // Size: 0x128
 function function_a3c24f6a(entity, *asmstatename) {
@@ -737,7 +736,7 @@ function function_a3c24f6a(entity, *asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1b98a8d7, Offset: 0x3660
 // Size: 0x3a
 function function_d58e0db5(entity, *asmstatename) {
@@ -747,7 +746,7 @@ function function_d58e0db5(entity, *asmstatename) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x44a08812, Offset: 0x36a8
 // Size: 0x1e
 function private mechzpreptoshootgrenadestart(entity) {
@@ -756,7 +755,7 @@ function private mechzpreptoshootgrenadestart(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x915cd8b5, Offset: 0x36d0
 // Size: 0x1a
 function private mechzpreptoshootgrenadesterminate(entity) {
@@ -765,7 +764,7 @@ function private mechzpreptoshootgrenadesterminate(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x808eef45, Offset: 0x36f8
 // Size: 0x4e
 function private mechzshootgrenadestart(entity) {
@@ -778,7 +777,7 @@ function private mechzshootgrenadestart(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe4120c34, Offset: 0x3750
 // Size: 0x86
 function private mechzshootgrenadeterminate(entity) {
@@ -793,7 +792,7 @@ function private mechzshootgrenadeterminate(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2064424a, Offset: 0x37e0
 // Size: 0x34
 function private mechzsetspeedwalk(entity) {
@@ -801,7 +800,7 @@ function private mechzsetspeedwalk(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x14ac2e5d, Offset: 0x3820
 // Size: 0x34
 function private mechzsetspeedrun(entity) {
@@ -809,7 +808,7 @@ function private mechzsetspeedrun(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb20db72f, Offset: 0x3860
 // Size: 0x24
 function private mechzshootflame(entity) {
@@ -817,21 +816,21 @@ function private mechzshootflame(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3eec5b7e, Offset: 0x3890
 // Size: 0x8a
 function private function_35c0aac1() {
     self endon(#"death");
     self notify(#"hash_35afb115cb92d570");
     self endon(#"hash_35afb115cb92d570");
-    wait(0.3);
+    wait 0.3;
     self clientfield::set("mechz_ft", 1);
     self.var_492622ad = 1;
     self.var_b25ccf7 = gettime() + 2500;
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x235cb27b, Offset: 0x3928
 // Size: 0x410
 function private mechzupdateflame(entity) {
@@ -888,7 +887,7 @@ function private mechzupdateflame(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe744df3, Offset: 0x3d40
 // Size: 0x11e
 function function_5afe5280(mechz) {
@@ -901,13 +900,13 @@ function function_5afe5280(mechz) {
         } else {
             self burnplayer::setplayerburning(1.5, 0.5, 20, mechz, undefined, 1);
         }
-        wait(1.5);
+        wait 1.5;
         self.is_burning = 0;
     }
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc166a637, Offset: 0x3e68
 // Size: 0xe2
 function function_fd99ea48(mechz) {
@@ -918,14 +917,14 @@ function function_fd99ea48(mechz) {
         self.is_burning = 1;
         for (percentage = 0; percentage <= 1; percentage += tick_rate) {
             self dodamage(250 * tick_rate, self.origin, mechz, undefined, undefined, "MOD_BURNED", 0);
-            wait(1.5 * tick_rate);
+            wait 1.5 * tick_rate;
         }
         self.is_burning = 0;
     }
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf1c2e2f1, Offset: 0x3f58
 // Size: 0x9a
 function mechzstopflame(entity) {
@@ -939,7 +938,7 @@ function mechzstopflame(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x28e5930f, Offset: 0x4000
 // Size: 0x8c
 function function_34d763b5() {
@@ -954,7 +953,7 @@ function function_34d763b5() {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x22cfd045, Offset: 0x4098
 // Size: 0x1a
 function private mechzplayedberserkintro(entity) {
@@ -962,7 +961,7 @@ function private mechzplayedberserkintro(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1b07deb6, Offset: 0x40c0
 // Size: 0xc0
 function private function_9e135033() {
@@ -977,12 +976,12 @@ function private function_9e135033() {
             }
             self setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x89b51839, Offset: 0x4188
 // Size: 0x2c
 function private mechzattackstart(entity) {
@@ -990,7 +989,7 @@ function private mechzattackstart(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x26ff23b3, Offset: 0x41c0
 // Size: 0x2c
 function private mechzdeathstart(entity) {
@@ -998,7 +997,7 @@ function private mechzdeathstart(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdbd45819, Offset: 0x41f8
 // Size: 0x2c
 function private mechzidlestart(entity) {
@@ -1006,7 +1005,7 @@ function private mechzidlestart(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x19020730, Offset: 0x4230
 // Size: 0x2c
 function private mechzpainstart(entity) {
@@ -1014,7 +1013,7 @@ function private mechzpainstart(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x212ff850, Offset: 0x4268
 // Size: 0x22
 function private mechzpainterminate(entity) {
@@ -1023,7 +1022,7 @@ function private mechzpainterminate(entity) {
 }
 
 // Namespace namespace_3444cb7b/mechz
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1f33716, Offset: 0x4298
 // Size: 0x2c
 function private mechzjetpackpainterminate(entity) {
@@ -1034,7 +1033,7 @@ function private mechzjetpackpainterminate(entity) {
 #namespace namespace_8681f0e2;
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xee2f6261, Offset: 0x42d0
 // Size: 0x31c
 function private function_3b8b6e80() {
@@ -1054,7 +1053,7 @@ function private function_3b8b6e80() {
     self.var_e9c62827 = 1;
     self weaponobjects::createwatcher("eq_mechz_firebomb", &function_d0651b24, 1);
     /#
-        self.debug_traversal_ast = "getup_back";
+        self.debug_traversal_ast = "<dev string:x38>";
     #/
     self.var_1df3d140 = spawn("trigger_box", self.origin, 0, 700, 50, 25);
     self thread deleteondeath(self.var_1df3d140);
@@ -1077,7 +1076,7 @@ function private function_3b8b6e80() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9e523dcd, Offset: 0x45f8
 // Size: 0x32
 function private function_6d409ca1() {
@@ -1088,7 +1087,7 @@ function private function_6d409ca1() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc44c89ad, Offset: 0x4638
 // Size: 0x4e
 function function_5d873f78() {
@@ -1099,7 +1098,7 @@ function function_5d873f78() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc75bfcc9, Offset: 0x4690
 // Size: 0x24
 function function_d0651b24(watcher) {
@@ -1107,7 +1106,7 @@ function function_d0651b24(watcher) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfa365456, Offset: 0x46c0
 // Size: 0x3c
 function deleteondeath(object) {
@@ -1127,7 +1126,7 @@ function private function_769e329() {
         if (isdefined(self.favoriteenemy)) {
             if (self.var_1df3d140 istouching(self.favoriteenemy)) {
                 /#
-                    printtoprightln("MOD_EXPLOSIVE");
+                    printtoprightln("<dev string:x4a>");
                 #/
             }
         }
@@ -1136,7 +1135,7 @@ function private function_769e329() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1b725e93, Offset: 0x4788
 // Size: 0x42
 function private function_7202e3df() {
@@ -1148,7 +1147,7 @@ function private function_7202e3df() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x69e1431b, Offset: 0x47d8
 // Size: 0x80a
 function function_679ee5b3(inflictor, attacker, damage, dflags, mod, weapon, *var_fd90b0bb, point, dir, hitloc, offsettime, boneindex, modelindex) {
@@ -1202,27 +1201,27 @@ function function_679ee5b3(inflictor, attacker, damage, dflags, mod, weapon, *va
         damage show_hit_marker();
         dflags = int(dflags * 1);
         /#
-            iprintlnbold("mechz_jetpack_destroyed_zm" + dflags + "<unknown string>" + self.health - dflags);
+            iprintlnbold("<dev string:x56>" + dflags + "<dev string:x64>" + self.health - dflags);
         #/
         damage_type = 2;
     }
     if (hitloc !== "none") {
         /#
-            iprintlnbold("<unknown string>" + dflags + "<unknown string>" + self.health - dflags);
+            iprintlnbold("<dev string:x6e>" + dflags + "<dev string:x64>" + self.health - dflags);
         #/
     } else if (weapon == "MOD_PROJECTILE" || weapon == "MOD_GRENADE") {
         dflags = int(dflags * 2);
         /#
-            iprintlnbold("<unknown string>" + dflags + "<unknown string>" + self.health - dflags);
+            iprintlnbold("<dev string:x7f>" + dflags + "<dev string:x64>" + self.health - dflags);
         #/
     } else if (weapon == "MOD_PROJECTILE_SPLASH" || weapon == "MOD_BURNED" || weapon == "MOD_GRENADE_SPLASH" || weapon == "MOD_EXPLOSIVE") {
         dflags = int(dflags * 3);
         /#
-            iprintlnbold("<unknown string>" + dflags + "<unknown string>" + self.health - dflags);
+            iprintlnbold("<dev string:x93>" + dflags + "<dev string:x64>" + self.health - dflags);
         #/
     } else if (weapon == "MOD_CRUSH") {
         /#
-            iprintlnbold("<unknown string>" + dflags + "<unknown string>" + self.health - dflags);
+            iprintlnbold("<dev string:xae>" + dflags + "<dev string:x64>" + self.health - dflags);
         #/
     }
     if (!isdefined(weakpoint)) {
@@ -1251,14 +1250,14 @@ function function_679ee5b3(inflictor, attacker, damage, dflags, mod, weapon, *va
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xd273414c, Offset: 0x4ff0
 // Size: 0x320
 function private function_669e8e27(entity, weakpoint, attacker, damage, weapon, mod, inflictor) {
     var_6dd5345c = undefined;
     if (weakpoint.type === #"weakpoint") {
         var_6dd5345c = 2;
-        namespace_81245006::function_ef87b7e8(weakpoint, damage);
+        namespace_81245006::damageweakpoint(weakpoint, damage);
         if (namespace_81245006::function_f29756fe(weakpoint) === 3 && isdefined(weakpoint.var_f371ebb0)) {
             destructserverutils::function_8475c53a(entity, weakpoint.var_f371ebb0);
             if (weakpoint.var_f371ebb0 == "left_arm_armor") {
@@ -1274,7 +1273,7 @@ function private function_669e8e27(entity, weakpoint, attacker, damage, weapon, 
             damage_mod = [[ level.var_56f626bc ]](entity, weapon, attacker);
         }
         damage *= damage_mod;
-        namespace_81245006::function_ef87b7e8(weakpoint, damage);
+        namespace_81245006::damageweakpoint(weakpoint, damage);
         if (namespace_81245006::function_f29756fe(weakpoint) === 3 && isdefined(weakpoint.var_f371ebb0)) {
             destructserverutils::function_8475c53a(entity, weakpoint.var_f371ebb0);
             scoreevent = "destroyed_armor_zm";
@@ -1295,7 +1294,7 @@ function private function_669e8e27(entity, weakpoint, attacker, damage, weapon, 
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x2158e216, Offset: 0x5318
 // Size: 0x70
 function private function_311ae556(damage, weapon) {
@@ -1311,7 +1310,7 @@ function private function_311ae556(damage, weapon) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd559a739, Offset: 0x5390
 // Size: 0x24
 function function_7101cd45() {
@@ -1319,7 +1318,7 @@ function function_7101cd45() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xebf8fe2, Offset: 0x53c0
 // Size: 0x1c
 function show_hit_marker() {
@@ -1327,7 +1326,7 @@ function show_hit_marker() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x206d351, Offset: 0x53e8
 // Size: 0x3c
 function hide_part(var_7527000) {
@@ -1337,7 +1336,7 @@ function hide_part(var_7527000) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x388b5118, Offset: 0x5430
 // Size: 0xa0
 function function_40c68562() {
@@ -1351,7 +1350,7 @@ function function_40c68562() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf5a2e04d, Offset: 0x54d8
 // Size: 0x5c
 function function_3ebf4258() {
@@ -1362,7 +1361,7 @@ function function_3ebf4258() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5cf27edf, Offset: 0x5540
 // Size: 0x10c
 function function_39d47bef(attacker, weapon, mod, inflictor) {
@@ -1378,7 +1377,7 @@ function function_39d47bef(attacker, weapon, mod, inflictor) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfa889c4, Offset: 0x5658
 // Size: 0xf4
 function function_4c489c31(attacker) {
@@ -1397,7 +1396,7 @@ function function_4c489c31(attacker) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd2f9e0e4, Offset: 0x5758
 // Size: 0x24e
 function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
@@ -1433,7 +1432,7 @@ function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8cdcd3fa, Offset: 0x59b0
 // Size: 0x64
 function function_ee30c07(var_832f96cf) {
@@ -1445,7 +1444,7 @@ function function_ee30c07(var_832f96cf) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8bda4ea3, Offset: 0x5a20
 // Size: 0x2c
 function function_fe2419fc() {
@@ -1454,7 +1453,7 @@ function function_fe2419fc() {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbea1225f, Offset: 0x5a58
 // Size: 0x26c
 function function_53f176ae(eventstruct) {
@@ -1511,7 +1510,7 @@ function function_53f176ae(eventstruct) {
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x83e02428, Offset: 0x5cd0
 // Size: 0x168
 function function_fb451f53() {
@@ -1531,12 +1530,12 @@ function function_fb451f53() {
         }
         bhtnactionstartevent(self, str_notify);
         self notify(#"bhtn_action_notify", {#action:str_notify});
-        wait(randomfloatrange(min_wait, max_wait));
+        wait randomfloatrange(min_wait, max_wait);
     }
 }
 
 // Namespace namespace_8681f0e2/mechz
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb72c83b, Offset: 0x5e40
 // Size: 0x24
 function function_9d12d0d2(*params) {

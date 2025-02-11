@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_e7b06f1b;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_e7b06f1b/namespace_e7b06f1b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x130
 // Size: 0x4
 function private preinit() {
@@ -40,7 +39,7 @@ function function_f1d9de41(player) {
 }
 
 // Namespace namespace_e7b06f1b/namespace_e7b06f1b
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9c15fcf0, Offset: 0x170
 // Size: 0x6c
 function function_386c20ef(player) {

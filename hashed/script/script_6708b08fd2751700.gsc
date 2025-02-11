@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\objective_manager.gsc;
 #using script_2618e0f3e5e11649;
 #using script_3411bb48d41bd3b;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\rat_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\rat_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\objective_manager;
 
 #namespace rat;
 
@@ -31,26 +30,26 @@
         init();
         level.rat.common.gethostplayer = &util::gethostplayer;
         level.rat.deathcount = 0;
-        addratscriptcmd("<unknown string>", &function_70f41194);
-        addratscriptcmd("<unknown string>", &function_31980089);
-        addratscriptcmd("<unknown string>", &function_1251949b);
-        addratscriptcmd("<unknown string>", &function_684893c8);
-        addratscriptcmd("<unknown string>", &function_7eabbc02);
-        addratscriptcmd("<unknown string>", &function_d50abf44);
-        addratscriptcmd("<unknown string>", &function_89684f6a);
-        addratscriptcmd("<unknown string>", &function_baeffaeb);
-        addratscriptcmd("<unknown string>", &function_63a39134);
-        addratscriptcmd("<unknown string>", &function_d19f7fe9);
-        addratscriptcmd("<unknown string>", &function_2bd96c6e);
-        addratscriptcmd("<unknown string>", &function_ee280019);
-        addratscriptcmd("<unknown string>", &function_40e4c9de);
-        addratscriptcmd("<unknown string>", &function_fea33619);
-        addratscriptcmd("<unknown string>", &function_163c296a);
-        addratscriptcmd("<unknown string>", &function_92891f6e);
-        addratscriptcmd("<unknown string>", &function_834d65f9);
-        addratscriptcmd("<unknown string>", &function_ad78fe8a);
-        addratscriptcmd("<unknown string>", &function_adb96ff1);
-        addratscriptcmd("<unknown string>", &function_a93cbd41);
+        addratscriptcmd("<dev string:x38>", &function_70f41194);
+        addratscriptcmd("<dev string:x55>", &function_31980089);
+        addratscriptcmd("<dev string:x67>", &function_1251949b);
+        addratscriptcmd("<dev string:x7c>", &function_684893c8);
+        addratscriptcmd("<dev string:x8f>", &function_7eabbc02);
+        addratscriptcmd("<dev string:x9d>", &function_d50abf44);
+        addratscriptcmd("<dev string:xb0>", &function_89684f6a);
+        addratscriptcmd("<dev string:xc7>", &function_baeffaeb);
+        addratscriptcmd("<dev string:xd8>", &function_63a39134);
+        addratscriptcmd("<dev string:xee>", &function_d19f7fe9);
+        addratscriptcmd("<dev string:x107>", &function_2bd96c6e);
+        addratscriptcmd("<dev string:x12a>", &function_ee280019);
+        addratscriptcmd("<dev string:x158>", &function_40e4c9de);
+        addratscriptcmd("<dev string:x17d>", &function_fea33619);
+        addratscriptcmd("<dev string:x19b>", &function_163c296a);
+        addratscriptcmd("<dev string:x1b3>", &function_92891f6e);
+        addratscriptcmd("<dev string:x1ca>", &function_834d65f9);
+        addratscriptcmd("<dev string:x1ee>", &function_ad78fe8a);
+        addratscriptcmd("<dev string:x20b>", &function_adb96ff1);
+        addratscriptcmd("<dev string:x222>", &function_a93cbd41);
         setdvar(#"rat_death_count", 0);
     }
 
@@ -78,7 +77,7 @@
                 if (getplayers().size <= remaining) {
                     break;
                 }
-                if (!isdefined(getplayers()[i].bot) || getplayers()[i].team == hostteam || getplayers()[i].team == "<unknown string>") {
+                if (!isdefined(getplayers()[i].bot) || getplayers()[i].team == hostteam || getplayers()[i].team == "<dev string:x246>") {
                     continue;
                 }
                 bot::remove_bot(getplayers()[i]);
@@ -128,7 +127,7 @@
         player = [[ level.rat.common.gethostplayer ]]();
         numitems = 1000;
         distance = 1000;
-        name = "<unknown string>";
+        name = "<dev string:x24e>";
         if (isdefined(params.var_1d978d3)) {
             numitems = int(params.var_1d978d3);
         }
@@ -140,15 +139,15 @@
         }
         items = item_world::function_2e3efdda(player.origin, undefined, numitems, distance);
         foreach (item in items) {
-            if (item.itementry.name == "<unknown string>") {
+            if (item.itementry.name == "<dev string:x252>") {
                 continue;
             }
             if (isdefined(params.handler)) {
-                if (params.handler != item.itementry.handler && params.handler != "<unknown string>") {
+                if (params.handler != item.itementry.handler && params.handler != "<dev string:x26a>") {
                     continue;
                 }
             }
-            if (name == "<unknown string>" || item.itementry.name == name) {
+            if (name == "<dev string:x24e>" || item.itementry.name == name) {
                 function_55e20e75(params._id, item.origin);
             }
         }
@@ -172,7 +171,7 @@
         direction = player getplayerangles();
         direction_vec = anglestoforward(direction);
         guy = undefined;
-        guy = namespace_85745671::function_9d3ad056("<unknown string>", player.origin, player.angles, "<unknown string>");
+        guy = namespace_85745671::function_9d3ad056("<dev string:x272>", player.origin, player.angles, "<dev string:x28b>");
     }
 
     // Namespace rat/namespace_7d3a1543
@@ -240,7 +239,7 @@
     // Size: 0x4c
     function function_163c296a(*params) {
         if (!isdefined(level.contentmanager.activeobjective)) {
-            return "<unknown string>";
+            return "<dev string:x24e>";
         }
         return level.contentmanager.activeobjective.content_script_name;
     }
@@ -251,7 +250,7 @@
     // Size: 0xa8
     function function_92891f6e(params) {
         var_4f7fa3d1 = 1;
-        if (params.success === "<unknown string>") {
+        if (params.success === "<dev string:x29c>") {
             var_4f7fa3d1 = 0;
         }
         if (!isdefined(level.contentmanager.activeobjective)) {
@@ -267,11 +266,11 @@
     // Checksum 0x47867250, Offset: 0xef0
     // Size: 0x184
     function function_834d65f9(params) {
-        if (!isdefined(level.contentmanager.activeobjective) || level.contentmanager.activeobjective.content_script_name != "<unknown string>") {
+        if (!isdefined(level.contentmanager.activeobjective) || level.contentmanager.activeobjective.content_script_name != "<dev string:x2a5>") {
             return;
         }
         var_4f7fa3d1 = 1;
-        if (params.success === "<unknown string>") {
+        if (params.success === "<dev string:x29c>") {
             var_4f7fa3d1 = 0;
         }
         instance = level.contentmanager.activeobjective;
@@ -312,17 +311,17 @@
     // Checksum 0xb0950ef0, Offset: 0x1160
     // Size: 0xe0
     function function_a93cbd41(params) {
-        if (!isdefined(level.contentmanager.activeobjective) || level.contentmanager.activeobjective.content_script_name != "<unknown string>") {
+        if (!isdefined(level.contentmanager.activeobjective) || level.contentmanager.activeobjective.content_script_name != "<dev string:x2b7>") {
             return;
         }
         var_4f7fa3d1 = 1;
-        if (params.success === "<unknown string>") {
+        if (params.success === "<dev string:x29c>") {
             var_4f7fa3d1 = 0;
         }
         instance = level.contentmanager.activeobjective;
         if (var_4f7fa3d1) {
         } else {
-            level notify(#"hash_681a588173f0b1d7");
+            level notify(#"timer_payload");
             objective_manager::stop_timer();
         }
         return instance.success;

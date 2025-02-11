@@ -1,37 +1,36 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using script_5f261a5d57de5f7c;
-#using script_3751b21462a54a7d;
-#using scripts\zm_common\trials\zm_trial_disable_buys.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using script_301f64a4090c381a;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm_ping.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
 #using script_1471eea5d2e60f83;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_301f64a4090c381a;
+#using script_3751b21462a54a7d;
+#using script_5f261a5d57de5f7c;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\trials\zm_trial_disable_buys;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_ping;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_blockers;
 
@@ -44,7 +43,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd18a83f3, Offset: 0xb58
 // Size: 0xb4
 function private preinit() {
@@ -59,7 +58,7 @@ function private preinit() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x170ce849, Offset: 0xc18
 // Size: 0xec
 function private postinit() {
@@ -77,7 +76,7 @@ function private postinit() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3aa8d353, Offset: 0xd10
 // Size: 0x170
 function function_ff88a016() {
@@ -103,7 +102,7 @@ function function_ff88a016() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbb13e5ae, Offset: 0xe88
 // Size: 0x90
 function function_7325d8d2() {
@@ -113,7 +112,7 @@ function function_7325d8d2() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7d1980b1, Offset: 0xf20
 // Size: 0x17c
 function init_blockers() {
@@ -132,7 +131,7 @@ function init_blockers() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x59c4a9c0, Offset: 0x10a8
 // Size: 0x17c
 function private function_ba58e1be(str_type) {
@@ -160,7 +159,7 @@ function private function_ba58e1be(str_type) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xab019192, Offset: 0x1230
 // Size: 0x1d0
 function private function_a5c8dce5(var_c282fd0f, str_type, params = undefined) {
@@ -188,7 +187,7 @@ function private function_a5c8dce5(var_c282fd0f, str_type, params = undefined) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3dd09319, Offset: 0x1408
 // Size: 0x258
 function private function_6747a910() {
@@ -207,7 +206,7 @@ function private function_6747a910() {
                 }
             }
             if (isdefined(n_delay)) {
-                wait(n_delay);
+                wait n_delay;
             }
         }
         foreach (id in var_e01b3fc7) {
@@ -223,7 +222,7 @@ function private function_6747a910() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5c60b036, Offset: 0x1668
 // Size: 0x50c
 function door_init() {
@@ -302,7 +301,7 @@ function door_init() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9d6ba7d, Offset: 0x1b80
 // Size: 0x1ec
 function door_classify(parent_trig) {
@@ -326,9 +325,9 @@ function door_classify(parent_trig) {
         }
         switch (self.script_string) {
         case #"anim":
-            assert(isdefined(self.script_animname), "tag_slot2_digi_9" + self.targetname);
-            assert(isdefined(level.scr_anim[self.script_animname]), "scoreEventZM" + self.script_animname);
-            assert(isdefined(level.var_6ecb5c15), "<unknown string>");
+            assert(isdefined(self.script_animname), "<dev string:x38>" + self.targetname);
+            assert(isdefined(level.scr_anim[self.script_animname]), "<dev string:x71>" + self.script_animname);
+            assert(isdefined(level.var_6ecb5c15), "<dev string:xb7>");
             break;
         }
     }
@@ -339,7 +338,7 @@ function door_classify(parent_trig) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb08aa2e9, Offset: 0x1d78
 // Size: 0x4b8
 function door_buy() {
@@ -421,7 +420,7 @@ function function_db84b4f4() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b3d1eb0, Offset: 0x2308
 // Size: 0x96
 function function_5989dd12(a_doors) {
@@ -432,7 +431,7 @@ function function_5989dd12(a_doors) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6ea67aa7, Offset: 0x23a8
 // Size: 0x46
 function force_open_door(e_activator) {
@@ -440,7 +439,7 @@ function force_open_door(e_activator) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ac592e5, Offset: 0x23f8
 // Size: 0x3c0
 function blocker_update_prompt_visibility() {
@@ -449,7 +448,7 @@ function blocker_update_prompt_visibility() {
         level.var_cef2e607[#"blocker_update_prompt_visibility"] = -1;
     }
     level.var_cef2e607[#"blocker_update_prompt_visibility"]++;
-    wait(float(function_60d95f53()) / 1000 * (level.var_cef2e607[#"blocker_update_prompt_visibility"] % int(0.25 / float(function_60d95f53()) / 1000) + 1));
+    wait float(function_60d95f53()) / 1000 * (level.var_cef2e607[#"blocker_update_prompt_visibility"] % int(0.25 / float(function_60d95f53()) / 1000) + 1);
     dist = 16384;
     while (true) {
         a_players = function_a1ef346b();
@@ -478,12 +477,12 @@ function blocker_update_prompt_visibility() {
                 a_players[i] globallogic::function_d96c031e();
             }
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a05ef91, Offset: 0x27c0
 // Size: 0xd2
 function door_delay() {
@@ -494,17 +493,17 @@ function door_delay() {
     for (i = 0; i < a_trigs.size; i++) {
         a_trigs[i] triggerenable(0);
     }
-    wait(self.script_int);
+    wait self.script_int;
     for (i = 0; i < self.script_int; i++) {
         /#
             iprintln(self.script_int - i);
         #/
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb881c2ec, Offset: 0x28a0
 // Size: 0xbdc
 function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
@@ -540,7 +539,7 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
         } else {
             n_delay = 5;
         }
-        wait(n_delay);
+        wait n_delay;
     }
     if (open || !is_true(quick)) {
         self notsolid();
@@ -557,7 +556,7 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
     if (self function_807c87e7()) {
         if (!open) {
             self util::delay(time, undefined, &self_disconnectpaths);
-            wait(0.1);
+            wait 0.1;
             self solid();
         } else if (open && self.script_noteworthy !== "model_clip" && is_true(level.var_bb6bf2e0)) {
             if (isdefined(n_delay)) {
@@ -599,7 +598,7 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
             }
             self function_747781ba();
         }
-        wait(randomfloat(0.15));
+        wait randomfloat(0.15);
         break;
     case #"move":
     case #"slide_apart":
@@ -615,16 +614,16 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
                 self thread disconnect_paths_when_done();
             }
         }
-        wait(randomfloat(0.15));
+        wait randomfloat(0.15);
         break;
     case #"anim":
         self [[ level.var_6ecb5c15 ]](self.script_animname);
         self thread door_solid_thread_anim();
-        wait(randomfloat(0.15));
+        wait randomfloat(0.15);
         break;
     case #"physics":
         self thread physics_launch_door(self);
-        wait(0.1);
+        wait 0.1;
         break;
     case #"zbarrier":
         self thread door_zbarrier_move();
@@ -646,18 +645,18 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
                     bomb showpart("tag_slot3_digi_" + var_16782a41);
                     bomb showpart("tag_slot4_digi_" + var_b30bc24e);
                     bomb showpart("tag_sign");
-                    wait(0.5);
+                    wait 0.5;
                     bomb hidepart("tag_sign");
-                    wait(0.5);
+                    wait 0.5;
                     timer -= 1;
                     /#
                         iprintlnbold(timer);
                     #/
                 }
             } else {
-                wait(5);
+                wait 5;
             }
-            bomb playsound(#"hash_1371389f48e55f05");
+            bomb playsound(#"exp_blocker");
             bomb delete();
             self function_c1342dc1();
         } else {
@@ -666,9 +665,9 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
                 break;
             }
             if (isdefined(self.var_f912ea8d)) {
-                wait(self.var_f912ea8d);
+                wait self.var_f912ea8d;
             } else {
-                wait(5);
+                wait 5;
             }
             if (isdefined(self.script_firefx)) {
                 playfx(level._effect[self.script_firefx], self.origin);
@@ -698,7 +697,7 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8bac02a8, Offset: 0x3488
 // Size: 0x384
 function function_e02a26f6() {
@@ -733,7 +732,7 @@ function function_e02a26f6() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47c2acae, Offset: 0x3818
 // Size: 0x160
 function function_c1342dc1() {
@@ -750,7 +749,7 @@ function function_c1342dc1() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x87ba98a4, Offset: 0x3980
 // Size: 0x12c
 function kill_trapped_zombies(trigger) {
@@ -765,12 +764,12 @@ function kill_trapped_zombies(trigger) {
         if (zombies[i] istouching(trigger)) {
             zombies[i].marked_for_recycle = 1;
             zombies[i] dodamage(zombies[i].health + 666, trigger.origin, self);
-            wait(randomfloat(0.15));
+            wait randomfloat(0.15);
             continue;
         }
         if (isdefined(level.custom_trapped_zombies)) {
             zombies[i] thread [[ level.custom_trapped_zombies ]]();
-            wait(randomfloat(0.15));
+            wait randomfloat(0.15);
         }
     }
 }
@@ -784,13 +783,13 @@ function any_player_touching(trigger) {
         if (player istouching(trigger)) {
             return true;
         }
-        wait(0.01);
+        wait 0.01;
     }
     return false;
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa4b6b3cf, Offset: 0x3b70
 // Size: 0x180
 function any_player_touching_any(trigger, more_triggers) {
@@ -812,7 +811,7 @@ function any_player_touching_any(trigger, more_triggers) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8bcdd334, Offset: 0x3cf8
 // Size: 0x178
 function any_zombie_touching_any(trigger, more_triggers) {
@@ -833,20 +832,20 @@ function any_zombie_touching_any(trigger, more_triggers) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf85ce924, Offset: 0x3e78
 // Size: 0x8e
 function wait_trigger_clear(trigger, more_triggers, end_on) {
     self endon(end_on);
     while (any_player_touching_any(trigger, more_triggers) || any_zombie_touching_any(trigger, more_triggers)) {
-        wait(1);
+        wait 1;
     }
-    println("<unknown string>");
+    println("<dev string:xf2>");
     self notify(#"trigger_clear");
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x118be869, Offset: 0x3f10
 // Size: 0xa0
 function waittill_door_trigger_clear_local_power_off(trigger, a_trigs) {
@@ -855,13 +854,13 @@ function waittill_door_trigger_clear_local_power_off(trigger, a_trigs) {
         if (is_true(self.local_power_on)) {
             self waittill(#"local_power_off");
         }
-        println("<unknown string>");
+        println("<dev string:x11a>");
         self wait_trigger_clear(trigger, a_trigs, "local_power_on");
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xad53735a, Offset: 0x3fb8
 // Size: 0xa0
 function waittill_door_trigger_clear_global_power_off(trigger, a_trigs) {
@@ -870,13 +869,13 @@ function waittill_door_trigger_clear_global_power_off(trigger, a_trigs) {
         if (is_true(self.power_on)) {
             self waittill(#"power_off");
         }
-        println("<unknown string>");
+        println("<dev string:x13e>");
         self wait_trigger_clear(trigger, a_trigs, "power_on");
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38f25ffa, Offset: 0x4060
 // Size: 0x1aa
 function waittill_door_can_close() {
@@ -912,7 +911,7 @@ function waittill_door_can_close() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4dc73e0a, Offset: 0x4218
 // Size: 0x5de
 function door_think() {
@@ -929,7 +928,7 @@ function door_think() {
                 self waittill(#"local_power_on");
             }
             if (!is_true(self._door_open)) {
-                println("<unknown string>");
+                println("<dev string:x163>");
                 self door_opened(n_cost, 1);
                 if (!isdefined(self.power_cost)) {
                     self.power_cost = 0;
@@ -940,15 +939,15 @@ function door_think() {
             if (is_true(level.local_doors_stay_open)) {
                 return;
             }
-            wait(3);
+            wait 3;
             self waittill_door_can_close();
             self door_block();
             if (is_true(self._door_open)) {
-                println("<unknown string>");
+                println("<dev string:x184>");
                 self door_opened(n_cost, 1);
             }
             self sethintstring(#"hash_671e980430950a22");
-            wait(3);
+            wait 3;
             continue;
         case #"electric_door":
             if (zm_custom::function_901b751c(#"zmpowerdoorstate") === 0) {
@@ -961,7 +960,7 @@ function door_think() {
                 level flag::wait_till(self.script_flag_wait);
             }
             if (!is_true(self._door_open)) {
-                println("<unknown string>");
+                println("<dev string:x1a5>");
                 self door_opened(n_cost, 1);
                 if (!isdefined(self.power_cost)) {
                     self.power_cost = 0;
@@ -973,15 +972,15 @@ function door_think() {
                 self flag::set("elec_trigger_can_remove");
                 return;
             }
-            wait(3);
+            wait 3;
             self waittill_door_can_close();
             self door_block();
             if (is_true(self._door_open)) {
-                println("<unknown string>");
+                println("<dev string:x1c7>");
                 self door_opened(n_cost, 1);
             }
             self thread function_dafd2e5a();
-            wait(3);
+            wait 3;
             continue;
         case #"electric_buyable_door":
             if (zm_custom::function_901b751c(#"zmpowerdoorstate") === 0) {
@@ -1032,7 +1031,7 @@ function self_and_flag_wait(msg) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0516974, Offset: 0x4870
 // Size: 0xa8
 function door_block() {
@@ -1046,7 +1045,7 @@ function door_block() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x17bfbea7, Offset: 0x4920
 // Size: 0x944
 function door_opened(cost, quick_close) {
@@ -1140,7 +1139,7 @@ function door_opened(cost, quick_close) {
         }
     }
     level.active_zone_names = zm_zonemgr::get_active_zone_names();
-    wait(1);
+    wait 1;
     self.door_is_moving = 0;
     foreach (trig in a_trigs) {
         if (isdefined(trig)) {
@@ -1157,7 +1156,7 @@ function door_opened(cost, quick_close) {
         return;
     }
     if (level flag::get("door_can_close")) {
-        wait(2);
+        wait 2;
         for (i = 0; i < a_trigs.size; i++) {
             a_trigs[i] triggerenable(1);
         }
@@ -1165,7 +1164,7 @@ function door_opened(cost, quick_close) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb3ed6967, Offset: 0x5270
 // Size: 0xe4
 function physics_launch_door(*door_trig) {
@@ -1175,12 +1174,12 @@ function physics_launch_door(*door_trig) {
     self moveto(self.origin + vec, 0.1);
     self waittill(#"movedone");
     self physicslaunch(self.origin, self.script_vector * 300);
-    wait(60);
+    wait 60;
     self delete();
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x74889e1d, Offset: 0x5360
 // Size: 0x4c
 function function_747781ba() {
@@ -1189,7 +1188,7 @@ function function_747781ba() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5fa0b7c6, Offset: 0x53b8
 // Size: 0xe8
 function door_solid_thread() {
@@ -1210,12 +1209,12 @@ function door_solid_thread() {
             self solid();
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb734b3a3, Offset: 0x54a8
 // Size: 0xe0
 function door_solid_thread_anim() {
@@ -1234,12 +1233,12 @@ function door_solid_thread_anim() {
             self solid();
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8cd99176, Offset: 0x5590
 // Size: 0x3c
 function disconnect_paths_when_done() {
@@ -1248,7 +1247,7 @@ function disconnect_paths_when_done() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x78741f6d, Offset: 0x55d8
 // Size: 0x1c
 function self_disconnectpaths() {
@@ -1256,7 +1255,7 @@ function self_disconnectpaths() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47d9929e, Offset: 0x5600
 // Size: 0x34c
 function debris_init() {
@@ -1297,7 +1296,7 @@ function debris_init() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x32af3dd6, Offset: 0x5958
 // Size: 0xf14
 function debris_think() {
@@ -1512,7 +1511,7 @@ function debris_think() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb8091a7c, Offset: 0x6878
 // Size: 0x9c
 function debris_zbarrier_move() {
@@ -1525,7 +1524,7 @@ function debris_zbarrier_move() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd1397d1e, Offset: 0x6920
 // Size: 0x54
 function door_zbarrier_move() {
@@ -1535,13 +1534,13 @@ function door_zbarrier_move() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x36b70f94, Offset: 0x6980
 // Size: 0x94
 function move_chunk(index, b_hide) {
     self setzbarrierpiecestate(index, "opening");
     while (self getzbarrierpiecestate(index) == "opening") {
-        wait(0.1);
+        wait 0.1;
     }
     self notify(#"movedone");
     if (b_hide) {
@@ -1550,7 +1549,7 @@ function move_chunk(index, b_hide) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x434615f8, Offset: 0x6a20
 // Size: 0x2fc
 function debris_move(struct) {
@@ -1568,7 +1567,7 @@ function debris_move(struct) {
                 angles = og_angles + (-5 + randomfloat(10), -5 + randomfloat(10), -5 + randomfloat(10));
                 time = randomfloatrange(0.1, 0.4);
                 self rotateto(angles, time);
-                wait(time - 0.05);
+                wait time - 0.05;
             }
         }
     }
@@ -1591,12 +1590,12 @@ function debris_move(struct) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9b6f77c2, Offset: 0x6d28
 // Size: 0xb2
 function function_a9bf8f6c(t_door) {
     while (!isdefined(level.is_forever_solo_game)) {
-        wait(0.1);
+        wait 0.1;
     }
     cost = 1000;
     if (isdefined(t_door.zombie_cost)) {
@@ -1611,7 +1610,7 @@ function function_a9bf8f6c(t_door) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x73d7e317, Offset: 0x6de8
 // Size: 0x1c
 function blocker_disconnect_paths(*start_node, *end_node, *two_way) {
@@ -1619,7 +1618,7 @@ function blocker_disconnect_paths(*start_node, *end_node, *two_way) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa5ef7801, Offset: 0x6e10
 // Size: 0x1c
 function blocker_connect_paths(*start_node, *end_node, *two_way) {
@@ -1627,7 +1626,7 @@ function blocker_connect_paths(*start_node, *end_node, *two_way) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x382c0704, Offset: 0x6e38
 // Size: 0x844
 function blocker_init() {
@@ -1664,7 +1663,7 @@ function blocker_init() {
                     if (targets[j].script_noteworthy == "2" || targets[j].script_noteworthy == "3" || targets[j].script_noteworthy == "4" || targets[j].script_noteworthy == "5" || targets[j].script_noteworthy == "6") {
                         targets[j] hide();
                         /#
-                            iprintlnbold("<unknown string>");
+                            iprintlnbold("<dev string:x1e9>");
                         #/
                     }
                 }
@@ -1735,7 +1734,7 @@ function blocker_init() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x33741177, Offset: 0x7688
 // Size: 0x30
 function should_delete_zbarriers() {
@@ -1743,7 +1742,7 @@ function should_delete_zbarriers() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xade73eca, Offset: 0x76c0
 // Size: 0x266
 function function_22642075() {
@@ -1777,7 +1776,7 @@ function function_22642075() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x23a2edc9, Offset: 0x7930
 // Size: 0x11a
 function destructible_glass_barricade(unbroken_section, node) {
@@ -1794,7 +1793,7 @@ function destructible_glass_barricade(unbroken_section, node) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cabe21f, Offset: 0x7a58
 // Size: 0x334
 function blocker_attack_spots() {
@@ -1841,7 +1840,7 @@ function blocker_attack_spots() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x661cab5f, Offset: 0x7d98
 // Size: 0x40
 function blocker_choke() {
@@ -1854,7 +1853,7 @@ function blocker_choke() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x327291b7, Offset: 0x7de0
 // Size: 0x110
 function blocker_think() {
@@ -1867,7 +1866,7 @@ function blocker_think() {
         use_choke = 1;
     }
     while (true) {
-        wait(0.5);
+        wait 0.5;
         if (use_choke) {
             if (level._blocker_choke > 3) {
                 waitframe(1);
@@ -1885,7 +1884,7 @@ function blocker_think() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x8d2ed3e8, Offset: 0x7ef8
 // Size: 0x14e
 function player_fails_blocker_repair_trigger_preamble(player, players, trigger, hold_required) {
@@ -1917,29 +1916,29 @@ function player_fails_blocker_repair_trigger_preamble(player, players, trigger, 
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc5e220ce, Offset: 0x8050
 // Size: 0x4a
 function has_blocker_affecting_perk() {
     has_perk = undefined;
     if (isdefined(self) && self namespace_e86ffa8::function_efb6dedf(4)) {
-        has_perk = #"hash_5930cf0eb070e35a";
+        has_perk = #"talent_speedcola";
     }
     return has_perk;
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb434d09c, Offset: 0x80a8
 // Size: 0x2c
 function do_post_chunk_repair_delay(*has_perk) {
     if (!self util::script_delay()) {
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2946aebb, Offset: 0x80e0
 // Size: 0x2be
 function handle_post_board_repair_rewards(cost, *zbarrier) {
@@ -1972,7 +1971,7 @@ function handle_post_board_repair_rewards(cost, *zbarrier) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x590817e, Offset: 0x83a8
 // Size: 0x58
 function blocker_unitrigger_think() {
@@ -1983,7 +1982,7 @@ function blocker_unitrigger_think() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x377f5a15, Offset: 0x8408
 // Size: 0xb06
 function blocker_trigger_think() {
@@ -1991,7 +1990,7 @@ function blocker_trigger_think() {
     if (is_true(level.no_board_repair)) {
         return;
     }
-    println("<unknown string>");
+    println("<dev string:x1f3>");
     level endon(#"stop_blocker_think");
     cost = 10;
     if (isdefined(self.zombie_cost)) {
@@ -2140,7 +2139,7 @@ function blocker_trigger_think() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef8d9d0b, Offset: 0x8f18
 // Size: 0x6c
 function increment_window_repaired(*s_barrier) {
@@ -2150,7 +2149,7 @@ function increment_window_repaired(*s_barrier) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x705617dd, Offset: 0x8f90
 // Size: 0x78
 function blockertrigger_update_prompt(player) {
@@ -2161,7 +2160,7 @@ function blockertrigger_update_prompt(player) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfd59046f, Offset: 0x9010
 // Size: 0x5e
 function blockerstub_update_prompt(player) {
@@ -2182,7 +2181,7 @@ function blockerstub_update_prompt(player) {
 // Checksum 0xaf547842, Offset: 0x9078
 // Size: 0x24
 function random_destroyed_chunk_show() {
-    wait(0.5);
+    wait 0.5;
     self show();
 }
 
@@ -2202,7 +2201,7 @@ function door_repaired_rumble_n_sound() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7e53765d, Offset: 0x9150
 // Size: 0x18
 function board_completion() {
@@ -2210,7 +2209,7 @@ function board_completion() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x895596cc, Offset: 0x9170
 // Size: 0x54
 function trigger_delete_on_repair() {
@@ -2222,7 +2221,7 @@ function trigger_delete_on_repair() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2b7354a6, Offset: 0x91d0
 // Size: 0x1a
 function rebuild_barrier_reward_reset() {
@@ -2231,7 +2230,7 @@ function rebuild_barrier_reward_reset() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x515e3cf3, Offset: 0x91f8
 // Size: 0xd98
 function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
@@ -2279,9 +2278,9 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             } else {
                 ent rotatepitch(90, time, time * 0.5);
             }
-            wait(time);
+            wait time;
             destroy_immediately hide();
-            wait(0.1);
+            wait 0.1;
             ent delete();
         } else {
             ent = spawn("script_origin", destroy_immediately.origin);
@@ -2307,9 +2306,9 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             } else {
                 ent rotatepitch(90, time, time * 0.5);
             }
-            wait(time);
+            wait time;
             destroy_immediately hide();
-            wait(0.1);
+            wait 0.1;
             ent delete();
         }
         destroy_immediately update_states("destroyed");
@@ -2344,14 +2343,14 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
         } else {
             ent rotatepitch(90, time, time * 0.5);
         }
-        wait(time);
+        wait time;
         if (isdefined(destroy_immediately.unbroken_section)) {
             if (isdefined(destroy_immediately.material) && destroy_immediately.material == "metal") {
                 destroy_immediately.unbroken_section zm_utility::self_delete();
             }
         }
         destroy_immediately hide();
-        wait(0.1);
+        wait 0.1;
         ent delete();
         destroy_immediately update_states("destroyed");
         destroy_immediately notify(#"destroyed");
@@ -2375,7 +2374,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             } else {
                 ent rotatepitch(90, time, time * 0.5);
             }
-            wait(time);
+            wait time;
             destroy_immediately hide();
             ent delete();
             destroy_immediately update_states("destroyed");
@@ -2400,7 +2399,7 @@ function remove_chunk_rotate_grate(chunk) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x26ef7b1f, Offset: 0xa018
 // Size: 0x342
 function zombie_boardtear_audio_offset(chunk) {
@@ -2409,14 +2408,14 @@ function zombie_boardtear_audio_offset(chunk) {
     }
     if (isdefined(chunk.material) && chunk.material == "glass" && chunk.already_broken == 0) {
         chunk playsound(#"zmb_break_glass_barrier");
-        wait(randomfloatrange(0.3, 0.6));
+        wait randomfloatrange(0.3, 0.6);
         chunk playsound(#"zmb_break_glass_barrier");
         chunk.already_broken = 1;
         return;
     }
     if (isdefined(chunk.material) && chunk.material == "metal" && chunk.already_broken == 0) {
         chunk playsound(#"grab_metal_bar");
-        wait(randomfloatrange(0.3, 0.6));
+        wait randomfloatrange(0.3, 0.6);
         chunk playsound(#"break_metal_bar");
         chunk.already_broken = 1;
         return;
@@ -2424,7 +2423,7 @@ function zombie_boardtear_audio_offset(chunk) {
     if (isdefined(chunk.material) && chunk.material == "rock") {
         if (!is_true(level.use_clientside_rock_tearin_fx)) {
             chunk playsound(#"zmb_break_rock_barrier");
-            wait(randomfloatrange(0.3, 0.6));
+            wait randomfloatrange(0.3, 0.6);
             chunk playsound(#"zmb_break_rock_barrier");
         }
         chunk.already_broken = 1;
@@ -2438,21 +2437,21 @@ function zombie_boardtear_audio_offset(chunk) {
     }
     if (!is_true(level.use_clientside_board_fx)) {
         chunk zm_utility::play_sound_on_ent("break_barrier_piece");
-        wait(randomfloatrange(0.3, 0.6));
+        wait randomfloatrange(0.3, 0.6);
         chunk zm_utility::play_sound_on_ent("break_barrier_piece");
     }
     chunk.already_broken = 1;
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc229d604, Offset: 0xa368
 // Size: 0xac
 function zombie_bartear_audio_offset(chunk) {
     chunk zm_utility::play_sound_on_ent("grab_metal_bar");
-    wait(randomfloatrange(0.3, 0.6));
+    wait randomfloatrange(0.3, 0.6);
     chunk zm_utility::play_sound_on_ent("break_metal_bar");
-    wait(randomfloatrange(1, 1.3));
+    wait randomfloatrange(1, 1.3);
     chunk zm_utility::play_sound_on_ent("drop_metal_bar");
 }
 
@@ -2468,7 +2467,7 @@ function ensure_chunk_is_back_to_origin(chunk) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa23c58da, Offset: 0xa480
 // Size: 0x224
 function replace_chunk(barrier, chunk, has_perk, via_powerup = 0, player) {
@@ -2487,20 +2486,20 @@ function replace_chunk(barrier, chunk, has_perk, via_powerup = 0, player) {
     barrier.zbarrier zbarrierpieceusedefaultmodel(chunk);
     barrier.zbarrier.chunk_health[chunk] = 0;
     scalar = 1;
-    if (has_perk === #"hash_5930cf0eb070e35a") {
+    if (has_perk === #"talent_speedcola") {
         scalar = 0.31;
     }
     barrier.zbarrier showzbarrierpiece(chunk);
     barrier.zbarrier setzbarrierpiecestate(chunk, "closing", scalar);
     waitduration = barrier.zbarrier getzbarrierpieceanimlengthforstate(chunk, "closing", scalar);
-    wait(waitduration);
+    wait waitduration;
     if (isplayer(player)) {
         player playrumbleonentity(#"zm_interact_rumble");
     }
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xabaedd1f, Offset: 0xa6b0
 // Size: 0x17c
 function open_zbarrier(barrier, var_56646e12 = 0) {
@@ -2591,7 +2590,7 @@ function zombie_boardtear_audio_plus_fx_offset_repair_horizontal(chunk) {
             chunk clientfield::set("tearin_rock_fx", 0);
         } else {
             earthquake(randomfloatrange(0.3, 0.4), randomfloatrange(0.2, 0.4), chunk.origin, 150);
-            wait(randomfloatrange(0.3, 0.6));
+            wait randomfloatrange(0.3, 0.6);
             chunk zm_utility::play_sound_on_ent("break_barrier_piece");
         }
         return;
@@ -2601,7 +2600,7 @@ function zombie_boardtear_audio_plus_fx_offset_repair_horizontal(chunk) {
         return;
     }
     earthquake(randomfloatrange(0.3, 0.4), randomfloatrange(0.2, 0.4), chunk.origin, 150);
-    wait(randomfloatrange(0.3, 0.6));
+    wait randomfloatrange(0.3, 0.6);
     chunk zm_utility::play_sound_on_ent("break_barrier_piece");
 }
 
@@ -2615,7 +2614,7 @@ function zombie_boardtear_audio_plus_fx_offset_repair_verticle(chunk) {
             chunk clientfield::set("tearin_rock_fx", 0);
         } else {
             earthquake(randomfloatrange(0.3, 0.4), randomfloatrange(0.2, 0.4), chunk.origin, 150);
-            wait(randomfloatrange(0.3, 0.6));
+            wait randomfloatrange(0.3, 0.6);
             chunk zm_utility::play_sound_on_ent("break_barrier_piece");
         }
         return;
@@ -2625,7 +2624,7 @@ function zombie_boardtear_audio_plus_fx_offset_repair_verticle(chunk) {
         return;
     }
     earthquake(randomfloatrange(0.3, 0.4), randomfloatrange(0.2, 0.4), chunk.origin, 150);
-    wait(randomfloatrange(0.3, 0.6));
+    wait randomfloatrange(0.3, 0.6);
     chunk zm_utility::play_sound_on_ent("break_barrier_piece");
 }
 
@@ -2639,27 +2638,27 @@ function zombie_gratetear_audio_plus_fx_offset_repair_horizontal(chunk) {
     switch (randomint(9)) {
     case 0:
         playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin + (-30, 0, 0));
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfx(level._effect[#"fx_zombie_bar_break_lite"], chunk.origin + (-30, 0, 0));
         break;
     case 1:
         playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin + (-30, 0, 0));
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin + (-30, 0, 0));
         break;
     case 2:
         playfx(level._effect[#"fx_zombie_bar_break_lite"], chunk.origin + (-30, 0, 0));
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin + (-30, 0, 0));
         break;
     case 3:
         playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin + (-30, 0, 0));
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfx(level._effect[#"fx_zombie_bar_break_lite"], chunk.origin + (-30, 0, 0));
         break;
     case 4:
         playfx(level._effect[#"fx_zombie_bar_break_lite"], chunk.origin + (-30, 0, 0));
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfx(level._effect[#"fx_zombie_bar_break_lite"], chunk.origin + (-30, 0, 0));
         break;
     case 5:
@@ -2687,27 +2686,27 @@ function zombie_bartear_audio_plus_fx_offset_repair_horizontal(chunk) {
     switch (randomint(9)) {
     case 0:
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_left");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_right");
         break;
     case 1:
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_left");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_right");
         break;
     case 2:
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_left");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_right");
         break;
     case 3:
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_left");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_right");
         break;
     case 4:
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_left");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_right");
         break;
     case 5:
@@ -2735,27 +2734,27 @@ function zombie_bartear_audio_plus_fx_offset_repair_verticle(chunk) {
     switch (randomint(9)) {
     case 0:
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_top");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_bottom");
         break;
     case 1:
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_top");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_bottom");
         break;
     case 2:
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_top");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_bottom");
         break;
     case 3:
         playfxontag(level._effect[#"fx_zombie_bar_break"], chunk, "Tag_fx_top");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_bottom");
         break;
     case 4:
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_top");
-        wait(randomfloatrange(0, 0.3));
+        wait randomfloatrange(0, 0.3);
         playfxontag(level._effect[#"fx_zombie_bar_break_lite"], chunk, "Tag_fx_bottom");
         break;
     case 5:
@@ -2774,12 +2773,12 @@ function zombie_bartear_audio_plus_fx_offset_repair_verticle(chunk) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a3a24a7, Offset: 0xbfd0
 // Size: 0x19c
 function flag_blocker() {
     if (!isdefined(self.script_flag_wait)) {
-        assertmsg("<unknown string>" + self.origin + "<unknown string>");
+        assertmsg("<dev string:x21b>" + self.origin + "<dev string:x22f>");
         return;
     }
     if (!isdefined(level.flag[self.script_flag_wait])) {
@@ -2801,11 +2800,11 @@ function flag_blocker() {
         self triggerenable(0);
         return;
     }
-    assertmsg("<unknown string>" + self.origin + "<unknown string>" + type + "<unknown string>");
+    assertmsg("<dev string:x263>" + self.origin + "<dev string:x277>" + type + "<dev string:x287>");
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49143d52, Offset: 0xc178
 // Size: 0x32
 function update_states(states) {
@@ -2814,7 +2813,7 @@ function update_states(states) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xead80600, Offset: 0xc1b8
 // Size: 0x172
 function quantum_bomb_open_nearest_door_validation(position) {
@@ -2841,7 +2840,7 @@ function quantum_bomb_open_nearest_door_validation(position) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7ffdd6fa, Offset: 0xc338
 // Size: 0x1ea
 function quantum_bomb_open_nearest_door_result(position) {
@@ -2873,7 +2872,7 @@ function quantum_bomb_open_nearest_door_result(position) {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5e81fd9, Offset: 0xc530
 // Size: 0xa4
 function function_dafd2e5a() {
@@ -2890,7 +2889,7 @@ function function_dafd2e5a() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3233c796, Offset: 0xc5e0
 // Size: 0x4e
 function function_807c87e7() {
@@ -2901,7 +2900,7 @@ function function_807c87e7() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfad05703, Offset: 0xc638
 // Size: 0x2e6
 function function_53117870() {
@@ -2913,9 +2912,9 @@ function function_53117870() {
         if (is_true(door.var_5d16ec51)) {
             ent = door;
             if (isdefined(door.target)) {
-                var_da3e7018 = struct::get(door.target, "targetname");
-                if (var_da3e7018.script_noteworthy === "ping_objective_ent") {
-                    ent = var_da3e7018;
+                linked_struct = struct::get(door.target, "targetname");
+                if (linked_struct.script_noteworthy === "ping_objective_ent") {
+                    ent = linked_struct;
                 }
             }
             array::add(var_a0878328, ent, 0);
@@ -2934,7 +2933,7 @@ function function_53117870() {
             return [door];
         }
     }
-    println("<unknown string>" + self.script_flag);
+    println("<dev string:x29e>" + self.script_flag);
     return undefined;
 }
 

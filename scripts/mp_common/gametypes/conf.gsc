@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using script_43f7c47906da34c7;
-#using scripts\mp_common\gametypes\spawning.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\hostmigration.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
+#using script_43f7c47906da34c7;
+#using script_44b0b8420eabacad;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\hostmigration;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\spawning;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace conf;
 

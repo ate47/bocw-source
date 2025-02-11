@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
 
 #namespace bot_animation;
 
 // Namespace bot_animation/bot_animation
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xae2fbafa, Offset: 0xb0
 // Size: 0x11c
 function play_animation(var_f6550bae) {
@@ -21,7 +20,7 @@ function play_animation(var_f6550bae) {
 }
 
 // Namespace bot_animation/bot_animation
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x72a14811, Offset: 0x1d8
 // Size: 0x1dc
 function private function_33f98f4(animation, mocomp, blendout) {

@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5f261a5d57de5f7c;
 #using script_3751b21462a54a7d;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_5f261a5d57de5f7c;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_perk_staminup;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7fda37cc, Offset: 0x228
 // Size: 0x14
 function private preinit() {
@@ -31,20 +30,20 @@ function private preinit() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x58116169, Offset: 0x248
 // Size: 0x15c
 function enable_staminup_perk_for_level() {
-    zm_perks::register_perk_basic_info(#"hash_602a1b6107105f07", #"perk_staminup", 2000, #"zombie/perk_marathon", getweapon("zombie_perk_bottle_marathon"), undefined, #"zmperksstaminup");
-    zm_perks::register_perk_precache_func(#"hash_602a1b6107105f07", &staminup_precache);
-    zm_perks::register_perk_clientfields(#"hash_602a1b6107105f07", &staminup_register_clientfield, &staminup_set_clientfield);
-    zm_perks::register_perk_machine(#"hash_602a1b6107105f07", &staminup_perk_machine_setup);
-    zm_perks::register_perk_host_migration_params(#"hash_602a1b6107105f07", "vending_marathon", "marathon_light");
+    zm_perks::register_perk_basic_info(#"talent_staminup", #"perk_staminup", 2000, #"zombie/perk_marathon", getweapon("zombie_perk_bottle_marathon"), undefined, #"zmperksstaminup");
+    zm_perks::register_perk_precache_func(#"talent_staminup", &staminup_precache);
+    zm_perks::register_perk_clientfields(#"talent_staminup", &staminup_register_clientfield, &staminup_set_clientfield);
+    zm_perks::register_perk_machine(#"talent_staminup", &staminup_perk_machine_setup);
+    zm_perks::register_perk_host_migration_params(#"talent_staminup", "vending_marathon", "marathon_light");
     zm_perks::register_perk_damage_override_func(&function_dae4e0ad);
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9b355245, Offset: 0x3b0
 // Size: 0xf6
 function staminup_precache() {
@@ -53,14 +52,14 @@ function staminup_precache() {
         return;
     }
     level._effect[#"marathon_light"] = "zombie/fx_perk_staminup_ndu";
-    level.machine_assets[#"hash_602a1b6107105f07"] = spawnstruct();
-    level.machine_assets[#"hash_602a1b6107105f07"].weapon = getweapon("zombie_perk_bottle_marathon");
-    level.machine_assets[#"hash_602a1b6107105f07"].off_model = "p9_sur_machine_staminup_off";
-    level.machine_assets[#"hash_602a1b6107105f07"].on_model = "p9_sur_machine_staminup";
+    level.machine_assets[#"talent_staminup"] = spawnstruct();
+    level.machine_assets[#"talent_staminup"].weapon = getweapon("zombie_perk_bottle_marathon");
+    level.machine_assets[#"talent_staminup"].off_model = "p9_sur_machine_staminup_off";
+    level.machine_assets[#"talent_staminup"].on_model = "p9_sur_machine_staminup";
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x4b0
 // Size: 0x4
 function staminup_register_clientfield() {
@@ -68,7 +67,7 @@ function staminup_register_clientfield() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbda216d3, Offset: 0x4c0
 // Size: 0xc
 function staminup_set_clientfield(*state) {
@@ -76,7 +75,7 @@ function staminup_set_clientfield(*state) {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x80f254c4, Offset: 0x4d8
 // Size: 0x9a
 function staminup_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -92,7 +91,7 @@ function staminup_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *c
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0xaa67c31a, Offset: 0x580
 // Size: 0x84
 function function_dae4e0ad(*einflictor, *eattacker, *idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

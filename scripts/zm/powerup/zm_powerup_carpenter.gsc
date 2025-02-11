@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_blockers.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_blockers;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_carpenter;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x38571a92, Offset: 0x1e0
 // Size: 0x8c
 function private preinit() {
@@ -34,7 +33,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1e6411d9, Offset: 0x278
 // Size: 0x298
 function grab_carpenter(e_player) {
@@ -91,7 +90,7 @@ function get_closest_window_repair(windows, origin) {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x359ad9f6, Offset: 0x630
 // Size: 0x532
 function start_carpenter(var_264cf1f9, var_ea1d8f06 = 1) {
@@ -166,7 +165,7 @@ function start_carpenter(var_264cf1f9, var_ea1d8f06 = 1) {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55945e42, Offset: 0xb70
 // Size: 0x12a
 function get_near_boards(windows) {
@@ -194,7 +193,7 @@ function get_near_boards(windows) {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x86672b8f, Offset: 0xca8
 // Size: 0x12a
 function get_far_boards(windows) {
@@ -222,7 +221,7 @@ function get_far_boards(windows) {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a74545f, Offset: 0xde0
 // Size: 0x224
 function repair_far_boards(barriers) {
@@ -258,7 +257,7 @@ function repair_far_boards(barriers) {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4e9ae3bf, Offset: 0x1010
 // Size: 0x42
 function func_should_drop_carpenter() {
@@ -269,7 +268,7 @@ function func_should_drop_carpenter() {
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x82041a4, Offset: 0x1060
 // Size: 0x88
 function get_num_window_destroyed() {

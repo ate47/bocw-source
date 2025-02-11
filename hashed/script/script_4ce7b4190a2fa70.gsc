@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace sr_objective_reward_menu;
 
@@ -102,7 +101,7 @@ class class_51a06b68 : cluielem {
             player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
     }
 
 }

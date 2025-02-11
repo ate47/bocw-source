@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace emp;
 
@@ -41,7 +40,7 @@ function monitor_emp_killstreaks() {
                 update_distance_to_closest_emp(localclientnum, distance(local_player.origin, closest_enemy_emp.origin));
             }
         }
-        wait(has_at_least_one_active_enemy_turret ? 0.1 : 0.7);
+        wait has_at_least_one_active_enemy_turret ? 0.1 : 0.7;
     }
 }
 
@@ -73,7 +72,7 @@ function update_distance_to_closest_emp(localclientnum, new_value) {
     if (!isdefined(localclientnum)) {
         return;
     }
-    distance_to_closest_enemy_emp_ui_model = getuimodel(function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d"), "distanceToClosestEnemyEmpKillstreak");
+    distance_to_closest_enemy_emp_ui_model = getuimodel(function_1df4c3b0(localclientnum, #"hud_items"), "distanceToClosestEnemyEmpKillstreak");
     if (isdefined(distance_to_closest_enemy_emp_ui_model)) {
         setuimodelvalue(distance_to_closest_enemy_emp_ui_model, new_value);
     }
@@ -133,13 +132,13 @@ function emp_turret_deploy(localclientnum) {
     self useanimtree("generic");
     self setanimrestart(#"o_turret_emp_core_deploy", 1, 0, 1);
     length = getanimlength(#"o_turret_emp_core_deploy");
-    wait(length * 0.75);
+    wait length * 0.75;
     self useanimtree("generic");
     self setanim(#"o_turret_emp_core_spin", 1);
     params = getscriptbundle("killstreak_bundle");
     self.fxhandle = util::playfxontag(localclientnum, params.var_98fba0f7, self, "tag_fx");
     self thread cleanup_fx_on_shutdown(localclientnum, self.fxhandle);
-    wait(length * 0.25);
+    wait length * 0.25;
     self setanim(#"o_turret_emp_core_deploy", 0);
 }
 

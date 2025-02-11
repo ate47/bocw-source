@@ -1,54 +1,53 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_340a2e805e35f7a2;
-#using script_336275a0ba841d18;
-#using scripts\zm\powerup\zm_powerup_free_perk.gsc;
-#using scripts\zm\powerup\zm_powerup_hero_weapon_power.gsc;
-#using scripts\zm\powerup\zm_powerup_small_ammo.gsc;
-#using scripts\zm\powerup\zm_powerup_full_ammo.gsc;
-#using scripts\zm\powerup\zm_powerup_insta_kill.gsc;
-#using script_4d1e366b77f0b4b;
-#using script_35b8a6927c851193;
+#using script_165beea08a63a243;
+#using script_17514fc41e89c54a;
 #using script_20dc0f45753888c7;
-#using script_3e57cc1a9084fdd6;
+#using script_335d0650ed05d36d;
+#using script_336275a0ba841d18;
+#using script_340a2e805e35f7a2;
 #using script_3411bb48d41bd3b;
 #using script_34ab99a4ca1a43d;
+#using script_35b8a6927c851193;
+#using script_3e196d275a6fb180;
+#using script_3e57cc1a9084fdd6;
+#using script_44b0b8420eabacad;
+#using script_4d04c61f130f8ab1;
+#using script_4d1e366b77f0b4b;
 #using script_4e521006b6636566;
-#using script_17514fc41e89c54a;
 #using script_5544f0d56caa6b36;
 #using script_5683260b7a7b1fa3;
-#using script_4d04c61f130f8ab1;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_intel.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_cleanup_mgr.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
-#using scripts\zm_common\gametypes\globallogic_player.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\zm_common\zm_fasttravel.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
-#using script_335d0650ed05d36d;
-#using script_3e196d275a6fb180;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using script_165beea08a63a243;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\territory_util;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm\powerup\zm_powerup_free_perk;
+#using scripts\zm\powerup\zm_powerup_full_ammo;
+#using scripts\zm\powerup\zm_powerup_hero_weapon_power;
+#using scripts\zm\powerup\zm_powerup_insta_kill;
+#using scripts\zm\powerup\zm_powerup_small_ammo;
+#using scripts\zm_common\gametypes\globallogic_player;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_cleanup_mgr;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_fasttravel;
+#using scripts\zm_common\zm_intel;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zonslaught;
 
@@ -61,7 +60,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.mapbounds = {#center:(0, 0, 0)};
     level.var_2f5a329e = 1;
     spawning::addsupportedspawnpointtype("tdm");
-    println("<unknown string>");
+    println("<dev string:x38>");
     level.dog_round_count = 0;
     changeadvertisedstatus(0);
     clientfield::register("scriptmover", "" + #"hash_56a6be021662c82e", 1, 2, "int");
@@ -210,13 +209,13 @@ function function_d2211917() {
             if (isalive(ai) && ai istouching(self)) {
                 var_f2174bdd = getclosestpointonnavmesh(level.var_df7b46d1.origin + (0, 0, 8), 128, 64);
                 var_f2174bdd = isdefined(var_f2174bdd) ? var_f2174bdd : level.var_df7b46d1.origin + (0, 0, 8);
-                playfx(level._effect[#"hash_7a06e7dd7e64b880"], ai.origin);
-                playfx(level._effect[#"hash_7a06e7dd7e64b880"], var_f2174bdd);
+                playfx(level._effect[#"boss_appear"], ai.origin);
+                playfx(level._effect[#"boss_appear"], var_f2174bdd);
                 ai forceteleport(var_f2174bdd, ai.angles);
             }
             waitframe(1);
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -399,7 +398,7 @@ function function_acafdd66() {
     while (true) {
         self waittill(#"bad_path");
         self.var_4fe4e626 = 1;
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -722,7 +721,7 @@ function function_e88957df(var_a0168ed5 = 0) {
         }
     }
     if (isdefined(var_7c02f666) && var_7c02f666 >= 7) {
-        self zm_utility::function_659819fa(#"hash_3c8fbebec2f463f5");
+        self zm_utility::give_achievement(#"hash_3c8fbebec2f463f5");
     }
     if (var_9b7bd0e8 === 3 && !is_true(self.var_7ba8b439)) {
         self.var_7ba8b439 = 1;
@@ -807,7 +806,7 @@ function function_e88957df(var_a0168ed5 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_2509e6ed81b9096b", undefined, 1);
                 break;
             default:
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x60>");
                 return;
             }
         }
@@ -896,7 +895,7 @@ function function_e88957df(var_a0168ed5 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_1c907a3cbd04a346", undefined, 1);
                 break;
             default:
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x60>");
                 return;
             }
         }
@@ -915,7 +914,7 @@ function function_e88957df(var_a0168ed5 = 0) {
             self zm_stats::increment_global_stat(#"hash_926b4857266e7a2");
             var_d9070a37 = self zm_stats::get_global_stat(#"hash_926b4857266e7a2");
             if (isdefined(var_d9070a37) && var_d9070a37 >= 7) {
-                self zm_utility::function_659819fa(#"hash_6703984223a2809c");
+                self zm_utility::give_achievement(#"hash_6703984223a2809c");
             }
         }
         if (is_true(var_77acb6b1)) {
@@ -990,7 +989,7 @@ function function_e88957df(var_a0168ed5 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_41333e39d398c7e1", undefined, 1);
                 break;
             default:
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x60>");
                 return;
             }
         }
@@ -1056,7 +1055,7 @@ function function_82ca1565(spawnpoint, gametype) {
     case #"hash_42f07692f7d48364":
         return is_true(spawnpoint.var_3d72e6da);
     default:
-        assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);
+        assertmsg("<dev string:x7d>" + gametype + "<dev string:x8c>" + spawnpoint.origin[0] + "<dev string:xb8>" + spawnpoint.origin[1] + "<dev string:xc0>" + spawnpoint.origin[2]);
         break;
     }
     return 0;

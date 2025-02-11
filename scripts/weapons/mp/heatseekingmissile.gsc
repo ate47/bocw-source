@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace heatseekingmissile;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x65b6df64, Offset: 0xd8
 // Size: 0x34
 function private preinit() {

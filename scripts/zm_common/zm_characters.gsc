@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_maptable.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_maptable;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_characters;
 
@@ -27,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_characters/zm_characters
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x49670886, Offset: 0x7d8
 // Size: 0x7c
 function private preinit() {
@@ -60,9 +59,9 @@ function private preinit() {
     // Checksum 0x56474fd7, Offset: 0x900
     // Size: 0x104
     function private function_9436b105(cmd) {
-        if (issubstr(cmd, "vox_plr_3_exert_pain_high_3")) {
-            tokens = strtok(cmd, "<unknown string>");
-            player = int(getsubstr(tokens[0], "<unknown string>".size));
+        if (issubstr(cmd, "<dev string:x38>")) {
+            tokens = strtok(cmd, "<dev string:x48>");
+            player = int(getsubstr(tokens[0], "<dev string:x4d>".size));
             character = int(tokens[tokens.size - 1]);
             players = getplayers();
             players[player - 1] thread zombie_force_char(character);
@@ -72,7 +71,7 @@ function private preinit() {
 #/
 
 // Namespace zm_characters/zm_characters
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xa10
 // Size: 0x4
 function precachecustomcharacters() {
@@ -80,7 +79,7 @@ function precachecustomcharacters() {
 }
 
 // Namespace zm_characters/zm_characters
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x27c88a1f, Offset: 0xa20
 // Size: 0x24
 function initcharacterstartindex() {
@@ -101,7 +100,7 @@ function selectcharacterindextouse() {
 }
 
 // Namespace zm_characters/zm_characters
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8783f8b, Offset: 0xaa0
 // Size: 0x212
 function function_b04c6f1f() {
@@ -145,7 +144,7 @@ function function_b04c6f1f() {
 }
 
 // Namespace zm_characters/zm_characters
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x735dc5df, Offset: 0xcc0
 // Size: 0x27c
 function set_character(character) {
@@ -160,7 +159,7 @@ function set_character(character) {
     if (!isdefined(self.characterindex) || !player_role::is_valid(self.characterindex)) {
         self.characterindex = self player_role::function_2a911680();
         /#
-            if (self ishost() && getdvarstring(#"force_char") != "<unknown string>") {
+            if (self ishost() && getdvarstring(#"force_char") != "<dev string:x57>") {
                 self.characterindex = getdvarint(#"force_char", 0);
             }
         #/
@@ -251,7 +250,7 @@ function setup_personality_character_exerts() {
 }
 
 // Namespace zm_characters/zm_characters
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3319a7dd, Offset: 0x1840
 // Size: 0xce
 function get_character_index(character) {
@@ -262,7 +261,7 @@ function get_character_index(character) {
             return i;
         }
     }
-    assertmsg("<unknown string>");
+    assertmsg("<dev string:x5b>");
     return 0;
 }
 
@@ -291,7 +290,7 @@ function function_d35e4c92(characterindex, var_fdf0f13d = 0) {
 }
 
 // Namespace zm_characters/zm_characters
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe1ec835d, Offset: 0x1a50
 // Size: 0x126
 function function_dc232a80(character) {
@@ -309,7 +308,7 @@ function function_dc232a80(character) {
                 return 0;
             }
         }
-        assertmsg("<unknown string>" + characterindex);
+        assertmsg("<dev string:x7f>" + characterindex);
     }
     return 0;
 }

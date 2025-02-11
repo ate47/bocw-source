@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace ping;
 
 // Namespace ping/ping_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x97207b44, Offset: 0x80
 // Size: 0x9c
 function function_fed6948(type) {
@@ -21,7 +20,7 @@ function function_fed6948(type) {
 }
 
 // Namespace ping/ping_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5afd7302, Offset: 0x128
 // Size: 0x42
 function function_5947d757(type) {
@@ -29,7 +28,7 @@ function function_5947d757(type) {
 }
 
 // Namespace ping/ping_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf3f2e725, Offset: 0x178
 // Size: 0x208
 function function_44806bba(type) {
@@ -49,7 +48,7 @@ function function_44806bba(type) {
     } else if (pool == 12) {
         return getdvarint(#"hash_37085d816592dbe3", 2);
     } else {
-        assertmsg("<unknown string>" + type + "<unknown string>" + pool + "<unknown string>");
+        assertmsg("<dev string:x38>" + type + "<dev string:x69>" + pool + "<dev string:x76>");
     }
     return 1;
 }

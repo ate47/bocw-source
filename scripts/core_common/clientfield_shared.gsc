@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
 
 #namespace clientfield;
 
 // Namespace clientfield/clientfield_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x3511f407, Offset: 0xe0
 // Size: 0x4c
 function register(str_pool_name, str_name, n_version, n_bits, str_type) {
@@ -13,7 +12,7 @@ function register(str_pool_name, str_name, n_version, n_bits, str_type) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x22a9ddf5, Offset: 0x138
 // Size: 0x44
 function function_5b7d846d(str_name, n_version, n_bits, str_type) {
@@ -21,7 +20,7 @@ function function_5b7d846d(str_name, n_version, n_bits, str_type) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7d8cd162, Offset: 0x188
 // Size: 0x4c
 function register_clientuimodel(str_name, n_version, n_bits, str_type, var_59f69872) {
@@ -29,7 +28,7 @@ function register_clientuimodel(str_name, n_version, n_bits, str_type, var_59f69
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf8214521, Offset: 0x1e0
 // Size: 0x9c
 function register_luielem(menu_name, var_483e93f7, field_name, n_version, n_bits, str_type, var_59f69872) {
@@ -61,7 +60,7 @@ function function_91cd7763(var_b693fec6, uniqueid, version, var_59f69872) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x7fb41075, Offset: 0x370
 // Size: 0x94
 function function_b63c5dfe(var_b693fec6, menu_name, var_483e93f7, field_name, version, var_59f69872) {
@@ -69,7 +68,7 @@ function function_b63c5dfe(var_b693fec6, menu_name, var_483e93f7, field_name, ve
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc5b572df, Offset: 0x410
 // Size: 0x2c
 function set(str_field_name, n_value) {
@@ -77,12 +76,12 @@ function set(str_field_name, n_value) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x38a4c50b, Offset: 0x448
 // Size: 0x10c
 function _set(str_field_name, n_value) {
     if (!isdefined(str_field_name)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         return;
     }
     if (!level flag::get(#"hash_4f4b65226250fc99")) {
@@ -100,7 +99,7 @@ function _set(str_field_name, n_value) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe36477ab, Offset: 0x560
 // Size: 0x7c
 function is_registered(field_name) {
@@ -115,7 +114,7 @@ function is_registered(field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd27064bd, Offset: 0x5e8
 // Size: 0x22
 function can_set(*str_field_name, *n_value) {
@@ -123,11 +122,11 @@ function can_set(*str_field_name, *n_value) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x74e85e15, Offset: 0x618
 // Size: 0x84
 function set_to_player(str_field_name, n_value) {
-    assert(isplayer(self), "<unknown string>");
+    assert(isplayer(self), "<dev string:x78>");
     if (isplayer(self)) {
         codesetplayerstateclientfield(self, str_field_name, n_value);
     }
@@ -142,7 +141,7 @@ function function_ec6130f9(str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcbf32486, Offset: 0x6d8
 // Size: 0x2c
 function set_player_uimodel(str_field_name, n_value) {
@@ -158,7 +157,7 @@ function function_40aa8832(str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x2e728e56, Offset: 0x740
 // Size: 0x74
 function function_9bf78ef8(menu_name, var_483e93f7, str_field_name, n_value) {
@@ -166,7 +165,7 @@ function function_9bf78ef8(menu_name, var_483e93f7, str_field_name, n_value) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x42d0fdfd, Offset: 0x7c0
 // Size: 0x6c
 function function_bb878fc3(menu_name, var_483e93f7, str_field_name) {
@@ -174,7 +173,7 @@ function function_bb878fc3(menu_name, var_483e93f7, str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcf32fd46, Offset: 0x838
 // Size: 0x22
 function get_player_uimodel(str_field_name) {
@@ -190,7 +189,7 @@ function function_f7ae6994(menu_name, var_483e93f7, str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x19befd4a, Offset: 0x8e0
 // Size: 0x2c
 function set_world_uimodel(str_field_name, n_value) {
@@ -206,7 +205,7 @@ function function_1bea0e72(str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfd3261fd, Offset: 0x948
 // Size: 0x22
 function get_world_uimodel(str_field_name) {
@@ -222,7 +221,7 @@ function increment_world_uimodel(str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaf9dd922, Offset: 0x9a8
 // Size: 0x2c
 function increment(str_field_name, n_increment_count) {
@@ -230,7 +229,7 @@ function increment(str_field_name, n_increment_count) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc6b4084b, Offset: 0x9e0
 // Size: 0x144
 function private _increment(str_field_name, n_increment_count = 1) {
@@ -260,7 +259,7 @@ function private _increment(str_field_name, n_increment_count = 1) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb0ec2a8d, Offset: 0xb30
 // Size: 0x10c
 function increment_uimodel(str_field_name, n_increment_count = 1) {
@@ -278,7 +277,7 @@ function increment_uimodel(str_field_name, n_increment_count = 1) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4418eb87, Offset: 0xc48
 // Size: 0x5c
 function increment_to_player(str_field_name, n_increment_count = 1) {
@@ -288,7 +287,7 @@ function increment_to_player(str_field_name, n_increment_count = 1) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf0bea7a8, Offset: 0xcb0
 // Size: 0x44
 function get(str_field_name) {
@@ -299,7 +298,7 @@ function get(str_field_name) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfb30eaa5, Offset: 0xd00
 // Size: 0x22
 function get_to_player(field_name) {

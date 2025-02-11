@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\dev.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7d712f77ab8d0c16;
 #using script_335d0650ed05d36d;
 #using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_7d712f77ab8d0c16;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\dev;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\util;
 
 #namespace dev_spawn;
 
@@ -19,8 +18,8 @@
     // Size: 0x7c
     function function_d8049496() {
         callback::on_start_gametype(&on_start_gametype);
-        setdvar(#"hash_4c1fd51cfe763a2", "<unknown string>");
-        setdvar(#"hash_6d53bd520b4f7853", "<unknown string>");
+        setdvar(#"hash_4c1fd51cfe763a2", "<dev string:x38>");
+        setdvar(#"hash_6d53bd520b4f7853", "<dev string:x43>");
     }
 
     // Namespace dev_spawn/dev_spawn
@@ -38,41 +37,41 @@
     function function_f084faed() {
         if (!isdefined(level.var_2f11d3e5)) {
             level.var_2f11d3e5 = [];
-            level.var_2f11d3e5[#"dm"] = "<unknown string>";
-            level.var_2f11d3e5[#"ffa"] = "<unknown string>";
-            level.var_2f11d3e5[#"dem"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition"] = "<unknown string>";
-            level.var_2f11d3e5[#"dom"] = "<unknown string>";
-            level.var_2f11d3e5[#"domination"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_attacker_a"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_attacker_b"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_defender_a"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_defender_b"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_overtime"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_remove_a"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_remove_b"] = "<unknown string>";
-            level.var_2f11d3e5[#"demolition_start_spawn"] = "<unknown string>";
-            level.var_2f11d3e5[#"domination_flag_a"] = "<unknown string>";
-            level.var_2f11d3e5[#"domination_flag_b"] = "<unknown string>";
-            level.var_2f11d3e5[#"domination_flag_c"] = "<unknown string>";
-            level.var_2f11d3e5[#"hash_4bcbc16ff5f139bb"] = "<unknown string>";
-            level.var_2f11d3e5[#"hash_4bcbc06ff5f13808"] = "<unknown string>";
-            level.var_2f11d3e5[#"hash_4bcbc36ff5f13d21"] = "<unknown string>";
-            level.var_2f11d3e5[#"ctf"] = "<unknown string>";
-            level.var_2f11d3e5[#"frontline"] = "<unknown string>";
-            level.var_2f11d3e5[#"gun"] = "<unknown string>";
-            level.var_2f11d3e5[#"koth"] = "<unknown string>";
-            level.var_2f11d3e5[#"infil"] = "<unknown string>";
-            level.var_2f11d3e5[#"kc"] = "<unknown string>";
-            level.var_2f11d3e5[#"sd"] = "<unknown string>";
-            level.var_2f11d3e5[#"control"] = "<unknown string>";
-            level.var_2f11d3e5[#"tdm"] = "<unknown string>";
-            level.var_2f11d3e5[#"clean"] = "<unknown string>";
-            level.var_2f11d3e5[#"ct"] = "<unknown string>";
-            level.var_2f11d3e5[#"escort"] = "<unknown string>";
-            level.var_2f11d3e5[#"bounty"] = "<unknown string>";
-            level.var_2f11d3e5[#"vip"] = "<unknown string>";
-            level.var_2f11d3e5[#"dropkick"] = "<unknown string>";
+            level.var_2f11d3e5[#"dm"] = "<dev string:x4a>";
+            level.var_2f11d3e5[#"ffa"] = "<dev string:x4a>";
+            level.var_2f11d3e5[#"dem"] = "<dev string:x51>";
+            level.var_2f11d3e5[#"demolition"] = "<dev string:x51>";
+            level.var_2f11d3e5[#"dom"] = "<dev string:x58>";
+            level.var_2f11d3e5[#"domination"] = "<dev string:x58>";
+            level.var_2f11d3e5[#"demolition_attacker_a"] = "<dev string:x5f>";
+            level.var_2f11d3e5[#"demolition_attacker_b"] = "<dev string:x71>";
+            level.var_2f11d3e5[#"demolition_defender_a"] = "<dev string:x83>";
+            level.var_2f11d3e5[#"demolition_defender_b"] = "<dev string:x95>";
+            level.var_2f11d3e5[#"demolition_overtime"] = "<dev string:xa7>";
+            level.var_2f11d3e5[#"demolition_remove_a"] = "<dev string:xb7>";
+            level.var_2f11d3e5[#"demolition_remove_b"] = "<dev string:xc7>";
+            level.var_2f11d3e5[#"demolition_start_spawn"] = "<dev string:xd7>";
+            level.var_2f11d3e5[#"domination_flag_a"] = "<dev string:xea>";
+            level.var_2f11d3e5[#"domination_flag_b"] = "<dev string:xf8>";
+            level.var_2f11d3e5[#"domination_flag_c"] = "<dev string:x106>";
+            level.var_2f11d3e5[#"hash_4bcbc16ff5f139bb"] = "<dev string:x114>";
+            level.var_2f11d3e5[#"hash_4bcbc06ff5f13808"] = "<dev string:x122>";
+            level.var_2f11d3e5[#"hash_4bcbc36ff5f13d21"] = "<dev string:x130>";
+            level.var_2f11d3e5[#"ctf"] = "<dev string:x13e>";
+            level.var_2f11d3e5[#"frontline"] = "<dev string:x145>";
+            level.var_2f11d3e5[#"gun"] = "<dev string:x152>";
+            level.var_2f11d3e5[#"koth"] = "<dev string:x158>";
+            level.var_2f11d3e5[#"infil"] = "<dev string:x160>";
+            level.var_2f11d3e5[#"kc"] = "<dev string:x169>";
+            level.var_2f11d3e5[#"sd"] = "<dev string:x16f>";
+            level.var_2f11d3e5[#"control"] = "<dev string:x175>";
+            level.var_2f11d3e5[#"tdm"] = "<dev string:x180>";
+            level.var_2f11d3e5[#"clean"] = "<dev string:x187>";
+            level.var_2f11d3e5[#"ct"] = "<dev string:x191>";
+            level.var_2f11d3e5[#"escort"] = "<dev string:x197>";
+            level.var_2f11d3e5[#"bounty"] = "<dev string:x1a1>";
+            level.var_2f11d3e5[#"vip"] = "<dev string:x1ab>";
+            level.var_2f11d3e5[#"dropkick"] = "<dev string:x1b2>";
         }
     }
 
@@ -83,13 +82,13 @@
     function function_3326cf8d() {
         while (true) {
             var_14d21c2b = getdvarstring(#"scr_set_spawns");
-            if (var_14d21c2b != "<unknown string>") {
+            if (var_14d21c2b != "<dev string:x1be>") {
                 function_f084faed();
                 var_9e1b22d = function_f0b81b80(var_14d21c2b);
                 function_bf14041f(var_9e1b22d);
-                setdvar(#"scr_set_spawns", "<unknown string>");
+                setdvar(#"scr_set_spawns", "<dev string:x1be>");
             }
-            wait(1);
+            wait 1;
         }
     }
 
@@ -112,7 +111,7 @@
     // Size: 0x1cc
     function function_f0b81b80(var_14d21c2b) {
         flagset = [];
-        tokens = strtok(tolower(var_14d21c2b), "<unknown string>");
+        tokens = strtok(tolower(var_14d21c2b), "<dev string:x1c2>");
         foreach (token in tokens) {
             spawnflag = function_423a05a4(token);
             if (isdefined(spawnflag)) {
@@ -146,13 +145,13 @@
     // Checksum 0x5f860710, Offset: 0x9c0
     // Size: 0xf4
     function function_5650f4ee(var_7a594c78, var_55a94d2c, actualteam, isstartspawn) {
-        if (var_55a94d2c == "<unknown string>") {
+        if (var_55a94d2c == "<dev string:x43>") {
             return 1;
-        } else if (var_55a94d2c == "<unknown string>" && !isstartspawn) {
+        } else if (var_55a94d2c == "<dev string:x1ca>" && !isstartspawn) {
             return 0;
-        } else if (isstartspawn && var_55a94d2c != "<unknown string>") {
+        } else if (isstartspawn && var_55a94d2c != "<dev string:x1ca>") {
             return 0;
-        } else if (var_55a94d2c == "<unknown string>" && var_7a594c78 != #"any") {
+        } else if (var_55a94d2c == "<dev string:x1d3>" && var_7a594c78 != #"any") {
             if (var_7a594c78 == #"neutral" && isdefined(actualteam)) {
                 return 0;
             }
@@ -211,14 +210,14 @@
                     continue;
                 }
                 foreach (spawnpoint in level.spawn_start[key]) {
-                    showonespawnpoint(spawnpoint, color, "<unknown string>");
+                    showonespawnpoint(spawnpoint, color, "<dev string:x1db>");
                 }
             }
             return;
         }
         color = (1, 0, 1);
         foreach (spawnpoint in level.spawn_start) {
-            showonespawnpoint(spawnpoint, color, "<unknown string>");
+            showonespawnpoint(spawnpoint, color, "<dev string:x1db>");
         }
         return;
     }
@@ -282,7 +281,7 @@
         line(center, a, color, 0, depthtest);
         line(a, b, color, 0, depthtest);
         line(a, c, color, 0, depthtest);
-        if (isdefined(var_379ac7cc) && var_379ac7cc != "<unknown string>") {
+        if (isdefined(var_379ac7cc) && var_379ac7cc != "<dev string:x1be>") {
             print3d(spawn_point.origin + (0, 0, height), var_379ac7cc, color, 1, 1);
         }
     }
@@ -336,7 +335,7 @@
         thread dev::lineuntilnotified(center, a, color, 0, notification);
         thread dev::lineuntilnotified(a, b, color, 0, notification);
         thread dev::lineuntilnotified(a, c, color, 0, notification);
-        if (isdefined(print) && print != "<unknown string>") {
+        if (isdefined(print) && print != "<dev string:x1be>") {
             thread dev::print3duntilnotified(spawn_point.origin + (0, 0, height), print, color, 1, 1, notification);
         }
         return;

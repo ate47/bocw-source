@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3dc93ca9902a9cda;
-#using scripts\core_common\stealth\player.gsc;
-#using scripts\core_common\stealth\utility.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\player;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace threat_sight;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5d5d77b4, Offset: 0x2f0
 // Size: 0x1b4
 function private preinit() {
@@ -46,7 +45,7 @@ function private preinit() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4d9bbd5b, Offset: 0x4b0
 // Size: 0x64
 function private register_clientfields() {
@@ -55,7 +54,7 @@ function private register_clientfields() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x39c816ed, Offset: 0x520
 // Size: 0x28
 function private function_4c75a19(dvar) {
@@ -63,7 +62,7 @@ function private function_4c75a19(dvar) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x458ef145, Offset: 0x550
 // Size: 0x260
 function threat_sight_set_enabled(enabled) {
@@ -88,7 +87,7 @@ function threat_sight_set_enabled(enabled) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf73ddd, Offset: 0x7b8
 // Size: 0x84
 function threat_sight_set_dvar(enabled) {
@@ -100,14 +99,14 @@ function threat_sight_set_dvar(enabled) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69f4194b, Offset: 0x848
 // Size: 0x9c
 function threat_sight_set_dvar_display(enabled) {
     self notify(#"threat_sight_set_dvar_display");
     self endon(#"threat_sight_set_dvar_display");
     if (!enabled) {
-        wait(1);
+        wait 1;
     }
     if (level.var_53ad6e22[#"ai_threatusedisplay"]) {
         setsaveddvar(#"hash_7bf40e4b6a830d11", enabled);
@@ -130,7 +129,7 @@ function threat_sight_enabled() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x784a2cb4, Offset: 0x970
 // Size: 0x2f4
 function threat_sight_set_state(statename) {
@@ -170,7 +169,7 @@ function threat_sight_set_state(statename) {
         break;
     default:
         /#
-            iprintlnbold("<unknown string>" + statename + "<unknown string>");
+            iprintlnbold("<dev string:x38>" + statename + "<dev string:x5e>");
         #/
         break;
     }
@@ -188,7 +187,7 @@ function threat_sight_set_state(statename) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x64cbc1d, Offset: 0xc70
 // Size: 0x70
 function threat_sight_set_state_parameters(statename) {
@@ -198,7 +197,7 @@ function threat_sight_set_state_parameters(statename) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xca02aaee, Offset: 0xce8
 // Size: 0x4c
 function private function_eefd0bb3(*str_notify) {
@@ -207,7 +206,7 @@ function private function_eefd0bb3(*str_notify) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2a6edcbc, Offset: 0xd40
 // Size: 0x16
 function function_60514e0b() {
@@ -215,7 +214,7 @@ function function_60514e0b() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9b7b8cde, Offset: 0xd60
 // Size: 0x388
 function private function_3a739b35() {
@@ -267,7 +266,7 @@ function private function_3a739b35() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ae3e0a8, Offset: 0x10f0
 // Size: 0x194
 function threat_sight_immediate_thread() {
@@ -277,7 +276,7 @@ function threat_sight_immediate_thread() {
     while (true) {
         level flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
-        wait(randomfloatrange(0.4, 0.6));
+        wait randomfloatrange(0.4, 0.6);
         foreach (player in getplayers()) {
             if (isdefined(player.ignore_stealth_sight)) {
                 continue;
@@ -293,7 +292,7 @@ function threat_sight_immediate_thread() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39073e42, Offset: 0x1290
 // Size: 0xa2
 function threat_sight_player_init() {
@@ -312,7 +311,7 @@ function threat_sight_player_init() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6ce293f1, Offset: 0x1340
 // Size: 0x1dc
 function threat_sight_player_entity_state_set(ai, statename) {
@@ -350,7 +349,7 @@ function threat_sight_player_entity_state_set(ai, statename) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x938a11eb, Offset: 0x1528
 // Size: 0x22
 function function_36a6a90() {
@@ -358,7 +357,7 @@ function function_36a6a90() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8b8422fa, Offset: 0x1558
 // Size: 0x84
 function function_79fc894b(player) {
@@ -370,7 +369,7 @@ function function_79fc894b(player) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1fc797b6, Offset: 0x15e8
 // Size: 0x74
 function function_ee9635fa(player) {
@@ -381,7 +380,7 @@ function function_ee9635fa(player) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0e0fd83, Offset: 0x1668
 // Size: 0x74
 function function_740f4859(player) {
@@ -392,7 +391,7 @@ function function_740f4859(player) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ded63a0, Offset: 0x16e8
 // Size: 0x2ec
 function threat_sight_sighted(player) {
@@ -436,7 +435,7 @@ function threat_sight_sighted(player) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4c14815, Offset: 0x19e0
 // Size: 0xfc
 function threat_sight_sighted_wait_lost(player) {
@@ -451,12 +450,12 @@ function threat_sight_sighted_wait_lost(player) {
         if (self.stealth.threat_sight_lost) {
             return;
         }
-        wait(0.05);
+        wait 0.05;
     }
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x68c8a20d, Offset: 0x1ae8
 // Size: 0x174
 function threat_sight_force_visible(othersentient, durationseconds) {
@@ -476,7 +475,7 @@ function threat_sight_force_visible(othersentient, durationseconds) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c0c10a5, Offset: 0x1c68
 // Size: 0x406
 function threat_sight_force_visible_thread() {
@@ -515,14 +514,14 @@ function threat_sight_force_visible_thread() {
         foreach (key in remove) {
             self.stealth.force_visible[key] = undefined;
         }
-        wait(waittime);
+        wait waittime;
     }
     self.stealth.force_visible = undefined;
     self.stealth.force_visible_thread = undefined;
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd6d55a88, Offset: 0x2078
 // Size: 0x2c
 function function_7af4fa05(entity) {
@@ -530,7 +529,7 @@ function function_7af4fa05(entity) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcd9afeb6, Offset: 0x20b0
 // Size: 0x684
 function threat_sight_player_entity_state_thread() {
@@ -601,12 +600,12 @@ function threat_sight_player_entity_state_thread() {
             self thread threat_sight_player_sight_audio(anycansee, self.stealth.maxthreat);
         }
         self.stealth.threat_visible = anycansee;
-        wait(0.05);
+        wait 0.05;
     }
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb698c24f, Offset: 0x2740
 // Size: 0xba
 function player_is_sprinting_at_me(ai) {
@@ -638,13 +637,13 @@ function threat_sight_fake(origin, amount) {
     }
     while (amount > 0) {
         self thread threat_sight_player_sight_audio(1, max(self.stealth.maxthreat, amount));
-        wait(0.05);
+        wait 0.05;
     }
     self thread threat_sight_player_sight_audio(0, max(self.stealth.maxthreat, amount));
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe5b0c426, Offset: 0x2998
 // Size: 0x68
 function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {

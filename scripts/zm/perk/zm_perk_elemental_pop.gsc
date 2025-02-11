@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_5f261a5d57de5f7c;
-#using scripts\zm_common\aats\zm_aat.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\zm_common\aats\zm_aat;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_perk_elemental_pop;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xed380ff5, Offset: 0x3b0
 // Size: 0x14
 function private preinit() {
@@ -36,7 +35,7 @@ function private preinit() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x41209728, Offset: 0x3d0
 // Size: 0x2b4
 function function_27473e44() {
@@ -56,7 +55,7 @@ function function_27473e44() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3decd96, Offset: 0x690
 // Size: 0xfe
 function precache() {
@@ -72,7 +71,7 @@ function precache() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x36145bc4, Offset: 0x798
 // Size: 0x84
 function register_clientfield() {
@@ -81,7 +80,7 @@ function register_clientfield() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4c1d3877, Offset: 0x828
 // Size: 0xc
 function set_clientfield(*state) {
@@ -89,7 +88,7 @@ function set_clientfield(*state) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xd84a3365, Offset: 0x840
 // Size: 0xb2
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -102,11 +101,11 @@ function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision)
     if (isdefined(collision)) {
         collision.script_string = "elemental_perk";
     }
-    bump_trigger.use_func = &function_290b5aa8;
+    bump_trigger.use_func = &on_use;
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x496b7a16, Offset: 0x900
 // Size: 0x420
 function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, weapon, *var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype) {
@@ -128,7 +127,7 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
                 arrayremovevalue(a_aat, "ammomod_electriccherry");
                 str_choice = array::random(a_aat);
                 damage.var_2defbefd = 1;
-                var_1799ae59 = getweapon(#"hash_2b2738038b4c33be");
+                w_aat = getweapon(#"hash_2b2738038b4c33be");
                 var_bebe15e1 = 0;
                 weapon = "MOD_PISTOL_BULLET";
                 if (damage namespace_e86ffa8::function_cd6787b(3)) {
@@ -138,13 +137,13 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
                     }
                     str_choice = n_tier < 0 ? str_choice : str_choice + "_" + n_tier;
                 }
-                damage.aat[var_1799ae59] = str_choice;
+                damage.aat[w_aat] = str_choice;
                 if (self.var_6f84b820 === #"normal" || self.var_6f84b820 === #"special" && isdefined(n_tier) && n_tier > 3) {
                     damage clientfield::increment_to_player("" + #"hash_12c6e46c315cd43b", 1);
-                    aat::aat_response(b_death, attacker, damage, flags, meansofdeath, weapon, var_1799ae59, var_bebe15e1, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
+                    aat::aat_response(b_death, attacker, damage, flags, meansofdeath, weapon, w_aat, var_bebe15e1, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
                     damage.var_4caed594 = gettime();
                 }
-                damage thread function_751b9d86(var_1799ae59);
+                damage thread function_751b9d86(w_aat);
             }
         }
     }
@@ -152,20 +151,20 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc7d3c0d, Offset: 0xd28
 // Size: 0x5a
-function function_751b9d86(var_1799ae59) {
+function function_751b9d86(w_aat) {
     self endon(#"death");
     self notify("3b0a02adb5fc6c9b");
     self endon("3b0a02adb5fc6c9b");
     waitframe(2);
-    self.aat[var_1799ae59] = undefined;
+    self.aat[w_aat] = undefined;
     self.var_13a70bc8 = undefined;
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xafadf7d7, Offset: 0xd90
 // Size: 0xd4
 function is_valid_weapon(weapon) {
@@ -187,15 +186,15 @@ function is_valid_weapon(weapon) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x75f63bef, Offset: 0xe70
 // Size: 0x34
-function function_290b5aa8(*player) {
+function on_use(*player) {
     self clientfield::increment("" + #"hash_2bc83061af453e44");
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d560db1, Offset: 0xeb0
 // Size: 0x34
 function function_fdaa251f() {
@@ -205,7 +204,7 @@ function function_fdaa251f() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x2d637c7f, Offset: 0xef0
 // Size: 0x40
 function function_cf066d32(*b_pause, *str_perk, *str_result, *n_slot) {
@@ -213,7 +212,7 @@ function function_cf066d32(*b_pause, *str_perk, *str_result, *n_slot) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5a6d9774, Offset: 0xf38
 // Size: 0x59a
 function function_a26b7152() {
@@ -304,7 +303,7 @@ function function_a26b7152() {
                         a_zombies[i] thread function_c262b70e(self);
                         a_zombies[i] thread function_99e4dfef();
                     }
-                    wait(0.1);
+                    wait 0.1;
                     if (isdefined(a_zombies[i]) && isalive(a_zombies[i])) {
                         a_zombies[i] dodamage(perk_dmg, self.origin, self, self, "none", "MOD_UNKNOWN", 0, level.weapondefault);
                     }
@@ -316,7 +315,7 @@ function function_a26b7152() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaed48e72, Offset: 0x14e0
 // Size: 0xce
 function function_7c82917f(current_weapon) {
@@ -328,12 +327,12 @@ function function_7c82917f(current_weapon) {
         n_reload_time *= getdvarfloat(#"perk_weapreloadmultiplier", 0);
     }
     n_cooldown_time = n_reload_time + 3;
-    wait(n_cooldown_time);
+    wait n_cooldown_time;
     self.var_cb7633ba = 0;
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe5c58cd0, Offset: 0x15b8
 // Size: 0xd4
 function check_for_reload_complete(weapon) {
@@ -351,7 +350,7 @@ function check_for_reload_complete(weapon) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x64b1c597, Offset: 0x1698
 // Size: 0xbc
 function weapon_replaced_monitor(weapon) {
@@ -368,7 +367,7 @@ function weapon_replaced_monitor(weapon) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6507de1f, Offset: 0x1760
 // Size: 0xec
 function elemental_pop_reload_fx(n_fraction) {
@@ -380,12 +379,12 @@ function elemental_pop_reload_fx(n_fraction) {
     } else {
         self clientfield::set("elemental_pop_reload_fx", 3);
     }
-    wait(1);
+    wait 1;
     self clientfield::set("elemental_pop_reload_fx", 0);
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7adea1f5, Offset: 0x1858
 // Size: 0x19e
 function function_c262b70e(player) {
@@ -393,7 +392,7 @@ function function_c262b70e(player) {
     self endon(#"death", #"stun_zombie");
     if (self.health <= 0) {
         /#
-            iprintln("<unknown string>");
+            iprintln("<dev string:x38>");
         #/
         return;
     }
@@ -405,7 +404,7 @@ function function_c262b70e(player) {
     if (isplayer(player)) {
         player zm_stats::increment_challenge_stat(#"hash_19ddacc82a4cd51f");
     }
-    wait(4);
+    wait 4;
     if (isdefined(self)) {
         self ai::clear_stun();
         self val::reset(#"hash_76ad14d5686b6f9f", "ignoreall");
@@ -414,7 +413,7 @@ function function_c262b70e(player) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c5ad500, Offset: 0x1a00
 // Size: 0xdc
 function function_99e4dfef() {
@@ -433,7 +432,7 @@ function function_99e4dfef() {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x80490485, Offset: 0x1ae8
 // Size: 0xbc
 function function_3a74fa68(player) {
@@ -449,7 +448,7 @@ function function_3a74fa68(player) {
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x285c1bc2, Offset: 0x1bb0
 // Size: 0x2ce
 function function_70c2d1b6() {
@@ -479,7 +478,7 @@ function function_70c2d1b6() {
                     a_zombies[i] thread function_c262b70e();
                     a_zombies[i] thread function_99e4dfef();
                 }
-                wait(0.1);
+                wait 0.1;
                 if (isalive(self) && isalive(a_zombies[i])) {
                     if (a_zombies[i].health - n_damage <= 0) {
                         a_zombies[i].var_4f3445ab = 1;

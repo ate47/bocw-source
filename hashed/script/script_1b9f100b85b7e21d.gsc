@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3dc93ca9902a9cda;
-#using scripts\cp_common\snd.gsc;
+#using scripts\cp_common\snd;
 
 #namespace snd;
 
 // Namespace snd/namespace_33f8f0d7
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x953d0737, Offset: 0x90
 // Size: 0x2a
 function function_9ae4fc6f(soundalias, targets) {

@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace sd;
 
@@ -16,7 +15,7 @@ function event_handler[gametype_init] main(*eventstruct) {
         setsoundcontext("bomb_plant", "silent");
     }
     level.var_e4935474 = [];
-    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"hash_11ea1e04b846f98e", #"attackingteam", 1, 2, "int", undefined, 0, 1);
+    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"war_data", #"attackingteam", 1, 2, "int", undefined, 0, 1);
     clientfield::register("scriptmover", "entityModelsNum", 1, 10, "int", &function_e116df6c, 0, 0);
 }
 

@@ -1,33 +1,32 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\mp\gadgets\gadget_smart_cover.gsc;
-#using scripts\abilities\mp\gadgets\gadget_concertina_wire.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\spawnlogic.gsc;
-#using scripts\mp_common\gametypes\spawning.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_44b0b8420eabacad;
+#using scripts\abilities\mp\gadgets\gadget_concertina_wire;
+#using scripts\abilities\mp\gadgets\gadget_smart_cover;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\spawning;
+#using scripts\mp_common\gametypes\spawnlogic;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace clean;
 
@@ -70,7 +69,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.onspawnplayer = &onspawnplayer;
     player::function_cf3aa03d(&onplayerkilled);
     spawning::addsupportedspawnpointtype("tdm");
-    level.cleandropweapon = getweapon(#"hash_1a8e376e04ffed9d");
+    level.cleandropweapon = getweapon(#"dogtag_drop");
     level.goalfx = "ui/fx8_fracture_deposit_point";
     level.var_6c5ba305 = "ui/fx8_fracture_deposit_point_end";
     level.var_dfce3f1c = #"clean_deposit";
@@ -166,12 +165,12 @@ function function_aafe4c74() {
     // Size: 0xde
     function debug_print() {
         while (true) {
-            iprintln("<unknown string>" + level.activedrops);
-            iprintln("<unknown string>" + level.var_8b5ef67d);
-            iprintln("<unknown string>" + level.var_bb42ed2);
-            iprintln("<unknown string>" + level.var_9d4a9561);
-            iprintln("<unknown string>" + level.var_b8c2e6df);
-            wait(5);
+            iprintln("<dev string:x38>" + level.activedrops);
+            iprintln("<dev string:x44>" + level.var_8b5ef67d);
+            iprintln("<dev string:x55>" + level.var_bb42ed2);
+            iprintln("<dev string:x64>" + level.var_9d4a9561);
+            iprintln("<dev string:x73>" + level.var_b8c2e6df);
+            wait 5;
         }
     }
 
@@ -251,7 +250,7 @@ function function_fccce038() {
 function function_b25ab1e7() {
     var_ba985a3c = undefined;
     foreach (taco in level.tacos) {
-        if (taco.interactteam == #"hash_161f03feaadc9b8f") {
+        if (taco.interactteam == #"group_none") {
             return taco;
         }
         if (isdefined(taco.var_2581d0d)) {
@@ -320,7 +319,7 @@ function function_903c4eff(victim, attacker, pos, yawangle) {
     self clientfield::set("taco_waypoint", 1);
     self playloopsound("mpl_fracture_core_loop");
     self dontinterpolate();
-    self gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::allow_use(#"group_all");
     if (isdefined(self.var_2581d0d)) {
         self.var_2581d0d delete();
     }
@@ -381,7 +380,7 @@ function function_9415d18b() {
 function timeout_wait() {
     level endon(#"game_ended");
     self endon(#"reset");
-    wait(60);
+    wait 60;
     /#
         level.var_bb42ed2++;
     #/
@@ -401,7 +400,7 @@ function registermp_multi_kill_medals_interface() {
     self clientfield::set("taco_waypoint", 0);
     self stoploopsound();
     self.trigger.origin = (0, 0, 1000);
-    self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+    self gameobjects::allow_use(#"group_none");
     waittillframeend();
     if (isdefined(self.var_2581d0d)) {
         self.var_2581d0d delete();
@@ -437,14 +436,14 @@ function private function_8be56c1(targetname) {
     structs = struct::get_array(targetname);
     foreach (struct in structs) {
         /#
-            assert(isdefined(struct.script_index), function_9e72a96(targetname) + "<unknown string>");
-            assert(!isdefined(level.cleandeposithubs[struct.script_index]), function_9e72a96(targetname) + "<unknown string>");
+            assert(isdefined(struct.script_index), function_9e72a96(targetname) + "<dev string:x7f>");
+            assert(!isdefined(level.cleandeposithubs[struct.script_index]), function_9e72a96(targetname) + "<dev string:x9d>");
         #/
         level.cleandeposithubs[struct.script_index] = function_bad2b0d4(struct.origin);
     }
     /#
         for (i = 0; i < level.cleandeposithubs.size; i++) {
-            assert(isdefined(level.cleandeposithubs[i]), "<unknown string>" + function_9e72a96(targetname) + "<unknown string>" + i);
+            assert(isdefined(level.cleandeposithubs[i]), "<dev string:xc3>" + function_9e72a96(targetname) + "<dev string:xcf>" + i);
         }
     #/
 }
@@ -456,7 +455,7 @@ function private function_8be56c1(targetname) {
 function private function_8c1a5f77() {
     if (!isdefined(level.cleandepositpoints)) {
         /#
-            util::error("<unknown string>");
+            util::error("<dev string:xed>");
         #/
         return;
     }
@@ -499,8 +498,8 @@ function function_bad2b0d4(origin) {
     trigger = spawn("trigger_radius", origin, 0, 60, 108);
     visuals[0] = spawn("script_model", trigger.origin);
     deposithub = gameobjects::create_use_object(#"neutral", trigger, visuals, undefined, level.var_dfce3f1c);
-    deposithub gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
-    deposithub gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    deposithub gameobjects::allow_use(#"group_all");
+    deposithub gameobjects::set_visible(#"group_all");
     deposithub gameobjects::set_use_time(0);
     deposithub gameobjects::disable_object();
     deposithub.onuse = &function_83e87bd5;
@@ -530,7 +529,7 @@ function function_b8a3dde4() {
     if (wait_time < 0) {
         wait_time = level.cleandepositonlinetime * 0.05;
     }
-    wait(wait_time);
+    wait wait_time;
     if (isdefined(self.var_a9079d5e)) {
         self.var_a9079d5e delete();
     }
@@ -567,7 +566,7 @@ function function_fd08eb25() {
                     globallogic_audio::play_2d_on_team("mpl_hardpoint_move", team);
                 }
             }
-            wait(level.var_2576eaeb);
+            wait level.var_2576eaeb;
         }
         if (isdefined(level.var_96226f2e)) {
             objective_setstate(level.var_96226f2e, "invisible");
@@ -576,9 +575,9 @@ function function_fd08eb25() {
         deposithub = level.cleandeposithubs[var_e0b73154];
         var_79efdaa0 = function_e3e1cf54(var_e0b73154);
         deposithub gameobjects::enable_object();
-        deposithub gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
-        smart_cover::function_18f38647(deposithub.trigger);
-        concertina_wire::function_18f38647(deposithub.trigger);
+        deposithub gameobjects::allow_use(#"group_all");
+        smart_cover::addprotectedzone(deposithub.trigger);
+        concertina_wire::addprotectedzone(deposithub.trigger);
         deposithub thread function_b8a3dde4();
         enableinfluencer(deposithub.influencer, 1);
         if (isdefined(level.var_1940f14e)) {
@@ -600,22 +599,22 @@ function function_fd08eb25() {
         var_696c0ca5 = var_e0b73154;
         if (isdefined(level.shownextzoneobjective) && level.shownextzoneobjective > 0 && isdefined(level.var_96226f2e)) {
             var_4f1e9d48 = max(0, level.cleandepositonlinetime - level.shownextzoneobjective);
-            wait(var_4f1e9d48);
+            wait var_4f1e9d48;
             var_f6595e31 = level.cleandeposithubs[var_79efdaa0];
             if (isdefined(var_f6595e31.origin)) {
                 objective_setposition(level.var_96226f2e, var_f6595e31.origin);
                 objective_setstate(level.var_96226f2e, "active");
             }
             var_b2667d52 = level.cleandepositonlinetime - var_4f1e9d48;
-            wait(var_b2667d52);
+            wait var_b2667d52;
         } else {
-            wait(level.cleandepositonlinetime);
+            wait level.cleandepositonlinetime;
         }
-        smart_cover::function_60a53911(deposithub.trigger);
-        concertina_wire::function_60a53911(deposithub.trigger);
+        smart_cover::removeprotectedzone(deposithub.trigger);
+        concertina_wire::removeprotectedzone(deposithub.trigger);
         deposithub gameobjects::disable_object();
-        deposithub gameobjects::allow_use(#"hash_161f03feaadc9b8f");
-        deposithub gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        deposithub gameobjects::allow_use(#"group_none");
+        deposithub gameobjects::set_visible(#"group_none");
         enableinfluencer(deposithub.influencer, 0);
         deposithub stoploopsound();
         if (isdefined(level.var_1940f14e)) {

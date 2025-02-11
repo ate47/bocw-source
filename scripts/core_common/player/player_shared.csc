@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using script_3d0f36632dad12df;
-#using scripts\core_common\postfx_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using script_3d0f36632dad12df;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\system_shared;
 
 #namespace player;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player/player_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb51dd468, Offset: 0x190
 // Size: 0x16c
 function private preinit() {
@@ -48,7 +47,7 @@ function event_handler[slide_begin] function_8183e35a(*eventstruct) {
 }
 
 // Namespace player/player_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xed19cba8, Offset: 0x3b8
 // Size: 0x84
 function gameplay_started_callback(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -59,7 +58,7 @@ function gameplay_started_callback(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xea4b22f1, Offset: 0x448
 // Size: 0x54
 function local_player_spawn(localclientnum) {
@@ -70,7 +69,7 @@ function local_player_spawn(localclientnum) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6e7df10d, Offset: 0x4a8
 // Size: 0x120
 function on_player_spawned(localclientnum) {
@@ -86,7 +85,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6f03a0bc, Offset: 0x5d0
 // Size: 0xc0
 function function_5bec2ba9(params) {
@@ -97,7 +96,7 @@ function function_5bec2ba9(params) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x48abc074, Offset: 0x698
 // Size: 0x94
 function function_4ff4a239(localclientnum) {
@@ -110,7 +109,7 @@ function function_4ff4a239(localclientnum) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xee4a3976, Offset: 0x738
 // Size: 0x5c
 function function_8f03c3d0(localclientnum) {
@@ -124,7 +123,7 @@ function function_8f03c3d0(localclientnum) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8a93a6b0, Offset: 0x7a0
 // Size: 0x5c
 function function_e450e3e1(*params) {
@@ -133,7 +132,7 @@ function function_e450e3e1(*params) {
 }
 
 // Namespace player/player_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc3747465, Offset: 0x808
 // Size: 0x122
 function function_f9e445ee(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -153,7 +152,7 @@ function function_f9e445ee(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc6f66df2, Offset: 0x938
 // Size: 0xfc
 function private function_f22aa227(localclientnum) {

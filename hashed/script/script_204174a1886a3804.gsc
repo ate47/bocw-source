@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace incursion_infiltrationtitlecards;
 
@@ -98,7 +97,7 @@ class class_7c3faeda : cluielem {
             player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 13);
             return;
         }
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
     }
 
     // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards

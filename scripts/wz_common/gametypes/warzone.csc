@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_78825cbb1ab9f493;
 
 #namespace warzone;

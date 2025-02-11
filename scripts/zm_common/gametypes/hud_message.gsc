@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\globallogic_audio.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\gametypes\globallogic_audio;
+#using scripts\zm_common\util;
 
 #namespace hud_message;
 
 // Namespace hud_message/hud_message
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa5131289, Offset: 0xc0
 // Size: 0x20c
 function init() {

@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_680dddbda86931fa;
-#using scripts\core_common\item_world.csc;
 #using script_3d35e2ff167b3a82;
-#using scripts\core_common\item_inventory.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using script_680dddbda86931fa;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
 
 #namespace item_drop;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace item_drop/item_drop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe3a61927, Offset: 0x1b8
 // Size: 0x50
 function private preinit() {
@@ -32,7 +31,7 @@ function private preinit() {
 }
 
 // Namespace item_drop/item_drop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa107011, Offset: 0x210
 // Size: 0x2b4
 function private function_2777823f() {
@@ -49,7 +48,7 @@ function private function_2777823f() {
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8d7a87cb, Offset: 0x4d0
 // Size: 0x50c
 function private function_67189b6b(localclientnum, newval) {
@@ -117,7 +116,7 @@ function private function_67189b6b(localclientnum, newval) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcde735fa, Offset: 0x9e8
 // Size: 0x74
 function private function_1a45bc2a(item) {
@@ -131,7 +130,7 @@ function private function_1a45bc2a(item) {
 }
 
 // Namespace item_drop/item_drop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6f3b7cf5, Offset: 0xa68
 // Size: 0x7c
 function function_fd47982d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -142,7 +141,7 @@ function function_fd47982d(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x949b39b8, Offset: 0xaf0
 // Size: 0x1a4
 function function_1fe1281(localclientnum, newval) {
@@ -171,7 +170,7 @@ function function_1fe1281(localclientnum, newval) {
 }
 
 // Namespace item_drop/item_drop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x48bfc6f5, Offset: 0xca0
 // Size: 0xb4
 function function_a517a859(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -185,7 +184,7 @@ function function_a517a859(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace item_drop/item_drop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbb9ebf51, Offset: 0xd60
 // Size: 0x14c
 function function_e7bb925a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -204,7 +203,7 @@ function function_e7bb925a(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace item_drop/item_drop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x18ae5f9d, Offset: 0xeb8
 // Size: 0xba
 function function_63226f88(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -224,7 +223,7 @@ function function_63226f88(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace item_drop/item_drop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3e768515, Offset: 0xf80
 // Size: 0xd6
 function function_45f94325(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

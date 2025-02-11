@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
+#using script_1304295570304027;
 #using script_5495f0bb06045dc7;
 #using script_b9a55edd207e4ca;
-#using script_1304295570304027;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_cf48051e;
 

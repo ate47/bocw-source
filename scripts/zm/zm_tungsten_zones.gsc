@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_4ce5d94e8c797350;
-#using script_63d1562b37284458;
-#using scripts\core_common\scene_shared.gsc;
 #using script_5b4706e8af2ca31b;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\territory.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using script_63d1562b37284458;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\territory;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_tungsten_zones;
 
@@ -37,7 +36,7 @@ function autoexec init() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1d4c2ae5, Offset: 0x1328
 // Size: 0x3124
 function zone_init() {
@@ -359,16 +358,16 @@ function zone_init() {
     // Checksum 0x7b58cb5b, Offset: 0x4458
     // Size: 0x36
     function function_b9ad8870() {
-        flag::wait_till("connect_backlot_to_mainstreet");
+        flag::wait_till("<dev string:x38>");
         while (true) {
-            wait(2);
+            wait 2;
         }
     }
 
 #/
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd1ad4ce3, Offset: 0x4498
 // Size: 0x1c
 function function_990a7f89() {
@@ -376,7 +375,7 @@ function function_990a7f89() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed00a4cd, Offset: 0x44c0
 // Size: 0x3c
 function function_4f804075() {
@@ -385,7 +384,7 @@ function function_4f804075() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x979d398b, Offset: 0x4508
 // Size: 0x3c
 function function_5c0aa258() {
@@ -394,7 +393,7 @@ function function_5c0aa258() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe436705b, Offset: 0x4550
 // Size: 0x3c
 function function_904e469e() {
@@ -411,7 +410,7 @@ function function_2d12df62() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x83ba4949, Offset: 0x45c0
 // Size: 0x64
 function function_5077fd82() {
@@ -421,7 +420,7 @@ function function_5077fd82() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9c180e0, Offset: 0x4630
 // Size: 0x64
 function function_e20c4fba() {
@@ -431,7 +430,7 @@ function function_e20c4fba() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x412d1164, Offset: 0x46a0
 // Size: 0x64
 function function_a7b4cb9e() {
@@ -441,7 +440,7 @@ function function_a7b4cb9e() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xabb25182, Offset: 0x4710
 // Size: 0x64
 function function_2803d91d() {
@@ -451,7 +450,7 @@ function function_2803d91d() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4772070d, Offset: 0x4780
 // Size: 0x64
 function function_e41728ee() {
@@ -461,7 +460,7 @@ function function_e41728ee() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x317059b7, Offset: 0x47f0
 // Size: 0x64
 function function_da725fc1() {
@@ -471,7 +470,7 @@ function function_da725fc1() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20e61a89, Offset: 0x4860
 // Size: 0x64
 function function_68e1cb94() {
@@ -481,7 +480,7 @@ function function_68e1cb94() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb6c27310, Offset: 0x48d0
 // Size: 0x64
 function function_158bd6c6() {
@@ -491,7 +490,7 @@ function function_158bd6c6() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbfcd6503, Offset: 0x4940
 // Size: 0x64
 function function_dde97037() {
@@ -501,7 +500,7 @@ function function_dde97037() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa65b1298, Offset: 0x49b0
 // Size: 0x3f8
 function function_44b1279a() {
@@ -509,45 +508,45 @@ function function_44b1279a() {
     self endon("b16a9f8e903683d");
     self endon(#"disconnect", #"death");
     self setupminimap("", "amerika");
-    self clientfield::set_to_player("" + #"hash_464e0cd19b3b8c12", 0);
-    self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 4);
+    self clientfield::set_to_player("" + #"minimap_underground", 0);
+    self clientfield::set_to_player("" + #"music_underscore", 4);
     self.var_9767e0af = 0;
     util::wait_network_frame();
     while (true) {
         if (!isplayer(self)) {
             return;
         }
-        if (!clientfield::function_ec6130f9("" + #"hash_464e0cd19b3b8c12")) {
+        if (!clientfield::function_ec6130f9("" + #"minimap_underground")) {
             waitframe(1);
             continue;
         }
         is_player_in_zone = self zm_zonemgr::is_player_in_zone(level.var_65c43c31, 0);
-        var_c2858d41 = self clientfield::get_to_player("" + #"hash_464e0cd19b3b8c12");
-        if (is_player_in_zone && var_c2858d41 == 0) {
+        minimap_underground = self clientfield::get_to_player("" + #"minimap_underground");
+        if (is_player_in_zone && minimap_underground == 0) {
             self setupminimap("", "tunnel");
-            self clientfield::set_to_player("" + #"hash_464e0cd19b3b8c12", 1);
-        } else if (!is_player_in_zone && var_c2858d41 == 1) {
+            self clientfield::set_to_player("" + #"minimap_underground", 1);
+        } else if (!is_player_in_zone && minimap_underground == 1) {
             self setupminimap("", "amerika");
-            self clientfield::set_to_player("" + #"hash_464e0cd19b3b8c12", 0);
+            self clientfield::set_to_player("" + #"minimap_underground", 0);
         }
         var_6444ee1f = self zm_zonemgr::is_player_in_zone(level.var_6eacc74a, 0);
         var_52764a82 = self zm_zonemgr::is_player_in_zone(level.var_359fd531, 0);
-        var_710b2d6e = self clientfield::get_to_player("" + #"hash_4be33f9c734f0cb9");
+        var_710b2d6e = self clientfield::get_to_player("" + #"music_underscore");
         if (var_6444ee1f || var_52764a82) {
             if (var_6444ee1f && var_710b2d6e != 0) {
-                self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 0);
+                self clientfield::set_to_player("" + #"music_underscore", 0);
             } else if (var_52764a82 && var_710b2d6e != 1) {
-                self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 1);
+                self clientfield::set_to_player("" + #"music_underscore", 1);
             }
         } else if (var_710b2d6e != 4) {
-            self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 4);
+            self clientfield::set_to_player("" + #"music_underscore", 4);
         }
         s_waitresult = self waittill(#"zone_change");
     }
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe4f95ef3, Offset: 0x4db0
 // Size: 0x2a4
 function setupminimap(material, var_da0dddd2) {
@@ -571,7 +570,7 @@ function setupminimap(material, var_da0dddd2) {
         }
         var_aa9f20e7[var_aa9f20e7.size] = corner;
     }
-    assert(var_32af51c9.size == 2 && var_aa9f20e7.size == 2, "connect_burger_to_concessions");
+    assert(var_32af51c9.size == 2 && var_aa9f20e7.size == 2, "<dev string:x49>");
     if (var_da0dddd2 == "tunnel") {
         self compass::function_d6cba2e9(material, var_32af51c9[0].origin[0], var_32af51c9[0].origin[1], var_32af51c9[1].origin[0], var_32af51c9[1].origin[1]);
     }
@@ -581,7 +580,7 @@ function setupminimap(material, var_da0dddd2) {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd76a3616, Offset: 0x5060
 // Size: 0x5ae
 function function_27028b8e(str_zone) {
@@ -699,7 +698,7 @@ function function_27028b8e(str_zone) {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeea11cc6, Offset: 0x5618
 // Size: 0x142
 function function_9dd333eb() {
@@ -715,7 +714,7 @@ function function_9dd333eb() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a98ad62, Offset: 0x5768
 // Size: 0x44
 function function_8aecc4f0() {
@@ -726,17 +725,17 @@ function function_8aecc4f0() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb04909cb, Offset: 0x57b8
 // Size: 0x3c
 function function_4fc2e560() {
     level flag::wait_till("power_on1");
-    wait(1);
-    namespace_9cf4c697::function_2a1bd467(self);
+    wait 1;
+    zipline_player::function_2a1bd467(self);
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x46999cbc, Offset: 0x5800
 // Size: 0x15c
 function function_169ac2dd() {
@@ -753,7 +752,7 @@ function function_169ac2dd() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x69fbde82, Offset: 0x5968
 // Size: 0x14c
 function function_49779a9c() {
@@ -768,21 +767,21 @@ function function_49779a9c() {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xae6da169, Offset: 0x5ac0
 // Size: 0x6a
 function private function_8d8f7e79(a_ents) {
-    e_door = a_ents[#"hash_12c1afcfcedeafb"];
+    e_door = a_ents[#"zipline_door"];
     e_door function_619a5c20();
     e_door.var_72910c52 = zm_utility::function_4a4cf79a(#"hash_1b7c3d825c8b5c1a", e_door.origin);
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x98e1529f, Offset: 0x5b38
 // Size: 0x64
 function private function_2a1cfabb(a_ents) {
-    e_door = a_ents[#"hash_12c1afcfcedeafb"];
+    e_door = a_ents[#"zipline_door"];
     e_door function_23a29590();
     if (isdefined(e_door.var_72910c52)) {
         zm_utility::function_bc5a54a8(e_door.var_72910c52);
@@ -790,25 +789,25 @@ function private function_2a1cfabb(a_ents) {
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9aa1cf26, Offset: 0x5ba8
 // Size: 0x3c
 function private function_f63d1381(a_ents) {
-    e_door = a_ents[#"hash_12c1afcfcedeafb"];
+    e_door = a_ents[#"zipline_door"];
     e_door function_619a5c20();
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbbf225f3, Offset: 0x5bf0
 // Size: 0x3c
 function private function_88c5fdab(a_ents) {
-    e_door = a_ents[#"hash_12c1afcfcedeafb"];
+    e_door = a_ents[#"zipline_door"];
     e_door function_23a29590();
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6b243cf2, Offset: 0x5c38
 // Size: 0x5c
 function function_6e486b1(*var_d3413870) {

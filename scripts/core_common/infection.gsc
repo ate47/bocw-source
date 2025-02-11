@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3d703ef87a841fe4;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spectating.gsc;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\spectating;
+#using scripts\core_common\system_shared;
 
 #namespace infection;
 
@@ -153,7 +152,7 @@ function give_body() {
 function function_da08f4d0() {
     self endon(#"death");
     while (true) {
-        wait(randomintrange(3, 5));
+        wait randomintrange(3, 5);
         self playsound(#"hash_4325dee8081cb1b3");
     }
 }

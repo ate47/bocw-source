@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_player;
 
 #namespace zm_tungsten_ffotd;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_tungsten_ffotd/zm_tungsten_ffotd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x250
 // Size: 0x4
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace zm_tungsten_ffotd/zm_tungsten_ffotd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x89b035a3, Offset: 0x260
 // Size: 0x1e4
 function private postinit() {
@@ -42,7 +41,7 @@ function private postinit() {
 }
 
 // Namespace zm_tungsten_ffotd/zm_tungsten_ffotd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe626cb8c, Offset: 0x450
 // Size: 0xf4
 function function_6526f34b() {
@@ -59,7 +58,7 @@ function function_6526f34b() {
 }
 
 // Namespace zm_tungsten_ffotd/zm_tungsten_ffotd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7bb41e72, Offset: 0x550
 // Size: 0x1cc
 function function_13b9705e() {
@@ -96,7 +95,7 @@ function function_67a43327(str_struct, v_origin, v_angles) {
 }
 
 // Namespace zm_tungsten_ffotd/zm_tungsten_ffotd
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5e66b485, Offset: 0x790
 // Size: 0xb6
 function function_e0cfb01(str_zone_name, v_origin) {

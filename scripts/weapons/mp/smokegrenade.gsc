@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\smokegrenade.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\smokegrenade;
 
 #namespace smokegrenade;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf358517a, Offset: 0xd8
 // Size: 0x34
 function private preinit() {

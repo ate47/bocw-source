@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_puppet;
 
@@ -26,7 +25,7 @@
                 self.barricade_enter = 0;
             }
             player = getplayers()[0];
-            if (isdefined(player) && player buttonpressed("<unknown string>")) {
+            if (isdefined(player) && player buttonpressed("<dev string:x38>")) {
                 if (self.iscurrentlypuppet) {
                     if (zm_utility::check_point_in_playable_area(self.goalpos) && !zm_utility::check_point_in_playable_area(self.origin)) {
                         self.backedupgoal = self.goalpos;

@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\entityheadicons_shared.gsc;
+#using scripts\core_common\entityheadicons_shared;
+#using scripts\core_common\system_shared;
 
 #namespace entityheadicons;
 

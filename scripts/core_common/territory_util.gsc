@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
 
 #namespace territory;
 
 // Namespace territory/territory_util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x204312be, Offset: 0x90
 // Size: 0x32
 function function_c0de0601() {
@@ -12,7 +11,7 @@ function function_c0de0601() {
 }
 
 // Namespace territory/territory_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1f46dbc5, Offset: 0xd0
 // Size: 0xf6
 function get_center(territory = level.territory) {
@@ -27,7 +26,7 @@ function get_center(territory = level.territory) {
 }
 
 // Namespace territory/territory_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb1a9ea4c, Offset: 0x1d0
 // Size: 0x230
 function get_radius(territory = level.territory) {
@@ -56,7 +55,7 @@ function get_radius(territory = level.territory) {
 }
 
 // Namespace territory/territory_util
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3f260c19, Offset: 0x408
 // Size: 0x18a
 function is_inside(point, ignoreheight = 0, territory = level.territory) {
@@ -83,7 +82,7 @@ function is_inside(point, ignoreheight = 0, territory = level.territory) {
 }
 
 // Namespace territory/territory_util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa4729fd2, Offset: 0x5a0
 // Size: 0x6a
 function is_valid(object, territory = level.territory) {
@@ -94,7 +93,7 @@ function is_valid(object, territory = level.territory) {
 }
 
 // Namespace territory/territory_util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe2440b3c, Offset: 0x618
 // Size: 0x2dc
 function function_b3791221(maxattempts = 10, territory = level.territory) {
@@ -136,7 +135,7 @@ function function_b3791221(maxattempts = 10, territory = level.territory) {
 }
 
 // Namespace territory/territory_util
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc36ea6ea, Offset: 0x900
 // Size: 0x6a
 function function_5c7345a3(name, key, territory = level.territory) {
@@ -145,7 +144,7 @@ function function_5c7345a3(name, key, territory = level.territory) {
 }
 
 // Namespace territory/territory_util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x199cac01, Offset: 0x978
 // Size: 0x19e
 function function_39dd704c(objects, territory) {

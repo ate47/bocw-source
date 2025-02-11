@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
 #using script_1940fc077a028a81;
 #using script_3411bb48d41bd3b;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\throttle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\throttle_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_utility;
 
 #namespace awareness;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x66d8ca3a, Offset: 0x1d8
 // Size: 0x1dc
 function private preinit() {
@@ -50,7 +49,7 @@ function private preinit() {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2d2edb19, Offset: 0x3c0
 // Size: 0xe8
 function private function_8cdaa4ca() {
@@ -65,7 +64,7 @@ function private function_8cdaa4ca() {
                 arrayremoveindex(level.var_a82d661a, var_df2fb7be);
             }
         }
-        wait(5);
+        wait 5;
     }
 }
 
@@ -99,7 +98,7 @@ function function_d703c8f8(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2dbca76b, Offset: 0x588
 // Size: 0x9c
 function function_e732359c(type, position, var_4603c944, entity, params) {
@@ -107,12 +106,12 @@ function function_e732359c(type, position, var_4603c944, entity, params) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa236764, Offset: 0x630
 // Size: 0x3a0
 function function_9d0a9f4e(entity, awareness_event) {
     /#
-        if (getdvarint(#"hash_7228e2918da6da2a", 0) > 1) {
+        if (getdvarint(#"awareness_debug", 0) > 1) {
             colors = array((1, 0, 0), (1, 0.5, 0), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 0.752941, 0.796078), (0, 1, 1));
             if (!isdefined(self.var_12726112)) {
                 self.var_12726112 = 0;
@@ -120,7 +119,7 @@ function function_9d0a9f4e(entity, awareness_event) {
             var_a6373be0 = colors[self.var_12726112];
             self.var_12726112 = (self.var_12726112 + 1) % colors.size;
             start_pos = entity.origin + (0, 0, entity function_6a9ae71() / 2);
-            recordline(start_pos, awareness_event.position, var_a6373be0, "<unknown string>", entity);
+            recordline(start_pos, awareness_event.position, var_a6373be0, "<dev string:x38>", entity);
         }
     #/
     if (is_true(self.ignoreall)) {
@@ -128,16 +127,16 @@ function function_9d0a9f4e(entity, awareness_event) {
     }
     if (isdefined(self.var_3eaac485) && self.var_3eaac485 > gettime()) {
         /#
-            if (getdvarint(#"hash_7228e2918da6da2a", 0) > 1) {
-                record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
+            if (getdvarint(#"awareness_debug", 0) > 1) {
+                record3dtext("<dev string:x42>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<dev string:x38>", entity);
             }
         #/
         return false;
     }
     if (self isplayinganimscripted()) {
         /#
-            if (getdvarint(#"hash_7228e2918da6da2a", 0) > 1) {
-                record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
+            if (getdvarint(#"awareness_debug", 0) > 1) {
+                record3dtext("<dev string:x69>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<dev string:x38>", entity);
             }
         #/
         return false;
@@ -145,23 +144,23 @@ function function_9d0a9f4e(entity, awareness_event) {
     if (isdefined(entity.var_b4b8ad5f)) {
         if (distancesquared(entity.var_b4b8ad5f.position, awareness_event.position) <= sqr(256)) {
             /#
-                if (getdvarint(#"hash_7228e2918da6da2a", 0) > 1) {
-                    record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
+                if (getdvarint(#"awareness_debug", 0) > 1) {
+                    record3dtext("<dev string:x94>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<dev string:x38>", entity);
                 }
             #/
             return false;
         }
     }
     /#
-        if (getdvarint(#"hash_7228e2918da6da2a", 0) > 1) {
-            record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
+        if (getdvarint(#"awareness_debug", 0) > 1) {
+            record3dtext("<dev string:xc4>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<dev string:x38>", entity);
         }
     #/
     return true;
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6a64f053, Offset: 0x9d8
 // Size: 0x22
 function function_1db27761(entity, event) {
@@ -169,31 +168,31 @@ function function_1db27761(entity, event) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x788406e8, Offset: 0xa08
 // Size: 0x2c
 function pause(entity) {
-    entity flag::set(#"hash_624e5d5dfb7f742b");
+    entity flag::set(#"pause_awareness");
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x71b755d, Offset: 0xa40
 // Size: 0x2c
 function resume(entity) {
-    entity flag::clear(#"hash_624e5d5dfb7f742b");
+    entity flag::clear(#"pause_awareness");
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3d6c3a48, Offset: 0xa78
 // Size: 0x2a
 function is_paused(entity) {
-    return entity flag::get(#"hash_624e5d5dfb7f742b");
+    return entity flag::get(#"pause_awareness");
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x56fd8d29, Offset: 0xab0
 // Size: 0x3c
 function function_cf2fab43(event) {
@@ -203,7 +202,7 @@ function function_cf2fab43(event) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4f1be3aa, Offset: 0xaf8
 // Size: 0x110
 function private function_3041c2b8() {
@@ -228,7 +227,7 @@ function private function_3041c2b8() {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x57139d33, Offset: 0xc10
 // Size: 0x88
 function private function_7a84e563() {
@@ -259,7 +258,7 @@ function event_handler[enter_vehicle] function_8a544559(eventstruct) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5294339, Offset: 0xd60
 // Size: 0x5c
 function private function_1d61b6d6(params) {
@@ -270,7 +269,7 @@ function private function_1d61b6d6(params) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfa38cc0, Offset: 0xdc8
 // Size: 0xd0
 function function_44454d0f(n_radius) {
@@ -287,7 +286,7 @@ function function_44454d0f(n_radius) {
             var_fb6494ee = 5000;
         }
         function_e732359c(0, self.origin, var_fb6494ee, self);
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -307,12 +306,12 @@ function event_handler[exit_vehicle] function_af1a8e24(eventstruct) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6be19939, Offset: 0xf60
 // Size: 0x228
 function private function_83baeaf1(event) {
     /#
-        if (getdvarint(#"hash_7228e2918da6da2a", 0)) {
+        if (getdvarint(#"awareness_debug", 0)) {
             function_fbae6630(event);
         }
     #/
@@ -338,7 +337,7 @@ function event_handler[grenade_fire] function_da91200f(eventstruct) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9c1d2f81, Offset: 0x11e0
 // Size: 0x74
 function private function_bf26aaf9(*params) {
@@ -350,7 +349,7 @@ function private function_bf26aaf9(*params) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x69feb2b1, Offset: 0x1260
 // Size: 0x2c
 function private function_83c46567(dynent) {
@@ -358,13 +357,13 @@ function private function_83c46567(dynent) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xeff6a8d4, Offset: 0x1298
 // Size: 0x2c6
 function private function_4645d5f8(*params) {
     self endon(#"death");
     while (true) {
-        waitresult = self waittill(#"gunshot", #"explode", #"hash_c77d45f3ba174cb", #"alert");
+        waitresult = self waittill(#"gunshot", #"explode", #"radio_event", #"alert");
         if (self.current_state.name === #"chase") {
             self waittill(#"state_changed");
             continue;
@@ -376,7 +375,7 @@ function private function_4645d5f8(*params) {
         case #"explode":
             self callback::callback(#"awareness_event", {#type:2, #entity:waitresult.owner, #position:waitresult.position, #params:{#radius:1024}});
             break;
-        case #"hash_c77d45f3ba174cb":
+        case #"radio_event":
             self callback::callback(#"awareness_event", {#type:3, #entity:waitresult.originator, #position:waitresult.originator.origin, #params:{#enemy:waitresult.originator.enemy}});
             break;
         case #"alert":
@@ -389,7 +388,7 @@ function private function_4645d5f8(*params) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf3dc0bf0, Offset: 0x1568
 // Size: 0xd6
 function private function_fc45f7e2(*params) {
@@ -405,7 +404,7 @@ function private function_fc45f7e2(*params) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xaf49ecdc, Offset: 0x1648
 // Size: 0xf4
 function register_state(entity, name, enter, update, exit, target_update, debug_update) {
@@ -417,7 +416,7 @@ function register_state(entity, name, enter, update, exit, target_update, debug_
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb212b40a, Offset: 0x1748
 // Size: 0x22
 function function_b3810444(entity, name) {
@@ -425,11 +424,11 @@ function function_b3810444(entity, name) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x839e04b, Offset: 0x1778
 // Size: 0x16c
 function set_state(entity, state_name) {
-    assert(isdefined(entity.var_d2a0e298[state_name]), "<unknown string>" + (ishash(state_name) ? function_9e72a96(state_name) : state_name));
+    assert(isdefined(entity.var_d2a0e298[state_name]), "<dev string:xd6>" + (ishash(state_name) ? function_9e72a96(state_name) : state_name));
     state = entity.var_d2a0e298[state_name];
     if (isdefined(entity.current_state)) {
         if (isdefined(entity.current_state.exit_func)) {
@@ -446,11 +445,11 @@ function set_state(entity, state_name) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xda215ef3, Offset: 0x18f0
 // Size: 0xb4
 function target_update(entity) {
-    if (flag::get(#"hash_624e5d5dfb7f742b")) {
+    if (flag::get(#"pause_awareness")) {
         return;
     }
     if (entity function_dd070839() && !flag::get(#"hash_290cba33c13ddac5")) {
@@ -462,7 +461,7 @@ function target_update(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf81449d7, Offset: 0x19b0
 // Size: 0x4aa
 function function_fa6e010d() {
@@ -473,13 +472,13 @@ function function_fa6e010d() {
     }
     var_4e686deb = int(pow(2, self.var_a2f87939) - 1);
     while (true) {
-        if (((self getentitynumber() & var_4e686deb) != (getlevelframenumber() & var_4e686deb) || flag::get(#"hash_624e5d5dfb7f742b")) && !is_true(self.var_bd1d170c)) {
+        if (((self getentitynumber() & var_4e686deb) != (getlevelframenumber() & var_4e686deb) || flag::get(#"pause_awareness")) && !is_true(self.var_bd1d170c)) {
             /#
-                if (getdvarint(#"hash_7228e2918da6da2a", 0) && flag::get(#"hash_624e5d5dfb7f742b")) {
+                if (getdvarint(#"awareness_debug", 0) && flag::get(#"pause_awareness")) {
                     if (getdvarint(#"recorder_enablerec", 0)) {
-                        record3dtext("<unknown string>", self.origin, (0, 1, 1), "<unknown string>", self);
+                        record3dtext("<dev string:x10d>", self.origin, (0, 1, 1), "<dev string:x38>", self);
                     } else {
-                        print3d(self.origin, "<unknown string>", (0, 1, 1), 1, 1);
+                        print3d(self.origin, "<dev string:x10d>", (0, 1, 1), 1, 1);
                     }
                 }
             #/
@@ -495,17 +494,17 @@ function function_fa6e010d() {
             [[ self.current_state.update_func ]](self);
         }
         /#
-            if (isdefined(self.current_state) && getdvarint(#"hash_7228e2918da6da2a", 0)) {
+            if (isdefined(self.current_state) && getdvarint(#"awareness_debug", 0)) {
                 if (getdvarint(#"recorder_enablerec", 0)) {
-                    record3dtext(function_9e72a96(self.current_state.name), self.origin, (0, 1, 1), "<unknown string>", self);
+                    record3dtext(function_9e72a96(self.current_state.name), self.origin, (0, 1, 1), "<dev string:x38>", self);
                 } else {
                     print3d(self.origin, function_9e72a96(self.current_state.name), (0, 1, 1), 1, 1);
                 }
                 if (is_true(self.var_1033fa72)) {
                     if (getdvarint(#"recorder_enablerec", 0)) {
-                        record3dtext("<unknown string>", self.origin, (0, 1, 1), "<unknown string>", self);
+                        record3dtext("<dev string:x117>", self.origin, (0, 1, 1), "<dev string:x38>", self);
                     } else {
-                        print3d(self.origin, "<unknown string>", (0, 1, 1), 1, 1);
+                        print3d(self.origin, "<dev string:x117>", (0, 1, 1), 1, 1);
                     }
                 }
                 if (isdefined(self.current_state.debug_func)) {
@@ -518,7 +517,7 @@ function function_fa6e010d() {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x20c12cc4, Offset: 0x1e68
 // Size: 0x12c
 function function_5f511313(params) {
@@ -529,7 +528,7 @@ function function_5f511313(params) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xebe924e8, Offset: 0x1fa0
 // Size: 0x1fe
 function function_b184324d(origin, radius, var_5e8ea34a = 0, dist_from_boundary = 15, var_5e95f317 = dist_from_boundary) {
@@ -543,7 +542,7 @@ function function_b184324d(origin, radius, var_5e8ea34a = 0, dist_from_boundary 
     point = (origin[0] + point[0], origin[1] + point[1], origin[2]);
     if (isdefined(point)) {
         /#
-            recordstar(point, (0, 0, 1), "<unknown string>", self);
+            recordstar(point, (0, 0, 1), "<dev string:x38>", self);
         #/
         point = checknavmeshdirection(origin, point - origin, max(distance(point, origin), dist_from_boundary), var_5e95f317);
         return getclosestpointonnavmesh(point, var_5e95f317, dist_from_boundary);
@@ -552,7 +551,7 @@ function function_b184324d(origin, radius, var_5e8ea34a = 0, dist_from_boundary 
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x83a648e1, Offset: 0x21a8
 // Size: 0x20e
 function function_496e0dbc(entity, origin, radius, var_5e8ea34a = 0, dist_from_boundary = 15, height) {
@@ -574,7 +573,7 @@ function function_496e0dbc(entity, origin, radius, var_5e8ea34a = 0, dist_from_b
 /#
 
     // Namespace awareness/namespace_df233b8a
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x27956ac2, Offset: 0x23c0
     // Size: 0x1f8
     function function_555d960b(entity) {
@@ -586,17 +585,17 @@ function function_496e0dbc(entity, origin, radius, var_5e8ea34a = 0, dist_from_b
             debugstar(goalinfo.goalpos, 1, (0, 1, 0));
         }
         if (isdefined(entity.var_1267fdea)) {
-            record3dtext("<unknown string>" + int(entity.var_1267fdea * 1000), entity.origin, (0, 1, 0), "<unknown string>", entity);
+            record3dtext("<dev string:x12e>" + int(entity.var_1267fdea * 1000), entity.origin, (0, 1, 0), "<dev string:x38>", entity);
         }
         foreach (index, var_1d3d7802 in entity.var_eb5eeb0f) {
-            record3dtext("<unknown string>" + index + "<unknown string>" + gettime() - var_1d3d7802, entity.origin, (0, 1, 0), "<unknown string>", entity);
+            record3dtext("<dev string:x13f>" + index + "<dev string:x14b>" + gettime() - var_1d3d7802, entity.origin, (0, 1, 0), "<dev string:x38>", entity);
         }
     }
 
 #/
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9544d4cd, Offset: 0x25c0
 // Size: 0x14c
 function function_9c9d96b5(entity) {
@@ -617,7 +616,7 @@ function function_9c9d96b5(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x54e05d18, Offset: 0x2718
 // Size: 0x24
 function function_3b4cac9b(*notifyhash) {
@@ -625,7 +624,7 @@ function function_3b4cac9b(*notifyhash) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51d54bbe, Offset: 0x2748
 // Size: 0x4a0
 function function_3bac247(entity) {
@@ -638,7 +637,7 @@ function function_3bac247(entity) {
     var_7f4fe0f1 = isdefined(entity.var_f6ea781c) ? entity.var_f6ea781c : 1;
     entity.wander_radius = isdefined(entity.spawn_point.wander_radius) ? entity.spawn_point.wander_radius : isdefined(entity.wander_radius) ? entity.wander_radius : 128;
     while (true) {
-        flag::wait_till_clear(#"hash_624e5d5dfb7f742b");
+        flag::wait_till_clear(#"pause_awareness");
         [[ level.var_108771cb ]]->waitinqueue(entity);
         if (isdefined(entity.spawn_point) && isdefined(entity.spawn_point.origin)) {
             goal = function_b184324d(entity.spawn_point.origin, entity.wander_radius, entity getpathfindingradius() * 1.2, var_af6bd013);
@@ -646,11 +645,11 @@ function function_3bac247(entity) {
             goal = function_b184324d(entity.origin, 300, 100, var_af6bd013, entity getpathfindingradius());
             /#
                 if (getdvarint(#"hash_50e7f4258cd6dd5", 0)) {
-                    type = "<unknown string>";
+                    type = "<dev string:x152>";
                 }
             #/
         }
-        if (flag::get(#"hash_624e5d5dfb7f742b")) {
+        if (flag::get(#"pause_awareness")) {
             continue;
         }
         if (!isdefined(goal)) {
@@ -671,13 +670,13 @@ function function_3bac247(entity) {
             #/
         }
         if (waitresult._notify === #"goal" || waitresult._notify === #"bad_path") {
-            wait(randomfloatrange(var_f0b43a45, var_7f4fe0f1));
+            wait randomfloatrange(var_f0b43a45, var_7f4fe0f1);
         }
     }
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x59b8123d, Offset: 0x2bf0
 // Size: 0x116
 function function_c91092d2(var_f83c1c54, time_sec) {
@@ -699,7 +698,7 @@ function function_c91092d2(var_f83c1c54, time_sec) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9fa7849a, Offset: 0x2d10
 // Size: 0x29c
 function function_4ebe4a6d(entity) {
@@ -730,7 +729,7 @@ function function_4ebe4a6d(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca902b57, Offset: 0x2fb8
 // Size: 0x54
 function function_b264a0bc(entity) {
@@ -740,7 +739,7 @@ function function_b264a0bc(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa59b0d2e, Offset: 0x3018
 // Size: 0x7c
 function function_4df0b826(entity, enemy) {
@@ -751,7 +750,7 @@ function function_4df0b826(entity, enemy) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd7218209, Offset: 0x30a0
 // Size: 0x3c
 function function_853a6d58(event) {
@@ -761,7 +760,7 @@ function function_853a6d58(event) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1556909c, Offset: 0x30e8
 // Size: 0x84
 function function_b41f0471(entity) {
@@ -772,7 +771,7 @@ function function_b41f0471(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa81dbad4, Offset: 0x3178
 // Size: 0x24
 function function_56907d56(*notifyhash) {
@@ -780,7 +779,7 @@ function function_56907d56(*notifyhash) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4abb6ce, Offset: 0x31a8
 // Size: 0x112
 function function_6938f39b(entity, awareness_event) {
@@ -795,7 +794,7 @@ function function_6938f39b(entity, awareness_event) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4cbbe084, Offset: 0x32c8
 // Size: 0x724
 function function_2eab2251(entity, awareness_event) {
@@ -830,10 +829,10 @@ function function_2eab2251(entity, awareness_event) {
         entity.var_5aaa7f76 = var_2e7ba82c;
         entity.awarenesslevelcurrent = "low_alert";
         /#
-            recordstar(entity.var_5aaa7f76, (0, 1, 0), "<unknown string>", entity);
-            recordline(entity.origin, entity.var_5aaa7f76, (0, 1, 0), "<unknown string>", entity);
-            record3dtext("<unknown string>", entity.var_5aaa7f76, (0, 1, 0), "<unknown string>", entity);
-            record3dtext("<unknown string>", entity.origin, (0, 1, 0), "<unknown string>", entity);
+            recordstar(entity.var_5aaa7f76, (0, 1, 0), "<dev string:x38>", entity);
+            recordline(entity.origin, entity.var_5aaa7f76, (0, 1, 0), "<dev string:x38>", entity);
+            record3dtext("<dev string:x16b>", entity.var_5aaa7f76, (0, 1, 0), "<dev string:x38>", entity);
+            record3dtext("<dev string:x180>", entity.origin, (0, 1, 0), "<dev string:x38>", entity);
         #/
         [[ level.var_812c573d ]]->waitinqueue(entity);
         if (awareness_event.type === 4) {
@@ -845,26 +844,26 @@ function function_2eab2251(entity, awareness_event) {
     }
     if (!isdefined(investigate_point) && isdefined(var_2e7ba82c)) {
         /#
-            if (getdvarint(#"hash_7228e2918da6da2a", 0)) {
-                record3dtext("<unknown string>", entity.origin, (1, 0, 0), "<unknown string>", entity);
+            if (getdvarint(#"awareness_debug", 0)) {
+                record3dtext("<dev string:x19a>", entity.origin, (1, 0, 0), "<dev string:x38>", entity);
             }
         #/
         investigate_point = checknavmeshdirection(entity.origin, var_2e7ba82c - entity.origin, distance(var_2e7ba82c, entity.origin) * randomfloatrange(0.8, 1.2), entity getpathfindingradius());
     }
     if (!isdefined(investigate_point) || distancesquared(entity.origin, investigate_point) <= sqr(entity.goalradius)) {
         /#
-            if (getdvarint(#"hash_7228e2918da6da2a", 0)) {
-                record3dtext("<unknown string>", entity.origin, (1, 0, 0), "<unknown string>", entity);
+            if (getdvarint(#"awareness_debug", 0)) {
+                record3dtext("<dev string:x1d0>", entity.origin, (1, 0, 0), "<dev string:x38>", entity);
             }
         #/
         entity setgoal(entity.origin);
-        wait(randomfloatrange(2, 5));
+        wait randomfloatrange(2, 5);
         if (isdefined(awareness_event) && awareness_event === entity.var_b4b8ad5f) {
             function_1db27761(entity, undefined);
         }
         return;
     }
-    if (flag::get(#"hash_624e5d5dfb7f742b")) {
+    if (flag::get(#"pause_awareness")) {
         return;
     }
     function_1db27761(entity, awareness_event);
@@ -880,10 +879,10 @@ function function_2eab2251(entity, awareness_event) {
             entity setgoal(entity.origin);
         }
         if (entity isingoal(investigate_point)) {
-            wait(randomfloatrange(2, 5));
+            wait randomfloatrange(2, 5);
         }
     } else {
-        wait(randomfloatrange(2, 5));
+        wait randomfloatrange(2, 5);
     }
     function_1db27761(entity, undefined);
 }
@@ -891,7 +890,7 @@ function function_2eab2251(entity, awareness_event) {
 /#
 
     // Namespace awareness/namespace_df233b8a
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x64bcc4e4, Offset: 0x39f8
     // Size: 0x198
     function function_a360dd00(entity) {
@@ -900,17 +899,17 @@ function function_2eab2251(entity, awareness_event) {
             line(entity.origin, entity.goalpos, (0, 0, 1), 1, 1, 1);
         }
         if (isdefined(entity.var_1267fdea)) {
-            record3dtext("<unknown string>" + int(entity.var_1267fdea * 1000), entity.origin, (0, 1, 0), "<unknown string>", entity);
+            record3dtext("<dev string:x12e>" + int(entity.var_1267fdea * 1000), entity.origin, (0, 1, 0), "<dev string:x38>", entity);
         }
         foreach (index, var_1d3d7802 in entity.var_eb5eeb0f) {
-            record3dtext("<unknown string>" + index + "<unknown string>" + gettime() - var_1d3d7802, entity.origin, (0, 1, 0), "<unknown string>", entity);
+            record3dtext("<dev string:x13f>" + index + "<dev string:x14b>" + gettime() - var_1d3d7802, entity.origin, (0, 1, 0), "<dev string:x38>", entity);
         }
     }
 
 #/
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7b4305a3, Offset: 0x3b98
 // Size: 0x24e
 function function_9eefc327(entity) {
@@ -946,7 +945,7 @@ function function_9eefc327(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4f48cf0a, Offset: 0x3df0
 // Size: 0x54
 function function_34162a25(entity) {
@@ -955,7 +954,7 @@ function function_34162a25(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x505a8231, Offset: 0x3e50
 // Size: 0xce
 function function_c241ef9a(ai, enemy, var_fb09158c) {
@@ -968,7 +967,7 @@ function function_c241ef9a(ai, enemy, var_fb09158c) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb87fbbe3, Offset: 0x3f28
 // Size: 0x10e
 function function_d7fedde2(entity) {
@@ -982,7 +981,7 @@ function function_d7fedde2(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbcec4338, Offset: 0x4040
 // Size: 0x2b6
 function function_2bc424fd(entity, target) {
@@ -1014,23 +1013,23 @@ function function_2bc424fd(entity, target) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd6dfb68, Offset: 0x4300
 // Size: 0x16e4
 function function_5c40e824(entity) {
     potential_targets = [];
     var_8d6705e8 = [];
-    var_61203702 = [];
+    possible_targets = [];
     if (!isdefined(self.var_2d5cbb7)) {
         self.var_2d5cbb7 = [];
     }
     target_player = entity.team === level.zombie_team;
     var_7c12fa23 = 0;
     if (target_player) {
-        var_61203702 = function_a1ef346b();
+        possible_targets = function_a1ef346b();
         function_1eaaceab(level.var_7015803, 0);
-        var_61203702 = arraycombine(var_61203702, level.var_7015803);
-        foreach (target in var_61203702) {
+        possible_targets = arraycombine(possible_targets, level.var_7015803);
+        foreach (target in possible_targets) {
             if (function_2bc424fd(entity, target) && (!target.ignoreme && !target isnotarget() || target === entity.var_8a3828c6)) {
                 function_bc3f5b5a(entity, target);
                 position = isdefined(target.last_valid_position) ? target.last_valid_position : target.origin;
@@ -1043,20 +1042,20 @@ function function_5c40e824(entity) {
                     var_7c12fa23 = 1;
                 }
             }
-            assert(potential_targets.size <= 16, "<unknown string>");
+            assert(potential_targets.size <= 16, "<dev string:x1f3>");
         }
     } else {
-        var_61203702 = getentitiesinradius(entity.origin, 1500, 15);
+        possible_targets = getentitiesinradius(entity.origin, 1500, 15);
         var_2019ec4e = isdefined(entity.var_443d78cc) ? entity.var_443d78cc : entity;
-        var_61203702 = arraysortclosest(var_61203702, var_2019ec4e.origin);
-        for (i = 0; potential_targets.size < 16 && i < var_61203702.size; i++) {
-            target = var_61203702[i];
+        possible_targets = arraysortclosest(possible_targets, var_2019ec4e.origin);
+        for (i = 0; potential_targets.size < 16 && i < possible_targets.size; i++) {
+            target = possible_targets[i];
             if (entity === target) {
                 continue;
             }
             if (function_2bc424fd(entity, target) && target.team != entity.team) {
                 position = isdefined(target.last_valid_position) ? target.last_valid_position : target.origin;
-                potential_targets[potential_targets.size] = var_61203702[i];
+                potential_targets[potential_targets.size] = possible_targets[i];
                 var_8d6705e8[var_8d6705e8.size] = position;
                 if (!isdefined(self.var_2d5cbb7[target getentitynumber()])) {
                     self.var_2d5cbb7[target getentitynumber()] = {#var_e29d2657:0, #dist:-1};
@@ -1261,42 +1260,42 @@ function function_5c40e824(entity) {
     }
     /#
         if (getdvar(#"hash_169a29e17dd1b916", 0) > 0) {
-            var_edbf2d06 = "<unknown string>";
+            var_edbf2d06 = "<dev string:x219>";
             for (i = 0; i < potential_targets.size; i++) {
                 target = potential_targets[i];
                 score = var_e3958ef0[i];
                 if (isdefined(target)) {
-                    color = var_9b606bab === target ? "<unknown string>" : "<unknown string>";
-                    var_f24e54b = "<unknown string>";
+                    color = var_9b606bab === target ? "<dev string:x21d>" : "<dev string:x223>";
+                    var_f24e54b = "<dev string:x219>";
                     if (isdefined(self.var_29a3768c[target getentitynumber()])) {
-                        var_f24e54b = "<unknown string>" + self.var_29a3768c[target getentitynumber()];
+                        var_f24e54b = "<dev string:x229>" + self.var_29a3768c[target getentitynumber()];
                     }
-                    var_edbf2d06 = color + "<unknown string>" + target getentitynumber() + "<unknown string>" + score;
+                    var_edbf2d06 = color + "<dev string:x23d>" + target getentitynumber() + "<dev string:x246>" + score;
                 } else {
-                    var_edbf2d06 = "<unknown string>";
+                    var_edbf2d06 = "<dev string:x257>";
                 }
-                record3dtext(var_edbf2d06, entity.origin + (0, 0, 80 - 30 * i), (1, 1, 1), "<unknown string>", entity, 0.5);
-                record3dtext("<unknown string>" + var_674755ca[i] + var_f24e54b, entity.origin + (0, 0, 75 - 30 * i), (1, 1, 1), "<unknown string>", entity, 0.5);
+                record3dtext(var_edbf2d06, entity.origin + (0, 0, 80 - 30 * i), (1, 1, 1), "<dev string:x38>", entity, 0.5);
+                record3dtext("<dev string:x267>" + var_674755ca[i] + var_f24e54b, entity.origin + (0, 0, 75 - 30 * i), (1, 1, 1), "<dev string:x38>", entity, 0.5);
             }
             if (isdefined(entity.var_c2dcab66)) {
-                var_edbf2d06 = "<unknown string>";
+                var_edbf2d06 = "<dev string:x219>";
                 foreach (attacker in entity.var_c2dcab66) {
                     var_76fc2ac9 = (gettime() - attacker.time) * 0.001;
                     if (isdefined(attacker.player) && isdefined(entity.var_448aebc7[attacker.player getentitynumber()])) {
-                        var_edbf2d06 += "<unknown string>" + attacker.player getentitynumber() + "<unknown string>" + entity.var_448aebc7[attacker.player getentitynumber()] + "<unknown string>" + var_76fc2ac9 + "<unknown string>";
+                        var_edbf2d06 += "<dev string:x23d>" + attacker.player getentitynumber() + "<dev string:x273>" + entity.var_448aebc7[attacker.player getentitynumber()] + "<dev string:x27a>" + var_76fc2ac9 + "<dev string:x285>";
                     }
                 }
-                record3dtext(var_edbf2d06, entity.origin + (0, 0, -20), (1, 1, 1), "<unknown string>", entity, 0.5);
+                record3dtext(var_edbf2d06, entity.origin + (0, 0, -20), (1, 1, 1), "<dev string:x38>", entity, 0.5);
             }
             if (is_true(entity.var_982e6932)) {
-                record3dtext("<unknown string>", entity.origin + (0, 0, -25), (0, 1, 0), "<unknown string>", entity, 0.5);
+                record3dtext("<dev string:x28a>", entity.origin + (0, 0, -25), (0, 1, 0), "<dev string:x38>", entity, 0.5);
             }
         }
     #/
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x97da032d, Offset: 0x59f0
 // Size: 0x1cc
 function function_4c4ad565(event) {
@@ -1304,10 +1303,10 @@ function function_4c4ad565(event) {
         var_55015c64 = event.victim getentitynumber();
         var_e7c958b3 = event.attacker getentitynumber();
         /#
-            assert(isdefined(var_55015c64) && isdefined("<unknown string>"));
+            assert(isdefined(var_55015c64) && isdefined("<dev string:x2a0>"));
             if (getdvar(#"hash_169a29e17dd1b916", 0) > 0) {
                 recordline(self.origin, event.victim.origin, (0, 0, 0));
-                record3dtext("<unknown string>" + var_55015c64 + "<unknown string>", self.origin - (0, 0, 5), (0, 0, 0), "<unknown string>", self, 0.5);
+                record3dtext("<dev string:x2c2>" + var_55015c64 + "<dev string:x2ce>", self.origin - (0, 0, 5), (0, 0, 0), "<dev string:x38>", self, 0.5);
             }
         #/
         if (!isdefined(self.var_b2fdaa21)) {
@@ -1319,7 +1318,7 @@ function function_4c4ad565(event) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7353807b, Offset: 0x5bc8
 // Size: 0x19c
 function function_bc3f5b5a(entity, player) {
@@ -1346,7 +1345,7 @@ function function_bc3f5b5a(entity, player) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c82c8ba, Offset: 0x5d70
 // Size: 0x16
 function function_6f1eeb7a(entity) {
@@ -1354,7 +1353,7 @@ function function_6f1eeb7a(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe1a5dd98, Offset: 0x5d90
 // Size: 0x34
 function function_8ccbffca(player) {
@@ -1362,7 +1361,7 @@ function function_8ccbffca(player) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0ec83, Offset: 0x5dd0
 // Size: 0x14c
 function function_978025e4(entity) {
@@ -1378,7 +1377,7 @@ function function_978025e4(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe4ae0fbf, Offset: 0x5f28
 // Size: 0x1da
 function function_d0939c67(entity, target, min_dist) {
@@ -1408,7 +1407,7 @@ function function_d0939c67(entity, target, min_dist) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x12920a14, Offset: 0x6110
 // Size: 0x7dc
 function function_39da6c3c(entity) {
@@ -1512,7 +1511,7 @@ function function_39da6c3c(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4e9f31f0, Offset: 0x68f8
 // Size: 0x6c
 function function_b9f81e8b(entity) {
@@ -1522,13 +1521,13 @@ function function_b9f81e8b(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe048e471, Offset: 0x6970
 // Size: 0xd0
 function function_85bb995c() {
     self endon(#"death", #"state_changed");
     while (true) {
-        wait(1);
+        wait 1;
         if (!isdefined(self.enemy)) {
             continue;
         }
@@ -1543,7 +1542,7 @@ function function_85bb995c() {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8b330227, Offset: 0x6a48
 // Size: 0x2f6
 function function_7c72a5c7(entity) {
@@ -1564,13 +1563,13 @@ function function_7c72a5c7(entity) {
                 entity.at_entrance_tear_spot = 0;
                 /#
                     if (getdvarint(#"hash_2f078c2224f40586", 0) && isdefined(entity.first_node.zbarrier)) {
-                        record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 2), (1, 0, 0), "<unknown string>", entity);
+                        record3dtext("<dev string:x2dc>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 2), (1, 0, 0), "<dev string:x2f9>", entity);
                     }
                 #/
             }
             /#
                 if (getdvarint(#"hash_2f078c2224f40586", 0) && isdefined(entity.first_node.zbarrier)) {
-                    record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 7), (1, 0.5, 0), "<unknown string>", entity);
+                    record3dtext("<dev string:x307>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 7), (1, 0.5, 0), "<dev string:x2f9>", entity);
                 }
             #/
         }
@@ -1587,7 +1586,7 @@ function function_7c72a5c7(entity) {
 }
 
 // Namespace awareness/namespace_df233b8a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1000bfd7, Offset: 0x6d48
 // Size: 0x1bc
 function function_fd83d499(entity) {
@@ -1601,7 +1600,7 @@ function function_fd83d499(entity) {
             entity.got_to_entrance = 1;
             /#
                 if (getdvarint(#"hash_2f078c2224f40586", 0)) {
-                    record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 2), (1, 0.5, 0), "<unknown string>", entity);
+                    record3dtext("<dev string:x321>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 2), (1, 0.5, 0), "<dev string:x2f9>", entity);
                     line(entity.origin, entity.first_node.origin, (0.1, 0.9, 0));
                 }
             #/
@@ -1653,8 +1652,8 @@ function function_8d21ac75(entity) {
     function private function_dfe1997a() {
         util::waittill_can_add_debug_command();
         mapname = util::get_map_name();
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x338>" + mapname + "<dev string:x349>");
+        adddebugcommand("<dev string:x338>" + mapname + "<dev string:x381>");
     }
 
     // Namespace awareness/namespace_df233b8a
@@ -1664,13 +1663,13 @@ function function_8d21ac75(entity) {
     function private function_66c2ca1e(type) {
         switch (type) {
         case 0:
-            return "<unknown string>";
+            return "<dev string:x3ca>";
         case 1:
-            return "<unknown string>";
+            return "<dev string:x3ea>";
         case 3:
-            return "<unknown string>";
+            return "<dev string:x40b>";
         case 2:
-            return "<unknown string>";
+            return "<dev string:x42d>";
         }
     }
 
@@ -1688,14 +1687,14 @@ function function_8d21ac75(entity) {
 #/
 
 // Namespace awareness/namespace_df233b8a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd49d7098, Offset: 0x72e8
 // Size: 0x13a
 function function_c6b1009e() {
     self notify(#"sndawarenesschange");
     self endon(#"death");
     self endon(#"sndawarenesschange");
-    wait(0.2);
+    wait 0.2;
     switch (self.current_state.name) {
     case #"wander":
         self clientfield::set("sndAwarenessChange", 1);

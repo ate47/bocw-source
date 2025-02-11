@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\item_supply_drop.gsc;
-#using script_b9a55edd207e4ca;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
 #using script_1304295570304027;
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\killstreaks\planemortar_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using script_44b0b8420eabacad;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\medals_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
+#using script_44b0b8420eabacad;
+#using script_7a8059ca02b7b09e;
+#using script_b9a55edd207e4ca;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\item_supply_drop;
+#using scripts\core_common\medals_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\planemortar_shared;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\overtime;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace groundwar_base;
 
@@ -68,7 +67,7 @@ function onstartgametype() {
 function function_3a7ee360() {
     foreach (bombzone in level.bombzones) {
         if (!is_true(bombzone.var_a9ecfe20)) {
-            function_60aa4296(bombzone);
+            setup_doors(bombzone);
         }
     }
     namespace_5c32f369::update_settings();
@@ -85,7 +84,7 @@ function function_c521ddc8(door, bombzone) {
     door waittill(#"broken", #"death");
     if (!bombzone.var_49957ef3) {
         bombzone.var_49957ef3 = 1;
-        bombzone gameobjects::allow_use(#"hash_33c49a99551acae7");
+        bombzone gameobjects::allow_use(#"group_enemy");
         bombzone.trigger setcursorhint("HINT_INTERACTIVE_PROMPT");
     }
 }
@@ -94,7 +93,7 @@ function function_c521ddc8(door, bombzone) {
 // Params 1, eflags: 0x0
 // Checksum 0xcd630b18, Offset: 0x6d0
 // Size: 0xb0
-function function_60aa4296(bombzone) {
+function setup_doors(bombzone) {
     foreach (door in bombzone.doors) {
         door setcandamage(1);
         thread function_c521ddc8(door, bombzone);
@@ -142,7 +141,7 @@ function onplayerkilled(einflictor, attacker, *idamage, *smeansofdeath, weapon, 
                 psoffsettime thread challenges::killedbasedefender(bombzone.trigger);
             } else {
                 /#
-                    psoffsettime iprintlnbold("<unknown string>");
+                    psoffsettime iprintlnbold("<dev string:x38>");
                 #/
             }
             return;
@@ -161,7 +160,7 @@ function onplayerkilled(einflictor, attacker, *idamage, *smeansofdeath, weapon, 
             return;
         }
         /#
-            psoffsettime iprintlnbold("<unknown string>");
+            psoffsettime iprintlnbold("<dev string:x82>");
         #/
     }
 }
@@ -172,7 +171,7 @@ function onplayerkilled(einflictor, attacker, *idamage, *smeansofdeath, weapon, 
 // Size: 0xc4
 function end_round(winningteam, var_c1e98979) {
     foreach (bombzone in level.bombzones) {
-        bombzone gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        bombzone gameobjects::set_visible(#"group_none");
     }
     thread globallogic::function_a3e3bd39(winningteam, var_c1e98979);
 }
@@ -202,18 +201,18 @@ function updategametypedvars() {
 function resetbombzone() {
     if (overtime::is_overtime_round()) {
         self gameobjects::set_owner_team(#"neutral");
-        self gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+        self gameobjects::allow_use(#"group_all");
     } else {
-        self gameobjects::allow_use(#"hash_33c49a99551acae7");
+        self gameobjects::allow_use(#"group_enemy");
     }
     self gameobjects::set_use_time(level.planttime);
     self gameobjects::set_use_text(#"hash_1fd43fb1addaf0aa");
     self gameobjects::set_use_hint_text(#"hash_10c61997a0f3235");
-    self gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", "waypoint_defend" + self.label);
-    self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", "waypoint_defend" + self.label);
-    self gameobjects::set_2d_icon(#"hash_33c49a99551acae7", "waypoint_target" + self.label);
-    self gameobjects::set_3d_icon(#"hash_33c49a99551acae7", "waypoint_target" + self.label);
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::set_2d_icon(#"group_friendly", "waypoint_defend" + self.label);
+    self gameobjects::set_3d_icon(#"group_friendly", "waypoint_defend" + self.label);
+    self gameobjects::set_2d_icon(#"group_enemy", "waypoint_target" + self.label);
+    self gameobjects::set_3d_icon(#"group_enemy", "waypoint_target" + self.label);
+    self gameobjects::set_visible(#"group_all");
     self.useweapon = getweapon(#"briefcase_bomb");
 }
 
@@ -222,11 +221,11 @@ function resetbombzone() {
 // Checksum 0xe597fabc, Offset: 0xfc8
 // Size: 0xa4
 function setupfordefusing() {
-    self gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    self gameobjects::allow_use(#"group_friendly");
     self gameobjects::set_use_time(level.defusetime);
     self gameobjects::set_use_text(#"mp/defusing_explosive");
     self gameobjects::set_use_hint_text(#"hash_754b795109a2bbba");
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::set_visible(#"group_all");
 }
 
 // Namespace groundwar_base/groundwar_base
@@ -243,14 +242,14 @@ function bombs() {
     for (index = 0; index < bombzones.size; index++) {
         trigger = bombzones[index];
         scriptlabel = trigger.script_label;
-        var_d584ad9f = getentarray("bombzone_clip" + scriptlabel, "targetname");
+        clipbrushes = getentarray("bombzone_clip" + scriptlabel, "targetname");
         visuals = getentarray(bombzones[index].target, "targetname");
         var_b3c46dd0 = trigger.script_team;
         name = #"base" + scriptlabel;
         bombzone = gameobjects::create_use_object(var_b3c46dd0, trigger, visuals, (0, 0, 0), name, 1, 1);
         bombzone gameobjects::set_use_time(level.planttime);
         bombzone gameobjects::set_use_text(#"hash_1fd43fb1addaf0aa");
-        bombzone gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+        bombzone gameobjects::set_visible(#"group_all");
         if (scriptlabel == "_c") {
             level.var_9fb20124[trigger.script_team] = bombzone;
             bombzone.var_a9ecfe20 = 1;
@@ -263,7 +262,7 @@ function bombs() {
         bombzone.index = index;
         bombzone.onbeginuse = &onbeginuse;
         bombzone.onenduse = &onenduse;
-        bombzone.onuse = &function_41ba5f03;
+        bombzone.onuse = &onuseobject;
         bombzone.oncantuse = &oncantuse;
         bombzone.useweapon = getweapon(#"briefcase_bomb");
         bombzone.visuals[0].killcament = spawn("script_model", bombzone.visuals[0].origin + (0, 0, 128));
@@ -409,7 +408,7 @@ function oncantuse(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x7a803c3b, Offset: 0x1bf0
 // Size: 0x55c
-function function_41ba5f03(player) {
+function onuseobject(player) {
     team = player.team;
     self function_1e4847e();
     player function_1e4847e();
@@ -417,7 +416,7 @@ function function_41ba5f03(player) {
         self gameobjects::set_flags(1);
         level thread bombplanted(self, player);
         /#
-            print("<unknown string>" + self.label);
+            print("<dev string:xcc>" + self.label);
         #/
         player notify(#"bomb_planted");
         if (isdefined(player.pers[#"plants"])) {
@@ -435,7 +434,7 @@ function function_41ba5f03(player) {
             level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"plant"});
         } else {
             /#
-                player iprintlnbold("<unknown string>");
+                player iprintlnbold("<dev string:xde>");
             #/
         }
         level thread popups::displayteammessagetoall(#"hash_12473d7e6ed6e752", player);
@@ -445,7 +444,7 @@ function function_41ba5f03(player) {
     self gameobjects::set_flags(0);
     player notify(#"bomb_defused");
     /#
-        print("<unknown string>" + self.label);
+        print("<dev string:x124>" + self.label);
     #/
     self thread bombdefused(player);
     self resetbombzone();
@@ -463,7 +462,7 @@ function function_41ba5f03(player) {
         level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"defuse"});
     } else {
         /#
-            player iprintlnbold("<unknown string>");
+            player iprintlnbold("<dev string:x136>");
         #/
     }
     level thread popups::displayteammessagetoall(#"hash_53c3f7bb9aec1bcc", player);
@@ -479,14 +478,14 @@ function ondrop(player) {
         globallogic_audio::leader_dialog("bombFriendlyDropped", player.pers[#"team"]);
         /#
             if (isdefined(player)) {
-                print("<unknown string>");
+                print("<dev string:x17d>");
             } else {
-                print("<unknown string>");
+                print("<dev string:x17d>");
             }
         #/
     }
     player notify(#"event_ended");
-    self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", "waypoint_bomb");
+    self gameobjects::set_3d_icon(#"group_friendly", "waypoint_bomb");
     sound::play_on_players(game.bomb_dropped_sound, game.attackers);
 }
 
@@ -560,8 +559,8 @@ function bombplanted(destroyedobj, player) {
     destroyedobj.detonatetime = detonatetime;
     trace = bullettrace(player.origin + (0, 0, 20), player.origin - (0, 0, 2000), 0, player);
     self dropbombmodel(player, destroyedobj.label);
-    destroyedobj gameobjects::allow_use(#"hash_161f03feaadc9b8f");
-    destroyedobj gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    destroyedobj gameobjects::allow_use(#"group_none");
+    destroyedobj gameobjects::set_visible(#"group_none");
     if (overtime::is_overtime_round()) {
         destroyedobj gameobjects::set_owner_team(util::getotherteam(player.team));
     }
@@ -604,12 +603,12 @@ function bombplanted(destroyedobj, player) {
         globallogic_utils::pausetimer();
         level.var_2a07e987 = 1;
         setgameendtime(0);
-        wait(3);
+        wait 3;
         end_round(team, 1);
         return;
     }
     if (var_3c6bbe27 == 1) {
-        function_60aa4296(level.var_9fb20124[destroyedobj.team]);
+        setup_doors(level.var_9fb20124[destroyedobj.team]);
         level.var_9fb20124[destroyedobj.team] gameobjects::show_waypoint();
     }
 }
@@ -630,18 +629,18 @@ function function_473a1738(var_d40f7c9f, duration) {
         while (isdefined(level.hostmigrationtimer)) {
             endtime += 250;
             function_789dbdd3(var_d40f7c9f, endtime);
-            wait(0.25);
+            wait 0.25;
         }
     }
     /#
         if (gettime() != endtime) {
-            println("<unknown string>" + gettime() + "<unknown string>" + endtime);
+            println("<dev string:x18d>" + gettime() + "<dev string:x1ad>" + endtime);
         }
     #/
     while (isdefined(level.hostmigrationtimer)) {
         endtime += 250;
         function_789dbdd3(var_d40f7c9f, endtime);
-        wait(0.25);
+        wait 0.25;
     }
     return gettime() - starttime;
 }
@@ -668,8 +667,8 @@ function function_789dbdd3(var_d40f7c9f, detonatetime) {
 // Size: 0xf4
 function bombdefused(player) {
     self.tickingobject globallogic_utils::stoptickingsound();
-    self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
-    self gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    self gameobjects::allow_use(#"group_none");
+    self gameobjects::set_visible(#"group_none");
     self.bombdefused = 1;
     self notify(#"bomb_defused");
     self.bombplanted = 0;
@@ -779,7 +778,7 @@ function function_b4ab93bd(capturearea) {
 // Checksum 0xbaa420ef, Offset: 0x3678
 // Size: 0x24
 function function_b8ddeed6(sentient) {
-    namespace_5c32f369::function_290b5aa8(sentient);
+    namespace_5c32f369::on_use(sentient);
 }
 
 // Namespace groundwar_base/groundwar_base

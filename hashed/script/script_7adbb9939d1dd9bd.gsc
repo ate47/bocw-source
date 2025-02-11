@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace namespace_8eb9bc0a;
 
@@ -20,17 +19,17 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6cfcd2d4, Offset: 0x280
 // Size: 0x104
 function private preinit() {
     setdvar(#"hash_6d3c5317001d4fc6", 0);
     /#
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x38>");
+        adddebugcommand("<dev string:x7e>");
+        adddebugcommand("<dev string:xd2>");
+        adddebugcommand("<dev string:x119>");
+        adddebugcommand("<dev string:x16a>");
     #/
     var_852d7a5c = isprofilebuild();
     /#
@@ -43,7 +42,7 @@ function private preinit() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xda06c17c, Offset: 0x390
 // Size: 0x394
 function zombie_open_sesame() {
@@ -81,12 +80,12 @@ function zombie_open_sesame() {
         waitframe(1);
     }
     level notify(#"open_sesame");
-    wait(1);
+    wait 1;
     setdvar(#"zombie_unlock_all", 0);
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5a7986b7, Offset: 0x730
 // Size: 0x302
 function function_97346595() {
@@ -97,7 +96,7 @@ function function_97346595() {
         if (new_value != var_2e0b8925) {
             /#
                 if (!(var_2e0b8925 && new_value)) {
-                    adddebugcommand("<unknown string>");
+                    adddebugcommand("<dev string:x1b9>");
                 }
             #/
             if (new_value != 0) {
@@ -108,23 +107,23 @@ function function_97346595() {
                 callback::on_spawned(&function_c5342e8d);
                 players = getplayers();
                 foreach (player in players) {
-                    player val::set(#"hash_401e97eafd7ce04d", "takedamage", 0);
+                    player val::set(#"bot_soak", "takedamage", 0);
                 }
                 /#
-                    adddebugcommand("<unknown string>" + remainingplayers);
+                    adddebugcommand("<dev string:x1c0>" + remainingplayers);
                 #/
                 waitframe(1);
                 /#
-                    adddebugcommand("<unknown string>");
+                    adddebugcommand("<dev string:x1e0>");
                 #/
             } else {
                 /#
-                    adddebugcommand("<unknown string>");
+                    adddebugcommand("<dev string:x1fc>");
                 #/
                 callback::remove_on_spawned(&function_c5342e8d);
                 players = getplayers();
                 foreach (player in players) {
-                    player val::reset(#"hash_401e97eafd7ce04d", "takedamage");
+                    player val::reset(#"bot_soak", "takedamage");
                 }
             }
         }
@@ -134,15 +133,15 @@ function function_97346595() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4f0b0b68, Offset: 0xa40
 // Size: 0x2c
 function private function_c5342e8d() {
-    self val::set(#"hash_401e97eafd7ce04d", "takedamage", 0);
+    self val::set(#"bot_soak", "takedamage", 0);
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3643a681, Offset: 0xa78
 // Size: 0xca
 function function_d379ba37() {
@@ -160,7 +159,7 @@ function function_d379ba37() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x75f8b7b4, Offset: 0xb50
 // Size: 0x310
 function function_57bf0556() {
@@ -176,9 +175,9 @@ function function_57bf0556() {
     level thread function_e5266c17();
     while (level.var_a095060b) {
         if (getdvarint(#"hash_2fe8fa3077b74221", 1) > 1) {
-            wait(randomfloatrange(0.2, 0.6));
+            wait randomfloatrange(0.2, 0.6);
         } else {
-            wait(randomintrange(2, 6));
+            wait randomintrange(2, 6);
         }
         if (level.botcount > 0 && randomint(100) > 70) {
             bot::remove_random_bot();
@@ -200,7 +199,7 @@ function function_57bf0556() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd023a883, Offset: 0xe68
 // Size: 0x44
 function function_e5266c17() {
@@ -211,7 +210,7 @@ function function_e5266c17() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x18f39b51, Offset: 0xeb8
 // Size: 0xa4
 function function_db3aef8f() {
@@ -225,15 +224,15 @@ function function_db3aef8f() {
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbb9a586, Offset: 0xf68
 // Size: 0x34
 function debugmsg(txt) {
-    println("<unknown string>" + txt);
+    println("<dev string:x219>" + txt);
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe90b4dfa, Offset: 0xfa8
 // Size: 0x128
 function function_a161addf() {

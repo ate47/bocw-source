@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace math;
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x13d9e559, Offset: 0x80
 // Size: 0x44
 function clamp(val, val_min, val_max) {
@@ -93,7 +92,7 @@ function angle_dif(oldangle, newangle) {
 }
 
 // Namespace math/math_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4e4c41c1, Offset: 0x4a8
 // Size: 0x22
 function sign(x) {
@@ -112,7 +111,7 @@ function randomsign() {
 }
 
 // Namespace math/math_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14e4e0f3, Offset: 0x510
 // Size: 0x38
 function cointoss(n_chance = 50) {

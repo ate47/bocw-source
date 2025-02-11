@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\util;
 
 #namespace fx;
 
@@ -15,14 +14,14 @@
     // Size: 0x17c
     function print_org(fxcommand, fxid, fxpos, waittime) {
         if (getdvarint(#"debug", 0)) {
-            println("<unknown string>");
-            println("<unknown string>" + fxpos[0] + "<unknown string>" + fxpos[1] + "<unknown string>" + fxpos[2] + "<unknown string>");
-            println("<unknown string>");
-            println("<unknown string>");
-            println("<unknown string>" + fxcommand + "<unknown string>");
-            println("<unknown string>" + fxid + "<unknown string>");
-            println("<unknown string>" + waittime + "<unknown string>");
-            println("<unknown string>");
+            println("<dev string:x38>");
+            println("<dev string:x3d>" + fxpos[0] + "<dev string:x4b>" + fxpos[1] + "<dev string:x4b>" + fxpos[2] + "<dev string:x50>");
+            println("<dev string:x55>");
+            println("<dev string:x73>");
+            println("<dev string:x83>" + fxcommand + "<dev string:x50>");
+            println("<dev string:x9b>" + fxid + "<dev string:x50>");
+            println("<dev string:xae>" + waittime + "<dev string:x50>");
+            println("<dev string:xc2>");
         }
     }
 
@@ -69,9 +68,9 @@ function gunfireloopfxthread(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shot
         shotnum = shotsbase + randomint(shotsrange);
         for (i = 0; i < shotnum; i++) {
             triggerfx(fxent);
-            wait(shotdelaybase + randomfloat(shotdelayrange));
+            wait shotdelaybase + randomfloat(shotdelayrange);
         }
-        wait(betweensetsbase + randomfloat(betweensetsrange));
+        wait betweensetsbase + randomfloat(betweensetsrange);
     }
 }
 
@@ -121,10 +120,10 @@ function gunfireloopfxvecthread(fxid, fxpos, fxpos2, shotsmin, shotsmax, shotdel
             if (delay < 0.05) {
                 delay = 0.05;
             }
-            wait(delay);
+            wait delay;
         }
-        wait(shotdelaybase + randomfloat(shotdelayrange));
-        wait(betweensetsbase + randomfloat(betweensetsrange));
+        wait shotdelaybase + randomfloat(shotdelayrange);
+        wait betweensetsbase + randomfloat(betweensetsrange);
     }
 }
 

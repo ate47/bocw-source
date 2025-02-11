@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace postfx;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace postfx/postfx_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa0bd99a6, Offset: 0xf8
 // Size: 0x24
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace postfx/postfx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7b685d0d, Offset: 0x128
 // Size: 0x7c
 function localplayer_postfx_bundle_init(*localclientnum) {
@@ -47,26 +46,26 @@ function localplayer_postfx_bundle_init(*localclientnum) {
     // Size: 0x210
     function postfxbundledebuglisten() {
         self endon(#"death");
-        setdvar(#"scr_play_postfx_bundle", "<unknown string>");
-        setdvar(#"scr_stop_postfx_bundle", "<unknown string>");
-        setdvar(#"scr_exit_postfx_bundle", "<unknown string>");
+        setdvar(#"scr_play_postfx_bundle", "<dev string:x38>");
+        setdvar(#"scr_stop_postfx_bundle", "<dev string:x38>");
+        setdvar(#"scr_exit_postfx_bundle", "<dev string:x38>");
         while (true) {
             playbundlename = getdvarstring(#"scr_play_postfx_bundle");
-            if (playbundlename != "<unknown string>") {
+            if (playbundlename != "<dev string:x38>") {
                 self thread playpostfxbundle(playbundlename);
-                setdvar(#"scr_play_postfx_bundle", "<unknown string>");
+                setdvar(#"scr_play_postfx_bundle", "<dev string:x38>");
             }
             stopbundlename = getdvarstring(#"scr_stop_postfx_bundle");
-            if (stopbundlename != "<unknown string>") {
+            if (stopbundlename != "<dev string:x38>") {
                 self thread stoppostfxbundle(stopbundlename);
-                setdvar(#"scr_stop_postfx_bundle", "<unknown string>");
+                setdvar(#"scr_stop_postfx_bundle", "<dev string:x38>");
             }
             var_38ce085 = getdvarstring(#"scr_exit_postfx_bundle");
-            if (var_38ce085 != "<unknown string>") {
+            if (var_38ce085 != "<dev string:x38>") {
                 self thread exitpostfxbundle(var_38ce085);
-                setdvar(#"scr_exit_postfx_bundle", "<unknown string>");
+                setdvar(#"scr_exit_postfx_bundle", "<dev string:x38>");
             }
-            wait(0.5);
+            wait 0.5;
         }
     }
 
@@ -78,7 +77,7 @@ function localplayer_postfx_bundle_init(*localclientnum) {
         self endon(#"death");
         var_986c8888 = 0;
         var_4828f60f = 0;
-        var_e0f0fb1d = "<unknown string>";
+        var_e0f0fb1d = "<dev string:x38>";
         ent = undefined;
         while (true) {
             showmodel = getdvarint(#"hash_56d8c90edb7a97b6", 0);
@@ -88,7 +87,7 @@ function localplayer_postfx_bundle_init(*localclientnum) {
                 if (showmodel > 0) {
                     if (!isdefined(ent)) {
                         newspawn = 1;
-                        ent = util::spawn_model(self.localclientnum, "<unknown string>");
+                        ent = util::spawn_model(self.localclientnum, "<dev string:x3c>");
                     }
                 } else if (var_986c8888 > 0) {
                     if (isdefined(ent)) {
@@ -101,16 +100,16 @@ function localplayer_postfx_bundle_init(*localclientnum) {
             if ((newspawn || showmodel == 1) && isdefined(ent)) {
                 ent.origin = self.origin + (0, 0, 70) + anglestoforward(self.angles) * 250;
             }
-            bundlename = getdvarstring(#"cg_playrenderoverridebundle", "<unknown string>");
+            bundlename = getdvarstring(#"cg_playrenderoverridebundle", "<dev string:x38>");
             if (bundlename != var_e0f0fb1d && isdefined(ent)) {
                 ent stoprenderoverridebundle(var_e0f0fb1d);
-                if (bundlename != "<unknown string>") {
+                if (bundlename != "<dev string:x38>") {
                     ent playrenderoverridebundle(bundlename);
                 }
             }
             if (showviewmodel && (showviewmodel != var_4828f60f || bundlename != var_e0f0fb1d)) {
                 self stoprenderoverridebundle(var_e0f0fb1d);
-                if (bundlename != "<unknown string>") {
+                if (bundlename != "<dev string:x38>") {
                     self playrenderoverridebundle(bundlename);
                 }
             }
@@ -123,7 +122,7 @@ function localplayer_postfx_bundle_init(*localclientnum) {
 #/
 
 // Namespace postfx/postfx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3d5a7cff, Offset: 0x680
 // Size: 0x3c
 function playpostfxbundle(playbundlename) {
@@ -132,7 +131,7 @@ function playpostfxbundle(playbundlename) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd6122d2f, Offset: 0x6c8
 // Size: 0x8c
 function watchentityshutdown(playbundlename) {
@@ -145,7 +144,7 @@ function watchentityshutdown(playbundlename) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6aad65cc, Offset: 0x760
 // Size: 0x24
 function stoppostfxbundle(bundlename) {
@@ -153,7 +152,7 @@ function stoppostfxbundle(bundlename) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xddba3009, Offset: 0x790
 // Size: 0x34
 function function_c8b5f318(bundlename, constname, constvalue) {
@@ -161,7 +160,7 @@ function function_c8b5f318(bundlename, constname, constvalue) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x479a7254, Offset: 0x7d0
 // Size: 0x22
 function function_556665f2(bundlename) {
@@ -169,7 +168,7 @@ function function_556665f2(bundlename) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc261581f, Offset: 0x800
 // Size: 0x24
 function exitpostfxbundle(bundlename) {
@@ -177,7 +176,7 @@ function exitpostfxbundle(bundlename) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x5202c136, Offset: 0x830
 // Size: 0x124
 function setfrontendstreamingoverlay(localclientnum, system, enabled) {

@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_164a456ce05c3483;
-#using script_47851dbeea22fe66;
-#using script_774302f762d76254;
-#using script_1ee011cd0961afd7;
-#using script_634ae70c663d1cc9;
 #using script_17dcb1172e441bf6;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_47851dbeea22fe66;
+#using script_634ae70c663d1cc9;
+#using script_774302f762d76254;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_61052b71;
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x220
 // Size: 0x4
 function init() {
@@ -36,14 +35,14 @@ function main() {
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1eba0b37, Offset: 0x250
 // Size: 0x156
 function function_5529395e() {
     self notify("21a1deafb5f08486");
     self endon("21a1deafb5f08486");
     self thread namespace_268747c0::function_978c05b5();
-    result = self waittill(#"hash_3e251384a5400dce");
+    result = self waittill(#"destroy_hazard");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_17228d33, self);
         namespace_1e25ad94::debugmsg("Deleting physics box trap permenently at:" + self.origin);
@@ -60,11 +59,11 @@ function function_5529395e() {
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60b45474, Offset: 0x3b0
 // Size: 0x218
 function function_8b014c60(trap, var_7c56394 = 0) {
-    assert(isdefined(trap.script_parameters), "<unknown string>");
+    assert(isdefined(trap.script_parameters), "<dev string:x38>");
     args = strtok(trap.script_parameters, ";");
     trap.var_b7a27a3a = 0;
     if (isdefined(trap.script_int)) {
@@ -72,7 +71,7 @@ function function_8b014c60(trap, var_7c56394 = 0) {
     }
     switch (args[0]) {
     case #"velocity":
-        assert(args.size >= 4, "<unknown string>");
+        assert(args.size >= 4, "<dev string:x57>");
         trap.velocityvector = (float(args[1]), float(args[2]), float(args[3]));
         trap.type = 0;
         break;
@@ -91,7 +90,7 @@ function function_8b014c60(trap, var_7c56394 = 0) {
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7c625db6, Offset: 0x5d0
 // Size: 0x10c
 function function_bb1d1cf9(trap, page = 0) {
@@ -111,7 +110,7 @@ function function_bb1d1cf9(trap, page = 0) {
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4e3314e, Offset: 0x6e8
 // Size: 0x304
 function function_e74a3df6() {
@@ -119,7 +118,7 @@ function function_e74a3df6() {
     self endon("6a2e88ac4d6010df");
     level endon(#"game_over", #"hash_15db1223146bc923");
     while (true) {
-        wait(0.5);
+        wait 0.5;
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {
             continue;
@@ -153,7 +152,7 @@ function function_e74a3df6() {
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
-                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                trap notify(#"destroy_hazard", {#var_760a0807:0});
                 namespace_1e25ad94::debugmsg("Paging out physics box trap at:" + trap.origin);
             }
         }
@@ -161,7 +160,7 @@ function function_e74a3df6() {
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xefb21993, Offset: 0x9f8
 // Size: 0x130
 function function_8bd713b2() {
@@ -179,17 +178,17 @@ function function_8bd713b2() {
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x272adc9e, Offset: 0xb30
 // Size: 0x486
 function function_d74e40c3() {
     self notify("1f0b44627f606460");
     self endon("1f0b44627f606460");
     level endon(#"game_over");
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self thread function_5529395e();
     if (!isdefined(self.script_model)) {
-        self notify(#"hash_3e251384a5400dce");
+        self notify(#"destroy_hazard");
     }
     var_d71f280f = self.origin;
     upposition = var_d71f280f + (0, 0, 15);
@@ -203,7 +202,7 @@ function function_d74e40c3() {
         }
         result = self.trigger waittill(#"trigger", #"hash_5dc5b7f198cd1bec");
         if (result._notify === #"hash_5dc5b7f198cd1bec") {
-            wait(0.25);
+            wait 0.25;
             continue;
         }
         self.script_model moveto(upposition, 0.1);
@@ -244,9 +243,9 @@ function function_d74e40c3() {
             }
             break;
         }
-        wait(5);
+        wait 5;
         self.script_model moveto(var_d71f280f, 2);
-        wait(2);
+        wait 2;
     }
 }
 

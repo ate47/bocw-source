@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace contracts;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x76313768, Offset: 0xd0
 // Size: 0x7c
 function init_player_contract_events() {
@@ -32,7 +31,7 @@ function init_player_contract_events() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa896f0ec, Offset: 0x158
 // Size: 0xf8
 function register_player_contract_event(event_name, event_func, max_param_count = 0) {
@@ -46,7 +45,7 @@ function register_player_contract_event(event_name, event_func, max_param_count 
 }
 
 // Namespace contracts/contracts_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc3d2bf4f, Offset: 0x258
 // Size: 0x35a
 function player_contract_event(event_name, param1 = undefined, param2 = undefined, param3 = undefined) {
@@ -96,7 +95,7 @@ function get_contract_stat(slot, stat_name) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xebfcc7ba, Offset: 0x608
 // Size: 0x1ec
 function function_d17bcd3c(slot) {
@@ -120,7 +119,7 @@ function function_d17bcd3c(slot) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x92002231, Offset: 0x800
 // Size: 0xf0
 function function_de4ff5a(slot) {
@@ -135,7 +134,7 @@ function function_de4ff5a(slot) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe97cc73f, Offset: 0x8f8
 // Size: 0x236
 function setup_player_contracts(max_contract_slots, var_1b3f5772) {
@@ -173,7 +172,7 @@ function setup_player_contracts(max_contract_slots, var_1b3f5772) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x66dbb451, Offset: 0xb38
 // Size: 0x34
 function is_contract_active(var_38280f2f) {
@@ -184,7 +183,7 @@ function is_contract_active(var_38280f2f) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7402b098, Offset: 0xb78
 // Size: 0x58
 function increment_contract(var_38280f2f, delta = 1) {
@@ -226,10 +225,10 @@ function increment_contract(var_38280f2f, delta = 1) {
     function function_e07e542b(var_1d89ece6, var_300afbc8) {
         level thread watch_contract_debug(var_300afbc8);
         function_a781ee84(var_1d89ece6);
-        util::function_3f749abc(var_1d89ece6 + "<unknown string>", "<unknown string>");
-        util::function_3f749abc(var_1d89ece6 + "<unknown string>", "<unknown string>");
-        util::function_3f749abc(var_1d89ece6 + "<unknown string>", "<unknown string>");
-        util::function_3f749abc(var_1d89ece6 + "<unknown string>", "<unknown string>");
+        util::function_3f749abc(var_1d89ece6 + "<dev string:x38>", "<dev string:x57>");
+        util::function_3f749abc(var_1d89ece6 + "<dev string:x78>", "<dev string:x9b>");
+        util::function_3f749abc(var_1d89ece6 + "<dev string:xc0>", "<dev string:xcc>");
+        util::function_3f749abc(var_1d89ece6 + "<dev string:xe8>", "<dev string:xf5>");
     }
 
     // Namespace contracts/contracts_shared
@@ -237,14 +236,14 @@ function increment_contract(var_38280f2f, delta = 1) {
     // Checksum 0x59f420ba, Offset: 0xdd8
     // Size: 0x12c
     function function_a781ee84(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + 2);
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + 5);
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + 10);
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + 100);
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + 1000);
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + 0);
+        var_78a6fb52 = var_1d89ece6 + "<dev string:x111>";
+        var_c8d599b5 = "<dev string:x13b>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x161>", var_c8d599b5 + 2);
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x168>", var_c8d599b5 + 5);
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x16f>", var_c8d599b5 + 10);
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x177>", var_c8d599b5 + 100);
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x180>", var_c8d599b5 + 1000);
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x18a>", var_c8d599b5 + 0);
     }
 
     // Namespace contracts/contracts_shared
@@ -261,7 +260,7 @@ function increment_contract(var_38280f2f, delta = 1) {
                 [[ var_300afbc8 ]]();
             }
             profilestop();
-            wait(0.5);
+            wait 0.5;
         }
     }
 
@@ -282,7 +281,7 @@ function increment_contract(var_38280f2f, delta = 1) {
                     if (isdefined(player.pers) && isdefined(player.pers[#"contracts"])) {
                         player.pers[#"contracts"] = undefined;
                     }
-                    iprintln("<unknown string>" + player.name);
+                    iprintln("<dev string:x194>" + player.name);
                 }
             }
             setdvar(#"hash_7c0db43f4c0bff69", 0);
@@ -299,14 +298,14 @@ function increment_contract(var_38280f2f, delta = 1) {
                     if (isdefined(player.pers) && isdefined(player.pers[#"contracts"])) {
                         player function_78083139();
                     }
-                    iprintln("<unknown string>" + player.name);
+                    iprintln("<dev string:x1bd>" + player.name);
                 }
             }
             setdvar(#"hash_23bd356dbd92a9e2", 0);
         }
-        if (getdvarstring(#"hash_4e7103a8bd2b97f6", "<unknown string>") != "<unknown string>") {
+        if (getdvarstring(#"hash_4e7103a8bd2b97f6", "<dev string:x1e4>") != "<dev string:x1e4>") {
             if (isdefined(level.players)) {
-                var_f029d0d7 = getdvarstring(#"hash_4e7103a8bd2b97f6", "<unknown string>");
+                var_f029d0d7 = getdvarstring(#"hash_4e7103a8bd2b97f6", "<dev string:x1e4>");
                 foreach (player in level.players) {
                     if (!isdefined(player)) {
                         continue;
@@ -319,17 +318,17 @@ function increment_contract(var_38280f2f, delta = 1) {
                     var_61525c00.target_value = 8;
                     var_61525c00.var_59cb904f = 0;
                     player function_5e1c4d33(var_61525c00);
-                    iprintln("<unknown string>" + var_f029d0d7 + "<unknown string>" + player.name + "<unknown string>");
+                    iprintln("<dev string:x1e8>" + var_f029d0d7 + "<dev string:x200>" + player.name + "<dev string:x209>");
                 }
             }
-            setdvar(#"hash_4e7103a8bd2b97f6", "<unknown string>");
+            setdvar(#"hash_4e7103a8bd2b97f6", "<dev string:x1e4>");
         }
         if (getdvarint(#"scr_contract_msg_front_end_only", 0) > 0) {
-            iprintln("<unknown string>");
+            iprintln("<dev string:x21e>");
             setdvar(#"scr_contract_msg_front_end_only", 0);
         }
         if (getdvarint(#"scr_contract_msg_debug_on", 0) > 0) {
-            iprintln("<unknown string>");
+            iprintln("<dev string:x251>");
             setdvar(#"scr_contract_msg_debug_on", 0);
         }
     }
@@ -348,7 +347,7 @@ function function_d3fba20e() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfe4c97e3, Offset: 0x15a8
 // Size: 0x56a
 function function_78083139() {
@@ -424,8 +423,8 @@ function function_78083139() {
         }
         /#
             if (getdvarint(#"scr_contract_debug", 0) > 0) {
-                var_7b6acdb1 = var_9224acc ? "<unknown string>" : "<unknown string>";
-                iprintln("<unknown string>" + function_9e72a96(var_38280f2f) + "<unknown string>" + delta + "<unknown string>" + var_4b67585c + "<unknown string>" + var_2de8a050 + var_7b6acdb1);
+                var_7b6acdb1 = var_9224acc ? "<dev string:x27a>" : "<dev string:x1e4>";
+                iprintln("<dev string:x28b>" + function_9e72a96(var_38280f2f) + "<dev string:x29a>" + delta + "<dev string:x2a9>" + var_4b67585c + "<dev string:x2ca>" + var_2de8a050 + var_7b6acdb1);
             }
         #/
         flags = player function_507247e8(var_9224acc);
@@ -439,7 +438,7 @@ function function_78083139() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xbcec9c98, Offset: 0x1b20
 // Size: 0xcc
 function function_d8c98325(var_38280f2f, delta, flags, var_4b67585c, var_2de8a050) {
@@ -453,7 +452,7 @@ function function_d8c98325(var_38280f2f, delta, flags, var_4b67585c, var_2de8a05
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xab862af1, Offset: 0x1bf8
 // Size: 0x16c
 function function_507247e8(var_9224acc) {
@@ -487,11 +486,11 @@ function function_507247e8(var_9224acc) {
     // Checksum 0x3c129304, Offset: 0x1d70
     // Size: 0x1b8
     function private function_bcd04944() {
-        wait(3);
+        wait 3;
         while (true) {
             players = getplayers();
             if (!isarray(players) || players.size == 0) {
-                wait(1);
+                wait 1;
                 continue;
             }
             player = players[0];
@@ -506,7 +505,7 @@ function function_507247e8(var_9224acc) {
                 player luinotifyevent(#"hash_1739c4bd5baf83bc", 1, var_2047a89d);
                 setdvar(#"hash_52370a459bac6981", 0);
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 

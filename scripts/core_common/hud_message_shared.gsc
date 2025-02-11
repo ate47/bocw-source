@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_6167e26342be354b;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace hud_message;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5946675c, Offset: 0xf8
 // Size: 0x24
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x128
 // Size: 0x4
 function init() {
@@ -40,12 +39,12 @@ function playnotifyloop(duration) {
     if (duration < 1) {
         duration = 1;
     }
-    wait(duration);
+    wait duration;
     playnotifyloop delete();
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb70c82dd, Offset: 0x1d8
 // Size: 0xa4
 function setlowermessage(text, time) {
@@ -58,7 +57,7 @@ function setlowermessage(text, time) {
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e8f0d9, Offset: 0x288
 // Size: 0x54
 function clearlowermessage() {

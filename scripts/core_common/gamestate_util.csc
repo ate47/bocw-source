@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace gamestate;
 
 // Namespace gamestate/gamestate_util

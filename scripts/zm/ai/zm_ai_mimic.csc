@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\archetype_mimic.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\ai\archetype_mimic;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace zm_ai_mimic;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x977ca8f1, Offset: 0x180
 // Size: 0xdc
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1d6d6284, Offset: 0x268
 // Size: 0x74
 function function_78505cdf(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -38,7 +37,7 @@ function function_78505cdf(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe1af24b5, Offset: 0x2e8
 // Size: 0x6c
 function mimic_cleanup_teleport(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -48,7 +47,7 @@ function mimic_cleanup_teleport(localclientnum, *oldval, *newval, *bnewent, *bin
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x805f0fa3, Offset: 0x360
 // Size: 0xcc
 function function_4bc65819(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -64,7 +63,7 @@ function function_4bc65819(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc25c2a8f, Offset: 0x438
 // Size: 0x54
 function function_119c2eb0() {

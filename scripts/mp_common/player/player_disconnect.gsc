@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\gamerep.gsc;
-#using scripts\mp_common\player\player_record.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\gamestate_util.gsc;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gamerep;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\player\player_record;
+#using scripts\mp_common\util;
 
 #namespace player;
 
 // Namespace player/player_disconnect
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5c59768d, Offset: 0x130
 // Size: 0x704
 function callback_playerdisconnect() {
@@ -45,7 +44,7 @@ function callback_playerdisconnect() {
     }
     if (isdefined(self.score) && isdefined(self.pers) && isdefined(self.pers[#"team"])) {
         /#
-            print("<unknown string>" + self.pers[#"team"] + "<unknown string>" + self.score);
+            print("<dev string:x38>" + self.pers[#"team"] + "<dev string:x48>" + self.score);
         #/
         level.dropteam += 1;
     }
@@ -94,7 +93,7 @@ function callback_playerdisconnect() {
 }
 
 // Namespace player/player_disconnect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf72bc6b, Offset: 0x840
 // Size: 0x2c4
 function private function_79915d44() {
@@ -107,8 +106,8 @@ function private function_79915d44() {
             nemesisamount = nemesis.value;
         }
     }
-    assert(isdefined(nemesisname), "<unknown string>" + self.name);
-    assert(isstring(nemesisname), "<unknown string>" + nemesisname + "<unknown string>" + self.name);
+    assert(isdefined(nemesisname), "<dev string:x4d>" + self.name);
+    assert(isstring(nemesisname), "<dev string:x71>" + nemesisname + "<dev string:x7d>" + self.name);
     self.pers[#"nemesis_name"] = nemesisname;
     if (nemesisname != "") {
         for (playerindex = 0; playerindex < level.players.size; playerindex++) {

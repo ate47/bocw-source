@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_62caa307a394c18c;
-#using scripts\zm_common\scoreevents.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using script_5f261a5d57de5f7c;
 #using script_24c32478acf44108;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_5f261a5d57de5f7c;
+#using script_62caa307a394c18c;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\scoreevents;
+#using scripts\zm_common\zm_utility;
 
 #namespace zombie_dog_toxic_cloud;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6c761a45, Offset: 0x240
 // Size: 0x154
 function init_shared() {
@@ -41,7 +40,7 @@ function init_shared() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53839c06, Offset: 0x3a0
 // Size: 0x7c
 function function_4f3cd1f0() {
@@ -53,7 +52,7 @@ function function_4f3cd1f0() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2aff0397, Offset: 0x428
 // Size: 0x1a4
 function function_a6c93300(*params) {
@@ -79,7 +78,7 @@ function function_a6c93300(*params) {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94dd92da, Offset: 0x5d8
 // Size: 0x684
 function function_659d1778(attacker) {
@@ -147,12 +146,12 @@ function function_659d1778(attacker) {
                 }
             }
         }
-        wait(0.2);
+        wait 0.2;
     }
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4a2a9268, Offset: 0xc68
 // Size: 0x2c
 function function_5b8201e0(*params) {

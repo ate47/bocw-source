@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_bgb_pack.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_bgb_pack;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_trial_restrict_controls;
 
@@ -37,7 +36,7 @@ function private preinit() {
 // Size: 0x32a
 function private on_begin(var_bd9d962 = #"invert") {
     level endon(#"hash_7646638df88a3656");
-    wait(5);
+    wait 5;
     level.var_2439365b = var_bd9d962;
     switch (level.var_2439365b) {
     case #"invert":
@@ -115,7 +114,7 @@ function private function_3d8fa20a() {
     self endon("63943c3872eb77bc");
     self endon(#"death");
     level endon(#"hash_7646638df88a3656");
-    wait(5);
+    wait 5;
     while (self zm_utility::is_jumping()) {
         waitframe(1);
     }
@@ -157,7 +156,7 @@ function private function_dc856fd8() {
 // Size: 0x184
 function private function_a5b02a07() {
     self endon(#"death");
-    wait(0.5);
+    wait 0.5;
     n_players = getplayers().size;
     switch (n_players) {
     case 1:

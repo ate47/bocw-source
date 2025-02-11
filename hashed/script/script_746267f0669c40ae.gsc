@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_dc59353021baee1;
 #using script_42e02216167edefc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_dc59353021baee1;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
 
 #namespace namespace_95fdc800;
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9d28e1a9, Offset: 0x3c8
 // Size: 0x9e8
 function init(name) {
@@ -68,7 +67,7 @@ function init(name) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x7343842b, Offset: 0xdb8
 // Size: 0xa4
 function private function_3be17ddc(exits, var_4e8e65e4, north) {
@@ -81,7 +80,7 @@ function private function_3be17ddc(exits, var_4e8e65e4, north) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa35d848f, Offset: 0xe68
 // Size: 0x264
 function function_9ab6c6c6() {
@@ -120,7 +119,7 @@ function function_9ab6c6c6() {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xa83a80fe, Offset: 0x10d8
 // Size: 0xe8
 function private function_968ec9e9(parent, child, var_cbb28d5) {
@@ -142,7 +141,7 @@ function private function_968ec9e9(parent, child, var_cbb28d5) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x45313bdb, Offset: 0x11c8
 // Size: 0xe4
 function private function_5a8d487e(parent, child, var_ea1e2708) {
@@ -164,7 +163,7 @@ function private function_5a8d487e(parent, child, var_ea1e2708) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x75247cca, Offset: 0x12b8
 // Size: 0x44
 function private create_door(var_565c3878, var_7d4204c7, cost) {
@@ -174,13 +173,13 @@ function private create_door(var_565c3878, var_7d4204c7, cost) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe7e5a975, Offset: 0x1308
 // Size: 0x660
 function private function_fd269801(var_ac850bbc) {
     self notify("526c8abbf88d0ad2");
     self endon("526c8abbf88d0ad2");
-    level endon(#"hash_186e943c1cd0db52", #"hash_521118da55424987");
+    level endon(#"hash_186e943c1cd0db52", #"rg_abort");
     center = var_ac850bbc.center;
     var_65e05a9d = [];
     array::push_front(var_65e05a9d, center);
@@ -241,7 +240,7 @@ function private function_fd269801(var_ac850bbc) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcc653678, Offset: 0x1970
 // Size: 0x24
 function function_d6e32b1b() {
@@ -249,11 +248,11 @@ function function_d6e32b1b() {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3b54a465, Offset: 0x19a0
 // Size: 0xa0
 function function_1bce4bde(name) {
-    assert(isdefined(name), "<unknown string>");
+    assert(isdefined(name), "<dev string:x38>");
     function_f4b7f348("Generating Map:" + name);
     startloc = namespace_f27a9d0d::init(name);
     init(name);
@@ -262,7 +261,7 @@ function function_1bce4bde(name) {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb027c619, Offset: 0x1a48
 // Size: 0xf8
 function function_b1989480() {
@@ -282,10 +281,10 @@ function function_b1989480() {
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x592c4e28, Offset: 0x1b48
 // Size: 0x34
 function function_f4b7f348(text) {
-    println("<unknown string>" + text);
+    println("<dev string:x4c>" + text);
 }
 

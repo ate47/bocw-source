@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\fx_character.csc;
-#using scripts\abilities\gadgets\gadget_jammer_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\ai_shared.csc;
+#using scripts\abilities\gadgets\gadget_jammer_shared;
+#using scripts\core_common\ai\systems\fx_character;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace archetype_avogadro;
 
@@ -18,20 +17,20 @@ function private autoexec __init__system__() {
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3096fd76, Offset: 0x2b0
 // Size: 0x1ec
 function private preinit() {
-    clientfield::register("missile", "" + #"hash_699d5bb1a9339a93", 1, 2, "int", &function_9452b8f1, 0, 0);
-    clientfield::register("actor", "" + #"hash_4466de6137f54b59", 1, 1, "int", &function_1d2d070c, 0, 0);
-    clientfield::register("actor", "" + #"hash_2eec8fc21495a18c", 1, 2, "int", &function_ae4cd3d4, 0, 0);
+    clientfield::register("missile", "" + #"avogadro_bolt_fx", 1, 2, "int", &function_9452b8f1, 0, 0);
+    clientfield::register("actor", "" + #"avogadro_phase_fx", 1, 1, "int", &function_1d2d070c, 0, 0);
+    clientfield::register("actor", "" + #"avogadro_health_fx", 1, 2, "int", &function_ae4cd3d4, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_183ef3538fd62563", 1, 1, "int", &function_9beb815c, 0, 0);
     clientfield::register("scriptmover", "avogadro_phase_beam", 1, getminbitcountfornum(3), "int", &function_6ddf79a2, 0, 0);
     ai::add_archetype_spawn_function(#"avogadro", &initavogadro);
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x4a8
 // Size: 0x4
 function private postinit() {
@@ -39,7 +38,7 @@ function private postinit() {
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbb3d09ca, Offset: 0x4b8
 // Size: 0x64
 function initavogadro(localclientnum) {
@@ -49,7 +48,7 @@ function initavogadro(localclientnum) {
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa7af30fd, Offset: 0x528
 // Size: 0x64
 function on_entity_shutdown(*localclientnum) {
@@ -69,12 +68,12 @@ function function_8dede8a3(localclientnum) {
     self endon(#"shutdown", #"death");
     while (isdefined(self)) {
         self playsound(localclientnum, #"hash_6f92148122930a");
-        wait(randomintrange(3, 10));
+        wait randomintrange(3, 10);
     }
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa5b5e103, Offset: 0x620
 // Size: 0x146
 function function_9452b8f1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -100,7 +99,7 @@ function function_9452b8f1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf9e0b4b2, Offset: 0x770
 // Size: 0xac
 function function_9beb815c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -113,7 +112,7 @@ function function_9beb815c(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbc643c2e, Offset: 0x828
 // Size: 0xce
 function function_1d2d070c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -132,7 +131,7 @@ function function_1d2d070c(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x12b8c678, Offset: 0x900
 // Size: 0x192
 function private function_ae4cd3d4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -160,7 +159,7 @@ function private function_ae4cd3d4(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xd0ac5a6f, Offset: 0xaa0
 // Size: 0x26a
 function private function_6ddf79a2(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -197,7 +196,7 @@ function private function_6ddf79a2(localclientnum, oldval, newval, *bnewent, *bi
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfc040aac, Offset: 0xd18
 // Size: 0x8c
 function function_df8ae699(localclientnum) {

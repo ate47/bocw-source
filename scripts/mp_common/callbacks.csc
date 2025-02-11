@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\vehicle.csc;
-#using scripts\mp_common\callbacks.csc;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\killstreaks\helicopter_shared.csc;
-#using scripts\killstreaks\airsupport.csc;
-#using scripts\core_common\footsteps_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\footsteps_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\airsupport;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\mp_common\callbacks;
+#using scripts\mp_common\vehicle;
 
 #namespace callback;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x74e19437, Offset: 0x1a0
 // Size: 0x1c
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa760accb, Offset: 0x1c8
 // Size: 0x124
 function set_default_callbacks() {
@@ -46,11 +45,11 @@ function set_default_callbacks() {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb80f4cc, Offset: 0x2f8
 // Size: 0x7c
 function localclientconnect(localclientnum) {
-    println("<unknown string>" + localclientnum);
+    println("<dev string:x38>" + localclientnum);
     if (isdefined(level.charactercustomizationsetup)) {
         [[ level.charactercustomizationsetup ]](localclientnum);
     }
@@ -58,7 +57,7 @@ function localclientconnect(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x718cd1b5, Offset: 0x380
 // Size: 0x2c
 function function_27cbba18(localclientnum) {
@@ -66,7 +65,7 @@ function function_27cbba18(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf5ed8813, Offset: 0x3b8
 // Size: 0x44
 function playerlaststand(localclientnum) {
@@ -75,7 +74,7 @@ function playerlaststand(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x903376f7, Offset: 0x408
 // Size: 0x104
 function playerspawned(localclientnum) {
@@ -97,7 +96,7 @@ function playerspawned(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x56222fe7, Offset: 0x518
 // Size: 0x32c
 function entityspawned(localclientnum) {
@@ -112,7 +111,7 @@ function entityspawned(localclientnum) {
         return;
     }
     if (!isdefined(self.type)) {
-        println("<unknown string>");
+        println("<dev string:x68>");
         return;
     }
     if (self.type == "missile") {
@@ -168,7 +167,7 @@ function entityspawned(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5773829f, Offset: 0x850
 // Size: 0x3e
 function entervehicle(localclientnum, vehicle) {
@@ -180,7 +179,7 @@ function entervehicle(localclientnum, vehicle) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xac02b1be, Offset: 0x898
 // Size: 0x3e
 function exitvehicle(localclientnum, vehicle) {
@@ -192,7 +191,7 @@ function exitvehicle(localclientnum, vehicle) {
 }
 
 // Namespace callback/callbacks
-// Params 12, eflags: 0x2 linked
+// Params 12, eflags: 0x0
 // Checksum 0xe84e048b, Offset: 0x8e0
 // Size: 0x5d6
 function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owner, exittype, *time, height) {
@@ -218,8 +217,8 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         owner = #"russian";
         break;
     default:
-        println("<unknown string>");
-        println("<unknown string>" + owner + "<unknown string>");
+        println("<dev string:x82>");
+        println("<dev string:xbf>" + owner + "<dev string:xd9>");
         owner = #"marines";
         break;
     }
@@ -234,7 +233,7 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         teamfaction = #"none";
         break;
     default:
-        println("<unknown string>" + teamfaction + "<unknown string>");
+        println("<dev string:xde>" + teamfaction + "<dev string:xd9>");
         teamfaction = #"allies";
         break;
     }
@@ -277,16 +276,16 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         return;
     }
     /#
-        println("<unknown string>");
-        println("<unknown string>");
+        println("<dev string:x114>");
+        println("<dev string:x118>");
         println(yaw);
-        println("<unknown string>");
+        println("<dev string:x114>");
     #/
     return;
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb7890dbc, Offset: 0xec0
 // Size: 0x9c
 function creating_corpse(localclientnum, player) {
@@ -300,12 +299,12 @@ function creating_corpse(localclientnum, player) {
 }
 
 // Namespace callback/callbacks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x67f4fc2b, Offset: 0xf68
 // Size: 0x96
 function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.emp = bwastimejump;
-    println("<unknown string>");
+    println("<dev string:x162>");
     if (bwastimejump) {
         self notify(#"emp");
         return;
@@ -314,7 +313,7 @@ function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap,
 }
 
 // Namespace callback/callbacks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x15872ace, Offset: 0x1008
 // Size: 0x4a
 function callback_proximity(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

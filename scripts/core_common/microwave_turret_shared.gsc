@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\damage.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace microwave_turret;
 
@@ -93,7 +92,7 @@ function stopmicrowave() {
                 waitframe(1);
                 continue;
             }
-            wait(1);
+            wait 1;
         }
     }
 
@@ -103,8 +102,8 @@ function stopmicrowave() {
     // Size: 0x104
     function turretdebug() {
         turret = self;
-        angles = turret gettagangles("<unknown string>");
-        origin = turret gettagorigin("<unknown string>");
+        angles = turret gettagangles("<dev string:x38>");
+        origin = turret gettagorigin("<dev string:x38>");
         cone_apex = origin;
         forward = anglestoforward(angles);
         dome_apex = cone_apex + vectorscale(forward, 750);
@@ -202,7 +201,7 @@ function microwaveentity(entity) {
             }
         }
         if (isdefined(entity.microwavedamageinitialdelay)) {
-            wait(randomfloatrange(0.1, 0.3));
+            wait randomfloatrange(0.1, 0.3);
             entity.microwavedamageinitialdelay = undefined;
         }
         entity dodamage(damage, turret.origin, turret.owner, turret, 0, "MOD_TRIGGER_HURT", 0, turretweapon);
@@ -229,7 +228,7 @@ function microwaveentity(entity) {
         if (isplayer(entity) && entity.microwaveeffect % 3 == 2) {
             scoreevents::processscoreevent(#"hpm_suppress", turret.owner, entity, turretweapon);
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 

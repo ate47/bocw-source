@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\blackboard_vehicle.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\blackboard_vehicle;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace amws;
 
@@ -229,7 +228,7 @@ function state_stationary_update(*params) {
     self notify(#"stop_rocket_firing_thread");
     vehicle_ai::clearalllookingandtargeting();
     vehicle_ai::clearallmovement();
-    wait(1);
+    wait 1;
     self cobra_raise();
     mintime = 6;
     maxtime = 12;
@@ -274,7 +273,7 @@ function state_stationary_update(*params) {
                 }
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
     self notify(#"stop_rocket_firing_thread");
     vehicle_ai::clearalllookingandtargeting();
@@ -342,7 +341,7 @@ function turretfireupdate() {
     while (true) {
         if (self.avoid_shooting_owner === 1 && isdefined(self.owner)) {
             if (self vehicle_ai::owner_in_line_of_fire()) {
-                wait(0.5);
+                wait 0.5;
                 continue;
             }
         }
@@ -354,7 +353,7 @@ function turretfireupdate() {
             }
             waitframe(1);
             if (!self.gunner1ontarget) {
-                wait(0.5);
+                wait 0.5;
             }
             if (self.gunner1ontarget) {
                 if (isdefined(self.enemy) && self cansee(self.enemy)) {
@@ -364,16 +363,16 @@ function turretfireupdate() {
                     self setturretspinning(0);
                 }
                 if (isdefined(self.enemy) && isai(self.enemy)) {
-                    wait(randomfloatrange(self.settings.burstfireaidelaymin, self.settings.burstfireaidelaymax));
+                    wait randomfloatrange(self.settings.burstfireaidelaymin, self.settings.burstfireaidelaymax);
                 } else {
-                    wait(randomfloatrange(self.settings.burstfiredelaymin, self.settings.burstfiredelaymax));
+                    wait randomfloatrange(self.settings.burstfiredelaymin, self.settings.burstfiredelaymax);
                 }
             } else {
-                wait(0.5);
+                wait 0.5;
             }
             continue;
         }
-        wait(0.4);
+        wait 0.4;
     }
 }
 
@@ -416,7 +415,7 @@ function state_combat_update(*params) {
             self.lock_evading |= self.locking_on_hacking;
         }
         if (is_true(self.inpain)) {
-            wait(0.1);
+            wait 0.1;
         } else if (!isdefined(self.enemy)) {
             should_slow_down_at_goal = 1;
             if (self.lock_evading) {
@@ -445,7 +444,7 @@ function state_combat_update(*params) {
                 if (!is_true(self.var_23eff037)) {
                     self playsound(#"hash_7c4742a949425295");
                     self.var_23eff037 = 1;
-                    wait(0.5);
+                    wait 0.5;
                 }
             }
             if (self.shouldgotonewposition == 0) {
@@ -516,7 +515,7 @@ function aim_and_fire_rocket_launcher(aim_time) {
     self notify(#"stop_rocket_firing_thread");
     self endon(#"death", #"change_state", #"stop_rocket_firing_thread");
     if (!self.turretontarget) {
-        wait(aim_time);
+        wait aim_time;
     }
     if (isdefined(self.enemy) && self.turretontarget && !is_true(self.var_a8c60b0e)) {
         util::cooldown("rocket", self.settings.rocketcooldown);
@@ -567,7 +566,7 @@ function waittill_weapon_lock_or_timeout(wait_time) {
 // Checksum 0xc7c31833, Offset: 0x2488
 // Size: 0x74
 function wait_evasion_reaction_time() {
-    wait(randomfloatrange(isdefined(self.settings.enemy_evasion_reaction_time_min) ? self.settings.enemy_evasion_reaction_time_min : 0.1, isdefined(self.settings.enemy_evasion_reaction_time_max) ? self.settings.enemy_evasion_reaction_time_max : 0.2));
+    wait randomfloatrange(isdefined(self.settings.enemy_evasion_reaction_time_min) ? self.settings.enemy_evasion_reaction_time_min : 0.1, isdefined(self.settings.enemy_evasion_reaction_time_max) ? self.settings.enemy_evasion_reaction_time_max : 0.2);
 }
 
 // Namespace amws/amws
@@ -581,7 +580,7 @@ function firerocketlauncher(enemy) {
         self turretsettarget(0, enemy);
         self waittilltimeout(1, #"turret_on_target");
         self playsound(#"hash_713f03be0cf78d55");
-        wait(1.2);
+        wait 1.2;
         if (self.variant == "armored") {
             vehicle_ai::fire_for_rounds(1, 0, enemy);
             return;
@@ -625,7 +624,7 @@ function getnextmoveposition_wander() {
     #/
     if (!isdefined(best_point)) {
         /#
-            self.debug_ai_movement_type = "<unknown string>" + queryresult.data.size + "<unknown string>";
+            self.debug_ai_movement_type = "<dev string:x38>" + queryresult.data.size + "<dev string:x49>";
         #/
         /#
             self.debug_ai_move_to_point = undefined;
@@ -633,7 +632,7 @@ function getnextmoveposition_wander() {
         return undefined;
     }
     /#
-        self.debug_ai_movement_type = "<unknown string>" + queryresult.data.size;
+        self.debug_ai_movement_type = "<dev string:x4f>" + queryresult.data.size;
     #/
     /#
         self.debug_ai_move_to_point = best_point.origin;
@@ -661,7 +660,7 @@ function getnextmoveposition_evasive(client_flags) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
                 }
                 point._scoredebug[#"inclaimedlocation"].score = -500;
-                point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
+                point._scoredebug[#"inclaimedlocation"].scorename = "<dev string:x5c>";
             #/
             point.score += -500;
         }
@@ -685,7 +684,7 @@ function getnextmoveposition_evasive(client_flags) {
                                 point._scoredebug[#"evading_directness"] = spawnstruct();
                             }
                             point._scoredebug[#"evading_directness"].score = 200;
-                            point._scoredebug[#"evading_directness"].scorename = "<unknown string>";
+                            point._scoredebug[#"evading_directness"].scorename = "<dev string:x71>";
                         #/
                         point.score += 200;
                         continue;
@@ -699,7 +698,7 @@ function getnextmoveposition_evasive(client_flags) {
                                 point._scoredebug[#"evading_directness_line_of_sight"] = spawnstruct();
                             }
                             point._scoredebug[#"evading_directness_line_of_sight"].score = -101;
-                            point._scoredebug[#"evading_directness_line_of_sight"].scorename = "<unknown string>";
+                            point._scoredebug[#"evading_directness_line_of_sight"].scorename = "<dev string:x87>";
                         #/
                         point.score += -101;
                     }
@@ -720,7 +719,7 @@ function getnextmoveposition_evasive(client_flags) {
                     point._scoredebug[#"hash_3c71f4605004afec"] = spawnstruct();
                 }
                 point._scoredebug[#"hash_3c71f4605004afec"].score = 105;
-                point._scoredebug[#"hash_3c71f4605004afec"].scorename = "<unknown string>";
+                point._scoredebug[#"hash_3c71f4605004afec"].scorename = "<dev string:xab>";
             #/
             point.score += 105;
         }
@@ -740,7 +739,7 @@ function getnextmoveposition_evasive(client_flags) {
     #/
     if (!isdefined(best_point)) {
         /#
-            self.debug_ai_movement_type = "<unknown string>" + queryresult.data.size + "<unknown string>";
+            self.debug_ai_movement_type = "<dev string:xc4>" + queryresult.data.size + "<dev string:x49>";
         #/
         /#
             self.debug_ai_move_to_point = undefined;
@@ -748,7 +747,7 @@ function getnextmoveposition_evasive(client_flags) {
         return undefined;
     }
     /#
-        self.debug_ai_movement_type = "<unknown string>" + queryresult.data.size;
+        self.debug_ai_movement_type = "<dev string:xd6>" + queryresult.data.size;
     #/
     /#
         self.debug_ai_move_to_point = best_point.origin;
@@ -806,7 +805,7 @@ function getnextmoveposition_tactical(enemy) {
                 point._scoredebug[#"directnessraw"] = spawnstruct();
             }
             point._scoredebug[#"directnessraw"].score = point.directness;
-            point._scoredebug[#"directnessraw"].scorename = "<unknown string>";
+            point._scoredebug[#"directnessraw"].scorename = "<dev string:xe4>";
         #/
         point.score += point.directness;
         /#
@@ -817,7 +816,7 @@ function getnextmoveposition_tactical(enemy) {
                 point._scoredebug[#"directness"] = spawnstruct();
             }
             point._scoredebug[#"directness"].score = directnessscore;
-            point._scoredebug[#"directness"].scorename = "<unknown string>";
+            point._scoredebug[#"directness"].scorename = "<dev string:xf5>";
         #/
         point.score += directnessscore;
         /#
@@ -828,7 +827,7 @@ function getnextmoveposition_tactical(enemy) {
                 point._scoredebug[#"disttoorigin"] = spawnstruct();
             }
             point._scoredebug[#"disttoorigin"].score = mapfloat(0, prefereddistawayfromorigin, 0, 100, point.disttoorigin2d);
-            point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
+            point._scoredebug[#"disttoorigin"].scorename = "<dev string:x103>";
         #/
         point.score += mapfloat(0, prefereddistawayfromorigin, 0, 100, point.disttoorigin2d);
         targetdistscore = 0;
@@ -844,7 +843,7 @@ function getnextmoveposition_tactical(enemy) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
                 }
                 point._scoredebug[#"inclaimedlocation"].score = -500;
-                point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
+                point._scoredebug[#"inclaimedlocation"].scorename = "<dev string:x5c>";
             #/
             point.score += -500;
         }
@@ -856,7 +855,7 @@ function getnextmoveposition_tactical(enemy) {
                 point._scoredebug[#"disttotarget"] = spawnstruct();
             }
             point._scoredebug[#"disttotarget"].score = targetdistscore;
-            point._scoredebug[#"disttotarget"].scorename = "<unknown string>";
+            point._scoredebug[#"disttotarget"].scorename = "<dev string:x113>";
         #/
         point.score += targetdistscore;
         /#
@@ -867,7 +866,7 @@ function getnextmoveposition_tactical(enemy) {
                 point._scoredebug[#"random"] = spawnstruct();
             }
             point._scoredebug[#"random"].score = randomfloatrange(0, randomness);
-            point._scoredebug[#"random"].scorename = "<unknown string>";
+            point._scoredebug[#"random"].scorename = "<dev string:x123>";
         #/
         point.score += randomfloatrange(0, randomness);
         if (point.score > best_score) {
@@ -881,7 +880,7 @@ function getnextmoveposition_tactical(enemy) {
     #/
     if (!isdefined(best_point)) {
         /#
-            self.debug_ai_movement_type = "<unknown string>" + queryresult.data.size + "<unknown string>";
+            self.debug_ai_movement_type = "<dev string:x12d>" + queryresult.data.size + "<dev string:x49>";
         #/
         /#
             self.debug_ai_move_to_point = undefined;
@@ -895,7 +894,7 @@ function getnextmoveposition_tactical(enemy) {
         }
     #/
     /#
-        self.debug_ai_movement_type = "<unknown string>" + queryresult.data.size;
+        self.debug_ai_movement_type = "<dev string:x140>" + queryresult.data.size;
     #/
     /#
         self.debug_ai_move_to_point = best_point.origin;
@@ -916,7 +915,7 @@ function path_update_interrupt_by_attacker() {
             self.debug_ai_move_to_points_considered = [];
         #/
         /#
-            self.debug_ai_movement_type = "<unknown string>";
+            self.debug_ai_movement_type = "<dev string:x14f>";
         #/
         /#
             self.debug_ai_move_to_point = undefined;
@@ -934,11 +933,11 @@ function path_update_interrupt_by_attacker() {
 function path_update_interrupt() {
     self notify(#"path_update_interrupt_by_attacker");
     self endon(#"death", #"change_state", #"near_goal", #"reached_end_node", #"amws_end_interrupt_watch", #"path_update_interrupt_by_attacker");
-    wait(1);
+    wait 1;
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
             if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
-                wait(0.2);
+                wait 0.2;
                 self notify(#"near_goal");
             }
         }
@@ -951,7 +950,7 @@ function path_update_interrupt() {
                 self notify(#"near_goal");
             }
         }
-        wait(0.2);
+        wait 0.2;
     }
 }
 

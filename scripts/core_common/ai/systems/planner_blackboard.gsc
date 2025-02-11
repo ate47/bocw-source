@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace plannerblackboard;
 
 /#
@@ -14,7 +13,7 @@
 #/
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe9cdf164, Offset: 0xd0
 // Size: 0x3e
 function clearundostack(blackboard) {
@@ -23,7 +22,7 @@ function clearundostack(blackboard) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x42fa3a9b, Offset: 0x118
 // Size: 0x80
 function create(&blackboardvalues) {
@@ -36,7 +35,7 @@ function create(&blackboardvalues) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe8913676, Offset: 0x1a0
 // Size: 0xf8
 function getattribute(blackboard, attribute) {
@@ -51,7 +50,7 @@ function getattribute(blackboard, attribute) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb39a1657, Offset: 0x2a0
 // Size: 0x70
 function getundostacksize(blackboard) {
@@ -61,7 +60,7 @@ function getundostacksize(blackboard) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x14da3484, Offset: 0x318
 // Size: 0x2ac
 function setattribute(blackboard, attribute, value, readonly = 0) {
@@ -69,13 +68,13 @@ function setattribute(blackboard, attribute, value, readonly = 0) {
     assert(isstring(attribute) || ishash(attribute));
     assert(isarray(blackboard.values));
     assert(isarray(blackboard.undostack));
-    assert(blackboard.mode === "<unknown string>");
+    assert(blackboard.mode === "<dev string:x38>");
     /#
         if (isdefined(level.__ai_debugplannerblackboard) && level.__ai_debugplannerblackboard > 0 && !readonly) {
-            assert(!isstruct(value), "<unknown string>");
+            assert(!isstruct(value), "<dev string:x3e>");
             if (isarray(value)) {
                 foreach (entryvalue in value) {
-                    assert(!isstruct(entryvalue), "<unknown string>");
+                    assert(!isstruct(entryvalue), "<dev string:x89>");
                 }
             }
         }
@@ -88,7 +87,7 @@ function setattribute(blackboard, attribute, value, readonly = 0) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7cc370cf, Offset: 0x5d0
 // Size: 0x1a
 function setreadmode(blackboard) {
@@ -96,7 +95,7 @@ function setreadmode(blackboard) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd68b0840, Offset: 0x5f8
 // Size: 0x1a
 function setreadwritemode(blackboard) {
@@ -104,7 +103,7 @@ function setreadwritemode(blackboard) {
 }
 
 // Namespace plannerblackboard/planner_blackboard
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbd476e95, Offset: 0x620
 // Size: 0x144
 function undo(blackboard, stackindex) {

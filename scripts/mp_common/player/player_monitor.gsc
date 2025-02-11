@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\bb.gsc;
-#using scripts\core_common\match_record.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\gamestate.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gamestate;
+#using scripts\core_common\match_record;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\gametypes\globallogic_utils;
 
 #namespace player_monitor;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc542b240, Offset: 0x140
 // Size: 0x44
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc5dfcb84, Offset: 0x190
 // Size: 0x144
 function monitor() {
@@ -51,7 +50,7 @@ function monitor() {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xd3d2187a, Offset: 0x2e0
 // Size: 0x1a2
 function function_d35f877a(player, *weapon, statname, value = 0) {
@@ -79,7 +78,7 @@ function function_d35f877a(player, *weapon, statname, value = 0) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1ba75159, Offset: 0x490
 // Size: 0x3c
 function function_36185795(*params) {
@@ -90,7 +89,7 @@ function function_36185795(*params) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x82edba79, Offset: 0x4d8
 // Size: 0x36a
 function private function_43e771ee(died = 0) {
@@ -162,7 +161,7 @@ function event_handler[weapon_change_complete] function_91abdff4(eventstruct) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9f0a0a15, Offset: 0x960
 // Size: 0x94
 function on_player_killed(*params) {
@@ -176,7 +175,7 @@ function on_player_killed(*params) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7e4df700, Offset: 0xa00
 // Size: 0x82
 function private function_654cd97() {
@@ -191,7 +190,7 @@ function private function_654cd97() {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc61a263e, Offset: 0xa90
 // Size: 0x19e
 function private breadcrumbs() {
@@ -212,12 +211,12 @@ function private breadcrumbs() {
             lifeindex = isdefined(self.pers[#"telemetry"].life.life_index) ? self.pers[#"telemetry"].life.life_index : -1;
             recordbreadcrumbdataforplayer(self, lifeindex);
         }
-        wait(waittime);
+        wait waittime;
     }
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4767f333, Offset: 0xc38
 // Size: 0x552
 function private travel_dist() {
@@ -297,7 +296,7 @@ function private travel_dist() {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3dad37e1, Offset: 0x1198
 // Size: 0x36
 function on_end_game() {
@@ -324,7 +323,7 @@ function event_handler[wallrun_end] function_830b9d71(*eventstruct) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbf8bee51, Offset: 0x1228
 // Size: 0x36
 function function_83433c76() {
@@ -351,7 +350,7 @@ function event_handler[swimming_end] function_b3154405(*eventstruct) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e73cebf, Offset: 0x12b8
 // Size: 0x36
 function function_9fabf258() {
@@ -386,21 +385,21 @@ function event_handler[doublejump_begin] function_2d820dd0(*eventstruct) {
 }
 
 // Namespace player_monitor/player_monitor
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7c28be15, Offset: 0x1378
 // Size: 0xe6
 function private inactivity() {
     self endon(#"disconnect");
     self notify(#"player_monitor_inactivity");
     self endon(#"player_monitor_inactivity");
-    wait(10);
+    wait 10;
     while (true) {
         if (isdefined(self)) {
             if (self isremotecontrolling() || self util::isusingremote() || is_true(level.inprematchperiod) || is_true(self.var_4c45f505)) {
                 self resetinactivitytimer();
             }
         }
-        wait(5);
+        wait 5;
     }
 }
 

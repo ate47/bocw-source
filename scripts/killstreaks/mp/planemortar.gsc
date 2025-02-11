@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
 #using script_1cc417743d7c262d;
 #using script_396f7d71538c9677;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\planemortar_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\planemortar_shared;
+#using scripts\mp_common\util;
 
 #namespace planemortar;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf7f0db8c, Offset: 0x210
 // Size: 0xfc
 function private preinit() {
@@ -39,7 +38,7 @@ function private preinit() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf25b4700, Offset: 0x318
 // Size: 0xa6
 function function_269fec2() {
@@ -53,7 +52,7 @@ function function_269fec2() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e00a775, Offset: 0x3c8
 // Size: 0x1de
 function plane_mortar_bda_dialog() {
@@ -83,7 +82,7 @@ function plane_mortar_bda_dialog() {
 }
 
 // Namespace planemortar/planemortar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa87e7be3, Offset: 0x5b0
 // Size: 0x14c
 function planeawardscoreevent(attacker, plane) {

@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\bgbs\zm_bgb_anywhere_but_here.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\bgbs\zm_bgb_anywhere_but_here;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_random_teleport;
 
@@ -69,7 +68,7 @@ function private function_6a04c6e6() {
     self endon(#"disconnect");
     level endon(#"hash_34f9cf7500b33c6b", #"end_game");
     while (true) {
-        wait(randomfloatrange(level.var_935c100a, level.var_33146b2e));
+        wait randomfloatrange(level.var_935c100a, level.var_33146b2e);
         if (isalive(self)) {
             if (self isusingoffhand()) {
                 self forceoffhandend();

@@ -1,39 +1,38 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_164a456ce05c3483;
-#using script_47851dbeea22fe66;
-#using script_1ee011cd0961afd7;
-#using script_5f20d3b434d24884;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_2a5bf5b4a00cee0d;
 #using script_17dcb1172e441bf6;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\ai\blackboard_vehicle.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\statemachine_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using script_1b01e95a6b5270fd;
+#using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
+#using script_47851dbeea22fe66;
+#using script_5701633066d199f2;
+#using script_5f20d3b434d24884;
+#using scripts\core_common\ai\blackboard_vehicle;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\statemachine_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace namespace_8c89a9e9;
 
 // Namespace namespace_8c89a9e9/namespace_8c89a9e9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x460fac2d, Offset: 0x278
 // Size: 0x34
 function init() {
@@ -41,7 +40,7 @@ function init() {
 }
 
 // Namespace namespace_8c89a9e9/namespace_8c89a9e9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6044e9d8, Offset: 0x2b8
 // Size: 0x1ac
 function function_5836955d() {
@@ -70,7 +69,7 @@ function function_5836955d() {
 }
 
 // Namespace namespace_8c89a9e9/namespace_8c89a9e9
-// Params 13, eflags: 0x6 linked
+// Params 13, eflags: 0x4
 // Checksum 0x4c2c2ecd, Offset: 0x470
 // Size: 0x150
 function private function_b8c581fb(*inflictor, *attacker, damage, *flags, *meansofdamage, *weapon, *var_fd90b0bb, *point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {
@@ -89,7 +88,7 @@ function private function_b8c581fb(*inflictor, *attacker, damage, *flags, *means
 }
 
 // Namespace namespace_8c89a9e9/namespace_8c89a9e9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cc123d9, Offset: 0x5c8
 // Size: 0x2e2
 function function_d8e8920a() {
@@ -97,9 +96,9 @@ function function_d8e8920a() {
     if (!isdefined(level.doa.var_39e3fa99)) {
         return;
     }
-    wait(randomint(6) + 1);
+    wait randomint(6) + 1;
     while (true) {
-        wait(1);
+        wait 1;
         if (isdefined(self.enemy)) {
             var_6e3ad56b = self.enemy.origin;
             if (isplayer(self.enemy)) {
@@ -124,14 +123,14 @@ function function_d8e8920a() {
             self.takedamage = 0;
             self namespace_ec06fe4a::function_8c808737();
             self forceteleport(spot, angles);
-            wait(0.3);
+            wait 0.3;
             self.takedamage = 1;
             self namespace_ec06fe4a::function_4f72130c();
             self namespace_83eb6304::function_3ecfde67("ethereal_vapors");
             self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_ghost_warp_in");
-            wait(0.5);
+            wait 0.5;
             self.ignoreall = 0;
-            wait(1 + randomint(8));
+            wait 1 + randomint(8);
         }
     }
 }

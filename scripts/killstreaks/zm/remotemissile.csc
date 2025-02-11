@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\system_shared.csc;
 #using script_57f0934f7e3e3b54;
-#using scripts\killstreaks\remotemissile_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\remotemissile_shared;
 
 #namespace remotemissile;
 
@@ -16,18 +15,18 @@ function private autoexec __init__system__() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd463f1b, Offset: 0x118
 // Size: 0x11c
 function private preinit() {
     clientfield::register("world", "" + #"hash_59ec82b1a72deb72", 1, 1, "int", &function_c668b489, 0, 0);
-    clientfield::register("toplayer", "" + #"hash_7bdbbf163a28169", 6000, 1, "int", &function_3815e8dc, 0, 1);
+    clientfield::register("toplayer", "" + #"remotemissile_fov", 6000, 1, "int", &remotemissile_fov, 0, 1);
     clientfield::register("toplayer", "" + #"hash_4241f7b51f8c144", 8000, 1, "int", &function_73155fe5, 0, 0);
     init_shared();
 }
 
 // Namespace remotemissile/remotemissile
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x338c0004, Offset: 0x240
 // Size: 0xcc
 function function_c668b489(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -41,15 +40,15 @@ function function_c668b489(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace remotemissile/remotemissile
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1dfebbfd, Offset: 0x318
 // Size: 0x3c
-function function_3815e8dc(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function remotemissile_fov(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     
 }
 
 // Namespace remotemissile/remotemissile
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x550b347e, Offset: 0x360
 // Size: 0x1d0
 function function_73155fe5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -72,7 +71,7 @@ function function_73155fe5(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x47857e53, Offset: 0x538
 // Size: 0xcc
 function private function_4fe8eba6(newval) {

@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace tweakables;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x863ea3f0, Offset: 0xe8
 // Size: 0x67c
 function private preinit() {
@@ -54,7 +53,7 @@ function private preinit() {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa1a4dbfb, Offset: 0x770
 // Size: 0x1ea
 function gettweakabledvarvalue(category, name) {
@@ -131,7 +130,7 @@ function gettweakabledvar(category, name) {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfdd9cdf2, Offset: 0xb38
 // Size: 0x240
 function gettweakablevalue(category, name) {
@@ -173,7 +172,7 @@ function gettweakablevalue(category, name) {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1244ee05, Offset: 0xd80
 // Size: 0x1c8
 function gettweakablelastvalue(category, name) {
@@ -248,7 +247,7 @@ function settweakablevalue(category, name, value) {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe88d0bb9, Offset: 0x1128
 // Size: 0x1a2
 function settweakablelastvalue(category, name, value) {
@@ -283,7 +282,7 @@ function settweakablelastvalue(category, name, value) {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf3a02f4d, Offset: 0x12d8
 // Size: 0x592
 function registertweakable(category, name, dvar, value) {
@@ -375,7 +374,7 @@ function setclienttweakable(*category, name) {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba686756, Offset: 0x18b0
 // Size: 0xec
 function updateuitweakables(debug_refresh) {
@@ -388,7 +387,7 @@ function updateuitweakables(debug_refresh) {
                 settweakablelastvalue("hud", clienttweakable, curvalue);
             }
         }
-        wait(randomfloatrange(0.9, 1.1));
+        wait randomfloatrange(0.9, 1.1);
     } while (isdefined(debug_refresh));
 }
 

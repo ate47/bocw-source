@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bots\bot_position.gsc;
-#using scripts\core_common\bots\bot_action.gsc;
-#using scripts\core_common\bots\bot.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\bots\bot_action;
+#using scripts\core_common\bots\bot_position;
+#using scripts\core_common\callbacks_shared;
 
 #namespace namespace_255a2b21;
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d209f19, Offset: 0xa0
 // Size: 0x114
 function preinit() {
@@ -22,7 +21,7 @@ function preinit() {
 }
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa672f194, Offset: 0x1c0
 // Size: 0x24
 function private on_player_spawned() {
@@ -30,7 +29,7 @@ function private on_player_spawned() {
 }
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x261c4875, Offset: 0x1f0
 // Size: 0x54
 function private on_player_laststand() {
@@ -42,7 +41,7 @@ function private on_player_laststand() {
 }
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x436277b8, Offset: 0x250
 // Size: 0x2c
 function private on_player_revived(*params) {
@@ -50,7 +49,7 @@ function private on_player_revived(*params) {
 }
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbde33bef, Offset: 0x288
 // Size: 0x5c
 function private on_player_killed(*params) {
@@ -61,7 +60,7 @@ function private on_player_killed(*params) {
 }
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3c801c28, Offset: 0x2f0
 // Size: 0x24
 function private on_player_disconnect() {
@@ -69,7 +68,7 @@ function private on_player_disconnect() {
 }
 
 // Namespace namespace_255a2b21/namespace_255a2b21
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8e2f4d49, Offset: 0x320
 // Size: 0x700
 function private function_301f229d(team) {

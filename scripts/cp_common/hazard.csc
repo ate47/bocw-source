@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace hazard;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hazard/hazard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xae5b6634, Offset: 0x170
 // Size: 0xb4
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace hazard/hazard
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc9eeeaa1, Offset: 0x230
 // Size: 0xbc
 function hazard_gas(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -43,7 +42,7 @@ function hazard_gas(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *f
 }
 
 // Namespace hazard/hazard
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x4a8f5577, Offset: 0x2f8
 // Size: 0xd4
 function hazard_gas_with_mask(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -60,7 +59,7 @@ function hazard_gas_with_mask(localclientnum, oldval, newval, *bnewent, *binitia
 }
 
 // Namespace hazard/hazard
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x896459a8, Offset: 0x3d8
 // Size: 0x68
 function function_f5b6d619() {
@@ -68,7 +67,7 @@ function function_f5b6d619() {
     self endon(#"death", #"hash_452ba9cb2df33d3f");
     while (true) {
         self postfx::playpostfxbundle("pstfx_water_t_out");
-        wait(2.4);
+        wait 2.4;
     }
 }
 

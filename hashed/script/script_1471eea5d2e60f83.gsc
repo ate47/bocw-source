@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\popups_shared.gsc;
 #using script_45fdb6cec5580007;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\ping_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\ping_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\system_shared;
 
 #namespace ping;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x747f9a36, Offset: 0x100
 // Size: 0x24c
 function private postinit() {
@@ -28,7 +27,7 @@ function private postinit() {
     }
     level.ping = {#players:[], #count:0, #pings:[], #durations:[60, 60, 10, 15, 20, 30, 15, 15, 25, 25, level.var_142ecedc, 15, 15]};
     assert(level.ping.durations.size == 13);
-    callback::function_94eab4fb(&function_94eab4fb);
+    callback::on_ping(&on_ping);
     callback::on_disconnect(&on_disconnect);
     callback::on_joined_team(&on_joined_team);
     callback::on_spawned(&on_player_spawn);
@@ -39,7 +38,7 @@ function private postinit() {
 }
 
 // Namespace ping/ping
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a77b9ec, Offset: 0x358
 // Size: 0x4c
 function function_dd017b2e(params) {
@@ -47,7 +46,7 @@ function function_dd017b2e(params) {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2d9afd89, Offset: 0x3b0
 // Size: 0x2c
 function private function_77d2f4f5() {
@@ -55,7 +54,7 @@ function private function_77d2f4f5() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3c579ec0, Offset: 0x3e8
 // Size: 0x2c
 function private function_76fbd527() {
@@ -63,7 +62,7 @@ function private function_76fbd527() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf72e4297, Offset: 0x420
 // Size: 0xe2
 function private function_9c9adcf1() {
@@ -85,7 +84,7 @@ function private function_9c9adcf1() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc4f7e4a1, Offset: 0x510
 // Size: 0x14c
 function private function_68ee7643() {
@@ -103,7 +102,7 @@ function private function_68ee7643() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x168bae95, Offset: 0x668
 // Size: 0xf0
 function private clear_all_pings() {
@@ -114,7 +113,7 @@ function private clear_all_pings() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa12fee56, Offset: 0x760
 // Size: 0x44
 function on_player_spawn() {
@@ -125,7 +124,7 @@ function on_player_spawn() {
 }
 
 // Namespace ping/ping
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd8761c2e, Offset: 0x7b0
 // Size: 0x3c
 function on_joined_team(*params) {
@@ -134,7 +133,7 @@ function on_joined_team(*params) {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x246a0dde, Offset: 0x7f8
 // Size: 0x1c
 function on_disconnect() {
@@ -142,7 +141,7 @@ function on_disconnect() {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1be7885, Offset: 0x820
 // Size: 0x14
 function on_end_game() {
@@ -150,7 +149,7 @@ function on_end_game() {
 }
 
 // Namespace ping/ping
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf859c829, Offset: 0x840
 // Size: 0x1c8
 function function_d58bf295(*params) {
@@ -192,7 +191,7 @@ function function_9455917d(entity) {
 }
 
 // Namespace ping/ping
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x31499a5e, Offset: 0xbd0
 // Size: 0x356
 function private function_c5f0d88f(player, eventtype, location, param) {
@@ -237,7 +236,7 @@ function private function_c5f0d88f(player, eventtype, location, param) {
 }
 
 // Namespace ping/ping
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5f838c45, Offset: 0xf30
 // Size: 0x15c
 function function_bbe2694a(networkid) {
@@ -256,7 +255,7 @@ function function_bbe2694a(networkid) {
 }
 
 // Namespace ping/ping
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc480d552, Offset: 0x1098
 // Size: 0x16c
 function private function_aa50d3e4(ping) {
@@ -279,7 +278,7 @@ function private function_aa50d3e4(ping) {
 }
 
 // Namespace ping/ping
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6ef4e2a0, Offset: 0x1210
 // Size: 0x24
 function private function_220a4754(ping, param) {
@@ -287,7 +286,7 @@ function private function_220a4754(ping, param) {
 }
 
 // Namespace ping/ping
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x84ae78e3, Offset: 0x1240
 // Size: 0xf8
 function private function_cff0c866(player, event_type, param) {
@@ -305,10 +304,10 @@ function private function_cff0c866(player, event_type, param) {
 }
 
 // Namespace ping/ping
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdfc39577, Offset: 0x1340
 // Size: 0x16c
-function private function_94eab4fb(params) {
+function private on_ping(params) {
     player = params.player;
     eventtype = params.type;
     remove = params.remove;
@@ -332,7 +331,7 @@ function private function_94eab4fb(params) {
 }
 
 // Namespace ping/ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd27910e9, Offset: 0x14b8
 // Size: 0x162
 function private update() {
@@ -348,7 +347,7 @@ function private update() {
                 function_aa50d3e4(ping);
             }
         }
-        wait(1);
+        wait 1;
     }
 }
 

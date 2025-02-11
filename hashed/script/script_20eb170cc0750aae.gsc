@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_3dc93ca9902a9cda;
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\skipto.gsc;
 #using script_32399001bdb550da;
-#using scripts\cp_common\gametypes\globallogic_utils.gsc;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
-#using scripts\cp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\cp_common\gametypes\globallogic.gsc;
-#using scripts\cp_common\gamedifficulty.gsc;
-#using scripts\cp_common\bb.gsc;
+#using script_3dc93ca9902a9cda;
 #using script_44b0b8420eabacad;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\bb;
+#using scripts\cp_common\gamedifficulty;
+#using scripts\cp_common\gametypes\globallogic;
+#using scripts\cp_common\gametypes\globallogic_spawn;
+#using scripts\cp_common\gametypes\globallogic_ui;
+#using scripts\cp_common\gametypes\globallogic_utils;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\util;
 
 #namespace coop;
 
@@ -80,7 +79,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xad4af714, Offset: 0x8e0
 // Size: 0xc0
 function on_mission_failed() {
@@ -91,7 +90,7 @@ function on_mission_failed() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8eddf61, Offset: 0x9a8
 // Size: 0x64
 function function_e89f60e2() {
@@ -100,7 +99,7 @@ function function_e89f60e2() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a54cd10, Offset: 0xa18
 // Size: 0x1f4
 function function_45b62760() {
@@ -125,7 +124,7 @@ function function_45b62760() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3da3af35, Offset: 0xc18
 // Size: 0x4d8
 function function_7f1305bc() {
@@ -166,7 +165,7 @@ function function_7f1305bc() {
         player function_a7af3a2a();
         level util::delay(0.05, undefined, &lui::screen_fade, 0.25, 0, 1, "black", 1);
         player util::function_8b0c9d28(undefined, 5);
-        wait(0.4);
+        wait 0.4;
         level flag::wait_till(#"gameplay_started");
         player val::reset_all(#"hash_342acf3710210ee2");
         globallogic_ui::function_cdbb5c49(0);
@@ -174,7 +173,7 @@ function function_7f1305bc() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5eb0128f, Offset: 0x10f8
 // Size: 0x300
 function onstartgametype() {
@@ -210,7 +209,7 @@ function onstartgametype() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa42938bf, Offset: 0x1400
 // Size: 0x1c
 function function_ddc47ed1() {
@@ -218,7 +217,7 @@ function function_ddc47ed1() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x71294539, Offset: 0x1428
 // Size: 0x5e
 function private spawnplayer_internal() {
@@ -228,17 +227,17 @@ function private spawnplayer_internal() {
 }
 
 // Namespace coop/coop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc75ca8e1, Offset: 0x1490
 // Size: 0x76
 function onspawnplayer(*predictedspawn, *question) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self.usingobj = undefined;
     self spawnplayer_internal();
     self thread function_bb5fae75();
     self.var_2869a26a = 1;
     self thread gamedifficulty::function_c6f98249();
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace coop/coop
@@ -269,12 +268,12 @@ function onscoreclosemusic() {
         if (scoredif <= scorethreshold && scorethresholdstart <= topscore) {
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace coop/coop
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xcc0b1ac7, Offset: 0x16a8
 // Size: 0x38c
 function onplayerkilled(*einflictor, *attacker, *idamage, *smeansofdeath, *weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -297,7 +296,7 @@ function onplayerkilled(*einflictor, *attacker, *idamage, *smeansofdeath, *weapo
     if (isdefined(level.var_5be43b2d)) {
         return;
     }
-    level.var_fd5d8a0 = self;
+    level.dead_player = self;
     if (isdefined(level.var_85b00b2b)) {
         var_f695d653 = level.var_85b00b2b;
     }
@@ -322,7 +321,7 @@ function onplayerkilled(*einflictor, *attacker, *idamage, *smeansofdeath, *weapo
 }
 
 // Namespace coop/coop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf5f3798a, Offset: 0x1a40
 // Size: 0x814
 function function_34459363(var_e9724d01, var_d2b863b2) {
@@ -337,7 +336,7 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
     }
     foreach (player in level.players) {
         player thread util::hide_hint_text(0);
-        player val::set(#"hash_12e8539788b7d534", "show_hud", 0);
+        player val::set(#"load_checkpoint", "show_hud", 0);
         bb::function_47cb52f6(level.var_b28c2c3a, player, "restart");
         player val::set(#"hash_5677fd1c5f50cf38", "freezecontrols");
         player.var_c071a13e = 1;
@@ -355,22 +354,22 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
         player setluimenudata(player.var_c341be0e, #"hash_76be1320dd574b24", var_d2b863b2);
     }
     var_effac39e = 1.25;
-    if (isdefined(level.var_fd5d8a0)) {
+    if (isdefined(level.dead_player)) {
         if (is_true(level.var_41cd8311)) {
             foreach (player in level.players) {
                 if (is_true(player.var_8fc85657)) {
-                    level.var_fd5d8a0 waittill(#"end_killcam", #"hash_769655bf42475c20");
-                    if (isdefined(level.var_fd5d8a0.var_55180cd8)) {
-                        var_effac39e = level.var_fd5d8a0.var_55180cd8;
+                    level.dead_player waittill(#"end_killcam", #"hash_769655bf42475c20");
+                    if (isdefined(level.dead_player.var_55180cd8)) {
+                        var_effac39e = level.dead_player.var_55180cd8;
                     }
                 }
             }
         }
-        if (level.var_fd5d8a0 util::function_a1d6293()) {
-            wait(0.7);
+        if (level.dead_player util::function_a1d6293()) {
+            wait 0.7;
         } else {
             level thread lui::screen_fade(var_effac39e, 1, 0, "black", 0);
-            wait(var_effac39e);
+            wait var_effac39e;
         }
         var_b80196ac = 1;
         if (is_true(level.var_41cd8311)) {
@@ -383,13 +382,13 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
     }
     if (!isdefined(var_b80196ac)) {
         level thread lui::screen_fade(var_effac39e, 1, 0, "black", 0);
-        wait(var_effac39e);
+        wait var_effac39e;
     }
     if (var_e9724d01 != #"" || var_d2b863b2 != #"") {
-        wait(2.6);
+        wait 2.6;
     }
     if (is_true(level.gameended)) {
-        wait(1000);
+        wait 1000;
     }
     foreach (player in level.players) {
         player notify(#"hash_4bd20f5c626eb3f0");
@@ -401,7 +400,7 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
             util::unmake_hero(key);
         }
     }
-    player = level.var_fd5d8a0;
+    player = level.dead_player;
     if (!isdefined(player)) {
         player = level.players[0];
     }
@@ -417,7 +416,7 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed37af7d, Offset: 0x2260
 // Size: 0xfe
 function function_ffac0e3() {
@@ -425,7 +424,7 @@ function function_ffac0e3() {
     level endon(#"game_ended");
     self clientfield::set_to_player("killcam_menu", 1);
     /#
-        printtoprightln("<unknown string>", (1, 0, 1));
+        printtoprightln("<dev string:x38>", (1, 0, 1));
     #/
     while (self usebuttonpressed()) {
         waitframe(1);
@@ -449,12 +448,12 @@ function function_ffac0e3() {
             self.var_ca00be20 = newdebughudelem(self);
             self.var_ca00be20.archived = 0;
             self.var_ca00be20.x = 0;
-            self.var_ca00be20.alignx = "<unknown string>";
-            self.var_ca00be20.aligny = "<unknown string>";
-            self.var_ca00be20.horzalign = "<unknown string>";
-            self.var_ca00be20.vertalign = "<unknown string>";
+            self.var_ca00be20.alignx = "<dev string:x50>";
+            self.var_ca00be20.aligny = "<dev string:x5a>";
+            self.var_ca00be20.horzalign = "<dev string:x50>";
+            self.var_ca00be20.vertalign = "<dev string:x64>";
             self.var_ca00be20.sort = 1;
-            self.var_ca00be20.font = "<unknown string>";
+            self.var_ca00be20.font = "<dev string:x6e>";
         }
         if (self issplitscreen()) {
             self.var_ca00be20.y = -100;
@@ -470,7 +469,7 @@ function function_ffac0e3() {
 #/
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9029a204, Offset: 0x24f8
 // Size: 0xe6
 function function_31c6ebd4() {
@@ -478,7 +477,7 @@ function function_31c6ebd4() {
     level endon(#"game_ended");
     /#
         self function_c5eb768b();
-        printtoprightln("<unknown string>", (1, 0, 1));
+        printtoprightln("<dev string:x38>", (1, 0, 1));
     #/
     while (self usebuttonpressed()) {
         waitframe(1);
@@ -491,7 +490,7 @@ function function_31c6ebd4() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2285e303, Offset: 0x25e8
 // Size: 0x144
 function function_27945f() {
@@ -508,7 +507,7 @@ function function_27945f() {
     level.level_ending = 1;
     /#
         if (!is_true(level.level_ending)) {
-            errormsg("<unknown string>");
+            errormsg("<dev string:x7b>");
         }
     #/
 }
@@ -530,7 +529,7 @@ function wait_to_spawn() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x51c0d754, Offset: 0x2800
 // Size: 0x104
 function function_5a6ac1d8() {
@@ -546,7 +545,7 @@ function function_5a6ac1d8() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x127f3fa1, Offset: 0x2910
 // Size: 0x18
 function spawnedasspectator() {
@@ -606,7 +605,7 @@ function function_fd5dfc25() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1f88d87b, Offset: 0x2be0
 // Size: 0x110
 function function_bb5fae75() {
@@ -632,7 +631,7 @@ function function_bb5fae75() {
 }
 
 // Namespace coop/coop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x31e0bcf9, Offset: 0x2cf8
 // Size: 0x84
 function function_b296ed1c() {

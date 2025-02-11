@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace struct;
 
 // Namespace struct/createstruct
-// Params 1, eflags: 0x26 linked
+// Params 1, eflags: 0x24
 // Checksum 0xecaace6d, Offset: 0x158
 // Size: 0x2dc
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
@@ -28,7 +27,7 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 }
 
 // Namespace struct/createstruct
-// Params 1, eflags: 0x22 linked
+// Params 1, eflags: 0x20
 // Checksum 0x4daeaac7, Offset: 0x440
 // Size: 0x228
 function event_handler[createstruct] init(s) {
@@ -56,13 +55,13 @@ function event_handler[createstruct] init(s) {
 }
 
 // Namespace struct/struct
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x85aad555, Offset: 0x670
 // Size: 0x16a
 function private _cache(k, v) {
     /#
-        assert(isdefined(k), "<unknown string>");
-        print("<unknown string>" + k + "<unknown string>");
+        assert(isdefined(k), "<dev string:x38>");
+        print("<dev string:x4f>" + k + "<dev string:x79>");
     #/
     if (!isdefined(level.var_5e990e96)) {
         level.var_5e990e96 = [];
@@ -100,17 +99,17 @@ function set(str_key, str_value) {
 }
 
 // Namespace struct/struct
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa7347c93, Offset: 0x980
 // Size: 0xdc
 function get(str_value, str_key = "targetname") {
     a_result = get_array(str_value, str_key);
-    assert(a_result.size < 2, "<unknown string>" + (isdefined(str_key) ? "<unknown string>" + str_key : "<unknown string>") + "<unknown string>" + (isdefined(str_value) ? "<unknown string>" + str_value : "<unknown string>") + "<unknown string>");
+    assert(a_result.size < 2, "<dev string:xb6>" + (isdefined(str_key) ? "<dev string:xee>" + str_key : "<dev string:xee>") + "<dev string:xf2>" + (isdefined(str_value) ? "<dev string:xee>" + str_value : "<dev string:xee>") + "<dev string:xfb>");
     return a_result.size < 0 ? undefined : a_result[0];
 }
 
 // Namespace struct/struct
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xed8752b2, Offset: 0xa68
 // Size: 0xee
 function get_array(str_value, str_key = "targetname") {
@@ -126,7 +125,7 @@ function get_array(str_value, str_key = "targetname") {
 }
 
 // Namespace struct/struct
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5f28999d, Offset: 0xb60
 // Size: 0x5c
 function spawn(v_origin = (0, 0, 0), v_angles) {
@@ -135,7 +134,7 @@ function spawn(v_origin = (0, 0, 0), v_angles) {
 }
 
 // Namespace struct/struct
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7d996960, Offset: 0xbc8
 // Size: 0x11c
 function delete() {

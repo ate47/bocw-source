@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7dc3a36c222eaf22;
 #using script_44b0b8420eabacad;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_7dc3a36c222eaf22;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\util;
 
 #namespace globallogic_defaults;
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x474f11bb, Offset: 0x148
 // Size: 0x32
 function getwinningteamfromloser(losing_team) {
@@ -28,7 +27,7 @@ function getwinningteamfromloser(losing_team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7f09145e, Offset: 0x188
 // Size: 0x5c
 function function_61c8bef4(*params) {
@@ -39,7 +38,7 @@ function function_61c8bef4(*params) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc6c241a9, Offset: 0x1f0
 // Size: 0x174
 function default_onforfeit(params) {
@@ -48,9 +47,9 @@ function default_onforfeit(params) {
     level endon(#"forfeit in progress", #"abort forfeit");
     forfeit_delay = 20;
     announcement(game.strings[#"opponent_forfeiting_in"], forfeit_delay, 0);
-    wait(10);
+    wait 10;
     announcement(game.strings[#"opponent_forfeiting_in"], 10, 0);
-    wait(10);
+    wait 10;
     if (!isdefined(params)) {
         round::set_winner(level.players[0]);
     } else if (params.var_6eb69269.size) {
@@ -66,8 +65,8 @@ function default_onforfeit(params) {
 // Checksum 0x4d113d34, Offset: 0x370
 // Size: 0xdc
 function default_ondeadevent(team) {
-    var_2e0d5506 = round::get_winner();
-    if (isdefined(var_2e0d5506) && var_2e0d5506 != #"none") {
+    current_winner = round::get_winner();
+    if (isdefined(current_winner) && current_winner != #"none") {
         return;
     }
     if (isdefined(level.teams[team])) {
@@ -80,7 +79,7 @@ function default_ondeadevent(team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49d06a1c, Offset: 0x458
 // Size: 0xdc
 function function_dcf41142(params) {
@@ -109,7 +108,7 @@ function function_daa7e9d5() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc2201ecd, Offset: 0x580
 // Size: 0xc
 function default_onalivecountchange(*team) {
@@ -117,7 +116,7 @@ function default_onalivecountchange(*team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1fceb742, Offset: 0x598
 // Size: 0xa4
 function onendgame(*var_c1e98979) {
@@ -132,7 +131,7 @@ function onendgame(*var_c1e98979) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa9b4386b, Offset: 0x648
 // Size: 0x150
 function default_ononeleftevent(team) {
@@ -153,7 +152,7 @@ function default_ononeleftevent(team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x90af2729, Offset: 0x7a0
 // Size: 0x2c
 function default_ontimelimit() {
@@ -162,7 +161,7 @@ function default_ontimelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb4f05b21, Offset: 0x7d8
 // Size: 0x48
 function default_onscorelimit() {
@@ -175,7 +174,7 @@ function default_onscorelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1713e5fa, Offset: 0x828
 // Size: 0x40
 function default_onroundscorelimit() {
@@ -186,7 +185,7 @@ function default_onroundscorelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc1eef8a4, Offset: 0x870
 // Size: 0x84
 function private function_85d45b4b(origin, angles) {
@@ -197,7 +196,7 @@ function private function_85d45b4b(origin, angles) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaa46b62f, Offset: 0x900
 // Size: 0xd4
 function default_onspawnspectator(origin, angles) {
@@ -206,13 +205,13 @@ function default_onspawnspectator(origin, angles) {
         return;
     }
     spawnpoints = spawning::get_spawnpoint_array("mp_global_intermission");
-    assert(spawnpoints.size, "<unknown string>");
+    assert(spawnpoints.size, "<dev string:x38>");
     spawnpoint = spawning::get_spawnpoint_random(spawnpoints);
     self function_85d45b4b(spawnpoint.origin, spawnpoint.angles);
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3b99a664, Offset: 0x9e0
 // Size: 0xb4
 function default_onspawnintermission(endgame) {
@@ -224,14 +223,14 @@ function default_onspawnintermission(endgame) {
         self spawn(spawnpoint.origin, spawnpoint.angles);
     } else {
         /#
-            util::error("<unknown string>");
+            util::error("<dev string:x95>");
         #/
     }
     self callback::callback(#"hash_3e52a013a2eb0f16");
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x365cbe94, Offset: 0xaa0
 // Size: 0xba
 function default_gettimelimit() {
@@ -244,7 +243,7 @@ function default_gettimelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x1ad49705, Offset: 0xb68
 // Size: 0xb0
 function default_getteamkillpenalty(einflictor, attacker, smeansofdeath, weapon) {
@@ -259,7 +258,7 @@ function default_getteamkillpenalty(einflictor, attacker, smeansofdeath, weapon)
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x9154cc76, Offset: 0xc20
 // Size: 0xc2
 function default_getteamkillscore(einflictor, attacker, smeansofdeath, weapon) {

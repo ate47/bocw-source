@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\snd_utility.gsc;
-#using script_54412fb3a6fab34c;
 #using script_3dc93ca9902a9cda;
-#using scripts\cp_common\snd.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\music_shared.gsc;
+#using script_54412fb3a6fab34c;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\music_shared;
+#using scripts\cp_common\snd;
+#using scripts\cp_common\snd_utility;
 
 #namespace namespace_72b0499b;
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x518
 // Size: 0x4
 function init_audio() {
@@ -22,7 +21,7 @@ function init_audio() {
 // Size: 0xc4
 function function_4e1b7477() {
     while (level.players.size == 0) {
-        wait(0.25);
+        wait 0.25;
     }
     level.players[0] endon(#"death");
     level endon(#"hash_629da45ba6679aae");
@@ -40,7 +39,7 @@ function function_4e1b7477() {
 // Size: 0xc4
 function function_827cf084() {
     while (level.players.size == 0) {
-        wait(0.25);
+        wait 0.25;
     }
     level.players[0] endon(#"death");
     level endon(#"hash_488f3af92d575e4d");
@@ -58,7 +57,7 @@ function function_827cf084() {
 // Size: 0xdc
 function function_2cc7f62c() {
     while (level.players.size == 0) {
-        wait(0.25);
+        wait 0.25;
     }
     level.players[0] endon(#"death");
     level endon(#"hash_6e7780f7f1e44599");
@@ -77,7 +76,7 @@ function function_2cc7f62c() {
 // Size: 0xdc
 function function_6cd6e708() {
     while (level.players.size == 0) {
-        wait(0.25);
+        wait 0.25;
     }
     level.players[0] endon(#"death");
     level endon(#"hash_11376b46ca5b856e");
@@ -91,7 +90,7 @@ function function_6cd6e708() {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x25949243, Offset: 0x898
 // Size: 0x794
 function function_816f9a23() {
@@ -114,7 +113,7 @@ function function_816f9a23() {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe85aed62, Offset: 0x1038
 // Size: 0xf04
 function function_62d67678() {
@@ -153,7 +152,7 @@ function function_62d67678() {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95b4f4c5, Offset: 0x1f48
 // Size: 0xa1c
 function function_54b26c90() {
@@ -180,7 +179,7 @@ function function_54b26c90() {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe0a42b6, Offset: 0x2970
 // Size: 0x1b4
 function function_552d1d58() {
@@ -190,7 +189,7 @@ function function_552d1d58() {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa9b3ae7c, Offset: 0x2b30
 // Size: 0x17c
 function function_132ea7de() {
@@ -203,7 +202,7 @@ function function_132ea7de() {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xeaf1a50a, Offset: 0x2cb8
 // Size: 0x5c
 function music(str_msg, n_delay = 0, var_37a6c96) {
@@ -212,20 +211,20 @@ function music(str_msg, n_delay = 0, var_37a6c96) {
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd8a1835, Offset: 0x2d20
 // Size: 0x2d2
 function function_7edafa59(str_msg, n_delay, var_37a6c96) {
     switch (str_msg) {
     case #"hash_6d6826a83750847":
     case #"hash_6d6826a83750847":
-    case #"hash_7b111d62aba4e64":
+    case #"2.0_briefing":
     case #"hash_2c622a30dc731207":
     case #"hash_35d3f2d1bf79eb35":
     case #"hash_4c5ac549022188d4":
-    case #"hash_4e895ec8a9bf0b63":
+    case #"12.0_turret":
     case #"hash_572e961104184b52":
-    case #"hash_5bfefcb798fc6c8a":
+    case #"5.0_village_combat":
     case #"hash_63ee253a845cbefd":
         if (isdefined(var_37a6c96)) {
             flag::wait_till(var_37a6c96);
@@ -237,7 +236,7 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
             flag::wait_till(var_37a6c96);
         }
         music::setmusicstate(str_msg, undefined, n_delay);
-        wait(1);
+        wait 1;
         music::setmusicstate("12.0_turret");
         break;
     case #"hash_2375b08205562389":
@@ -248,7 +247,7 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
         break;
     case #"hash_3c930a111db30f46":
         music::setmusicstate(str_msg, undefined, n_delay);
-        wait(5);
+        wait 5;
         music::setmusicstate("5.0_village_combat");
         break;
     case #"hash_7a72528b9f2c2f90":
@@ -262,32 +261,32 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
         break;
     default:
         /#
-            iprintlnbold("<unknown string>" + str_msg + "<unknown string>");
+            iprintlnbold("<dev string:x38>" + str_msg + "<dev string:x4a>");
         #/
         break;
     }
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8cac1376, Offset: 0x3000
 // Size: 0x132
 function function_e80c0ccf(str_msg) {
     switch (str_msg) {
-    case #"hash_7b111d62aba4e64":
-        snd::function_7db65a93(#"musictrack_cp_armada_1");
+    case #"2.0_briefing":
+        snd::client_msg(#"musictrack_cp_armada_1");
         waitframe(1);
-        snd::function_7db65a93(#"musictrack_cp_armada_2");
+        snd::client_msg(#"musictrack_cp_armada_2");
         break;
     case #"hash_3c930a111db30f46":
-    case #"hash_5bfefcb798fc6c8a":
-        snd::function_7db65a93(#"musictrack_cp_armada_3");
+    case #"5.0_village_combat":
+        snd::client_msg(#"musictrack_cp_armada_3");
         break;
     case #"hash_6d6826a83750847":
-        snd::function_7db65a93(#"musictrack_cp_armada_4");
+        snd::client_msg(#"musictrack_cp_armada_4");
         break;
     case #"hash_4c5ac549022188d4":
-        snd::function_7db65a93(#"musictrack_cp_armada_5");
+        snd::client_msg(#"musictrack_cp_armada_5");
         break;
     }
 }

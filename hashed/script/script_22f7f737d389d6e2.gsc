@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_ad27dfd8;
 
 // Namespace namespace_ad27dfd8/namespace_bb2f55e0
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd2fc1208, Offset: 0x2a0
 // Size: 0x434
 function function_8dbbde01(player, origin) {
@@ -73,7 +72,7 @@ function function_8dbbde01(player, origin) {
     org namespace_83eb6304::turnofffx("teamshift");
     coat namespace_e32bb68::function_ae271c0b("evt_doa_pickup_coatofarms_active_lp");
     coat namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_end");
-    wait(1);
+    wait 1;
     if (isdefined(coat)) {
         coat delete();
     }
@@ -86,7 +85,7 @@ function function_8dbbde01(player, origin) {
 }
 
 // Namespace namespace_ad27dfd8/namespace_bb2f55e0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x29f61e4d, Offset: 0x6e0
 // Size: 0x25a
 function private function_8ff2eaf3(trigger) {
@@ -125,7 +124,7 @@ function private function_8ff2eaf3(trigger) {
 }
 
 // Namespace namespace_ad27dfd8/namespace_bb2f55e0
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9e3a6b4f, Offset: 0x948
 // Size: 0x208
 function private function_7649c09d() {

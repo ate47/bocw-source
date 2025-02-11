@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\damage.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\weapons\deployable;
+#using scripts\weapons\weaponobjects;
 
 #namespace smart_cover;
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb71596f1, Offset: 0x380
 // Size: 0x53c
 function init_shared() {
@@ -43,7 +42,7 @@ function init_shared() {
     level.smartcoversettings.var_546a220c = "smart_cover_objective_open";
     level.smartcoversettings.smartcoverweapon = getweapon("ability_smart_cover");
     level.smartcoversettings.var_4115bb3a = getweapon(#"hash_34575452eba07c65");
-    level.smartcoversettings.var_d6a27a84 = [];
+    level.smartcoversettings.objectivezones = [];
     setupdvars();
     ability_player::register_gadget_should_notify(27, 1);
     weaponobjects::function_e6400478(#"ability_smart_cover", &function_21e722f6, 1);
@@ -70,7 +69,7 @@ function init_shared() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6ff1e86b, Offset: 0x8c8
 // Size: 0x80
 function function_1c601b99() {
@@ -83,7 +82,7 @@ function function_1c601b99() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3174df7a, Offset: 0x950
 // Size: 0xe4
 function function_716c6c70() {
@@ -99,7 +98,7 @@ function function_716c6c70() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5ba99230, Offset: 0xa40
 // Size: 0x31a
 function function_bff5c062(smartcover, attackingplayer) {
@@ -146,7 +145,7 @@ function function_bff5c062(smartcover, attackingplayer) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5f13057d, Offset: 0xd68
 // Size: 0x1f8
 function on_end_game() {
@@ -171,7 +170,7 @@ function on_end_game() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc96f0210, Offset: 0xf68
 // Size: 0x16c
 function setupdvars() {
@@ -183,7 +182,7 @@ function setupdvars() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3fd05447, Offset: 0x10e0
 // Size: 0x1c
 function function_649f8cbe(func) {
@@ -191,7 +190,7 @@ function function_649f8cbe(func) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e29a5ec, Offset: 0x1108
 // Size: 0x1c
 function function_a9427b5c(func) {
@@ -199,7 +198,7 @@ function function_a9427b5c(func) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xde7401c1, Offset: 0x1130
 // Size: 0xac
 function function_b397b517(timeoutoverride) {
@@ -208,7 +207,7 @@ function function_b397b517(timeoutoverride) {
     if ((isdefined(timeouttime) ? timeouttime : 0) == 0) {
         return;
     }
-    wait(timeouttime);
+    wait timeouttime;
     if (isdefined(self)) {
         self thread function_2a494565(1);
     }
@@ -231,7 +230,7 @@ function function_b11be5dc() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x53003e20, Offset: 0x1278
 // Size: 0x384
 function function_bd071599(player, smartcover) {
@@ -264,14 +263,14 @@ function function_bd071599(player, smartcover) {
     }
     player clientfield::set_player_uimodel("huditems.abilityHoldToActivate", 0);
     player clientfield::set_player_uimodel("huditems.abilityDelayProgress", 0);
-    wait(isdefined(level.smartcoversettings.bundle.detonationtime) ? level.smartcoversettings.bundle.detonationtime : 0);
+    wait isdefined(level.smartcoversettings.bundle.detonationtime) ? level.smartcoversettings.bundle.detonationtime : 0;
     player.var_622765b5 = 0;
     player.var_d3bf8986 = 1;
     smartcover function_2a494565(1);
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaf703a22, Offset: 0x1608
 // Size: 0x426
 function function_7ecb04ff(player) {
@@ -323,7 +322,7 @@ function function_7ecb04ff(player) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x36c12471, Offset: 0x1a38
 // Size: 0x9c
 function on_player_spawned() {
@@ -339,7 +338,7 @@ function on_player_spawned() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xecb001de, Offset: 0x1ae0
 // Size: 0x48
 function function_b7f5b1cc(origin, angles, player) {
@@ -350,7 +349,7 @@ function function_b7f5b1cc(origin, angles, player) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa061d865, Offset: 0x1b30
 // Size: 0x1d0
 function function_a47ce1c2(player) {
@@ -371,7 +370,7 @@ function function_a47ce1c2(player) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3a411164, Offset: 0x1d08
 // Size: 0xe8
 function function_408a9ea8(var_bf2bf1a) {
@@ -420,7 +419,7 @@ function function_548a710a(traceresults) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x64c0d14a, Offset: 0x20f8
 // Size: 0x38c
 function function_3b96637(watcher, owner) {
@@ -466,7 +465,7 @@ function function_3b96637(watcher, owner) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x23d42c06, Offset: 0x2490
 // Size: 0x80
 function function_670cd4a3() {
@@ -481,7 +480,7 @@ function function_670cd4a3() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb8e5decf, Offset: 0x2518
 // Size: 0x5a
 function function_21e722f6(watcher) {
@@ -492,7 +491,7 @@ function function_21e722f6(watcher) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x18bbc2a8, Offset: 0x2580
 // Size: 0x34
 function function_46f4e542(*player) {
@@ -502,7 +501,7 @@ function function_46f4e542(*player) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0472026, Offset: 0x25c0
 // Size: 0xbc
 function function_37f1dcd1() {
@@ -517,7 +516,7 @@ function function_37f1dcd1() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x49e46616, Offset: 0x2688
 // Size: 0xf8
 function ondamage() {
@@ -534,7 +533,7 @@ function ondamage() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x28a83ec5, Offset: 0x2788
 // Size: 0x44
 function function_375cfa56(smartcover, owner) {
@@ -544,7 +543,7 @@ function function_375cfa56(smartcover, owner) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x37dac2dd, Offset: 0x27d8
 // Size: 0x544
 function function_2a494565(isselfdestruct) {
@@ -607,7 +606,7 @@ function function_2a494565(isselfdestruct) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x880252cf, Offset: 0x2d28
 // Size: 0x174
 function onkilled(var_c946c04c) {
@@ -628,7 +627,7 @@ function onkilled(var_c946c04c) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6a715201, Offset: 0x2ea8
 // Size: 0x5e
 function function_884d0700(*var_796be15d) {
@@ -636,7 +635,7 @@ function function_884d0700(*var_796be15d) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x515f4a03, Offset: 0x2f10
 // Size: 0x5e
 function getmodel(*var_796be15d) {
@@ -644,7 +643,7 @@ function getmodel(*var_796be15d) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0xbafd0145, Offset: 0x2f78
 // Size: 0x1ca
 function function_d2368084(*einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *iboneindex, *imodelindex) {
@@ -662,7 +661,7 @@ function function_d2368084(*einflictor, eattacker, idamage, idflags, smeansofdea
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcf742919, Offset: 0x3150
 // Size: 0x204
 function function_20be77a3(smartcover) {
@@ -678,7 +677,7 @@ function function_20be77a3(smartcover) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa95826, Offset: 0x3360
 // Size: 0x3c
 function private function_9813d292() {
@@ -688,7 +687,7 @@ function private function_9813d292() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe2737ac0, Offset: 0x33a8
 // Size: 0x11c
 function private function_d2d0a813(var_24e0878b) {
@@ -705,7 +704,7 @@ function private function_d2d0a813(var_24e0878b) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9e82a4b3, Offset: 0x34d0
 // Size: 0x670
 function createsmartcover(watcher, var_5ebbec19, origin, angles, var_796be15d) {
@@ -765,7 +764,7 @@ function createsmartcover(watcher, var_5ebbec19, origin, angles, var_796be15d) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc7ebde99, Offset: 0x3b48
 // Size: 0xfc
 function function_127fb8f3(smartcover, attackingplayer) {
@@ -786,7 +785,7 @@ function function_127fb8f3(smartcover, attackingplayer) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x80e39980, Offset: 0x3c50
 // Size: 0x98
 function function_18dd6b22(smartcover) {
@@ -801,7 +800,7 @@ function function_18dd6b22(smartcover) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x61594efe, Offset: 0x3cf0
 // Size: 0xc6
 function function_bf4c81d2(origin, maxdistancesq) {
@@ -835,20 +834,20 @@ function watchweaponchange() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x706b5865, Offset: 0x3e50
 // Size: 0x70
-function function_57f553e9(&var_85947e0d, maxallowed) {
-    if (var_85947e0d.size <= maxallowed) {
+function function_57f553e9(&coverlist, maxallowed) {
+    if (coverlist.size <= maxallowed) {
         return undefined;
     }
-    outstayed_spawner = array::pop_front(var_85947e0d, 0);
-    arrayremovevalue(var_85947e0d, undefined, 0);
+    outstayed_spawner = array::pop_front(coverlist, 0);
+    arrayremovevalue(coverlist, undefined, 0);
     return outstayed_spawner;
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2474b4bb, Offset: 0x3ec8
 // Size: 0x34e
 function function_92112113(attacker, victim, weapon, attackerweapon, *meansofdeath) {
@@ -893,7 +892,7 @@ function function_92112113(attacker, victim, weapon, attackerweapon, *meansofdea
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x2a13f99, Offset: 0x4220
 // Size: 0x2aa
 function private function_4e6d9621(smartcover, origins, radii) {
@@ -921,7 +920,7 @@ function private function_4e6d9621(smartcover, origins, radii) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9a044314, Offset: 0x44d8
 // Size: 0xda
 function function_e3a901c(origins, radii) {
@@ -940,7 +939,7 @@ function function_e3a901c(origins, radii) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x746e5481, Offset: 0x45c0
 // Size: 0x16
 function reset_being_microwaved() {
@@ -949,7 +948,7 @@ function reset_being_microwaved() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd27f121a, Offset: 0x45e0
 // Size: 0x18c
 function startmicrowave() {
@@ -965,7 +964,7 @@ function startmicrowave() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4fd073f3, Offset: 0x4778
 // Size: 0xae
 function stopmicrowave() {
@@ -997,12 +996,12 @@ function turretdebugwatch() {
             waitframe(1);
             continue;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e5ca6f1, Offset: 0x48b8
 // Size: 0x174
 function turretdebug() {
@@ -1018,7 +1017,7 @@ function turretdebug() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x70b80cce, Offset: 0x4a38
 // Size: 0x138
 function turretthink() {
@@ -1043,7 +1042,7 @@ function turretthink() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x128d236c, Offset: 0x4b78
 // Size: 0xc0
 function microwaveentitypostshutdowncleanup(entity) {
@@ -1060,7 +1059,7 @@ function microwaveentitypostshutdowncleanup(entity) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x770b0613, Offset: 0x4c40
 // Size: 0x7f0
 function microwaveentity(entity) {
@@ -1122,7 +1121,7 @@ function microwaveentity(entity) {
             }
         }
         if (isdefined(entity.microwavedamageinitialdelay)) {
-            wait(randomfloatrange(0.1, 0.3));
+            wait randomfloatrange(0.1, 0.3);
             entity.microwavedamageinitialdelay = undefined;
         }
         entity thread status_effect::status_effect_apply(var_2b29cf8c, level.smartcoversettings.smartcoverweapon, self, 0);
@@ -1151,12 +1150,12 @@ function microwaveentity(entity) {
                 scoreevents::processscoreevent(#"hpm_suppress", turret.owner, entity, level.smartcoversettings.smartcoverweapon, turret.playersdamaged.size);
             }
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c65eee5, Offset: 0x5438
 // Size: 0x49a
 function microwaveturretaffectsentity(entity) {

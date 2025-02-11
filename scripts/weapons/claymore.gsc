@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace claymore;
 

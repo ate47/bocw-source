@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
 
 #namespace match_record;
 
@@ -10,7 +9,7 @@
     // Checksum 0x23638ece, Offset: 0x88
     // Size: 0x38
     function function_d92cb558(result, *vararg) {
-        pathstr = "<unknown string>";
+        pathstr = "<dev string:x38>";
         if (isdefined(vararg)) {
         }
         return pathstr;
@@ -19,7 +18,7 @@
 #/
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x63e5fa82, Offset: 0xc8
 // Size: 0x80
 function get_stat(...) {
@@ -35,7 +34,7 @@ function get_stat(...) {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x72daffa2, Offset: 0x150
 // Size: 0xc0
 function set_stat(...) {
@@ -53,7 +52,7 @@ function set_stat(...) {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xcf10e241, Offset: 0x218
 // Size: 0x14c
 function function_7a93acec(...) {
@@ -66,7 +65,7 @@ function function_7a93acec(...) {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x108735b6, Offset: 0x370
 // Size: 0xc0
 function inc_stat(...) {
@@ -84,7 +83,7 @@ function inc_stat(...) {
 }
 
 // Namespace match_record/match_record
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7dd80681, Offset: 0x438
 // Size: 0x70
 function get_player_index() {
@@ -96,7 +95,7 @@ function get_player_index() {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x7e08c167, Offset: 0x4b0
 // Size: 0x8c
 function get_player_stat(...) {
@@ -108,7 +107,7 @@ function get_player_stat(...) {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x2b0c5d2e, Offset: 0x548
 // Size: 0xcc
 function set_player_stat(...) {
@@ -122,7 +121,7 @@ function set_player_stat(...) {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x6bfc014, Offset: 0x620
 // Size: 0x19e
 function function_ded5f5b6(...) {
@@ -139,7 +138,7 @@ function function_ded5f5b6(...) {
 }
 
 // Namespace match_record/match_record
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xbe363fe4, Offset: 0x7c8
 // Size: 0xcc
 function function_34800eec(...) {

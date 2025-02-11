@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\gib.csc;
-#using scripts\core_common\ai\systems\destructible_character.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\struct;
 
 #namespace fx_character;
 
@@ -37,7 +36,7 @@ function autoexec main() {
 #namespace fxclientutils;
 
 // Namespace fxclientutils/fx_character
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4ec6680a, Offset: 0x360
 // Size: 0x1c
 function private _getfxbundle(name) {
@@ -45,7 +44,7 @@ function private _getfxbundle(name) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x31b3d4f5, Offset: 0x388
 // Size: 0x13c
 function private _configentity(localclientnum, entity) {
@@ -62,7 +61,7 @@ function private _configentity(localclientnum, entity) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x3e4e8ab2, Offset: 0x4d0
 // Size: 0x132
 function private _destructhandler(localclientnum, entity, piecenumber) {
@@ -81,7 +80,7 @@ function private _destructhandler(localclientnum, entity, piecenumber) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xe0b8a954, Offset: 0x610
 // Size: 0x132
 function private _gibhandler(localclientnum, entity, gibflag) {
@@ -100,7 +99,7 @@ function private _gibhandler(localclientnum, entity, gibflag) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbd95b03b, Offset: 0x750
 // Size: 0x92
 function private _gibpartnametogibflag(gibpartname) {
@@ -121,7 +120,7 @@ function private _gibpartnametogibflag(gibpartname) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb45a7ca7, Offset: 0x7f0
 // Size: 0x42
 function private _isgibbed(localclientnum, entity, stopongibflag) {
@@ -132,7 +131,7 @@ function private _isgibbed(localclientnum, entity, stopongibflag) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xc667960e, Offset: 0x840
 // Size: 0x42
 function private _ispiecedestructed(localclientnum, entity, stoponpiecedestroyed) {
@@ -143,7 +142,7 @@ function private _ispiecedestructed(localclientnum, entity, stoponpiecedestroyed
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x3a76802f, Offset: 0x890
 // Size: 0x6e
 function private _shouldplayfx(localclientnum, entity, fxstruct) {
@@ -199,7 +198,7 @@ function stopallfxbundles(localclientnum, entity) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe19a8c5e, Offset: 0xb90
 // Size: 0x124
 function stopfxbundle(localclientnum, entity, fxscriptbundle) {

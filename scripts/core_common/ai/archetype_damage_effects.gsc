@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
 
 #namespace archetype_damage_effects;
 
@@ -16,7 +15,7 @@ function autoexec main() {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdeacb534, Offset: 0x158
 // Size: 0x24
 function onactordamagecallback(params) {
@@ -24,7 +23,7 @@ function onactordamagecallback(params) {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x63b6171b, Offset: 0x188
 // Size: 0x1c
 function onactorkilledcallback(*params) {
@@ -32,7 +31,7 @@ function onactorkilledcallback(*params) {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6400af26, Offset: 0x1b0
 // Size: 0xbe
 function private function_6fedb40d() {
@@ -42,13 +41,13 @@ function private function_6fedb40d() {
     }
     self clientfield::set("arch_actor_fire_fx", 1);
     self.var_73c36602 = 1;
-    wait(isdefined(self.var_ab2486b4 / 1000) ? self.var_ab2486b4 / 1000 : 3);
+    wait isdefined(self.var_ab2486b4 / 1000) ? self.var_ab2486b4 / 1000 : 3;
     self clientfield::set("arch_actor_fire_fx", 0);
     self.var_73c36602 = 0;
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xadcbf4aa, Offset: 0x278
 // Size: 0x2c
 function private function_6eb1fbde() {
@@ -58,7 +57,7 @@ function private function_6eb1fbde() {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e0a53a0, Offset: 0x2b0
 // Size: 0xec
 function onactordamage(params) {
@@ -77,7 +76,7 @@ function onactordamage(params) {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47da0c2e, Offset: 0x3a8
 // Size: 0x84
 function onactorkilled() {

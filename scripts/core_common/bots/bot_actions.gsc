@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\bots\bot_action.gsc;
-#using scripts\core_common\bots\bot.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\bots\bot_action;
+#using scripts\core_common\gameobjects_shared;
 
 #namespace bot_actions;
 
 // Namespace bot_actions/bot_actions
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe370327e, Offset: 0xb8
 // Size: 0x5a
 function preinit() {
@@ -21,14 +20,14 @@ function preinit() {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbf6254a6, Offset: 0x120
 // Size: 0x27c
 function private function_9cefb01() {
     bot_action::register_action(#"melee", &function_97bc2873, &melee);
     bot_action::register_action(#"reload", &function_bebdaa6b, &reload);
     bot_action::register_action(#"hash_3d30e77358b222bb", &function_6ba9f861, &function_22e246dd);
-    bot_action::register_action(#"hash_7a087406b369e0b2", &function_9575b14a, &function_5be2fa6e);
+    bot_action::register_action(#"destroy_jammer", &function_9575b14a, &destroy_jammer);
     bot_action::register_action(#"hash_f2de979f0460355", &function_9f7ee32b, &function_f60b48cd);
     bot_action::register_action(#"hash_760170d9e327711f", &function_d31a5b9a, &function_3aab44a3);
     bot_action::register_action(#"hash_432f1b491c530184", &function_96340252, &function_c49cdd53);
@@ -38,7 +37,7 @@ function private function_9cefb01() {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1ba62362, Offset: 0x3a8
 // Size: 0x460
 function private function_bebdaa6b(actionparams) {
@@ -61,7 +60,7 @@ function private function_bebdaa6b(actionparams) {
     clipammo = self getweaponammoclip(weapon);
     stockammo = self getweaponammostock(weapon);
     /#
-        actionparams.debug[actionparams.debug.size] = #"hash_649eec90cdc06cdd" + clipammo + "<unknown string>" + weapon.clipsize + "<unknown string>" + stockammo;
+        actionparams.debug[actionparams.debug.size] = #"hash_649eec90cdc06cdd" + clipammo + "<dev string:x38>" + weapon.clipsize + "<dev string:x3d>" + stockammo;
     #/
     if (clipammo >= weapon.clipsize) {
         return undefined;
@@ -101,7 +100,7 @@ function private function_bebdaa6b(actionparams) {
         }
         if (getdvarint(#"hash_7140b31f7170f18b", 0)) {
             /#
-                actionparams.debug[actionparams.debug.size] = function_9e72a96(#"hash_7140b31f7170f18b") + "<unknown string>";
+                actionparams.debug[actionparams.debug.size] = function_9e72a96(#"hash_7140b31f7170f18b") + "<dev string:x44>";
             #/
             return undefined;
         }
@@ -116,11 +115,11 @@ function private function_bebdaa6b(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf78bd2c7, Offset: 0x810
 // Size: 0x8e
 function private reload(*actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     while (true) {
         if (!self isreloading()) {
             self bottapbutton(4);
@@ -130,7 +129,7 @@ function private reload(*actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xee6fae91, Offset: 0x8a8
 // Size: 0x1c8
 function private function_6ba9f861(actionparams) {
@@ -151,7 +150,7 @@ function private function_6ba9f861(actionparams) {
     }
     object = self.bot.var_538135ed.gameobject;
     trigger = object.trigger;
-    if (!isdefined(trigger) || !self function_e02bffcd(trigger)) {
+    if (!isdefined(trigger) || !self touching_trigger(trigger)) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_56cc687e292770eb";
         #/
@@ -161,11 +160,11 @@ function private function_6ba9f861(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa45adf, Offset: 0xa78
 // Size: 0xfc
 function private function_22e246dd(*actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     object = self.bot.var_538135ed.gameobject;
     self.bot.var_9d03fb75 = gettime() + int(2.5 * 1000);
     self.bot.var_fad934a1 = gettime() + int(12 * 1000);
@@ -173,7 +172,7 @@ function private function_22e246dd(*actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3aba25d0, Offset: 0xb80
 // Size: 0x28e
 function private function_9575b14a(actionparams) {
@@ -207,11 +206,11 @@ function private function_9575b14a(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4584e1d2, Offset: 0xe18
 // Size: 0xa6
-function private function_5be2fa6e(actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+function private destroy_jammer(actionparams) {
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     while (true) {
         jammer = actionparams.jammer;
         if (isdefined(jammer.enemytrigger)) {
@@ -222,14 +221,14 @@ function private function_5be2fa6e(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x100d5180, Offset: 0xec8
 // Size: 0x1a8
 function private function_5040c5b8(actionparams) {
     revivetarget = self bot::get_revive_target();
     if (!isdefined(revivetarget)) {
         /#
-            actionparams.debug[actionparams.debug.size] = "<unknown string>";
+            actionparams.debug[actionparams.debug.size] = "<dev string:x4c>";
         #/
         return undefined;
     }
@@ -256,11 +255,11 @@ function private function_5040c5b8(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2685b710, Offset: 0x1078
 // Size: 0x130
 function private revive(actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     self.bot.var_6bea1d82 = 1;
     if (!isdefined(self.bot.difficulty) || is_true(self.bot.difficulty.allowcrouch)) {
         self.bot.var_ce28855b = 1;
@@ -276,7 +275,7 @@ function private revive(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xeed6a878, Offset: 0x11b0
 // Size: 0x5e2
 function private function_97bc2873(actionparams) {
@@ -366,11 +365,11 @@ function private function_97bc2873(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x619552f7, Offset: 0x17a0
 // Size: 0x15e
 function private melee(actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     while (true) {
         var_bd773dde = actionparams.var_bd773dde;
         self.bot.var_87751145 = var_bd773dde;
@@ -390,7 +389,7 @@ function private melee(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xba02010d, Offset: 0x1908
 // Size: 0xd0
 function private function_d31a5b9a(actionparams) {
@@ -407,11 +406,11 @@ function private function_d31a5b9a(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8ffbabd7, Offset: 0x19e0
 // Size: 0x1b0
 function private function_3aab44a3(*actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     center = self.bot.var_ad331541 getcentroid();
     weapon = self getcurrentweapon();
     meleeweapon = weapon.ismeleeweapon || weapon.type == #"melee";
@@ -429,7 +428,7 @@ function private function_3aab44a3(*actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8d44b363, Offset: 0x1b98
 // Size: 0x138
 function private function_96340252(actionparams) {
@@ -452,11 +451,11 @@ function private function_96340252(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb36509b2, Offset: 0x1cd8
 // Size: 0x1a8
 function private function_c49cdd53(*actionparams) {
-    self endoncallback(&function_84f889a2, #"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endoncallback(&function_84f889a2, #"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     crate = undefined;
     while (true) {
         var_7485904b = self.bot.var_510b1057;
@@ -480,7 +479,7 @@ function private function_c49cdd53(*actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb59c3d1, Offset: 0x1e88
 // Size: 0x26
 function private function_84f889a2(*notifyhash) {
@@ -490,7 +489,7 @@ function private function_84f889a2(*notifyhash) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9e16cfca, Offset: 0x1eb8
 // Size: 0x1a8
 function private function_9f7ee32b(actionparams) {
@@ -504,7 +503,7 @@ function private function_9f7ee32b(actionparams) {
     if (self bot_action::function_a43bc7e2(actionparams) || self bot_action::function_ebb8205b(actionparams) || self bot_action::function_a0b0f487(actionparams) || self bot_action::function_2c3ea0c6(actionparams) || self bot_action::in_vehicle(actionparams)) {
         return undefined;
     }
-    if (!isdefined(target.trigger) || !self function_e02bffcd(target.trigger)) {
+    if (!isdefined(target.trigger) || !self touching_trigger(target.trigger)) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_56cc687e292770eb";
         #/
@@ -514,11 +513,11 @@ function private function_9f7ee32b(actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdc4e0c10, Offset: 0x2068
 // Size: 0x90
 function private function_f60b48cd(*actionparams) {
-    self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
+    self endon(#"hash_1ae115949cd752c8", #"death", #"bot_shutdown");
     while (true) {
         object = self.bot.objective.info.target;
         self use_gameobject(object);
@@ -526,7 +525,7 @@ function private function_f60b48cd(*actionparams) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5cf41de2, Offset: 0x2100
 // Size: 0x118
 function private use_trigger(trigger) {
@@ -551,10 +550,10 @@ function private use_trigger(trigger) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5be0ce15, Offset: 0x2220
 // Size: 0x9a
-function private function_e02bffcd(trigger) {
+function private touching_trigger(trigger) {
     if (!self istouching(trigger)) {
         return false;
     }
@@ -566,7 +565,7 @@ function private function_e02bffcd(trigger) {
 }
 
 // Namespace bot_actions/bot_actions
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xead329cc, Offset: 0x22c8
 // Size: 0x178
 function private use_gameobject(object) {

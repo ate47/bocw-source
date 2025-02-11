@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_1cc417743d7c262d;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_3411bb48d41bd3b;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_score;
 
 #namespace namespace_4faef43b;
 
@@ -40,7 +39,7 @@ function __init__() {
 // Params 1, eflags: 0x0
 // Checksum 0xbcb36db1, Offset: 0x510
 // Size: 0x2c
-function on_player_killed(*var_a2f12b49) {
+function on_player_killed(*death_params) {
     self clientfield::set_player_uimodel("hudItems.reinforcing", 0);
 }
 
@@ -58,11 +57,11 @@ function function_3dfeef3b(var_da2c0964 = 0) {
 // Size: 0x400
 function init_doors() {
     var_51eefac8 = array("p9_sr_barricade_01_window_01", "p9_sr_barricade_01_window_01", "p9_sr_barricade_01_window_01", "p9_sr_barricade_01_window_01_dmg_a", "p9_sr_barricade_01_window_01_dmg_a", "p9_sr_barricade_01_window_01_dmg_a", "p9_sr_barricade_01_window_01_dmg_b", "p9_sr_barricade_01_window_01_dmg_b", "p9_sr_barricade_01_window_01_dmg_b");
-    var_57652081 = struct::get_array("survival_door");
-    foreach (var_2b02295f in var_57652081) {
-        var_2b02295f.var_a7417bea = var_51eefac8;
-        var_2b02295f.s_boards = arraygetclosest(var_2b02295f.origin, struct::get_array("survival_door_boards"));
-        use_trigger = spawn("trigger_radius_use", var_2b02295f.origin, 0, 96, 96, 1);
+    door_structs = struct::get_array("survival_door");
+    foreach (door_struct in door_structs) {
+        door_struct.var_a7417bea = var_51eefac8;
+        door_struct.s_boards = arraygetclosest(door_struct.origin, struct::get_array("survival_door_boards"));
+        use_trigger = spawn("trigger_radius_use", door_struct.origin, 0, 96, 96, 1);
         assert(isdefined(use_trigger));
         use_trigger triggerignoreteam();
         use_trigger setvisibletoall();
@@ -70,26 +69,26 @@ function init_doors() {
         use_trigger setcursorhint("HINT_NOICON");
         use_trigger sethintstring(#"hash_e0e56e669b6a886");
         use_trigger usetriggerignoreuseholdtime();
-        var_56d14168 = spawn("script_model", var_2b02295f.origin);
-        assert(isdefined(var_56d14168));
-        var_56d14168.angles = var_2b02295f.angles;
-        var_56d14168.health = 10000000;
-        var_56d14168 setcandamage(1);
-        var_56d14168 setmodel("p8_wz_door_01");
-        var_56d14168.var_1c553fa4 = 1;
-        var_56d14168.damage_level = 0;
-        var_56d14168.var_27a45076 = 0;
-        var_56d14168.reinforced = 0;
-        var_2b02295f.trigger = use_trigger;
-        var_2b02295f.door = var_56d14168;
-        use_trigger.parent_struct = var_2b02295f;
-        var_56d14168.parent_struct = var_2b02295f;
-        var_8b4e689b = spawn("trigger_radius", var_2b02295f.origin, 0, 96, 96);
-        var_8b4e689b.parent_struct = var_2b02295f;
+        door_model = spawn("script_model", door_struct.origin);
+        assert(isdefined(door_model));
+        door_model.angles = door_struct.angles;
+        door_model.health = 10000000;
+        door_model setcandamage(1);
+        door_model setmodel("p8_wz_door_01");
+        door_model.var_1c553fa4 = 1;
+        door_model.damage_level = 0;
+        door_model.var_27a45076 = 0;
+        door_model.reinforced = 0;
+        door_struct.trigger = use_trigger;
+        door_struct.door = door_model;
+        use_trigger.parent_struct = door_struct;
+        door_model.parent_struct = door_struct;
+        var_8b4e689b = spawn("trigger_radius", door_struct.origin, 0, 96, 96);
+        var_8b4e689b.parent_struct = door_struct;
         var_8b4e689b thread function_6a3e8a89();
         use_trigger callback::on_trigger_once(&door_think);
-        namespace_85745671::function_1ede0cd3(var_2b02295f.target, var_2b02295f.door, 1);
-        function_be2c24a3(var_2b02295f.target, 0);
+        namespace_85745671::function_1ede0cd3(door_struct.target, door_struct.door, 1);
+        function_be2c24a3(door_struct.target, 0);
     }
 }
 
@@ -178,8 +177,8 @@ function private door_think(eventstruct) {
         current_angles = door.angles;
         var_f6f828b2 = (0, 90, 0) + current_angles;
         var_bc7389e4 = (0, -90, 0) + current_angles;
-        var_1be3aa53 = vectordot(player.origin - door.origin, anglestoforward(door.angles)) > 0;
-        if (door.var_27a45076 == 0 && var_1be3aa53) {
+        in_front = vectordot(player.origin - door.origin, anglestoforward(door.angles)) > 0;
+        if (door.var_27a45076 == 0 && in_front) {
             door rotateto(var_f6f828b2, 0.5);
             door.var_27a45076 = 1;
             function_be2c24a3(parent_struct.target, 1);
@@ -188,7 +187,7 @@ function private door_think(eventstruct) {
             } else {
                 self sethintstring(#"hash_3df5eb7de3fa5e80");
             }
-        } else if (door.var_27a45076 == 0 && !var_1be3aa53) {
+        } else if (door.var_27a45076 == 0 && !in_front) {
             door rotateto(var_bc7389e4, 0.5);
             door.var_27a45076 = -1;
             function_be2c24a3(parent_struct.target, 1);
@@ -300,7 +299,7 @@ function function_ae47792b(eventstruct) {
 function function_9801cde9() {
     self endon(#"death");
     self.var_1c553fa4 = 0;
-    wait(1);
+    wait 1;
     self.var_1c553fa4 = 1;
 }
 
@@ -469,7 +468,7 @@ function private function_994e81b7(eventstruct) {
 function function_82c85f70() {
     self endon(#"death");
     self.var_1c553fa4 = 0;
-    wait(0.5);
+    wait 0.5;
     self.var_1c553fa4 = 1;
 }
 
@@ -516,7 +515,7 @@ function private function_48a16d8d(activator, func) {
 // Size: 0x44
 function private function_be463e75(delay, func) {
     level endon(#"game_ended");
-    wait(delay);
+    wait delay;
     self callback::on_trigger_once(func);
 }
 

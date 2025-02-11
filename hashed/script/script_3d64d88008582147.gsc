@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_ab862743b3070a;
 #using script_340a2e805e35f7a2;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
 #using script_34ab99a4ca1a43d;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\util\ai_dog_util;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
 
 #namespace namespace_f0a1fe5c;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcdce3836, Offset: 0x278
 // Size: 0x2ac
 function private preinit() {
@@ -37,22 +36,22 @@ function private preinit() {
         if (zm_powerups::function_cc33adc8()) {
             clientfield::register("scriptmover", "powerup_pickup_sequence", 1, 4, "int");
             zm_powerups::add_zombie_powerup("naughty_or_nice", #"hash_218ac2126792ad24", #"hash_c63a666160e5343", &zm_powerups::func_should_always_drop, 0, 0, 0, undefined, "powerup_naughty_or_nice", "zombie_powerup_naughty_or_nice_time", "zombie_powerup_naughty_or_nice_on");
-            zm_vo::function_2cf4b07f(#"hash_488f781c3365038d", #"hash_1d3bccd799efe9e7");
+            zm_vo::function_2cf4b07f(#"powerup_nice", #"hash_1d3bccd799efe9e7");
             zm_vo::function_2cf4b07f(#"hash_1f61ea56f88705b0", #"hash_1d3bcbd799efe834");
             zm_vo::function_2cf4b07f(#"naughty_or_nice", #"hash_1d3bced799efed4d");
             zm_vo::function_2cf4b07f(#"hash_5832fe620991fcd1", #"hash_1d3bcdd799efeb9a");
             /#
-                adddebugcommand("<unknown string>");
+                adddebugcommand("<dev string:x38>");
             #/
             /#
-                adddebugcommand("<unknown string>");
+                adddebugcommand("<dev string:x8f>");
             #/
         }
     }
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x84bfb8c2, Offset: 0x530
 // Size: 0x54
 function function_a19d471a(player) {
@@ -63,7 +62,7 @@ function function_a19d471a(player) {
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd0a94b1, Offset: 0x590
 // Size: 0x3ec
 function function_feb491ef(player, origin, hint) {
@@ -81,7 +80,7 @@ function function_feb491ef(player, origin, hint) {
             temp_ent clientfield::set("powerup_pickup_sequence", 2);
             var_55bc7ca1 = 1;
         }
-        wait(0.3);
+        wait 0.3;
     }
     temp_ent stoploopsound(0.2);
     temp_ent clientfield::set("powerup_pickup_sequence", 0);
@@ -111,12 +110,12 @@ function function_feb491ef(player, origin, hint) {
     } else {
         level thread function_5928d77d();
     }
-    wait(2);
+    wait 2;
     temp_ent delete();
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x61b33749, Offset: 0x988
 // Size: 0xac
 function private function_c15a5f44(var_d13d4980) {
@@ -125,14 +124,14 @@ function private function_c15a5f44(var_d13d4980) {
     level endon(#"end_game");
     self function_b1c6ca30(var_d13d4980);
     if (math::cointoss()) {
-        level thread zm_vo::function_8abe0568(#"hash_488f781c3365038d");
+        level thread zm_vo::function_8abe0568(#"powerup_nice");
         return;
     }
     level thread zm_vo::function_8abe0568(#"hash_5832fe620991fcd1");
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd6753c13, Offset: 0xa40
 // Size: 0x208
 function private function_5928d77d() {
@@ -168,13 +167,13 @@ function private function_5928d77d() {
                 }
             }
         }
-        wait(2);
+        wait 2;
     }
     level.var_4be193f5 = 0;
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd3e3bb59, Offset: 0xc50
 // Size: 0x234
 function function_b1c6ca30(var_d13d4980) {

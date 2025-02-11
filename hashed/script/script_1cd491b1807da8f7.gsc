@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace dynent_use;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x57938ab1, Offset: 0x170
 // Size: 0x174
 function private preinit() {
@@ -36,7 +35,7 @@ function private preinit() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb23ab8e3, Offset: 0x2f0
 // Size: 0x74
 function private on_player_connect() {
@@ -51,7 +50,7 @@ function private on_player_connect() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdbd58f05, Offset: 0x370
 // Size: 0x2c
 function private on_player_disconnect() {
@@ -61,7 +60,7 @@ function private on_player_disconnect() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x53768fed, Offset: 0x3a8
 // Size: 0x2c
 function private on_player_killed(*params) {
@@ -69,7 +68,7 @@ function private on_player_killed(*params) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7faa1f34, Offset: 0x3e0
 // Size: 0x1a0
 function private create_use_trigger() {
@@ -83,7 +82,7 @@ function private create_use_trigger() {
     usetrigger triggerenable(0);
     usetrigger usetriggerignoreuseholdtime();
     usetrigger function_4bf6de9a(0);
-    usetrigger function_c96c67a5(0);
+    usetrigger skip1_ski(0);
     usetrigger function_89fca53b(1);
     usetrigger function_49462027(1, 1 | 16 | 1024);
     usetrigger callback::on_trigger_once(&function_46502841);
@@ -91,7 +90,7 @@ function private create_use_trigger() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x27192ce, Offset: 0x588
 // Size: 0x196
 function private update_loop() {
@@ -116,7 +115,7 @@ function private update_loop() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6cfd8430, Offset: 0x728
 // Size: 0x69c
 function private function_2f394f36() {
@@ -153,7 +152,7 @@ function private function_2f394f36() {
         if (isdefined(dynent.var_a548ec11) && gettime() <= dynent.var_a548ec11) {
             /#
                 if (debug) {
-                    print3d(dynent.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 5);
+                    print3d(dynent.origin, "<dev string:x38>", (1, 1, 1), 1, 0.5, 5);
                 }
             #/
             continue;
@@ -163,7 +162,7 @@ function private function_2f394f36() {
         if (isdefined(bundle) && isdefined(bundle.dynentstates) && isdefined(bundle.dynentstates[stateindex]) && (is_true(bundle.dynentstates[stateindex].var_efabe801) || level.inprematchperiod && !is_true(bundle.dynentstates[stateindex].var_4a78f198))) {
             /#
                 if (debug) {
-                    print3d(dynent.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 5);
+                    print3d(dynent.origin, "<dev string:x44>", (1, 1, 1), 1, 0.5, 5);
                 }
             #/
             continue;
@@ -202,7 +201,7 @@ function private function_2f394f36() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x886475c4, Offset: 0xdd0
 // Size: 0x2f8
 function function_662eb91e(dynent, vieworigin, viewforward, drawframes = 1) {
@@ -239,7 +238,7 @@ function function_662eb91e(dynent, vieworigin, viewforward, drawframes = 1) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x12b62d8f, Offset: 0x10d0
 // Size: 0xa4
 function function_836af3b3(bundle, state) {
@@ -251,7 +250,7 @@ function function_836af3b3(bundle, state) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7fb86ce9, Offset: 0x1180
 // Size: 0x11a
 function private function_46502841(trigger_struct) {
@@ -269,7 +268,7 @@ function private function_46502841(trigger_struct) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb1a353ce, Offset: 0x12a8
 // Size: 0x2f8
 function private function_2b9e2224(trigger) {
@@ -318,7 +317,7 @@ function private function_2b9e2224(trigger) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1b40a3ba, Offset: 0x15a8
 // Size: 0xc0
 function function_58fa8833(trigger, dynent) {
@@ -347,7 +346,7 @@ function function_58fa8833(trigger, dynent) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1abce993, Offset: 0x1670
 // Size: 0xcc
 function private function_e882de59(trigger) {
@@ -365,7 +364,7 @@ function private function_e882de59(trigger) {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe870c277, Offset: 0x1748
 // Size: 0x5c
 function function_7f2040e8() {
@@ -377,7 +376,7 @@ function function_7f2040e8() {
 }
 
 // Namespace dynent_use/dynent_use
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xcd8768fa, Offset: 0x17b0
 // Size: 0x340
 function use_dynent(dynent, activator, overridestate, disablegesture = 0, var_c78a0afc = 0) {
@@ -426,8 +425,8 @@ function use_dynent(dynent, activator, overridestate, disablegesture = 0, var_c7
         while (!canadddebugcommand()) {
             waitframe(1);
         }
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x5b>");
+        adddebugcommand("<dev string:x83>");
     }
 
     // Namespace dynent_use/dynent_use

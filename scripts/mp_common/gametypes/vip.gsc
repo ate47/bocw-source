@@ -1,39 +1,38 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\airsupport.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\mp_common\player\player_killed.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\laststand.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\perks.gsc;
-#using scripts\mp_common\draft.gsc;
-#using scripts\core_common\armor.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\armor;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\airsupport;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\draft;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\laststand;
+#using scripts\mp_common\perks;
+#using scripts\mp_common\player\player_killed;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace vip;
 
@@ -163,7 +162,7 @@ function onroundswitch() {
         var_35ee5a5a function_3e035a80();
         var_35ee5a5a function_ba08018d();
         var_35ee5a5a.var_6b4e7428 = 0;
-        var_35ee5a5a draft::select_character(var_35ee5a5a.pers[#"hash_629f4666af73d943"], 1);
+        var_35ee5a5a draft::select_character(var_35ee5a5a.pers[#"original_role"], 1);
         var_35ee5a5a.var_e8c7d324 = undefined;
         if (true) {
             var_35ee5a5a function_44d63ecd(1, 0);
@@ -185,10 +184,10 @@ function onspawnplayer(predictedspawn) {
 // Checksum 0xbd252efb, Offset: 0x1080
 // Size: 0x92
 function onspawned() {
-    var_59fb30b2 = self.pers[#"hash_629f4666af73d943"];
+    original_role = self.pers[#"original_role"];
     current_role = self getspecialistindex();
-    if (!isdefined(var_59fb30b2) || current_role != level.var_a9bb8bf) {
-        self.pers[#"hash_629f4666af73d943"] = current_role;
+    if (!isdefined(original_role) || current_role != level.var_a9bb8bf) {
+        self.pers[#"original_role"] = current_role;
         self.var_89eab96d = 1;
     }
 }
@@ -198,8 +197,8 @@ function onspawned() {
 // Checksum 0x2eeb0b75, Offset: 0x1120
 // Size: 0x3c
 function onconnect() {
-    if (!isdefined(self.pers[#"hash_5d729fc6e71ec2fc"])) {
-        self.pers[#"hash_5d729fc6e71ec2fc"] = 0;
+    if (!isdefined(self.pers[#"vip_count"])) {
+        self.pers[#"vip_count"] = 0;
     }
 }
 
@@ -254,7 +253,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
             psoffsettime stats::function_dad108fa(#"eliminated_final_enemy", 1);
         }
         if (self === level.vip) {
-            scoreevents::processscoreevent(#"hash_4865adbd99d59a08", psoffsettime, self, deathanimduration);
+            scoreevents::processscoreevent(#"vip_killed", psoffsettime, self, deathanimduration);
             psoffsettime stats::function_cc215323(#"hash_8bdbd052bdb213", 1);
             psoffsettime.pers[#"objectives"]++;
             psoffsettime.objectives = psoffsettime.pers[#"objectives"];
@@ -333,7 +332,7 @@ function function_9c92aa49() {
     var_7ea33249 = [];
     var_b181c82d = function_31d859f2();
     for (i = 0; i < var_b181c82d.size; i++) {
-        objectivename = i == 1 ? #"hash_4d535d16887e319e" : #"hash_4d535c16887e2feb";
+        objectivename = i == 1 ? #"vip_exfil_b" : #"hash_4d535c16887e2feb";
         var_8e875f24 = function_89d3faf4(var_b181c82d[i], objectivename);
         var_7ea33249[var_7ea33249.size] = var_8e875f24;
     }
@@ -361,8 +360,8 @@ function function_89d3faf4(var_f4a4fc64, objectivename) {
     trigger function_682f34cf(-800);
     trigger usetriggerignoreuseholdtime();
     var_8e875f24 = gameobjects::create_use_object(game.defenders, trigger, [], (0, 0, 0), objectivename, 1);
-    var_8e875f24 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    var_8e875f24 gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+    var_8e875f24 gameobjects::set_visible(#"group_all");
+    var_8e875f24 gameobjects::allow_use(#"group_none");
     var_8e875f24 gameobjects::set_use_time(level.var_c2eba59b);
     var_8e875f24 gameobjects::set_key_object(level.var_785c66f4);
     var_8e875f24 gameobjects::set_onbeginuse_event(&onbeginuse);
@@ -396,8 +395,8 @@ function function_89d3faf4(var_f4a4fc64, objectivename) {
 function function_f86e4f6e() {
     if (isdefined(level.var_576e41c3)) {
         foreach (var_2bf427c1 in level.var_576e41c3) {
-            var_2bf427c1 gameobjects::set_visible(#"hash_161f03feaadc9b8f");
-            var_2bf427c1 gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+            var_2bf427c1 gameobjects::set_visible(#"group_none");
+            var_2bf427c1 gameobjects::allow_use(#"group_none");
         }
     }
 }
@@ -613,25 +612,25 @@ function private function_83eb584e() {
         }
         var_e52acd04 = 2147483647;
         foreach (player in var_6a44aacb) {
-            if (player.pers[#"hash_5d729fc6e71ec2fc"] < var_e52acd04) {
-                var_e52acd04 = player.pers[#"hash_5d729fc6e71ec2fc"];
+            if (player.pers[#"vip_count"] < var_e52acd04) {
+                var_e52acd04 = player.pers[#"vip_count"];
             }
         }
-        var_b8d10d0e = 0;
+        max_score = 0;
         foreach (player in var_6a44aacb) {
-            if (player.pers[#"hash_5d729fc6e71ec2fc"] == var_e52acd04 && player.pers[#"score"] > var_b8d10d0e) {
-                var_b8d10d0e = player.pers[#"score"];
+            if (player.pers[#"vip_count"] == var_e52acd04 && player.pers[#"score"] > max_score) {
+                max_score = player.pers[#"score"];
             }
         }
         var_6329e8ff = [];
         foreach (player in var_6a44aacb) {
-            if (player.pers[#"hash_5d729fc6e71ec2fc"] == var_e52acd04 && player.pers[#"score"] == var_b8d10d0e) {
+            if (player.pers[#"vip_count"] == var_e52acd04 && player.pers[#"score"] == max_score) {
                 var_6329e8ff[var_6329e8ff.size] = player;
             }
         }
         var_daecd5d7 = randomintrange(0, var_6329e8ff.size);
         vip = var_6329e8ff[var_daecd5d7];
-        vip.pers[#"hash_5d729fc6e71ec2fc"]++;
+        vip.pers[#"vip_count"]++;
         vip draft::select_character(level.var_a9bb8bf, 1);
         vip.var_6b4e7428 = 1;
         vip.var_db459f8d = 1;
@@ -912,9 +911,9 @@ function function_3e035a80() {
 function function_1189df03() {
     trigger = spawn("trigger_radius_use", level.vip.origin);
     visuals = [];
-    var_785c66f4 = gameobjects::create_carry_object(game.attackers, trigger, visuals, (0, 0, 0), #"hash_526a94759b3b92b2");
-    var_785c66f4 gameobjects::allow_carry(#"hash_150a20fa4efc5c7a");
-    var_785c66f4 gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
+    var_785c66f4 = gameobjects::create_carry_object(game.attackers, trigger, visuals, (0, 0, 0), #"vip_waypoint");
+    var_785c66f4 gameobjects::allow_carry(#"group_friendly");
+    var_785c66f4 gameobjects::set_visible(#"group_friendly");
     var_785c66f4 gameobjects::set_use_time(0);
     var_785c66f4 gameobjects::function_b03b5362(1);
     var_785c66f4.allowweapons = 1;
@@ -937,7 +936,7 @@ function private function_95002a59(attacker, *victim, *inflictor, weapon, *means
         weapon.downs = weapon.pers[#"downs"];
         if (isplayer(weapon) && util::function_fbce7263(weapon.team, self.team) && !weapon laststand_mp::is_cheating()) {
             if (self === level.vip) {
-                scoreevents::processscoreevent(#"hash_4b450c958dfde514", weapon, self, meansofdeath);
+                scoreevents::processscoreevent(#"vip_downed", weapon, self, meansofdeath);
             }
         }
     }
@@ -979,7 +978,7 @@ function private onplayerrevived(revivee, reviver) {
     reviver.revives = reviver.pers[#"revives"];
     if (!reviver laststand_mp::is_cheating()) {
         if (revivee === level.vip) {
-            scoreevents::processscoreevent(#"hash_23a7b975b43b2594", reviver, revivee);
+            scoreevents::processscoreevent(#"vip_revived", reviver, revivee);
         }
     }
     revivee notify(#"revived");
@@ -1063,7 +1062,7 @@ function givelastattackerwarning(team) {
         } else {
             fullhealthtime += interval;
         }
-        wait(interval);
+        wait interval;
         if (self.health == self.maxhealth && fullhealthtime >= 3) {
             break;
         }
@@ -1088,7 +1087,7 @@ function private function_8cac4c76() {
 // Checksum 0xfa74eeda, Offset: 0x4b98
 // Size: 0x64
 function private set_ui_team() {
-    wait(0.05);
+    wait 0.05;
     if (game.attackers == #"allies") {
         clientfield::set_world_uimodel("hudItems.war.attackingTeam", 1);
         return;
@@ -1106,7 +1105,7 @@ function private function_106733b6() {
     angles = self.angles;
     assert(isdefined(origin) && isdefined(angles));
     var_8e875f24 = self;
-    wait(0);
+    wait 0;
     destination = getstartorigin(origin, angles, #"ai_swat_rifle_ent_litlbird_rappel_stn_vehicle2");
     destination = (destination[0], destination[1], destination[2] - 75);
     var_6aa266d6 = helicopter::getvalidrandomstartnode(destination).origin;
@@ -1126,10 +1125,10 @@ function private function_106733b6() {
         level waittill(#"hash_4ca4b50f818377c4");
     }
     if (true) {
-        var_226a0ac0 = spawn("trigger_radius", var_8e875f24.origin, 0, 400, 100);
-        var_226a0ac0 setinvisibletoall();
-        var_226a0ac0 setvisibletoplayer(level.vip);
-        var_226a0ac0 waittill(#"trigger");
+        activation_trigger = spawn("trigger_radius", var_8e875f24.origin, 0, 400, 100);
+        activation_trigger setinvisibletoall();
+        activation_trigger setvisibletoplayer(level.vip);
+        activation_trigger waittill(#"trigger");
         thread globallogic_audio::function_b4319f8e("vipAttackersExfilStartTeam", level.vip.team, level.vip, "vipAttackersExfilStartTeam");
         level.vip thread globallogic_audio::leader_dialog_on_player("vipAttackersExfilStartVIP", "vipAttackersExfilStartVIP");
         var_e7a10ea = self.var_f23c87bd == "vip_exfil_b" ? "vipDefendersExfilStartB" : "vipDefendersExfilStartA";
@@ -1138,7 +1137,7 @@ function private function_106733b6() {
     helicopter thread function_7082507b(helicopter);
     helicopter waittill(#"hash_13b3aacf002f7c8f");
     var_8e875f24.trigger setvisibletoplayer(level.vip);
-    var_8e875f24 gameobjects::allow_use(#"hash_33c49a99551acae7");
+    var_8e875f24 gameobjects::allow_use(#"group_enemy");
     var_8e875f24 waittill(#"hash_21fb1bf7c34422cd");
     if (!isdefined(level.vip) || !isalive(level.vip)) {
         return;
@@ -1158,7 +1157,7 @@ function private function_3bdfa078() {
     startnode = self.var_6728673;
     assert(isdefined(startnode));
     var_8e875f24 = self;
-    wait(0);
+    wait 0;
     helicopter = function_9bbc1c91(startnode.origin, startnode.angles);
     var_8e875f24.helicopter = helicopter;
     function_3eef60e4(helicopter);
@@ -1178,10 +1177,10 @@ function private function_3bdfa078() {
         level waittill(#"hash_4ca4b50f818377c4");
     }
     if (true) {
-        var_226a0ac0 = spawn("trigger_radius", var_8e875f24.origin, 0, 400, 100);
-        var_226a0ac0 setinvisibletoall();
-        var_226a0ac0 setvisibletoplayer(level.vip);
-        var_226a0ac0 waittill(#"trigger");
+        activation_trigger = spawn("trigger_radius", var_8e875f24.origin, 0, 400, 100);
+        activation_trigger setinvisibletoall();
+        activation_trigger setvisibletoplayer(level.vip);
+        activation_trigger waittill(#"trigger");
         thread globallogic_audio::function_b4319f8e("vipAttackersExfilStartTeam", level.vip.team, level.vip, "vipAttackersExfilStartTeam");
         level.vip thread globallogic_audio::leader_dialog_on_player("vipAttackersExfilStartVIP", "vipAttackersExfilStartVIP");
         var_e7a10ea = self.var_f23c87bd == "vip_exfil_b" ? "vipDefendersExfilStartB" : "vipDefendersExfilStartA";
@@ -1191,7 +1190,7 @@ function private function_3bdfa078() {
     helicopter thread function_7082507b(helicopter);
     helicopter waittill(#"hash_13b3aacf002f7c8f");
     var_8e875f24.trigger setvisibletoplayer(level.vip);
-    var_8e875f24 gameobjects::allow_use(#"hash_33c49a99551acae7");
+    var_8e875f24 gameobjects::allow_use(#"group_enemy");
     var_8e875f24 waittill(#"hash_21fb1bf7c34422cd");
     if (!isdefined(level.vip) || !isalive(level.vip)) {
         return;
@@ -1211,8 +1210,8 @@ function private function_9bbc1c91(origin, angles) {
     helicopter.soundmod = "heli";
     helicopter.takedamage = 0;
     helicopter.drivepath = 1;
-    var_9a1bcc5b = 200;
-    helicopter setneargoalnotifydist(var_9a1bcc5b);
+    notifydist = 200;
+    helicopter setneargoalnotifydist(notifydist);
     if (target_istarget(helicopter)) {
         target_remove(helicopter);
     }
@@ -1265,7 +1264,7 @@ function private function_b2b03432(helicopter, destination) {
         helicopter waittill(#"near_goal");
     } else {
         helicopter thread airsupport::setgoalposition(destination, "exfil_site_heli_reached", 1);
-        helicopter waittill(#"hash_7f5ee97a8378d695");
+        helicopter waittill(#"exfil_site_heli_reached");
     }
     last_distance_from_goal_squared = sqr(1e+07);
     continue_waiting = 1;
@@ -1293,7 +1292,7 @@ function function_77192ec(helicopter, destination) {
     movetime = 0.5;
     var_f1705e15 rotateto((0, helicopter.angles[1], 0), movetime, 0.15, 0.15);
     var_f1705e15 moveto(destination, movetime, 0, 0);
-    wait(movetime);
+    wait movetime;
     var_3d6ff184 = helicopter.origin;
     var_736a6d8f = 10;
     var_4cc352d9 = 71;
@@ -1304,7 +1303,7 @@ function function_77192ec(helicopter, destination) {
     right = (right[0], right[1], 0);
     var_3d6ff184 += right * var_4cc352d9;
     var_f1705e15 moveto(var_3d6ff184, movetime, 0, 0.2);
-    wait(movetime);
+    wait movetime;
     helicopter notify(#"hash_2dc51722de7dcdb5");
 }
 
@@ -1490,7 +1489,7 @@ function function_d914539a(goalyaw) {
     var_bc4bc17d = anglelerp(self.angles[1], goalyaw, var_44cf825);
     var_fc27b3e3 = (var_9546359, var_bc4bc17d, 0);
     self rotateto(var_fc27b3e3, var_64165cee, 0.2, 0.1);
-    wait(var_64165cee);
+    wait var_64165cee;
     if (!isdefined(self)) {
         return;
     }
@@ -1547,7 +1546,7 @@ function function_a34ad686() {
 function function_6f9743ac(delay) {
     self endon(#"death");
     level endon(#"game_ended");
-    wait(delay);
+    wait delay;
     self notify(#"hash_371e4087fcc0efc2");
 }
 
@@ -1576,7 +1575,7 @@ function function_498839(helicopter) {
                 helicopter function_9ffc1856(var_a9a839e2, 0);
                 while (true) {
                     /#
-                        recordsphere(var_a9a839e2, 8, (0, 0, 1), "tag_origin");
+                        recordsphere(var_a9a839e2, 8, (0, 0, 1), "<dev string:x38>");
                     #/
                     var_baa92af9 = ispointinnavvolume(helicopter.origin, "navvolume_big");
                     if (var_baa92af9 && !issentient(helicopter)) {
@@ -1656,7 +1655,7 @@ function private function_8de67419(leavenode) {
         self function_9ffc1856(var_a9a839e2, 0);
         while (true) {
             /#
-                recordsphere(var_a9a839e2, 8, (0, 0, 1), "tag_origin");
+                recordsphere(var_a9a839e2, 8, (0, 0, 1), "<dev string:x38>");
             #/
             var_baa92af9 = ispointinnavvolume(self.origin, "navvolume_big");
             if (!var_baa92af9) {
@@ -1729,7 +1728,7 @@ function resume_time() {
     // Checksum 0x16c75df5, Offset: 0x7708
     // Size: 0x24
     function init_devgui() {
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x42>");
     }
 
     // Namespace vip/vip
@@ -1766,8 +1765,8 @@ function resume_time() {
             if (!isdefined(rope)) {
                 continue;
             }
-            start = rope gettagorigin("<unknown string>");
-            end = rope gettagorigin("<unknown string>");
+            start = rope gettagorigin("<dev string:x92>");
+            end = rope gettagorigin("<dev string:xa2>");
             color = (0, 1, 0);
             trace = groundtrace(start, end + (0, 0, -2048), 0, self, 1, 1);
             origin = trace[#"position"];
@@ -1799,8 +1798,8 @@ function resume_time() {
         end = start;
         while (isdefined(start) && isdefined(next.target) && getdvarint(#"hash_27392129ff420c70", 0)) {
             waitframe(1);
-            next = getvehiclenode(next.target, "<unknown string>");
-            if (next.script_notify === "<unknown string>") {
+            next = getvehiclenode(next.target, "<dev string:xba>");
+            if (next.script_notify === "<dev string:xc8>") {
                 exfil = next;
             }
             if (!isdefined(next.target)) {

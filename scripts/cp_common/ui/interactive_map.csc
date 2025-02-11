@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace interactive_map;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfda5dba2, Offset: 0x1b0
 // Size: 0x4c
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xf8b8e58e, Offset: 0x208
 // Size: 0x76
 function private toggle_interactive_map(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -35,7 +34,7 @@ function private toggle_interactive_map(localclientnum, *oldval, newval, *bnewen
 }
 
 // Namespace interactive_map/interactive_map
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x25a92054, Offset: 0x288
 // Size: 0x686
 function private function_f4804ac(localclientnum) {
@@ -100,7 +99,7 @@ function private function_f4804ac(localclientnum) {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6f1b38d9, Offset: 0x918
 // Size: 0x3a
 function private function_b1a83ab() {
@@ -108,7 +107,7 @@ function private function_b1a83ab() {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x96cc7905, Offset: 0x960
 // Size: 0x56
 function private function_644b2f6d() {
@@ -120,7 +119,7 @@ function private function_644b2f6d() {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6baca31b, Offset: 0x9c0
 // Size: 0x74
 function private function_125940c8() {
@@ -133,7 +132,7 @@ function private function_125940c8() {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x88b8f0df, Offset: 0xa40
 // Size: 0x46
 function private function_747d0bce(field) {
@@ -145,7 +144,7 @@ function private function_747d0bce(field) {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x54baaf13, Offset: 0xa90
 // Size: 0x6c
 function private function_2ff81eb2(field) {
@@ -158,7 +157,7 @@ function private function_2ff81eb2(field) {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3e0495ac, Offset: 0xb08
 // Size: 0x7c
 function private function_fecfab51(field) {

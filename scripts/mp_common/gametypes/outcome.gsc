@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
 #using script_3d703ef87a841fe4;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
 
 #namespace outcome;
 
@@ -16,7 +15,7 @@ function autoexec main() {
 }
 
 // Namespace outcome/outcome
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x46d484ea, Offset: 0x168
 // Size: 0x66
 function function_a1a81955() {
@@ -30,7 +29,7 @@ function function_a1a81955() {
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe23d3592, Offset: 0x1d8
 // Size: 0xce
 function is_winner(outcome, team_or_player) {
@@ -48,7 +47,7 @@ function is_winner(outcome, team_or_player) {
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x252418f0, Offset: 0x2b0
 // Size: 0x2c
 function set_flag(outcome, flag) {
@@ -56,7 +55,7 @@ function set_flag(outcome, flag) {
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xda95c11a, Offset: 0x2e8
 // Size: 0x2a
 function get_flag(outcome, flag) {
@@ -64,7 +63,7 @@ function get_flag(outcome, flag) {
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xac7b3f01, Offset: 0x320
 // Size: 0x2a
 function clear_flag(outcome, flag) {
@@ -72,21 +71,21 @@ function clear_flag(outcome, flag) {
 }
 
 // Namespace outcome/outcome
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8df45b48, Offset: 0x358
 // Size: 0xc0
 function function_2e00fa44(outcome) {
     flags = 0;
-    foreach (var_b4a9554f in level.var_9b671c3c) {
-        if (outcome flag::get(var_b4a9554f.flag)) {
-            flags |= var_b4a9554f.code_flag;
+    foreach (flag_type in level.var_9b671c3c) {
+        if (outcome flag::get(flag_type.flag)) {
+            flags |= flag_type.code_flag;
         }
     }
     return flags;
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x33261f99, Offset: 0x420
 // Size: 0x22
 function function_897438f4(outcome, var_c1e98979) {
@@ -94,7 +93,7 @@ function function_897438f4(outcome, var_c1e98979) {
 }
 
 // Namespace outcome/outcome
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3743cb77, Offset: 0x450
 // Size: 0x16
 function function_3624d032(outcome) {
@@ -102,7 +101,7 @@ function function_3624d032(outcome) {
 }
 
 // Namespace outcome/outcome
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xad260dbe, Offset: 0x470
 // Size: 0x5a
 function get_winning_team(outcome) {
@@ -116,7 +115,7 @@ function get_winning_team(outcome) {
 }
 
 // Namespace outcome/outcome
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x93d928d0, Offset: 0x4d8
 // Size: 0x2c
 function function_b5f4c9d8(outcome) {
@@ -127,7 +126,7 @@ function function_b5f4c9d8(outcome) {
 }
 
 // Namespace outcome/outcome
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc085e7f8, Offset: 0x510
 // Size: 0x48
 function get_winner(outcome) {
@@ -141,7 +140,7 @@ function get_winner(outcome) {
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x19f5371f, Offset: 0x560
 // Size: 0x72
 function set_winner(outcome, team_or_player) {
@@ -157,7 +156,7 @@ function set_winner(outcome, team_or_player) {
 }
 
 // Namespace outcome/outcome
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9700283c, Offset: 0x5e0
 // Size: 0x54
 function function_af2e264f(outcome, winner) {
@@ -169,7 +168,7 @@ function function_af2e264f(outcome, winner) {
 }
 
 // Namespace outcome/outcome
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5726f6e8, Offset: 0x640
 // Size: 0x52
 function function_6d0354e3() {
@@ -182,7 +181,7 @@ function function_6d0354e3() {
 }
 
 // Namespace outcome/outcome
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x45675ac2, Offset: 0x6a0
 // Size: 0x3c
 function function_870759fb(outcome) {

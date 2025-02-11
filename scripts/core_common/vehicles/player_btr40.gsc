@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_btr40;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_btr40/player_btr40
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6b7e5b7b, Offset: 0x108
 // Size: 0x2c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace player_btr40/player_btr40
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x458f152f, Offset: 0x140
 // Size: 0x194
 function private function_a5a8e361() {
@@ -46,7 +45,7 @@ function private function_a5a8e361() {
 }
 
 // Namespace player_btr40/player_btr40
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4cc74412, Offset: 0x2e0
 // Size: 0x94
 function function_658070e(params) {
@@ -61,7 +60,7 @@ function function_658070e(params) {
 }
 
 // Namespace player_btr40/player_btr40
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x769f5cce, Offset: 0x380
 // Size: 0x7c
 function function_b3042635(params) {
@@ -72,7 +71,7 @@ function function_b3042635(params) {
 }
 
 // Namespace player_btr40/player_btr40
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x37931d8a, Offset: 0x408
 // Size: 0xec
 function function_32ff31aa(params) {

@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace teleport;
 
 // Namespace teleport/teleport_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf8cb8a69, Offset: 0x108
 // Size: 0x340
 function team(kvp, var_dad37549, var_b095575e = 0) {
@@ -18,7 +17,7 @@ function team(kvp, var_dad37549, var_b095575e = 0) {
         return 0;
     }
     if (var_bac46abd.a_s_players.size < level.players.size) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         return undefined;
     }
     foreach (e_player in level.players) {
@@ -47,7 +46,7 @@ function team(kvp, var_dad37549, var_b095575e = 0) {
 }
 
 // Namespace teleport/teleport_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x4f5d6895, Offset: 0x450
 // Size: 0x178
 function player(e_player, kvp, var_dad37549, var_b095575e = 0) {
@@ -68,7 +67,7 @@ function player(e_player, kvp, var_dad37549, var_b095575e = 0) {
 }
 
 // Namespace teleport/teleport_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3bc7789d, Offset: 0x5d0
 // Size: 0x178
 function hero(ai_hero, kvp, var_dad37549) {
@@ -89,7 +88,7 @@ function hero(ai_hero, kvp, var_dad37549) {
 }
 
 // Namespace teleport/teleport_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd173d532, Offset: 0x750
 // Size: 0xc6
 function function_ff8a7a3(kvp) {
@@ -100,7 +99,7 @@ function function_ff8a7a3(kvp) {
 }
 
 // Namespace teleport/teleport_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x33730141, Offset: 0x820
 // Size: 0x84
 function private function_1d2a3300() {
@@ -115,7 +114,7 @@ function private function_1d2a3300() {
 }
 
 // Namespace teleport/teleport_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x21836785, Offset: 0x8b0
 // Size: 0x134
 function private function_e6615993(kvp, var_dad37549) {
@@ -136,14 +135,14 @@ function private function_e6615993(kvp, var_dad37549) {
         var_dad37549 = 0;
     }
     if (!isdefined(str_value) || !isdefined(str_key)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x6d>");
         return undefined;
     }
     return {#str_value:str_value, #str_key:str_key, #var_dad37549:var_dad37549};
 }
 
 // Namespace teleport/teleport_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x27ae1fa8, Offset: 0x9f0
 // Size: 0x2e4
 function private function_166effac(kvp, var_dad37549) {
@@ -181,7 +180,7 @@ function private function_166effac(kvp, var_dad37549) {
             }
         }
         if (a_s_heroes.size < level.heroes.size) {
-            assertmsg("<unknown string>");
+            assertmsg("<dev string:xa5>");
             return undefined;
         }
     }
@@ -189,7 +188,7 @@ function private function_166effac(kvp, var_dad37549) {
 }
 
 // Namespace teleport/teleport_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x897aded4, Offset: 0xce0
 // Size: 0x216
 function private function_29305761(s_teleport, var_dad37549, var_b095575e = 0) {
@@ -226,7 +225,7 @@ function private function_29305761(s_teleport, var_dad37549, var_b095575e = 0) {
 }
 
 // Namespace teleport/teleport_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7214cb13, Offset: 0xf00
 // Size: 0x116
 function function_df1911b9(s_teleport, var_dad37549) {

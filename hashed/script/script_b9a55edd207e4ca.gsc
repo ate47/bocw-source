@@ -1,44 +1,43 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_46192c58ea066d7f;
-#using scripts\wz_common\hud.gsc;
-#using scripts\wz_common\spawn.gsc;
-#using scripts\wz_common\wz_loadouts.gsc;
-#using script_5495f0bb06045dc7;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\laststand.gsc;
-#using scripts\mp_common\callbacks.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_152c3f4ffef9e588;
-#using script_4ba46a0f73534383;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\territory.gsc;
-#using scripts\core_common\struct.gsc;
-#using script_44b0b8420eabacad;
-#using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\loadout_shared.gsc;
-#using scripts\core_common\location.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using script_69514c4c056c768;
-#using scripts\core_common\item_inventory.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\death_circle.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_335d0650ed05d36d;
+#using script_44b0b8420eabacad;
+#using script_46192c58ea066d7f;
+#using script_4ba46a0f73534383;
+#using script_5495f0bb06045dc7;
+#using script_69514c4c056c768;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\loadout_shared;
+#using scripts\core_common\location;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\territory;
+#using scripts\core_common\territory_util;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\callbacks;
+#using scripts\mp_common\laststand;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\wz_common\hud;
+#using scripts\wz_common\spawn;
+#using scripts\wz_common\wz_loadouts;
 
 #namespace namespace_2938acdc;
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6f802fce, Offset: 0x3d8
 // Size: 0x2d4
 function init() {
@@ -69,7 +68,7 @@ function init() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x86cfb074, Offset: 0x6b8
 // Size: 0x64
 function private on_player_connect() {
@@ -101,7 +100,7 @@ function function_b8da6142(player) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94f686c9, Offset: 0x7d8
 // Size: 0x28
 function function_e1ca24fe(players) {
@@ -110,16 +109,16 @@ function function_e1ca24fe(players) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24cc56e7, Offset: 0x808
 // Size: 0x358
 function function_c11071a8() {
-    wait(math::clamp(level.prematchperiod - 2, 0, level.prematchperiod));
+    wait math::clamp(level.prematchperiod - 2, 0, level.prematchperiod);
     players = getplayers();
     if (is_true(getgametypesetting("allowPlayerMovementPrematch"))) {
         level thread function_38b14e59(players, 2, 3, 2, 0);
     }
-    wait(2);
+    wait 2;
     players = function_e1ca24fe(players);
     foreach (player in players) {
         player val::set(#"hash_4a7df1f1aa746fdc", "freezecontrols", 1);
@@ -133,7 +132,7 @@ function function_c11071a8() {
             }
         }
     }
-    wait(3 + 2 / 3);
+    wait 3 + 2 / 3;
     players = function_e1ca24fe(players);
     foreach (player in players) {
         if (!isalive(player)) {
@@ -145,7 +144,7 @@ function function_c11071a8() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x334e52e6, Offset: 0xb68
 // Size: 0x344
 function function_38b14e59(players, fadeouttime, blacktime, fadeintime, rumble) {
@@ -163,7 +162,7 @@ function function_38b14e59(players, fadeouttime, blacktime, fadeintime, rumble) 
             [[ lui_menu ]]->set_fadeovertime(player, int(fadeouttime * 1000));
         }
     }
-    wait(fadeouttime + blacktime);
+    wait fadeouttime + blacktime;
     players = function_e1ca24fe(players);
     foreach (player in players) {
         player thread item_inventory::reset_inventory();
@@ -177,7 +176,7 @@ function function_38b14e59(players, fadeouttime, blacktime, fadeintime, rumble) 
         [[ lui_menu ]]->set_endalpha(player, 0);
         [[ lui_menu ]]->set_fadeovertime(player, int(fadeintime * 1000));
     }
-    wait(fadeintime);
+    wait fadeintime;
     players = function_e1ca24fe(players);
     foreach (player in players) {
         [[ lui_menu ]]->close(player);
@@ -185,7 +184,7 @@ function function_38b14e59(players, fadeouttime, blacktime, fadeintime, rumble) 
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44d7e3e0, Offset: 0xeb8
 // Size: 0xac
 function function_3b948dcf() {
@@ -200,7 +199,7 @@ function function_3b948dcf() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf50fe057, Offset: 0xf70
 // Size: 0x2f0
 function function_aef30871(location) {
@@ -244,7 +243,7 @@ function function_aef30871(location) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x96201f9b, Offset: 0x1268
 // Size: 0xa0
 function function_844e7af4(dest, destinations) {
@@ -257,7 +256,7 @@ function function_844e7af4(dest, destinations) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a947c65, Offset: 0x1310
 // Size: 0x2c
 function function_28e27688() {
@@ -265,7 +264,7 @@ function function_28e27688() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf1d0993, Offset: 0x1348
 // Size: 0x340
 function give_custom_loadout(takeoldweapon = 0) {
@@ -305,7 +304,7 @@ function give_custom_loadout(takeoldweapon = 0) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b1ad68d, Offset: 0x1690
 // Size: 0x27c
 function function_fd19a11c() {
@@ -347,7 +346,7 @@ function function_fd19a11c() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9e0ff243, Offset: 0x1918
 // Size: 0x4d4
 function give_killstreaks(var_67fe8973) {
@@ -361,7 +360,7 @@ function give_killstreaks(var_67fe8973) {
     for (killstreaknum = 0; killstreaknum < var_67fe8973.size; killstreaknum++) {
         killstreakindex = var_67fe8973[killstreaknum];
         if (isdefined(killstreakindex) && killstreakindex > 0) {
-            assert(isdefined(level.tbl_killstreakdata[killstreakindex]), "<unknown string>" + killstreakindex + "<unknown string>");
+            assert(isdefined(level.tbl_killstreakdata[killstreakindex]), "<dev string:x38>" + killstreakindex + "<dev string:x49>");
             if (isdefined(level.tbl_killstreakdata[killstreakindex])) {
                 self.killstreak[currentkillstreak] = level.tbl_killstreakdata[killstreakindex];
                 if (is_true(level.usingmomentum)) {
@@ -423,7 +422,7 @@ function give_killstreaks(var_67fe8973) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39570125, Offset: 0x1df8
 // Size: 0xa4
 function function_6541c917() {
@@ -434,7 +433,7 @@ function function_6541c917() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x973fcf8, Offset: 0x1ea8
 // Size: 0xa4
 function function_ae5cdb4c() {
@@ -445,7 +444,7 @@ function function_ae5cdb4c() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb66a9bcc, Offset: 0x1f58
 // Size: 0xa4
 function function_a0a43fdb() {
@@ -456,7 +455,7 @@ function function_a0a43fdb() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14d74533, Offset: 0x2008
 // Size: 0x84
 function function_343266f9() {
@@ -467,7 +466,7 @@ function function_343266f9() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcf6b921, Offset: 0x2098
 // Size: 0xa4
 function function_2e725b79() {
@@ -478,7 +477,7 @@ function function_2e725b79() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf13f09a2, Offset: 0x2148
 // Size: 0xf4
 function give_max_ammo() {
@@ -515,7 +514,7 @@ function function_cb5befb2() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe7a9e5ab, Offset: 0x23b0
 // Size: 0x1d8
 function function_11fa5782(vehicletype, droppoint) {
@@ -545,7 +544,7 @@ function function_11fa5782(vehicletype, droppoint) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x16266ac7, Offset: 0x2590
 // Size: 0x244
 function function_4212369d() {
@@ -553,8 +552,8 @@ function function_4212369d() {
         level.var_11fa5782 = &function_11fa5782;
         vehicles = [];
         if (is_true(getgametypesetting(#"hash_7fc70ca67b167d76"))) {
-            vehicles[vehicles.size] = #"hash_1c63d67929319598";
-            vehicles[vehicles.size] = #"hash_1c63d67929319598";
+            vehicles[vehicles.size] = #"vehicle_t9_mil_ru_truck_transport_player";
+            vehicles[vehicles.size] = #"vehicle_t9_mil_ru_truck_transport_player";
         }
         if (is_true(getgametypesetting(#"hash_183c8366c2eb71e2"))) {
             vehicles[vehicles.size] = #"vehicle_t9_mil_fav_light";
@@ -574,7 +573,7 @@ function function_4212369d() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfa28dcfe, Offset: 0x27e0
 // Size: 0x172
 function function_20d09030() {
@@ -597,7 +596,7 @@ function function_20d09030() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb9f281fd, Offset: 0x2960
 // Size: 0x1d4
 function function_c3623479(vehicle) {
@@ -615,7 +614,7 @@ function function_c3623479(vehicle) {
     case #"vehicle_t9_mil_fav_light":
         objectivetype = "fav_drop";
         break;
-    case #"hash_1c63d67929319598":
+    case #"vehicle_t9_mil_ru_truck_transport_player":
         objectivetype = "truck_drop";
         break;
     default:
@@ -628,14 +627,14 @@ function function_c3623479(vehicle) {
     vehicle thread function_e63bcc08();
     vehicle waittill(#"death");
     gameobjects::release_obj_id(vehicle.objid);
-    wait(30);
+    wait 30;
     if (isdefined(vehicle)) {
         vehicle delete();
     }
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf8b1a996, Offset: 0x2b40
 // Size: 0xe8
 function function_e63bcc08() {
@@ -653,7 +652,7 @@ function function_e63bcc08() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa94b7b91, Offset: 0x2c30
 // Size: 0x54
 function on_vehicle_spawned() {
@@ -663,7 +662,7 @@ function on_vehicle_spawned() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2240f62a, Offset: 0x2c90
 // Size: 0x124
 function function_1f93e91f(params) {
@@ -681,7 +680,7 @@ function function_1f93e91f(params) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa8afb937, Offset: 0x2dc0
 // Size: 0x324
 function on_player_killed(params) {
@@ -689,7 +688,7 @@ function on_player_killed(params) {
     squadplayers = function_c65231e2(self.squad);
     if (aliveplayers.size == 0 && squadplayers.size > 1) {
         attacker = params.eattacker;
-        callback::callback(#"hash_34b41fbe3398f1ef", {#squad:self.squad, #players:squadplayers, #attacker:attacker});
+        callback::callback(#"squad_wiped", {#squad:self.squad, #players:squadplayers, #attacker:attacker});
         if (isplayer(attacker) && attacker util::isenemyplayer(self)) {
             if (squadplayers.size >= max(2, (isdefined(level.var_704bcca1) ? level.var_704bcca1 : 0) - 1)) {
                 scoreevents::processscoreevent(#"hash_44c301a9ab6ae990", attacker, self, params.weapon);
@@ -714,7 +713,7 @@ function on_player_killed(params) {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa2e5045b, Offset: 0x30f0
 // Size: 0x1c8
 function function_a4740127() {
@@ -742,7 +741,7 @@ function function_a4740127() {
 }
 
 // Namespace namespace_2938acdc/namespace_2938acdc
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa721fe7a, Offset: 0x32c0
 // Size: 0x34
 function function_407d343f() {

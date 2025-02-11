@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\scene_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace scene;
 
@@ -23,8 +22,8 @@
     // Checksum 0xd0f0fe95, Offset: 0xf8
     // Size: 0x9c
     function function_c3c9d0e5() {
-        if (getdvarstring(#"scene_menu_mode", "<unknown string>") == "<unknown string>") {
-            setdvar(#"scene_menu_mode", "<unknown string>");
+        if (getdvarstring(#"scene_menu_mode", "<dev string:x38>") == "<dev string:x38>") {
+            setdvar(#"scene_menu_mode", "<dev string:x3c>");
         }
         level thread run_scene_tests();
         level thread toggle_scene_menu();
@@ -41,18 +40,18 @@
         level.scene_test_struct.angles = (0, 0, 0);
         while (true) {
             str_scene = getdvarstring(#"run_client_scene");
-            str_mode = tolower(getdvarstring(#"scene_menu_mode", "<unknown string>"));
-            a_toks = strtok(str_scene, "<unknown string>");
+            str_mode = tolower(getdvarstring(#"scene_menu_mode", "<dev string:x3c>"));
+            a_toks = strtok(str_scene, "<dev string:x47>");
             str_scene = a_toks[0];
             str_shot = a_toks[1];
             if (!isdefined(str_scene)) {
-                str_scene = "<unknown string>";
+                str_scene = "<dev string:x38>";
             }
-            if (str_scene != "<unknown string>") {
-                setdvar(#"run_client_scene", "<unknown string>");
+            if (str_scene != "<dev string:x38>") {
+                setdvar(#"run_client_scene", "<dev string:x38>");
                 clear_old_ents(str_scene);
                 b_found = 0;
-                a_scenes = struct::get_array(str_scene, "<unknown string>");
+                a_scenes = struct::get_array(str_scene, "<dev string:x4c>");
                 foreach (s_instance in a_scenes) {
                     if (isdefined(s_instance)) {
                         b_found = 1;
@@ -72,11 +71,11 @@
                 }
             }
             str_scene = getdvarstring(#"init_client_scene");
-            if (str_scene != "<unknown string>") {
-                setdvar(#"init_client_scene", "<unknown string>");
+            if (str_scene != "<dev string:x38>") {
+                setdvar(#"init_client_scene", "<dev string:x38>");
                 clear_old_ents(str_scene);
                 b_found = 0;
-                a_scenes = struct::get_array(str_scene, "<unknown string>");
+                a_scenes = struct::get_array(str_scene, "<dev string:x4c>");
                 foreach (s_instance in a_scenes) {
                     if (isdefined(s_instance)) {
                         b_found = 1;
@@ -88,8 +87,8 @@
                 }
             }
             str_scene = getdvarstring(#"stop_client_scene");
-            if (str_scene != "<unknown string>") {
-                setdvar(#"stop_client_scene", "<unknown string>");
+            if (str_scene != "<dev string:x38>") {
+                setdvar(#"stop_client_scene", "<dev string:x38>");
                 function_d2785094(level.var_a572f325);
                 level stop(str_scene, 1);
             }
@@ -118,15 +117,15 @@
         n_scene_menu_last = -1;
         while (true) {
             n_scene_menu = getdvarstring(#"client_scene_menu");
-            if (n_scene_menu != "<unknown string>") {
+            if (n_scene_menu != "<dev string:x38>") {
                 n_scene_menu = int(n_scene_menu);
                 if (n_scene_menu != n_scene_menu_last) {
                     switch (n_scene_menu) {
                     case 1:
-                        level thread display_scene_menu("<unknown string>");
+                        level thread display_scene_menu("<dev string:x60>");
                         break;
                     case 2:
-                        level thread display_scene_menu("<unknown string>");
+                        level thread display_scene_menu("<dev string:x69>");
                         break;
                     default:
                         level flag::clear(#"menu_open");
@@ -150,8 +149,8 @@
     // Size: 0xd4
     function function_8ee42bf(o_scene) {
         if (isdefined(o_scene) && isdefined(o_scene._s)) {
-            str_type = isdefined(o_scene._s.scenetype) ? o_scene._s.scenetype : "<unknown string>";
-            if (level flag::get(str_type + "<unknown string>") && level flag::get(#"hash_5bcd66a9c21f5b2d")) {
+            str_type = isdefined(o_scene._s.scenetype) ? o_scene._s.scenetype : "<dev string:x60>";
+            if (level flag::get(str_type + "<dev string:x73>") && level flag::get(#"hash_5bcd66a9c21f5b2d")) {
                 level thread display_scene_menu(o_scene._s.scenetype);
             }
         }
@@ -163,7 +162,7 @@
     // Size: 0xd3e
     function display_scene_menu(str_type, str_scene) {
         if (!isdefined(str_type)) {
-            str_type = "<unknown string>";
+            str_type = "<dev string:x60>";
         }
         level flag::clear(#"hash_4035a6aa4a6ba08d");
         level flag::clear(#"hash_7b50fddf7a4b9e2e");
@@ -174,36 +173,36 @@
         setdvar(#"cl_tacticalhud", 0);
         b_shot_menu = 0;
         a_scenedefs = get_scenedefs(str_type);
-        if (str_type == "<unknown string>") {
-            a_scenedefs = arraycombine(a_scenedefs, get_scenedefs("<unknown string>"), 0, 1);
+        if (str_type == "<dev string:x60>") {
+            a_scenedefs = arraycombine(a_scenedefs, get_scenedefs("<dev string:x88>"), 0, 1);
         }
         names = [];
         if (isstring(str_scene)) {
-            names[names.size] = "<unknown string>";
-            names[names.size] = "<unknown string>";
-            names[names.size] = "<unknown string>";
+            names[names.size] = "<dev string:x95>";
+            names[names.size] = "<dev string:x9d>";
+            names[names.size] = "<dev string:x38>";
             names = arraycombine(names, get_all_shot_names(str_scene), 1, 0);
-            names[names.size] = "<unknown string>";
-            names[names.size] = "<unknown string>";
-            names[names.size] = "<unknown string>";
-            names[names.size] = "<unknown string>";
+            names[names.size] = "<dev string:x38>";
+            names[names.size] = "<dev string:xa5>";
+            names[names.size] = "<dev string:x38>";
+            names[names.size] = "<dev string:xad>";
             str_title = str_scene;
             b_shot_menu = 1;
             selected = isdefined(level.scene_menu_shot_index) ? level.scene_menu_shot_index : 0;
         } else {
-            level flag::set(str_type + "<unknown string>");
-            names[0] = "<unknown string>";
-            names[1] = "<unknown string>";
+            level flag::set(str_type + "<dev string:x73>");
+            names[0] = "<dev string:xb5>";
+            names[1] = "<dev string:x38>";
             if (level flag::get(#"hash_5bcd66a9c21f5b2d")) {
-                println("<unknown string>" + toupper(str_type) + "<unknown string>");
+                println("<dev string:xd7>" + toupper(str_type) + "<dev string:xec>");
             }
             var_72acc069 = 1;
             foreach (s_scenedef in a_scenedefs) {
-                if (s_scenedef.vmtype === "<unknown string>" && s_scenedef.scenetype === str_type) {
+                if (s_scenedef.vmtype === "<dev string:xfe>" && s_scenedef.scenetype === str_type) {
                     if (level flag::get(#"hash_5bcd66a9c21f5b2d")) {
                         if (is_active(s_scenedef.name) && function_c0f30783(s_scenedef)) {
                             array::add_sorted(names, s_scenedef.name, 0);
-                            println("<unknown string>" + toupper(str_type) + "<unknown string>" + var_72acc069 + "<unknown string>" + s_scenedef.name);
+                            println("<dev string:x108>" + toupper(str_type) + "<dev string:x11d>" + var_72acc069 + "<dev string:x122>" + s_scenedef.name);
                             var_72acc069++;
                         }
                         continue;
@@ -214,10 +213,10 @@
                 }
             }
             if (level flag::get(#"hash_5bcd66a9c21f5b2d")) {
-                println("<unknown string>" + toupper(str_type) + "<unknown string>");
+                println("<dev string:xd7>" + toupper(str_type) + "<dev string:x12c>");
             }
-            names[names.size] = "<unknown string>";
-            str_title = str_type + "<unknown string>";
+            names[names.size] = "<dev string:x13c>";
+            str_title = str_type + "<dev string:x144>";
         }
         selected = 0;
         up_pressed = 0;
@@ -227,7 +226,7 @@
         while (true) {
             if (held) {
                 scene_list_settext(names, selected, str_title, 30);
-                wait(0.5);
+                wait 0.5;
             } else {
                 scene_list_settext(names, selected, str_title, 1);
             }
@@ -235,7 +234,7 @@
                 if (function_5c10bd79(0) util::up_button_pressed()) {
                     up_pressed = 1;
                     selected--;
-                    if (names[selected] === "<unknown string>") {
+                    if (names[selected] === "<dev string:x38>") {
                         selected--;
                     }
                 }
@@ -250,7 +249,7 @@
                 if (function_5c10bd79(0) util::down_button_pressed()) {
                     down_pressed = 1;
                     selected++;
-                    if (names[selected] === "<unknown string>") {
+                    if (names[selected] === "<dev string:x38>") {
                         selected++;
                     }
                 }
@@ -272,9 +271,9 @@
             } else if (selected >= names.size) {
                 selected = 0;
             }
-            if (function_5c10bd79(0) buttonpressed("<unknown string>")) {
+            if (function_5c10bd79(0) buttonpressed("<dev string:x14a>")) {
                 if (b_shot_menu) {
-                    while (function_5c10bd79(0) buttonpressed("<unknown string>")) {
+                    while (function_5c10bd79(0) buttonpressed("<dev string:x14a>")) {
                         waitframe(1);
                     }
                     level.scene_menu_shot_index = selected;
@@ -284,36 +283,36 @@
                     setdvar(#"client_scene_menu", 0);
                 }
             }
-            if (function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>")) {
-                if (names[selected] == "<unknown string>") {
-                    level flag::toggle("<unknown string>");
-                    while (function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>")) {
+            if (function_5c10bd79(0) buttonpressed("<dev string:x156>") || function_5c10bd79(0) buttonpressed("<dev string:x162>") || function_5c10bd79(0) buttonpressed("<dev string:x16e>")) {
+                if (names[selected] == "<dev string:xb5>") {
+                    level flag::toggle("<dev string:x177>");
+                    while (function_5c10bd79(0) buttonpressed("<dev string:x156>") || function_5c10bd79(0) buttonpressed("<dev string:x162>") || function_5c10bd79(0) buttonpressed("<dev string:x16e>")) {
                         waitframe(1);
                     }
                     level thread display_scene_menu(str_type);
-                } else if (names[selected] == "<unknown string>") {
+                } else if (names[selected] == "<dev string:x13c>") {
                     setdvar(#"client_scene_menu", 0);
                 } else if (b_shot_menu) {
-                    if (names[selected] == "<unknown string>") {
+                    if (names[selected] == "<dev string:xad>") {
                         level.scene_menu_shot_index = selected;
-                        while (function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>")) {
+                        while (function_5c10bd79(0) buttonpressed("<dev string:x156>") || function_5c10bd79(0) buttonpressed("<dev string:x162>") || function_5c10bd79(0) buttonpressed("<dev string:x16e>")) {
                             waitframe(1);
                         }
                         level thread display_scene_menu(str_type);
-                    } else if (names[selected] == "<unknown string>") {
+                    } else if (names[selected] == "<dev string:xa5>") {
                         setdvar(#"stop_client_scene", str_scene);
-                    } else if (names[selected] == "<unknown string>") {
+                    } else if (names[selected] == "<dev string:x95>") {
                         setdvar(#"init_client_scene", str_scene);
-                    } else if (names[selected] == "<unknown string>") {
+                    } else if (names[selected] == "<dev string:x9d>") {
                         setdvar(#"run_client_scene", str_scene);
                     } else {
-                        setdvar(#"run_client_scene", str_scene + "<unknown string>" + names[selected]);
+                        setdvar(#"run_client_scene", str_scene + "<dev string:x47>" + names[selected]);
                     }
                 }
-                while (function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>") || function_5c10bd79(0) buttonpressed("<unknown string>")) {
+                while (function_5c10bd79(0) buttonpressed("<dev string:x156>") || function_5c10bd79(0) buttonpressed("<dev string:x162>") || function_5c10bd79(0) buttonpressed("<dev string:x16e>")) {
                     waitframe(1);
                 }
-                if (!b_shot_menu && isdefined(names[selected]) && names[selected] != "<unknown string>") {
+                if (!b_shot_menu && isdefined(names[selected]) && names[selected] != "<dev string:x38>") {
                     level.scene_menu_shot_index = selected;
                     level thread display_scene_menu(str_type, names[selected]);
                 }
@@ -350,19 +349,19 @@
             var_444abf97 = 1;
         }
         debug2dtext((150, 325, 0), str_title, (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
-        str_mode = tolower(getdvarstring(#"scene_menu_mode", "<unknown string>"));
+        str_mode = tolower(getdvarstring(#"scene_menu_mode", "<dev string:x3c>"));
         switch (str_mode) {
         case #"default":
-            debug2dtext((150, 362.5, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
+            debug2dtext((150, 362.5, 0), "<dev string:x191>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
             break;
         case #"loop":
-            debug2dtext((150, 362.5, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
+            debug2dtext((150, 362.5, 0), "<dev string:x1a2>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
             break;
         case #"capture_single":
-            debug2dtext((150, 362.5, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
+            debug2dtext((150, 362.5, 0), "<dev string:x1b0>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
             break;
         case #"capture_series":
-            debug2dtext((150, 362.5, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
+            debug2dtext((150, 362.5, 0), "<dev string:x1c8>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
             break;
         }
         for (i = 0; i < 16; i++) {
@@ -370,19 +369,19 @@
             if (isdefined(strings[index])) {
                 text = strings[index];
             } else {
-                text = "<unknown string>";
+                text = "<dev string:x38>";
             }
             if (is_scene_playing(text)) {
-                text += "<unknown string>";
+                text += "<dev string:x1e0>";
                 str_color = (0, 1, 0);
             } else if (is_scene_initialized(text)) {
-                text += "<unknown string>";
+                text += "<dev string:x1ee>";
                 str_color = (0, 1, 0);
             } else {
                 str_color = (1, 1, 1);
             }
             if (i == 5) {
-                text = "<unknown string>" + text + "<unknown string>";
+                text = "<dev string:x200>" + text + "<dev string:x205>";
                 str_color = (0.8, 0.4, 0);
             }
             debug2dtext((136, 400 + i * 25, 0), text, str_color, 1, (0, 0, 0), 1, 1, var_444abf97);
@@ -394,8 +393,8 @@
     // Checksum 0x77132d43, Offset: 0x1c30
     // Size: 0x60
     function is_scene_playing(str_scene) {
-        if (str_scene != "<unknown string>" && str_scene != "<unknown string>") {
-            if (level flag::get(str_scene + "<unknown string>")) {
+        if (str_scene != "<dev string:x38>" && str_scene != "<dev string:x20a>") {
+            if (level flag::get(str_scene + "<dev string:x212>")) {
                 return 1;
             }
         }
@@ -407,8 +406,8 @@
     // Checksum 0xe9ce064c, Offset: 0x1c98
     // Size: 0x60
     function is_scene_initialized(str_scene) {
-        if (str_scene != "<unknown string>" && str_scene != "<unknown string>") {
-            if (level flag::get(str_scene + "<unknown string>")) {
+        if (str_scene != "<dev string:x38>" && str_scene != "<dev string:x20a>") {
+            if (level flag::get(str_scene + "<dev string:x21e>")) {
                 return 1;
             }
         }
@@ -440,8 +439,8 @@
                 setdvar(#"hash_13d62f4d290ef671", 1);
                 setdvar(#"scr_show_shot_info_for_igcs", 1);
                 setdvar(#"cg_drawfps", 0);
-                adddebugcommand(0, "<unknown string>");
-                wait(1);
+                adddebugcommand(0, "<dev string:x22e>");
+                wait 1;
             }
         #/
     }
@@ -470,7 +469,7 @@
                 setdvar(#"hash_13d62f4d290ef671", drawbig);
                 setdvar(#"scr_show_shot_info_for_igcs", var_2640d68e);
                 setdvar(#"cg_drawfps", drawfps);
-                adddebugcommand(0, "<unknown string>");
+                adddebugcommand(0, "<dev string:x23d>");
             }
         #/
     }
@@ -489,7 +488,7 @@
             var_a572f325.name = self.scriptbundlename;
         }
         if (!isdefined(var_a572f325.name)) {
-            var_a572f325.name = "<unknown string>";
+            var_a572f325.name = "<dev string:x3c>";
         }
         function_3bafd088(var_a572f325);
         play(arg1, arg2, undefined, 1, str_mode);
@@ -505,7 +504,7 @@
         if (!is_true(self.debug_display) && self != level) {
             self.debug_display = 1;
             while (true) {
-                level flag::wait_till("<unknown string>");
+                level flag::wait_till("<dev string:x24a>");
                 debug_frames = randomintrange(5, 15);
                 debug_time = debug_frames / 60;
                 sphere(self.origin, 1, (0, 1, 1), 1, 1, 8, debug_frames);
@@ -513,8 +512,8 @@
                     foreach (i, o_scene in self.scenes) {
                         n_offset = 15 * (i + 1);
                         print3d(self.origin - (0, 0, n_offset), o_scene._str_name, (0.8, 0.2, 0.8), 1, 0.3, debug_frames);
-                        print3d(self.origin - (0, 0, n_offset + 5), "<unknown string>" + (isdefined([[ o_scene ]]->function_2ba44cd0()) ? "<unknown string>" + [[ o_scene ]]->function_2ba44cd0() : "<unknown string>") + "<unknown string>", (0.8, 0.2, 0.8), 1, 0.15, debug_frames);
-                        print3d(self.origin - (0, 0, n_offset + 10), "<unknown string>" + (isdefined(function_12479eba(o_scene._str_name)) ? "<unknown string>" + function_12479eba(o_scene._str_name) : "<unknown string>") + "<unknown string>", (0.8, 0.2, 0.8), 1, 0.15, debug_frames);
+                        print3d(self.origin - (0, 0, n_offset + 5), "<dev string:x258>" + (isdefined([[ o_scene ]]->function_2ba44cd0()) ? "<dev string:x38>" + [[ o_scene ]]->function_2ba44cd0() : "<dev string:x38>") + "<dev string:x26b>", (0.8, 0.2, 0.8), 1, 0.15, debug_frames);
+                        print3d(self.origin - (0, 0, n_offset + 10), "<dev string:x270>" + (isdefined(function_12479eba(o_scene._str_name)) ? "<dev string:x38>" + function_12479eba(o_scene._str_name) : "<dev string:x38>") + "<dev string:x283>", (0.8, 0.2, 0.8), 1, 0.15, debug_frames);
                     }
                 } else if (isdefined(self.scriptbundlename)) {
                     print3d(self.origin - (0, 0, 15), self.scriptbundlename, (0.8, 0.2, 0.8), 1, 0.3, debug_frames);
@@ -522,7 +521,7 @@
                     self.debug_display = 0;
                     break;
                 }
-                wait(debug_time);
+                wait debug_time;
             }
         }
     }

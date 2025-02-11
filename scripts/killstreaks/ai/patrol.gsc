@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\ai\target.gsc;
-#using scripts\killstreaks\ai\escort.gsc;
-#using scripts\killstreaks\ai\state.gsc;
-#using scripts\core_common\entityheadicons_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\entityheadicons_shared;
+#using scripts\killstreaks\ai\escort;
+#using scripts\killstreaks\ai\state;
+#using scripts\killstreaks\ai\target;
 
 #namespace ai_patrol;
 
@@ -20,9 +19,9 @@ function init() {
 // Params 10, eflags: 0x0
 // Checksum 0xf6d065ad, Offset: 0x140
 // Size: 0x13a
-function function_7d8be726(patrol_radius, var_edc20efd, var_d73e0c6e, marker_fx, var_36b19b5e, var_861daf20, var_a85cb855, var_52e43a03, var_544ae93d, var_7d9560c1) {
+function function_7d8be726(patrol_radius, var_edc20efd, var_d73e0c6e, marker_fx, marker_objective, var_861daf20, var_a85cb855, var_52e43a03, var_544ae93d, var_7d9560c1) {
     assert(isdefined(self.ai));
-    self.ai.patrol = {#state:2, #patrol_radius:patrol_radius, #var_edc20efd:var_edc20efd, #var_d73e0c6e:var_d73e0c6e, #marker_fx:marker_fx, #var_36b19b5e:var_36b19b5e, #var_861daf20:var_861daf20, #var_a85cb855:var_a85cb855, #var_52e43a03:var_52e43a03, #var_544ae93d:var_544ae93d, #var_7d9560c1:var_7d9560c1};
+    self.ai.patrol = {#state:2, #patrol_radius:patrol_radius, #var_edc20efd:var_edc20efd, #var_d73e0c6e:var_d73e0c6e, #marker_fx:marker_fx, #marker_objective:marker_objective, #var_861daf20:var_861daf20, #var_a85cb855:var_a85cb855, #var_52e43a03:var_52e43a03, #var_544ae93d:var_544ae93d, #var_7d9560c1:var_7d9560c1};
 }
 
 // Namespace ai_patrol/patrol
@@ -298,8 +297,8 @@ function update_patrol() {
         }
     }
     /#
-        recordcircle(self.ai.patrol.var_9033671b, self.ai.patrol.patrol_radius, (0, 0, 1), "<unknown string>");
-        recordcircle(self.ai.patrol.var_9033671b, self.ai.patrol.var_edc20efd, (1, 0, 0), "<unknown string>");
+        recordcircle(self.ai.patrol.var_9033671b, self.ai.patrol.patrol_radius, (0, 0, 1), "<dev string:x38>");
+        recordcircle(self.ai.patrol.var_9033671b, self.ai.patrol.var_edc20efd, (1, 0, 0), "<dev string:x38>");
     #/
 }
 
@@ -322,13 +321,13 @@ function update_enemy() {
 // Checksum 0x1ae26e80, Offset: 0x1220
 // Size: 0x11c
 function private function_9a61e8fb(origin) {
-    if (isdefined(self.ai.patrol.var_36b19b5e)) {
+    if (isdefined(self.ai.patrol.marker_objective)) {
         owner = self.script_owner;
         if (isdefined(owner)) {
             self.var_e2aca908 = spawn("script_model", origin);
             if (isdefined(self.var_e2aca908)) {
                 self.var_e2aca908.origin = origin;
-                self.var_e2aca908 entityheadicons::setentityheadicon(owner.team, owner, self.ai.patrol.var_36b19b5e);
+                self.var_e2aca908 entityheadicons::setentityheadicon(owner.team, owner, self.ai.patrol.marker_objective);
                 headiconobjectiveid = self.var_e2aca908.entityheadobjectives[self.var_e2aca908.entityheadobjectives.size - 1];
                 objective_setinvisibletoall(headiconobjectiveid);
                 objective_setvisibletoplayer(headiconobjectiveid, owner);

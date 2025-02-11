@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weapon_utils;
 
 #namespace battlechatter;
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3933f6a3, Offset: 0x1a8
 // Size: 0xd4
 function function_30146e82(player) {
@@ -34,7 +33,7 @@ function function_30146e82(player) {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x85663264, Offset: 0x288
 // Size: 0x38e
 function pain_vox(meansofdeath, weapon) {
@@ -107,7 +106,7 @@ function pain_vox(meansofdeath, weapon) {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x88b9621, Offset: 0x620
 // Size: 0x9c
 function function_78c16252() {
@@ -127,7 +126,7 @@ function function_78c16252() {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x45f62e7d, Offset: 0x6c8
 // Size: 0x19c
 function play_death_vox(body, *attacker, weapon, meansofdeath) {
@@ -158,7 +157,7 @@ function play_death_vox(body, *attacker, weapon, meansofdeath) {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x84cd6719, Offset: 0x870
 // Size: 0x3c0
 function get_death_vox(weapon, playerbundle, meansofdeath) {
@@ -245,7 +244,7 @@ function get_death_vox(weapon, playerbundle, meansofdeath) {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x27c2978c, Offset: 0xc38
 // Size: 0xb4
 function function_90cedf5b() {
@@ -262,7 +261,7 @@ function function_90cedf5b() {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4323e74, Offset: 0xcf8
 // Size: 0x7c
 function function_624f04c6(playerbundle) {
@@ -275,7 +274,7 @@ function function_624f04c6(playerbundle) {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d282066, Offset: 0xd80
 // Size: 0x154
 function function_e9f06034(player, playbreath) {

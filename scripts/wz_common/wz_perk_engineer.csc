@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.csc;
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace wz_perk_engineer;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9789b7df, Offset: 0x118
 // Size: 0x10c
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4bb04908, Offset: 0x230
 // Size: 0x3c
 function private on_localplayer_spawned(localclientnum) {
@@ -40,7 +39,7 @@ function private on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5e7ec02f, Offset: 0x278
 // Size: 0xbe
 function function_e446e567(*notifyhash) {
@@ -55,7 +54,7 @@ function function_e446e567(*notifyhash) {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3c213357, Offset: 0x340
 // Size: 0x360
 function private function_7800b9c2(localclientnum) {
@@ -70,7 +69,7 @@ function private function_7800b9c2(localclientnum) {
             var_94c264dd |= self [[ self.var_53204996 ]](localclientnum);
         }
         if (!var_94c264dd && self.var_100abb43.size == 0) {
-            wait(0.2);
+            wait 0.2;
             continue;
         }
         var_5ef114b0 = [];
@@ -98,12 +97,12 @@ function private function_7800b9c2(localclientnum) {
             waitframe(1);
         }
         self.var_100abb43 = var_5ef114b0;
-        wait(0.2);
+        wait 0.2;
     }
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4e64a943, Offset: 0x6a8
 // Size: 0x2e
 function private function_5118c0a3(item) {
@@ -111,7 +110,7 @@ function private function_5118c0a3(item) {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaa6a94bb, Offset: 0x6e0
 // Size: 0x6a
 function private function_76a0624a() {
@@ -125,7 +124,7 @@ function private function_76a0624a() {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9534e787, Offset: 0x758
 // Size: 0x6c
 function private function_da8108ae() {
@@ -139,7 +138,7 @@ function private function_da8108ae() {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x499ff830, Offset: 0x7d0
 // Size: 0xc0
 function private function_8550d243(localclientnum, *bundle) {
@@ -159,7 +158,7 @@ function private function_8550d243(localclientnum, *bundle) {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc3577c92, Offset: 0x898
 // Size: 0xc0
 function private function_62888a11(localclientnum, *bundle) {
@@ -179,7 +178,7 @@ function private function_62888a11(localclientnum, *bundle) {
 }
 
 // Namespace wz_perk_engineer/wz_perk_engineer
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc9c8c196, Offset: 0x960
 // Size: 0xe0
 function private function_b52a94e5(localclientnum, *bundle) {

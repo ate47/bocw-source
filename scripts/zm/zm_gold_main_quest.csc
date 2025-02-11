@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_1a6b18d8e5bf3274;
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\audio_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_gold_main_quest;
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97ba3474, Offset: 0x1f0
 // Size: 0x62c
 function init() {
@@ -26,7 +25,7 @@ function init() {
     clientfield::register("world", "" + #"hash_2e532832d80e7afb", 16000, 1, "int", &function_db150da1, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_33a2a9faed4bf8d9", 16000, 1, "int", &function_9f3ff6fa, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_5db889fa88fbbe02", 16000, getminbitcountfornum(4), "int", &function_d3dcbd21, 0, 0);
-    clientfield::register("scriptmover", "" + #"hash_46bf4cc1eea0741a", 16000, 1, "int", &function_e56be134, 0, 0);
+    clientfield::register("scriptmover", "" + #"dome_shader", 16000, 1, "int", &dome_shader, 0, 0);
     clientfield::register("toplayer", "" + #"hash_d4826b65faa9efb", 16000, 1, "int", &function_996f5d0f, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_6ab08e0e1cffcd35", 16000, 1, "int", &function_b66e99f1, 0, 0);
     clientfield::register("world", "" + #"hash_6c7ee343dab35f07", 16000, 1, "int", &function_789ec6a8, 0, 0);
@@ -37,7 +36,7 @@ function init() {
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6ec4856a, Offset: 0x828
 // Size: 0x4cc
 function function_48f7c5e6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -80,7 +79,7 @@ function function_48f7c5e6(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9d39440a, Offset: 0xd00
 // Size: 0x122
 function function_568ae388(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -99,7 +98,7 @@ function function_568ae388(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x76fc4af8, Offset: 0xe30
 // Size: 0xa4
 function function_e959dd37(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -110,7 +109,7 @@ function function_e959dd37(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x74b78690, Offset: 0xee0
 // Size: 0x1f4
 function function_78d36eb1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -134,7 +133,7 @@ function function_78d36eb1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9c312496, Offset: 0x10e0
 // Size: 0xce
 function private function_1fd7d1f6() {
@@ -149,7 +148,7 @@ function private function_1fd7d1f6() {
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe3dd6e6, Offset: 0x11b8
 // Size: 0x5c
 function private function_ea1d7a10(*str_notify) {
@@ -160,7 +159,7 @@ function private function_ea1d7a10(*str_notify) {
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x5efe7f63, Offset: 0x1220
 // Size: 0x162
 function function_db002447(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -183,7 +182,7 @@ function function_db002447(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x814dfd9, Offset: 0x1390
 // Size: 0xf4
 function function_3131e413(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -194,7 +193,7 @@ function function_3131e413(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xeae93059, Offset: 0x1490
 // Size: 0x224
 function private function_49331ac6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -226,7 +225,7 @@ function private function_49331ac6(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7a72d1b8, Offset: 0x16c0
 // Size: 0x172
 function function_e7b6b97f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -250,7 +249,7 @@ function function_e7b6b97f(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa094689f, Offset: 0x1840
 // Size: 0x74
 function function_807a046(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -260,7 +259,7 @@ function function_807a046(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x810ec16b, Offset: 0x18c0
 // Size: 0xc4
 function function_95631678(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -272,7 +271,7 @@ function function_95631678(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x11b8f3ac, Offset: 0x1990
 // Size: 0x16a
 function function_db150da1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -290,7 +289,7 @@ function function_db150da1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x309bc9f1, Offset: 0x1b08
 // Size: 0x10e
 function function_9f3ff6fa(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -307,7 +306,7 @@ function function_9f3ff6fa(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6d760fd5, Offset: 0x1c20
 // Size: 0x22a
 function function_d3dcbd21(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -345,10 +344,10 @@ function function_d3dcbd21(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xeae3e5fd, Offset: 0x1e58
 // Size: 0xdc
-function function_e56be134(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function dome_shader(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         self playrenderoverridebundle(#"hash_33472031c8a872cd");
         self playsound(fieldname, #"hash_1bf3ee4eb2a58e82");
@@ -359,7 +358,7 @@ function function_e56be134(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd2816e47, Offset: 0x1f40
 // Size: 0x26e
 function function_996f5d0f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -396,7 +395,7 @@ function function_996f5d0f(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x77a1b06c, Offset: 0x21b8
 // Size: 0x406
 function function_b66e99f1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -450,7 +449,7 @@ function function_b66e99f1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb6c6b5f7, Offset: 0x25c8
 // Size: 0x2e0
 function function_789ec6a8(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {

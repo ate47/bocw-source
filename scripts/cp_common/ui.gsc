@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\util;
 
 #namespace ui;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ui/ui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x61361414, Offset: 0x2f8
 // Size: 0x3c
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace ui/ui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x65cc2271, Offset: 0x340
 // Size: 0x1c
 function private postinit() {
@@ -43,7 +42,7 @@ function private postinit() {
 }
 
 // Namespace ui/ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80e55d5d, Offset: 0x368
 // Size: 0x30
 function game_time() {
@@ -175,7 +174,7 @@ function function_77ab7e7d(n_seconds, var_8430ebdc, var_c15fc3d5) {
 }
 
 // Namespace ui/ui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe9c84b63, Offset: 0xcc0
 // Size: 0x182
 function private function_c01d14b6(var_3b192471, n_time_left) {
@@ -199,7 +198,7 @@ function private function_c01d14b6(var_3b192471, n_time_left) {
 }
 
 // Namespace ui/ui
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xf96bdd14, Offset: 0xe50
 // Size: 0x28a
 function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1) {
@@ -242,7 +241,7 @@ function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1)
 function function_b4e596c2(var_3b192471, n_time, str_notify) {
     level endon("destroy_ui_countdown_timer_" + var_3b192471);
     self endon(var_3b192471 + "_complete");
-    assert(isdefined(level.var_ef4974d7[var_3b192471]), "<unknown string>" + var_3b192471);
+    assert(isdefined(level.var_ef4974d7[var_3b192471]), "<dev string:x38>" + var_3b192471);
     while (level.var_ef4974d7[var_3b192471].n_time_left > n_time) {
         waitframe(1);
     }
@@ -254,7 +253,7 @@ function function_b4e596c2(var_3b192471, n_time, str_notify) {
 }
 
 // Namespace ui/ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf020cd77, Offset: 0x11c8
 // Size: 0x94
 function function_d1eb8589(var_3b192471 = "mission_fail_timer") {
@@ -310,7 +309,7 @@ function function_7ec9d70a(var_3b192471 = "mission_fail_timer") {
 // Checksum 0xc3fdc5ac, Offset: 0x13c8
 // Size: 0x72
 function function_7856e5e0(var_3b192471 = "mission_fail_timer") {
-    assert(isdefined(level.var_ef4974d7[var_3b192471]), "<unknown string>" + var_3b192471 + "<unknown string>");
+    assert(isdefined(level.var_ef4974d7[var_3b192471]), "<dev string:x5a>" + var_3b192471 + "<dev string:x6e>");
     return level.var_ef4974d7[var_3b192471].n_time_left;
 }
 
@@ -346,13 +345,13 @@ function game_result(str_winning_team) {
     // Size: 0x196
     function private devgui_loop() {
         while (true) {
-            wait(0.25);
-            dvarstr = getdvarstring(#"hash_146e539b33582942", "<unknown string>");
-            if (dvarstr == "<unknown string>") {
+            wait 0.25;
+            dvarstr = getdvarstring(#"devgui_ui", "<dev string:x80>");
+            if (dvarstr == "<dev string:x80>") {
                 continue;
             }
-            setdvar(#"hash_146e539b33582942", "<unknown string>");
-            args = strtok(dvarstr, "<unknown string>");
+            setdvar(#"devgui_ui", "<dev string:x80>");
+            args = strtok(dvarstr, "<dev string:x84>");
             host = util::gethostplayer();
             if (!isdefined(host)) {
                 continue;
@@ -361,7 +360,7 @@ function game_result(str_winning_team) {
             case #"comms":
                 host function_97f309cb(args[1]);
                 break;
-            case #"hash_382e15719c2d9b7a":
+            case #"specialist_comms":
                 host function_97f309cb(args[1], args[2]);
                 break;
             case #"prompt":
@@ -401,7 +400,7 @@ function game_result(str_winning_team) {
         if (isstring(index)) {
             index = int(index);
         }
-        self clientfield::set_player_uimodel("<unknown string>", index);
+        self clientfield::set_player_uimodel("<dev string:x89>", index);
     }
 
 #/

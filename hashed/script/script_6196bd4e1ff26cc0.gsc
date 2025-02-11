@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
 
 #namespace namespace_65320816;
 
@@ -28,10 +27,10 @@ function private preinit() {
         zm_powerups::add_zombie_powerup("cranked_pause", #"hash_2162e3666ea2485c", #"hash_4beb7d0e9dfb41f4", &zm_powerups::func_should_always_drop, 0, 0, 0, undefined, "powerup_cranked_pause", "zombie_powerup_cranked_pause_time", "zombie_powerup_cranked_pause_on");
         zm_vo::function_2cf4b07f(#"cranked_pause", #"hash_6f3de1197858ca4b");
         /#
-            adddebugcommand("<unknown string>");
+            adddebugcommand("<dev string:x38>");
         #/
         /#
-            adddebugcommand("<unknown string>");
+            adddebugcommand("<dev string:x8b>");
         #/
     }
 }
@@ -65,7 +64,7 @@ function private function_4ee6dbc3(drop_item, player) {
     }
     level flag::set("cranked_pause");
     playsoundatposition(#"hash_6add4f54cc6f196a", (0, 0, 0));
-    wait(10);
+    wait 10;
     level flag::clear("cranked_pause");
     playsoundatposition(#"hash_54a9a9f2c8be8a9d", (0, 0, 0));
 }

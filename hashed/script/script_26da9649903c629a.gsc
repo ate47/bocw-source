@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\math_shared.gsc;
 #using script_1b9f100b85b7e21d;
 #using script_3dc93ca9902a9cda;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace namespace_f180c0d7;
 
@@ -29,17 +28,17 @@ function function_b26dad22(level_notify) {
     /#
         level endon(#"hash_1cf48096c380b7cd");
     #/
-    var_991ef290 = 1300;
-    var_24120947 = 1000;
-    var_b4030a00 = 100;
+    bottom_distance = 1300;
+    middle_distance = 1000;
+    top_distance = 100;
     var_168492dd = undefined;
     level.player = getplayers()[0];
     function_5ac4dc99("bottom_distance", -1);
     function_5ac4dc99("middle_distance", -1);
     function_5ac4dc99("top_distance", -1);
-    setdvar(#"hash_244a543491606468", var_991ef290);
-    setdvar(#"hash_29d46f70d5dcef62", 1200);
-    setdvar(#"hash_4d0da2cce37b5b96", var_b4030a00);
+    setdvar(#"bottom_distance", bottom_distance);
+    setdvar(#"middle_distance", 1200);
+    setdvar(#"top_distance", top_distance);
     var_270e748f = 0;
     var_9ddd4d57 = undefined;
     level.var_7466d419.var_2939dba = #"hash_5cad1a1b9fdc43ee";
@@ -51,29 +50,29 @@ function function_b26dad22(level_notify) {
                 setdvar(#"current_distance", var_b4d6bef6);
             }
             if (isdefined(var_168492dd)) {
-                if (var_b4d6bef6 < var_b4030a00 && var_168492dd >= var_b4030a00) {
+                if (var_b4d6bef6 < top_distance && var_168492dd >= top_distance) {
                     level notify(#"stop");
                     thread function_ad449a1b("stop");
                     thread function_4b0f12f6("stop");
                     thread function_f4567c7c(var_b4d6bef6, "stop");
                     level.player clientfield::set_to_player("pstfx_script_vignette", 3);
-                } else if (var_b4d6bef6 > var_b4030a00 && var_168492dd <= var_b4030a00) {
+                } else if (var_b4d6bef6 > top_distance && var_168492dd <= top_distance) {
                     level notify(#"stop");
                     thread function_4b0f12f6("stop");
                     thread function_d262b525("stop", 3);
                     thread function_f4567c7c(var_b4d6bef6, "stop");
                     level.player clientfield::set_to_player("pstfx_script_vignette", 2);
-                } else if (var_b4d6bef6 < var_24120947 && var_168492dd >= var_24120947) {
+                } else if (var_b4d6bef6 < middle_distance && var_168492dd >= middle_distance) {
                     level notify(#"stop");
                     thread function_4b0f12f6("stop");
                     thread function_d262b525("stop", 3);
                     thread function_f4567c7c(var_b4d6bef6, "stop");
                     level.player clientfield::set_to_player("pstfx_script_vignette", 2);
-                } else if (var_b4d6bef6 > var_24120947 && var_168492dd <= var_24120947) {
+                } else if (var_b4d6bef6 > middle_distance && var_168492dd <= middle_distance) {
                     level notify(#"stop");
                     thread function_f4567c7c(var_b4d6bef6, "stop");
                     level.player clientfield::set_to_player("pstfx_script_vignette", 1);
-                } else if (var_b4d6bef6 < var_991ef290 && var_168492dd >= var_991ef290) {
+                } else if (var_b4d6bef6 < bottom_distance && var_168492dd >= bottom_distance) {
                     level notify(#"stop");
                     thread function_f4567c7c(var_b4d6bef6, "stop");
                     iprintlnbold("You're flying too high get down!");
@@ -86,9 +85,9 @@ function function_b26dad22(level_notify) {
                         playfxontag(level.var_7466d419.var_2939dba, var_9ddd4d57, "tag_origin");
                         var_270e748f = 1;
                     }
-                } else if (var_b4d6bef6 > var_991ef290 && var_168492dd <= var_991ef290) {
+                } else if (var_b4d6bef6 > bottom_distance && var_168492dd <= bottom_distance) {
                     level notify(#"stop");
-                    level notify(#"hash_49600419866451c4");
+                    level notify(#"out_of_zone");
                     level.player clientfield::set_to_player("pstfx_script_vignette", 0);
                     if (var_270e748f == 1) {
                         var_9ddd4d57 delete();
@@ -113,7 +112,7 @@ function function_4b0f12f6(level_notify) {
     weapon = getweapon(#"ar_damage_t9");
     player_damage = 20;
     while (true) {
-        var_867b0f45 = level.var_7466d419 getspeedmph();
+        chopper_speed = level.var_7466d419 getspeedmph();
         shot_count = randomintrange(10, 12);
         random_y = 0;
         random_x = randomintrange(1000, 1500);
@@ -130,18 +129,18 @@ function function_4b0f12f6(level_notify) {
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         thread function_f4567c7c("stop");
         while (shot_count > 0) {
-            if (var_867b0f45 > 20) {
+            if (chopper_speed > 20) {
                 offset = (1200, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + var_9d5321a;
                 magicbullet(weapon, var_f4d3e08a, var_6d32c483);
-            } else if (var_867b0f45 <= 20) {
+            } else if (chopper_speed <= 20) {
                 magicbullet(weapon, var_f4d3e08a, var_9d5321a);
             }
             shot_count--;
-            wait(0.075);
+            wait 0.075;
             var_2ff447b6 = snd::play("tmp_impacts_metal", level.players[0]);
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -156,7 +155,7 @@ function function_ad449a1b(level_notify) {
     var_43050ba4 = 1;
     while (var_43050ba4 > 0) {
         canshoot = 1;
-        var_867b0f45 = level.var_7466d419 getspeedmph();
+        chopper_speed = level.var_7466d419 getspeedmph();
         random_y = 0;
         random_x = randomintrange(3000, 3500);
         random_z = randomintrange(400, 600);
@@ -168,7 +167,7 @@ function function_ad449a1b(level_notify) {
         var_5a3aa491 = (random_x, random_y, random_z);
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         if (canshoot) {
-            if (var_867b0f45 > 10) {
+            if (chopper_speed > 10) {
                 offset = (4000, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
                 missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
@@ -180,7 +179,7 @@ function function_ad449a1b(level_notify) {
                     level.var_7466d419 thread heatseekingmissile::missiletarget_proximitydetonate(missle, missle, weapon, "death");
                     attractor = missile_createattractorent(level.var_7466d419, 25000, 150, 1);
                 }
-            } else if (var_867b0f45 <= 10) {
+            } else if (chopper_speed <= 10) {
                 missle = magicbullet(weapon, var_f4d3e08a, level.var_7466d419.origin);
                 level.var_c95e0d20 = missle;
                 if (var_43050ba4 <= 1) {
@@ -193,7 +192,7 @@ function function_ad449a1b(level_notify) {
             }
             var_43050ba4--;
         }
-        wait(2);
+        wait 2;
     }
 }
 
@@ -207,7 +206,7 @@ function function_d262b525(level_notify, var_7366cb1a) {
     weapon = getweapon(#"hash_513c26c6a751d20e");
     while (true) {
         canshoot = 1;
-        var_867b0f45 = level.var_7466d419 getspeedmph();
+        chopper_speed = level.var_7466d419 getspeedmph();
         random_y = 0;
         random_x = randomintrange(3000, 3500);
         random_z = randomintrange(400, 600);
@@ -219,17 +218,17 @@ function function_d262b525(level_notify, var_7366cb1a) {
         var_5a3aa491 = (random_x, random_y, random_z);
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         if (canshoot) {
-            if (var_867b0f45 > 10) {
+            if (chopper_speed > 10) {
                 offset = (4000, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
                 missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
-            } else if (var_867b0f45 <= 10) {
+            } else if (chopper_speed <= 10) {
                 offset = (1000, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
                 missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
             }
         }
-        wait(var_7366cb1a);
+        wait var_7366cb1a;
     }
 }
 

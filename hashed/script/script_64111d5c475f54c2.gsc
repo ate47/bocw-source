@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace zm_silver_hud;
 

@@ -1,25 +1,24 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_193d6fcd3b319d05;
+#using script_340a2e805e35f7a2;
 #using script_34e9dd62fc371077;
 #using script_6196bd4e1ff26cc0;
-#using scripts\zm_common\aats\zm_aat.gsc;
-#using scripts\zm_common\objective_manager.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using script_340a2e805e35f7a2;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\aats\zm_aat;
+#using scripts\zm_common\objective_manager;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_9be1ab53;
 
@@ -56,7 +55,7 @@ function private preinit() {
 // Checksum 0x9d05c0ca, Offset: 0x320
 // Size: 0x2c
 function function_4e9f972a() {
-    wait(4);
+    wait 4;
     level flag::clear(#"hash_2c0ce601824acdf5");
 }
 

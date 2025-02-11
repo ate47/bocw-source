@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_acquire_weapon;
 
@@ -116,10 +115,10 @@ function private on_begin(weapon_name, var_eaa7f0ba, var_957937ee, var_9c56c5a9,
         }
     }
     /#
-        assert(isdefined(level.var_ab9d0ec6), "<unknown string>");
+        assert(isdefined(level.var_ab9d0ec6), "<dev string:x38>");
         foreach (weapon in level.var_ab9d0ec6) {
-            assert(isdefined(weapon), "<unknown string>");
-            assert(weapon != level.weaponnone, "<unknown string>");
+            assert(isdefined(weapon), "<dev string:x67>");
+            assert(weapon != level.weaponnone, "<dev string:xa0>");
         }
     #/
     if (is_true(self.var_eaa7f0ba)) {
@@ -231,7 +230,7 @@ function private monitor_objective(s_challenge, a_weapons) {
     foreach (n_objective_id in s_challenge.a_n_objective_ids) {
         objective_setinvisibletoplayer(n_objective_id, self);
     }
-    wait(12);
+    wait 12;
     while (true) {
         foreach (weapon in a_weapons) {
             weapon_upgraded = zm_weapons::get_upgrade_weapon(weapon);

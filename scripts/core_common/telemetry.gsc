@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_7a8059ca02b7b09e;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace telemetry;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace telemetry/telemetry
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5988303c, Offset: 0xd8
 // Size: 0x9c
 function private preinit() {
@@ -29,6 +28,6 @@ function private preinit() {
         }
         return;
     }
-    println("<unknown string>");
+    println("<dev string:x38>");
 }
 

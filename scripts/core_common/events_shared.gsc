@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
 
 #namespace events;
 
@@ -20,7 +19,7 @@ function add_timed_event(seconds, notify_string, client_notify_string) {
 // Size: 0xa2
 function timed_event_monitor(seconds, notify_string, client_notify_string) {
     for (;;) {
-        wait(0.5);
+        wait 0.5;
         if (!isdefined(level.starttime)) {
             continue;
         }
@@ -83,7 +82,7 @@ function any_team_reach_score(score) {
 // Size: 0x5a
 function score_team_event_monitor(score, notify_string, client_notify_string) {
     for (;;) {
-        wait(0.5);
+        wait 0.5;
         if (any_team_reach_score(score)) {
             event_notify(notify_string, client_notify_string);
             return;
@@ -97,7 +96,7 @@ function score_team_event_monitor(score, notify_string, client_notify_string) {
 // Size: 0xaa
 function score_event_monitor(score, notify_string, client_notify_string) {
     for (;;) {
-        wait(0.5);
+        wait 0.5;
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (isdefined(players[i].score) && players[i].score >= score) {

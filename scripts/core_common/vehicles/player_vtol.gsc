@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\turret_shared.gsc;
-#using scripts\core_common\targetting_delay.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\killstreaks\airsupport.gsc;
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\targetting_delay;
+#using scripts\core_common\turret_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\airsupport;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace player_vtol;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_vtol/player_vtol
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5e521a2d, Offset: 0x140
 // Size: 0x2c
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace player_vtol/player_vtol
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6262085a, Offset: 0x178
 // Size: 0xdc
 function function_1b39ded0() {
@@ -43,7 +42,7 @@ function function_1b39ded0() {
 }
 
 // Namespace player_vtol/player_vtol
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x78b478e7, Offset: 0x260
 // Size: 0xa8
 function function_fcc7ca52() {
@@ -85,7 +84,7 @@ function event_handler[event_a1da12f0] function_9d2a2309() {
 }
 
 // Namespace player_vtol/player_vtol
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe48cb87b, Offset: 0x470
 // Size: 0xc4
 function function_7d2e878c() {

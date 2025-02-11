@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_net.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_net;
 
 #namespace lightning_chain;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8d5ec500, Offset: 0x240
 // Size: 0x19c
 function init() {
@@ -37,7 +36,7 @@ function init() {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 14, eflags: 0x2 linked
+// Params 14, eflags: 0x0
 // Checksum 0x4da8b49d, Offset: 0x3e8
 // Size: 0x21a
 function create_lightning_chain_params(max_arcs = 5, max_enemies_killed = 10, radius_start = 300, radius_decay = 20, head_gib_chance = 75, arc_travel_time = 0.11, kills_for_powerup = 10, min_fx_distance = 128, network_death_choke = 4, should_kill_enemies = 1, clientside_fx = 1, arc_fx_sound = undefined, no_fx = 0, prevent_weapon_kill_credit = 0) {
@@ -60,7 +59,7 @@ function create_lightning_chain_params(max_arcs = 5, max_enemies_killed = 10, ra
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x40e417bf, Offset: 0x610
 // Size: 0x42
 function private on_player_connect() {
@@ -71,7 +70,7 @@ function private on_player_connect() {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa603fffd, Offset: 0x660
 // Size: 0x2a4
 function arc_damage(source_enemy, player, arc_num, params = level.default_lightning_chain_params) {
@@ -83,7 +82,7 @@ function arc_damage(source_enemy, player, arc_num, params = level.default_lightn
         player.tesla_enemies_hit = 0;
     }
     /#
-        function_df47c3e8("<unknown string>" + arc_num + "<unknown string>" + player.tesla_enemies_hit);
+        function_df47c3e8("<dev string:x38>" + arc_num + "<dev string:x62>" + player.tesla_enemies_hit);
     #/
     lc_flag_hit(self, 1);
     radius_decay = params.radius_decay * arc_num;
@@ -96,7 +95,7 @@ function arc_damage(source_enemy, player, arc_num, params = level.default_lightn
     lc_flag_hit(enemies, 1);
     self thread lc_do_damage(source_enemy, arc_num, player, params);
     /#
-        function_df47c3e8("<unknown string>" + enemies.size + "<unknown string>" + arc_num);
+        function_df47c3e8("<dev string:x7c>" + enemies.size + "<dev string:x87>" + arc_num);
     #/
     for (i = 0; i < enemies.size; i++) {
         if (!isdefined(enemies[i]) || enemies[i] == self) {
@@ -112,7 +111,7 @@ function arc_damage(source_enemy, player, arc_num, params = level.default_lightn
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9ef95fb8, Offset: 0x910
 // Size: 0x74
 function arc_damage_ent(player, arc_num, params = level.default_lightning_chain_params) {
@@ -121,26 +120,26 @@ function arc_damage_ent(player, arc_num, params = level.default_lightning_chain_
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x60ed724d, Offset: 0x990
 // Size: 0xe4
 function private lc_end_arc_damage(arc_num, enemies_hit_num, params) {
     if (arc_num >= params.max_arcs) {
         /#
-            function_df47c3e8("<unknown string>");
+            function_df47c3e8("<dev string:xa4>");
         #/
         return true;
     }
     if (enemies_hit_num >= params.max_enemies_killed) {
         /#
-            function_df47c3e8("<unknown string>");
+            function_df47c3e8("<dev string:xca>");
         #/
         return true;
     }
     radius_decay = params.radius_decay * arc_num;
     if (params.radius_start - radius_decay <= 0) {
         /#
-            function_df47c3e8("<unknown string>");
+            function_df47c3e8("<dev string:xf6>");
         #/
         return true;
     }
@@ -148,7 +147,7 @@ function private lc_end_arc_damage(arc_num, enemies_hit_num, params) {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x853c14e5, Offset: 0xa80
 // Size: 0x210
 function private lc_get_enemies_in_area(origin, distance, player) {
@@ -195,7 +194,7 @@ function private lc_get_enemies_in_area(origin, distance, player) {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x40d2459e, Offset: 0xc98
 // Size: 0xf4
 function private lc_flag_hit(enemy, hit, durationoverride) {
@@ -223,13 +222,13 @@ function private lc_flag_hit(enemy, hit, durationoverride) {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xd32e6c20, Offset: 0xd98
 // Size: 0x42c
 function private lc_do_damage(source_enemy, arc_num, player, params) {
     player endon(#"disconnect");
     if (arc_num > 1) {
-        wait(randomfloatrange(0.2, 0.6) * arc_num);
+        wait randomfloatrange(0.2, 0.6) * arc_num;
     }
     if (!isalive(self)) {
         return;
@@ -254,7 +253,7 @@ function private lc_do_damage(source_enemy, arc_num, player, params) {
     }
     if (player.tesla_network_death_choke > params.network_death_choke) {
         /#
-            function_df47c3e8("<unknown string>" + player.tesla_network_death_choke);
+            function_df47c3e8("<dev string:x12f>" + player.tesla_network_death_choke);
         #/
         util::wait_network_frame(2);
         player.tesla_network_death_choke = 0;
@@ -303,7 +302,7 @@ function private lc_do_damage(source_enemy, arc_num, player, params) {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x8247d410, Offset: 0x11d0
 // Size: 0x150
 function private function_915d4fec(params, v_origin, player) {
@@ -320,7 +319,7 @@ function private function_915d4fec(params, v_origin, player) {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbac57566, Offset: 0x1328
 // Size: 0x1d0
 function lc_play_death_fx(arc_num, params) {
@@ -357,12 +356,12 @@ function lc_play_death_fx(arc_num, params) {
 }
 
 // Namespace lightning_chain/lightning_chain
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd5e6338f, Offset: 0x1500
 // Size: 0x284
 function lc_play_arc_fx(target, params) {
     if (!isdefined(self) || !isdefined(target)) {
-        wait(params.arc_travel_time);
+        wait params.arc_travel_time;
         return;
     }
     tag = "J_SpineUpper";
@@ -382,7 +381,7 @@ function lc_play_arc_fx(target, params) {
     distance_squared = params.min_fx_distance * params.min_fx_distance;
     if (distancesquared(origin, target_origin) < distance_squared) {
         /#
-            function_df47c3e8("<unknown string>");
+            function_df47c3e8("<dev string:x171>");
         #/
         return;
     }
@@ -418,7 +417,7 @@ function lc_play_arc_fx(target, params) {
     // Size: 0x5c
     function function_df47c3e8(msg) {
         if (getdvarint(#"zombie_debug", 0) > 0) {
-            println("<unknown string>" + msg);
+            println("<dev string:x1a5>" + msg);
         }
     }
 

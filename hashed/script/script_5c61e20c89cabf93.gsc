@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace ammo;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ammo/namespace_d4606b05
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xab88e2a5, Offset: 0xe0
 // Size: 0x1c
 function private preinit() {
@@ -20,7 +19,7 @@ function private preinit() {
 }
 
 // Namespace ammo/namespace_d4606b05
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf551bfe5, Offset: 0x108
 // Size: 0x204
 function function_d1df9410(waitresult) {

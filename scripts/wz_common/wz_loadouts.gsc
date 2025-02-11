@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace wz_loadouts;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x506fc234, Offset: 0x100
 // Size: 0x164
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2a675db6, Offset: 0x270
 // Size: 0xb4
 function function_a9b8fa06() {
@@ -56,7 +55,7 @@ function function_a9b8fa06() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20d76381, Offset: 0x330
 // Size: 0x1d2
 function function_3fed57dd() {
@@ -98,7 +97,7 @@ function function_3fed57dd() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5e1dc6cd, Offset: 0x510
 // Size: 0x174
 function give_item(item_name, item_count) {
@@ -123,7 +122,7 @@ function give_item(item_name, item_count) {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3be7f974, Offset: 0x690
 // Size: 0x25c
 function give_weapon(weaponname, attachmentnames) {
@@ -149,15 +148,15 @@ function give_weapon(weaponname, attachmentnames) {
                 return;
             }
             attachment = item_world_util::function_49ce7663(attachmentname);
-            namespace_a0d533d1::function_9e9c82a6(weapon, attachment);
+            item_inventory_util::function_9e9c82a6(weapon, attachment);
         }
-        weapon.amount = self getweaponammoclipsize(namespace_a0d533d1::function_2b83d3ff(weapon));
+        weapon.amount = self getweaponammoclipsize(item_inventory_util::function_2b83d3ff(weapon));
     }
     self item_world::function_de2018e3(weapon, self, var_fa3df96);
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x16ff8cd0, Offset: 0x8f8
 // Size: 0x124
 function private function_58190f52() {
@@ -178,7 +177,7 @@ function private function_58190f52() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6122f091, Offset: 0xa28
 // Size: 0x1cc
 function private function_6667abef() {
@@ -201,7 +200,7 @@ function private function_6667abef() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x98fd9a79, Offset: 0xc00
 // Size: 0x174
 function private function_7376c60d() {
@@ -224,7 +223,7 @@ function private function_7376c60d() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x86599e79, Offset: 0xd80
 // Size: 0x22c
 function private function_1f091d2f() {
@@ -250,7 +249,7 @@ function private function_1f091d2f() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9ac50909, Offset: 0xfb8
 // Size: 0x284
 function private function_2d31b980() {
@@ -277,7 +276,7 @@ function private function_2d31b980() {
 }
 
 // Namespace wz_loadouts/wz_loadouts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80ea2b9e, Offset: 0x1248
 // Size: 0x104
 function private function_f56a5599() {

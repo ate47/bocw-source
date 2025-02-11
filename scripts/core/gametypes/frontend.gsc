@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\gamestate.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gamestate;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace frontend;
 
 // Namespace frontend/frontend
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xd0
 // Size: 0x4
 function callback_void() {
@@ -20,7 +19,7 @@ function callback_void() {
 }
 
 // Namespace frontend/frontend
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6300f260, Offset: 0xe0
 // Size: 0x24
 function callback_actorspawnedfrontend(spawner) {
@@ -53,7 +52,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace frontend/frontend
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x54565d6e, Offset: 0x330
 // Size: 0x1ac
 function private on_menu_response(eventstruct) {
@@ -73,7 +72,7 @@ function private on_menu_response(eventstruct) {
         }
         return;
     }
-    if (eventstruct.response === #"hash_3525d782f82ab70f") {
+    if (eventstruct.response === #"arcade_state") {
         if (isdefined(level.var_d0e9b96)) {
             function_e2a06860(level.var_d0e9b96, eventstruct.intpayload);
         }
@@ -81,7 +80,7 @@ function private on_menu_response(eventstruct) {
 }
 
 // Namespace frontend/frontend
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65b13b63, Offset: 0x4e8
 // Size: 0x1c
 function callback_playerconnect() {
@@ -102,7 +101,7 @@ function callback_playerconnect() {
         for (row_num = 2; row_num < num_rows; row_num++) {
             challenge_name = tablelookupcolumnforrow(#"gamedata/stats/zm/statsmilestones4.csv", row_num, 5);
             display_row_num = row_num - 2;
-            devgui_string = "<unknown string>" + "<unknown string>" + (display_row_num > 10 ? display_row_num : "<unknown string>" + display_row_num) + "<unknown string>" + function_9e72a96(challenge_name) + "<unknown string>" + row_num + "<unknown string>";
+            devgui_string = "<dev string:x38>" + "<dev string:x48>" + (display_row_num > 10 ? display_row_num : "<dev string:x60>" + display_row_num) + "<dev string:x65>" + function_9e72a96(challenge_name) + "<dev string:x6a>" + row_num + "<dev string:x85>";
             adddebugcommand(devgui_string);
         }
     }
@@ -112,8 +111,8 @@ function callback_playerconnect() {
     // Checksum 0x601737d8, Offset: 0x660
     // Size: 0x4c
     function function_83f052f2() {
-        setdvar(#"ct_cmd", "<unknown string>");
-        adddebugcommand("<unknown string>");
+        setdvar(#"ct_cmd", "<dev string:x8c>");
+        adddebugcommand("<dev string:x90>");
     }
 
     // Namespace frontend/frontend
@@ -123,16 +122,16 @@ function callback_playerconnect() {
     function function_5f1dd5aa() {
         self endon(#"disconnect");
         while (true) {
-            ct_cmd = getdvarstring(#"ct_cmd", "<unknown string>");
-            if (ct_cmd == "<unknown string>") {
-                wait(0.25);
+            ct_cmd = getdvarstring(#"ct_cmd", "<dev string:x8c>");
+            if (ct_cmd == "<dev string:x8c>") {
+                wait 0.25;
                 continue;
             }
-            if (ct_cmd == "<unknown string>") {
+            if (ct_cmd == "<dev string:xed>") {
                 unlocked = getdvar(#"ui_unlock_all_ct", 0);
                 setdvar(#"ui_unlock_all_ct", !unlocked);
             }
-            setdvar(#"ct_cmd", "<unknown string>");
+            setdvar(#"ct_cmd", "<dev string:x8c>");
         }
     }
 
@@ -145,55 +144,55 @@ function callback_playerconnect() {
         menu = eventstruct.menu;
         response = eventstruct.response;
         if (!isdefined(menu)) {
-            menu = "<unknown string>";
+            menu = "<dev string:x8c>";
         }
         if (!isdefined(response)) {
-            response = "<unknown string>";
+            response = "<dev string:x8c>";
         }
-        if (menu == "<unknown string>") {
+        if (menu == "<dev string:x105>") {
             player = getplayers()[0];
             if (!isdefined(player)) {
                 return;
             }
             if (isalive(player)) {
                 player.health = 0;
-                player.sessionstate = "<unknown string>";
+                player.sessionstate = "<dev string:x115>";
                 origin = player.origin;
-                if (player isinmovemode("<unknown string>")) {
+                if (player isinmovemode("<dev string:x122>")) {
                     origin = (player.origin[0], player.origin[1], player.origin[2] + 60);
                 }
                 player spawn(origin, player.angles);
                 return;
             }
-            if (player isinmovemode("<unknown string>")) {
-                adddebugcommand("<unknown string>");
-                wait(0.1);
+            if (player isinmovemode("<dev string:x12c>")) {
+                adddebugcommand("<dev string:x12c>");
+                wait 0.1;
             }
-            if (player isinmovemode("<unknown string>")) {
-                adddebugcommand("<unknown string>");
-                wait(0.1);
+            if (player isinmovemode("<dev string:x122>")) {
+                adddebugcommand("<dev string:x122>");
+                wait 0.1;
             }
             var_175d3c32 = function_9e72a96(response);
-            tokens = strtok(var_175d3c32, "<unknown string>");
+            tokens = strtok(var_175d3c32, "<dev string:x133>");
             spawn = spawnstruct();
             spawn.origin = (int(tokens[0]), int(tokens[1]), int(tokens[2]) - 60);
             spawn.angles = (int(tokens[3]), int(tokens[4]), int(tokens[5]));
-            player.sessionstate = "<unknown string>";
+            player.sessionstate = "<dev string:x138>";
             player.health = 100;
             player.maxhealth = player.health;
             player spawn(spawn.origin, spawn.angles);
-            wait(0.1);
-            if (player isinmovemode("<unknown string>")) {
-                adddebugcommand("<unknown string>");
-                wait(0.1);
+            wait 0.1;
+            if (player isinmovemode("<dev string:x12c>")) {
+                adddebugcommand("<dev string:x12c>");
+                wait 0.1;
             }
             if (!isgodmode(player)) {
-                adddebugcommand("<unknown string>");
-                wait(0.1);
+                adddebugcommand("<dev string:x143>");
+                wait 0.1;
             }
-            if (!player isinmovemode("<unknown string>")) {
-                adddebugcommand("<unknown string>");
-                wait(0.1);
+            if (!player isinmovemode("<dev string:x122>")) {
+                adddebugcommand("<dev string:x122>");
+                wait 0.1;
             }
             player setorigin(spawn.origin);
         }
@@ -208,15 +207,15 @@ function callback_playerconnect() {
         while (true) {
             daily_challenge_cmd = getdvarint(#"daily_challenge_cmd", 0);
             if (daily_challenge_cmd == 0 || !sessionmodeiszombiesgame()) {
-                wait(1);
+                wait 1;
                 continue;
             }
             daily_challenge_row = daily_challenge_cmd;
             daily_challenge_index = tablelookupcolumnforrow(#"gamedata/stats/zm/statsmilestones4.csv", daily_challenge_row, 0);
             daily_challenge_stat = tablelookupcolumnforrow(#"gamedata/stats/zm/statsmilestones4.csv", daily_challenge_row, 4);
-            adddebugcommand("<unknown string>" + daily_challenge_stat + "<unknown string>" + "<unknown string>");
-            adddebugcommand("<unknown string>" + daily_challenge_index + "<unknown string>");
-            adddebugcommand("<unknown string>" + "<unknown string>");
+            adddebugcommand("<dev string:x14a>" + daily_challenge_stat + "<dev string:x16b>" + "<dev string:x180>");
+            adddebugcommand("<dev string:x186>" + daily_challenge_index + "<dev string:x180>");
+            adddebugcommand("<dev string:x1cc>" + "<dev string:x180>");
             setdvar(#"daily_challenge_cmd", 0);
         }
     }
@@ -226,12 +225,12 @@ function callback_playerconnect() {
     // Checksum 0x476eaf7d, Offset: 0xda0
     // Size: 0x3e0
     function function_27d2e95a() {
-        level.var_314051a1 = getscriptbundle("<unknown string>");
+        level.var_314051a1 = getscriptbundle("<dev string:x215>");
         if (!isdefined(level.var_314051a1)) {
             return;
         }
-        setdvar(#"callings_cmd", "<unknown string>");
-        adddebugcommand("<unknown string>");
+        setdvar(#"callings_cmd", "<dev string:x8c>");
+        adddebugcommand("<dev string:x22d>");
         for (seasonid = 1; seasonid <= level.var_314051a1.size; seasonid++) {
             for (var_d49657fd = 0; var_d49657fd < 4; var_d49657fd++) {
                 faction = getscriptbundle(level.var_314051a1.factionlist[var_d49657fd].faction);
@@ -239,26 +238,26 @@ function callback_playerconnect() {
                 var_662e72f3 = array(0, 1, 3, 6, 12);
                 counter = 1;
                 foreach (tokens in var_662e72f3) {
-                    var_3430f147 = "<unknown string>" + seasonid + "<unknown string>" + var_d49657fd + "<unknown string>" + tokens;
-                    devgui_string = "<unknown string>" + seasonid + "<unknown string>" + factionname + "<unknown string>" + tokens + "<unknown string>" + (tokens != 1 ? "<unknown string>" : "<unknown string>") + "<unknown string>" + counter + "<unknown string>" + var_3430f147 + "<unknown string>";
+                    var_3430f147 = "<dev string:x282>" + seasonid + "<dev string:x292>" + var_d49657fd + "<dev string:x292>" + tokens;
+                    devgui_string = "<dev string:x297>" + seasonid + "<dev string:x2cd>" + factionname + "<dev string:x2d3>" + tokens + "<dev string:x2d8>" + (tokens != 1 ? "<dev string:x2e2>" : "<dev string:x8c>") + "<dev string:x2e7>" + counter + "<dev string:x2ec>" + var_3430f147 + "<dev string:x300>";
                     adddebugcommand(devgui_string);
                     counter++;
                 }
                 counter = 1;
                 for (var_cab404b1 = 0; var_cab404b1 <= 12; var_cab404b1++) {
-                    var_f6c57b = "<unknown string>" + seasonid + "<unknown string>" + var_d49657fd + "<unknown string>" + var_cab404b1;
-                    devgui_string = "<unknown string>" + seasonid + "<unknown string>" + factionname + "<unknown string>" + var_cab404b1 + "<unknown string>" + counter + "<unknown string>" + var_f6c57b + "<unknown string>";
+                    var_f6c57b = "<dev string:x306>" + seasonid + "<dev string:x292>" + var_d49657fd + "<dev string:x292>" + var_cab404b1;
+                    devgui_string = "<dev string:x31d>" + seasonid + "<dev string:x2cd>" + factionname + "<dev string:x35b>" + var_cab404b1 + "<dev string:x2e7>" + counter + "<dev string:x2ec>" + var_f6c57b + "<dev string:x300>";
                     adddebugcommand(devgui_string);
                     counter++;
                 }
             }
-            adddebugcommand("<unknown string>" + seasonid + "<unknown string>" + seasonid + "<unknown string>" + seasonid + "<unknown string>");
+            adddebugcommand("<dev string:x365>" + seasonid + "<dev string:x2e7>" + seasonid + "<dev string:x39e>" + seasonid + "<dev string:x300>");
             seasonid++;
         }
     }
 
     // Namespace frontend/frontend
-    // Params 1, eflags: 0x40
+    // Params 1, eflags: 0x40 variadic
     // Checksum 0x56beb4ce, Offset: 0x1188
     // Size: 0xbc
     function function_1c289498(...) {
@@ -266,11 +265,11 @@ function callback_playerconnect() {
         if (vararg.size <= 1) {
             return;
         }
-        cmd = "<unknown string>";
+        cmd = "<dev string:x3c0>";
         for (i = 0; i < vararg.size; i++) {
-            cmd += vararg[i] + "<unknown string>";
+            cmd += vararg[i] + "<dev string:x65>";
         }
-        cmd += "<unknown string>";
+        cmd += "<dev string:x3d1>";
         adddebugcommand(cmd);
     }
 
@@ -279,17 +278,17 @@ function callback_playerconnect() {
     // Checksum 0x51921a, Offset: 0x1250
     // Size: 0x20c
     function function_c209f336(seasonid) {
-        function_1c289498("<unknown string>", seasonid - 1, "<unknown string>");
-        function_1c289498("<unknown string>", seasonid - 1, "<unknown string>");
-        function_1c289498("<unknown string>", seasonid - 1, "<unknown string>");
-        function_1c289498("<unknown string>", seasonid - 1, "<unknown string>");
+        function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x3ef>");
+        function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x405>");
+        function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x41b>");
+        function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x431>");
         for (var_d49657fd = 0; var_d49657fd < 4; var_d49657fd++) {
-            function_1c289498("<unknown string>", seasonid - 1, "<unknown string>", var_d49657fd, "<unknown string>");
-            function_1c289498("<unknown string>", seasonid - 1, "<unknown string>", var_d49657fd, "<unknown string>");
-            function_1c289498("<unknown string>", seasonid - 1, "<unknown string>", var_d49657fd, "<unknown string>");
+            function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x444>", var_d49657fd, "<dev string:x450>");
+            function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x444>", var_d49657fd, "<dev string:x45a>");
+            function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x444>", var_d49657fd, "<dev string:x46c>");
             for (groupid = 0; groupid < 3; groupid++) {
                 for (categoryid = 0; categoryid < 4; categoryid++) {
-                    function_1c289498("<unknown string>", seasonid - 1, "<unknown string>", var_d49657fd, "<unknown string>", groupid, "<unknown string>", categoryid, "<unknown string>");
+                    function_1c289498("<dev string:x3d7>", seasonid - 1, "<dev string:x444>", var_d49657fd, "<dev string:x47a>", groupid, "<dev string:x48d>", categoryid, "<dev string:x4a1>");
                 }
             }
         }
@@ -300,26 +299,26 @@ function callback_playerconnect() {
     // Checksum 0x3b27b50e, Offset: 0x1468
     // Size: 0x2a4
     function function_87e397ba() {
-                for (seasonid = 1; seasonid <= level.var_314051a1.size; seasonid++) {
+        for (seasonid = 1; seasonid <= level.var_314051a1.size; seasonid++) {
             function_c209f336(seasonid);
         }
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
-        function_1c289498("<unknown string>", "<unknown string>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x4bf>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x4ce>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x4dd>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x4f6>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x507>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x517>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x52d>");
+        function_1c289498("<dev string:x4ae>", "<dev string:x549>");
         for (i = 0; i < 4; i++) {
-            function_1c289498("<unknown string>", "<unknown string>", i, "<unknown string>");
-            function_1c289498("<unknown string>", "<unknown string>", i, "<unknown string>");
-            function_1c289498("<unknown string>", "<unknown string>", i, "<unknown string>");
-            function_1c289498("<unknown string>", "<unknown string>", i, "<unknown string>");
-            function_1c289498("<unknown string>", "<unknown string>", i, "<unknown string>");
+            function_1c289498("<dev string:x4ae>", "<dev string:x560>", i, "<dev string:x56c>");
+            function_1c289498("<dev string:x4ae>", "<dev string:x560>", i, "<dev string:x575>");
+            function_1c289498("<dev string:x4ae>", "<dev string:x581>", i, "<dev string:x58f>");
+            function_1c289498("<dev string:x4ae>", "<dev string:x581>", i, "<dev string:x59a>");
+            function_1c289498("<dev string:x4ae>", "<dev string:x581>", i, "<dev string:x56c>");
         }
         for (var_d49657fd = 0; var_d49657fd < 4; var_d49657fd++) {
-            function_1c289498("<unknown string>", "<unknown string>", var_d49657fd);
+            function_1c289498("<dev string:x4ae>", "<dev string:x5aa>", var_d49657fd);
         }
     }
 
@@ -333,43 +332,43 @@ function callback_playerconnect() {
         }
         level endon(#"game_ended");
         while (true) {
-            callings_cmd = getdvarstring(#"callings_cmd", "<unknown string>");
-            if (callings_cmd == "<unknown string>") {
-                wait(0.25);
+            callings_cmd = getdvarstring(#"callings_cmd", "<dev string:x8c>");
+            if (callings_cmd == "<dev string:x8c>") {
+                wait 0.25;
                 continue;
             }
-            if (callings_cmd == "<unknown string>") {
+            if (callings_cmd == "<dev string:x5be>") {
                 function_87e397ba();
-            } else if (strstartswith(callings_cmd, "<unknown string>")) {
-                str = strreplace(callings_cmd, "<unknown string>", "<unknown string>");
-                arr = strtok(str, "<unknown string>");
+            } else if (strstartswith(callings_cmd, "<dev string:x282>")) {
+                str = strreplace(callings_cmd, "<dev string:x282>", "<dev string:x8c>");
+                arr = strtok(str, "<dev string:x292>");
                 seasonid = arr[0];
                 var_d49657fd = arr[1];
                 tokens = arr[2];
-                statpath = "<unknown string>" + int(seasonid) - 1 + "<unknown string>" + var_d49657fd + "<unknown string>" + tokens;
-                adddebugcommand("<unknown string>" + statpath + "<unknown string>");
-            } else if (strstartswith(callings_cmd, "<unknown string>")) {
-                str = strreplace(callings_cmd, "<unknown string>", "<unknown string>");
+                statpath = "<dev string:x5d1>" + int(seasonid) - 1 + "<dev string:x5ea>" + var_d49657fd + "<dev string:x5f8>" + tokens;
+                adddebugcommand("<dev string:x3c0>" + statpath + "<dev string:x180>");
+            } else if (strstartswith(callings_cmd, "<dev string:x604>")) {
+                str = strreplace(callings_cmd, "<dev string:x604>", "<dev string:x8c>");
                 seasonid = int(str);
                 function_c209f336(seasonid);
-            } else if (strstartswith(callings_cmd, "<unknown string>")) {
-                str = strreplace(callings_cmd, "<unknown string>", "<unknown string>");
-                arr = strtok(str, "<unknown string>");
+            } else if (strstartswith(callings_cmd, "<dev string:x306>")) {
+                str = strreplace(callings_cmd, "<dev string:x306>", "<dev string:x8c>");
+                arr = strtok(str, "<dev string:x292>");
                 seasonid = arr[0];
                 var_d49657fd = arr[1];
                 tier = arr[2];
-                statpath = "<unknown string>" + int(seasonid) - 1 + "<unknown string>" + var_d49657fd + "<unknown string>" + tier;
-                adddebugcommand("<unknown string>" + statpath + "<unknown string>");
-            } else if (strstartswith(callings_cmd, "<unknown string>")) {
-                str = strreplace(callings_cmd, "<unknown string>", "<unknown string>");
-                arr = strtok(str, "<unknown string>");
+                statpath = "<dev string:x5d1>" + int(seasonid) - 1 + "<dev string:x5ea>" + var_d49657fd + "<dev string:x616>" + tier;
+                adddebugcommand("<dev string:x3c0>" + statpath + "<dev string:x180>");
+            } else if (strstartswith(callings_cmd, "<dev string:x62a>")) {
+                str = strreplace(callings_cmd, "<dev string:x62a>", "<dev string:x8c>");
+                arr = strtok(str, "<dev string:x292>");
                 taskid = arr[0];
                 taskid = int(taskid);
                 setdvar(#"zm_active_daily_calling", taskid);
                 setdvar(#"zm_active_event_calling", 0);
                 setdvar(#"hash_acdd08b365cb62f", 1);
             }
-            setdvar(#"callings_cmd", "<unknown string>");
+            setdvar(#"callings_cmd", "<dev string:x8c>");
         }
     }
 
@@ -378,8 +377,8 @@ function callback_playerconnect() {
     // Checksum 0x4dd6be9, Offset: 0x1b98
     // Size: 0x6c
     function function_1fcf4d0e(menu_path, commands) {
-        var_c62ccf1 = "<unknown string>";
-        adddebugcommand("<unknown string>" + var_c62ccf1 + menu_path + "<unknown string>" + commands + "<unknown string>");
+        var_c62ccf1 = "<dev string:x645>";
+        adddebugcommand("<dev string:x38>" + var_c62ccf1 + menu_path + "<dev string:x650>" + commands + "<dev string:x300>");
     }
 
     // Namespace frontend/frontend
@@ -387,8 +386,8 @@ function callback_playerconnect() {
     // Checksum 0x712a90e4, Offset: 0x1c10
     // Size: 0x54
     function function_8aa5abd4(menu_path) {
-        var_c62ccf1 = "<unknown string>";
-        adddebugcommand("<unknown string>" + var_c62ccf1 + menu_path + "<unknown string>");
+        var_c62ccf1 = "<dev string:x645>";
+        adddebugcommand("<dev string:x657>" + var_c62ccf1 + menu_path + "<dev string:x300>");
     }
 
     // Namespace frontend/frontend
@@ -396,16 +395,16 @@ function callback_playerconnect() {
     // Checksum 0x663adc63, Offset: 0x1c70
     // Size: 0x15c
     function function_41cd078d() {
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        function_1fcf4d0e("<unknown string>", "<unknown string>" + "<unknown string>" + "<unknown string>");
-        function_1fcf4d0e("<unknown string>", "<unknown string>" + "<unknown string>" + "<unknown string>");
-        function_1fcf4d0e("<unknown string>", "<unknown string>" + "<unknown string>" + "<unknown string>");
+        adddebugcommand("<dev string:x66a>");
+        adddebugcommand("<dev string:x690>");
+        adddebugcommand("<dev string:x6b2>");
+        adddebugcommand("<dev string:x6d2>");
+        adddebugcommand("<dev string:x6f7>");
+        adddebugcommand("<dev string:x734>");
+        adddebugcommand("<dev string:x76d>");
+        function_1fcf4d0e("<dev string:x7b2>", "<dev string:x7d2>" + "<dev string:x7da>" + "<dev string:x7f0>");
+        function_1fcf4d0e("<dev string:x802>", "<dev string:x7d2>" + "<dev string:x7da>" + "<dev string:x813>");
+        function_1fcf4d0e("<dev string:x829>", "<dev string:x7d2>" + "<dev string:x7da>" + "<dev string:x847>");
         level thread function_e4ea0153();
     }
 
@@ -414,27 +413,27 @@ function callback_playerconnect() {
     // Checksum 0x62b5bd01, Offset: 0x1dd8
     // Size: 0x198
     function function_e4ea0153() {
-        setdvar(#"hash_3319d0fd07c9ead8", "<unknown string>");
+        setdvar(#"hash_3319d0fd07c9ead8", "<dev string:x8c>");
         while (true) {
-            var_8c931e31 = getdvarstring(#"hash_3319d0fd07c9ead8", "<unknown string>");
-            if (var_8c931e31 == "<unknown string>") {
+            var_8c931e31 = getdvarstring(#"hash_3319d0fd07c9ead8", "<dev string:x8c>");
+            if (var_8c931e31 == "<dev string:x8c>") {
                 waitframe(1);
                 continue;
             }
-            if (var_8c931e31 == "<unknown string>") {
+            if (var_8c931e31 == "<dev string:x86a>") {
                 luinotifyevent(#"hash_66d52cf08267edc4");
-            } else if (var_8c931e31 == "<unknown string>") {
+            } else if (var_8c931e31 == "<dev string:x87b>") {
                 luinotifyevent(#"aar_clear_rewards");
-            } else if (var_8c931e31 == "<unknown string>") {
+            } else if (var_8c931e31 == "<dev string:x890>") {
                 if (!isdefined(level.var_9c7f7c5d)) {
                     level thread function_daf9ea48();
                     level.var_9c7f7c5d = 1;
                 }
-            } else if (var_8c931e31 == "<unknown string>") {
+            } else if (var_8c931e31 == "<dev string:x8b2>") {
                 function_9eac333e();
             }
-            setdvar(#"hash_3319d0fd07c9ead8", "<unknown string>");
-            wait(0.25);
+            setdvar(#"hash_3319d0fd07c9ead8", "<dev string:x8c>");
+            wait 0.25;
         }
     }
 
@@ -446,25 +445,25 @@ function callback_playerconnect() {
         if (isdefined(level.var_9c7f7c5d) && level.var_60e97f7b) {
             return;
         }
-        function_8aa5abd4("<unknown string>");
-        notif_challenges_devgui_base = "<unknown string>";
+        function_8aa5abd4("<dev string:x829>");
+        notif_challenges_devgui_base = "<dev string:x8cf>";
         for (i = 1; i <= popups::devgui_notif_getchallengestablecount(); i++) {
             tablename = popups::devgui_notif_getchallengestablename(i);
             rows = tablelookuprowcount(tablename);
             for (j = 1; j < rows; j++) {
                 challengeid = tablelookupcolumnforrow(tablename, j, 0);
-                if (challengeid != "<unknown string>" && strisint(tablelookupcolumnforrow(tablename, j, 0))) {
+                if (challengeid != "<dev string:x8c>" && strisint(tablelookupcolumnforrow(tablename, j, 0))) {
                     challengestring = tablelookupcolumnforrow(tablename, j, 5);
                     type = tablelookupcolumnforrow(tablename, j, 3);
                     challengetier = int(tablelookupcolumnforrow(tablename, j, 1));
-                    challengetierstring = "<unknown string>" + challengetier;
+                    challengetierstring = "<dev string:x8c>" + challengetier;
                     if (challengetier < 10) {
-                        challengetierstring = "<unknown string>" + challengetier;
+                        challengetierstring = "<dev string:x60>" + challengetier;
                     }
                     name = tablelookupcolumnforrow(tablename, j, 5);
-                    devgui_cmd_challenge_path = notif_challenges_devgui_base + function_9e72a96(type) + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + challengetierstring + "<unknown string>" + challengeid;
+                    devgui_cmd_challenge_path = notif_challenges_devgui_base + function_9e72a96(type) + "<dev string:x2d3>" + function_9e72a96(name) + "<dev string:x2d3>" + challengetierstring + "<dev string:x8f1>" + challengeid;
                     util::waittill_can_add_debug_command();
-                    adddebugcommand(devgui_cmd_challenge_path + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + j + "<unknown string>" + "<unknown string>" + "<unknown string>" + i + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
+                    adddebugcommand(devgui_cmd_challenge_path + "<dev string:x8fa>" + "<dev string:x900>" + "<dev string:x905>" + "<dev string:x90e>" + "<dev string:x65>" + j + "<dev string:x905>" + "<dev string:x927>" + "<dev string:x65>" + i + "<dev string:x905>" + "<dev string:x7da>" + "<dev string:x942>" + "<dev string:x85>");
                     if (int(challengeid) % 10) {
                         waitframe(1);
                     }

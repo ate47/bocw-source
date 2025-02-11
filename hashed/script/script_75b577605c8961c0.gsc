@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3411bb48d41bd3b;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm\ai\zm_ai_avogadro.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\ai\archetype_avogadro.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\ai\archetype_avogadro;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
+#using scripts\zm\ai\zm_ai_avogadro;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_b062407c;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_b062407c/namespace_b062407c
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa2fcc14b, Offset: 0x138
 // Size: 0x7c
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace namespace_b062407c/namespace_b062407c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4419f359, Offset: 0x1c0
 // Size: 0x2e
 function function_907f6acc(watcher) {
@@ -39,7 +38,7 @@ function function_907f6acc(watcher) {
 }
 
 // Namespace namespace_b062407c/namespace_b062407c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdc32c961, Offset: 0x1f8
 // Size: 0x3dc
 function function_7a20f9a3(*watcher, *owner) {
@@ -65,7 +64,7 @@ function function_7a20f9a3(*watcher, *owner) {
     anim_model thread scene::play(#"hash_7de44b33b939963a", anim_model);
     waitframe(1);
     self hide();
-    wait(1);
+    wait 1;
     anim_model clientfield::set("" + #"hash_5f124a31eeb3904a", 1);
     zombie_count = 0;
     var_9af5cd8d = 0;
@@ -88,21 +87,21 @@ function function_7a20f9a3(*watcher, *owner) {
             var_a244d61b--;
             var_9af5cd8d = (var_9af5cd8d + 1) % spawn_locs.size;
             level notify(#"hash_2386c39d37af74e3", {#ai:ai});
-            wait(1);
+            wait 1;
             continue;
         }
         arrayremoveindex(spawn_locs, var_9af5cd8d);
         if (var_9af5cd8d >= spawn_locs.size) {
             var_9af5cd8d = 0;
         }
-        wait(0.25);
+        wait 0.25;
     }
     /#
         if (var_a244d61b > 0) {
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x38>");
         }
     #/
-    wait(0.5);
+    wait 0.5;
     anim_model clientfield::set("" + #"hash_5f124a31eeb3904a", 0);
     waitframe(1);
     anim_model delete();

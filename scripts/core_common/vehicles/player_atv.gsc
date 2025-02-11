@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_atv;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_atv/player_atv
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x13453780, Offset: 0x108
 // Size: 0x2c
 function private preinit() {
@@ -21,7 +20,7 @@ function private preinit() {
 }
 
 // Namespace player_atv/player_atv
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xca60385, Offset: 0x140
 // Size: 0x32
 function private function_500291c4() {

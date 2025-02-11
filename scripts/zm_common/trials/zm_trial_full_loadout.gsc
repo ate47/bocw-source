@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
 
 #namespace zm_trial_full_loadout;
 

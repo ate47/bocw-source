@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using script_b9a55edd207e4ca;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\struct.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_b9a55edd207e4ca;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\vehicle_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\player\player_utils;
 
 #namespace namespace_3f3933bc;
 
@@ -27,12 +26,12 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.defusetime = getgametypesetting(#"defusetime");
     level.bombtimer = getgametypesetting(#"bombtimer");
     level.missileoffset = (-175, 0, 40);
-    setdvar(#"hash_681d6d4c82e4d32b", -175);
-    setdvar(#"hash_681d6c4c82e4d178", 0);
-    setdvar(#"hash_681d6f4c82e4d691", 40);
-    setdvar(#"hash_7079ae3ce3222c01", 78);
-    setdvar(#"hash_7079ad3ce3222a4e", 0);
-    setdvar(#"hash_7079ac3ce322289b", 0);
+    setdvar(#"originoffset_x", -175);
+    setdvar(#"originoffset_y", 0);
+    setdvar(#"originoffset_z", 40);
+    setdvar(#"anglesoffset_x", 78);
+    setdvar(#"anglesoffset_y", 0);
+    setdvar(#"anglesoffset_z", 0);
     setdvar(#"hash_75bbabbef2106dda", 0.19);
     /#
         thread function_13bb0660();
@@ -46,11 +45,11 @@ function event_handler[gametype_init] main(*eventstruct) {
     // Checksum 0x40a9c870, Offset: 0x528
     // Size: 0x174
     function function_59ce3baf(points) {
-        println("<unknown string>");
+        println("<dev string:x38>");
         foreach (point in points) {
-            println("<unknown string>" + point.origin[0] + "<unknown string>" + point.origin[1] + "<unknown string>" + point.origin[2] + "<unknown string>" + point.angles[0] + "<unknown string>" + point.angles[1] + "<unknown string>" + point.angles[2] + "<unknown string>");
+            println("<dev string:x8a>" + point.origin[0] + "<dev string:x8f>" + point.origin[1] + "<dev string:x8f>" + point.origin[2] + "<dev string:x95>" + point.angles[0] + "<dev string:x8f>" + point.angles[1] + "<dev string:x8f>" + point.angles[2] + "<dev string:x9e>");
         }
-        println("<unknown string>");
+        println("<dev string:xa3>");
     }
 
     // Namespace namespace_3f3933bc/namespace_3f3933bc
@@ -87,8 +86,8 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Size: 0x1ca
 function function_4427fb0e() {
     while (true) {
-        var_38ae3e91 = (getdvarfloat(#"hash_681d6d4c82e4d32b", 0), getdvarfloat(#"hash_681d6c4c82e4d178", 0), getdvarfloat(#"hash_681d6f4c82e4d691", 0));
-        currentangles = (getdvarfloat(#"hash_7079ae3ce3222c01", 0), getdvarfloat(#"hash_7079ad3ce3222a4e", 0), getdvarfloat(#"hash_7079ac3ce322289b", 0));
+        var_38ae3e91 = (getdvarfloat(#"originoffset_x", 0), getdvarfloat(#"originoffset_y", 0), getdvarfloat(#"originoffset_z", 0));
+        currentangles = (getdvarfloat(#"anglesoffset_x", 0), getdvarfloat(#"anglesoffset_y", 0), getdvarfloat(#"anglesoffset_z", 0));
         foreach (var_8a15325a in level.var_d98635d9) {
             missile = var_8a15325a.var_974e7341;
             missile setscale(getdvarfloat(#"hash_75bbabbef2106dda", 0.12));
@@ -268,13 +267,13 @@ function function_d33f46a4(spawnpoint, index) {
 function function_f4ad14e2(vehicle, index) {
     level endon(#"game_ended");
     vehicle endon(#"death");
-    wait(10);
+    wait 10;
     upangle = vectorscale(vectornormalize(anglestoup(vehicle.angles)), 5);
     var_a5435776 = spawn("trigger_radius_use", vehicle.origin + upangle, 0, 128, 200);
     var_a5435776 setcursorhint("HINT_INTERACTIVE_PROMPT");
     var_31b5f1bc = gameobjects::create_use_object(game.attackers, var_a5435776, [], undefined, #"hash_7c8dfdab6fd04459" + index, 1, 1, 1);
-    var_31b5f1bc gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    var_31b5f1bc gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    var_31b5f1bc gameobjects::set_visible(#"group_all");
+    var_31b5f1bc gameobjects::allow_use(#"group_friendly");
     var_31b5f1bc gameobjects::set_use_time(level.planttime);
     var_31b5f1bc gameobjects::set_use_text(#"hash_f8bea24436ad636");
     var_31b5f1bc gameobjects::set_use_hint_text(#"hash_6b32950ab833923e");
@@ -294,11 +293,11 @@ function function_f4ad14e2(vehicle, index) {
 // Checksum 0x41585a5d, Offset: 0x1600
 // Size: 0x12c
 function function_4be0e7c4(vehicle, var_d282b6f0) {
-    level endon(#"game_ended", #"hash_49c22a5bcf6de27d");
+    level endon(#"game_ended", #"missle_active");
     vehicle endon(#"death");
     while (isdefined(var_d282b6f0)) {
         vehicle waittill(#"enter_vehicle");
-        var_d282b6f0 gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        var_d282b6f0 gameobjects::set_visible(#"group_none");
         var_d282b6f0.interrupted = 1;
         var_d282b6f0.trigger triggerenable(0);
         while (isdefined(var_d282b6f0) && isdefined(var_d282b6f0.interrupted)) {
@@ -348,7 +347,7 @@ function function_706c8105(vehicle, var_d282b6f0) {
     if (var_e07c7e8[#"fraction"] < 1) {
         return;
     }
-    var_d282b6f0 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    var_d282b6f0 gameobjects::set_visible(#"group_all");
     var_d282b6f0.interrupted = undefined;
     var_d282b6f0.trigger triggerenable(1);
     var_d282b6f0.trigger.origin = vehicle.origin;
@@ -402,14 +401,14 @@ function function_a0595047(player) {
             setgameendtime(gettime() + int(level.bombtimer * 1000));
             thread bombtimerwait();
             self gameobjects::clear_progress();
-            self gameobjects::allow_use(#"hash_33c49a99551acae7");
+            self gameobjects::allow_use(#"group_enemy");
             self.onbeginuse = &function_a8c87bae;
             self.onenduse = &function_46031620;
             self.onuse = &onusedefuseobject;
             return;
         }
         self.vehicle.var_9a2087f6 = 0;
-        self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+        self gameobjects::allow_use(#"group_none");
         function_bc2f89f7(self.vehicle, gettime() + int(10 * 1000), 78, &function_7b550339);
     }
 }
@@ -428,8 +427,8 @@ function function_bad0ccc5(truck) {
 // Checksum 0x77c817ca, Offset: 0x1db8
 // Size: 0xd2
 function function_7b550339(truck) {
-    truck.var_31cac59e gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    truck.var_31cac59e gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    truck.var_31cac59e gameobjects::set_visible(#"group_all");
+    truck.var_31cac59e gameobjects::allow_use(#"group_friendly");
     truck.var_31cac59e gameobjects::set_flags(0);
     truck makeusable();
     objective_setstate(truck.var_b09e50c3, "active");
@@ -534,7 +533,7 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
 // Size: 0x54
 function bombtimerwait() {
     level endon(#"game_ended", #"bomb_defused");
-    wait(level.bombtimer);
+    wait level.bombtimer;
     globallogic::function_a3e3bd39(game.attackers, 1);
 }
 
@@ -548,19 +547,19 @@ function function_71db2f7c(vehicle, *var_31cac59e) {
     gameobjects::release_obj_id(var_31cac59e.var_b09e50c3);
     var_31cac59e.var_b09e50c3 = undefined;
     var_31cac59e.var_31cac59e = undefined;
-    level notify(#"hash_49c22a5bcf6de27d");
+    level notify(#"missle_active");
     foreach (truck in level.var_d98635d9) {
         if (isdefined(truck.var_31cac59e)) {
-            truck.var_31cac59e gameobjects::set_visible(#"hash_161f03feaadc9b8f");
-            truck.var_31cac59e gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+            truck.var_31cac59e gameobjects::set_visible(#"group_none");
+            truck.var_31cac59e gameobjects::allow_use(#"group_none");
         }
     }
     upangle = vectorscale(vectornormalize(anglestoup(var_31cac59e.angles)), 5);
     defusetrigger = spawn("trigger_radius_use", var_31cac59e.origin + upangle, 0, 128, 200);
     defusetrigger setcursorhint("HINT_INTERACTIVE_PROMPT");
     defuseobject = gameobjects::create_use_object(game.attackers, defusetrigger, [], undefined, #"hash_12ac522cdf799e82", 1, 1, 1);
-    defuseobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    defuseobject gameobjects::allow_use(#"hash_33c49a99551acae7");
+    defuseobject gameobjects::set_visible(#"group_all");
+    defuseobject gameobjects::allow_use(#"group_enemy");
     defuseobject gameobjects::set_use_time(level.defusetime);
     defuseobject gameobjects::set_use_text(#"mp/defusing_explosive");
     defuseobject gameobjects::set_use_hint_text(#"hash_754b795109a2bbba");
@@ -603,8 +602,8 @@ function onusedefuseobject(player) {
     var_611dc78e = 1;
     foreach (truck in level.var_d98635d9) {
         if (isdefined(truck.var_31cac59e)) {
-            truck.var_31cac59e gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-            truck.var_31cac59e gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+            truck.var_31cac59e gameobjects::set_visible(#"group_all");
+            truck.var_31cac59e gameobjects::allow_use(#"group_friendly");
             thread function_4be0e7c4(truck, truck.var_31cac59e);
             var_611dc78e = 0;
         }

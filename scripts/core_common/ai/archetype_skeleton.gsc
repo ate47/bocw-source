@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\destructible_character.gsc;
 #using script_2c5daa95f8fec03c;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\zombie;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace archetype_skeleton;
 
@@ -31,7 +30,7 @@ function autoexec init() {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x488fb2d3, Offset: 0x290
 // Size: 0x4a
 function private function_f31535d8() {
@@ -41,7 +40,7 @@ function private function_f31535d8() {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2a3b6202, Offset: 0x2e8
 // Size: 0x2c
 function private archetypeskeletononanimscriptedcallback(*entity) {
@@ -50,7 +49,7 @@ function private archetypeskeletononanimscriptedcallback(*entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x21751d0a, Offset: 0x320
 // Size: 0x1f4
 function private registerbehaviorscriptfunctions() {
@@ -66,7 +65,7 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xec936f05, Offset: 0x520
 // Size: 0x36c
 function private function_a1acece9() {
@@ -99,7 +98,7 @@ function private function_a1acece9() {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x43e64aed, Offset: 0x898
 // Size: 0x72
 function private setup_variant_type(*params) {
@@ -111,7 +110,7 @@ function private setup_variant_type(*params) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 13, eflags: 0x6 linked
+// Params 13, eflags: 0x4
 // Checksum 0xd0759939, Offset: 0x918
 // Size: 0xee
 function private function_abab78a7(inflictor, attacker, damage, idflags, meansofdeath, weapon, var_fd90b0bb, point, dir, hitloc, offsettime, boneindex, modelindex) {
@@ -128,7 +127,7 @@ function private function_abab78a7(inflictor, attacker, damage, idflags, meansof
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9dc3ca15, Offset: 0xa10
 // Size: 0x5c
 function private function_4ac532fd(*s_params) {
@@ -139,7 +138,7 @@ function private function_4ac532fd(*s_params) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4d984d2f, Offset: 0xa78
 // Size: 0x24
 function private skeletondeathaction(entity) {
@@ -147,7 +146,7 @@ function private skeletondeathaction(entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6f21e09f, Offset: 0xaa8
 // Size: 0x17a
 function private function_233f80e1(entity) {
@@ -182,7 +181,7 @@ function private function_233f80e1(entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9c85f34, Offset: 0xc30
 // Size: 0x11c
 function private function_dd3f5fa7(entity) {
@@ -206,7 +205,7 @@ function private function_dd3f5fa7(entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b2b2f8d, Offset: 0xd58
 // Size: 0x64
 function private function_9eb31dff(entity) {
@@ -215,7 +214,7 @@ function private function_9eb31dff(entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e3692fe, Offset: 0xdc8
 // Size: 0x8e
 function function_bcb3a1a1() {
@@ -240,7 +239,7 @@ function private function_7a007bbf(skeleton, entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x880ad371, Offset: 0xef0
 // Size: 0xdc
 function function_7d1989aa(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -252,7 +251,7 @@ function function_7d1989aa(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xd99ebfad, Offset: 0xfd8
 // Size: 0xdc
 function function_5ff8994e(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -264,7 +263,7 @@ function function_5ff8994e(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7dcff9f3, Offset: 0x10c0
 // Size: 0x4c
 function function_9873c40e(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -272,7 +271,7 @@ function function_9873c40e(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfd2509f1, Offset: 0x1118
 // Size: 0x130
 function function_a94fc02e(entity) {
@@ -291,7 +290,7 @@ function function_a94fc02e(entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa121800d, Offset: 0x1250
 // Size: 0xd0
 function function_9f7eb359(entity) {
@@ -308,7 +307,7 @@ function function_9f7eb359(entity) {
 }
 
 // Namespace archetype_skeleton/archetype_skeleton
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6d8ec56d, Offset: 0x1328
 // Size: 0x274
 function private function_7ef4937e(entity) {

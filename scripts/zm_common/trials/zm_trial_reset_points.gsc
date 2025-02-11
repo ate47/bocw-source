@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_trial;
 
 #namespace zm_trial_reset_points;
 
@@ -37,7 +36,7 @@ function private on_begin(var_899c6d17) {
     } else {
         var_899c6d17 = 0;
     }
-    wait(6);
+    wait 6;
     foreach (player in getplayers()) {
         player thread reset_points(var_899c6d17);
     }

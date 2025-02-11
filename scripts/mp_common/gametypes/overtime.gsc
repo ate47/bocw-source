@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace overtime;
 
 // Namespace overtime/overtime
@@ -15,7 +14,7 @@ function autoexec main() {
 }
 
 // Namespace overtime/overtime
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99f5f9ce, Offset: 0xd8
 // Size: 0x1c
 function is_overtime_round() {
@@ -26,7 +25,7 @@ function is_overtime_round() {
 }
 
 // Namespace overtime/overtime
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6f007a77, Offset: 0x100
 // Size: 0x19a
 function round_stats_init() {
@@ -49,7 +48,7 @@ function round_stats_init() {
 }
 
 // Namespace overtime/overtime
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d21f1c, Offset: 0x2a8
 // Size: 0x30
 function get_rounds_played() {
@@ -60,7 +59,7 @@ function get_rounds_played() {
 }
 
 // Namespace overtime/overtime
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfc6cf6d9, Offset: 0x2e0
 // Size: 0x44
 function function_f435f4dd() {

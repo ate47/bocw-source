@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreak_detect.csc;
-#using scripts\mp_common\player\player.csc;
-#using script_67e430791b8fcb93;
-#using scripts\mp_common\gametypes\display_transition.csc;
-#using script_1bd5a845bf9ba498;
-#using scripts\core_common\dogtags.csc;
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\animation_shared.csc;
-#using scripts\core_common\visionset_mgr_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\killcam_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
+#using script_1bd5a845bf9ba498;
+#using script_67e430791b8fcb93;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\killstreaks\killstreak_detect;
+#using scripts\mp_common\gametypes\display_transition;
+#using scripts\mp_common\player\player;
 
 #namespace globallogic;
 
@@ -27,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace globallogic/globallogic
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaca5bde8, Offset: 0x4e0
 // Size: 0xd6c
 function private preinit() {
@@ -48,26 +47,26 @@ function private preinit() {
         clientfield::function_5b7d846d("hudItems.team" + i + ".livesCount", #"hash_410fe12a68d6e801", [#"team" + i, #"livescount"], 1, 8, "int", undefined, 0, 0);
         clientfield::function_5b7d846d("hudItems.team" + i + ".noRespawnsLeft", #"hash_410fe12a68d6e801", [#"team" + i, #"norespawnsleft"], 1, 1, "int", undefined, 0, 0);
     }
-    clientfield::register_clientuimodel("hudItems.armorIsOnCooldown", #"hash_6f4b11a0bee9b73d", #"armorisoncooldown", 1, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.hideOutcomeUI", #"hash_6f4b11a0bee9b73d", #"hideoutcomeui", 1, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.captureCrateState", #"hash_6f4b11a0bee9b73d", #"capturecratestate", 1, 2, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.captureCrateTotalTime", #"hash_6f4b11a0bee9b73d", #"capturecratetotaltime", 1, 13, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.playerLivesCount", #"hash_6f4b11a0bee9b73d", #"playerlivescount", 1, 8, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByEntNum", #"hash_6f4b11a0bee9b73d", #"killedbyentnum", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByAttachmentCount", #"hash_6f4b11a0bee9b73d", #"killedbyattachmentcount", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByItemIndex", #"hash_6f4b11a0bee9b73d", #"killedbyitemindex", 1, 10, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByMOD", #"hash_6f4b11a0bee9b73d", #"killedbymod", 1, 8, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.armorIsOnCooldown", #"hud_items", #"armorisoncooldown", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.hideOutcomeUI", #"hud_items", #"hideoutcomeui", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.captureCrateState", #"hud_items", #"capturecratestate", 1, 2, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.captureCrateTotalTime", #"hud_items", #"capturecratetotaltime", 1, 13, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.playerLivesCount", #"hud_items", #"playerlivescount", 1, 8, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByEntNum", #"hud_items", #"killedbyentnum", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByAttachmentCount", #"hud_items", #"killedbyattachmentcount", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByItemIndex", #"hud_items", #"killedbyitemindex", 1, 10, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByMOD", #"hud_items", #"killedbymod", 1, 8, "int", undefined, 0, 0);
     for (index = 0; index < 5; index++) {
-        clientfield::register_clientuimodel("huditems.killedByAttachment" + index, #"hash_6f4b11a0bee9b73d", #"killedbyattachment" + (isdefined(index) ? "" + index : ""), 1, 6, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("huditems.killedByAttachment" + index, #"hud_items", #"killedbyattachment" + (isdefined(index) ? "" + index : ""), 1, 6, "int", undefined, 0, 0);
     }
     clientfield::register("toplayer", "thermal_sight", 1, 1, "int", &function_765b7c63, 0, 0);
     clientfield::register("toplayer", "strobe_light", 1, 1, "int", &fireflykillcam, 0, 0);
     clientfield::register("allplayers", "cold_blooded", 1, 1, "int", &function_194072a7, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeMarksman", #"hash_6f4b11a0bee9b73d", #"hash_211941ad042d5253", 12000, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeSharpshooter", #"hash_6f4b11a0bee9b73d", #"hash_8cf83c1c40a25bd", 12000, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeExpert", #"hash_6f4b11a0bee9b73d", #"hash_6134a4ba19a50d19", 12000, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeMaster", #"hash_6f4b11a0bee9b73d", #"hash_3102c376e7775b5b", 12000, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.killedByClassMasteryBadge", #"hash_6f4b11a0bee9b73d", #"hash_4f5347191b4b69f7", 12000, 2, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeMarksman", #"hud_items", #"hash_211941ad042d5253", 12000, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeSharpshooter", #"hud_items", #"hash_8cf83c1c40a25bd", 12000, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeExpert", #"hud_items", #"hash_6134a4ba19a50d19", 12000, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByMasteryBadgeMaster", #"hud_items", #"hash_3102c376e7775b5b", 12000, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.killedByClassMasteryBadge", #"hud_items", #"hash_4f5347191b4b69f7", 12000, 2, "int", undefined, 0, 0);
     level._effect[#"pineapplegun_explosion"] = undefined;
     level.gamestarted = 0;
     level.gameended = 0;
@@ -95,7 +94,7 @@ function private preinit() {
 }
 
 // Namespace globallogic/globallogic
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a08f6b7, Offset: 0x1258
 // Size: 0x24
 function on_player_spawned(*localclientnum) {
@@ -103,7 +102,7 @@ function on_player_spawned(*localclientnum) {
 }
 
 // Namespace globallogic/globallogic
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd40a5243, Offset: 0x1288
 // Size: 0x1c
 function function_977fa24b(*localclientnum) {
@@ -111,7 +110,7 @@ function function_977fa24b(*localclientnum) {
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe9236ce6, Offset: 0x12b0
 // Size: 0xa0
 function on_end_game(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -123,7 +122,7 @@ function on_end_game(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2126a8ff, Offset: 0x1358
 // Size: 0x78
 function post_game(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -134,7 +133,7 @@ function post_game(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *f
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2d108ea, Offset: 0x13d8
 // Size: 0x4e
 function firefly_effect_cb(*localclientnum, *oldval, newval, bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -143,7 +142,7 @@ function firefly_effect_cb(*localclientnum, *oldval, newval, bnewent, *binitials
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xefbb0f30, Offset: 0x1430
 // Size: 0x16c
 function annihilate_effect_cb(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -164,7 +163,7 @@ function annihilate_effect_cb(localclientnum, oldval, newval, *bnewent, *binitia
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x4b99f8e, Offset: 0x15a8
 // Size: 0xec
 function pineapplegun_effect_cb(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -181,7 +180,7 @@ function pineapplegun_effect_cb(localclientnum, oldval, newval, *bnewent, *binit
 }
 
 // Namespace globallogic/globallogic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x578280f8, Offset: 0x16a0
 // Size: 0x8c
 function play_plant_sound(*param1, *param2) {
@@ -193,7 +192,7 @@ function play_plant_sound(*param1, *param2) {
 }
 
 // Namespace globallogic/globallogic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xba41fb5f, Offset: 0x1738
 // Size: 0x194
 function updateenemyequipment(local_client_num, *newval) {
@@ -213,7 +212,7 @@ function updateenemyequipment(local_client_num, *newval) {
 }
 
 // Namespace globallogic/globallogic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xad922e6e, Offset: 0x18d8
 // Size: 0x2c
 function function_116b413e(local_client_num, newval) {
@@ -221,7 +220,7 @@ function function_116b413e(local_client_num, newval) {
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xab30317d, Offset: 0x1910
 // Size: 0x26c
 function function_765b7c63(local_client_num, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -248,7 +247,7 @@ function function_765b7c63(local_client_num, oldval, newval, bnewent, binitialsn
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1bc9899c, Offset: 0x1b88
 // Size: 0xcc
 function fireflykillcam(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -263,7 +262,7 @@ function fireflykillcam(local_client_num, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace globallogic/globallogic
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x372966c, Offset: 0x1c60
 // Size: 0xe4
 function function_194072a7(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

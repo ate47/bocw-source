@@ -1,37 +1,36 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_52d2de9b438adc78;
-#using scripts\killstreaks\mp\killstreak_weapons.gsc;
-#using scripts\weapons\weapons.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\weapons\smokegrenade.gsc;
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\emp_shared.gsc;
-#using scripts\killstreaks\airsupport.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\entityheadicons_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_52d2de9b438adc78;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\entityheadicons_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\airsupport;
+#using scripts\killstreaks\emp_shared;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\mp\killstreak_weapons;
+#using scripts\weapons\heatseekingmissile;
+#using scripts\weapons\smokegrenade;
+#using scripts\weapons\weaponobjects;
+#using scripts\weapons\weapons;
 
 #namespace supplydrop;
 
@@ -44,7 +43,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1ba762b, Offset: 0x938
 // Size: 0x49c
 function private preinit() {
@@ -89,7 +88,7 @@ function private preinit() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x451bdbaa, Offset: 0xde0
 // Size: 0x7c
 function on_game_playing() {
@@ -102,7 +101,7 @@ function on_game_playing() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6f6b2e24, Offset: 0xe68
 // Size: 0x1c8
 function function_7422bd1e(var_b27d6a17) {
@@ -113,7 +112,7 @@ function function_7422bd1e(var_b27d6a17) {
     }
     weapon = getweapon(#"supplydrop_marker");
     while (true) {
-        wait(var_b27d6a17);
+        wait var_b27d6a17;
         context = {#var_9fc6cfe9:1, #dist_from_boundary:50, #var_8741accb:#"airdrop_supplydrop", #droptag:"tag_cargo_attach", #perform_physics_trace:1, #max_dist_from_location:16, #radius:30, #tracemask:5};
         for (origin = function_2dcf7a5f(var_8cf55682, context); !isdefined(origin); origin = function_2dcf7a5f(var_8cf55682, context)) {
             waitframe(1);
@@ -124,7 +123,7 @@ function function_7422bd1e(var_b27d6a17) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3057038a, Offset: 0x1038
 // Size: 0x33e
 function function_25ac512() {
@@ -163,7 +162,7 @@ function function_25ac512() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x91cd34b, Offset: 0x1380
 // Size: 0x166
 function function_2dcf7a5f(var_8cf55682, context) {
@@ -188,7 +187,7 @@ function function_2dcf7a5f(var_8cf55682, context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x705f3693, Offset: 0x14f0
 // Size: 0x24a
 function function_9bea1c04(var_8cf55682) {
@@ -215,7 +214,7 @@ function function_9bea1c04(var_8cf55682) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x323adb71, Offset: 0x1748
 // Size: 0x31c
 function function_d57719b8() {
@@ -249,7 +248,7 @@ function function_d57719b8() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x16d8ea9b, Offset: 0x1a70
 // Size: 0xe8
 function function_1c601b99() {
@@ -263,7 +262,7 @@ function function_1c601b99() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1484bf8c, Offset: 0x1b60
 // Size: 0x13c
 function function_bff5c062(supplydrop, attackingplayer) {
@@ -282,7 +281,7 @@ function function_bff5c062(supplydrop, attackingplayer) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef444e8f, Offset: 0x1ca8
 // Size: 0x106
 function finalizecratecategory(category) {
@@ -321,7 +320,7 @@ function setcategorytypeweight(category, type, weight) {
             }
             if (isdefined(finalindex) && finalindex + 1 != cratename) {
                 /#
-                    util::error("Hint string missing");
+                    util::error("<dev string:x38>");
                 #/
                 callback::abort_level();
                 return;
@@ -336,7 +335,7 @@ function setcategorytypeweight(category, type, weight) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xe6de649e, Offset: 0x1ff0
 // Size: 0xd4
 function function_d51de8cf(name, weight, var_16a49f, hint, hint_gambler) {
@@ -346,7 +345,7 @@ function function_d51de8cf(name, weight, var_16a49f, hint, hint_gambler) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xc86d150a, Offset: 0x20d0
 // Size: 0x180
 function function_e611181f(category, type, name, weight, hint, hint_gambler, givefunction, landfunctionoverride) {
@@ -377,7 +376,7 @@ function function_e611181f(category, type, name, weight, hint, hint_gambler, giv
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe8155551, Offset: 0x2258
 // Size: 0x3ea
 function getrandomcratetype(category, gambler_crate_name) {
@@ -431,7 +430,7 @@ function getrandomcratetype(category, gambler_crate_name) {
         break;
     }
     /#
-        if (isdefined(level.dev_gui_supply_drop) && level.dev_gui_supply_drop != "supply_drop_deploy" && level.dev_gui_supply_drop != "tag_care_package") {
+        if (isdefined(level.dev_gui_supply_drop) && level.dev_gui_supply_drop != "<dev string:x65>" && level.dev_gui_supply_drop != "<dev string:x6f>") {
             typekey = level.dev_gui_supply_drop;
         }
     #/
@@ -439,14 +438,14 @@ function getrandomcratetype(category, gambler_crate_name) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x575150e8, Offset: 0x2650
 // Size: 0xb6
 function givecrateitem(crate) {
     if (!isalive(self) || !isdefined(crate.cratetype)) {
         return;
     }
-    assert(isdefined(crate.cratetype.givefunction), "<unknown string>" + crate.cratetype.name);
+    assert(isdefined(crate.cratetype.givefunction), "<dev string:x73>" + crate.cratetype.name);
     return [[ crate.cratetype.givefunction ]]("inventory_" + crate.cratetype.name);
 }
 
@@ -464,7 +463,7 @@ function givecratekillstreakwaiter(event, removecrate, extraendon) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x823045f5, Offset: 0x2790
 // Size: 0x24
 function givecratekillstreak(killstreak) {
@@ -472,7 +471,7 @@ function givecratekillstreak(killstreak) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8f528e2c, Offset: 0x27c0
 // Size: 0x19a
 function givespecializedcrateweapon(weapon) {
@@ -528,7 +527,7 @@ function givecrateweapon(weapon_name) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xed60d895, Offset: 0x2b40
 // Size: 0x22c
 function usesupplydropmarker(package_contents_id, context) {
@@ -571,7 +570,7 @@ function usesupplydropmarker(package_contents_id, context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x15ec606f, Offset: 0x2d78
 // Size: 0x54
 function issupplydropgrenadeallowed(killstreak) {
@@ -583,7 +582,7 @@ function issupplydropgrenadeallowed(killstreak) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x33796b05, Offset: 0x2dd8
 // Size: 0x24
 function adddroplocation(killstreak_id, location) {
@@ -591,7 +590,7 @@ function adddroplocation(killstreak_id, location) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7ad3bf35, Offset: 0x2e08
 // Size: 0x1c
 function deldroplocation(killstreak_id) {
@@ -599,7 +598,7 @@ function deldroplocation(killstreak_id) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbc18c54e, Offset: 0x2e30
 // Size: 0x2d8
 function function_4c0ed253(location, context) {
@@ -636,7 +635,7 @@ function function_4c0ed253(location, context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2549adb0, Offset: 0x3110
 // Size: 0x490
 function islocationgood(location, context) {
@@ -695,7 +694,7 @@ function islocationgood(location, context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8c602abd, Offset: 0x35a8
 // Size: 0x13a
 function usekillstreaksupplydrop(killstreak) {
@@ -782,7 +781,7 @@ function use_killstreak_grim_reaper(killstreak) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x14099e57, Offset: 0x3b30
 // Size: 0xde
 function cleanupwatcherondeath(team, killstreak_id) {
@@ -794,7 +793,7 @@ function cleanupwatcherondeath(team, killstreak_id) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x516ccc8f, Offset: 0x3c18
 // Size: 0x12c
 function cleanup(context, player) {
@@ -820,7 +819,7 @@ function cleanup(context, player) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14422152, Offset: 0x3d50
 // Size: 0x326
 function markerupdatethread(context) {
@@ -856,7 +855,7 @@ function markerupdatethread(context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x39e4c13f, Offset: 0x4080
 // Size: 0x164
 function function_200081db(*owner, context, location) {
@@ -889,7 +888,7 @@ function function_36573ef(killstreak_id, context, team) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6ffc3ce5, Offset: 0x4288
 // Size: 0x47c
 function supplydropwatcher(package_contents_id, trigger_event, supplydropweapon, context) {
@@ -960,7 +959,7 @@ function supplydropwatcher(package_contents_id, trigger_event, supplydropweapon,
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x79365f0b, Offset: 0x4710
 // Size: 0x8c
 function checkforemp() {
@@ -970,13 +969,13 @@ function checkforemp() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2a18398e, Offset: 0x47a8
 // Size: 0x1e4
 function supplydropgrenadetimeout(team, killstreak_id, weapon) {
     self endon(#"death", #"stationary");
     grenade_lifetime = 10;
-    wait(grenade_lifetime);
+    wait grenade_lifetime;
     if (!isdefined(self)) {
         return;
     }
@@ -999,7 +998,7 @@ function supplydropgrenadetimeout(team, killstreak_id, weapon) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd405101d, Offset: 0x4998
 // Size: 0xae
 function checkweaponchange(team, killstreak_id) {
@@ -1010,7 +1009,7 @@ function checkweaponchange(team, killstreak_id) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c749b8e, Offset: 0x4a50
 // Size: 0xd6
 function geticonforcrate() {
@@ -1029,7 +1028,7 @@ function geticonforcrate() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe08a249b, Offset: 0x4b30
 // Size: 0x33c
 function crateactivate(hacker) {
@@ -1076,7 +1075,7 @@ function crateactivate(hacker) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x69393d1, Offset: 0x4e78
 // Size: 0xbc
 function setricochetprotectionendtime(killstreak, killstreak_id, owner) {
@@ -1088,7 +1087,7 @@ function setricochetprotectionendtime(killstreak, killstreak_id, owner) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfd87a83b, Offset: 0x4f40
 // Size: 0x1c
 function cratedeactivate() {
@@ -1096,7 +1095,7 @@ function cratedeactivate() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb010d68c, Offset: 0x4f68
 // Size: 0xb0
 function dropalltoground(origin, radius, stickyobjectradius) {
@@ -1108,7 +1107,7 @@ function dropalltoground(origin, radius, stickyobjectradius) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x233d3ece, Offset: 0x5020
 // Size: 0x2c
 function dropeverythingtouchingcrate(origin) {
@@ -1116,17 +1115,17 @@ function dropeverythingtouchingcrate(origin) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x22e53ade, Offset: 0x5058
 // Size: 0x4c
 function dropalltogroundaftercratedelete(crate, crate_origin) {
     crate waittill(#"death");
-    wait(0.1);
+    wait 0.1;
     crate dropeverythingtouchingcrate(crate_origin);
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x40b5df58, Offset: 0x50b0
 // Size: 0xb4
 function dropcratestoground(origin, radius) {
@@ -1140,7 +1139,7 @@ function dropcratestoground(origin, radius) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb76b82dc, Offset: 0x5170
 // Size: 0xb6
 function dropcratetoground() {
@@ -1158,7 +1157,7 @@ function dropcratetoground() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x3ca7d8fc, Offset: 0x5230
 // Size: 0x586
 function cratespawn(killstreak, killstreakid, owner, team, drop_origin, drop_angle, _crate, context) {
@@ -1229,7 +1228,7 @@ function cratespawn(killstreak, killstreakid, owner, team, drop_origin, drop_ang
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49572559, Offset: 0x57c0
 // Size: 0xfc
 function cratedelete(drop_all_to_ground) {
@@ -1255,29 +1254,29 @@ function cratedelete(drop_all_to_ground) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8e70243, Offset: 0x58c8
 // Size: 0x5e
 function stationarycrateoverride() {
     self endon(#"death", #"stationary");
-    wait(4);
+    wait 4;
     self.angles = self.angles;
     self.origin = self.origin;
     self notify(#"stationary");
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0391788, Offset: 0x5930
 // Size: 0x44
 function timeoutcratewaiter() {
     self endon(#"death", #"stationary");
-    wait(20);
+    wait 20;
     self cratedelete(1);
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7f1fdd6d, Offset: 0x5980
 // Size: 0x84
 function cratephysics() {
@@ -1289,7 +1288,7 @@ function cratephysics() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x94eb8a34, Offset: 0x5a10
 // Size: 0xdc
 function function_d2d0a813() {
@@ -1302,7 +1301,7 @@ function function_d2d0a813() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfa0f146b, Offset: 0x5af8
 // Size: 0x3c
 function private function_9813d292() {
@@ -1312,7 +1311,7 @@ function private function_9813d292() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x555e780b, Offset: 0x5b40
 // Size: 0x6e
 function function_1f686c3b(v_target_location) {
@@ -1327,7 +1326,7 @@ function function_1f686c3b(v_target_location) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x70bfb826, Offset: 0x5bb8
 // Size: 0x4d4
 function cratecontrolleddrop(killstreak, v_target_location, var_72886e11) {
@@ -1364,7 +1363,7 @@ function cratecontrolleddrop(killstreak, v_target_location, var_72886e11) {
         hostmigration::waittillhostmigrationdone();
         crate moveto(target, params.kstotaldroptime, acceltime, deceltime);
         crate thread function_2defd397();
-        wait(acceltime);
+        wait acceltime;
         if (!is_true(crate.pop_parachute)) {
             crate waittill(#"movedone", #"pop_parachute");
         }
@@ -1402,7 +1401,7 @@ function play_impact_sound() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x84f657ef, Offset: 0x60c8
 // Size: 0x84
 function update_crate_velocity() {
@@ -1417,7 +1416,7 @@ function update_crate_velocity() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x190afd49, Offset: 0x6158
 // Size: 0x8a
 function crateredophysics() {
@@ -1430,7 +1429,7 @@ function crateredophysics() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x73f22870, Offset: 0x61f0
 // Size: 0x1ac
 function do_supply_drop_detonation(weapon, owner) {
@@ -1439,19 +1438,19 @@ function do_supply_drop_detonation(weapon, owner) {
     self util::waittillnotmoving();
     self.angles = (0, self.angles[1], 90);
     fuse_time = float(weapon.fusetime) / 1000;
-    wait(fuse_time);
+    wait fuse_time;
     if (!isdefined(owner) || !owner emp::enemyempactive()) {
         thread smokegrenade::playsmokesound(self.origin, 6, level.sound_smoke_start, level.sound_smoke_stop, level.sound_smoke_loop);
         playfxontag(level.var_5efaff3e, self, "tag_fx");
         proj_explosion_sound = weapon.projexplosionsound;
         sound::play_in_space(proj_explosion_sound, self.origin);
     }
-    wait(3);
+    wait 3;
     self delete();
 }
 
 // Namespace supplydrop/supplydrop
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x6dd05a82, Offset: 0x63a8
 // Size: 0xfc
 function dosupplydrop(weapon_instance, weapon, owner, killstreak_id, package_contents_id, context) {
@@ -1465,7 +1464,7 @@ function dosupplydrop(weapon_instance, weapon, owner, killstreak_id, package_con
 }
 
 // Namespace supplydrop/supplydrop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa0c98fad, Offset: 0x64b0
 // Size: 0x9c
 function watchexplode(weapon, owner, killstreak_id, package_contents_id) {
@@ -1476,7 +1475,7 @@ function watchexplode(weapon, owner, killstreak_id, package_contents_id) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xabc5c67f, Offset: 0x6558
 // Size: 0x54
 function cratetimeoutthreader() {
@@ -1488,7 +1487,7 @@ function cratetimeoutthreader() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x984fbec8, Offset: 0x65b8
 // Size: 0x74
 function cratetimeout(*time) {
@@ -1498,7 +1497,7 @@ function cratetimeout(*time) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbda6c51a, Offset: 0x6638
 // Size: 0x94
 function deleteonownerleave() {
@@ -1509,17 +1508,17 @@ function deleteonownerleave() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa8ef55ac, Offset: 0x66d8
 // Size: 0x3c
 function waitanddelete(time) {
     self endon(#"death");
-    wait(time);
+    wait time;
     self delete();
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd6275fb, Offset: 0x6720
 // Size: 0x118
 function function_703ed715(trace) {
@@ -1534,7 +1533,7 @@ function function_703ed715(trace) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0x1dee9ec6, Offset: 0x6840
 // Size: 0x614
 function dropcrate(origin, angle, killstreak, owner, team, killcament, killstreak_id, package_contents_id, crate, context, var_83f3c388) {
@@ -1564,7 +1563,7 @@ function dropcrate(origin, angle, killstreak, owner, team, killcament, killstrea
     v_target_location = trace[#"position"];
     /#
         if (getdvarint(#"scr_supply_drop_valid_location_debug", 0)) {
-            util::drawcylinder(v_target_location, context.radius, 8000, 99999999, "<unknown string>", (0, 0, 0.9), 0.8);
+            util::drawcylinder(v_target_location, context.radius, 8000, 99999999, "<dev string:x94>", (0, 0, 0.9), 0.8);
         }
     #/
     if (isdefined(context.vehicle)) {
@@ -1596,14 +1595,14 @@ function dropcrate(origin, angle, killstreak, owner, team, killcament, killstrea
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x47be435, Offset: 0x6e60
 // Size: 0x17c
 function unlinkonrotation(crate) {
     self endon(#"delete");
     crate endon(#"death", #"stationary");
     waitbeforerotationcheck = getdvarfloat(#"scr_supplydrop_killcam_rot_wait", 0.5);
-    wait(waitbeforerotationcheck);
+    wait waitbeforerotationcheck;
     mincos = getdvarfloat(#"scr_supplydrop_killcam_max_rot", 0.999);
     cosine = 1;
     currentdirection = vectornormalize(anglestoforward(crate.angles));
@@ -1619,7 +1618,7 @@ function unlinkonrotation(crate) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xbe6f5974, Offset: 0x6fe8
 // Size: 0x392
 function default_land_function(crate, category, owner, team) {
@@ -1662,7 +1661,7 @@ function default_land_function(crate, category, owner, team) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x6e602dab, Offset: 0x7388
 // Size: 0x1ea
 function spawn_explosive_crate(origin, angle, killstreak, owner, team, hacker, playerhasengineerperk, killcament) {
@@ -1689,7 +1688,7 @@ function spawn_explosive_crate(origin, angle, killstreak, owner, team, hacker, p
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe86a73c4, Offset: 0x7580
 // Size: 0x284
 function watch_explosive_crate(killcament) {
@@ -1718,7 +1717,7 @@ function watch_explosive_crate(killcament) {
             }
         }
     }
-    wait(0.1);
+    wait 0.1;
     if (isdefined(self)) {
         self cratedelete();
     }
@@ -1726,7 +1725,7 @@ function watch_explosive_crate(killcament) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6de0580b, Offset: 0x7810
 // Size: 0x1ec
 function function_960ea519(opener, killcament) {
@@ -1746,7 +1745,7 @@ function function_960ea519(opener, killcament) {
     detonationdelay = bundle.var_18d14afd;
     self entityheadicons::destroyentityheadicons();
     self thread function_71c8970c(0.84);
-    wait(detonationdelay);
+    wait detonationdelay;
     self function_345ada65(opener);
     if (isdefined(self)) {
         self cratedelete(1);
@@ -1755,7 +1754,7 @@ function function_960ea519(opener, killcament) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb89edb5, Offset: 0x7a08
 // Size: 0x28c
 function function_345ada65(attacker) {
@@ -1774,12 +1773,12 @@ function function_345ada65(attacker) {
     if (isdefined(bundle.var_3f41a92c)) {
         playrumbleonposition(bundle.var_3f41a92c, self.origin);
     }
-    playsoundatposition(#"hash_2f1ae087d02ed33f", self.origin);
+    playsoundatposition(#"wpn_frag_explode", self.origin);
     self radiusdamage(self.origin, 256, 500, 300, attacker, "MOD_EXPLOSIVE", getweapon(#"supplydrop"));
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3107a75a, Offset: 0x7ca0
 // Size: 0x1d2
 function function_71c8970c(interval) {
@@ -1798,7 +1797,7 @@ function function_71c8970c(interval) {
         playfxontag(#"hash_73dda66347b73ddd", self, "tag_fx_03");
         playfxontag(#"hash_73dda66347b73ddd", self, "tag_fx_04");
         playfxontag(#"hash_3e6e2a2df9fd889", self, "tag_body");
-        wait(interval);
+        wait interval;
         interval /= 1.2;
         if (interval < 0.08) {
             break;
@@ -1807,7 +1806,7 @@ function function_71c8970c(interval) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x77c3cf7d, Offset: 0x7e80
 // Size: 0x152
 function watchforcratekill(start_kill_watch_z_threshold) {
@@ -1868,12 +1867,12 @@ function cratekill() {
         if (numframesstationary >= maxframestillstationary) {
             break;
         }
-        wait(0.01);
+        wait 0.01;
     }
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbecbbfb9, Offset: 0x80f0
 // Size: 0x3fc
 function cratedroptogroundkill() {
@@ -1919,15 +1918,15 @@ function cratedroptogroundkill() {
             cratedroptogroundtrace(start);
             start = self getpointinbounds(-1, -1, 0);
             cratedroptogroundtrace(start);
-            wait(0.2);
+            wait 0.2;
             continue;
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x35e1972f, Offset: 0x84f8
 // Size: 0x1fc
 function cratedroptogroundtrace(start) {
@@ -1950,7 +1949,7 @@ function cratedroptogroundtrace(start) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38be442c, Offset: 0x8700
 // Size: 0x3c4
 function is_touching_crate() {
@@ -1992,7 +1991,7 @@ function is_touching_crate() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae1de0b, Offset: 0x8ad0
 // Size: 0x1c4
 function is_clone_touching_crate() {
@@ -2012,7 +2011,7 @@ function is_clone_touching_crate() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5e6aa697, Offset: 0x8ca0
 // Size: 0x198
 function is_equipment_touching_crate() {
@@ -2040,7 +2039,7 @@ function is_equipment_touching_crate() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3b10b624, Offset: 0x8e40
 // Size: 0x98
 function spawnuseent(player) {
@@ -2056,7 +2055,7 @@ function spawnuseent(player) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc66289e2, Offset: 0x8ee0
 // Size: 0x4c
 function useentownerdeathwaiter(owner) {
@@ -2066,7 +2065,7 @@ function useentownerdeathwaiter(owner) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf17b7968, Offset: 0x8f38
 // Size: 0x242
 function crateusethink() {
@@ -2114,7 +2113,7 @@ function crateusethink() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x152c530e, Offset: 0x9188
 // Size: 0x172
 function crateusethinkowner() {
@@ -2149,7 +2148,7 @@ function crateusethinkowner() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdf62deca, Offset: 0x9308
 // Size: 0x1d0
 function useholdthink(player, usetime) {
@@ -2179,7 +2178,7 @@ function useholdthink(player, usetime) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x64ce190, Offset: 0x94e0
 // Size: 0xee
 function continueholdthinkloop(player) {
@@ -2217,7 +2216,7 @@ function continueholdthinkloop(player) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4bab5e1b, Offset: 0x95d8
 // Size: 0x122
 function useholdthinkloop(player) {
@@ -2243,7 +2242,7 @@ function useholdthinkloop(player) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9e21b980, Offset: 0x9708
 // Size: 0x1ce
 function crategamblerthink() {
@@ -2270,7 +2269,7 @@ function crategamblerthink() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c8e1ac7, Offset: 0x98e0
 // Size: 0x6c
 function cratereactivate() {
@@ -2280,7 +2279,7 @@ function cratereactivate() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6de8249a, Offset: 0x9958
 // Size: 0x434
 function personalusebar(object) {
@@ -2325,7 +2324,7 @@ function personalusebar(object) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xf5f42e05, Offset: 0x9d98
 // Size: 0x428
 function spawn_helicopter(owner, team, origin, angles, vehicledef, targetname, killstreak_id, context) {
@@ -2383,7 +2382,7 @@ function spawn_helicopter(owner, team, origin, angles, vehicledef, targetname, k
 }
 
 // Namespace supplydrop/supplydrop
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x24b5399c, Offset: 0xa1c8
 // Size: 0xda
 function function_f4712512(*einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
@@ -2395,7 +2394,7 @@ function function_f4712512(*einflictor, eattacker, idamage, idflags, smeansofdea
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x44682bd6, Offset: 0xa2b0
 // Size: 0x1ec
 function destroyhelicopter(*var_fec7078b) {
@@ -2430,7 +2429,7 @@ function destroyhelicopter(*var_fec7078b) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2de67317, Offset: 0xa4a8
 // Size: 0x1a
 function getdropheight(*origin) {
@@ -2438,7 +2437,7 @@ function getdropheight(*origin) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf323db91, Offset: 0xa4d0
 // Size: 0x1e
 function getdropdirection() {
@@ -2446,7 +2445,7 @@ function getdropdirection() {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x81f54e60, Offset: 0xa4f8
 // Size: 0x5a
 function getnextdropdirection(drop_direction, degrees) {
@@ -2458,7 +2457,7 @@ function getnextdropdirection(drop_direction, degrees) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2bbc6810, Offset: 0xa560
 // Size: 0x1fa
 function gethelistart(drop_origin, drop_direction) {
@@ -2482,7 +2481,7 @@ function gethelistart(drop_origin, drop_direction) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4bf98ff1, Offset: 0xa768
 // Size: 0x162
 function getheliend(drop_origin, drop_direction) {
@@ -2500,7 +2499,7 @@ function getheliend(drop_origin, drop_direction) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x713836c1, Offset: 0xa8d8
 // Size: 0x74
 function addoffsetontopoint(point, direction, offset) {
@@ -2510,7 +2509,7 @@ function addoffsetontopoint(point, direction, offset) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa066ab4b, Offset: 0xa958
 // Size: 0x5e
 function supplydrophelistartpath_v2_setup(goal, *goal_offset, var_aea79ccc) {
@@ -2520,7 +2519,7 @@ function supplydrophelistartpath_v2_setup(goal, *goal_offset, var_aea79ccc) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa8c942bd, Offset: 0xa9c0
 // Size: 0x60
 function supplydrophelistartpath_v2_part2_local(goal, goalpath, goal_local_offset) {
@@ -2530,7 +2529,7 @@ function supplydrophelistartpath_v2_part2_local(goal, goalpath, goal_local_offse
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4e87f7b9, Offset: 0xaa28
 // Size: 0x38
 function supplydrophelistartpath_v2_part2(goal, goalpath, goal_world_offset) {
@@ -2575,7 +2574,7 @@ function supplydrophelistartpath(goal, goal_offset) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x10161804, Offset: 0xad20
 // Size: 0x88
 function supplydropheliendpath_v2(start, var_aea79ccc) {
@@ -2616,7 +2615,7 @@ function supplydropheliendpath(origin, drop_direction) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6561c12d, Offset: 0xaf68
 // Size: 0x34a
 function inccratekillstreakusagestat(weapon, killstreak_id) {
@@ -2658,7 +2657,7 @@ function inccratekillstreakusagestat(weapon, killstreak_id) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7025ee95, Offset: 0xb2c0
 // Size: 0x8c
 function markercleanupthread(context) {
@@ -2668,7 +2667,7 @@ function markercleanupthread(context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x76d2b3f4, Offset: 0xb358
 // Size: 0x8a
 function getchopperdroppoint(context) {
@@ -2677,41 +2676,41 @@ function getchopperdroppoint(context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd577c838, Offset: 0xb3f0
 // Size: 0xae
 function private function_7d90f954(drop_origin, context) {
     if (ispointonnavmesh(drop_origin, context.dist_from_boundary)) {
         /#
-            recordsphere(drop_origin + (0, 0, 10), 2, (0, 1, 0), "<unknown string>");
+            recordsphere(drop_origin + (0, 0, 10), 2, (0, 1, 0), "<dev string:xc6>");
         #/
         return true;
     }
     /#
-        recordsphere(drop_origin + (0, 0, 10), 2, (1, 0, 0), "<unknown string>");
+        recordsphere(drop_origin + (0, 0, 10), 2, (1, 0, 0), "<dev string:xc6>");
     #/
     return false;
 }
 
 // Namespace supplydrop/supplydrop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8f681875, Offset: 0xb4a8
 // Size: 0x96
 function private function_75277c27(tacpoint, *context) {
     if (isdefined(context.ceilingheight) && context.ceilingheight >= 4000) {
         /#
-            recordsphere(context.origin, 2, (0, 1, 0), "<unknown string>");
+            recordsphere(context.origin, 2, (0, 1, 0), "<dev string:xc6>");
         #/
         return true;
     }
     /#
-        recordsphere(context.origin, 2, (1, 0, 0), "<unknown string>");
+        recordsphere(context.origin, 2, (1, 0, 0), "<dev string:xc6>");
     #/
     return false;
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x85f80c8a, Offset: 0xb548
 // Size: 0x10c
 function private function_9153c267(drop_origin, *context, drop_height) {
@@ -2720,12 +2719,12 @@ function private function_9153c267(drop_origin, *context, drop_height) {
         var_baa92af9 = ispointinnavvolume(heli_drop_goal, "navvolume_big");
         if (var_baa92af9) {
             /#
-                recordsphere(context + (0, 0, 20), 2, (0, 1, 0), "<unknown string>");
+                recordsphere(context + (0, 0, 20), 2, (0, 1, 0), "<dev string:xc6>");
             #/
             return true;
         }
         /#
-            recordsphere(context + (0, 0, 20), 2, (1, 0, 0), "<unknown string>");
+            recordsphere(context + (0, 0, 20), 2, (1, 0, 0), "<dev string:xc6>");
         #/
         return false;
     }
@@ -2733,7 +2732,7 @@ function private function_9153c267(drop_origin, *context, drop_height) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x9912b422, Offset: 0xb660
 // Size: 0x158
 function private function_accec5c5(drop_origin, *context, drop_height) {
@@ -2743,18 +2742,18 @@ function private function_accec5c5(drop_origin, *context, drop_height) {
     trace = physicstrace(heli_drop_goal, context + (0, 0, 10), (radius * -1, radius * -1, 0), (radius, radius, 2 * radius), undefined, mask);
     if (trace[#"fraction"] < 1) {
         /#
-            recordsphere(context + (0, 0, 20), 2, (1, 0, 0), "<unknown string>");
+            recordsphere(context + (0, 0, 20), 2, (1, 0, 0), "<dev string:xc6>");
         #/
         return false;
     }
     /#
-        recordsphere(context + (0, 0, 20), 2, (0, 1, 0), "<unknown string>");
+        recordsphere(context + (0, 0, 20), 2, (0, 1, 0), "<dev string:xc6>");
     #/
     return true;
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x2cc3f071, Offset: 0xb7c0
 // Size: 0x136
 function private function_fc826e6(tacpoints, context, drop_height) {
@@ -2769,7 +2768,7 @@ function private function_fc826e6(tacpoints, context, drop_height) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7025aeb6, Offset: 0xb900
 // Size: 0xf4
 function function_6dc6bc6b(origins, context, drop_height) {
@@ -2786,7 +2785,7 @@ function function_6dc6bc6b(origins, context, drop_height) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe6df602e, Offset: 0xba00
 // Size: 0x2b6
 function function_263d3e9e(drop_origin, drop_height, context) {
@@ -2812,13 +2811,13 @@ function function_263d3e9e(drop_origin, drop_height, context) {
                 filteredpoints = function_6dc6bc6b(tacpoints, context, drop_height);
                 if (isdefined(filteredpoints[0])) {
                     /#
-                        recordsphere(filteredpoints[0] + (0, 0, 70), 4, (1, 0.5, 0), "<unknown string>");
+                        recordsphere(filteredpoints[0] + (0, 0, 70), 4, (1, 0.5, 0), "<dev string:xc6>");
                     #/
                     return filteredpoints[0];
                 } else {
                     var_c71b63fa = arraygetclosest(drop_origin, tacpoints);
                     /#
-                        recordsphere(var_c71b63fa + (0, 0, 70), 4, (0, 1, 1), "<unknown string>");
+                        recordsphere(var_c71b63fa + (0, 0, 70), 4, (0, 1, 1), "<dev string:xc6>");
                     #/
                     return var_c71b63fa;
                 }
@@ -2829,7 +2828,7 @@ function function_263d3e9e(drop_origin, drop_height, context) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x45a0a58a, Offset: 0xbcc0
 // Size: 0x14e
 function function_fe13a227(chopper, heli_drop_goal, drop_height, original_drop_origin) {
@@ -2838,10 +2837,10 @@ function function_fe13a227(chopper, heli_drop_goal, drop_height, original_drop_o
         drop_origin = (heli_drop_goal[0], heli_drop_goal[1], heli_drop_goal[2] - drop_height);
         while (true) {
             /#
-                recordsphere(original_drop_origin, 4, (1, 0, 0), "<unknown string>");
-                recordsphere(drop_origin, 4, (1, 0.5, 0), "<unknown string>");
-                recordsphere(heli_drop_goal, 4, (0, 0, 1), "<unknown string>");
-                recordline(drop_origin, heli_drop_goal, (0, 0, 1), "<unknown string>");
+                recordsphere(original_drop_origin, 4, (1, 0, 0), "<dev string:xc6>");
+                recordsphere(drop_origin, 4, (1, 0.5, 0), "<dev string:xc6>");
+                recordsphere(heli_drop_goal, 4, (0, 0, 1), "<dev string:xc6>");
+                recordline(drop_origin, heli_drop_goal, (0, 0, 1), "<dev string:xc6>");
             #/
             waitframe(1);
         }
@@ -2849,7 +2848,7 @@ function function_fe13a227(chopper, heli_drop_goal, drop_height, original_drop_o
 }
 
 // Namespace supplydrop/supplydrop
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8fe053cf, Offset: 0xbe18
 // Size: 0x1484
 function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_contents_id, context) {
@@ -2866,7 +2865,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
             level notify(#"stop_heli_drop_valid_location_marked_cylinder");
             level notify(#"stop_heli_drop_valid_location_arrived_at_goal_cylinder");
             level notify(#"stop_heli_drop_valid_location_dropped_cylinder");
-            util::drawcylinder(origin, context.radius, 8000, 99999999, "<unknown string>", (0.4, 0, 0.4), 0.8);
+            util::drawcylinder(origin, context.radius, 8000, 99999999, "<dev string:xd0>", (0.4, 0, 0.4), 0.8);
         }
     #/
     origin = self.markerposition;
@@ -2984,7 +2983,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
             }
         }
         if (wait_for_drop) {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         break;
@@ -3031,7 +3030,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
         chopper [[ context.epilog ]](context);
     }
     /#
-        println("<unknown string>" + gettime() - chopper.spawntime);
+        println("<dev string:x101>" + gettime() - chopper.spawntime);
         if (getdvarint(#"scr_supply_drop_valid_location_debug", 0)) {
             if (isdefined(context.dropoffset)) {
                 chopper_drop_point = chopper.origin - rotatepoint(context.dropoffset, chopper.angles);
@@ -3040,8 +3039,8 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
             }
             trace = groundtrace(chopper_drop_point + (0, 0, -100), chopper_drop_point + (0, 0, -10000), 0, undefined, 0);
             debug_drop_location = trace[#"position"];
-            util::drawcylinder(debug_drop_location, context.radius, 8000, 99999999, "<unknown string>", (1, 0.6, 0), 0.9);
-            iprintln("<unknown string>" + distance2d(chopper_drop_point, heli_drop_goal));
+            util::drawcylinder(debug_drop_location, context.radius, 8000, 99999999, "<dev string:x11c>", (1, 0.6, 0), 0.9);
+            iprintln("<dev string:x156>" + distance2d(chopper_drop_point, heli_drop_goal));
         }
     #/
     on_target = 0;
@@ -3064,7 +3063,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
         if (continue_waiting) {
             /#
                 if (getdvarint(#"scr_supply_drop_valid_location_debug", 0)) {
-                    iprintln("<unknown string>" + distance2d(chopper_drop_point, heli_drop_goal));
+                    iprintln("<dev string:x178>" + distance2d(chopper_drop_point, heli_drop_goal));
                 }
             #/
             waitframe(1);
@@ -3072,7 +3071,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
     }
     /#
         if (getdvarint(#"scr_supply_drop_valid_location_debug", 0)) {
-            iprintln("<unknown string>" + distance2d(chopper_drop_point, heli_drop_goal));
+            iprintln("<dev string:x18d>" + distance2d(chopper_drop_point, heli_drop_goal));
         }
     #/
     chopper scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "arrive");
@@ -3080,7 +3079,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
     chopper notify(#"drop_crate", {#position:chopper.origin, #direction:chopper.angles, #owner:chopper.owner});
     chopper.droptime = gettime();
     chopper playsound(#"veh_supply_drop");
-    wait(0.7);
+    wait 0.7;
     if (isdefined(level.killstreakweapons[weapon])) {
         chopper namespace_f9b02f80::play_pilot_dialog_on_owner("waveStartFinal", level.killstreakweapons[weapon], chopper.killstreak_id);
     }
@@ -3100,17 +3099,17 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
         goalpath = supplydropheliendpath_v2(chopper.origin, 1);
         chopper airsupport::followpath(goalpath.path, undefined, 0);
     }
-    println("<unknown string>" + gettime() - chopper.droptime);
+    println("<dev string:x1af>" + gettime() - chopper.droptime);
     chopper notify(#"leaving");
     chopper deletedelay();
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ac3b696, Offset: 0xd2a8
 // Size: 0x4c
 function function_e16ff9df(delay) {
-    wait(delay);
+    wait delay;
     if (!isdefined(self)) {
         return;
     }
@@ -3120,7 +3119,7 @@ function function_e16ff9df(delay) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xca4a1c44, Offset: 0xd300
 // Size: 0x53e
 function helidropcrate(killstreak, originalowner, offset, killcament, killstreak_id, package_contents_id, context, var_83f3c388) {
@@ -3181,7 +3180,7 @@ function helidropcrate(killstreak, originalowner, offset, killcament, killstreak
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39670119, Offset: 0xd848
 // Size: 0x18c
 function lbexplode() {
@@ -3216,12 +3215,12 @@ function lbspin(speed) {
     self setyawspeed(speed, speed, speed);
     while (isdefined(self)) {
         self settargetyaw(self.angles[1] + speed * 0.9);
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace supplydrop/supplydrop
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf296d2a0, Offset: 0xda88
 // Size: 0x76
 function refcountdecchopper(team, killstreak_id, killstreaktype, var_9e10e827) {
@@ -3232,7 +3231,7 @@ function refcountdecchopper(team, killstreak_id, killstreaktype, var_9e10e827) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3400c1, Offset: 0xdb08
 // Size: 0x44
 function function_4bf116ab(ents) {
@@ -3240,7 +3239,7 @@ function function_4bf116ab(ents) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55035961, Offset: 0xdb58
 // Size: 0x34
 function function_2842c984(*ents) {
@@ -3250,7 +3249,7 @@ function function_2842c984(*ents) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd9aa083, Offset: 0xdb98
 // Size: 0x56
 function function_76b49bd8(ents) {
@@ -3259,7 +3258,7 @@ function function_76b49bd8(ents) {
 }
 
 // Namespace supplydrop/supplydrop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x32fdb84f, Offset: 0xdbf8
 // Size: 0x114
 function function_2defd397() {
@@ -3269,7 +3268,7 @@ function function_2defd397() {
     self waittill(#"movedone");
     self scene::stop(#"p9_fxanim_wz_parachute_supplydrop_01_bundle");
     self.parachute thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "detach", self.parachute);
-    wait(1);
+    wait 1;
     if (isdefined(self.parachute)) {
         self.parachute clientfield::set("supply_drop_parachute_rob", 0);
     }
@@ -3282,9 +3281,9 @@ function function_2defd397() {
     // Checksum 0x7dde953b, Offset: 0xdd18
     // Size: 0x80
     function supply_drop_dev_gui() {
-        setdvar(#"scr_supply_drop_gui", "tag_care_package");
+        setdvar(#"scr_supply_drop_gui", "<dev string:x6f>");
         while (true) {
-            wait(0.5);
+            wait 0.5;
             devgui_string = getdvarstring(#"scr_supply_drop_gui");
             level.dev_gui_supply_drop = devgui_string;
         }

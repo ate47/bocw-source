@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\util_shared;
 
 #namespace mp_miami;
 
@@ -18,9 +17,9 @@ function event_handler[level_init] main(*eventstruct) {
     setsaveddvar(#"wind_global_hi_altitude", 10000);
     setsaveddvar(#"wind_global_low_strength_percent", 100);
     setsaveddvar(#"phys_ragdoll_buoyancy", 1);
-    setsaveddvar(#"hash_281a310f2cf89f87", 0);
+    setsaveddvar(#"vt_enable", 0);
     setsaveddvar(#"hash_7112f4ec5fd42556", 0);
-    clientfield::register("scriptmover", "neon_rob", 1, 1, "counter", &function_336be979, 0, 0);
+    clientfield::register("scriptmover", "neon_rob", 1, 1, "counter", &neon_rob, 0, 0);
     callback::on_gameplay_started(&on_gameplay_started);
     load::main();
     level thread function_22faec66();
@@ -28,7 +27,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_miami/mp_miami
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x191ad082, Offset: 0x2d8
 // Size: 0x68
 function on_gameplay_started(*localclientnum) {
@@ -39,10 +38,10 @@ function on_gameplay_started(*localclientnum) {
 }
 
 // Namespace mp_miami/mp_miami
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7636b1b1, Offset: 0x348
 // Size: 0xfc
-function function_336be979(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function neon_rob(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     player = function_5c10bd79(bwastimejump);
     if (!isdefined(player) || !player function_21c0fa55() || !isdefined(self)) {
         return;
@@ -57,7 +56,7 @@ function function_336be979(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace mp_miami/mp_miami
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5474f038, Offset: 0x450
 // Size: 0x174
 function function_22faec66() {

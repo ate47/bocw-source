@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\outcome.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
 #using script_3d703ef87a841fe4;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\outcome;
+#using scripts\mp_common\gametypes\overtime;
+#using scripts\mp_common\gametypes\round;
 
 #namespace match;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x888484ed, Offset: 0x130
 // Size: 0x14
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x40447a44, Offset: 0x150
 // Size: 0x3e
 function private function_37f04b09() {
@@ -36,7 +35,7 @@ function private function_37f04b09() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdf8adce0, Offset: 0x198
 // Size: 0x4c
 function private function_94003d29() {
@@ -48,7 +47,7 @@ function private function_94003d29() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20d95e9a, Offset: 0x1f0
 // Size: 0xe
 function function_f37f02fc() {
@@ -66,7 +65,7 @@ function private function_b6b94df8() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x186f4228, Offset: 0x240
 // Size: 0x34
 function set_overtime() {
@@ -75,7 +74,7 @@ function set_overtime() {
 }
 
 // Namespace match/match
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb7fef231, Offset: 0x280
 // Size: 0x2c
 function set_flag(flag) {
@@ -83,7 +82,7 @@ function set_flag(flag) {
 }
 
 // Namespace match/match
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x48d60c11, Offset: 0x2b8
 // Size: 0x2a
 function get_flag(flag) {
@@ -99,7 +98,7 @@ function clear_flag(flag) {
 }
 
 // Namespace match/match
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x349ae8a9, Offset: 0x328
 // Size: 0x2c
 function function_897438f4(var_c1e98979) {
@@ -107,7 +106,7 @@ function function_897438f4(var_c1e98979) {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf30275f3, Offset: 0x360
 // Size: 0x1a
 function function_3624d032() {
@@ -115,7 +114,7 @@ function function_3624d032() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8ba0388, Offset: 0x388
 // Size: 0x64
 function function_c10174e7() {
@@ -129,7 +128,7 @@ function function_c10174e7() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x845d40ce, Offset: 0x3f8
 // Size: 0x1a
 function get_winning_team() {
@@ -148,7 +147,7 @@ function is_winning_team(team) {
 }
 
 // Namespace match/match
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3caad425, Offset: 0x478
 // Size: 0xa2
 function function_a2b53e17(player) {
@@ -164,7 +163,7 @@ function function_a2b53e17(player) {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x772085f2, Offset: 0x528
 // Size: 0x24
 function function_75f97ac7() {
@@ -175,7 +174,7 @@ function function_75f97ac7() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x85dc6c8, Offset: 0x558
 // Size: 0x46
 function function_517c0ce0() {
@@ -186,7 +185,7 @@ function function_517c0ce0() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0dea8df, Offset: 0x5a8
 // Size: 0x1a
 function function_b5f4c9d8() {
@@ -194,7 +193,7 @@ function function_b5f4c9d8() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbcc24596, Offset: 0x5d0
 // Size: 0x52
 function get_winner() {
@@ -213,7 +212,7 @@ function set_winner(team_or_player) {
 }
 
 // Namespace match/match
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4e9d9f09, Offset: 0x668
 // Size: 0x2c
 function function_af2e264f(winner) {
@@ -230,7 +229,7 @@ function function_870759fb() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x308c995, Offset: 0x6e8
 // Size: 0x132
 function function_6d0354e3() {
@@ -250,7 +249,7 @@ function function_6d0354e3() {
 }
 
 // Namespace match/match
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe31af664, Offset: 0x828
 // Size: 0x48c
 function function_10cd0ad() {

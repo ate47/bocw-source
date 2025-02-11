@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\system_shared;
 
 #namespace demo;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace demo/demo_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x61796efc, Offset: 0xe0
 // Size: 0x54
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace demo/demo_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x495d6ee7, Offset: 0x140
 // Size: 0x14
 function private init() {
@@ -32,7 +31,7 @@ function private init() {
 }
 
 // Namespace demo/demo_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x250e7fd6, Offset: 0x160
 // Size: 0x8c
 function private add_bookmark(bookmark, overrideentitycamera) {
@@ -46,7 +45,7 @@ function private add_bookmark(bookmark, overrideentitycamera) {
 }
 
 // Namespace demo/demo_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa28aa7f4, Offset: 0x1f8
 // Size: 0x84
 function kill_bookmark(var_81538b15, var_f28fb772, einflictor, var_50d1e41a, overrideentitycamera) {
@@ -73,7 +72,7 @@ function event_bookmark(bookmarkname, time, var_81538b15, scoreeventpriority, ev
 }
 
 // Namespace demo/demo_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x54f41ded, Offset: 0x388
 // Size: 0x74
 function bookmark(bookmarkname, time, var_81538b15, var_f28fb772, scoreeventpriority) {
@@ -82,13 +81,13 @@ function bookmark(bookmarkname, time, var_81538b15, var_f28fb772, scoreeventprio
 }
 
 // Namespace demo/demo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x712abe2d, Offset: 0x408
 // Size: 0xc4
 function function_c6ae5fd6(bookmarkname, winningteamindex, losingteamindex) {
     bookmark = potm::function_5b1e9ed4(game.var_e9714926, bookmarkname, gettime(), undefined, undefined, 0);
     if (!isdefined(bookmark)) {
-        println("<unknown string>" + bookmarkname + "<unknown string>");
+        println("<dev string:x38>" + bookmarkname + "<dev string:x5b>");
         return;
     }
     if (isdefined(winningteamindex)) {
@@ -112,7 +111,7 @@ function initactorbookmarkparams(killtimescount, killtimemsec, killtimedelay) {
 }
 
 // Namespace demo/demo_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x23a86c9d, Offset: 0x540
 // Size: 0x74
 function reset_actor_bookmark_kill_times() {
@@ -162,13 +161,13 @@ function add_actor_bookmark_kill_time() {
 }
 
 // Namespace demo/demo_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x231c60ea, Offset: 0x6d8
 // Size: 0x1e2
 function watch_actor_bookmarks() {
     while (true) {
         if (!isdefined(level.actorbookmarkparamsinitialized)) {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         waitframe(1);

@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_6243781aa5394e62;
-#using script_7d8e141380aa3f06;
-#using script_a28cfdb7ec79c28;
-#using script_4c3ae065d31d9544;
 #using script_430de98794e456b;
 #using script_49d775adf53f3e10;
-#using script_7785d936148d9f8;
-#using scripts\zm\zm_gold_main_quest.csc;
-#using scripts\zm\zm_gold_ww_quest.csc;
-#using scripts\zm\zm_gold_util.csc;
+#using script_4c3ae065d31d9544;
 #using script_50a657242c20890c;
-#using scripts\zm\zm_gold_pap_quest.csc;
-#using script_791ecf7869b6b24f;
-#using scripts\zm_common\zm_ping.csc;
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_intel.csc;
+#using script_6243781aa5394e62;
 #using script_68732f44626820ed;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using script_7785d936148d9f8;
+#using script_791ecf7869b6b24f;
+#using script_7d8e141380aa3f06;
+#using script_a28cfdb7ec79c28;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm\zm_gold_main_quest;
+#using scripts\zm\zm_gold_pap_quest;
+#using scripts\zm\zm_gold_util;
+#using scripts\zm\zm_gold_ww_quest;
+#using scripts\zm_common\zm_intel;
+#using scripts\zm_common\zm_ping;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_gold;
 
@@ -70,7 +69,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace zm_gold/zm_gold
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x60aee7d7, Offset: 0x8d0
 // Size: 0x3c
 function function_1493eabf() {
@@ -79,7 +78,7 @@ function function_1493eabf() {
 }
 
 // Namespace zm_gold/zm_gold
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x89246262, Offset: 0x918
 // Size: 0x282
 function setup_personality_character_exerts() {
@@ -102,7 +101,7 @@ function setup_personality_character_exerts() {
 }
 
 // Namespace zm_gold/zm_gold
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x76563761, Offset: 0xba8
 // Size: 0x7c
 function function_6c117bd1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -145,7 +144,7 @@ function function_4fd00e1f(localclientnum, *oldval, newval, *bnewent, *binitials
             }
             /#
                 if (!isdefined(level.var_3630f9c0[var_47c85523][fieldname])) {
-                    level.var_3630f9c0[var_47c85523][fieldname] = playviewmodelfx(fieldname, str_fx, "<unknown string>");
+                    level.var_3630f9c0[var_47c85523][fieldname] = playviewmodelfx(fieldname, str_fx, "<dev string:x38>");
                 }
             #/
         } else {
@@ -170,7 +169,7 @@ function function_4fd00e1f(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold/zm_gold
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x797fc63d, Offset: 0xf90
 // Size: 0x19c
 function function_84e68eed(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -188,7 +187,7 @@ function function_84e68eed(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold/zm_gold
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xa577299b, Offset: 0x1138
 // Size: 0x1e4
 function private function_36f11a86(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -216,7 +215,7 @@ function private function_36f11a86(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace zm_gold/zm_gold
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xd287bf6b, Offset: 0x1328
 // Size: 0x15c
 function private function_d03c22c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {

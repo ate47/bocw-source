@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\abilities\gadgets\gadget_concertina_wire.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\abilities\gadgets\gadget_concertina_wire;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
 
 #namespace concertina_wire;
 
@@ -60,7 +59,7 @@ function function_806b0f85(attacker, weapon) {
 function function_6190ae9e(origin, *angles, *player) {
     if (isdefined(level.var_87226c31.bundle.var_bc78f60e)) {
         length2 = sqr(level.var_87226c31.bundle.var_bc78f60e + level.var_87226c31.bundle.maxwidth);
-        foreach (protectedzone in level.var_87226c31.var_d6a27a84) {
+        foreach (protectedzone in level.var_87226c31.objectivezones) {
             if (isdefined(protectedzone)) {
                 dist2 = distance2dsquared(player, protectedzone.origin);
                 if (dist2 < length2) {
@@ -76,15 +75,15 @@ function function_6190ae9e(origin, *angles, *player) {
 // Params 1, eflags: 0x0
 // Checksum 0x4e806423, Offset: 0x460
 // Size: 0x34
-function function_18f38647(zone) {
-    array::add(level.var_87226c31.var_d6a27a84, zone);
+function addprotectedzone(zone) {
+    array::add(level.var_87226c31.objectivezones, zone);
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
 // Params 1, eflags: 0x0
 // Checksum 0x845dc832, Offset: 0x4a0
 // Size: 0x34
-function function_60a53911(zone) {
-    arrayremovevalue(level.var_87226c31.var_d6a27a84, zone);
+function removeprotectedzone(zone) {
+    arrayremovevalue(level.var_87226c31.objectivezones, zone);
 }
 

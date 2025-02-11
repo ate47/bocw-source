@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm\zm_gold_vo.gsc;
-#using scripts\zm\zm_gold_main_quest.gsc;
-#using scripts\zm_common\zm_utility_zsurvival.gsc;
-#using scripts\zm\zm_gold_util.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm\zm_gold_main_quest;
+#using scripts\zm\zm_gold_util;
+#using scripts\zm\zm_gold_vo;
+#using scripts\zm_common\zm_utility_zsurvival;
 
 #namespace namespace_2a67e53;
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x79718f2f, Offset: 0x2a8
 // Size: 0xac
 function init() {
@@ -22,7 +21,7 @@ function init() {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x609f984a, Offset: 0x360
 // Size: 0x194
 function private function_613baf1b() {
@@ -37,7 +36,7 @@ function private function_613baf1b() {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xbecdf8af, Offset: 0x500
 // Size: 0x11e
 function private function_26d68622(v_center, var_50721d66) {
@@ -53,7 +52,7 @@ function private function_26d68622(v_center, var_50721d66) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x28fd1ffa, Offset: 0x628
 // Size: 0x82
 function private function_18e95e2b(var_e9a27711, s_screen) {
@@ -64,7 +63,7 @@ function private function_18e95e2b(var_e9a27711, s_screen) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x12397e6, Offset: 0x6b8
 // Size: 0x5e6
 function private function_626826e8(v_center, var_50721d66) {
@@ -102,15 +101,15 @@ function private function_626826e8(v_center, var_50721d66) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x976f43c1, Offset: 0xca8
 // Size: 0x398
 function function_902089af(e_player) {
     level endon(#"end_game");
-    e_player val::set(#"hash_20ca625deb016343", "disable_weapons", 1);
-    e_player val::set(#"hash_20ca625deb016343", "allow_crouch", 0);
-    e_player val::set(#"hash_20ca625deb016343", "allow_prone", 0);
-    e_player val::set(#"hash_20ca625deb016343", "allow_jump", 0);
+    e_player val::set(#"satellite_terminal", "disable_weapons", 1);
+    e_player val::set(#"satellite_terminal", "allow_crouch", 0);
+    e_player val::set(#"satellite_terminal", "allow_prone", 0);
+    e_player val::set(#"satellite_terminal", "allow_jump", 0);
     e_player namespace_553954de::function_14bada94();
     e_player zm_gold_util::function_b488623(1);
     level.terminal.screen.entity setmodel(level.terminal.screen.model);
@@ -119,7 +118,7 @@ function function_902089af(e_player) {
     level.terminal.control clientfield::set("" + #"hash_4545e81f76244b", 1);
     level thread function_d59c42ab(level.terminal);
     s_result = e_player function_f3c47da1(level.terminal, self);
-    level notify(#"hash_76c5d10560b669a7");
+    level notify(#"terminal_off");
     level.terminal.screen.info function_92c05efb(undefined);
     level.terminal.control clientfield::set("" + #"hash_4545e81f76244b", 0);
     level.terminal.screen.entity stoploopsound();
@@ -127,18 +126,18 @@ function function_902089af(e_player) {
     level.terminal.screen.entity setmodel(#"hash_117b941d47272b4f");
     if (isdefined(e_player)) {
         e_player zm_gold_util::function_b488623(0);
-        e_player val::reset_all(#"hash_20ca625deb016343");
+        e_player val::reset_all(#"satellite_terminal");
         e_player namespace_553954de::function_548f282();
     }
     return s_result;
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbeb8085, Offset: 0x1048
 // Size: 0x11e
 function cleanup() {
-    level notify(#"hash_76c5d10560b669a7");
+    level notify(#"terminal_off");
     waitframe(1);
     if (isdefined(level.terminal.screen.entity)) {
         level.terminal.screen.entity setmodel(#"hash_117b941d47272b4f");
@@ -154,7 +153,7 @@ function cleanup() {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf7b20133, Offset: 0x1170
 // Size: 0x5c
 function private function_4b648627(var_e9a27711) {
@@ -163,11 +162,11 @@ function private function_4b648627(var_e9a27711) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x20ceaf7, Offset: 0x11d8
 // Size: 0x17e
 function function_d59c42ab(var_3f94a5b6) {
-    level endon(#"hash_76c5d10560b669a7");
+    level endon(#"terminal_off");
     var_3f94a5b6.screen.info function_92c05efb(var_3f94a5b6.target);
     while (true) {
         if (!isdefined(var_3f94a5b6.target) || !var_3f94a5b6.target function_4b648627(var_3f94a5b6.cursor)) {
@@ -187,7 +186,7 @@ function function_d59c42ab(var_3f94a5b6) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcaa5f3fa, Offset: 0x1360
 // Size: 0x11c
 function function_92c05efb(var_9da78756) {
@@ -211,7 +210,7 @@ function function_92c05efb(var_9da78756) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x52c5fc83, Offset: 0x1488
 // Size: 0x13a
 function private function_1e3823bc(var_3f94a5b6) {
@@ -230,7 +229,7 @@ function private function_1e3823bc(var_3f94a5b6) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa996b9dc, Offset: 0x15d0
 // Size: 0x1ea
 function private function_d25d2a9(var_e9a27711, s_screen, var_7b1452d6, n_active = 0) {
@@ -251,20 +250,20 @@ function private function_d25d2a9(var_e9a27711, s_screen, var_7b1452d6, n_active
     // Checksum 0xdb672c10, Offset: 0x17c8
     // Size: 0xbe
     function private function_dae63c17() {
-        level endon(#"end_game", #"hash_76c5d10560b669a7");
+        level endon(#"end_game", #"terminal_off");
         self endon(#"disconnect", #"death");
         while (true) {
-            self iprintlnbold("<unknown string>");
-            self iprintlnbold("<unknown string>");
-            self iprintlnbold("<unknown string>");
-            wait(5);
+            self iprintlnbold("<dev string:x38>");
+            self iprintlnbold("<dev string:x5d>");
+            self iprintlnbold("<dev string:x82>");
+            wait 5;
         }
     }
 
 #/
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x61345968, Offset: 0x1890
 // Size: 0x14a
 function function_b699cdc8(var_3f94a5b6) {
@@ -290,11 +289,11 @@ function function_b699cdc8(var_3f94a5b6) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc1aed20a, Offset: 0x19e8
 // Size: 0x146
 function private function_d228e8b0(var_3f94a5b6) {
-    level endon(#"hash_76c5d10560b669a7");
+    level endon(#"terminal_off");
     self endon(#"disconnect", #"death");
     while (true) {
         waitresult = self waittill(#"menuresponse");
@@ -314,14 +313,14 @@ function private function_d228e8b0(var_3f94a5b6) {
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x35edf815, Offset: 0x1b38
 // Size: 0x122e
 function function_f3c47da1(var_3f94a5b6, e_trigger) {
-    level endon(#"hash_76c5d10560b669a7");
+    level endon(#"terminal_off");
     self endon(#"disconnect", #"death");
     e_trigger endon(#"death");
-    var_982da0b4 = 0;
+    b_warning = 0;
     /#
         self thread function_dae63c17();
     #/
@@ -350,8 +349,8 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                 } else {
                     level.terminal.screen.entity playsound(#"hash_5fefa13a2bdf38d3");
                     level thread zm_gold_vo::function_8cc97115();
-                    wait(0.5);
-                    var_982da0b4 = 1;
+                    wait 0.5;
+                    b_warning = 1;
                 }
                 s_result = {#success:b_success};
                 v_delta = var_3f94a5b6.cursor - var_3f94a5b6.screen.center;
@@ -383,7 +382,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
             }
         #/
         if (s_input.updown != 0 || s_input.var_93354cc2 != 0) {
-            var_982da0b4 = 0;
+            b_warning = 0;
             a_angles = [];
             var_37503ff5 = [];
             self function_bc82f900(#"hash_b102b3c65a5b674");
@@ -393,7 +392,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                 n_angle = var_3f94a5b6.control.angles[0];
                 /#
                     line(s_screen.center + v_anchor, var_3f94a5b6.cursor, (0, 1, 0), 1, 0);
-                    print3d(var_3f94a5b6.cursor + (0, 0, 2), n_angle + "<unknown string>" + n_radius, (0, 1, 0), 1, 0.1);
+                    print3d(var_3f94a5b6.cursor + (0, 0, 2), n_angle + "<dev string:x9b>" + n_radius, (0, 1, 0), 1, 0.1);
                 #/
                 var_26c827e8 = abs(v_anchor[2] + s_screen.half_size[2]) / n_radius;
                 a_angles[0] = var_26c827e8 < 1 ? asin(var_26c827e8) : 0;
@@ -447,7 +446,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                 n_angle = var_3f94a5b6.control.angles[1];
                 /#
                     line(s_screen.center + v_anchor, var_3f94a5b6.cursor, (0, 0, 1), 1, 0);
-                    print3d(var_3f94a5b6.cursor - (0, 0, 2), n_angle + "<unknown string>" + n_radius, (0, 0, 1), 1, 0.1);
+                    print3d(var_3f94a5b6.cursor - (0, 0, 2), n_angle + "<dev string:x9b>" + n_radius, (0, 0, 1), 1, 0.1);
                 #/
                 var_c575b928 = abs(v_anchor[2] - s_screen.half_size[2]) / n_radius;
                 a_angles[0] = var_c575b928 < 1 ? acos(var_c575b928) : 0;
@@ -501,7 +500,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
             #/
             var_3f94a5b6.cursor = v_target;
             level function_d25d2a9(var_3f94a5b6.cursor, s_screen, var_3f94a5b6.control, n_active);
-            wait(0.05);
+            wait 0.05;
             continue;
         }
         waitframe(1);

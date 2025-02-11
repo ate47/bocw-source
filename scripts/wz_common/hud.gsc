@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
+#using scripts\wz_common\util;
 
 #namespace hud;
 
 // Namespace hud/hud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xda0eda8a, Offset: 0x3f0
 // Size: 0x3f4
 function function_9b9cecdf() {
@@ -38,11 +37,11 @@ function function_9b9cecdf() {
 }
 
 // Namespace hud/hud
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x696c8ede, Offset: 0x7f0
 // Size: 0x3c
 function private on_player_spawned() {
-    wait(0.5);
+    wait 0.5;
     if (!isplayer(self)) {
         return;
     }
@@ -50,7 +49,7 @@ function private on_player_spawned() {
 }
 
 // Namespace hud/hud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8cf622b7, Offset: 0x838
 // Size: 0xec
 function function_2f66bc37() {
@@ -62,7 +61,7 @@ function function_2f66bc37() {
 }
 
 // Namespace hud/hud
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x97f7efae, Offset: 0x930
 // Size: 0x8c
 function function_cb4b48d5(var_80427091 = 1) {
@@ -74,7 +73,7 @@ function function_cb4b48d5(var_80427091 = 1) {
 }
 
 // Namespace hud/hud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1b53aeb5, Offset: 0x9c8
 // Size: 0x14
 function function_22df4165() {
@@ -82,7 +81,7 @@ function function_22df4165() {
 }
 
 // Namespace hud/hud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc9cdcfaa, Offset: 0x9e8
 // Size: 0x48
 function function_5db32126() {
@@ -95,7 +94,7 @@ function function_5db32126() {
 }
 
 // Namespace hud/hud
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb5e0a98f, Offset: 0xa38
 // Size: 0xec
 function private function_ed40d523() {
@@ -111,7 +110,7 @@ function private function_ed40d523() {
 }
 
 // Namespace hud/hud
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9b27c06a, Offset: 0xb30
 // Size: 0x152
 function function_e91890a7() {

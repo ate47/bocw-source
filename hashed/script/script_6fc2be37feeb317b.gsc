@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5a8a1aa32dea1a04;
-#using script_3ddf84b7bb3bf47d;
-#using scripts\zm_common\aats\zm_aat.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility_zsurvival.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using script_3ddf84b7bb3bf47d;
+#using script_5a8a1aa32dea1a04;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\zm_common\aats\zm_aat;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_utility_zsurvival;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_4b9fccd8;
 
@@ -36,7 +35,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7069a258, Offset: 0x340
 // Size: 0x134
 function preinit() {
@@ -53,18 +52,18 @@ function preinit() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfc421db7, Offset: 0x480
 // Size: 0xa4
 function postinit() {
-    mapdestinations = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
+    mapdestinations = struct::get_array(#"content_destination", "variantname");
     if (is_true(getgametypesetting(#"zmpapenabled")) && isdefined(mapdestinations) && mapdestinations.size > 0) {
         level thread function_329ecd95(mapdestinations[0]);
     }
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbc9023aa, Offset: 0x530
 // Size: 0x308
 function function_a5ed2da0() {
@@ -93,7 +92,7 @@ function function_a5ed2da0() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb43dd5aa, Offset: 0x840
 // Size: 0x90
 function function_cb9d309b(var_beee4994) {
@@ -103,11 +102,11 @@ function function_cb9d309b(var_beee4994) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd89c797a, Offset: 0x8d8
 // Size: 0x29c
 function function_e0069640(struct) {
-    assert(isstruct(struct), "<unknown string>");
+    assert(isstruct(struct), "<dev string:x38>");
     if (zm_utility::is_survival()) {
         var_c6d25878 = &zm_utility::function_f5a222a8;
     } else {
@@ -137,7 +136,7 @@ function function_e0069640(struct) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe542a81d, Offset: 0xb80
 // Size: 0x138
 function function_395f9528() {
@@ -155,7 +154,7 @@ function function_395f9528() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4df0559c, Offset: 0xcc0
 // Size: 0x170
 function function_f15be4f1() {
@@ -172,14 +171,14 @@ function function_f15be4f1() {
                 s_result.attacker.var_54c2b211 = 1;
             }
             self clientfield::set("weapon_machine_fx", 0);
-            wait(0.5);
+            wait 0.5;
             self clientfield::set("weapon_machine_fx", 1);
         }
     }
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf839b6f7, Offset: 0xe38
 // Size: 0x1cc
 function function_5b75a557(eventstruct) {
@@ -187,7 +186,7 @@ function function_5b75a557(eventstruct) {
     machine = self.scriptmodel;
     player endon(#"death");
     self endon(#"death");
-    assert(isdefined(machine), "<unknown string>");
+    assert(isdefined(machine), "<dev string:x5d>");
     if (isplayer(player)) {
         while (player isswitchingweapons()) {
             waitframe(1);
@@ -206,7 +205,7 @@ function function_5b75a557(eventstruct) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf2137d10, Offset: 0x1010
 // Size: 0x34
 function private on_connect() {
@@ -214,7 +213,7 @@ function private on_connect() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5ad15c29, Offset: 0x1050
 // Size: 0xec
 function private function_90017e84(params) {
@@ -238,7 +237,7 @@ function private function_90017e84(params) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6d27a948, Offset: 0x1148
 // Size: 0x28a
 function function_e3af0084() {
@@ -266,12 +265,12 @@ function function_e3af0084() {
             self clientfield::set_player_uimodel("pap_current", 0);
         }
         self zm_aat::function_ec7953fa();
-        waitresult = self waittill(#"weapon_change", #"hash_4de2d5115dc310e2", #"hash_75ec9942d2d5fd0f", #"hash_5cd57762f792396b", #"hash_3713641b67661d30");
+        waitresult = self waittill(#"weapon_change", #"aat_acquired", #"hash_75ec9942d2d5fd0f", #"hash_5cd57762f792396b", #"hash_3713641b67661d30");
     }
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x92fafc41, Offset: 0x13e0
 // Size: 0x7e
 function function_10e802ad() {
@@ -281,7 +280,7 @@ function function_10e802ad() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1d6b6572, Offset: 0x1468
 // Size: 0x166
 function function_6c71e778(machine, trigger) {
@@ -335,7 +334,7 @@ function function_ee7e837d(item) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaac3a208, Offset: 0x1768
 // Size: 0x30
 function function_d6739845(var_461c9e9e) {
@@ -346,7 +345,7 @@ function function_d6739845(var_461c9e9e) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc840bb63, Offset: 0x17a0
 // Size: 0x1a4
 function function_a9a3d4e0(machine, trigger) {
@@ -365,7 +364,7 @@ function function_a9a3d4e0(machine, trigger) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdca3c8db, Offset: 0x1950
 // Size: 0x1b4
 function function_ef9d58d0(item, weapon) {
@@ -400,7 +399,7 @@ function function_ef9d58d0(item, weapon) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1890e220, Offset: 0x1b10
 // Size: 0x1a4
 function function_d2b370d7(aat_name, var_c3317960) {
@@ -445,7 +444,7 @@ function function_d2b370d7(aat_name, var_c3317960) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc25df980, Offset: 0x1cc0
 // Size: 0xd9e
 function function_4609e67c(machine, trigger) {
@@ -560,7 +559,7 @@ function function_4609e67c(machine, trigger) {
                     }
                 }
                 break;
-            case #"hash_199f079f459775b4":
+            case #"pap_purchase":
                 if (self isswitchingweapons() || is_true(self.var_c685a4c6) || isdefined(item.paplv) && item.paplv >= 3 || item.paplv === intpayload) {
                     machine playsoundtoplayer(#"uin_default_action_denied", self);
                 } else {
@@ -603,7 +602,7 @@ function function_4609e67c(machine, trigger) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc323f036, Offset: 0x2a68
 // Size: 0x112
 function function_be24d7ce(item) {
@@ -627,7 +626,7 @@ function function_be24d7ce(item) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5b07d9c, Offset: 0x2b88
 // Size: 0x44
 function function_329ecd95(destination) {
@@ -637,7 +636,7 @@ function function_329ecd95(destination) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x716ae3ea, Offset: 0x2bd8
 // Size: 0x16c
 function function_ff03fdfb(destination) {
@@ -645,9 +644,9 @@ function function_ff03fdfb(destination) {
         level waittill(level.var_ce45839f);
     }
     foreach (location in destination.locations) {
-        var_55bc5738 = location.instances[#"hash_448adaf187bbb953"];
-        if (isdefined(var_55bc5738)) {
-            children = content_manager::get_children(var_55bc5738);
+        weapon_machine = location.instances[#"weapon_machine"];
+        if (isdefined(weapon_machine)) {
+            children = content_manager::get_children(weapon_machine);
             foreach (child in children) {
                 function_e0069640(child);
             }
@@ -656,7 +655,7 @@ function function_ff03fdfb(destination) {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6ffb3ca7, Offset: 0x2d50
 // Size: 0xc4
 function function_80287c83(weapon, str_ammo_mod) {

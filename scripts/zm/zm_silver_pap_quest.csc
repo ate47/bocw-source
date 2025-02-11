@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_ping.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_ping;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_silver_pap_quest;
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5d3ad6f7, Offset: 0x1f8
 // Size: 0x4fc
 function init_clientfield() {
@@ -33,7 +32,7 @@ function init_clientfield() {
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x89a0320c, Offset: 0x700
 // Size: 0x6c
 function function_ceb6041f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -43,7 +42,7 @@ function function_ceb6041f(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1215396b, Offset: 0x778
 // Size: 0x6c
 function function_b56e6c7e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -53,7 +52,7 @@ function function_b56e6c7e(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x423f3f09, Offset: 0x7f0
 // Size: 0x6c
 function function_483f3ae0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -63,7 +62,7 @@ function function_483f3ae0(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2e8e159e, Offset: 0x868
 // Size: 0x134
 function function_840cc260(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -83,7 +82,7 @@ function function_840cc260(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x34bcf810, Offset: 0x9a8
 // Size: 0x94
 function function_6902ffa4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -94,7 +93,7 @@ function function_6902ffa4(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd3cd9e9a, Offset: 0xa48
 // Size: 0xe2
 function function_e5ffabef(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -111,7 +110,7 @@ function function_e5ffabef(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7de7bfc6, Offset: 0xb38
 // Size: 0x10c
 function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -127,7 +126,7 @@ function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbd9fea8d, Offset: 0xc50
 // Size: 0xc4
 function function_33082eb4(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -140,7 +139,7 @@ function function_33082eb4(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3402a07e, Offset: 0xd20
 // Size: 0x150
 function function_4dff5056(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -158,12 +157,12 @@ function function_4dff5056(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x779ed960, Offset: 0xe78
 // Size: 0x94
 function function_b28348c(localclientnum) {
     self endon(#"death");
-    wait(3.5);
+    wait 3.5;
     if (self zm_utility::function_f8796df3(localclientnum)) {
         playviewmodelfx(localclientnum, #"hash_255cc054085bf4c4", "tag_torso");
         return;
@@ -172,7 +171,7 @@ function function_b28348c(localclientnum) {
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x63364ed3, Offset: 0xf18
 // Size: 0x84
 function function_c4603212(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -183,7 +182,7 @@ function function_c4603212(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xfdf3be0c, Offset: 0xfa8
 // Size: 0x15e
 function function_760c94c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -204,7 +203,7 @@ function function_760c94c(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x48449ab4, Offset: 0x1110
 // Size: 0x74
 function function_2424f2ac(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -214,7 +213,7 @@ function function_2424f2ac(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8589e75f, Offset: 0x1190
 // Size: 0x194
 function function_32b2a189(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -234,7 +233,7 @@ function function_32b2a189(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x466174be, Offset: 0x1330
 // Size: 0x37c
 function function_619cd4e5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

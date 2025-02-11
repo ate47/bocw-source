@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_746267f0669c40ae;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
 
 #namespace namespace_21dd166c;
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd3b2ffab, Offset: 0x3b8
 // Size: 0x50
 function function_ee83bc59(&array) {
@@ -17,7 +16,7 @@ function function_ee83bc59(&array) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc080169d, Offset: 0x410
 // Size: 0x54
 function function_b5f93b3b(&array) {
@@ -28,7 +27,7 @@ function function_b5f93b3b(&array) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf4dced4e, Offset: 0x470
 // Size: 0x16a
 function function_72c2ebdd(array, weights) {
@@ -85,7 +84,7 @@ function private function_53808d89(n, grid, mins, maxs) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa6d9de2e, Offset: 0x878
 // Size: 0x9e
 function private function_d5a0b1bc(&grid) {
@@ -104,7 +103,7 @@ function private function_d5a0b1bc(&grid) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb0cf70da, Offset: 0x920
 // Size: 0xf6
 function private function_2679112e() {
@@ -123,7 +122,7 @@ function private function_2679112e() {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x12a1b288, Offset: 0xa20
 // Size: 0x130
 function private function_d5a0313a() {
@@ -151,7 +150,7 @@ function private function_d5a0313a() {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc00d728, Offset: 0xb58
 // Size: 0x34
 function function_c083433f() {
@@ -160,7 +159,7 @@ function function_c083433f() {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcc6d40e3, Offset: 0xb98
 // Size: 0x4c
 function private function_f4ad1256(var_ac850bbc) {
@@ -169,13 +168,13 @@ function private function_f4ad1256(var_ac850bbc) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x230b5e08, Offset: 0xbf0
 // Size: 0x380
 function function_3846f71f() {
     self notify("2509726c959861cb");
     self endon("2509726c959861cb");
-    level endon(#"hash_521118da55424987");
+    level endon(#"rg_abort");
     if (!isdefined(level.var_5b193175)) {
         level.var_5b193175 = &function_f4ad1256;
     }
@@ -223,7 +222,7 @@ function function_3846f71f() {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x84bda81c, Offset: 0xf78
 // Size: 0xa1a
 function private function_f27dcbdb(var_ac850bbc) {
@@ -301,7 +300,7 @@ function private function_f27dcbdb(var_ac850bbc) {
     }
     /#
         if (var_6337f20.size > 0) {
-            println("<unknown string>" + var_6337f20.size + "<unknown string>");
+            println("<dev string:x38>" + var_6337f20.size + "<dev string:x42>");
             function_50a302e0(var_ac850bbc.grid, var_ac850bbc.mins, var_ac850bbc.maxs);
         }
     #/
@@ -342,7 +341,7 @@ function private function_f27dcbdb(var_ac850bbc) {
     }
     /#
         if (var_6337f20.size > 0) {
-            println("<unknown string>" + var_6337f20.size + "<unknown string>");
+            println("<dev string:x56>" + var_6337f20.size + "<dev string:x62>");
             function_50a302e0(var_ac850bbc.grid, var_ac850bbc.mins, var_ac850bbc.maxs);
         }
     #/
@@ -350,7 +349,7 @@ function private function_f27dcbdb(var_ac850bbc) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb926b15b, Offset: 0x19a0
 // Size: 0x2e
 function private function_9b4fd56b(var_ac850bbc) {
@@ -358,7 +357,7 @@ function private function_9b4fd56b(var_ac850bbc) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb7d2eb93, Offset: 0x19d8
 // Size: 0xf0c
 function private function_a1b9e7c0(grid) {
@@ -518,7 +517,7 @@ function private function_a1b9e7c0(grid) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x10cda904, Offset: 0x28f0
 // Size: 0xa8
 function function_7f9c08bb(row, col, dir) {
@@ -536,7 +535,7 @@ function function_7f9c08bb(row, col, dir) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xe2779758, Offset: 0x29a0
 // Size: 0x96
 function private function_1cbb1766(row, col, dir) {
@@ -554,7 +553,7 @@ function private function_1cbb1766(row, col, dir) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6ea9a365, Offset: 0x2a40
 // Size: 0x8c
 function private function_a91abf58(var_ac850bbc) {
@@ -567,7 +566,7 @@ function private function_a91abf58(var_ac850bbc) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd286ceb5, Offset: 0x2ad8
 // Size: 0x518
 function private function_6673d10c(var_ac850bbc) {
@@ -586,7 +585,7 @@ function private function_6673d10c(var_ac850bbc) {
                 edge = function_1cbb1766(var_68ba8360.row, var_68ba8360.col, 2);
                 var_57873587[var_5dba4756] = edge;
             }
-            edge.var_47a3990 = 1;
+            edge.connection_type = 1;
         }
         if (var_68ba8360.exits & 8 && var_68ba8360.row > mins.row && isdefined(grid[var_68ba8360.row - 1][var_68ba8360.col].height)) {
             var_5dba4756 = function_7f9c08bb(var_68ba8360.row, var_68ba8360.col, 8);
@@ -595,7 +594,7 @@ function private function_6673d10c(var_ac850bbc) {
                 edge = function_1cbb1766(var_68ba8360.row, var_68ba8360.col, 8);
                 var_57873587[var_5dba4756] = edge;
             }
-            edge.var_47a3990 = 1;
+            edge.connection_type = 1;
         }
         if (var_68ba8360.exits & 4 && var_68ba8360.col < maxs.row && isdefined(grid[var_68ba8360.row][var_68ba8360.col + 1].height)) {
             var_5dba4756 = function_7f9c08bb(var_68ba8360.row, var_68ba8360.col, 4);
@@ -604,7 +603,7 @@ function private function_6673d10c(var_ac850bbc) {
                 edge = function_1cbb1766(var_68ba8360.row, var_68ba8360.col, 4);
                 var_57873587[var_5dba4756] = edge;
             }
-            edge.var_47a3990 = 1;
+            edge.connection_type = 1;
         }
         if (var_68ba8360.exits & 1 && var_68ba8360.col > mins.col && isdefined(grid[var_68ba8360.row][var_68ba8360.col - 1].height)) {
             var_5dba4756 = function_7f9c08bb(var_68ba8360.row, var_68ba8360.col, 1);
@@ -613,7 +612,7 @@ function private function_6673d10c(var_ac850bbc) {
                 edge = function_1cbb1766(var_68ba8360.row, var_68ba8360.col, 1);
                 var_57873587[var_5dba4756] = edge;
             }
-            edge.var_47a3990 = 1;
+            edge.connection_type = 1;
         }
         if (!getdvarint(#"hash_55c78475b1ebf3de", 1)) {
             waitframe(1);
@@ -653,7 +652,7 @@ function private function_41cea16c(var_e5a03c2d) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x38b6248f, Offset: 0x3188
 // Size: 0x28
 function function_ad3c4c28(left, right) {
@@ -661,7 +660,7 @@ function function_ad3c4c28(left, right) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x15658cc4, Offset: 0x31b8
 // Size: 0xd4
 function private function_42d4c400(edge, var_b17324f2) {
@@ -684,7 +683,7 @@ function private function_42d4c400(edge, var_b17324f2) {
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xf036b3a7, Offset: 0x3298
 // Size: 0x1e6
 function private function_d10d1a39(membership, edge, var_b17324f2) {
@@ -777,7 +776,7 @@ function private function_6544fed5(var_e5a03c2d) {
             line(grid[0][24].origin + (512, 512, 0), grid[24][24].origin + (512, -512, 0), boxcolor);
             for (i = 0; i < 25; i++) {
                 for (j = 0; j < 25; j++) {
-                    print3d(grid[i][j].origin + (0, 0, 12), "<unknown string>" + i + "<unknown string>" + j + "<unknown string>", boxcolor, 1, 5);
+                    print3d(grid[i][j].origin + (0, 0, 12), "<dev string:x75>" + i + "<dev string:x7a>" + j + "<dev string:x80>", boxcolor, 1, 5);
                 }
             }
             waitframe(1);
@@ -789,58 +788,58 @@ function private function_6544fed5(var_e5a03c2d) {
     // Checksum 0xa9671763, Offset: 0x39a0
     // Size: 0x4fc
     function private function_50a302e0(grid, mins, maxs) {
-        print("<unknown string>");
+        print("<dev string:x85>");
         for (j = mins.col; j <= maxs.col; j++) {
-            print("<unknown string>");
+            print("<dev string:x8a>");
         }
-        println("<unknown string>");
+        println("<dev string:x92>");
         for (i = mins.row; i <= maxs.row; i++) {
-            print("<unknown string>");
+            print("<dev string:x85>");
             for (j = mins.col; j <= maxs.col; j++) {
                 if (isdefined(grid[i][j].exits)) {
                     if (grid[i][j].exits & 8) {
-                        var_9b9b1d8c = grid[i][j].var_4e8e65e4 === 1 ? "<unknown string>" : "<unknown string>";
-                        print("<unknown string>" + var_9b9b1d8c + "<unknown string>");
+                        var_9b9b1d8c = grid[i][j].var_4e8e65e4 === 1 ? "<dev string:x96>" : "<dev string:x9b>";
+                        print("<dev string:xa0>" + var_9b9b1d8c + "<dev string:xa5>");
                     } else {
-                        print("<unknown string>");
+                        print("<dev string:xab>");
                     }
                     continue;
                 }
-                print("<unknown string>");
+                print("<dev string:xb3>");
             }
-            println("<unknown string>");
-            print("<unknown string>");
+            println("<dev string:x92>");
+            print("<dev string:x85>");
             for (j = mins.col; j <= maxs.col; j++) {
                 if (isdefined(grid[i][j].exits)) {
-                    var_9b9b1d8c = grid[i][j].var_4e8e65e4 === 1 ? "<unknown string>" : "<unknown string>";
-                    print(grid[i][j].exits & 1 ? var_9b9b1d8c : "<unknown string>");
+                    var_9b9b1d8c = grid[i][j].var_4e8e65e4 === 1 ? "<dev string:x96>" : "<dev string:x9b>";
+                    print(grid[i][j].exits & 1 ? var_9b9b1d8c : "<dev string:xa0>");
                     print(var_9b9b1d8c);
-                    print(grid[i][j].exits & 4 ? var_9b9b1d8c : "<unknown string>");
-                    print("<unknown string>");
+                    print(grid[i][j].exits & 4 ? var_9b9b1d8c : "<dev string:xa0>");
+                    print("<dev string:x85>");
                     continue;
                 }
-                print("<unknown string>");
+                print("<dev string:xb3>");
             }
-            println("<unknown string>");
-            print("<unknown string>");
+            println("<dev string:x92>");
+            print("<dev string:x85>");
             for (j = mins.col; j <= maxs.col; j++) {
                 if (isdefined(grid[i][j].exits)) {
                     if (grid[i][j].exits & 2) {
-                        var_9b9b1d8c = grid[i][j].var_4e8e65e4 === 1 ? "<unknown string>" : "<unknown string>";
-                        print("<unknown string>" + var_9b9b1d8c + "<unknown string>");
+                        var_9b9b1d8c = grid[i][j].var_4e8e65e4 === 1 ? "<dev string:x96>" : "<dev string:x9b>";
+                        print("<dev string:xa0>" + var_9b9b1d8c + "<dev string:xa5>");
                     } else {
-                        print("<unknown string>");
+                        print("<dev string:xab>");
                     }
                     continue;
                 }
-                print("<unknown string>");
+                print("<dev string:xb3>");
             }
-            println("<unknown string>");
-            print("<unknown string>");
+            println("<dev string:x92>");
+            print("<dev string:x85>");
             for (j = mins.col; j <= maxs.col; j++) {
-                print("<unknown string>");
+                print("<dev string:x8a>");
             }
-            println("<unknown string>");
+            println("<dev string:x92>");
         }
     }
 
@@ -849,7 +848,7 @@ function private function_6544fed5(var_e5a03c2d) {
     // Checksum 0xaeae7f3f, Offset: 0x3ea8
     // Size: 0x142
     function private function_94306783(var_e5a03c2d, height) {
-        level endon(#"hash_186e943c1cd0db52", #"hash_521118da55424987");
+        level endon(#"hash_186e943c1cd0db52", #"rg_abort");
         if (!isdefined(height)) {
             height = 0;
         }
@@ -872,7 +871,7 @@ function private function_6544fed5(var_e5a03c2d) {
     // Checksum 0xeb98baf8, Offset: 0x3ff8
     // Size: 0x12a
     function private function_a38567b2(edges, height) {
-        level endon(#"hash_186e943c1cd0db52", #"hash_521118da55424987");
+        level endon(#"hash_186e943c1cd0db52", #"rg_abort");
         if (!isdefined(height)) {
             height = 0;
         }
@@ -893,7 +892,7 @@ function private function_6544fed5(var_e5a03c2d) {
     // Checksum 0x7b5d6340, Offset: 0x4130
     // Size: 0x49e
     function private function_7c408b40(grid, mins, maxs, height) {
-        level endon(#"hash_186e943c1cd0db52", #"hash_521118da55424987");
+        level endon(#"hash_186e943c1cd0db52", #"rg_abort");
         if (!isdefined(height)) {
             height = 0;
         }
@@ -926,7 +925,7 @@ function private function_6544fed5(var_e5a03c2d) {
     // Checksum 0xf7f6db42, Offset: 0x45d8
     // Size: 0x1ce
     function private function_9a7586fd(center, height) {
-        level endon(#"hash_186e943c1cd0db52", #"hash_521118da55424987");
+        level endon(#"hash_186e943c1cd0db52", #"rg_abort");
         if (!isdefined(height)) {
             height = 0;
         }

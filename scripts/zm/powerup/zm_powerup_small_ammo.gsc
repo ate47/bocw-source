@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\trials\zm_trial_reset_loadout.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_placeable_mine.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\trials\zm_trial_reset_loadout;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_placeable_mine;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_powerup_small_ammo;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1bdb01c3, Offset: 0x180
 // Size: 0xcc
 function __init__() {
@@ -40,7 +39,7 @@ function __init__() {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9424d998, Offset: 0x258
 // Size: 0x6c
 function function_81558cdf(player) {
@@ -52,7 +51,7 @@ function function_81558cdf(player) {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2a34bd6a, Offset: 0x2d0
 // Size: 0x54
 function function_d7d24283(*e_powerup, player) {
@@ -65,7 +64,7 @@ function function_d7d24283(*e_powerup, player) {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x593a7a2c, Offset: 0x330
 // Size: 0x118
 function function_8be02874(*drop_item, player) {
@@ -85,7 +84,7 @@ function function_8be02874(*drop_item, player) {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe74c20fa, Offset: 0x450
 // Size: 0x208
 function function_ae7afb91(player) {
@@ -93,7 +92,7 @@ function function_ae7afb91(player) {
     player notify(#"zmb_small_ammo");
     player zm_placeable_mine::disable_all_prompts_for_player();
     foreach (slotid in array(17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1)) {
-        weapon1 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(slotid));
+        weapon1 = player item_inventory_util::function_2b83d3ff(player item_inventory::function_2e711614(slotid));
         player function_7374e868(weapon1);
     }
     if (is_true(level.var_2f5a329e)) {
@@ -105,7 +104,7 @@ function function_ae7afb91(player) {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55ca7b0f, Offset: 0x660
 // Size: 0x256
 function function_7374e868(weapon) {
@@ -155,7 +154,7 @@ function function_7374e868(weapon) {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9254dd48, Offset: 0x8c0
 // Size: 0x13c
 function give_clip_of_ammo(w_weapon) {

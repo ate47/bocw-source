@@ -1,30 +1,29 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\draft.gsc;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\persistence_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_44b0b8420eabacad;
+#using script_7a8059ca02b7b09e;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\persistence_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\draft;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
+#using scripts\weapons\weapon_utils;
 
 #namespace gun;
 
@@ -33,7 +32,7 @@
 // Checksum 0xc0505651, Offset: 0x278
 // Size: 0x4c
 function autoexec ignore_systems() {
-    if (util::get_game_type() === #"hash_451623a99cfee5d9") {
+    if (util::get_game_type() === #"gun_rambo") {
         system::ignore(#"killstreaks");
     }
 }
@@ -58,7 +57,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.var_ce802423 = 1;
     level.var_34842a14 = 1;
     level.var_be0e9c3e = "taco_music";
-    if (level.gametype === #"hash_451623a99cfee5d9") {
+    if (level.gametype === #"gun_rambo") {
         game.musicset = "_rgg";
         level.var_be0e9c3e += game.musicset;
     }
@@ -104,7 +103,7 @@ function inactivitykick() {
         return;
     }
     while (level.inactivitykick > self.timeplayed[#"total"]) {
-        wait(1);
+        wait 1;
     }
     if (self.pers[#"participation"] == 0 && self.time_played_moving < 1) {
         globallogic::gamehistoryplayerkicked();
@@ -176,16 +175,16 @@ function onendgame(*var_c1e98979) {
 // Size: 0x4d4
 function function_9ffa772e(var_ad9f582e = 0) {
     loadouts = getscriptbundle(#"hash_64fc10899d9faf46");
-    if (level.gametype === #"hash_451623a99cfee5d9") {
+    if (level.gametype === #"gun_rambo") {
         loadouts = getscriptbundle(#"hash_2deaed5c3e4b941");
     }
     if (!isdefined(loadouts)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         return;
     }
     var_4509f8e = isdefined(loadouts.var_4509f8e) ? loadouts.var_4509f8e : [];
     if (var_4509f8e.size == 0) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x57>");
         return;
     }
     if (var_ad9f582e < 7) {
@@ -195,7 +194,7 @@ function function_9ffa772e(var_ad9f582e = 0) {
         weaponslist = var_4509f8e[var_ad9f582e];
     }
     if (!isdefined(weaponslist)) {
-        assertmsg("<unknown string>" + var_ad9f582e + "<unknown string>");
+        assertmsg("<dev string:x72>" + var_ad9f582e + "<dev string:x9c>");
         return;
     }
     tiers = isdefined(weaponslist.tiers) ? weaponslist.tiers : [];
@@ -205,7 +204,7 @@ function function_9ffa772e(var_ad9f582e = 0) {
         }
     }
     if (tiers.size == 0) {
-        assertmsg("<unknown string>" + var_ad9f582e + "<unknown string>");
+        assertmsg("<dev string:xa1>" + var_ad9f582e + "<dev string:x9c>");
         return;
     }
     foreach (tier in tiers) {
@@ -231,7 +230,7 @@ function function_9ffa772e(var_ad9f582e = 0) {
         camoindex = option.var_b704d026 !== 1 ? option.camoindex : 0;
         addguntoprogression(weapon.name, attachments, blueprintindex, camoindex);
     }
-    assert(level.gunprogression.size > 0, "<unknown string>" + var_ad9f582e + "<unknown string>");
+    assert(level.gunprogression.size > 0, "<dev string:xd0>" + var_ad9f582e + "<dev string:x9c>");
 }
 
 // Namespace gun/gun
@@ -265,7 +264,7 @@ function addguntoprogression(weaponname, var_45f60e0f, blueprintindex = 0, camoi
 // Size: 0x4c
 function takeoldweapon(oldweapon) {
     self endon(#"death", #"disconnect");
-    wait(1);
+    wait 1;
     self takeweapon(oldweapon);
 }
 
@@ -277,7 +276,7 @@ function givecustomloadout(takeoldweapon = 0) {
     self loadout::init_player(!takeoldweapon);
     self function_e6f9e3cd();
     self clearperks();
-    if (level.gametype === #"hash_451623a99cfee5d9") {
+    if (level.gametype === #"gun_rambo") {
         self function_b5feff95(#"talent_gungho" + level.game_mode_suffix);
     }
     perks = self getloadoutperks(0);
@@ -324,7 +323,7 @@ function givecustomloadout(takeoldweapon = 0) {
         self giveweapon(secondaryoffhand);
         self setweaponammoclip(secondaryoffhand, 1);
         self loadout::function_442539("secondarygrenade", secondaryoffhand);
-        self ability_util::function_36a15b60(secondaryoffhand);
+        self ability_util::gadget_power_full(secondaryoffhand);
     }
     actionslot3 = getdvarint(#"hash_449fa75f87a4b5b4", 0) < 0 ? "flourish_callouts" : "ping_callouts";
     self setactionslot(3, actionslot3);
@@ -420,7 +419,7 @@ function demoteplayer(attacker) {
 function infiniteammo() {
     self endon(#"death", #"disconnect");
     while (true) {
-        wait(0.1);
+        wait 0.1;
         weapon = self getcurrentweapon();
         self givemaxammo(weapon);
     }
@@ -467,7 +466,7 @@ function function_5c23e4f5() {
     }
     var_5a4bc4d6 = 18;
     var_ee737733 = 15;
-    if (level.gametype === #"hash_451623a99cfee5d9") {
+    if (level.gametype === #"gun_rambo") {
         var_5a4bc4d6 = 19;
         var_ee737733 = 17;
     }
@@ -521,8 +520,8 @@ function function_cfef3f4c() {
         util::init_dvar(#"hash_30c63c4ab5be356f", 0, &function_9209a6f8);
         util::init_dvar(#"hash_62d3e4c605defe30", 0, &function_98c43bf8);
         util::waittill_can_add_debug_command();
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:xfc>");
+        adddebugcommand("<dev string:x165>");
     }
 
     // Namespace gun/gun
@@ -560,9 +559,9 @@ function function_cfef3f4c() {
             player takeweapon(player getcurrentweapon());
             player giveweapon(weapon, weaponoptions, var_f879230e);
             player switchtoweapon(weapon);
-            player iprintlnbold("<unknown string>" + i + 1 + "<unknown string>" + level.gunprogression.size + "<unknown string>" + getweaponname(weapon));
+            player iprintlnbold("<dev string:x1cc>" + i + 1 + "<dev string:x1d0>" + level.gunprogression.size + "<dev string:x1d5>" + getweaponname(weapon));
             result = level waittilltimeout(3, #"hash_a1e5a52aeb09e3c");
-            if (result._notify == "<unknown string>") {
+            if (result._notify == "<dev string:x1db>") {
                 break;
             }
         }
@@ -592,10 +591,10 @@ function function_cfef3f4c() {
         baseorigin = (350, 70, 0);
         var_e97558ce = (0, 25, 0);
         while (true) {
-            debug2dtext(baseorigin, "<unknown string>", (0, 1, 1), 1, (0, 0, 0), 0.8);
+            debug2dtext(baseorigin, "<dev string:x1fe>", (0, 1, 1), 1, (0, 0, 0), 0.8);
             foreach (i, weaponstruct in level.gunprogression) {
                 origin = baseorigin + (i + 1) * var_e97558ce;
-                string = "<unknown string>" + i + 1 + "<unknown string>" + getweaponname(weaponstruct.weapon);
+                string = "<dev string:x1cc>" + i + 1 + "<dev string:x1d5>" + getweaponname(weaponstruct.weapon);
                 debug2dtext(origin, string, (1, 1, 1), 1, (0, 0, 0), 0.8);
             }
             waitframe(1);

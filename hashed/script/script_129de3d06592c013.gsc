@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_1cc417743d7c262d;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\deployable;
+#using scripts\weapons\weaponobjects;
 
 #namespace listening_device;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace listening_device/listening_device
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3556bdd1, Offset: 0x1e8
 // Size: 0x164
 function init_shared() {
@@ -39,7 +38,7 @@ function init_shared() {
 }
 
 // Namespace listening_device/listening_device
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb6169fe4, Offset: 0x358
 // Size: 0x48
 function function_1c601b99() {
@@ -49,7 +48,7 @@ function function_1c601b99() {
 }
 
 // Namespace listening_device/listening_device
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x28c69019, Offset: 0x3a8
 // Size: 0x238
 function function_bff5c062(listening_device, attackingplayer) {
@@ -81,7 +80,7 @@ function function_bff5c062(listening_device, attackingplayer) {
 }
 
 // Namespace listening_device/listening_device
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4c56b5e, Offset: 0x5e8
 // Size: 0x1c2
 function function_2111cf41(watcher) {
@@ -111,7 +110,7 @@ function function_2111cf41(watcher) {
 }
 
 // Namespace listening_device/listening_device
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x461398c8, Offset: 0x7b8
 // Size: 0xd4
 function function_ad011f90(attacker, weapon, target) {
@@ -123,7 +122,7 @@ function function_ad011f90(attacker, weapon, target) {
 }
 
 // Namespace listening_device/listening_device
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa5b05039, Offset: 0x898
 // Size: 0x24
 function function_7b26afb(*player) {
@@ -131,7 +130,7 @@ function function_7b26afb(*player) {
 }
 
 // Namespace listening_device/listening_device
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5abb1e3c, Offset: 0x8c8
 // Size: 0x12c
 function function_8bdff396(watcher, player) {
@@ -154,7 +153,7 @@ function function_8bdff396(watcher, player) {
 }
 
 // Namespace listening_device/listening_device
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xefc6e809, Offset: 0xa00
 // Size: 0x13c
 function function_8af865a6(attacker, *callback_data) {
@@ -170,7 +169,7 @@ function function_8af865a6(attacker, *callback_data) {
 }
 
 // Namespace listening_device/listening_device
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6ca6b9ff, Offset: 0xb48
 // Size: 0x1ea
 function function_23fef963() {
@@ -206,7 +205,7 @@ function function_23fef963() {
 }
 
 // Namespace listening_device/listening_device
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x158b8072, Offset: 0xd40
 // Size: 0x1c
 function private on_game_playing() {
@@ -214,7 +213,7 @@ function private on_game_playing() {
 }
 
 // Namespace listening_device/listening_device
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7016f05a, Offset: 0xd68
 // Size: 0x26
 function private on_weapon_fired(*params) {
@@ -223,7 +222,7 @@ function private on_weapon_fired(*params) {
 }
 
 // Namespace listening_device/listening_device
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x625f020f, Offset: 0xd98
 // Size: 0x3b4
 function function_d993c135() {
@@ -286,12 +285,12 @@ function function_d993c135() {
         if (pass >= 4) {
             pass = 0;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace listening_device/listening_device
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x18c5458b, Offset: 0x1158
 // Size: 0xa34
 function function_f38fc2a8(data) {

@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\scene_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace zm_gold_ww_quest;
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6a733441, Offset: 0x150
 // Size: 0x214
 function init() {
@@ -20,7 +19,7 @@ function init() {
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2430c17, Offset: 0x370
 // Size: 0x122
 function play_charge_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -35,7 +34,7 @@ function play_charge_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x20205bb7, Offset: 0x4a0
 // Size: 0xd2
 function function_b5268151(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -47,7 +46,7 @@ function function_b5268151(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6d526315, Offset: 0x580
 // Size: 0x14c
 function function_770151a9(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -65,7 +64,7 @@ function function_770151a9(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x107cfc3d, Offset: 0x6d8
 // Size: 0x8c
 function function_e9ae3d81(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -74,7 +73,7 @@ function function_e9ae3d81(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf0261ccb, Offset: 0x770
 // Size: 0x1ac
 function function_9b54b294(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -98,7 +97,7 @@ function function_9b54b294(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x96e68360, Offset: 0x928
 // Size: 0x16c
 function private function_5d7d4dd0(localclientnum, var_76f1881e, b_clockwise = 1) {
@@ -118,21 +117,21 @@ function private function_5d7d4dd0(localclientnum, var_76f1881e, b_clockwise = 1
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x65744642, Offset: 0xaa0
 // Size: 0xc4
 function function_5824b6e(var_76f1881e, b_clockwise, localclientnum) {
     level endon(#"end_game");
     self endon(#"death", #"turn_off");
     do {
-        wait(0.5);
+        wait 0.5;
         level function_b2061f2f(b_clockwise, localclientnum);
     } while (level.var_4965c181[localclientnum] != var_76f1881e);
     level.var_838bf3b1[localclientnum] playsound(localclientnum, #"hash_b1ecaea59103899");
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x23589214, Offset: 0xb70
 // Size: 0x204
 function function_b2061f2f(b_clockwise, localclientnum) {
@@ -163,7 +162,7 @@ function function_b2061f2f(b_clockwise, localclientnum) {
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xfacc7b08, Offset: 0xd80
 // Size: 0x12c
 function function_aa1d2bf6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {

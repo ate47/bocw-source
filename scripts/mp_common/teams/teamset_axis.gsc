@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\teams\teamset.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\mp_common\teams\teamset;
 
 #namespace teamset_axis;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace teamset_axis/teamset_axis
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6dc4bfac, Offset: 0x138
 // Size: 0x4c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace teamset_axis/teamset_axis
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x784b1160, Offset: 0x190
 // Size: 0x90
 function init(team) {

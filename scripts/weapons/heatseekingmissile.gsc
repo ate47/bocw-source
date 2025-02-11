@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\dev_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\dev_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace heatseekingmissile;
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80c06d39, Offset: 0x1b8
 // Size: 0xac
 function init_shared() {
@@ -26,7 +25,7 @@ function init_shared() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaf8a28de, Offset: 0x270
 // Size: 0x4c
 function on_player_spawned() {
@@ -36,7 +35,7 @@ function on_player_spawned() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5fec1926, Offset: 0x2c8
 // Size: 0x1f4
 function clearirtarget() {
@@ -71,7 +70,7 @@ function clearirtarget() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3602974, Offset: 0x4c8
 // Size: 0x84
 function function_5e6cd0ab(weapon, attacker) {
@@ -81,7 +80,7 @@ function function_5e6cd0ab(weapon, attacker) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe743c6ae, Offset: 0x558
 // Size: 0x9c
 function function_a439ae56(missile, weapon, attacker) {
@@ -148,7 +147,7 @@ function event_handler[missile_fire] function_a3d258b6(eventstruct) {
 #/
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5ec0bbf7, Offset: 0x958
 // Size: 0xb2
 function getappropriateplayerweapon(currentweapon) {
@@ -167,7 +166,7 @@ function getappropriateplayerweapon(currentweapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53768bae, Offset: 0xa18
 // Size: 0x98
 function stingerwaitforads() {
@@ -183,7 +182,7 @@ function stingerwaitforads() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb237f21, Offset: 0xab8
 // Size: 0x208
 function on_weapon_change(params) {
@@ -217,7 +216,7 @@ function on_weapon_change(params) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa198ba3b, Offset: 0xcc8
 // Size: 0x800
 function stingerirtloop(weapon) {
@@ -359,7 +358,7 @@ function stingerirtloop(weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51a6c0d0, Offset: 0x14d0
 // Size: 0x176
 function targetwithinrangeofplayspace(target) {
@@ -413,10 +412,10 @@ function targetwithinrangeofplayspace(target) {
         self.lockoncanceledmessage.fontscale = 1.25;
         self.lockoncanceledmessage.x = 0;
         self.lockoncanceledmessage.y = 50;
-        self.lockoncanceledmessage.alignx = "<unknown string>";
-        self.lockoncanceledmessage.aligny = "<unknown string>";
-        self.lockoncanceledmessage.horzalign = "<unknown string>";
-        self.lockoncanceledmessage.vertalign = "<unknown string>";
+        self.lockoncanceledmessage.alignx = "<dev string:x38>";
+        self.lockoncanceledmessage.aligny = "<dev string:x42>";
+        self.lockoncanceledmessage.horzalign = "<dev string:x38>";
+        self.lockoncanceledmessage.vertalign = "<dev string:x42>";
         self.lockoncanceledmessage.foreground = 1;
         self.lockoncanceledmessage.hidewheninmenu = 1;
         self.lockoncanceledmessage.archived = 0;
@@ -427,7 +426,7 @@ function targetwithinrangeofplayspace(target) {
 #/
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6b12aa24, Offset: 0x17d8
 // Size: 0xc6
 function private function_d656e945(team) {
@@ -451,7 +450,7 @@ function private function_d656e945(team) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x67298e90, Offset: 0x18a8
 // Size: 0x4ac
 function getbeststingertarget(weapon) {
@@ -531,7 +530,7 @@ function getbeststingertarget(weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2d6fc324, Offset: 0x1d60
 // Size: 0xf0
 function calclockonradius(target, *subtarget, weapon) {
@@ -549,7 +548,7 @@ function calclockonradius(target, *subtarget, weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x25393210, Offset: 0x1e58
 // Size: 0xf0
 function calclockonlossradius(target, *subtarget, weapon) {
@@ -567,7 +566,7 @@ function calclockonlossradius(target, *subtarget, weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7e9af4fe, Offset: 0x1f50
 // Size: 0x62
 function ratiodistancefromscreencenter(target, subtarget, weapon) {
@@ -576,7 +575,7 @@ function ratiodistancefromscreencenter(target, subtarget, weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4a44172a, Offset: 0x1fc0
 // Size: 0x62
 function insidestingerreticledetect(target, subtarget, weapon) {
@@ -594,7 +593,7 @@ function insidestingerreticlenolock(target, subtarget, weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf05b9c75, Offset: 0x20a0
 // Size: 0x62
 function insidestingerreticlelocked(target, subtarget, weapon) {
@@ -603,7 +602,7 @@ function insidestingerreticlelocked(target, subtarget, weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa216b667, Offset: 0x2110
 // Size: 0x12a
 function isstillvalidtarget(ent, weapon, var_7929b469 = 1) {
@@ -629,7 +628,7 @@ function isstillvalidtarget(ent, weapon, var_7929b469 = 1) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc0269e7a, Offset: 0x2248
 // Size: 0x98
 function function_1b76fb42(ent, weapon) {
@@ -648,7 +647,7 @@ function function_1b76fb42(ent, weapon) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5fc391dc, Offset: 0x22e8
 // Size: 0x24
 function playerstingerads() {
@@ -656,7 +655,7 @@ function playerstingerads() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x899cd230, Offset: 0x2318
 // Size: 0xac
 function looplocalseeksound(alias, interval) {
@@ -664,12 +663,12 @@ function looplocalseeksound(alias, interval) {
     for (;;) {
         self playsoundforlocalplayer(alias);
         self playrumbleonentity("stinger_lock_rumble");
-        wait(interval / 2);
+        wait interval / 2;
     }
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa44c308c, Offset: 0x23d0
 // Size: 0x7c
 function playsoundforlocalplayer(alias) {
@@ -684,7 +683,7 @@ function playsoundforlocalplayer(alias) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x16a8ee42, Offset: 0x2458
 // Size: 0x172
 function looplocallocksound(alias, interval) {
@@ -696,20 +695,20 @@ function looplocallocksound(alias, interval) {
     for (;;) {
         self playsoundforlocalplayer(alias);
         self playrumbleonentity("stinger_lock_rumble");
-        wait(interval / 6);
+        wait interval / 6;
         self playsoundforlocalplayer(alias);
         self playrumbleonentity("stinger_lock_rumble");
-        wait(interval / 6);
+        wait interval / 6;
         self playsoundforlocalplayer(alias);
         self playrumbleonentity("stinger_lock_rumble");
-        wait(interval / 6);
+        wait interval / 6;
         self stoprumble("stinger_lock_rumble");
     }
     self.stingerlocksound = undefined;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9fa5ab51, Offset: 0x25d8
 // Size: 0x176
 function locksighttest(target, subtarget, var_27cdcb1 = 0) {
@@ -736,7 +735,7 @@ function locksighttest(target, subtarget, var_27cdcb1 = 0) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xae796eaa, Offset: 0x2758
 // Size: 0xbc
 function softsighttest(var_27cdcb1 = 0) {
@@ -757,7 +756,7 @@ function softsighttest(var_27cdcb1 = 0) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x550afede, Offset: 0x2820
 // Size: 0x42
 function initlockfield(target) {
@@ -770,7 +769,7 @@ function initlockfield(target) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6e5a2b46, Offset: 0x2870
 // Size: 0x19e
 function lockingon(target, lock) {
@@ -793,7 +792,7 @@ function lockingon(target, lock) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x302ce149, Offset: 0x2a18
 // Size: 0x82
 function watchclearlockingon(target, clientnum) {
@@ -804,7 +803,7 @@ function watchclearlockingon(target, clientnum) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2b40f521, Offset: 0x2aa8
 // Size: 0x1b0
 function lockedon(target, lock) {
@@ -839,7 +838,7 @@ function lockedon(target, lock) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99c3f4cb, Offset: 0x2c60
 // Size: 0x1a
 function enemyislocking() {
@@ -847,7 +846,7 @@ function enemyislocking() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcf9395ec, Offset: 0x2c88
 // Size: 0x1a
 function enemylockedon() {
@@ -855,7 +854,7 @@ function enemylockedon() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xcee90e86, Offset: 0x2cb0
 // Size: 0x1c8
 function playlockonsoundsthread(player, var_df318bbf, var_4edd2f28) {
@@ -869,11 +868,11 @@ function playlockonsoundsthread(player, var_df318bbf, var_4edd2f28) {
         while (true) {
             if (self enemyislocking()) {
                 self.locksounds playsoundtoplayer(var_df318bbf, player);
-                wait(0.125);
+                wait 0.125;
             }
             if (self enemylockedon()) {
                 self.locksounds playsoundtoplayer(var_4edd2f28, player);
-                wait(0.125);
+                wait 0.125;
             }
             if (!self enemyislocking() && !self enemylockedon()) {
                 self.locksounds stopsounds();
@@ -884,7 +883,7 @@ function playlockonsoundsthread(player, var_df318bbf, var_4edd2f28) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc2ee26aa, Offset: 0x2e80
 // Size: 0x4c
 function function_c8b14330(vehicle) {
@@ -894,7 +893,7 @@ function function_c8b14330(vehicle) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x67cee0f6, Offset: 0x2ed8
 // Size: 0xe6
 function targetinghacking(target, lock) {
@@ -911,7 +910,7 @@ function targetinghacking(target, lock) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x251cecfa, Offset: 0x2fc8
 // Size: 0x82
 function watchclearhacking(target, clientnum) {
@@ -922,7 +921,7 @@ function watchclearhacking(target, clientnum) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc15386f, Offset: 0x3058
 // Size: 0x5ac
 function setfriendlyflags(weapon, target) {
@@ -996,7 +995,7 @@ function setfriendlyflags(weapon, target) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x49ea9ffd, Offset: 0x3610
 // Size: 0xcc
 function setfriendlyhacking(weapon, target) {
@@ -1015,7 +1014,7 @@ function setfriendlyhacking(weapon, target) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc2d54da0, Offset: 0x36e8
 // Size: 0xcc
 function setfriendlytargetting(weapon, target) {
@@ -1034,7 +1033,7 @@ function setfriendlytargetting(weapon, target) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x94536123, Offset: 0x37c0
 // Size: 0xe4
 function setfriendlytargetlocked(weapon, target) {
@@ -1057,7 +1056,7 @@ function setfriendlytargetlocked(weapon, target) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa71df274, Offset: 0x38b0
 // Size: 0xa8
 function watchclearlockedon(target, clientnum) {
@@ -1105,12 +1104,12 @@ function missiletarget_lockonmonitor(*player, endon1, endon2) {
                 self clientfield::set("heli_warn_locked", 0);
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4762afe, Offset: 0x3bb8
 // Size: 0x104
 function _incomingmissile(missile, attacker) {
@@ -1134,7 +1133,7 @@ function _incomingmissile(missile, attacker) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x319d4d2a, Offset: 0x3cc8
 // Size: 0x84
 function _targetmissiletracker(missile, attacker) {
@@ -1146,7 +1145,7 @@ function _targetmissiletracker(missile, attacker) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc7bb01b2, Offset: 0x3d58
 // Size: 0xfc
 function _incomingmissiletracker(missile, attacker) {
@@ -1165,7 +1164,7 @@ function _incomingmissiletracker(missile, attacker) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2b102f53, Offset: 0x3e60
 // Size: 0x26
 function missiletarget_ismissileincoming() {
@@ -1179,7 +1178,7 @@ function missiletarget_ismissileincoming() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca9ed301, Offset: 0x3e90
 // Size: 0x80
 function missiletarget_isotherplayermissileincoming(attacker) {
@@ -1197,7 +1196,7 @@ function missiletarget_isotherplayermissileincoming(attacker) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb8db66c3, Offset: 0x3f18
 // Size: 0xf6
 function missiletarget_handleincomingmissile(responsefunc, endon1, endon2, allowdirectdamage) {
@@ -1219,7 +1218,7 @@ function missiletarget_handleincomingmissile(responsefunc, endon1, endon2, allow
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xd0549b3, Offset: 0x4018
 // Size: 0xe4
 function missiletarget_proximitydetonateincomingmissile(killstreakbundle, endon1, endon2, allowdirectdamage) {
@@ -1232,7 +1231,7 @@ function missiletarget_proximitydetonateincomingmissile(killstreakbundle, endon1
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x4cc50253, Offset: 0x4108
 // Size: 0x21c
 function _missiledetonate(attacker, weapon, range, mindamage, maxdamage, allowdirectdamage) {
@@ -1262,7 +1261,7 @@ function _missiledetonate(attacker, weapon, range, mindamage, maxdamage, allowdi
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xb912d96e, Offset: 0x4330
 // Size: 0x3a8
 function missiletarget_proximitydetonate(missile, attacker, weapon, endon1, endon2, allowdirectdamage) {
@@ -1320,7 +1319,7 @@ function missiletarget_proximitydetonate(missile, attacker, weapon, endon1, endo
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4995a434, Offset: 0x46e0
 // Size: 0x104
 function missiletarget_playflarefx(flare_fx, tag_origin) {
@@ -1349,7 +1348,7 @@ function missiletarget_playflarefx(flare_fx, tag_origin) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x88e44297, Offset: 0x47f0
 // Size: 0x290
 function missiletarget_deployflares(origin, angles) {

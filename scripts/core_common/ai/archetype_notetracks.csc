@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai_shared.csc;
+#using scripts\core_common\ai_shared;
 
 #namespace notetracks;
 
@@ -15,7 +14,7 @@ function autoexec main() {
 }
 
 // Namespace notetracks/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6dd722c8, Offset: 0x178
 // Size: 0x84
 function private initializenotetrackhandlers(localclientnum) {
@@ -25,7 +24,7 @@ function private initializenotetrackhandlers(localclientnum) {
 }
 
 // Namespace notetracks/archetype_notetracks
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x200b123f, Offset: 0x208
 // Size: 0x44
 function private addsurfacenotetrackfxhandler(localclientnum, notetrack, surfacetable) {
@@ -34,7 +33,7 @@ function private addsurfacenotetrackfxhandler(localclientnum, notetrack, surface
 }
 
 // Namespace notetracks/archetype_notetracks
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x4bb412d1, Offset: 0x258
 // Size: 0xa0
 function private handlesurfacenotetrackfx(localclientnum, notetrack, surfacetable) {

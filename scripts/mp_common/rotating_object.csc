@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace rotating_object;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace rotating_object/rotating_object
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x98a31556, Offset: 0x110
 // Size: 0x24
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace rotating_object/rotating_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd8c10c4b, Offset: 0x140
 // Size: 0x5c
 function init(localclientnum) {
@@ -32,7 +31,7 @@ function init(localclientnum) {
 }
 
 // Namespace rotating_object/rotating_object
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe27600bc, Offset: 0x1a8
 // Size: 0x1fa
 function rotating_object_think() {

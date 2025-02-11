@@ -1,35 +1,34 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_774302f762d76254;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_774302f762d76254;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_56b772a5;
 
 // Namespace namespace_56b772a5/namespace_c995c40a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc0518871, Offset: 0x1a8
 // Size: 0x94
 function function_160c9deb(heli) {
@@ -42,7 +41,7 @@ function function_160c9deb(heli) {
 }
 
 // Namespace namespace_56b772a5/namespace_c995c40a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xca2f2d2f, Offset: 0x248
 // Size: 0x58c
 function function_ee81f2ca(origin, player) {
@@ -113,7 +112,7 @@ function function_ee81f2ca(origin, player) {
 }
 
 // Namespace namespace_56b772a5/namespace_c995c40a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8b2b4a5c, Offset: 0x7e0
 // Size: 0x164
 function function_9b3b2351(*var_f3fd3234, vehicle) {
@@ -137,20 +136,20 @@ function function_9b3b2351(*var_f3fd3234, vehicle) {
 }
 
 // Namespace namespace_56b772a5/namespace_c995c40a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8260ada1, Offset: 0x950
 // Size: 0x5c
 function function_fee48e9e() {
     if (!isdefined(self) || !isdefined(self.doa)) {
         return;
     }
-    self notify(#"hash_77af89fb2b44942f");
+    self notify(#"kill_shield");
     self notify(#"kill_chickens");
     util::wait_network_frame();
 }
 
 // Namespace namespace_56b772a5/namespace_c995c40a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1d4ffba0, Offset: 0x9b8
 // Size: 0x80
 function function_c45d8312(player, time) {
@@ -159,7 +158,7 @@ function function_c45d8312(player, time) {
     while (!namespace_dfc652ee::function_f759a457()) {
         waitframe(1);
     }
-    wait(time);
+    wait time;
     player notify(#"hash_279998c5df86c04d");
 }
 

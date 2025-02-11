@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_7da86f3c;
 
 // Namespace namespace_7da86f3c/namespace_e7909880
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcd24201a, Offset: 0x1f8
 // Size: 0x334
 function function_eeb092f5(entity) {
@@ -45,12 +44,12 @@ function function_eeb092f5(entity) {
     var_c980e593 = namespace_ec06fe4a::spawnmodel(entity.origin, "tag_origin");
     entity.doa.var_c980e593 = var_c980e593;
     if (isdefined(var_c980e593)) {
-        if (!isdefined(level.doa.var_537a3e29)) {
-            level.doa.var_537a3e29 = [];
-        } else if (!isarray(level.doa.var_537a3e29)) {
-            level.doa.var_537a3e29 = array(level.doa.var_537a3e29);
+        if (!isdefined(level.doa.active_attractors)) {
+            level.doa.active_attractors = [];
+        } else if (!isarray(level.doa.active_attractors)) {
+            level.doa.active_attractors = array(level.doa.active_attractors);
         }
-        level.doa.var_537a3e29[level.doa.var_537a3e29.size] = var_c980e593;
+        level.doa.active_attractors[level.doa.active_attractors.size] = var_c980e593;
         var_c980e593 enablelinkto();
         var_c980e593 linkto(entity, undefined, (0, 0, 60));
         var_c980e593 namespace_83eb6304::function_3ecfde67("magnet_on");
@@ -66,7 +65,7 @@ function function_eeb092f5(entity) {
     }
     entity.doa.var_d006e019 = gettime() + timeout * 1000;
     while (gettime() < entity.doa.var_d006e019) {
-        wait(0.5);
+        wait 0.5;
     }
     if (isdefined(entity.doa.var_c980e593)) {
         entity.doa.var_c980e593 notify(#"expired");
@@ -74,7 +73,7 @@ function function_eeb092f5(entity) {
 }
 
 // Namespace namespace_7da86f3c/namespace_e7909880
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2335bbd5, Offset: 0x538
 // Size: 0xfc
 function function_2927fa9b() {
@@ -82,17 +81,17 @@ function function_2927fa9b() {
     self endon("4e7b52fe18a9b641");
     self endon(#"death");
     self waittill(#"expired");
-    arrayremovevalue(level.doa.var_537a3e29, self);
+    arrayremovevalue(level.doa.active_attractors, self);
     self namespace_83eb6304::turnofffx("magnet_on");
     self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_magnet_active_lp");
     self namespace_83eb6304::function_3ecfde67("magnet_fade");
     self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_magnet_active_end");
-    wait(1);
+    wait 1;
     self delete();
 }
 
 // Namespace namespace_7da86f3c/namespace_e7909880
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x147d2eb5, Offset: 0x640
 // Size: 0xb6
 function function_85cdc313(owner) {
@@ -105,7 +104,7 @@ function function_85cdc313(owner) {
 }
 
 // Namespace namespace_7da86f3c/namespace_e7909880
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x238cfd3b, Offset: 0x700
 // Size: 0x20e
 function function_77af9e81() {
@@ -121,13 +120,13 @@ function function_77af9e81() {
     if (isdefined(self.var_d438ec42)) {
         self [[ self.var_d438ec42 ]]();
     }
-    arrayremovevalue(level.doa.var_537a3e29, undefined);
+    arrayremovevalue(level.doa.active_attractors, undefined);
     while (true) {
         self.attractors = [];
         if (isdefined(self.var_d7e0da8b)) {
             self [[ self.var_d7e0da8b ]]();
         }
-        foreach (orb in level.doa.var_537a3e29) {
+        foreach (orb in level.doa.active_attractors) {
             if (!isdefined(orb)) {
                 continue;
             }
@@ -141,7 +140,7 @@ function function_77af9e81() {
 }
 
 // Namespace namespace_7da86f3c/namespace_e7909880
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x47d2a2d0, Offset: 0x918
 // Size: 0x42
 function function_9ded1b6c(type) {
@@ -152,7 +151,7 @@ function function_9ded1b6c(type) {
 }
 
 // Namespace namespace_7da86f3c/namespace_e7909880
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x63c27b47, Offset: 0x968
 // Size: 0x3b2
 function private function_68126677(var_624b8d02 = getdvarint(#"hash_5f8a3b48d8ebee04", sqr(400))) {

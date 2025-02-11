@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\mp_common\gametypes\dev.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\core_common\rat_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\rat_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\dev;
+#using scripts\mp_common\util;
 
 #namespace rat;
 
@@ -27,8 +26,8 @@
         init();
         level.rat.common.gethostplayer = &util::gethostplayer;
         level.rat.deathcount = 0;
-        addratscriptcmd("<unknown string>", &rscaddenemy);
-        addratscriptcmd("<unknown string>", &function_50634409);
+        addratscriptcmd("<dev string:x38>", &rscaddenemy);
+        addratscriptcmd("<dev string:x44>", &function_50634409);
         setdvar(#"rat_death_count", 0);
     }
 
@@ -57,13 +56,13 @@
         }
         bot = dev::getormakebot(team);
         if (!isdefined(bot)) {
-            println("<unknown string>");
-            ratreportcommandresult(params._id, 0, "<unknown string>");
+            println("<dev string:x55>");
+            ratreportcommandresult(params._id, 0, "<dev string:x55>");
             return;
         }
         bot thread testenemy(team);
         bot thread deathcounter();
-        wait(2);
+        wait 2;
         pos = (float(params.x), float(params.y), float(params.z));
         bot setorigin(pos);
         if (isdefined(params.ax)) {

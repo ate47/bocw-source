@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\system_shared;
 
 #namespace hackable;
 
@@ -44,7 +43,7 @@ function add_hackable_object(obj, test_callback, start_callback, fail_callback, 
         obj.hackable_timeout = getdvarfloat(#"scr_hacker_default_timeout", 0);
     }
     if (!isdefined(obj.hackable_progress_prompt)) {
-        obj.hackable_progress_prompt = #"hash_7080e1304a0ce47d";
+        obj.hackable_progress_prompt = #"weapon/hacking";
     }
     if (!isdefined(obj.hackable_cost_mult)) {
         obj.hackable_cost_mult = 1;
@@ -176,7 +175,7 @@ function complete_hacking_object(obj) {
 function watch_timeout(obj, time) {
     obj notify(#"hackable_watch_timeout");
     obj endon(#"hackable_watch_timeout");
-    wait(time);
+    wait time;
     if (isdefined(obj)) {
         fail_hacking_object(obj);
     }

@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\smokegrenade.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\flag_shared.csc;
 #using script_4daa124bc391e7ed;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\smokegrenade;
 
 #namespace player;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaba49a03, Offset: 0x160
 // Size: 0x21c
 function private preinit() {
@@ -38,7 +37,7 @@ function private preinit() {
 }
 
 // Namespace player/player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x53a44ed3, Offset: 0x388
 // Size: 0x7c
 function function_a25e8ff(localclientnum, var_27121fbd) {
@@ -52,7 +51,7 @@ function function_a25e8ff(localclientnum, var_27121fbd) {
 }
 
 // Namespace player/player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4a8bb106, Offset: 0x410
 // Size: 0x144
 function on_player_spawned(localclientnum) {
@@ -72,7 +71,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace player/player
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe8d7dd1c, Offset: 0x560
 // Size: 0xd8
 function private function_5d6c2a78(localclientnum) {
@@ -84,7 +83,7 @@ function private function_5d6c2a78(localclientnum) {
 }
 
 // Namespace player/player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49f724ee, Offset: 0x640
 // Size: 0x4c
 function function_930e5d42(localclientnum) {
@@ -95,7 +94,7 @@ function function_930e5d42(localclientnum) {
 }
 
 // Namespace player/player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa8f133ba, Offset: 0x698
 // Size: 0x1b4
 function on_player_corpse(localclientnum, params) {
@@ -116,7 +115,7 @@ function on_player_corpse(localclientnum, params) {
 }
 
 // Namespace player/player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x95752350, Offset: 0x858
 // Size: 0x94
 function function_585458(params) {
@@ -131,7 +130,7 @@ function function_585458(params) {
 }
 
 // Namespace player/player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb3a7dbb6, Offset: 0x8f8
 // Size: 0x44
 function function_bcc9c79c(local_client_num) {
@@ -139,7 +138,7 @@ function function_bcc9c79c(local_client_num) {
 }
 
 // Namespace player/player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3919807, Offset: 0x948
 // Size: 0x92
 function function_c451ab29(local_client_num, bundle) {
@@ -150,7 +149,7 @@ function function_c451ab29(local_client_num, bundle) {
 }
 
 // Namespace player/player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x46959419, Offset: 0x9e8
 // Size: 0x68
 function function_9216f2c3(local_client_num, *bundle) {
@@ -167,7 +166,7 @@ function function_9216f2c3(local_client_num, *bundle) {
 }
 
 // Namespace player/player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xeda6c982, Offset: 0xa58
 // Size: 0x10a
 function function_6803f977(local_client_num, bundle) {
@@ -197,7 +196,7 @@ function function_6803f977(local_client_num, bundle) {
 }
 
 // Namespace player/player
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xeeb8b511, Offset: 0xb70
 // Size: 0x94
 function function_74ce4ee8(localclientnum, playernum, body, rob) {

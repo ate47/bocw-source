@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\spectating.gsc;
-#using scripts\zm_common\gametypes\globallogic_player.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_player;
+#using scripts\zm_common\gametypes\spectating;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_loadout;
 
 #namespace globallogic_ui;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x188
 // Size: 0x4
 function private preinit() {
@@ -131,7 +130,7 @@ function teamwithlowestplayercount(playercounts, *ignore_team) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb700d07a, Offset: 0x638
 // Size: 0x564
 function menuautoassign(comingfrommenu) {
@@ -214,7 +213,7 @@ function menuautoassign(comingfrommenu) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95244082, Offset: 0xba8
 // Size: 0xcc
 function teamscoresequal() {
@@ -232,7 +231,7 @@ function teamscoresequal() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf4521bdc, Offset: 0xc80
 // Size: 0xbe
 function teamwithlowestscore() {
@@ -284,7 +283,7 @@ function getsplitscreenteam() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa212b80c, Offset: 0xea8
 // Size: 0x24
 function updateobjectivetext() {
@@ -292,7 +291,7 @@ function updateobjectivetext() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x66c105c2, Offset: 0xed8
 // Size: 0x1c
 function closemenus() {
@@ -300,7 +299,7 @@ function closemenus() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x648f25f6, Offset: 0xf00
 // Size: 0xfc
 function beginclasschoice(*forcenewchoice) {
@@ -325,7 +324,7 @@ function showmainmenuforteam() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6a7f0cc2, Offset: 0x10b0
 // Size: 0x54
 function menuautocontrolplayer() {
@@ -336,7 +335,7 @@ function menuautocontrolplayer() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe30f0998, Offset: 0x1110
 // Size: 0x204
 function menuteam(team) {
@@ -369,7 +368,7 @@ function menuteam(team) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x17088635, Offset: 0x1320
 // Size: 0x18e
 function menuspectator() {
@@ -411,12 +410,12 @@ function removespawnmessageshortly(delay) {
     self endon(#"disconnect");
     waittillframeend();
     self endon(#"end_respawn");
-    wait(delay);
+    wait delay;
     self hud_message::clearlowermessage();
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc301f190, Offset: 0x1548
 // Size: 0x24
 function function_bc2eb1b8() {
@@ -424,7 +423,7 @@ function function_bc2eb1b8() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe7234a96, Offset: 0x1578
 // Size: 0x24
 function function_f8f38932() {

@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\killstreaks\mp\killstreaks.gsc;
-#using scripts\mp_common\gametypes\prop.gsc;
-#using scripts\mp_common\gametypes\spawnlogic.gsc;
-#using scripts\mp_common\gametypes\spawning.gsc;
-#using scripts\mp_common\gametypes\_prop_dev.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\mp_common\util.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\mp\killstreaks;
+#using scripts\mp_common\gametypes\_prop_dev;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\prop;
+#using scripts\mp_common\gametypes\spawning;
+#using scripts\mp_common\gametypes\spawnlogic;
+#using scripts\mp_common\util;
 
 #namespace prop_controls;
 
@@ -372,7 +371,7 @@ function propinputwatch() {
             continue;
         }
         if (msg == "spin") {
-            self function_9bc7ac53();
+            self propspin();
             continue;
         }
         if (msg == "changeProp") {
@@ -416,7 +415,7 @@ function proplockunlock() {
 // Params 0, eflags: 0x0
 // Checksum 0xbc7a2e55, Offset: 0x1730
 // Size: 0xd4
-function function_9bc7ac53() {
+function propspin() {
     self.propent unlink();
     self.propent.angles += (0, 45, 0);
     self.propent.origin = self.propanchor.origin;
@@ -731,7 +730,7 @@ function set_pitch_roll_for_ground_normal(traceignore) {
     if (!isdefined(groundnormal)) {
         return;
     }
-    var_bcd5e04 = anglestoforward(self.angles);
+    ovf = anglestoforward(self.angles);
     ovr = anglestoright(self.angles);
     new_angles = vectortoangles(groundnormal);
     pitch = angleclamp180(new_angles[0] + 90);
@@ -743,7 +742,7 @@ function set_pitch_roll_for_ground_normal(traceignore) {
     } else {
         mod = 1;
     }
-    dot = vectordot(var_c13d4c82, var_bcd5e04);
+    dot = vectordot(var_c13d4c82, ovf);
     newpitch = dot * pitch;
     newroll = (1 - abs(dot)) * pitch * mod;
     self.angles = (newpitch, self.angles[1], newroll);
@@ -948,7 +947,7 @@ function flashlockpropkey() {
     }
     newscale = self.lockpropkey.startfontscale + 0.75;
     self.lockpropkey.fontscale = newscale;
-    wait(0.1);
+    wait 0.1;
     if (isdefined(self.lockpropkey)) {
         self.lockpropkey.fontscale = self.lockpropkey.startfontscale;
     }
@@ -1018,14 +1017,14 @@ function canlock() {
     foreach (trigger in triggers) {
         if (trigger istouchingvolume(self.origin, self getmins(), self getmaxs())) {
             /#
-                function_6de7bc19(0, "<unknown string>", self, trigger.origin, trigger.classname);
+                function_6de7bc19(0, "<dev string:x38>", self, trigger.origin, trigger.classname);
             #/
             return 0;
         }
     }
     if (self isplayerswimming()) {
         /#
-            function_6de7bc19(1, "<unknown string>", self);
+            function_6de7bc19(1, "<dev string:x41>", self);
         #/
         return 1;
     }
@@ -1034,14 +1033,14 @@ function canlock() {
     org1 = trace1[#"position"];
     if (frac == 1) {
         /#
-            function_6de7bc19(0, "<unknown string>", self, org1, "<unknown string>");
+            function_6de7bc19(0, "<dev string:x49>", self, org1, "<dev string:x53>");
         #/
         return 0;
     }
     foreach (trigger in triggers) {
         if (trigger istouchingvolume(org1, self getmins(), self getmaxs())) {
             /#
-                function_6de7bc19(0, "<unknown string>", self, trigger.origin, trigger.classname);
+                function_6de7bc19(0, "<dev string:x57>", self, trigger.origin, trigger.classname);
             #/
             return 0;
         }
@@ -1049,16 +1048,16 @@ function canlock() {
     point = getnearestpathpoint(org1, 256);
     if (!isdefined(point)) {
         /#
-            function_6de7bc19(0, "<unknown string>", self, org1);
+            function_6de7bc19(0, "<dev string:x61>", self, org1);
         #/
         return 0;
     }
-    var_734faed8 = point[2] - org1[2];
-    if (var_734faed8 > 50) {
+    distz = point[2] - org1[2];
+    if (distz > 50) {
         point2 = getnearestpathpoint(org1, 50);
         if (!isdefined(point2)) {
             /#
-                function_6de7bc19(0, "<unknown string>", self, org1, "<unknown string>", point, "<unknown string>");
+                function_6de7bc19(0, "<dev string:x69>", self, org1, "<dev string:x76>", point, "<dev string:x61>");
             #/
             return 0;
         }
@@ -1066,7 +1065,7 @@ function canlock() {
     dist2d = distance2d(point, org1);
     if (dist2d > 100) {
         /#
-            function_6de7bc19(0, "<unknown string>", self, org1, "<unknown string>", point, "<unknown string>");
+            function_6de7bc19(0, "<dev string:x7f>", self, org1, "<dev string:x76>", point, "<dev string:x61>");
         #/
         return 0;
     }
@@ -1074,19 +1073,19 @@ function canlock() {
     foreach (trigger in triggers) {
         if (trigger istouchingvolume(org2, self getmins(), self getmaxs())) {
             /#
-                function_6de7bc19(0, "<unknown string>", self, trigger.origin, trigger.classname);
+                function_6de7bc19(0, "<dev string:x89>", self, trigger.origin, trigger.classname);
             #/
             return 0;
         }
     }
     if (!self isonground() || self iswallrunning()) {
         /#
-            function_6de7bc19(1, "<unknown string>", self, org1, "<unknown string>", org2, "<unknown string>", point, "<unknown string>" + distance(org1, point));
+            function_6de7bc19(1, "<dev string:x90>", self, org1, "<dev string:x57>", org2, "<dev string:x89>", point, "<dev string:x97>" + distance(org1, point));
         #/
         return 1;
     }
     /#
-        function_6de7bc19(1, "<unknown string>", self);
+        function_6de7bc19(1, "<dev string:xa0>", self);
     #/
     return 1;
 }
@@ -1135,7 +1134,7 @@ function setnewabilityhud() {
         self.abilitykey.label = #"mp_ph_flash";
         break;
     default:
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:xaa>");
         break;
     }
 }
@@ -1159,7 +1158,7 @@ function setnewabilitycount(var_8c8fd413, count) {
         propsetclonesleft(count);
         break;
     default:
-        assertmsg("<unknown string>" + var_8c8fd413);
+        assertmsg("<dev string:xc5>" + var_8c8fd413);
         break;
     }
 }

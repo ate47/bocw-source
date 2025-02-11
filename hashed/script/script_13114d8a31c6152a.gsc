@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.gsc;
 #using script_35ae72be7b4fec10;
+#using scripts\core_common\math_shared;
 
 #namespace namespace_c8e236da;
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf00f0343, Offset: 0xa0
 // Size: 0x194
 function function_ebf737f8(var_e11b5b56) {
@@ -23,7 +22,7 @@ function function_ebf737f8(var_e11b5b56) {
 }
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe2524121, Offset: 0x240
 // Size: 0xf4
 function function_abdf062(var_5a95d718, var_144abf82) {
@@ -39,7 +38,7 @@ function function_abdf062(var_5a95d718, var_144abf82) {
 }
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc6f6c5de, Offset: 0x340
 // Size: 0x9c
 function function_bf642b41(var_88e62a80, var_6262df45) {
@@ -52,7 +51,7 @@ function function_bf642b41(var_88e62a80, var_6262df45) {
 }
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ca2e824, Offset: 0x3e8
 // Size: 0x3a
 function function_295a2a9e(var_e11b5b56) {
@@ -63,7 +62,7 @@ function function_295a2a9e(var_e11b5b56) {
 }
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa30a1f8d, Offset: 0x430
 // Size: 0x64
 function function_f7362969(var_a5a2c782, var_541423e6 = 1) {
@@ -75,7 +74,7 @@ function function_f7362969(var_a5a2c782, var_541423e6 = 1) {
 }
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaa1ed1db, Offset: 0x4a0
 // Size: 0x9c
 function clearlist() {
@@ -89,7 +88,7 @@ function clearlist() {
 }
 
 // Namespace namespace_c8e236da/namespace_c8e236da
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaa9b3767, Offset: 0x548
 // Size: 0x64
 function removelist() {

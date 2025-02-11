@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
 
 #namespace namespace_1125e192;
 
 // Namespace namespace_1125e192/namespace_d5ac265e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd74c6d3b, Offset: 0x88
 // Size: 0xf4
 function function_93c5a24() {
@@ -32,8 +31,8 @@ function function_93c5a24() {
     // Checksum 0x50da46db, Offset: 0x188
     // Size: 0x6e
     function function_ace23f69(v_loc) {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x38>");
+        self endon("<dev string:x38>");
         while (isdefined(v_loc)) {
             sphere(v_loc, 32, (1, 0, 0), undefined, undefined, undefined, 10);
             waitframe(10);

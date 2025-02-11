@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_trial.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_trial;
 
 #namespace zm_trial_disable_buys;
 

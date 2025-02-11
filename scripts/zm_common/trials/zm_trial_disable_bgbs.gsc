@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_bgb_pack.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_bgb_pack;
+#using scripts\zm_common\zm_trial;
 
 #namespace zm_trial_disable_bgbs;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_disable_bgbs/zm_trial_disable_bgbs
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x84e0cf04, Offset: 0xe8
 // Size: 0x5c
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_disable_bgbs/zm_trial_disable_bgbs
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x83a294d0, Offset: 0x150
 // Size: 0xd8
 function private on_begin() {
@@ -39,7 +38,7 @@ function private on_begin() {
 }
 
 // Namespace zm_trial_disable_bgbs/zm_trial_disable_bgbs
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7a40be99, Offset: 0x230
 // Size: 0xc8
 function private on_end(*round_reset) {
@@ -51,7 +50,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_disable_bgbs/zm_trial_disable_bgbs
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6bc3f029, Offset: 0x300
 // Size: 0x32
 function is_active() {

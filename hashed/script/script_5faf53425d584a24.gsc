@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_c8382500;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_c8382500/namespace_c8382500
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcf51af98, Offset: 0x120
 // Size: 0x2c
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace namespace_c8382500/namespace_c8382500
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7a956d69, Offset: 0x158
 // Size: 0xb4
 function private function_a7b7d70b(player, networkid) {
@@ -40,7 +39,7 @@ function private function_a7b7d70b(player, networkid) {
 }
 
 // Namespace namespace_c8382500/namespace_c8382500
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x503400a, Offset: 0x218
 // Size: 0xc4a
 function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {

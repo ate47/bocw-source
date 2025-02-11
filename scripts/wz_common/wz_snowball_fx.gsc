@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace wz_snowball_fx;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wz_snowball_fx/wz_snowball_fx
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd0e08ffd, Offset: 0x138
 // Size: 0x84
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace wz_snowball_fx/wz_snowball_fx
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3032411e, Offset: 0x1c8
 // Size: 0x434
 function function_c9509a9c(params) {
@@ -85,18 +84,18 @@ function function_c9509a9c(params) {
 }
 
 // Namespace wz_snowball_fx/wz_snowball_fx
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d348a4c, Offset: 0x608
 // Size: 0x84
 function function_4df181ef() {
     self endoncallback(&function_8407e8ae, #"death", #"game_ended");
     self clientfield::set_to_player("player_hit_freezing_snowball", 1);
-    wait(2);
+    wait 2;
     self clientfield::set_to_player("player_hit_freezing_snowball", 0);
 }
 
 // Namespace wz_snowball_fx/wz_snowball_fx
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe4d727ec, Offset: 0x698
 // Size: 0x2c
 function function_8407e8ae(*notifyhash) {

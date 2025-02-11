@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using script_62caa307a394c18c;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
 #using script_2c5daa95f8fec03c;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using script_62caa307a394c18c;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace ammomod_shatterblast;
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbb5042f2, Offset: 0x390
 // Size: 0x304
 function init_shatterblast() {
@@ -37,7 +36,7 @@ function init_shatterblast() {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdd2fa336, Offset: 0x6a0
 // Size: 0xdc
 function private function_93e5316a(aat_name = "ammomod_shatterblast") {
@@ -60,7 +59,7 @@ function private function_93e5316a(aat_name = "ammomod_shatterblast") {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xf86f489, Offset: 0x788
 // Size: 0x1dc
 function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, shitloc = self.origin, *boneindex) {
@@ -89,7 +88,7 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, shitloc =
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbdaae7de, Offset: 0x970
 // Size: 0xea
 function function_2f3ba0ef(center) {
@@ -102,7 +101,7 @@ function function_2f3ba0ef(center) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xfb1e637e, Offset: 0xa68
 // Size: 0x322
 function function_eb81be7e(attacker, weapon, shitloc, vpoint) {
@@ -127,15 +126,15 @@ function function_eb81be7e(attacker, weapon, shitloc, vpoint) {
     time2 = randomfloatrange(0.4, 0.7);
     var_846e9d0 = randomfloatrange(0.4, 0.7);
     var_ae78e48a thread function_a97aaed0(attacker, weapon, shitloc, var_624e473c);
-    wait(time1);
+    wait time1;
     var_3c3a800f thread function_a97aaed0(attacker, weapon, shitloc, var_6f76e171);
-    wait(time2);
+    wait time2;
     var_5309adad thread function_a97aaed0(attacker, weapon, shitloc, var_623746f2);
-    wait(var_846e9d0);
+    wait var_846e9d0;
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc09e8103, Offset: 0xd98
 // Size: 0xb4
 function function_a97aaed0(attacker, weapon, shitloc, point) {
@@ -147,7 +146,7 @@ function function_a97aaed0(attacker, weapon, shitloc, point) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x442dc629, Offset: 0xe58
 // Size: 0xe0
 function function_cbd0f7ea(attacker, damage, weapon) {
@@ -160,7 +159,7 @@ function function_cbd0f7ea(attacker, damage, weapon) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x6107cf69, Offset: 0xf40
 // Size: 0x27c
 function function_945cac2d(damage, attacker, weapon, shitloc, var_84ed9a13) {
@@ -170,7 +169,7 @@ function function_945cac2d(damage, attacker, weapon, shitloc, var_84ed9a13) {
     }
     if (isdefined(var_84ed9a13) && is_true(var_84ed9a13.var_b98c4585)) {
         if (namespace_81245006::function_f29756fe(var_84ed9a13) == 1 && var_84ed9a13.type == #"armor" && var_84ed9a13.health > 0) {
-            namespace_81245006::function_ef87b7e8(var_84ed9a13, var_84ed9a13.health);
+            namespace_81245006::damageweakpoint(var_84ed9a13, var_84ed9a13.health);
         }
         if (namespace_81245006::function_f29756fe(var_84ed9a13) === 3 && isdefined(var_84ed9a13.var_f371ebb0)) {
             destructserverutils::function_8475c53a(self, var_84ed9a13.var_f371ebb0);
@@ -188,7 +187,7 @@ function function_945cac2d(damage, attacker, weapon, shitloc, var_84ed9a13) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xf2223598, Offset: 0x11c8
 // Size: 0x458
 function function_aa443b97(attacker, weapon, *shitloc, vpoint, tier, extra = 0) {
@@ -245,7 +244,7 @@ function function_aa443b97(attacker, weapon, *shitloc, vpoint, tier, extra = 0) 
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x487bce9e, Offset: 0x1628
 // Size: 0x144
 function function_ddd30474(attacker, weapon, vpoint, shitloc, tier) {
@@ -270,7 +269,7 @@ function function_ddd30474(attacker, weapon, vpoint, shitloc, tier) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6168e75, Offset: 0x1778
 // Size: 0xc2
 function private function_9465e5f8(attacker) {

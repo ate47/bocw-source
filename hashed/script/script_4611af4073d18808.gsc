@@ -1,48 +1,47 @@
-// Atian COD Tools GSC CW decompiler test
+#using script_164a456ce05c3483;
+#using script_17dcb1172e441bf6;
 #using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
+#using script_350cffecd05ef6cf;
 #using script_40f967ad5d18ea74;
 #using script_47851dbeea22fe66;
-#using script_164a456ce05c3483;
 #using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_774302f762d76254;
-#using script_1b0b07ff57d1dde3;
-#using script_6b6510e124bad778;
-#using script_1ee011cd0961afd7;
-#using script_350cffecd05ef6cf;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
+#using script_6b6510e124bad778;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_774302f762d76254;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_a4bedd45;
 
 // Namespace namespace_a4bedd45/namespace_1dde4e70
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x16bade9b, Offset: 0x2e8
 // Size: 0x76
 function function_49f419a1(time = 1) {
     self endon(#"disconnect");
     old = self.doa.var_4f3aee7b;
     self.doa.var_4f3aee7b = 1;
-    wait(time);
+    wait time;
     self.doa.var_4f3aee7b = old;
 }
 
 // Namespace namespace_a4bedd45/namespace_1dde4e70
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc18f4c9c, Offset: 0x368
 // Size: 0xa6
 function function_17c3e29f() {
@@ -55,7 +54,7 @@ function function_17c3e29f() {
 }
 
 // Namespace namespace_a4bedd45/namespace_1dde4e70
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x712f1395, Offset: 0x418
 // Size: 0xac
 function function_c724b8f9() {
@@ -71,7 +70,7 @@ function function_c724b8f9() {
 }
 
 // Namespace namespace_a4bedd45/namespace_1dde4e70
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x64549704, Offset: 0x4d0
 // Size: 0x61c
 function function_1735c657(forced) {
@@ -84,7 +83,7 @@ function function_1735c657(forced) {
     self thread function_c724b8f9();
     self thread function_17c3e29f();
     timeout = self namespace_1c2a96f9::function_4808b985(90);
-    result = self waittilltimeout(timeout, #"hash_444e9c51ba5bd99", #"hash_7893364bd228d63e");
+    result = self waittilltimeout(timeout, #"camera_changed", #"hash_7893364bd228d63e");
     if (forced) {
         if (!is_true(result.var_cff8d1e) || is_true(level.doa.var_318aa67a)) {
             self thread function_1735c657(forced);
@@ -110,11 +109,11 @@ function function_1735c657(forced) {
     self clientfield::increment_to_player("exitFPS");
     self.doa.var_21eab413 = gettime() + 2500;
     /#
-        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
+        namespace_1e25ad94::debugmsg("<dev string:x38>" + self.name + "<dev string:x50>" + gettime());
     #/
     self.doa.infps = undefined;
     self namespace_7f5aeb59::function_fae39d88();
-    wait(0.25);
+    wait 0.25;
     self clientfield::increment_to_player("setCompassVis");
     self notify(#"critical_health_end");
     org = undefined;
@@ -125,14 +124,14 @@ function function_1735c657(forced) {
             org.angles = self.angles;
             self linkto(org);
             org rotateto(faceangles, 0.25);
-            wait(0.25);
+            wait 0.25;
         }
     }
     if (isdefined(org)) {
         self unlink();
         org delete();
     }
-    wait(0.2);
+    wait 0.2;
     self namespace_ec06fe4a::freezeplayercontrols(0);
     self.doa.var_4f3aee7b = 0;
     self namespace_83eb6304::turnofffx("firstPersonMarker");
@@ -145,12 +144,12 @@ function function_1735c657(forced) {
     self setorigin(self.origin + (0, 0, 20));
     self notify(#"hash_5a8ee2526fb3775b");
     /#
-        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
+        namespace_1e25ad94::debugmsg("<dev string:x38>" + self.name + "<dev string:x6a>" + gettime());
     #/
 }
 
 // Namespace namespace_a4bedd45/namespace_1dde4e70
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x385fb497, Offset: 0xaf8
 // Size: 0x61c
 function function_1f704cee(force = 0, faceangles = 1) {
@@ -170,7 +169,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
     self notify("7f96f25ab02d6853");
     self endon("7f96f25ab02d6853");
     /#
-        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
+        namespace_1e25ad94::debugmsg("<dev string:x80>" + self.name + "<dev string:x8c>" + gettime());
     #/
     self.doa.infps = 1;
     self.doa.var_4f3aee7b = force;
@@ -186,7 +185,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
     }
     angles = (0, angles[1], 0);
     /#
-        namespace_1e25ad94::debugmsg("<unknown string>" + angles + "<unknown string>" + v_player_velocity + "<unknown string>" + length(v_player_velocity));
+        namespace_1e25ad94::debugmsg("<dev string:xa7>" + angles + "<dev string:xc8>" + v_player_velocity + "<dev string:xdb>" + length(v_player_velocity));
     #/
     if (is_true(self.doa.var_f583234e)) {
         self clientfield::set_to_player("toggleflashlight", 0);
@@ -211,11 +210,11 @@ function function_1f704cee(force = 0, faceangles = 1) {
             self.doa.var_5d4bd96f.angles = self.angles;
             self linkto(self.doa.var_5d4bd96f);
             self.doa.var_5d4bd96f rotateto(angles, 0.25);
-            wait(0.25);
+            wait 0.25;
             self unlink();
             self.doa.var_5d4bd96f delete();
             /#
-                namespace_1e25ad94::debugmsg("<unknown string>" + self.angles);
+                namespace_1e25ad94::debugmsg("<dev string:xe5>" + self.angles);
             #/
         }
     }

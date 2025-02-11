@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace spectating;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5e165cb9, Offset: 0x118
 // Size: 0x24
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe039c96, Offset: 0x148
 // Size: 0xb4
 function main() {
@@ -33,7 +32,7 @@ function main() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd02c8804, Offset: 0x208
 // Size: 0x64
 function on_player_connecting() {
@@ -43,7 +42,7 @@ function on_player_connecting() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x84f4e8, Offset: 0x278
 // Size: 0x2c
 function on_player_spawned() {
@@ -52,7 +51,7 @@ function on_player_spawned() {
 }
 
 // Namespace spectating/spectating
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5ce2f40b, Offset: 0x2b0
 // Size: 0x34
 function on_joined_team(*params) {
@@ -61,7 +60,7 @@ function on_joined_team(*params) {
 }
 
 // Namespace spectating/spectating
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30ea9cf1, Offset: 0x2f0
 // Size: 0x34
 function on_joined_spectate(*params) {
@@ -81,7 +80,7 @@ function updatespectatesettings() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x309e4549, Offset: 0x3a0
 // Size: 0xca
 function getsplitscreenteam() {
@@ -104,7 +103,7 @@ function getsplitscreenteam() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x804f5fe3, Offset: 0x478
 // Size: 0xb6
 function otherlocalplayerstillalive() {
@@ -126,7 +125,7 @@ function otherlocalplayerstillalive() {
 }
 
 // Namespace spectating/spectating
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdc7fac96, Offset: 0x538
 // Size: 0x98
 function allowspectateallteams(allow) {
@@ -136,7 +135,7 @@ function allowspectateallteams(allow) {
 }
 
 // Namespace spectating/spectating
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x22b18772, Offset: 0x5d8
 // Size: 0xb0
 function allowspectateallteamsexceptteam(skip_team, allow) {
@@ -149,7 +148,7 @@ function allowspectateallteamsexceptteam(skip_team, allow) {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ea66633, Offset: 0x690
 // Size: 0x54c
 function setspectatepermissions() {
@@ -219,7 +218,7 @@ function setspectatepermissions() {
 }
 
 // Namespace spectating/spectating
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd3501e7a, Offset: 0xbe8
 // Size: 0xdc
 function setspectatepermissionsformachine() {

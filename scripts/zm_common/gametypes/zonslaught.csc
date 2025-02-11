@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
+#using script_11cc3a9267cf7ac7;
+#using script_35fc7a0b68a84517;
+#using script_44c87b4589ee1f93;
+#using script_557089630e09eb03;
+#using script_60793766a26de8df;
+#using script_6243781aa5394e62;
+#using script_62c40d9a3acec9b1;
+#using script_6d8b721f24e2653d;
 #using script_723ebc06cb1968f2;
 #using script_72f8a3c40978a2de;
 #using script_79309cd5815ebbc2;
-#using script_35fc7a0b68a84517;
-#using script_6d8b721f24e2653d;
-#using script_557089630e09eb03;
-#using scripts\zm\powerup\zm_powerup_hero_weapon_power.csc;
-#using scripts\zm\powerup\zm_powerup_small_ammo.csc;
-#using scripts\zm\powerup\zm_powerup_full_ammo.csc;
-#using scripts\zm\powerup\zm_powerup_insta_kill.csc;
-#using scripts\zm\powerup\zm_powerup_free_perk.csc;
-#using scripts\zm\powerup\zm_powerup_nuke.csc;
-#using script_60793766a26de8df;
-#using script_11cc3a9267cf7ac7;
-#using script_44c87b4589ee1f93;
-#using script_6243781aa5394e62;
-#using script_62c40d9a3acec9b1;
-#using scripts\zm_common\zm_fasttravel.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\oob.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\util_shared;
+#using scripts\zm\powerup\zm_powerup_free_perk;
+#using scripts\zm\powerup\zm_powerup_full_ammo;
+#using scripts\zm\powerup\zm_powerup_hero_weapon_power;
+#using scripts\zm\powerup\zm_powerup_insta_kill;
+#using scripts\zm\powerup\zm_powerup_nuke;
+#using scripts\zm\powerup\zm_powerup_small_ammo;
+#using scripts\zm_common\zm_fasttravel;
 
 #namespace zonslaught;
 
@@ -31,11 +30,11 @@
 function event_handler[gametype_init] main(*eventstruct) {
     level._zombie_gamemodeprecache = &onprecachegametype;
     level._zombie_gamemodemain = &onstartgametype;
-    println("<unknown string>");
+    println("<dev string:x38>");
     level.var_36a81b25 = 1;
     clientfield::register("scriptmover", "" + #"hash_56a6be021662c82e", 1, 2, "int", &function_bed6f88d, 0, 0);
-    clientfield::register_clientuimodel("hudItems.onslaught.wave_number", #"hash_6f4b11a0bee9b73d", [#"onslaught", #"wave_number"], 1, 7, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.onslaught.bosskill_count", #"hash_6f4b11a0bee9b73d", [#"onslaught", #"hash_2ec97775399a0680"], 1, 7, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.onslaught.wave_number", #"hud_items", [#"onslaught", #"wave_number"], 1, 7, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.onslaught.bosskill_count", #"hud_items", [#"onslaught", #"hash_2ec97775399a0680"], 1, 7, "int", undefined, 0, 0);
     clientfield::register("scriptmover", "orb_spawn", 1, 1, "int", &orb_spawn, 0, 0);
     clientfield::register("scriptmover", "bot_claim_fx", 1, 2, "int", &bot_claim_fx, 0, 0);
     clientfield::register("actor", "orb_soul_capture_fx", 1, 3, "int", &orb_soul_capture_fx, 0, 0);
@@ -52,11 +51,11 @@ function event_handler[gametype_init] main(*eventstruct) {
     level._effect[#"hash_d7a655f41aa4b03"] = "zombie/fx9_onslaught_spawn_lg";
     level._effect[#"soul_fx"] = "zombie/fx9_onslaught_orb_soul";
     level._effect[#"hash_308d15c5b36ba48a"] = "maps/zm_red/fx8_soul_charge_purple";
-    level._effect[#"hash_11fd5c794ccab4e5"] = "zombie/fx9_onslaught_orb_trail";
-    level._effect[#"hash_55ab97f3dc5e7ba2"] = "sr/fx9_safehouse_orb_activate";
+    level._effect[#"orb_idle"] = "zombie/fx9_onslaught_orb_trail";
+    level._effect[#"orb_activate"] = "sr/fx9_safehouse_orb_activate";
     level.var_de8cc106 = #"hash_6d2c4c09332d861b";
     level.var_cb450873 = #"hash_4bfee97440e2b6f2";
-    println("<unknown string>");
+    println("<dev string:x66>");
 }
 
 // Namespace zonslaught/zonslaught
@@ -76,7 +75,7 @@ function on_player_spawned(localclientnum) {
 // Checksum 0xd5183446, Offset: 0x8c0
 // Size: 0x24
 function onprecachegametype() {
-    println("<unknown string>");
+    println("<dev string:x92>");
 }
 
 // Namespace zonslaught/zonslaught
@@ -84,7 +83,7 @@ function onprecachegametype() {
 // Checksum 0x6bc0607d, Offset: 0x8f0
 // Size: 0x24
 function onstartgametype() {
-    println("<unknown string>");
+    println("<dev string:xb7>");
 }
 
 // Namespace zonslaught/zonslaught
@@ -160,15 +159,15 @@ function orb_spawn(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *f
 // Size: 0x21c
 function bot_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.fxid = function_239993de(fieldname, level._effect[#"hash_11fd5c794ccab4e5"], self, "tag_origin");
+        self.fxid = function_239993de(fieldname, level._effect[#"orb_idle"], self, "tag_origin");
         if (!isdefined(self.var_94ebeb0a)) {
             self.var_94ebeb0a = self playloopsound(level.var_de8cc106);
         }
-        self.var_58e905a8 = playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
+        self.var_58e905a8 = playfx(fieldname, level._effect[#"orb_activate"], self.origin);
         return;
     }
     if (bwastimejump == 2) {
-        self.var_58e905a8 = playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
+        self.var_58e905a8 = playfx(fieldname, level._effect[#"orb_activate"], self.origin);
         return;
     }
     if (isdefined(self.fxid)) {
@@ -182,7 +181,7 @@ function bot_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
         killfx(fieldname, self.var_58e905a8);
         self.var_58e905a8 = undefined;
     }
-    playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
+    playfx(fieldname, level._effect[#"orb_activate"], self.origin);
 }
 
 // Namespace zonslaught/zonslaught
@@ -212,14 +211,14 @@ function orb_soul_capture_fx(localclientnum, *oldval, newval, *bnewent, *binitia
         e_fx playsound(fieldname, "zmb_onslaught_zsouls_start");
         e_fx.sfx_id = e_fx playloopsound(#"hash_58d856545ecf5e28");
         util::playfxontag(fieldname, level._effect[#"soul_fx"], e_fx, "tag_origin");
-        wait(0.3);
+        wait 0.3;
         power = distance(e_fx.origin, level.var_df7b46d1.origin);
         n_time = e_fx fake_physicslaunch(level.var_df7b46d1.origin + (0, 0, 68), power, 0.85);
-        wait(n_time);
+        wait n_time;
         playsound(fieldname, "zmb_onslaught_zsouls_end", level.var_df7b46d1.origin);
         e_fx stoploopsound(e_fx.sfx_id);
         util::playfxontag(fieldname, level._effect[#"hash_308d15c5b36ba48a"], e_fx, "tag_origin");
-        wait(0.3);
+        wait 0.3;
         e_fx delete();
     }
 }
@@ -233,7 +232,7 @@ function function_ace38635(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         spawn_fx = playfx(fieldname, "zombie/fx9_onslaught_spawn_sm", self.origin);
         playsound(fieldname, #"hash_1a0e3429a5f96df3", self.origin);
-        wait(1.5);
+        wait 1.5;
         playsound(fieldname, #"hash_441ebe442c5946b2", self.origin);
         stopfx(fieldname, spawn_fx);
     }
@@ -264,7 +263,7 @@ function function_40deac72(localclientnum) {
             earthquake(localclientnum, var_1826041c, 0.1, self.origin, 128);
         }
         e_player playrumbleonentity(localclientnum, "onslaught_orb");
-        wait(0.3);
+        wait 0.3;
     }
 }
 

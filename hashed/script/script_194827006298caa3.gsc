@@ -1,25 +1,24 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_215d7818c548cb51;
-#using script_176597095ddfaa17;
 #using script_16b1b77a76492c6a;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using script_3411bb48d41bd3b;
+#using script_176597095ddfaa17;
+#using script_215d7818c548cb51;
 #using script_27347f09888ad15;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_3411bb48d41bd3b;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
 
 #namespace world_event_horde_hunt;
 
@@ -32,7 +31,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x67337126, Offset: 0x2c0
 // Size: 0x174
 function preinit() {
@@ -51,12 +50,12 @@ function preinit() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6ed013d1, Offset: 0x440
 // Size: 0x392
 function private function_8ebf52b6(instance) {
     instance flag::clear("cleanup");
-    instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_1226f6af);
+    instance callback::function_d8abfc3d(#"portal_activated", &function_1226f6af);
     level callback::add_callback(#"hash_594217387367ebb4", &function_1226f6af, instance);
     var_2b737124 = instance.contentgroups[#"corpses"][0];
     if (isdefined(var_2b737124.targetname)) {
@@ -64,7 +63,7 @@ function private function_8ebf52b6(instance) {
         /#
             if (getdvarint(#"hash_730311c63805303a", 0)) {
                 level flag::wait_till(#"gameplay_started");
-                wait(randomfloatrange(1, 5));
+                wait randomfloatrange(1, 5);
             }
         #/
         if (issubstr(var_2b737124.targetname, "1")) {
@@ -88,7 +87,7 @@ function private function_8ebf52b6(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa9522011, Offset: 0x7e0
 // Size: 0x18c
 function private function_dbeb7b0f(*eventstruct) {
@@ -113,7 +112,7 @@ function private function_dbeb7b0f(*eventstruct) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6b8f4dd0, Offset: 0x978
 // Size: 0x74
 function function_6400a64d(instance) {
@@ -123,7 +122,7 @@ function function_6400a64d(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdf234b25, Offset: 0x9f8
 // Size: 0x414
 function private function_deefa538(instance) {
@@ -132,7 +131,7 @@ function private function_deefa538(instance) {
     }
     instance notify(#"hash_68607fe956734fee");
     instance endon(#"cleanup");
-    wait(0.5);
+    wait 0.5;
     n_variant = randomintrange(1, 4);
     /#
         var_3d0c759f = getdvarint(#"hash_6a8bc2baa3d9fcb8", 0);
@@ -140,8 +139,8 @@ function private function_deefa538(instance) {
             n_variant = var_3d0c759f;
         }
     #/
-    var_eb92deab = isdefined(instance.contentgroups[#"hash_36fe80c29811691c"]) ? instance.contentgroups[#"hash_36fe80c29811691c"] : [];
-    var_ea63e380 = isdefined(instance.contentgroups[#"hash_55507f11db488717"]) ? instance.contentgroups[#"hash_55507f11db488717"] : [];
+    var_eb92deab = isdefined(instance.contentgroups[#"leader_spawn"]) ? instance.contentgroups[#"leader_spawn"] : [];
+    var_ea63e380 = isdefined(instance.contentgroups[#"follower_spawn"]) ? instance.contentgroups[#"follower_spawn"] : [];
     function_283f2fb3(var_eb92deab);
     function_283f2fb3(var_ea63e380);
     var_18d554fc = int(min(level.realm, 3));
@@ -161,7 +160,7 @@ function private function_deefa538(instance) {
     var_347a4920 playloopsound(#"hash_3b2e8e212c9bfb8a");
     level thread function_963ac9d8(var_347a4920);
     fx::play(#"hash_78d88a4dc6405970", var_10d9fd32 + (0, 0, 5000), undefined, 10);
-    wait(1.5);
+    wait 1.5;
     instance.var_eb48250f = function_8a9ecf71(instance, var_eb92deab, var_b6947716, &function_57a97c81);
     instance.var_f2d5c926 = function_8a9ecf71(instance, var_ea63e380, var_532e237f, &function_ca46226a);
     instance thread function_1b8f27ec();
@@ -169,18 +168,18 @@ function private function_deefa538(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbb260656, Offset: 0xe18
 // Size: 0x5c
 function function_963ac9d8(var_347a4920) {
-    wait(10);
+    wait 10;
     var_347a4920 stoploopsound();
     var_347a4920 playsound(#"hash_6eca5f5eaa236ce3");
     var_347a4920 util::deleteaftertime(1);
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xcca09679, Offset: 0xe80
 // Size: 0x3c6
 function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_func) {
@@ -191,9 +190,9 @@ function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_fun
         if (!isdefined(var_4bf95f4c)) {
             break;
         }
-        var_7ecdee63 = var_4bf95f4c.var_990b33df;
+        str_aitype = var_4bf95f4c.aitype_name;
         spawn = var_842cdacd[0];
-        ai = namespace_85745671::function_9d3ad056(var_7ecdee63, spawn.origin, spawn.angles, #"hash_4085d77991160042");
+        ai = namespace_85745671::function_9d3ad056(str_aitype, spawn.origin, spawn.angles, #"hash_4085d77991160042");
         if (isdefined(ai)) {
             ai ghost();
             ai.var_a950813d = 1;
@@ -227,14 +226,14 @@ function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_fun
                 level thread function_d3d7a798(ai);
             }
         }
-        wait(0.5);
+        wait 0.5;
         var_5af17050 = namespace_679a22ba::function_ce65eab6(var_ccd67daa);
     } while (var_842cdacd.size && var_5af17050.spawned < var_5af17050.var_cffbc08);
     return a_ai;
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5f3a27f, Offset: 0x1250
 // Size: 0x180
 function private function_283f2fb3(&a_spawns) {
@@ -256,7 +255,7 @@ function private function_283f2fb3(&a_spawns) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8baf867b, Offset: 0x13d8
 // Size: 0x42
 function private function_c7db899f() {
@@ -269,7 +268,7 @@ function private function_c7db899f() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xee731932, Offset: 0x1428
 // Size: 0x484
 function private function_1b8f27ec() {
@@ -289,7 +288,7 @@ function private function_1b8f27ec() {
         }
         if (var_3d872e54 === 1) {
             var_3d872e54 = undefined;
-            wait(1);
+            wait 1;
             continue;
         }
         foreach (ai in self.var_eb48250f) {
@@ -299,7 +298,7 @@ function private function_1b8f27ec() {
         }
         if (self flag::get(#"hash_3ea0bab19c8c86b6")) {
             self flag::wait_till_clear(#"hash_3ea0bab19c8c86b6");
-            wait(3);
+            wait 3;
             arrayremovevalue(self.var_eb48250f, undefined);
             function_1eaaceab(self.var_eb48250f);
             if (!self.var_eb48250f.size) {
@@ -311,7 +310,7 @@ function private function_1b8f27ec() {
             }
             continue;
         }
-        wait(randomfloatrange(1.5, 3));
+        wait randomfloatrange(1.5, 3);
         arrayremovevalue(self.var_eb48250f, undefined);
         function_1eaaceab(self.var_eb48250f);
         if (!self.var_eb48250f.size) {
@@ -324,7 +323,7 @@ function private function_1b8f27ec() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x1fdf70e3, Offset: 0x18b8
 // Size: 0x324
 function private function_57a97c81(instance, spawn) {
@@ -366,7 +365,7 @@ function private function_57a97c81(instance, spawn) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6b5738f, Offset: 0x1be8
 // Size: 0x11c
 function private function_c292b3fe(v_loc, instance) {
@@ -375,7 +374,7 @@ function private function_c292b3fe(v_loc, instance) {
     self endon(#"death");
     instance endon(#"hash_3ea0bab19c8c86b6");
     for (n_time = 0; distance2dsquared(self.origin, v_loc) > 10000 && n_time < 90; n_time += 1) {
-        wait(1);
+        wait 1;
     }
     if (n_time >= 90) {
         self.var_a950813d = undefined;
@@ -385,7 +384,7 @@ function private function_c292b3fe(v_loc, instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x39a679b4, Offset: 0x1d10
 // Size: 0x458
 function private function_ca46226a(instance, *spawn) {
@@ -421,7 +420,7 @@ function private function_ca46226a(instance, *spawn) {
             v_goal = var_5e61a2e7.origin + namespace_77bd50da::function_81cad6d6(var_5d615ad6, var_18df63c9) + (randomintrange(32 * -1, 32), randomintrange(32 * -1, 32), 0);
         }
         if (!isdefined(v_goal) || distance2dsquared(self.origin, v_goal) < 10000) {
-            wait(1.5);
+            wait 1.5;
             continue;
         }
         v_goal = getclosestpointonnavmesh(v_goal, 128, 32);
@@ -430,7 +429,7 @@ function private function_ca46226a(instance, *spawn) {
             s_result = self waittilltimeout(1.5, #"goal");
             var_de5b3f09 = 0;
             if (s_result._notify === "goal") {
-                wait(randomfloatrange(3, 4));
+                wait randomfloatrange(3, 4);
             }
             continue;
         }
@@ -438,12 +437,12 @@ function private function_ca46226a(instance, *spawn) {
         if (var_de5b3f09 > 10) {
             break;
         }
-        wait(1);
+        wait 1;
     } while (spawn.var_eb48250f.size);
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8a2f19cd, Offset: 0x2170
 // Size: 0x200
 function private function_b55fe25b() {
@@ -471,13 +470,13 @@ function private function_b55fe25b() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xba040012, Offset: 0x2378
 // Size: 0x110
 function private function_2660ef47() {
     self endon(#"cleanup");
     while (true) {
-        wait(1);
+        wait 1;
         arrayremovevalue(self.a_ai, undefined);
         function_1eaaceab(self.a_ai);
         if (!self.a_ai.size) {
@@ -494,7 +493,7 @@ function private function_2660ef47() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb72ee43f, Offset: 0x2490
 // Size: 0x86
 function private function_e2f41f69(var_74714668) {
@@ -505,12 +504,12 @@ function private function_e2f41f69(var_74714668) {
             namespace_2c949ef8::function_8b6ae460(self.var_571f5454, var_74714668);
             break;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd2cc2a5b, Offset: 0x2520
 // Size: 0x2b4
 function private function_92184323(*eventstruct) {
@@ -541,7 +540,7 @@ function private function_92184323(*eventstruct) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x4b4de7ee, Offset: 0x27e0
 // Size: 0xba
 function private function_7d9c6082(instance, ai) {
@@ -562,7 +561,7 @@ function private function_7d9c6082(instance, ai) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe10b48bc, Offset: 0x28a8
 // Size: 0x2ec
 function private function_9974f649(*eventstruct) {
@@ -577,14 +576,14 @@ function private function_9974f649(*eventstruct) {
                     ai callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
                     ai callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_92184323);
                     ai thread namespace_2c949ef8::function_1c491c2b();
-                    println("<unknown string>");
+                    println("<dev string:x38>");
                 }
                 if (isalive(ai.twin) && !is_true(ai.twin.var_20841367)) {
                     ai.twin.var_20841367 = 1;
                     ai.twin callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
                     ai.twin callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_92184323);
                     ai.twin thread namespace_2c949ef8::function_1c491c2b();
-                    println("<unknown string>");
+                    println("<dev string:x5d>");
                 }
             }
             return;
@@ -594,7 +593,7 @@ function private function_9974f649(*eventstruct) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf9c2db7, Offset: 0x2ba0
 // Size: 0x2f4
 function private function_ca912561(instance) {
@@ -628,7 +627,7 @@ function private function_ca912561(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe2abeda1, Offset: 0x2ea0
 // Size: 0x2ec
 function private function_d3d7a798(ai) {
@@ -637,7 +636,7 @@ function private function_d3d7a798(ai) {
     while (isdefined(instance) && !is_true(instance.var_ca912561)) {
         function_1eaaceab(instance.a_ai);
         if (!isdefined(instance.a_ai) || instance.a_ai.size <= 0) {
-            println("<unknown string>");
+            println("<dev string:x82>");
             if (instance flag::get(#"cleanup")) {
                 return;
             }
@@ -646,24 +645,24 @@ function private function_d3d7a798(ai) {
             foreach (var_f077a87e in instance.a_ai) {
                 if (var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_blast" || var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_bomb") {
                     /#
-                        ai_name = var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_blast" ? "<unknown string>" : "<unknown string>";
-                        println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>" + var_f077a87e.origin);
+                        ai_name = var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_blast" ? "<dev string:xad>" : "<dev string:xc4>";
+                        println("<dev string:xda>" + ai_name + "<dev string:xfe>" + var_f077a87e getentitynumber() + "<dev string:x104>" + var_f077a87e.origin);
                     #/
                     if (var_f077a87e.origin[2] < -1000) {
-                        println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>");
+                        println("<dev string:xda>" + ai_name + "<dev string:xfe>" + var_f077a87e getentitynumber() + "<dev string:x112>");
                         var_f077a87e.allowdeath = 1;
                         var_f077a87e kill();
                     }
                 }
             }
         }
-        wait(2);
+        wait 2;
     }
-    println("<unknown string>");
+    println("<dev string:x134>");
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe2192319, Offset: 0x3198
 // Size: 0x2a4
 function private function_f0abbc8b() {
@@ -675,7 +674,7 @@ function private function_f0abbc8b() {
     self linkto(var_55e11aa9);
     var_55e11aa9.origin = self.origin + (0, 0, 5000);
     level fx::play(#"hash_2520b0c56a09da9d", spawn.origin, undefined, 6);
-    wait(0.25);
+    wait 0.25;
     str_anim = self function_4cb6cdb8();
     if (isdefined(str_anim)) {
         self thread animation::play(str_anim, self);
@@ -695,7 +694,7 @@ function private function_f0abbc8b() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4d682448, Offset: 0x3448
 // Size: 0xc2
 function private function_4cb6cdb8() {
@@ -714,7 +713,7 @@ function private function_4cb6cdb8() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb3751359, Offset: 0x3518
 // Size: 0x12e
 function private function_22e55954(instance) {
@@ -734,7 +733,7 @@ function private function_22e55954(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3fe888a, Offset: 0x3650
 // Size: 0x74
 function private function_1226f6af(*var_273eefec) {

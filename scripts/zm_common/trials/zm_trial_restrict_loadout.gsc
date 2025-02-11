@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_35d3717bf2cbee8f;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_traps.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\trials\zm_trial_disable_hero_weapons;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_traps;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_restrict_loadout;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfbdec3f2, Offset: 0x450
 // Size: 0x5c
 function private preinit() {
@@ -36,7 +35,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xeccfdcf9, Offset: 0x4b8
 // Size: 0x1f6
 function private is_weapon_allowed(weapon) {
@@ -69,7 +68,7 @@ function private is_weapon_allowed(weapon) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xad86760, Offset: 0x6b8
 // Size: 0x126
 function private is_melee_allowed(weapon) {
@@ -90,7 +89,7 @@ function private is_melee_allowed(weapon) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6727346d, Offset: 0x7e8
 // Size: 0x100
 function private function_6a8979c9() {
@@ -104,7 +103,7 @@ function private function_6a8979c9() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x506a8b63, Offset: 0x8f0
 // Size: 0x14c
 function private function_e14e7b75(weapon) {
@@ -127,7 +126,7 @@ function private function_e14e7b75(weapon) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x44d428a8, Offset: 0xa48
 // Size: 0x24
 function private function_33f0ddd3(*eventstruct) {
@@ -135,7 +134,7 @@ function private function_33f0ddd3(*eventstruct) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x68362546, Offset: 0xa78
 // Size: 0xb4
 function private function_f66032dd() {
@@ -149,7 +148,7 @@ function private function_f66032dd() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb3e21364, Offset: 0xb38
 // Size: 0x1578
 function private on_begin(var_e097dc07, var_f5300808) {
@@ -204,7 +203,7 @@ function private on_begin(var_e097dc07, var_f5300808) {
         break;
     case #"hash_7416cabf26f52c5f":
         var_e7beaa5 = zm_weapons::function_ed29dde5("pistol", 0, 1);
-        var_e7beaa5 = arraycombine(var_e7beaa5, array(#"hash_138efe2bb30be63c", #"hash_138f012bb30beb55", #"hash_46ad37ce8122812e", #"hash_138f002bb30be9a2", #"hash_3a8348f19a7e7629"), 0, 0);
+        var_e7beaa5 = arraycombine(var_e7beaa5, array(#"ww_random_ray_gun1", #"ww_random_ray_gun2", #"ww_random_ray_gun2_charged", #"ww_random_ray_gun3", #"ww_random_ray_gun3_charged"), 0, 0);
         var_fda63ae3 = function_f1dd7bf8(array("pistol_standard_t8", "pistol_burst_t8", "pistol_revolver_t8"));
         level zm_trial::function_25ee130(1);
         break;
@@ -291,7 +290,7 @@ function private on_begin(var_e097dc07, var_f5300808) {
         level.b_special_weapons = 1;
         break;
     default:
-        assert(0, "<unknown string>" + var_e097dc07);
+        assert(0, "<dev string:x38>" + var_e097dc07);
         break;
     }
     level.var_526d919 = [];
@@ -335,7 +334,7 @@ function private on_begin(var_e097dc07, var_f5300808) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7979fcbd, Offset: 0x20b8
 // Size: 0x3d4
 function private on_end(round_reset) {
@@ -376,7 +375,7 @@ function private on_end(round_reset) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb07ce850, Offset: 0x2498
 // Size: 0x152
 function function_f1dd7bf8(var_9e126e48) {
@@ -401,7 +400,7 @@ function function_f1dd7bf8(var_9e126e48) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd3fa94ea, Offset: 0x25f8
 // Size: 0x164
 function function_f0e03d3(var_f5300808) {
@@ -422,7 +421,7 @@ function function_f0e03d3(var_f5300808) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ab3f333, Offset: 0x2768
 // Size: 0x40
 function function_937e218c() {
@@ -433,7 +432,7 @@ function function_937e218c() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x566889ec, Offset: 0x27b0
 // Size: 0x72
 function is_active(var_1eb3fec6 = 0) {
@@ -453,21 +452,21 @@ function function_bb33631e(var_b5d0ea49) {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1fedaf25, Offset: 0x28b8
 // Size: 0x6c
 function private disable_offhand_weapons() {
     self endon(#"disconnect");
     was_enabled = self offhandweaponsenabled();
     self disableoffhandweapons();
-    wait(1);
+    wait 1;
     if (was_enabled) {
         self enableoffhandweapons();
     }
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8bbb7342, Offset: 0x2930
 // Size: 0x18c
 function private function_e20ebcfd() {
@@ -485,7 +484,7 @@ function private function_e20ebcfd() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa3b28233, Offset: 0x2ac8
 // Size: 0x124
 function private function_f3fdd8f7() {
@@ -502,17 +501,17 @@ function private function_f3fdd8f7() {
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe5d42130, Offset: 0x2bf8
 // Size: 0x232
 function private monitor_objective(challenge) {
     self endon(#"disconnect");
     level endon(#"hash_7646638df88a3656");
-    assert(isarray(challenge.a_n_objective_ids), "<unknown string>");
+    assert(isarray(challenge.a_n_objective_ids), "<dev string:x57>");
     foreach (n_objective_id in challenge.a_n_objective_ids) {
         objective_setinvisibletoplayer(n_objective_id, self);
     }
-    wait(12);
+    wait 12;
     while (true) {
         if (self function_f3fdd8f7()) {
             foreach (n_objective_id in challenge.a_n_objective_ids) {
@@ -538,7 +537,7 @@ function function_5fbf572(weapon, var_2f0cc3aa = 0) {
     if (var_2f0cc3aa && is_active(1) && isdefined(weapon) && is_melee_allowed(weapon)) {
         return true;
     }
-    if (is_active(1) || namespace_fc5170d1::is_active() || self function_635f9c02(weapon)) {
+    if (is_active(1) || zm_trial_disable_hero_weapons::is_active() || self function_635f9c02(weapon)) {
         if (isplayer(self)) {
             self zm_trial_util::function_97444b02();
         }

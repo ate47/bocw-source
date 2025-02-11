@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_4ce7b4190a2fa70;
-#using scripts\zm_common\zm_utility_zsurvival.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using script_18077945bb84ede7;
 #using script_165beea08a63a243;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_18077945bb84ede7;
+#using script_4ce7b4190a2fa70;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_utility_zsurvival;
 
 #namespace namespace_cda50904;
 
@@ -30,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x3b0
 // Size: 0x4
 function preinit() {
@@ -38,7 +37,7 @@ function preinit() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf91a50ba, Offset: 0x3c0
 // Size: 0x1c
 function finalize() {
@@ -48,7 +47,7 @@ function finalize() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xece3f4e5, Offset: 0x3e8
 // Size: 0x44e
 function function_a92a93e9(v_location, v_angles, var_75b5cef0 = 0, n_delay = 1) {
@@ -89,7 +88,7 @@ function function_a92a93e9(v_location, v_angles, var_75b5cef0 = 0, n_delay = 1) 
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e01c121, Offset: 0xa80
 // Size: 0x38c
 function function_bdd95292(struct) {
@@ -100,7 +99,7 @@ function function_bdd95292(struct) {
     struct.var_9825cc78 = [];
     struct.players = [];
     players = getplayers();
-    assert(players.size > 0, "<unknown string>");
+    assert(players.size > 0, "<dev string:x6a>");
     foreach (player in players) {
         if (!isdefined(player.var_524f43cb)) {
             player.var_524f43cb = [];
@@ -131,7 +130,7 @@ function function_bdd95292(struct) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e0d047f, Offset: 0xe18
 // Size: 0x180
 function function_9086861a() {
@@ -147,7 +146,7 @@ function function_9086861a() {
         if (!var_79e2063c) {
             mdl_origin = self.scriptmodel.origin;
             self.scriptmodel clientfield::set("reward_chest_fx", 0);
-            wait(5);
+            wait 5;
             self fx::play("sr/fx9_safehouse_mchn_wonderfizz_spawn", self.origin, self.angles);
             self.scriptmodel delete();
             level thread item_drop::function_4da960f6(mdl_origin, 64, 3);
@@ -158,7 +157,7 @@ function function_9086861a() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2eafb3a3, Offset: 0xfa0
 // Size: 0xb4
 function function_b4f2a34e(eventstruct) {
@@ -166,13 +165,13 @@ function function_b4f2a34e(eventstruct) {
     if (self.struct.state == 0) {
         self.struct.scriptmodel thread scene::play(self.struct.var_422ae63e, self.struct.scriptmodel);
         self.struct.state = 1;
-        wait(0.25);
+        wait 0.25;
     }
     var_9a42a872 thread function_39340834(self.struct, self);
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x20daa86a, Offset: 0x1060
 // Size: 0x34c
 function function_39340834(struct, trigger) {
@@ -223,7 +222,7 @@ function function_39340834(struct, trigger) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6af2ee81, Offset: 0x13b8
 // Size: 0x1c0
 function function_621d45bc(list, struct) {
@@ -244,7 +243,7 @@ function function_621d45bc(list, struct) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x776fb59e, Offset: 0x1580
 // Size: 0x6dc
 function private function_410c380(list, var_523adf97, var_5fe37ae8) {
@@ -352,7 +351,7 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb014b1f0, Offset: 0x1c68
 // Size: 0x27a
 function private function_219cb8bb(itementry) {
@@ -403,7 +402,7 @@ function private function_219cb8bb(itementry) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x34aa3592, Offset: 0x1ef0
 // Size: 0x9a
 function private function_76d51213(struct, var_6ca170e7) {
@@ -416,7 +415,7 @@ function private function_76d51213(struct, var_6ca170e7) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6ed85faf, Offset: 0x1f98
 // Size: 0x8c
 function function_6c71e778() {
@@ -427,7 +426,7 @@ function function_6c71e778() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a2e9939, Offset: 0x2030
 // Size: 0x92
 function function_39d87af7(currentselection) {
@@ -444,7 +443,7 @@ function function_39d87af7(currentselection) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8aab0679, Offset: 0x20d0
 // Size: 0x680
 function function_80bbb50b(chest, trigger) {
@@ -455,7 +454,7 @@ function function_80bbb50b(chest, trigger) {
     }
     self endoncallback(&function_6c71e778, #"death");
     chest endoncallback(&function_6c71e778, #"death");
-    wait(0.25);
+    wait 0.25;
     self val::set(#"hash_5ff56dba9074b0b4", "allow_crouch", 0);
     self val::set(#"hash_5ff56dba9074b0b4", "allow_prone", 0);
     self.var_ba0ccdab = 0;
@@ -546,7 +545,7 @@ function function_80bbb50b(chest, trigger) {
     // Size: 0x54
     function init_devgui() {
         util::waittill_can_add_debug_command();
-        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<dev string:x9c>", "<dev string:xd6>");
         level thread function_578918d1();
     }
 
@@ -567,7 +566,7 @@ function function_80bbb50b(chest, trigger) {
                     function_a92a93e9(loc, player.angles + (0, 180, 0), 0);
                 }
             }
-            wait(1);
+            wait 1;
         }
     }
 

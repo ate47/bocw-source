@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace namespace_fe63274;
 
 // Namespace namespace_fe63274/namespace_fe63274

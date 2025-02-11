@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_a2fc8c70;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 // Size: 0x54
 function private preinit() {
     if (is_true(getgametypesetting(#"hash_cd096e90260a26b"))) {
-        level._effect[#"hash_5fa0154f4b01ba02"] = "zombie/fx9_onslaught_orb_unstable_collapse";
+        level._effect[#"orb_nuke"] = "zombie/fx9_onslaught_orb_unstable_collapse";
     }
 }
 

@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace ztutorial;
 
 // Namespace ztutorial/gametype_init
@@ -15,7 +14,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0x95b27cf2, Offset: 0xc8
 // Size: 0x24
 function onprecachegametype() {
-    println("<unknown string>");
+    println("<dev string:x38>");
 }
 
 // Namespace ztutorial/ztutorial
@@ -23,6 +22,6 @@ function onprecachegametype() {
 // Checksum 0x8652413c, Offset: 0xf8
 // Size: 0x24
 function onstartgametype() {
-    println("<unknown string>");
+    println("<dev string:x5c>");
 }
 

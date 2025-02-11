@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\trophy_system.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\trophy_system;
 
 #namespace trophy_system;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x62577666, Offset: 0xf0
 // Size: 0x34
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x64f8ec1f, Offset: 0x130
 // Size: 0x90
 function function_ccfcde75(trophy, grenade) {

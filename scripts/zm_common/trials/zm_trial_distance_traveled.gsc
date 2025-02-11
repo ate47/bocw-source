@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_distance_traveled;
 
@@ -38,7 +37,7 @@ function private on_begin(var_38282db8) {
     foreach (player in getplayers()) {
         player thread function_ed4d5d4(var_38282db8);
     }
-    level.var_4220f02a = array(getweapon(#"launcher_standard_t8"), getweapon(#"hash_138efe2bb30be63c"), getweapon(#"hash_138f012bb30beb55"), getweapon(#"hash_46ad37ce8122812e"), getweapon(#"hash_138f002bb30be9a2"), getweapon(#"hash_3a8348f19a7e7629"));
+    level.var_4220f02a = array(getweapon(#"launcher_standard_t8"), getweapon(#"ww_random_ray_gun1"), getweapon(#"ww_random_ray_gun2"), getweapon(#"ww_random_ray_gun2_charged"), getweapon(#"ww_random_ray_gun3"), getweapon(#"ww_random_ray_gun3_charged"));
 }
 
 // Namespace zm_trial_distance_traveled/zm_trial_distance_traveled
@@ -64,11 +63,11 @@ function is_active() {
 // Size: 0x240
 function function_ed4d5d4(var_38282db8) {
     self endon(#"disconnect");
-    level endon(#"hash_7646638df88a3656", #"end_game", #"hash_43a461e5c99d52a0");
+    level endon(#"hash_7646638df88a3656", #"end_game", #"end_distance_traveled");
     n_distance_traveled = 0;
     self zm_trial_util::function_2190356a(int(n_distance_traveled), 1);
     self zm_trial_util::function_c2cd0cba(var_38282db8);
-    wait(12);
+    wait 12;
     var_31409e15 = self.origin;
     while (true) {
         var_abf38d09 = distance(self.origin, var_31409e15) * 0.0254;
@@ -89,7 +88,7 @@ function function_ed4d5d4(var_38282db8) {
             self zm_trial_util::function_2190356a(var_38282db8);
             self zm_trial_util::function_c2cd0cba(var_38282db8);
             zm_trial::fail(#"hash_1ab078fa9460e7c9", array(self));
-            level notify(#"hash_43a461e5c99d52a0");
+            level notify(#"end_distance_traveled");
             return;
         }
         var_31409e15 = self.origin;

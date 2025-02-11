@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.gsc;
+#using scripts\core_common\math_shared;
 
 #namespace face;
 
@@ -10,7 +9,7 @@
 function playfacethread(*facialanim, str_script_alias, importance, notifystring, *waitornot, *timetowait, player_or_team) {
     self endon(#"death");
     if (!isdefined(notifystring)) {
-        wait(1);
+        wait 1;
         self notify(timetowait);
         return;
     }
@@ -36,20 +35,20 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
     if (self.istalking) {
         if (isdefined(self.a.currentdialogimportance)) {
             if (waitornot < self.a.currentdialogimportance) {
-                wait(1);
+                wait 1;
                 self notify(timetowait);
                 return;
             } else if (waitornot == self.a.currentdialogimportance) {
                 if (self.a.facialsoundalias == notifystring) {
                     return;
                 }
-                println("<unknown string>" + self.a.facialsoundalias + "<unknown string>" + notifystring);
+                println("<dev string:x38>" + self.a.facialsoundalias + "<dev string:x54>" + notifystring);
                 while (self.istalking) {
                     self waittill(#"done speaking");
                 }
             }
         } else {
-            println("<unknown string>" + self.a.facialsoundalias + "<unknown string>" + notifystring);
+            println("<dev string:x61>" + self.a.facialsoundalias + "<dev string:x54>" + notifystring);
             if (isscriptfunctionptr(level.var_4ceaaaf5)) {
                 self thread [[ level.var_4ceaaaf5 ]](self.a.facialsoundalias);
             } else {
@@ -77,7 +76,7 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
     }
     /#
         if (level.numberofimportantpeopletalking > 1) {
-            println("<unknown string>" + notifystring);
+            println("<dev string:x81>" + notifystring);
         }
     #/
     uniquenotify = timetowait + " " + level.talknotifyseed;
@@ -101,7 +100,7 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
             }
         } else {
             /#
-                println("<unknown string>" + notifystring + "<unknown string>");
+                println("<dev string:xc3>" + notifystring + "<dev string:xe2>");
                 self thread _missing_dialog(notifystring, str_vox_file, uniquenotify);
             #/
         }
@@ -129,7 +128,7 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
 }
 
 // Namespace face/face
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x84f3acdd, Offset: 0x8e0
 // Size: 0xfc
 function _play_sound_to_player_with_notify(soundalias, player_or_team, uniquenotify) {
@@ -142,15 +141,15 @@ function _play_sound_to_player_with_notify(soundalias, player_or_team, uniquenot
     }
     n_playbacktime = soundgetplaybacktime(soundalias);
     if (n_playbacktime > 0) {
-        wait(n_playbacktime * 0.001);
+        wait n_playbacktime * 0.001;
     } else {
-        wait(1);
+        wait 1;
     }
     self notify(uniquenotify);
 }
 
 // Namespace face/face
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x956f5afe, Offset: 0x9e8
 // Size: 0x354
 function private _temp_dialog(str_line, uniquenotify, b_missing_vo = 0) {

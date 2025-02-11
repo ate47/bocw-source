@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\aats\zm_aat.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using script_408211ac7ff6ef56;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using script_3a704cbcf4081bfb;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
 #using script_340a2e805e35f7a2;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using script_3a704cbcf4081bfb;
+#using script_408211ac7ff6ef56;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\zm_common\aats\zm_aat;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_fishing;
 
@@ -30,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bf21164, Offset: 0x248
 // Size: 0x2c
 function preinit() {
@@ -38,11 +37,11 @@ function preinit() {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x89f9c8cd, Offset: 0x280
 // Size: 0xd4
 function postinit() {
-    mapdestinations = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
+    mapdestinations = struct::get_array(#"content_destination", "variantname");
     if (!zm_utility::is_survival() && isdefined(mapdestinations) && mapdestinations.size > 0) {
         level thread function_a225198d(mapdestinations[0]);
     }
@@ -51,7 +50,7 @@ function postinit() {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9d168928, Offset: 0x360
 // Size: 0x44
 function function_a225198d(destination) {
@@ -61,7 +60,7 @@ function function_a225198d(destination) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55ec7968, Offset: 0x3b0
 // Size: 0xc0
 function function_43eaec20(destination) {
@@ -74,22 +73,22 @@ function function_43eaec20(destination) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7291b284, Offset: 0x478
 // Size: 0x408
 function function_29307fae(struct) {
-    assert(isstruct(struct), "<unknown string>");
-    spawn_points = struct.contentgroups[#"hash_4f55f52a18ce23d"];
+    assert(isstruct(struct), "<dev string:x38>");
+    spawn_points = struct.contentgroups[#"fishing_spawn"];
     foreach (point in spawn_points) {
         spawn_struct = point;
         var_16129dba = content_manager::spawn_script_model(spawn_struct, #"p8_wz_ep_fishing_pole", 0);
         var_16129dba clientfield::set("set_compass_icon", 1);
         var_1dfa9e6 = content_manager::spawn_script_model(spawn_struct, undefined);
         var_1dfa9e6 playloopsound(#"hash_30a2fa81c37f5aff");
-        assert(isdefined(spawn_struct.contentgroups[#"hash_a8d2c2c21149a79"]), "<unknown string>");
+        assert(isdefined(spawn_struct.contentgroups[#"hash_a8d2c2c21149a79"]), "<dev string:x56>");
         var_c4b6fa2d = spawn_struct.contentgroups[#"hash_a8d2c2c21149a79"];
-        var_cf8192ca = content_manager::spawn_script_model(var_c4b6fa2d[0], #"hash_dbe95bf7266e66b", 0);
-        assert(isdefined(spawn_struct.contentgroups[#"hash_61b2fec1f617bb75"]), "<unknown string>");
+        var_cf8192ca = content_manager::spawn_script_model(var_c4b6fa2d[0], #"p9_zm_out_fishing_01_bobber", 0);
+        assert(isdefined(spawn_struct.contentgroups[#"hash_61b2fec1f617bb75"]), "<dev string:x87>");
         var_df283c09 = spawn_struct.contentgroups[#"hash_61b2fec1f617bb75"];
         var_9fadc93c = var_df283c09[0];
         forward = anglestoforward(var_16129dba.angles);
@@ -109,7 +108,7 @@ function function_29307fae(struct) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8d5d573a, Offset: 0x888
 // Size: 0x1d4
 function function_1cbcfab5(player) {
@@ -158,19 +157,19 @@ function function_1cbcfab5(player) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe50d29a0, Offset: 0xa68
 // Size: 0x5c
 function function_2bf9274() {
     self notify("6903aa98af509547");
     self endon("6903aa98af509547");
     self endon(#"death");
-    wait(1);
+    wait 1;
     self sethintstring(#"hash_6ca9ecf6df3b77ed");
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe803b29, Offset: 0xad0
 // Size: 0x30c
 function function_e126c567(eventstruct) {
@@ -217,7 +216,7 @@ function function_e126c567(eventstruct) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xdd0edb34, Offset: 0xde8
 // Size: 0xa8
 function fake_physicslaunch(start_pos, target_pos, power) {
@@ -231,7 +230,7 @@ function fake_physicslaunch(start_pos, target_pos, power) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb985ea11, Offset: 0xe98
 // Size: 0xa6
 function function_86edc85c(target_pos, maxwait = 2) {
@@ -246,7 +245,7 @@ function function_86edc85c(target_pos, maxwait = 2) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd1d23168, Offset: 0xf48
 // Size: 0x2a8
 function function_b828bd39(player, var_cdef1b0e) {
@@ -255,7 +254,7 @@ function function_b828bd39(player, var_cdef1b0e) {
     }
     self endon(#"death", #"fishing_done");
     player endon(#"death", #"disconnect");
-    wait(2.1);
+    wait 2.1;
     var_95981760 = self fake_physicslaunch(self.origin, var_cdef1b0e, 120);
     self function_86edc85c(var_cdef1b0e, var_95981760);
     self thread fishing_buoy_splash(var_cdef1b0e);
@@ -265,7 +264,7 @@ function function_b828bd39(player, var_cdef1b0e) {
     self.var_3fa8a746 = 0;
     while (player function_15049d95() && !self.dropping_item) {
         time = randomintrange(5, 7);
-        wait(time);
+        wait time;
         self.var_3fa8a746 = 1;
         player function_bc82f900("fishing_rumble");
         playsoundatposition(#"hash_5784befa5a563866", player.origin);
@@ -282,12 +281,12 @@ function function_b828bd39(player, var_cdef1b0e) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x66f3f206, Offset: 0x11f8
 // Size: 0xa4
-function fishing_buoy_splash(var_e222eb46) {
-    if (isdefined(var_e222eb46)) {
-        var_3cd73ec2 = (var_e222eb46[0], var_e222eb46[1], var_e222eb46[2] + 4);
+function fishing_buoy_splash(pos_override) {
+    if (isdefined(pos_override)) {
+        var_3cd73ec2 = (pos_override[0], pos_override[1], pos_override[2] + 4);
     } else {
         var_3cd73ec2 = (self.origin[0], self.origin[1], self.origin[2] + 4);
     }
@@ -295,7 +294,7 @@ function fishing_buoy_splash(var_e222eb46) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3bce6c1c, Offset: 0x12a8
 // Size: 0x5c4
 function function_16e4e507(var_558f00ed, var_886a6495, trigger, var_da4747b7) {
@@ -362,7 +361,7 @@ function function_16e4e507(var_558f00ed, var_886a6495, trigger, var_da4747b7) {
                 trigger deletedelay();
                 var_558f00ed clientfield::set("set_compass_icon", 0);
             }
-            wait(2);
+            wait 2;
             if (isdefined(var_558f00ed) && isdefined(var_886a6495)) {
                 var_558f00ed hide();
                 playfx(#"hash_6afe37492bc21f7f", var_558f00ed.origin);
@@ -375,7 +374,7 @@ function function_16e4e507(var_558f00ed, var_886a6495, trigger, var_da4747b7) {
             return;
         }
         if (isdefined(var_886a6495) && isdefined(var_558f00ed)) {
-            wait(1.7);
+            wait 1.7;
             if (isdefined(var_886a6495) && isdefined(trigger) && isdefined(var_558f00ed)) {
                 trigger.isfishing = 0;
                 var_886a6495.isfishing = 0;
@@ -390,17 +389,17 @@ function function_16e4e507(var_558f00ed, var_886a6495, trigger, var_da4747b7) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x800d090b, Offset: 0x1878
 // Size: 0x34
 function function_a543f4d1() {
     self endon(#"death");
-    wait(1.7);
+    wait 1.7;
     self zm_aat::function_ec7953fa();
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62120b5d, Offset: 0x18b8
 // Size: 0x12c
 function function_73532e4f(*str_notify) {
@@ -422,7 +421,7 @@ function function_73532e4f(*str_notify) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa3d0d028, Offset: 0x19f0
 // Size: 0x350
 function function_e8c63c15(player, var_da4747b7, index = 0) {
@@ -458,7 +457,7 @@ function function_e8c63c15(player, var_da4747b7, index = 0) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xced9be3b, Offset: 0x1d48
 // Size: 0xac
 function private on_item_pickup(params) {
@@ -473,20 +472,20 @@ function private on_item_pickup(params) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6b638e26, Offset: 0x1e00
 // Size: 0x162
 function function_c5c1b1fe(start_pos, end_pos, *player, var_ecf3bd81 = 0) {
     self endon(#"death");
     player = (player[0], player[1], player[2] + 4);
     var_22fb8377 = self fake_physicslaunch(end_pos, player, 200);
-    wait(1);
+    wait 1;
     timepassed = gettime();
     while (self.origin[2] > player[2] && float(gettime() - timepassed) / 1000 < var_22fb8377) {
         waitframe(1);
     }
     time = self namespace_b637a3ed::drop_item(0, player, (0, 0, 0), 2);
-    wait(time);
+    wait time;
     if (var_ecf3bd81) {
         self thread function_eaa298d9();
         return;
@@ -495,32 +494,32 @@ function function_c5c1b1fe(start_pos, end_pos, *player, var_ecf3bd81 = 0) {
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x508b417d, Offset: 0x1f70
 // Size: 0x16c
 function function_eaa298d9() {
     self endon(#"death");
-    wait(1);
+    wait 1;
     pointinfo = function_9cc082d2(self.origin, 32);
     if (isdefined(pointinfo) && isdefined(pointinfo[#"point"])) {
         navmeshposition = pointinfo[#"point"];
         var_9905e63e = spawnstruct();
         var_9905e63e.origin = navmeshposition;
         boot = mimic_prop_spawn::spawn_prop(var_9905e63e, undefined, #"hash_6290596be2341e21", 1);
-        var_a6fe91fd = [];
-        if (!isdefined(var_a6fe91fd)) {
-            var_a6fe91fd = [];
-        } else if (!isarray(var_a6fe91fd)) {
-            var_a6fe91fd = array(var_a6fe91fd);
+        prop_array = [];
+        if (!isdefined(prop_array)) {
+            prop_array = [];
+        } else if (!isarray(prop_array)) {
+            prop_array = array(prop_array);
         }
-        var_a6fe91fd[var_a6fe91fd.size] = boot;
-        mimic_prop_spawn::function_55657fb4(undefined, boot, var_a6fe91fd);
+        prop_array[prop_array.size] = boot;
+        mimic_prop_spawn::function_55657fb4(undefined, boot, prop_array);
     }
     self deletedelay();
 }
 
 // Namespace zm_fishing/zm_fishing
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b580456, Offset: 0x20e8
 // Size: 0x64
 function function_ff1fe53a(params) {

@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_274952f8a08d7ad0;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\shaderanim_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\animation_debug_shared.csc;
+#using scripts\core_common\animation_debug_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\shaderanim_shared;
+#using scripts\core_common\system_shared;
 
 #namespace animation;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8d763856, Offset: 0x378
 // Size: 0xc4
 function private preinit() {
@@ -37,7 +36,7 @@ function first_frame(animation, v_origin_or_ent, v_angles_or_tag) {
 }
 
 // Namespace animation/animation_shared
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0xddf531ab, Offset: 0x490
 // Size: 0x122
 function play(animation, v_origin_or_ent, v_angles_or_tag, n_rate = 1, n_blend_in = 0.2, n_blend_out = 0.2, n_lerp, b_link = 0, n_start_time = 0, var_b2e32ae2 = "linear", localclientnum = 0) {
@@ -47,7 +46,7 @@ function play(animation, v_origin_or_ent, v_angles_or_tag, n_rate = 1, n_blend_i
 }
 
 // Namespace animation/animation_shared
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0xafd8be6f, Offset: 0x5c0
 // Size: 0x564
 function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, *n_blend_out = 1, *n_lerp = 0.2, b_link = 0, n_start_time, var_b2e32ae2, localclientnum) {
@@ -57,7 +56,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     self notify(#"new_scripted_anim");
     self endon(#"new_scripted_anim", #"death");
     if (!isdefined(self.model) || self.model == #"") {
-        assertmsg("<unknown string>" + self.origin);
+        assertmsg("<dev string:x38>" + self.origin);
         return;
     }
     flag::set_val("firstframe", n_blend_out == 0);
@@ -71,7 +70,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         self animscripted("_anim_notify_", n_rate, n_blend_in, v_angles_or_tag, n_lerp, n_blend_out, n_start_time, var_b2e32ae2);
     } else {
         if (isstring(n_blend_in)) {
-            assert(isdefined(n_rate.model), "<unknown string>" + v_angles_or_tag + "<unknown string>" + n_blend_in + "<unknown string>");
+            assert(isdefined(n_rate.model), "<dev string:x76>" + v_angles_or_tag + "<dev string:x92>" + n_blend_in + "<dev string:xa0>");
             v_pos = n_rate gettagorigin(n_blend_in);
             v_ang = n_rate gettagangles(n_blend_in);
             self.origin = v_pos;
@@ -92,9 +91,9 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         self unlink();
     }
     /#
-        self.var_80c69db6 = "<unknown string>";
+        self.var_80c69db6 = "<dev string:xd6>";
         self.var_6c4bb19 = {#animation:v_angles_or_tag, #v_origin_or_ent:n_rate, #v_angles_or_tag:n_blend_in};
-        if (level flag::get("<unknown string>")) {
+        if (level flag::get("<dev string:xe0>")) {
             self thread anim_info_render_thread();
         }
     #/
@@ -112,7 +111,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x32d74626, Offset: 0xb30
 // Size: 0x4c
 function private waittill_end() {
@@ -121,7 +120,7 @@ function private waittill_end() {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x11e11b48, Offset: 0xb88
 // Size: 0x4a
 function _get_align_ent(e_align) {
@@ -142,7 +141,7 @@ function _get_align_ent(e_align) {
 function _get_align_pos(v_origin_or_ent = self.origin, v_angles_or_tag = isdefined(self.angles) ? self.angles : (0, 0, 0)) {
     s = spawnstruct();
     if (isvec(v_origin_or_ent)) {
-        assert(isvec(v_angles_or_tag), "<unknown string>");
+        assert(isvec(v_angles_or_tag), "<dev string:xee>");
         s.origin = v_origin_or_ent;
         s.angles = v_angles_or_tag;
     } else {
@@ -162,7 +161,7 @@ function _get_align_pos(v_origin_or_ent = self.origin, v_angles_or_tag = isdefin
 }
 
 // Namespace animation/animation_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xdebc03f8, Offset: 0xd70
 // Size: 0x16a
 function play_siege(str_anim, str_shot = "default", n_rate = 1, b_loop = 0) {
@@ -181,19 +180,19 @@ function play_siege(str_anim, str_shot = "default", n_rate = 1, b_loop = 0) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4d29a9c4, Offset: 0xee8
 // Size: 0x74
 function add_notetrack_func(funcname, func) {
     if (!isdefined(level._animnotifyfuncs)) {
         level._animnotifyfuncs = [];
     }
-    assert(!isdefined(level._animnotifyfuncs[funcname]), "<unknown string>");
+    assert(!isdefined(level._animnotifyfuncs[funcname]), "<dev string:x117>");
     level._animnotifyfuncs[funcname] = func;
 }
 
 // Namespace animation/animation_shared
-// Params 3, eflags: 0x42 linked
+// Params 3, eflags: 0x40 variadic
 // Checksum 0x66ffc295, Offset: 0xf68
 // Size: 0x112
 function add_global_notetrack_handler(str_note, func, ...) {
@@ -212,7 +211,7 @@ function add_global_notetrack_handler(str_note, func, ...) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1d845b31, Offset: 0x1088
 // Size: 0x29e
 function call_notetrack_handler(str_note) {
@@ -243,7 +242,7 @@ function call_notetrack_handler(str_note) {
                 self [[ func ]]();
                 break;
             default:
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x13d>");
                 break;
             }
         }
@@ -251,7 +250,7 @@ function call_notetrack_handler(str_note) {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x83a893a7, Offset: 0x1330
 // Size: 0x274
 function setup_notetracks() {
@@ -272,7 +271,7 @@ function setup_notetracks() {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd15f29d6, Offset: 0x15b0
 // Size: 0xd6
 function handle_notetracks() {
@@ -291,7 +290,7 @@ function handle_notetracks() {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd8eb7e86, Offset: 0x1690
 // Size: 0xe2
 function cracks_on(str_type) {
@@ -312,7 +311,7 @@ function cracks_on(str_type) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeac452d3, Offset: 0x1780
 // Size: 0xe2
 function cracks_off(str_type) {
@@ -333,7 +332,7 @@ function cracks_off(str_type) {
 }
 
 // Namespace animation/animation_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdfae036e, Offset: 0x1870
 // Size: 0x1b2
 function cf_cracks_on(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -356,7 +355,7 @@ function cf_cracks_on(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 }
 
 // Namespace animation/animation_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x90e17af9, Offset: 0x1a30
 // Size: 0x19a
 function cf_cracks_off(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

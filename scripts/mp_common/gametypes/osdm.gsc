@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\dm.gsc;
-#using scripts\mp_common\gametypes\os.gsc;
 #using script_1cc417743d7c262d;
+#using scripts\mp_common\gametypes\dm;
+#using scripts\mp_common\gametypes\os;
 
 #namespace osdm;
 

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace ai_puppeteer;
 
@@ -33,13 +32,13 @@
                 level.ai_puppeteer_active = 1;
                 level notify(#"kill ai puppeteer");
                 if (!util::function_88c74107()) {
-                    adddebugcommand("<unknown string>");
+                    adddebugcommand("<dev string:x38>");
                 }
                 thread ai_puppeteer();
             } else if (!getdvar(#"debug_ai_puppeteer", 0) && is_true(level.ai_puppeteer_active)) {
                 level.ai_puppeteer_active = 0;
                 if (util::function_88c74107()) {
-                    adddebugcommand("<unknown string>");
+                    adddebugcommand("<dev string:x38>");
                 }
                 level notify(#"kill ai puppeteer");
             }
@@ -61,9 +60,9 @@
         level.ai_puppet_highlighting = 0;
         player thread ai_puppet_cursor_tracker();
         player thread ai_puppet_manager();
-        player val::set(#"ai_puppeteer", "<unknown string>", 1);
+        player val::set(#"ai_puppeteer", "<dev string:x42>", 1);
         level waittill(#"kill ai puppeteer");
-        player val::reset(#"ai_puppeteer", "<unknown string>");
+        player val::reset(#"ai_puppeteer", "<dev string:x42>");
         ai_puppet_release(1);
         if (isdefined(level.ai_puppet_target)) {
             level.ai_puppet_target delete();
@@ -79,7 +78,7 @@
         level endon(#"kill ai puppeteer");
         self endon(#"death");
         while (true) {
-            if (self buttonpressed("<unknown string>")) {
+            if (self buttonpressed("<dev string:x4e>")) {
                 if (isdefined(level.ai_puppet)) {
                     if (isdefined(level.ai_puppet_target)) {
                         if (isai(level.ai_puppet_target)) {
@@ -99,7 +98,7 @@
                             self thread ai_puppeteer_highlight_ai(level.playercursorai, (1, 0, 0));
                         }
                     } else {
-                        level.ai_puppet_target = spawn("<unknown string>", level.playercursor[#"position"]);
+                        level.ai_puppet_target = spawn("<dev string:x5f>", level.playercursor[#"position"]);
                         level.ai_puppet_target makesentient();
                         level.ai_puppet_target.health = 10000;
                         level.ai_puppet_target_normal = level.playercursor[#"normal"];
@@ -107,8 +106,8 @@
                         self thread ai_puppeteer_highlight_point(level.ai_puppet_target.origin, level.ai_puppet_target_normal, anglestoforward(self getplayerangles()), (1, 0, 0));
                     }
                 }
-                wait(0.2);
-            } else if (self buttonpressed("<unknown string>")) {
+                wait 0.2;
+            } else if (self buttonpressed("<dev string:x6f>")) {
                 if (isdefined(level.ai_puppet)) {
                     if (isdefined(level.ai_puppet) && isusingnavvolume(level.ai_puppet)) {
                         var_8d9fdff6 = vectornormalize(level.playercursor[#"position"] - self.origin);
@@ -138,8 +137,8 @@
                         self thread ai_puppeteer_highlight_point(level.playercursor[#"position"], level.playercursor[#"normal"], anglestoforward(self getplayerangles()), (0, 1, 0));
                     }
                 }
-                wait(0.2);
-            } else if (self buttonpressed("<unknown string>") && self buttonpressed("<unknown string>")) {
+                wait 0.2;
+            } else if (self buttonpressed("<dev string:x7b>") && self buttonpressed("<dev string:x87>")) {
                 if (isdefined(level.ai_puppet)) {
                     if (isusingnavvolume(level.ai_puppet)) {
                         var_8d9fdff6 = vectornormalize(level.playercursor[#"position"] - self.origin);
@@ -177,8 +176,8 @@
                         self thread ai_puppeteer_highlight_point(level.playercursor[#"position"], level.playercursor[#"normal"], anglestoforward(self getplayerangles()), (0, 1, 0));
                     }
                 }
-                wait(0.2);
-            } else if (self buttonpressed("<unknown string>")) {
+                wait 0.2;
+            } else if (self buttonpressed("<dev string:x93>")) {
                 if (isdefined(level.playercursorai)) {
                     if (isdefined(level.ai_puppet) && level.playercursorai == level.ai_puppet) {
                         ai_puppet_release(1);
@@ -190,17 +189,17 @@
                         self thread ai_puppeteer_highlight_ai(level.ai_puppet, (0, 1, 1));
                     }
                 }
-                wait(0.2);
-            } else if (self buttonpressed("<unknown string>")) {
+                wait 0.2;
+            } else if (self buttonpressed("<dev string:x87>")) {
                 if (isdefined(level.ai_puppet)) {
                     level.ai_puppet clearforcedgoal();
                 }
-                wait(0.2);
+                wait 0.2;
             } else if (self util::stance_button_held()) {
                 if (isdefined(level.ai_puppet)) {
                     level.ai_puppet forceteleport(level.playercursor[#"position"], level.ai_puppet.angles);
                 }
-                wait(0.2);
+                wait 0.2;
             }
             if (isdefined(level.ai_puppet)) {
                 ai_puppeteer_render_ai(level.ai_puppet, (0, 1, 1));
@@ -213,10 +212,10 @@
                 }
             }
             if (isdefined(level.ai_puppet)) {
-                if (self buttonpressed("<unknown string>")) {
+                if (self buttonpressed("<dev string:x9f>")) {
                     level.ai_puppet.goalradius += 64;
                     level.ai_puppet.goalheight = level.ai_puppet.goalradius;
-                } else if (self buttonpressed("<unknown string>")) {
+                } else if (self buttonpressed("<dev string:xaa>")) {
                     radius = level.ai_puppet.goalradius - 64;
                     if (radius < 16) {
                         radius = 16;
@@ -226,7 +225,7 @@
                     }
                     level.ai_puppet.goalradius = radius;
                     level.ai_puppet.goalheight = level.ai_puppet.goalradius;
-                } else if (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
+                } else if (self buttonpressed("<dev string:xb7>") || self buttonpressed("<dev string:xc4>")) {
                     level.ai_puppet.goalradius = 16;
                     if (isusingnavvolume(level.ai_puppet)) {
                         level.ai_puppet.goalradius = level.ai_puppet.radius;
@@ -336,74 +335,74 @@
         level.puppeteer_hud_select.x = 0;
         level.puppeteer_hud_select.y = ypos;
         level.puppeteer_hud_select.fontscale = 1;
-        level.puppeteer_hud_select.alignx = "<unknown string>";
-        level.puppeteer_hud_select.horzalign = "<unknown string>";
+        level.puppeteer_hud_select.alignx = "<dev string:xd2>";
+        level.puppeteer_hud_select.horzalign = "<dev string:xd2>";
         level.puppeteer_hud_select.color = (0, 0, 1);
         ypos += 20;
         level.puppeteer_hud_goto = newdebughudelem();
         level.puppeteer_hud_goto.x = 0;
         level.puppeteer_hud_goto.y = ypos;
         level.puppeteer_hud_goto.fontscale = 1;
-        level.puppeteer_hud_goto.alignx = "<unknown string>";
-        level.puppeteer_hud_goto.horzalign = "<unknown string>";
+        level.puppeteer_hud_goto.alignx = "<dev string:xd2>";
+        level.puppeteer_hud_goto.horzalign = "<dev string:xd2>";
         level.puppeteer_hud_goto.color = (0, 1, 0);
         ypos += 20;
         level.var_d87fff95 = newdebughudelem();
         level.var_d87fff95.x = 0;
         level.var_d87fff95.y = ypos;
         level.var_d87fff95.fontscale = 1;
-        level.var_d87fff95.alignx = "<unknown string>";
-        level.var_d87fff95.horzalign = "<unknown string>";
+        level.var_d87fff95.alignx = "<dev string:xd2>";
+        level.var_d87fff95.horzalign = "<dev string:xd2>";
         level.var_d87fff95.color = (0, 1, 1);
         ypos += 20;
         level.var_b6a95fbe = newdebughudelem();
         level.var_b6a95fbe.x = 0;
         level.var_b6a95fbe.y = ypos;
         level.var_b6a95fbe.fontscale = 1;
-        level.var_b6a95fbe.alignx = "<unknown string>";
-        level.var_b6a95fbe.horzalign = "<unknown string>";
+        level.var_b6a95fbe.alignx = "<dev string:xd2>";
+        level.var_b6a95fbe.horzalign = "<dev string:xd2>";
         level.var_b6a95fbe.color = (1, 0, 0);
         ypos += 20;
         level.puppeteer_hud_shoot = newdebughudelem();
         level.puppeteer_hud_shoot.x = 0;
         level.puppeteer_hud_shoot.y = ypos;
         level.puppeteer_hud_shoot.fontscale = 1;
-        level.puppeteer_hud_shoot.alignx = "<unknown string>";
-        level.puppeteer_hud_shoot.horzalign = "<unknown string>";
+        level.puppeteer_hud_shoot.alignx = "<dev string:xd2>";
+        level.puppeteer_hud_shoot.horzalign = "<dev string:xd2>";
         level.puppeteer_hud_shoot.color = (1, 0, 1);
         ypos += 20;
         level.puppeteer_hud_teleport = newdebughudelem();
         level.puppeteer_hud_teleport.x = 0;
         level.puppeteer_hud_teleport.y = ypos;
         level.puppeteer_hud_teleport.fontscale = 1;
-        level.puppeteer_hud_teleport.alignx = "<unknown string>";
-        level.puppeteer_hud_teleport.horzalign = "<unknown string>";
+        level.puppeteer_hud_teleport.alignx = "<dev string:xd2>";
+        level.puppeteer_hud_teleport.horzalign = "<dev string:xd2>";
         level.puppeteer_hud_teleport.color = (1, 1, 0);
         ypos += 20;
         level.var_33b22db3 = newdebughudelem();
         level.var_33b22db3.x = 0;
         level.var_33b22db3.y = ypos;
         level.var_33b22db3.fontscale = 1;
-        level.var_33b22db3.alignx = "<unknown string>";
-        level.var_33b22db3.horzalign = "<unknown string>";
+        level.var_33b22db3.alignx = "<dev string:xd2>";
+        level.var_33b22db3.horzalign = "<dev string:xd2>";
         level.var_33b22db3.color = (1, 1, 1);
         if (level.orbis) {
-            level.puppeteer_hud_select settext("<unknown string>");
-            level.puppeteer_hud_goto settext("<unknown string>");
-            level.var_d87fff95 settext("<unknown string>");
-            level.var_b6a95fbe settext("<unknown string>");
-            level.puppeteer_hud_shoot settext("<unknown string>");
-            level.puppeteer_hud_teleport settext("<unknown string>");
-            level.var_33b22db3 settext("<unknown string>");
+            level.puppeteer_hud_select settext("<dev string:xda>");
+            level.puppeteer_hud_goto settext("<dev string:xed>");
+            level.var_d87fff95 settext("<dev string:xf9>");
+            level.var_b6a95fbe settext("<dev string:x11a>");
+            level.puppeteer_hud_shoot settext("<dev string:x13a>");
+            level.puppeteer_hud_teleport settext("<dev string:x157>");
+            level.var_33b22db3 settext("<dev string:x171>");
             return;
         }
-        level.puppeteer_hud_select settext("<unknown string>");
-        level.puppeteer_hud_goto settext("<unknown string>");
-        level.var_d87fff95 settext("<unknown string>");
-        level.var_b6a95fbe settext("<unknown string>");
-        level.puppeteer_hud_shoot settext("<unknown string>");
-        level.puppeteer_hud_teleport settext("<unknown string>");
-        level.var_33b22db3 settext("<unknown string>");
+        level.puppeteer_hud_select settext("<dev string:x192>");
+        level.puppeteer_hud_goto settext("<dev string:x1a0>");
+        level.var_d87fff95 settext("<dev string:x1ac>");
+        level.var_b6a95fbe settext("<dev string:x1c1>");
+        level.puppeteer_hud_shoot settext("<dev string:x13a>");
+        level.puppeteer_hud_teleport settext("<dev string:x1da>");
+        level.var_33b22db3 settext("<dev string:x171>");
     }
 
     // Namespace ai_puppeteer/ai_puppeteer_shared
@@ -481,7 +480,7 @@
         while (timer < 0.7) {
             ai_puppeteer_render_point(point, normal, forward, color);
             timer += 0.15;
-            wait(0.15);
+            wait 0.15;
         }
         level.ai_puppet_highlighting = 0;
     }
@@ -498,7 +497,7 @@
         while (timer < 0.7) {
             ai_puppeteer_render_node(node, (0, 1, 0));
             timer += 0.15;
-            wait(0.15);
+            wait 0.15;
         }
         level.ai_puppet_highlighting = 0;
     }
@@ -515,7 +514,7 @@
         while (timer < 0.7 && isdefined(ai)) {
             ai_puppeteer_render_ai(ai, color);
             timer += 0.15;
-            wait(0.15);
+            wait 0.15;
         }
         level.ai_puppet_highlighting = 0;
     }

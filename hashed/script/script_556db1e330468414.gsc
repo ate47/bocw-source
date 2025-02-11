@@ -1,36 +1,35 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_6155d71e1c9a57eb;
+#using script_1471eea5d2e60f83;
 #using script_16b1b77a76492c6a;
 #using script_34ab99a4ca1a43d;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using script_1471eea5d2e60f83;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_6155d71e1c9a57eb;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
-#namespace namespace_181e92ae;
+#namespace monster_house;
 
-// Namespace namespace_181e92ae/world_event_monster_house
+// Namespace monster_house/world_event_monster_house
 // Params 0, eflags: 0x5
 // Checksum 0xece1d005, Offset: 0x2c0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_6eb528f341abf64a", &preinit, undefined, undefined, #"content_manager");
+    system::register(#"monster_house", &preinit, undefined, undefined, #"content_manager");
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 0, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 0, eflags: 0x4
 // Checksum 0x5950bbe2, Offset: 0x310
 // Size: 0xec
 function private preinit() {
@@ -43,15 +42,15 @@ function private preinit() {
     if (!is_true(getgametypesetting(#"hash_50bcc0278b8ff6b2")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    content_manager::register_script(#"hash_6eb528f341abf64a", &function_66c8033b, 1);
+    content_manager::register_script(#"monster_house", &function_66c8033b, 1);
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x2 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x0
 // Checksum 0x3fa1c84f, Offset: 0x408
 // Size: 0x276
 function function_66c8033b(instance) {
-    s_start = instance.contentgroups[#"hash_4d7f33a283d72002"][0];
+    s_start = instance.contentgroups[#"start_crystal"][0];
     instance.var_8b241b32 = s_start.origin;
     mdl_start = function_4b312787(s_start);
     if (mdl_start clientfield::is_registered("perk_death_perception_item_marked_for_rob")) {
@@ -77,8 +76,8 @@ function function_66c8033b(instance) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x4
 // Checksum 0xca4190a6, Offset: 0x688
 // Size: 0x10c
 function private function_4c9f2ecc(s_result) {
@@ -90,15 +89,15 @@ function private function_4c9f2ecc(s_result) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x4
 // Checksum 0xa7940df8, Offset: 0x7a0
 // Size: 0x2e0
 function private function_37eab05b(instance) {
     level thread function_a77f3600(instance);
     level thread function_2d2fade8(instance);
     level thread function_68aac628(instance, "monsterhouse_low");
-    var_d56fdb6 = array::randomize(isdefined(instance.contentgroups[#"hash_1c35d9839ba0d789"]) ? instance.contentgroups[#"hash_1c35d9839ba0d789"] : []);
+    var_d56fdb6 = array::randomize(isdefined(instance.contentgroups[#"spawn_crystal"]) ? instance.contentgroups[#"spawn_crystal"] : []);
     instance.var_eb3bf4b1 = [];
     var_90acdb64 = getplayers().size * 2 + 4;
     n_spawned = 0;
@@ -129,8 +128,8 @@ function private function_37eab05b(instance) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 0, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 0, eflags: 0x4
 // Checksum 0x9581d381, Offset: 0xa88
 // Size: 0xb0
 function private function_6326cff8() {
@@ -141,8 +140,8 @@ function private function_6326cff8() {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x4
 // Checksum 0x2833e1ec, Offset: 0xb40
 // Size: 0x2f4
 function private function_cdec3a88(*s_result) {
@@ -170,8 +169,8 @@ function private function_cdec3a88(*s_result) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 0, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 0, eflags: 0x4
 // Checksum 0x24f0ac8b, Offset: 0xe40
 // Size: 0x84
 function private function_3a22c4f4() {
@@ -183,8 +182,8 @@ function private function_3a22c4f4() {
     self setmodel(#"hash_50aa2075dbc5e6e0");
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x4
 // Checksum 0x22581d88, Offset: 0xed0
 // Size: 0x70
 function private function_a77f3600(instance) {
@@ -194,17 +193,17 @@ function private function_a77f3600(instance) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x4
 // Checksum 0xafbfe661, Offset: 0xf48
 // Size: 0x284
 function private function_2d2fade8(instance) {
     instance endon(#"cleanup");
     n_wait_time = 90 + getplayers().size * -10;
     level thread function_84ab63bd(instance, n_wait_time);
-    wait(n_wait_time);
+    wait n_wait_time;
     /#
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x38>");
     #/
     if (isdefined(instance.var_b9e44637)) {
         instance.var_b9e44637 stoploopsound();
@@ -215,7 +214,7 @@ function private function_2d2fade8(instance) {
         if (!isentity(mdl_crystal)) {
             continue;
         }
-        mdl_crystal notify(#"hash_285fd9bc53c292d8");
+        mdl_crystal notify(#"pod_destroyed");
         mdl_crystal notify(#"hash_52a1c0be67192d9b");
         mdl_crystal val::set(#"hash_3f8039e6e19dc02b", "takedamage", 0);
         mdl_crystal thread function_fc37bb4f("inactive");
@@ -228,21 +227,21 @@ function private function_2d2fade8(instance) {
     instance flag::set(#"cleanup");
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 2, eflags: 0x2 linked
+// Namespace monster_house/world_event_monster_house
+// Params 2, eflags: 0x0
 // Checksum 0x99241da5, Offset: 0x11d8
 // Size: 0x94
 function function_84ab63bd(instance, n_wait_time) {
     instance endon(#"cleanup");
     var_286f8a2c = 0.33 * n_wait_time;
-    wait(var_286f8a2c);
+    wait var_286f8a2c;
     level thread function_68aac628(instance, "monsterhouse_med");
-    wait(var_286f8a2c);
+    wait var_286f8a2c;
     level thread function_68aac628(instance, "monsterhouse_high");
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x6 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x4
 // Checksum 0x368427fb, Offset: 0x1278
 // Size: 0x1c8
 function private function_4b312787(struct) {
@@ -261,13 +260,13 @@ function private function_4b312787(struct) {
     mdl_crystal.var_9880bf81 = 1;
     mdl_crystal thread function_fc37bb4f("active");
     mdl_crystal thread scene::play(str_scene, mdl_crystal);
-    mdl_crystal fx::play(#"hash_55757df7429e3ca6", mdl_crystal.origin, mdl_crystal.angles, #"hash_285fd9bc53c292d8", 1);
+    mdl_crystal fx::play(#"hash_55757df7429e3ca6", mdl_crystal.origin, mdl_crystal.angles, #"pod_destroyed", 1);
     level thread namespace_58949729::function_8265e656(mdl_crystal);
     return mdl_crystal;
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x2 linked
+// Namespace monster_house/world_event_monster_house
+// Params 1, eflags: 0x0
 // Checksum 0x4e938a58, Offset: 0x1448
 // Size: 0x132
 function function_fc37bb4f(str_type) {
@@ -293,8 +292,8 @@ function function_fc37bb4f(str_type) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 2, eflags: 0x2 linked
+// Namespace monster_house/world_event_monster_house
+// Params 2, eflags: 0x0
 // Checksum 0x9fffdad5, Offset: 0x1588
 // Size: 0x5c
 function function_68aac628(instance, var_9c1ed9ea) {
@@ -306,7 +305,7 @@ function function_68aac628(instance, var_9c1ed9ea) {
 
 /#
 
-    // Namespace namespace_181e92ae/world_event_monster_house
+    // Namespace monster_house/world_event_monster_house
     // Params 1, eflags: 0x4
     // Checksum 0x79670daa, Offset: 0x15f0
     // Size: 0x202
@@ -314,8 +313,8 @@ function function_68aac628(instance, var_9c1ed9ea) {
         if (!getdvarint(#"hash_730311c63805303a", 0)) {
             return;
         }
-        level endon(#"hash_345e9169ebba28fb");
-        var_d56fdb6 = isdefined(instance.contentgroups[#"hash_1c35d9839ba0d789"]) ? instance.contentgroups[#"hash_1c35d9839ba0d789"] : [];
+        level endon(#"portal_activated");
+        var_d56fdb6 = isdefined(instance.contentgroups[#"spawn_crystal"]) ? instance.contentgroups[#"spawn_crystal"] : [];
         while (true) {
             foreach (var_d2ee34ea in var_d56fdb6) {
                 sphere(var_d2ee34ea.origin, 6, (0, 1, 1), 0.75, 0, 7, 10);

@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_fav_light;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x744f94f3, Offset: 0x110
 // Size: 0x2c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb2fee1cd, Offset: 0x148
 // Size: 0xcc
 function private function_6e6e0d52() {
@@ -37,7 +36,7 @@ function private function_6e6e0d52() {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe04185bc, Offset: 0x220
 // Size: 0x9c
 function function_1d4618ca(params) {
@@ -56,7 +55,7 @@ function function_1d4618ca(params) {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa16e0333, Offset: 0x2c8
 // Size: 0x9c
 function function_79f2b4cf(params) {
@@ -75,7 +74,7 @@ function function_79f2b4cf(params) {
 }
 
 // Namespace player_fav_light/player_fav_light
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1c9908e3, Offset: 0x370
 // Size: 0xe4
 function function_c4c18caf(params) {

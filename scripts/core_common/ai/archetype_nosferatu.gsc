@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_1f0e83e43bf9c3b9;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace archetypenosferatu;
 
@@ -29,7 +28,7 @@ class class_1546f28e {
     var var_425c4c8b;
 
     // Namespace class_1546f28e/archetype_nosferatu
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0xd6824552, Offset: 0x2948
     // Size: 0x1a
     constructor() {
@@ -51,7 +50,7 @@ function autoexec init() {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3de1b315, Offset: 0x3a8
 // Size: 0x4a
 function private function_dbd0360f() {
@@ -61,7 +60,7 @@ function private function_dbd0360f() {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8f033804, Offset: 0x400
 // Size: 0xc
 function private function_b1df7220(*entity) {
@@ -69,7 +68,7 @@ function private function_b1df7220(*entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x34473333, Offset: 0x418
 // Size: 0x2c
 function private function_f8ab724f(*entity) {
@@ -78,7 +77,7 @@ function private function_f8ab724f(*entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa671bc9b, Offset: 0x450
 // Size: 0xb4
 function private function_5b800648() {
@@ -93,7 +92,7 @@ function private function_5b800648() {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9959de10, Offset: 0x510
 // Size: 0x3c
 function private function_2e5f2af4() {
@@ -103,7 +102,7 @@ function private function_2e5f2af4() {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x93576a92, Offset: 0x558
 // Size: 0x804
 function private registerbehaviorscriptfunctions() {
@@ -149,7 +148,7 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf5e57ebb, Offset: 0xd68
 // Size: 0x64
 function function_2e8014e(entity) {
@@ -159,7 +158,7 @@ function function_2e8014e(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7227f63f, Offset: 0xdd8
 // Size: 0x10c
 function private function_b75dd595(entity) {
@@ -181,7 +180,7 @@ function private function_b75dd595(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7abe6d88, Offset: 0xef0
 // Size: 0x70
 function private function_8b2173e0(entity) {
@@ -192,7 +191,7 @@ function private function_8b2173e0(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x914e2148, Offset: 0xf68
 // Size: 0x11c
 function private function_3df24b25(entity) {
@@ -216,7 +215,7 @@ function private function_3df24b25(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xde2cef86, Offset: 0x1090
 // Size: 0x80
 function private function_15d413b9(entity) {
@@ -228,7 +227,7 @@ function private function_15d413b9(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xed88c9e3, Offset: 0x1118
 // Size: 0x8c
 function private function_b758de87(entity) {
@@ -240,7 +239,7 @@ function private function_b758de87(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x87654a4d, Offset: 0x11b0
 // Size: 0x38
 function private function_b5305a8f(entity) {
@@ -251,7 +250,7 @@ function private function_b5305a8f(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6c4030e7, Offset: 0x11f0
 // Size: 0xcc
 function private function_2ad18645(*notifyhash) {
@@ -266,7 +265,7 @@ function private function_2ad18645(*notifyhash) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x5a1cb3e2, Offset: 0x12c8
 // Size: 0x106
 function private function_fb3fdf43(entity, latch_enemy) {
@@ -285,7 +284,7 @@ function private function_fb3fdf43(entity, latch_enemy) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x40268485, Offset: 0x13d8
 // Size: 0x1ec
 function private function_20a76c21(entity) {
@@ -317,7 +316,7 @@ function private function_20a76c21(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb526d6bf, Offset: 0x15d0
 // Size: 0xec
 function private function_db62d88a() {
@@ -327,12 +326,12 @@ function private function_db62d88a() {
     if (isdefined(w_current) && is_true(w_current.isheroweapon)) {
         self val::set(#"nosferatu_latch", "disable_weapons", 1);
     }
-    wait(8);
+    wait 8;
     self val::reset(#"nosferatu_latch", "ignoreme");
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x83b2250e, Offset: 0x16c8
 // Size: 0x1e6
 function private function_a41a5aea(entity) {
@@ -366,7 +365,7 @@ function private function_a41a5aea(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7d3600d4, Offset: 0x18b8
 // Size: 0x17a
 function private function_b5047448(entity) {
@@ -401,7 +400,7 @@ function private function_b5047448(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7472d237, Offset: 0x1a40
 // Size: 0x3d2
 function private function_e9819a23(entity) {
@@ -442,7 +441,7 @@ function private function_e9819a23(entity) {
                 var_7a61ad67 = vectornormalize(entity getvelocity());
                 if (vectordot(var_7a61ad67, enemyvelocity) > cos(20)) {
                     /#
-                        record3dtext("<unknown string>", entity.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                        record3dtext("<dev string:x38>", entity.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
                     #/
                     return false;
                 }
@@ -464,7 +463,7 @@ function private function_e9819a23(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfe29700c, Offset: 0x1e20
 // Size: 0x322
 function private function_85d8b15d(entity) {
@@ -499,7 +498,7 @@ function private function_85d8b15d(entity) {
                 var_7a61ad67 = vectornormalize(entity getvelocity());
                 if (vectordot(var_7a61ad67, enemyvelocity) > cos(20)) {
                     /#
-                        record3dtext("<unknown string>", entity.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                        record3dtext("<dev string:x38>", entity.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
                     #/
                     return false;
                 }
@@ -517,7 +516,7 @@ function private function_85d8b15d(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa95da70e, Offset: 0x2150
 // Size: 0xec
 function function_ebe0e1b5(entity) {
@@ -536,7 +535,7 @@ function function_ebe0e1b5(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x61edd056, Offset: 0x2248
 // Size: 0x6c
 function private function_76505306(entity) {
@@ -546,7 +545,7 @@ function private function_76505306(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x55867be5, Offset: 0x22c0
 // Size: 0x2c
 function private function_e0ad0db2(entity) {
@@ -554,7 +553,7 @@ function private function_e0ad0db2(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x48f1e09c, Offset: 0x22f8
 // Size: 0xb0
 function private nosferatushouldmelee(entity) {
@@ -571,7 +570,7 @@ function private nosferatushouldmelee(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2cb91085, Offset: 0x23b0
 // Size: 0x24e
 function private function_7ffbbff(entity) {
@@ -607,7 +606,7 @@ function private function_7ffbbff(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x64e1880, Offset: 0x2608
 // Size: 0x11c
 function private function_105988a0(entity) {
@@ -631,7 +630,7 @@ function private function_105988a0(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcd5ab558, Offset: 0x2730
 // Size: 0x11c
 function private function_c2f87d6(entity) {
@@ -655,7 +654,7 @@ function private function_c2f87d6(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5f588537, Offset: 0x2858
 // Size: 0x6c
 function private function_ed80a3bc(entity) {
@@ -665,7 +664,7 @@ function private function_ed80a3bc(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc60befdb, Offset: 0x28d0
 // Size: 0x6c
 function private function_4df0b87d(entity) {
@@ -675,7 +674,7 @@ function private function_4df0b87d(entity) {
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x6c5c0067, Offset: 0x2a08
 // Size: 0x9a
 function function_37d5cfc(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -686,7 +685,7 @@ function function_37d5cfc(entity, *mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xdd504965, Offset: 0x2ab0
 // Size: 0x84
 function function_4b55eb0a(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -697,7 +696,7 @@ function function_4b55eb0a(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x1bb033a, Offset: 0x2b40
 // Size: 0x2f4
 function function_1ad502a0(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -722,14 +721,14 @@ function function_1ad502a0(entity, mocompanim, *mocompanimblendouttime, *mocompa
             movedelta = getmovedelta(mocompduration, 0, 1);
             animendpos = mocompanimflag localtoworldcoords(movedelta);
             distance = distance(mocompanimflag.origin, animendpos);
-            recordcircle(animendpos, 3, (0, 1, 0), "<unknown string>");
-            record3dtext("<unknown string>" + distance, animendpos, (0, 1, 0), "<unknown string>");
+            recordcircle(animendpos, 3, (0, 1, 0), "<dev string:x54>");
+            record3dtext("<dev string:x5e>" + distance, animendpos, (0, 1, 0), "<dev string:x54>");
         #/
     }
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9d1ae32c, Offset: 0x2e40
 // Size: 0xb64
 function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -759,28 +758,28 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
         }
         if (traceresult[#"fraction"] < 0.9) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x62>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 0;
         } else if (!var_201660e6) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x73>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 0;
         } else if (var_cf699df5 > var_65cbfb52 && var_776ddabf >= sqr(130)) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x85>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 0;
         } else if (var_65cbfb52 >= sqr(450)) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x94>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 0;
         }
         if (var_535d098c) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:xa3>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 1;
         }
@@ -795,11 +794,11 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
             var_7948b2f3 = withinzrange && withinfov;
             var_425c4c8b = (isvisible || var_535d098c) && var_7948b2f3;
             /#
-                reasons = "<unknown string>" + isvisible + "<unknown string>" + withinzrange + "<unknown string>" + withinfov;
+                reasons = "<dev string:xb7>" + isvisible + "<dev string:xbf>" + withinzrange + "<dev string:xc6>" + withinfov;
                 if (var_425c4c8b) {
-                    record3dtext(reasons, mocompanimflag.origin + (0, 0, 60), (0, 1, 0), "<unknown string>");
+                    record3dtext(reasons, mocompanimflag.origin + (0, 0, 60), (0, 1, 0), "<dev string:x54>");
                 } else {
-                    record3dtext(reasons, mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
+                    record3dtext(reasons, mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<dev string:x54>");
                 }
             #/
             if (var_425c4c8b) {
@@ -824,8 +823,8 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
         if (currentanimtime <= mocompanimflag.meleeinfo.var_6392c3a2) {
             assert(isdefined(mocompanimflag.meleeinfo.var_10b8b6d1) && isdefined(mocompanimflag.meleeinfo.var_8b9a15a6));
             /#
-                recordsphere(mocompanimflag.meleeinfo.var_cb28f380, 3, (0, 1, 0), "<unknown string>");
-                recordsphere(mocompanimflag.meleeinfo.adjustedendpos, 3, (0, 0, 1), "<unknown string>");
+                recordsphere(mocompanimflag.meleeinfo.var_cb28f380, 3, (0, 1, 0), "<dev string:x54>");
+                recordsphere(mocompanimflag.meleeinfo.adjustedendpos, 3, (0, 0, 1), "<dev string:x54>");
             #/
             adjustedorigin = mocompanimflag.origin + mocompanimflag.meleeinfo.var_10b8b6d1 * mocompanimflag.meleeinfo.var_8b9a15a6;
             mocompanimflag forceteleport(adjustedorigin);
@@ -838,7 +837,7 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc40bbfc6, Offset: 0x39b0
 // Size: 0xbe
 function function_b472ba3d(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -852,7 +851,7 @@ function function_b472ba3d(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x45d28fc, Offset: 0x3a78
 // Size: 0x2c
 function nfrtuleaprumble(entity) {

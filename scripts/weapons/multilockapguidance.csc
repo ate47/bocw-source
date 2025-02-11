@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace antipersonnel_guidance;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace antipersonnel_guidance/multilockapguidance
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbc1de109, Offset: 0xd8
 // Size: 0x1c
 function private preinit() {
@@ -21,7 +20,7 @@ function private preinit() {
 }
 
 // Namespace antipersonnel_guidance/multilockapguidance
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6d92bff9, Offset: 0x100
 // Size: 0xb8
 function player_init() {
@@ -33,7 +32,7 @@ function player_init() {
 }
 
 // Namespace antipersonnel_guidance/multilockapguidance
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x669785e5, Offset: 0x1c0
 // Size: 0x12e
 function watch_lockon(*localclientnum) {

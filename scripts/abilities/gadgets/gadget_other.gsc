@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\abilities\ability_player.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\system_shared;
 
 #namespace gadget_other;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace gadget_other/gadget_other
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x81f38d4a, Offset: 0xd8
 // Size: 0x44
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace gadget_other/gadget_other
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1008ed24, Offset: 0x128
 // Size: 0x22
 function gadget_other_is_inuse(slot) {
@@ -30,7 +29,7 @@ function gadget_other_is_inuse(slot) {
 }
 
 // Namespace gadget_other/gadget_other
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb44aadba, Offset: 0x158
 // Size: 0x22
 function gadget_other_is_flickering(slot) {
@@ -44,12 +43,12 @@ function gadget_other_is_flickering(slot) {
     // Checksum 0xe8eb2cbb, Offset: 0x188
     // Size: 0xbc
     function set_gadget_other_status(weapon, status, time) {
-        timestr = "<unknown string>";
+        timestr = "<dev string:x38>";
         if (isdefined(time)) {
-            timestr = "<unknown string>" + "<unknown string>" + time;
+            timestr = "<dev string:x3c>" + "<dev string:x42>" + time;
         }
         if (getdvarint(#"scr_cpower_debug_prints", 0) > 0) {
-            self iprintlnbold("<unknown string>" + weapon.name + "<unknown string>" + status + timestr);
+            self iprintlnbold("<dev string:x4e>" + weapon.name + "<dev string:x5f>" + status + timestr);
         }
     }
 

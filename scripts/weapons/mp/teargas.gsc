@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\teargas.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\teargas;
 
-#namespace namespace_8a3384f2;
+#namespace teargas;
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
+// Namespace teargas/teargas
 // Params 0, eflags: 0x5
 // Checksum 0x6867d33c, Offset: 0xa0
 // Size: 0x3c
@@ -14,8 +13,8 @@ function private autoexec __init__system__() {
     system::register(#"hash_2d15b1979434a7ae", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 0, eflags: 0x6 linked
+// Namespace teargas/teargas
+// Params 0, eflags: 0x4
 // Checksum 0x936fa071, Offset: 0xe8
 // Size: 0x9c
 function private preinit() {
@@ -25,8 +24,8 @@ function private preinit() {
     globallogic_score::function_c1e9b86b(level.var_c7b2d0ab, &function_6703177e);
 }
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 1, eflags: 0x2 linked
+// Namespace teargas/teargas
+// Params 1, eflags: 0x0
 // Checksum 0x2aa4fca6, Offset: 0x190
 // Size: 0x13c
 function function_6703177e(params) {
@@ -40,8 +39,8 @@ function function_6703177e(params) {
     attacker stats::function_bcf9602(#"hash_5a979e436e74441", 1, #"hash_6abe83944d701459");
 }
 
-// Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 5, eflags: 0x2 linked
+// Namespace teargas/teargas
+// Params 5, eflags: 0x0
 // Checksum 0x7c94394c, Offset: 0x2d8
 // Size: 0x3c
 function function_8f5e1a77(*attacker, *victim, *weapon, attackerweapon, *meansofdeath) {

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace hostmigration;
 
@@ -41,7 +40,7 @@ function resumetimer() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x115be52e, Offset: 0x238
 // Size: 0x80
 function locktimer() {
@@ -56,18 +55,18 @@ function locktimer() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe1fc79b5, Offset: 0x2c0
 // Size: 0x72
 function matchstarttimerconsole_internal(counttime) {
     waittillframeend();
     level endon(#"match_start_timer_beginning");
     luinotifyevent(#"create_prematch_timer", 2, gettime() + int(counttime * 1000), 1);
-    wait(counttime);
+    wait counttime;
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb8f8b5f8, Offset: 0x340
 // Size: 0xec
 function matchstarttimerconsole(*type, duration) {
@@ -88,7 +87,7 @@ function matchstarttimerconsole(*type, duration) {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1aa0881c, Offset: 0x438
 // Size: 0xba
 function hostmigrationwait() {
@@ -100,11 +99,11 @@ function hostmigrationwait() {
     potm::forceinit();
     level notify(#"host_migration_countdown_begin");
     thread matchstarttimerconsole("match_starting_in", 5);
-    wait(5);
+    wait 5;
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe763f1f2, Offset: 0x500
 // Size: 0x44
 function waittillhostmigrationcountdown() {
@@ -116,16 +115,16 @@ function waittillhostmigrationcountdown() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf30d07be, Offset: 0x550
 // Size: 0x20
 function hostmigrationwaitforplayers() {
     level endon(#"hostmigration_enoughplayers");
-    wait(15);
+    wait 15;
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb466dce1, Offset: 0x578
 // Size: 0xe4
 function hostmigrationtimerthink_internal() {
@@ -141,7 +140,7 @@ function hostmigrationtimerthink_internal() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2a3b5556, Offset: 0x668
 // Size: 0x94
 function hostmigrationtimerthink() {
@@ -155,7 +154,7 @@ function hostmigrationtimerthink() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15109e43, Offset: 0x708
 // Size: 0x44
 function waittillhostmigrationdone() {
@@ -168,7 +167,7 @@ function waittillhostmigrationdone() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1e9331a6, Offset: 0x758
 // Size: 0x38
 function waittillhostmigrationstarts(duration) {
@@ -176,11 +175,11 @@ function waittillhostmigrationstarts(duration) {
         return;
     }
     level endon(#"host_migration_begin");
-    wait(duration);
+    wait duration;
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0342de6, Offset: 0x798
 // Size: 0x13c
 function waitlongdurationwithhostmigrationpause(duration) {
@@ -197,7 +196,7 @@ function waitlongdurationwithhostmigrationpause(duration) {
     }
     /#
         if (gettime() != endtime) {
-            println("<unknown string>" + gettime() + "<unknown string>" + endtime);
+            println("<dev string:x38>" + gettime() + "<dev string:x58>" + endtime);
         }
     #/
     waittillhostmigrationdone();
@@ -227,7 +226,7 @@ function waitlongdurationwithhostmigrationpauseemp(duration) {
     }
     /#
         if (gettime() != empendtime) {
-            println("<unknown string>" + gettime() + "<unknown string>" + empendtime);
+            println("<dev string:x38>" + gettime() + "<dev string:x74>" + empendtime);
         }
     #/
     waittillhostmigrationdone();
@@ -251,18 +250,18 @@ function waitlongdurationwithgameendtimeupdate(duration) {
         while (isdefined(level.hostmigrationtimer)) {
             endtime += 1000;
             setgameendtime(int(endtime));
-            wait(1);
+            wait 1;
         }
     }
     /#
         if (gettime() != endtime) {
-            println("<unknown string>" + gettime() + "<unknown string>" + endtime);
+            println("<dev string:x38>" + gettime() + "<dev string:x58>" + endtime);
         }
     #/
     while (isdefined(level.hostmigrationtimer)) {
         endtime += 1000;
         setgameendtime(int(endtime));
-        wait(1);
+        wait 1;
     }
     return gettime() - starttime;
 }
@@ -290,7 +289,7 @@ function migrationawarewait(durationms) {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaa373ebd, Offset: 0xce0
 // Size: 0x140
 function function_8d332f88(durationms) {

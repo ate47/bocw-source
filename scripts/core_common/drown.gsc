@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
 #using script_396f7d71538c9677;
 #using script_725554a59d6a75b9;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace drown;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc0bd8fcb, Offset: 0x170
 // Size: 0x11c
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1df6848, Offset: 0x298
 // Size: 0x6a
 function activate_player_health_visionset() {
@@ -45,7 +44,7 @@ function activate_player_health_visionset() {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5209962b, Offset: 0x310
 // Size: 0x4e
 function deactivate_player_health_visionset() {
@@ -56,7 +55,7 @@ function deactivate_player_health_visionset() {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc66e2b8e, Offset: 0x368
 // Size: 0x4c
 function function_27777812() {
@@ -65,7 +64,7 @@ function function_27777812() {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeef21fa9, Offset: 0x3c0
 // Size: 0x24
 function function_c621d98c(params) {
@@ -73,7 +72,7 @@ function function_c621d98c(params) {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa65c89f9, Offset: 0x3f0
 // Size: 0x3c
 function function_84845e32(params) {
@@ -86,7 +85,7 @@ function function_84845e32(params) {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd2ac445f, Offset: 0x438
 // Size: 0x60c
 function watch_player_drowning() {
@@ -157,7 +156,7 @@ function watch_player_drowning() {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8bb34d3e, Offset: 0xa50
 // Size: 0x54
 function function_1ef50162(*params) {

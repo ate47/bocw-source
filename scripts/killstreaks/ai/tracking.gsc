@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace tracking;
 
 // Namespace tracking/tracking

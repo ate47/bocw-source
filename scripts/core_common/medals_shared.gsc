@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace medals;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace medals/medals_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x11c7c33d, Offset: 0xd8
 // Size: 0x24
 function private preinit() {
@@ -21,7 +20,7 @@ function private preinit() {
 }
 
 // Namespace medals/medals_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c9718f7, Offset: 0x108
 // Size: 0x64
 function init() {
@@ -34,7 +33,7 @@ function init() {
 }
 
 // Namespace medals/medals_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc20ec2a, Offset: 0x178
 // Size: 0xe
 function on_player_connect() {
@@ -42,7 +41,7 @@ function on_player_connect() {
 }
 
 // Namespace medals/medals_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x74f117ad, Offset: 0x190
 // Size: 0x2e
 function setlastkilledby(attacker, inflictor) {

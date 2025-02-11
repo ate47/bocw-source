@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace flak_drone;
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97debba4, Offset: 0x1d0
 // Size: 0x7c
 function init_shared() {
@@ -22,7 +21,7 @@ function init_shared() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1174d127, Offset: 0x258
 // Size: 0x24c
 function initflakdrone() {
@@ -50,7 +49,7 @@ function initflakdrone() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca56a8fa, Offset: 0x4b0
 // Size: 0xc
 function state_off_enter(*params) {
@@ -58,19 +57,19 @@ function state_off_enter(*params) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe80347c1, Offset: 0x4c8
 // Size: 0x430
 function state_off_update(*params) {
     self endon(#"change_state", #"death");
     while (!isdefined(self.parent)) {
-        wait(0.1);
+        wait 0.1;
     }
     self.parent endon(#"death");
     while (true) {
         self setspeed(400);
         if (is_true(self.inpain)) {
-            wait(0.1);
+            wait 0.1;
         }
         self vehclearlookat();
         self.current_pathto_pos = undefined;
@@ -93,7 +92,7 @@ function state_off_update(*params) {
                         point._scoredebug[#"disttoorigin"] = spawnstruct();
                     }
                     point._scoredebug[#"disttoorigin"].score = disttooriginscore;
-                    point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
+                    point._scoredebug[#"disttoorigin"].scorename = "<dev string:x38>";
                 #/
                 point.score += disttooriginscore;
                 if (point.score > best_score) {
@@ -118,12 +117,12 @@ function state_off_update(*params) {
             self updateflakdronespeed();
             self function_a57c34b7(self.current_pathto_pos);
         }
-        wait(randomfloatrange(0.1, 0.2));
+        wait randomfloatrange(0.1, 0.2);
     }
 }
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3fa509b6, Offset: 0x900
 // Size: 0x164
 function updateflakdronespeed() {
@@ -147,7 +146,7 @@ function updateflakdronespeed() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x98697dbb, Offset: 0xa70
 // Size: 0xc
 function state_combat_enter(*params) {
@@ -155,7 +154,7 @@ function state_combat_enter(*params) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xad01ac07, Offset: 0xa88
 // Size: 0x8c
 function state_combat_update(*params) {
@@ -166,7 +165,7 @@ function state_combat_update(*params) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6e9a5964, Offset: 0xb20
 // Size: 0x502
 function spawnflakrocket(missile, spawnpos, parent) {
@@ -230,13 +229,13 @@ function spawnflakrocket(missile, spawnpos, parent) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xca7979cf, Offset: 0x1030
 // Size: 0x84
 function cleanupaftermissiledeath(rocket, flak_drone) {
     missile = self;
     missile waittill(#"death");
-    wait(0.5);
+    wait 0.5;
     if (isdefined(rocket)) {
         rocket delete();
     }
@@ -246,7 +245,7 @@ function cleanupaftermissiledeath(rocket, flak_drone) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe97ccd69, Offset: 0x10c0
 // Size: 0x1bc
 function state_death_update(params) {
@@ -270,7 +269,7 @@ function state_death_update(params) {
         self playsound(#"veh_wasp_gibbed");
         self ghost();
         self notsolid();
-        wait(5);
+        wait 5;
         if (isdefined(self)) {
             self delete();
         }
@@ -280,7 +279,7 @@ function state_death_update(params) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xed588ab8, Offset: 0x1288
 // Size: 0x1e6
 function drone_pain_for_time(time, stablizeparam, restorelookpoint) {
@@ -291,7 +290,7 @@ function drone_pain_for_time(time, stablizeparam, restorelookpoint) {
         while (gettime() < self.painstarttime + int(time * 1000)) {
             self setvehvelocity(self.velocity * stablizeparam);
             self setangularvelocity(self getangularvelocity() * stablizeparam);
-            wait(0.1);
+            wait 0.1;
         }
         if (isdefined(restorelookpoint)) {
             restorelookent = spawn("script_model", restorelookpoint);
@@ -300,7 +299,7 @@ function drone_pain_for_time(time, stablizeparam, restorelookpoint) {
             self vehlookat(restorelookent);
             self turretsettarget(0, restorelookent);
             restorelookent thread util::function_f9af3d43(1.5);
-            wait(1.5);
+            wait 1.5;
             self vehclearlookat();
             self turretcleartarget(0);
         }
@@ -309,7 +308,7 @@ function drone_pain_for_time(time, stablizeparam, restorelookpoint) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x23bce938, Offset: 0x1478
 // Size: 0x12c
 function drone_pain(*eattacker, *damagetype, *hitpoint, *hitdirection, *hitlocationinfo, *partname) {
@@ -323,7 +322,7 @@ function drone_pain(*eattacker, *damagetype, *hitpoint, *hitdirection, *hitlocat
 }
 
 // Namespace flak_drone/flak_drone
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0xfbb50907, Offset: 0x15b0
 // Size: 0xf8
 function flakdronedamageoverride(*einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, vpoint, vdir, shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, partname, *vsurfacenormal) {
@@ -337,13 +336,13 @@ function flakdronedamageoverride(*einflictor, eattacker, idamage, *idflags, smea
 }
 
 // Namespace flak_drone/flak_drone
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4b60445, Offset: 0x16b0
 // Size: 0x130
 function spawn(parent, ondeathcallback) {
     if (!isnavvolumeloaded()) {
         /#
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x48>");
         #/
         return undefined;
     }
@@ -359,7 +358,7 @@ function spawn(parent, ondeathcallback) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x99206d1f, Offset: 0x17e8
 // Size: 0xb2
 function configureteam(parent, ishacked) {
@@ -375,7 +374,7 @@ function configureteam(parent, ishacked) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xece737fe, Offset: 0x18a8
 // Size: 0x9c
 function watchgameevents() {
@@ -386,7 +385,7 @@ function watchgameevents() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf088e641, Offset: 0x1950
 // Size: 0x5c
 function watchdeath() {
@@ -397,7 +396,7 @@ function watchdeath() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5119c50a, Offset: 0x19b8
 // Size: 0x64
 function watchparentdeath() {
@@ -408,7 +407,7 @@ function watchparentdeath() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbb0995ae, Offset: 0x1a28
 // Size: 0xcc
 function watchparentmissiles() {
@@ -423,7 +422,7 @@ function watchparentmissiles() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb6bc39a, Offset: 0x1b00
 // Size: 0x2c
 function setcamostate(state) {
@@ -431,7 +430,7 @@ function setcamostate(state) {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x305de9a2, Offset: 0x1b38
 // Size: 0x114
 function shutdown(explode) {
@@ -442,7 +441,7 @@ function shutdown(explode) {
     if (isdefined(drone) && !isdefined(drone.parent)) {
         drone ghost();
         drone notsolid();
-        wait(5);
+        wait 5;
         if (isdefined(drone)) {
             drone delete();
         }

@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_c1466447;
 
@@ -60,7 +59,7 @@ function private function_1633056a(var_16e6b8ea = 10) {
         if (isalive(self) && !self laststand::player_is_in_laststand() && self function_c81cdba2()) {
             self playsoundtoplayer(#"hash_6df374d848ba6a60", self);
             self dodamage(var_16e6b8ea, self.origin);
-            wait(1);
+            wait 1;
         }
         waitframe(1);
     }

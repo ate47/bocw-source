@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace claymore;
 
@@ -30,7 +29,7 @@ function claymore_spawned(localclientnum) {
     self util::waittill_dobj(localclientnum);
     while (true) {
         if (isdefined(self.stunned) && self.stunned) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         self waittill(#"stunned");

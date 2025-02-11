@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_61828ad9e71c6616;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace namespace_bf7415ae;
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xc1d09f87, Offset: 0x148
 // Size: 0xc4
 function function_890b3889(killstreaktype, killstreakweapon, maxrange, var_f6825ff2, var_c7502f87, var_7551540f, var_d89073fc, var_d3deec73) {
@@ -22,21 +21,21 @@ function function_890b3889(killstreaktype, killstreakweapon, maxrange, var_f6825
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b9cf557, Offset: 0x218
 // Size: 0x88
 function private function_4b1634b2(*killstreakweapon) {
     self endon(#"death", #"disconnect", #"cancel_selection", #"lockin_selection");
     while (true) {
         if (!self killstreakrules::function_71e94a3b()) {
-            self notify(#"hash_24520f447c149637");
+            self notify(#"airsupport_interference");
         }
         waitframe(1);
     }
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x118c09d3, Offset: 0x2a8
 // Size: 0x80
 function private function_469dabd0(killstreaktype) {
@@ -52,13 +51,13 @@ function private function_469dabd0(killstreaktype) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7c63fbe3, Offset: 0x330
 // Size: 0x2ce
 function private function_a2eec6c2(killstreaktype, killstreakweapon) {
     self endon(#"disconnect");
-    waitresult = self waittill(#"weapon_fired", #"weapon_change", #"hash_24520f447c149637");
-    if (waitresult._notify === #"hash_24520f447c149637") {
+    waitresult = self waittill(#"weapon_fired", #"weapon_change", #"airsupport_interference");
+    if (waitresult._notify === #"airsupport_interference") {
         self notify(#"cancel_selection");
         currentweapon = self getcurrentweapon();
         if (currentweapon === killstreakweapon && killstreakweapon.iscarriedkillstreak) {
@@ -83,21 +82,21 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
     /#
         str_notify = function_9e72a96(waitresult._notify);
         str_weapon = function_9e72a96(waitresult.weapon.name);
-        var_d8d53d01 = isdefined(waitresult.last_weapon) ? function_9e72a96(waitresult.last_weapon.name) : "<unknown string>";
-        assertmsg("<unknown string>" + str_notify + "<unknown string>" + str_weapon + "<unknown string>" + var_d8d53d01);
+        var_d8d53d01 = isdefined(waitresult.last_weapon) ? function_9e72a96(waitresult.last_weapon.name) : "<dev string:x38>";
+        assertmsg("<dev string:x45>" + str_notify + "<dev string:x54>" + str_weapon + "<dev string:x65>" + var_d8d53d01);
     #/
     self notify(#"cancel_selection");
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x79b64a10, Offset: 0x608
 // Size: 0xec
 function function_be6de952(killstreaktype, var_94fe38b6) {
     self endon(#"disconnect");
     waitresult = self waittill(#"lockin_selection", #"cancel_selection");
     if (waitresult._notify === "lockin_selection") {
-        wait(0.1);
+        wait 0.1;
         e_target = self.mdl_target[killstreaktype];
         if (isdefined(e_target)) {
             s_location = spawnstruct();
@@ -111,7 +110,7 @@ function function_be6de952(killstreaktype, var_94fe38b6) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xa2a02919, Offset: 0x700
 // Size: 0xd4
 function private function_f3305d7f(killstreaktype, var_c7502f87, var_7551540f) {
@@ -126,7 +125,7 @@ function private function_f3305d7f(killstreaktype, var_c7502f87, var_7551540f) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc8d9c02, Offset: 0x7e0
 // Size: 0x74
 function private function_ecb58f93(killstreaktype, var_c7502f87) {
@@ -141,7 +140,7 @@ function private function_ecb58f93(killstreaktype, var_c7502f87) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0xb23c1d37, Offset: 0x860
 // Size: 0x370
 function private function_b66d4fac(killstreaktype, maxrange, var_f6825ff2, var_c7502f87, var_d89073fc, var_d3deec73) {
@@ -179,7 +178,7 @@ function private function_b66d4fac(killstreaktype, maxrange, var_f6825ff2, var_c
             b_valid = function_469dabd0(killstreaktype);
             self.mdl_target[killstreaktype] [[ var_d3deec73 ]](b_valid);
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 

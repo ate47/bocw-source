@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\gametypes\globallogic_utils.gsc;
-#using scripts\cp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
 #using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\gametypes\globallogic;
+#using scripts\cp_common\gametypes\globallogic_utils;
+#using scripts\cp_common\util;
 
 #namespace globallogic_defaults;
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49e0888a, Offset: 0x150
 // Size: 0x3a
 function getwinningteamfromloser(losing_team) {
@@ -23,7 +22,7 @@ function getwinningteamfromloser(losing_team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0e19b81, Offset: 0x198
 // Size: 0x34c
 function default_onforfeit(team) {
@@ -32,9 +31,9 @@ function default_onforfeit(team) {
     level endon(#"forfeit in progress", #"abort forfeit");
     forfeit_delay = 20;
     announcement(game.strings[#"opponent_forfeiting_in"], forfeit_delay, 0);
-    wait(10);
+    wait 10;
     announcement(game.strings[#"opponent_forfeiting_in"], 10, 0);
-    wait(10);
+    wait 10;
     endreason = #"";
     if (level.multiteam) {
         setdvar(#"ui_text_endreason", game.strings[#"other_teams_forfeited"]);
@@ -49,23 +48,23 @@ function default_onforfeit(team) {
         setdvar(#"ui_text_endreason", endreason);
         winner = getwinningteamfromloser(team);
     } else {
-        assert(isdefined(team), "<unknown string>");
-        assert(0, "<unknown string>" + team + "<unknown string>");
+        assert(isdefined(team), "<dev string:x38>");
+        assert(0, "<dev string:x59>" + team + "<dev string:x6c>");
         winner = "tie";
     }
     level.forcedend = 1;
     /#
         if (isplayer(winner)) {
-            print("<unknown string>" + winner getxuid() + "<unknown string>" + winner.name + "<unknown string>");
+            print("<dev string:x86>" + winner getxuid() + "<dev string:x98>" + winner.name + "<dev string:x9d>");
         } else {
-            globallogic_utils::logteamwinstring("<unknown string>", winner);
+            globallogic_utils::logteamwinstring("<dev string:xa2>", winner);
         }
     #/
     thread globallogic::endgame();
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x68cf97fd, Offset: 0x4f0
 // Size: 0xa4
 function default_ondeadevent(team) {
@@ -81,7 +80,7 @@ function default_ondeadevent(team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x616d47f4, Offset: 0x5a0
 // Size: 0x15c
 function function_9fd1cc80(team) {
@@ -104,7 +103,7 @@ function function_9fd1cc80(team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x13087b0f, Offset: 0x708
 // Size: 0xe
 function function_8fd32d09(*team) {
@@ -112,7 +111,7 @@ function function_8fd32d09(*team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8d60871, Offset: 0x720
 // Size: 0xc8
 function function_b8fe203b(team) {
@@ -144,7 +143,7 @@ function function_b322d0f3(team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x78404dda, Offset: 0x860
 // Size: 0xc
 function default_onalivecountchange(*team) {
@@ -152,7 +151,7 @@ function default_onalivecountchange(*team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7dbf8af1, Offset: 0x878
 // Size: 0x10
 function default_onroundendgame(winner) {
@@ -160,7 +159,7 @@ function default_onroundendgame(winner) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbb74ba11, Offset: 0x890
 // Size: 0xc
 function default_ononeleftevent(*team) {
@@ -168,7 +167,7 @@ function default_ononeleftevent(*team) {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x40ef4bc2, Offset: 0x8a8
 // Size: 0xf4
 function default_ontimelimit() {
@@ -179,9 +178,9 @@ function default_ontimelimit() {
     } else {
         /#
             if (isdefined(winner)) {
-                print("<unknown string>" + winner.name);
+                print("<dev string:xad>" + winner.name);
             } else {
-                print("<unknown string>");
+                print("<dev string:xc2>");
             }
         #/
     }
@@ -190,7 +189,7 @@ function default_ontimelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x841a3df8, Offset: 0x9a8
 // Size: 0x110
 function default_onscorelimit() {
@@ -204,9 +203,9 @@ function default_onscorelimit() {
     } else {
         /#
             if (isdefined(winner)) {
-                print("<unknown string>" + winner.name);
+                print("<dev string:xd5>" + winner.name);
             } else {
-                print("<unknown string>");
+                print("<dev string:xea>");
             }
         #/
     }
@@ -216,7 +215,7 @@ function default_onscorelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd83de3e, Offset: 0xac0
 // Size: 0x17c
 function default_onspawnspectator(origin, angles) {
@@ -226,15 +225,15 @@ function default_onspawnspectator(origin, angles) {
     }
     spawnpointname = "cp_global_intermission";
     spawnpoints = struct::get_array(spawnpointname, "targetname");
-    assert(spawnpoints.size, "<unknown string>" + spawnpointname + "<unknown string>");
+    assert(spawnpoints.size, "<dev string:xfd>" + spawnpointname + "<dev string:x10e>");
     spawnpoint = spawning::get_spawnpoint_random(spawnpoints);
-    assert(isdefined(spawnpoint.origin), "<unknown string>" + spawnpointname + "<unknown string>");
-    assert(isdefined(spawnpoint.angles), "<unknown string>" + spawnpointname + "<unknown string>" + spawnpoint.origin + "<unknown string>");
+    assert(isdefined(spawnpoint.origin), "<dev string:x148>" + spawnpointname + "<dev string:x15d>");
+    assert(isdefined(spawnpoint.angles), "<dev string:x148>" + spawnpointname + "<dev string:x171>" + spawnpoint.origin + "<dev string:x17a>");
     self spawn(spawnpoint.origin, spawnpoint.angles);
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe72ec452, Offset: 0xc48
 // Size: 0xac
 function default_onspawnintermission() {
@@ -246,12 +245,12 @@ function default_onspawnintermission() {
         return;
     }
     /#
-        util::error("<unknown string>" + spawnpointname + "<unknown string>");
+        util::error("<dev string:x18c>" + spawnpointname + "<dev string:x193>");
     #/
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f6c97c1, Offset: 0xd00
 // Size: 0x6a
 function default_gettimelimit() {
@@ -263,7 +262,7 @@ function default_gettimelimit() {
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa52c6ec2, Offset: 0xd78
 // Size: 0x26
 function default_getteamkillpenalty(*einflictor, *attacker, *smeansofdeath, *weapon) {
@@ -271,7 +270,7 @@ function default_getteamkillpenalty(*einflictor, *attacker, *smeansofdeath, *wea
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xccadb82a, Offset: 0xda8
 // Size: 0x26
 function default_getteamkillscore(*einflictor, *attacker, *smeansofdeath, *weapon) {

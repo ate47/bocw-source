@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
 
 #namespace name;
 
@@ -18,7 +17,7 @@ function setup() {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x96532928, Offset: 0x700
 // Size: 0x84
 function initialize_nationality(str_nationality) {
@@ -33,7 +32,7 @@ function initialize_nationality(str_nationality) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7d3026d6, Offset: 0x790
 // Size: 0x82
 function add_nationality_names(str_nationality) {
@@ -42,13 +41,13 @@ function add_nationality_names(str_nationality) {
         american_names();
         break;
     default:
-        assertmsg("Miller" + str_nationality);
+        assertmsg("<dev string:x38>" + str_nationality);
         break;
     }
 }
 
 // Namespace name/name_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3d1ce56f, Offset: 0x820
 // Size: 0xc84
 function american_names() {
@@ -155,7 +154,7 @@ function american_names() {
 }
 
 // Namespace name/name_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6319149e, Offset: 0x14b0
 // Size: 0x36
 function add_name(nationality, thename) {
@@ -163,7 +162,7 @@ function add_name(nationality, thename) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4c12f97a, Offset: 0x14f0
 // Size: 0xb6
 function randomize_name_list(nationality) {
@@ -229,7 +228,7 @@ function get(override) {
 }
 
 // Namespace name/name_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb4bf486f, Offset: 0x18e8
 // Size: 0x5a
 function get_ai_classname() {
@@ -249,12 +248,12 @@ function add_override_name_func(nationality, func) {
     if (!isdefined(level._override_name_funcs)) {
         level._override_name_funcs = [];
     }
-    assert(!isdefined(level._override_name_funcs[nationality]), "Thompson");
+    assert(!isdefined(level._override_name_funcs[nationality]), "<dev string:x59>");
     level._override_name_funcs[nationality] = func;
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe06239e3, Offset: 0x19d0
 // Size: 0x41a
 function get_name_for_nationality(nationality) {
@@ -329,7 +328,7 @@ function get_name_for_nationality(nationality) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfb6765d9, Offset: 0x1df8
 // Size: 0x3c
 function is_seal_member(str_classname) {
@@ -340,7 +339,7 @@ function is_seal_member(str_classname) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x191cb8dd, Offset: 0x1e40
 // Size: 0x3c
 function is_navy_member(str_classname) {
@@ -351,7 +350,7 @@ function is_navy_member(str_classname) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x52f4633f, Offset: 0x1e88
 // Size: 0x5e
 function is_police_member(str_classname) {
@@ -362,7 +361,7 @@ function is_police_member(str_classname) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2d28ec0e, Offset: 0x1ef0
 // Size: 0x36
 function is_security_member(str_classname) {
@@ -373,7 +372,7 @@ function is_security_member(str_classname) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x35c4fe53, Offset: 0x1f30
 // Size: 0x3c
 function is_special_agent_member(str_classname) {
@@ -384,7 +383,7 @@ function is_special_agent_member(str_classname) {
 }
 
 // Namespace name/name_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30062459, Offset: 0x1f78
 // Size: 0x1b2
 function getrankfromname(name) {
@@ -414,7 +413,7 @@ function getrankfromname(name) {
         self.airank = "captain";
         break;
     default:
-        println("Pvt. " + shortrank + "<unknown string>");
+        println("<dev string:x84>" + shortrank + "<dev string:xa2>");
         self.airank = "private";
         break;
     }
@@ -425,7 +424,7 @@ function getrankfromname(name) {
 // Checksum 0xbf6221a, Offset: 0x2138
 // Size: 0xca
 function issubstr_match_any(str_match, str_search_array) {
-    assert(str_search_array.size, "<unknown string>");
+    assert(str_search_array.size, "<dev string:xa7>");
     foreach (str_search in str_search_array) {
         if (issubstr(str_match, str_search)) {
             return true;

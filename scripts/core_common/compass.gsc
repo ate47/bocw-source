@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\territory.gsc;
-#using scripts\core_common\match_record.gsc;
+#using scripts\core_common\match_record;
+#using scripts\core_common\territory;
 
 #namespace compass;
 
 // Namespace compass/compass
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa6a93201, Offset: 0x100
 // Size: 0x14c
 function setupminimap(material, *zone = "") {
@@ -15,14 +14,14 @@ function setupminimap(material, *zone = "") {
         corners = territory::function_1deaf019("minimap_corner", "targetname", "");
     }
     if (corners.size != 2) {
-        println("<unknown string>");
+        println("<dev string:x38>");
         return;
     }
     function_d6cba2e9(zone, corners[0].origin[0], corners[0].origin[1], corners[1].origin[0], corners[1].origin[1]);
 }
 
 // Namespace compass/compass
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc8f4fa3, Offset: 0x258
 // Size: 0x33c
 function function_d6cba2e9(material = "", var_56a8cb79, var_47612cea, var_49fcbf2c, var_9815db69) {
@@ -68,7 +67,7 @@ function function_d6cba2e9(material = "", var_56a8cb79, var_47612cea, var_49fcbf
 function setupminimapzone(zone) {
     corners = getentarray("zone_0" + zone + "_corner", "targetname");
     if (corners.size != 2) {
-        println("<unknown string>");
+        println("<dev string:x38>");
         return;
     }
     corner0 = (corners[0].origin[0], corners[0].origin[1], 0);
@@ -97,7 +96,7 @@ function setupminimapzone(zone) {
 }
 
 // Namespace compass/compass
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe353b544, Offset: 0x860
 // Size: 0x3e
 function vecscale(vec, scalar) {

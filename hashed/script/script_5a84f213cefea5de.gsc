@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapons.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\loadout_shared.gsc;
-#using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\loadout_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weapons;
 
 #namespace namespace_1d9319e5;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2be22625, Offset: 0x188
 // Size: 0x3c
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc473f2ac, Offset: 0x1d0
 // Size: 0x124
 function private function_116fd9a7() {
@@ -50,7 +49,7 @@ function private function_116fd9a7() {
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6e2a20b5, Offset: 0x300
 // Size: 0x154
 function private function_77512b90(killstreakbundle, hasscorestreak = 0) {
@@ -60,18 +59,18 @@ function private function_77512b90(killstreakbundle, hasscorestreak = 0) {
     if (isdefined(self.var_48590990)) {
         waittime = int(3 * 1000) - gettime() - self.var_48590990;
         if (waittime > 0) {
-            wait(float(waittime) / 1000);
+            wait float(waittime) / 1000;
         }
     }
     if (hasscorestreak) {
-        wait(1);
+        wait 1;
     }
     self.var_48590990 = gettime();
     self killstreaks::add_to_notification_queue(level.killstreaks[killstreakbundle.var_d3413870].menuname, undefined, killstreakbundle.var_d3413870, undefined, 1);
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x28577106, Offset: 0x460
 // Size: 0x534
 function private function_898628ef(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, *slotid) {
@@ -133,7 +132,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x9a36ae66, Offset: 0x9a0
 // Size: 0x446
 function private function_a712496a(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
@@ -151,7 +150,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
     var_4f3ed40 = function_9f1cc9a9(primaryweapon) != 0;
     var_8b94e68d = function_9f1cc9a9(stowedweapon) != 0;
     assert(!(var_4f3ed40 && var_8b94e68d));
-    weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
+    weapon = item_inventory_util::function_2b83d3ff(itemcount);
     if (var_4f3ed40 || !var_8b94e68d) {
         weapon = function_eeddea9a(weapon, 1);
     } else {
@@ -184,7 +183,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb68437db, Offset: 0xdf0
 // Size: 0x164
 function drop_weapon(var_4c42f7cf, weapon) {
@@ -201,12 +200,12 @@ function drop_weapon(var_4c42f7cf, weapon) {
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xe361743, Offset: 0xf60
 // Size: 0x2d2
 function private function_2eebeff5(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     heldweapons = var_aec6fa7f getweaponslist();
-    weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
+    weapon = item_inventory_util::function_2b83d3ff(itemcount);
     heldweapon = level.var_34d27b26;
     if (itemcount.itementry.itemtype == #"equipment") {
         heldweapon = isdefined(heldweapons[2]) ? heldweapons[2] : level.var_34d27b26;
@@ -230,7 +229,7 @@ function private function_2eebeff5(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb1a9709b, Offset: 0x1240
 // Size: 0x10c
 function function_79270eec(var_4c42f7cf, weapon) {
@@ -247,12 +246,12 @@ function function_79270eec(var_4c42f7cf, weapon) {
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x53171a8f, Offset: 0x1358
 // Size: 0x1c6
 function private function_8c369ecb(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     heldweapons = var_aec6fa7f getweaponslist();
-    weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
+    weapon = item_inventory_util::function_2b83d3ff(itemcount);
     heldweapon = isdefined(heldweapons[4]) ? heldweapons[4] : level.var_43a51921;
     ammo = var_aec6fa7f getweaponammoclip(heldweapon);
     if (heldweapon != level.var_43a51921 && ammo > 0) {
@@ -272,7 +271,7 @@ function private function_8c369ecb(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd4ad147, Offset: 0x1528
 // Size: 0x10c
 function function_3af40ef4(var_4c42f7cf, weapon) {
@@ -289,7 +288,7 @@ function function_3af40ef4(var_4c42f7cf, weapon) {
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xe43a7741, Offset: 0x1640
 // Size: 0x9e
 function private function_6598f0a0(*item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
@@ -302,23 +301,23 @@ function private function_6598f0a0(*item, player, *networkid, *itemid, itemcount
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x339d5c13, Offset: 0x16e8
 // Size: 0x174
 function private function_d045e83b(*item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     weaponslist = var_aec6fa7f getweaponslist();
-    var_c20b09e1 = 0;
+    gaveammo = 0;
     for (i = 0; i < min(weaponslist.size, 2); i++) {
         weapon = weaponslist[i];
         currentammostock = var_aec6fa7f getweaponammostock(weapon);
         if (currentammostock >= var_aec6fa7f function_5d951520(weapon)) {
             continue;
         }
-        var_c20b09e1 = 1;
+        gaveammo = 1;
         clipsize = var_aec6fa7f function_b7f1fd2c(weapon);
         var_aec6fa7f setweaponammostock(weapon, currentammostock + clipsize);
     }
-    if (var_c20b09e1) {
+    if (gaveammo) {
         self hud::function_4a4de0de();
         return 0;
     }

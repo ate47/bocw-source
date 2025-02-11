@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapons.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weapons;
 
 #namespace pickup_items;
 
@@ -51,7 +50,7 @@ function start_gametype() {
         assert(isdefined(visuals[0]));
         visuals[0] pickup_item_init();
         pickup_item_object = gameobjects::create_use_object(#"neutral", trigger, visuals, (0, 0, 0), #"pickup_item");
-        pickup_item_object gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+        pickup_item_object gameobjects::allow_use(#"group_all");
         pickup_item_object gameobjects::set_use_time(0);
         pickup_item_object.onuse = &on_touch;
         level.pickup_items[level.pickup_items.size] = pickup_item_object;
@@ -163,7 +162,7 @@ function get_item_from_string_perk(perks_string) {
     item_struct = spawnstruct();
     if (!isdefined(level.perkspecialties[perks_string])) {
         /#
-            util::error("<unknown string>" + perks_string + "<unknown string>" + self.origin);
+            util::error("<dev string:x38>" + perks_string + "<dev string:x4e>" + self.origin);
         #/
         return;
     }
@@ -323,9 +322,9 @@ function on_touch(player) {
     }
     pickup_item playsound(pickup_item.sound_pickup);
     self gameobjects::set_model_visibility(0);
-    self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+    self gameobjects::allow_use(#"group_none");
     if (level.pickupitemrespawn) {
-        wait(pickup_item.respawn_time);
+        wait pickup_item.respawn_time;
         self thread respawn_pickup();
     }
 }
@@ -340,7 +339,7 @@ function respawn_pickup() {
     pickup_item playsound(pickup_item.sound_respawn);
     pickup_item cycle_item();
     self gameobjects::set_model_visibility(1);
-    self gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::allow_use(#"group_all");
 }
 
 // Namespace pickup_items/pickup_items

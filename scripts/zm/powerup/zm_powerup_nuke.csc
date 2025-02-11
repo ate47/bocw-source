@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_powerups.csc;
-#using scripts\core_common\ai\zombie_death.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_powerups;
 
 #namespace zm_powerup_nuke;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x63dde1ef, Offset: 0x120
 // Size: 0xc4
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x369bc325, Offset: 0x1f0
 // Size: 0x54
 function zombie_nuked(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

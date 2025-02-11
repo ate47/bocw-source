@@ -1,64 +1,63 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_wallbuy.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_quick_spawning.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_placeable_mine.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_melee_weapon.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_hud.gsc;
-#using scripts\zm_common\zm_game_module.gsc;
-#using scripts\zm_common\zm_ffotd.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_crafting.gsc;
-#using scripts\zm_common\zm_blockers.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\globallogic_scriptmover.gsc;
-#using scripts\zm_common\gametypes\globallogic_player.gsc;
-#using scripts\zm_common\gametypes\globallogic_spawn.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_vehicle.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\status_effects\status_effects.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_puppeteer_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_puppeteer_shared;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\globallogic\globallogic_vehicle;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\status_effects\status_effects;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_player;
+#using scripts\zm_common\gametypes\globallogic_scriptmover;
+#using scripts\zm_common\gametypes\globallogic_spawn;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_blockers;
+#using scripts\zm_common\zm_crafting;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_ffotd;
+#using scripts\zm_common\zm_game_module;
+#using scripts\zm_common\zm_hud;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_melee_weapon;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_placeable_mine;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_quick_spawning;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_wallbuy;
+#using scripts\zm_common\zm_weapons;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_playerzombie;
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcba0c98a, Offset: 0x2e0
 // Size: 0x2a4
 function zombify_player() {
@@ -98,7 +97,7 @@ function zombify_player() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x574c3a42, Offset: 0x590
 // Size: 0x136
 function playerzombie_player_damage() {
@@ -123,7 +122,7 @@ function playerzombie_player_damage() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf6fad052, Offset: 0x6d0
 // Size: 0x166
 function playerzombie_downed_state() {
@@ -149,19 +148,19 @@ function playerzombie_downed_state() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec82665a, Offset: 0x840
 // Size: 0x17e
 function playerzombie_downed_hud() {
     /#
         self endon(#"death", #"disconnect");
         text = newdebughudelem(self);
-        text.alignx = "<unknown string>";
-        text.aligny = "<unknown string>";
-        text.horzalign = "<unknown string>";
-        text.vertalign = "<unknown string>";
+        text.alignx = "<dev string:x38>";
+        text.aligny = "<dev string:x42>";
+        text.horzalign = "<dev string:x4c>";
+        text.vertalign = "<dev string:x5b>";
         text.foreground = 1;
-        text.font = "<unknown string>";
+        text.font = "<dev string:x6a>";
         text.fontscale = 1.8;
         text.alpha = 0;
         text.color = (1, 1, 1);
@@ -179,7 +178,7 @@ function playerzombie_downed_hud() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa794e280, Offset: 0x9c8
 // Size: 0x6c
 function playerzombie_infinite_health() {
@@ -189,12 +188,12 @@ function playerzombie_infinite_health() {
         if (self.health < bighealth) {
             self.health = bighealth;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae08b255, Offset: 0xa40
 // Size: 0x2a4
 function playerzombie_soundboard() {
@@ -242,7 +241,7 @@ function playerzombie_soundboard() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xff04d49f, Offset: 0xcf0
 // Size: 0x126
 function can_do_input(inputtype) {
@@ -267,14 +266,14 @@ function can_do_input(inputtype) {
         }
         break;
     default:
-        assertmsg("<unknown string>" + inputtype);
+        assertmsg("<dev string:x75>" + inputtype);
         break;
     }
     return cando;
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x95bb4714, Offset: 0xe20
 // Size: 0x24
 function playerzombie_play_sound(alias) {
@@ -282,12 +281,12 @@ function playerzombie_play_sound(alias) {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1723d682, Offset: 0xe50
 // Size: 0x182
 function playerzombie_waitfor_buttonrelease(inputtype) {
     if (inputtype != "use" && inputtype != "attack" && inputtype != "ads") {
-        assertmsg("<unknown string>" + inputtype + "<unknown string>");
+        assertmsg("<dev string:xa7>" + inputtype + "<dev string:xde>");
         return;
     }
     notifystring = "waitfor_buttonrelease_" + inputtype;

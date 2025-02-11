@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace path;
 
 /#
@@ -24,9 +23,9 @@
     // Checksum 0xb48d512f, Offset: 0x1b0
     // Size: 0xac
     function private function_d88e0349(path_1, path_2, center, radius, point_color, line_color, var_80bf7c44) {
-        recordline(path_1, path_2, line_color, "<unknown string>");
-        recordsphere(path_1, 2, point_color, "<unknown string>");
-        recordcircle(center, radius, var_80bf7c44, "<unknown string>");
+        recordline(path_1, path_2, line_color, "<dev string:x38>");
+        recordsphere(path_1, 2, point_color, "<dev string:x38>");
+        recordcircle(center, radius, var_80bf7c44, "<dev string:x38>");
     }
 
     // Namespace path/path

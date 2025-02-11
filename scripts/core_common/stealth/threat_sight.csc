@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_1ff59bb2b15dfb4d;
-#using scripts\core_common\class_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\class_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace threat_sight;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x53fadd63, Offset: 0x158
 // Size: 0x64
 function private preinit() {
@@ -33,12 +32,12 @@ function private preinit() {
     level.stealth_threat_sight = new class_d0a0a887();
     [[ level.stealth_threat_sight ]]->init(8);
     /#
-        function_5ac4dc99("<unknown string>", 0);
+        function_5ac4dc99("<dev string:x38>", 0);
     #/
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc6c00728, Offset: 0x1c8
 // Size: 0x94
 function private register_clientfields() {
@@ -47,7 +46,7 @@ function private register_clientfields() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x206ed0fe, Offset: 0x268
 // Size: 0x34
 function private function_ac3d4bc() {
@@ -55,7 +54,7 @@ function private function_ac3d4bc() {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdece4122, Offset: 0x2a8
 // Size: 0x3da
 function private function_8991ddb4(localclientnum) {
@@ -98,7 +97,7 @@ function private function_8991ddb4(localclientnum) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x9ca6122e, Offset: 0x690
 // Size: 0x4bc
 function private function_5010aab6(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -124,11 +123,11 @@ function private function_5010aab6(localclientnum, *oldvalue, *newvalue, *bnewen
     }
     if (isdefined(self.threat_sight.elem)) {
         /#
-            var_fdd79624 = "<unknown string>";
+            var_fdd79624 = "<dev string:x53>";
             if (!getdvarint(#"hash_7bf40e4b6a830d11", 1)) {
-                var_fdd79624 = "<unknown string>";
+                var_fdd79624 = "<dev string:x57>";
             }
-            self thread function_ccfdbd44(wasdemojump, "<unknown string>" + self.threat_sight.var_1911547e + "<unknown string>" + self.threat_sight.var_97c4563c + "<unknown string>" + self.threat_sight.sight + "<unknown string>" + var_fdd79624);
+            self thread function_ccfdbd44(wasdemojump, "<dev string:x53>" + self.threat_sight.var_1911547e + "<dev string:x66>" + self.threat_sight.var_97c4563c + "<dev string:x6c>" + self.threat_sight.sight + "<dev string:x71>" + var_fdd79624);
         #/
         if (!self.threat_sight.elem stealth_meter_display::is_open(wasdemojump)) {
             self.threat_sight.elem stealth_meter_display::open(wasdemojump);
@@ -157,8 +156,8 @@ function private function_5010aab6(localclientnum, *oldvalue, *newvalue, *bnewen
     // Checksum 0xb9052364, Offset: 0xb58
     // Size: 0xce
     function private function_ccfdbd44(*localclientnum, msg) {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x76>");
+        self endon("<dev string:x76>");
         self endon(#"death");
         while (getdvarint(#"hash_40034352c4930dca") && isdefined(self.threat_sight)) {
             print3d(self.origin + (0, 0, 40), msg, (1, 1, 1), 1, 0.75, 1, 0);
@@ -169,7 +168,7 @@ function private function_5010aab6(localclientnum, *oldvalue, *newvalue, *bnewen
 #/
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x31be26f9, Offset: 0xc30
 // Size: 0x6c
 function private function_d4ae86f5(localclientnum) {
@@ -180,7 +179,7 @@ function private function_d4ae86f5(localclientnum) {
 }
 
 // Namespace stealth_threat_sight/threat_sight
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4bf98232, Offset: 0xca8
 // Size: 0xde
 function private function_a2d377b5(localclientnum) {

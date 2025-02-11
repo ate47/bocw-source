@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\util;
 
 #namespace spawning;
 
 // Namespace spawning/spawning
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9599f7b0, Offset: 0xd0
 // Size: 0x138
 function getteamstartspawnname(team, spawnpointnamebase) {

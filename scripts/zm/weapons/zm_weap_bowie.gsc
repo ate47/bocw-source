@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_maptable.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_melee_weapon.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_maptable;
+#using scripts\zm_common\zm_melee_weapon;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_weap_bowie;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x13231bf0, Offset: 0x1a8
 // Size: 0x24
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x40a7711f, Offset: 0x1d8
 // Size: 0x15c
 function private postinit() {

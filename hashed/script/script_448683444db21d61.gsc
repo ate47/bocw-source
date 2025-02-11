@@ -1,36 +1,35 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using script_5e96d104c70be5ac;
-#using scripts\zm_common\trials\zm_trial_disable_buys.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_melee_weapon.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\zm_common\callbacks.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\math_shared.gsc;
 #using script_340a2e805e35f7a2;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_5e96d104c70be5ac;
+#using script_7a8059ca02b7b09e;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\callbacks;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\trials\zm_trial_disable_buys;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_melee_weapon;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace namespace_207ea311;
 
@@ -106,10 +105,10 @@ function function_23c31b4e() {
         }
         waitresult = level waittill(#"dark_aether_active", #"power_on");
         if (waitresult._notify == "power_on") {
-            wait(5);
+            wait 5;
         }
         if (waitresult._notify == "dark_aether_active" && level flag::get(#"dark_aether_active")) {
-            wait(3);
+            wait 3;
         }
     }
 }

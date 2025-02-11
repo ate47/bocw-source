@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace status_effect_wound;
 
 // Namespace status_effect_wound/status_effect_wound
@@ -14,7 +13,7 @@ function function_ea37c549(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x100
 // Size: 0x4
 function function_9b4598a4() {
@@ -22,7 +21,7 @@ function function_9b4598a4() {
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x110
 // Size: 0x4
 function function_94ce9f97() {

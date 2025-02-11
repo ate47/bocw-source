@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_80c07c34;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_80c07c34/namespace_80c07c34
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc6d9e4b6, Offset: 0xe0
 // Size: 0x44
 function private _preload() {
@@ -23,7 +22,7 @@ function private _preload() {
 }
 
 // Namespace namespace_80c07c34/namespace_80c07c34
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x130
 // Size: 0x4
 function private function_fa076c68() {
@@ -31,7 +30,7 @@ function private function_fa076c68() {
 }
 
 // Namespace namespace_80c07c34/namespace_80c07c34
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x55e34eb0, Offset: 0x140
 // Size: 0x20
 function private function_ad272ef4() {
@@ -41,7 +40,7 @@ function private function_ad272ef4() {
 }
 
 // Namespace namespace_80c07c34/namespace_80c07c34
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x168
 // Size: 0x4
 function private function_90ceecf8() {
@@ -49,7 +48,7 @@ function private function_90ceecf8() {
 }
 
 // Namespace namespace_80c07c34/namespace_80c07c34
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x178
 // Size: 0x4
 function private function_7c9b0132() {
@@ -57,7 +56,7 @@ function private function_7c9b0132() {
 }
 
 // Namespace namespace_80c07c34/namespace_80c07c34
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x188
 // Size: 0x4
 function private function_bc948200() {

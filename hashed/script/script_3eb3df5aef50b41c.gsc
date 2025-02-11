@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\stealth\debug.gsc;
-#using scripts\core_common\stealth\utility.gsc;
-#using script_6c5ee33879e077f8;
 #using script_3ad66e3076c279ab;
-#using scripts\core_common\flag_shared.gsc;
+#using script_6c5ee33879e077f8;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\debug;
+#using scripts\core_common\stealth\utility;
 
 #namespace namespace_32a4062b;
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14297ec1, Offset: 0x128
 // Size: 0x84
 function main() {
     if (!isdefined(level.stealth)) {
-        namespace_393f6012::function_f9682fd();
+        stealth_manager::function_f9682fd();
     }
     self init_settings();
     self thread spotted_thread();
@@ -24,11 +23,11 @@ function main() {
 }
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeb0f0497, Offset: 0x1b8
 // Size: 0x12e
 function init_settings() {
-    assert(!isdefined(self.stealth), "<unknown string>");
+    assert(!isdefined(self.stealth), "<dev string:x38>");
     self.stealth = spawnstruct();
     self.stealth.spotted_list = [];
     self.stealth.funcs = [];
@@ -42,7 +41,7 @@ function init_settings() {
 }
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ac835d0, Offset: 0x2f0
 // Size: 0x178
 function spotted_thread() {
@@ -66,7 +65,7 @@ function spotted_thread() {
 }
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x71709cad, Offset: 0x470
 // Size: 0xa4
 function state_hidden() {
@@ -82,7 +81,7 @@ function state_hidden() {
 }
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x27b2365e, Offset: 0x520
 // Size: 0xec
 function state_spotted() {
@@ -110,23 +109,23 @@ function getup_from_prone() {
 }
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x232705b2, Offset: 0x638
 // Size: 0x88
 function visibility_thread() {
     self endon(#"death");
-    self endon(#"hash_4bfd375383ea3706");
+    self endon(#"long_death");
     while (true) {
         self flag::wait_till("stealth_enabled");
         if (!isdefined(self.stealth.ignore_visibility)) {
             self.maxvisibledist = self get_detect_range();
         }
-        wait(0.05);
+        wait 0.05;
     }
 }
 
 // Namespace namespace_32a4062b/friendly
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x737e5948, Offset: 0x6c8
 // Size: 0x112
 function get_detect_range() {

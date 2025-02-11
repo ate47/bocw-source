@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\wz_common\util;
 
 #namespace death_circle;
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa7340bcd, Offset: 0x118
 // Size: 0xf4
 function init_vo() {
@@ -17,7 +16,7 @@ function init_vo() {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x63c3bf0b, Offset: 0x218
 // Size: 0x4c
 function function_e8c1f9d2() {
@@ -27,7 +26,7 @@ function function_e8c1f9d2() {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ebd2cff, Offset: 0x270
 // Size: 0x1c
 function function_a0fd3c83() {
@@ -35,7 +34,7 @@ function function_a0fd3c83() {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9886a10e, Offset: 0x298
 // Size: 0x1c
 function function_465ef407() {
@@ -43,7 +42,7 @@ function function_465ef407() {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1218ee1, Offset: 0x2c0
 // Size: 0x1c
 function function_1bbc8595() {
@@ -51,7 +50,7 @@ function function_1bbc8595() {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x93ce195f, Offset: 0x2e8
 // Size: 0x1c
 function function_dce81333() {

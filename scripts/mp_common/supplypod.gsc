@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\draft.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
 #using script_7f6cd71c43c45c57;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\abilities\ability_player.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\draft;
+#using scripts\weapons\deployable;
+#using scripts\weapons\weaponobjects;
 
 #namespace supplypod;
 
@@ -36,7 +35,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6ffce8fe, Offset: 0x370
 // Size: 0x1dc
 function private preinit() {
@@ -45,7 +44,7 @@ function private preinit() {
     }
     level.var_934fb97 = spawnstruct();
     level.var_934fb97.var_27fce4c0 = [];
-    level.var_934fb97.var_d741a6a4 = [];
+    level.var_934fb97.audiothrottletracker = [];
     level.var_934fb97.bundle = getscriptbundle("killstreak_supplypod");
     level.var_934fb97.weapon = getweapon("gadget_supplypod");
     level.var_934fb97.var_ff101fac = getweapon(#"supplypod_catch");
@@ -60,7 +59,7 @@ function private preinit() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1b1cfe5, Offset: 0x558
 // Size: 0x40
 function finalize() {
@@ -74,7 +73,7 @@ function finalize() {
 // Checksum 0xa6f2c0ad, Offset: 0x5a0
 // Size: 0xb4
 function function_127fb8f3(supplypod, *attackingplayer) {
-    attackingplayer.gameobject gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+    attackingplayer.gameobject gameobjects::allow_use(#"group_none");
     if (isdefined(level.var_86e3d17a)) {
         _station_up_to_detention_center_triggers = [[ level.var_86e3d17a ]]();
         if ((isdefined(_station_up_to_detention_center_triggers) ? _station_up_to_detention_center_triggers : 0) > 0) {
@@ -85,7 +84,7 @@ function function_127fb8f3(supplypod, *attackingplayer) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbc488c83, Offset: 0x660
 // Size: 0x40c
 function function_bff5c062(supplypod, attackingplayer) {
@@ -100,8 +99,8 @@ function function_bff5c062(supplypod, attackingplayer) {
     supplypod setteam(attackingplayer getteam());
     supplypod.team = attackingplayer getteam();
     supplypod.gameobject gameobjects::set_owner_team(attackingplayer.team);
-    supplypod.gameobject gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
-    supplypod.gameobject gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    supplypod.gameobject gameobjects::set_visible(#"group_friendly");
+    supplypod.gameobject gameobjects::allow_use(#"group_friendly");
     supplypod notify(#"hash_523ddcbd662010e5");
     supplypod notify(#"hacked");
     if (isdefined(supplypod.var_2d045452)) {
@@ -142,7 +141,7 @@ function function_bff5c062(supplypod, attackingplayer) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb6101ac, Offset: 0xa78
 // Size: 0x1e0
 function function_29de6f1f(weapon, meansofdeath = undefined) {
@@ -160,7 +159,7 @@ function function_29de6f1f(weapon, meansofdeath = undefined) {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8dc21744, Offset: 0xc60
 // Size: 0x28
 function function_49ef5263() {
@@ -171,7 +170,7 @@ function function_49ef5263() {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc1e6b9ae, Offset: 0xc90
 // Size: 0x194
 function hintobjectivehint_updat(weapon) {
@@ -189,7 +188,7 @@ function hintobjectivehint_updat(weapon) {
 }
 
 // Namespace supplypod/supplypod
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x995302a0, Offset: 0xe30
 // Size: 0x184
 function function_92856c6(attacker, *victim, weapon, attackerweapon, meansofdeath) {
@@ -213,7 +212,7 @@ function function_92856c6(attacker, *victim, weapon, attackerweapon, meansofdeat
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd697b67c, Offset: 0xfc0
 // Size: 0xbc
 function function_8d653231(params) {
@@ -225,7 +224,7 @@ function function_8d653231(params) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x538d56c4, Offset: 0x1088
 // Size: 0xaa
 function function_f579e72b(watcher) {
@@ -238,7 +237,7 @@ function function_f579e72b(watcher) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3be47226, Offset: 0x1140
 // Size: 0x4c
 function function_f7d9ebce(*player) {
@@ -250,7 +249,7 @@ function function_f7d9ebce(*player) {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d0bb587, Offset: 0x1198
 // Size: 0x2c
 function function_7c0d095c() {
@@ -261,7 +260,7 @@ function function_7c0d095c() {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa0ff8e52, Offset: 0x11d0
 // Size: 0x1be
 function supplypod_spawned(watcher, owner) {
@@ -293,7 +292,7 @@ function supplypod_spawned(watcher, owner) {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd12c751d, Offset: 0x1398
 // Size: 0x5c
 function playdeathfx() {
@@ -302,7 +301,7 @@ function playdeathfx() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x23feffea, Offset: 0x1400
 // Size: 0x5c
 function function_263be969() {
@@ -311,25 +310,25 @@ function function_263be969() {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9ef73454, Offset: 0x1468
 // Size: 0xcc
-function function_d7cd849c(soundbank, *team) {
+function playcommanderaudio(soundbank, *team) {
     if (!isdefined(team)) {
         return;
     }
-    if (!isdefined(level.var_934fb97.var_d741a6a4[team])) {
-        level.var_934fb97.var_d741a6a4[team] = 0;
+    if (!isdefined(level.var_934fb97.audiothrottletracker[team])) {
+        level.var_934fb97.audiothrottletracker[team] = 0;
     }
-    var_ad7969ca = level.var_934fb97.var_d741a6a4[team];
-    if (var_ad7969ca != 0 && gettime() < int(5 * 1000) + var_ad7969ca) {
+    lasttimeplayed = level.var_934fb97.audiothrottletracker[team];
+    if (lasttimeplayed != 0 && gettime() < int(5 * 1000) + lasttimeplayed) {
         return;
     }
-    level.var_934fb97.var_d741a6a4[team] = gettime();
+    level.var_934fb97.audiothrottletracker[team] = gettime();
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x137b30d3, Offset: 0x1540
 // Size: 0x34
 function setupclientfields() {
@@ -337,7 +336,7 @@ function setupclientfields() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xed859a2d, Offset: 0x1580
 // Size: 0x8c
 function private setupcallbacks() {
@@ -347,7 +346,7 @@ function private setupcallbacks() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x416edb4a, Offset: 0x1618
 // Size: 0x1c4
 function on_player_spawned() {
@@ -372,7 +371,7 @@ function on_player_spawned() {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa258ba2c, Offset: 0x17e8
 // Size: 0x294
 function function_46d74bb7(var_70150641) {
@@ -408,7 +407,7 @@ function function_46d74bb7(var_70150641) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd2a327b0, Offset: 0x1a88
 // Size: 0x66
 function supplypod_on(*slot, playerweapon) {
@@ -417,7 +416,7 @@ function supplypod_on(*slot, playerweapon) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc1de3a2a, Offset: 0x1af8
 // Size: 0x14
 function supplypod_off(*slot, *weapon) {
@@ -425,7 +424,7 @@ function supplypod_off(*slot, *weapon) {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfd4a2f3e, Offset: 0x1b18
 // Size: 0x12
 function getobjectiveid() {
@@ -433,7 +432,7 @@ function getobjectiveid() {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x18a0513a, Offset: 0x1b38
 // Size: 0x44
 function deleteobjective(objectiveid) {
@@ -444,7 +443,7 @@ function deleteobjective(objectiveid) {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6e6eb67, Offset: 0x1b88
 // Size: 0xcc
 function function_890b2784() {
@@ -460,10 +459,10 @@ function function_890b2784() {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbcd121f0, Offset: 0x1c60
 // Size: 0x216
-function function_827486aa(var_d3213f00, var_7497ba51 = 1) {
+function function_827486aa(destroyedbyenemy, var_7497ba51 = 1) {
     self notify(#"hash_523ddcbd662010e5");
     self.var_ab0875aa = 1;
     if (isdefined(self.var_83d9bfb5) && self.var_83d9bfb5) {
@@ -480,24 +479,24 @@ function function_827486aa(var_d3213f00, var_7497ba51 = 1) {
     self function_890b2784();
     if (isdefined(self.owner)) {
         if (game.state == #"playing") {
-            if (is_true(var_d3213f00)) {
+            if (is_true(destroyedbyenemy)) {
                 self.owner globallogic_score::function_5829abe3(self.var_846acfcf, self.var_d02ddb8e, level.var_934fb97.weapon);
             }
         }
     }
     if (var_7497ba51 && self.var_8d834202 === 1) {
-        wait((isdefined(level.var_934fb97.bundle.var_fd663ee0) ? level.var_934fb97.bundle.var_fd663ee0 : 0) / 1000);
+        wait (isdefined(level.var_934fb97.bundle.var_fd663ee0) ? level.var_934fb97.bundle.var_fd663ee0 : 0) / 1000;
     }
     profilestart();
-    function_9d4aabb9(var_d3213f00);
+    function_9d4aabb9(destroyedbyenemy);
     profilestop();
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3130c07f, Offset: 0x1e80
 // Size: 0x3fc
-function function_9d4aabb9(var_d3213f00) {
+function function_9d4aabb9(destroyedbyenemy) {
     if (!isdefined(self)) {
         return;
     }
@@ -511,7 +510,7 @@ function function_9d4aabb9(var_d3213f00) {
                 self playsound(level.var_934fb97.bundle.var_b3756378);
             }
         }
-        if (is_true(var_d3213f00)) {
+        if (is_true(destroyedbyenemy)) {
             if (isdefined(player)) {
                 var_f3ab6571 = self.owner weaponobjects::function_8481fc06(level.var_934fb97.weapon) > 1;
                 self.owner thread globallogic_audio::function_6daffa93(level.var_934fb97.weapon, var_f3ab6571);
@@ -519,11 +518,11 @@ function function_9d4aabb9(var_d3213f00) {
             if (isplayer(self.var_846acfcf)) {
                 self.var_846acfcf challenges::destroyedequipment(self.var_d02ddb8e);
             }
-            function_d7cd849c(level.var_934fb97.bundle.var_2ee73347, self.team);
-            function_d7cd849c(level.var_934fb97.bundle.var_79efc1, util::getotherteam(self.team));
+            playcommanderaudio(level.var_934fb97.bundle.var_2ee73347, self.team);
+            playcommanderaudio(level.var_934fb97.bundle.var_79efc1, util::getotherteam(self.team));
         } else {
-            function_d7cd849c(level.var_934fb97.bundle.var_10c9ba2d, self.team);
-            function_d7cd849c(level.var_934fb97.bundle.var_f29e64de, util::getotherteam(self.team));
+            playcommanderaudio(level.var_934fb97.bundle.var_10c9ba2d, self.team);
+            playcommanderaudio(level.var_934fb97.bundle.var_f29e64de, util::getotherteam(self.team));
         }
     }
     if (self.var_8d834202 === 1) {
@@ -544,7 +543,7 @@ function function_9d4aabb9(var_d3213f00) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7a3df7b, Offset: 0x2288
 // Size: 0x158
 function private function_5761966a(supplypod) {
@@ -559,7 +558,7 @@ function private function_5761966a(supplypod) {
     while (isdefined(supplypod.var_7b7607df[player.clientid]) && supplypod.var_7b7607df[player.clientid] > gettime()) {
         timeremaining = float(supplypod.var_7b7607df[player.clientid] - gettime()) / 1000;
         if (timeremaining > 0) {
-            wait(timeremaining);
+            wait timeremaining;
         }
     }
     objective_setinvisibletoplayer(supplypod.var_134eefb9, player);
@@ -567,7 +566,7 @@ function private function_5761966a(supplypod) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x99a2d723, Offset: 0x23e8
 // Size: 0x44
 function private function_3c4843e3(supplypod, timetoadd) {
@@ -575,7 +574,7 @@ function private function_3c4843e3(supplypod, timetoadd) {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4a13430, Offset: 0x2438
 // Size: 0x18c
 function watchfordeath() {
@@ -602,7 +601,7 @@ function watchfordeath() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x675b8474, Offset: 0x25d0
 // Size: 0x288
 function watchfordamage() {
@@ -616,8 +615,8 @@ function watchfordamage() {
     while (true) {
         waitresult = self waittill(#"damage");
         if ((isdefined(level.var_934fb97.bundle.var_4f845dc4) ? level.var_934fb97.bundle.var_4f845dc4 : 0) && isdefined(waitresult.attacker) && isplayer(waitresult.attacker)) {
-            var_fd03ecd9 = supplypod.health / startinghealth;
-            objective_setprogress(supplypod.var_134eefb9, var_fd03ecd9);
+            healthprct = supplypod.health / startinghealth;
+            objective_setprogress(supplypod.var_134eefb9, healthprct);
             var_adb78fe4 = isdefined(supplypod.var_7b7607df[waitresult.attacker.clientid]);
             waitresult.attacker function_3c4843e3(supplypod, level.var_934fb97.bundle.var_c14832cd);
             if (!var_adb78fe4) {
@@ -631,7 +630,7 @@ function watchfordamage() {
 }
 
 // Namespace supplypod/supplypod
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x9b61117a, Offset: 0x2860
 // Size: 0x10a
 function function_8d362deb(*einflictor, attacker, idamage, idflags, smeansofdeath, weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *iboneindex, *imodelindex) {
@@ -645,7 +644,7 @@ function function_8d362deb(*einflictor, attacker, idamage, idflags, smeansofdeat
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2743bb1, Offset: 0x2978
 // Size: 0x92
 function function_438ca4e0() {
@@ -661,7 +660,7 @@ function function_438ca4e0() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe75c6ae2, Offset: 0x2a18
 // Size: 0x38
 function function_fec0924() {
@@ -671,7 +670,7 @@ function function_fec0924() {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb7a6a379, Offset: 0x2a58
 // Size: 0xa7c
 function function_9abdee8c(*watcher, object) {
@@ -717,10 +716,10 @@ function function_9abdee8c(*watcher, object) {
     array::push(level.var_934fb97.var_27fce4c0[player.clientid], supplypod, var_a7edcaed);
     supplypod setcandamage(1);
     supplypod clientfield::set("enemyequip", 1);
-    supplypod.var_99d2556b = gettime();
+    supplypod.builttime = gettime();
     supplypod.uniqueid = function_fec0924();
-    function_d7cd849c(level.var_934fb97.bundle.var_69b1ff7, player getteam());
-    function_d7cd849c(level.var_934fb97.bundle.var_4f37dfe9, util::getotherteam(player getteam()));
+    playcommanderaudio(level.var_934fb97.bundle.var_69b1ff7, player getteam());
+    playcommanderaudio(level.var_934fb97.bundle.var_4f37dfe9, util::getotherteam(player getteam()));
     if (isdefined(level.var_934fb97.bundle.var_a0db3d4d)) {
         supplypod playloopsound(level.var_934fb97.bundle.var_a0db3d4d);
     }
@@ -746,7 +745,7 @@ function function_9abdee8c(*watcher, object) {
     supplypod.gameobject.onbeginuse = &function_8c8fb7b5;
     supplypod.gameobject.onenduse = &function_a1434496;
     supplypod.gameobject.canuseobject = &canuseobject;
-    supplypod.gameobject.var_5ecd70 = supplypod;
+    supplypod.gameobject.parentobj = supplypod;
     supplypod.gameobject.var_33d50507 = 1;
     supplypod.gameobject.dontlinkplayertotrigger = 1;
     supplypod.gameobject.keepweapon = 1;
@@ -754,8 +753,8 @@ function function_9abdee8c(*watcher, object) {
     supplypod.gameobject.var_d647eb08 = 1;
     player deployable::function_6ec9ee30(supplypod, level.var_934fb97.weapon);
     supplypod animation::play(#"hash_7540bb5a61e603a");
-    supplypod.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    supplypod.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    supplypod.gameobject gameobjects::set_visible(#"group_all");
+    supplypod.gameobject gameobjects::allow_use(#"group_all");
     if (supplypod.gameobject canuseobject(player)) {
         supplypod.gameobject function_a1434496(undefined, player, 1, 1);
     }
@@ -765,7 +764,7 @@ function function_9abdee8c(*watcher, object) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x19ee5cdc, Offset: 0x34e0
 // Size: 0xc
 function private function_8c8fb7b5(*player) {
@@ -773,7 +772,7 @@ function private function_8c8fb7b5(*player) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb6d6bfcd, Offset: 0x34f8
 // Size: 0x14
 function private function_a143899c(*player, *waittime) {
@@ -781,11 +780,11 @@ function private function_a143899c(*player, *waittime) {
 }
 
 // Namespace supplypod/supplypod
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xef4f70ec, Offset: 0x3518
 // Size: 0x4c4
 function private function_a1434496(*team, player, result, var_d862c76d) {
-    supplypod = self.var_5ecd70;
+    supplypod = self.parentobj;
     if (!isdefined(supplypod)) {
         return;
     }
@@ -839,7 +838,7 @@ function private function_a1434496(*team, player, result, var_d862c76d) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2aacec1b, Offset: 0x39e8
 // Size: 0x22
 function canuseobject(user) {
@@ -847,7 +846,7 @@ function canuseobject(user) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a8847f0, Offset: 0x3a18
 // Size: 0x12c
 function function_18f999b5(waittime) {
@@ -866,7 +865,7 @@ function function_18f999b5(waittime) {
 }
 
 // Namespace supplypod/supplypod
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3851a7d8, Offset: 0x3b50
 // Size: 0x228
 function function_1f8cd247(origin, *angles, player) {
@@ -895,7 +894,7 @@ function function_1f8cd247(origin, *angles, player) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x23e8b9e6, Offset: 0x3d80
 // Size: 0xb6
 function function_63c23d02(watcher, supplypod) {
@@ -922,7 +921,7 @@ function oncancelplacement(*supplypod) {
 }
 
 // Namespace supplypod/supplypod
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x99b64860, Offset: 0x3ed8
 // Size: 0xb4
 function function_452147b1(weapon, weaponindex) {
@@ -935,7 +934,7 @@ function function_452147b1(weapon, weaponindex) {
 }
 
 // Namespace supplypod/supplypod
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x50e44b70, Offset: 0x3f98
 // Size: 0x196
 function function_5bc9564e(weapon) {
@@ -975,7 +974,7 @@ function function_740ec27e() {
 }
 
 // Namespace supplypod/supplypod
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x698dde4f, Offset: 0x4298
 // Size: 0x15c
 function function_bcf0dd99() {

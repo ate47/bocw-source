@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
 
 #namespace wz_ski_slopes;
 
@@ -22,7 +21,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace wz_ski_slopes/wz_ski_slopes
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf3dbdfe7, Offset: 0x228
 // Size: 0x1b8
 function private function_103cfebf() {
@@ -38,7 +37,7 @@ function private function_103cfebf() {
 }
 
 // Namespace wz_ski_slopes/wz_ski_slopes
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb64f8a7, Offset: 0x3e8
 // Size: 0x7c
 function on_gameplay_started(*localclientnum) {

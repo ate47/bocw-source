@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace perks;
 
@@ -10,11 +9,11 @@
 // Checksum 0x7bc3a17e, Offset: 0x160
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2af3fdb587243686", &preinit, undefined, undefined, undefined);
+    system::register(#"perks_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb7924b4f, Offset: 0x1a8
 // Size: 0x8c
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69eb6340, Offset: 0x240
 // Size: 0xd4
 function perk_setperk(str_perk) {
@@ -35,14 +34,14 @@ function perk_setperk(str_perk) {
     if (!isdefined(self.var_fb3c9d6a[str_perk])) {
         self.var_fb3c9d6a[str_perk] = 0;
     }
-    assert(self.var_fb3c9d6a[str_perk] >= 0, "<unknown string>");
-    assert(self.var_fb3c9d6a[str_perk] < 23, "<unknown string>");
+    assert(self.var_fb3c9d6a[str_perk] >= 0, "<dev string:x38>");
+    assert(self.var_fb3c9d6a[str_perk] < 23, "<dev string:x53>");
     self.var_fb3c9d6a[str_perk]++;
     self setperk(str_perk);
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbf1b52dd, Offset: 0x320
 // Size: 0xb4
 function perk_unsetperk(str_perk) {
@@ -53,14 +52,14 @@ function perk_unsetperk(str_perk) {
         self.var_fb3c9d6a[str_perk] = 0;
     }
     self.var_fb3c9d6a[str_perk]--;
-    assert(self.var_fb3c9d6a[str_perk] >= 0, "<unknown string>");
+    assert(self.var_fb3c9d6a[str_perk] >= 0, "<dev string:x38>");
     if (self.var_fb3c9d6a[str_perk] <= 0) {
         self unsetperk(str_perk);
     }
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x23e4c392, Offset: 0x3e0
 // Size: 0x4a
 function perk_hasperk(str_perk) {
@@ -71,7 +70,7 @@ function perk_hasperk(str_perk) {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4beea07, Offset: 0x438
 // Size: 0x26
 function perk_reset_all() {
@@ -80,7 +79,7 @@ function perk_reset_all() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb61eb57d, Offset: 0x468
 // Size: 0x44
 function private on_player_spawned() {
@@ -146,7 +145,7 @@ function private event_handler[gadget_on] function_7d697841(eventstruct) {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3103c0e, Offset: 0x938
 // Size: 0x154
 function private function_845e1139() {
@@ -166,7 +165,7 @@ function private function_845e1139() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x70410fbb, Offset: 0xa98
 // Size: 0x266
 function private function_78976b52() {
@@ -205,7 +204,7 @@ function private function_78976b52() {
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1f9df55e, Offset: 0xd08
 // Size: 0x100
 function private function_e5f5216f(cf) {
@@ -224,7 +223,7 @@ function private function_e5f5216f(cf) {
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x26a9f7c8, Offset: 0xe10
 // Size: 0x150
 function private function_691948bf(cf) {
@@ -246,7 +245,7 @@ function private function_691948bf(cf) {
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xef59da57, Offset: 0xf68
 // Size: 0xfe
 function private function_b8e083d0(weapon) {
@@ -272,7 +271,7 @@ function private function_b8e083d0(weapon) {
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdcd8006b, Offset: 0x1070
 // Size: 0xc6
 function private function_4ed3bc25(*notifyhash) {
@@ -288,7 +287,7 @@ function private function_4ed3bc25(*notifyhash) {
 }
 
 // Namespace perks/perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc4cec252, Offset: 0x1140
 // Size: 0x2c
 function private function_c2b5717d(*notifyhash) {

@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\util;
 
 #namespace shellshock;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace shellshock/shellshock
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x902d744c, Offset: 0x168
 // Size: 0x3c
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace shellshock/shellshock
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1b0
 // Size: 0x4
 function init() {
@@ -33,7 +32,7 @@ function init() {
 }
 
 // Namespace shellshock/shellshock
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9aadf72, Offset: 0x1c0
 // Size: 0xec
 function on_damage(*eattacker, *einflictor, *weapon, smeansofdeath, idamage) {
@@ -65,7 +64,7 @@ function end_on_death() {
 // Size: 0x36
 function end_on_timer(timer) {
     self endon(#"disconnect");
-    wait(timer);
+    wait timer;
     self notify(#"end_on_timer");
 }
 

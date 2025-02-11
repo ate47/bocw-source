@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
 
 #namespace namespace_ba4f7a20;
 
@@ -114,9 +113,9 @@ function give_weapon(weaponname, attachmentnames) {
                 return;
             }
             attachment = item_world_util::function_49ce7663(attachmentname + "_t9_item");
-            namespace_a0d533d1::function_9e9c82a6(weapon, attachment);
+            item_inventory_util::function_9e9c82a6(weapon, attachment);
         }
-        weapon.amount = self getweaponammoclipsize(namespace_a0d533d1::function_2b83d3ff(weapon));
+        weapon.amount = self getweaponammoclipsize(item_inventory_util::function_2b83d3ff(weapon));
     }
     self item_world::function_de2018e3(weapon, self, var_fa3df96);
 }

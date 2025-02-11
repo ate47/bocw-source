@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\audio_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace helicopter_sounds;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb7bb9c78, Offset: 0x290
 // Size: 0x5cc
 function private preinit() {
@@ -40,8 +39,8 @@ function private preinit() {
     init_heli_sound_values("heli_guard", "turbine", 10, 0.9, 1, 30, 0.9, 1.05);
     init_heli_sound_values("heli_guard", "rotor", 10, 0.9, 1, 30, 0.9, 1.1);
     /#
-        if (getdvarstring(#"helisounds") == "<unknown string>") {
-            setdvar(#"helisounds", "<unknown string>");
+        if (getdvarstring(#"helisounds") == "<dev string:x38>") {
+            setdvar(#"helisounds", "<dev string:x38>");
         }
         level thread command_parser();
     #/
@@ -52,7 +51,7 @@ function private preinit() {
 // Checksum 0x74138cf8, Offset: 0x868
 // Size: 0x8a
 function vehicle_is_firing_function(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    println("<unknown string>" + bwastimejump);
+    println("<dev string:x3c>" + bwastimejump);
     if (bwastimejump == 0) {
         self.isfiring = 0;
         return;
@@ -61,7 +60,7 @@ function vehicle_is_firing_function(*localclientnum, *oldval, newval, *bnewent, 
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xc0ca87d5, Offset: 0x900
 // Size: 0x27c
 function init_heli_sound_values(heli_type, part_type, max_speed_vol, min_vol, max_vol, max_speed_pitch, min_pitch, max_pitch) {
@@ -79,14 +78,14 @@ function init_heli_sound_values(heli_type, part_type, max_speed_vol, min_vol, ma
     level.helisoundvalues[heli_type][part_type].pitchmax = max_pitch;
     /#
         if (getdvarint(#"debug_heli", 0) > 0) {
-            println("<unknown string>" + heli_type);
-            println("<unknown string>" + part_type);
-            println("<unknown string>" + max_speed_vol);
-            println("<unknown string>" + min_vol);
-            println("<unknown string>" + max_vol);
-            println("<unknown string>" + max_speed_pitch);
-            println("<unknown string>" + min_pitch);
-            println("<unknown string>" + max_pitch);
+            println("<dev string:x54>" + heli_type);
+            println("<dev string:x74>" + part_type);
+            println("<dev string:x94>" + max_speed_vol);
+            println("<dev string:xb8>" + min_vol);
+            println("<dev string:xd6>" + max_vol);
+            println("<dev string:xf4>" + max_speed_pitch);
+            println("<dev string:x11a>" + min_pitch);
+            println("<dev string:x13a>" + max_pitch);
         }
     #/
 }
@@ -100,32 +99,32 @@ function init_heli_sound_values(heli_type, part_type, max_speed_vol, min_vol, ma
     function command_parser() {
         while (true) {
             command = getdvarstring(#"helisounds");
-            if (command != "<unknown string>") {
+            if (command != "<dev string:x38>") {
                 success = 1;
-                tokens = strtok(command, "<unknown string>");
+                tokens = strtok(command, "<dev string:x15a>");
                 if (!isdefined(tokens[0]) || !isdefined(level.helisoundvalues[tokens[0]])) {
                     if (isdefined(tokens[0])) {
-                        println("<unknown string>" + tokens[0]);
+                        println("<dev string:x15f>" + tokens[0]);
                     } else {
-                        println("<unknown string>");
+                        println("<dev string:x192>");
                     }
-                    println("<unknown string>");
+                    println("<dev string:x1c2>");
                     success = 0;
                 } else if (!isdefined(tokens[1])) {
                     if (isdefined(tokens[1])) {
-                        println("<unknown string>" + tokens[0] + "<unknown string>" + tokens[1]);
+                        println("<dev string:x20f>" + tokens[0] + "<dev string:x242>" + tokens[1]);
                     } else {
-                        println("<unknown string>" + tokens[0]);
+                        println("<dev string:x251>" + tokens[0]);
                     }
-                    println("<unknown string>");
+                    println("<dev string:x1c2>");
                     success = 0;
                 } else if (!isdefined(tokens[2])) {
-                    println("<unknown string>" + tokens[0] + "<unknown string>" + tokens[1]);
-                    println("<unknown string>");
+                    println("<dev string:x28c>" + tokens[0] + "<dev string:x2cc>" + tokens[1]);
+                    println("<dev string:x1c2>");
                     success = 0;
                 } else if (!isdefined(tokens[3])) {
-                    println("<unknown string>" + tokens[0] + "<unknown string>" + tokens[1]);
-                    println("<unknown string>");
+                    println("<dev string:x2d7>" + tokens[0] + "<dev string:x2cc>" + tokens[1]);
+                    println("<dev string:x1c2>");
                     success = 0;
                 }
                 if (success) {
@@ -136,36 +135,36 @@ function init_heli_sound_values(heli_type, part_type, max_speed_vol, min_vol, ma
                     switch (value_name) {
                     case #"volumemin":
                         level.helisoundvalues[heli_type][heli_part].volumemin = value;
-                        println("<unknown string>" + value);
+                        println("<dev string:x312>" + value);
                         break;
                     case #"volumemax":
                         level.helisoundvalues[heli_type][heli_part].volumemax = value;
-                        println("<unknown string>" + value);
+                        println("<dev string:x32b>" + value);
                         break;
                     case #"pitchmin":
                         level.helisoundvalues[heli_type][heli_part].pitchmin = value;
-                        println("<unknown string>" + value);
+                        println("<dev string:x344>" + value);
                         break;
                     case #"pitchmax":
                         level.helisoundvalues[heli_type][heli_part].pitchmax = value;
-                        println("<unknown string>" + value);
+                        println("<dev string:x35c>" + value);
                         break;
                     case #"speedvolumemax":
                         level.helisoundvalues[heli_type][heli_part].speedvolumemax = value;
-                        println("<unknown string>" + value);
+                        println("<dev string:x374>" + value);
                         break;
                     case #"speedpitchmax":
                         level.helisoundvalues[heli_type][heli_part].speedpitchmax = value;
-                        println("<unknown string>" + value);
+                        println("<dev string:x392>" + value);
                         break;
                     default:
-                        println("<unknown string>");
+                        println("<dev string:x3af>");
                         break;
                     }
                 }
-                setdvar(#"helisounds", "<unknown string>");
+                setdvar(#"helisounds", "<dev string:x38>");
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 
@@ -243,7 +242,7 @@ function init_heli_sounds_heli_guard() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd2a8ca60, Offset: 0x1620
 // Size: 0x5c
 function sound_linkto(parent, tag) {
@@ -255,7 +254,7 @@ function sound_linkto(parent, tag) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7bb8c124, Offset: 0x1688
 // Size: 0x324
 function setup_heli_sounds(bone_location, type, tag, run, dmg1, dmg2, dmg3) {
@@ -286,7 +285,7 @@ function setup_heli_sounds(bone_location, type, tag, run, dmg1, dmg2, dmg3) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab85dddc, Offset: 0x19b8
 // Size: 0x27c
 function init_terrain_sounds() {
@@ -313,7 +312,7 @@ function init_terrain_sounds() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xee0d8c69, Offset: 0x1c40
 // Size: 0x7c
 function setup_terrain_sounds(surface_type, alias) {
@@ -323,7 +322,7 @@ function setup_terrain_sounds(surface_type, alias) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x14f0fa41, Offset: 0x1cc8
 // Size: 0x7c
 function setup_terrain_brass_sounds(surface_type, alias) {
@@ -359,23 +358,23 @@ function start_helicopter_sounds(*localclientnum) {
         case #"veh_drn_qrdrone_mp":
             break;
         default:
-            println("<unknown string>" + self.vehicletype + "<unknown string>");
+            println("<dev string:x40c>" + self.vehicletype + "<dev string:x423>");
             break;
         }
         self init_terrain_sounds();
         self thread terrain_trace();
         /#
             if (getdvarint(#"debug_heli", 0) > 0) {
-                iprintlnbold("<unknown string>" + self.vehicletype + "<unknown string>");
+                iprintlnbold("<dev string:x451>" + self.vehicletype + "<dev string:x466>");
             }
         #/
         return;
     }
-    println("<unknown string>");
+    println("<dev string:x476>");
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1dc8a695, Offset: 0x1f40
 // Size: 0x64
 function heli_loop_sound_delete(real_ent) {
@@ -386,7 +385,7 @@ function heli_loop_sound_delete(real_ent) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x150427c1, Offset: 0x1fb0
 // Size: 0x28
 function heli_linkto_sound_ents_delete(*localclientnum, entity) {
@@ -394,7 +393,7 @@ function heli_linkto_sound_ents_delete(*localclientnum, entity) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c20e32e, Offset: 0x1fe0
 // Size: 0xc2
 function heli_sound_play(heli_bone) {
@@ -405,7 +404,7 @@ function heli_sound_play(heli_bone) {
     case #"wind":
         break;
     default:
-        println("<unknown string>" + heli_bone.type + "<unknown string>");
+        println("<dev string:x4b2>" + heli_bone.type + "<dev string:x4d2>");
         break;
     }
 }
@@ -475,7 +474,7 @@ function play_heli_guard_sounds() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xe70e8fd, Offset: 0x2448
 // Size: 0x426
 function heli_idle_run_transition(heli_type, heli_part, wait_time, updown) {
@@ -487,7 +486,7 @@ function heli_idle_run_transition(heli_type, heli_part, wait_time, updown) {
     }
     while (isdefined(self)) {
         if (!isdefined(level.helisoundvalues[heli_type]) || !isdefined(level.helisoundvalues[heli_type][heli_part])) {
-            println("<unknown string>");
+            println("<dev string:x4f3>");
             return;
         }
         max_speed_vol = level.helisoundvalues[heli_type][heli_part].speedvolumemax;
@@ -511,19 +510,19 @@ function heli_idle_run_transition(heli_type, heli_part, wait_time, updown) {
             heli_bone.run setloopstate(heli_bone.run.alias, run_volume, run_pitch, 1, 0.15);
             /#
                 if (getdvarint(#"debug_heli", 0) > 0) {
-                    println("<unknown string>" + self.cur_speed);
-                    println("<unknown string>" + run_pitch);
-                    println("<unknown string>" + self.cur_speed);
-                    println("<unknown string>" + run_volume);
+                    println("<dev string:x525>" + self.cur_speed);
+                    println("<dev string:x53e>" + run_pitch);
+                    println("<dev string:x525>" + self.cur_speed);
+                    println("<dev string:x552>" + run_volume);
                 }
             #/
         }
-        wait(wait_time);
+        wait wait_time;
     }
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e3b1aa7, Offset: 0x2878
 // Size: 0x370
 function terrain_trace_brass() {
@@ -539,7 +538,7 @@ function terrain_trace_brass() {
     trace_real_ent = undefined;
     pre_origin = (100000, 100000, 100000);
     while (isdefined(self)) {
-        wait(1 + randomfloatrange(0, 0.2));
+        wait 1 + randomfloatrange(0, 0.2);
         if (distancesquared(pre_origin, trace_ent.origin) < 144) {
             continue;
         }
@@ -585,7 +584,7 @@ function terrain_trace_brass() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f122907, Offset: 0x2bf0
 // Size: 0x2e0
 function terrain_trace() {
@@ -598,7 +597,7 @@ function terrain_trace() {
     trace_real_ent = undefined;
     pre_origin = (100000, 100000, 100000);
     while (isdefined(self)) {
-        wait(1 + randomfloatrange(0, 0.2));
+        wait 1 + randomfloatrange(0, 0.2);
         if (distancesquared(pre_origin, trace_ent.origin) < 144) {
             continue;
         }
@@ -641,11 +640,11 @@ function terrain_trace() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x663eeca4, Offset: 0x2ed8
 // Size: 0x3d8
 function aircraft_dustkick(localclientnum) {
-    println("<unknown string>");
+    println("<dev string:x566>");
     self endon(#"death");
     maxheight = 1200;
     minheight = 350;
@@ -701,10 +700,10 @@ function aircraft_dustkick(localclientnum) {
         if (!isdefined(self.treadfxnamearray) || !isdefined(self.treadfxnamearray[trace[#"surfacetype"]])) {
             /#
                 if (isdefined(self.vehicletype)) {
-                    println("<unknown string>" + trace[#"surfacetype"] + "<unknown string>" + self.vehicletype);
+                    println("<dev string:x583>" + trace[#"surfacetype"] + "<dev string:x5aa>" + self.vehicletype);
                     return;
                 }
-                println("<unknown string>" + trace[#"surfacetype"] + "<unknown string>");
+                println("<dev string:x583>" + trace[#"surfacetype"] + "<dev string:x5c0>");
             #/
             return;
         }
@@ -715,7 +714,7 @@ function aircraft_dustkick(localclientnum) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x28ff6693, Offset: 0x32b8
 // Size: 0x80
 function play_targeting_sound(play, sound, handle) {
@@ -730,7 +729,7 @@ function play_targeting_sound(play, sound, handle) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x711b2a5, Offset: 0x3340
 // Size: 0x3a
 function play_targeted_sound(play) {
@@ -738,7 +737,7 @@ function play_targeted_sound(play) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6e89b202, Offset: 0x3388
 // Size: 0x3a
 function play_locked_sound(play) {
@@ -746,7 +745,7 @@ function play_locked_sound(play) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa354c209, Offset: 0x33d0
 // Size: 0x3a
 function play_fired_sound(play) {
@@ -769,7 +768,7 @@ function play_leaving_battlefield_alarm(play) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x11a065ce, Offset: 0x34b0
 // Size: 0xa8
 function get_heli_sound_ent(sound_ent) {
@@ -786,7 +785,7 @@ function get_heli_sound_ent(sound_ent) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6fe6250e, Offset: 0x3560
 // Size: 0x2a
 function get_lock_sound_ent() {
@@ -795,7 +794,7 @@ function get_lock_sound_ent() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x88067ab, Offset: 0x3598
 // Size: 0x2a
 function get_leaving_sound_ent() {
@@ -804,7 +803,7 @@ function get_leaving_sound_ent() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa6697ae4, Offset: 0x35d0
 // Size: 0x54
 function heli_sound_ent_delete(real_ent) {
@@ -840,7 +839,7 @@ function drone_up_down_transition() {
     self thread drone_button_watch();
     while (true) {
         last_pos = self.origin[2];
-        wait(0.1);
+        wait 0.1;
         self.qrdrone_z_difference = last_pos - self.origin[2];
         if (self.qrdrone_z_difference < 0) {
             up_difference = self.qrdrone_z_difference * -1;
@@ -863,7 +862,7 @@ function drone_up_down_transition() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7958e569, Offset: 0x3b28
 // Size: 0x3c
 function qr_ent_cleanup(veh_ent) {
@@ -887,7 +886,7 @@ function drone_rotate_angle(*heli_type, *heli_part) {
     qr_ent_angle linkto(self, tag);
     while (true) {
         last_angle = abs(self.angles[1]);
-        wait(0.1);
+        wait 0.1;
         turning_speed = last_angle - abs(self.angles[1]);
         abs_turning_speed = abs(turning_speed);
         jet_stick_vol = audio::scale_speed(0, 5, 0, 0.4, abs_turning_speed);
@@ -897,7 +896,7 @@ function drone_rotate_angle(*heli_type, *heli_part) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d931598, Offset: 0x3d98
 // Size: 0xe2
 function drone_button_watch() {

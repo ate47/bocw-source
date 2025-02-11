@@ -1,69 +1,68 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_770e34dfe9b07f3c;
 #using script_1496ada77dc2f2e2;
-#using scripts\zm_common\trials\zm_trial_restrict_controls.gsc;
-#using script_6951ea86fdae9ae0;
-#using scripts\zm_common\trials\zm_trial_double_damage.gsc;
-#using scripts\zm_common\trials\zm_trial_activate_hazards.gsc;
-#using scripts\zm_common\trials\zm_trial_add_special.gsc;
-#using scripts\zm_common\trials\zm_trial_moving_hill.gsc;
-#using scripts\zm_common\trials\zm_trial_weapon_rotation.gsc;
-#using scripts\zm_common\trials\zm_trial_upgrade_multiple.gsc;
-#using scripts\zm_common\trials\zm_trial_repair_boards.gsc;
-#using scripts\zm_common\trials\zm_trial_timed_round.gsc;
-#using scripts\zm_common\trials\zm_trial_no_sprint.gsc;
-#using scripts\zm_common\trials\zm_trial_kill_with_special.gsc;
-#using script_e59b4cddfde38fe;
-#using scripts\zm_common\trials\zm_trial_no_ads.gsc;
 #using script_3688d332e17e9ac1;
-#using scripts\zm_common\trials\zm_trial_give_reward.gsc;
-#using script_35d3717bf2cbee8f;
-#using scripts\zm_common\trials\zm_trial_disable_hud.gsc;
-#using scripts\zm_common\trials\zm_trial_reset_loadout.gsc;
-#using scripts\zm_common\trials\zm_trial_timeout.gsc;
-#using script_698dd790cdc4965f;
-#using scripts\zm_common\trials\zm_trial_force_archetypes.gsc;
-#using scripts\zm_common\trials\zm_trial_super_sprinters_only.gsc;
-#using scripts\zm_common\trials\zm_trial_sprinters_only.gsc;
-#using script_760b801e43fe3017;
-#using script_68cf49837639e4f1;
 #using script_3c5fdcb080338059;
-#using script_c65026898539e6d;
-#using script_7b843bf90a032750;
 #using script_444bc5b4fa0fe14f;
-#using scripts\zm_common\trials\zm_trial_no_powerups.gsc;
-#using scripts\zm_common\trials\zm_trial_special_enemy.gsc;
-#using scripts\zm_common\trials\zm_trial_damage_drains_points.gsc;
-#using scripts\zm_common\trials\zm_trial_headshots_only.gsc;
-#using scripts\zm_common\trials\zm_trial_open_all_doors.gsc;
-#using scripts\zm_common\trials\zm_trial_crawlers_only.gsc;
-#using scripts\zm_common\trials\zm_trial_use_pack_a_punch.gsc;
-#using scripts\zm_common\trials\zm_trial_disable_perks.gsc;
-#using scripts\zm_common\trials\zm_trial_defend_area.gsc;
-#using scripts\zm_common\trials\zm_trial_use_magicbox.gsc;
-#using scripts\zm_common\trials\zm_trial_disable_buys.gsc;
-#using scripts\zm_common\trials\zm_trial_turn_on_power.gsc;
-#using scripts\zm_common\trials\zm_trial_acquire_weapon.gsc;
-#using scripts\zm_common\trials\zm_trial_acquire_perks.gsc;
+#using script_68cf49837639e4f1;
+#using script_6951ea86fdae9ae0;
+#using script_760b801e43fe3017;
+#using script_770e34dfe9b07f3c;
 #using script_7828033bc0ecda72;
-#using script_75f53105a210f2f7;
-#using scripts\zm_common\trials\zm_trial_restrict_loadout.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_game_module.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_cleanup_mgr.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_7b843bf90a032750;
+#using script_c65026898539e6d;
+#using script_e59b4cddfde38fe;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\trials\zm_trial_acquire_perks;
+#using scripts\zm_common\trials\zm_trial_acquire_weapon;
+#using scripts\zm_common\trials\zm_trial_activate_hazards;
+#using scripts\zm_common\trials\zm_trial_add_special;
+#using scripts\zm_common\trials\zm_trial_crawlers_only;
+#using scripts\zm_common\trials\zm_trial_damage_drains_points;
+#using scripts\zm_common\trials\zm_trial_defend_area;
+#using scripts\zm_common\trials\zm_trial_disable_buys;
+#using scripts\zm_common\trials\zm_trial_disable_hero_weapons;
+#using scripts\zm_common\trials\zm_trial_disable_hud;
+#using scripts\zm_common\trials\zm_trial_disable_perks;
+#using scripts\zm_common\trials\zm_trial_disable_upgraded_weapons;
+#using scripts\zm_common\trials\zm_trial_double_damage;
+#using scripts\zm_common\trials\zm_trial_force_archetypes;
+#using scripts\zm_common\trials\zm_trial_give_reward;
+#using scripts\zm_common\trials\zm_trial_headshots_only;
+#using scripts\zm_common\trials\zm_trial_kill_with_special;
+#using scripts\zm_common\trials\zm_trial_moving_hill;
+#using scripts\zm_common\trials\zm_trial_no_ads;
+#using scripts\zm_common\trials\zm_trial_no_player_damage;
+#using scripts\zm_common\trials\zm_trial_no_powerups;
+#using scripts\zm_common\trials\zm_trial_no_sprint;
+#using scripts\zm_common\trials\zm_trial_open_all_doors;
+#using scripts\zm_common\trials\zm_trial_repair_boards;
+#using scripts\zm_common\trials\zm_trial_reset_loadout;
+#using scripts\zm_common\trials\zm_trial_restrict_controls;
+#using scripts\zm_common\trials\zm_trial_restrict_loadout;
+#using scripts\zm_common\trials\zm_trial_special_enemy;
+#using scripts\zm_common\trials\zm_trial_sprinters_only;
+#using scripts\zm_common\trials\zm_trial_super_sprinters_only;
+#using scripts\zm_common\trials\zm_trial_timed_round;
+#using scripts\zm_common\trials\zm_trial_timeout;
+#using scripts\zm_common\trials\zm_trial_turn_on_power;
+#using scripts\zm_common\trials\zm_trial_upgrade_multiple;
+#using scripts\zm_common\trials\zm_trial_use_magicbox;
+#using scripts\zm_common\trials\zm_trial_use_pack_a_punch;
+#using scripts\zm_common\trials\zm_trial_weapon_rotation;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_cleanup_mgr;
+#using scripts\zm_common\zm_game_module;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace ztrials;
 
@@ -83,7 +82,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.var_9093a47e = &function_b8839207;
     level.round_end_custom_logic = &function_61fd0e87;
     level.round_number = 0;
-    level.var_df8480a0 = 0;
+    level.trial_strikes = 0;
     level flag::init(#"ztrial", 1);
     callback::on_connect(&function_8277ff43);
     level._supress_survived_screen = 1;
@@ -104,9 +103,9 @@ function event_handler[level_init] levelinit(*eventstruct) {
     } else if (var_189d26ca == "") {
         var_189d26ca = util::get_map_name() + "_default";
     }
-    assert(var_189d26ca != "<unknown string>", "<unknown string>");
+    assert(var_189d26ca != "<dev string:x38>", "<dev string:x3c>");
     level.var_6d87ac05 = zm_trial::function_d02ffd(var_189d26ca);
-    assert(isdefined(level.var_6d87ac05), "<unknown string>");
+    assert(isdefined(level.var_6d87ac05), "<dev string:x55>");
     /#
         function_9a6b2309();
     #/
@@ -208,7 +207,7 @@ function private function_61fd0e87() {
     }
     if (!level flag::get("round_reset") && !level flag::get(#"trial_failed")) {
         zm_trial_util::function_96e10d88(1);
-        wait(3);
+        wait 3;
     }
 }
 
@@ -226,7 +225,7 @@ function private function_b8839207(e_door, n_cost) {
         } else {
             e_door zm_utility::set_hint_string(self, "default_buy_door", n_cost);
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -240,7 +239,7 @@ function private function_b8839207(e_door, n_cost) {
         level.devcheater = 1;
         level.zombie_total = 0;
         level notify(#"kill_round");
-        wait(1);
+        wait 1;
         zombies = getaiteamarray(level.zombie_team);
         if (isdefined(zombies)) {
             for (i = 0; i < zombies.size; i++) {
@@ -292,31 +291,31 @@ function private function_b8839207(e_door, n_cost) {
     function private function_9a6b2309() {
         assert(isdefined(level.var_6d87ac05));
         foreach (round_info in level.var_6d87ac05.rounds) {
-            adddebugcommand("<unknown string>" + round_info.round + "<unknown string>" + function_9e72a96(round_info.name) + "<unknown string>" + round_info.round + "<unknown string>" + round_info.round + "<unknown string>");
+            adddebugcommand("<dev string:xee>" + round_info.round + "<dev string:x112>" + function_9e72a96(round_info.name) + "<dev string:x117>" + round_info.round + "<dev string:x11c>" + round_info.round + "<dev string:x13f>");
         }
         for (i = 0; i <= 3; i++) {
-            adddebugcommand("<unknown string>" + i + "<unknown string>" + i + "<unknown string>");
+            adddebugcommand("<dev string:x145>" + i + "<dev string:x16b>" + i + "<dev string:x13f>");
         }
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x190>");
+        adddebugcommand("<dev string:x1df>");
+        adddebugcommand("<dev string:x226>");
+        adddebugcommand("<dev string:x282>");
+        adddebugcommand("<dev string:x2d8>");
+        adddebugcommand("<dev string:x332>");
+        adddebugcommand("<dev string:x38c>");
         while (true) {
-            string = getdvarstring(#"hash_57e97658cd1d89e2", "<unknown string>");
-            cmd = strtok(string, "<unknown string>");
+            string = getdvarstring(#"hash_57e97658cd1d89e2", "<dev string:x38>");
+            cmd = strtok(string, "<dev string:x3da>");
             if (cmd.size > 0) {
                 round_number = int(cmd[0]);
                 if (isdefined(level.var_b9714a5d)) {
                     [[ level.var_b9714a5d ]](round_number);
                 }
                 level thread zm_game_module::zombie_goto_round(round_number);
-                setdvar(#"hash_57e97658cd1d89e2", "<unknown string>");
+                setdvar(#"hash_57e97658cd1d89e2", "<dev string:x38>");
             }
-            string = getdvarstring(#"hash_25a4cfc19b09ae41", "<unknown string>");
-            cmd = strtok(string, "<unknown string>");
+            string = getdvarstring(#"hash_25a4cfc19b09ae41", "<dev string:x38>");
+            cmd = strtok(string, "<dev string:x3da>");
             if (cmd.size > 0) {
                 strikes = int(cmd[0]);
                 if (strikes == 3) {
@@ -325,33 +324,33 @@ function private function_b8839207(e_door, n_cost) {
                 } else {
                     zm_trial::function_fe2ecb6(strikes);
                 }
-                setdvar(#"hash_25a4cfc19b09ae41", "<unknown string>");
+                setdvar(#"hash_25a4cfc19b09ae41", "<dev string:x38>");
             }
-            string = getdvarstring(#"hash_2446ebd1d15f0dab", "<unknown string>");
-            cmd = strtok(string, "<unknown string>");
+            string = getdvarstring(#"hash_2446ebd1d15f0dab", "<dev string:x38>");
+            cmd = strtok(string, "<dev string:x3da>");
             if (cmd.size > 0) {
                 complete_current_round();
-                setdvar(#"hash_2446ebd1d15f0dab", "<unknown string>");
+                setdvar(#"hash_2446ebd1d15f0dab", "<dev string:x38>");
             }
-            string = getdvarstring(#"hash_5a32209acb1f54a0", "<unknown string>");
-            cmd = strtok(string, "<unknown string>");
+            string = getdvarstring(#"hash_5a32209acb1f54a0", "<dev string:x38>");
+            cmd = strtok(string, "<dev string:x3da>");
             if (cmd.size > 0) {
                 zm_trial::fail(undefined, getplayers());
-                setdvar(#"hash_5a32209acb1f54a0", "<unknown string>");
+                setdvar(#"hash_5a32209acb1f54a0", "<dev string:x38>");
             }
-            string = getdvarstring(#"hash_1576c65ebdf43de0", "<unknown string>");
-            cmd = strtok(string, "<unknown string>");
+            string = getdvarstring(#"hash_1576c65ebdf43de0", "<dev string:x38>");
+            cmd = strtok(string, "<dev string:x3da>");
             if (cmd.size > 0) {
                 foreach (player in getplayers()) {
-                    player zm_stats::function_49469f35("<unknown string>", 0);
-                    player zm_stats::function_49469f35("<unknown string>", 0);
-                    player zm_stats::function_49469f35("<unknown string>", 0);
+                    player zm_stats::function_49469f35("<dev string:x3df>", 0);
+                    player zm_stats::function_49469f35("<dev string:x3fb>", 0);
+                    player zm_stats::function_49469f35("<dev string:x417>", 0);
                 }
                 level.var_ee7ca64 = [];
-                setdvar(#"hash_1576c65ebdf43de0", "<unknown string>");
+                setdvar(#"hash_1576c65ebdf43de0", "<dev string:x38>");
             }
-            string = getdvarstring(#"hash_2f6ef50454652bf2", "<unknown string>");
-            cmd = strtok(string, "<unknown string>");
+            string = getdvarstring(#"hash_2f6ef50454652bf2", "<dev string:x38>");
+            cmd = strtok(string, "<dev string:x3da>");
             if (cmd.size > 0) {
                 challenge = function_1201b5da(cmd[0]);
                 foreach (player in getplayers()) {
@@ -360,7 +359,7 @@ function private function_b8839207(e_door, n_cost) {
                     curr_time = gettime();
                     player zm_stats::function_49469f35(stat_name, curr_time);
                 }
-                setdvar(#"hash_2f6ef50454652bf2", "<unknown string>");
+                setdvar(#"hash_2f6ef50454652bf2", "<dev string:x38>");
             }
             if (getdvarint(#"hash_145033f5271f2651", 0) == 1) {
                 zm_trial_util::function_9c1092f6();

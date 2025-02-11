@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace ai_state;
 
 // Namespace ai_state/state
 // Params 8, eflags: 0x0
 // Checksum 0x76f1ac4, Offset: 0x80
 // Size: 0xd4
-function function_e9b061a8(state, start, update_goal, end, update_enemy, var_edc20efd, var_ff716a93, update_debug) {
-    level.extra_screen_electricity_.functions[state] = {#start:start, #update_goal:update_goal, #end:end, #update_enemy:update_enemy, #var_edc20efd:var_edc20efd, #var_ff716a93:var_ff716a93, #update_debug:update_debug};
+function function_e9b061a8(state, start, update_goal, end, update_enemy, var_edc20efd, attack_origin, update_debug) {
+    level.extra_screen_electricity_.functions[state] = {#start:start, #update_goal:update_goal, #end:end, #update_enemy:update_enemy, #var_edc20efd:var_edc20efd, #attack_origin:attack_origin, #update_debug:update_debug};
 }
 
 // Namespace ai_state/state
@@ -65,8 +64,8 @@ function function_4af1ff64() {
 // Checksum 0xef747d63, Offset: 0x3e8
 // Size: 0x7a
 function function_a78474f2() {
-    if (isdefined(self.ai.state) && isdefined(level.extra_screen_electricity_.functions[self.ai.state].var_ff716a93)) {
-        return self [[ level.extra_screen_electricity_.functions[self.ai.state].var_ff716a93 ]]();
+    if (isdefined(self.ai.state) && isdefined(level.extra_screen_electricity_.functions[self.ai.state].attack_origin)) {
+        return self [[ level.extra_screen_electricity_.functions[self.ai.state].attack_origin ]]();
     }
     return undefined;
 }
@@ -117,8 +116,8 @@ function is_state(state) {
     // Checksum 0x1ed16193, Offset: 0x5f8
     // Size: 0x5e
     function function_3a57bb58() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x38>");
+        self endon("<dev string:x38>");
         self endon(#"death");
         while (true) {
             self function_c1d2ede8();

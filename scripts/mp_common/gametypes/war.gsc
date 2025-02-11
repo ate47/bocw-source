@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_4acb48c9cb82bb51;
 
 #namespace war;

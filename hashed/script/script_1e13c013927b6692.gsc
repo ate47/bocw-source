@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_fasttravel.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\callbacks.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\callbacks;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\zm_fasttravel;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace namespace_fa39a5c3;
 
@@ -23,12 +22,12 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x380dd6af, Offset: 0x1b0
 // Size: 0xfc
 function preinit() {
     clientfield::register("toplayer", "" + #"hash_69dc133e22a2769f", 16000, 1, "int");
-    level.var_5bfd847e = #"hash_3b7ec2c707912dd9";
+    level.var_5bfd847e = #"power_fasttravel";
     level.var_e9737821 = &function_c52e8ba;
     level.var_352c9e03 = &function_af65fe93;
     level.var_91171ae5 = &function_54a36ee5;
@@ -38,7 +37,7 @@ function preinit() {
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe87dbfe8, Offset: 0x2b8
 // Size: 0x4c
 function on_player_spawned() {
@@ -49,16 +48,16 @@ function on_player_spawned() {
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6bd7d320, Offset: 0x310
 // Size: 0x3c
 function function_d467cf16() {
     level waittill(#"all_players_spawned");
-    level flag::set(#"hash_3b7ec2c707912dd9");
+    level flag::set(#"power_fasttravel");
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x598556c8, Offset: 0x358
 // Size: 0x4e6
 function function_c52e8ba(player, var_8d5d092c) {
@@ -130,7 +129,7 @@ function function_c52e8ba(player, var_8d5d092c) {
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x90499ba, Offset: 0x848
 // Size: 0xec
 function function_af65fe93(var_79bf62e6) {
@@ -144,7 +143,7 @@ function function_af65fe93(var_79bf62e6) {
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x151255c7, Offset: 0x940
 // Size: 0x9a
 function function_54a36ee5(e_unitrigger) {
@@ -159,7 +158,7 @@ function function_54a36ee5(e_unitrigger) {
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73f2ae5d, Offset: 0x9e8
 // Size: 0xde
 function function_bce9fcbe() {

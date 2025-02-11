@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_47851dbeea22fe66;
-#using script_774302f762d76254;
-#using script_1ee011cd0961afd7;
-#using script_1b0b07ff57d1dde3;
-#using script_634ae70c663d1cc9;
 #using script_17dcb1172e441bf6;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
+#using script_47851dbeea22fe66;
+#using script_634ae70c663d1cc9;
+#using script_774302f762d76254;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_85f9e33a;
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x340
 // Size: 0x4
 function init() {
@@ -31,7 +30,7 @@ function init() {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d75e0c1, Offset: 0x350
 // Size: 0x16
 function main() {
@@ -39,14 +38,14 @@ function main() {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xafe0fafc, Offset: 0x370
 // Size: 0x1de
 function function_81853592() {
     self notify("64d873247a66697a");
     self endon("64d873247a66697a");
     self thread namespace_268747c0::function_978c05b5();
-    result = self waittill(#"hash_3e251384a5400dce");
+    result = self waittill(#"destroy_hazard");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_18f8e489, self);
         namespace_1e25ad94::debugmsg("Deleting Flogger trap permenently at:" + self.origin);
@@ -65,7 +64,7 @@ function function_81853592() {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x87153a42, Offset: 0x558
 // Size: 0x210
 function function_ecfc6c75(trap, var_7c56394 = 0) {
@@ -104,7 +103,7 @@ function function_ecfc6c75(trap, var_7c56394 = 0) {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x18ab0d3e, Offset: 0x770
 // Size: 0xf4
 function function_7fb58446(trap, page = 0) {
@@ -121,7 +120,7 @@ function function_7fb58446(trap, page = 0) {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd32b2c12, Offset: 0x870
 // Size: 0x350
 function function_9d10940b() {
@@ -129,7 +128,7 @@ function function_9d10940b() {
     self endon("56bc794308d648b4");
     level endon(#"game_over");
     while (true) {
-        wait(0.5);
+        wait 0.5;
         if (namespace_4dae815d::function_59a9cf1d() == 0) {
             continue;
         }
@@ -171,14 +170,14 @@ function function_9d10940b() {
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
                 namespace_1e25ad94::debugmsg("Paging out flogger trap at:" + trap.origin);
-                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                trap notify(#"destroy_hazard", {#var_760a0807:0});
             }
         }
     }
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14e3e0ed, Offset: 0xbc8
 // Size: 0x138
 function function_a76494d5() {
@@ -197,22 +196,22 @@ function function_a76494d5() {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20b7b2c5, Offset: 0xd08
 // Size: 0x5fc
 function function_80eed528() {
     self notify("220693f3dc4b6553");
     self endon("220693f3dc4b6553");
     level endon(#"game_over");
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self thread function_81853592();
     if (!isdefined(self.script_model)) {
-        self notify(#"hash_3e251384a5400dce");
+        self notify(#"destroy_hazard");
     }
     self.script_model useanimtree("generic");
     self.script_model solid();
     length = getanimlength(#"hash_32b5327a0dd4ac63");
-    assert(self.trigger.size == 0, "<unknown string>");
+    assert(self.trigger.size == 0, "<dev string:x38>");
     triggers = arraycopy(self.trigger);
     foreach (trigger in triggers) {
         trigger namespace_268747c0::function_54f185a();
@@ -233,7 +232,7 @@ function function_80eed528() {
     animationrate = self.spinrate;
     length /= animationrate;
     self.script_model namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_eng_start");
-    wait(1);
+    wait 1;
     foreach (trigger in self.trigger) {
         trigger triggerenable(1);
         trigger thread function_ab141bd8(self.script_model, self);
@@ -242,7 +241,7 @@ function function_80eed528() {
     self.script_model namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_eng_loop");
     self.script_model thread function_b98fe7eb();
     self.script_model animscripted("spin_end", self.origin, self.angles, #"hash_32b5327a0dd4ac63", "server script", undefined, animationrate);
-    wait(length);
+    wait length;
     self.script_model stopanimscripted(0, 1);
     self.script_model namespace_e32bb68::function_ae271c0b("evt_doa_hazard_flogger_eng_loop");
     self.script_model namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_eng_stop");
@@ -251,12 +250,12 @@ function function_80eed528() {
         trigger namespace_268747c0::function_54f185a();
     }
     self.trigger = [];
-    wait(randomfloatrange(self.minwait, self.maxwait));
+    wait randomfloatrange(self.minwait, self.maxwait);
     self thread function_80eed528();
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5455c9ca, Offset: 0x1310
 // Size: 0x8a
 function function_b98fe7eb() {
@@ -270,7 +269,7 @@ function function_b98fe7eb() {
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x787a29e4, Offset: 0x13a8
 // Size: 0x308
 function function_ab141bd8(model, trap) {

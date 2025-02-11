@@ -1,33 +1,32 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_2a5bf5b4a00cee0d;
 #using script_164a456ce05c3483;
+#using script_17dcb1172e441bf6;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_3faf478d5b0850fe;
 #using script_47851dbeea22fe66;
-#using script_1ee011cd0961afd7;
-#using script_5f20d3b434d24884;
-#using script_1b0b07ff57d1dde3;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using script_5f20d3b434d24884;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_f6712ec9;
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcb458638, Offset: 0x1d0
 // Size: 0x194
 function init() {
@@ -42,7 +41,7 @@ function init() {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe3c4cc74, Offset: 0x370
 // Size: 0x164
 function function_96a48049() {
@@ -66,7 +65,7 @@ function function_96a48049() {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3eb9b1c0, Offset: 0x4e0
 // Size: 0xcc
 function function_3dbef270(*params) {
@@ -80,7 +79,7 @@ function function_3dbef270(*params) {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x60a14909, Offset: 0x5b8
 // Size: 0x98
 function function_86555fba() {
@@ -94,7 +93,7 @@ function function_86555fba() {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x98c9a76b, Offset: 0x658
 // Size: 0x246
 function function_29c22852(entity) {
@@ -133,7 +132,7 @@ function function_29c22852(entity) {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd884fda5, Offset: 0x8a8
 // Size: 0xa8
 function private function_33b29495(*entity) {
@@ -146,7 +145,7 @@ function private function_33b29495(*entity) {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1c89af69, Offset: 0x958
 // Size: 0x4e
 function private function_27a1a846(*entity) {
@@ -159,7 +158,7 @@ function private function_27a1a846(*entity) {
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbf5d5ccc, Offset: 0x9b0
 // Size: 0x44
 function private function_99ac548f(entity) {

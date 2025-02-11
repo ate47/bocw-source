@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_player.gsc;
 #using script_301f64a4090c381a;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\throttle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\throttle_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_weapons;
 
 #namespace riotshield;
 
@@ -231,7 +230,7 @@ function should_shield_absorb_damage(*einflictor, eattacker, *idamage, *idflags,
                     return zombie_utility::get_zombie_var(#"riotshield_stowed_block_fraction");
                 }
             } else {
-                assert(!isdefined(self.riotshieldentity), "<unknown string>");
+                assert(!isdefined(self.riotshieldentity), "<dev string:x38>");
             }
         }
     }

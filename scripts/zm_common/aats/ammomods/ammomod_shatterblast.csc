@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\aat_shared.csc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\clientfield_shared;
 
 #namespace ammomod_shatterblast;
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xabbbb3a6, Offset: 0x198
 // Size: 0x18c
 function init_shatterblast() {
@@ -22,7 +21,7 @@ function init_shatterblast() {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe361c8b6, Offset: 0x330
 // Size: 0x64
 function function_d28d723d(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

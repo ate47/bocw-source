@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace statemachine;
 
 // Namespace statemachine/statemachine_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb2007f0, Offset: 0x90
 // Size: 0x120
 function create(name, owner, change_notify = "change_state") {
@@ -29,7 +28,7 @@ function create(name, owner, change_notify = "change_state") {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39ac99ca, Offset: 0x1b8
 // Size: 0xee
 function clear() {
@@ -48,7 +47,7 @@ function clear() {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa612651e, Offset: 0x2b0
 // Size: 0x12c
 function add_state(name, enter_func, update_func, exit_func, reenter_func) {
@@ -67,7 +66,7 @@ function add_state(name, enter_func, update_func, exit_func, reenter_func) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2ff3ca60, Offset: 0x3e8
 // Size: 0x18
 function get_state(name) {
@@ -75,7 +74,7 @@ function get_state(name) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8048721f, Offset: 0x408
 // Size: 0x28
 function has_state(name) {
@@ -83,7 +82,7 @@ function has_state(name) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3319ca86, Offset: 0x438
 // Size: 0xe0
 function add_interrupt_connection(from_state_name, to_state_name, on_notify, checkfunc) {
@@ -99,7 +98,7 @@ function add_interrupt_connection(from_state_name, to_state_name, on_notify, che
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf5e5fd51, Offset: 0x520
 // Size: 0x168
 function add_utility_connection(from_state_name, to_state_name, checkfunc, defaultscore) {
@@ -123,7 +122,7 @@ function add_utility_connection(from_state_name, to_state_name, checkfunc, defau
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5bf8fba0, Offset: 0x690
 // Size: 0x54
 function function_b94a7666(from_state_name, on_notify) {
@@ -132,7 +131,7 @@ function function_b94a7666(from_state_name, on_notify) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf172800b, Offset: 0x6f0
 // Size: 0x264
 function set_state(name, state_params) {
@@ -141,7 +140,7 @@ function set_state(name, state_params) {
         return;
     }
     if (!isdefined(state)) {
-        assertmsg("<unknown string>" + name + "<unknown string>" + self.name);
+        assertmsg("<dev string:x38>" + name + "<dev string:x57>" + self.name);
         return;
     }
     reenter = self.current_state === state;
@@ -177,7 +176,7 @@ function set_state(name, state_params) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x261f1aba, Offset: 0x960
 // Size: 0xd8
 function threadnotifyconnections(state) {
@@ -189,7 +188,7 @@ function threadnotifyconnections(state) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7b7fd29d, Offset: 0xa40
 // Size: 0x108
 function connection_on_notify(state_machine, notify_name, connection) {
@@ -208,7 +207,7 @@ function connection_on_notify(state_machine, notify_name, connection) {
 }
 
 // Namespace statemachine/statemachine_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x341826c1, Offset: 0xb50
 // Size: 0x294
 function evaluate_connections(eval_func, params) {
@@ -282,15 +281,15 @@ function evaluate_connections(eval_func, params) {
         while (true) {
             i = 1;
             foreach (state_machine in owner.state_machines) {
-                statename = "<unknown string>";
+                statename = "<dev string:x6d>";
                 if (isdefined(state_machine.current_state) && isdefined(state_machine.current_state.name)) {
                     statename = state_machine.current_state.name;
                 }
                 if (!getdvarint(#"recorder_enablerec", 0)) {
                     heightoffset = heightstart * i;
-                    print3d(owner.origin + (0, 0, heightoffset), "<unknown string>" + state_machine.name + "<unknown string>" + statename, (1, 1, 0));
+                    print3d(owner.origin + (0, 0, heightoffset), "<dev string:x79>" + state_machine.name + "<dev string:x81>" + statename, (1, 1, 0));
                 } else {
-                    record3dtext("<unknown string>" + state_machine.name + "<unknown string>" + statename, owner.origin, (1, 1, 0), "<unknown string>", owner, 1);
+                    record3dtext("<dev string:x79>" + state_machine.name + "<dev string:x81>" + statename, owner.origin, (1, 1, 0), "<dev string:x87>", owner, 1);
                 }
                 i++;
             }

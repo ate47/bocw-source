@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace ability_gadgets;
 
@@ -13,11 +12,11 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ability_gadgets/ability_gadgets
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1d1a219a, Offset: 0x130
 // Size: 0xa4
 function private preinit() {
-    clientfield::register_clientuimodel("huditems.abilityHoldToActivate", #"hash_6f4b11a0bee9b73d", #"abilityholdtoactivate", 1, 2, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("huditems.abilityDelayProgress", #"hash_6f4b11a0bee9b73d", #"abilitydelayprogress", 1, 5, "float", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.abilityHoldToActivate", #"hud_items", #"abilityholdtoactivate", 1, 2, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.abilityDelayProgress", #"hud_items", #"abilitydelayprogress", 1, 5, "float", undefined, 0, 0);
 }
 

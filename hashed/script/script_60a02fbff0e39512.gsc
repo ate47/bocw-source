@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\land_mine.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\flag_shared.gsc;
 #using script_1cd491b1807da8f7;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\land_mine;
 
 #namespace namespace_f3e83343;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7fd170a6, Offset: 0x1a0
 // Size: 0x28c
 function preinit() {
@@ -66,7 +65,7 @@ function private event_handler[event_9673dc9a] function_3981d015(eventstruct) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x74115590, Offset: 0x558
 // Size: 0xa6
 function function_b217acf() {
@@ -83,7 +82,7 @@ function function_b217acf() {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x173a6a80, Offset: 0x608
 // Size: 0xa4e
 function function_160e40a2() {
@@ -192,7 +191,7 @@ function function_160e40a2() {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbbb0cfe, Offset: 0x1060
 // Size: 0x8e
 function function_92f2f8cf(doors) {
@@ -202,7 +201,7 @@ function function_92f2f8cf(doors) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1961ff1d, Offset: 0x10f8
 // Size: 0x3e0
 function function_c743094d(eventstruct) {
@@ -245,7 +244,7 @@ function function_c743094d(eventstruct) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe04d1832, Offset: 0x14e0
 // Size: 0x88
 function function_67b96164(eventstruct) {
@@ -257,7 +256,7 @@ function function_67b96164(eventstruct) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd5bc0a61, Offset: 0x1570
 // Size: 0x308
 function function_995a4e51(*activator, laststate, state) {
@@ -330,7 +329,7 @@ function function_d7b6ee00(activator, laststate, state) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd899567, Offset: 0x1a80
 // Size: 0x238
 function function_51a020(activator, laststate, state) {
@@ -369,7 +368,7 @@ function function_51a020(activator, laststate, state) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b6ffde5, Offset: 0x1cc0
 // Size: 0xee
 function private function_724a2fa5(eventstruct) {
@@ -388,7 +387,7 @@ function private function_724a2fa5(eventstruct) {
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5b771c7e, Offset: 0x1db8
 // Size: 0x9c
 function private function_5d409a7b(eventstruct) {

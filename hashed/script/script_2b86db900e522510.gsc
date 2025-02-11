@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace encodedradio_usebar;
 
@@ -59,7 +58,7 @@ class class_ba33e0c1 : cluielem {
             player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar

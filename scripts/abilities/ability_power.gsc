@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\ability_util.gsc;
-#using scripts\abilities\ability_gadgets.gsc;
+#using scripts\abilities\ability_gadgets;
+#using scripts\abilities\ability_util;
 
 #namespace ability_power;
 
@@ -11,9 +10,9 @@
     // Checksum 0x3056b043, Offset: 0xf8
     // Size: 0x104
     function cpower_print(slot, str) {
-        color = "<unknown string>";
-        toprint = color + "<unknown string>" + str;
-        weaponname = "<unknown string>";
+        color = "<dev string:x38>";
+        toprint = color + "<dev string:x3e>" + str;
+        weaponname = "<dev string:x52>";
         if (isdefined(self._gadgets_player[slot])) {
             weaponname = self._gadgets_player[slot].name;
         }
@@ -21,7 +20,7 @@
             self iprintlnbold(toprint);
             return;
         }
-        println(self.playername + "<unknown string>" + weaponname + "<unknown string>" + toprint);
+        println(self.playername + "<dev string:x5a>" + weaponname + "<dev string:x5a>" + toprint);
     }
 
 #/
@@ -35,7 +34,7 @@ function power_is_hero_ability(gadget) {
 }
 
 // Namespace ability_power/ability_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xec8795e2, Offset: 0x230
 // Size: 0x40
 function function_9d78823f(gadget, weapon) {
@@ -46,7 +45,7 @@ function function_9d78823f(gadget, weapon) {
 }
 
 // Namespace ability_power/ability_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x185a7269, Offset: 0x278
 // Size: 0x56
 function is_weapon_or_variant_same_as_gadget(weapon, gadget) {
@@ -62,7 +61,7 @@ function is_weapon_or_variant_same_as_gadget(weapon, gadget) {
 }
 
 // Namespace ability_power/ability_power
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa3b55c08, Offset: 0x2d8
 // Size: 0x374
 function power_gain_event_score(*event, eattacker, score, weapon) {
@@ -154,7 +153,7 @@ function power_gain_event_killed_actor(eattacker, *meansofdeath) {
 }
 
 // Namespace ability_power/ability_power
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb55703ed, Offset: 0x7c8
 // Size: 0x184
 function power_gain_event(slot, *eattacker, val, source) {
@@ -177,13 +176,13 @@ function power_gain_event(slot, *eattacker, val, source) {
             self.var_aec4af05[eattacker] = self.var_aec4af05[eattacker] + powertoadd;
         }
         /#
-            self cpower_print(eattacker, "<unknown string>" + powertoadd + "<unknown string>" + source + "<unknown string>" + powerleft);
+            self cpower_print(eattacker, "<dev string:x60>" + powertoadd + "<dev string:x6d>" + source + "<dev string:x7b>" + powerleft);
         #/
     }
 }
 
 // Namespace ability_power/ability_power
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xd82ac0c5, Offset: 0x958
 // Size: 0x16c
 function power_loss_event_took_damage(eattacker, *einflictor, *weapon, *smeansofdeath, idamage) {
@@ -212,7 +211,7 @@ function power_loss_event_took_damage(eattacker, *einflictor, *weapon, *smeansof
 }
 
 // Namespace ability_power/ability_power
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3a045889, Offset: 0xad0
 // Size: 0xcc
 function power_loss_event(slot, *eattacker, val, source) {
@@ -220,7 +219,7 @@ function power_loss_event(slot, *eattacker, val, source) {
     if (powertoremove > 0.1 || powertoremove < -0.1) {
         powerleft = self gadgetpowerchange(eattacker, powertoremove);
         /#
-            self cpower_print(eattacker, "<unknown string>" + powertoremove + "<unknown string>" + source + "<unknown string>" + powerleft);
+            self cpower_print(eattacker, "<dev string:x8d>" + powertoremove + "<dev string:x6d>" + source + "<dev string:x7b>" + powerleft);
         #/
     }
 }
@@ -235,7 +234,7 @@ function power_drain_completely(slot) {
 }
 
 // Namespace ability_power/ability_power
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa479c83f, Offset: 0xc00
 // Size: 0x6e
 function ismovingpowerloss() {
@@ -245,7 +244,7 @@ function ismovingpowerloss() {
 }
 
 // Namespace ability_power/ability_power
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa30a1a1d, Offset: 0xc78
 // Size: 0x230
 function power_consume_timer_think(slot, *weapon) {
@@ -255,7 +254,7 @@ function power_consume_timer_think(slot, *weapon) {
     }
     time = gettime();
     while (true) {
-        wait(0.1);
+        wait 0.1;
         if (!isdefined(self._gadgets_player[weapon])) {
             return;
         }

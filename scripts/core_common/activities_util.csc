@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
+#using scripts\core_common\util_shared;
 
 #namespace activities;
 
 // Namespace activities/activities_util
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb79b19a2, Offset: 0xb8
 // Size: 0xca
 function private function_10de102b(outcome = "failed") {
@@ -15,7 +14,7 @@ function private function_10de102b(outcome = "failed") {
 }
 
 // Namespace activities/activities_util
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1cfec173, Offset: 0x190
 // Size: 0xd0
 function private function_4c80102b() {
@@ -25,7 +24,7 @@ function private function_4c80102b() {
 }
 
 // Namespace activities/activities_util
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x268
 // Size: 0x4
 function private function_be258f26() {
@@ -33,7 +32,7 @@ function private function_be258f26() {
 }
 
 // Namespace activities/activities_util
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xae84ca54, Offset: 0x278
 // Size: 0xc0
 function private function_1c01a227(task) {
@@ -44,7 +43,7 @@ function private function_1c01a227(task) {
 }
 
 // Namespace activities/activities_util
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe8a8670e, Offset: 0x340
 // Size: 0xa8
 function private function_2c46b6f9(outcome) {

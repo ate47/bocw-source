@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\values_shared;
 
 #namespace phalanx;
 
@@ -21,7 +20,7 @@ class phalanx {
     var startsentientcount_;
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x84185aa3, Offset: 0x1880
     // Size: 0x3e
     constructor() {
@@ -33,7 +32,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x986ae88d, Offset: 0xf40
     // Size: 0xf0
     function private _haltfire(sentients) {
@@ -46,7 +45,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x62e8a64d, Offset: 0x1038
     // Size: 0x12c
     function _initializesentient(sentient) {
@@ -64,7 +63,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 13, eflags: 0x6 linked
+    // Params 13, eflags: 0x4
     // Checksum 0xcf96c158, Offset: 0x500
     // Size: 0x1a0
     function private _dampenexplosivedamage(inflictor, *attacker, damage, *flags, meansofdamage, weapon, *var_fd90b0bb, *point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {
@@ -83,16 +82,16 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 5, eflags: 0x6 linked
+    // Params 5, eflags: 0x4
     // Checksum 0x12b7e773, Offset: 0x1170
     // Size: 0x1f8
     function private _movephalanxtier(sentients, phalanxtype, tier, destination, forward) {
         positions = _getphalanxpositions(phalanxtype, tier);
         angles = vectortoangles(forward);
-        assert(sentients.size <= positions.size, "<unknown string>");
+        assert(sentients.size <= positions.size, "<dev string:x1d7>");
         foreach (index, sentient in sentients) {
             if (isdefined(sentient) && isalive(sentient)) {
-                assert(isvec(positions[index]), "<unknown string>" + index + "<unknown string>" + tier + "<unknown string>" + phalanxtype);
+                assert(isvec(positions[index]), "<dev string:x21a>" + index + "<dev string:x24a>" + tier + "<dev string:x258>" + phalanxtype);
                 orientedpos = _rotatevec(positions[index], angles[1] - 90);
                 navmeshposition = getclosestpointonnavmesh(destination + orientedpos, 200);
                 sentient function_a57c34b7(navmeshposition);
@@ -101,7 +100,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 2, eflags: 0x6 linked
+    // Params 2, eflags: 0x4
     // Checksum 0x8dc302a3, Offset: 0x17b0
     // Size: 0x98
     function private _rotatevec(vector, angle) {
@@ -109,13 +108,13 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1b8a1308, Offset: 0x1ed0
     // Size: 0x164
     function resumeadvance() {
         if (!scattered_) {
             _assignphalanxstance(sentienttiers_[#"phalanx_tier1"], "stand");
-            wait(1);
+            wait 1;
             forward = vectornormalize(endposition_ - startposition_);
             _movephalanxtier(sentienttiers_[#"phalanx_tier1"], phalanxtype_, "phalanx_tier1", endposition_, forward);
             _movephalanxtier(sentienttiers_[#"phalanx_tier2"], phalanxtype_, "phalanx_tier2", endposition_, forward);
@@ -125,7 +124,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 6, eflags: 0x6 linked
+    // Params 6, eflags: 0x4
     // Checksum 0xf12fff6e, Offset: 0x2e8
     // Size: 0x20e
     function private _createphalanxtier(phalanxtype, tier, phalanxposition, forward, maxtiersize, spawner = undefined) {
@@ -153,7 +152,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 8, eflags: 0x2 linked
+    // Params 8, eflags: 0x0
     // Checksum 0x201c3cb, Offset: 0x1b18
     // Size: 0x3ac
     function initialize(phalanxtype, origin, destination, breakingpoint, maxtiersize = 10, tieronespawner = undefined, tiertwospawner = undefined, tierthreespawner = undefined) {
@@ -183,7 +182,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xae4a4eb, Offset: 0x1a80
     // Size: 0x90
     function haltadvance() {
@@ -195,7 +194,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 2, eflags: 0x6 linked
+    // Params 2, eflags: 0x4
     // Checksum 0x7eee00d7, Offset: 0x6a8
     // Size: 0x694
     function private _getphalanxpositions(phalanxtype, tier) {
@@ -271,24 +270,24 @@ class phalanx {
             }
             break;
         default:
-            assert("<unknown string>" + phalanxtype + "<unknown string>");
+            assert("<dev string:x38>" + phalanxtype + "<dev string:x52>");
             break;
         }
-        assert("<unknown string>" + tier + "<unknown string>");
+        assert("<dev string:x58>" + tier + "<dev string:x52>");
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x59dd4898, Offset: 0x1850
     // Size: 0x28
     function private _updatephalanxthread(phalanx) {
         while ([[ phalanx ]]->_updatephalanx()) {
-            wait(1);
+            wait 1;
         }
     }
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa5e3f7bd, Offset: 0x19f0
     // Size: 0x88
     function haltfire() {
@@ -298,7 +297,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x89eed7ba, Offset: 0x2040
     // Size: 0x7c
     function resumefire() {
@@ -308,18 +307,18 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0xbeb69c5d, Offset: 0xd48
     // Size: 0xb2
     function private _getphalanxspawner(tier) {
         spawner = getspawnerarray(tier, "targetname");
-        assert(spawner.size >= 0, "<unknown string>" + "<unknown string>" + "<unknown string>");
-        assert(spawner.size == 1, "<unknown string>" + "<unknown string>" + "<unknown string>");
+        assert(spawner.size >= 0, "<dev string:x72>" + "<dev string:xbb>" + "<dev string:x106>");
+        assert(spawner.size == 1, "<dev string:x120>" + "<dev string:x167>" + "<dev string:x190>");
         return spawner[0];
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0xabec392c, Offset: 0x1430
     // Size: 0x17c
     function private _releasesentient(sentient) {
@@ -341,7 +340,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 2, eflags: 0x6 linked
+    // Params 2, eflags: 0x4
     // Checksum 0xfc18dce5, Offset: 0x1f8
     // Size: 0xe8
     function private _assignphalanxstance(sentients, stance) {
@@ -354,7 +353,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0x6 linked
+    // Params 0, eflags: 0x4
     // Checksum 0xdf57f1d0, Offset: 0x18d8
     // Size: 0x10c
     function private _updatephalanx() {
@@ -374,7 +373,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x151b6602, Offset: 0x1688
     // Size: 0x5c
     function private _resumefire(sentient) {
@@ -384,7 +383,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x6d3e736, Offset: 0x1370
     // Size: 0xb2
     function private _prunedead(sentients) {
@@ -398,7 +397,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x28b15243, Offset: 0x20c8
     // Size: 0x16c
     function scatterphalanx() {
@@ -407,30 +406,30 @@ class phalanx {
             _releasesentients(sentienttiers_[#"phalanx_tier1"]);
             sentienttiers_[#"phalanx_tier1"] = [];
             _assignphalanxstance(sentienttiers_[#"phalanx_tier2"], "crouch");
-            wait(randomfloatrange(5, 7));
+            wait randomfloatrange(5, 7);
             _releasesentients(sentienttiers_[#"phalanx_tier2"]);
             sentienttiers_[#"phalanx_tier2"] = [];
             _assignphalanxstance(sentienttiers_[#"phalanx_tier3"], "crouch");
-            wait(randomfloatrange(5, 7));
+            wait randomfloatrange(5, 7);
             _releasesentients(sentienttiers_[#"phalanx_tier3"]);
             sentienttiers_[#"phalanx_tier3"] = [];
         }
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x481c50e4, Offset: 0x15b8
     // Size: 0xc8
     function private _releasesentients(sentients) {
         foreach (sentient in sentients) {
             _resumefire(sentient);
             _releasesentient(sentient);
-            wait(randomfloatrange(0.5, 5));
+            wait randomfloatrange(0.5, 5);
         }
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0xc1a56656, Offset: 0xe08
     // Size: 0x130
     function private _haltadvance(sentients) {
@@ -445,7 +444,7 @@ class phalanx {
     }
 
     // Namespace phalanx/phalanx
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x3606b9dd, Offset: 0x16f0
     // Size: 0xb8
     function private _resumefiresentients(sentients) {

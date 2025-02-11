@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
 
 #namespace battlechatter_table;
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 2, eflags: 0x42 linked
+// Params 2, eflags: 0x40 variadic
 // Checksum 0x72e744b6, Offset: 0xa8
 // Size: 0x148
 function function_c5dda35e(category, ...) {
@@ -21,7 +20,7 @@ function function_c5dda35e(category, ...) {
 }
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd412a69f, Offset: 0x1f8
 // Size: 0x2ae
 function function_b8e1addf(category, filename) {
@@ -57,7 +56,7 @@ function function_b8e1addf(category, filename) {
 }
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe9b2d6b2, Offset: 0x4b0
 // Size: 0x7a
 function function_4e83ff35(category, type, modifier) {
@@ -69,7 +68,7 @@ function function_4e83ff35(category, type, modifier) {
 }
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4807700a, Offset: 0x538
 // Size: 0x7a
 function function_2d2570e3(category, type, modifier) {
@@ -81,7 +80,7 @@ function function_2d2570e3(category, type, modifier) {
 }
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x97468fa6, Offset: 0x5c0
 // Size: 0x72
 function function_ac3d3b19(category, type, modifier) {
@@ -93,7 +92,7 @@ function function_ac3d3b19(category, type, modifier) {
 }
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb746f83b, Offset: 0x640
 // Size: 0xc4
 function exists(category, type, modifier) {
@@ -111,7 +110,7 @@ function exists(category, type, modifier) {
 }
 
 // Namespace battlechatter_table/battlechatter_table
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xdb043abf, Offset: 0x710
 // Size: 0xa6
 function private categorykey(category, type = "all", modifier = "all") {

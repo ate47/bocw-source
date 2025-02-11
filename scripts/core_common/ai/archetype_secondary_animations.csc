@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\throttle_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\ai_shared.csc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\throttle_shared;
+#using scripts\core_common\util_shared;
 
 #namespace archetype_secondary_animations;
 
@@ -22,7 +21,7 @@ function autoexec main() {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xee01daa3, Offset: 0x240
 // Size: 0x20
 function private function_718815fb(dvar) {
@@ -30,7 +29,7 @@ function private function_718815fb(dvar) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x90c40cf3, Offset: 0x268
 // Size: 0xb4
 function private secondaryanimationsinit(localclientnum) {
@@ -47,7 +46,7 @@ function private secondaryanimationsinit(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3379e1db, Offset: 0x328
 // Size: 0x12c
 function private on_entity_spawn(localclientnum) {
@@ -66,7 +65,7 @@ function private on_entity_spawn(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x81942079, Offset: 0x460
 // Size: 0x3c
 function private function_b27b8716(localclientnum) {
@@ -75,7 +74,7 @@ function private function_b27b8716(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfd4c0324, Offset: 0x4a8
 // Size: 0x6a
 function private on_entity_shutdown(localclientnum) {
@@ -92,7 +91,7 @@ function private on_entity_shutdown(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1e16c20, Offset: 0x520
 // Size: 0x8c8
 function buildandvalidatefacialanimationlist(localclientnum) {
@@ -131,12 +130,12 @@ function buildandvalidatefacialanimationlist(localclientnum) {
         array::add(deathanims, animation);
     }
     foreach (deathanim in deathanims) {
-        assert(!isanimlooping(localclientnum, deathanim), "<unknown string>" + deathanim + "<unknown string>");
+        assert(!isanimlooping(localclientnum, deathanim), "<dev string:x38>" + deathanim + "<dev string:x61>");
     }
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x97363222, Offset: 0xdf0
 // Size: 0x7c
 function private function_77fa627c() {
@@ -149,7 +148,7 @@ function private function_77fa627c() {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1e90a743, Offset: 0xe78
 // Size: 0x1ba
 function private getfacialanimoverride(localclientnum) {
@@ -182,7 +181,7 @@ function private getfacialanimoverride(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x92535b29, Offset: 0x1040
 // Size: 0xa6
 function private function_176c97f8(substate) {
@@ -193,7 +192,7 @@ function private function_176c97f8(substate) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa5bce2d8, Offset: 0x10f0
 // Size: 0x5e
 function private function_f5dde44(substate) {
@@ -204,7 +203,7 @@ function private function_f5dde44(substate) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc1fecef6, Offset: 0x1158
 // Size: 0x240
 function private function_9d9508f(localclientnum) {
@@ -248,7 +247,7 @@ function private function_9d9508f(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x84a20792, Offset: 0x13a0
 // Size: 0x6a
 function private function_d474d993(localclientnum) {
@@ -265,7 +264,7 @@ function private function_d474d993(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd2593c5b, Offset: 0x1418
 // Size: 0xe8
 function private function_3673906(localclientnum) {
@@ -285,7 +284,7 @@ function private function_3673906(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1a40d293, Offset: 0x1508
 // Size: 0x568
 function private function_909a3089(localclientnum) {
@@ -360,7 +359,7 @@ function private function_909a3089(localclientnum) {
             animtoplay = array::random(level.__facialanimationslist[self.archetype][nextfacestate]);
             if (isdefined(animoverride)) {
                 animtoplay = animoverride;
-                assert(nextfacestate != "<unknown string>" || !isanimlooping(localclientnum, animtoplay), "<unknown string>" + animtoplay + "<unknown string>");
+                assert(nextfacestate != "<dev string:x9f>" || !isanimlooping(localclientnum, animtoplay), "<dev string:x38>" + animtoplay + "<dev string:x61>");
             }
             applynewfaceanim(localclientnum, animtoplay, clearoncompletion);
             self._currentfacestate = nextfacestate;
@@ -372,7 +371,7 @@ function private function_909a3089(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4f2d8b, Offset: 0x1a78
 // Size: 0x252
 function private function_a7db9953(localclientnum) {
@@ -416,7 +415,7 @@ function private function_a7db9953(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x2d33bdf5, Offset: 0x1cd8
 // Size: 0xfc
 function private applynewfaceanim(localclientnum, animation, clearoncompletion = 0) {
@@ -426,7 +425,7 @@ function private applynewfaceanim(localclientnum, animation, clearoncompletion =
         if (self hasdobj(localclientnum) && self hasanimtree()) {
             self setflaggedanimknob(#"ai_secondary_facial_anim", animation, 1, 0.1, 1);
             if (clearoncompletion) {
-                wait(getanimlength(animation));
+                wait getanimlength(animation);
                 clearcurrentfacialanim(localclientnum);
             }
         }
@@ -434,7 +433,7 @@ function private applynewfaceanim(localclientnum, animation, clearoncompletion =
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb09d1c76, Offset: 0x1de0
 // Size: 0x18a
 function private applydeathanim(localclientnum) {
@@ -465,7 +464,7 @@ function private applydeathanim(localclientnum) {
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcd424839, Offset: 0x1f78
 // Size: 0x76
 function private clearcurrentfacialanim(localclientnum) {

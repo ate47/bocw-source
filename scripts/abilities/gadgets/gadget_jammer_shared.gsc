@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\weapons\deployable.gsc;
-#using script_4721de209091b1a6;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using script_4721de209091b1a6;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\deployable;
+#using scripts\weapons\weaponobjects;
 
 #namespace jammer;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4ca42c4d, Offset: 0x2d0
 // Size: 0x14
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd71331d8, Offset: 0x2f0
 // Size: 0x264
 function init_shared() {
@@ -63,7 +62,7 @@ function init_shared() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3120102b, Offset: 0x560
 // Size: 0x14c
 function setupcallbacks() {
@@ -80,7 +79,7 @@ function setupcallbacks() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x68264293, Offset: 0x6b8
 // Size: 0x184
 function private registerclientfields() {
@@ -95,7 +94,7 @@ function private registerclientfields() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x717e908c, Offset: 0x848
 // Size: 0xba
 function private function_1a50ce7b(watcher) {
@@ -111,7 +110,7 @@ function private function_1a50ce7b(watcher) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x77a9e68f, Offset: 0x910
 // Size: 0x50
 function function_1c601b99() {
@@ -121,7 +120,7 @@ function function_1c601b99() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd0980596, Offset: 0x968
 // Size: 0x1c0
 function function_bff5c062(var_d148081d, attackingplayer) {
@@ -162,7 +161,7 @@ function event_handler[entity_deleted] codecallback_entitydeleted(*entity) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x965b3f2c, Offset: 0xc28
 // Size: 0x2a
 function function_48c30195(entity, shouldignore) {
@@ -172,7 +171,7 @@ function function_48c30195(entity, shouldignore) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xef69e47f, Offset: 0xc60
 // Size: 0x34
 function function_86e3d17a() {
@@ -188,7 +187,7 @@ function register(entity, var_448f97f2) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x87a2a6c1, Offset: 0xcd0
 // Size: 0x30
 function function_4e7e56a8(weapon, callbackfunction) {
@@ -196,7 +195,7 @@ function function_4e7e56a8(weapon, callbackfunction) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5d2f90bb, Offset: 0xd08
 // Size: 0x30
 function function_32c879d(weapon, callbackfunction) {
@@ -204,7 +203,7 @@ function function_32c879d(weapon, callbackfunction) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2cae25a9, Offset: 0xd40
 // Size: 0xe
 function onplayerspawned() {
@@ -212,7 +211,7 @@ function onplayerspawned() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x57707deb, Offset: 0xd58
 // Size: 0x19c
 function private function_7d81a4ff(*watcher, player) {
@@ -236,7 +235,7 @@ function private function_7d81a4ff(*watcher, player) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc77c328a, Offset: 0xf00
 // Size: 0x3c
 function private function_a1924bff() {
@@ -247,7 +246,7 @@ function private function_a1924bff() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9ca65fa4, Offset: 0xf48
 // Size: 0x558
 function function_9da52774() {
@@ -306,7 +305,7 @@ function function_9da52774() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3915a78d, Offset: 0x14a8
 // Size: 0x114
 function function_322a8fc6(entity) {
@@ -326,7 +325,7 @@ function function_322a8fc6(entity) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x86fa45ce, Offset: 0x15c8
 // Size: 0x33c
 function function_af165064() {
@@ -363,7 +362,7 @@ function function_af165064() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa582e676, Offset: 0x1910
 // Size: 0x1b2
 function private function_3500dad3() {
@@ -396,7 +395,7 @@ function private function_3500dad3() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa048f475, Offset: 0x1ad0
 // Size: 0x228
 function private function_93491e83(entity) {
@@ -444,7 +443,7 @@ function function_4a82368f(entity, owner) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa7db4af5, Offset: 0x1de8
 // Size: 0xc2
 function function_1c430dad(entity, isjammed) {
@@ -461,7 +460,7 @@ function function_1c430dad(entity, isjammed) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4539ba4d, Offset: 0x1eb8
 // Size: 0x224
 function private function_d88f3e48(entity) {
@@ -512,7 +511,7 @@ function function_cc908239(entity) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5e378d75, Offset: 0x2190
 // Size: 0x24
 function function_994b472b(*player) {
@@ -520,12 +519,12 @@ function function_994b472b(*player) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xaeb9ba68, Offset: 0x21c0
 // Size: 0xdc
 function function_51a743f8(attacker, weapon, target) {
     if (isplayer(attacker) && isdefined(self) && attacker !== self.owner) {
-        scoreevents::processscoreevent(#"hash_69a2a40ed6e84e00", attacker);
+        scoreevents::processscoreevent(#"jammer_shutdown", attacker);
         var_f3ab6571 = self.owner weaponobjects::function_8481fc06(self.weapon) > 1;
         self.owner thread globallogic_audio::function_6daffa93(self.weapon, var_f3ab6571);
     }
@@ -533,7 +532,7 @@ function function_51a743f8(attacker, weapon, target) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc69f33ce, Offset: 0x22a8
 // Size: 0xd4
 function function_a4d07061(attacker, *callback_data) {
@@ -547,7 +546,7 @@ function function_a4d07061(attacker, *callback_data) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3a5d0d17, Offset: 0x2388
 // Size: 0x24
 function function_b2e496fa(*watcher) {
@@ -555,7 +554,7 @@ function function_b2e496fa(*watcher) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x22ccdaeb, Offset: 0x23b8
 // Size: 0x82
 function private function_2fdf3111(entity, attackingplayer) {
@@ -569,7 +568,7 @@ function private function_2fdf3111(entity, attackingplayer) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb1b6ea6c, Offset: 0x2448
 // Size: 0x226
 function private function_b16c8865(entity, attackingplayer) {
@@ -615,7 +614,7 @@ function private function_b16c8865(entity, attackingplayer) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x376153bc, Offset: 0x2678
 // Size: 0x28
 function private function_7b151daa(player) {
@@ -662,7 +661,7 @@ function function_2e6238c0(weapon, owner) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfd25a004, Offset: 0x2848
 // Size: 0x194
 function function_2eb0a933(weapon, owner) {
@@ -701,7 +700,7 @@ function function_2eb0a933(weapon, owner) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe8f64a41, Offset: 0x29e8
 // Size: 0x1f4
 function function_f87d8ea0(params) {
@@ -714,7 +713,7 @@ function function_f87d8ea0(params) {
         }
         owner = var_fde75ff9.owner;
         if (isdefined(owner) && isdefined(params.players[owner getentitynumber()]) && level.var_578f7c6d.radiussqr >= distancesquared(var_fde75ff9.origin, self.origin)) {
-            scoreevents::processscoreevent(#"hash_3f995db1490a1721", var_fde75ff9.owner);
+            scoreevents::processscoreevent(#"jammer_assist", var_fde75ff9.owner);
             owner stats::function_622feb0d(var_fde75ff9.weapon.name, #"assists", 1);
             if (isdefined(level.var_b7bc3c75.var_e2298731)) {
                 owner [[ level.var_b7bc3c75.var_e2298731 ]]();
@@ -727,7 +726,7 @@ function function_f87d8ea0(params) {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xf88eb2f2, Offset: 0x2be8
 // Size: 0x198
 function function_767ffeec(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
@@ -753,7 +752,7 @@ function function_767ffeec(attacker, victim, *weapon, *attackerweapon, *meansofd
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0cd3f1b, Offset: 0x2d88
 // Size: 0x74
 function function_3d6d7536(params) {

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\debug_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\debug_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace weapons;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x633318f5, Offset: 0x1d8
 // Size: 0x64
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf35a2149, Offset: 0x248
 // Size: 0x3c
 function on_player_spawned() {
@@ -47,8 +46,8 @@ function on_player_spawned() {
         player = self;
         gameobject_link = undefined;
         while (true) {
-            wait(float(function_60d95f53()) / 1000);
-            if (self.sessionstate != "<unknown string>") {
+            wait float(function_60d95f53()) / 1000;
+            if (self.sessionstate != "<dev string:x38>") {
                 continue;
             }
             test_mount = getdvarint(#"test_mount", 0);
@@ -60,8 +59,8 @@ function on_player_spawned() {
                     gameobject_link delete();
                     gameobject_link = undefined;
                 }
-                gameobject_link = util::spawn_model("<unknown string>", player.origin, player.angles);
-                player playerlinkto(gameobject_link, "<unknown string>", 0, 60, 60, 30, 10, 0);
+                gameobject_link = util::spawn_model("<dev string:x43>", player.origin, player.angles);
+                player playerlinkto(gameobject_link, "<dev string:x43>", 0, 60, 60, 30, 10, 0);
                 player function_66f3a713();
             } else if (test_mount == 2) {
                 player unlink();
@@ -73,7 +72,7 @@ function on_player_spawned() {
 #/
 
 // Namespace weapons/weapons_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbcac4b9, Offset: 0x450
 // Size: 0x15a
 function function_c0101095(*weapon, forward, var_62e5b78) {
@@ -93,18 +92,18 @@ function function_c0101095(*weapon, forward, var_62e5b78) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8c49e4d9, Offset: 0x5b8
 // Size: 0x5c
 function function_f40168d3() {
     self endon(#"death");
     self clientfield::set("deathfx", 1);
-    wait(0.25);
+    wait 0.25;
     self delete();
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb37407ec, Offset: 0x620
 // Size: 0x34
 function function_430e844a(*params) {
@@ -115,7 +114,7 @@ function function_430e844a(*params) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc5e55cd7, Offset: 0x660
 // Size: 0xcce
 function function_e870d33d() {
@@ -127,10 +126,10 @@ function function_e870d33d() {
     vehicle = undefined;
     var_13ab34e1 = undefined;
     while (isdefined(player.var_766deb67)) {
-        wait(float(function_60d95f53()) / 1000);
+        wait float(function_60d95f53()) / 1000;
     }
     while (true) {
-        wait(float(function_60d95f53()) / 1000);
+        wait float(function_60d95f53()) / 1000;
         if (isplayer(player)) {
             current_weapon = player getcurrentweapon();
             if (current_weapon == level.weaponnone) {
@@ -228,14 +227,14 @@ function function_e870d33d() {
                         var_394fad2b = 0;
                         break;
                     }
-                    wait(float(function_60d95f53()) / 1000);
+                    wait float(function_60d95f53()) / 1000;
                 }
                 while (gettime() < var_4308b3d8) {
                     if (player playerads() == 0) {
                         var_394fad2b = 0;
                         break;
                     }
-                    wait(float(function_60d95f53()) / 1000);
+                    wait float(function_60d95f53()) / 1000;
                 }
                 var_628f1aed = 0;
                 if (var_394fad2b) {
@@ -249,7 +248,7 @@ function function_e870d33d() {
                     player.var_e7e2e3e5 = 1;
                     player.var_766deb67 = vehicle;
                     while (player adsbuttonpressed()) {
-                        wait(float(function_60d95f53()) / 1000);
+                        wait float(function_60d95f53()) / 1000;
                         slot = player gadgetgetslot(current_weapon.altweapon != level.weaponnone ? current_weapon.altweapon : current_weapon);
                         if (0 <= slot && slot < 3) {
                             power = player gadgetpowerget(slot);
@@ -272,7 +271,7 @@ function function_e870d33d() {
                 }
                 if (var_628f1aed) {
                     while (true) {
-                        wait(float(function_60d95f53()) / 1000);
+                        wait float(function_60d95f53()) / 1000;
                         current_weapon = player getcurrentweapon();
                         if (current_weapon == level.weaponnone) {
                             continue;
@@ -283,7 +282,7 @@ function function_e870d33d() {
                         break;
                     }
                 } else if (vehicle_used) {
-                    wait(0.4);
+                    wait 0.4;
                 }
                 continue;
             }
@@ -300,14 +299,14 @@ function function_e870d33d() {
                     var_7db1ac70 = 0;
                     continue;
                 }
-                wait(float(function_60d95f53()) / 1000);
+                wait float(function_60d95f53()) / 1000;
             }
         }
     }
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x276f494b, Offset: 0x1338
 // Size: 0x10c
 function function_18a9a4e4(settings) {
@@ -320,7 +319,7 @@ function function_18a9a4e4(settings) {
     player endon(#"death", #"disconnect");
     rumble_delay = float(isdefined(settings.var_efe13502) ? settings.var_efe13502 : 0.5);
     if (rumble_delay > 0) {
-        wait(rumble_delay);
+        wait rumble_delay;
     }
     if (player playerads() == 0) {
         return;
@@ -329,11 +328,11 @@ function function_18a9a4e4(settings) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf8269ee5, Offset: 0x1450
 // Size: 0xd0
 function function_7a677105(weapon) {
-    assert(isdefined(weapon.customsettings), "<unknown string>" + weapon.name);
+    assert(isdefined(weapon.customsettings), "<dev string:x51>" + weapon.name);
     if (!isdefined(level.var_825acea)) {
         level.var_825acea = [];
     }
@@ -345,7 +344,7 @@ function function_7a677105(weapon) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8ca5556b, Offset: 0x1528
 // Size: 0x6c
 function is_primary_weapon(weapon) {
@@ -354,7 +353,7 @@ function is_primary_weapon(weapon) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x31e0e4c0, Offset: 0x15a0
 // Size: 0x48
 function is_side_arm(weapon) {
@@ -363,7 +362,7 @@ function is_side_arm(weapon) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf6cca626, Offset: 0x15f0
 // Size: 0x48
 function is_inventory(weapon) {
@@ -372,7 +371,7 @@ function is_inventory(weapon) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf74ef6bd, Offset: 0x1640
 // Size: 0x48
 function is_grenade(weapon) {
@@ -381,7 +380,7 @@ function is_grenade(weapon) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xadb6355b, Offset: 0x1690
 // Size: 0x34
 function force_stowed_weapon_update() {
@@ -391,7 +390,7 @@ function force_stowed_weapon_update() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x774540bf, Offset: 0x16d0
 // Size: 0x94
 function detach_carry_object_model() {
@@ -407,7 +406,7 @@ function detach_carry_object_model() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd1a878f, Offset: 0x1770
 // Size: 0x144
 function detach_all_weapons() {
@@ -438,7 +437,7 @@ function detach_all_weapons() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3a52ae22, Offset: 0x18c0
 // Size: 0x434
 function stow_on_back(*current) {
@@ -476,7 +475,7 @@ function stow_on_back(*current) {
         if (isarray(self.weapon_array_primary)) {
             for (idx = 0; idx < self.weapon_array_primary.size; idx++) {
                 temp_index_weapon = self.weapon_array_primary[idx];
-                assert(isdefined(temp_index_weapon), "<unknown string>");
+                assert(isdefined(temp_index_weapon), "<dev string:x86>");
                 if (temp_index_weapon == currentweapon) {
                     continue;
                 }
@@ -495,7 +494,7 @@ function stow_on_back(*current) {
         if (index_weapon == level.weaponnone && isarray(self.weapon_array_sidearm)) {
             for (idx = 0; idx < self.weapon_array_sidearm.size; idx++) {
                 temp_index_weapon = self.weapon_array_sidearm[idx];
-                assert(isdefined(temp_index_weapon), "<unknown string>");
+                assert(isdefined(temp_index_weapon), "<dev string:xa8>");
                 if (temp_index_weapon == currentweapon) {
                     continue;
                 }
@@ -513,7 +512,7 @@ function stow_on_back(*current) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6f4721e8, Offset: 0x1d00
 // Size: 0x10c
 function stow_on_hip() {
@@ -547,7 +546,7 @@ function weapondamagetracepassed(from, to, startradius, ignore) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x9835eb2e, Offset: 0x1e88
 // Size: 0x1d8
 function weapondamagetrace(from, to, startradius, ignore) {
@@ -573,7 +572,7 @@ function weapondamagetrace(from, to, startradius, ignore) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x48635fbe, Offset: 0x2068
 // Size: 0x38
 function has_lmg() {
@@ -582,7 +581,7 @@ function has_lmg() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9ccc903a, Offset: 0x20a8
 // Size: 0x2e
 function has_launcher() {
@@ -591,7 +590,7 @@ function has_launcher() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x770ec2fd, Offset: 0x20e0
 // Size: 0x2e
 function has_heavy_weapon() {
@@ -600,7 +599,7 @@ function has_heavy_weapon() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe1d79265, Offset: 0x2118
 // Size: 0x5c
 function has_lockon(target) {
@@ -610,7 +609,7 @@ function has_lockon(target) {
 }
 
 // Namespace weapons/weapons_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xdc79c37c, Offset: 0x2180
 // Size: 0x40
 function function_74bbb3fa(damage, weapon, *target) {

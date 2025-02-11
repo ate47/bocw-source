@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace gadget_homunculus;
 
@@ -94,14 +93,14 @@ function private function_9ce07f7c(homunculus) {
 function private function_90cc805b(homunculus) {
     var_b1de6a06 = getentitiesinradius(homunculus.origin, 250, 15);
     var_9db93b2e = [];
-    foreach (var_6baf60af in var_b1de6a06) {
-        if (function_62318121(homunculus, var_6baf60af)) {
+    foreach (nearby_actor in var_b1de6a06) {
+        if (function_62318121(homunculus, nearby_actor)) {
             if (!isdefined(var_9db93b2e)) {
                 var_9db93b2e = [];
             } else if (!isarray(var_9db93b2e)) {
                 var_9db93b2e = array(var_9db93b2e);
             }
-            var_9db93b2e[var_9db93b2e.size] = var_6baf60af;
+            var_9db93b2e[var_9db93b2e.size] = nearby_actor;
         }
     }
     return arraysortclosest(var_9db93b2e, homunculus.origin, undefined, undefined, 250);
@@ -192,7 +191,7 @@ function private function_bb17ec5a() {
     self.mover scene::stop();
     self.dancing = undefined;
     /#
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x38>");
     #/
     start_attack = 1;
     while (true) {
@@ -222,7 +221,7 @@ function private function_bb17ec5a() {
             }
             waitframe(1);
         }
-        wait(0.1);
+        wait 0.1;
     }
     self drop_to_ground();
     self.attacking = undefined;
@@ -353,7 +352,7 @@ function function_127fb8f3(homunculus, *attackingplayer) {
     if (isdefined(level._equipment_emp_destroy_fx)) {
         playfx(level._equipment_emp_destroy_fx, attackingplayer.origin + (0, 0, 5), (cos(randangle), sin(randangle), 0), anglestoup(attackingplayer.angles));
     }
-    wait(1.1);
+    wait 1.1;
     attackingplayer function_7bfc867f();
 }
 

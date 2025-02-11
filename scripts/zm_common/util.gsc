@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
 
 #namespace util;
 
@@ -17,9 +16,9 @@
 function brush_delete() {
     num = self.v[#"exploder"];
     if (isdefined(self.v[#"delay"])) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     } else {
-        wait(0.05);
+        wait 0.05;
     }
     if (!isdefined(self.model)) {
         return;
@@ -38,7 +37,7 @@ function brush_delete() {
 // Size: 0x8c
 function brush_show() {
     if (isdefined(self.v[#"delay"])) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     }
     assert(isdefined(self.model));
     self.model show();
@@ -51,7 +50,7 @@ function brush_show() {
 // Size: 0x21c
 function brush_throw() {
     if (isdefined(self.v[#"delay"])) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     }
     ent = undefined;
     if (isdefined(self.v[#"target"])) {
@@ -72,7 +71,7 @@ function brush_throw() {
     self.model rotatevelocity((x, y, z), 12);
     self.model movegravity((x, y, z), 12);
     self.v[#"exploder"] = undefined;
-    wait(6);
+    wait 6;
     self.model delete();
 }
 
@@ -208,7 +207,7 @@ function _playlocalsound(soundalias) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xedf78258, Offset: 0xb50
 // Size: 0x8c
 function getotherteam(team) {
@@ -219,11 +218,11 @@ function getotherteam(team) {
     } else {
         return #"allies";
     }
-    assertmsg("<unknown string>" + team);
+    assertmsg("<dev string:x38>" + team);
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x762d557f, Offset: 0xbe8
 // Size: 0x74
 function getteammask(team) {
@@ -234,7 +233,7 @@ function getteammask(team) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4acdab37, Offset: 0xc68
 // Size: 0xb8
 function getotherteamsmask(skip_team) {
@@ -253,7 +252,7 @@ function getotherteamsmask(skip_team) {
 // Checksum 0x87ac1a9b, Offset: 0xd28
 // Size: 0x5c
 function getfx(fx) {
-    assert(isdefined(level._effect[fx]), "<unknown string>" + fx + "<unknown string>");
+    assert(isdefined(level._effect[fx]), "<dev string:x57>" + fx + "<dev string:x5e>");
     return level._effect[fx];
 }
 
@@ -333,7 +332,7 @@ function registerroundswitch(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb264b2f7, Offset: 0xfe0
 // Size: 0x74
 function registerroundlimit(minvalue, maxvalue) {
@@ -343,7 +342,7 @@ function registerroundlimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc27baa81, Offset: 0x1060
 // Size: 0x74
 function registerroundwinlimit(minvalue, maxvalue) {
@@ -353,7 +352,7 @@ function registerroundwinlimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe8290cb0, Offset: 0x10e0
 // Size: 0x74
 function registerscorelimit(minvalue, maxvalue) {
@@ -363,7 +362,7 @@ function registerscorelimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7487c9fd, Offset: 0x1160
 // Size: 0x74
 function registertimelimit(minvalue, maxvalue) {
@@ -373,7 +372,7 @@ function registertimelimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x46edbfb2, Offset: 0x11e0
 // Size: 0x74
 function registernumlives(minvalue, maxvalue) {

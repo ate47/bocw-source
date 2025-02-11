@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_movement_speed;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_movement_speed/status_effect_movement_speed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa8d1f58f, Offset: 0xe8
 // Size: 0x4c
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace status_effect_movement_speed/status_effect_movement_speed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x140
 // Size: 0x4
 function function_f7e9c0bb() {

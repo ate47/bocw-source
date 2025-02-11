@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_9038b9d9;
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43d4df8d, Offset: 0x310
 // Size: 0x24e
 function function_6ec0595a() {
@@ -60,15 +59,15 @@ function function_6ec0595a() {
     while (!namespace_dfc652ee::function_f759a457()) {
         waitframe(1);
     }
-    wait(timeout);
+    wait timeout;
     if (isdefined(self.doa.tesla_org)) {
-        self.doa.tesla_org notify(#"hash_44e59870e1833e7");
+        self.doa.tesla_org notify(#"tesla_cleanup");
     }
     self notify(#"hash_5c369acbb01ea11");
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8d8e1e1f, Offset: 0x568
 // Size: 0x1c0
 function function_9b8a196a() {
@@ -98,7 +97,7 @@ function function_9b8a196a() {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2f058232, Offset: 0x730
 // Size: 0x2dc
 function function_dd76db7c(org) {
@@ -134,26 +133,26 @@ function function_dd76db7c(org) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x195ca6d7, Offset: 0xa18
 // Size: 0xec
 function function_453dcc55() {
     self notify("36c3208bf48c30a6");
     self endon("36c3208bf48c30a6");
     self endon(#"death");
-    self waittill(#"hash_44e59870e1833e7");
+    self waittill(#"tesla_cleanup");
     if (isdefined(self.trigger)) {
         self.trigger delete();
     }
     self unlink();
     vel = self.org.origin - self.origin + (0, 0, 50);
     self thread function_f50d3546(self.org, vel);
-    wait(5);
+    wait 5;
     self delete();
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd4cee892, Offset: 0xb10
 // Size: 0xc4
 function function_f50d3546(org, vel) {
@@ -166,7 +165,7 @@ function function_f50d3546(org, vel) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdb00de4e, Offset: 0xbe0
 // Size: 0x13c
 function function_3be74620(owner) {
@@ -174,10 +173,10 @@ function function_3be74620(owner) {
     self endon("9a8fea8ce1c3c75");
     self endon(#"death");
     self endon(#"hash_5c369acbb01ea11");
-    self waittill(#"hash_44e59870e1833e7");
+    self waittill(#"tesla_cleanup");
     foreach (obj in self.objects) {
         if (isdefined(obj)) {
-            obj notify(#"hash_44e59870e1833e7");
+            obj notify(#"tesla_cleanup");
         }
     }
     if (isdefined(owner)) {
@@ -189,7 +188,7 @@ function function_3be74620(owner) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa7b28ada, Offset: 0xd28
 // Size: 0xa8
 function function_8efc825c(org) {
@@ -198,12 +197,12 @@ function function_8efc825c(org) {
     self endon(#"hash_5c369acbb01ea11");
     self waittill(#"disconnect", #"entering_last_stand", #"death", #"player_died", #"clone_shutdown");
     if (isdefined(org)) {
-        org notify(#"hash_44e59870e1833e7");
+        org notify(#"tesla_cleanup");
     }
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb8614a1, Offset: 0xdd8
 // Size: 0x100
 function function_49ee8def() {
@@ -226,7 +225,7 @@ function function_49ee8def() {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x15475473, Offset: 0xee0
 // Size: 0xb4
 function function_8d45f3be(guy, attacker) {
@@ -245,7 +244,7 @@ function function_8d45f3be(guy, attacker) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x32a57a5f, Offset: 0xfa0
 // Size: 0x3a
 function function_5d21013(player) {
@@ -259,7 +258,7 @@ function function_5d21013(player) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8eac59eb, Offset: 0xfe8
 // Size: 0xd6
 function function_957d23cc(player) {
@@ -280,7 +279,7 @@ function function_957d23cc(player) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe94153f2, Offset: 0x10c8
 // Size: 0x2a0
 function function_d9c75d31(source_enemy, player, arc_num) {
@@ -313,7 +312,7 @@ function function_d9c75d31(source_enemy, player, arc_num) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x67b6aec1, Offset: 0x1370
 // Size: 0xe8
 function function_a34a58f4(arc_num, enemies_hit_num) {
@@ -331,7 +330,7 @@ function function_a34a58f4(arc_num, enemies_hit_num) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xff5fca37, Offset: 0x1460
 // Size: 0x1e6
 function function_2513a3f2(origin, distance, player) {
@@ -368,7 +367,7 @@ function function_2513a3f2(origin, distance, player) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb1a41cf3, Offset: 0x1650
 // Size: 0x76
 function function_c6988f55(enemy, hit) {
@@ -385,7 +384,7 @@ function function_c6988f55(enemy, hit) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9be58684, Offset: 0x16d0
 // Size: 0x1ec
 function function_9a98038e(source_enemy, arc_num, player) {
@@ -394,7 +393,7 @@ function function_9a98038e(source_enemy, arc_num, player) {
     }
     timetowait = 0.2 * arc_num;
     if (timetowait > 0) {
-        wait(timetowait);
+        wait timetowait;
     }
     if (!isdefined(self) || !isalive(self)) {
         return;
@@ -423,7 +422,7 @@ function function_9a98038e(source_enemy, arc_num, player) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7bbef604, Offset: 0x18c8
 // Size: 0x94
 function function_ba559b7b(arc_num) {
@@ -436,12 +435,12 @@ function function_ba559b7b(arc_num) {
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55b8460, Offset: 0x1968
 // Size: 0x24c
 function tesla_play_arc_fx(target) {
     if (!isdefined(self) || !isdefined(target)) {
-        wait(getdvarfloat(#"hash_d68c28b3c93b18f", 0.05));
+        wait getdvarfloat(#"hash_d68c28b3c93b18f", 0.05);
         return;
     }
     tag = "J_SpineUpper";

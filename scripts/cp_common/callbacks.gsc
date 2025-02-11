@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\deployable.gsc;
 #using script_4266a5d281c65453;
-#using scripts\cp_common\gametypes\globallogic_player.gsc;
-#using scripts\cp_common\gametypes\globallogic_actor.gsc;
-#using scripts\cp_common\gametypes\globallogic.gsc;
-#using scripts\cp_common\challenges.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_vehicle.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\globallogic\globallogic_vehicle;
+#using scripts\core_common\system_shared;
+#using scripts\cp_common\challenges;
+#using scripts\cp_common\gametypes\globallogic;
+#using scripts\cp_common\gametypes\globallogic_actor;
+#using scripts\cp_common\gametypes\globallogic_player;
+#using scripts\weapons\deployable;
 
 #namespace callback;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf6c31ded, Offset: 0x118
 // Size: 0x14
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc5bdb3f1, Offset: 0x138
 // Size: 0x3c
 function function_8a0395cd(func, obj) {
@@ -52,7 +51,7 @@ function event_handler[event_bcae220e] function_980de2d1(eventstruct) {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x614efb7d, Offset: 0x200
 // Size: 0x20c
 function set_default_callbacks() {

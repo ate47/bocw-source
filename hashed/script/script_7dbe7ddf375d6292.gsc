@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace namespace_7c1d0bac;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7dca38f9, Offset: 0x150
 // Size: 0xbc
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x66f73b51, Offset: 0x218
 // Size: 0x434
 function function_c9509a9c(params) {
@@ -87,18 +86,18 @@ function function_c9509a9c(params) {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec58a9f8, Offset: 0x658
 // Size: 0x84
 function function_4df181ef() {
     self endoncallback(&function_8407e8ae, #"death", #"game_ended");
     self clientfield::set_to_player("player_hit_freezing_snowball", 1);
-    wait(2);
+    wait 2;
     self clientfield::set_to_player("player_hit_freezing_snowball", 0);
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc8a41e67, Offset: 0x6e8
 // Size: 0x2c
 function function_8407e8ae(*notifyhash) {
@@ -106,7 +105,7 @@ function function_8407e8ae(*notifyhash) {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcead7667, Offset: 0x720
 // Size: 0x22
 function creategrenadewatcher(watcher) {
@@ -114,7 +113,7 @@ function creategrenadewatcher(watcher) {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x79d2867c, Offset: 0x750
 // Size: 0x4c
 function function_aa95d684(*watcher, *player) {
@@ -123,7 +122,7 @@ function function_aa95d684(*watcher, *player) {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a828fc4, Offset: 0x7a8
 // Size: 0x558
 function function_5f86757d() {

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
 
 #namespace hvo;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hvo/high_value_operative
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x41f52482, Offset: 0x100
 // Size: 0x44
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace hvo/high_value_operative
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe44b4aa, Offset: 0x150
 // Size: 0x5f2
 function function_2ce5cb7e() {
@@ -81,7 +80,7 @@ function function_2ce5cb7e() {
 }
 
 // Namespace hvo/high_value_operative
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x206ccca1, Offset: 0x750
 // Size: 0x5fc
 function function_59d3154f() {
@@ -146,7 +145,7 @@ function function_59d3154f() {
 }
 
 // Namespace hvo/high_value_operative
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x10a2734a, Offset: 0xd58
 // Size: 0xc28
 function function_323c6715() {
@@ -171,8 +170,8 @@ function function_323c6715() {
             if (!isdefined(player) || isbot(player)) {
                 continue;
             }
-            assert(isdefined(player.pers), "<unknown string>");
-            assert(isdefined(player.pers[#"hvo"]), "<unknown string>");
+            assert(isdefined(player.pers), "<dev string:x38>");
+            assert(isdefined(player.pers[#"hvo"]), "<dev string:x50>");
             var_9b4eeccc = function_b14806c6(player player_role::get(), currentsessionmode());
             if (!isdefined(var_9b4eeccc) || isdefined(hvo.var_447510ee) && hvo.var_447510ee != var_9b4eeccc || !isdefined(player.pers) || !isdefined(player.pers[#"hvo"])) {
                 continue;
@@ -255,7 +254,7 @@ function function_323c6715() {
 }
 
 // Namespace hvo/high_value_operative
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x1c5f1796, Offset: 0x1988
 // Size: 0x194
 function private function_cd851b02(stat, var_9b4eeccc, ddl) {
@@ -272,7 +271,7 @@ function private function_cd851b02(stat, var_9b4eeccc, ddl) {
 }
 
 // Namespace hvo/high_value_operative
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xa5df2e40, Offset: 0x1b28
 // Size: 0x14c
 function private function_d0c02a50(stat, var_aa1fbd8c, ddl) {
@@ -285,7 +284,7 @@ function private function_d0c02a50(stat, var_aa1fbd8c, ddl) {
 }
 
 // Namespace hvo/high_value_operative
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xeac23be1, Offset: 0x1c80
 // Size: 0x124
 function private function_1fa30a47(stat, currentscore, var_9b4eeccc) {
@@ -299,7 +298,7 @@ function private function_1fa30a47(stat, currentscore, var_9b4eeccc) {
 }
 
 // Namespace hvo/high_value_operative
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x612ca327, Offset: 0x1db0
 // Size: 0x10c
 function private function_b535c32e(stat, score, var_aa1fbd8c) {
@@ -311,7 +310,7 @@ function private function_b535c32e(stat, score, var_aa1fbd8c) {
 }
 
 // Namespace hvo/high_value_operative
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x3317557f, Offset: 0x1ec8
 // Size: 0xd0
 function private function_be94d98b(stat, score, var_aa1fbd8c) {

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace namespace_e4c964e8;
 
 // Namespace namespace_e4c964e8/namespace_e4c964e8
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9cafa9ff, Offset: 0x80
 // Size: 0x4e
 function private function_7b29177a() {
@@ -15,7 +14,7 @@ function private function_7b29177a() {
 }
 
 // Namespace namespace_e4c964e8/namespace_e4c964e8
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x74806186, Offset: 0xd8
 // Size: 0x26
 function private default_value(val, def) {

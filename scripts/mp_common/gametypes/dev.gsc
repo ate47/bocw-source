@@ -1,28 +1,27 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\core_common\bots\bot_action.gsc;
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\dev_spawn.gsc;
-#using scripts\mp_common\gametypes\dev_class.gsc;
-#using scripts\mp_common\devgui.gsc;
 #using script_7d712f77ab8d0c16;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\perks.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\dev_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\bots\bot_action;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\dev_shared;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\devgui;
+#using scripts\mp_common\gametypes\dev_class;
+#using scripts\mp_common\gametypes\dev_spawn;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\util;
 
 #namespace dev;
 
@@ -51,19 +50,19 @@ function private preinit() {
 }
 
 // Namespace dev/dev
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x436e6bbd, Offset: 0x200
 // Size: 0x3a8
 function init() {
     /#
-        if (getdvarstring(#"scr_show_hq_spawns") == "<unknown string>") {
-            setdvar(#"scr_show_hq_spawns", "<unknown string>");
+        if (getdvarstring(#"scr_show_hq_spawns") == "<dev string:x38>") {
+            setdvar(#"scr_show_hq_spawns", "<dev string:x38>");
         }
         if (!isdefined(getdvar(#"scr_testscriptruntimeerror"))) {
-            setdvar(#"scr_testscriptruntimeerror", "<unknown string>");
+            setdvar(#"scr_testscriptruntimeerror", "<dev string:x3c>");
         }
-        if (getdvarstring(#"hash_42bc2c660a3d2ecd") == "<unknown string>") {
-            setdvar(#"hash_42bc2c660a3d2ecd", "<unknown string>");
+        if (getdvarstring(#"hash_42bc2c660a3d2ecd") == "<dev string:x38>") {
+            setdvar(#"hash_42bc2c660a3d2ecd", "<dev string:x44>");
         }
         thread testscriptruntimeerror();
         thread testdvars();
@@ -74,23 +73,23 @@ function init() {
         thread dev_class::dev_cac_init();
         thread dev_spawn::function_d8049496();
         thread globallogic_score::setplayermomentumdebug();
-        setdvar(#"scr_giveperk", "<unknown string>");
-        setdvar(#"scr_forceevent", "<unknown string>");
+        setdvar(#"scr_giveperk", "<dev string:x38>");
+        setdvar(#"scr_forceevent", "<dev string:x38>");
         setdvar(#"scr_draw_triggers", 0);
-        setdvar(#"scr_givegesture", "<unknown string>");
+        setdvar(#"scr_givegesture", "<dev string:x38>");
         thread engagement_distance_debug_toggle();
         thread equipment_dev_gui();
         thread grenade_dev_gui();
         setdvar(#"debug_dynamic_ai_spawning", 0);
         level.dem_spawns = [];
-        if (level.gametype == "<unknown string>") {
+        if (level.gametype == "<dev string:x49>") {
             extra_spawns = [];
-            extra_spawns[0] = "<unknown string>";
-            extra_spawns[1] = "<unknown string>";
-            extra_spawns[2] = "<unknown string>";
-            extra_spawns[3] = "<unknown string>";
+            extra_spawns[0] = "<dev string:x50>";
+            extra_spawns[1] = "<dev string:x6b>";
+            extra_spawns[2] = "<dev string:x86>";
+            extra_spawns[3] = "<dev string:xa1>";
             for (i = 0; i < extra_spawns.size; i++) {
-                points = getentarray(extra_spawns[i], "<unknown string>");
+                points = getentarray(extra_spawns[i], "<dev string:xbc>");
                 if (isdefined(points) && points.size > 0) {
                     level.dem_spawns = arraycombine(level.dem_spawns, points, 1, 0);
                 }
@@ -98,19 +97,19 @@ function init() {
         }
         for (;;) {
             updatedevsettings();
-            wait(0.5);
+            wait 0.5;
         }
     #/
 }
 
 // Namespace dev/dev
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xad188b31, Offset: 0x5b0
 // Size: 0x44
 function on_player_connected() {
     /#
         if (is_true(level.devgui_unlimited_ammo)) {
-            wait(1);
+            wait 1;
             self thread devgui_unlimited_ammo();
         }
     #/
@@ -146,17 +145,17 @@ function on_player_connected() {
                 setdvar(dvar, 0);
             }
             if (isdefined(enemydvar) && getdvarint(enemydvar, 0) == 1) {
-                team = "<unknown string>";
+                team = "<dev string:xc9>";
                 player = util::gethostplayer();
                 if (isdefined(player.team)) {
                     team = util::getotherteam(player.team);
                 }
                 ent = getormakebot(team);
                 if (!isdefined(ent)) {
-                    println("<unknown string>");
+                    println("<dev string:xd7>");
                     continue;
                 }
-                wait(1);
+                wait 1;
                 if (isdefined(ent)) {
                     ent killstreaks::give(key);
                     ent bot_action::function_d6318084(streak.weapon);
@@ -243,10 +242,10 @@ function on_player_connected() {
                     continue;
                 }
                 if (isdefined(team)) {
-                    if (strstartswith(team, "<unknown string>") && target.team == player.team) {
+                    if (strstartswith(team, "<dev string:xf4>") && target.team == player.team) {
                         continue;
                     }
-                    if (strstartswith(team, "<unknown string>") && target.team != player.team) {
+                    if (strstartswith(team, "<dev string:x100>") && target.team != player.team) {
                         continue;
                     }
                 }
@@ -271,7 +270,7 @@ function on_player_connected() {
                 }
             }
         }
-        setdvar(#"scr_playerwarp", "<unknown string>");
+        setdvar(#"scr_playerwarp", "<dev string:x38>");
     }
 
     // Namespace dev/dev
@@ -289,16 +288,16 @@ function on_player_connected() {
                 numpoints = 0;
                 spawnpoints = [];
                 location = level.scr_zm_map_start_location;
-                if ((location == "<unknown string>" || location == "<unknown string>") && isdefined(level.default_start_location)) {
+                if ((location == "<dev string:x10f>" || location == "<dev string:x38>") && isdefined(level.default_start_location)) {
                     location = level.default_start_location;
                 }
-                match_string = level.scr_zm_ui_gametype + "<unknown string>" + location;
+                match_string = level.scr_zm_ui_gametype + "<dev string:x11a>" + location;
                 if (level.streamdumpteamindex < level.teams.size) {
-                    structs = struct::get_array("<unknown string>", "<unknown string>");
+                    structs = struct::get_array("<dev string:x11f>", "<dev string:x130>");
                     if (isdefined(structs)) {
                         foreach (struct in structs) {
                             if (isdefined(struct.script_string)) {
-                                tokens = strtok(struct.script_string, "<unknown string>");
+                                tokens = strtok(struct.script_string, "<dev string:x145>");
                                 foreach (token in tokens) {
                                     if (token == match_string) {
                                         spawnpoints[spawnpoints.size] = struct;
@@ -308,7 +307,7 @@ function on_player_connected() {
                         }
                     }
                     if (!isdefined(spawnpoints) || spawnpoints.size == 0) {
-                        spawnpoints = struct::get_array("<unknown string>", "<unknown string>");
+                        spawnpoints = struct::get_array("<dev string:x14a>", "<dev string:x162>");
                     }
                     if (isdefined(spawnpoints)) {
                         numpoints = spawnpoints.size;
@@ -327,7 +326,7 @@ function on_player_connected() {
                 }
                 level.players[0] setplayerangles(averageangles);
                 level.players[0] setorigin(averageorigin);
-                wait(5);
+                wait 5;
                 setdvar(#"r_streamdumpdistance", 2);
             }
         }
@@ -343,26 +342,26 @@ function on_player_connected() {
         if (level.players.size > 0) {
             updatehardpoints();
             playerwarp_string = getdvarstring(#"scr_playerwarp");
-            if (playerwarp_string == "<unknown string>") {
+            if (playerwarp_string == "<dev string:x170>") {
                 warpalltohost();
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x178>") {
                 warpalltohost(playerwarp_string);
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x188>") {
                 warpalltohost(playerwarp_string);
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x19b>") {
                 function_9758857b();
-            } else if (strstartswith(playerwarp_string, "<unknown string>")) {
+            } else if (strstartswith(playerwarp_string, "<dev string:xf4>")) {
                 name = getsubstr(playerwarp_string, 8);
                 warpalltoplayer(playerwarp_string, name);
-            } else if (strstartswith(playerwarp_string, "<unknown string>")) {
+            } else if (strstartswith(playerwarp_string, "<dev string:x100>")) {
                 name = getsubstr(playerwarp_string, 11);
                 warpalltoplayer(playerwarp_string, name);
-            } else if (strstartswith(playerwarp_string, "<unknown string>")) {
+            } else if (strstartswith(playerwarp_string, "<dev string:x1b6>")) {
                 name = getsubstr(playerwarp_string, 4);
                 warpalltoplayer(undefined, name);
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x1be>") {
                 players = getplayers();
-                setdvar(#"scr_playerwarp", "<unknown string>");
+                setdvar(#"scr_playerwarp", "<dev string:x38>");
                 if (!isdefined(level.devgui_start_spawn_index)) {
                     level.devgui_start_spawn_index = 0;
                 }
@@ -379,9 +378,9 @@ function on_player_connected() {
                 if (level.devgui_start_spawn_index >= spawns.size) {
                     level.devgui_start_spawn_index = 0;
                 }
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x1d2>") {
                 players = getplayers();
-                setdvar(#"scr_playerwarp", "<unknown string>");
+                setdvar(#"scr_playerwarp", "<dev string:x38>");
                 if (!isdefined(level.devgui_start_spawn_index)) {
                     level.devgui_start_spawn_index = 0;
                 }
@@ -398,9 +397,9 @@ function on_player_connected() {
                 if (level.devgui_start_spawn_index < 0) {
                     level.devgui_start_spawn_index = spawns.size - 1;
                 }
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x1e6>") {
                 players = getplayers();
-                setdvar(#"scr_playerwarp", "<unknown string>");
+                setdvar(#"scr_playerwarp", "<dev string:x38>");
                 if (!isdefined(level.devgui_spawn_index)) {
                     level.devgui_spawn_index = 0;
                 }
@@ -417,9 +416,9 @@ function on_player_connected() {
                 if (level.devgui_spawn_index >= spawns.size) {
                     level.devgui_spawn_index = 0;
                 }
-            } else if (playerwarp_string == "<unknown string>") {
+            } else if (playerwarp_string == "<dev string:x1f4>") {
                 players = getplayers();
-                setdvar(#"scr_playerwarp", "<unknown string>");
+                setdvar(#"scr_playerwarp", "<dev string:x38>");
                 if (!isdefined(level.devgui_spawn_index)) {
                     level.devgui_spawn_index = 0;
                 }
@@ -436,39 +435,39 @@ function on_player_connected() {
                 if (level.devgui_spawn_index < 0) {
                     level.devgui_spawn_index = spawns.size - 1;
                 }
-            } else if (getdvarstring(#"scr_devgui_spawn") != "<unknown string>") {
+            } else if (getdvarstring(#"scr_devgui_spawn") != "<dev string:x38>") {
                 player = util::gethostplayer();
                 if (!isdefined(player.devgui_spawn_active)) {
                     player.devgui_spawn_active = 0;
                 }
                 if (!player.devgui_spawn_active) {
-                    iprintln("<unknown string>");
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x202>");
+                    iprintln("<dev string:x228>");
                     player.devgui_spawn_active = 1;
                     player thread spawning::devgui_spawn_think();
                 } else {
                     player notify(#"devgui_spawn_think");
                     player.devgui_spawn_active = 0;
-                    player setactionslot(3, "<unknown string>");
+                    player setactionslot(3, "<dev string:x24b>");
                 }
-                setdvar(#"scr_devgui_spawn", "<unknown string>");
-            } else if (getdvarstring(#"hash_c9f8ff06a656024") != "<unknown string>") {
+                setdvar(#"scr_devgui_spawn", "<dev string:x38>");
+            } else if (getdvarstring(#"hash_c9f8ff06a656024") != "<dev string:x38>") {
                 if (!isdefined(level.var_31922da4)) {
                     level.var_31922da4 = 0;
                 }
                 player = level.players[0];
                 if (!level.var_31922da4) {
-                    iprintln("<unknown string>");
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x202>");
+                    iprintln("<dev string:x228>");
                     level.var_31922da4 = 1;
                     player thread spawning::function_48a6b85();
                 } else {
                     level notify(#"hash_47f3d9a9e91670d1");
                     level.var_31922da4 = 0;
-                    player setactionslot(3, "<unknown string>");
+                    player setactionslot(3, "<dev string:x24b>");
                 }
-                setdvar(#"hash_c9f8ff06a656024", "<unknown string>");
-            } else if (getdvarstring(#"scr_player_ammo") != "<unknown string>") {
+                setdvar(#"hash_c9f8ff06a656024", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_player_ammo") != "<dev string:x38>") {
                 players = getplayers();
                 if (!isdefined(level.devgui_unlimited_ammo)) {
                     level.devgui_unlimited_ammo = 1;
@@ -476,9 +475,9 @@ function on_player_connected() {
                     level.devgui_unlimited_ammo = !level.devgui_unlimited_ammo;
                 }
                 if (level.devgui_unlimited_ammo) {
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x256>");
                 } else {
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x27e>");
                 }
                 for (i = 0; i < players.size; i++) {
                     if (level.devgui_unlimited_ammo) {
@@ -487,28 +486,28 @@ function on_player_connected() {
                     }
                     players[i] notify(#"devgui_unlimited_ammo");
                 }
-                setdvar(#"scr_player_ammo", "<unknown string>");
-            } else if (getdvarstring(#"scr_player_momentum") != "<unknown string>") {
+                setdvar(#"scr_player_ammo", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_player_momentum") != "<dev string:x38>") {
                 if (!isdefined(level.devgui_unlimited_momentum)) {
                     level.devgui_unlimited_momentum = 1;
                 } else {
                     level.devgui_unlimited_momentum = !level.devgui_unlimited_momentum;
                 }
                 if (level.devgui_unlimited_momentum) {
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x2a9>");
                     level thread devgui_unlimited_momentum();
                 } else {
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x2d5>");
                     level notify(#"devgui_unlimited_momentum");
                 }
-                setdvar(#"scr_player_momentum", "<unknown string>");
-            } else if (getdvarstring(#"scr_give_player_score") != "<unknown string>") {
+                setdvar(#"scr_player_momentum", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_give_player_score") != "<dev string:x38>") {
                 level thread devgui_increase_momentum(getdvarint(#"scr_give_player_score", 0));
-                setdvar(#"scr_give_player_score", "<unknown string>");
-            } else if (getdvarstring(#"hash_7d7add0fb8d419c8") != "<unknown string>") {
+                setdvar(#"scr_give_player_score", "<dev string:x38>");
+            } else if (getdvarstring(#"hash_7d7add0fb8d419c8") != "<dev string:x38>") {
                 level thread function_e88bdbcf();
-                setdvar(#"hash_7d7add0fb8d419c8", "<unknown string>");
-            } else if (getdvarstring(#"scr_player_zero_ammo") != "<unknown string>") {
+                setdvar(#"hash_7d7add0fb8d419c8", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_player_zero_ammo") != "<dev string:x38>") {
                 players = getplayers();
                 for (i = 0; i < players.size; i++) {
                     player = players[i];
@@ -522,26 +521,26 @@ function on_player_connected() {
                         player setweaponammoclip(weapons[j], 0);
                     }
                 }
-                setdvar(#"scr_player_zero_ammo", "<unknown string>");
-            } else if (getdvarstring(#"scr_emp_jammed") != "<unknown string>") {
+                setdvar(#"scr_player_zero_ammo", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_emp_jammed") != "<dev string:x38>") {
                 players = getplayers();
                 for (i = 0; i < players.size; i++) {
                     player = players[i];
                     player setempjammed(getdvarint(#"scr_emp_jammed", 0));
                 }
-                setdvar(#"scr_emp_jammed", "<unknown string>");
-            } else if (getdvarstring(#"scr_round_pause") != "<unknown string>") {
+                setdvar(#"scr_emp_jammed", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_round_pause") != "<dev string:x38>") {
                 if (!level.timerstopped) {
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x304>");
                     globallogic_utils::pausetimer();
                 } else {
-                    iprintln("<unknown string>");
+                    iprintln("<dev string:x31b>");
                     globallogic_utils::resumetimer();
                 }
-                setdvar(#"scr_round_pause", "<unknown string>");
-            } else if (getdvarstring(#"scr_round_end") != "<unknown string>") {
+                setdvar(#"scr_round_pause", "<dev string:x38>");
+            } else if (getdvarstring(#"scr_round_end") != "<dev string:x38>") {
                 level globallogic::forceend();
-                setdvar(#"scr_round_end", "<unknown string>");
+                setdvar(#"scr_round_end", "<dev string:x38>");
             } else if (getdvarint(#"scr_health_debug", 0)) {
                 players = getplayers();
                 host = util::gethostplayer();
@@ -566,22 +565,22 @@ function on_player_connected() {
                     }
                 }
                 setdvar(#"scr_health_debug", 0);
-            } else if (getdvarstring(#"scr_show_hq_spawns") != "<unknown string>") {
+            } else if (getdvarstring(#"scr_show_hq_spawns") != "<dev string:x38>") {
                 if (!isdefined(level.devgui_show_hq)) {
                     level.devgui_show_hq = 0;
                 }
-                if (level.gametype == "<unknown string>" && isdefined(level.radios)) {
+                if (level.gametype == "<dev string:x333>" && isdefined(level.radios)) {
                     if (!level.devgui_show_hq) {
                         for (i = 0; i < level.radios.size; i++) {
                             color = (1, 0, 0);
-                            level dev_spawn::showonespawnpoint(level.radios[i], color, "<unknown string>", 32, "<unknown string>");
+                            level dev_spawn::showonespawnpoint(level.radios[i], color, "<dev string:x33b>", 32, "<dev string:x34d>");
                         }
                     } else {
                         level notify(#"hide_hq_points");
                     }
                     level.devgui_show_hq = !level.devgui_show_hq;
                 }
-                setdvar(#"scr_show_hq_spawns", "<unknown string>");
+                setdvar(#"scr_show_hq_spawns", "<dev string:x38>");
             }
             if (getdvarint(#"r_streamdumpdistance", 0) == 3) {
                 if (!isdefined(level.streamdumpteamindex)) {
@@ -608,36 +607,36 @@ function on_player_connected() {
                     }
                     level.players[0] setplayerangles(averageangles);
                     level.players[0] setorigin(averageorigin);
-                    wait(5);
+                    wait 5;
                     setdvar(#"r_streamdumpdistance", 2);
                 }
             }
         }
-        if (getdvarstring(#"scr_giveperk") == "<unknown string>") {
+        if (getdvarstring(#"scr_giveperk") == "<dev string:x44>") {
             players = getplayers();
-            iprintln("<unknown string>");
+            iprintln("<dev string:x359>");
             for (i = 0; i < players.size; i++) {
                 players[i] clearperks();
                 players[i].extraperks = undefined;
             }
-            setdvar(#"scr_giveperk", "<unknown string>");
+            setdvar(#"scr_giveperk", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_giveperk") != "<unknown string>") {
+        if (getdvarstring(#"scr_giveperk") != "<dev string:x38>") {
             perk = getdvarstring(#"scr_giveperk");
-            specialties = strtok(perk, "<unknown string>");
+            specialties = strtok(perk, "<dev string:x37e>");
             players = getplayers();
-            iprintln("<unknown string>" + perk + "<unknown string>");
+            iprintln("<dev string:x383>" + perk + "<dev string:x3a1>");
             for (i = 0; i < players.size; i++) {
                 for (j = 0; j < specialties.size; j++) {
                     players[i] perks::perk_setperk(specialties[j]);
                     players[i].extraperks[specialties[j]] = 1;
                 }
             }
-            setdvar(#"scr_giveperk", "<unknown string>");
+            setdvar(#"scr_giveperk", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_giveskill") == "<unknown string>") {
+        if (getdvarstring(#"scr_giveskill") == "<dev string:x44>") {
             players = getplayers();
-            iprintln("<unknown string>");
+            iprintln("<dev string:x3a6>");
             foreach (player in players) {
                 if (!isdefined(player)) {
                     continue;
@@ -645,13 +644,13 @@ function on_player_connected() {
                 player function_e6f9e3cd();
                 player loadout::function_3d16577a(player.team, player.curclass);
             }
-            setdvar(#"scr_giveskill", "<unknown string>");
+            setdvar(#"scr_giveskill", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_giveskill") != "<unknown string>") {
+        if (getdvarstring(#"scr_giveskill") != "<dev string:x38>") {
             talentname = getdvarstring(#"scr_giveskill");
             var_2fe3f7e3 = hash(talentname);
             players = getplayers();
-            iprintln("<unknown string>" + talentname + "<unknown string>");
+            iprintln("<dev string:x3cc>" + talentname + "<dev string:x3a1>");
             foreach (player in players) {
                 if (!isdefined(player)) {
                     continue;
@@ -659,11 +658,11 @@ function on_player_connected() {
                 player function_b5feff95(var_2fe3f7e3);
                 player loadout::function_3d16577a(player.team, player.curclass);
             }
-            setdvar(#"scr_giveskill", "<unknown string>");
+            setdvar(#"scr_giveskill", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_givetalent") == "<unknown string>") {
+        if (getdvarstring(#"scr_givetalent") == "<dev string:x44>") {
             players = getplayers();
-            iprintln("<unknown string>");
+            iprintln("<dev string:x3eb>");
             foreach (player in players) {
                 if (!isdefined(player)) {
                     continue;
@@ -671,13 +670,13 @@ function on_player_connected() {
                 player function_e6f9e3cd();
                 player loadout::function_3d16577a(player.team, player.curclass);
             }
-            setdvar(#"scr_givetalent", "<unknown string>");
+            setdvar(#"scr_givetalent", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_givetalent") != "<unknown string>") {
+        if (getdvarstring(#"scr_givetalent") != "<dev string:x38>") {
             talentname = getdvarstring(#"scr_givetalent");
             var_2fe3f7e3 = hash(talentname);
             players = getplayers();
-            iprintln("<unknown string>" + talentname + "<unknown string>");
+            iprintln("<dev string:x411>" + talentname + "<dev string:x3a1>");
             foreach (player in players) {
                 if (!isdefined(player)) {
                     continue;
@@ -685,46 +684,46 @@ function on_player_connected() {
                 player function_b5feff95(var_2fe3f7e3);
                 player loadout::function_3d16577a(player.team, player.curclass);
             }
-            setdvar(#"scr_givetalent", "<unknown string>");
+            setdvar(#"scr_givetalent", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_forcegrenade") != "<unknown string>") {
+        if (getdvarstring(#"scr_forcegrenade") != "<dev string:x38>") {
             force_grenade_throw(getweapon(getdvarstring(#"scr_forcegrenade")));
-            setdvar(#"scr_forcegrenade", "<unknown string>");
+            setdvar(#"scr_forcegrenade", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_forceevent") != "<unknown string>") {
+        if (getdvarstring(#"scr_forceevent") != "<dev string:x38>") {
             event = getdvarstring(#"scr_forceevent");
             player = util::gethostplayer();
             forward = anglestoforward(player.angles);
             right = anglestoright(player.angles);
-            if (event == "<unknown string>") {
+            if (event == "<dev string:x431>") {
                 player dodamage(1, player.origin + forward);
-            } else if (event == "<unknown string>") {
+            } else if (event == "<dev string:x43e>") {
                 player dodamage(1, player.origin - forward);
-            } else if (event == "<unknown string>") {
+            } else if (event == "<dev string:x44a>") {
                 player dodamage(1, player.origin - right);
-            } else if (event == "<unknown string>") {
+            } else if (event == "<dev string:x456>") {
                 player dodamage(1, player.origin + right);
             }
-            setdvar(#"scr_forceevent", "<unknown string>");
+            setdvar(#"scr_forceevent", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_takeperk") != "<unknown string>") {
+        if (getdvarstring(#"scr_takeperk") != "<dev string:x38>") {
             perk = getdvarstring(#"scr_takeperk");
             for (i = 0; i < level.players.size; i++) {
                 level.players[i] perks::perk_unsetperk(perk);
                 level.players[i].extraperks[perk] = undefined;
             }
-            setdvar(#"scr_takeperk", "<unknown string>");
+            setdvar(#"scr_takeperk", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_x_kills_y") != "<unknown string>") {
-            nametokens = strtok(getdvarstring(#"scr_x_kills_y"), "<unknown string>");
+        if (getdvarstring(#"scr_x_kills_y") != "<dev string:x38>") {
+            nametokens = strtok(getdvarstring(#"scr_x_kills_y"), "<dev string:x145>");
             if (nametokens.size > 1) {
                 thread xkillsy(nametokens[0], nametokens[1]);
             }
-            setdvar(#"scr_x_kills_y", "<unknown string>");
+            setdvar(#"scr_x_kills_y", "<dev string:x38>");
         }
-        if (getdvarstring(#"scr_usedogs") != "<unknown string>") {
+        if (getdvarstring(#"scr_usedogs") != "<dev string:x38>") {
             ownername = getdvarstring(#"scr_usedogs");
-            setdvar(#"scr_usedogs", "<unknown string>");
+            setdvar(#"scr_usedogs", "<dev string:x38>");
             owner = undefined;
             for (index = 0; index < level.players.size; index++) {
                 if (level.players[index].name == ownername) {
@@ -732,17 +731,17 @@ function on_player_connected() {
                 }
             }
             if (isdefined(owner)) {
-                owner killstreaks::trigger_killstreak("<unknown string>");
+                owner killstreaks::trigger_killstreak("<dev string:x463>");
             }
         }
-        if (getdvarstring(#"scr_entdebug") != "<unknown string>") {
+        if (getdvarstring(#"scr_entdebug") != "<dev string:x38>") {
             ents = getentarray();
             level.entarray = [];
             level.entcounts = [];
             level.entgroups = [];
             for (index = 0; index < ents.size; index++) {
                 classname = ents[index].classname;
-                if (!issubstr(classname, "<unknown string>")) {
+                if (!issubstr(classname, "<dev string:x46b>")) {
                     curent = ents[index];
                     level.entarray[level.entarray.size] = curent;
                     if (!isdefined(level.entcounts[classname])) {
@@ -805,7 +804,7 @@ function on_player_connected() {
         self endon(#"devgui_unlimited_ammo");
         self endon(#"disconnect");
         for (;;) {
-            wait(1);
+            wait 1;
             if (!isdefined(self) || !isalive(self)) {
                 continue;
             }
@@ -840,7 +839,7 @@ function on_player_connected() {
         level notify(#"devgui_unlimited_momentum");
         level endon(#"devgui_unlimited_momentum");
         for (;;) {
-            wait(1);
+            wait 1;
             players = getplayers();
             foreach (player in players) {
                 if (!isdefined(player)) {
@@ -849,7 +848,7 @@ function on_player_connected() {
                 if (!isalive(player)) {
                     continue;
                 }
-                if (player.sessionstate != "<unknown string>") {
+                if (player.sessionstate != "<dev string:x475>") {
                     continue;
                 }
                 globallogic_score::_setplayermomentum(player, 5000);
@@ -870,10 +869,10 @@ function on_player_connected() {
             if (!isalive(player)) {
                 continue;
             }
-            if (player.sessionstate != "<unknown string>") {
+            if (player.sessionstate != "<dev string:x475>") {
                 continue;
             }
-            player globallogic_score::giveplayermomentumnotification(score, #"kill", "<unknown string>");
+            player globallogic_score::giveplayermomentumnotification(score, #"kill", "<dev string:x480>");
         }
     }
 
@@ -884,7 +883,7 @@ function on_player_connected() {
     function function_e88bdbcf(*score) {
         players = getplayers();
         foreach (player in players) {
-            if (isdefined(player) && isalive(player) && player.sessionstate == "<unknown string>") {
+            if (isdefined(player) && isalive(player) && player.sessionstate == "<dev string:x475>") {
                 player globallogic_score::resetplayermomentum();
             }
         }
@@ -903,20 +902,20 @@ function on_player_connected() {
         self.debug_health_bar = newdebughudelem(self);
         self.debug_health_bar.x = x + 80;
         self.debug_health_bar.y = y + 2;
-        self.debug_health_bar.alignx = "<unknown string>";
-        self.debug_health_bar.aligny = "<unknown string>";
-        self.debug_health_bar.horzalign = "<unknown string>";
-        self.debug_health_bar.vertalign = "<unknown string>";
+        self.debug_health_bar.alignx = "<dev string:x490>";
+        self.debug_health_bar.aligny = "<dev string:x498>";
+        self.debug_health_bar.horzalign = "<dev string:x49f>";
+        self.debug_health_bar.vertalign = "<dev string:x49f>";
         self.debug_health_bar.alpha = 1;
         self.debug_health_bar.foreground = 1;
         self.debug_health_bar setshader(#"black", 1, 8);
         self.debug_health_text = newdebughudelem(self);
         self.debug_health_text.x = x + 80;
         self.debug_health_text.y = y;
-        self.debug_health_text.alignx = "<unknown string>";
-        self.debug_health_text.aligny = "<unknown string>";
-        self.debug_health_text.horzalign = "<unknown string>";
-        self.debug_health_text.vertalign = "<unknown string>";
+        self.debug_health_text.alignx = "<dev string:x490>";
+        self.debug_health_text.aligny = "<dev string:x498>";
+        self.debug_health_text.horzalign = "<dev string:x49f>";
+        self.debug_health_text.vertalign = "<dev string:x49f>";
         self.debug_health_text.alpha = 1;
         self.debug_health_text.fontscale = 1;
         self.debug_health_text.foreground = 1;
@@ -942,7 +941,7 @@ function on_player_connected() {
         }
         perks = getarraykeys(self.extraperks);
         for (i = 0; i < perks.size; i++) {
-            println("<unknown string>" + self.name + "<unknown string>" + perks[i] + "<unknown string>");
+            println("<dev string:x4ad>" + self.name + "<dev string:x4bb>" + perks[i] + "<dev string:x4c9>");
             self perks::perk_setperk(perks[i]);
         }
     }
@@ -966,7 +965,7 @@ function on_player_connected() {
         if (!isalive(attacker) || !isalive(victim)) {
             return;
         }
-        victim thread [[ level.callbackplayerdamage ]](attacker, attacker, 1000, 0, "<unknown string>", level.weaponnone, (0, 0, 0), (0, 0, 0), "<unknown string>", (0, 0, 0), 0, 0, (1, 0, 0));
+        victim thread [[ level.callbackplayerdamage ]](attacker, attacker, 1000, 0, "<dev string:x4da>", level.weaponnone, (0, 0, 0), (0, 0, 0), "<dev string:x3c>", (0, 0, 0), 0, 0, (1, 0, 0));
     }
 
     // Namespace dev/dev
@@ -974,7 +973,7 @@ function on_player_connected() {
     // Checksum 0x18537b36, Offset: 0x45c0
     // Size: 0x24
     function testscriptruntimeerrorassert() {
-        wait(1);
+        wait 1;
         assert(0);
     }
 
@@ -983,8 +982,8 @@ function on_player_connected() {
     // Checksum 0x543af3e2, Offset: 0x45f0
     // Size: 0x2c
     function testscriptruntimeassertmsgassert() {
-        wait(1);
-        assertmsg("<unknown string>");
+        wait 1;
+        assertmsg("<dev string:x4ee>");
     }
 
     // Namespace dev/dev
@@ -992,8 +991,8 @@ function on_player_connected() {
     // Checksum 0xa3fdaafb, Offset: 0x4628
     // Size: 0x2c
     function testscriptruntimeerrormsgassert() {
-        wait(1);
-        errormsg("<unknown string>");
+        wait 1;
+        errormsg("<dev string:x508>");
     }
 
     // Namespace dev/dev
@@ -1001,9 +1000,9 @@ function on_player_connected() {
     // Checksum 0x1031a3ba, Offset: 0x4660
     // Size: 0x44
     function testscriptruntimeerror2() {
-        myundefined = "<unknown string>";
+        myundefined = "<dev string:x521>";
         if (myundefined == 1) {
-            println("<unknown string>");
+            println("<dev string:x529>");
         }
     }
 
@@ -1020,20 +1019,20 @@ function on_player_connected() {
     // Checksum 0x3467fb2a, Offset: 0x46d8
     // Size: 0x12c
     function testscriptruntimeerror() {
-        wait(5);
+        wait 5;
         for (;;) {
-            if (getdvarstring(#"scr_testscriptruntimeerror") != "<unknown string>") {
+            if (getdvarstring(#"scr_testscriptruntimeerror") != "<dev string:x3c>") {
                 break;
             }
-            wait(1);
+            wait 1;
         }
         myerror = getdvarstring(#"scr_testscriptruntimeerror");
-        setdvar(#"scr_testscriptruntimeerror", "<unknown string>");
-        if (myerror == "<unknown string>") {
+        setdvar(#"scr_testscriptruntimeerror", "<dev string:x3c>");
+        if (myerror == "<dev string:x552>") {
             testscriptruntimeerrorassert();
-        } else if (myerror == "<unknown string>") {
+        } else if (myerror == "<dev string:x55c>") {
             testscriptruntimeassertmsgassert();
-        } else if (myerror == "<unknown string>") {
+        } else if (myerror == "<dev string:x569>") {
             testscriptruntimeerrormsgassert();
         } else {
             testscriptruntimeerror1();
@@ -1046,18 +1045,18 @@ function on_player_connected() {
     // Checksum 0xab925ad7, Offset: 0x4810
     // Size: 0xfc
     function testdvars() {
-        wait(5);
+        wait 5;
         for (;;) {
-            if (getdvarstring(#"scr_testdvar") != "<unknown string>") {
+            if (getdvarstring(#"scr_testdvar") != "<dev string:x38>") {
                 break;
             }
-            wait(1);
+            wait 1;
         }
-        tokens = strtok(getdvarstring(#"scr_testdvar"), "<unknown string>");
+        tokens = strtok(getdvarstring(#"scr_testdvar"), "<dev string:x145>");
         dvarname = tokens[0];
         dvarvalue = tokens[1];
         setdvar(dvarname, dvarvalue);
-        setdvar(#"scr_testdvar", "<unknown string>");
+        setdvar(#"scr_testdvar", "<dev string:x38>");
         thread testdvars();
     }
 
@@ -1066,32 +1065,32 @@ function on_player_connected() {
     // Checksum 0x5c27f9db, Offset: 0x4918
     // Size: 0x22c
     function addenemyheli() {
-        wait(5);
+        wait 5;
         for (;;) {
             if (getdvarint(#"scr_spawnenemyheli", 0) > 0) {
                 break;
             }
-            wait(1);
+            wait 1;
         }
         enemyheli = getdvarint(#"scr_spawnenemyheli", 0);
         setdvar(#"scr_spawnenemyheli", 0);
-        team = "<unknown string>";
+        team = "<dev string:xc9>";
         player = util::gethostplayer();
         if (isdefined(player.pers[#"team"])) {
             team = util::getotherteam(player.pers[#"team"]);
         }
         ent = getormakebot(team);
         if (!isdefined(ent)) {
-            println("<unknown string>");
-            wait(1);
+            println("<dev string:xd7>");
+            wait 1;
             thread addenemyheli();
             return;
         }
         switch (enemyheli) {
         case 1:
             level.helilocation = ent.origin;
-            ent thread helicopter::usekillstreakhelicopter("<unknown string>");
-            wait(0.5);
+            ent thread helicopter::usekillstreakhelicopter("<dev string:x575>");
+            wait 0.5;
             ent notify(#"confirm_location", {#position:level.helilocation});
             break;
         case 2:
@@ -1105,7 +1104,7 @@ function on_player_connected() {
     // Checksum 0x97f5a377, Offset: 0x4b50
     // Size: 0xf8
     function getormakebot(team) {
-                for (i = 0; i < level.players.size; i++) {
+        for (i = 0; i < level.players.size; i++) {
             if (level.players[i].team == team) {
                 if (isbot(level.players[i])) {
                     return level.players[i];
@@ -1114,7 +1113,7 @@ function on_player_connected() {
         }
         ent = bot::add_bot(team);
         if (isdefined(ent)) {
-            sound::play_on_players("<unknown string>");
+            sound::play_on_players("<dev string:x58b>");
             ent waittill(#"spawned_player");
             ent.ignoreall = 1;
         }
@@ -1173,7 +1172,7 @@ function on_player_connected() {
                 level notify(#"kill_all_engage_dist_debug");
                 laststate = currentstate;
             }
-            wait(0.3);
+            wait 0.3;
         }
     }
 
@@ -1202,15 +1201,15 @@ function on_player_connected() {
         level.yellow = (1, 1, 0);
         level.red = (1, 0, 0);
         level.realtimeengagedist = newdebughudelem();
-        level.realtimeengagedist.alignx = "<unknown string>";
+        level.realtimeengagedist.alignx = "<dev string:x490>";
         level.realtimeengagedist.fontscale = level.debug_fontscale;
         level.realtimeengagedist.x = level.debug_xpos;
         level.realtimeengagedist.y = level.debug_ypos;
         level.realtimeengagedist.color = level.white;
-        level.realtimeengagedist settext("<unknown string>");
+        level.realtimeengagedist settext("<dev string:x5a0>");
         xpos = level.debug_xpos + 245;
         level.realtimeengagedist_value = newdebughudelem();
-        level.realtimeengagedist_value.alignx = "<unknown string>";
+        level.realtimeengagedist_value.alignx = "<dev string:x490>";
         level.realtimeengagedist_value.fontscale = level.debug_fontscale;
         level.realtimeengagedist_value.x = xpos;
         level.realtimeengagedist_value.y = level.debug_ypos;
@@ -1218,15 +1217,15 @@ function on_player_connected() {
         level.realtimeengagedist_value setvalue(0);
         xpos += 37;
         level.realtimeengagedist_middle = newdebughudelem();
-        level.realtimeengagedist_middle.alignx = "<unknown string>";
+        level.realtimeengagedist_middle.alignx = "<dev string:x490>";
         level.realtimeengagedist_middle.fontscale = level.debug_fontscale;
         level.realtimeengagedist_middle.x = xpos;
         level.realtimeengagedist_middle.y = level.debug_ypos;
         level.realtimeengagedist_middle.color = level.white;
-        level.realtimeengagedist_middle settext("<unknown string>");
+        level.realtimeengagedist_middle settext("<dev string:x145>");
         xpos += 105;
         level.realtimeengagedist_offvalue = newdebughudelem();
-        level.realtimeengagedist_offvalue.alignx = "<unknown string>";
+        level.realtimeengagedist_offvalue.alignx = "<dev string:x490>";
         level.realtimeengagedist_offvalue.fontscale = level.debug_fontscale;
         level.realtimeengagedist_offvalue.x = xpos;
         level.realtimeengagedist_offvalue.y = level.debug_ypos;
@@ -1297,47 +1296,47 @@ function on_player_connected() {
         genericsniper.engagedistoptimal = 1700;
         genericsniper.engagedistmulligan = 300;
         genericsniper.engagedistmax = 3000;
-        engage_dists_add("<unknown string>", genericpistol);
-        engage_dists_add("<unknown string>", genericpistol);
-        engage_dists_add("<unknown string>", genericpistol);
-        engage_dists_add("<unknown string>", genericpistol);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", shotty);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericlmg);
-        engage_dists_add("<unknown string>", genericriflesa);
-        engage_dists_add("<unknown string>", genericriflesa);
-        engage_dists_add("<unknown string>", genericriflesa);
-        engage_dists_add("<unknown string>", genericriflesa);
-        engage_dists_add("<unknown string>", genericriflebolt);
-        engage_dists_add("<unknown string>", genericriflebolt);
-        engage_dists_add("<unknown string>", genericriflebolt);
-        engage_dists_add("<unknown string>", genericriflebolt);
-        engage_dists_add("<unknown string>", genericriflebolt);
-        engage_dists_add("<unknown string>", generichmg);
-        engage_dists_add("<unknown string>", generichmg);
-        engage_dists_add("<unknown string>", generichmg);
-        engage_dists_add("<unknown string>", generichmg);
-        engage_dists_add("<unknown string>", genericsniper);
-        engage_dists_add("<unknown string>", genericsniper);
-        engage_dists_add("<unknown string>", genericsniper);
-        engage_dists_add("<unknown string>", genericsniper);
-        engage_dists_add("<unknown string>", genericsniper);
-        engage_dists_add("<unknown string>", genericsniper);
+        engage_dists_add("<dev string:x5c1>", genericpistol);
+        engage_dists_add("<dev string:x5c9>", genericpistol);
+        engage_dists_add("<dev string:x5d2>", genericpistol);
+        engage_dists_add("<dev string:x5dd>", genericpistol);
+        engage_dists_add("<dev string:x5e8>", genericsmg);
+        engage_dists_add("<dev string:x5f4>", genericsmg);
+        engage_dists_add("<dev string:x603>", genericsmg);
+        engage_dists_add("<dev string:x60b>", genericsmg);
+        engage_dists_add("<dev string:x613>", genericsmg);
+        engage_dists_add("<dev string:x61c>", genericsmg);
+        engage_dists_add("<dev string:x624>", genericsmg);
+        engage_dists_add("<dev string:x635>", shotty);
+        engage_dists_add("<dev string:x640>", genericlmg);
+        engage_dists_add("<dev string:x647>", genericlmg);
+        engage_dists_add("<dev string:x654>", genericlmg);
+        engage_dists_add("<dev string:x662>", genericlmg);
+        engage_dists_add("<dev string:x676>", genericlmg);
+        engage_dists_add("<dev string:x67e>", genericlmg);
+        engage_dists_add("<dev string:x68c>", genericlmg);
+        engage_dists_add("<dev string:x694>", genericlmg);
+        engage_dists_add("<dev string:x6a2>", genericlmg);
+        engage_dists_add("<dev string:x6aa>", genericlmg);
+        engage_dists_add("<dev string:x6b8>", genericriflesa);
+        engage_dists_add("<dev string:x6c4>", genericriflesa);
+        engage_dists_add("<dev string:x6d1>", genericriflesa);
+        engage_dists_add("<dev string:x6da>", genericriflesa);
+        engage_dists_add("<dev string:x6e6>", genericriflebolt);
+        engage_dists_add("<dev string:x6f5>", genericriflebolt);
+        engage_dists_add("<dev string:x705>", genericriflebolt);
+        engage_dists_add("<dev string:x714>", genericriflebolt);
+        engage_dists_add("<dev string:x71e>", genericriflebolt);
+        engage_dists_add("<dev string:x72d>", generichmg);
+        engage_dists_add("<dev string:x736>", generichmg);
+        engage_dists_add("<dev string:x745>", generichmg);
+        engage_dists_add("<dev string:x74d>", generichmg);
+        engage_dists_add("<dev string:x75b>", genericsniper);
+        engage_dists_add("<dev string:x771>", genericsniper);
+        engage_dists_add("<dev string:x788>", genericsniper);
+        engage_dists_add("<dev string:x79e>", genericsniper);
+        engage_dists_add("<dev string:x7af>", genericsniper);
+        engage_dists_add("<dev string:x7be>", genericsniper);
         level thread engage_dists_watcher();
     }
 
@@ -1395,7 +1394,7 @@ function on_player_connected() {
         level endon(#"kill_all_engage_dist_debug");
         level endon(#"kill_realtime_engagement_distance_debug");
         hudobjarray = engagement_distance_debug_init();
-        level thread engage_dist_debug_hud_destroy(hudobjarray, "<unknown string>");
+        level thread engage_dist_debug_hud_destroy(hudobjarray, "<dev string:x7d4>");
         level.debugrtengagedistcolor = level.green;
         player = util::gethostplayer();
         while (true) {
@@ -1412,7 +1411,7 @@ function on_player_connected() {
                 lasttracepos = tracepoint;
                 if (!isdefined(level.weaponengagedistvalues)) {
                     hudobj_changecolor(hudobjarray, level.white);
-                    hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                    hudobjarray engagedist_hud_changetext("<dev string:x7f2>", tracedist);
                 } else {
                     engagedistmin = level.weaponengagedistvalues.engagedistmin;
                     engagedistoptimal = level.weaponengagedistvalues.engagedistoptimal;
@@ -1420,18 +1419,18 @@ function on_player_connected() {
                     engagedistmax = level.weaponengagedistvalues.engagedistmax;
                     if (tracedist >= engagedistmin && tracedist <= engagedistmax) {
                         if (tracedist >= engagedistoptimal - engagedistmulligan && tracedist <= engagedistoptimal + engagedistmulligan) {
-                            hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                            hudobjarray engagedist_hud_changetext("<dev string:x7fc>", tracedist);
                             hudobj_changecolor(hudobjarray, level.green);
                         } else {
-                            hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                            hudobjarray engagedist_hud_changetext("<dev string:x807>", tracedist);
                             hudobj_changecolor(hudobjarray, level.yellow);
                         }
                     } else if (tracedist < engagedistmin) {
                         hudobj_changecolor(hudobjarray, level.red);
-                        hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                        hudobjarray engagedist_hud_changetext("<dev string:x80d>", tracedist);
                     } else if (tracedist > engagedistmax) {
                         hudobj_changecolor(hudobjarray, level.red);
-                        hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                        hudobjarray engagedist_hud_changetext("<dev string:x816>", tracedist);
                     }
                 }
             }
@@ -1446,7 +1445,7 @@ function on_player_connected() {
     // Checksum 0xdaea8ffe, Offset: 0x5ff8
     // Size: 0x78
     function hudobj_changecolor(hudobjarray, newcolor) {
-                for (i = 0; i < hudobjarray.size; i++) {
+        for (i = 0; i < hudobjarray.size; i++) {
             hudobj = hudobjarray[i];
             if (hudobj.color != newcolor) {
                 hudobj.color = newcolor;
@@ -1461,35 +1460,35 @@ function on_player_connected() {
     // Size: 0x2ec
     function engagedist_hud_changetext(engagedisttype, units) {
         if (!isdefined(level.lastdisttype)) {
-            level.lastdisttype = "<unknown string>";
+            level.lastdisttype = "<dev string:x3c>";
         }
-        if (engagedisttype == "<unknown string>") {
+        if (engagedisttype == "<dev string:x7fc>") {
             self[1] setvalue(units);
-            self[2] settext("<unknown string>");
+            self[2] settext("<dev string:x81e>");
             self[3].alpha = 0;
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x807>") {
             self[1] setvalue(units);
-            self[2] settext("<unknown string>");
+            self[2] settext("<dev string:x831>");
             self[3].alpha = 0;
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x80d>") {
             amountunder = level.weaponengagedistvalues.engagedistmin - units;
             self[1] setvalue(units);
             self[3] setvalue(amountunder);
             self[3].alpha = 1;
             if (level.lastdisttype != engagedisttype) {
-                self[2] settext("<unknown string>");
+                self[2] settext("<dev string:x83f>");
             }
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x816>") {
             amountover = units - level.weaponengagedistvalues.engagedistmax;
             self[1] setvalue(units);
             self[3] setvalue(amountover);
             self[3].alpha = 1;
             if (level.lastdisttype != engagedisttype) {
-                self[2] settext("<unknown string>");
+                self[2] settext("<dev string:x853>");
             }
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x7f2>") {
             self[1] setvalue(units);
-            self[2] settext("<unknown string>");
+            self[2] settext("<dev string:x866>");
             self[3].alpha = 0;
         }
         level.lastdisttype = engagedisttype;
@@ -1523,10 +1522,10 @@ function on_player_connected() {
     function larry_init(larry) {
         level endon(#"kill_larry");
         larry_hud_init(larry);
-        larry.model = spawn("<unknown string>", (0, 0, 0));
+        larry.model = spawn("<dev string:x87b>", (0, 0, 0));
         larry.model setmodel(#"defaultactor");
         larry.ai = [];
-        wait(0.1);
+        wait 0.1;
         for (;;) {
             waitframe(1);
             if (larry.ai.size > 0) {
@@ -1555,7 +1554,7 @@ function on_player_connected() {
     // Checksum 0x61bd3db6, Offset: 0x6718
     // Size: 0x23c
     function larry_ai(larry) {
-        var_572bc68e = "<unknown string>";
+        var_572bc68e = "<dev string:xc9>";
         if (level.teambased) {
             foreach (team in level.teams) {
                 if (team != self.team) {
@@ -1588,11 +1587,11 @@ function on_player_connected() {
         for (;;) {
             self waittill(#"spawned_player");
             larry.menu[larry.menu_health] setvalue(self.health);
-            larry.menu[larry.menu_damage] settext("<unknown string>");
-            larry.menu[larry.menu_range] settext("<unknown string>");
-            larry.menu[larry.menu_hitloc] settext("<unknown string>");
-            larry.menu[larry.menu_weapon] settext("<unknown string>");
-            larry.menu[larry.menu_perks] settext("<unknown string>");
+            larry.menu[larry.menu_damage] settext("<dev string:x38>");
+            larry.menu[larry.menu_range] settext("<dev string:x38>");
+            larry.menu[larry.menu_hitloc] settext("<dev string:x38>");
+            larry.menu[larry.menu_weapon] settext("<dev string:x38>");
+            larry.menu[larry.menu_perks] settext("<dev string:x38>");
             self clearperks();
         }
     }
@@ -1626,13 +1625,13 @@ function on_player_connected() {
             if (isdefined(self.cac_debug_location)) {
                 larry.menu[larry.menu_hitloc] settext(self.cac_debug_location);
             } else {
-                larry.menu[larry.menu_hitloc] settext("<unknown string>");
+                larry.menu[larry.menu_hitloc] settext("<dev string:x88b>");
             }
             if (isdefined(self.cac_debug_weapon)) {
                 larry.menu[larry.menu_weapon] settext(self.cac_debug_weapon);
                 continue;
             }
-            larry.menu[larry.menu_weapon] settext("<unknown string>");
+            larry.menu[larry.menu_weapon] settext("<dev string:x88b>");
         }
     }
 
@@ -1656,22 +1655,22 @@ function on_player_connected() {
         /#
             x = -45;
             y = 275;
-            menu_name = "<unknown string>";
+            menu_name = "<dev string:x898>";
             larry.hud = new_hud(menu_name, undefined, x, y, 1);
             larry.hud setshader(#"white", 135, 65);
-            larry.hud.alignx = "<unknown string>";
-            larry.hud.aligny = "<unknown string>";
+            larry.hud.alignx = "<dev string:x490>";
+            larry.hud.aligny = "<dev string:x498>";
             larry.hud.sort = 10;
             larry.hud.alpha = 0.6;
             larry.hud.color = (0, 0, 0.5);
-            larry.menu[0] = new_hud(menu_name, "<unknown string>", x + 5, y + 10, 1);
-            larry.menu[1] = new_hud(menu_name, "<unknown string>", x + 5, y + 20, 1);
-            larry.menu[2] = new_hud(menu_name, "<unknown string>", x + 5, y + 30, 1);
-            larry.menu[3] = new_hud(menu_name, "<unknown string>", x + 5, y + 40, 1);
-            larry.menu[4] = new_hud(menu_name, "<unknown string>", x + 5, y + 50, 1);
+            larry.menu[0] = new_hud(menu_name, "<dev string:x8a6>", x + 5, y + 10, 1);
+            larry.menu[1] = new_hud(menu_name, "<dev string:x8b7>", x + 5, y + 20, 1);
+            larry.menu[2] = new_hud(menu_name, "<dev string:x8c2>", x + 5, y + 30, 1);
+            larry.menu[3] = new_hud(menu_name, "<dev string:x8cc>", x + 5, y + 40, 1);
+            larry.menu[4] = new_hud(menu_name, "<dev string:x8dd>", x + 5, y + 50, 1);
             larry.cleartextmarker = newdebughudelem();
             larry.cleartextmarker.alpha = 0;
-            larry.cleartextmarker settext("<unknown string>");
+            larry.cleartextmarker settext("<dev string:x8e8>");
             larry.menu_health = larry.menu.size;
             larry.menu_damage = larry.menu.size + 1;
             larry.menu_range = larry.menu.size + 2;
@@ -1679,12 +1678,12 @@ function on_player_connected() {
             larry.menu_weapon = larry.menu.size + 4;
             larry.menu_perks = larry.menu.size + 5;
             x_offset = 70;
-            larry.menu[larry.menu_health] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 10, 1);
-            larry.menu[larry.menu_damage] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 20, 1);
-            larry.menu[larry.menu_range] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 30, 1);
-            larry.menu[larry.menu_hitloc] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 40, 1);
-            larry.menu[larry.menu_weapon] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 50, 1);
-            larry.menu[larry.menu_perks] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 60, 1);
+            larry.menu[larry.menu_health] = new_hud(menu_name, "<dev string:x38>", x + x_offset, y + 10, 1);
+            larry.menu[larry.menu_damage] = new_hud(menu_name, "<dev string:x38>", x + x_offset, y + 20, 1);
+            larry.menu[larry.menu_range] = new_hud(menu_name, "<dev string:x38>", x + x_offset, y + 30, 1);
+            larry.menu[larry.menu_hitloc] = new_hud(menu_name, "<dev string:x38>", x + x_offset, y + 40, 1);
+            larry.menu[larry.menu_weapon] = new_hud(menu_name, "<dev string:x38>", x + x_offset, y + 50, 1);
+            larry.menu[larry.menu_perks] = new_hud(menu_name, "<dev string:x38>", x + x_offset, y + 60, 1);
         #/
     }
 
@@ -1736,8 +1735,8 @@ function on_player_connected() {
             hud = newdebughudelem();
             hud.debug_hudelem = 1;
             hud.location = 0;
-            hud.alignx = "<unknown string>";
-            hud.aligny = "<unknown string>";
+            hud.alignx = "<dev string:x490>";
+            hud.aligny = "<dev string:x8f2>";
             hud.foreground = 1;
             hud.fontscale = alpha;
             hud.sort = debug_hudelem;
@@ -1760,7 +1759,7 @@ function on_player_connected() {
         /#
             self notify(#"print_weapon_name");
             self endon(#"print_weapon_name");
-            wait(0.2);
+            wait 0.2;
             if (self isswitchingweapons()) {
                 waitresult = self waittill(#"weapon_change_complete");
                 fail_safe = 0;
@@ -1836,7 +1835,7 @@ function on_player_connected() {
     // Checksum 0xd2634d31, Offset: 0x7c18
     // Size: 0xac
     function take_all_grenades_and_equipment(player) {
-                for (i = 0; i < level.dev_equipment.size; i++) {
+        for (i = 0; i < level.dev_equipment.size; i++) {
             player takeweapon(level.dev_equipment[i + 1]);
         }
         for (i = 0; i < level.dev_grenade.size; i++) {
@@ -1851,9 +1850,9 @@ function on_player_connected() {
     function equipment_dev_gui() {
         set_equipment_list();
         set_grenade_list();
-        setdvar(#"scr_give_equipment", "<unknown string>");
+        setdvar(#"scr_give_equipment", "<dev string:x38>");
         while (true) {
-            wait(0.5);
+            wait 0.5;
             devgui_int = getdvarint(#"scr_give_equipment", 0);
             if (devgui_int != 0) {
                 for (i = 0; i < level.players.size; i++) {
@@ -1872,9 +1871,9 @@ function on_player_connected() {
     function grenade_dev_gui() {
         set_equipment_list();
         set_grenade_list();
-        setdvar(#"scr_give_grenade", "<unknown string>");
+        setdvar(#"scr_give_grenade", "<dev string:x38>");
         while (true) {
-            wait(0.5);
+            wait 0.5;
             devgui_int = getdvarint(#"scr_give_grenade", 0);
             if (devgui_int != 0) {
                 for (i = 0; i < level.players.size; i++) {
@@ -1896,12 +1895,12 @@ function on_player_connected() {
         }
         host = util::gethostplayer();
         if (!isdefined(host.team)) {
-            iprintln("<unknown string>");
+            iprintln("<dev string:x8fc>");
             return;
         }
         bot = getormakebot(util::getotherteam(host.team));
         if (!isdefined(bot)) {
-            iprintln("<unknown string>");
+            iprintln("<dev string:xd7>");
             return;
         }
         angles = host getplayerangles();
@@ -1928,19 +1927,19 @@ function on_player_connected() {
         maxdrawtime = 10;
         drawtime = maxdrawtime;
         origintextoffset = (0, 0, -50);
-        endonmsg = "<unknown string>";
+        endonmsg = "<dev string:x924>";
         while (true) {
-            if (killstreaks::should_draw_debug("<unknown string>") > 0) {
+            if (killstreaks::should_draw_debug("<dev string:x945>") > 0) {
                 nodes = [];
                 end = 0;
-                node = getvehiclenode("<unknown string>", "<unknown string>");
+                node = getvehiclenode("<dev string:x954>", "<dev string:x162>");
                 if (!isdefined(node)) {
-                    println("<unknown string>");
+                    println("<dev string:x965>");
                     setdvar(#"scr_devstraferunpathdebugdraw", 0);
                     continue;
                 }
                 while (isdefined(node.target)) {
-                    new_node = getvehiclenode(node.target, "<unknown string>");
+                    new_node = getvehiclenode(node.target, "<dev string:x162>");
                     foreach (n in nodes) {
                         if (n == new_node) {
                             end = 1;
@@ -1993,7 +1992,7 @@ function on_player_connected() {
                 waitframe(1);
                 continue;
             }
-            wait(1);
+            wait 1;
         }
     }
 
@@ -2012,10 +2011,10 @@ function on_player_connected() {
         maxdrawtime = 10;
         drawtime = maxdrawtime;
         origintextoffset = (0, 0, -50);
-        endonmsg = "<unknown string>";
+        endonmsg = "<dev string:x981>";
         while (true) {
             if (getdvarint(#"scr_devhelipathsdebugdraw", 0) > 0) {
-                script_origins = getentarray("<unknown string>", "<unknown string>");
+                script_origins = getentarray("<dev string:x99e>", "<dev string:xbc>");
                 foreach (ent in script_origins) {
                     if (isdefined(ent.targetname)) {
                         switch (ent.targetname) {
@@ -2063,7 +2062,7 @@ function on_player_connected() {
             if (getdvarint(#"scr_devhelipathsdebugdraw", 0) == 0) {
                 level notify(endonmsg);
                 drawtime = maxdrawtime;
-                wait(1);
+                wait 1;
             }
             waitframe(1);
         }
@@ -2112,7 +2111,7 @@ function on_player_connected() {
         if (!isdefined(textoffset)) {
             textoffset = (0, 0, 0);
         }
-        originstring = "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2] + "<unknown string>";
+        originstring = "<dev string:x9af>" + self.origin[0] + "<dev string:x9b4>" + self.origin[1] + "<dev string:x9b4>" + self.origin[2] + "<dev string:x9ba>";
         print3d(self.origin + textoffset, originstring, textcolor, textalpha, textscale);
     }
 
@@ -2122,10 +2121,10 @@ function on_player_connected() {
     // Size: 0xcc
     function drawspeedacceltext(textcolor, textalpha, textscale, textoffset) {
         if (isdefined(self.script_airspeed)) {
-            print3d(self.origin + (0, 0, textoffset[2] * 2), "<unknown string>" + self.script_airspeed, textcolor, textalpha, textscale);
+            print3d(self.origin + (0, 0, textoffset[2] * 2), "<dev string:x9bf>" + self.script_airspeed, textcolor, textalpha, textscale);
         }
         if (isdefined(self.script_accel)) {
-            print3d(self.origin + (0, 0, textoffset[2] * 3), "<unknown string>" + self.script_accel, textcolor, textalpha, textscale);
+            print3d(self.origin + (0, 0, textoffset[2] * 3), "<dev string:x9d3>" + self.script_accel, textcolor, textalpha, textscale);
         }
     }
 
@@ -2138,9 +2137,9 @@ function on_player_connected() {
         ent = self;
         entfirsttarget = ent.targetname;
         while (isdefined(ent.target)) {
-            enttarget = getent(ent.target, "<unknown string>");
+            enttarget = getent(ent.target, "<dev string:x162>");
             ent thread drawpathsegment(enttarget, linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg);
-            if (ent.targetname == "<unknown string>") {
+            if (ent.targetname == "<dev string:x9e4>") {
                 entfirsttarget = ent.target;
             } else if (ent.target == entfirsttarget) {
                 break;
@@ -2157,7 +2156,7 @@ function on_player_connected() {
     function drawpathsegment(enttarget, linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg) {
         level endon(endonmsg);
         while (drawtime > 0) {
-            if (isdefined(self.targetname) && self.targetname == "<unknown string>") {
+            if (isdefined(self.targetname) && self.targetname == "<dev string:x954>") {
                 print3d(self.origin + textoffset, self.targetname, textcolor, textalpha, textscale);
             }
             line(self.origin, enttarget.origin, linecolor);

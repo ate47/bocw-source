@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\util_shared;
 
 #namespace mp_cartel;
 
@@ -23,7 +22,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_cartel/mp_cartel
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ec57d5b, Offset: 0x1e8
 // Size: 0x40
 function on_gameplay_started(*localclientnum) {
@@ -33,7 +32,7 @@ function on_gameplay_started(*localclientnum) {
 }
 
 // Namespace mp_cartel/mp_cartel
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2372a91c, Offset: 0x230
 // Size: 0x1b4
 function function_1ab1b817() {

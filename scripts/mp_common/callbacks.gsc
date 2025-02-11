@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_killed.gsc;
-#using scripts\mp_common\player\player_damage.gsc;
-#using scripts\mp_common\player\player_disconnect.gsc;
-#using scripts\mp_common\player\player_connect.gsc;
-#using scripts\mp_common\player\player_callbacks.gsc;
-#using scripts\mp_common\gametypes\hostmigration.gsc;
-#using scripts\mp_common\gametypes\globallogic_scriptmover.gsc;
-#using scripts\mp_common\gametypes\globallogic_actor.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\globallogic\globallogic_vehicle.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\globallogic\globallogic_vehicle;
+#using scripts\core_common\system_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_actor;
+#using scripts\mp_common\gametypes\globallogic_scriptmover;
+#using scripts\mp_common\gametypes\hostmigration;
+#using scripts\mp_common\player\player_callbacks;
+#using scripts\mp_common\player\player_connect;
+#using scripts\mp_common\player\player_damage;
+#using scripts\mp_common\player\player_disconnect;
+#using scripts\mp_common\player\player_killed;
+#using scripts\weapons\deployable;
 
 #namespace callback;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcbe596e4, Offset: 0x138
 // Size: 0x14
 function private preinit() {
@@ -32,7 +31,7 @@ function private preinit() {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xef95eaef, Offset: 0x158
 // Size: 0x6c
 function on_prematch_end(func, obj) {
@@ -44,19 +43,19 @@ function on_prematch_end(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x878d8a9f, Offset: 0x1d0
 // Size: 0x6c
 function function_c11071a8(func, obj) {
     if (self == level) {
-        add_callback(#"hash_61d33e99084dd46c", func, obj);
+        add_callback(#"prematch_start", func, obj);
         return;
     }
-    function_d8abfc3d(#"hash_61d33e99084dd46c", func, obj);
+    function_d8abfc3d(#"prematch_start", func, obj);
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe11c1727, Offset: 0x248
 // Size: 0x3c
 function on_changed_specialist(func, obj) {
@@ -64,7 +63,7 @@ function on_changed_specialist(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec6ffaaf, Offset: 0x290
 // Size: 0x2cc
 function set_default_callbacks() {

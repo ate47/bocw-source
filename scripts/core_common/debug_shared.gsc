@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace debug;
 
@@ -27,7 +26,7 @@
         callback::on_loadout(&on_loadout);
         /#
             if (getdvarint(#"hash_2bf322fc226fa167", 0)) {
-                adddebugcommand("<unknown string>");
+                adddebugcommand("<dev string:x38>");
             }
         #/
     }
@@ -37,10 +36,10 @@
     // Checksum 0x7b863afa, Offset: 0x1a0
     // Size: 0x23a
     function private function_ddca74dd() {
-        weaponname = getdvar(#"hash_136a06446fceeaa5", "<unknown string>");
-        if (weaponname != "<unknown string>") {
+        weaponname = getdvar(#"hash_136a06446fceeaa5", "<dev string:x5f>");
+        if (weaponname != "<dev string:x5f>") {
             waitframe(1);
-            split = strtok(weaponname, "<unknown string>");
+            split = strtok(weaponname, "<dev string:x63>");
             switch (split.size) {
             case 1:
             default:
@@ -80,18 +79,18 @@
     // Checksum 0xd76f282e, Offset: 0x410
     // Size: 0x3f0
     function devgui_debug_key_value() {
-        a_keys = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
+        a_keys = array("<dev string:x68>", "<dev string:x72>", "<dev string:x7e>", "<dev string:x8b>", "<dev string:xa0>", "<dev string:xae>", "<dev string:xbf>", "<dev string:xcd>", "<dev string:xd7>");
         setdvar(#"debug_key_value", 0);
         setdvar(#"debug_key_value_dist", 2000);
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:xdf>");
+        adddebugcommand("<dev string:x132>");
         foreach (str_key in a_keys) {
-            adddebugcommand("<unknown string>" + str_key + "<unknown string>" + str_key + "<unknown string>");
+            adddebugcommand("<dev string:x17f>" + str_key + "<dev string:x1b2>" + str_key + "<dev string:x1cd>");
         }
-        while (!flag::exists("<unknown string>")) {
+        while (!flag::exists("<dev string:x1d3>")) {
             util::wait_network_frame();
         }
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x1d3>");
         while (true) {
             debug_key_value = getdvar(#"debug_key_value", 0);
             if (debug_key_value != 0) {
@@ -110,7 +109,7 @@
             } else {
                 level notify(#"debug_key_value");
             }
-            wait(randomfloatrange(0.133333, 0.266667));
+            wait randomfloatrange(0.133333, 0.266667);
         }
     }
 
@@ -138,7 +137,7 @@
                 }
                 waitframe(1);
             }
-            wait(1);
+            wait 1;
         }
     }
 
@@ -157,12 +156,12 @@
             if (isdefined(n_time)) {
                 __s = spawnstruct();
                 __s endon(#"timeout");
-                __s util::delay_notify(n_time, "<unknown string>");
+                __s util::delay_notify(n_time, "<dev string:x1eb>");
             }
             while (true) {
                 value = self.(str_key);
                 if (isdefined(value)) {
-                    print3d(self.origin, isdefined(value) ? "<unknown string>" + value : "<unknown string>", (0, 0, 1), 1, n_scale, 1);
+                    print3d(self.origin, isdefined(value) ? "<dev string:x5f>" + value : "<dev string:x5f>", (0, 0, 1), 1, n_scale, 1);
                 }
                 waitframe(1);
             }
@@ -174,7 +173,7 @@
     // Checksum 0x610425e0, Offset: 0xb90
     // Size: 0x62
     function drawdebuglineinternal(frompoint, topoint, color, durationframes) {
-                for (i = 0; i < durationframes; i++) {
+        for (i = 0; i < durationframes; i++) {
             line(frompoint, topoint, color);
             waitframe(1);
         }
@@ -185,7 +184,7 @@
     // Checksum 0xd5a1a6a4, Offset: 0xc00
     // Size: 0x8a
     function drawdebugenttoentinternal(ent1, ent2, color, durationframes) {
-                for (i = 0; i < durationframes; i++) {
+        for (i = 0; i < durationframes; i++) {
             if (!isdefined(ent1) || !isdefined(ent2)) {
                 return;
             }
@@ -270,11 +269,11 @@
         location = params.vpoint;
         target = self;
         smeansofdeath = params.smeansofdeath;
-        if (smeansofdeath == "<unknown string>" || smeansofdeath == "<unknown string>") {
+        if (smeansofdeath == "<dev string:x1f6>" || smeansofdeath == "<dev string:x205>") {
             location = self.origin + (0, 0, 60);
         }
         if (damage) {
-            thread function_2cde0af9("<unknown string>" + damage, (1, 1, 1), location, (randomfloatrange(-1, 1), randomfloatrange(-1, 1), 2), 30);
+            thread function_2cde0af9("<dev string:x63>" + damage, (1, 1, 1), location, (randomfloatrange(-1, 1), randomfloatrange(-1, 1), 2), 30);
         }
     }
 

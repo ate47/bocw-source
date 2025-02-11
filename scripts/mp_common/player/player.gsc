@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
 #using script_44b0b8420eabacad;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\player\player_utils;
 
 #namespace player;
 
@@ -23,7 +22,7 @@ function autoexec __init__() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcd87fce0, Offset: 0x178
 // Size: 0x3ec
 function spectate_player_watcher() {
@@ -77,12 +76,12 @@ function spectate_player_watcher() {
             }
             self.watchingactiveclient = 0;
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc3f2cb11, Offset: 0x570
 // Size: 0x2c
 function reset_doublexp_timer() {
@@ -91,7 +90,7 @@ function reset_doublexp_timer() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfba002ba, Offset: 0x5a8
 // Size: 0xbc
 function doublexp_timer() {
@@ -101,7 +100,7 @@ function doublexp_timer() {
     if (!level.onlinegame) {
         return;
     }
-    wait(60);
+    wait 60;
     if (level.onlinegame) {
         if (!isdefined(self)) {
             return;
@@ -112,7 +111,7 @@ function doublexp_timer() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19186c5c, Offset: 0x670
 // Size: 0xbc
 function on_player_spawned() {
@@ -125,7 +124,7 @@ function on_player_spawned() {
     profilestop();
     if (self function_8b1a219a()) {
         self val::set(#"hash_6e3ee1d6ea855f0a", "allow_jump", 0);
-        wait(0.5);
+        wait 0.5;
         if (!isdefined(self)) {
             return;
         }
@@ -134,7 +133,7 @@ function on_player_spawned() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa536ceed, Offset: 0x738
 // Size: 0x24
 function on_game_playing() {
@@ -142,7 +141,7 @@ function on_game_playing() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1bac61d, Offset: 0x768
 // Size: 0x6e
 function function_490dc3d3() {
@@ -150,7 +149,7 @@ function function_490dc3d3() {
 }
 
 // Namespace player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc894fd11, Offset: 0x7e0
 // Size: 0x98
 function function_c3eed624() {
@@ -174,23 +173,23 @@ function last_valid_position() {
     while (!isdefined(self.last_valid_position) && isdefined(self)) {
         origin = self function_c3eed624();
         self.last_valid_position = getclosestpointonnavmesh(origin, 2048, 0);
-        wait(0.1);
+        wait 0.1;
     }
     while (isdefined(self)) {
         origin = self function_c3eed624();
         if (getdvarint(#"hash_1a597b008cc91bd8", 0) > 0) {
-            wait(1);
+            wait 1;
             continue;
         }
         playerradius = self getpathfindingradius();
         if (distance2dsquared(origin, self.last_valid_position) < sqr(playerradius) && sqr(origin[2] - self.last_valid_position[2]) < sqr(16)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (ispointonnavmesh(origin, self)) {
             self.last_valid_position = origin;
         } else if (!ispointonnavmesh(origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(origin, self.last_valid_position) < sqr(32)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         } else {
             position = getclosestpointonnavmesh(origin, 100, playerradius);
@@ -198,7 +197,7 @@ function last_valid_position() {
                 self.last_valid_position = position;
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 

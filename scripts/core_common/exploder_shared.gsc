@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
 
 #namespace exploder;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x77fa6fce, Offset: 0x1f8
 // Size: 0x1c
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc98e27fa, Offset: 0x220
 // Size: 0xd38
 function private postinit() {
@@ -74,7 +73,7 @@ function private postinit() {
             script_exploders[script_exploders.size] = potentialexploders[i];
         }
     }
-    println("<unknown string>" + potentialexploders.size);
+    println("<dev string:x38>" + potentialexploders.size);
     potentialexploders = getentarray("script_model", "classname");
     for (i = 0; i < potentialexploders.size; i++) {
         if (isdefined(potentialexploders[i].script_prefab_exploder)) {
@@ -84,7 +83,7 @@ function private postinit() {
             script_exploders[script_exploders.size] = potentialexploders[i];
         }
     }
-    println("<unknown string>" + potentialexploders.size);
+    println("<dev string:x6a>" + potentialexploders.size);
     potentialexploders = getentarray("item_health", "classname");
     for (i = 0; i < potentialexploders.size; i++) {
         if (isdefined(potentialexploders[i].script_prefab_exploder)) {
@@ -94,7 +93,7 @@ function private postinit() {
             script_exploders[script_exploders.size] = potentialexploders[i];
         }
     }
-    println("<unknown string>" + potentialexploders.size);
+    println("<dev string:x9d>" + potentialexploders.size);
     if (!isdefined(level.createfxent)) {
         level.createfxent = [];
     }
@@ -129,7 +128,7 @@ function private postinit() {
             ent.v[#"fxid"] = exploder.script_fxid;
         }
         ent.v[#"exploder"] = exploder.script_exploder;
-        assert(isdefined(exploder.script_exploder), "<unknown string>" + exploder.origin + "<unknown string>");
+        assert(isdefined(exploder.script_exploder), "<dev string:xcf>" + exploder.origin + "<dev string:xe6>");
         if (!isdefined(ent.v[#"delay"])) {
             ent.v[#"delay"] = 0;
         }
@@ -195,7 +194,7 @@ function exploder_before_load(num) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0b7759c, Offset: 0xf90
 // Size: 0x54
 function exploder(exploder_id) {
@@ -215,7 +214,7 @@ function function_993369d6(exploder_string) {
         activate_radiant_exploder(exploder_string, 1);
         return;
     }
-    assertmsg("<unknown string>");
+    assertmsg("<dev string:x101>");
 }
 
 // Namespace exploder/exploder_shared
@@ -232,13 +231,13 @@ function exploder_stop(num) {
 // Size: 0x3c
 function exploder_sound() {
     if (isdefined(self.script_delay)) {
-        wait(self.script_delay);
+        wait self.script_delay;
     }
     self playsound(level.scr_sound[self.script_sound]);
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4704bcea, Offset: 0x10d8
 // Size: 0x1e4
 function cannon_effect() {
@@ -259,7 +258,7 @@ function cannon_effect() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdfe564a6, Offset: 0x12c8
 // Size: 0x1a4
 function fire_effect() {
@@ -284,7 +283,7 @@ function fire_effect() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb7e177ea, Offset: 0x1478
 // Size: 0x1c
 function sound_effect() {
@@ -292,7 +291,7 @@ function sound_effect() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa47157a6, Offset: 0x14a0
 // Size: 0x74
 function effect_soundalias() {
@@ -303,7 +302,7 @@ function effect_soundalias() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1c0e36d6, Offset: 0x1520
 // Size: 0x304
 function trail_effect() {
@@ -334,14 +333,14 @@ function trail_effect() {
     if (!isdefined(self.v[#"trailfxtimeout"])) {
         return;
     }
-    wait(self.v[#"trailfxtimeout"]);
+    wait self.v[#"trailfxtimeout"];
     if (isdefined(temp_ent)) {
         temp_ent delete();
     }
 }
 
 // Namespace exploder/exploder_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa532c018, Offset: 0x1830
 // Size: 0x4c
 function trail_effect_ender(ent, ender) {
@@ -351,7 +350,7 @@ function trail_effect_ender(ent, ender) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8289e003, Offset: 0x1888
 // Size: 0x11c
 function exploder_delay() {
@@ -367,12 +366,12 @@ function exploder_delay() {
         max_delay = self.v[#"delay_max"];
     }
     if (min_delay > 0) {
-        wait(randomfloatrange(min_delay, max_delay));
+        wait randomfloatrange(min_delay, max_delay);
     }
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x83009e99, Offset: 0x19b0
 // Size: 0x8c
 function exploder_playsound() {
@@ -383,15 +382,15 @@ function exploder_playsound() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6153f13f, Offset: 0x1a48
 // Size: 0x114
 function brush_delete() {
     num = self.v[#"exploder"];
     if (isdefined(self.v[#"delay"])) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     } else {
-        wait(0.05);
+        wait 0.05;
     }
     if (!isdefined(self.model)) {
         return;
@@ -405,12 +404,12 @@ function brush_delete() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9f43a777, Offset: 0x1b68
 // Size: 0x8c
 function brush_show() {
     if (isdefined(self.v[#"delay"])) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     }
     assert(isdefined(self.model));
     self.model show();
@@ -418,12 +417,12 @@ function brush_show() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe3813df6, Offset: 0x1c00
 // Size: 0x21c
 function brush_throw() {
     if (isdefined(self.v[#"delay"])) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     }
     ent = undefined;
     if (isdefined(self.v[#"target"])) {
@@ -444,12 +443,12 @@ function brush_throw() {
     self.model rotatevelocity((x, y, z), 12);
     self.model movegravity((x, y, z), 12);
     self.v[#"exploder"] = undefined;
-    wait(6);
+    wait 6;
     self.model delete();
 }
 
 // Namespace exploder/exploder_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf4f216f4, Offset: 0x1e28
 // Size: 0xfa
 function exploder_trigger(trigger, script_value) {
@@ -458,9 +457,9 @@ function exploder_trigger(trigger, script_value) {
     trigger trigger::wait_till();
     if (isdefined(trigger.script_chance) && randomfloat(1) > trigger.script_chance) {
         if (isdefined(trigger.script_delay)) {
-            wait(trigger.script_delay);
+            wait trigger.script_delay;
         } else {
-            wait(4);
+            wait 4;
         }
         level thread exploder_trigger(trigger, script_value);
         return;
@@ -470,7 +469,7 @@ function exploder_trigger(trigger, script_value) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe53feac5, Offset: 0x1f30
 // Size: 0xc8
 function reportexploderids() {
@@ -478,15 +477,15 @@ function reportexploderids() {
         if (!isdefined(level._exploder_ids)) {
             return;
         }
-        println("<unknown string>");
+        println("<dev string:x140>");
         foreach (k, v in level._exploder_ids) {
-            println(k + "<unknown string>" + v);
+            println(k + "<dev string:x161>" + v);
         }
     #/
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xab79bffb, Offset: 0x2000
 // Size: 0xb8
 function getexploderid(ent) {
@@ -502,7 +501,7 @@ function getexploderid(ent) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa2129771, Offset: 0x20c0
 // Size: 0x80
 function createexploder(fxid) {
@@ -514,7 +513,7 @@ function createexploder(fxid) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4fd546cf, Offset: 0x2148
 // Size: 0x11c
 function activate_exploder(num) {
@@ -537,7 +536,7 @@ function activate_exploder(num) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcfbf7a85, Offset: 0x2270
 // Size: 0x6c
 function activate_radiant_exploder(string, immediate) {
@@ -550,13 +549,13 @@ function activate_radiant_exploder(string, immediate) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3b1f5ca, Offset: 0x22e8
 // Size: 0x304
 function activate_individual_exploder(*num) {
     level notify("exploder" + self.v[#"exploder"]);
     if (!level.clientscripts || !isdefined(level._exploder_ids[int(self.v[#"exploder"])]) || isdefined(self.v[#"exploder_server"])) {
-        println("<unknown string>" + self.v[#"exploder"] + "<unknown string>");
+        println("<dev string:x168>" + self.v[#"exploder"] + "<dev string:x175>");
         if (isdefined(self.v[#"firefx"])) {
             self thread fire_effect();
         }
@@ -590,7 +589,7 @@ function activate_individual_exploder(*num) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30c6fc9d, Offset: 0x25f8
 // Size: 0x94
 function activate_exploder_on_clients(num) {
@@ -607,7 +606,7 @@ function activate_exploder_on_clients(num) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcbbd483e, Offset: 0x2698
 // Size: 0xbc
 function stop_exploder(num) {
@@ -625,7 +624,7 @@ function stop_exploder(num) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x53f1e33a, Offset: 0x2760
 // Size: 0xac
 function delete_exploder_on_clients(exploder_id) {
@@ -653,11 +652,11 @@ function kill_exploder(exploder_string) {
         killclientradiantexploder(exploder_string);
         return;
     }
-    assertmsg("<unknown string>");
+    assertmsg("<dev string:x101>");
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7b784343, Offset: 0x2880
 // Size: 0x114
 function exploder_damage() {
@@ -673,24 +672,24 @@ function exploder_damage() {
     }
     damage = self.v[#"damage"];
     origin = self.v[#"origin"];
-    wait(delay);
+    wait delay;
     self.model radiusdamage(origin, radius, damage, damage / 3);
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8f51bb, Offset: 0x29a0
 // Size: 0x10c
 function earthquake() {
     earthquake_name = self.v[#"earthquake"];
-    assert(isdefined(level.earthquake) && isdefined(level.earthquake[earthquake_name]), "<unknown string>" + earthquake_name + "<unknown string>");
+    assert(isdefined(level.earthquake) && isdefined(level.earthquake[earthquake_name]), "<dev string:x18c>" + earthquake_name + "<dev string:x19f>");
     self exploder_delay();
     eq = level.earthquake[earthquake_name];
     earthquake(eq[#"magnitude"], eq[#"duration"], self.v[#"origin"], eq[#"radius"]);
 }
 
 // Namespace exploder/exploder_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb98c4779, Offset: 0x2ab8
 // Size: 0x17c
 function rumble() {
@@ -699,7 +698,7 @@ function rumble() {
     if (isdefined(self.v[#"damage_radius"])) {
         n_rumble_threshold_squared = self.v[#"damage_radius"] * self.v[#"damage_radius"];
     } else {
-        println("<unknown string>" + self.v[#"exploder"] + "<unknown string>");
+        println("<dev string:x1e7>" + self.v[#"exploder"] + "<dev string:x1f5>");
         n_rumble_threshold_squared = 16384;
     }
     for (i = 0; i < a_players.size; i++) {
@@ -711,11 +710,11 @@ function rumble() {
 }
 
 // Namespace exploder/exploder_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb0426449, Offset: 0x2c40
 // Size: 0x2c
 function stop_after_duration(name, duration) {
-    wait(duration);
+    wait duration;
     stop_exploder(name);
 }
 

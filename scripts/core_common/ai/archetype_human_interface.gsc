@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\archetype_human.gsc;
+#using scripts\core_common\ai\archetype_human;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\ai_interface;
 
 #namespace humaninterface;
 
 // Namespace humaninterface/archetype_human_interface
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bdd268f, Offset: 0x198
 // Size: 0x4ec
 function registerhumaninterfaceattributes() {
@@ -23,13 +22,13 @@ function registerhumaninterfaceattributes() {
     ai::registermatchedinterface(#"human", #"vignette_mode", "off", array("off", "slow", "fast"), &humansoldierserverutils::vignettemodecallback);
     ai::registermatchedinterface(#"human", #"usegrenades", 1, array(1, 0));
     ai::registermatchedinterface(#"human", #"demeanor", "combat", array("combat", "patrol", "cqb", "alert"), &humansoldierserverutils::function_20fdb709);
-    ai::registermatchedinterface(#"human", #"hash_1e055d856280060c", "none", array("none", "ads", "up", "down"), &humansoldierserverutils::function_beabbc97);
+    ai::registermatchedinterface(#"human", #"aim_state", "none", array("none", "ads", "up", "down"), &humansoldierserverutils::function_beabbc97);
 }
 
 #namespace humansoldierserverutils;
 
 // Namespace humansoldierserverutils/archetype_human_interface
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x4cf5baea, Offset: 0x690
 // Size: 0x64
 function useanimationoverridecallback(entity, *attribute, *oldvalue, value) {
@@ -41,7 +40,7 @@ function useanimationoverridecallback(entity, *attribute, *oldvalue, value) {
 }
 
 // Namespace humansoldierserverutils/archetype_human_interface
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x78aa2b95, Offset: 0x700
 // Size: 0x19a
 function vignettemodecallback(entity, *attribute, *oldvalue, value) {
@@ -70,7 +69,7 @@ function vignettemodecallback(entity, *attribute, *oldvalue, value) {
 }
 
 // Namespace humansoldierserverutils/archetype_human_interface
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x519075eb, Offset: 0x8a8
 // Size: 0x17a
 function function_20fdb709(entity, *attribute, oldvalue, value) {
@@ -98,7 +97,7 @@ function function_20fdb709(entity, *attribute, oldvalue, value) {
 }
 
 // Namespace humansoldierserverutils/archetype_human_interface
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x337fd005, Offset: 0xa30
 // Size: 0x132
 function function_beabbc97(entity, *attribute, oldvalue, value) {

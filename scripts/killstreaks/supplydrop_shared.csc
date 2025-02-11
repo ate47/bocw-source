@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_324d329b31b9b4ec;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace supplydrop;
 
 // Namespace supplydrop/supplydrop_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcdb4a1, Offset: 0x1e0
 // Size: 0x294
 function init_shared() {
@@ -30,7 +29,7 @@ function init_shared() {
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x5278ef5c, Offset: 0x480
 // Size: 0x16c
 function function_4559c532(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -49,7 +48,7 @@ function function_4559c532(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x15bfb0b1, Offset: 0x5f8
 // Size: 0x86
 function function_724944f0(localclientnum) {
@@ -65,7 +64,7 @@ function function_724944f0(localclientnum) {
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x84ccf2c0, Offset: 0x688
 // Size: 0x3c
 function setupanimtree() {
@@ -75,7 +74,7 @@ function setupanimtree() {
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x82ea1a20, Offset: 0x6d0
 // Size: 0x62
 function supplydrop_care_package_state(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -85,7 +84,7 @@ function supplydrop_care_package_state(*localclientnum, *oldval, newval, *bnewen
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x23418da5, Offset: 0x740
 // Size: 0x76
 function supplydrop_ai_tank_state(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -96,7 +95,7 @@ function supplydrop_ai_tank_state(*localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4e325a3a, Offset: 0x7c0
 // Size: 0x130
 function updatemarkerthread(localclientnum) {
@@ -113,7 +112,7 @@ function updatemarkerthread(localclientnum) {
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf78ae3e4, Offset: 0x8f8
 // Size: 0x102
 function stopcrateeffects(localclientnum) {
@@ -149,7 +148,7 @@ function cleanupthrustersthread(localclientnum) {
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb72b1b39, Offset: 0xa88
 // Size: 0x94
 function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -199,7 +198,7 @@ function marker_state_changed(localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace supplydrop/supplydrop_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa8b3efc7, Offset: 0xd98
 // Size: 0xae
 function function_feeeb71b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

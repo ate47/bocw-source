@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_7ca3324ffa5389e4;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\animation_shared.csc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace player_free_fall;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_free_fall/player_free_fall
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x100
 // Size: 0x4
 function private preinit() {

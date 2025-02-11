@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
 
 #namespace wz_forest;
 
@@ -22,7 +21,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace wz_forest/wz_forest
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x40edb887, Offset: 0x218
 // Size: 0x1b8
 function private function_103cfebf() {
@@ -38,7 +37,7 @@ function private function_103cfebf() {
 }
 
 // Namespace wz_forest/wz_forest
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc183a501, Offset: 0x3d8
 // Size: 0x34
 function on_gameplay_started(*localclientnum) {

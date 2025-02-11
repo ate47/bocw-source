@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
 
 #namespace radiant_live_update;
 
@@ -44,7 +43,7 @@
         self endon(#"stop_struct_render");
         while (isdefined(selected_struct) && isdefined(selected_struct.origin)) {
             box(selected_struct.origin, (-16, -16, -16), (16, 16, 16), 0, (1, 0.4, 0.4));
-            wait(0.01);
+            wait 0.01;
         }
     }
 

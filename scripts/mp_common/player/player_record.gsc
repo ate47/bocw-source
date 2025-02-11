@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\core_common\persistence_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\bb_shared.gsc;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\persistence_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\player\player_loadout;
 
 #namespace player_record;
 
 // Namespace player_record/player_record
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x41ee7b1e, Offset: 0x350
 // Size: 0x8c
 function private function_685505ce(inputarray) {
@@ -34,7 +33,7 @@ function private function_685505ce(inputarray) {
 }
 
 // Namespace player_record/player_record
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x979fffa1, Offset: 0x3e8
 // Size: 0x10ac
 function function_96d38b95(result) {
@@ -250,17 +249,17 @@ function function_96d38b95(result) {
 }
 
 // Namespace player_record/player_record
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe8d9fb6c, Offset: 0x14a0
 // Size: 0x204
 function record_special_move_data_for_life(killer) {
     if (!isdefined(self.lastwallrunstarttime) || !isdefined(self.lastdoublejumpstarttime) || !isdefined(self.timespentwallrunninginlife) || !isdefined(self.numberofdoublejumpsinlife) || !isdefined(self.numberofslidesinlife)) {
-        println("<unknown string>");
+        println("<dev string:x38>");
         return;
     }
     if (isdefined(killer)) {
         if (!isdefined(killer.lastwallrunstarttime) || !isdefined(killer.lastdoublejumpstarttime)) {
-            println("<unknown string>");
+            println("<dev string:x7b>");
             return;
         }
         matchrecordlogspecialmovedataforlife(self, isdefined(self.lastswimmingstarttime) ? self.lastswimmingstarttime : 0, self.lastwallrunstarttime, self.lastslidestarttime, self.lastdoublejumpstarttime, isdefined(self.timespentswimminginlife) ? self.timespentswimminginlife : 0, self.timespentwallrunninginlife, self.numberofdoublejumpsinlife, self.numberofslidesinlife, killer, killer.lastswimmingstarttime, killer.lastwallrunstarttime, isdefined(killer.lastslidestarttime) ? killer.lastslidestarttime : 0, killer.lastdoublejumpstarttime);
@@ -270,7 +269,7 @@ function record_special_move_data_for_life(killer) {
 }
 
 // Namespace player_record/player_record
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x16ee13b4, Offset: 0x16b0
 // Size: 0x38c
 function record_global_mp_stats_for_player_at_match_start() {
@@ -306,7 +305,7 @@ function record_global_mp_stats_for_player_at_match_start() {
 }
 
 // Namespace player_record/player_record
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x37f84110, Offset: 0x1a48
 // Size: 0x364
 function record_global_mp_stats_for_player_at_match_end() {
@@ -339,7 +338,7 @@ function record_global_mp_stats_for_player_at_match_end() {
 }
 
 // Namespace player_record/player_record
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a08d930, Offset: 0x1db8
 // Size: 0x304
 function record_misc_player_stats() {
@@ -376,7 +375,7 @@ function record_misc_player_stats() {
 }
 
 // Namespace player_record/player_record
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbdc4f4a7, Offset: 0x20c8
 // Size: 0x104
 function function_ea5da381() {
@@ -391,7 +390,7 @@ function function_ea5da381() {
 }
 
 // Namespace player_record/player_record
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe9f20825, Offset: 0x21d8
 // Size: 0x90a
 function function_7569c0fb() {
@@ -480,7 +479,7 @@ function function_7569c0fb() {
     case #"hash_6f784eb075451055":
     case #"dm_bb":
     case #"gunfight":
-    case #"hash_451623a99cfee5d9":
+    case #"gun_rambo":
     case #"gun":
     case #"conf_bb":
     case #"tdm":

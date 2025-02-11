@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\mp_common\laststand.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\laststand;
 
 #namespace vip;
 
@@ -12,9 +11,9 @@
 // Checksum 0x720240e6, Offset: 0x120
 // Size: 0x10c
 function event_handler[gametype_init] main(*eventstruct) {
-    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"hash_11ea1e04b846f98e", #"attackingteam", 1, 2, "int", undefined, 0, 1);
-    clientfield::register("allplayers", "vip_keyline", 1, 1, "int", &function_c527b4a1, 0, 1);
-    clientfield::register("toplayer", "vip_ascend_postfx", 1, 1, "int", &function_4cbca584, 0, 0);
+    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"war_data", #"attackingteam", 1, 2, "int", undefined, 0, 1);
+    clientfield::register("allplayers", "vip_keyline", 1, 1, "int", &vip_keyline, 0, 1);
+    clientfield::register("toplayer", "vip_ascend_postfx", 1, 1, "int", &vip_ascend_postfx, 0, 0);
     callback::on_localclient_connect(&on_localclient_connect);
 }
 
@@ -30,7 +29,7 @@ function on_localclient_connect(*localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0x7a5b0009, Offset: 0x2a0
 // Size: 0x1d4
-function function_c527b4a1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function vip_keyline(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death", #"disconnect");
     self util::waittill_dobj(fieldname);
     var_5f682f83 = function_9b3f0ed1(fieldname);
@@ -52,7 +51,7 @@ function function_c527b4a1(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xd1da8bd0, Offset: 0x480
 // Size: 0xb4
-function function_4cbca584(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function vip_ascend_postfx(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death", #"disconnect");
     if (bwastimejump) {
         self postfx::playpostfxbundle(#"hash_19450de64ead5f8e");

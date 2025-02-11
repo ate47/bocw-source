@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\core_common\bots\bot_animation.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\bots\bot_animation;
+#using scripts\core_common\callbacks_shared;
 
 #namespace bot_traversals;
 
 // Namespace bot_traversals/bot_traversals
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4663c1e5, Offset: 0xc0
 // Size: 0x34
 function preinit() {
@@ -14,7 +13,7 @@ function preinit() {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x94c9e53d, Offset: 0x100
 // Size: 0x15c
 function private function_45ed4ebd(eventstruct) {
@@ -45,12 +44,12 @@ function private function_45ed4ebd(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb8e94faf, Offset: 0x268
 // Size: 0x84
 function private function_b1528302(eventstruct, type) {
     /#
-        self thread function_c20f7b00(eventstruct, "<unknown string>" + function_9e72a96(type));
+        self thread function_c20f7b00(eventstruct, "<dev string:x38>" + function_9e72a96(type));
     #/
     eventstruct.type = type;
     self.bot.traversal = eventstruct;
@@ -58,7 +57,7 @@ function private function_b1528302(eventstruct, type) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc2fc9ec2, Offset: 0x2f8
 // Size: 0x54
 function private function_1aaef814(*notifyhash) {
@@ -70,7 +69,7 @@ function private function_1aaef814(*notifyhash) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x33f737ab, Offset: 0x358
 // Size: 0x52
 function private function_5186819c(eventstruct) {
@@ -78,7 +77,7 @@ function private function_5186819c(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5ee1d292, Offset: 0x3b8
 // Size: 0xaa
 function private function_51cbae24(eventstruct) {
@@ -89,7 +88,7 @@ function private function_51cbae24(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1d13fe09, Offset: 0x470
 // Size: 0x1da
 function private function_c8aebd21(eventstruct) {
@@ -111,7 +110,7 @@ function private function_c8aebd21(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8d2608c, Offset: 0x658
 // Size: 0x1da
 function private function_38db71f(eventstruct) {
@@ -141,21 +140,21 @@ function private function_38db71f(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x432250b8, Offset: 0x840
 // Size: 0x34
 function private function_342c7f77(eventstruct) {
     /#
-        self thread function_c20f7b00(eventstruct, "<unknown string>");
+        self thread function_c20f7b00(eventstruct, "<dev string:x47>");
     #/
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x365da5ff, Offset: 0x880
 // Size: 0x1ac
 function private function_e48afac9(eventstruct) {
-    self endoncallback(&function_1aaef814, #"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
+    self endoncallback(&function_1aaef814, #"death", #"bot_shutdown", #"bot_stuck", #"entering_last_stand", #"animscripted_start");
     self function_b1528302(eventstruct, #"ladder");
     self botsetmovepoint(eventstruct.end_position);
     self botsetmovemagnitude(1);
@@ -171,11 +170,11 @@ function private function_e48afac9(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcdf0bb98, Offset: 0xa38
 // Size: 0x3b4
 function private function_9bd9969f(eventstruct) {
-    self endoncallback(&function_1aaef814, #"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
+    self endoncallback(&function_1aaef814, #"death", #"bot_shutdown", #"bot_stuck", #"entering_last_stand", #"animscripted_start");
     self function_b1528302(eventstruct, #"vault");
     self botsetmovepoint(eventstruct.end_position);
     self botsetmovemagnitude(1);
@@ -212,11 +211,11 @@ function private function_9bd9969f(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb060d715, Offset: 0xdf8
 // Size: 0x28c
 function private function_adeef583(eventstruct) {
-    self endoncallback(&function_1aaef814, #"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
+    self endoncallback(&function_1aaef814, #"death", #"bot_shutdown", #"bot_stuck", #"entering_last_stand", #"animscripted_start");
     self function_b1528302(eventstruct, #"jump");
     endpos = eventstruct.var_15dca465;
     self botsetmovepoint(endpos);
@@ -240,11 +239,11 @@ function private function_adeef583(eventstruct) {
 }
 
 // Namespace bot_traversals/bot_traversals
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x80db89df, Offset: 0x1090
 // Size: 0x25c
 function private function_b2ff3887(eventstruct) {
-    self endoncallback(&function_1aaef814, #"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
+    self endoncallback(&function_1aaef814, #"death", #"bot_shutdown", #"bot_stuck", #"entering_last_stand", #"animscripted_start");
     self function_b1528302(eventstruct, #"drop");
     self botsetmovepoint(eventstruct.end_position);
     self botsetmovemagnitude(1);
@@ -273,7 +272,7 @@ function private function_b2ff3887(eventstruct) {
 // Size: 0xc6
 function private function_c3452ef9(eventstruct) {
     /#
-        self thread function_c20f7b00(eventstruct, "<unknown string>");
+        self thread function_c20f7b00(eventstruct, "<dev string:x5e>");
     #/
     self.traversestartnode = eventstruct.start_node;
     self.traversalstartpos = eventstruct.start_position;
@@ -295,29 +294,29 @@ function private function_c3452ef9(eventstruct) {
     // Checksum 0x317067d, Offset: 0x13c8
     // Size: 0x5b6
     function private function_c20f7b00(eventstruct, str) {
-        self endon(#"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
+        self endon(#"death", #"bot_shutdown", #"bot_stuck", #"entering_last_stand", #"animscripted_start");
         textpos = vectorlerp(eventstruct.start_position, eventstruct.end_position, 0.5);
         yaw = vectortoangles(eventstruct.normal)[1];
         do {
-            if (self bot::should_record("<unknown string>")) {
-                record3dtext(str, textpos, (1, 1, 1), "<unknown string>", self, 0.5);
-                recordstar(eventstruct.start_position, (0, 1, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.start_position, (0, -64, 0), (0, 64, 0), yaw, (0, 1, 0), "<unknown string>", self);
-                recordstar(eventstruct.end_position, (1, 0, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.end_position, (0, -64, 0), (0, 64, 0), yaw, (1, 0, 0), "<unknown string>", self);
+            if (self bot::should_record("<dev string:x71>")) {
+                record3dtext(str, textpos, (1, 1, 1), "<dev string:x88>", self, 0.5);
+                recordstar(eventstruct.start_position, (0, 1, 0), "<dev string:x88>", self);
+                function_af72dbc5(eventstruct.start_position, (0, -64, 0), (0, 64, 0), yaw, (0, 1, 0), "<dev string:x88>", self);
+                recordstar(eventstruct.end_position, (1, 0, 0), "<dev string:x88>", self);
+                function_af72dbc5(eventstruct.end_position, (0, -64, 0), (0, 64, 0), yaw, (1, 0, 0), "<dev string:x88>", self);
                 if (isdefined(eventstruct.var_a8cc518d)) {
-                    recordstar(eventstruct.var_a8cc518d, (1, 1, 0), "<unknown string>", self);
-                    function_af72dbc5(eventstruct.var_a8cc518d, (0, -64, 0), (0, 64, 128), yaw, (1, 1, 0), "<unknown string>", self);
-                    recordline(eventstruct.start_position, eventstruct.var_a8cc518d, (0, 1, 1), "<unknown string>", self);
-                    recordline(eventstruct.end_position, eventstruct.var_a8cc518d, (0, 1, 1), "<unknown string>", self);
+                    recordstar(eventstruct.var_a8cc518d, (1, 1, 0), "<dev string:x88>", self);
+                    function_af72dbc5(eventstruct.var_a8cc518d, (0, -64, 0), (0, 64, 128), yaw, (1, 1, 0), "<dev string:x88>", self);
+                    recordline(eventstruct.start_position, eventstruct.var_a8cc518d, (0, 1, 1), "<dev string:x88>", self);
+                    recordline(eventstruct.end_position, eventstruct.var_a8cc518d, (0, 1, 1), "<dev string:x88>", self);
                 } else {
-                    recordline(eventstruct.start_position, eventstruct.end_position, (0, 1, 1), "<unknown string>", self);
+                    recordline(eventstruct.start_position, eventstruct.end_position, (0, 1, 1), "<dev string:x88>", self);
                 }
-                recordstar(eventstruct.var_883d42a7, (0, 1, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.var_883d42a7, (0, -64, 0), (0, 64, 128), yaw, (0, 1, 0), "<unknown string>", self);
-                recordstar(eventstruct.var_15dca465, (1, 0, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.var_15dca465, (0, -64, 0), (0, 64, 128), yaw, (1, 0, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.var_75f5c2cb, (-15, -15, 18), (15, 15, 72), yaw, (1, 0, 1), "<unknown string>", self);
+                recordstar(eventstruct.var_883d42a7, (0, 1, 0), "<dev string:x88>", self);
+                function_af72dbc5(eventstruct.var_883d42a7, (0, -64, 0), (0, 64, 128), yaw, (0, 1, 0), "<dev string:x88>", self);
+                recordstar(eventstruct.var_15dca465, (1, 0, 0), "<dev string:x88>", self);
+                function_af72dbc5(eventstruct.var_15dca465, (0, -64, 0), (0, 64, 128), yaw, (1, 0, 0), "<dev string:x88>", self);
+                function_af72dbc5(eventstruct.var_75f5c2cb, (-15, -15, 18), (15, 15, 72), yaw, (1, 0, 1), "<dev string:x88>", self);
                 if (isdefined(eventstruct.start_node)) {
                     self function_3e781451(eventstruct.start_node, (0, 1, 0));
                 }
@@ -328,10 +327,10 @@ function private function_c3452ef9(eventstruct) {
                     self function_3e781451(eventstruct.mantle_node, (1, 1, 0));
                 }
                 if (isdefined(eventstruct.var_34a82e04)) {
-                    recordline(eventstruct.var_34a82e04, eventstruct.var_5162591f, (1, 1, 0), "<unknown string>", self);
+                    recordline(eventstruct.var_34a82e04, eventstruct.var_5162591f, (1, 1, 0), "<dev string:x88>", self);
                 }
                 if (isdefined(eventstruct.var_87d52c5)) {
-                    recordline(eventstruct.var_87d52c5, eventstruct.var_19c7b18b, (1, 1, 0), "<unknown string>", self);
+                    recordline(eventstruct.var_87d52c5, eventstruct.var_19c7b18b, (1, 1, 0), "<dev string:x88>", self);
                 }
             }
             waitframe(1);
@@ -346,10 +345,10 @@ function private function_c3452ef9(eventstruct) {
         if (node.type == #"volume") {
             mins = (0, 0, 0) - node.aabb_extents;
             maxs = node.aabb_extents;
-            function_af72dbc5(node.origin, mins, maxs, node.angles[1], color, "<unknown string>", self);
+            function_af72dbc5(node.origin, mins, maxs, node.angles[1], color, "<dev string:x88>", self);
             return;
         }
-        function_af72dbc5(node.origin, (-15, -15, 0), (15, 15, 15), node.angles[1], color, "<unknown string>", self);
+        function_af72dbc5(node.origin, (-15, -15, 0), (15, 15, 15), node.angles[1], color, "<dev string:x88>", self);
     }
 
 #/

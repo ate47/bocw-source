@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\helicopter_shared;
 
 #namespace exfil_chopper;
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x649f5260, Offset: 0x1c0
 // Size: 0x2a
 function function_662f57c9() {
@@ -18,7 +17,7 @@ function function_662f57c9() {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xebd4f691, Offset: 0x1f8
 // Size: 0x1c0
 function function_c21c59f(var_f4a4fc64, objectivename) {
@@ -29,8 +28,8 @@ function function_c21c59f(var_f4a4fc64, objectivename) {
     hintstring = var_f4a4fc64.hintstring;
     trigger = level function_c5347667(origin, var_f389af4f, hintstring);
     var_8e875f24 = gameobjects::create_use_object(#"neutral", trigger, [], (0, 0, 0), objectivename);
-    var_8e875f24 gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
-    var_8e875f24 gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    var_8e875f24 gameobjects::allow_use(#"group_all");
+    var_8e875f24 gameobjects::set_visible(#"group_none");
     var_8e875f24 gameobjects::disable_object(undefined, 0);
     var_8e875f24 gameobjects::set_use_time(level.var_c2eba59b);
     var_8e875f24.cancontestclaim = 1;
@@ -44,7 +43,7 @@ function function_c21c59f(var_f4a4fc64, objectivename) {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x9c1663e4, Offset: 0x3c0
 // Size: 0x158
 function private function_c5347667(origin, var_f389af4f, hintstring) {
@@ -69,7 +68,7 @@ function private function_c5347667(origin, var_f389af4f, hintstring) {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1098460b, Offset: 0x520
 // Size: 0x132
 function function_f76880c5() {
@@ -85,7 +84,7 @@ function function_f76880c5() {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x23ca8f49, Offset: 0x660
 // Size: 0x164
 function function_7f1fe6f8(var_8e875f24) {
@@ -97,14 +96,14 @@ function function_7f1fe6f8(var_8e875f24) {
     var_8e875f24.helicopter function_6d6a37b3();
     var_8e875f24.helicopter function_71f99527();
     var_8e875f24 gameobjects::enable_object();
-    var_8e875f24 gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
-    var_8e875f24 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    var_8e875f24 gameobjects::allow_use(#"group_all");
+    var_8e875f24 gameobjects::set_visible(#"group_all");
     var_8e875f24 gameobjects::set_flags(0);
     clientfield::set_world_uimodel("hud_items_fireteam.exfil_state", 3);
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2947bc8f, Offset: 0x7d0
 // Size: 0x160
 function function_d4774e31(origin, angles) {
@@ -125,7 +124,7 @@ function function_d4774e31(origin, angles) {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5fce4ac0, Offset: 0x938
 // Size: 0x8c
 function function_80d5586c(var_8e875f24) {
@@ -142,7 +141,7 @@ function function_80d5586c(var_8e875f24) {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1b377822, Offset: 0x9d0
 // Size: 0x74
 function function_6d6a37b3() {
@@ -152,7 +151,7 @@ function function_6d6a37b3() {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbf2460e5, Offset: 0xa50
 // Size: 0xfc
 function function_71f99527() {
@@ -166,7 +165,7 @@ function function_71f99527() {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2d115b66, Offset: 0xb58
 // Size: 0x16a
 function private function_1c85a66(helicopter) {
@@ -183,7 +182,7 @@ function private function_1c85a66(helicopter) {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa75f2bc8, Offset: 0xcd0
 // Size: 0xd4
 function private function_eae9cdce(helicopter) {
@@ -196,7 +195,7 @@ function private function_eae9cdce(helicopter) {
 }
 
 // Namespace exfil_chopper/exfil_chopper
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb8e9590f, Offset: 0xdb0
 // Size: 0xa8
 function private function_ced42479(helicopter, rope) {
@@ -221,8 +220,8 @@ function private function_ced42479(helicopter, rope) {
             if (!isdefined(rope)) {
                 continue;
             }
-            start = rope gettagorigin("<unknown string>");
-            end = rope gettagorigin("<unknown string>");
+            start = rope gettagorigin("<dev string:x38>");
+            end = rope gettagorigin("<dev string:x48>");
             color = (0, 1, 0);
             trace = groundtrace(start, end + (0, 0, -2048), 0, self, 1, 1);
             origin = trace[#"position"];

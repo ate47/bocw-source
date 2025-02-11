@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\scoreevents.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\zm_common\scoreevents;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace scoreevents;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x48a99f69, Offset: 0x2b0
 // Size: 0xcc
 function private preinit() {
@@ -34,7 +33,7 @@ function private preinit() {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb11e0e8e, Offset: 0x388
 // Size: 0x4e8
 function scoreeventsr(params) {
@@ -86,7 +85,7 @@ function scoreeventsr(params) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x40da54df, Offset: 0x878
 // Size: 0x74
 function function_b122e75f() {
@@ -98,7 +97,7 @@ function function_b122e75f() {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf3c7010a, Offset: 0x8f8
 // Size: 0x3d4
 function function_f8b76690(var_a0345f37, player, *weapon) {
@@ -141,7 +140,7 @@ function function_f8b76690(var_a0345f37, player, *weapon) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xae4fd7c7, Offset: 0xcd8
 // Size: 0x28c
 function function_ade393f4(var_a0345f37, player, weapon) {
@@ -169,7 +168,7 @@ function function_ade393f4(var_a0345f37, player, weapon) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa7faf58, Offset: 0xf70
 // Size: 0x3b4
 function function_88e6f8b7(params) {
@@ -196,7 +195,7 @@ function function_88e6f8b7(params) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x882a923c, Offset: 0x1330
 // Size: 0x5c
 function on_player_damage(params) {
@@ -206,7 +205,7 @@ function on_player_damage(params) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5db1c290, Offset: 0x1398
 // Size: 0x7e
 function function_46e3cf42(zombie, player) {
@@ -216,7 +215,7 @@ function function_46e3cf42(zombie, player) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcafb0f60, Offset: 0x1420
 // Size: 0xbc
 function function_513fa6e4(player) {
@@ -228,7 +227,7 @@ function function_513fa6e4(player) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a6f24b7, Offset: 0x14e8
 // Size: 0xd4
 function function_31553fb3() {
@@ -245,7 +244,7 @@ function function_31553fb3() {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a410d60, Offset: 0x15c8
 // Size: 0x214
 function on_item_pickup(params) {
@@ -270,7 +269,7 @@ function on_item_pickup(params) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x59ab026a, Offset: 0x17e8
 // Size: 0x13e
 function function_c62f5aff(item) {
@@ -294,7 +293,7 @@ function function_c62f5aff(item) {
 }
 
 // Namespace scoreevents/namespace_feb8f309
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x891daa74, Offset: 0x1930
 // Size: 0xcc
 function function_24a17c08() {
@@ -310,7 +309,7 @@ function function_24a17c08() {
         if (!self zm_utility::is_jumping()) {
             return;
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 

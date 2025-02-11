@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_7a8059ca02b7b09e;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\abilities\ability_power.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\abilities\ability_power;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace scoreevents;
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd1a072d7, Offset: 0x1a0
 // Size: 0xf2
 function registerscoreeventcallback(callback, func) {
@@ -31,7 +30,7 @@ function registerscoreeventcallback(callback, func) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d46ccc5, Offset: 0x2a0
 // Size: 0xf2
 function function_9677601b(callback, func) {
@@ -50,7 +49,7 @@ function function_9677601b(callback, func) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xca804e0b, Offset: 0x3a0
 // Size: 0xc0
 function function_6f51d1e9(event, players, victim, weapon) {
@@ -66,7 +65,7 @@ function function_6f51d1e9(event, players, victim, weapon) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc76ec1b, Offset: 0x468
 // Size: 0x7e
 function function_2a2e1723(event, player, victim, weapon) {
@@ -78,7 +77,7 @@ function function_2a2e1723(event, player, victim, weapon) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xfcad663, Offset: 0x4f0
 // Size: 0x9c8
 function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa74e2, var_28e349dc, var_6d2812ce, inflictor) {
@@ -102,7 +101,7 @@ function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa
             }
         }
     }
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     isscoreevent = 0;
     /#
         if (getdvarint(#"logscoreevents", 0) > 0) {
@@ -136,7 +135,7 @@ function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa
                 player ability_power::power_gain_event_score(event, victim, scoregiven, weapon);
                 /#
                     if (getdvarint(#"hash_628a73b6809e0598", 0) > 0) {
-                        println("<unknown string>" + player.playername + "<unknown string>" + function_9e72a96(event) + "<unknown string>" + scoregiven);
+                        println("<dev string:x38>" + player.playername + "<dev string:x55>" + function_9e72a96(event) + "<dev string:x60>" + scoregiven);
                     }
                 #/
             }
@@ -186,7 +185,7 @@ function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa
             }
         }
     }
-    profileNamedStop();
+    pixendevent();
     if (sessionmodeiscampaigngame() && isdefined(xp_difficulty_multiplier)) {
         if (isdefined(victim) && isdefined(victim.team)) {
             if (victim.team == #"axis" || victim.team == #"team3") {
@@ -202,7 +201,7 @@ function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4ed809d0, Offset: 0xec0
 // Size: 0x6e
 function doscoreeventcallback(callback, data) {
@@ -214,7 +213,7 @@ function doscoreeventcallback(callback, data) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc9457c8, Offset: 0xf38
 // Size: 0x70
 function private function_e4171c51(callback, data) {
@@ -227,7 +226,7 @@ function private function_e4171c51(callback, data) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xca06eedc, Offset: 0xfb0
 // Size: 0x70
 function private function_32358e67(callback, data) {
@@ -240,7 +239,7 @@ function private function_32358e67(callback, data) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2ef7e440, Offset: 0x1028
 // Size: 0x186
 function shouldaddrankxp(player) {
@@ -252,11 +251,11 @@ function shouldaddrankxp(player) {
     }
     if (is_true(level.var_4f654f3a)) {
         /#
-            playername = "<unknown string>";
+            playername = "<dev string:x6b>";
             if (isdefined(player) && isdefined(player.name)) {
                 playername = player.name;
             }
-            println("<unknown string>" + playername);
+            println("<dev string:x76>" + playername);
         #/
         return false;
     }
@@ -275,14 +274,14 @@ function shouldaddrankxp(player) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5eb287a, Offset: 0x11b8
 // Size: 0xc4
 function uninterruptedobitfeedkills(attacker, weapon) {
     self endon(#"disconnect");
-    wait(0.1);
+    wait 0.1;
     util::waittillslowprocessallowed();
-    wait(0.1);
+    wait 0.1;
     if (isdefined(attacker)) {
         processscoreevent(#"uninterrupted_obit_feed_kills", attacker, self, weapon);
         attacker contracts::increment_contract(#"contract_mp_quad_feed");
@@ -296,12 +295,12 @@ function uninterruptedobitfeedkills(attacker, weapon) {
 // Size: 0x64
 function function_c046c773(waitduration, event, player, victim, weapon) {
     self endon(#"disconnect");
-    wait(waitduration);
+    wait waitduration;
     processscoreevent(event, player, victim, weapon);
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf53b8b93, Offset: 0x12f8
 // Size: 0x30
 function isregisteredevent(type) {
@@ -312,18 +311,18 @@ function isregisteredevent(type) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4b2cc1c0, Offset: 0x1330
 // Size: 0x4c
 function decrementlastobituaryplayercountafterfade() {
     level endon(#"reset_obituary_count");
-    wait(5);
+    wait 5;
     level.lastobituaryplayercount--;
     assert(level.lastobituaryplayercount >= 0);
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2bf4a054, Offset: 0x1388
 // Size: 0x122
 function function_2b96d7dc() {
@@ -348,7 +347,7 @@ function function_2b96d7dc() {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf3b3d44d, Offset: 0x14b8
 // Size: 0x228
 function getscoreeventtablename(gametype) {
@@ -394,12 +393,12 @@ function getscoreeventtableid(gametype) {
     if (isdefined(scoreinfotableid)) {
         scoreinfotableloaded = 1;
     }
-    assert(scoreinfotableloaded, "<unknown string>" + function_9e72a96(getscoreeventtablename()));
+    assert(scoreinfotableloaded, "<dev string:xa5>" + function_9e72a96(getscoreeventtablename()));
     return scoreinfotableid;
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xafba13e7, Offset: 0x17d8
 // Size: 0x1dc
 function givecratecapturemedal(crate, capturer) {
@@ -492,7 +491,7 @@ function hero_ability_multikill_event(killcount, ability) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x59cc27b1, Offset: 0x1c30
 // Size: 0xb2
 function hero_weapon_multikill_event(killcount, weapon) {
@@ -507,7 +506,7 @@ function hero_weapon_multikill_event(killcount, weapon) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7dba135b, Offset: 0x1cf0
 // Size: 0x34
 function function_dcdf1105() {
@@ -515,7 +514,7 @@ function function_dcdf1105() {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1aa3cb3, Offset: 0x1d30
 // Size: 0xd4
 function player_fully_healed() {
@@ -531,7 +530,7 @@ function player_fully_healed() {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9f7fdb4f, Offset: 0x1e10
 // Size: 0x10
 function player_spawned() {
@@ -560,7 +559,7 @@ function function_f40d64cc(attacker, vehicle, weapon) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xfead77ea, Offset: 0x1ef0
 // Size: 0x1d6
 function function_644d867a(attacker, time, statname, weapon, inflictor) {
@@ -590,7 +589,7 @@ function function_644d867a(attacker, time, statname, weapon, inflictor) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xb3709e66, Offset: 0x20d0
 // Size: 0x184
 function function_31eb1b07(player, statname, var_26568428, timetoplay, weapon, inflictor) {

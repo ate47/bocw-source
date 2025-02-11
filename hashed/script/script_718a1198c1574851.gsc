@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\wz_loadouts.gsc;
-#using scripts\wz_common\hud.gsc;
-#using script_5495f0bb06045dc7;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\util_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_reinsertion.gsc;
-#using scripts\core_common\player\player_insertion.gsc;
 #using script_44b0b8420eabacad;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\death_circle.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_5495f0bb06045dc7;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_world;
+#using scripts\core_common\player\player_insertion;
+#using scripts\core_common\player\player_reinsertion;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\wz_common\hud;
+#using scripts\wz_common\wz_loadouts;
 
 #namespace namespace_bc2b656d;
 
@@ -166,8 +165,8 @@ function function_6de0bb32() {
 function on_team_eliminated(params) {
     players = getplayers(params.team);
     foreach (player in players) {
-        if (isdefined(player.var_b88236d6)) {
-            player.var_b88236d6 delete();
+        if (isdefined(player.reinsertionvehicle)) {
+            player.reinsertionvehicle delete();
         }
     }
 }
@@ -178,13 +177,13 @@ function on_team_eliminated(params) {
 // Size: 0xd4
 function on_player_killed(*params) {
     self.var_26074a5b = undefined;
-    if (!isdefined(self.var_b88236d6)) {
+    if (!isdefined(self.reinsertionvehicle)) {
         vehicle = spawnvehicle(#"hash_3effd1dd89ee3d36", (0, 0, 0), (0, 0, 0));
         if (isdefined(vehicle)) {
             vehicle.targetname = "reinsertionvehicle";
             vehicle ghost();
             vehicle notsolid();
-            self.var_b88236d6 = vehicle;
+            self.reinsertionvehicle = vehicle;
         }
     }
     self thread function_855ba783();
@@ -225,7 +224,7 @@ function function_c3144b08() {
     waitresult = self waittill(#"waitingtospawn");
     var_fa9f2461 = waitresult.timeuntilspawn + -0.5;
     if (var_fa9f2461 > 0) {
-        wait(var_fa9f2461);
+        wait var_fa9f2461;
     }
     self luinotifyevent(#"hash_175f8739ed7a932", 0);
 }
@@ -235,8 +234,8 @@ function function_c3144b08() {
 // Checksum 0xef76c799, Offset: 0xe50
 // Size: 0x2c
 function on_player_disconnect() {
-    if (isdefined(self.var_b88236d6)) {
-        self.var_b88236d6 delete();
+    if (isdefined(self.reinsertionvehicle)) {
+        self.reinsertionvehicle delete();
     }
 }
 
@@ -356,7 +355,7 @@ function function_2613549d(origin, var_6b4313e9) {
     fwd = var_6b4313e9 - origin;
     var_7d48f39e = vectortoangles(fwd);
     launchvelocity = fwd;
-    vehicle = self.var_b88236d6;
+    vehicle = self.reinsertionvehicle;
     if (isdefined(vehicle)) {
         vehicle.origin = origin;
         vehicle.angles = var_7d48f39e;
@@ -366,7 +365,7 @@ function function_2613549d(origin, var_6b4313e9) {
         self setclientthirdperson(1);
         self function_648c1f6(vehicle, undefined, 0, 180, 180, 180, 180, 0);
         self setplayerangles(var_7d48f39e);
-        wait(0);
+        wait 0;
         self setclientthirdperson(0);
         self startcameratween(0);
         self show();

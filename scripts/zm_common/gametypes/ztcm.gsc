@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_stats;
 
 #namespace ztcm;
 

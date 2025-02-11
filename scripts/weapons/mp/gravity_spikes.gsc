@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\weapons\gravity_spikes.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\abilities\ability_player.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\gravity_spikes;
 
 #namespace gravity_spikes;
 

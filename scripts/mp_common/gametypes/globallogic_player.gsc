@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace globallogic_player;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x14dd5bf1, Offset: 0xf8
 // Size: 0x3c
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7bfc4c1, Offset: 0x140
 // Size: 0x4e
 function function_4b7bb02c(weapon) {
@@ -40,7 +39,7 @@ function function_4b7bb02c(weapon) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x735d4c95, Offset: 0x198
 // Size: 0xec
 function on_player_disconnect() {

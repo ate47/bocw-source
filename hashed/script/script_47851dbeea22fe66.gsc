@@ -1,33 +1,32 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_34e46b51ae28401d;
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
+#using script_34e46b51ae28401d;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_e32bb68;
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd10cc159, Offset: 0x218
 // Size: 0x1a4
 function init() {
@@ -44,7 +43,7 @@ function init() {
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x4d7cc666, Offset: 0x3c8
 // Size: 0x12c
 function function_c1e0cc87(name, *unused1, *var_5ddf2027, var_f80dfd0d = 0) {
@@ -52,13 +51,13 @@ function function_c1e0cc87(name, *unused1, *var_5ddf2027, var_f80dfd0d = 0) {
         level.doa.var_9e132ad0 = [];
     }
     var_318e5b78 = level.doa.var_9e132ad0.size + 1;
-    assert(var_318e5b78 < 256, "<unknown string>");
-    assert(!isdefined(level.doa.var_9e132ad0[var_5ddf2027]), "<unknown string>");
+    assert(var_318e5b78 < 256, "<dev string:x38>");
+    assert(!isdefined(level.doa.var_9e132ad0[var_5ddf2027]), "<dev string:x5a>");
     level.doa.var_9e132ad0[var_5ddf2027] = {#name:var_5ddf2027, #id:var_318e5b78, #clear:var_f80dfd0d};
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x29a98e14, Offset: 0x500
 // Size: 0x150
 function function_593b9cbb(&queue, flag) {
@@ -87,7 +86,7 @@ function function_593b9cbb(&queue, flag) {
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7f6bc570, Offset: 0x658
 // Size: 0xd6
 function function_10e0969b(sfx) {
@@ -105,7 +104,7 @@ function function_10e0969b(sfx) {
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x86a79230, Offset: 0x738
 // Size: 0xd6
 function function_8dc5fbf8(sfx) {
@@ -123,14 +122,14 @@ function function_8dc5fbf8(sfx) {
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x91d13e90, Offset: 0x818
 // Size: 0x1e4
 function function_ae271c0b(name) {
     if (!isdefined(name) || !isdefined(self)) {
         return;
     }
-    assert(self != level, "<unknown string>" + name);
+    assert(self != level, "<dev string:x8e>" + name);
     if (!isdefined(level.doa.var_9e132ad0[name])) {
         namespace_1e25ad94::debugmsg("SFX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
@@ -145,18 +144,18 @@ function function_ae271c0b(name) {
         }
         self.var_a045580f[self.var_a045580f.size] = level.doa.var_9e132ad0[name];
     }
-    assert(self.var_a045580f.size < 24, "<unknown string>" + name);
+    assert(self.var_a045580f.size < 24, "<dev string:xd2>" + name);
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9af3c07d, Offset: 0xa08
 // Size: 0x1e4
 function function_3a59ec34(name) {
     if (!isdefined(name) || !isdefined(self)) {
         return;
     }
-    assert(self != level, "<unknown string>" + name);
+    assert(self != level, "<dev string:x105>" + name);
     if (!isdefined(level.doa.var_9e132ad0[name])) {
         namespace_1e25ad94::debugmsg("SFX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
@@ -171,6 +170,6 @@ function function_3a59ec34(name) {
         }
         self.var_17618ff9[self.var_17618ff9.size] = level.doa.var_9e132ad0[name];
     }
-    assert(self.var_17618ff9.size < 24, "<unknown string>" + name);
+    assert(self.var_17618ff9.size < 24, "<dev string:x148>" + name);
 }
 

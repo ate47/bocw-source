@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
 
 #namespace hud_message;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xd0
 // Size: 0x4
 function private preinit() {
@@ -20,7 +19,7 @@ function private preinit() {
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x5bd4bdfd, Offset: 0xe0
 // Size: 0x114
 function function_65299180(localclientnum, var_e69b15f0, arglist) {

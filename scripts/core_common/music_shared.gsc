@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace music;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace music/music_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x73041d1f, Offset: 0x128
 // Size: 0x5c
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace music/music_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xfbd9bda, Offset: 0x190
 // Size: 0x3c
 function setmusicstate(state, player, delay) {
@@ -34,13 +33,13 @@ function setmusicstate(state, player, delay) {
 }
 
 // Namespace music/music_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf4434a1b, Offset: 0x1d8
 // Size: 0xa4
 function function_d6f7c644(state, player, delay) {
     if (isdefined(level.musicstate)) {
         if (isdefined(delay)) {
-            wait(delay);
+            wait delay;
         }
         if (isdefined(player)) {
             util::setclientsysstate("musicCmd", state, player);
@@ -53,7 +52,7 @@ function function_d6f7c644(state, player, delay) {
 }
 
 // Namespace music/music_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x32c24349, Offset: 0x288
 // Size: 0xc0
 function setmusicstatebyteam(state, str_teamname) {
@@ -65,7 +64,7 @@ function setmusicstatebyteam(state, str_teamname) {
 }
 
 // Namespace music/music_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9b394b1, Offset: 0x350
 // Size: 0x66
 function on_player_spawned() {
@@ -118,12 +117,12 @@ function function_2af5f0ec(str_alias, var_e08a84d6, n_delay) {
 }
 
 // Namespace music/music_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1eb1c3c6, Offset: 0x578
 // Size: 0x3c
 function function_2b18b6d6(str_alias, n_delay) {
     if (isdefined(n_delay)) {
-        wait(n_delay);
+        wait n_delay;
     }
     playsoundatposition(str_alias, (0, 0, 0));
 }

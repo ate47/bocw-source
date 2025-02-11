@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\ai\archetype_cover_utility.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_cover_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\util_shared;
 
 #namespace archetype_human_cover;
 
@@ -67,7 +66,7 @@ function autoexec registerbehaviorscriptfunctions() {
     assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"switchtoannihilator", &aiutility::function_8f12f910);
     /#
-        util::init_dvar("<unknown string>", 0, &function_9c20a620);
+        util::init_dvar("<dev string:x38>", 0, &function_9c20a620);
     #/
 }
 
@@ -84,7 +83,7 @@ function autoexec registerbehaviorscriptfunctions() {
 #/
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2a6d9c9f, Offset: 0xca0
 // Size: 0xc52
 function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
@@ -170,8 +169,8 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
             if (isdefined(entity.var_38754eac)) {
                 return false;
             }
-            var_d65a8f8b = vectortoangles(totarget);
-            var_507685eb = angleclamp180(var_d65a8f8b[1] - entityangles[1]);
+            anglestotarget = vectortoangles(totarget);
+            var_507685eb = angleclamp180(anglestotarget[1] - entityangles[1]);
             var_ff1c6742 = abs(var_507685eb) / var_507685eb;
             var_af743256 = rotatepointaroundaxis(entityforward, (0, 0, 1), var_8de1b8f1 * var_ff1c6742);
             var_59a9f5cc = var_4748f6aa;
@@ -249,7 +248,7 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa802d527, Offset: 0x1900
 // Size: 0x74
 function private function_4387243d(entity) {
@@ -262,7 +261,7 @@ function private function_4387243d(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xed9db0dc, Offset: 0x1980
 // Size: 0x5e
 function private coverpreparetothrowgrenade(entity) {
@@ -272,7 +271,7 @@ function private coverpreparetothrowgrenade(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2c3cd82d, Offset: 0x19e8
 // Size: 0x14c
 function function_ce446f2e(entity) {
@@ -291,7 +290,7 @@ function function_ce446f2e(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1c545d81, Offset: 0x1b40
 // Size: 0x210
 function function_83c0b7e1(entity) {
@@ -316,7 +315,7 @@ function function_83c0b7e1(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4d0527fa, Offset: 0x1d58
 // Size: 0x22e
 function private covercleanuptothrowgrenade(entity) {
@@ -343,7 +342,7 @@ function private covercleanuptothrowgrenade(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x10ba41c2, Offset: 0x1f90
 // Size: 0x24
 function function_1fa73a96(entity) {
@@ -354,7 +353,7 @@ function function_1fa73a96(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4cee416e, Offset: 0x1fc0
 // Size: 0x24
 function private function_6e9ba2ac(entity) {
@@ -362,7 +361,7 @@ function private function_6e9ba2ac(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x535324e0, Offset: 0x1ff0
 // Size: 0xac
 function private canchangestanceatcovercondition(entity) {
@@ -376,7 +375,7 @@ function private canchangestanceatcovercondition(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe0f74842, Offset: 0x20a8
 // Size: 0x2e
 function private shouldreturntosuppressedcover(entity) {
@@ -387,7 +386,7 @@ function private shouldreturntosuppressedcover(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcdfe9b3b, Offset: 0x20e0
 // Size: 0x222
 function private shouldreturntocovercondition(entity) {
@@ -434,7 +433,7 @@ function private shouldreturntocovercondition(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4d9f02e, Offset: 0x2310
 // Size: 0x16e
 function private shouldadjusttocover(entity) {
@@ -461,7 +460,7 @@ function private shouldadjusttocover(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd1d80136, Offset: 0x2488
 // Size: 0x7a
 function private coverblindfireshootstart(entity, *asmstatename) {
@@ -472,7 +471,7 @@ function private coverblindfireshootstart(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x854fcb07, Offset: 0x2510
 // Size: 0x2e
 function private function_49bbbf20(entity) {
@@ -481,7 +480,7 @@ function private function_49bbbf20(entity) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x791b444f, Offset: 0x2548
 // Size: 0x58
 function private preparetochangestancetostand(entity, *asmstatename) {
@@ -491,7 +490,7 @@ function private preparetochangestancetostand(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7fd4da9e, Offset: 0x25a8
 // Size: 0x36
 function private cleanupchangestancetostand(entity, *asmstatename) {
@@ -500,7 +499,7 @@ function private cleanupchangestancetostand(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xebe77668, Offset: 0x25e8
 // Size: 0x54
 function private preparetochangestancetocrouch(entity, *asmstatename) {
@@ -509,7 +508,7 @@ function private preparetochangestancetocrouch(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x1674be3b, Offset: 0x2648
 // Size: 0x36
 function private cleanupchangestancetocrouch(entity, *asmstatename) {
@@ -518,7 +517,7 @@ function private cleanupchangestancetocrouch(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd9014ff, Offset: 0x2688
 // Size: 0x54
 function private function_79c0ab14(entity, *asmstatename) {
@@ -527,7 +526,7 @@ function private function_79c0ab14(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6a8dc909, Offset: 0x26e8
 // Size: 0x36
 function private function_bdba5c4(entity, *asmstatename) {
@@ -536,7 +535,7 @@ function private function_bdba5c4(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd5d2754c, Offset: 0x2728
 // Size: 0x74
 function private prepareforadjusttocover(entity, *asmstatename) {
@@ -546,7 +545,7 @@ function private prepareforadjusttocover(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8b957af5, Offset: 0x27a8
 // Size: 0xf2
 function private coverchangestanceactionstart(entity, *asmstatename) {
@@ -563,7 +562,7 @@ function private coverchangestanceactionstart(entity, *asmstatename) {
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe271ea9b, Offset: 0x28a8
 // Size: 0x360
 function temp_get_arm_offset(entity, *throwposition) {
@@ -607,7 +606,7 @@ function temp_get_arm_offset(entity, *throwposition) {
             } else if (coverdirection == "cover_left_direction") {
                 arm_offset = leftoffset;
             } else {
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x4c>");
             }
         }
     }

@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.csc;
-#using scripts\core_common\scene_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
 #using script_13263926d775e7d7;
+#using script_140d5347de8af85c;
 #using script_280ea497b298d2e;
 #using script_38867f943fb86135;
-#using scripts\core_common\animation_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using script_140d5347de8af85c;
-#using scripts\core_common\easing.csc;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\util_shared.csc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\easing;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\util;
 
 #namespace cp_nam_armada;
 
@@ -37,25 +36,25 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdaed0c1, Offset: 0x5a0
 // Size: 0x794
 function init_clientfields() {
-    clientfield::register("toplayer", "pstfx_sprite_rain_loop", 1, 1, "int", &function_949d138a, 0, 0);
+    clientfield::register("toplayer", "pstfx_sprite_rain_loop", 1, 1, "int", &pstfx_sprite_rain_loop, 0, 0);
     clientfield::register("toplayer", "pstfx_slowed", 1, 1, "int", &pstfx_slowed, 0, 0);
-    clientfield::register("toplayer", "pstfx_vignette", 1, 1, "int", &function_ba76755f, 0, 0);
-    clientfield::register("vehicle", "bamboo_heli_landing_rain_fx", 1, 1, "int", &function_783e9aab, 0, 0);
+    clientfield::register("toplayer", "pstfx_vignette", 1, 1, "int", &pstfx_vignette, 0, 0);
+    clientfield::register("vehicle", "bamboo_heli_landing_rain_fx", 1, 1, "int", &bamboo_heli_landing_rain_fx, 0, 0);
     clientfield::register("vehicle", "adler_chopper_mortar_village", 1, 1, "int", &function_8617decb, 0, 0);
-    clientfield::register("world", "toggle_dynsignage_mortartown", 1, 1, "int", &function_f6f70714, 0, 0);
-    clientfield::register("toplayer", "ease_to_dialog_dof", 1, 1, "int", &function_98d73c30, 0, 0);
+    clientfield::register("world", "toggle_dynsignage_mortartown", 1, 1, "int", &toggle_dynsignage_mortartown, 0, 0);
+    clientfield::register("toplayer", "ease_to_dialog_dof", 1, 1, "int", &ease_to_dialog_dof, 0, 0);
     clientfield::register("toplayer", "lerp_fov", 1, 3, "int", &lerp_fov, 0, 1);
-    clientfield::register("toplayer", "postfx_bundle_explosive_damage", 1, 1, "int", &function_dd4482eb, 0, 0);
-    clientfield::register("toplayer", "pstfx_script_vignette", 1, 2, "int", &namespace_f180c0d7::function_117e5e22, 0, 0);
-    clientfield::register("toplayer", "forest_pbg_switch", 1, 1, "int", &function_67987ae7, 0, 0);
-    clientfield::register("world", "toggle_gameplay_character_visibility", 1, 2, "int", &function_d29b4c27, 0, 0);
+    clientfield::register("toplayer", "postfx_bundle_explosive_damage", 1, 1, "int", &postfx_bundle_explosive_damage, 0, 0);
+    clientfield::register("toplayer", "pstfx_script_vignette", 1, 2, "int", &namespace_f180c0d7::pstfx_script_vignette, 0, 0);
+    clientfield::register("toplayer", "forest_pbg_switch", 1, 1, "int", &forest_pbg_switch, 0, 0);
+    clientfield::register("world", "toggle_gameplay_character_visibility", 1, 2, "int", &toggle_gameplay_character_visibility, 0, 0);
     clientfield::register("vehicle", "" + #"hash_4ddf67f7aa0f6884", 1, 1, "int", &function_241229f1, 0, 0);
     clientfield::register("vehicle", "" + #"hash_354296015ca81fd", 1, 1, "int", &function_936cacda, 0, 0);
-    clientfield::register("toplayer", "" + #"hash_7474973a37272b2c", 1, getminbitcountfornum(2), "int", &function_abeb9b2d, 0, 0);
+    clientfield::register("toplayer", "" + #"pstfx_teleport", 1, getminbitcountfornum(2), "int", &pstfx_teleport, 0, 0);
     clientfield::register("vehicle", "" + #"hash_2299cc8957801441", 1, 1, "int", &function_ba96d53c, 0, 0);
     clientfield::register("world", "" + #"hash_5a188b1de711e5ca", 1, 1, "int", &function_69d7c128, 0, 0);
     clientfield::register("world", "" + #"hash_7705eee7a483781a", 1, 1, "int", &function_a7313d0d, 0, 0);
@@ -68,10 +67,10 @@ function init_clientfields() {
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x67f62b32, Offset: 0xd40
 // Size: 0xac
-function function_d29b4c27(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function toggle_gameplay_character_visibility(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     waitframe(1);
     if (bwasdemojump == 2) {
         util::function_8eb5d4b0(5000, 6);
@@ -85,7 +84,7 @@ function function_d29b4c27(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2dbf510b, Offset: 0xdf8
 // Size: 0x3c
 function lerp_fov(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -124,7 +123,7 @@ function dof_disable_autofocus() {
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf10e98a, Offset: 0x1058
 // Size: 0x54
 function function_26826144(*str_notify) {
@@ -134,10 +133,10 @@ function function_26826144(*str_notify) {
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf43f912d, Offset: 0x10b8
 // Size: 0x10c
-function function_98d73c30(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function ease_to_dialog_dof(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self function_9e574055(2);
         self easing::function_b6f1c993(undefined, 60, 1, #"linear");
@@ -149,10 +148,10 @@ function function_98d73c30(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8871eef6, Offset: 0x11d0
 // Size: 0xa4
-function function_783e9aab(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function bamboo_heli_landing_rain_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_40e9c967 = self util::playfxontag(fieldname, level._effect[#"hash_12368454c367c6fc"], self, "tag_origin");
         return;
@@ -161,7 +160,7 @@ function function_783e9aab(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9678b723, Offset: 0x1280
 // Size: 0x84
 function function_8617decb(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -173,10 +172,10 @@ function function_8617decb(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x603095cd, Offset: 0x1310
 // Size: 0xc4
-function function_949d138a(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function pstfx_sprite_rain_loop(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         if (self postfx::function_556665f2("pstfx_t9_sprite_heli_spray_r")) {
             self postfx::stoppostfxbundle("pstfx_t9_sprite_heli_spray_r");
@@ -188,7 +187,7 @@ function function_949d138a(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x52a73528, Offset: 0x13e0
 // Size: 0xde
 function function_578ff07e() {
@@ -210,7 +209,7 @@ function function_578ff07e() {
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x958c774b, Offset: 0x14c8
 // Size: 0xf4
 function pstfx_slowed(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -226,10 +225,10 @@ function pstfx_slowed(*localclientnum, *oldval, newval, *bnewent, *binitialsnap,
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x98388320, Offset: 0x15c8
 // Size: 0xc4
-function function_ba76755f(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function pstfx_vignette(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         if (self postfx::function_556665f2("pstfx_vignette")) {
             self postfx::stoppostfxbundle("pstfx_vignette");
@@ -241,10 +240,10 @@ function function_ba76755f(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6c4c303c, Offset: 0x1698
 // Size: 0xc4
-function function_dd4482eb(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function postfx_bundle_explosive_damage(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         if (self postfx::function_556665f2("postfx_bundle_explosive_damage")) {
             self postfx::stoppostfxbundle("postfx_bundle_explosive_damage");
@@ -256,10 +255,10 @@ function function_dd4482eb(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x13138cb3, Offset: 0x1768
 // Size: 0xb4
-function function_67987ae7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function forest_pbg_switch(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         setexposureactivebank(fieldname, 2);
         setpbgactivebank(fieldname, 2);
@@ -270,12 +269,12 @@ function function_67987ae7(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x31710a28, Offset: 0x1828
 // Size: 0x414
 function function_69d7c128(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
-        forcestreamxmodel(#"hash_8cd82152094d2a0");
+        forcestreamxmodel(#"veh_t9_mil_us_air_napalm_strike");
         function_3385d776(#"hash_11fe9ff5e4f2a6cd");
         function_3385d776(#"hash_11fe9cf5e4f2a1b4");
         function_3385d776(#"hash_7b203243ad7d0395");
@@ -292,7 +291,7 @@ function function_69d7c128(*localclientnum, *oldval, newval, *bnewent, *binitial
         function_3385d776(#"hash_67b4b0bc7a445a09");
         return;
     }
-    stopforcestreamingxmodel(#"hash_8cd82152094d2a0");
+    stopforcestreamingxmodel(#"veh_t9_mil_us_air_napalm_strike");
     function_c22a1ca2(#"hash_11fe9ff5e4f2a6cd");
     function_c22a1ca2(#"hash_11fe9cf5e4f2a1b4");
     function_c22a1ca2(#"hash_7b203243ad7d0395");
@@ -310,7 +309,7 @@ function function_69d7c128(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf185a27b, Offset: 0x1c48
 // Size: 0xcc
 function function_a7313d0d(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -324,7 +323,7 @@ function function_a7313d0d(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x22f34a0, Offset: 0x1d20
 // Size: 0x18c
 function function_855380ee(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -332,19 +331,19 @@ function function_855380ee(*localclientnum, *oldval, newval, *bnewent, *binitial
         forcestreamxmodel(#"hash_21a97142189b5d28");
         forcestreamxmodel(#"hash_2606328857a76ba3");
         forcestreamxmodel(#"hash_4f34655ac3f72169");
-        forcestreamxmodel(#"hash_df624519733aea1");
+        forcestreamxmodel(#"usa_navarro_headset_01_clothanim");
         forcestreamxmodel(#"hash_14393238d3c50834");
         return;
     }
     stopforcestreamingxmodel(#"hash_21a97142189b5d28");
     stopforcestreamingxmodel(#"hash_2606328857a76ba3");
     stopforcestreamingxmodel(#"hash_4f34655ac3f72169");
-    stopforcestreamingxmodel(#"hash_df624519733aea1");
+    stopforcestreamingxmodel(#"usa_navarro_headset_01_clothanim");
     stopforcestreamingxmodel(#"hash_14393238d3c50834");
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa7b95acd, Offset: 0x1eb8
 // Size: 0x40c
 function function_c10a31d2(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -384,7 +383,7 @@ function function_c10a31d2(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa6cde735, Offset: 0x22d0
 // Size: 0x18c
 function function_9bf56dad(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -404,7 +403,7 @@ function function_9bf56dad(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x69b30a6b, Offset: 0x2468
 // Size: 0x1dc
 function function_241229f1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -414,13 +413,13 @@ function function_241229f1(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         self setsoundentcontext("plr_vehicle", "driver");
-        player playrumblelooponentity(fieldname, #"hash_3c2b94894227f3cf");
+        player playrumblelooponentity(fieldname, #"chopper_gunner_rumble_intro");
         self thread scene::play(#"hash_7dabd48a4919ffbd");
         player codeplaypostfxbundle("pstfx_mp_door_gunner_vignette");
         self setanim(#"hash_30cafb59b2924e48");
-        wait(getanimlength(#"hash_30cafb59b2924e48"));
+        wait getanimlength(#"hash_30cafb59b2924e48");
         if (isdefined(player)) {
-            player stoprumble(fieldname, #"hash_3c2b94894227f3cf");
+            player stoprumble(fieldname, #"chopper_gunner_rumble_intro");
         }
         if (isdefined(self)) {
             self clearanim(#"hash_30cafb59b2924e48", 0.2);
@@ -433,7 +432,7 @@ function function_241229f1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x736a4e06, Offset: 0x2650
 // Size: 0xae
 function function_936cacda(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -448,10 +447,10 @@ function function_936cacda(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xae426f53, Offset: 0x2708
 // Size: 0x1c4
-function function_abeb9b2d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function pstfx_teleport(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         if (!self postfx::function_556665f2("pstfx_t9_cp_prisoner_mkultra_white_transition_short")) {
             function_be93487f(fieldname, 8, 0, 1, 0, 0);
@@ -475,7 +474,7 @@ function function_abeb9b2d(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x77b1e228, Offset: 0x28d8
 // Size: 0xbe
 function function_ba96d53c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -492,10 +491,10 @@ function function_ba96d53c(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd235609c, Offset: 0x29a0
 // Size: 0x220
-function function_f6f70714(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function toggle_dynsignage_mortartown(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     var_cc46e921 = getdynentarray("dyn_signage");
     var_855e6723 = getentarray(fieldname, "static_signage", "targetname");
     if (bwasdemojump == 1) {
@@ -513,7 +512,7 @@ function function_f6f70714(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x39a96834, Offset: 0x2bc8
 // Size: 0xe2
 function function_35172364(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -531,7 +530,7 @@ function function_35172364(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe405cb99, Offset: 0x2cb8
 // Size: 0xe2
 function function_2dca33ef(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -549,7 +548,7 @@ function function_2dca33ef(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace cp_nam_armada/cp_nam_armada
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9e2c6ddb, Offset: 0x2da8
 // Size: 0x2ec
 function force_stream_weapons(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {

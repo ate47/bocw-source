@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace bb;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4ca42c4d, Offset: 0x120
 // Size: 0x14
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace bb/bb
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x25268ac6, Offset: 0x140
 // Size: 0x134
 function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, victimkilled, victimdowned) {
@@ -31,7 +30,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
 }
 
 // Namespace bb/bb
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4eb37789, Offset: 0x850
 // Size: 0x14
 function logaispawn(*aient, *spawner) {
@@ -39,7 +38,7 @@ function logaispawn(*aient, *spawner) {
 }
 
 // Namespace bb/bb
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7209e87b, Offset: 0x870
 // Size: 0x1d4
 function logplayerevent(player, eventname) {
@@ -73,7 +72,7 @@ function logplayerevent(player, eventname) {
 }
 
 // Namespace bb/bb
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x51e5b9e5, Offset: 0xa50
 // Size: 0x1cc
 function logpurchaseevent(player, sellerent, cost, itemname, itemupgraded, itemtype, *eventname) {
@@ -101,7 +100,7 @@ function logpurchaseevent(player, sellerent, cost, itemname, itemupgraded, itemt
 }
 
 // Namespace bb/bb
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xcc74f75, Offset: 0xc28
 // Size: 0x208
 function logpowerupevent(powerup, optplayer, eventname) {

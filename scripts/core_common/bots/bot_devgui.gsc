@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\dev_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bots\bot_action.gsc;
-#using scripts\core_common\bots\bot.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\bots\bot_action;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\dev_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace bot_devgui;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcd3bc0eb, Offset: 0x5e0
 // Size: 0x164
 function private preinit() {
@@ -41,7 +40,7 @@ function private preinit() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xedb4b941, Offset: 0x750
 // Size: 0x34
 function private on_player_connect() {
@@ -52,7 +51,7 @@ function private on_player_connect() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80cb9587, Offset: 0x790
 // Size: 0x24
 function private on_player_disconnect() {
@@ -62,7 +61,7 @@ function private on_player_disconnect() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x852ec61e, Offset: 0x7c0
 // Size: 0x8c
 function private on_player_spawned() {
@@ -76,7 +75,7 @@ function private on_player_spawned() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x33210884, Offset: 0x858
 // Size: 0x1c
 function private function_ac5215a9() {
@@ -84,7 +83,7 @@ function private function_ac5215a9() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xca4ff8a, Offset: 0x880
 // Size: 0x1c
 function private function_8d1480e9() {
@@ -92,7 +91,7 @@ function private function_8d1480e9() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa0d6e528, Offset: 0x8a8
 // Size: 0x728
 function private function_40dbe923(dvarstr) {
@@ -180,7 +179,7 @@ function private function_40dbe923(dvarstr) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc51cab2d, Offset: 0xfd8
 // Size: 0xb8
 function private devgui_loop() {
@@ -197,7 +196,7 @@ function private devgui_loop() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3a9be23c, Offset: 0x1098
 // Size: 0x1a6
 function private function_9a819607(host, botarg) {
@@ -231,7 +230,7 @@ function private function_9a819607(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38634ed8, Offset: 0x1248
 // Size: 0xc2
 function get_bots() {
@@ -246,7 +245,7 @@ function get_bots() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65477e47, Offset: 0x1318
 // Size: 0xce
 function get_friendly_bots() {
@@ -262,7 +261,7 @@ function get_friendly_bots() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x538727be, Offset: 0x13f0
 // Size: 0xea
 function get_enemy_bots() {
@@ -280,7 +279,7 @@ function get_enemy_bots() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf176858e, Offset: 0x14e8
 // Size: 0xd6
 function function_a0f5b7f5(team) {
@@ -312,10 +311,10 @@ function function_a0f5b7f5(team) {
                 }
                 displayname = makelocalizedstring(getcharacterdisplayname(index, sessionmode));
                 assetname = function_9e72a96(function_ac0419ac(index, sessionmode));
-                name = displayname + "T-Pose" + assetname + ":";
-                cmd = "Force Button:" + name + "<unknown string>" + index + "<unknown string>" + index + "<unknown string>";
+                name = displayname + "<dev string:x38>" + assetname + "<dev string:x3e>";
+                cmd = "<dev string:x43>" + name + "<dev string:x78>" + index + "<dev string:x7d>" + index + "<dev string:xac>";
                 util::add_debug_command(cmd);
-                cmd = "<unknown string>" + name + "<unknown string>" + index + "<unknown string>" + index + "<unknown string>";
+                cmd = "<dev string:xb1>" + name + "<dev string:x78>" + index + "<dev string:xe3>" + index + "<dev string:xac>";
                 util::add_debug_command(cmd);
             }
         }
@@ -324,7 +323,7 @@ function function_a0f5b7f5(team) {
 #/
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xadcc1aaa, Offset: 0x17f0
 // Size: 0x620
 function private add_bot_devgui_menu() {
@@ -376,7 +375,7 @@ function private add_bot_devgui_menu() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x51271fe7, Offset: 0x1e18
 // Size: 0xe4
 function private add_bot_devgui_cmd(entnum, path, sortkey, devguiarg, cmdargs = "") {
@@ -385,7 +384,7 @@ function private add_bot_devgui_cmd(entnum, path, sortkey, devguiarg, cmdargs = 
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x38cbee0a, Offset: 0x1f08
 // Size: 0xdc
 function private function_f105dc20(entnum, var_eeb5e4bd, buttonmenu, var_1e443b4, buttonbit) {
@@ -394,7 +393,7 @@ function private function_f105dc20(entnum, var_eeb5e4bd, buttonmenu, var_1e443b4
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x447fc05e, Offset: 0x1ff0
 // Size: 0x32c
 function private function_ade411a3(entnum, var_eeb5e4bd) {
@@ -433,7 +432,7 @@ function private function_ade411a3(entnum, var_eeb5e4bd) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xddff6f50, Offset: 0x2328
 // Size: 0x7c
 function clear_bot_devgui_menu() {
@@ -446,7 +445,7 @@ function clear_bot_devgui_menu() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x5437da3d, Offset: 0x23b0
 // Size: 0xc4
 function private devgui_add_bots(host, botarg, count) {
@@ -462,7 +461,7 @@ function private devgui_add_bots(host, botarg, count) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf76b8b28, Offset: 0x2480
 // Size: 0x96
 function private function_5aef57f5(host, botarg) {
@@ -477,7 +476,7 @@ function private function_5aef57f5(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xbfad25e1, Offset: 0x2520
 // Size: 0x39c
 function private devgui_add_fixed_spawn_bots(botarg, var_b27e53da, countarg) {
@@ -518,11 +517,11 @@ function private devgui_add_fixed_spawn_bots(botarg, var_b27e53da, countarg) {
             }
         }
     }
-    println("<unknown string>" + botarg + "<unknown string>" + var_c6e7a9ca + "<unknown string>" + origin[0] + "<unknown string>" + origin[1] + "<unknown string>" + origin[2] + "<unknown string>" + spawnangles[1]);
+    println("<dev string:x10f>" + botarg + "<dev string:x133>" + var_c6e7a9ca + "<dev string:x133>" + origin[0] + "<dev string:x133>" + origin[1] + "<dev string:x133>" + origin[2] + "<dev string:x133>" + spawnangles[1]);
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xfee772cf, Offset: 0x28c8
 // Size: 0x196
 function private function_57d0759d(botarg, var_b27e53da, countarg, origin, angle) {
@@ -552,7 +551,7 @@ function private function_57d0759d(botarg, var_b27e53da, countarg, origin, angle
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x159dc2d3, Offset: 0x2a68
 // Size: 0x1aa
 function private function_bd48ef10(team, count, origin, yaw, roleindex) {
@@ -581,7 +580,7 @@ function private function_bd48ef10(team, count, origin, yaw, roleindex) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x11a06f1d, Offset: 0x2c20
 // Size: 0xd2
 function private function_881d3aa(host, botarg) {
@@ -602,7 +601,7 @@ function private function_881d3aa(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf01d1d64, Offset: 0x2d00
 // Size: 0x100
 function private function_8dbb49c0(ignoreteam) {
@@ -621,7 +620,7 @@ function private function_8dbb49c0(ignoreteam) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x730032dc, Offset: 0x2e08
 // Size: 0xb8
 function private devgui_remove_bots(host, botarg) {
@@ -632,7 +631,7 @@ function private devgui_remove_bots(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x276a805f, Offset: 0x2ec8
 // Size: 0xb6
 function private devgui_ignoreall(host, botarg, cmdarg) {
@@ -643,7 +642,7 @@ function private devgui_ignoreall(host, botarg, cmdarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x950decaf, Offset: 0x2f88
 // Size: 0x190
 function private devgui_set_target(botarg, cmdarg) {
@@ -674,7 +673,7 @@ function private devgui_set_target(botarg, cmdarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x68502caa, Offset: 0x3120
 // Size: 0x132
 function private devgui_goal(botarg, cmdarg) {
@@ -701,7 +700,7 @@ function private devgui_goal(botarg, cmdarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf9119095, Offset: 0x3260
 // Size: 0x2d8
 function private set_goal(botarg, force = 0) {
@@ -743,7 +742,7 @@ function private set_goal(botarg, force = 0) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x763d90b8, Offset: 0x3540
 // Size: 0x148
 function private function_417ef9e7(botarg) {
@@ -762,7 +761,7 @@ function private function_417ef9e7(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3ac237f1, Offset: 0x3690
 // Size: 0x160
 function private set_goal_ent(botarg, ent) {
@@ -781,7 +780,7 @@ function private set_goal_ent(botarg, ent) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7d2dfc16, Offset: 0x37f8
 // Size: 0xc0
 function private function_be8f790e(botarg) {
@@ -793,7 +792,7 @@ function private function_be8f790e(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x71e7452b, Offset: 0x38c0
 // Size: 0x1d0
 function private function_93996ae6(botarg) {
@@ -823,7 +822,7 @@ function private function_93996ae6(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4e6f8c52, Offset: 0x3a98
 // Size: 0xbc
 function private function_cc8c642a(&goals) {
@@ -838,7 +837,7 @@ function private function_cc8c642a(&goals) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2c74573, Offset: 0x3b60
 // Size: 0x1a
 function private function_bc3bbe26(*notifyhash) {
@@ -846,7 +845,7 @@ function private function_bc3bbe26(*notifyhash) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x97ba2706, Offset: 0x3b88
 // Size: 0x140
 function private devgui_force_button(host, botarg, cmdarg, toggle) {
@@ -865,7 +864,7 @@ function private devgui_force_button(host, botarg, cmdarg, toggle) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x37dc73c0, Offset: 0x3cd0
 // Size: 0xb6
 function private function_baee1142(host, botarg) {
@@ -876,7 +875,7 @@ function private function_baee1142(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x939d9194, Offset: 0x3d90
 // Size: 0x120
 function private function_8bb94cab(host, botarg, inventorytype, offhandslot) {
@@ -892,7 +891,7 @@ function private function_8bb94cab(host, botarg, inventorytype, offhandslot) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe9c4e0ac, Offset: 0x3eb8
 // Size: 0xd2
 function private function_b24b9a1e(inventorytype, offhandslot) {
@@ -906,7 +905,7 @@ function private function_b24b9a1e(inventorytype, offhandslot) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc01c73a5, Offset: 0x3f98
 // Size: 0xf8
 function private function_9a65e59a(host, botarg) {
@@ -921,7 +920,7 @@ function private function_9a65e59a(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa9495cbb, Offset: 0x4098
 // Size: 0x1dc
 function private function_ef14f060() {
@@ -944,7 +943,7 @@ function private function_ef14f060() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3ca01c98, Offset: 0x4280
 // Size: 0x1a8
 function private function_fbdf36c1(botarg) {
@@ -964,7 +963,7 @@ function private function_fbdf36c1(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaee23841, Offset: 0x4430
 // Size: 0xb0
 function private function_30f27f9f(botarg) {
@@ -975,7 +974,7 @@ function private function_30f27f9f(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5e2c16c5, Offset: 0x44e8
 // Size: 0xce
 function private function_b037d12d(botarg) {
@@ -987,7 +986,7 @@ function private function_b037d12d(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8b9c8ff, Offset: 0x45c0
 // Size: 0xbe
 function private function_f419ffae(botarg) {
@@ -999,7 +998,7 @@ function private function_f419ffae(botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x10426658, Offset: 0x4688
 // Size: 0x11a
 function private function_2e08087e(player) {
@@ -1015,7 +1014,7 @@ function private function_2e08087e(player) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfc9f5602, Offset: 0x47b0
 // Size: 0xe8
 function devgui_tpose(host, botarg) {
@@ -1027,7 +1026,7 @@ function devgui_tpose(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x284c14f1, Offset: 0x48a0
 // Size: 0x118
 function private devgui_invulnerable(host, botarg, cmdarg) {
@@ -1042,7 +1041,7 @@ function private devgui_invulnerable(host, botarg, cmdarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe5033f2d, Offset: 0x49c0
 // Size: 0x140
 function private devgui_kill_bots(host, botarg) {
@@ -1058,7 +1057,7 @@ function private devgui_kill_bots(host, botarg) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbaef47d9, Offset: 0x4b08
 // Size: 0x180
 function private function_263ca697() {
@@ -1076,7 +1075,7 @@ function private function_263ca697() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x448944f1, Offset: 0x4c90
 // Size: 0xbc
 function private function_78a14db2() {
@@ -1090,7 +1089,7 @@ function private function_78a14db2() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x8df8f82c, Offset: 0x4d58
 // Size: 0xb4
 function private function_35e77034(weapon, weaponoptions, var_e91aba42) {
@@ -1105,7 +1104,7 @@ function private function_35e77034(weapon, weaponoptions, var_e91aba42) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcf097da, Offset: 0x4e18
 // Size: 0xa8
 function private function_85e7342b() {
@@ -1116,7 +1115,7 @@ function private function_85e7342b() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xcf0be617, Offset: 0x4ec8
 // Size: 0xea
 function private eye_trace(hitents = 0, var_18daeece = 0) {
@@ -1129,7 +1128,7 @@ function private eye_trace(hitents = 0, var_18daeece = 0) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x64b3886, Offset: 0x4fc0
 // Size: 0x46
 function private function_59842621() {
@@ -1139,7 +1138,7 @@ function private function_59842621() {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x14e9ad68, Offset: 0x5010
 // Size: 0x118
 function private function_eee09f16(pos) {
@@ -1161,7 +1160,7 @@ function private function_eee09f16(pos) {
 }
 
 // Namespace bot_devgui/bot_devgui
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb9cbae48, Offset: 0x5130
 // Size: 0xf8
 function private function_d1409e38(pos) {

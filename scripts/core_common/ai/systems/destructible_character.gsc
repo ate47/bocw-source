@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
 
 #namespace destructserverutils;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xec684e9a, Offset: 0x2c8
 // Size: 0x5b0
 function private preinit() {
@@ -70,7 +69,7 @@ function private preinit() {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb51cf531, Offset: 0x880
 // Size: 0x20
 function private _getdestructibledef(entity) {
@@ -78,7 +77,7 @@ function private _getdestructibledef(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfdd0b700, Offset: 0x8a8
 // Size: 0x2a
 function getdestructstate(entity) {
@@ -99,7 +98,7 @@ function function_f865501b(entity, var_e9807706, var_9cea16fe) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe88375fa, Offset: 0x948
 // Size: 0x64
 function private _setdestructed(entity, destructflag) {
@@ -108,7 +107,7 @@ function private _setdestructed(entity, destructflag) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x907ab7f0, Offset: 0x9b8
 // Size: 0x64
 function copydestructstate(originalentity, newentity) {
@@ -118,7 +117,7 @@ function copydestructstate(originalentity, newentity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9f073243, Offset: 0xa28
 // Size: 0xd4
 function function_8475c53a(entity, piecename) {
@@ -134,7 +133,7 @@ function function_8475c53a(entity, piecename) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2a55c407, Offset: 0xb08
 // Size: 0x104
 function destructhitlocpieces(entity, hitloc) {
@@ -150,7 +149,7 @@ function destructhitlocpieces(entity, hitloc) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x81d88bef, Offset: 0xc18
 // Size: 0xec
 function function_629a8d54(entity, hittag) {
@@ -166,7 +165,7 @@ function function_629a8d54(entity, hittag) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf2ca70b0, Offset: 0xd10
 // Size: 0x6c
 function destructleftarmpieces(entity) {
@@ -176,7 +175,7 @@ function destructleftarmpieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbcb2e18, Offset: 0xd88
 // Size: 0x6c
 function destructleftlegpieces(entity) {
@@ -186,7 +185,7 @@ function destructleftlegpieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4b8928f9, Offset: 0xe00
 // Size: 0x1ac
 function destructpiece(entity, piecenumber) {
@@ -251,7 +250,7 @@ function destructrandompieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa298e844, Offset: 0x11a8
 // Size: 0x6c
 function destructrightarmpieces(entity) {
@@ -261,7 +260,7 @@ function destructrightarmpieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x329a8605, Offset: 0x1220
 // Size: 0x6c
 function destructrightlegpieces(entity) {
@@ -271,7 +270,7 @@ function destructrightlegpieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd8cb6035, Offset: 0x1298
 // Size: 0x52
 function getpiececount(entity) {
@@ -326,7 +325,7 @@ function function_9885f550(entity, hitloc, var_a9e3f040) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4463e752, Offset: 0x14f8
 // Size: 0x6e
 function isdestructed(entity, piecenumber) {
@@ -335,7 +334,7 @@ function isdestructed(entity, piecenumber) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe9df59b2, Offset: 0x1570
 // Size: 0x17c
 function reapplydestructedpieces(entity) {
@@ -364,7 +363,7 @@ function reapplydestructedpieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2990c8db, Offset: 0x16f8
 // Size: 0xdc
 function showdestructedpieces(entity) {
@@ -381,7 +380,7 @@ function showdestructedpieces(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x35846e8, Offset: 0x17e0
 // Size: 0x94
 function togglespawngibs(entity, shouldspawngibs) {

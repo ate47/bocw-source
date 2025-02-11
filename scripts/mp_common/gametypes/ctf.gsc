@@ -1,43 +1,42 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\mp\gadgets\gadget_smart_cover.gsc;
-#using scripts\abilities\mp\gadgets\gadget_concertina_wire.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\hud_message.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic_defaults.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\mp_common\bb.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using script_3d703ef87a841fe4;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_3d703ef87a841fe4;
+#using script_7a8059ca02b7b09e;
+#using scripts\abilities\mp\gadgets\gadget_concertina_wire;
+#using scripts\abilities\mp\gadgets\gadget_smart_cover;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_defaults;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\hud_message;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\overtime;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\teams\teams;
+#using scripts\mp_common\util;
 
 #namespace ctf;
 
@@ -175,7 +174,7 @@ function onstartgametype() {
 function function_bc074337(var_69437f64) {
     level endon(#"game_ended");
     level waittill(#"game_playing");
-    wait(2);
+    wait 2;
     foreach (player in level.players) {
         team = player.pers[#"team"];
         if (team === #"spectator") {
@@ -266,7 +265,7 @@ function onendround(*var_c1e98979) {
 // Checksum 0xf9169652, Offset: 0x18c8
 // Size: 0x140
 function function_4e84324e() {
-    wait(5);
+    wait 5;
     if (!isarray(level.flags)) {
         return;
     }
@@ -418,20 +417,20 @@ function createflag(trigger) {
     visuals[1] notsolid();
     visuals[1] function_619a5c20();
     flag = gameobjects::create_carry_object(entityteam, trigger, visuals, (0, 0, 0), entityteam + "_flag");
-    flag gameobjects::function_3c3a122f(#"hash_150a20fa4efc5c7a", level.flagtouchreturntime);
-    flag gameobjects::function_3c3a122f(#"hash_33c49a99551acae7", level.flagcapturetime);
-    flag gameobjects::allow_carry(#"hash_33c49a99551acae7");
-    flag gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    flag gameobjects::function_3c3a122f(#"group_friendly", level.flagtouchreturntime);
+    flag gameobjects::function_3c3a122f(#"group_enemy", level.flagcapturetime);
+    flag gameobjects::allow_carry(#"group_enemy");
+    flag gameobjects::set_visible(#"group_all");
     flag.var_22389d70 = 0;
     flag function_ef8d5fb5();
     visuals[0] clientfield::set("ctf_flag_objid", flag.objectiveid);
     if (!getdvarint(#"hash_3127d4491fda6ae0", 0)) {
         flag gameobjects::set_visible_carrier_model(game.carry_flagmodels[entityteam]);
     }
-    flag gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", level.icondefend2d);
-    flag gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", level.icondefend3d);
-    flag gameobjects::set_2d_icon(#"hash_33c49a99551acae7", level.iconcapture2d);
-    flag gameobjects::set_3d_icon(#"hash_33c49a99551acae7", level.iconcapture3d);
+    flag gameobjects::set_2d_icon(#"group_friendly", level.icondefend2d);
+    flag gameobjects::set_3d_icon(#"group_friendly", level.icondefend3d);
+    flag gameobjects::set_2d_icon(#"group_enemy", level.iconcapture2d);
+    flag gameobjects::set_3d_icon(#"group_enemy", level.iconcapture3d);
     var_a319c814 = getgametypesetting(#"carrier_manualdrop");
     if (var_a319c814 === 1) {
         flag gameobjects::function_a8c842d6(1, 1, 0);
@@ -477,10 +476,10 @@ function createflagzone(trigger) {
     visuals = [];
     entityteam = util::function_6f4ff113(trigger.script_team);
     flagzone = gameobjects::create_use_object(entityteam, trigger, visuals, (0, 0, 0), entityteam + "_base");
-    flagzone gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    flagzone gameobjects::allow_use(#"group_friendly");
     flagzone gameobjects::set_use_time(0);
     flagzone gameobjects::set_use_text(#"mp/capturing_flag");
-    flagzone gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
+    flagzone gameobjects::set_visible(#"group_friendly");
     enemyteam = util::getotherteam(entityteam);
     flagzone gameobjects::set_key_object(level.teamflags[enemyteam]);
     flagzone.onuse = &oncapture;
@@ -488,9 +487,9 @@ function createflagzone(trigger) {
     flag.flagbase = flagzone;
     flagzone.flag = flag;
     flagzone createflagspawninfluencer(entityteam);
-    var_e68cc7ba = spawn("trigger_radius", trigger.origin, 120);
-    smart_cover::function_18f38647(var_e68cc7ba);
-    concertina_wire::function_18f38647(var_e68cc7ba);
+    excludezone = spawn("trigger_radius", trigger.origin, 120);
+    smart_cover::addprotectedzone(excludezone);
+    concertina_wire::addprotectedzone(excludezone);
     return flagzone;
 }
 
@@ -521,7 +520,7 @@ function ctf() {
     flag_triggers = getentarray("ctf_flag_pickup_trig", "targetname");
     if (!isdefined(flag_triggers) || flag_triggers.size != 2) {
         /#
-            util::error("ctf_carrier_friendly");
+            util::error("<dev string:x38>");
         #/
         return;
     }
@@ -536,7 +535,7 @@ function ctf() {
     flag_zones = getentarray("ctf_flag_zone_trig", "targetname");
     if (!isdefined(flag_zones) || flag_zones.size != 2) {
         /#
-            util::error("<unknown string>");
+            util::error("<dev string:x7d>");
         #/
         return;
     }
@@ -588,10 +587,10 @@ function function_d45df32e() {
 function ctf_icon_hide() {
     level waittill(#"game_ended");
     if (isdefined(level.teamflags[#"allies"])) {
-        level.teamflags[#"allies"] gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        level.teamflags[#"allies"] gameobjects::set_visible(#"group_none");
     }
     if (isdefined(level.teamflags[#"axis"])) {
-        level.teamflags[#"axis"] gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        level.teamflags[#"axis"] gameobjects::set_visible(#"group_none");
     }
 }
 
@@ -676,7 +675,7 @@ function ondrop(player) {
     self.visuals[0] clientfield::set("ctf_flag_away", 1);
     self function_ef8d5fb5();
     if (level.touchreturn) {
-        self gameobjects::allow_carry(#"hash_5ccfd7bbbf07c770");
+        self gameobjects::allow_carry(#"group_all");
         level.flaghints[otherteam] turn_off();
     }
     if (isdefined(player)) {
@@ -690,9 +689,9 @@ function ondrop(player) {
     globallogic_audio::leader_dialog("ctfEnemyFlagDropped", otherteam, "ctf_flag_enemy");
     /#
         if (isdefined(player)) {
-            print(team + "<unknown string>");
+            print(team + "<dev string:xc0>");
         } else {
-            print(team + "<unknown string>");
+            print(team + "<dev string:xc0>");
         }
     #/
     if (isdefined(player)) {
@@ -701,15 +700,15 @@ function ondrop(player) {
     globallogic_audio::play_2d_on_team("mpl_flagdrop_sting_friend", otherteam);
     globallogic_audio::play_2d_on_team("mpl_flagdrop_sting_enemy", team);
     if (level.touchreturn) {
-        self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", level.iconreturn3d);
-        self gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", level.iconreturn2d);
+        self gameobjects::set_3d_icon(#"group_friendly", level.iconreturn3d);
+        self gameobjects::set_2d_icon(#"group_friendly", level.iconreturn2d);
     } else {
-        self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", level.icondropped3d);
-        self gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", level.icondropped2d);
+        self gameobjects::set_3d_icon(#"group_friendly", level.icondropped3d);
+        self gameobjects::set_2d_icon(#"group_friendly", level.icondropped2d);
     }
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    self gameobjects::set_3d_icon(#"hash_33c49a99551acae7", level.iconcapture3d);
-    self gameobjects::set_2d_icon(#"hash_33c49a99551acae7", level.iconcapture2d);
+    self gameobjects::set_visible(#"group_all");
+    self gameobjects::set_3d_icon(#"group_enemy", level.iconcapture3d);
+    self gameobjects::set_2d_icon(#"group_enemy", level.iconcapture2d);
     thread sound::play_on_players(game.flag_dropped_sound, game.attackers);
     self removeinfluencers();
     if (isdefined(player)) {
@@ -735,7 +734,7 @@ function onpickup(player) {
     }
     player stats::function_bb7eedf0(#"pickups", 1);
     if (level.touchreturn) {
-        self gameobjects::allow_carry(#"hash_33c49a99551acae7");
+        self gameobjects::allow_carry(#"group_enemy");
     }
     self removeinfluencers();
     team = self gameobjects::get_owner_team();
@@ -767,9 +766,9 @@ function onpickup(player) {
         self returnflag();
         /#
             if (isdefined(player)) {
-                print(team + "<unknown string>");
+                print(team + "<dev string:xd1>");
             } else {
-                print(team + "<unknown string>");
+                print(team + "<dev string:xd1>");
             }
         #/
         util::function_a3f7de13(12, player.team, player getentitynumber());
@@ -818,18 +817,18 @@ function onpickup(player) {
     globallogic_audio::play_2d_on_team("mpl_flagget_sting_friend", otherteam);
     globallogic_audio::play_2d_on_team("mpl_flagget_sting_enemy", team);
     if (level.enemycarriervisible) {
-        self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+        self gameobjects::set_visible(#"group_all");
     } else {
-        self gameobjects::set_visible(#"hash_33c49a99551acae7");
+        self gameobjects::set_visible(#"group_enemy");
     }
-    self gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", level.iconkill2d);
-    self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", level.iconkill3d);
-    self gameobjects::set_2d_icon(#"hash_33c49a99551acae7", level.iconescort2d);
-    self gameobjects::set_3d_icon(#"hash_33c49a99551acae7", level.iconescort3d);
+    self gameobjects::set_2d_icon(#"group_friendly", level.iconkill2d);
+    self gameobjects::set_3d_icon(#"group_friendly", level.iconkill3d);
+    self gameobjects::set_2d_icon(#"group_enemy", level.iconescort2d);
+    self gameobjects::set_3d_icon(#"group_enemy", level.iconescort3d);
     player thread claim_trigger(level.flaghints[otherteam]);
     update_hints();
     /#
-        print(team + "<unknown string>");
+        print(team + "<dev string:xe3>");
     #/
     ss = level.spawnsystem;
     player_team_mask = util::getteammask(otherteam);
@@ -844,7 +843,7 @@ function onpickup(player) {
 // Size: 0x32
 function onpickupmusicstate(player) {
     self endon(#"death");
-    wait(6);
+    wait 6;
     if (player.isflagcarrier) {
     }
 }
@@ -874,18 +873,18 @@ function returnflag() {
     function_d1b40f6e(team, 0);
     globallogic_audio::play_2d_on_team("mpl_flagreturn_sting", team);
     globallogic_audio::play_2d_on_team("mpl_flagreturn_sting", otherteam);
-    level.teamflagzones[otherteam] gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
-    level.teamflagzones[otherteam] gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
+    level.teamflagzones[otherteam] gameobjects::allow_use(#"group_friendly");
+    level.teamflagzones[otherteam] gameobjects::set_visible(#"group_friendly");
     update_hints();
     if (level.touchreturn) {
-        self gameobjects::allow_carry(#"hash_33c49a99551acae7");
+        self gameobjects::allow_carry(#"group_enemy");
     }
     self gameobjects::return_home();
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", level.icondefend3d);
-    self gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", level.icondefend2d);
-    self gameobjects::set_3d_icon(#"hash_33c49a99551acae7", level.iconcapture3d);
-    self gameobjects::set_2d_icon(#"hash_33c49a99551acae7", level.iconcapture2d);
+    self gameobjects::set_visible(#"group_all");
+    self gameobjects::set_3d_icon(#"group_friendly", level.icondefend3d);
+    self gameobjects::set_2d_icon(#"group_friendly", level.icondefend2d);
+    self gameobjects::set_3d_icon(#"group_enemy", level.iconcapture3d);
+    self gameobjects::set_2d_icon(#"group_enemy", level.iconcapture2d);
     globallogic_audio::leader_dialog("ctfFriendlyFlagReturned", team, "ctf_flag");
     globallogic_audio::leader_dialog("ctfEnemyFlagReturned", otherteam, "ctf_flag_enemy");
 }
@@ -895,7 +894,7 @@ function returnflag() {
 // Checksum 0xf95a1ade, Offset: 0x48a0
 // Size: 0x154
 function function_883c46cc(team) {
-    wait(2);
+    wait 2;
     if (isdefined(game.stat[#"roundswon"])) {
         alliesroundswon = game.stat[#"roundswon"][#"allies"];
         axisroundswon = game.stat[#"roundswon"][#"axis"];
@@ -961,7 +960,7 @@ function oncapture(player) {
     globallogic_audio::play_2d_on_team("mpl_flagcapture_sting_friend", team);
     player giveflagcapturexp(player);
     /#
-        print(enemyteam + "<unknown string>");
+        print(enemyteam + "<dev string:xf2>");
     #/
     flag = player.carryobject;
     player challenges::capturedobjective(time, flag.trigger);
@@ -974,10 +973,10 @@ function oncapture(player) {
         objective_setvisibletoplayer(flag.objectiveid, var_ba17692e);
     }
     otherteam = util::getotherteam(team);
-    level.teamflags[otherteam] gameobjects::allow_carry(#"hash_33c49a99551acae7");
-    level.teamflags[otherteam] gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    level.teamflags[otherteam] gameobjects::allow_carry(#"group_enemy");
+    level.teamflags[otherteam] gameobjects::set_visible(#"group_all");
     level.teamflags[otherteam] gameobjects::return_home();
-    level.teamflagzones[otherteam] gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    level.teamflagzones[otherteam] gameobjects::allow_use(#"group_friendly");
     player.isflagcarrier = 0;
     player.flagcarried = undefined;
     player clientfield::set("ctf_flag_carrier", 0);
@@ -1009,16 +1008,16 @@ function giveflagcapturexp(player) {
 function onreset() {
     update_hints();
     team = self gameobjects::get_owner_team();
-    self gameobjects::set_3d_icon(#"hash_150a20fa4efc5c7a", level.icondefend3d);
-    self gameobjects::set_2d_icon(#"hash_150a20fa4efc5c7a", level.icondefend2d);
-    self gameobjects::set_3d_icon(#"hash_33c49a99551acae7", level.iconcapture3d);
-    self gameobjects::set_2d_icon(#"hash_33c49a99551acae7", level.iconcapture2d);
+    self gameobjects::set_3d_icon(#"group_friendly", level.icondefend3d);
+    self gameobjects::set_2d_icon(#"group_friendly", level.icondefend2d);
+    self gameobjects::set_3d_icon(#"group_enemy", level.iconcapture3d);
+    self gameobjects::set_2d_icon(#"group_enemy", level.iconcapture2d);
     if (level.touchreturn) {
-        self gameobjects::allow_carry(#"hash_33c49a99551acae7");
+        self gameobjects::allow_carry(#"group_enemy");
         self.trigger triggerenable(1);
     }
-    level.teamflagzones[team] gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
-    level.teamflagzones[team] gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    level.teamflagzones[team] gameobjects::set_visible(#"group_friendly");
+    level.teamflagzones[team] gameobjects::allow_use(#"group_friendly");
     self.visuals[0] clientfield::set("ctf_flag_away", 0);
     self gameobjects::set_flags(0);
     function_d1b40f6e(team, 0);

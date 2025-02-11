@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\ai\systems\gib.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace destructclientutils;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2dc53bd2, Offset: 0x220
 // Size: 0x610
 function private preinit() {
@@ -64,7 +63,7 @@ function private preinit() {
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x25b7b666, Offset: 0x838
 // Size: 0x20
 function private _getdestructibledef(entity) {
@@ -72,7 +71,7 @@ function private _getdestructibledef(entity) {
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x19110fe9, Offset: 0x860
 // Size: 0x136
 function private _destructhandler(localclientnum, oldvalue, newvalue, bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -99,7 +98,7 @@ function private _destructhandler(localclientnum, oldvalue, newvalue, bnewent, *
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xe4e22fc2, Offset: 0x9a0
 // Size: 0x1b4
 function private _destructpiece(localclientnum, entity, piecenumber, shouldspawngibs) {
@@ -122,7 +121,7 @@ function private _destructpiece(localclientnum, entity, piecenumber, shouldspawn
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x68af5139, Offset: 0xb60
 // Size: 0x32
 function private _getdestructstate(*localclientnum, entity) {
@@ -133,7 +132,7 @@ function private _getdestructstate(*localclientnum, entity) {
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xaa82e44, Offset: 0xba0
 // Size: 0xdc
 function private _handledestructcallbacks(localclientnum, entity, piecenumber) {
@@ -147,7 +146,7 @@ function private _handledestructcallbacks(localclientnum, entity, piecenumber) {
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb3231ced, Offset: 0xc88
 // Size: 0xc0
 function adddestructpiececallback(*localclientnum, entity, piecenumber, callbackfunction) {
@@ -164,7 +163,7 @@ function adddestructpiececallback(*localclientnum, entity, piecenumber, callback
 }
 
 // Namespace destructclientutils/destructible_character
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x14d1284, Offset: 0xd50
 // Size: 0x3e
 function ispiecedestructed(localclientnum, entity, piecenumber) {

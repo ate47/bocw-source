@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
+#using scripts\core_common\lui_shared;
 
 #namespace sr_armor_menu;
 

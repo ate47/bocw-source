@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace weapons;
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcaabb505, Offset: 0x90
 // Size: 0x24
 function ispistol(weapon) {
@@ -18,7 +17,7 @@ function isflashorstunweapon(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf0412ba8, Offset: 0xf0
 // Size: 0x3e
 function ispunch(weapon) {
@@ -34,7 +33,7 @@ function isknife(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe978b410, Offset: 0x1b0
 // Size: 0x46
 function isnonbarehandsmelee(weapon) {

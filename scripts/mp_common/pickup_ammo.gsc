@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\dynamic_loadout.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\struct;
+#using scripts\mp_common\dynamic_loadout;
 
 #namespace pickup_ammo;
 
@@ -18,11 +17,11 @@ function function_cff1656d() {
         pickup.trigger triggerignoreteam();
         pickup.gameobject = gameobjects::create_use_object(#"neutral", pickup.trigger, [], (0, 0, 0), "pickup_ammo");
         pickup.gameobject gameobjects::set_objective_entity(pickup.gameobject);
-        pickup.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-        pickup.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+        pickup.gameobject gameobjects::set_visible(#"group_all");
+        pickup.gameobject gameobjects::allow_use(#"group_all");
         pickup.gameobject gameobjects::set_use_time(0);
         pickup.gameobject.usecount = 0;
-        pickup.gameobject.var_5ecd70 = pickup;
+        pickup.gameobject.parentobj = pickup;
         pickup.gameobject.onuse = &function_5bb13b48;
     }
 }
@@ -87,7 +86,7 @@ function private function_5bb13b48(player) {
             if (isdefined(self.objectiveid)) {
                 objective_setinvisibletoplayer(self.objectiveid, player);
             }
-            self.var_5ecd70 setinvisibletoplayer(player);
+            self.parentobj setinvisibletoplayer(player);
             self.trigger setinvisibletoplayer(player);
             self playsoundtoplayer(#"hash_587fec4cf4ba3ebb", player);
             self.usecount++;
@@ -101,7 +100,7 @@ function private function_5bb13b48(player) {
         }
     }
     if (!is_true(level.var_aff59367) && self.usecount >= level.var_ad9d03e7) {
-        self.var_5ecd70 delete();
+        self.parentobj delete();
         self gameobjects::disable_object(1);
     }
 }
@@ -114,11 +113,11 @@ function private function_7a80944d(player) {
     level endon(#"game_ended");
     self endon(#"death");
     player endon(#"disconnect");
-    wait(isdefined(level.pickup_respawn_time) ? level.pickup_respawn_time : 0);
+    wait isdefined(level.pickup_respawn_time) ? level.pickup_respawn_time : 0;
     if (isdefined(self.objectiveid)) {
         objective_setvisibletoplayer(self.objectiveid, player);
     }
-    self.var_5ecd70 setvisibletoplayer(player);
+    self.parentobj setvisibletoplayer(player);
     self.trigger setvisibletoplayer(player);
 }
 

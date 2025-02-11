@@ -1,33 +1,32 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_dc59353021baee1;
-#using script_746267f0669c40ae;
+#using script_1306aefca48fc8b6;
+#using script_164a456ce05c3483;
+#using script_17dcb1172e441bf6;
 #using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
 #using script_40f967ad5d18ea74;
 #using script_47851dbeea22fe66;
-#using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_1b0b07ff57d1dde3;
-#using script_1ee011cd0961afd7;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
-#using script_74a56359b7d02ab6;
-#using script_5549681e1669c11a;
-#using script_1306aefca48fc8b6;
-#using script_73ad7687b437e468;
 #using script_48e04a393ec6d855;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_4d748e58ce25b60c;
+#using script_5549681e1669c11a;
+#using script_5701633066d199f2;
+#using script_5f20d3b434d24884;
+#using script_73ad7687b437e468;
+#using script_746267f0669c40ae;
+#using script_74a56359b7d02ab6;
+#using script_dc59353021baee1;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_1dc364c0;
 
 // Namespace namespace_1dc364c0/namespace_1dc364c0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x528d29f5, Offset: 0x268
 // Size: 0x8c
 function init() {
@@ -38,7 +37,7 @@ function init() {
 }
 
 // Namespace namespace_1dc364c0/namespace_1dc364c0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfeee4921, Offset: 0x300
 // Size: 0x3ca
 function function_cb06f399() {
@@ -91,7 +90,7 @@ function function_cb06f399() {
 }
 
 // Namespace namespace_1dc364c0/namespace_1dc364c0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x158a2588, Offset: 0x6d8
 // Size: 0xf30
 function function_e71841a() {
@@ -190,7 +189,7 @@ function function_e71841a() {
             continue;
         }
         if (var_f6198c5b.script_noteworthy === "teleporter") {
-            level.doa.var_c2648383[level.doa.var_c2648383.size] = var_f6198c5b;
+            level.doa.teleporter_locs[level.doa.teleporter_locs.size] = var_f6198c5b;
             continue;
         }
         self.floordecor[self.floordecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
@@ -209,14 +208,14 @@ function function_e71841a() {
         var_5e62902b.origin = var_f6198c5b.origin;
         var_5e62902b.type = args[0];
         if (var_5e62902b.type == #"room_warp") {
-            assert(args.size >= 4, "<unknown string>");
+            assert(args.size >= 4, "<dev string:x38>");
             width = int(args[1]);
             length = int(args[2]);
             height = int(args[3]);
             var_5e62902b.trigger = namespace_ec06fe4a::spawntrigger("trigger_box", var_5e62902b.origin, 2, length, height, width);
-            assert(isdefined(var_f6198c5b.script_noteworthy), "<unknown string>");
+            assert(isdefined(var_f6198c5b.script_noteworthy), "<dev string:x51>");
             var_5e62902b.room = namespace_5a917022::function_c8892b0f(var_f6198c5b.script_noteworthy);
-            assert(isdefined(var_5e62902b.room), "<unknown string>");
+            assert(isdefined(var_5e62902b.room), "<dev string:x72>");
             if (isdefined(args[4])) {
                 var_5e62902b.trigger.var_ee2cd39c = namespace_ec06fe4a::spawnmodel(var_5e62902b.origin, args[4], var_f6198c5b.angles, "room_warp" + var_5e62902b.origin);
                 if (isdefined(var_5e62902b.trigger.var_ee2cd39c)) {

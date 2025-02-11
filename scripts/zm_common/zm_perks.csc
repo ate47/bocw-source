@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_loadout.csc;
-#using scripts\zm_common\zm_customgame.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_perks;
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2c700fec, Offset: 0x310
 // Size: 0x7c
 function init() {
@@ -25,7 +24,7 @@ function init() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcd24d84f, Offset: 0x398
 // Size: 0xb4
 function function_f3c80d73(str_bottle, str_totem) {
@@ -39,7 +38,7 @@ function function_f3c80d73(str_bottle, str_totem) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x910ca595, Offset: 0x458
 // Size: 0x100
 function perks_register_clientfield() {
@@ -95,11 +94,11 @@ function function_89e748a7() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x836a6ba0, Offset: 0x1108
 // Size: 0xa8
 function perk_init_code_callbacks() {
-    wait(0.1);
+    wait 0.1;
     if (level._custom_perks.size > 0) {
         a_keys = getarraykeys(level._custom_perks);
         for (i = 0; i < a_keys.size; i++) {
@@ -111,7 +110,7 @@ function perk_init_code_callbacks() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe540ee04, Offset: 0x11b8
 // Size: 0x20
 function init_custom_perks() {
@@ -121,7 +120,7 @@ function init_custom_perks() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xdbd65af5, Offset: 0x11e0
 // Size: 0x66
 function register_perk_clientfields(str_perk, func_clientfield_register, func_code_callback) {
@@ -131,7 +130,7 @@ function register_perk_clientfields(str_perk, func_clientfield_register, func_co
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x63fa2740, Offset: 0x1250
 // Size: 0x46
 function register_perk_effects(str_perk, str_light_effect) {
@@ -140,7 +139,7 @@ function register_perk_effects(str_perk, str_light_effect) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd773999a, Offset: 0x12a0
 // Size: 0x46
 function register_perk_init_thread(str_perk, func_init_thread) {
@@ -149,7 +148,7 @@ function register_perk_init_thread(str_perk, func_init_thread) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x50137bde, Offset: 0x12f0
 // Size: 0x8e
 function function_b60f4a9f(str_perk, var_4fbc4ea9, var_347c72d2, var_51f1a532) {
@@ -162,7 +161,7 @@ function function_b60f4a9f(str_perk, var_4fbc4ea9, var_347c72d2, var_51f1a532) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x921a702d, Offset: 0x1388
 // Size: 0xa0
 function init_perk_custom_threads() {
@@ -177,7 +176,7 @@ function init_perk_custom_threads() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x12b16380, Offset: 0x1430
 // Size: 0x60
 function _register_undefined_perk(str_perk) {
@@ -190,7 +189,7 @@ function _register_undefined_perk(str_perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x20eb5385, Offset: 0x1498
 // Size: 0xb4
 function perk_meteor_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -204,20 +203,20 @@ function perk_meteor_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x462d5ef5, Offset: 0x1558
 // Size: 0x6c
 function init_perk_machines_fx(*localclientnum) {
     if (!level.enable_magic) {
         return;
     }
-    wait(0.1);
+    wait 0.1;
     machines = struct::get_array("zm_perk_machine", "targetname");
     array::thread_all(machines, &perk_start_up);
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9f35e02a, Offset: 0x15d0
 // Size: 0x154
 function perk_start_up() {
@@ -240,12 +239,12 @@ function perk_start_up() {
         if (timer >= 3) {
             break;
         }
-        wait(duration);
+        wait duration;
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcb171301, Offset: 0x1730
 // Size: 0x64
 function vending_machine_flicker_light(fx_light, duration) {
@@ -256,19 +255,19 @@ function vending_machine_flicker_light(fx_light, duration) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x78ee920c, Offset: 0x17a0
 // Size: 0xc4
 function play_perk_fx_on_client(client_num, fx_light, duration) {
     fxobj = spawn(client_num, self.origin + (0, 0, -50), "script_model");
     fxobj setmodel(#"tag_origin");
     util::playfxontag(client_num, level._effect[fx_light], fxobj, "tag_origin");
-    wait(duration);
+    wait duration;
     fxobj delete();
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x4d70bd76, Offset: 0x1870
 // Size: 0x6c
 function function_ccbdf992(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -336,7 +335,7 @@ function private function_be3ae9c5(n_value, var_51e3f61d = 0) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc917de6f, Offset: 0x1be8
 // Size: 0x104
 function function_9b4bc8e7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -352,20 +351,20 @@ function function_9b4bc8e7(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2c230885, Offset: 0x1cf8
 // Size: 0x88
 function function_6a0a572d(localclientnum) {
     level endon(#"demo_jump");
     self endon(#"death");
     while (true) {
-        wait(randomintrange(5, 20));
+        wait randomintrange(5, 20);
         self playsound(localclientnum, #"hash_62f87027921fa5b4");
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8bcd43d1, Offset: 0x1d88
 // Size: 0xc2
 function function_52c149b2(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -378,7 +377,7 @@ function function_52c149b2(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc63834ec, Offset: 0x1e58
 // Size: 0x2a4
 function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -398,11 +397,11 @@ function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitials
         }
     }
     level notify(#"hash_4d8d403fdb281b69");
-    wait(0.5);
+    wait 0.5;
     if (bwastimejump == 0) {
         var_6d877f48 = array::random(array((7, 7, 7), (-7, -7, -7), (-7, 7, 7), (7, -7, -7)));
         var_aaf8da70 rotateto(level.var_245eb09f + var_6d877f48, 0.2);
-        wait(0.8);
+        wait 0.8;
         var_aaf8da70 rotateto(level.var_245eb09f, 0.1);
         return;
     }
@@ -412,7 +411,7 @@ function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x537af84f, Offset: 0x2108
 // Size: 0x160
 function function_1625e105(e_player) {
@@ -422,7 +421,7 @@ function function_1625e105(e_player) {
     level endon(#"demo_jump", #"hash_4d8d403fdb281b69");
     e_player endon(#"death");
     self endon(#"death");
-    wait(1);
+    wait 1;
     while (isdefined(e_player)) {
         var_d1d1cc92 = e_player gettagorigin("j_head");
         if (!isdefined(var_d1d1cc92)) {
@@ -432,7 +431,7 @@ function function_1625e105(e_player) {
             var_a8dcfa = vectortoangles(var_d1d1cc92 - self.origin);
             self rotateto(var_a8dcfa, 0.15);
         }
-        wait(0.15);
+        wait 0.15;
     }
 }
 

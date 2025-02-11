@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
 #using script_1fa63e6c62e170a3;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\util;
 
 #namespace districts;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace districts/districts
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2ff4a8b, Offset: 0x138
 // Size: 0x44
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace districts/districts
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf3080150, Offset: 0x188
 // Size: 0x154
 function function_a7d79fcb(names, exclusive = 0) {
@@ -74,7 +73,7 @@ function function_930f8c81(names, exclusive = 0) {
 }
 
 // Namespace districts/districts
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xca8ec559, Offset: 0x460
 // Size: 0x42
 function private function_da432d39(name) {
@@ -86,7 +85,7 @@ function private function_da432d39(name) {
 }
 
 // Namespace districts/districts
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8cdcbefe, Offset: 0x4b0
 // Size: 0x74
 function private function_1e34097d(var_8f63b4bd) {

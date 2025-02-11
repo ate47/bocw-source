@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_54f593f5beb1464a;
 #using script_2a30ac7aa0ee8988;
+#using script_54f593f5beb1464a;
 
 #namespace namespace_e5326a0e;
 
@@ -38,7 +37,7 @@ function autoexec __init__() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8e57dd28, Offset: 0x270
 // Size: 0x14
 function function_cbbf16a4() {
@@ -46,7 +45,7 @@ function function_cbbf16a4() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x12f48a3f, Offset: 0x290
 // Size: 0x14
 function function_e5d1b704() {
@@ -54,7 +53,7 @@ function function_e5d1b704() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc065e60c, Offset: 0x2b0
 // Size: 0x54
 function function_574dc51f() {
@@ -63,7 +62,7 @@ function function_574dc51f() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x30931450, Offset: 0x310
 // Size: 0xa4
 function function_1ed4cf79() {
@@ -76,7 +75,7 @@ function function_1ed4cf79() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfdfb967c, Offset: 0x3c0
 // Size: 0xa4
 function function_11109d50() {
@@ -89,7 +88,7 @@ function function_11109d50() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x59800b3e, Offset: 0x470
 // Size: 0x104
 function function_bcd11f83() {
@@ -100,7 +99,7 @@ function function_bcd11f83() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x580
 // Size: 0x4
 function function_d5eb555d() {
@@ -108,7 +107,7 @@ function function_d5eb555d() {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x590
 // Size: 0x4
 function function_f05c9e0a() {
@@ -135,7 +134,7 @@ function function_8341771e(locations, radius, name) {
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2e8dfd65, Offset: 0x748
 // Size: 0x1c
 function function_c379f040() {

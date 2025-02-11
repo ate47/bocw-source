@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_7b1cd3908a825fdd;
 #using script_4474799e52e84c59;
-#using scripts\zm_common\zm_fishing.gsc;
-#using scripts\zm_common\zm_utility_zsurvival.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\objective_manager.gsc;
 #using script_5a525a75a8f1f7e4;
-#using scripts\zm_common\zm_wallbuy.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_7b1cd3908a825fdd;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\objective_manager;
+#using scripts\zm_common\zm_fishing;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_utility_zsurvival;
+#using scripts\zm_common\zm_wallbuy;
 
 #namespace zm_destination_manager;
 
@@ -28,17 +27,17 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4350b4b3, Offset: 0x1b0
 // Size: 0x46
 function private preinit() {
     level.contentmanager.preinit = 0;
-    level flag::init(#"hash_3c2081a03635c78", 0);
+    level flag::init(#"navmesh_loading", 0);
     level.var_7de6c9f = undefined;
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x257420ce, Offset: 0x200
 // Size: 0x2c
 function private finalize() {
@@ -48,17 +47,17 @@ function private finalize() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2c4024c5, Offset: 0x238
 // Size: 0x7a
 function function_123b048f(var_8a952bed) {
-    assert(isdefined(var_8a952bed), "<unknown string>");
-    assert(var_8a952bed.variantname == #"hash_313be7fccc870cdd", "<unknown string>");
+    assert(isdefined(var_8a952bed), "<dev string:x38>");
+    assert(var_8a952bed.variantname == #"content_destination", "<dev string:x38>");
     level.contentmanager.var_5f2429b1 = var_8a952bed;
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbed0a082, Offset: 0x2c0
 // Size: 0x16
 function function_2e165386() {
@@ -66,7 +65,7 @@ function function_2e165386() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x70fc6c9f, Offset: 0x2e0
 // Size: 0x242
 function function_f3be07d7(destination) {
@@ -100,13 +99,13 @@ function function_f3be07d7(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60e7d8a7, Offset: 0x530
 // Size: 0x1fc
 function function_e4254bac(destination, var_f281f968) {
     locations = array::randomize(content_manager::get_children(destination));
     for (i = 0; i < locations.size; i++) {
-        if (locations[i].variantname !== #"hash_4807866fcc400c90") {
+        if (locations[i].variantname !== #"content_location") {
             arrayremoveindex(locations, i, 1);
         }
     }
@@ -122,7 +121,7 @@ function function_e4254bac(destination, var_f281f968) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2563c6a8, Offset: 0x738
 // Size: 0x114
 function private function_6f9efb66() {
@@ -145,7 +144,7 @@ function private function_6f9efb66() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9589f4b6, Offset: 0x858
 // Size: 0x3cc
 function private function_1975f7db() {
@@ -193,8 +192,8 @@ function private function_1975f7db() {
             var_a3c51b07[i] = var_c0335359;
         }
         var_6067a19c = var_a3c51b07[i - 1];
-        if (isdefined(var_6067a19c.var_e859e591[#"hash_401d37614277df42"])) {
-            var_6067a19c.var_473c9869 = 1;
+        if (isdefined(var_6067a19c.var_e859e591[#"final_battle"])) {
+            var_6067a19c.final_battle = 1;
         }
         level.contentmanager.var_d60029a6 = var_a3c51b07;
         if (var_4191df0e) {
@@ -206,7 +205,7 @@ function private function_1975f7db() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb5fa4d2f, Offset: 0xc30
 // Size: 0x38e
 function function_786a9f4d(destinations) {
@@ -231,15 +230,15 @@ function function_786a9f4d(destinations) {
             if (level.contentmanager.var_46849b1b >= destinations.size) {
                 level.contentmanager.var_46849b1b = 0;
             }
-            level waittill(#"hash_345e9169ebba28fb");
-            level callback::callback(#"hash_345e9169ebba28fb");
+            level waittill(#"portal_activated");
+            level callback::callback(#"portal_activated");
             locations = destination.locations;
             foreach (location in locations) {
                 foreach (instance in location.instances) {
-                    instance callback::callback(#"hash_345e9169ebba28fb");
+                    instance callback::callback(#"portal_activated");
                 }
             }
-            level callback::callback(#"hash_1c1f524243c91729");
+            level callback::callback(#"destination_completed");
             deactivate(destination);
             function_dafa6af4(destination);
             return;
@@ -248,7 +247,7 @@ function function_786a9f4d(destinations) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4145abbc, Offset: 0xfc8
 // Size: 0x614
 function function_dafa6af4(*destination) {
@@ -291,12 +290,12 @@ function function_dafa6af4(*destination) {
     }
     var_112acc94 = isdefined(level.var_3d1ef3ae) ? level.var_3d1ef3ae : level.contentmanager.var_dc858a58.list[level.contentmanager.var_dc858a58.index];
     if (isdefined(var_112acc94)) {
-        namespace_553954de::function_1aa044d3(var_112acc94);
+        namespace_553954de::switch_map(var_112acc94);
     }
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfaa0f127, Offset: 0x15e8
 // Size: 0xa6
 function private function_c62829da(destination) {
@@ -315,11 +314,11 @@ function private function_c62829da(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1742f074, Offset: 0x1698
 // Size: 0x114
 function function_ab94c270(destination) {
-    if (level flag::get(#"hash_3c2081a03635c78")) {
+    if (level flag::get(#"navmesh_loading")) {
         return;
     }
     ent = function_c62829da(destination);
@@ -327,27 +326,27 @@ function function_ab94c270(destination) {
         return;
     }
     if (isdefined(ent)) {
-        level flag::set(#"hash_3c2081a03635c78");
+        level flag::set(#"navmesh_loading");
         level.var_7de6c9f = undefined;
         var_ada19974 = function_dbe9e22e(ent);
         while (var_ada19974.size > 0) {
             var_ada19974 = function_8abb2f1a(var_ada19974);
             waitframe(1);
         }
-        level flag::clear(#"hash_3c2081a03635c78");
+        level flag::clear(#"navmesh_loading");
         level.var_7de6c9f = ent;
     }
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6ad5d0d0, Offset: 0x17b8
 // Size: 0x2f4
 function activate(destination) {
     level.contentmanager.currentdestination = destination;
-    level callback::callback(#"hash_4ac56c023c88537f", {#destination:destination});
+    level callback::callback(#"destination_activated", {#destination:destination});
     level thread function_ab94c270(destination);
-    level flag::wait_till_clear(#"hash_3c2081a03635c78");
+    level flag::wait_till_clear(#"navmesh_loading");
     if (isdefined(level.contentmanager.var_a3205267)) {
         [[ level.contentmanager.var_a3205267 ]](destination);
     }
@@ -376,7 +375,7 @@ function activate(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbdad941, Offset: 0x1ab8
 // Size: 0x68
 function deactivate(destination) {
@@ -386,7 +385,7 @@ function deactivate(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60e0b701, Offset: 0x1b28
 // Size: 0x21e
 function function_506afb9e(destination, var_2371bf) {
@@ -409,7 +408,7 @@ function function_506afb9e(destination, var_2371bf) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcfa83dc, Offset: 0x1d50
 // Size: 0x156
 function function_66ec9032(struct_array) {

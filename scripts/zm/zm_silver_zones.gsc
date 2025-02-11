@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_hud.gsc;
 #using script_2f560596a9a134ab;
 #using script_4ce5d94e8c797350;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_hud;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_silver_zones;
 
@@ -23,7 +22,7 @@ function autoexec init() {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3cde16a, Offset: 0xad0
 // Size: 0xff4
 function zone_init() {
@@ -114,7 +113,7 @@ function zone_init() {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7da646ef, Offset: 0x1ad0
 // Size: 0x7c
 function function_2ccf9bdc() {
@@ -123,7 +122,7 @@ function function_2ccf9bdc() {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb1b54cfa, Offset: 0x1b58
 // Size: 0x24
 function function_a0910b80() {
@@ -131,7 +130,7 @@ function function_a0910b80() {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd9a16de9, Offset: 0x1b88
 // Size: 0x84
 function function_34c9de53(params) {
@@ -141,7 +140,7 @@ function function_34c9de53(params) {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x553681db, Offset: 0x1c18
 // Size: 0x24
 function function_f62d4e38() {
@@ -149,7 +148,7 @@ function function_f62d4e38() {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x513b52cc, Offset: 0x1c48
 // Size: 0xb4
 function function_a74dcd0a(player) {
@@ -163,7 +162,7 @@ function function_a74dcd0a(player) {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x23b6c918, Offset: 0x1d08
 // Size: 0x13e
 function function_64c67df3(zone_path) {
@@ -187,7 +186,7 @@ function function_64c67df3(zone_path) {
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65bdfc4d, Offset: 0x1e50
 // Size: 0x1a8
 function function_44b1279a() {
@@ -196,20 +195,20 @@ function function_44b1279a() {
     self endon(#"disconnect");
     while (true) {
         is_player_in_zone = self zm_zonemgr::is_player_in_zone(level.var_65c43c31, 0);
-        var_c2858d41 = self clientfield::get_to_player("" + #"hash_464e0cd19b3b8c12");
-        if (is_player_in_zone && var_c2858d41 == 0) {
-            self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 1);
-            self clientfield::set_to_player("" + #"hash_464e0cd19b3b8c12", 1);
-        } else if (!is_player_in_zone && var_c2858d41 == 1) {
-            self clientfield::set_to_player("" + #"hash_464e0cd19b3b8c12", 0);
-            self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 0);
+        minimap_underground = self clientfield::get_to_player("" + #"minimap_underground");
+        if (is_player_in_zone && minimap_underground == 0) {
+            self clientfield::set_to_player("" + #"music_underscore", 1);
+            self clientfield::set_to_player("" + #"minimap_underground", 1);
+        } else if (!is_player_in_zone && minimap_underground == 1) {
+            self clientfield::set_to_player("" + #"minimap_underground", 0);
+            self clientfield::set_to_player("" + #"music_underscore", 0);
         }
         s_waitresult = self waittill(#"zone_change");
     }
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8eb476c5, Offset: 0x2000
 // Size: 0x36e
 function function_27028b8e(str_zone) {

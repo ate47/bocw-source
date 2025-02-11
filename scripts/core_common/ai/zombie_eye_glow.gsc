@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace zombie_eye_glow;
 
@@ -63,10 +62,10 @@ function delayed_zombie_eye_glow(var_64959d6d) {
     self endon(#"death");
     if (is_true(self.in_the_ground) || is_true(self.in_the_ceiling)) {
         while (!isdefined(self.create_eyes)) {
-            wait(0.1);
+            wait 0.1;
         }
     } else {
-        wait(0.5);
+        wait 0.5;
     }
     self function_b43f92cd(var_64959d6d);
 }

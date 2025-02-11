@@ -1,38 +1,37 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\mp_common\bb.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\trigger_shared.gsc;
-#using script_3d703ef87a841fe4;
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\territory.gsc;
-#using script_306215d6cfd5f1f4;
-#using script_7d712f77ab8d0c16;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
-#using script_335d0650ed05d36d;
-#using script_3e196d275a6fb180;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
 #using script_1435f3c9fc699e04;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using script_1cc417743d7c262d;
+#using script_306215d6cfd5f1f4;
+#using script_335d0650ed05d36d;
+#using script_3d703ef87a841fe4;
+#using script_3e196d275a6fb180;
+#using script_44b0b8420eabacad;
+#using script_7a8059ca02b7b09e;
+#using script_7d712f77ab8d0c16;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\territory;
+#using scripts\core_common\territory_util;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\util;
 
 #namespace namespace_5c32f369;
 
@@ -88,12 +87,12 @@ function init() {
     // Checksum 0x9e85eefe, Offset: 0xa30
     // Size: 0x15c
     function function_8d90ce2e() {
-        spawning::function_25e7711a("_a", #"none", "securing", "tie");
-        spawning::function_25e7711a("dom_neutral", #"none", "cap_exit", "tie");
-        spawning::function_25e7711a("<unknown string>", #"none", "<unknown string>", "tie");
-        spawning::function_25e7711a("<unknown string>", #"none", "<unknown string>", "tie");
-        spawning::function_25e7711a("<unknown string>", #"none", "<unknown string>", "tie");
-        spawning::function_25e7711a("<unknown string>", #"none", "<unknown string>", "tie");
+        spawning::function_25e7711a("<dev string:x38>", #"none", "<dev string:x40>", "<dev string:x51>");
+        spawning::function_25e7711a("<dev string:x59>", #"none", "<dev string:x61>", "<dev string:x51>");
+        spawning::function_25e7711a("<dev string:x72>", #"none", "<dev string:x7a>", "<dev string:x51>");
+        spawning::function_25e7711a("<dev string:x8b>", #"none", "<dev string:x93>", "<dev string:x51>");
+        spawning::function_25e7711a("<dev string:xa4>", #"none", "<dev string:xac>", "<dev string:x51>");
+        spawning::function_25e7711a("<dev string:xbd>", #"none", "<dev string:xc5>", "<dev string:x51>");
     }
 
 #/
@@ -114,7 +113,7 @@ function function_fdbc620d() {
 // Checksum 0x9001808a, Offset: 0xc58
 // Size: 0xb2
 function function_4480f87e(capturearea) {
-    capturearea.onuse = &function_290b5aa8;
+    capturearea.onuse = &on_use;
     capturearea.onbeginuse = &on_begin_use;
     capturearea.onuseupdate = &on_use_update;
     capturearea.onenduse = &on_end_use;
@@ -151,7 +150,7 @@ function function_16ee17b2(var_6c9e0594) {
     if (var_bd4d0f54.size == 0) {
         /#
             for (index = 0; index < 20; index++) {
-                println("<unknown string>");
+                println("<dev string:xd6>");
             }
         #/
         callback::abort_level();
@@ -164,9 +163,9 @@ function function_16ee17b2(var_6c9e0594) {
         visuals[0] = trigger.visual;
         name = #"dom" + trigger.visual.script_label;
         var_6b67c295 = gameobjects::create_use_object(#"none", trigger, visuals, (0, 0, 0), name);
-        var_6b67c295 gameobjects::allow_use(#"hash_33c49a99551acae7");
+        var_6b67c295 gameobjects::allow_use(#"group_enemy");
         var_6b67c295 gameobjects::set_use_text(#"mp/capturing_flag");
-        var_6b67c295 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+        var_6b67c295 gameobjects::set_visible(#"group_all");
         var_6b67c295 gameobjects::set_owner_team(#"neutral");
         var_6b67c295 gameobjects::set_objective_entity(visuals[0]);
         var_6b67c295.label = var_6b67c295 gameobjects::get_label();
@@ -273,24 +272,24 @@ function function_669e3110() {
         return [];
     }
     var_db1e5a88 = [];
-    foreach (var_72a1dc4f in var_9a6d57c4) {
-        if (!isdefined(level.teams[var_72a1dc4f.script_team])) {
+    foreach (headquarter in var_9a6d57c4) {
+        if (!isdefined(level.teams[headquarter.script_team])) {
             continue;
         }
-        var_72a1dc4f.objectiveid = gameobjects::get_next_obj_id();
-        var_72a1dc4f.var_c851244c = 0;
-        objective_add(var_72a1dc4f.objectiveid, "active", var_72a1dc4f, "dom_headquarter");
-        objective_setteam(var_72a1dc4f.objectiveid, var_72a1dc4f.script_team);
-        function_4339912c(var_72a1dc4f.objectiveid);
-        function_29ef32ee(var_72a1dc4f.objectiveid, var_72a1dc4f.script_team);
-        var_72a1dc4f.var_95afd88f = "dom_" + var_72a1dc4f.script_team + "_hq_cam";
-        var_72a1dc4f.var_c851244c = namespace_99c84a33::function_99652b58(var_72a1dc4f.var_95afd88f, var_72a1dc4f.objectiveid, var_72a1dc4f.script_team);
+        headquarter.objectiveid = gameobjects::get_next_obj_id();
+        headquarter.var_c851244c = 0;
+        objective_add(headquarter.objectiveid, "active", headquarter, "dom_headquarter");
+        objective_setteam(headquarter.objectiveid, headquarter.script_team);
+        function_4339912c(headquarter.objectiveid);
+        function_29ef32ee(headquarter.objectiveid, headquarter.script_team);
+        headquarter.var_95afd88f = "dom_" + headquarter.script_team + "_hq_cam";
+        headquarter.var_c851244c = namespace_99c84a33::function_99652b58(headquarter.var_95afd88f, headquarter.objectiveid, headquarter.script_team);
         if (!isdefined(var_db1e5a88)) {
             var_db1e5a88 = [];
         } else if (!isarray(var_db1e5a88)) {
             var_db1e5a88 = array(var_db1e5a88);
         }
-        var_db1e5a88[var_db1e5a88.size] = var_72a1dc4f;
+        var_db1e5a88[var_db1e5a88.size] = headquarter;
     }
     return var_db1e5a88;
 }
@@ -303,48 +302,48 @@ function function_daaeaa95() {
     game.dialog[#"securing_a"] = "domFriendlySecuringA";
     game.dialog[#"securing_b"] = "domFriendlySecuringB";
     game.dialog[#"securing_c"] = "domFriendlySecuringC";
-    game.dialog[#"hash_2cce4827ba1ef1c8"] = "domFriendlySecuringD";
-    game.dialog[#"hash_2cce4927ba1ef37b"] = "domFriendlySecuringE";
-    game.dialog[#"hash_2cce4a27ba1ef52e"] = "domFriendlySecuringF";
+    game.dialog[#"securing_d"] = "domFriendlySecuringD";
+    game.dialog[#"securing_e"] = "domFriendlySecuringE";
+    game.dialog[#"securing_f"] = "domFriendlySecuringF";
     game.dialog[#"secured_a"] = "domFriendlySecuredA";
     game.dialog[#"secured_b"] = "domFriendlySecuredB";
     game.dialog[#"secured_c"] = "domFriendlySecuredC";
-    game.dialog[#"hash_617e13012f96c1e7"] = "domFriendlySecuredD";
-    game.dialog[#"hash_617e12012f96c034"] = "domFriendlySecuredE";
-    game.dialog[#"hash_617e15012f96c54d"] = "domFriendlySecuredF";
+    game.dialog[#"secured_d"] = "domFriendlySecuredD";
+    game.dialog[#"secured_e"] = "domFriendlySecuredE";
+    game.dialog[#"secured_f"] = "domFriendlySecuredF";
     game.dialog[#"secured_all"] = "domFriendlySecuredAll";
     game.dialog[#"losing_a"] = "domEnemySecuringA";
     game.dialog[#"losing_b"] = "domEnemySecuringB";
     game.dialog[#"losing_c"] = "domEnemySecuringC";
-    game.dialog[#"hash_39b603dc88861980"] = "domEnemySecuringD";
-    game.dialog[#"hash_39b604dc88861b33"] = "domEnemySecuringE";
-    game.dialog[#"hash_39b605dc88861ce6"] = "domEnemySecuringF";
+    game.dialog[#"losing_d"] = "domEnemySecuringD";
+    game.dialog[#"losing_e"] = "domEnemySecuringE";
+    game.dialog[#"losing_f"] = "domEnemySecuringF";
     game.dialog[#"lost_a"] = "domEnemySecuredA";
     game.dialog[#"lost_b"] = "domEnemySecuredB";
     game.dialog[#"lost_c"] = "domEnemySecuredC";
-    game.dialog[#"hash_251e65681a651318"] = "domEnemySecuredD";
-    game.dialog[#"hash_251e66681a6514cb"] = "domEnemySecuredE";
-    game.dialog[#"hash_251e67681a65167e"] = "domEnemySecuredF";
+    game.dialog[#"lost_d"] = "domEnemySecuredD";
+    game.dialog[#"lost_e"] = "domEnemySecuredE";
+    game.dialog[#"lost_f"] = "domEnemySecuredF";
     game.dialog[#"lost_all"] = "domEnemySecuredAll";
     game.dialog[#"enemy_a"] = "domEnemyHasA";
     game.dialog[#"enemy_b"] = "domEnemyHasB";
     game.dialog[#"enemy_c"] = "domEnemyHasC";
-    game.dialog[#"hash_7ca0e4d7255f2848"] = "domEnemyHasD";
-    game.dialog[#"hash_7ca0e5d7255f29fb"] = "domEnemyHasE";
-    game.dialog[#"hash_7ca0e6d7255f2bae"] = "domEnemyHasF";
+    game.dialog[#"enemy_d"] = "domEnemyHasD";
+    game.dialog[#"enemy_e"] = "domEnemyHasE";
+    game.dialog[#"enemy_f"] = "domEnemyHasF";
     game.dialogtime = [];
     game.dialogtime[#"securing_a"] = 0;
     game.dialogtime[#"securing_b"] = 0;
     game.dialogtime[#"securing_c"] = 0;
-    game.dialogtime[#"hash_2cce4827ba1ef1c8"] = 0;
-    game.dialogtime[#"hash_2cce4927ba1ef37b"] = 0;
-    game.dialogtime[#"hash_2cce4a27ba1ef52e"] = 0;
+    game.dialogtime[#"securing_d"] = 0;
+    game.dialogtime[#"securing_e"] = 0;
+    game.dialogtime[#"securing_f"] = 0;
     game.dialogtime[#"losing_a"] = 0;
     game.dialogtime[#"losing_b"] = 0;
     game.dialogtime[#"losing_c"] = 0;
-    game.dialogtime[#"hash_39b603dc88861980"] = 0;
-    game.dialogtime[#"hash_39b604dc88861b33"] = 0;
-    game.dialogtime[#"hash_39b605dc88861ce6"] = 0;
+    game.dialogtime[#"losing_d"] = 0;
+    game.dialogtime[#"losing_e"] = 0;
+    game.dialogtime[#"losing_f"] = 0;
 }
 
 // Namespace namespace_5c32f369/namespace_5c32f369
@@ -361,11 +360,11 @@ function private function_fa8f5fda(var_bd4d0f54) {
             var_68adb4a4 setmodel("tag_origin");
             triggers = territory::function_1deaf019(var_68adb4a4.target, "targetname");
             /#
-                var_99db19f5 = "<unknown string>";
+                var_99db19f5 = "<dev string:x103>";
                 if (isdefined(level.territory) && isdefined(level.territory.targetname)) {
-                    var_99db19f5 = "<unknown string>" + level.territory.targetname + "<unknown string>";
+                    var_99db19f5 = "<dev string:x107>" + level.territory.targetname + "<dev string:x11a>";
                 }
-                assert(triggers.size == 1, "<unknown string>" + var_68adb4a4.target + "<unknown string>" + triggers.size + var_99db19f5);
+                assert(triggers.size == 1, "<dev string:x11f>" + var_68adb4a4.target + "<dev string:x14b>" + triggers.size + var_99db19f5);
             #/
             trigger = triggers[0];
             trigger trigger::add_flags(16);
@@ -374,12 +373,12 @@ function private function_fa8f5fda(var_bd4d0f54) {
                 trigger.script_label = var_68adb4a4.script_label;
             } else {
                 /#
-                    util::error("<unknown string>" + var_68adb4a4.script_label + "<unknown string>" + var_68adb4a4.target);
+                    util::error("<dev string:x15b>" + var_68adb4a4.script_label + "<dev string:x17e>" + var_68adb4a4.target);
                 #/
             }
         } else {
             /#
-                util::error("<unknown string>" + var_68adb4a4.script_label);
+                util::error("<dev string:x15b>" + var_68adb4a4.script_label);
             #/
         }
         if (trigger.script_label == "_a") {
@@ -407,7 +406,7 @@ function private function_fa8f5fda(var_bd4d0f54) {
             continue;
         }
         /#
-            util::error("<unknown string>" + trigger.script_label);
+            util::error("<dev string:x193>" + trigger.script_label);
         #/
     }
     return var_3a0ebe3c;
@@ -770,11 +769,11 @@ function function_91cdcd1e(enemy_players, var_24672ed6, var_b4950c2b) {
 // Params 1, eflags: 0x0
 // Checksum 0xe843e047, Offset: 0x3598
 // Size: 0x244
-function function_290b5aa8(sentient) {
+function on_use(sentient) {
     var_5e54cb59 = sentient.team;
     assert(var_5e54cb59 != #"neutral");
     /#
-        print("<unknown string>" + self.label);
+        print("<dev string:x1aa>" + self.label);
     #/
     var_24672ed6 = !self gameobjects::function_abb86400();
     enemy_players = function_1575fa8b(var_5e54cb59);
@@ -848,7 +847,7 @@ function give_neutralized_credit(touchlist, string, var_24672ed6) {
             potm::bookmark(#"event", gettime(), player_from_touchlist);
         } else {
             /#
-                player_from_touchlist iprintlnbold("<unknown string>");
+                player_from_touchlist iprintlnbold("<dev string:x1bd>");
             #/
         }
         level thread popups::displayteammessagetoall(string, player_from_touchlist);
@@ -921,7 +920,7 @@ function credit_player(player, string, var_24672ed6, var_81b74b24, neutralizing,
         }
     } else {
         /#
-            player iprintlnbold("<unknown string>");
+            player iprintlnbold("<dev string:x1bd>");
         #/
     }
     if (var_a84f97bf) {
@@ -953,7 +952,7 @@ function dominated_challenge_check() {
 // Size: 0x4c
 function function_1bcd5536(team) {
     level endon(#"flag_captured", #"game_ended");
-    wait(180);
+    wait 180;
     challenges::totaldomination(team);
 }
 
@@ -1034,7 +1033,7 @@ function function_a059441e() {
 // Params 3, eflags: 0x0
 // Checksum 0x28cb2f09, Offset: 0x4820
 // Size: 0xf4
-function function_ce1f2f60(var_77d0878c, var_6d179b9d, var_947c5f58) {
+function function_ce1f2f60(var_77d0878c, var_6d179b9d, is_draw) {
     if (util::islastround() || util::isoneround()) {
         nearwinning = "nearWinningFinal";
         nearlosing = "nearLosingFinal";
@@ -1042,7 +1041,7 @@ function function_ce1f2f60(var_77d0878c, var_6d179b9d, var_947c5f58) {
         nearwinning = "nearWinning";
         nearlosing = "nearLosing";
     }
-    if (var_947c5f58) {
+    if (is_draw) {
         neardrawing = "nearDrawing";
         globallogic_audio::function_61e17de0(neardrawing, var_77d0878c);
     } else {
@@ -1061,7 +1060,7 @@ function function_c2b3568d(var_a7c860e6) {
     var_f7ad20df = &teams::function_7f8faff9;
     var_6e5994f6 = &getplayers;
     var_b47a98a8 = [];
-    var_947c5f58 = 0;
+    is_draw = 0;
     foreach (scorer, _ in var_c9949377) {
         score = [[ var_f7ad20df ]](scorer);
         var_b47a98a8[scorer] = score;
@@ -1082,13 +1081,13 @@ function function_c2b3568d(var_a7c860e6) {
                 continue;
             }
             if (top_score - var_b47a98a8[loser] < 2) {
-                var_947c5f58 = 1;
+                is_draw = 1;
                 var_77d0878c = arraycombine(var_77d0878c, [[ var_6e5994f6 ]](loser));
                 continue;
             }
             var_6d179b9d = arraycombine(var_6d179b9d, [[ var_6e5994f6 ]](loser));
         }
-        function_ce1f2f60(var_77d0878c, var_6d179b9d, var_947c5f58);
+        function_ce1f2f60(var_77d0878c, var_6d179b9d, is_draw);
         level notify(#"hash_15b8b6edc4ed3032", {#var_7090bf53:0});
         return true;
     }
@@ -1181,7 +1180,7 @@ function function_7bc4ede8() {
         if (warningscore && !playednearendvo) {
             playednearendvo = function_c2b3568d(warningscore);
         }
-        wait(5);
+        wait 5;
         hostmigration::waittillhostmigrationdone();
     }
 }
@@ -1281,17 +1280,17 @@ function function_de560341() {
             addspawnpoints(#"allies", flagspawns[#"dom_flag_c"], "spl3");
             addspawnpoints(#"axis", flagspawns[#"dom_flag_c"], "spl3");
         }
-        if (isdefined(flagspawns[#"hash_6da017d055932bbd"])) {
-            addspawnpoints(#"allies", flagspawns[#"hash_6da017d055932bbd"], "spl4");
-            addspawnpoints(#"axis", flagspawns[#"hash_6da017d055932bbd"], "spl4");
+        if (isdefined(flagspawns[#"dom_flag_d"])) {
+            addspawnpoints(#"allies", flagspawns[#"dom_flag_d"], "spl4");
+            addspawnpoints(#"axis", flagspawns[#"dom_flag_d"], "spl4");
         }
-        if (isdefined(flagspawns[#"hash_6da016d055932a0a"])) {
-            addspawnpoints(#"allies", flagspawns[#"hash_6da016d055932a0a"], "spl5");
-            addspawnpoints(#"axis", flagspawns[#"hash_6da016d055932a0a"], "spl5");
+        if (isdefined(flagspawns[#"dom_flag_e"])) {
+            addspawnpoints(#"allies", flagspawns[#"dom_flag_e"], "spl5");
+            addspawnpoints(#"axis", flagspawns[#"dom_flag_e"], "spl5");
         }
-        if (isdefined(flagspawns[#"hash_6da015d055932857"])) {
-            addspawnpoints(#"allies", flagspawns[#"hash_6da015d055932857"], "spl6");
-            addspawnpoints(#"axis", flagspawns[#"hash_6da015d055932857"], "spl6");
+        if (isdefined(flagspawns[#"dom_flag_f"])) {
+            addspawnpoints(#"allies", flagspawns[#"dom_flag_f"], "spl6");
+            addspawnpoints(#"axis", flagspawns[#"dom_flag_f"], "spl6");
         }
     }
     spawning::add_default_spawnlist("spl1");
@@ -1468,10 +1467,10 @@ function function_5ca9806b(var_e9670377) {
             return;
         }
     }
-    foreach (var_72a1dc4f in level.var_db1e5a88) {
-        if (is_true(var_72a1dc4f.var_c851244c) && var_72a1dc4f.objectiveid == var_e9670377) {
-            if (self.team == var_72a1dc4f.script_team) {
-                self namespace_99c84a33::function_99c84a33(var_72a1dc4f.objectiveid);
+    foreach (headquarter in level.var_db1e5a88) {
+        if (is_true(headquarter.var_c851244c) && headquarter.objectiveid == var_e9670377) {
+            if (self.team == headquarter.script_team) {
+                self namespace_99c84a33::function_99c84a33(headquarter.objectiveid);
             }
             return;
         }
@@ -1598,23 +1597,23 @@ function function_d24432a4(state) {
     }
     str_alias = undefined;
     switch (state) {
-    case #"hash_640a5184fc18e57e":
+    case #"cap_low":
         str_alias = #"hash_1c5192b85675532d";
         n_waittime = 1.25;
         break;
-    case #"hash_6f256b850314afde":
+    case #"cap_mid":
         str_alias = #"hash_1c5191b85675517a";
         n_waittime = 1.25;
         break;
-    case #"hash_2e61c11bc0c92a20":
+    case #"cap_high":
         str_alias = #"hash_1c518cb8567548fb";
         n_waittime = 1.25;
         break;
-    case #"hash_5e81de6ac73f5206":
+    case #"cap_drain":
         str_alias = #"hash_1c518fb856754e14";
         n_waittime = 1.25;
         break;
-    case #"hash_510115bff25681fd":
+    case #"cap_contested":
         str_alias = #"hash_43014e1f7354354f";
         n_waittime = 1.25;
         break;

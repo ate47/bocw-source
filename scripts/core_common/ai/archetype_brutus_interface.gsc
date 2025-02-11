@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\archetype_brutus.gsc;
+#using scripts\core_common\ai\archetype_brutus;
+#using scripts\core_common\ai\systems\ai_interface;
 
 #namespace brutusinterface;
 
 // Namespace brutusinterface/archetype_brutus_interface
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb80e64e6, Offset: 0x90
 // Size: 0xec
 function registerbrutusinterfaceattributes() {

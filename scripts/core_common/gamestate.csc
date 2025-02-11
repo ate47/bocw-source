@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace gamestate;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace gamestate/gamestate
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x49a92143, Offset: 0xd8
 // Size: 0x2c
 function private preinit() {
@@ -32,7 +31,7 @@ function event_handler[event_f7d4a05b] function_69452d92(eventstruct) {
     }
     if (eventstruct.gamestate !== game.state) {
         game.state = eventstruct.gamestate;
-        println("<unknown string>" + game.state);
+        println("<dev string:x38>" + game.state);
         callback::callback(#"hash_1184c2c2ed4c24b3", eventstruct);
         switch (eventstruct.gamestate) {
         case #"playing":

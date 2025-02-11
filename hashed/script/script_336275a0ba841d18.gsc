@@ -1,44 +1,43 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm\powerup\zm_powerup_nuke.gsc;
-#using script_3a88f428c6d8ef90;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\gametypes\zonslaught.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_sq.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\gametypes\globallogic_score.gsc;
-#using script_41b18a77720c5395;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using script_34e9dd62fc371077;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_eye_glow.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
 #using script_335d0650ed05d36d;
+#using script_34e9dd62fc371077;
+#using script_3a88f428c6d8ef90;
 #using script_3e196d275a6fb180;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\death_circle.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_41b18a77720c5395;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_eye_glow;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\zm\powerup\zm_powerup_nuke;
+#using scripts\zm_common\gametypes\globallogic_score;
+#using scripts\zm_common\gametypes\zonslaught;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_sq;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_51f64aa9;
 
@@ -194,10 +193,10 @@ function function_2ce126c4() {
         glassradiusdamage((1000, 1416, 226), 64, 25, 25, "MOD_UNKNOWN");
         glassradiusdamage((3338, 4143, 94), 64, 25, 25, "MOD_UNKNOWN");
     }
-    level._effect[#"hash_f122d8967f599a"] = "zombie/fx9_onslaught_spawn_sm";
-    level._effect[#"hash_70915e6d17793425"] = "zm_ai/fx8_dog_lightning_spawn";
-    level._effect[#"hash_7a06e7dd7e64b880"] = "zm_ai/fx8_avo_elec_teleport_appear";
-    level._effect[#"hash_5fa0154f4b01ba02"] = "zombie/fx9_onslaught_orb_nuke";
+    level._effect[#"zombie_flash"] = "zombie/fx9_onslaught_spawn_sm";
+    level._effect[#"boss_flash"] = "zm_ai/fx8_dog_lightning_spawn";
+    level._effect[#"boss_appear"] = "zm_ai/fx8_avo_elec_teleport_appear";
+    level._effect[#"orb_nuke"] = "zombie/fx9_onslaught_orb_nuke";
     /#
         if (getdvarint(#"hash_61dfb5be7263ab36", 0) == 1) {
             level.var_2b37d0dd = 1;
@@ -231,7 +230,7 @@ function function_2ce126c4() {
         level endon(#"end_game");
         while (true) {
             if (isdefined(level.var_51514f45) && isdefined(level.var_df7b46d1) && is_true(level.var_2b37d0dd)) {
-                print3d(level.var_df7b46d1.origin + (0, 0, 40), "onslaught" + level.var_51514f45, (0, 1, 0), undefined, 0.25);
+                print3d(level.var_df7b46d1.origin + (0, 0, 40), "<dev string:x38>" + level.var_51514f45, (0, 1, 0), undefined, 0.25);
             }
             waitframe(1);
         }
@@ -246,11 +245,11 @@ function function_2ce126c4() {
 function function_c1d511f6() {
     level endon(#"end_game");
     level flag::wait_till("rounds_started");
-    wait(2);
+    wait 2;
     while (true) {
         waitresult = level waittill(#"hash_5731a6df491c37c7");
         var_c2f7b1a3 = waitresult.location;
-        zm_sq::function_266d66eb(#"hash_641e9c4d20df5950", var_c2f7b1a3);
+        zm_sq::objective_set(#"hash_641e9c4d20df5950", var_c2f7b1a3);
         level waittill(#"boss_killed");
     }
 }
@@ -285,9 +284,9 @@ function private function_d3379a31() {
             if (var_e418724e == 3) {
                 return;
             }
-            wait(randomintrange(10, 20));
+            wait randomintrange(10, 20);
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -308,13 +307,13 @@ function private function_d3379a31() {
             } else if (!isarray(var_273a84a9)) {
                 var_273a84a9 = array(var_273a84a9);
             }
-            var_273a84a9[var_273a84a9.size] = "zmb_vocals_";
+            var_273a84a9[var_273a84a9.size] = "<dev string:x4f>";
             if (!isdefined(var_273a84a9)) {
                 var_273a84a9 = [];
             } else if (!isarray(var_273a84a9)) {
                 var_273a84a9 = array(var_273a84a9);
             }
-            var_273a84a9[var_273a84a9.size] = "energy_low";
+            var_273a84a9[var_273a84a9.size] = "<dev string:x56>";
             var_8fb1964e = spawning::function_d400d613(#"mp_spawn_point", var_273a84a9);
             spawns = var_8fb1964e[#"tdm"];
             if (!isdefined(spawns)) {
@@ -417,7 +416,7 @@ function function_61c3d59c(str_text, var_a920f1d6) {
     self endon(#"disconnect", #"death");
     level.onslaught_hud onslaught_hud::function_d0a02472(self, 1);
     self function_d09d6958(str_text);
-    wait(var_a920f1d6);
+    wait var_a920f1d6;
     level.onslaught_hud onslaught_hud::function_d0a02472(self, 0);
 }
 
@@ -439,7 +438,7 @@ function function_f9b8bf44(str_text, var_a920f1d6) {
     self endon(#"disconnect", #"death");
     level.onslaught_hud onslaught_hud::function_1c28d7c2(self, 1);
     self function_22d0bd07(str_text);
-    wait(var_a920f1d6);
+    wait var_a920f1d6;
     level.onslaught_hud onslaught_hud::function_1c28d7c2(self, 0);
 }
 
@@ -461,7 +460,7 @@ function function_4b12e9e4(str_text, var_a920f1d6) {
     self endon(#"disconnect", #"death");
     level.onslaught_hud onslaught_hud::function_d6b5fdc4(self, 1);
     self function_f0e74135(str_text);
-    wait(var_a920f1d6);
+    wait var_a920f1d6;
     level.onslaught_hud onslaught_hud::function_d6b5fdc4(self, 0);
 }
 
@@ -531,16 +530,16 @@ function function_6071bedf() {
 function function_bfd2a58b() {
     level waittill(#"initial_fade_in_complete");
     while (getplayers().size < 0) {
-        wait(1);
+        wait 1;
     }
-    wait(1);
+    wait 1;
     /#
         if (is_true(level.var_bc0b4b46)) {
             level thread debug_spawns();
         }
     #/
     level thread function_81c192d();
-    wait(2);
+    wait 2;
     level flag::set("rounds_started");
 }
 
@@ -755,7 +754,7 @@ function aidamage(inflictor, *attacker, damage, *dflags, *mod, *weapon, *var_fd9
 function hide_pop() {
     self endon(#"death");
     self ghost();
-    wait(0.25);
+    wait 0.25;
     if (isdefined(self)) {
         self show();
         waitframe(1);
@@ -797,7 +796,7 @@ function function_1495c8c(v_origin, v_angles, anim_name) {
     self orientmode("face default");
     self animscripted("rise_anim", self.origin, v_angles, anim_name, "normal");
     if (self.health > 0) {
-        playfx(level._effect[#"hash_7a06e7dd7e64b880"], origin);
+        playfx(level._effect[#"boss_appear"], origin);
         playrumbleonposition("zm_nova_phase_exit_rumble", self.origin);
     }
     self notify(#"rise_anim_finished");
@@ -813,20 +812,20 @@ function function_1495c8c(v_origin, v_angles, anim_name) {
 function function_3fd720cc() {
     self endon(#"death");
     origin = self.origin;
-    self val::set(#"hash_60ade25781f407a4", "takedamage", 0);
-    self val::set(#"hash_60ade25781f407a4", "ignoreall", 1);
+    self val::set(#"boss_spawn", "takedamage", 0);
+    self val::set(#"boss_spawn", "ignoreall", 1);
     for (var_760da554 = 14; var_760da554 > 0; var_760da554 -= 1) {
         if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e" || is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
-            level.var_df7b46d1 fx::play(level._effect[#"hash_70915e6d17793425"], level.var_df7b46d1.origin, (0, 0, 0), "delete_boss_spawn_fx", 1);
+            level.var_df7b46d1 fx::play(level._effect[#"boss_flash"], level.var_df7b46d1.origin, (0, 0, 0), "delete_boss_spawn_fx", 1);
             level.var_df7b46d1 playrumbleonentity("zm_nova_phase_exit_rumble");
         } else {
-            playfx(level._effect[#"hash_70915e6d17793425"], origin);
+            playfx(level._effect[#"boss_flash"], origin);
             playrumbleonposition("zm_nova_phase_exit_rumble", origin);
         }
-        wait(0.5);
+        wait 0.5;
     }
-    self val::reset(#"hash_60ade25781f407a4", "takedamage");
-    self val::reset(#"hash_60ade25781f407a4", "ignoreall");
+    self val::reset(#"boss_spawn", "takedamage");
+    self val::reset(#"boss_spawn", "ignoreall");
     if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e" || is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
         level.var_df7b46d1 notify(#"delete_boss_spawn_fx");
     }
@@ -840,7 +839,7 @@ function function_b5ba566b(*v_origin, *v_angles, *anim_name) {
     self endon(#"death");
     if (self.health > 0) {
         origin = self gettagorigin("tag_origin");
-        playfx(level._effect[#"hash_7a06e7dd7e64b880"], origin);
+        playfx(level._effect[#"boss_appear"], origin);
         playrumbleonposition("zm_nova_phase_exit_rumble", self.origin);
         playsoundatposition(#"hash_3f974bee9fb4e319", self.origin);
     }
@@ -866,9 +865,9 @@ function function_6fcd98c5() {
 // Checksum 0xca032eca, Offset: 0x3c38
 // Size: 0x356
 function function_46ff5efa(var_82ea43f2 = 1, var_f91adf76 = 0) {
-    playfx(level._effect[#"hash_5fa0154f4b01ba02"], level.var_df7b46d1.var_48fcd26a.origin);
+    playfx(level._effect[#"orb_nuke"], level.var_df7b46d1.var_48fcd26a.origin);
     playsoundatposition(#"hash_712929054f8c3fda", level.var_df7b46d1.var_48fcd26a.origin);
-    wait(1);
+    wait 1;
     lui::screen_flash(0.2, 0.5, 1, 0.8, "white", undefined, 1);
     level callback::callback(#"hash_c41074e4c29158a");
     playsoundatposition(#"hash_7459371c7e21f143", level.var_df7b46d1.var_48fcd26a.origin);
@@ -951,7 +950,7 @@ function function_e75baa3f() {
 // Size: 0xb4
 function function_94f4e961(n_delay = 4) {
     if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e") {
-        wait(n_delay);
+        wait n_delay;
         level.var_51514f45 -= level.var_e2fec446;
         level.var_51514f45 = math::clamp(level.var_51514f45, 0.25, 4);
     }
@@ -1107,7 +1106,7 @@ function function_b33a5cf4(var_ba65b6cb) {
             }
         }
         if (killstreaks::is_killstreak_weapon(waitresult.weapon) && isplayer(attacker)) {
-            attacker zm_utility::function_659819fa(#"hash_2deb5f76757c411d");
+            attacker zm_utility::give_achievement(#"hash_2deb5f76757c411d");
         }
     }
     level.var_1c376a62 = self.origin;
@@ -1301,8 +1300,8 @@ function function_c50adb68(wave_number) {
         }
         level.var_9b7bd0e8 = int(floor((wave_number + 0.9) / 3));
         level.var_bc2071f = 100;
-        level flag::clear("<unknown string>");
-        level flag::set("<unknown string>");
+        level flag::clear("<dev string:x5d>");
+        level flag::set("<dev string:x81>");
         level.wave_number = wave_number;
         level.var_3e67b08d = zombie_utility::set_zombie_var(#"zombie_spawn_delay", [[ level.func_get_zombie_spawn_delay ]](level.wave_number + 1));
     }
@@ -1324,11 +1323,11 @@ function function_453afff4() {
         }
         /#
             if (is_true(level.var_2b37d0dd)) {
-                debug2dtext((670, 160, 0), "<unknown string>" + level.wave_number, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
-                debug2dtext((670, 220, 0), "<unknown string>" + var_88f09c5 + "<unknown string>" + var_88f09c5, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
-                debug2dtext((670, 280, 0), "<unknown string>" + level.total_zombies_killed, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
-                debug2dtext((670, 340, 0), "<unknown string>" + level.var_9b7bd0e8, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
-                debug2dtext((670, 400, 0), "<unknown string>" + level.var_bc2071f, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
+                debug2dtext((670, 160, 0), "<dev string:xa3>" + level.wave_number, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
+                debug2dtext((670, 220, 0), "<dev string:xb2>" + var_88f09c5 + "<dev string:xbb>" + var_88f09c5, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
+                debug2dtext((670, 280, 0), "<dev string:xc0>" + level.total_zombies_killed, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
+                debug2dtext((670, 340, 0), "<dev string:xce>" + level.var_9b7bd0e8, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
+                debug2dtext((670, 400, 0), "<dev string:xde>" + level.var_bc2071f, (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 1);
             }
         #/
         waitframe(1);
@@ -1351,7 +1350,7 @@ function game_over() {
 // Size: 0x44
 function function_77805e8(*params) {
     level thread zm::function_6c369691();
-    wait(10);
+    wait 10;
     level lui::screen_fade_out(1);
 }
 
@@ -1383,7 +1382,7 @@ function function_ea32773(*waitresult) {
 function give_match_bonus(*data) {
     players = getplayers();
     foreach (player in players) {
-        assert(isdefined(player.var_9a2f93bd), "<unknown string>");
+        assert(isdefined(player.var_9a2f93bd), "<dev string:xe8>");
         var_22ba849f = getdvarint(#"hash_3f0689f4ecc2fbab", 0);
         var_900d44db = zm::function_d3113f01(level.wave_number);
         if (!isdefined(player.var_1096b5c0)) {
@@ -1398,9 +1397,9 @@ function give_match_bonus(*data) {
         player zm::function_78e7b549(var_370ac26d);
         player display_transition::function_d7b5082e();
         /#
-            println("<unknown string>" + player getentnum() + "<unknown string>" + player.name + "<unknown string>" + var_370ac26d);
-            println("<unknown string>" + var_22ba849f);
-            println("<unknown string>");
+            println("<dev string:x123>" + player getentnum() + "<dev string:x13c>" + player.name + "<dev string:x142>" + var_370ac26d);
+            println("<dev string:x14a>" + var_22ba849f);
+            println("<dev string:x157>");
         #/
     }
 }
@@ -1419,7 +1418,7 @@ function private function_13f485ad() {
         player addrankxpvalue("wave_end_xp", var_370ac26d, 4);
         player.var_1096b5c0 -= var_370ac26d;
         if (!isdefined(player.var_a160c21d) || player.var_a160c21d === 0) {
-            println("<unknown string>" + player getentitynumber() + "<unknown string>");
+            println("<dev string:x17d>" + player getentitynumber() + "<dev string:x191>");
             player.var_a160c21d = 0;
         }
         player.var_1096b5c0 += player function_ac940a26();
@@ -1626,10 +1625,10 @@ function spawn_zombie(outer_radius, inner_radius, duration, var_d894caa2, var_8c
     }
     if (isdefined(var_78da6163)) {
         /#
-            println("<unknown string>" + var_78da6163.region);
+            println("<dev string:x1b7>" + var_78da6163.region);
             var_1c28df18 = function_b507a336(var_78da6163.region);
             foreach (neighbor in var_1c28df18.neighbors) {
-                println("<unknown string>" + neighbor);
+                println("<dev string:x1cc>" + neighbor);
             }
         #/
     }
@@ -1647,7 +1646,7 @@ function spawn_zombie(outer_radius, inner_radius, duration, var_d894caa2, var_8c
         /#
             if (is_true(level.var_bc79322a)) {
                 sphere(var_d23463ac.origin + (0, 0, 30), 10, color, 1, 0, 8, duration);
-                println("<unknown string>" + var_3ab48a16 + "<unknown string>" + var_d23463ac.region);
+                println("<dev string:x1da>" + var_3ab48a16 + "<dev string:x1ec>" + var_d23463ac.region);
             }
         #/
         var_d23463ac.used_time = gettime();
@@ -1707,7 +1706,7 @@ function spawn_zombie(outer_radius, inner_radius, duration, var_d894caa2, var_8c
     if ((is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e") && (level flag::get("onslaught_round_logic_complete") || level flag::get("onslaught_accelerated_round_end"))) {
         return;
     }
-    wait(level.var_3e67b08d);
+    wait level.var_3e67b08d;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -1803,7 +1802,7 @@ function function_26667466() {
                 level.var_a7bd1c53 += (0, 0, 68);
             }
             level.var_df7b46d1.var_48fcd26a clientfield::set("bot_claim_fx", 1);
-            wait(level.var_fcdb4d36);
+            wait level.var_fcdb4d36;
             if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e") {
                 self.state = 3;
                 level.var_679cf74b = 1;
@@ -2004,11 +2003,11 @@ function function_26667466() {
                     var_39061289 = getclosestpointonnavmesh(var_eaa2511c, 204, 16);
                     if (isdefined(var_655e0ae3) && isdefined(var_39061289)) {
                         level.var_db2a4bc9 = generatenavmeshpath(var_655e0ae3, var_39061289, self);
-                        println("<unknown string>" + var_39061289);
+                        println("<dev string:x1f8>" + var_39061289);
                         if (!isdefined(level.var_db2a4bc9) || !isdefined(level.var_db2a4bc9.pathpoints) || level.var_db2a4bc9.pathpoints.size == 0) {
                             /#
-                                recordsphere(var_39061289, 8, (0.1, 0.1, 0.1), "<unknown string>");
-                                println("<unknown string>");
+                                recordsphere(var_39061289, 8, (0.1, 0.1, 0.1), "<dev string:x21e>");
+                                println("<dev string:x228>");
                             #/
                             level.var_75302c0e = 0;
                             if (!isdefined(level.var_cd1e3b1f)) {
@@ -2089,7 +2088,7 @@ function function_26667466() {
             break;
         case 6:
             level thread function_46ff5efa();
-            wait(level.var_6bb0102e);
+            wait level.var_6bb0102e;
             level.var_df7b46d1.state = 3;
             break;
         default:
@@ -2137,7 +2136,7 @@ function function_86d134a1() {
                     if (isdefined(level.deathcircle.var_5c54ab33)) {
                         level.deathcircle.var_5c54ab33 hide();
                     }
-                    wait(2);
+                    wait 2;
                     level notify(#"end_game");
                 }
             }
@@ -2148,7 +2147,7 @@ function function_86d134a1() {
             death_circle::function_9229c3b3(level.deathcircle.var_5c54ab33, level.circle_radius, self.origin, 0);
             /#
                 if (is_true(level.var_2d41db66) || util::get_game_type() === #"hash_5aa4949e75ab9d9c") {
-                    debug2dtext((50, 600, 0), "<unknown string>" + level.circle_radius, undefined, undefined, undefined, 0.5);
+                    debug2dtext((50, 600, 0), "<dev string:x253>" + level.circle_radius, undefined, undefined, undefined, 0.5);
                 }
             #/
         }
@@ -2319,7 +2318,7 @@ function function_158444df(n_delay) {
     self notify("5aba16a43ea63d9a");
     self endon("5aba16a43ea63d9a");
     self endon(#"death");
-    wait(n_delay);
+    wait n_delay;
     self.var_7f0213e3 = undefined;
     self notify(#"end_orb_impact_fx");
 }
@@ -2368,9 +2367,9 @@ function function_6362d51(parent) {
                     var_7ae0f9f6 = 0;
                 }
             }
-            var_395d24d1 = parent.origin + (0, 0, 68);
-            target_pos = var_395d24d1 + var_fe23b0e8;
-            var_e4547143 = vectornormalize(target_pos - var_395d24d1);
+            anchor_pos = parent.origin + (0, 0, 68);
+            target_pos = anchor_pos + var_fe23b0e8;
+            var_e4547143 = vectornormalize(target_pos - anchor_pos);
             dist = distancesquared(self.origin, target_pos);
             if (level.var_df7b46d1.state === 3) {
                 if (dist > sqr(36)) {
@@ -2473,7 +2472,7 @@ function function_3be471a2(var_78664f9a) {
                     print3d(var_2d5745a8.origin + (0, 0, 240), var_2d5745a8.usecount, var_3045d5d6, 1, 2, duration, 1);
                     if (isdefined(level.var_771d8317)) {
                         if (var_188f8bf > level.var_771d8317) {
-                            print3d(var_2d5745a8.origin + (0, 0, 300), "<unknown string>", var_3045d5d6, 1, 2, duration, 1);
+                            print3d(var_2d5745a8.origin + (0, 0, 300), "<dev string:x26b>", var_3045d5d6, 1, 2, duration, 1);
                         }
                     }
                     if (is_true(var_2d5745a8.is_active)) {
@@ -2588,7 +2587,7 @@ function function_582988d8(zone) {
 function function_10986874(var_c2f7b1a3) {
     level endon(#"end_game");
     level notify(#"hash_5731a6df491c37c7", {#location:var_c2f7b1a3});
-    wait(0.5);
+    wait 0.5;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -2610,10 +2609,10 @@ function function_f19e31a2() {
         }
         level thread function_310986be();
         if (!isdefined(level.var_9cf0f18d)) {
-            println("<unknown string>" + level.var_9cf0f18d.origin);
+            println("<dev string:x273>" + level.var_9cf0f18d.origin);
             continue;
         }
-        println("<unknown string>" + level.var_9cf0f18d.origin);
+        println("<dev string:x2b1>" + level.var_9cf0f18d.origin);
         level thread function_10986874(level.var_9cf0f18d.origin);
         if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e") {
             while (level.wave_number % 3 != 0) {
@@ -2631,11 +2630,11 @@ function function_f19e31a2() {
         }
         level flag::set("elite_surge_wave");
         /#
-            debug2dtext((1000, 700, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 200);
+            debug2dtext((1000, 700, 0), "<dev string:x2db>", (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 200);
         #/
-        println("<unknown string>" + level.var_9cf0f18d.origin);
+        println("<dev string:x2eb>" + level.var_9cf0f18d.origin);
         /#
-            debug2dtext((1000, 700, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 200);
+            debug2dtext((1000, 700, 0), "<dev string:x315>", (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 200);
         #/
         level callback::callback(#"hash_668017ea3d415b3b");
         level flag::wait_till_clear(#"hash_554d70a6779336e1");
@@ -2643,7 +2642,7 @@ function function_f19e31a2() {
             level.var_15c1545d.objectiveanchor.origin = level.var_df7b46d1.origin;
         }
         level.var_15c1545d.objectiveanchor clientfield::set("" + #"hash_56a6be021662c82e", 2);
-        wait(2);
+        wait 2;
         if (level.var_9b7bd0e8 === 0) {
             level thread zm_vo::function_7622cb70(#"hash_514a3b399c691364", 0.5, 1);
         }
@@ -2653,18 +2652,18 @@ function function_f19e31a2() {
         switch (level.var_2812b9f5) {
         case #"hash_4f87aa2a203d37d0":
         case #"spawner_bo5_mimic":
-            wait(2);
+            wait 2;
             break;
         default:
-            wait(4);
+            wait 4;
             break;
         }
         level function_a2f55e89();
         /#
-            debug2dtext((1000, 700, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 200);
+            debug2dtext((1000, 700, 0), "<dev string:x333>", (1, 1, 1), 1, (0, 0, 0), 0.5, 2.8, 200);
         #/
         zm_sq::objective_complete(#"hash_641e9c4d20df5950");
-        println("<unknown string>" + level.var_9cf0f18d.origin);
+        println("<dev string:x34a>" + level.var_9cf0f18d.origin);
         if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e" || is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
             var_9f0bcfaa = getclosestpointonnavmesh(level.var_df7b46d1.origin, 64, 32);
             var_9f0bcfaa = isdefined(var_9f0bcfaa) ? var_9f0bcfaa : level.var_75d496b5;
@@ -2698,7 +2697,7 @@ function function_f19e31a2() {
                 ai function_6c40ff50();
                 if (i < level.var_693d250e - 1) {
                     ai val::set("onslaught_boss", "takedamage", 0);
-                    wait(2);
+                    wait 2;
                     ai val::reset("onslaught_boss", "takedamage");
                 }
             }
@@ -2865,7 +2864,7 @@ function function_32a5425() {
 function function_b504f826() {
     level endon(#"end_game");
     while (true) {
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -2876,7 +2875,7 @@ function function_b504f826() {
 function function_31add0ec() {
     level endon(#"end_game");
     while (true) {
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -2914,14 +2913,14 @@ function function_69e5b9b() {
             player function_a7a4f67f(level.var_9b7bd0e8);
         }
         level callback::callback(#"hash_75d9baf9eed8610b");
-        wait(level.var_d2a573c6);
+        wait level.var_d2a573c6;
         level flag::wait_till_clear(#"hash_554d70a6779336e1");
         level.var_df7b46d1.var_48fcd26a playsound(#"hash_7abe3d8888674c46");
         level function_a2f55e89();
         if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e") {
             if (level.wave_number % 3 === 0) {
                 level flag::wait_till_clear("elite_surge_wave");
-                wait(level.var_6bb0102e);
+                wait level.var_6bb0102e;
             }
         } else {
             while (level.var_df7b46d1.state == 5 || level.var_df7b46d1.state == 6) {
@@ -2946,11 +2945,11 @@ function function_69e5b9b() {
         } else if (level.var_df7b46d1.state == 3) {
             level function_3be471a2(1);
         }
-        wait(level.var_f4dc118e);
+        wait level.var_f4dc118e;
         if (level.var_df7b46d1.state != 3 && !(is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e")) {
             level function_3be471a2(1);
         }
-        wait(level.var_b4b52d95);
+        wait level.var_b4b52d95;
         level notify(#"hash_5797e93787e36c6d");
         level callback::callback(#"hash_5118a91e667446ee");
         zm_round_logic::set_round_number(level.round_number + 1);
@@ -3095,7 +3094,7 @@ function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0)
         zombie.currentvoxpriority = priority;
         zombie playsoundontag(alias, "j_head");
         playbacktime = float(max(isdefined(soundgetplaybacktime(alias)) ? soundgetplaybacktime(alias) : 500, 500)) / 1000;
-        wait(playbacktime);
+        wait playbacktime;
         zombie.talking = 0;
         zombie.currentvox = undefined;
         zombie.currentvoxpriority = 1;
@@ -3148,7 +3147,7 @@ function zmbaivox_playelectrocution() {
 function zmbaivox_ambientdelay() {
     self notify(#"sndambientdelay");
     self endon(#"sndambientdelay", #"death", #"disconnect");
-    wait(2);
+    wait 2;
     self.delayambientvox = 0;
 }
 
@@ -3249,7 +3248,7 @@ function zombie_behind_vox() {
         level._audio_zbv_shared_ent_list = get_zombie_array();
     }
     while (true) {
-        wait(1);
+        wait 1;
         t = gettime();
         if (t > level._zbv_vox_last_update_time + 1000) {
             level._zbv_vox_last_update_time = t;
@@ -3284,7 +3283,7 @@ function zombie_behind_vox() {
                 yaw = self getyawtospot(zombs[i].origin);
                 z_diff = self.origin[2] - zombs[i].origin[2];
                 if ((yaw < -95 || yaw > 95) && abs(z_diff) < 50) {
-                    wait(0.1);
+                    wait 0.1;
                     if (isdefined(zombs[i]) && isalive(zombs[i])) {
                         bhtnactionstartevent(zombs[i], "behind");
                         zombs[i] notify(#"bhtn_action_notify", {#action:"behind"});
@@ -3295,7 +3294,7 @@ function zombie_behind_vox() {
             }
         }
         if (played_sound) {
-            wait(2.5);
+            wait 2.5;
         }
     }
 }
@@ -3331,7 +3330,7 @@ function play_ambient_zombie_vocals() {
         }
         bhtnactionstartevent(self, type);
         self notify(#"bhtn_action_notify", {#action:type});
-        wait(randomfloatrange(1, float));
+        wait randomfloatrange(1, float);
     }
 }
 
@@ -3391,7 +3390,7 @@ function get_number_variants(aliasprefix) {
             return i;
         }
     }
-    assertmsg("<unknown string>");
+    assertmsg("<dev string:x374>");
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9

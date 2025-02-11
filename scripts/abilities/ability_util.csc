@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
+#using scripts\core_common\util_shared;
 
 #namespace ability_util;
 
@@ -97,7 +96,7 @@ function set_aoe_fx(local_client_num, *oldval, newval, *bnewent, *binitialsnap, 
 }
 
 // Namespace ability_util/ability_util
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6c8149c8, Offset: 0x590
 // Size: 0xe8
 function stop_aoe_fx(local_client_num, clientfield_name, *aoe_fx_info) {
@@ -117,7 +116,7 @@ function stop_aoe_fx(local_client_num, clientfield_name, *aoe_fx_info) {
 }
 
 // Namespace ability_util/ability_util
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x99585c12, Offset: 0x680
 // Size: 0x34c
 function private aoe_fx(local_client_num, clientfield_name, aoe_fx_info) {
@@ -160,7 +159,7 @@ function private aoe_fx(local_client_num, clientfield_name, aoe_fx_info) {
 }
 
 // Namespace ability_util/ability_util
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0x152c1854, Offset: 0x9d8
 // Size: 0x51c
 function private do_aoe_fx(*local_client_num, center, yaw_count, pitch, clientfield_name, aoe_fx_info) {

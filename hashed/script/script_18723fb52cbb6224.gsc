@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using script_19367cd29a4485db;
-#using script_34ab99a4ca1a43d;
 #using script_16b1b77a76492c6a;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using script_19367cd29a4485db;
 #using script_340a2e805e35f7a2;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_34ab99a4ca1a43d;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace world_event_radio_tuning;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a76dd71, Offset: 0x328
 // Size: 0x11c
 function preinit() {
@@ -47,7 +46,7 @@ function preinit() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xde051df4, Offset: 0x450
 // Size: 0x444
 function function_602f1c7e(instance) {
@@ -57,7 +56,7 @@ function function_602f1c7e(instance) {
     }
     level flag::wait_till(#"gameplay_started");
     instance flag::clear("cleanup");
-    instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_a3780cd3);
+    instance callback::function_d8abfc3d(#"portal_activated", &function_a3780cd3);
     level callback::add_callback(#"hash_594217387367ebb4", &function_a3780cd3, instance);
     var_927876a9 = instance.contentgroups[#"radio"][0];
     var_364b8f56 = isdefined(instance.contentgroups[#"hash_2a62eb308e140655"]) ? instance.contentgroups[#"hash_2a62eb308e140655"] : [];
@@ -65,7 +64,7 @@ function function_602f1c7e(instance) {
         instance.var_74554a28 = zm_utility::function_f5a222a8(#"hash_496b373a4a051d25", var_927876a9.origin, &function_f128aae9);
     }
     instance.mdl_radio = content_manager::spawn_script_model(var_927876a9, #"hash_6f139def53a9ba61");
-    instance.mdl_radio fx::play(#"hash_6615a4858493260b", instance.mdl_radio.origin, instance.mdl_radio.angles, #"hash_5fc1f0dacaa027e8");
+    instance.mdl_radio fx::play(#"hash_6615a4858493260b", instance.mdl_radio.origin, instance.mdl_radio.angles, #"light_change");
     instance.var_364b8f56 = var_364b8f56;
     foreach (var_c42af4d6 in var_364b8f56) {
         var_c42af4d6.var_e43750de = content_manager::spawn_script_model(var_c42af4d6, #"hash_6644a1e856afa8ab");
@@ -84,7 +83,7 @@ function function_602f1c7e(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x58159b26, Offset: 0x8a0
 // Size: 0x3e
 function function_f128aae9(*v_origin_or_ent, *params) {
@@ -95,7 +94,7 @@ function function_f128aae9(*v_origin_or_ent, *params) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc1e33901, Offset: 0x8e8
 // Size: 0x144
 function private function_1d6f6f32(*eventstruct) {
@@ -112,15 +111,15 @@ function private function_1d6f6f32(*eventstruct) {
         if (self.instance flag::get("correct_frequencies")) {
             break;
         }
-        wait(0.1);
+        wait 0.1;
     }
     self.instance flag::set("radio_tuning_success");
-    wait(2);
+    wait 2;
     self delete();
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe76ede33, Offset: 0xa38
 // Size: 0x150
 function function_556eed55(trigger) {
@@ -140,7 +139,7 @@ function function_556eed55(trigger) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x408fc436, Offset: 0xb90
 // Size: 0x6d4
 function function_ba971eed(instance) {
@@ -151,18 +150,18 @@ function function_ba971eed(instance) {
         var_a2f3927f = #"hash_e5c05e974fad1d6";
     }
     instance.mdl_radio playsound(var_a2f3927f);
-    instance.mdl_radio notify(#"hash_5fc1f0dacaa027e8");
-    instance.mdl_radio fx::play(#"hash_2461617b51991e17", instance.mdl_radio.origin, instance.mdl_radio.angles, #"hash_5fc1f0dacaa027e8");
-    wait(0.5);
+    instance.mdl_radio notify(#"light_change");
+    instance.mdl_radio fx::play(#"hash_2461617b51991e17", instance.mdl_radio.origin, instance.mdl_radio.angles, #"light_change");
+    wait 0.5;
     instance.mdl_radio playloopsound(#"hash_6f36df54622394e0");
     instance.mdl_radio thread function_35bafcde(instance, "feedback", "radio");
-    instance.mdl_radio notify(#"hash_5fc1f0dacaa027e8");
-    instance.mdl_radio fx::play(#"hash_6615a4858493260b", instance.mdl_radio.origin, instance.mdl_radio.angles, #"hash_5fc1f0dacaa027e8");
+    instance.mdl_radio notify(#"light_change");
+    instance.mdl_radio fx::play(#"hash_6615a4858493260b", instance.mdl_radio.origin, instance.mdl_radio.angles, #"light_change");
     var_571f5454 = instance.mdl_radio.origin;
     level function_334316f8(var_571f5454, 45);
     instance flag::set("first_ambush_complete");
-    instance.mdl_radio notify(#"hash_5fc1f0dacaa027e8");
-    instance.mdl_radio fx::play(#"hash_2461617b51991e17", instance.mdl_radio.origin, instance.mdl_radio.angles, #"hash_5fc1f0dacaa027e8");
+    instance.mdl_radio notify(#"light_change");
+    instance.mdl_radio fx::play(#"hash_2461617b51991e17", instance.mdl_radio.origin, instance.mdl_radio.angles, #"light_change");
     instance.mdl_radio playsound(#"hash_4d16320cccbd00fc");
     instance.var_3875a0bb = randomintrangeinclusive(1, 8);
     instance.mdl_radio playloopsound(#"hash_15bd285132a5e267" + instance.var_3875a0bb);
@@ -179,7 +178,7 @@ function function_ba971eed(instance) {
         var_84152d93 = #"hash_7306f4c002ca0976";
     }
     instance.mdl_radio playsound(var_84152d93);
-    wait(1);
+    wait 1;
     dropstruct = {#origin:instance.s_start.origin, #angles:instance.s_start.angles + (0, -45, 0), #var_738dfc81:8};
     dropstruct namespace_65181344::function_fd87c780(#"survival_resource_list", 8, 3);
     if (!is_true(instance.var_8ba71ca4)) {
@@ -198,7 +197,7 @@ function function_ba971eed(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x481c0db6, Offset: 0x1270
 // Size: 0x588
 function function_42d1d544(instance) {
@@ -218,7 +217,7 @@ function function_42d1d544(instance) {
     self.usetrigger = usetrigger;
     self playloopsound(#"hash_76a8c4dd7f9da5f3");
     self thread function_35bafcde(instance, "idle");
-    self fx::play(#"hash_33d3573cec691428", self.origin, self.angles, #"hash_5fc1f0dacaa027e8");
+    self fx::play(#"hash_33d3573cec691428", self.origin, self.angles, #"light_change");
     while (true) {
         usetrigger waittill(#"trigger");
         var_b61e50f0 += 1;
@@ -231,11 +230,11 @@ function function_42d1d544(instance) {
         self playsound(#"hash_4d16320cccbd00fc");
         var_fb400364 = function_d3b57053(instance);
         if (is_true(var_fb400364) && !self.var_cb78e59d) {
-            wait(0.5);
+            wait 0.5;
             if (self.var_e7606911) {
                 self.var_e7606911 = 0;
-                self notify(#"hash_5fc1f0dacaa027e8");
-                self fx::play(#"hash_33d3573cec691428", self.origin, self.angles, #"hash_5fc1f0dacaa027e8");
+                self notify(#"light_change");
+                self fx::play(#"hash_33d3573cec691428", self.origin, self.angles, #"light_change");
             }
             self.var_cb78e59d = 1;
             self playloopsound(#"hash_3b453b7c6a3141d4");
@@ -243,12 +242,12 @@ function function_42d1d544(instance) {
             level function_334316f8(self.origin, 30);
             self playsound(#"hash_4d16320cccbd00fc");
         } else {
-            wait(0.5);
+            wait 0.5;
         }
         if (!self.var_e7606911) {
             self.var_e7606911 = 1;
-            self notify(#"hash_5fc1f0dacaa027e8");
-            self fx::play(#"hash_447841d9ee8d6d38", self.origin, self.angles, #"hash_5fc1f0dacaa027e8");
+            self notify(#"light_change");
+            self fx::play(#"hash_447841d9ee8d6d38", self.origin, self.angles, #"light_change");
         }
         self playloopsound(#"hash_2f65077ad9554da3" + var_b61e50f0);
         self thread function_35bafcde(instance, var_b61e50f0);
@@ -259,14 +258,14 @@ function function_42d1d544(instance) {
             self.b_set = 0;
             instance notify(#"hash_2277cbc7a1c6b43", {#increase:0, #var_e43750de:self});
         }
-        wait(0.5);
+        wait 0.5;
         usetrigger sethintstring(#"hash_62ab4ca34f5b97d6");
         usetrigger setvisibletoall();
     }
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x56bfca2f, Offset: 0x1800
 // Size: 0xd6
 function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
@@ -277,12 +276,12 @@ function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
     self endon(#"death");
     while (true) {
         self playsound(#"hash_5025a103d5f8470" + str_type + "_subtitle_" + str_suffix);
-        wait(5);
+        wait 5;
     }
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2ccaf639, Offset: 0x18e0
 // Size: 0xfc
 function function_2c1d994f(instance) {
@@ -304,7 +303,7 @@ function function_2c1d994f(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x26dac0df, Offset: 0x19e8
 // Size: 0xa0
 function function_d3b57053(instance) {
@@ -323,7 +322,7 @@ function function_d3b57053(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x919ac21e, Offset: 0x1a90
 // Size: 0x1ac
 function function_a3780cd3() {
@@ -335,14 +334,14 @@ function function_a3780cd3() {
     }
     if (isdefined(self.var_364b8f56)) {
         foreach (var_c42af4d6 in self.var_364b8f56) {
-            var_c42af4d6.var_e43750de notify(#"hash_5fc1f0dacaa027e8");
+            var_c42af4d6.var_e43750de notify(#"light_change");
             var_c42af4d6.var_e43750de stoploopsound();
             if (isdefined(var_c42af4d6.var_e43750de.usetrigger)) {
                 var_c42af4d6.var_e43750de.usetrigger delete();
             }
         }
     }
-    self.mdl_radio notify(#"hash_5fc1f0dacaa027e8");
+    self.mdl_radio notify(#"light_change");
     self.mdl_radio stoploopsound();
     if (isdefined(self.trigger)) {
         self.trigger delete();
@@ -350,7 +349,7 @@ function function_a3780cd3() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1fad9e4e, Offset: 0x1c48
 // Size: 0x274
 function function_b1aee549(instance, var_976623c6) {
@@ -406,7 +405,7 @@ function function_b1aee549(instance, var_976623c6) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x291a6e0f, Offset: 0x1ec8
 // Size: 0x264
 function function_97d03d85(s_params) {
@@ -468,11 +467,11 @@ function function_97d03d85(s_params) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x800bea64, Offset: 0x2138
 // Size: 0x4a
 function function_334316f8(var_cefe6e34, n_time) {
     level thread namespace_2c949ef8::function_8b6ae460(var_cefe6e34, undefined, 500, 1500, undefined, n_time, 0);
-    wait(n_time);
+    wait n_time;
 }
 

@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\stealth\debug.gsc;
-#using scripts\core_common\stealth\utility.gsc;
 #using script_3ad66e3076c279ab;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\debug;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\util_shared;
 
 #namespace event;
 
@@ -18,7 +17,7 @@ function scalevolume(*ent, *vol) {
 #namespace stealth_event;
 
 // Namespace stealth_event/event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaa89b08e, Offset: 0x2c8
 // Size: 0x34
 function event_init_entity() {
@@ -27,7 +26,7 @@ function event_init_entity() {
 }
 
 // Namespace stealth_event/event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x26b98cc, Offset: 0x308
 // Size: 0x276
 function event_entity_core_set_enabled(enabled) {
@@ -50,7 +49,7 @@ function event_entity_core_set_enabled(enabled) {
 }
 
 // Namespace stealth_event/event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a00db67, Offset: 0x588
 // Size: 0x484
 function event_init_level() {
@@ -89,7 +88,7 @@ function event_init_level() {
 }
 
 // Namespace stealth_event/event
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x64645d3, Offset: 0xa18
 // Size: 0xfe
 function event_severity_compare(var_86dfea16, var_3ec8d9e9) {
@@ -102,7 +101,7 @@ function event_severity_compare(var_86dfea16, var_3ec8d9e9) {
 }
 
 // Namespace stealth_event/event
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x90e63f74, Offset: 0xb20
 // Size: 0x142
 function event_severity_shift(severity, direction) {
@@ -119,12 +118,12 @@ function event_severity_shift(severity, direction) {
 }
 
 // Namespace stealth_event/event
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x139bafe, Offset: 0xc70
 // Size: 0x1ac
 function event_severity_set(severity, eventname, escalation, var_4cca9730, var_af2ae264) {
-    assert(!(severity == "<unknown string>" && isdefined(var_af2ae264)));
-    assert(!(severity == "<unknown string>" && isdefined(escalation)));
+    assert(!(severity == "<dev string:x38>" && isdefined(var_af2ae264)));
+    assert(!(severity == "<dev string:x47>" && isdefined(escalation)));
     if (!isdefined(escalation)) {
         escalation = 0;
     }
@@ -150,7 +149,7 @@ function event_severity_set(severity, eventname, escalation, var_4cca9730, var_a
 }
 
 // Namespace stealth_event/event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x39659000, Offset: 0xe28
 // Size: 0x4c
 function event_severity_get(eventname) {
@@ -159,7 +158,7 @@ function event_severity_get(eventname) {
 }
 
 // Namespace stealth_event/event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa67f879, Offset: 0xe80
 // Size: 0x4c
 function event_escalation_get(eventname) {
@@ -168,7 +167,7 @@ function event_escalation_get(eventname) {
 }
 
 // Namespace stealth_event/event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbe325a2c, Offset: 0xed8
 // Size: 0x4c
 function event_escalation_scalar_get(eventname) {
@@ -177,7 +176,7 @@ function event_escalation_scalar_get(eventname) {
 }
 
 // Namespace stealth_event/event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeabce533, Offset: 0xf30
 // Size: 0x4c
 function event_escalation_to_combat_get(eventname) {
@@ -186,7 +185,7 @@ function event_escalation_to_combat_get(eventname) {
 }
 
 // Namespace stealth_event/event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc820a17b, Offset: 0xf88
 // Size: 0x2a
 function event_escalation_clear() {
@@ -195,7 +194,7 @@ function event_escalation_clear() {
 }
 
 // Namespace stealth_event/event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1b39c5d7, Offset: 0xfc0
 // Size: 0x6e6
 function event_listener_thread() {
@@ -270,13 +269,13 @@ function event_listener_thread() {
                 self.stealth.event_escalation_scalar += var_4cca9730;
             }
             /#
-                typeorig = "<unknown string>";
+                typeorig = "<dev string:x51>";
                 if (isdefined(event.typeorig)) {
-                    typeorig = "<unknown string>" + (ishash(event.typeorig) ? function_9e72a96(event.typeorig) : event.typeorig) + "<unknown string>";
+                    typeorig = "<dev string:x55>" + (ishash(event.typeorig) ? function_9e72a96(event.typeorig) : event.typeorig) + "<dev string:x5b>";
                 }
-                event_str = "<unknown string>" + (ishash(event.type) ? function_9e72a96(event.type) : event.type) + typeorig;
+                event_str = "<dev string:x60>" + (ishash(event.type) ? function_9e72a96(event.type) : event.type) + typeorig;
                 if (isdefined(eventhandled) && !eventhandled) {
-                    event_str += "<unknown string>";
+                    event_str += "<dev string:x6b>";
                 }
                 self thread stealth_debug::function_314b7255(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
                 self.stealth.ai_event = event.type;
@@ -286,7 +285,7 @@ function event_listener_thread() {
 }
 
 // Namespace stealth_event/event
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xca700756, Offset: 0x16b0
 // Size: 0x2e8
 function event_broadcast_axis(eventtype, eventtypeperipheral, enemy, rangeauto, rangesight) {
@@ -334,7 +333,7 @@ function event_broadcast_axis(eventtype, eventtypeperipheral, enemy, rangeauto, 
 }
 
 // Namespace stealth_event/event
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x44b6e6e1, Offset: 0x19a0
 // Size: 0x170
 function event_broadcast_generic(eventtype, eventposition, eventradius, evententity) {
@@ -404,7 +403,7 @@ function event_broadcast_axis_by_sight(eventtype, enemy, eventposition, eventrad
 }
 
 // Namespace stealth_event/event
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x73dca09b, Offset: 0x1d78
 // Size: 0x278
 function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, eventradius, var_c5108979, tacposition, autorange) {
@@ -451,11 +450,11 @@ function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, e
 }
 
 // Namespace stealth_event/event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62277780, Offset: 0x1ff8
 // Size: 0xc0
 function function_961c59a4(event) {
-    assert(event.type == "<unknown string>");
+    assert(event.type == "<dev string:x79>");
     if (!isdefined(event.entity.item.name)) {
         return false;
     }

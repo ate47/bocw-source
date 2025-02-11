@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\globallogic_utils.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\gametypes\globallogic_utils;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_utility;
 
 #namespace globallogic_audio;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5763e1bc, Offset: 0x170
 // Size: 0x7c
 function private preinit() {
@@ -34,7 +33,7 @@ function private preinit() {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x67ac4428, Offset: 0x1f8
 // Size: 0xe4
 function on_player_connect() {

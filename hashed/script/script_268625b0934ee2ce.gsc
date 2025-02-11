@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\stealth\utility.gsc;
 #using script_42e8ee8721f5e6ef;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\util_shared;
 
 #namespace player;
 
@@ -34,7 +33,7 @@ function stealth_noteworthy_thread(enabled, callouts) {
     self endoncallback(&function_19d52da4, #"stealth_noteworthy_thread", #"disconnect");
     assert(isplayer(self));
     while (!isdefined(self.stealth)) {
-        wait(1);
+        wait 1;
     }
     callback::on_ai_killed(&function_3a7a5076);
     stealth_noteworthy_init();
@@ -56,7 +55,7 @@ function stealth_noteworthy_thread(enabled, callouts) {
         var_17280c7c = undefined;
         if (self playerads() > level.stealth.noteworthy.stealth_noteworthy_min_ads) {
             eye = self getplayercamerapos();
-            var_a74a4e75 = anglestoforward(self getplayerangles());
+            eye_dir = anglestoforward(self getplayerangles());
             targets = stealth_noteworthy_entities(self.origin, 20000, "axis", level.stealth.noteworthy.civilians_aim, level.stealth.noteworthy.fakeactors_aim);
             foreach (var_acbf85fc in targets) {
                 entnum = var_acbf85fc getentitynumber();
@@ -65,7 +64,7 @@ function stealth_noteworthy_thread(enabled, callouts) {
                 }
                 var_dfc74aa8 = var_acbf85fc stealth_noteworthy_get_eye();
                 dir = vectornormalize(var_dfc74aa8 - eye);
-                dot = vectordot(var_a74a4e75, dir);
+                dot = vectordot(eye_dir, dir);
                 if (dot > level.stealth.noteworthy.stealth_noteworthy_min_dot && dot > bestdot) {
                     if (sighttracepassed(var_dfc74aa8, eye, 0, self)) {
                         bestdot = dot;
@@ -87,7 +86,7 @@ function stealth_noteworthy_thread(enabled, callouts) {
 }
 
 // Namespace stealth_player/player
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x64a9f84, Offset: 0x728
 // Size: 0x2c
 function private function_19d52da4(*var_352058a) {
@@ -95,7 +94,7 @@ function private function_19d52da4(*var_352058a) {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb938374a, Offset: 0x760
 // Size: 0x33a
 function private stealth_noteworthy_init() {
@@ -103,7 +102,7 @@ function private stealth_noteworthy_init() {
         return;
     }
     /#
-        function_5ac4dc99("<unknown string>", 0);
+        function_5ac4dc99("<dev string:x38>", 0);
     #/
     level.stealth.noteworthy = spawnstruct();
     level.stealth.noteworthy.priority_func = &stealth_noteworthy_priority;
@@ -132,7 +131,7 @@ function private stealth_noteworthy_init() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x303f37ee, Offset: 0xaa8
 // Size: 0x340
 function private stealth_noteworthy_kill_monitor() {
@@ -188,7 +187,7 @@ function private stealth_noteworthy_kill_monitor() {
 }
 
 // Namespace stealth_player/player
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x89c8998a, Offset: 0xdf0
 // Size: 0x30
 function private function_3a7a5076(var_854423c5) {
@@ -197,7 +196,7 @@ function private function_3a7a5076(var_854423c5) {
 }
 
 // Namespace stealth_player/player
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x2261ead0, Offset: 0xe28
 // Size: 0x5d6
 function private stealth_noteworthy_delayed(eventname, target, var_78a2f9b6, delay) {
@@ -238,7 +237,7 @@ function private stealth_noteworthy_delayed(eventname, target, var_78a2f9b6, del
         delay = randomfloatrange(level.stealth.noteworthy.stealth_noteworthy_min_delay, level.stealth.noteworthy.stealth_noteworthy_max_delay);
     }
     if (delay > 0) {
-        wait(delay);
+        wait delay;
     }
     function_1eaaceab(self.stealth.stealth_note_pending_targets);
     if (is_true(var_78a2f9b6) && isdefined(self.stealth.maxalertlevel) && self.stealth.stealth_note_start_alert < self.stealth.maxalertlevel) {
@@ -248,12 +247,12 @@ function private stealth_noteworthy_delayed(eventname, target, var_78a2f9b6, del
     }
     if (eventname == "aim") {
         eye = self getplayercamerapos();
-        var_a74a4e75 = anglestoforward(self getplayerangles());
+        eye_dir = anglestoforward(self getplayerangles());
         contents = stealth_noteworthy_aim_contents();
         foreach (ent in self.stealth.stealth_note_pending_targets) {
             var_dfc74aa8 = ent stealth_noteworthy_get_eye();
             dir = vectornormalize(var_dfc74aa8 - eye);
-            dot = vectordot(var_a74a4e75, dir);
+            dot = vectordot(eye_dir, dir);
             if (dot < level.stealth.noteworthy.stealth_noteworthy_min_dot || !sighttracepassed(var_dfc74aa8, eye, 0, self)) {
                 self.stealth.stealth_note_pending = undefined;
                 self.stealth.stealth_note_pending_targets = undefined;
@@ -270,7 +269,7 @@ function private stealth_noteworthy_delayed(eventname, target, var_78a2f9b6, del
 }
 
 // Namespace stealth_player/player
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9c984061, Offset: 0x1408
 // Size: 0x10c
 function private stealth_noteworthy_priority(eventname) {
@@ -290,11 +289,11 @@ function private stealth_noteworthy_priority(eventname) {
         return 30;
     case #"aim":
         return 20;
-    case #"hash_a82fa1391355735":
-    case #"hash_32b3037d0c7237a1":
-    case #"hash_41c5f724238aa06e":
-    case #"hash_5f71ade4df457495":
-    case #"hash_66e5f6a038177fe8":
+    case #"callout_ahead":
+    case #"callout_below":
+    case #"callout_right":
+    case #"callout_left":
+    case #"callout_behind":
         return 10;
     }
     return 0;
@@ -308,16 +307,16 @@ function private stealth_noteworthy_priority(eventname) {
     // Size: 0x174
     function private function_1e099116() {
         while (true) {
-            wait_result = getplayers()[0] waittill("<unknown string>");
+            wait_result = getplayers()[0] waittill("<dev string:x54>");
             eventname = wait_result.event;
             var_e6eef508 = wait_result.targets;
             if (getdvarint(#"hash_3ca672bc9412d156")) {
                 foreach (subject in var_e6eef508) {
                     if (isdefined(subject)) {
-                        iprintln("<unknown string>" + eventname + "<unknown string>" + subject getentitynumber());
+                        iprintln("<dev string:x6a>" + eventname + "<dev string:x83>" + subject getentitynumber());
                         continue;
                     }
-                    iprintln("<unknown string>" + eventname + "<unknown string>");
+                    iprintln("<dev string:x6a>" + eventname + "<dev string:x8a>");
                 }
             }
         }
@@ -326,7 +325,7 @@ function private stealth_noteworthy_priority(eventname) {
 #/
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x16a0
 // Size: 0x4
 function private stealth_noteworthy_aim_contents() {
@@ -334,7 +333,7 @@ function private stealth_noteworthy_aim_contents() {
 }
 
 // Namespace stealth_player/player
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xebada70b, Offset: 0x16b0
 // Size: 0x1ae
 function private stealth_noteworthy_entities(origin, radius, team = "axis", civilians, fakeactors) {
@@ -346,9 +345,9 @@ function private stealth_noteworthy_entities(origin, radius, team = "axis", civi
     function_1eaaceab(entities);
     if (is_true(fakeactors)) {
         var_33ed2ca8 = [];
-        foreach (var_2b0a1046 in var_33ed2ca8) {
-            if (isdefined(var_2b0a1046.team) && (var_2b0a1046.team == team || is_true(civilians) && var_2b0a1046.team == "neutral")) {
-                entities[entities.size] = var_2b0a1046;
+        foreach (fake_actor in var_33ed2ca8) {
+            if (isdefined(fake_actor.team) && (fake_actor.team == team || is_true(civilians) && fake_actor.team == "neutral")) {
+                entities[entities.size] = fake_actor;
             }
         }
     }
@@ -356,7 +355,7 @@ function private stealth_noteworthy_entities(origin, radius, team = "axis", civi
 }
 
 // Namespace stealth_player/player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x266d3ce, Offset: 0x1868
 // Size: 0x8c0
 function stealth_noteworthy_callouts(enabled) {
@@ -367,7 +366,7 @@ function stealth_noteworthy_callouts(enabled) {
     }
     level.stealth.noteworthy.callout_next = 0;
     while (true) {
-        wait(0.5);
+        wait 0.5;
         level flag::wait_till("stealth_enabled");
         if (!level.stealth.noteworthy.callout_spotted) {
             level flag::wait_till_clear("stealth_spotted");
@@ -388,11 +387,11 @@ function stealth_noteworthy_callouts(enabled) {
             if (isdefined(level.stealth.noteworthy.callout_func_validator) && !self [[ level.stealth.noteworthy.callout_func_validator ]](ent)) {
                 continue;
             }
-            var_b7f614b4 = distancesquared(self.origin, ent.origin) > level.stealth.noteworthy.callout_proximity_radius * level.stealth.noteworthy.callout_proximity_radius;
-            if (var_b7f614b4 && !stealth_noteworthy_trace(ent stealth_noteworthy_get_eye(), self_eye, ent)) {
+            should_trace = distancesquared(self.origin, ent.origin) > level.stealth.noteworthy.callout_proximity_radius * level.stealth.noteworthy.callout_proximity_radius;
+            if (should_trace && !stealth_noteworthy_trace(ent stealth_noteworthy_get_eye(), self_eye, ent)) {
                 continue;
             }
-            if (self stealth_noteworthy_visible(ent, var_b7f614b4)) {
+            if (self stealth_noteworthy_visible(ent, should_trace)) {
                 ent.stealth.callout_next = gettime() + level.stealth.noteworthy.callout_debounce_guy;
                 continue;
             }
@@ -403,8 +402,8 @@ function stealth_noteworthy_callouts(enabled) {
             if (isdefined(type)) {
                 entnum = ent getentitynumber();
                 if (is_true(level.stealth.noteworthy.callout_civilians)) {
-                    foreach (var_edce0829 in callouts.results[#"all"]) {
-                        if (var_edce0829.team != ent.team && var_edce0829.team == "neutral") {
+                    foreach (existing_ent in callouts.results[#"all"]) {
+                        if (existing_ent.team != ent.team && existing_ent.team == "neutral") {
                             callouts = stealth_noteworthy_callouts_init();
                         }
                         break;
@@ -428,9 +427,9 @@ function stealth_noteworthy_callouts(enabled) {
             var_2a0b59fb = [];
             foreach (ent in callouts.results[type]) {
                 var_d853ee3f = stealth_noteworthy_entities(ent.origin, level.stealth.noteworthy.callout_bunch_radius, ent.team, 0, level.stealth.noteworthy.fakeactors_callout);
-                foreach (var_b07265a2 in var_d853ee3f) {
-                    var_2a0b59fb[var_b07265a2 getentitynumber()] = var_b07265a2;
-                    var_b07265a2.stealth.callout_next = gettime() + level.stealth.noteworthy.callout_debounce_guy;
+                foreach (other_ent in var_d853ee3f) {
+                    var_2a0b59fb[other_ent getentitynumber()] = other_ent;
+                    other_ent.stealth.callout_next = gettime() + level.stealth.noteworthy.callout_debounce_guy;
                 }
             }
             foreach (ent in var_2a0b59fb) {
@@ -442,7 +441,7 @@ function stealth_noteworthy_callouts(enabled) {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb4cf1570, Offset: 0x2130
 // Size: 0xd6
 function private stealth_noteworthy_callouts_init() {
@@ -459,25 +458,25 @@ function private stealth_noteworthy_callouts_init() {
 }
 
 // Namespace stealth_player/player
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe7c418f3, Offset: 0x2210
 // Size: 0x1f2
 function private stealth_noteworthy_callout_type(ent) {
     type = undefined;
-    var_bae3b774 = anglestoforward(self.angles);
-    var_77a0ea82 = vectorcross(var_bae3b774, (0, 0, 1));
+    self_fwd = anglestoforward(self.angles);
+    self_right = vectorcross(self_fwd, (0, 0, 1));
     dir = vectornormalize(ent.origin - self.origin);
-    var_35a5aae = vectordot(var_bae3b774, dir);
-    if (var_35a5aae > 0.7) {
+    dot_fwd = vectordot(self_fwd, dir);
+    if (dot_fwd > 0.7) {
         type = "ahead";
-    } else if (var_35a5aae < -0.6) {
+    } else if (dot_fwd < -0.6) {
         type = "behind";
     } else {
         height = ent.origin[2] - self.origin[2];
-        if (var_35a5aae > 0 && height < -100) {
+        if (dot_fwd > 0 && height < -100) {
             type = "below";
         } else {
-            dot_right = vectordot(var_77a0ea82, dir);
+            dot_right = vectordot(self_right, dir);
             if (dot_right < -0.7) {
                 type = "left";
             } else if (dot_right > 0.7) {
@@ -492,7 +491,7 @@ function private stealth_noteworthy_callout_type(ent) {
 }
 
 // Namespace stealth_player/player
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc95905b0, Offset: 0x2410
 // Size: 0xf8
 function private stealth_noteworthy_visible(other, var_5958f865) {
@@ -513,7 +512,7 @@ function private stealth_noteworthy_visible(other, var_5958f865) {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6ce671d2, Offset: 0x2510
 // Size: 0x8a
 function private stealth_noteworthy_get_eye() {
@@ -527,7 +526,7 @@ function private stealth_noteworthy_get_eye() {
 }
 
 // Namespace stealth_player/player
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x7aefa0d8, Offset: 0x25a8
 // Size: 0x9a
 function private stealth_noteworthy_trace(start, end, ignore_ent) {
@@ -540,7 +539,7 @@ function private stealth_noteworthy_trace(start, end, ignore_ent) {
 }
 
 // Namespace stealth_player/player
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x768763e4, Offset: 0x2650
 // Size: 0x27a
 function ambient_player_thread(var_bfd9f922, var_ececce87, var_d572c578, var_4fb611ad) {
@@ -567,9 +566,9 @@ function ambient_player_thread(var_bfd9f922, var_ececce87, var_d572c578, var_4fb
         }
         self flag::wait_till("stealth_enabled");
         if (level.stealth.candidatesvoice.size == 0) {
-            wait(1);
+            wait 1;
         } else {
-            wait(randomfloatrange(var_bfd9f922, var_ececce87));
+            wait randomfloatrange(var_bfd9f922, var_ececce87);
         }
         if (level flag::get("stealth_spotted")) {
             continue;
@@ -588,7 +587,7 @@ function ambient_player_thread(var_bfd9f922, var_ececce87, var_d572c578, var_4fb
 }
 
 // Namespace stealth_player/player
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa8fbd5b7, Offset: 0x28d8
 // Size: 0x362
 function private ambient_candidates(var_af882d4b, var_b5e49a23) {
@@ -641,7 +640,7 @@ function private ambient_candidates(var_af882d4b, var_b5e49a23) {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf4f740f6, Offset: 0x2c48
 // Size: 0x16
 function ambient_player_stop() {

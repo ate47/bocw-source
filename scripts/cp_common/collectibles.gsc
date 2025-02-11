@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_7d0013bbc05623b9;
-#using script_6e46300ab1cb7adb;
 #using script_32399001bdb550da;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_6e46300ab1cb7adb;
+#using script_7d0013bbc05623b9;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
 
 #namespace collectibles;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace collectibles/collectibles
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x76e7e5a, Offset: 0x110
 // Size: 0x10
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace collectibles/collectibles
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa4f226bd, Offset: 0x128
 // Size: 0x14
 function private postinit() {
@@ -34,7 +33,7 @@ function private postinit() {
 }
 
 // Namespace collectibles/collectibles
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaf5c9923, Offset: 0x148
 // Size: 0x73c
 function function_5a395617() {
@@ -53,7 +52,7 @@ function function_5a395617() {
                 collectible.var_430d1d6a = var_eeb11904.var_8ca1d4a;
                 collectible.index = k;
                 if (collectible.index >= 10) {
-                    assert(0, "<unknown string>" + function_9e72a96(collectible.var_430d1d6a) + "<unknown string>" + 10);
+                    assert(0, "<dev string:x38>" + function_9e72a96(collectible.var_430d1d6a) + "<dev string:x68>" + 10);
                 }
                 if (!isdefined(var_bdf7b99d[collectible.var_1d226975])) {
                     var_bdf7b99d[collectible.var_1d226975] = [];
@@ -85,14 +84,14 @@ function function_5a395617() {
                     assert(isdefined(collectible.var_f3575c58));
                     assert(isdefined(collectible.var_ed968ffd));
                     if (collectible.var_f3575c58 > 6) {
-                        assert(0, "<unknown string>" + function_9e72a96(collectible.var_ed968ffd) + "<unknown string>" + 6);
+                        assert(0, "<dev string:x92>" + function_9e72a96(collectible.var_ed968ffd) + "<dev string:xb9>" + 6);
                     }
                     if (isdefined(collectible.var_f3575c58) && isdefined(collectible.var_ed968ffd)) {
                         if (!isdefined(var_7bb83649[collectible.var_f3575c58])) {
                             var_7bb83649[collectible.var_f3575c58] = collectible;
                         } else {
                             var_91783c0f = var_7bb83649[collectible.var_f3575c58].name;
-                            assert(0, "<unknown string>" + function_9e72a96(collectible.var_ed968ffd) + "<unknown string>" + collectible.var_f3575c58 + "<unknown string>" + function_9e72a96(collectible.name) + "<unknown string>" + function_9e72a96(var_91783c0f));
+                            assert(0, "<dev string:xec>" + function_9e72a96(collectible.var_ed968ffd) + "<dev string:x114>" + collectible.var_f3575c58 + "<dev string:x11e>" + function_9e72a96(collectible.name) + "<dev string:x124>" + function_9e72a96(var_91783c0f));
                         }
                         if (!isdefined(var_bdf7b99d[collectible.var_1d226975][collectible.var_f3575c58])) {
                             var_bdf7b99d[collectible.var_1d226975][collectible.var_f3575c58] = [];
@@ -131,7 +130,7 @@ function function_28bfb57e(mission_name = savegame::function_8136eb5a()) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x90b2726, Offset: 0x9a8
 // Size: 0xa2
 function function_293d81b4(var_1d226975 = 0, key) {
@@ -148,7 +147,7 @@ function function_293d81b4(var_1d226975 = 0, key) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd3974fa7, Offset: 0xa58
 // Size: 0xd4
 function function_c57acbc9(var_2a51713, value = 1) {
@@ -160,7 +159,7 @@ function function_c57acbc9(var_2a51713, value = 1) {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5b82c720, Offset: 0xb38
 // Size: 0xde
 function function_ab921f3d(var_2a51713) {
@@ -175,7 +174,7 @@ function function_ab921f3d(var_2a51713) {
 }
 
 // Namespace collectibles/collectibles
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc500a089, Offset: 0xc20
 // Size: 0x15c
 function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
@@ -192,7 +191,7 @@ function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6802e2c1, Offset: 0xd88
 // Size: 0xea
 function function_1fe63475(var_d13a0347, var_28c9f917) {
@@ -205,7 +204,7 @@ function function_1fe63475(var_d13a0347, var_28c9f917) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x84979bf3, Offset: 0xe80
 // Size: 0xea
 function function_ee216b9e(var_d13a0347, var_28c9f917) {
@@ -218,7 +217,7 @@ function function_ee216b9e(var_d13a0347, var_28c9f917) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe2a32421, Offset: 0xf78
 // Size: 0xfc
 function function_55fb73ea(var_d13a0347, var_28c9f917) {
@@ -255,7 +254,7 @@ function function_9f455dbc() {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xde8a8894, Offset: 0x1150
 // Size: 0xc0
 function function_9f976c54(mission_name = savegame::function_8136eb5a()) {
@@ -269,7 +268,7 @@ function function_9f976c54(mission_name = savegame::function_8136eb5a()) {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe05773cd, Offset: 0x1218
 // Size: 0xb0
 function function_99c4aa1(var_d13a0347) {
@@ -300,7 +299,7 @@ function function_ee839c3b() {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4c903be8, Offset: 0x1398
 // Size: 0xf2
 function function_7be39f53(mission_name = savegame::function_8136eb5a()) {
@@ -316,7 +315,7 @@ function function_7be39f53(mission_name = savegame::function_8136eb5a()) {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x63723483, Offset: 0x1498
 // Size: 0xe2
 function function_5d5166dd(var_d13a0347) {
@@ -344,7 +343,7 @@ function function_d06c5a39() {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb83d890a, Offset: 0x15d8
 // Size: 0x11c
 function function_6cd091d2(var_2a51713, var_c05d6) {
@@ -362,7 +361,7 @@ function function_6cd091d2(var_2a51713, var_c05d6) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x611a8000, Offset: 0x1700
 // Size: 0x6c
 function private function_cb8ff1b9(var_2a51713, is_unlocked) {
@@ -372,7 +371,7 @@ function private function_cb8ff1b9(var_2a51713, is_unlocked) {
 }
 
 // Namespace collectibles/collectibles
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1778
 // Size: 0x4
 function function_5b42ccea() {
@@ -380,7 +379,7 @@ function function_5b42ccea() {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb62e6b61, Offset: 0x1788
 // Size: 0x24
 function add_callback(collectible, callback) {
@@ -388,7 +387,7 @@ function add_callback(collectible, callback) {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x725acc5b, Offset: 0x17b8
 // Size: 0x1e
 function function_606a97af(collectible) {
@@ -396,7 +395,7 @@ function function_606a97af(collectible) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1b49b42e, Offset: 0x17e0
 // Size: 0x4a
 function function_f539a1fa(collectible, params) {

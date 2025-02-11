@@ -1,31 +1,30 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_340a2e805e35f7a2;
-#using script_3b2abb7986f4ae7c;
 #using script_34ab99a4ca1a43d;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_transformation.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_maptable.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm.gsc;
 #using script_3a704cbcf4081bfb;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_3b2abb7986f4ae7c;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_maptable;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_transformation;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_holiday_event;
 
@@ -38,7 +37,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2a6fa0af, Offset: 0x400
 // Size: 0x10c
 function private preinit() {
@@ -53,15 +52,15 @@ function private preinit() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xeafa0c24, Offset: 0x518
 // Size: 0xbc
 function private postinit() {
     if (is_true(getgametypesetting(#"hash_4751990deae37e66"))) {
         /#
-            util::add_debug_command("<unknown string>");
-            util::add_debug_command("<unknown string>");
-            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<dev string:x38>");
+            util::add_debug_command("<dev string:x93>");
+            util::add_debug_command("<dev string:xeb>");
             zm_devgui::add_custom_devgui_callback(&function_33572994);
         #/
         level thread function_5837bf72();
@@ -69,7 +68,7 @@ function private postinit() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe532e9ca, Offset: 0x5e0
 // Size: 0xcac
 function function_5837bf72() {
@@ -97,7 +96,7 @@ function function_5837bf72() {
                 }
             }
             foreach (instance in var_f79418e) {
-                var_842cdacd = instance.contentgroups[#"hash_6b1e5d8f9e70a70e"];
+                var_842cdacd = instance.contentgroups[#"chest_spawn"];
                 if (isarray(var_842cdacd)) {
                     level.var_e0b4bcdf = arraycombine(level.var_e0b4bcdf, var_842cdacd);
                 }
@@ -216,7 +215,7 @@ function function_5837bf72() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xebd5657b, Offset: 0x1298
 // Size: 0x204
 function function_367f9f86(var_6f531d9b) {
@@ -242,13 +241,13 @@ function function_367f9f86(var_6f531d9b) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x75ccd960, Offset: 0x14a8
 // Size: 0x7c
 function private function_54188cef() {
     self.scriptmodel endon(#"death");
     self.scriptmodel endon(#"hash_20d5ae218d7c2b33");
-    wait(180);
+    wait 180;
     if (isdefined(self.trigger)) {
         self.trigger delete();
     }
@@ -256,7 +255,7 @@ function private function_54188cef() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x978dbb93, Offset: 0x1530
 // Size: 0x122
 function function_3ba5772b() {
@@ -274,7 +273,7 @@ function function_3ba5772b() {
             self.var_4356b0bd = 1;
             break;
         case #"soa":
-            wait(1.4 + float(function_60d95f53()) / 1000);
+            wait 1.4 + float(function_60d95f53()) / 1000;
             self.var_4356b0bd = 1;
             break;
         }
@@ -282,7 +281,7 @@ function function_3ba5772b() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 13, eflags: 0x6 linked
+// Params 13, eflags: 0x4
 // Checksum 0xb78c97a2, Offset: 0x1660
 // Size: 0x1ee
 function private function_cb059f82(inflictor, attacker, damage, flags, meansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype) {
@@ -303,7 +302,7 @@ function private function_cb059f82(inflictor, attacker, damage, flags, meansofde
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0xb61ab19, Offset: 0x1858
 // Size: 0xbc
 function function_9f5a8125(inflictor, attacker, damage, flags, meansofdeath, weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, *boneindex, *surfacetype) {
@@ -313,7 +312,7 @@ function function_9f5a8125(inflictor, attacker, damage, flags, meansofdeath, wea
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x76fd6068, Offset: 0x1920
 // Size: 0x194
 function private function_7d47c6f7(params) {
@@ -341,7 +340,7 @@ function private function_7d47c6f7(params) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1c4a22b5, Offset: 0x1ac0
 // Size: 0x18a
 function private function_5da12481(params) {
@@ -368,7 +367,7 @@ function private function_5da12481(params) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x71b81bce, Offset: 0x1c58
 // Size: 0xb4
 function private function_933708f2() {
@@ -383,16 +382,16 @@ function private function_933708f2() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf504cb46, Offset: 0x1d18
 // Size: 0x34
 function private function_fb4c0780(player) {
     self notify(#"hash_20d5ae218d7c2b33");
-    self thread namespace_dedc3cb9::function_960ea519(player);
+    self thread helicopter_escape::function_960ea519(player);
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa09996c0, Offset: 0x1d58
 // Size: 0xc4
 function function_cf4230c2() {
@@ -414,24 +413,24 @@ function function_cf4230c2() {
         case #"hash_e41021f4d82e571":
             level flag::toggle(#"hash_69ca47ce3a408f31");
             if (level flag::get(#"hash_69ca47ce3a408f31")) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x147>");
             } else {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x170>");
             }
             break;
         case #"hash_68f2deafb75d0499":
             level flag::toggle(#"hash_6ef5c2fd97dfb8ba");
             if (level flag::get(#"hash_6ef5c2fd97dfb8ba")) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x19a>");
             } else {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x1c6>");
             }
             break;
         case #"hash_3d3ef40bc9791d4b":
-            if (level flag::get("<unknown string>")) {
-                level flag::clear("<unknown string>");
+            if (level flag::get("<dev string:x1f3>")) {
+                level flag::clear("<dev string:x1f3>");
             } else {
-                level flag::set("<unknown string>");
+                level flag::set("<dev string:x1f3>");
                 level thread function_50567097();
             }
             break;
@@ -443,9 +442,9 @@ function function_cf4230c2() {
     // Checksum 0x42a7482b, Offset: 0x1ff8
     // Size: 0x1ea
     function private function_50567097() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
-        while (level flag::get("<unknown string>")) {
+        self notify("<dev string:x213>");
+        self endon("<dev string:x213>");
+        while (level flag::get("<dev string:x1f3>")) {
             foreach (var_6f531d9b in level.var_e0b4bcdf) {
                 if (isdefined(level.var_165a2af4) && isdefined(var_6f531d9b.str_zone) && isinarray(level.var_165a2af4, var_6f531d9b.str_zone)) {
                     continue;
@@ -458,7 +457,7 @@ function function_cf4230c2() {
                     circle(var_6f531d9b.origin, 50, (1, 0, 0));
                 }
                 if (isdefined(var_6f531d9b.str_zone) && isdefined(v_color)) {
-                    print3d(var_6f531d9b.origin, "<unknown string>" + var_6f531d9b.str_zone, v_color, 1, 0.5);
+                    print3d(var_6f531d9b.origin, "<dev string:x227>" + var_6f531d9b.str_zone, v_color, 1, 0.5);
                 }
             }
             waitframe(1);

@@ -1,41 +1,40 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_2a5bf5b4a00cee0d;
 #using script_164a456ce05c3483;
-#using script_47851dbeea22fe66;
+#using script_17dcb1172e441bf6;
+#using script_1b01e95a6b5270fd;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
+#using script_47851dbeea22fe66;
+#using script_5701633066d199f2;
 #using script_5f20d3b434d24884;
 #using script_774302f762d76254;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
-#using scripts\core_common\vehicles\raps.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\ai\blackboard_vehicle.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\statemachine_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\blackboard_vehicle;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\statemachine_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicles\raps;
 
 #namespace namespace_a0fa2b5;
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x420cbd58, Offset: 0x328
 // Size: 0xb4
 function init() {
@@ -45,7 +44,7 @@ function init() {
 }
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4f28da1, Offset: 0x3e8
 // Size: 0x3bc
 function function_fd051611(*s_params) {
@@ -92,7 +91,7 @@ function function_fd051611(*s_params) {
 }
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc791232, Offset: 0x7b0
 // Size: 0x4bc
 function function_d240d5de() {
@@ -166,7 +165,7 @@ function function_d240d5de() {
 }
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2ae975a, Offset: 0xc78
 // Size: 0xc8
 function proximitykill() {
@@ -180,7 +179,7 @@ function proximitykill() {
                 self.favoriteenemy dodamage(25, self.origin, self, undefined, "MOD_IMPACT");
             }
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -201,21 +200,21 @@ function proximitykill() {
 #/
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x60e55e48, Offset: 0xdb8
 // Size: 0x6c
 function function_41157a40() {
     self endon(#"death");
     self thread updatetarget();
     while (!self.var_c0bd8c06) {
-        wait(1);
+        wait 1;
         namespace_250e9486::function_c1f37cab();
     }
     self thread namespace_ec06fe4a::function_570729f0(0.1);
 }
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaa14607d, Offset: 0xe30
 // Size: 0x54
 function private initblackboard() {
@@ -226,18 +225,18 @@ function private initblackboard() {
 }
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc34a985e, Offset: 0xe90
 // Size: 0x70
 function private updatetarget() {
     self endon(#"death");
     while (true) {
         if (is_true(self.ignoreall)) {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         self namespace_250e9486::function_4b49bf0d();
-        wait(0.5);
+        wait 0.5;
     }
 }
 

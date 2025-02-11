@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
 
 #namespace zm_powerup_fire_sale;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x96f98e09, Offset: 0x200
 // Size: 0xa4
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0f14d2c, Offset: 0x2b0
 // Size: 0x84
 function grab_fire_sale(player) {
@@ -50,7 +49,7 @@ function grab_fire_sale(player) {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3f590d76, Offset: 0x340
 // Size: 0x14c
 function function_3ceac0e1(e_powerup, player) {
@@ -68,7 +67,7 @@ function function_3ceac0e1(e_powerup, player) {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9cef0d2, Offset: 0x498
 // Size: 0x3a8
 function start_fire_sale(item) {
@@ -107,7 +106,7 @@ function start_fire_sale(item) {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x12efd1a4, Offset: 0x848
 // Size: 0x4a
 function check_to_clear_fire_sale() {
@@ -115,12 +114,12 @@ function check_to_clear_fire_sale() {
     while (firesale_chest_is_leaving()) {
         waitframe(1);
     }
-    wait(1);
+    wait 1;
     level.disable_firesale_drop = undefined;
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1377b93, Offset: 0x8a0
 // Size: 0xfa
 function firesale_chest_is_leaving() {
@@ -135,7 +134,7 @@ function firesale_chest_is_leaving() {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x56c8c261, Offset: 0x9a8
 // Size: 0x29a
 function toggle_fire_sale_on() {
@@ -178,7 +177,7 @@ function toggle_fire_sale_on() {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5c9ad67, Offset: 0xc50
 // Size: 0x74
 function apply_fire_sale_to_chest() {
@@ -186,12 +185,12 @@ function apply_fire_sale_to_chest() {
     if (self.zbarrier.state == "leaving") {
         self.zbarrier waittilltimeout(10, #"left");
     }
-    wait(0.1);
+    wait 0.1;
     self thread zm_magicbox::show_chest();
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7459907e, Offset: 0xcd0
 // Size: 0x246
 function remove_temp_chest(chest_index) {
@@ -222,7 +221,7 @@ function remove_temp_chest(chest_index) {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xada9d9b0, Offset: 0xf20
 // Size: 0x90
 function func_should_drop_fire_sale() {
@@ -233,7 +232,7 @@ function func_should_drop_fire_sale() {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb16141db, Offset: 0xfb8
 // Size: 0x148
 function sndfiresalemusic_start() {
@@ -251,7 +250,7 @@ function sndfiresalemusic_start() {
 }
 
 // Namespace zm_powerup_fire_sale/zm_powerup_fire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3af2f604, Offset: 0x1108
 // Size: 0xea
 function sndfiresalemusic_stop() {

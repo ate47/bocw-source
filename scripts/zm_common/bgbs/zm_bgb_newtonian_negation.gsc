@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_bgb;
 
 #namespace zm_bgb_newtonian_negation;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_bgb_newtonian_negation/zm_bgb_newtonian_negation
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x535ba23c, Offset: 0x120
 // Size: 0xcc
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace zm_bgb_newtonian_negation/zm_bgb_newtonian_negation
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x81c6a613, Offset: 0x1f8
 // Size: 0x26
 function validation() {
@@ -38,7 +37,7 @@ function validation() {
 }
 
 // Namespace zm_bgb_newtonian_negation/zm_bgb_newtonian_negation
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x600af617, Offset: 0x228
 // Size: 0x34
 function enable() {
@@ -47,7 +46,7 @@ function enable() {
 }
 
 // Namespace zm_bgb_newtonian_negation/zm_bgb_newtonian_negation
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6ba61d27, Offset: 0x268
 // Size: 0x3c
 function function_4712db36() {
@@ -57,7 +56,7 @@ function function_4712db36() {
 }
 
 // Namespace zm_bgb_newtonian_negation/zm_bgb_newtonian_negation
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc847eb9c, Offset: 0x2b0
 // Size: 0xd4
 function disable() {
@@ -73,7 +72,7 @@ function disable() {
 }
 
 // Namespace zm_bgb_newtonian_negation/zm_bgb_newtonian_negation
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfa59f9ab, Offset: 0x390
 // Size: 0x2c
 function function_8622e664(var_b4666218) {

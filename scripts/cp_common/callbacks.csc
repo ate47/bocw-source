@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\cp\explosive_bolt.csc;
-#using scripts\cp_common\callbacks.csc;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\footsteps_shared.csc;
-#using scripts\core_common\exploder_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\ai_shared.csc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\footsteps_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\cp_common\callbacks;
+#using scripts\weapons\cp\explosive_bolt;
 
 #namespace callback;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xec9f3ff8, Offset: 0x158
 // Size: 0x1c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa59661e2, Offset: 0x180
 // Size: 0xf4
 function set_default_callbacks() {
@@ -46,11 +45,11 @@ function set_default_callbacks() {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e987e36, Offset: 0x280
 // Size: 0x9c
 function localclientconnect(localclientnum) {
-    println("<unknown string>" + localclientnum);
+    println("<dev string:x38>" + localclientnum);
     if (isdefined(level.charactercustomizationsetup)) {
         [[ level.charactercustomizationsetup ]](localclientnum);
     }
@@ -61,7 +60,7 @@ function localclientconnect(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30be1950, Offset: 0x328
 // Size: 0xc4
 function playerspawned(localclientnum) {
@@ -77,14 +76,14 @@ function playerspawned(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55b41880, Offset: 0x3f8
 // Size: 0x300
 function entityspawned(localclientnum) {
     self endon(#"death");
     util::function_89a98f85();
     if (!isdefined(self.type)) {
-        println("<unknown string>");
+        println("<dev string:x68>");
         return;
     }
     if (isplayer(self)) {
@@ -138,7 +137,7 @@ function entityspawned(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2c4a5268, Offset: 0x700
 // Size: 0x14
 function creating_corpse(*localclientnum, *player) {
@@ -151,7 +150,7 @@ function creating_corpse(*localclientnum, *player) {
 // Size: 0x96
 function callback_stunned(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.stunned = bwastimejump;
-    println("<unknown string>");
+    println("<dev string:x82>");
     if (bwastimejump) {
         self notify(#"stunned");
         return;
@@ -165,7 +164,7 @@ function callback_stunned(*localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x96
 function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.emp = bwastimejump;
-    println("<unknown string>");
+    println("<dev string:x96>");
     if (bwastimejump) {
         self notify(#"emp");
         return;
@@ -182,7 +181,7 @@ function callback_proximity(*localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c6c8271, Offset: 0x8b8
 // Size: 0x138
 function function_19bd6f4f() {
@@ -198,7 +197,7 @@ function function_19bd6f4f() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x89323061, Offset: 0x9f8
 // Size: 0x24
 function function_a578d98() {
@@ -208,7 +207,7 @@ function function_a578d98() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7f58f4eb, Offset: 0xa28
 // Size: 0x14
 function function_e551f1ce() {
@@ -216,7 +215,7 @@ function function_e551f1ce() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x30463cda, Offset: 0xa48
 // Size: 0x14
 function function_1786cd9e() {
@@ -224,7 +223,7 @@ function function_1786cd9e() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed14444d, Offset: 0xa68
 // Size: 0x14
 function function_c3238310() {

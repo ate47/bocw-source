@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace cinematicmotion;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace cinematicmotion/namespace_345fff71
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3d1d7efd, Offset: 0x108
 // Size: 0x54
 function preinit() {
@@ -22,7 +21,7 @@ function preinit() {
 }
 
 // Namespace cinematicmotion/namespace_345fff71
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xafc99488, Offset: 0x168
 // Size: 0x2ea
 function function_92dd9a20(param) {
@@ -72,7 +71,7 @@ function function_92dd9a20(param) {
 }
 
 // Namespace cinematicmotion/namespace_345fff71
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc2291672, Offset: 0x460
 // Size: 0x64
 function function_bbf6e778(param) {

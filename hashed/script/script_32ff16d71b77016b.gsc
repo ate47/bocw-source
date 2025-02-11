@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\cp_common\friendlyfire.gsc;
-#using scripts\core_common\name_shared.gsc;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\name_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\friendlyfire;
+#using scripts\cp_common\util;
 
 #namespace namespace_4e75a347;
 
@@ -17,12 +16,12 @@
 // Size: 0x60
 function event_handler[event_7d801d3e] function_2f02dc73(eventstruct) {
     function_3475cd5c();
-    assert(isdefined(level.var_279714e8), "<unknown string>");
+    assert(isdefined(level.var_279714e8), "<dev string:x38>");
     self [[ level.var_279714e8 ]](eventstruct.entity);
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa89d1548, Offset: 0x330
 // Size: 0x3c
 function private function_3475cd5c() {
@@ -34,7 +33,7 @@ function private function_3475cd5c() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x56e008a1, Offset: 0x378
 // Size: 0x214
 function function_86d89f13(spawner) {
@@ -66,7 +65,7 @@ function function_86d89f13(spawner) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2c22709a, Offset: 0x598
 // Size: 0x64
 function private function_8069a99d() {
@@ -82,7 +81,7 @@ function private function_8069a99d() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x287497d3, Offset: 0x608
 // Size: 0x1ca
 function private function_8adcfb4f(aitype) {
@@ -114,7 +113,7 @@ function private function_8adcfb4f(aitype) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5bafb65, Offset: 0x7e0
 // Size: 0x98
 function private function_eefa18e(str) {
@@ -125,7 +124,7 @@ function private function_eefa18e(str) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xae371afb, Offset: 0x880
 // Size: 0x34c
 function private function_beea5074() {
@@ -140,18 +139,18 @@ function private function_beea5074() {
     if (!isdefined(self)) {
         return;
     }
-    var_d3e9a2bd = isdefined(eattacker) && (self.team === eattacker.team || util::function_9b7092ef(self.team, eattacker.team));
+    same_team = isdefined(eattacker) && (self.team === eattacker.team || util::function_9b7092ef(self.team, eattacker.team));
     var_24c578bc = !isdefined(self.script_allowdeath) || self.script_allowdeath;
-    if (var_d3e9a2bd || !var_24c578bc) {
+    if (same_team || !var_24c578bc) {
         self.health = self.maxhealth;
-        if (var_d3e9a2bd) {
+        if (same_team) {
             self thread function_beea5074();
             return;
         }
     }
     if (isdefined(eattacker) && eattacker != self) {
         if (!isdefined(einflictor) || !isai(einflictor) || isvehicle(einflictor) && einflictor getseatoccupant(0) === eattacker) {
-            if (idamage > 0 && !var_d3e9a2bd && self.team != #"neutral" && shitloc !== "riotshield") {
+            if (idamage > 0 && !same_team && self.team != #"neutral" && shitloc !== "riotshield") {
                 fatal = var_24c578bc && self.health <= 0;
                 eattacker thread damagefeedback::update(smeansofdeath, einflictor, undefined, weapon, self, undefined, shitloc, fatal);
             }
@@ -165,14 +164,14 @@ function private function_beea5074() {
         self thread friendlyfire::function_1ad87afd(self, idamage, eattacker, smeansofdeath, undefined, einflictor);
     }
     s_params = {#eattacker:eattacker, #einflictor:einflictor, #idamage:idamage, #smeansofdeath:smeansofdeath, #shitloc:shitloc, #weapon:weapon};
-    function_a484fe9(s_params);
+    kill_drone(s_params);
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x197313f7, Offset: 0xbd8
 // Size: 0x1d0
-function function_a484fe9(s_params) {
+function kill_drone(s_params) {
     if (!isdefined(self) || is_true(self.drone.isdead)) {
         return;
     }
@@ -209,16 +208,16 @@ function function_a484fe9(s_params) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf651baa9, Offset: 0xdb0
 // Size: 0x90
 function private function_e7956bb6() {
     self endon(#"entitydeleted");
-    wait(5);
+    wait 5;
     self.drone.var_9e843395 = 0;
     allplayers = function_58385b58();
     while (isdefined(self)) {
-        wait(5);
+        wait 5;
         if (!function_bfc92d86(self)) {
             self delete();
         }
@@ -226,7 +225,7 @@ function private function_e7956bb6() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x729d12f8, Offset: 0xe48
 // Size: 0xe2
 function private function_bfc92d86(drone) {
@@ -240,13 +239,13 @@ function private function_bfc92d86(drone) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc069f429, Offset: 0xf38
 // Size: 0x33e
 function private function_19f971bb() {
     self moveto(self.origin, 0.05);
     self rotateto(self.angles, 0.05);
-    wait(0.1);
+    wait 0.1;
     var_361f5589 = getfakeaiarray();
     var_9789086c = 54;
     var_6076a7b7 = 10;
@@ -291,7 +290,7 @@ function private function_19f971bb() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe64ba7f5, Offset: 0x1280
 // Size: 0x6a
 function function_cab4b520(demeanor = "COMBAT") {
@@ -303,7 +302,7 @@ function function_cab4b520(demeanor = "COMBAT") {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe0368c85, Offset: 0x12f8
 // Size: 0xd6
 function private function_44dd1cfb(var_ceb8c425, var_e325076f) {
@@ -318,7 +317,7 @@ function private function_44dd1cfb(var_ceb8c425, var_e325076f) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6e3b022d, Offset: 0x13d8
 // Size: 0x96
 function private function_f2582c66(var_ceb8c425, var_e325076f) {
@@ -330,7 +329,7 @@ function private function_f2582c66(var_ceb8c425, var_e325076f) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb8cc7184, Offset: 0x1478
 // Size: 0x44
 function private play_anim(droneanim, rate, mode) {
@@ -339,7 +338,7 @@ function private play_anim(droneanim, rate, mode) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xa4c4186c, Offset: 0x14c8
 // Size: 0x34
 function private function_98f16d76(droneanim, rate, mode) {
@@ -347,7 +346,7 @@ function private function_98f16d76(droneanim, rate, mode) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xf9ce801a, Offset: 0x1508
 // Size: 0xdc
 function private play_single_anim(droneanim, rate = 1, mode = "server script") {
@@ -361,7 +360,7 @@ function private play_single_anim(droneanim, rate = 1, mode = "server script") {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdbba1959, Offset: 0x15f0
 // Size: 0x192
 function drone_idle(stance) {
@@ -381,13 +380,13 @@ function drone_idle(stance) {
             }
             self thread function_98f16d76(idleanim);
             var_447218d2 = getanimlength(idleanim);
-            wait(var_447218d2 - 0.2);
+            wait var_447218d2 - 0.2;
         }
     }
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6c2f2b3a, Offset: 0x1790
 // Size: 0x164
 function private function_eaea34d2(lastnode) {
@@ -409,14 +408,14 @@ function private function_eaea34d2(lastnode) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf17fe14c, Offset: 0x1900
 // Size: 0x382
 function drone_fight(stance) {
     self endon(#"death", #"entitydeleted", #"hash_1b1ebb63b6197fd7");
     self.drone.stance = stance;
     self thread drone_idle(stance);
-    wait(0.3);
+    wait 0.3;
     while (isdefined(self)) {
         var_73e5bfb2 = 0;
         var_87aec447 = 100;
@@ -428,7 +427,7 @@ function drone_fight(stance) {
                     animation = self function_f2582c66(stance, "IDLE_TO_ATTACK");
                     self play_anim(animation);
                     waittime = getanimlength(animation) - 0.1;
-                    wait(waittime);
+                    wait waittime;
                 } else {
                     var_73e5bfb2 = 0.5;
                 }
@@ -437,80 +436,80 @@ function drone_fight(stance) {
                 if (var_c10115e8) {
                     animation = self function_f2582c66(stance, "ATTACK");
                     self thread play_anim(animation);
-                    wait(0.1);
+                    wait 0.1;
                 }
                 if (var_73e5bfb2 > 0) {
-                    wait(var_73e5bfb2);
+                    wait var_73e5bfb2;
                     var_73e5bfb2 = 0;
                 }
                 self drone_fire_randomly();
             }
-            wait(0.5);
+            wait 0.5;
             if (var_c10115e8) {
                 if (self function_44dd1cfb(stance, "ATTACK_TO_IDLE")) {
                     animation = self function_f2582c66(stance, "ATTACK_TO_IDLE");
                     self play_anim(animation);
                     waittime = getanimlength(animation) - 0.1;
-                    wait(waittime);
+                    wait waittime;
                 } else {
-                    wait(0.5);
+                    wait 0.5;
                 }
             }
             self thread drone_idle(stance);
-            wait(0.3);
+            wait 0.3;
             if (self function_44dd1cfb(stance, "RELOAD") && math::cointoss()) {
                 animation = self function_f2582c66(stance, "RELOAD");
                 self play_anim(animation);
                 waittime = getanimlength(animation) - 0.1;
-                wait(waittime);
+                wait waittime;
             }
-            wait(1);
+            wait 1;
             continue;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5be05043, Offset: 0x1c90
 // Size: 0x22c
 function private drone_fire_randomly() {
     self endon(#"death", #"entitydeleted");
     if (math::cointoss()) {
         self drone_shoot();
-        wait(0.1);
+        wait 0.1;
         self drone_shoot();
-        wait(0.1);
+        wait 0.1;
         self drone_shoot();
         if (math::cointoss()) {
-            wait(0.1);
+            wait 0.1;
             self drone_shoot();
         }
         if (math::cointoss()) {
-            wait(0.1);
+            wait 0.1;
             self drone_shoot();
-            wait(0.1);
+            wait 0.1;
             self drone_shoot();
-            wait(0.1);
+            wait 0.1;
         }
         if (math::cointoss()) {
-            wait(randomfloatrange(1, 2));
+            wait randomfloatrange(1, 2);
         }
         return;
     }
     self drone_shoot();
-    wait(randomfloatrange(0.25, 0.75));
+    wait randomfloatrange(0.25, 0.75);
     self drone_shoot();
-    wait(randomfloatrange(0.15, 0.75));
+    wait randomfloatrange(0.15, 0.75);
     self drone_shoot();
-    wait(randomfloatrange(0.15, 0.75));
+    wait randomfloatrange(0.15, 0.75);
     self drone_shoot();
-    wait(randomfloatrange(0.15, 0.75));
+    wait randomfloatrange(0.15, 0.75);
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x77ff341d, Offset: 0x1ec8
 // Size: 0x134
 function private drone_shoot() {
@@ -526,7 +525,7 @@ function private drone_shoot() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x423f1990, Offset: 0x2008
 // Size: 0x54
 function private drone_shoot_fx() {
@@ -535,7 +534,7 @@ function private drone_shoot_fx() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7db0cdf4, Offset: 0x2068
 // Size: 0x44
 function private drone_play_weapon_sound(weaponsound) {
@@ -545,7 +544,7 @@ function private drone_play_weapon_sound(weaponsound) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x97e1be, Offset: 0x20b8
 // Size: 0xc4
 function private function_d3d685b8() {
@@ -558,7 +557,7 @@ function private function_d3d685b8() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x725304ed, Offset: 0x2188
 // Size: 0x4c
 function private function_35f3d336() {
@@ -568,17 +567,17 @@ function private function_35f3d336() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x47a91193, Offset: 0x21e0
 // Size: 0x106
 function private get_anim_data(runanim) {
     run_speed = 170;
     anim_relative = 1;
     anim_time = getanimlength(runanim);
-    var_6aae47b7 = getmovedelta(runanim, 0, 1);
-    var_df2d0f7f = length(var_6aae47b7);
-    if (anim_time > 0 && var_df2d0f7f > 0) {
-        run_speed = var_df2d0f7f / anim_time;
+    anim_delta = getmovedelta(runanim, 0, 1);
+    anim_dist = length(anim_delta);
+    if (anim_time > 0 && anim_dist > 0) {
+        run_speed = anim_dist / anim_time;
         anim_relative = 0;
     }
     struct = spawnstruct();
@@ -589,7 +588,7 @@ function private get_anim_data(runanim) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2ac21774, Offset: 0x22f0
 // Size: 0xb4
 function function_f89df05b() {
@@ -602,13 +601,13 @@ function function_f89df05b() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb11fda2e, Offset: 0x23b0
 // Size: 0x584
 function private function_54f05251() {
     self endon(#"death", #"entitydeleted");
     self.node = undefined;
-    wait(0.05);
+    wait 0.05;
     path = self function_7bce6b25(self.target, self.origin);
     assert(isdefined(path));
     assert(isdefined(path[0]));
@@ -666,7 +665,7 @@ function private function_54f05251() {
             self rotateto((0, var_df8541a5[1], 0), min(0.5, var_d7e06ec6));
         }
         self moveto(destination, var_d7e06ec6);
-        wait(var_d7e06ec6);
+        wait var_d7e06ec6;
         if (isdefined(path[path_index][#"notify"])) {
             self notify(path[path_index][#"notify"]);
             level notify(path[path_index][#"notify"]);
@@ -674,7 +673,7 @@ function private function_54f05251() {
         if (is_true(self.drone.var_e1c463c8)) {
             self.drone.var_e1c463c8 = 0;
             self thread drone_idle();
-            wait(0.2);
+            wait 0.2;
             function_f89df05b();
         }
     }
@@ -682,19 +681,19 @@ function private function_54f05251() {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x28b80f64, Offset: 0x2940
 // Size: 0x6c
 function private function_35b3aa66(angle, duration, delay) {
     self endon(#"death", #"entitydeleted");
     if (delay > 0) {
-        wait(delay);
+        wait delay;
     }
     self rotateto(angle, duration);
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x57eb0e09, Offset: 0x29b8
 // Size: 0x2c6
 function private function_7bce6b25(var_3d70749c, var_a3375299) {
@@ -739,7 +738,7 @@ function private function_7bce6b25(var_3d70749c, var_a3375299) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd9a9ff5b, Offset: 0x2c88
 // Size: 0xea
 function private function_4e864a71(nodetype, noteworthy) {
@@ -762,7 +761,7 @@ function private function_4e864a71(nodetype, noteworthy) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1c6b989d, Offset: 0x2d80
 // Size: 0x17e
 function private function_a7879d43(node) {
@@ -786,7 +785,7 @@ function private function_a7879d43(node) {
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa0761705, Offset: 0x2f08
 // Size: 0x84
 function private check_delete(script_noteworthy) {
@@ -800,7 +799,7 @@ function private check_delete(script_noteworthy) {
         self delete();
         return true;
     } else if (script_noteworthy == "die_on_goal") {
-        self function_a484fe9();
+        self kill_drone();
         return true;
     }
     return false;

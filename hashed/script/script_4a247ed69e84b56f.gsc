@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_634ae70c663d1cc9;
-#using script_47851dbeea22fe66;
-#using script_774302f762d76254;
-#using script_1ee011cd0961afd7;
 #using script_17dcb1172e441bf6;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_47851dbeea22fe66;
+#using script_634ae70c663d1cc9;
+#using script_774302f762d76254;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_538252ab;
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x210
 // Size: 0x4
 function init() {
@@ -28,7 +27,7 @@ function init() {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcbc42df1, Offset: 0x220
 // Size: 0x16
 function main() {
@@ -36,14 +35,14 @@ function main() {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d14170a, Offset: 0x240
 // Size: 0x14c
 function function_49caf2d6() {
     self notify("5911fdf5a238fc16");
     self endon("5911fdf5a238fc16");
     self thread namespace_268747c0::function_978c05b5();
-    result = self waittill(#"hash_3e251384a5400dce");
+    result = self waittill(#"destroy_hazard");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_ed906439, self);
         namespace_1e25ad94::debugmsg("Deleting killzone trap permenently at:" + self.origin);
@@ -59,7 +58,7 @@ function function_49caf2d6() {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1a6d4594, Offset: 0x398
 // Size: 0xd8
 function function_4acf40a(trap, var_7c56394 = 0, modelname) {
@@ -79,14 +78,14 @@ function function_4acf40a(trap, var_7c56394 = 0, modelname) {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x92af7739, Offset: 0x478
 // Size: 0x32c
 function function_7ae8d74a(trap, page = 0) {
     if (!is_true(trap.initialized)) {
-        assert(isdefined(trap.script_parameters), "<unknown string>");
+        assert(isdefined(trap.script_parameters), "<dev string:x38>");
         args = strtok(trap.script_parameters, ";");
-        assert(args.size >= 4, "<unknown string>");
+        assert(args.size >= 4, "<dev string:x5d>");
         trap.type = hash(args[0]);
         trap.radius = int(args[1]);
         trap.height = int(args[2]);
@@ -123,7 +122,7 @@ function function_7ae8d74a(trap, page = 0) {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x159e4479, Offset: 0x7b0
 // Size: 0x31c
 function function_d4a86caf() {
@@ -131,7 +130,7 @@ function function_d4a86caf() {
     self endon("6ec0a773d4131741");
     level endon(#"game_over");
     while (true) {
-        wait(0.5);
+        wait 0.5;
         foreach (trap in level.doa.var_ed906439) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
@@ -166,7 +165,7 @@ function function_d4a86caf() {
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
-                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                trap notify(#"destroy_hazard", {#var_760a0807:0});
                 namespace_1e25ad94::debugmsg("Paging out killzone trap at:" + trap.origin);
             }
         }
@@ -174,7 +173,7 @@ function function_d4a86caf() {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x938bf70a, Offset: 0xad8
 // Size: 0x156
 function function_90e65586() {
@@ -195,16 +194,16 @@ function function_90e65586() {
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb1a40df, Offset: 0xc38
 // Size: 0x1f8
 function function_e20d74b3() {
     self notify("749b46a4633ab082");
     self endon("749b46a4633ab082");
     level endon(#"game_over");
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self thread function_49caf2d6();
-    wait(randomfloatrange(0.1, 3));
+    wait randomfloatrange(0.1, 3);
     while (true) {
         self.trigger = self namespace_268747c0::function_678eaf60("killzone", self.origin, 1024, 1, 256);
         if (self.trigger.radius != self.radius || self.trigger.height != self.height) {
@@ -216,25 +215,25 @@ function function_e20d74b3() {
             }
         }
         self.trigger thread function_d1b295d7(self);
-        wait(1);
+        wait 1;
         if (isdefined(self.trigger)) {
             self.trigger triggerenable(1);
             while (isdefined(self.trigger)) {
-                wait(0.25);
+                wait 0.25;
             }
         }
     }
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9993dae, Offset: 0xe38
 // Size: 0x440
 function function_d1b295d7(trap) {
     self notify("1e24548a9aeb5437");
     self endon("1e24548a9aeb5437");
     level endon(#"game_over");
-    self endon(#"death", #"hash_3e251384a5400dce", #"hash_5dc5b7f198cd1bec");
+    self endon(#"death", #"destroy_hazard", #"hash_5dc5b7f198cd1bec");
     var_f3e30707 = (isdefined(trap.var_f3e30707) ? trap.var_f3e30707 : 1) * 1000;
     while (true) {
         result = self waittill(#"trigger");

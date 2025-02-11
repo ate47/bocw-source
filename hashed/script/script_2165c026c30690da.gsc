@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_2618e0f3e5e11649;
-#using scripts\zm_common\zm_destination_manager.gsc;
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
 #using script_1940fc077a028a81;
-#using script_3411bb48d41bd3b;
+#using script_2618e0f3e5e11649;
 #using script_3357acf79ce92f4b;
-#using scripts\zm\ai\zm_ai_abom.gsc;
+#using script_3411bb48d41bd3b;
 #using script_7d5c9b91cf8d272b;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm\ai\zm_ai_abom;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\zm_destination_manager;
 
 #namespace namespace_5665d8db;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdbb5456d, Offset: 0x158
 // Size: 0x64
 function preinit() {
@@ -35,7 +34,7 @@ function preinit() {
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7ef18c30, Offset: 0x1c8
 // Size: 0x7c
 function function_b82e0a5d() {
@@ -47,7 +46,7 @@ function function_b82e0a5d() {
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x250
 // Size: 0x4
 function function_545f669b() {
@@ -55,7 +54,7 @@ function function_545f669b() {
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9050ef8a, Offset: 0x260
 // Size: 0x204
 function private setup_awareness(entity) {
@@ -74,7 +73,7 @@ function private setup_awareness(entity) {
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6f0aec9e, Offset: 0x470
 // Size: 0x84
 function function_d1a74442(*params) {
@@ -88,7 +87,7 @@ function function_d1a74442(*params) {
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc291fc3, Offset: 0x500
 // Size: 0x174
 function function_a1667de7() {
@@ -104,7 +103,7 @@ function function_a1667de7() {
                     var_976a5e89 = 0;
                     self thread namespace_361e505d::function_8a959784(self);
                     self clientfield::set("abomDissolveCF", 2);
-                    wait(1);
+                    wait 1;
                     self dontinterpolate();
                     self forceteleport(spawn_pos, isdefined(self.angles) ? self.angles : (0, 0, 0), 0, 1);
                     self thread namespace_361e505d::function_940cd1d8();
@@ -115,12 +114,12 @@ function function_a1667de7() {
         } else if (ispointonnavmesh(self.origin, self)) {
             var_71bd8257 = self.origin;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1c70eac1, Offset: 0x680
 // Size: 0x2a6
 function private function_2b6f50fd() {
@@ -154,7 +153,7 @@ function private function_2b6f50fd() {
         if (is_true(var_2251b11e) && isdefined(last_pos)) {
             /#
                 if (is_true(level.var_bb61089c)) {
-                    println("<unknown string>" + "<unknown string>" + self.origin + "<unknown string>");
+                    println("<dev string:x38>" + "<dev string:x4b>" + self.origin + "<dev string:x58>");
                 }
             #/
             var_201abbfd = 0;

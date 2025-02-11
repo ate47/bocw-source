@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_b574e135;
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x82dc5bb8, Offset: 0xb0
 // Size: 0x184
 function init() {
@@ -19,7 +18,7 @@ function init() {
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc822ef77, Offset: 0x240
 // Size: 0x54
 function function_f5d0eb85(state) {
@@ -28,7 +27,7 @@ function function_f5d0eb85(state) {
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcf8f1b46, Offset: 0x2a0
 // Size: 0x54
 function function_d508d5d8(state) {
@@ -37,7 +36,7 @@ function function_d508d5d8(state) {
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x187c0251, Offset: 0x300
 // Size: 0x54
 function function_4b599595(state) {
@@ -46,7 +45,7 @@ function function_4b599595(state) {
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x703874ee, Offset: 0x360
 // Size: 0x54
 function function_471f4c0f(state) {
@@ -55,7 +54,7 @@ function function_471f4c0f(state) {
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe874792b, Offset: 0x3c0
 // Size: 0x54
 function function_278866ab(state) {
@@ -64,7 +63,7 @@ function function_278866ab(state) {
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x372c1881, Offset: 0x420
 // Size: 0x54
 function function_8d857888(state) {

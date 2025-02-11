@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_c9c45ed8;
 
 // Namespace namespace_c9c45ed8/namespace_c9c45ed8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x12ee0581, Offset: 0xf8
 // Size: 0x440
 function init() {
@@ -17,14 +16,14 @@ function init() {
         level.doa.var_dfcf49f8 |= 1 << dungeon.type;
     }
     /#
-        var_663588d = "<unknown string>";
+        var_663588d = "<dev string:x38>";
         foreach (dungeon in level.doa.var_4bd98f7c) {
             if (is_true(dungeon.var_dd490566)) {
                 continue;
             }
             name = function_9e72a96(dungeon.name);
             locstr = function_9e72a96(dungeon.locstring);
-            cmdline = "<unknown string>" + name + "<unknown string>";
+            cmdline = "<dev string:x4f>" + name + "<dev string:x6a>";
             util::add_devgui(var_663588d + name, cmdline);
         }
     #/

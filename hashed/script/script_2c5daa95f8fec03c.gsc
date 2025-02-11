@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\destructible_character.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_81245006;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_81245006/namespace_81245006
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcc8b1a2c, Offset: 0x140
 // Size: 0xcc
 function private preinit() {
@@ -26,8 +25,8 @@ function private preinit() {
         return;
     }
     for (i = 0; i < 6; i++) {
-        clientfield::register("actor", "" + #"hash_1474b2823ab7e9f3" + i, 1, 1, "int");
-        clientfield::register("actor", "" + #"hash_855297c2add300" + i, 1, 1, "counter");
+        clientfield::register("actor", "" + #"weakpoint_state" + i, 1, 1, "int");
+        clientfield::register("actor", "" + #"weakpoint_fx" + i, 1, 1, "counter");
     }
 }
 
@@ -91,7 +90,7 @@ function initweakpoints(entity) {
 }
 
 // Namespace namespace_81245006/namespace_81245006
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x620ebffc, Offset: 0x6a8
 // Size: 0x160
 function function_bd0bd9f4(entity, &var_426069a) {
@@ -100,10 +99,10 @@ function function_bd0bd9f4(entity, &var_426069a) {
         if (!isdefined(var_8cc382e6.var_4aa216c9) || !isdefined(var_8cc382e6.weakpoint)) {
             continue;
         }
-        entity.var_5ace757d[var_8cc382e6.weakpoint - 1].var_ee8794bf = "" + #"hash_1474b2823ab7e9f3" + clientfield_index;
-        entity.var_5ace757d[var_8cc382e6.weakpoint - 1].var_98634dc5 = "" + #"hash_855297c2add300" + clientfield_index;
+        entity.var_5ace757d[var_8cc382e6.weakpoint - 1].var_ee8794bf = "" + #"weakpoint_state" + clientfield_index;
+        entity.var_5ace757d[var_8cc382e6.weakpoint - 1].var_98634dc5 = "" + #"weakpoint_fx" + clientfield_index;
         clientfield_index++;
-        assert(clientfield_index <= 6, "<unknown string>");
+        assert(clientfield_index <= 6, "<dev string:x38>");
     }
 }
 
@@ -247,7 +246,7 @@ function function_37e3f011(entity, bone, weakpointstate) {
         /#
             if (getdvarint(#"scr_weakpoint_debug", 0) > 0) {
                 if (!isstring(bone)) {
-                    iprintlnbold("<unknown string>" + bonename);
+                    iprintlnbold("<dev string:x61>" + bonename);
                 }
             }
         #/
@@ -266,7 +265,7 @@ function function_37e3f011(entity, bone, weakpointstate) {
 }
 
 // Namespace namespace_81245006/namespace_81245006
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1aaff4bf, Offset: 0x1180
 // Size: 0x16
 function function_fab3ee3e(entity) {
@@ -274,10 +273,10 @@ function function_fab3ee3e(entity) {
 }
 
 // Namespace namespace_81245006/namespace_81245006
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3b050042, Offset: 0x11a0
 // Size: 0xf4
-function function_ef87b7e8(var_dd54fdb1, damage) {
+function damageweakpoint(var_dd54fdb1, damage) {
     var_dd54fdb1.health -= damage;
     if (isactor(self) && isdefined(var_dd54fdb1.var_98634dc5)) {
         self clientfield::increment(var_dd54fdb1.var_98634dc5);
@@ -299,7 +298,7 @@ function function_76e239dc(entity, attacker) {
     if (isarray(var_e67ec32)) {
         foreach (var_7092cd34 in var_e67ec32) {
             if (var_7092cd34.type === #"armor" && var_7092cd34.health > 0) {
-                function_ef87b7e8(var_7092cd34, var_7092cd34.health);
+                damageweakpoint(var_7092cd34, var_7092cd34.health);
                 if (isdefined(var_7092cd34.var_f371ebb0)) {
                     destructserverutils::function_8475c53a(entity, var_7092cd34.var_f371ebb0);
                     entity.var_426947c4 = 1;
@@ -323,7 +322,7 @@ function function_76e239dc(entity, attacker) {
 }
 
 // Namespace namespace_81245006/namespace_81245006
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4e1095e4, Offset: 0x1518
 // Size: 0x74
 function function_6c64ebd3(var_dd54fdb1, state) {

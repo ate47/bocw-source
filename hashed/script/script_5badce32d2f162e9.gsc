@@ -1,25 +1,24 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\stealth\utility.gsc;
 #using script_3072532951b5b4ae;
 #using script_68d08b784c92da95;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_dba1ec08;
 
-// Namespace namespace_dba1ec08/namespace_186a1392
+// Namespace namespace_dba1ec08/archetype_stealth
 // Params 0, eflags: 0x5
 // Checksum 0x9c153344, Offset: 0x100
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2dc824b6cfc14a18", &preinit, undefined, undefined, #"archetype_utility");
+    system::register(#"archetype_stealth", &preinit, undefined, undefined, #"archetype_utility");
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 0, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 0, eflags: 0x4
 // Checksum 0x516d56e5, Offset: 0x150
 // Size: 0x24
 function private preinit() {
@@ -27,8 +26,8 @@ function private preinit() {
     function_7dcf5e();
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 0, eflags: 0x2 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 0, eflags: 0x0
 // Checksum 0x9e7d341f, Offset: 0x180
 // Size: 0x25e6
 function function_7dcf5e() {
@@ -222,8 +221,8 @@ function function_7dcf5e() {
     level.var_70f1c402 = undefined;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x2 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x0
 // Checksum 0x8a6ad27c, Offset: 0x2770
 // Size: 0x58
 function shouldstealth(behaviortreeentity) {
@@ -233,8 +232,8 @@ function shouldstealth(behaviortreeentity) {
     return false;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x2 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x0
 // Checksum 0x5edad7ec, Offset: 0x27d0
 // Size: 0x3e
 function locomotionshouldstealth(behaviortreeentity) {
@@ -247,8 +246,8 @@ function locomotionshouldstealth(behaviortreeentity) {
     return false;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0x42400725, Offset: 0x2818
 // Size: 0x40
 function private function_59b7ac43(behaviortreeentity) {
@@ -258,8 +257,8 @@ function private function_59b7ac43(behaviortreeentity) {
     return false;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0x699021ef, Offset: 0x2860
 // Size: 0x40
 function private function_50255836(behaviortreeentity) {
@@ -269,8 +268,8 @@ function private function_50255836(behaviortreeentity) {
     return false;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x2 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x0
 // Checksum 0x369c9c09, Offset: 0x28a8
 // Size: 0x5a
 function shouldstealthresume(behaviortreeentity) {
@@ -284,8 +283,8 @@ function shouldstealthresume(behaviortreeentity) {
     return false;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0x2d683ab0, Offset: 0x2910
 // Size: 0xa0
 function private stealthreactcondition(entity) {
@@ -293,40 +292,40 @@ function private stealthreactcondition(entity) {
     return !is_true(entity.stealth_reacting) && entity hasvalidinterrupt("react") && !inscene;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0x3bbaa02a, Offset: 0x29b8
 // Size: 0x1a
 function private stealthreactstart(behaviortreeentity) {
     behaviortreeentity.stealth_reacting = 1;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0x93cb76df, Offset: 0x29e0
 // Size: 0x16
 function private stealthreactterminate(behaviortreeentity) {
     behaviortreeentity.stealth_reacting = undefined;
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0xf53c4dd3, Offset: 0x2a00
 // Size: 0x24
 function private function_695d612e(behaviortreeentity) {
     behaviortreeentity ai::function_fc7bd6c7(1);
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0xe9e237df, Offset: 0x2a30
 // Size: 0x24
 function private function_36003c04(behaviortreeentity) {
     behaviortreeentity ai::function_f6060793();
 }
 
-// Namespace namespace_dba1ec08/namespace_186a1392
-// Params 1, eflags: 0x6 linked
+// Namespace namespace_dba1ec08/archetype_stealth
+// Params 1, eflags: 0x4
 // Checksum 0xca04fbc4, Offset: 0x2a60
 // Size: 0x56
 function private stealthidleterminate(behaviortreeentity) {

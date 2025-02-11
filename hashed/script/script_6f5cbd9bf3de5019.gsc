@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\vehicleriders_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicleriders_shared;
 
-#namespace namespace_f36ad2eb;
+#namespace player_large_helicopter_armada;
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
 // Params 0, eflags: 0x5
 // Checksum 0x57763388, Offset: 0x330
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2838d085012cb7f", &preinit, undefined, undefined, #"player_vehicle");
+    system::register(#"player_large_helicopter_armada", &preinit, undefined, undefined, #"player_vehicle");
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x4
 // Checksum 0x218d9fc5, Offset: 0x380
 // Size: 0x74
 function private preinit() {
@@ -32,8 +31,8 @@ function private preinit() {
     #/
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x0
 // Checksum 0xe3740ce2, Offset: 0x400
 // Size: 0x494
 function function_38ae4287() {
@@ -67,20 +66,20 @@ function function_38ae4287() {
     self callback::on_vehicle_collision(&function_4885ce1);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x4
 // Checksum 0xc835ebae, Offset: 0x8a0
 // Size: 0x44
 function private function_89c08ee4() {
     self.vehkilloccupantsondeath = 1;
     self.var_ffdf490c = 1;
     /#
-        self thread player_vehicle::deletemeonnotify(level, "<unknown string>");
+        self thread player_vehicle::deletemeonnotify(level, "<dev string:x38>");
     #/
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0xf8a815f8, Offset: 0x8f0
 // Size: 0x94
 function private function_b985a0f1(player) {
@@ -92,8 +91,8 @@ function private function_b985a0f1(player) {
     self setheliheightcap(1);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x0
 // Checksum 0x3a01fce, Offset: 0x990
 // Size: 0xc0
 function function_fcc7ca52() {
@@ -101,15 +100,15 @@ function function_fcc7ca52() {
     while (true) {
         params = self waittill(#"gunner_weapon_fired");
         if (params.gunner_index == 3) {
-            wait(0.05);
+            wait 0.05;
             self turretsettarget(4, self turretgettarget(0));
             self fireweapon(4);
         }
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x0
 // Checksum 0xc4274edb, Offset: 0xa58
 // Size: 0x80
 function function_5904233e() {
@@ -123,8 +122,8 @@ function function_5904233e() {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0x752d5a89, Offset: 0xae0
 // Size: 0xe4
 function private function_2205f6bf(*player) {
@@ -142,8 +141,8 @@ function private function_2205f6bf(*player) {
     self function_d929b41();
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0xbcde4c05, Offset: 0xbd0
 // Size: 0xec
 function private function_1b957284(params) {
@@ -164,8 +163,8 @@ function private function_1b957284(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0x28cb72d6, Offset: 0xcc8
 // Size: 0xac
 function private function_a7401191(params) {
@@ -179,8 +178,8 @@ function private function_a7401191(params) {
     player stoprumble("fallwind_loop_rapid");
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0x8313d41d, Offset: 0xd80
 // Size: 0x12c
 function private function_e2d16bde(params) {
@@ -204,8 +203,8 @@ function private function_e2d16bde(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0xeda463aa, Offset: 0xeb8
 // Size: 0xf8
 function private function_c0745670(params) {
@@ -224,16 +223,16 @@ function private function_c0745670(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0x98a88e34, Offset: 0xfb8
 // Size: 0xc
 function function_b51c1995(*params) {
     
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0x313fb115, Offset: 0xfd0
 // Size: 0x5c
 function function_a9ad737b(*params) {
@@ -243,8 +242,8 @@ function function_a9ad737b(*params) {
     self function_803e9bf3(0);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 4, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 4, eflags: 0x0
 // Checksum 0x5f490b48, Offset: 0x1038
 // Size: 0x6e
 function function_329f45a4(*current_state, *to_state, *connection, *params) {
@@ -258,16 +257,16 @@ function function_329f45a4(*current_state, *to_state, *connection, *params) {
     return false;
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 4, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 4, eflags: 0x4
 // Checksum 0x907bf4cf, Offset: 0x10b0
 // Size: 0x44
 function private function_a1fd6110(current_state, to_state, connection, params) {
     return !function_329f45a4(current_state, to_state, connection, params);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0x4066f834, Offset: 0x1100
 // Size: 0x13c
 function function_3a367b9a(params) {
@@ -290,8 +289,8 @@ function function_3a367b9a(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0x7348a66e, Offset: 0x1248
 // Size: 0x44
 function function_bf42edb7(params) {
@@ -301,8 +300,8 @@ function function_bf42edb7(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0x42593926, Offset: 0x1298
 // Size: 0x184
 function private function_6d4df083(params) {
@@ -325,8 +324,8 @@ function private function_6d4df083(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0xed6c9bcd, Offset: 0x1428
 // Size: 0x15c
 function private function_b488602f(params) {
@@ -351,8 +350,8 @@ function private function_b488602f(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0xecfd5932, Offset: 0x1590
 // Size: 0xc4
 function private function_d43d2b06(params) {
@@ -363,8 +362,8 @@ function private function_d43d2b06(params) {
     self vehicle_ai::defaultstate_death_enter(params);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0xaf00bbee, Offset: 0x1660
 // Size: 0x254
 function private function_6ed31d89(params) {
@@ -398,8 +397,8 @@ function private function_6ed31d89(params) {
     vehicle_death::deletewhensafe();
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0x5a787692, Offset: 0x18c0
 // Size: 0x5c
 function function_200c3bd0(*params) {
@@ -408,15 +407,15 @@ function function_200c3bd0(*params) {
     self setphysacceleration((0, 0, -386));
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0xd379a684, Offset: 0x1928
 // Size: 0xe8
 function function_3a7426cf(*params) {
     self endon(#"change_state", #"death");
     damagetime = gettime() + 15000;
     while (true) {
-        wait(0.25);
+        wait 0.25;
         if (self function_479389f3()) {
             self vehicle_ai::set_state("landed");
             return;
@@ -429,8 +428,8 @@ function function_3a7426cf(*params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0xd7394293, Offset: 0x1a18
 // Size: 0xdc
 function function_d39845f(*params) {
@@ -443,8 +442,8 @@ function function_d39845f(*params) {
     self thread function_6c8cff7e(self.var_67136cb0, self.helilandingorigin, self.var_6fac6f50);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0xb969a1a7, Offset: 0x1b00
 // Size: 0x25a
 function function_b705c816(params) {
@@ -458,7 +457,7 @@ function function_b705c816(params) {
         return;
     }
     if (self vehicle_ai::get_previous_state() === "off") {
-        wait(2);
+        wait 2;
     }
     while (true) {
         if (is_true(self.jammed)) {
@@ -486,8 +485,8 @@ function function_b705c816(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x0
 // Checksum 0x81fc178c, Offset: 0x1d68
 // Size: 0x8c
 function function_7db28345(*params) {
@@ -502,8 +501,8 @@ function function_7db28345(*params) {
     self function_f4d358df();
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x4
 // Checksum 0x23e7f940, Offset: 0x1e00
 // Size: 0x65a
 function private function_479389f3() {
@@ -586,8 +585,8 @@ function private function_479389f3() {
     return true;
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 1, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 1, eflags: 0x4
 // Checksum 0x7b586975, Offset: 0x2468
 // Size: 0x50c
 function private function_4885ce1(params) {
@@ -630,7 +629,7 @@ function private function_4885ce1(params) {
     state = self vehicle_ai::get_current_state();
     if (state === "driving") {
         player = self getseatoccupant(0);
-        if (!isdefined(player) || !player function_6947dde2()) {
+        if (!isdefined(player) || !player vehiclemovedownbuttonpressed()) {
             return;
         }
         move = player getnormalizedmovement();
@@ -659,8 +658,8 @@ function private function_4885ce1(params) {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x0
 // Checksum 0x2d4b1ad6, Offset: 0x2980
 // Size: 0xac
 function function_9dd58750() {
@@ -676,8 +675,8 @@ function function_9dd58750() {
     self setvehvelocity(slidemove);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 3, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 3, eflags: 0x0
 // Checksum 0x3a4e76cd, Offset: 0x2a38
 // Size: 0x2b4
 function function_6c8cff7e(normal, origin = self.origin, offset = 0) {
@@ -711,8 +710,8 @@ function function_6c8cff7e(normal, origin = self.origin, offset = 0) {
     self setgoal(self.origin, 1, 0);
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x4
 // Checksum 0x2a2eb9ae, Offset: 0x2cf8
 // Size: 0x2a
 function private function_f4d358df() {
@@ -722,8 +721,8 @@ function private function_f4d358df() {
     self.var_6fac6f50 = undefined;
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x4
 // Checksum 0x268c5123, Offset: 0x2d30
 // Size: 0xdc
 function private function_d929b41() {
@@ -737,16 +736,16 @@ function private function_d929b41() {
     }
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 0, eflags: 0x6 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x2e18
 // Size: 0x4
 function private function_3b841f4() {
     
 }
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 2, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 2, eflags: 0x0
 // Checksum 0x748a3c50, Offset: 0x2e28
 // Size: 0x15e
 function function_5bce3f3a(vehicle, seat_index) {
@@ -772,7 +771,7 @@ function function_5bce3f3a(vehicle, seat_index) {
 
 /#
 
-    // Namespace namespace_f36ad2eb/namespace_f36ad2eb
+    // Namespace player_large_helicopter_armada/player_large_helicopter_armada
     // Params 0, eflags: 0x4
     // Checksum 0x33953138, Offset: 0x2f90
     // Size: 0xc4
@@ -781,13 +780,13 @@ function function_5bce3f3a(vehicle, seat_index) {
             waitframe(1);
         }
         mapname = util::get_map_name();
-        var_a0acc8a4 = "<unknown string>" + mapname + "<unknown string>";
-        var_497149a8 = "<unknown string>" + mapname + "<unknown string>";
-        adddebugcommand("<unknown string>");
-        adddebugcommand(var_497149a8 + "<unknown string>");
+        var_a0acc8a4 = "<dev string:x4f>" + mapname + "<dev string:x60>";
+        var_497149a8 = "<dev string:x65>" + mapname + "<dev string:x60>";
+        adddebugcommand("<dev string:x77>");
+        adddebugcommand(var_497149a8 + "<dev string:x11a>");
     }
 
-    // Namespace namespace_f36ad2eb/namespace_f36ad2eb
+    // Namespace player_large_helicopter_armada/player_large_helicopter_armada
     // Params 1, eflags: 0x4
     // Checksum 0x6460f5b2, Offset: 0x3060
     // Size: 0x35c
@@ -795,22 +794,22 @@ function function_5bce3f3a(vehicle, seat_index) {
         self endon(#"death");
         chopper endon(#"death", #"disconnect", #"exit_vehicle", #"change_seat");
         chopper endon(#"pilot_exit");
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x14e>");
+        self endon("<dev string:x14e>");
         var_c3de1760 = [];
         var_db7f7f7c = function_951b4205();
         foreach (asset in var_db7f7f7c) {
             if (isdefined(asset.name)) {
-                if (asset.name == "<unknown string>") {
-                    array::add(var_c3de1760, "<unknown string>");
+                if (asset.name == "<dev string:x162>") {
+                    array::add(var_c3de1760, "<dev string:x162>");
                     continue;
                 }
-                if (asset.name == "<unknown string>") {
-                    array::add(var_c3de1760, "<unknown string>");
+                if (asset.name == "<dev string:x199>") {
+                    array::add(var_c3de1760, "<dev string:x199>");
                     continue;
                 }
-                if (asset.name == "<unknown string>") {
-                    array::add(var_c3de1760, "<unknown string>");
+                if (asset.name == "<dev string:x1d8>") {
+                    array::add(var_c3de1760, "<dev string:x1d8>");
                 }
             }
         }
@@ -825,18 +824,18 @@ function function_5bce3f3a(vehicle, seat_index) {
                 case 0:
                 case 1:
                 case 2:
-                    if (chopper.vehicletype != "<unknown string>") {
-                        chopper setvehicletype("<unknown string>");
+                    if (chopper.vehicletype != "<dev string:x199>") {
+                        chopper setvehicletype("<dev string:x199>");
                     }
                     break;
                 case 3:
-                    if (chopper.vehicletype != "<unknown string>") {
-                        chopper setvehicletype("<unknown string>");
+                    if (chopper.vehicletype != "<dev string:x1d8>") {
+                        chopper setvehicletype("<dev string:x1d8>");
                     }
                     break;
                 case 4:
-                    if (chopper.vehicletype != "<unknown string>") {
-                        chopper setvehicletype("<unknown string>");
+                    if (chopper.vehicletype != "<dev string:x162>") {
+                        chopper setvehicletype("<dev string:x162>");
                     }
                     break;
                 }
@@ -848,8 +847,8 @@ function function_5bce3f3a(vehicle, seat_index) {
 
 #/
 
-// Namespace namespace_f36ad2eb/namespace_f36ad2eb
-// Params 2, eflags: 0x2 linked
+// Namespace player_large_helicopter_armada/player_large_helicopter_armada
+// Params 2, eflags: 0x0
 // Checksum 0xf570fd41, Offset: 0x33c8
 // Size: 0x28e
 function function_7516cdbc(var_72dc2794, e_player) {
@@ -861,25 +860,25 @@ function function_7516cdbc(var_72dc2794, e_player) {
     var_83082aec = 120;
     var_77843477 = undefined;
     while (true) {
-        var_867b0f45 = self getspeedmph();
+        chopper_speed = self getspeedmph();
         if (isdefined(var_77843477)) {
-            if (var_867b0f45 > var_9e838eb2 && var_77843477 <= var_9e838eb2) {
+            if (chopper_speed > var_9e838eb2 && var_77843477 <= var_9e838eb2) {
                 e_player playrumblelooponentity("fallwind_loop_slow");
-            } else if (var_867b0f45 < var_95505aa4 && var_77843477 >= var_95505aa4) {
+            } else if (chopper_speed < var_95505aa4 && var_77843477 >= var_95505aa4) {
                 e_player stoprumble("fallwind_loop_rapid");
                 e_player playrumblelooponentity("fallwind_loop_slow");
-            } else if (var_867b0f45 > var_95505aa4 && var_77843477 <= var_95505aa4) {
+            } else if (chopper_speed > var_95505aa4 && var_77843477 <= var_95505aa4) {
                 e_player stoprumble("fallwind_loop_slow");
                 e_player playrumblelooponentity("fallwind_loop_rapid");
-            } else if (var_867b0f45 < var_83082aec && var_77843477 >= var_83082aec) {
+            } else if (chopper_speed < var_83082aec && var_77843477 >= var_83082aec) {
                 e_player stoprumble("fallwind_loop_slow");
                 e_player playrumblelooponentity("fallwind_loop_rapid");
-            } else if (var_867b0f45 > var_83082aec && var_77843477 <= var_83082aec) {
+            } else if (chopper_speed > var_83082aec && var_77843477 <= var_83082aec) {
                 e_player stoprumble("fallwind_loop_rapid");
                 e_player playrumblelooponentity("fallwind_loop_slow");
             }
         }
-        var_77843477 = var_867b0f45;
+        var_77843477 = chopper_speed;
         waitframe(1);
     }
 }

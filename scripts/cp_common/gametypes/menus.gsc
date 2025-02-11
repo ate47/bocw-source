@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\skipto.gsc;
-#using scripts\cp_common\load.gsc;
 #using script_32399001bdb550da;
 #using script_35ae72be7b4fec10;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
-#using scripts\cp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\gametypes\globallogic;
+#using scripts\cp_common\gametypes\globallogic_ui;
+#using scripts\cp_common\load;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\util;
 
 #namespace menus;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1df468ed, Offset: 0x488
 // Size: 0x44
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x929ef651, Offset: 0x4d8
 // Size: 0x1bc
 function init() {
@@ -55,7 +54,7 @@ function init() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf01fcea9, Offset: 0x6a0
 // Size: 0x1c
 function on_player_connect() {
@@ -63,7 +62,7 @@ function on_player_connect() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x50cec3bb, Offset: 0x6c8
 // Size: 0x8e8
 function on_menu_response() {
@@ -118,12 +117,12 @@ function on_menu_response() {
             continue;
         }
         if (response == #"first_snapshot") {
-            if (level flag::get(#"hash_321357f5b78401ef")) {
+            if (level flag::get(#"hud_initialized")) {
                 /#
                     globallogic_ui::function_3f278444();
                 #/
             }
-            level flag::set(#"hash_321357f5b78401ef");
+            level flag::set(#"hud_initialized");
             continue;
         }
         if (response == #"restartmission") {
@@ -175,11 +174,11 @@ function on_menu_response() {
             continue;
         }
         if (response == "objective_splash" && intpayload === 0) {
-            level notify(#"hash_4df0c0f18673f6c3");
+            level notify(#"objectives_shown");
             continue;
         }
-        if (response == #"hash_4c6480245891f16a") {
-            level notify(#"hash_4c6480245891f16a", {#button:"" + intpayload});
+        if (response == #"lui_button") {
+            level notify(#"lui_button", {#button:"" + intpayload});
             continue;
         }
         if (menu == game.menu[#"menu_team"] && level.allow_teamchange) {
@@ -220,7 +219,7 @@ function on_menu_response() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa999b41, Offset: 0xfb8
 // Size: 0x3e4
 function private function_c35a1bfc() {
@@ -267,7 +266,7 @@ function private function_c35a1bfc() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x46110ccf, Offset: 0x13a8
 // Size: 0x234
 function private function_d7c2965() {
@@ -284,7 +283,7 @@ function private function_d7c2965() {
     player val::set(#"hash_69a35e48bb13280c", "allowdeath", 0);
     player val::set(#"hash_69a35e48bb13280c", "pre_load_ghost", 1);
     if (gettime() - (isdefined(level.var_6ca9b5fe) ? level.var_6ca9b5fe : 0) < 3000) {
-        wait(0.33);
+        wait 0.33;
     }
     globallogic_ui::function_760546ce();
     if (isdefined(player) && player isplayinganimscripted()) {

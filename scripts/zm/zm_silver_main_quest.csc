@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\beam_shared.csc;
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_ping.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\audio_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\beam_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_ping;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_silver_main_quest;
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x68a21737, Offset: 0x4f8
 // Size: 0x6d4
 function init() {
@@ -33,14 +32,14 @@ function init() {
     clientfield::register("world", "" + #"hash_48df238a087c684e", 1, 1, "int", &function_fdc7d35f, 0, 1);
     clientfield::register("world", "" + #"hash_17466a1bb2380af6", 1, getminbitcountfornum(4), "int", &function_fdd966d7, 0, 1);
     clientfield::register("world", "" + #"hash_6f13307bc53f2de5", 1, 1, "int", &function_6f615c6d, 0, 0);
-    clientfield::register("world", "" + #"hash_570bb58b50e9db2e", 1, 1, "int", &function_20c688ff, 0, 1);
+    clientfield::register("world", "" + #"falling_concrete", 1, 1, "int", &falling_concrete, 0, 1);
     clientfield::register("world", "" + #"hash_718b0f4fd6db0bb4", 1, 1, "int", &function_46350cca, 0, 1);
     clientfield::register("world", "" + #"hash_575a337754ccd980", 1, 1, "int", &function_85d502d3, 0, 0);
     clientfield::register("world", "" + #"hash_3fd05810b220d13a", 1, 1, "int", &function_7593da3, 0, 0);
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd1ce44e4, Offset: 0xbd8
 // Size: 0x8c
 function function_85d502d3(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -52,7 +51,7 @@ function function_85d502d3(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x91c44d7, Offset: 0xc70
 // Size: 0x574
 function function_7593da3(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -86,7 +85,7 @@ function function_7593da3(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb92d7644, Offset: 0x11f0
 // Size: 0x94
 function function_f8d671e1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -97,7 +96,7 @@ function function_f8d671e1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1f022cd0, Offset: 0x1290
 // Size: 0xa4
 function function_11e1fa9a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -109,7 +108,7 @@ function function_11e1fa9a(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x30dcc81b, Offset: 0x1340
 // Size: 0x9c
 function function_2929e754(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -120,7 +119,7 @@ function function_2929e754(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa41035a9, Offset: 0x13e8
 // Size: 0x16e
 function function_f03e2a9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -143,7 +142,7 @@ function function_f03e2a9(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3e12f191, Offset: 0x1560
 // Size: 0x74
 function function_779a8e5b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -153,7 +152,7 @@ function function_779a8e5b(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe2730c4f, Offset: 0x15e0
 // Size: 0x74
 function function_c2ba61dd(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -163,7 +162,7 @@ function function_c2ba61dd(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1a5e3d27, Offset: 0x1660
 // Size: 0xac
 function function_c3ed4d53(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -173,7 +172,7 @@ function function_c3ed4d53(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xed86bd7b, Offset: 0x1718
 // Size: 0xb4
 function function_bfce814a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -189,7 +188,7 @@ function function_bfce814a(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb9e0a060, Offset: 0x17d8
 // Size: 0x9c
 function function_be9e97b1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -201,7 +200,7 @@ function function_be9e97b1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x393f6832, Offset: 0x1880
 // Size: 0x9c
 function function_d23b3778(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -212,7 +211,7 @@ function function_d23b3778(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd3442267, Offset: 0x1928
 // Size: 0x2e0
 function function_46350cca(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -245,10 +244,10 @@ function function_46350cca(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf942fdf4, Offset: 0x1c10
 // Size: 0x2c8
-function function_20c688ff(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function falling_concrete(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(level.var_996d0044)) {
         level.var_996d0044 = [];
     } else if (!isarray(level.var_996d0044)) {
@@ -277,19 +276,19 @@ function function_20c688ff(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xea1c7bfc, Offset: 0x1ee0
 // Size: 0x18c
 function function_52eda57a(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
-        util::lock_model(#"hash_1d36b9bc18b6f8");
+        util::lock_model(#"p9_foliage_tree_scots_pine_01_lrg_snow_melting");
         util::lock_model(#"hash_110c841953691a8b");
         util::lock_model(#"hash_45f4868c92c218a3");
         util::lock_model(#"hash_58d051399d3d0e5c");
         util::lock_model(#"hash_58b838fd0a3a99aa");
         return;
     }
-    util::unlock_model(#"hash_1d36b9bc18b6f8");
+    util::unlock_model(#"p9_foliage_tree_scots_pine_01_lrg_snow_melting");
     util::unlock_model(#"hash_110c841953691a8b");
     util::unlock_model(#"hash_45f4868c92c218a3");
     util::unlock_model(#"hash_58d051399d3d0e5c");
@@ -297,7 +296,7 @@ function function_52eda57a(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xfdb5ea58, Offset: 0x2078
 // Size: 0x2cc
 function function_fdc7d35f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -321,7 +320,7 @@ function function_fdc7d35f(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x40821d1a, Offset: 0x2350
 // Size: 0xd5c
 function function_fdd966d7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -415,7 +414,7 @@ function function_fdd966d7(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc9c1a1bb, Offset: 0x30b8
 // Size: 0x104
 function function_6f615c6d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -430,7 +429,7 @@ function function_6f615c6d(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_main_quest/zm_silver_main_quest
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe357adc1, Offset: 0x31c8
 // Size: 0xae
 function function_9d39f661(localclientnum) {
@@ -438,10 +437,10 @@ function function_9d39f661(localclientnum) {
     self endon("34e704ca2c3b358d");
     level endon(#"hash_3bbf8d3383f43cdf");
     audio::playloopat("zmb_silver_mq_6_alarm_2_lp", (-144, 2019, -170));
-    wait(0.75);
+    wait 0.75;
     while (true) {
         playsound(localclientnum, #"hash_1a12eda2416ca0a", (565, 2137, -178));
-        wait(2);
+        wait 2;
     }
 }
 

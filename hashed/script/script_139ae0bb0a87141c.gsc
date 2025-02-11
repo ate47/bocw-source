@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_fe983bbff18d77f;
-#using script_6f8610e78fdd3440;
-#using scripts\core_common\stealth\utility.gsc;
-#using scripts\core_common\stealth\debug.gsc;
-#using script_5450c003e8a913b7;
 #using script_3072532951b5b4ae;
-#using scripts\core_common\ai_shared.gsc;
+#using script_5450c003e8a913b7;
+#using script_6f8610e78fdd3440;
 #using script_7b68dad851540de;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_fe983bbff18d77f;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\debug;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace group;
 
@@ -25,7 +24,7 @@ function scalevolume(*ent, *vol) {
 #namespace stealth_group;
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6f8a4a44, Offset: 0x1b8
 // Size: 0xf8
 function initgroup(groupname) {
@@ -48,7 +47,7 @@ function initgroup(groupname) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbbd34e67, Offset: 0x2b8
 // Size: 0xec
 function addtogroup(groupname, guy) {
@@ -61,7 +60,7 @@ function addtogroup(groupname, guy) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe520e14c, Offset: 0x3b0
 // Size: 0x64
 function function_b6ebd4af(guy) {
@@ -75,7 +74,7 @@ function function_b6ebd4af(guy) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe897695b, Offset: 0x420
 // Size: 0x124
 function function_34c06bfe(guy) {
@@ -96,12 +95,12 @@ function function_34c06bfe(guy) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x47a22f55, Offset: 0x550
 // Size: 0x54
 function group_waitfordeath(guy) {
     guy waittill(#"death");
-    guy thread namespace_f1f700ac::death_cleanup();
+    guy thread stealth_enemy::death_cleanup();
     self function_34c06bfe(guy);
 }
 
@@ -129,7 +128,7 @@ function clearallgroups() {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc29bae96, Offset: 0x730
 // Size: 0xa4
 function getgroup(groupname) {
@@ -147,17 +146,17 @@ function getgroup(groupname) {
     // Size: 0x2bc
     function function_957fac82() {
         foreach (group in level.stealth.groupdata.groups) {
-            println("<unknown string>" + group.name);
-            println("<unknown string>");
+            println("<dev string:x38>" + group.name);
+            println("<dev string:x47>");
             foreach (guy in group.members) {
-                println("<unknown string>" + guy getentitynumber());
+                println("<dev string:x56>" + guy getentitynumber());
             }
             var_d78e3a4f = 0;
-            println("<unknown string>");
+            println("<dev string:x5d>");
             foreach (pod in group.pods) {
-                println("<unknown string>" + var_d78e3a4f + "<unknown string>");
+                println("<dev string:x69>" + var_d78e3a4f + "<dev string:x74>");
                 foreach (guy in pod.members) {
-                    println("<unknown string>" + guy getentitynumber());
+                    println("<dev string:x56>" + guy getentitynumber());
                 }
                 var_d78e3a4f++;
             }
@@ -167,7 +166,7 @@ function getgroup(groupname) {
 #/
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xedc6e61, Offset: 0xaa8
 // Size: 0x98
 function makenewpod(groupdata, state, origin) {
@@ -183,7 +182,7 @@ function makenewpod(groupdata, state, origin) {
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x29be02b3, Offset: 0xb48
 // Size: 0x8c
 function function_f6ab9430(pod, origin, var_ccf5f27b) {
@@ -196,7 +195,7 @@ function function_f6ab9430(pod, origin, var_ccf5f27b) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd5791ce4, Offset: 0xbe0
 // Size: 0x2c
 function addtopod(pod, guy) {
@@ -204,7 +203,7 @@ function addtopod(pod, guy) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaadf58ca, Offset: 0xc18
 // Size: 0x20c
 function function_4f3db9c6(pod, var_ccf5f27b) {
@@ -238,7 +237,7 @@ function function_4f3db9c6(pod, var_ccf5f27b) {
 }
 
 // Namespace stealth_group/group
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xd13139a7, Offset: 0xe30
 // Size: 0x136
 function group_trytojoinexistingpod(groupdata, currentpod, podstate, guy, investigatepos) {
@@ -258,7 +257,7 @@ function group_trytojoinexistingpod(groupdata, currentpod, podstate, guy, invest
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2cac26ef, Offset: 0xf70
 // Size: 0x170
 function group_assigntoinvestigatepod(groupdata, guy, investigatepos) {
@@ -284,7 +283,7 @@ function group_assigntoinvestigatepod(groupdata, guy, investigatepos) {
 }
 
 // Namespace stealth_group/group
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x9cf25b13, Offset: 0x10e8
 // Size: 0x304
 function group_assigntohuntpod(groupdata, guy, lastknownpos, *lastknowntime) {
@@ -321,9 +320,9 @@ function group_assigntohuntpod(groupdata, guy, lastknownpos, *lastknowntime) {
     newpod thread pod_hunt_delayednotify();
     /#
         if (isdefined(newpod.borigininvolume) && !newpod.borigininvolume) {
-            stealth_debug::function_65b21ab8(lastknownpos, "<unknown string>");
+            stealth_debug::function_65b21ab8(lastknownpos, "<dev string:x82>");
         } else {
-            stealth_debug::function_65b21ab8(lastknownpos, "<unknown string>");
+            stealth_debug::function_65b21ab8(lastknownpos, "<dev string:x9f>");
         }
     #/
     /#
@@ -332,7 +331,7 @@ function group_assigntohuntpod(groupdata, guy, lastknownpos, *lastknowntime) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd2799050, Offset: 0x13f8
 // Size: 0x164
 function group_removefrompod(groupdata = getgroup(guy.script_stealthgroup), guy) {
@@ -405,16 +404,16 @@ function group_removefrompod(groupdata = getgroup(guy.script_stealthgroup), guy)
                 if (isdefined(groupname)) {
                     print3d(pod.origin + zoffset, groupname, (1, 1, 0), 1, 0.8, 1);
                 }
-                guystr = "<unknown string>";
+                guystr = "<dev string:xc9>";
                 foreach (member in pod.members) {
                     if (isalive(member)) {
-                        guystr += "<unknown string>" + member getentitynumber();
+                        guystr += "<dev string:xcd>" + member getentitynumber();
                     }
                 }
                 if (pod.state == 1) {
-                    print3d(pod.origin + zoffset + down, "<unknown string>" + guystr, (1, 1, 0), 1, 0.4, 1);
+                    print3d(pod.origin + zoffset + down, "<dev string:xd2>" + guystr, (1, 1, 0), 1, 0.4, 1);
                 } else if (pod.state == 2) {
-                    print3d(pod.origin + zoffset + down, "<unknown string>" + guystr, (1, 1, 0), 1, 0.4, 1);
+                    print3d(pod.origin + zoffset + down, "<dev string:xd9>" + guystr, (1, 1, 0), 1, 0.4, 1);
                 }
                 foreach (point in pod.investigatepoints) {
                     drawcross(point.origin);
@@ -433,7 +432,7 @@ function group_removefrompod(groupdata = getgroup(guy.script_stealthgroup), guy)
 #/
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3fd6b46c, Offset: 0x1c08
 // Size: 0x2ea
 function group_findsomeotherguytoinvestigate(pos, var_ae3b954a) {
@@ -473,7 +472,7 @@ function group_findsomeotherguytoinvestigate(pos, var_ae3b954a) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc9c7f3d, Offset: 0x1f00
 // Size: 0x114
 function group_checkrequestbackupoutsideofvolume(e) {
@@ -483,13 +482,13 @@ function group_checkrequestbackupoutsideofvolume(e) {
             otherguy = group_findsomeotherguytoinvestigate(e.investigate_pos, self.script_stealthgroup);
             if (isdefined(otherguy)) {
                 /#
-                    stealth_debug::function_65b21ab8(self, "<unknown string>");
+                    stealth_debug::function_65b21ab8(self, "<dev string:xe1>");
                 #/
                 /#
-                    stealth_debug::function_65b21ab8(self, "<unknown string>");
+                    stealth_debug::function_65b21ab8(self, "<dev string:x10f>");
                 #/
                 /#
-                    stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
+                    stealth_debug::function_65b21ab8(otherguy, "<dev string:x138>");
                 #/
                 otherguy function_a3fcf9e0("seek_backup", self, e.investigate_pos);
                 return true;
@@ -500,7 +499,7 @@ function group_checkrequestbackupoutsideofvolume(e) {
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x67887362, Offset: 0x2020
 // Size: 0x84
 function group_eventinvestigate(groupname, guy, e) {
@@ -512,7 +511,7 @@ function group_eventinvestigate(groupname, guy, e) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcf68c8cb, Offset: 0x20b0
 // Size: 0x17c
 function group_investigate_seekbackup(e) {
@@ -537,7 +536,7 @@ function group_investigate_seekbackup(e) {
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbe442d64, Offset: 0x2238
 // Size: 0x25a
 function group_generateinitialinvestigatepoints(pod, groupname, origin) {
@@ -573,7 +572,7 @@ function group_generateinitialinvestigatepoints(pod, groupname, origin) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7ea13fe8, Offset: 0x24a0
 // Size: 0xc8
 function group_findpod(groupdata, guy) {
@@ -593,7 +592,7 @@ function group_findpod(groupdata, guy) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3391b7d7, Offset: 0x2570
 // Size: 0x6c
 function pod_addusedpoint(pod, point) {
@@ -604,7 +603,7 @@ function pod_addusedpoint(pod, point) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ef553d, Offset: 0x25e8
 // Size: 0xdc
 function pod_cleanupusedpoints(pod) {
@@ -622,7 +621,7 @@ function pod_cleanupusedpoints(pod) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5e7e3f4, Offset: 0x26d0
 // Size: 0x85e
 function group_getinvestigatepoint(guy, *volume) {
@@ -732,7 +731,7 @@ function group_getinvestigatepoint(guy, *volume) {
 }
 
 // Namespace stealth_group/group
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x62b0f510, Offset: 0x2f38
 // Size: 0xd6
 function ispointinlane(point, pod, var_941fad23, lanewidth, distfromcenter, var_f64a59e) {
@@ -749,7 +748,7 @@ function ispointinlane(point, pod, var_941fad23, lanewidth, distfromcenter, var_
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x112f3fc0, Offset: 0x3018
 // Size: 0xa4
 function group_eventcoverblown(groupname, guy, e) {
@@ -762,18 +761,18 @@ function group_eventcoverblown(groupname, guy, e) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x657669d3, Offset: 0x30c8
 // Size: 0x3e
 function group_delayedcoverblownpropagation(guy) {
-    wait(2);
+    wait 2;
     if (isdefined(guy) && isalive(guy)) {
         self.bcoverhasbeenblown = 1;
     }
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd9607ead, Offset: 0x3110
 // Size: 0x22c
 function group_coverblown_seekbackup(groupdata, e) {
@@ -804,7 +803,7 @@ function group_coverblown_seekbackup(groupdata, e) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf59d482b, Offset: 0x3348
 // Size: 0x80
 function pod_updateinvestigateorigin(guy, pos) {
@@ -821,7 +820,7 @@ function pod_updateinvestigateorigin(guy, pos) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5c8752e8, Offset: 0x33d0
 // Size: 0x11c
 function group_eventhunt(groupname, guy) {
@@ -842,7 +841,7 @@ function group_eventhunt(groupname, guy) {
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xca749914, Offset: 0x34f8
 // Size: 0x112
 function group_updatepodhuntorigin(guy, var_4af4ea3d) {
@@ -860,7 +859,7 @@ function group_updatepodhuntorigin(guy, var_4af4ea3d) {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x46f48241, Offset: 0x3618
 // Size: 0xaa
 function pod_hunt_update() {
@@ -868,7 +867,7 @@ function pod_hunt_update() {
     self thread pod_hunt_hunker_update();
     if (isdefined(level.stealth.hunttimeout) && level.stealth.hunttimeout[self.script_stealthgroup]) {
         endtime = level.stealth.hunttimeout[self.script_stealthgroup];
-        wait(endtime);
+        wait endtime;
         self thread pod_settoidle();
         return;
     }
@@ -876,7 +875,7 @@ function pod_hunt_update() {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x132c9d58, Offset: 0x36d0
 // Size: 0x106
 function pod_hunt_hunker_update() {
@@ -901,7 +900,7 @@ function pod_hunt_hunker_update() {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd48f7fad, Offset: 0x37e0
 // Size: 0xb0
 function function_b55ead5e() {
@@ -915,28 +914,28 @@ function function_b55ead5e() {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c99ba34, Offset: 0x3898
 // Size: 0x168
 function pod_hunt_delayednotify() {
     self endon(#"state_change");
-    wait(3);
+    wait 3;
     groupdata = self.parentgroup;
     foreach (guy in groupdata.members) {
         if (guy [[ guy.fnisinstealthidle ]]() || guy [[ guy.fnisinstealthinvestigate ]]()) {
             var_d6fd5eab = 1;
-            if (isdefined(guy.stealth.funcs) && isdefined(guy.stealth.funcs[#"hash_24243e64d705b92a"])) {
-                var_d6fd5eab = guy [[ guy.stealth.funcs[#"hash_24243e64d705b92a"] ]]();
+            if (isdefined(guy.stealth.funcs) && isdefined(guy.stealth.funcs[#"should_hunt"])) {
+                var_d6fd5eab = guy [[ guy.stealth.funcs[#"should_hunt"] ]]();
             }
             if (var_d6fd5eab) {
-                guy namespace_f1f700ac::bt_set_stealth_state("hunt", undefined);
+                guy stealth_enemy::bt_set_stealth_state("hunt", undefined);
             }
         }
     }
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a9498d9, Offset: 0x3a08
 // Size: 0x4ca
 function pod_hunt_vo() {
@@ -967,7 +966,7 @@ function pod_hunt_vo() {
             if (!is_true(hunters[0].ignoreall)) {
                 leader = hunters[0];
                 arrayremovevalue(hunters, leader);
-                wait(randomfloatrange(2, 2.5));
+                wait randomfloatrange(2, 2.5);
                 function_1eaaceab(hunters);
                 hunters = arraysortclosest(hunters, getplayers()[0].origin);
                 hunter = undefined;
@@ -1000,13 +999,13 @@ function pod_hunt_vo() {
                 }
             }
         }
-        wait(randomintrange(10, 15));
+        wait randomintrange(10, 15);
     }
     level.bcs_stealthhuntthink = undefined;
 }
 
 // Namespace stealth_group/group
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf515a6c5, Offset: 0x3ee0
 // Size: 0x140
 function group_assigntocombatpod(groupdata, guy) {
@@ -1025,7 +1024,7 @@ function group_assigntocombatpod(groupdata, guy) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d280b69, Offset: 0x4028
 // Size: 0xb8
 function group_anyoneincombat(groupname) {
@@ -1039,7 +1038,7 @@ function group_anyoneincombat(groupname) {
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6fee2630, Offset: 0x40e8
 // Size: 0xdc
 function group_eventcombat(groupname, guy, target) {
@@ -1055,11 +1054,11 @@ function group_eventcombat(groupname, guy, target) {
 }
 
 // Namespace stealth_group/group
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7849215e, Offset: 0x41d0
 // Size: 0x324
 function group_delayedcombatpropagationfromhunt(delaytime, guy, target, targetpos) {
-    wait(delaytime);
+    wait delaytime;
     if (!isdefined(guy) || !isalive(guy) || is_true(guy.in_melee_death)) {
         return;
     }
@@ -1087,9 +1086,9 @@ function group_delayedcombatpropagationfromhunt(delaytime, guy, target, targetpo
                     otherguy getenemyinfo(target);
                     otherguy function_a3fcf9e0("combat", target, targetpos);
                     /#
-                        stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
+                        stealth_debug::function_65b21ab8(otherguy, "<dev string:x142>");
                     #/
-                    wait(0.5);
+                    wait 0.5;
                 }
             }
         }
@@ -1097,17 +1096,17 @@ function group_delayedcombatpropagationfromhunt(delaytime, guy, target, targetpo
 }
 
 // Namespace stealth_group/group
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x622cef40, Offset: 0x4500
 // Size: 0x4b4
 function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
     initialwait = float(function_60d95f53()) / 1000 * 2;
-    wait(initialwait);
+    wait initialwait;
     if (is_true(guy.stealth.reacting)) {
         guy waittill(#"hash_22ca87c523f21d6d");
     }
     if (delaytime > initialwait) {
-        wait(delaytime - initialwait);
+        wait delaytime - initialwait;
     }
     var_91239be5 = sqr(99999);
     if (!isdefined(guy) || !isalive(guy) || is_true(guy.in_melee_death)) {
@@ -1136,14 +1135,14 @@ function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
                     var_b288ad4a = 1;
                     var_3f01ab8a = 1;
                     /#
-                        stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
+                        stealth_debug::function_65b21ab8(otherguy, "<dev string:x158>");
                     #/
                 }
             }
             if (!var_b288ad4a && otherguy cansee(guy)) {
                 var_b288ad4a = 1;
                 /#
-                    stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
+                    stealth_debug::function_65b21ab8(otherguy, "<dev string:x16a>");
                 #/
             }
             if (!var_b288ad4a && distancesquared(otherguy.origin, guy.origin) < var_91239be5 && (!false || otherguy util::has_tac_vis(guy))) {
@@ -1152,7 +1151,7 @@ function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
                     var_3f01ab8a = 1;
                 }
                 /#
-                    stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
+                    stealth_debug::function_65b21ab8(otherguy, "<dev string:x18e>");
                 #/
             }
             if (var_3f01ab8a) {
@@ -1164,7 +1163,7 @@ function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
                 } else {
                     otherguy function_a3fcf9e0("combat", guy, guy.origin);
                 }
-                wait(0.5);
+                wait 0.5;
             }
         }
     }
@@ -1186,7 +1185,7 @@ function pod_settocombat(var_3f01ab8a, enemy) {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b1ec5d7, Offset: 0x4ac8
 // Size: 0x2e4
 function groups_combat_checklosttarget() {
@@ -1218,23 +1217,23 @@ function groups_combat_checklosttarget() {
                     var_62ac8068 namespace_979752dc::group_flag_set("stealth_combat_hunting");
                     var_49201461 pod_settohunt();
                 }
-                wait(randomfloatrange(0.5, 1));
+                wait randomfloatrange(0.5, 1);
             }
             return;
         }
-        wait(2);
+        wait 2;
     }
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcb2d2cb4, Offset: 0x4db8
 // Size: 0xec
 function pod_combat_update_checklosttarget() {
     self endon(#"state_change");
-    wait(5);
-    if (!self pod_haslostenemy() && isdefined(level.stealth.funcs) && isdefined(level.stealth.funcs[#"hash_6fddb66367e0a124"])) {
-        self thread [[ level.stealth.funcs[#"hash_6fddb66367e0a124"] ]]();
+    wait 5;
+    if (!self pod_haslostenemy() && isdefined(level.stealth.funcs) && isdefined(level.stealth.funcs[#"call_backup"])) {
+        self thread [[ level.stealth.funcs[#"call_backup"] ]]();
     }
     if (!is_true(level.stealth.var_ffa24aff)) {
         return;
@@ -1244,7 +1243,7 @@ function pod_combat_update_checklosttarget() {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x82a1047a, Offset: 0x4eb0
 // Size: 0x2e4
 function pod_haslostenemy() {
@@ -1287,7 +1286,7 @@ function pod_haslostenemy() {
 }
 
 // Namespace stealth_group/group
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7d88e8b5, Offset: 0x51a0
 // Size: 0x122
 function pod_isclosetoanymembers(otherguy, radius, var_2c0664ad) {
@@ -1309,14 +1308,14 @@ function pod_isclosetoanymembers(otherguy, radius, var_2c0664ad) {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6fff550a, Offset: 0x52d0
 // Size: 0x1de
 function pod_combat_periodicping() {
     self endon(#"state_change");
     var_69617fed = 1;
     var_26031df0 = 384;
-    wait(var_69617fed);
+    wait var_69617fed;
     while (true) {
         foreach (group in level.stealth.groupdata.groups) {
             foreach (guy in group.members) {
@@ -1325,18 +1324,18 @@ function pod_combat_periodicping() {
                 }
                 if (self pod_isclosetoanymembers(guy, var_26031df0, 1)) {
                     /#
-                        stealth_debug::function_65b21ab8(guy, "<unknown string>");
+                        stealth_debug::function_65b21ab8(guy, "<dev string:x1a9>");
                     #/
                     guy function_a3fcf9e0("combat", guy, guy.origin);
                 }
             }
         }
-        wait(var_69617fed);
+        wait var_69617fed;
     }
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd7197f1d, Offset: 0x54b8
 // Size: 0x1c
 function pod_settohunt() {
@@ -1344,7 +1343,7 @@ function pod_settohunt() {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1f746ace, Offset: 0x54e0
 // Size: 0x1d8
 function private function_b921795f() {
@@ -1357,20 +1356,20 @@ function private function_b921795f() {
             continue;
         }
         var_d6fd5eab = 1;
-        if (isdefined(guy.stealth.funcs) && isdefined(guy.stealth.funcs[#"hash_24243e64d705b92a"])) {
-            var_d6fd5eab = guy [[ guy.stealth.funcs[#"hash_24243e64d705b92a"] ]]();
+        if (isdefined(guy.stealth.funcs) && isdefined(guy.stealth.funcs[#"should_hunt"])) {
+            var_d6fd5eab = guy [[ guy.stealth.funcs[#"should_hunt"] ]]();
         }
         if (!var_d6fd5eab) {
-            guy namespace_f1f700ac::bt_set_stealth_state("idle", undefined);
+            guy stealth_enemy::bt_set_stealth_state("idle", undefined);
             continue;
         }
-        guy namespace_f1f700ac::bt_set_stealth_state("hunt", undefined);
-        wait(randomfloatrange(0.5, 1));
+        guy stealth_enemy::bt_set_stealth_state("hunt", undefined);
+        wait randomfloatrange(0.5, 1);
     }
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa1631625, Offset: 0x56c0
 // Size: 0xa0
 function pod_settoidle() {
@@ -1394,7 +1393,7 @@ function pod_isleader(guy) {
 }
 
 // Namespace stealth_group/group
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9376ad7c, Offset: 0x5808
 // Size: 0xfc
 function pod_getclosestguy(pos) {
@@ -1414,7 +1413,7 @@ function pod_getclosestguy(pos) {
 }
 
 // Namespace stealth_group/group
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a59aae8, Offset: 0x5910
 // Size: 0x108
 function pod_delete() {

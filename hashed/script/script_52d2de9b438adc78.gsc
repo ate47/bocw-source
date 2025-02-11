@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace ir_strobe;
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5cf881f0, Offset: 0x190
 // Size: 0x54
 function init_shared() {
@@ -22,7 +21,7 @@ function init_shared() {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc9776034, Offset: 0x1f0
 // Size: 0x58
 function function_8806675d(var_45e9e49f, activatefunc) {
@@ -36,7 +35,7 @@ function function_8806675d(var_45e9e49f, activatefunc) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7833e220, Offset: 0x250
 // Size: 0x8e
 function function_c5d20b5c(owner, context, position, ksweapon) {
@@ -47,7 +46,7 @@ function function_c5d20b5c(owner, context, position, ksweapon) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x474edbd4, Offset: 0x2e8
 // Size: 0x2c4
 function function_f625256f(killstreak_id, context) {
@@ -95,7 +94,7 @@ function function_f625256f(killstreak_id, context) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfee96e54, Offset: 0x5b8
 // Size: 0x112
 function cleanup(context, player) {
@@ -118,7 +117,7 @@ function cleanup(context, player) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ba2fc4e, Offset: 0x6d8
 // Size: 0xdc
 function markercleanupthread(context) {
@@ -133,7 +132,7 @@ function markercleanupthread(context) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a590de, Offset: 0x7c0
 // Size: 0x6be
 function markerupdatethread(context) {
@@ -218,7 +217,7 @@ function markerupdatethread(context) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5b8ffe3a, Offset: 0xe88
 // Size: 0x5fc
 function function_ef6c4a46(killstreak_id, trigger_event, supplydropweapon, context) {
@@ -313,7 +312,7 @@ function function_ef6c4a46(killstreak_id, trigger_event, supplydropweapon, conte
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcdb41d41, Offset: 0x1490
 // Size: 0xce
 function cleanupwatcherondeath(*killstreak_id, *var_b57ab85c) {
@@ -324,7 +323,7 @@ function cleanupwatcherondeath(*killstreak_id, *var_b57ab85c) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x72cea976, Offset: 0x1568
 // Size: 0x8c
 function checkforemp() {
@@ -362,7 +361,7 @@ function event_handler[grenade_fire] function_cb63f633(eventstruct) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x479fd9ac, Offset: 0x1700
 // Size: 0x17c
 function function_d5ca3f62(player) {
@@ -392,7 +391,7 @@ function function_d5ca3f62(player) {
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x91307707, Offset: 0x1888
 // Size: 0xe4
 function private function_2cbae477(var_babebdbc = #"weapon/fx8_equip_swat_smk_signal", var_76361c1a = "tag_flash") {
@@ -416,7 +415,7 @@ function function_284b1d4c(origin, model, timeout = undefined, var_babebdbc = un
 }
 
 // Namespace ir_strobe/namespace_f0840611
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6ec0b237, Offset: 0x1a48
 // Size: 0xa4
 function private function_f61c0c1(timeout) {

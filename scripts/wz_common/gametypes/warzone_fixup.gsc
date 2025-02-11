@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_54f593f5beb1464a;
 
 #namespace warzone_fixup;
@@ -26,7 +25,7 @@ function autoexec __init__() {
 }
 
 // Namespace warzone_fixup/warzone_fixup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa3d4c812, Offset: 0x1a8
 // Size: 0xe4
 function private function_c94723bd() {
@@ -40,7 +39,7 @@ function private function_c94723bd() {
 }
 
 // Namespace warzone_fixup/warzone_fixup
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x82c8405f, Offset: 0x298
 // Size: 0xd0
 function private function_9b8d4d02(*prematch) {
@@ -53,7 +52,7 @@ function private function_9b8d4d02(*prematch) {
 }
 
 // Namespace warzone_fixup/warzone_fixup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x38d19a0e, Offset: 0x370
 // Size: 0x24
 function private function_d0dc6619() {
@@ -61,7 +60,7 @@ function private function_d0dc6619() {
 }
 
 // Namespace warzone_fixup/warzone_fixup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x3a0
 // Size: 0x4
 function private function_f16631fc() {
@@ -69,7 +68,7 @@ function private function_f16631fc() {
 }
 
 // Namespace warzone_fixup/warzone_fixup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x3b0
 // Size: 0x4
 function private function_91d1fd09() {

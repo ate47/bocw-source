@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_bonus_points_player;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x44fb5b85, Offset: 0x1c0
 // Size: 0xf4
 function private preinit() {
@@ -32,7 +31,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1fbe6289, Offset: 0x2c0
 // Size: 0x74
 function grab_bonus_points_player(player) {
@@ -44,7 +43,7 @@ function grab_bonus_points_player(player) {
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x13db9ea5, Offset: 0x340
 // Size: 0xc4
 function function_ec014d54(player) {
@@ -59,7 +58,7 @@ function function_ec014d54(player) {
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x52136ef9, Offset: 0x410
 // Size: 0x20c
 function bonus_points_player_powerup(item, player) {
@@ -89,7 +88,7 @@ function bonus_points_player_powerup(item, player) {
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x49b880a2, Offset: 0x628
 // Size: 0x10c
 function function_56784293(item, player) {

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
 #using script_18b9d0e77614c97;
-#using scripts\core_common\dev_shared.csc;
-#using scripts\core_common\activecamo_shared.csc;
-#using scripts\core_common\delete.csc;
+#using scripts\core_common\activecamo_shared;
+#using scripts\core_common\delete;
+#using scripts\core_common\dev_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace load;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x291e7f35, Offset: 0x120
 // Size: 0x34
 function main() {
@@ -26,7 +25,7 @@ function main() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc69033f6, Offset: 0x160
 // Size: 0x8c
 function private preinit() {
@@ -59,7 +58,7 @@ function private preinit() {
 #/
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb2f16b99, Offset: 0x238
 // Size: 0xb8
 function apply_mature_filter() {

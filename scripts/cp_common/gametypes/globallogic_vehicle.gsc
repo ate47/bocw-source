@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\turret_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_44b0b8420eabacad;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\turret_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\cp_common\util;
 
 #namespace vehicles;
 
@@ -29,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace vehicles/globallogic_vehicle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x476d1fa6, Offset: 0x178
 // Size: 0x64
 function private preinit() {
@@ -41,7 +40,7 @@ function private preinit() {
 }
 
 // Namespace vehicles/globallogic_vehicle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x70ecf6c2, Offset: 0x1e8
 // Size: 0x188
 function private function_80238885() {
@@ -68,7 +67,7 @@ function private function_80238885() {
 }
 
 // Namespace vehicles/globallogic_vehicle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa77bff9e, Offset: 0x378
 // Size: 0x1f0
 function private function_d521a2c1() {

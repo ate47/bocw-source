@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_maptable.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_maptable;
 
 #namespace zm_weap_bowie;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x170
 // Size: 0x4
 function private preinit() {
@@ -21,7 +20,7 @@ function private preinit() {
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb10c05dc, Offset: 0x180
 // Size: 0xb4
 function private postinit() {

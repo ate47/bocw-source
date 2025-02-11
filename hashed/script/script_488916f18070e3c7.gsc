@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_d3c2ca3;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_d3c2ca3/namespace_d3c2ca3
-// Params 0, eflags: 0x3 linked
+// Params 0, eflags: 0x1
 // Checksum 0x8f8a8322, Offset: 0x118
 // Size: 0x5c
 function autoexec postinit() {
@@ -25,7 +24,7 @@ function autoexec postinit() {
 }
 
 // Namespace namespace_d3c2ca3/namespace_d3c2ca3
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc7b6785e, Offset: 0x180
 // Size: 0xc6
 function function_82c985d1(*var_1482c45a) {

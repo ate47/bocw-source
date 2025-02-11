@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\lightning_chain.gsc;
 #using script_62caa307a394c18c;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lightning_chain;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_utility;
 
 #namespace ammomod_deadwire;
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdd58fb17, Offset: 0x268
 // Size: 0xa84
 function init_deadwire() {
@@ -105,7 +104,7 @@ function init_deadwire() {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7aa45a27, Offset: 0xcf8
 // Size: 0xcc
 function private function_832f84f6(aat_name = "ammomod_deadwire") {
@@ -127,7 +126,7 @@ function private function_832f84f6(aat_name = "ammomod_deadwire") {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x8ee194f7, Offset: 0xdd0
 // Size: 0x40c
 function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc, *boneindex = self.origin) {
@@ -197,7 +196,7 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc,
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe652af5c, Offset: 0x11e8
 // Size: 0xc2
 function function_b686c867(e_attacker) {
@@ -213,7 +212,7 @@ function function_b686c867(e_attacker) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf0d3e54f, Offset: 0x12b8
 // Size: 0xdc
 function function_e0e02bed(attacker, s_params, tier) {
@@ -232,7 +231,7 @@ function function_e0e02bed(attacker, s_params, tier) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xba95f931, Offset: 0x13a0
 // Size: 0x1c4
 function function_5e4b580b(player, s_params, tier) {
@@ -258,7 +257,7 @@ function function_5e4b580b(player, s_params, tier) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7efb632f, Offset: 0x1570
 // Size: 0x19c
 function function_de99f2ad(player, var_fb0999c0, s_params, tier, var_ebf63dce = 0) {
@@ -271,19 +270,19 @@ function function_de99f2ad(player, var_fb0999c0, s_params, tier, var_ebf63dce = 
     if (self == var_fb0999c0 && is_true(level.aat[#"ammomod_deadwire"].immune_result_direct[self.archetype])) {
         return;
     }
-    if (self ai::is_stunned() || self flag::get(#"hash_83000b27a1fe353") || !self ai::function_28aab32a()) {
+    if (self ai::is_stunned() || self flag::get(#"deadwire_stun") || !self ai::function_28aab32a()) {
         return;
     }
     if (self.var_6f84b820 === #"elite") {
         return;
     }
-    self flag::set(#"hash_83000b27a1fe353");
+    self flag::set(#"deadwire_stun");
     self.var_9c33fa32 = player;
     self thread function_30c7f12c(player, s_params, tier, var_ebf63dce);
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb250a954, Offset: 0x1718
 // Size: 0x11c
 function function_13d4bcdf(*origin, player, params) {
@@ -298,11 +297,11 @@ function function_13d4bcdf(*origin, player, params) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc375d4c0, Offset: 0x1840
 // Size: 0x23e
 function function_2bd8c11(player, damage_percent, weapon, stun_duration) {
-    self endon(#"death", #"hash_41856bb6371c74a6", #"hash_3a0cc85cce9af776", #"hash_83000b27a1fe353");
+    self endon(#"death", #"deadwire_stunned", #"hash_3a0cc85cce9af776", #"deadwire_stun");
     var_4691e777 = self.origin;
     time = 0;
     while (time <= stun_duration) {
@@ -323,17 +322,17 @@ function function_2bd8c11(player, damage_percent, weapon, stun_duration) {
             waitframe(1);
         }
         time += 1;
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf871d4d6, Offset: 0x1a88
 // Size: 0x134
 function function_30c7f12c(player, s_params, tier, *var_ebf63dce = 0) {
-    self notify(#"hash_41856bb6371c74a6");
-    self endon(#"death", #"hash_41856bb6371c74a6");
+    self notify(#"deadwire_stunned");
+    self endon(#"death", #"deadwire_stunned");
     waitframe(1);
     var_5c68bd89 = var_ebf63dce + 1;
     if (isactor(self) || isvehicle(self)) {
@@ -343,19 +342,19 @@ function function_30c7f12c(player, s_params, tier, *var_ebf63dce = 0) {
         self.tesla_damage_func = &function_13d4bcdf;
     }
     self lightning_chain::arc_damage_ent(s_params, 2, tier);
-    wait(6);
+    wait 6;
     self thread function_ffe2bb2f();
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73223b05, Offset: 0x1bc8
 // Size: 0xc4
 function function_ffe2bb2f() {
-    self endon(#"death", #"hash_41856bb6371c74a6");
+    self endon(#"death", #"deadwire_stunned");
     waitframe(1);
-    if (self flag::get(#"hash_83000b27a1fe353")) {
-        self flag::clear(#"hash_83000b27a1fe353");
+    if (self flag::get(#"deadwire_stun")) {
+        self flag::clear(#"deadwire_stun");
         self.var_9c33fa32 = undefined;
         if (isactor(self) || isvehicle(self)) {
             self clientfield::set("zm_ammomod_deadwire_zap", 0);
@@ -364,25 +363,25 @@ function function_ffe2bb2f() {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe05b0c2f, Offset: 0x1c98
 // Size: 0x7c
 function function_742f2da3(damage = 0, attacker, weapon) {
-    if (self flag::get(#"hash_83000b27a1fe353")) {
+    if (self flag::get(#"deadwire_stun")) {
         self.health = damage + 1;
         self thread function_851db518(attacker, weapon);
     }
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3fc7d39e, Offset: 0x1d20
 // Size: 0xb4
 function function_851db518(attacker, weapon) {
     self notify("4d0ff4a6c6cb4c74");
     self endon("4d0ff4a6c6cb4c74");
     self endon(#"death");
-    self flag::wait_till_clear(#"hash_83000b27a1fe353");
+    self flag::wait_till_clear(#"deadwire_stun");
     if (!zm_utility::is_magic_bullet_shield_enabled(self)) {
         self.var_fc304017 = 1;
         self kill(self.origin, attacker, undefined, weapon, undefined, 1);

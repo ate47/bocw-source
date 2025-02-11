@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_471b31bd963b388e;
 #using script_340a2e805e35f7a2;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
 
-#namespace namespace_f0884ae5;
+#namespace item_spawn_group;
 
-// Namespace namespace_f0884ae5/namespace_1d9375fc
-// Params 1, eflags: 0x2 linked
+// Namespace item_spawn_group/item_spawn_groups
+// Params 1, eflags: 0x0
 // Checksum 0x405fba71, Offset: 0xa0
 // Size: 0x6c
 function setup(seedvalue) {
@@ -15,7 +14,7 @@ function setup(seedvalue) {
         return;
     }
     function_1f4464c0(seedvalue);
-    println("<unknown string>" + seedvalue);
+    println("<dev string:x38>" + seedvalue);
     namespace_65181344::setup_groups();
 }
 

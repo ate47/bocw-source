@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_7bdcff4f92f3d220;
-#using script_61828ad9e71c6616;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
 #using script_1cc417743d7c262d;
 #using script_396f7d71538c9677;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\killstreaks\zm\airsupport.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\planemortar_shared.gsc;
+#using script_61828ad9e71c6616;
+#using script_7bdcff4f92f3d220;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\planemortar_shared;
+#using scripts\killstreaks\zm\airsupport;
+#using scripts\zm_common\zm_player;
 
 #namespace planemortar;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x63fd79f, Offset: 0x338
 // Size: 0xe4
 function private preinit() {
@@ -40,7 +39,7 @@ function private preinit() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3f81cd5e, Offset: 0x428
 // Size: 0x34
 function private function_3675de8b() {
@@ -49,7 +48,7 @@ function private function_3675de8b() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7ada4948, Offset: 0x468
 // Size: 0x26
 function function_269fec2() {
@@ -59,7 +58,7 @@ function function_269fec2() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ed7c82b, Offset: 0x498
 // Size: 0x1de
 function plane_mortar_bda_dialog() {
@@ -92,7 +91,7 @@ function plane_mortar_bda_dialog() {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcd2f71a0, Offset: 0x680
 // Size: 0x12a
 function function_c9ca313b(*killstreaktype) {
@@ -169,7 +168,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
             if (isdefined(projectile)) {
                 projectile.angles = (-90, 0, 90);
             }
-            wait(1);
+            wait 1;
             if (isdefined(projectile) && isplayer(self)) {
                 projectile thread function_5673c107();
                 s_location = spawnstruct();
@@ -187,7 +186,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xafeb3a7c, Offset: 0xb58
 // Size: 0x224
 function function_66133f8b(var_5b276012) {
@@ -213,7 +212,7 @@ function function_66133f8b(var_5b276012) {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe0c98171, Offset: 0xd88
 // Size: 0x24
 function private function_142c133b() {
@@ -221,7 +220,7 @@ function private function_142c133b() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfab33981, Offset: 0xdb8
 // Size: 0x24
 function private function_c6fe946e() {
@@ -229,7 +228,7 @@ function private function_c6fe946e() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x46eecd68, Offset: 0xde8
 // Size: 0x24
 function private function_f2cd26bf() {
@@ -237,7 +236,7 @@ function private function_f2cd26bf() {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe4020f74, Offset: 0xe18
 // Size: 0x4c
 function private function_fa592333(b_valid) {
@@ -245,17 +244,17 @@ function private function_fa592333(b_valid) {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xedfa3920, Offset: 0xe70
 // Size: 0x34
 function function_5673c107() {
     self endon(#"death");
-    wait(7);
+    wait 7;
     self delete();
 }
 
 // Namespace planemortar/planemortar
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb4082de8, Offset: 0xeb0
 // Size: 0x280
 function private function_8f181838(var_5b276012, params, targetposition) {
@@ -263,13 +262,13 @@ function private function_8f181838(var_5b276012, params, targetposition) {
     self.planemortarpilotindex = self namespace_f9b02f80::get_random_pilot_index("planemortar");
     self thread function_16f87e96(8);
     if (isdefined(params.var_675bebb2)) {
-        wait(params.var_675bebb2);
+        wait params.var_675bebb2;
     }
     n_yaw = randomintrange(0, 360);
     for (i = 0; i < 8; i++) {
         if (i != 0) {
             n_interval = randomfloatrange(0.5, 2);
-            wait(n_interval);
+            wait n_interval;
         }
         n_radius = 500 * randomfloat(1);
         n_angle = randomintrange(0, 360);
@@ -280,12 +279,12 @@ function private function_8f181838(var_5b276012, params, targetposition) {
         self thread function_83e61117(var_5acfe25f, n_yaw);
     }
     n_length = scene::function_12479eba(#"p9_fxanim_mp_planemortar_01_bundle");
-    wait(n_length + 0.5);
+    wait n_length + 0.5;
     self notify("planemortar_complete" + var_5b276012);
 }
 
 // Namespace planemortar/planemortar
-// Params 10, eflags: 0x6 linked
+// Params 10, eflags: 0x4
 // Checksum 0xca6f8b6b, Offset: 0x1138
 // Size: 0x8c
 function private function_5e7e3e86(*einflictor, eattacker, *idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

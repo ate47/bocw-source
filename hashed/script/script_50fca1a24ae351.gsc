@@ -1,48 +1,47 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_dc59353021baee1;
-#using script_746267f0669c40ae;
-#using script_2c9915120c137848;
-#using script_2474a362752098d2;
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_3bbf85ab4cb9f3c2;
-#using script_40f967ad5d18ea74;
-#using script_3faf478d5b0850fe;
-#using script_47851dbeea22fe66;
-#using script_1ce46999727f2f2b;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_774302f762d76254;
-#using script_6b6510e124bad778;
-#using script_1b0b07ff57d1dde3;
-#using script_1ee011cd0961afd7;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
 #using script_17dcb1172e441bf6;
-#using script_74a56359b7d02ab6;
-#using script_f38dc50f0e82277;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ce46999727f2f2b;
+#using script_1ee011cd0961afd7;
+#using script_2474a362752098d2;
+#using script_2a5bf5b4a00cee0d;
+#using script_2c9915120c137848;
 #using script_2e9202713de2b353;
-#using script_6ad6653eed415ffc;
+#using script_3bbf85ab4cb9f3c2;
+#using script_3faf478d5b0850fe;
+#using script_40f967ad5d18ea74;
 #using script_41fbdfb1149a433e;
-#using script_73ad7687b437e468;
+#using script_47851dbeea22fe66;
 #using script_48e04a393ec6d855;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_4d748e58ce25b60c;
+#using script_5701633066d199f2;
+#using script_5f20d3b434d24884;
+#using script_6ad6653eed415ffc;
+#using script_6b6510e124bad778;
+#using script_73ad7687b437e468;
+#using script_746267f0669c40ae;
+#using script_74a56359b7d02ab6;
+#using script_774302f762d76254;
+#using script_dc59353021baee1;
+#using script_f38dc50f0e82277;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_981c1f3c;
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa319ba00, Offset: 0x4f0
 // Size: 0x17c
 function init() {
     level.doa.var_43cb2d40 = [];
-    level.doa.var_c2648383 = [];
+    level.doa.teleporter_locs = [];
     level.doa.var_a8a563fc = [];
     level.doa.var_783e7439 = [];
     level flag::init("dungeon_building", 0);
@@ -59,7 +58,7 @@ function init() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2a5340f6, Offset: 0x678
 // Size: 0x430
 function main() {
@@ -93,7 +92,7 @@ function main() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x447905ed, Offset: 0xab0
 // Size: 0x218
 function function_470f56e6(origin, ignore, var_fcfb8b8d = 1) {
@@ -123,7 +122,7 @@ function function_470f56e6(origin, ignore, var_fcfb8b8d = 1) {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3c57686f, Offset: 0xcd0
 // Size: 0x6d0
 function function_ec0b503f(var_499e2f80) {
@@ -132,12 +131,12 @@ function function_ec0b503f(var_499e2f80) {
     self notify("17273a2d0c87b864");
     self endon("17273a2d0c87b864");
     idx = function_61e1a1cb(var_499e2f80);
-    assert(isdefined(idx), "<unknown string>");
+    assert(isdefined(idx), "<dev string:x38>");
     topper = struct::get(var_499e2f80 + "_topper", "targetname");
     var_8f13e4c5 = getent(var_499e2f80 + "_WaitVolume", "targetname");
     startnode = struct::get(var_499e2f80, "targetname");
-    assert(isdefined(startnode), "<unknown string>");
-    assert(isdefined(startnode.target), "<unknown string>");
+    assert(isdefined(startnode), "<dev string:x8a>");
+    assert(isdefined(startnode.target), "<dev string:xac>");
     var_3a27fe75 = struct::get(startnode.target, "targetname");
     result = self waittill(#"trigger");
     if (isdefined(level.doa.var_182fb75a)) {
@@ -164,7 +163,7 @@ function function_ec0b503f(var_499e2f80) {
     level.doa.var_a7ccb320 = undefined;
     profilestop();
     level function_c88b8726(idx);
-    level namespace_a6ddb172::function_7a0e5387(16);
+    level doa_banner::function_7a0e5387(16);
     level thread namespace_9fc66ac::announce(61);
     level.doa.var_5b55ba1f = namespace_4dae815d::function_21cd3890(5);
     if (isdefined(var_8f13e4c5)) {
@@ -196,7 +195,7 @@ function function_ec0b503f(var_499e2f80) {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5c569157, Offset: 0x13a8
 // Size: 0x1e0
 function function_fe17d41e() {
@@ -222,12 +221,12 @@ function function_fe17d41e() {
                 groundent.var_ae9c1083 = 1;
             }
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbafe52ff, Offset: 0x1590
 // Size: 0x6a
 function function_61e1a1cb(name) {
@@ -239,7 +238,7 @@ function function_61e1a1cb(name) {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8c925971, Offset: 0x1608
 // Size: 0x6a
 function function_56bd9d70(idx) {
@@ -248,7 +247,7 @@ function function_56bd9d70(idx) {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x22a939b9, Offset: 0x1680
 // Size: 0x366
 function function_8790b64a() {
@@ -297,7 +296,7 @@ function function_8790b64a() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa9101507, Offset: 0x19f0
 // Size: 0x25e
 function function_4be92bcc(idx, seconds) {
@@ -324,12 +323,12 @@ function function_4be92bcc(idx, seconds) {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfac969c4, Offset: 0x1c58
 // Size: 0x214
 function function_c88b8726(index) {
     profilestart();
-    assert(!isdefined(level.doa.var_187ed224), "<unknown string>");
+    assert(!isdefined(level.doa.var_187ed224), "<dev string:xd3>");
     if (!isdefined(level.doa.var_a354a42f)) {
         level.doa.var_a354a42f = 1;
     }
@@ -350,12 +349,12 @@ function function_c88b8726(index) {
     level clientfield::increment("world_dungeon_build", 1);
     namespace_95fdc800::function_d6e32b1b();
     level.doa.var_187ed224 = namespace_95fdc800::function_1bce4bde(level.doa.var_4bd98f7c[index].name);
-    wait(0.6);
+    wait 0.6;
     level util::set_lighting_state(3, 0);
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x57556f7a, Offset: 0x1e78
 // Size: 0xac
 function function_30697e3b() {
@@ -364,7 +363,7 @@ function function_30697e3b() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24c3c441, Offset: 0x1f30
 // Size: 0xac
 function function_1a775179() {
@@ -373,7 +372,7 @@ function function_1a775179() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6122b7c9, Offset: 0x1fe8
 // Size: 0x82
 function function_fd83ca7f() {
@@ -387,7 +386,7 @@ function function_fd83ca7f() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x49406883, Offset: 0x2078
 // Size: 0x14e
 function function_3574d58() {
@@ -408,14 +407,14 @@ function function_3574d58() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1bfdbf2f, Offset: 0x21d0
 // Size: 0x370
 function doaenemyfillerfodder() {
     level endon(#"dungeon_cleanup", #"dungeon_destroyed");
     self notify("b40686875632ffd");
     self endon("b40686875632ffd");
-    wait(15);
+    wait 15;
     level thread function_fd83ca7f();
     level.doa.var_35c4260d = [];
     var_764338c3 = namespace_ec06fe4a::spawnorigin((0, 0, 0));
@@ -456,12 +455,12 @@ function doaenemyfillerfodder() {
                 }
             }
         }
-        wait(randomintrange(2, 4));
+        wait randomintrange(2, 4);
     }
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe264672b, Offset: 0x2548
 // Size: 0x3d4
 function function_600ea4f() {
@@ -470,12 +469,12 @@ function function_600ea4f() {
         namespace_1e25ad94::function_4e3cfad("\tDungeon creation timeout!", (1, 0, 0), undefined, 1.5, 1000);
         namespace_1e25ad94::debugmsg("Dungeon creation timeout!", 1);
     }
-    if (level.doa.var_c2648383.size > 0) {
+    if (level.doa.teleporter_locs.size > 0) {
         if (isdefined(level.doa.var_187ed224)) {
-            level.doa.var_c2648383 = arraysortclosest(level.doa.var_c2648383, level.doa.var_187ed224.origin);
+            level.doa.teleporter_locs = arraysortclosest(level.doa.teleporter_locs, level.doa.var_187ed224.origin);
         }
-        furthest = level.doa.var_c2648383[level.doa.var_c2648383.size - 1];
-        level.doa.var_c2648383 = [];
+        furthest = level.doa.teleporter_locs[level.doa.teleporter_locs.size - 1];
+        level.doa.teleporter_locs = [];
         level.doa.var_9f48249a = namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_2c9923d7(39), furthest.origin, undefined, undefined, 1);
         level.doa.var_9f48249a namespace_83eb6304::function_3ecfde67("teleporter_dungeon_light");
         level.doa.var_9f48249a clientfield::set("set_icon", 9);
@@ -499,7 +498,7 @@ function function_600ea4f() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe3f46c75, Offset: 0x2928
 // Size: 0x370
 function function_c153f40() {
@@ -535,7 +534,7 @@ function function_c153f40() {
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd4fc5c2d, Offset: 0x2ca0
 // Size: 0x15e
 function function_10d89d49() {
@@ -543,19 +542,19 @@ function function_10d89d49() {
     self endon("19141bf095382546");
     self endon(#"disconnect");
     level endon(#"game_over", #"dungeon_cleanup", #"dungeon_destroyed");
-    wait(1);
+    wait 1;
     while (isdefined(level.doa.var_182fb75a)) {
         basez = level.doa.var_187ed224.origin[2] - 256;
         if (self.origin[2] <= basez) {
             namespace_1e25ad94::debugmsg("Player " + self.name + " FELL out of the active dungeon at location: " + self.origin + "  Failsafe warp to start point: " + level.doa.var_187ed224.origin, 1);
             self setorigin(level.doa.var_187ed224.origin);
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x318077c7, Offset: 0x2e08
 // Size: 0x708
 function function_73730269(var_f3c8eb3) {
@@ -575,7 +574,7 @@ function function_73730269(var_f3c8eb3) {
         }
     }
     level notify(#"dungeon_cleanup");
-    level notify(#"hash_521118da55424987");
+    level notify(#"rg_abort");
     if (isdefined(var_f3c8eb3)) {
         var_f3c8eb3 namespace_83eb6304::turnofffx("teleporter_dungeon_light");
     }

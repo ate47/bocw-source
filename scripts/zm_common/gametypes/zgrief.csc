@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\struct;
 
 #namespace zgrief;
 
@@ -10,7 +9,7 @@
 function event_handler[gametype_init] main(*eventstruct) {
     level._zombie_gamemodeprecache = &onprecachegametype;
     level._zombie_gamemodemain = &onstartgametype;
-    println("<unknown string>");
+    println("<dev string:x38>");
 }
 
 // Namespace zgrief/zgrief
@@ -18,7 +17,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0x872046bb, Offset: 0xf0
 // Size: 0x24
 function onprecachegametype() {
-    println("<unknown string>");
+    println("<dev string:x55>");
 }
 
 // Namespace zgrief/zgrief
@@ -26,6 +25,6 @@ function onprecachegametype() {
 // Checksum 0xe8e0e49d, Offset: 0x120
 // Size: 0x24
 function onstartgametype() {
-    println("<unknown string>");
+    println("<dev string:x76>");
 }
 

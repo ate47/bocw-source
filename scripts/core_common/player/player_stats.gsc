@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapons.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weapons;
 
 #namespace stats;
 
@@ -18,20 +17,20 @@
                 return;
             }
             for (i = 1; i < vararg.size; i++) {
-                pathstr = pathstr + "<unknown string>" + (ishash(vararg[i]) ? function_9e72a96(vararg[i]) : vararg[i]);
+                pathstr = pathstr + "<dev string:x38>" + (ishash(vararg[i]) ? function_9e72a96(vararg[i]) : vararg[i]);
             }
-            println("<unknown string>" + pathstr);
+            println("<dev string:x3d>" + pathstr);
         }
     }
 
 #/
 
 // Namespace stats/player_stats
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8d8728d, Offset: 0x200
 // Size: 0xc0
 function function_f94325d3() {
-    assert(isplayer(self), "<unknown string>");
+    assert(isplayer(self), "<dev string:x5b>");
     if (sessionmodeiscampaigngame()) {
         return true;
     }
@@ -47,7 +46,7 @@ function function_f94325d3() {
 }
 
 // Namespace stats/player_stats
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c4d70d5, Offset: 0x2c8
 // Size: 0x6c
 function function_ca76d4a() {
@@ -62,7 +61,7 @@ function function_ca76d4a() {
 }
 
 // Namespace stats/player_stats
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x58cc5d3d, Offset: 0x340
 // Size: 0xe
 function function_8921af36() {
@@ -70,7 +69,7 @@ function function_8921af36() {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xc8a466ea, Offset: 0x358
 // Size: 0xce
 function get_stat(...) {
@@ -80,7 +79,7 @@ function get_stat(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:x5b>");
         result = self readstat(0, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -93,7 +92,7 @@ function get_stat(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x211a12ff, Offset: 0x430
 // Size: 0xce
 function function_e3eb9a8b(...) {
@@ -103,7 +102,7 @@ function function_e3eb9a8b(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:x87>");
         result = self readstat(1, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -116,7 +115,7 @@ function function_e3eb9a8b(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xdbb8b10, Offset: 0x508
 // Size: 0xce
 function function_1bb1c57c(...) {
@@ -126,7 +125,7 @@ function function_1bb1c57c(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:x5b>");
         result = self readstat(2, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -139,7 +138,7 @@ function function_1bb1c57c(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x40
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x4739b23a, Offset: 0x5e0
 // Size: 0xc0
 function function_6d50f14b(...) {
@@ -149,7 +148,7 @@ function function_6d50f14b(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:xba>");
         result = self readstat(3, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -159,7 +158,7 @@ function function_6d50f14b(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xc552f0cd, Offset: 0x6a8
 // Size: 0xc0
 function function_ff8f4f17(...) {
@@ -169,7 +168,7 @@ function function_ff8f4f17(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:xee>");
         result = self readstat(4, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -179,7 +178,7 @@ function function_ff8f4f17(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x4e638b49, Offset: 0x770
 // Size: 0x16a
 function set_stat(...) {
@@ -193,7 +192,7 @@ function set_stat(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:x124>");
         value = vararg[vararg.size - 1];
         arrayremoveindex(vararg, vararg.size - 1);
         result = self writestat(0, vararg, value);
@@ -205,7 +204,7 @@ function set_stat(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xe0bec7f3, Offset: 0x8e8
 // Size: 0x16a
 function function_505387a6(...) {
@@ -219,7 +218,7 @@ function function_505387a6(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        assert(isplayer(self), "<unknown string>");
+        assert(isplayer(self), "<dev string:x124>");
         value = vararg[vararg.size - 1];
         arrayremoveindex(vararg, vararg.size - 1);
         result = self writestat(1, vararg, value);
@@ -231,7 +230,7 @@ function function_505387a6(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xe65f30c0, Offset: 0xa60
 // Size: 0x172
 function inc_stat(...) {
@@ -243,7 +242,7 @@ function inc_stat(...) {
     if (!function_f94325d3()) {
         return;
     }
-    assert(isplayer(self), "<unknown string>");
+    assert(isplayer(self), "<dev string:x124>");
     if (!isplayer(self)) {
         return;
     }
@@ -257,7 +256,7 @@ function inc_stat(...) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xbbe877c2, Offset: 0xbe0
 // Size: 0x18a
 function function_f5859f81(...) {
@@ -270,7 +269,7 @@ function function_f5859f81(...) {
         return;
     }
     player = self;
-    assert(isplayer(player), "<unknown string>");
+    assert(isplayer(player), "<dev string:x124>");
     if (!isdefined(player) || !isplayer(player)) {
         return;
     }
@@ -305,7 +304,7 @@ function private function_1d354b96(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcde1527, Offset: 0xf00
 // Size: 0x52
 function function_ed81f25e(statname) {
@@ -313,7 +312,7 @@ function function_ed81f25e(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1b5ed2ec, Offset: 0xf60
 // Size: 0x78
 function function_baa25a23(statname, value) {
@@ -325,7 +324,7 @@ function function_baa25a23(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xae80737, Offset: 0xfe0
 // Size: 0x48
 function function_d40764f3(statname, value) {
@@ -337,7 +336,7 @@ function function_d40764f3(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6c67158a, Offset: 0x1030
 // Size: 0x78
 function function_cc215323(statname, value) {
@@ -349,7 +348,7 @@ function function_cc215323(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2c6ecfe6, Offset: 0x10b0
 // Size: 0x6e
 function function_a2261724(weapon) {
@@ -358,7 +357,7 @@ function function_a2261724(weapon) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe3b36bf3, Offset: 0x1128
 // Size: 0x20c
 function function_a431be09(weapon) {
@@ -367,7 +366,7 @@ function function_a431be09(weapon) {
     if (loadout_slot_index === "primarygrenade" || loadout_slot_index === "secondarygrenade" || loadout_slot_index === "specialgrenade") {
         weaponname = function_3f64434(statweapon);
         self function_622feb0d(weaponname, #"destructions", 1);
-        self function_6fb0b113(weaponname, #"hash_98b8582b08abfa5");
+        self function_6fb0b113(weaponname, #"best_destructions");
         return;
     }
     if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
@@ -376,15 +375,15 @@ function function_a431be09(weapon) {
             return;
         }
         self function_8fb23f94(killstreak, "destructions", 1);
-        self function_b04e7184(killstreak, #"hash_98b8582b08abfa5");
+        self function_b04e7184(killstreak, #"best_destructions");
         return;
     }
     self function_561716e6(statweapon.name, #"destroyed", 1);
-    self function_80099ca1(statweapon.name, #"hash_36be6b672cd9dda3");
+    self function_80099ca1(statweapon.name, #"best_destroyed");
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa98ede17, Offset: 0x1340
 // Size: 0x42
 function function_b2c11cc(weapon, statname) {
@@ -392,7 +391,7 @@ function function_b2c11cc(weapon, statname) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x682097c1, Offset: 0x1390
 // Size: 0x68
 function function_53e7d4a5(weapon, statname, value) {
@@ -404,7 +403,7 @@ function function_53e7d4a5(weapon, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x32dc4c2e, Offset: 0x1400
 // Size: 0x68
 function function_561716e6(weapon, statname, value) {
@@ -416,19 +415,19 @@ function function_561716e6(weapon, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x53c38f51, Offset: 0x1470
 // Size: 0x78
 function function_6cdd992f(weapon, bucket, value) {
     if (!function_f94325d3()) {
         return false;
     }
-    self inc_stat(#"hash_3713686a5fc7b39e", weapon, #"hash_2a1ce63d60556431", bucket, #"statvalue", value);
+    self inc_stat(#"hash_3713686a5fc7b39e", weapon, #"engagement_ranges", bucket, #"statvalue", value);
     return true;
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd868d274, Offset: 0x14f0
 // Size: 0x78
 function function_328bc34a(weapon, location, value) {
@@ -440,7 +439,7 @@ function function_328bc34a(weapon, location, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd03af550, Offset: 0x1570
 // Size: 0x184
 function function_80099ca1(weapon, statname) {
@@ -466,7 +465,7 @@ function function_80099ca1(weapon, statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x62a736e5, Offset: 0x1700
 // Size: 0x42
 function function_97f7728e(equipment, statname) {
@@ -474,7 +473,7 @@ function function_97f7728e(equipment, statname) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfc2672ae, Offset: 0x1750
 // Size: 0x4a
 function function_3f64434(weapon) {
@@ -486,7 +485,7 @@ function function_3f64434(weapon) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc4abe28e, Offset: 0x17a8
 // Size: 0x68
 function function_c8da9a88(equipment, statname, value) {
@@ -498,7 +497,7 @@ function function_c8da9a88(equipment, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x5924215c, Offset: 0x1818
 // Size: 0x68
 function function_622feb0d(equipment, statname, value) {
@@ -510,7 +509,7 @@ function function_622feb0d(equipment, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x607390ba, Offset: 0x1888
 // Size: 0x184
 function function_6fb0b113(equipment, statname) {
@@ -536,7 +535,7 @@ function function_6fb0b113(equipment, statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd714cbc3, Offset: 0x1a18
 // Size: 0x42
 function function_9792680b(scorestreak, statname) {
@@ -544,7 +543,7 @@ function function_9792680b(scorestreak, statname) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd0908bd1, Offset: 0x1a68
 // Size: 0x68
 function function_1eb9272f(scorestreak, statname, value) {
@@ -556,7 +555,7 @@ function function_1eb9272f(scorestreak, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x45942697, Offset: 0x1ad8
 // Size: 0x68
 function function_8fb23f94(scorestreak, statname, value) {
@@ -568,7 +567,7 @@ function function_8fb23f94(scorestreak, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1237ebae, Offset: 0x1b48
 // Size: 0x184
 function function_b04e7184(scorestreak, statname) {
@@ -614,7 +613,7 @@ function function_e1c64c80(vehicle, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1a6a09d6, Offset: 0x1d98
 // Size: 0x68
 function function_7fd36562(vehicle, statname, value) {
@@ -626,7 +625,7 @@ function function_7fd36562(vehicle, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcb54a69, Offset: 0x1e08
 // Size: 0x52
 function function_7a850245(statname, value) {
@@ -637,7 +636,7 @@ function function_7a850245(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xea5840ac, Offset: 0x1e68
 // Size: 0x1fc
 function function_62b271d8(statname, value) {
@@ -665,7 +664,7 @@ function function_62b271d8(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x24c7b1c8, Offset: 0x2070
 // Size: 0x1fc
 function function_b7f80d87(statname, value) {
@@ -693,7 +692,7 @@ function function_b7f80d87(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7928fa4, Offset: 0x2278
 // Size: 0xca
 function function_81f5c0fe(statname, value) {
@@ -707,7 +706,7 @@ function function_81f5c0fe(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfbdf74ca, Offset: 0x2350
 // Size: 0xa2
 function set_stat_global(statname, value) {
@@ -721,7 +720,7 @@ function set_stat_global(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbcec9411, Offset: 0x2400
 // Size: 0x7a
 function get_stat_global(statname) {
@@ -753,7 +752,7 @@ function function_927be59d(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5bd83d69, Offset: 0x2588
 // Size: 0x5a
 function set_stat_challenge(statname, value) {
@@ -764,7 +763,7 @@ function set_stat_challenge(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7b5084a0, Offset: 0x25f0
 // Size: 0x3a
 function get_stat_challenge(statname) {
@@ -772,7 +771,7 @@ function get_stat_challenge(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa32fd6fe, Offset: 0x2638
 // Size: 0x3a
 function function_af5584ca(statname) {
@@ -780,7 +779,7 @@ function function_af5584ca(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc5d376d2, Offset: 0x2680
 // Size: 0x5a
 function function_8e071909(statname, value) {
@@ -799,7 +798,7 @@ function function_878e75b7(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb82fdd02, Offset: 0x2748
 // Size: 0xa2
 function function_dad108fa(statname, value) {
@@ -813,7 +812,7 @@ function function_dad108fa(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb96957a9, Offset: 0x27f8
 // Size: 0x82
 function function_42277145(statname, value) {
@@ -825,7 +824,7 @@ function function_42277145(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x55203c6, Offset: 0x2888
 // Size: 0x52
 function function_bb7eedf0(statname, value) {
@@ -834,7 +833,7 @@ function function_bb7eedf0(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf9294f3e, Offset: 0x28e8
 // Size: 0x134
 function function_d0de7686(statname, value, var_4261ca42) {
@@ -861,7 +860,7 @@ function function_d0de7686(statname, value, var_4261ca42) {
 }
 
 // Namespace stats/player_stats
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xfc85ece3, Offset: 0x2a28
 // Size: 0x154
 function function_841e4896(statname, value, var_4261ca42, weaponnamehash) {
@@ -891,7 +890,7 @@ function function_841e4896(statname, value, var_4261ca42, weaponnamehash) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc508d6d5, Offset: 0x2b88
 // Size: 0x54
 function function_a47092b5(statname, value, var_4261ca42) {
@@ -901,7 +900,7 @@ function function_a47092b5(statname, value, var_4261ca42) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf8b273f0, Offset: 0x2be8
 // Size: 0x54
 function function_bcf9602(statname, value, var_4261ca42) {
@@ -911,7 +910,7 @@ function function_bcf9602(statname, value, var_4261ca42) {
 }
 
 // Namespace stats/player_stats
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x508563a2, Offset: 0x2c48
 // Size: 0x13a
 function function_eec52333(weapon, statname, value, classnum, pickedup, forceads) {
@@ -936,7 +935,7 @@ function function_eec52333(weapon, statname, value, classnum, pickedup, forceads
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf56aff42, Offset: 0x2d90
 // Size: 0x3c
 function function_e24eec31(weapon, statname, value) {

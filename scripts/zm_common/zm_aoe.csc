@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\load.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\load;
 
 #namespace zm_aoe;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1e76deac, Offset: 0x2c8
 // Size: 0xb4
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x255f17ee, Offset: 0x388
 // Size: 0x164
 function private postinit() {
@@ -49,7 +48,7 @@ function private postinit() {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b886474, Offset: 0x4f8
 // Size: 0xfc
 function private function_e969e75(aoeid) {
@@ -67,7 +66,7 @@ function private function_e969e75(aoeid) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe49c6cd, Offset: 0x600
 // Size: 0x1d6
 function function_15dea507(aoeid, type, var_5ff737c1) {
@@ -99,7 +98,7 @@ function function_15dea507(aoeid, type, var_5ff737c1) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9844b945, Offset: 0x7e0
 // Size: 0xae
 function function_1b06433(type, var_2badd710) {
@@ -117,7 +116,7 @@ function function_1b06433(type, var_2badd710) {
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xa3607a0c, Offset: 0x898
 // Size: 0x3fc
 function private function_dcc24343(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -187,7 +186,7 @@ function private function_dcc24343(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace zm_aoe/zm_aoe
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x4d5993e5, Offset: 0xca0
 // Size: 0x4a
 function private function_6bcf2a61(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

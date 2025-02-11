@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm.csc;
-#using scripts\zm_common\util.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_zdraw;
 
@@ -27,7 +26,7 @@
     // Checksum 0xdc258f57, Offset: 0x128
     // Size: 0x94
     function private preinit() {
-        setdvar(#"zdraw", "<unknown string>");
+        setdvar(#"zdraw", "<dev string:x38>");
         level.zdraw = spawnstruct();
         function_c9f70832();
         function_99bd35ec();
@@ -107,7 +106,7 @@
         level.zdraw.sides = 10;
         level.zdraw.var_eeef5e89 = (0, 0, 0);
         level.zdraw.var_f78505a1 = 0;
-        level.zdraw.var_d15c03f8 = "<unknown string>";
+        level.zdraw.var_d15c03f8 = "<dev string:x38>";
     }
 
     // Namespace zm_zdraw/zm_zdraw
@@ -121,11 +120,11 @@
             cmd = getdvarstring(#"zdraw");
             if (cmd.size) {
                 function_b36498d3();
-                params = strtok(cmd, "<unknown string>");
+                params = strtok(cmd, "<dev string:x3c>");
                 function_cd7ed6c5(params, 0, 1);
-                setdvar(#"zdraw", "<unknown string>");
+                setdvar(#"zdraw", "<dev string:x38>");
             }
-            wait(0.5);
+            wait 0.5;
         }
     }
 
@@ -143,7 +142,7 @@
                 continue;
             }
             if (is_true(toplevel)) {
-                function_96c207f("<unknown string>" + var_a99ac828[startat]);
+                function_96c207f("<dev string:x43>" + var_a99ac828[startat]);
             }
             return startat;
         }
@@ -237,13 +236,13 @@
     // Checksum 0x964169d8, Offset: 0xed8
     // Size: 0x1d2
     function function_b5cdeec6(var_a99ac828, startat) {
-        level.zdraw.text = "<unknown string>";
+        level.zdraw.text = "<dev string:x38>";
         if (isdefined(var_a99ac828[startat])) {
             var_769ff4d7 = function_7bf700e4(var_a99ac828, startat);
             if (var_769ff4d7 > startat) {
                 startat = var_769ff4d7;
                 level.zdraw.text = level.zdraw.var_d15c03f8;
-                level.zdraw.var_d15c03f8 = "<unknown string>";
+                level.zdraw.var_d15c03f8 = "<dev string:x38>";
             }
         }
         while (isdefined(var_a99ac828[startat])) {
@@ -287,7 +286,7 @@
                     level.zdraw.color = level.zdraw.colors[var_a99ac828[startat]];
                 } else {
                     level.zdraw.color = (1, 1, 1);
-                    function_96c207f("<unknown string>" + var_a99ac828[startat]);
+                    function_96c207f("<dev string:x5c>" + var_a99ac828[startat]);
                 }
                 startat += 1;
             }
@@ -426,7 +425,7 @@
                 level.zdraw.var_eeef5e89 = (level.zdraw.var_f78505a1, level.zdraw.var_eeef5e89[1], level.zdraw.var_eeef5e89[2]);
                 level.zdraw.var_f78505a1 = 0;
             } else {
-                function_96c207f("<unknown string>");
+                function_96c207f("<dev string:x73>");
                 return startat;
             }
             var_769ff4d7 = revive_getdvar(var_a99ac828, startat);
@@ -435,7 +434,7 @@
                 level.zdraw.var_eeef5e89 = (level.zdraw.var_eeef5e89[0], level.zdraw.var_f78505a1, level.zdraw.var_eeef5e89[2]);
                 level.zdraw.var_f78505a1 = 0;
             } else {
-                function_96c207f("<unknown string>");
+                function_96c207f("<dev string:x73>");
                 return startat;
             }
             var_769ff4d7 = revive_getdvar(var_a99ac828, startat);
@@ -444,7 +443,7 @@
                 level.zdraw.var_eeef5e89 = (level.zdraw.var_eeef5e89[0], level.zdraw.var_eeef5e89[1], level.zdraw.var_f78505a1);
                 level.zdraw.var_f78505a1 = 0;
             } else {
-                function_96c207f("<unknown string>");
+                function_96c207f("<dev string:x73>");
                 return startat;
             }
         }
@@ -482,7 +481,7 @@
     // Checksum 0x7b33a272, Offset: 0x1a70
     // Size: 0x34
     function function_96c207f(msg) {
-        println("<unknown string>" + msg);
+        println("<dev string:x99>" + msg);
     }
 
 #/

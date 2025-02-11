@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flowgraph\flowgraph_core.csc;
+#using scripts\core_common\flowgraph\flowgraph_core;
 
 #namespace flowgraph_trigger;
 

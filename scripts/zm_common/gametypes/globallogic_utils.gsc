@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\gametypes\hostmigration.gsc;
-#using scripts\zm_common\gametypes\globallogic_score.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\gametypes\globallogic_score;
+#using scripts\zm_common\gametypes\hostmigration;
 
 #namespace globallogic_utils;
 
@@ -13,12 +12,12 @@
 function testshock() {
     self endon(#"death", #"disconnect");
     for (;;) {
-        wait(3);
+        wait 3;
         numshots = randomint(6);
         for (i = 0; i < numshots; i++) {
             iprintlnbold(numshots);
             self shellshock(#"frag_grenade_mp", 0.2);
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
@@ -51,7 +50,7 @@ function timeuntilroundend() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19f3aecf, Offset: 0x270
 // Size: 0x4c
 function gettimeremaining() {
@@ -62,7 +61,7 @@ function gettimeremaining() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x132d68f9, Offset: 0x2c8
 // Size: 0x44
 function registerpostroundevent(eventfunc) {
@@ -110,12 +109,12 @@ function getvalueinrange(value, minvalue, maxvalue) {
         for (i = 0; i < numplayers - 1; i++) {
             if (isdefined(level.placement[#"all"][i]) && isdefined(level.placement[#"all"][i + 1])) {
                 if (level.placement[#"all"][i].score < level.placement[#"all"][i + 1].score) {
-                    println("<unknown string>");
+                    println("<dev string:x38>");
                     for (i = 0; i < numplayers; i++) {
                         player = level.placement[#"all"][i];
-                        println("<unknown string>" + i + "<unknown string>" + player.name + "<unknown string>" + player.score);
+                        println("<dev string:x4e>" + i + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.score);
                     }
-                    assertmsg("<unknown string>");
+                    assertmsg("<dev string:x60>");
                     break;
                 }
             }
@@ -125,7 +124,7 @@ function getvalueinrange(value, minvalue, maxvalue) {
 #/
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf9ae564, Offset: 0x588
 // Size: 0x22
 function isvalidclass(vclass) {
@@ -144,16 +143,16 @@ function playtickingsound(gametype_tick_sound) {
         self playsound(gametype_tick_sound);
         if (time > 10) {
             time -= 1;
-            wait(1);
+            wait 1;
         } else if (time > 4) {
             time -= 0.5;
-            wait(0.5);
+            wait 0.5;
         } else if (time > 1) {
             time -= 0.4;
-            wait(0.4);
+            wait 0.4;
         } else {
             time -= 0.3;
-            wait(0.3);
+            wait 0.3;
         }
         hostmigration::waittillhostmigrationdone();
     }
@@ -168,7 +167,7 @@ function stoptickingsound() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x88c8fe4, Offset: 0x6f8
 // Size: 0xec
 function gametimer() {
@@ -186,12 +185,12 @@ function gametimer() {
             game.timepassed += gettime() - prevtime;
         }
         prevtime = gettime();
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe88906a9, Offset: 0x7f0
 // Size: 0x66
 function gettimepassed() {
@@ -229,7 +228,7 @@ function resumetimer() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf88daf1e, Offset: 0x8e8
 // Size: 0x9e
 function getscoreremaining(team) {
@@ -242,7 +241,7 @@ function getscoreremaining(team) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca6985f5, Offset: 0x990
 // Size: 0xea
 function getscoreperminute(team) {
@@ -257,7 +256,7 @@ function getscoreperminute(team) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x71eb87c5, Offset: 0xa88
 // Size: 0x96
 function getestimatedtimeuntilscorelimit(team) {
@@ -277,18 +276,18 @@ function getestimatedtimeuntilscorelimit(team) {
 function rumbler() {
     self endon(#"disconnect");
     while (true) {
-        wait(0.1);
+        wait 0.1;
         self playrumbleonentity("damage_heavy");
     }
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4722de7a, Offset: 0xb78
 // Size: 0x24
 function waitfortimeornotify(time, notifyname) {
     self endon(notifyname);
-    wait(time);
+    wait time;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -297,10 +296,10 @@ function waitfortimeornotify(time, notifyname) {
 // Size: 0x60
 function waitfortimeornotifynoartillery(time, notifyname) {
     self endon(notifyname);
-    wait(time);
+    wait time;
     while (isdefined(level.artilleryinprogress)) {
         assert(level.artilleryinprogress);
-        wait(0.25);
+        wait 0.25;
     }
 }
 
@@ -345,23 +344,23 @@ function gethitlocheight(shitloc) {
     // Checksum 0xb66ad44c, Offset: 0xd80
     // Size: 0x5a
     function debugline(start, end) {
-                for (i = 0; i < 50; i++) {
+        for (i = 0; i < 50; i++) {
             line(start, end);
             waitframe(1);
         }
     }
 
     // Namespace globallogic_utils/globallogic_utils
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x21da9363, Offset: 0xde8
     // Size: 0x10c
     function logteamwinstring(wintype, winner) {
         log_string = wintype;
         if (isdefined(winner)) {
-            log_string = log_string + "<unknown string>" + winner;
+            log_string = log_string + "<dev string:x8b>" + winner;
         }
         foreach (team, str_team in level.teams) {
-            log_string = log_string + "<unknown string>" + str_team + "<unknown string>" + game.stat[#"teamscores"][team];
+            log_string = log_string + "<dev string:x96>" + str_team + "<dev string:x5a>" + game.stat[#"teamscores"][team];
         }
         print(log_string);
     }

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\scene_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
 
 #namespace mp_nuketown6;
 
@@ -27,7 +26,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_nuketown6/mp_nuketown6
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3d569c30, Offset: 0x2d8
 // Size: 0xb4
 function on_gameplay_started(*localclientnum) {
@@ -42,7 +41,7 @@ function on_gameplay_started(*localclientnum) {
 }
 
 // Namespace mp_nuketown6/mp_nuketown6
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf7519b6f, Offset: 0x398
 // Size: 0x5c
 function init_clientfields() {
@@ -50,7 +49,7 @@ function init_clientfields() {
 }
 
 // Namespace mp_nuketown6/mp_nuketown6
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x835c32e6, Offset: 0x400
 // Size: 0x108
 function function_b02d88a3() {
@@ -65,7 +64,7 @@ function function_b02d88a3() {
 }
 
 // Namespace mp_nuketown6/mp_nuketown6
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1c9aff89, Offset: 0x510
 // Size: 0x350
 function function_a6101b7() {
@@ -100,7 +99,7 @@ function function_a6101b7() {
 }
 
 // Namespace mp_nuketown6/mp_nuketown6
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdcf4878b, Offset: 0x868
 // Size: 0xb4
 function function_6b8c4c36(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

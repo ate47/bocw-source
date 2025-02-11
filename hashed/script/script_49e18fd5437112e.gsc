@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_c8d806d2487b617;
 #using script_152c3f4ffef9e588;
+#using script_c8d806d2487b617;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
 
 #namespace namespace_2b1568cc;
 

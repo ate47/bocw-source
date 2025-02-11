@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\animation_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace clientfaceanim;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe441b514, Offset: 0x100
 // Size: 0x8c
 function main() {
@@ -27,7 +26,7 @@ function main() {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6f00657b, Offset: 0x198
 // Size: 0x24
 function private on_localclient_connect(localclientnum) {
@@ -35,7 +34,7 @@ function private on_localclient_connect(localclientnum) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd6e1a714, Offset: 0x1c8
 // Size: 0x2c
 function private on_player_spawned(*localclientnum) {
@@ -43,7 +42,7 @@ function private on_player_spawned(*localclientnum) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa03fb2f7, Offset: 0x200
 // Size: 0xda
 function private on_player_shutdown(localclientnum) {
@@ -68,7 +67,7 @@ function private on_player_shutdown(localclientnum) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x805843ef, Offset: 0x2e8
 // Size: 0x380
 function buildandvalidatefacialanimationlist(localclientnum) {
@@ -86,13 +85,13 @@ function buildandvalidatefacialanimationlist(localclientnum) {
         level.__clientfacialanimationslist[#"wallrunning"] = array(#"mp_t8_face_hero_wall_run_1");
         deathanims = level.__clientfacialanimationslist[#"death"];
         foreach (deathanim in deathanims) {
-            assert(!isanimlooping(localclientnum, deathanim), "<unknown string>" + deathanim + "<unknown string>");
+            assert(!isanimlooping(localclientnum, deathanim), "<dev string:x38>" + deathanim + "<dev string:x61>");
         }
     }
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcba36377, Offset: 0x670
 // Size: 0x138
 function private facialanimationthink_getwaittime(localclientnum) {
@@ -119,7 +118,7 @@ function private facialanimationthink_getwaittime(localclientnum) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa3b46a6b, Offset: 0x7b0
 // Size: 0x290
 function private function_26ff990a(local_client_num) {
@@ -163,7 +162,7 @@ function private function_26ff990a(local_client_num) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x59f6267b, Offset: 0xa48
 // Size: 0x52
 function private update_players(local_client_num) {
@@ -173,12 +172,12 @@ function private update_players(local_client_num) {
             waitframe(1);
             continue;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x40dfca2, Offset: 0xaa8
 // Size: 0x2f6
 function private updatefacialanimforplayer(localclientnum, player) {
@@ -228,7 +227,7 @@ function private updatefacialanimforplayer(localclientnum, player) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x15f28cd1, Offset: 0xda8
 // Size: 0x7c
 function private applynewfaceanim(localclientnum, animation) {
@@ -240,7 +239,7 @@ function private applynewfaceanim(localclientnum, animation) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x421231ca, Offset: 0xe30
 // Size: 0xbc
 function private applydeathanim(localclientnum) {
@@ -254,7 +253,7 @@ function private applydeathanim(localclientnum) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb300445c, Offset: 0xef8
 // Size: 0x34
 function private deathanimshutdown(*notifystring, *param3) {
@@ -262,7 +261,7 @@ function private deathanimshutdown(*notifystring, *param3) {
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3f81c33b, Offset: 0xf38
 // Size: 0x5e
 function private clearallfacialanims(localclientnum) {

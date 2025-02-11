@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_heavy_helicopter;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7d2e1a7b, Offset: 0x160
 // Size: 0xc4
 function private preinit(*localclientnum) {
@@ -26,7 +25,7 @@ function private preinit(*localclientnum) {
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x14970cd2, Offset: 0x230
 // Size: 0x1a
 function private function_8220feb0(*localclientnum) {
@@ -34,7 +33,7 @@ function private function_8220feb0(*localclientnum) {
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8d6ad2ba, Offset: 0x258
 // Size: 0xcc
 function function_44ad5e3e(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -50,7 +49,7 @@ function function_44ad5e3e(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc9933e5a, Offset: 0x330
 // Size: 0x112
 function hind_compass_icon(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

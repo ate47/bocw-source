@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace killstreak_hacking;
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xcfc97866, Offset: 0xd8
 // Size: 0x172
 function enable_hacking(*killstreakname, prehackfunction, posthackfunction) {
@@ -42,7 +41,7 @@ function disable_hacking() {
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19678552, Offset: 0x280
 // Size: 0x5c
 function hackerfx() {
@@ -53,7 +52,7 @@ function hackerfx() {
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa2a6d223, Offset: 0x2e8
 // Size: 0x5c
 function hackerloopfx() {
@@ -64,7 +63,7 @@ function hackerloopfx() {
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x190f1fad, Offset: 0x350
 // Size: 0x19c
 function private _hacked_callback(hacker) {
@@ -105,21 +104,21 @@ function override_hacked_killstreak_reference(killstreakref) {
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb0caa34a, Offset: 0x528
 // Size: 0x9a
 function get_hacked_timeout_duration_ms() {
     killstreak = self;
     timeout = killstreak killstreak_bundles::get_hack_timeout();
     if (!isdefined(timeout) || timeout <= 0) {
-        assertmsg("<unknown string>" + killstreak.killstreaktype + "<unknown string>");
+        assertmsg("<dev string:x38>" + killstreak.killstreaktype + "<dev string:x63>");
         return;
     }
     return int(timeout * 1000);
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdc202ea0, Offset: 0x5d0
 // Size: 0x5a
 function set_vehicle_drivable_time_starting_now(killstreak, duration_ms = -1) {
@@ -130,7 +129,7 @@ function set_vehicle_drivable_time_starting_now(killstreak, duration_ms = -1) {
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3e2756b3, Offset: 0x638
 // Size: 0xdc
 function _update_health(hacker) {
@@ -148,7 +147,7 @@ function _update_health(hacker) {
         return;
     }
     /#
-        hacker iprintlnbold("<unknown string>");
+        hacker iprintlnbold("<dev string:x9d>");
     #/
 }
 
@@ -171,12 +170,12 @@ function _update_health(hacker) {
         killstreakentity = self;
         killstreakentity notify(#"killstreak_switch_team_singleton");
         killstreakentity endon(#"killstreak_switch_team_singleton", #"death");
-        setdvar(#"scr_killstreak_switch_team", "<unknown string>");
+        setdvar(#"scr_killstreak_switch_team", "<dev string:xc7>");
         while (true) {
-            wait(0.5);
+            wait 0.5;
             devgui_int = getdvarint(#"scr_killstreak_switch_team", 0);
             if (devgui_int != 0) {
-                team = "<unknown string>";
+                team = "<dev string:xcb>";
                 if (isdefined(level.getenemyteam) && isdefined(owner) && isdefined(owner.team)) {
                     team = [[ level.getenemyteam ]](owner.team);
                 }
@@ -184,20 +183,20 @@ function _update_health(hacker) {
                     player = [[ level.devongetormakebot ]](team);
                 }
                 if (!isdefined(player)) {
-                    println("<unknown string>");
-                    wait(1);
+                    println("<dev string:xd9>");
+                    wait 1;
                     continue;
                 }
                 if (!isdefined(killstreakentity.killstreak_hackedcallback)) {
                     /#
-                        iprintlnbold("<unknown string>");
+                        iprintlnbold("<dev string:xf6>");
                     #/
                     return;
                 }
                 killstreakentity notify(#"killstreak_hacked", {#hacker:player});
                 killstreakentity.previouslyhacked = 1;
                 killstreakentity [[ killstreakentity.killstreak_hackedcallback ]](player);
-                wait(0.5);
+                wait 0.5;
                 setdvar(#"scr_killstreak_switch_team", 0);
                 return;
             }

@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace damage;
 
 // Namespace damage/damage
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x36328cb8, Offset: 0xa0
 // Size: 0x3c0
 function friendlyfirecheck(owner, attacker, forcedfriendlyfirerule) {

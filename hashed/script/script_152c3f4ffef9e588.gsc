@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_c8d806d2487b617;
 #using script_1f41849126bfc83d;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_26187575f84f8d07;
-#using scripts\core_common\perks.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_c8d806d2487b617;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace radiation;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace radiation/radiation
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcb217c3e, Offset: 0x160
 // Size: 0x9c
 function private preinit() {
@@ -34,16 +33,16 @@ function private preinit() {
 }
 
 // Namespace radiation/radiation
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x40bd8366, Offset: 0x208
 // Size: 0xf6
 function private function_3c3e40b6() {
     if (!isdefined(level.radiation)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         return;
     }
     if (level.radiation.levels.size <= 0) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x6f>");
         return;
     }
     self.radiation = {};
@@ -56,7 +55,7 @@ function private function_3c3e40b6() {
 }
 
 // Namespace radiation/radiation
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x51449809, Offset: 0x308
 // Size: 0x5c
 function private _on_player_spawned() {
@@ -68,7 +67,7 @@ function private _on_player_spawned() {
 }
 
 // Namespace radiation/radiation
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdd0c1034, Offset: 0x370
 // Size: 0x6c
 function private function_9dece272(*params) {
@@ -80,7 +79,7 @@ function private function_9dece272(*params) {
 }
 
 // Namespace radiation/radiation
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x96129e80, Offset: 0x3e8
 // Size: 0x4e
 function function_c9c6dda1(player) {
@@ -92,7 +91,7 @@ function function_c9c6dda1(player) {
 }
 
 // Namespace radiation/radiation
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x48d7a57c, Offset: 0x440
 // Size: 0x79e
 function private function_1e3ac913() {
@@ -197,7 +196,7 @@ function private function_1e3ac913() {
 }
 
 // Namespace radiation/radiation
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd52928f6, Offset: 0xbe8
 // Size: 0x96
 function function_9b065f90() {
@@ -210,23 +209,23 @@ function function_9b065f90() {
 }
 
 // Namespace radiation/radiation
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef187976, Offset: 0xc88
 // Size: 0x2d4
 function function_6ade1bbf(timedelay) {
     self endon(#"death", #"disconnect");
     level endon(#"game_ended");
-    wait(timedelay);
+    wait timedelay;
     if (!isdefined(self.radiation.var_32adf91d)) {
         return;
     }
     if (self.radiation.var_32adf91d == level.var_4fdf11d8) {
-        namespace_6615ea91::function_59621e3c(self, #"dot");
+        radiation_ui::function_59621e3c(self, #"dot");
     }
     if (self.radiation.var_32adf91d >= 2) {
         self.heal.var_c8777194 = 1;
         self.n_regen_delay = 9;
-        namespace_6615ea91::function_59621e3c(self, #"hash_53d8a06b13ec49d9");
+        radiation_ui::function_59621e3c(self, #"hash_53d8a06b13ec49d9");
     } else {
         self.n_regen_delay = 1;
     }
@@ -243,7 +242,7 @@ function function_6ade1bbf(timedelay) {
         self perks::perk_setperk(#"specialty_forwardspawninteract");
         self perks::perk_setperk(#"specialty_slide");
         self perks::perk_setperk(#"specialty_sprintheal");
-        namespace_6615ea91::function_59621e3c(self, #"disable_perks");
+        radiation_ui::function_59621e3c(self, #"disable_perks");
         return;
     }
     if (isdefined(level.var_eada15e7)) {
@@ -252,15 +251,15 @@ function function_6ade1bbf(timedelay) {
 }
 
 // Namespace radiation/radiation
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe71b2794, Offset: 0xf68
 // Size: 0xb4
 function function_3c1f8280() {
-    namespace_6615ea91::function_137e7814(self, self.radiation.var_32adf91d);
+    radiation_ui::function_137e7814(self, self.radiation.var_32adf91d);
     var_60ece81c = level.radiation.levels[self.radiation.var_32adf91d].maxhealth;
     percenthealth = self.radiation.var_abd7d46a / var_60ece81c;
-    namespace_6615ea91::function_835a6746(self, percenthealth);
-    namespace_6615ea91::function_36a2c924(self, 1 - percenthealth);
+    radiation_ui::function_835a6746(self, percenthealth);
+    radiation_ui::function_36a2c924(self, 1 - percenthealth);
 }
 
 // Namespace radiation/radiation
@@ -274,7 +273,7 @@ function private function_770871f5(player) {
 }
 
 // Namespace radiation/radiation
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb09f3d2e, Offset: 0x10d0
 // Size: 0x114
 function private function_f68871f2(player, sickness) {
@@ -292,6 +291,6 @@ function private function_f68871f2(player, sickness) {
     }
     player.radiation.sickness[sickness] = undefined;
     arrayremovevalue(player.radiation.sickness, undefined, 1);
-    namespace_6615ea91::function_5cf1c0a(player, sickness);
+    radiation_ui::function_5cf1c0a(player, sickness);
 }
 

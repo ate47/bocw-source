@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_powerups.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_powerups;
 
 #namespace zm_powerup_bonus_points_player;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x91dff6f7, Offset: 0x118
 // Size: 0x64
 function private preinit() {

@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
 
 #namespace perplayer;
 

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_pbr;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb3947d77, Offset: 0x160
 // Size: 0x54
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x182aca3b, Offset: 0x1c0
 // Size: 0x184
 function private function_cc0af45d() {
@@ -45,7 +44,7 @@ function private function_cc0af45d() {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 15, eflags: 0x6 linked
+// Params 15, eflags: 0x4
 // Checksum 0x268d5339, Offset: 0x350
 // Size: 0x234
 function private function_b61c27bb(einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
@@ -71,7 +70,7 @@ function private function_b61c27bb(einflictor, eattacker, idamage, *idflags, sme
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe8d28302, Offset: 0x590
 // Size: 0x84
 function function_b65217f6(params) {
@@ -87,7 +86,7 @@ function function_b65217f6(params) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf2b19884, Offset: 0x620
 // Size: 0x5c
 function function_674b9c5b(params) {
@@ -99,7 +98,7 @@ function function_674b9c5b(params) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9746ccc6, Offset: 0x688
 // Size: 0x84
 function function_f2626e5f(params) {
@@ -116,7 +115,7 @@ function function_f2626e5f(params) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x228224a4, Offset: 0x718
 // Size: 0xb4
 function private function_ca11d4c2(params) {
@@ -133,7 +132,7 @@ function private function_ca11d4c2(params) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x43c4136a, Offset: 0x7d8
 // Size: 0x3c
 function function_eb39313f(player) {
@@ -144,7 +143,7 @@ function function_eb39313f(player) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2be2b8a, Offset: 0x820
 // Size: 0x30
 function function_77fbc7d9(player) {
@@ -155,7 +154,7 @@ function function_77fbc7d9(player) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca23b0d, Offset: 0x858
 // Size: 0x236
 function function_53f7a11f(player) {
@@ -193,7 +192,7 @@ function function_53f7a11f(player) {
 }
 
 // Namespace player_pbr/player_pbr
-// Params 15, eflags: 0x6 linked
+// Params 15, eflags: 0x4
 // Checksum 0x793a969d, Offset: 0xa98
 // Size: 0x104
 function private function_786eff5d(einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {

@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
 #using script_4dc6a9b234b838e1;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_5a359049;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7a722be, Offset: 0x170
 // Size: 0xe4
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfcf15095, Offset: 0x260
 // Size: 0x5c
 function private postinit() {
@@ -50,7 +49,7 @@ function private postinit() {
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdb095530, Offset: 0x2c8
 // Size: 0x18
 function cymbal_monkey_exists() {
@@ -58,7 +57,7 @@ function cymbal_monkey_exists() {
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x683cee73, Offset: 0x2e8
 // Size: 0xda
 function function_c1c47eb6(inflictor, attacker, *damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *boneindex, *modelindex, *surfacetype, *vsurfacenormal) {
@@ -68,7 +67,7 @@ function function_c1c47eb6(inflictor, attacker, *damage, *flags, *meansofdeath, 
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x912261a, Offset: 0x3d0
 // Size: 0xc4
 function function_c58f9108(params) {
@@ -79,7 +78,7 @@ function function_c58f9108(params) {
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1bc57ae, Offset: 0x4a0
 // Size: 0x34
 function function_3fb4ce3b() {

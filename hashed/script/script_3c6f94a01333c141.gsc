@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_b9a55edd207e4ca;
+#using script_1435f3c9fc699e04;
+#using script_335d0650ed05d36d;
 #using script_46192c58ea066d7f;
 #using script_50d0f08de978328d;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_335d0650ed05d36d;
-#using scripts\core_common\item_world.gsc;
-#using script_1435f3c9fc699e04;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_b9a55edd207e4ca;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic_score;
 
 #namespace fireteam_koth;
 

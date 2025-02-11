@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\archetype_catalyst_interface.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\spawner_shared.gsc;
+#using scripts\core_common\ai\archetype_catalyst_interface;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\spawner_shared;
 
 #namespace archetypecatalyst;
 
@@ -21,7 +20,7 @@ function autoexec main() {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x57b8b711, Offset: 0x190
 // Size: 0x9c
 function private registerbehaviorscriptfunctions() {
@@ -31,7 +30,7 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x77e4c2d8, Offset: 0x238
 // Size: 0x24
 function iscatalyst(*entity) {
@@ -39,7 +38,7 @@ function iscatalyst(*entity) {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc676403f, Offset: 0x268
 // Size: 0xbc
 function function_5608540a() {
@@ -55,7 +54,7 @@ function function_5608540a() {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe75e4209, Offset: 0x330
 // Size: 0x4a
 function private function_728127b() {
@@ -65,7 +64,7 @@ function private function_728127b() {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x171d584d, Offset: 0x388
 // Size: 0x16a
 function function_27c82a36(entity, catalyst_type) {
@@ -109,7 +108,7 @@ function function_84c6177b(spawner, catalyst_type, location) {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9f8bdc7a, Offset: 0x5e0
 // Size: 0x1a
 function private function_b7e4069(catalyst_type) {
@@ -117,7 +116,7 @@ function private function_b7e4069(catalyst_type) {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xde316b10, Offset: 0x608
 // Size: 0x2c
 function private function_dc16721f(entity) {
@@ -126,7 +125,7 @@ function private function_dc16721f(entity) {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6c122579, Offset: 0x640
 // Size: 0xb6
 function function_8f9b9d24(catalyst_type, func) {
@@ -144,7 +143,7 @@ function function_8f9b9d24(catalyst_type, func) {
 }
 
 // Namespace archetypecatalyst/archetype_catalyst
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xde350f3e, Offset: 0x700
 // Size: 0x174
 function function_720a0584(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -152,8 +151,8 @@ function function_720a0584(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     mocompduration animmode("normal");
     if (isdefined(mocompduration.traverseendnode)) {
         /#
-            print3d(mocompduration.traversestartnode.origin, "<unknown string>", (1, 0, 0), 1, 1, 60);
-            print3d(mocompduration.traverseendnode.origin, "<unknown string>", (0, 1, 0), 1, 1, 60);
+            print3d(mocompduration.traversestartnode.origin, "<dev string:x38>", (1, 0, 0), 1, 1, 60);
+            print3d(mocompduration.traverseendnode.origin, "<dev string:x38>", (0, 1, 0), 1, 1, 60);
             line(mocompduration.traversestartnode.origin, mocompduration.traverseendnode.origin, (0, 1, 0), 1, 0, 60);
         #/
         mocompduration forceteleport(mocompduration.traverseendnode.origin, mocompduration.traverseendnode.angles, 0);

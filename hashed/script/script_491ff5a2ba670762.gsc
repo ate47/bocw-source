@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
 #using script_7d712f77ab8d0c16;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace spawning;
 
 // Namespace spawning/namespace_863ecef3
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2ee05508, Offset: 0xd8
 // Size: 0x54
 function function_d9deb7d7() {
@@ -24,7 +23,7 @@ function function_d9deb7d7() {
 }
 
 // Namespace spawning/namespace_863ecef3
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9ac3bc06, Offset: 0x138
 // Size: 0x2f8
 function function_76a18acc(var_8fb24641) {
@@ -63,7 +62,7 @@ function function_76a18acc(var_8fb24641) {
 }
 
 // Namespace spawning/namespace_863ecef3
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9339192b, Offset: 0x438
 // Size: 0x11a
 function function_fbff01ea() {
@@ -85,7 +84,7 @@ function function_fbff01ea() {
 }
 
 // Namespace spawning/namespace_863ecef3
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8f9c3853, Offset: 0x560
 // Size: 0x19c
 function function_9b36f6dc(spawnfilter, team) {
@@ -115,7 +114,7 @@ function function_9b36f6dc(spawnfilter, team) {
 }
 
 // Namespace spawning/namespace_863ecef3
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2ed62f5, Offset: 0x708
 // Size: 0x304
 function function_245cb231(var_8fb24641, objectiveid) {

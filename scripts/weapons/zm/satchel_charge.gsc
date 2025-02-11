@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
 #using script_4dc6a9b234b838e1;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\weapons\satchel_charge.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\satchel_charge;
+#using scripts\zm_common\zm_weapons;
 
 #namespace satchel_charge;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb78d7a9c, Offset: 0x110
 // Size: 0x94
 function private preinit() {
@@ -31,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x7d23899e, Offset: 0x1b0
 // Size: 0xda
 function function_558ac85a(inflictor, attacker, *damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *boneindex, *modelindex, *surfacetype, *vsurfacenormal) {
@@ -41,7 +40,7 @@ function function_558ac85a(inflictor, attacker, *damage, *flags, *meansofdeath, 
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x272c6bfd, Offset: 0x298
 // Size: 0xc4
 function function_7c8d1738(params) {
@@ -52,7 +51,7 @@ function function_7c8d1738(params) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4755ead, Offset: 0x368
 // Size: 0x34
 function function_3fb4ce3b() {

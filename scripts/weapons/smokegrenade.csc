@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\player\player_stats.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\sound_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\util_shared;
 
 #namespace smokegrenade;
 
 // Namespace smokegrenade/smokegrenade
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8c54b887, Offset: 0x168
 // Size: 0x1fc
 function init_shared() {
@@ -26,7 +25,7 @@ function init_shared() {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8b02ab51, Offset: 0x370
 // Size: 0x108
 function on_local_player_spawned(local_client_num) {
@@ -41,7 +40,7 @@ function on_local_player_spawned(local_client_num) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf0a66031, Offset: 0x480
 // Size: 0x4c
 function private on_end_game(localclientnum) {
@@ -51,7 +50,7 @@ function private on_end_game(localclientnum) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x16e3e7a2, Offset: 0x4d8
 // Size: 0x9e
 function track_grenades(*local_client_num) {
@@ -63,7 +62,7 @@ function track_grenades(*local_client_num) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x25f7b2de, Offset: 0x580
 // Size: 0xae
 function function_709fad19() {
@@ -76,7 +75,7 @@ function function_709fad19() {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc29fe50, Offset: 0x638
 // Size: 0x260
 function monitor_smoke(local_client_num) {
@@ -112,7 +111,7 @@ function monitor_smoke(local_client_num) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa672a974, Offset: 0x8a0
 // Size: 0x148
 function function_ffbaa2ce(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -131,7 +130,7 @@ function function_ffbaa2ce(local_client_num, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x371f34d9, Offset: 0x9f0
 // Size: 0x1dc
 function function_e69d0e4d(local_client_num) {
@@ -152,12 +151,12 @@ function function_e69d0e4d(local_client_num) {
             }
             var_e098466f = var_7bf0773f;
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa74f67c3, Offset: 0xbd8
 // Size: 0x1f0
 function function_62ec0142(local_client_num, *bundle) {
@@ -197,7 +196,7 @@ function function_62ec0142(local_client_num, *bundle) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc8485e6a, Offset: 0xdd0
 // Size: 0x180
 function function_28db726(local_client_num, *bundle) {
@@ -229,7 +228,7 @@ function function_28db726(local_client_num, *bundle) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x90b857c7, Offset: 0xf58
 // Size: 0x128
 function vehicle_transition(local_client_num, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -245,7 +244,7 @@ function vehicle_transition(local_client_num, *oldval, *newval, *bnewent, *binit
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe6cf0916, Offset: 0x1088
 // Size: 0x7c
 function function_4fc900e1(local_client_num) {
@@ -254,7 +253,7 @@ function function_4fc900e1(local_client_num) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa2453f21, Offset: 0x1110
 // Size: 0x9c
 function insmoke(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -267,7 +266,7 @@ function insmoke(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fi
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x4f25b740, Offset: 0x11b8
 // Size: 0x11c
 function private function_f9dcc967(*local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

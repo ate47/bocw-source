@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace userspawnselection;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x48f76181, Offset: 0x1e8
 // Size: 0x54
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8781c65a, Offset: 0x248
 // Size: 0x304
 function setupclientfields() {
@@ -37,13 +36,13 @@ function setupclientfields() {
         clientfield::function_5b7d846d(basename + "useStatus", #"hash_5e10ae8c08eeb04b", [hash(isdefined(index) ? "" + index : ""), #"usestatus"], 1, 1, "int", undefined, 0, 1);
         clientfield::function_5b7d846d(basename + "team", #"hash_5e10ae8c08eeb04b", [hash(isdefined(index) ? "" + index : ""), #"team"], 1, 2, "int", undefined, 0, 1);
     }
-    clientfield::register_clientuimodel("hudItems.showSpawnSelect", #"hash_6f4b11a0bee9b73d", #"showspawnselect", 1, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.killcamActive", #"hash_6f4b11a0bee9b73d", #"killcamactive", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.showSpawnSelect", #"hud_items", #"showspawnselect", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.killcamActive", #"hud_items", #"killcamactive", 1, 1, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hideautospawnoption", #"hash_5e10ae8c08eeb04b", #"hideautospawnoption", 1, 1, "int", undefined, 0, 0);
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6c00f114, Offset: 0x558
 // Size: 0x1ec
 function private setupstaticmodelfieldsforspawngroup(spawngroup) {
@@ -61,7 +60,7 @@ function private setupstaticmodelfieldsforspawngroup(spawngroup) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x91cd5ea6, Offset: 0x750
 // Size: 0x128
 function function_bc7ec9a1(spawngroup) {
@@ -79,7 +78,7 @@ function function_bc7ec9a1(spawngroup) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd278a38d, Offset: 0x880
 // Size: 0x6c
 function setupspawngroup(spawngroup) {
@@ -91,7 +90,7 @@ function setupspawngroup(spawngroup) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x314b29a9, Offset: 0x8f8
 // Size: 0xe8
 function setupspawngroups(*localclientnum) {

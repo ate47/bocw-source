@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\killstreaks\mp\killstreak_weapons.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\mp\killstreakrules.gsc;
-#using scripts\killstreaks\killstreak_vehicle.gsc;
 #using script_20b49c655167d21c;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreak_detect.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using script_4721de209091b1a6;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
 #using script_396f7d71538c9677;
+#using script_4721de209091b1a6;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreak_detect;
+#using scripts\killstreaks\killstreak_vehicle;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\mp\killstreak_weapons;
+#using scripts\killstreaks\mp\killstreakrules;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\player\player_utils;
 
 #namespace killstreaks;
 
@@ -29,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbb721b70, Offset: 0x240
 // Size: 0xbc
 function private preinit() {
@@ -43,7 +42,7 @@ function private preinit() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x800bb927, Offset: 0x308
 // Size: 0x15c
 function init() {
@@ -62,13 +61,13 @@ function init() {
     /#
         level.killstreak_init_end_time = getmillisecondsraw();
         elapsed_time = level.killstreak_init_end_time - level.killstreak_init_start_time;
-        println("<unknown string>" + elapsed_time + "<unknown string>");
+        println("<dev string:x38>" + elapsed_time + "<dev string:x59>");
         level thread killstreak_debug_think();
     #/
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x28aab763, Offset: 0x470
 // Size: 0x194
 function private function_f1707039() {
@@ -89,7 +88,7 @@ function private function_f1707039() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2cb13cff, Offset: 0x610
 // Size: 0x58
 function private function_1f7e617a() {
@@ -101,7 +100,7 @@ function private function_1f7e617a() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd90a9b79, Offset: 0x670
 // Size: 0x3e6
 function private on_menu_response(eventstruct) {
@@ -160,7 +159,7 @@ function private on_menu_response(eventstruct) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x37173cab, Offset: 0xa60
 // Size: 0x18
 function function_3b4959c6() {
@@ -168,7 +167,7 @@ function function_3b4959c6() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x45d502b, Offset: 0xa80
 // Size: 0x4c
 function private function_395f82d0(killstreaktype) {
@@ -176,7 +175,7 @@ function private function_395f82d0(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x1a54ee97, Offset: 0xad8
 // Size: 0x44
 function private function_daabc818(event, player, victim, weapon) {
@@ -184,7 +183,7 @@ function private function_daabc818(event, player, victim, weapon) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdb5b0312, Offset: 0xb28
 // Size: 0x446
 function private function_d3106952() {
@@ -193,13 +192,13 @@ function private function_d3106952() {
     if (function_3b4959c6()) {
         return;
     }
-    wait(5);
+    wait 5;
     var_7d46072 = 1;
     var_e9414fa = 0;
     while (!level.gameended) {
         players = getplayers();
         if (players.size == 0) {
-            wait(1);
+            wait 1;
             continue;
         }
         foreach (player in players) {

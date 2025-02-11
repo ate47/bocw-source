@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_ping.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_ping;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_gold_pap_quest;
 
 // Namespace zm_gold_pap_quest/zm_gold_pap_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3274dd86, Offset: 0xf0
 // Size: 0x144
 function init() {
     clientfield::register("world", "" + #"hash_666ad912cb4541f1", 16000, 1, "int", &function_7d467651, 0, 0);
     clientfield::register("world", "" + #"hash_18c31f1201f7c968", 16000, 1, "counter", &function_e4ea3f5f, 0, 0);
-    clientfield::register("world", "" + #"hash_4d477a055c04e499", 16000, 1, "counter", &function_b35747a, 0, 0);
+    clientfield::register("world", "" + #"teleporter_minimap", 16000, 1, "counter", &teleporter_minimap, 0, 0);
     zm_ping::function_5ae4a10c(undefined, "gold_teleporter", #"hash_4046a68ee9d717fc", undefined, #"hash_6416821107fc95b2");
 }
 
 // Namespace zm_gold_pap_quest/zm_gold_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd4a1619d, Offset: 0x240
 // Size: 0x26a
 function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -44,7 +43,7 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_gold_pap_quest/zm_gold_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb7027a8d, Offset: 0x4b8
 // Size: 0xfe
 function function_e4ea3f5f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -56,10 +55,10 @@ function function_e4ea3f5f(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_gold_pap_quest/zm_gold_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xebc02be7, Offset: 0x5c0
 // Size: 0xf0
-function function_b35747a(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump) {
+function teleporter_minimap(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump) {
     foreach (var_1da0aee8 in getentarray(localclientnum, "gold_teleporter", "targetname")) {
         var_1da0aee8 zm_utility::set_compass_icon(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
     }

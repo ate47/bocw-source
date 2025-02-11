@@ -1,37 +1,36 @@
-// Atian COD Tools GSC CW decompiler test
+#using script_1d4ca739cb476f50;
+#using script_31a4e84bd38b34e2;
 #using script_45af62df1bb6015d;
 #using script_c22b8fa254e64a0;
-#using scripts\weapons\spike_charge.csc;
-#using scripts\weapons\cp\weaponobjects.csc;
-#using scripts\cp_common\skipto.csc;
-#using scripts\cp_common\rotating_object.csc;
-#using scripts\cp_common\oed.csc;
-#using scripts\cp_common\hazard.csc;
-#using scripts\cp_common\global_fx.csc;
-#using scripts\cp_common\ambient.csc;
-#using scripts\core_common\vehicles\driving_fx.csc;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\footsteps_shared.csc;
-#using scripts\core_common\clientfaceanim_shared.csc;
-#using scripts\core_common\audio_shared.csc;
-#using script_31a4e84bd38b34e2;
-#using scripts\core_common\status_effects\status_effects.csc;
-#using scripts\weapons\antipersonnelguidance.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\traps_deployable.csc;
-#using scripts\core_common\turret_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\scene_shared.csc;
-#using script_1d4ca739cb476f50;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\helicopter_sounds_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfaceanim_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\footsteps_shared;
+#using scripts\core_common\helicopter_sounds_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\status_effects\status_effects;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\traps_deployable;
+#using scripts\core_common\turret_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicles\driving_fx;
+#using scripts\cp_common\ambient;
+#using scripts\cp_common\global_fx;
+#using scripts\cp_common\hazard;
+#using scripts\cp_common\oed;
+#using scripts\cp_common\rotating_object;
+#using scripts\cp_common\skipto;
+#using scripts\weapons\antipersonnelguidance;
+#using scripts\weapons\cp\weaponobjects;
+#using scripts\weapons\spike_charge;
 
 #namespace load;
 
 // Namespace load/load
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf5843fa7, Offset: 0x180
 // Size: 0x4e
 function levelnotifyhandler(clientnum, state, *oldstate) {
@@ -50,11 +49,11 @@ function autoexec function_aeb1baea() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8c3dc02, Offset: 0x220
 // Size: 0x174
 function function_5e443ed1() {
-    assert(isdefined(level.first_frame), "<unknown string>");
+    assert(isdefined(level.first_frame), "<dev string:x38>");
     if (is_true(level._loadstarted)) {
         return;
     }
@@ -71,7 +70,7 @@ function function_5e443ed1() {
 }
 
 // Namespace load/load
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcfdacf2e, Offset: 0x3a0
 // Size: 0x2c
 function basic_player_connect(localclientnum) {
@@ -79,18 +78,18 @@ function basic_player_connect(localclientnum) {
 }
 
 // Namespace load/load
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xea359673, Offset: 0x3d8
 // Size: 0x7c
 function on_player_spawned(localclientnum) {
-    level flag::set(#"hash_31f7d14ea61c9b88");
-    level flag::clear(#"hash_31f7d14ea61c9b88");
+    level flag::set(#"player_spawning");
+    level flag::clear(#"player_spawning");
     self thread force_update_player_clientfields(localclientnum);
     self function_b181fc06(localclientnum);
 }
 
 // Namespace load/load
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x52c24a9c, Offset: 0x460
 // Size: 0x5c
 function force_update_player_clientfields(localclientnum) {
@@ -102,7 +101,7 @@ function force_update_player_clientfields(localclientnum) {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x4c8
 // Size: 0x4
 function register_clientfields() {

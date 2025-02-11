@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\killstreaks\killstreak_hacking.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\airsupport.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\airsupport;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreak_hacking;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\teams\teams;
+#using scripts\mp_common\util;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace recon_plane;
 
@@ -33,7 +32,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa7f9bdae, Offset: 0x2d8
 // Size: 0x2d4
 function private preinit() {
@@ -67,7 +66,7 @@ function private preinit() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x85198149, Offset: 0x5b8
 // Size: 0x54
 function onplayerconnect() {
@@ -79,7 +78,7 @@ function onplayerconnect() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x10d249a9, Offset: 0x618
 // Size: 0x2c
 function onplayerspawned(*local_client_num) {
@@ -89,7 +88,7 @@ function onplayerspawned(*local_client_num) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x898c116a, Offset: 0x650
 // Size: 0xc8
 function function_769ed4e8(ent) {
@@ -102,7 +101,7 @@ function function_769ed4e8(ent) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ef2ceda, Offset: 0x720
 // Size: 0x32
 function function_e7ed088a() {
@@ -110,7 +109,7 @@ function function_e7ed088a() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x249aa05d, Offset: 0x760
 // Size: 0x11c
 function function_5604e453(enemy) {
@@ -129,7 +128,7 @@ function function_5604e453(enemy) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xebc178a0, Offset: 0x888
 // Size: 0xa6
 function function_ed29480b(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
@@ -142,7 +141,7 @@ function function_ed29480b(attacker, victim, *weapon, *attackerweapon, *meansofd
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80c08e3b, Offset: 0x938
 // Size: 0xda
 function function_4dc67281() {
@@ -162,7 +161,7 @@ function function_4dc67281() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb47186a8, Offset: 0xa20
 // Size: 0x34
 function function_c131324d(params) {
@@ -170,7 +169,7 @@ function function_c131324d(params) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe7e79f53, Offset: 0xa60
 // Size: 0x194
 function fx_flesh_hit_neck_fatal(params) {
@@ -180,7 +179,7 @@ function fx_flesh_hit_neck_fatal(params) {
                 scoregiven = scoreevents::processscoreevent(#"hash_2bca2bdbbd783d4e", player, undefined, undefined);
                 if (isdefined(scoregiven)) {
                     player stats::function_8fb23f94("recon_plane", #"assists", 1);
-                    player stats::function_b04e7184("recon_plane", #"hash_54b8c7eda311cba4");
+                    player stats::function_b04e7184("recon_plane", #"best_assists");
                     if (isdefined(level.var_b7bc3c75.var_e2298731)) {
                         player [[ level.var_b7bc3c75.var_e2298731 ]]();
                     }
@@ -191,7 +190,7 @@ function fx_flesh_hit_neck_fatal(params) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x567efc7c, Offset: 0xc00
 // Size: 0x750
 function function_732dcb56(killstreaktype) {
@@ -243,7 +242,7 @@ function function_732dcb56(killstreaktype) {
     recon_plane.killstreakdamagemodifier = &killstreakdamagemodifier;
     if (isdefined(bundle.var_6dfc61a2) && bundle.var_6dfc61a2 > 0) {
         recon_plane.extra_low_health = bundle.var_6dfc61a2;
-        recon_plane.extra_low_health_callback = &function_71ad74a1;
+        recon_plane.extra_low_health_callback = &onextralowhealth;
     }
     recon_plane.numflares = 1;
     recon_plane helicopter::create_flare_ent((0, 0, -25));
@@ -266,23 +265,23 @@ function function_732dcb56(killstreaktype) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbab989c5, Offset: 0x1358
 // Size: 0x56c
 function function_98e60435(var_d44b8c3e, bundle) {
-    var_6e3ae51a = randomfloatrange(isdefined(level.var_84f1b20f) ? level.var_84f1b20f : 90, isdefined(level.var_26837e34) ? level.var_26837e34 : 180);
-    startangles = (0, var_6e3ae51a, 0);
+    travelangle = randomfloatrange(isdefined(level.var_84f1b20f) ? level.var_84f1b20f : 90, isdefined(level.var_26837e34) ? level.var_26837e34 : 180);
+    startangles = (0, travelangle, 0);
     startforward = anglestoforward(startangles);
     if (sessionmodeiswarzonegame()) {
-        var_12306a94 = 25000;
+        travelradius = 25000;
         zoffset = var_d44b8c3e[2] + 9500;
     } else {
-        var_12306a94 = airsupport::getmaxmapwidth() * 1.5;
+        travelradius = airsupport::getmaxmapwidth() * 1.5;
         zoffset = killstreaks::function_43f4782d() + 9500;
     }
     if (sessionmodeiswarzonegame()) {
         var_51cabd75 = 180 / 30;
-        var_ddd8ddab = var_12306a94 * 2 / (3 - 1);
+        var_ddd8ddab = travelradius * 2 / (3 - 1);
         var_c8e01926 = undefined;
         var_37db735d = [];
         var_51c6fb78 = 0;
@@ -291,7 +290,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
         while (var_51c6fb78 < var_51cabd75) {
             var_59a518e1 = [];
             for (i = 0; i < 3; i++) {
-                position = var_d44b8c3e + vectorscale(forward, -1 * var_12306a94 + var_ddd8ddab * i);
+                position = var_d44b8c3e + vectorscale(forward, -1 * travelradius + var_ddd8ddab * i);
                 if (i == 0) {
                     var_90aa61b = position;
                 }
@@ -307,7 +306,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
                 trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - (0, 0, 5000), 0, undefined);
                 groundheight = trace[#"position"][2];
                 var_6b1fb8d9 = groundheight + (maxheight - groundheight) * bundle.var_ff73e08c;
-                endposition = var_90aa61b + vectorscale(forward, var_12306a94 * 2);
+                endposition = var_90aa61b + vectorscale(forward, travelradius * 2);
                 if (var_35637e22 < 2000) {
                     adjustedpath[#"startposition"] = (var_90aa61b[0], var_90aa61b[1], var_6b1fb8d9);
                     adjustedpath[#"endposition"] = (endposition[0], endposition[1], var_6b1fb8d9);
@@ -330,14 +329,14 @@ function function_98e60435(var_d44b8c3e, bundle) {
             return var_af2fe365;
         }
     }
-    adjustedpath[#"startposition"] = var_d44b8c3e + vectorscale(startforward, -1 * var_12306a94) + (0, 0, zoffset);
-    adjustedpath[#"endposition"] = var_d44b8c3e + vectorscale(startforward, var_12306a94) + (0, 0, zoffset);
+    adjustedpath[#"startposition"] = var_d44b8c3e + vectorscale(startforward, -1 * travelradius) + (0, 0, zoffset);
+    adjustedpath[#"endposition"] = var_d44b8c3e + vectorscale(startforward, travelradius) + (0, 0, zoffset);
     adjustedpath[#"angles"] = startangles;
     return adjustedpath;
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4efdb3d, Offset: 0x18d0
 // Size: 0x1e
 function function_f724cfe4(health) {
@@ -346,7 +345,7 @@ function function_f724cfe4(health) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x59065123, Offset: 0x18f8
 // Size: 0x2c
 function hackedprefunction(*hacker) {
@@ -355,7 +354,7 @@ function hackedprefunction(*hacker) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2f9a6234, Offset: 0x1930
 // Size: 0xb4
 function configureteampost(owner, *ishacked) {
@@ -366,7 +365,7 @@ function configureteampost(owner, *ishacked) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb3086498, Offset: 0x19f0
 // Size: 0x64
 function onlowhealth(*attacker, *weapon) {
@@ -377,10 +376,10 @@ function onlowhealth(*attacker, *weapon) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa1cd441d, Offset: 0x1a60
 // Size: 0x64
-function function_71ad74a1(*attacker, *weapon) {
+function onextralowhealth(*attacker, *weapon) {
     bundle = killstreaks::get_script_bundle("recon_plane");
     if (isdefined(bundle.var_277154f7)) {
         self clientfield::set("recon_plane_damage_fx", 2);
@@ -388,7 +387,7 @@ function function_71ad74a1(*attacker, *weapon) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x231ee1c, Offset: 0x1ad0
 // Size: 0x24
 function onteamchange(*entnum, *event) {
@@ -396,7 +395,7 @@ function onteamchange(*entnum, *event) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bbf1681, Offset: 0x1b00
 // Size: 0x18c
 function ontimeout() {
@@ -406,8 +405,8 @@ function ontimeout() {
     self clientfield::set("recon_plane", 0);
     airsupport::leave(10);
     assert(10 > 3);
-    self util::delay(10 - 3, undefined, &killstreaks::function_3696d106);
-    wait(10 - 1);
+    self util::delay(10 - 3, undefined, &killstreaks::outro_scaling);
+    wait 10 - 1;
     self killstreaks::function_90e951f2();
     waitframe(1);
     if (isdefined(self)) {
@@ -417,7 +416,7 @@ function ontimeout() {
             self.var_23cd2a2f delete();
         }
         profilestop();
-        wait(1);
+        wait 1;
         if (isdefined(self)) {
             arrayremovevalue(level.var_d952ba86, self);
             self delete();
@@ -426,7 +425,7 @@ function ontimeout() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e4ba8aa, Offset: 0x1c98
 // Size: 0x34
 function ontimecheck() {
@@ -434,7 +433,7 @@ function ontimecheck() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x37198f08, Offset: 0x1cd8
 // Size: 0x44
 function function_b16d07ad(attacker, *arg) {
@@ -442,7 +441,7 @@ function function_b16d07ad(attacker, *arg) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x48268dcd, Offset: 0x1d28
 // Size: 0x2e6
 function function_e55922df(attacker, weapon) {
@@ -485,7 +484,7 @@ function function_e55922df(attacker, weapon) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d206158, Offset: 0x2018
 // Size: 0x68
 function function_e6689aef() {
@@ -499,7 +498,7 @@ function function_e6689aef() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6a0ed743, Offset: 0x2088
 // Size: 0x44
 function function_171f5ed8() {
@@ -508,7 +507,7 @@ function function_171f5ed8() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc4bbf45, Offset: 0x20d8
 // Size: 0x168
 function function_cf33d294() {
@@ -532,7 +531,7 @@ function function_cf33d294() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x84af18a6, Offset: 0x2248
 // Size: 0x1b0
 function function_bde85071() {
@@ -555,7 +554,7 @@ function function_bde85071() {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeb0111ee, Offset: 0x2400
 // Size: 0xe6
 function function_65f48f1a(player) {
@@ -569,7 +568,7 @@ function function_65f48f1a(player) {
 }
 
 // Namespace recon_plane/recon_plane
-// Params 12, eflags: 0x2 linked
+// Params 12, eflags: 0x0
 // Checksum 0x3edcce68, Offset: 0x24f0
 // Size: 0x7c
 function killstreakdamagemodifier(damage, *attacker, *direction, *point, smeansofdeath, *tagname, *modelname, *partname, *weapon, *flags, *inflictor, *chargelevel) {

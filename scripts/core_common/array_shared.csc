@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace array;
 
 // Namespace array/array_shared
-// Params 4, eflags: 0x42 linked
+// Params 4, eflags: 0x40 variadic
 // Checksum 0xa42ebb8e, Offset: 0xb0
 // Size: 0x190
 function filter(&array, b_keep_keys, func_filter, ...) {
@@ -68,7 +67,7 @@ function get_touching(a_ents, e_volume) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xab88878c, Offset: 0x3e0
 // Size: 0xe0
 function remove_index(array, index, b_keep_keys) {
@@ -145,12 +144,12 @@ function notify_all(&array, str_notify) {
 }
 
 // Namespace array/array_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x246dfd20, Offset: 0x868
 // Size: 0x164
 function thread_all(&entities, func, arg1, arg2, arg3, arg4, arg5, arg6) {
-    assert(isdefined(entities), "<unknown string>");
-    assert(isdefined(func), "<unknown string>");
+    assert(isdefined(entities), "<dev string:x38>");
+    assert(isdefined(func), "<dev string:x6e>");
     if (isarray(entities)) {
         foreach (ent in entities) {
             if (!isdefined(ent)) {
@@ -168,8 +167,8 @@ function thread_all(&entities, func, arg1, arg2, arg3, arg4, arg5, arg6) {
 // Checksum 0xc53057ba, Offset: 0x9d8
 // Size: 0x14c
 function thread_all_ents(&entities, func, arg1, arg2, arg3, arg4, arg5) {
-    assert(isdefined(entities), "<unknown string>");
-    assert(isdefined(func), "<unknown string>");
+    assert(isdefined(entities), "<dev string:xa0>");
+    assert(isdefined(func), "<dev string:xdb>");
     if (isarray(entities)) {
         foreach (v in entities) {
             util::single_thread(self, func, v, arg1, arg2, arg3, arg4, arg5);
@@ -180,12 +179,12 @@ function thread_all_ents(&entities, func, arg1, arg2, arg3, arg4, arg5) {
 }
 
 // Namespace array/array_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xa3b72b38, Offset: 0xb30
 // Size: 0x15c
 function run_all(&entities, func, arg1, arg2, arg3, arg4, arg5, arg6) {
-    assert(isdefined(entities), "<unknown string>");
-    assert(isdefined(func), "<unknown string>");
+    assert(isdefined(entities), "<dev string:x112>");
+    assert(isdefined(func), "<dev string:x145>");
     if (isarray(entities)) {
         foreach (ent in entities) {
             util::single_func(ent, func, arg1, arg2, arg3, arg4, arg5, arg6);
@@ -212,7 +211,7 @@ function exclude(array, array_exclude) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xcb5ab40a, Offset: 0xd80
 // Size: 0x66
 function add(&array, item, allow_dupes = 1) {
@@ -224,7 +223,7 @@ function add(&array, item, allow_dupes = 1) {
 }
 
 // Namespace array/array_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7bd41219, Offset: 0xdf0
 // Size: 0x118
 function add_sorted(&array, item, allow_dupes = 1, func_compare, var_e19f0739 = 0) {
@@ -241,7 +240,7 @@ function add_sorted(&array, item, allow_dupes = 1, func_compare, var_e19f0739 = 
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x397874ce, Offset: 0xf10
 // Size: 0x154
 function wait_till(&array, notifies, n_timeout) {
@@ -287,7 +286,7 @@ function wait_till_match(&array, str_notify, str_match, n_timeout) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7c8f1cbf, Offset: 0x1200
 // Size: 0x54
 function _waitlogic_match(s_tracker, str_notify, str_match) {
@@ -297,7 +296,7 @@ function _waitlogic_match(s_tracker, str_notify, str_match) {
 }
 
 // Namespace array/array_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x43bbd083, Offset: 0x1260
 // Size: 0x34
 function _waitlogic_death(s_tracker) {
@@ -306,7 +305,7 @@ function _waitlogic_death(s_tracker) {
 }
 
 // Namespace array/array_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf661f85, Offset: 0x12a0
 // Size: 0x40
 function update_waitlogic_tracker(s_tracker) {
@@ -317,7 +316,7 @@ function update_waitlogic_tracker(s_tracker) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9af1e486, Offset: 0x12e8
 // Size: 0x70
 function flag_wait(&array, str_flag) {
@@ -331,7 +330,7 @@ function flag_wait(&array, str_flag) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x42 linked
+// Params 2, eflags: 0x40 variadic
 // Checksum 0x6f935f8f, Offset: 0x1360
 // Size: 0x108
 function function_d77ef691(&array, ...) {
@@ -373,7 +372,7 @@ function flag_wait_clear(&array, str_flag, n_timeout) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x13b17a76, Offset: 0x1540
 // Size: 0x154
 function wait_any(array, msg, n_timeout) {
@@ -393,7 +392,7 @@ function wait_any(array, msg, n_timeout) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xacf0bc30, Offset: 0x16a0
 // Size: 0x78
 function _waitlogic2(s_tracker, ent, msg) {
@@ -420,7 +419,7 @@ function flag_wait_any(array, str_flag) {
 }
 
 // Namespace array/array_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x58e3faca, Offset: 0x1800
 // Size: 0x4a
 function random(array) {
@@ -469,7 +468,7 @@ function reverse(array) {
 }
 
 // Namespace array/array_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5e5f5ffe, Offset: 0x19d0
 // Size: 0xc2
 function slice(&array, var_12692bcf = 0, var_d88b3814 = 2147483647, n_increment = 1) {
@@ -496,19 +495,19 @@ function remove_keys(array) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe5465627, Offset: 0x1b48
 // Size: 0x98
 function swap(&array, index1, index2) {
-    assert(index1 < array.size, "<unknown string>");
-    assert(index2 < array.size, "<unknown string>");
+    assert(index1 < array.size, "<dev string:x174>");
+    assert(index2 < array.size, "<dev string:x193>");
     temp = array[index1];
     array[index1] = array[index2];
     array[index2] = temp;
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa2372a30, Offset: 0x1be8
 // Size: 0x92
 function pop(&array, index, b_keep_keys = 1) {
@@ -525,7 +524,7 @@ function pop(&array, index, b_keep_keys = 1) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1c804eec, Offset: 0x1c88
 // Size: 0x5a
 function pop_front(&array, b_keep_keys = 1) {
@@ -534,7 +533,7 @@ function pop_front(&array, b_keep_keys = 1) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x26244928, Offset: 0x1cf0
 // Size: 0x4c
 function push(&array, val, index = array.size + 1) {
@@ -542,7 +541,7 @@ function push(&array, val, index = array.size + 1) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x71dc9f8c, Offset: 0x1d48
 // Size: 0x2c
 function push_front(&array, val) {
@@ -563,7 +562,7 @@ function replace(array, value, replacement) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe35e344f, Offset: 0x1e28
 // Size: 0x1a
 function private function_80fe1cb6(a, b) {
@@ -571,7 +570,7 @@ function private function_80fe1cb6(a, b) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x87c5dbac, Offset: 0x1e50
 // Size: 0x72
 function find(&array, ent, func_compare = &function_80fe1cb6) {
@@ -599,7 +598,7 @@ function fartherfunc(dist1, dist2) {
 }
 
 // Namespace array/array_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x4dedefe1, Offset: 0x1f20
 // Size: 0x28c
 function get_all_closest(org, &array, excluders = [], max = array.size, maxdist) {
@@ -660,7 +659,7 @@ function get_all_closest(org, &array, excluders = [], max = array.size, maxdist)
 }
 
 // Namespace array/array_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb8a828a6, Offset: 0x21b8
 // Size: 0x22
 function alphabetize(&array) {
@@ -668,7 +667,7 @@ function alphabetize(&array) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x394c2b16, Offset: 0x21e8
 // Size: 0x42
 function sort_by_value(&array, b_lowest_first = 0) {
@@ -684,7 +683,7 @@ function sort_by_script_int(&a_ents, b_lowest_first = 0) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4008d78, Offset: 0x2288
 // Size: 0x1a2
 function merge_sort(&current_list, func_sort, param) {
@@ -718,7 +717,7 @@ function merge_sort(&current_list, func_sort, param) {
 }
 
 // Namespace array/array_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x33160858, Offset: 0x2438
 // Size: 0x140
 function merge(left, right, func_sort, param) {
@@ -788,19 +787,19 @@ function bubble_sort(&array, sort_func) {
 // Checksum 0x1b07f5a1, Offset: 0x26e8
 // Size: 0x18c
 function spread_all(&entities, func, arg1, arg2, arg3, arg4, arg5) {
-    assert(isdefined(entities), "<unknown string>");
-    assert(isdefined(func), "<unknown string>");
+    assert(isdefined(entities), "<dev string:x1b2>");
+    assert(isdefined(func), "<dev string:x1ed>");
     if (isarray(entities)) {
         foreach (ent in entities) {
             if (isdefined(ent)) {
                 util::single_thread(ent, func, arg1, arg2, arg3, arg4, arg5);
             }
-            wait(randomfloatrange(0.0666667, 0.133333));
+            wait randomfloatrange(0.0666667, 0.133333);
         }
         return;
     }
     util::single_thread(entities, func, arg1, arg2, arg3, arg4, arg5);
-    wait(randomfloatrange(0.0666667, 0.133333));
+    wait randomfloatrange(0.0666667, 0.133333);
 }
 
 // Namespace array/array_shared
@@ -814,7 +813,7 @@ function wait_till_touching(&a_ents, e_volume) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7b37b433, Offset: 0x28c0
 // Size: 0xa2
 function is_touching(&a_ents, e_volume) {
@@ -827,7 +826,7 @@ function is_touching(&a_ents, e_volume) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xde46e38, Offset: 0x2970
 // Size: 0xb4
 function contains(array_or_val, value) {
@@ -853,7 +852,7 @@ function quick_sort(&array, compare_func) {
 }
 
 // Namespace array/array_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x1dc69654, Offset: 0x2a98
 // Size: 0x124
 function quick_sort_mid(&array, start, end, compare_func) {
@@ -878,7 +877,7 @@ function quick_sort_mid(&array, start, end, compare_func) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xef2c8aa8, Offset: 0x2bc8
 // Size: 0x48
 function _compare_value(val1, val2, b_lowest_first = 1) {
@@ -897,7 +896,7 @@ function function_5b554cb6(val1, val2) {
 }
 
 // Namespace array/array_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x80303c8c, Offset: 0x2c40
 // Size: 0x62
 function _compare_script_int(e1, e2, b_lowest_first = 1) {
@@ -924,7 +923,7 @@ function _filter_dead(val) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x57872e5e, Offset: 0x2cf8
 // Size: 0x44
 function _filter_classname(val, arg) {
@@ -932,7 +931,7 @@ function _filter_classname(val, arg) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa91d5d6a, Offset: 0x2d48
 // Size: 0x46
 function function_e01a747e(val, arg) {
@@ -946,7 +945,7 @@ function function_e01a747e(val, arg) {
     // Checksum 0x3fe40b83, Offset: 0x2d98
     // Size: 0xc2
     function function_f2d037b1() {
-        wait(5);
+        wait 5;
         for (maxval = 0; maxval < 100; maxval++) {
             for (i = 0; i < 100; i++) {
                 minval = randomintrangeinclusive(0, maxval);
@@ -978,7 +977,7 @@ function function_e01a747e(val, arg) {
             var_c8e96eee = 1;
         }
         var_365f3054 = randomintrange(0, max_entries);
-        println("<unknown string>" + var_365f3054 + "<unknown string>" + minval + "<unknown string>" + maxval + "<unknown string>");
+        println("<dev string:x224>" + var_365f3054 + "<dev string:x240>" + minval + "<dev string:x25e>" + maxval + "<dev string:x266>");
         source_array = [];
         for (i = 0; i < var_365f3054; i++) {
             if (!isdefined(source_array)) {
@@ -992,14 +991,14 @@ function function_e01a747e(val, arg) {
         sorted_array = quick_sort(test_array, compare_func);
         if (var_c8e96eee) {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                assert(sorted_array[i] <= sorted_array[i + 1], "<unknown string>");
+                assert(sorted_array[i] <= sorted_array[i + 1], "<dev string:x275>");
             }
         } else {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                assert(sorted_array[i] >= sorted_array[i + 1], "<unknown string>");
+                assert(sorted_array[i] >= sorted_array[i + 1], "<dev string:x275>");
             }
         }
-        println("<unknown string>");
+        println("<dev string:x28b>");
     }
 
     // Namespace array/array_shared
@@ -1007,7 +1006,7 @@ function function_e01a747e(val, arg) {
     // Checksum 0x4144f519, Offset: 0x30e8
     // Size: 0xca
     function function_81d0d595() {
-        wait(5);
+        wait 5;
         for (maxval = 0; maxval < 100; maxval++) {
             for (i = 0; i < 100; i++) {
                 minval = randomintrangeinclusive(0, maxval);
@@ -1039,7 +1038,7 @@ function function_e01a747e(val, arg) {
             var_c8e96eee = 1;
         }
         var_365f3054 = randomintrange(0, max_entries);
-        println("<unknown string>" + var_365f3054 + "<unknown string>" + minval + "<unknown string>" + maxval + "<unknown string>");
+        println("<dev string:x293>" + var_365f3054 + "<dev string:x240>" + minval + "<dev string:x25e>" + maxval + "<dev string:x266>");
         source_array = [];
         for (i = 0; i < var_365f3054; i++) {
             if (!isdefined(source_array)) {
@@ -1053,14 +1052,14 @@ function function_e01a747e(val, arg) {
         bubble_sort(sorted_array, compare_func);
         if (var_c8e96eee) {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                assert(sorted_array[i] <= sorted_array[i + 1], "<unknown string>");
+                assert(sorted_array[i] <= sorted_array[i + 1], "<dev string:x2b0>");
             }
         } else {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                assert(sorted_array[i] >= sorted_array[i + 1], "<unknown string>");
+                assert(sorted_array[i] >= sorted_array[i + 1], "<dev string:x2b0>");
             }
         }
-        println("<unknown string>");
+        println("<dev string:x28b>");
     }
 
 #/

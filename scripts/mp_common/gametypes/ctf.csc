@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace ctf;
 
@@ -34,7 +33,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0xed659fb8, Offset: 0x650
 // Size: 0xe4
 function ctf_reset_score(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    gamescoremodel = function_1df4c3b0(bwastimejump, #"hash_18f98623d8947fda");
+    gamescoremodel = function_1df4c3b0(bwastimejump, #"game_score");
     playerscoremodel = getuimodel(gamescoremodel, "playerScore");
     enemyscoremodel = getuimodel(gamescoremodel, "enemyScore");
     setuimodelvalue(playerscoremodel, 0);

@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\killstreaks\ultimate_turret_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\ultimate_turret_shared;
 
 #namespace ultimate_turret;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x54b07498, Offset: 0x118
 // Size: 0x44
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb2935649, Offset: 0x168
 // Size: 0x2c
 function function_4b645b3f(killstreaktype) {
@@ -34,7 +33,7 @@ function function_4b645b3f(killstreaktype) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x14ddd74d, Offset: 0x1a0
 // Size: 0x7e
 function turret_destroyed(attacker, weapon) {

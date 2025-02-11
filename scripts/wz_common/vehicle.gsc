@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_40fc784c60f9fa7b;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
 
 #namespace wz_vehicle;
 

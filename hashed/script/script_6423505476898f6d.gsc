@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_7cc5fb39b97494c4;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\doors_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\doors_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace namespace_64f6ea7a;
 
@@ -64,23 +63,23 @@ function init_max_yaws() {
 // Size: 0x1f6
 function private get_max_yaw(var_b6cc4c20) {
     var_e4214597 = 70;
-    var_1e45bf81 = 30;
-    var_2a162980 = 5;
+    major_increment = 30;
+    minor_increment = 5;
     var_533884d6 = math::sign(self.m_s_bundle.door_swing_angle);
     if (var_b6cc4c20) {
         if (isdefined(self.var_a2f96f78.var_bed36372)) {
-            assert(self.var_a2f96f78.var_bed36372 > 0, "<unknown string>" + self.m_e_door.origin + "<unknown string>");
+            assert(self.var_a2f96f78.var_bed36372 > 0, "<dev string:x38>" + self.m_e_door.origin + "<dev string:x4b>");
             self.var_15695d13 = self.var_a2f96f78.var_bed36372 * var_533884d6;
             return;
         }
     } else if (isdefined(self.var_a2f96f78.var_f3a85f58)) {
-        assert(self.var_a2f96f78.var_f3a85f58 > 0, "<unknown string>" + self.m_e_door.origin + "<unknown string>");
+        assert(self.var_a2f96f78.var_f3a85f58 > 0, "<dev string:x38>" + self.m_e_door.origin + "<dev string:x95>");
         self.var_ca91d615 = self.var_a2f96f78.var_f3a85f58 * var_533884d6 * -1;
         return;
     }
-    var_f58bf66c = get_max_yaw_internal(var_e4214597, var_1e45bf81, var_b6cc4c20);
-    var_f58bf66c += var_2a162980;
-    var_c3277087 = get_max_yaw_internal(var_f58bf66c, var_2a162980, var_b6cc4c20);
+    var_f58bf66c = get_max_yaw_internal(var_e4214597, major_increment, var_b6cc4c20);
+    var_f58bf66c += minor_increment;
+    var_c3277087 = get_max_yaw_internal(var_f58bf66c, minor_increment, var_b6cc4c20);
     if (var_b6cc4c20) {
         self.var_15695d13 = var_c3277087 * var_533884d6;
         return;
@@ -122,7 +121,7 @@ function private get_max_yaw_internal(test_yaw, increment, var_b6cc4c20) {
         cycles++;
         if (cycles == 3) {
             cycles = 0;
-            wait(0.05);
+            wait 0.05;
         }
     }
     assert(test_yaw >= 0);
@@ -133,10 +132,10 @@ function private get_max_yaw_internal(test_yaw, increment, var_b6cc4c20) {
 // Params 3, eflags: 0x4
 // Checksum 0x29688e17, Offset: 0x608
 // Size: 0x6be
-function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
+function private yaw_collision_check(yaw, var_b6cc4c20, *content_override) {
     var_3b412bef = (0, 0, 10);
     basestart = self.var_85f2454d.origin + var_3b412bef;
-    if (var_43119537) {
+    if (content_override) {
         trace_angles = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
     } else {
         trace_angles = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
@@ -166,12 +165,12 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
             }
             var_5bdd16d1 = basestart + self doors::function_eea7cdb4(trace_angles) * self.var_e9da41b9;
             line(basestart, var_5bdd16d1, (1, 1, 1), 1, 0, var_816ef68c);
-            print3d(var_5bdd16d1, var_b6cc4c20 + "<unknown string>", color, 1, 0.05, var_816ef68c);
+            print3d(var_5bdd16d1, var_b6cc4c20 + "<dev string:xdf>", color, 1, 0.05, var_816ef68c);
             line(start, var_84a65cf6[#"position"], color, 0.5, 0, var_816ef68c);
             if (var_84a65cf6[#"fraction"] < 1) {
                 line(var_84a65cf6[#"position"], end, color * 0.3, 0.5, 0, var_816ef68c);
             }
-            print3d(start, "<unknown string>" + self.traces, color, 1, 0.05, var_816ef68c);
+            print3d(start, "<dev string:xe7>" + self.traces, color, 1, 0.05, var_816ef68c);
         }
     #/
     if (var_fe34498d > 3) {
@@ -193,7 +192,7 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
                 if (var_5124c314[#"fraction"] < 1) {
                     line(var_5124c314[#"position"], end, color * 0.3, 0.5, 0, var_816ef68c);
                 }
-                print3d(start, "<unknown string>" + self.traces, color, 1, 0.05, var_816ef68c);
+                print3d(start, "<dev string:xe7>" + self.traces, color, 1, 0.05, var_816ef68c);
             }
         #/
         if (var_17a48baf > 5) {
@@ -202,7 +201,7 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
     }
     /#
         if (getdvarint(#"hash_5171254138328d84", 0)) {
-            println("<unknown string>" + self.m_e_door getentitynumber() + "<unknown string>" + var_43119537 + "<unknown string>" + self.m_e_door.origin);
+            println("<dev string:xec>" + self.m_e_door getentitynumber() + "<dev string:xf7>" + content_override + "<dev string:x109>" + self.m_e_door.origin);
         }
     #/
     return false;
@@ -228,7 +227,7 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
         line_end = start + self doors::function_eea7cdb4(trace_angles) * self.var_e9da41b9;
         line(start, line_end, color, 1, 0, 1);
         angle = [[ self ]]->function_85fe0c35(!var_b6cc4c20);
-        print3d(line_end, angle + "<unknown string>", color, 1, 0.05);
+        print3d(line_end, angle + "<dev string:xdf>", color, 1, 0.05);
     }
 
 #/
@@ -248,7 +247,7 @@ function monitor_door_push(delay) {
         delay = 0.5;
     }
     if (delay > 0) {
-        wait(delay);
+        wait delay;
     }
     self thread door_ease_in_open_input();
     while (true) {
@@ -281,7 +280,7 @@ function private door_ease_in_open_input() {
             break;
         }
         self.masterdoorratescale = 1 - time / maxtime;
-        wait(0.05);
+        wait 0.05;
         time -= 0.05;
     }
     self.masterdoorratescale = 1;
@@ -377,12 +376,12 @@ function push_door(e_who, var_5991aa24) {
     if (abs(amount) < 0.001) {
         return;
     }
-    var_1042ef32 = undefined;
+    target_angles = undefined;
     var_12d56c89 = spawnstruct();
     if (var_cd167873 > 0) {
-        var_1042ef32 = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, amount, var_22fc16ba, var_12d56c89);
+        target_angles = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, amount, var_22fc16ba, var_12d56c89);
     } else {
-        var_1042ef32 = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, amount, var_22fc16ba, var_12d56c89);
+        target_angles = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, amount, var_22fc16ba, var_12d56c89);
     }
     [[ self ]]->set_player_who_opened(pushent);
     if (var_12d56c89.var_e6d945ba) {
@@ -416,16 +415,16 @@ function push_door(e_who, var_5991aa24) {
         }
         physicsexplosionsphere(self.m_e_door.origin, 64, 0, 0);
         self.m_e_door setforcenocull();
-        self.m_e_door rotateto(var_1042ef32, open_time);
+        self.m_e_door rotateto(target_angles, open_time);
         self.m_e_door waittill(#"rotatedone");
         self.m_e_door removeforcenocull();
         physicsexplosionsphere(self.m_e_door.origin, 64, 0, 0);
         if (isdefined(pushent)) {
-            pushent notify(#"hash_7a96e443b93cd211");
+            pushent notify(#"opened_door");
         }
     } else {
         self.m_e_door notify(#"rotatedone");
-        self.m_e_door.angles = var_1042ef32;
+        self.m_e_door.angles = target_angles;
     }
     self.var_2ec65fe = undefined;
     if (var_12d56c89.var_672b7d83 == "closed") {
@@ -492,7 +491,7 @@ function private door_is_half_open() {
 // Checksum 0x43f7190d, Offset: 0x1c98
 // Size: 0xea
 function door_is_open_at_least(checkangle) {
-    assert(checkangle >= 0, "<unknown string>" + checkangle + "<unknown string>");
+    assert(checkangle >= 0, "<dev string:x11f>" + checkangle + "<dev string:x143>");
     var_e17e8d14 = self doors::get_door_angles() - self doors::get_door_angles(1);
     var_e17e8d14 = angleclamp180(var_e17e8d14);
     angle_diff = var_e17e8d14[0] + var_e17e8d14[1] + var_e17e8d14[2];
@@ -563,7 +562,7 @@ function private door_creak_sound_stop() {
         self.m_e_door endon(#"entitydeleted");
     }
     self endon(#"hash_751ece30abc106fd");
-    wait(0.55);
+    wait 0.55;
     if (isdefined(self.m_e_door)) {
         self.m_e_door stoploopsound();
     }
@@ -583,7 +582,7 @@ function private angle_diff(value1, value2) {
 // Checksum 0x675829d2, Offset: 0x2088
 // Size: 0x402
 function function_9670a4a4(var_f700d5eb, b_reverse, var_d6cc2350, var_58c4c830, var_b0a715f2) {
-    assert(!isdefined(var_d6cc2350) || var_d6cc2350 > 0, "<unknown string>");
+    assert(!isdefined(var_d6cc2350) || var_d6cc2350 > 0, "<dev string:x16a>");
     var_f626de4 = undefined;
     var_672b7d83 = undefined;
     var_e6d945ba = 0;

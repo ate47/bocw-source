@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace singlelockap_guidance;
 
@@ -333,7 +332,7 @@ function seekersound(alias, looping, id) {
         time = soundgetplaybacktime(alias) * 0.001;
         do {
             self playlocalsound(alias);
-            wait(time);
+            wait time;
         } while (looping);
         self stoprumble("stinger_lock_rumble");
     }

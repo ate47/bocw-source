@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace blackseajetskideployprompt;
 
 // Namespace blackseajetskideployprompt
 // Method(s) 6 Total 13
-class class_6b831806 : cluielem {
+class cblackseajetskideployprompt : cluielem {
 
     var var_bf9c8c95;
     var var_d5213cbb;
 
-    // Namespace namespace_6b831806/blackseajetskideployprompt
+    // Namespace cblackseajetskideployprompt/blackseajetskideployprompt
     // Params 2, eflags: 0x0
     // Checksum 0x9806ae76, Offset: 0x268
     // Size: 0x3c
@@ -19,7 +18,7 @@ class class_6b831806 : cluielem {
         cluielem::open_luielem(player, flags);
     }
 
-    // Namespace namespace_6b831806/blackseajetskideployprompt
+    // Namespace cblackseajetskideployprompt/blackseajetskideployprompt
     // Params 2, eflags: 0x0
     // Checksum 0x8dbab234, Offset: 0x2e0
     // Size: 0x44
@@ -27,7 +26,7 @@ class class_6b831806 : cluielem {
         player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "deployProgress", value);
     }
 
-    // Namespace namespace_6b831806/blackseajetskideployprompt
+    // Namespace cblackseajetskideployprompt/blackseajetskideployprompt
     // Params 1, eflags: 0x0
     // Checksum 0xf4792e4e, Offset: 0x2b0
     // Size: 0x24
@@ -35,7 +34,7 @@ class class_6b831806 : cluielem {
         cluielem::close_luielem(player);
     }
 
-    // Namespace namespace_6b831806/blackseajetskideployprompt
+    // Namespace cblackseajetskideployprompt/blackseajetskideployprompt
     // Params 0, eflags: 0x0
     // Checksum 0x5ddfb015, Offset: 0x218
     // Size: 0x44
@@ -51,7 +50,7 @@ class class_6b831806 : cluielem {
 // Checksum 0xc52bf7e, Offset: 0xf8
 // Size: 0x34
 function register() {
-    elem = new class_6b831806();
+    elem = new cblackseajetskideployprompt();
     [[ elem ]]->setup_clientfields();
     return elem;
 }

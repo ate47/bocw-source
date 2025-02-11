@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\throttle_shared.gsc;
-#using scripts\core_common\ai\systems\shared.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\throttle_shared;
 
 #namespace gib;
 
@@ -25,7 +24,7 @@ function autoexec main() {
 #namespace gibserverutils;
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf470203c, Offset: 0x2a0
 // Size: 0x380
 function private function_3aa023f1(entity, var_c3317960) {
@@ -46,7 +45,7 @@ function private function_3aa023f1(entity, var_c3317960) {
     }
     definition = getscriptbundle(name);
     if (!isdefined(definition)) {
-        assertmsg("<unknown string>" + name);
+        assertmsg("<dev string:x38>" + name);
         return undefined;
     }
     gibpiecelookup = [];
@@ -59,7 +58,7 @@ function private function_3aa023f1(entity, var_c3317960) {
     gibpieces = [];
     foreach (gibflag, gibpiece in gibpiecelookup) {
         if (!isdefined(gibpiece)) {
-            assertmsg("<unknown string>" + gibflag);
+            assertmsg("<dev string:x59>" + gibflag);
             continue;
         }
         gibstruct = spawnstruct();
@@ -78,7 +77,7 @@ function private function_3aa023f1(entity, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x467a1f69, Offset: 0x628
 // Size: 0x44
 function private function_69db754(entity, gibflag, var_c3317960) {
@@ -87,7 +86,7 @@ function private function_69db754(entity, gibflag, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc43e21ee, Offset: 0x678
 // Size: 0x5c
 function private _annihilate(entity) {
@@ -102,7 +101,7 @@ function private _annihilate(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xcea62b1f, Offset: 0x6e0
 // Size: 0xb4
 function private _getgibextramodel(entity, gibflag) {
@@ -112,11 +111,11 @@ function private _getgibextramodel(entity, gibflag) {
     if (gibflag == 8) {
         return (isdefined(entity.gib_data) ? entity.gib_data.head : entity.head);
     }
-    assertmsg("<unknown string>");
+    assertmsg("<dev string:x8c>");
 }
 
 // Namespace gibserverutils/gib
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xd7aa21c, Offset: 0x7a0
 // Size: 0x78
 function private _gibextra(entity, gibflag, var_c3317960) {
@@ -131,7 +130,7 @@ function private _gibextra(entity, gibflag, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xe35150a8, Offset: 0x820
 // Size: 0x1e4
 function private _gibextrainternal(entity, gibflag, var_c3317960) {
@@ -162,7 +161,7 @@ function private _gibextrainternal(entity, gibflag, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x6a5b408f, Offset: 0xa10
 // Size: 0x90
 function private _gibentity(entity, gibflag, var_c3317960) {
@@ -177,7 +176,7 @@ function private _gibentity(entity, gibflag, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x5ecc09f9, Offset: 0xaa8
 // Size: 0x1bc
 function private _gibentityinternal(entity, gibflag, var_c3317960) {
@@ -207,7 +206,7 @@ function private _gibentityinternal(entity, gibflag, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe31ce35e, Offset: 0xc70
 // Size: 0x142
 function private _getgibbedlegmodel(entity) {
@@ -225,7 +224,7 @@ function private _getgibbedlegmodel(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd2661f4d, Offset: 0xdc0
 // Size: 0x2a
 function private _getgibbedstate(entity) {
@@ -236,7 +235,7 @@ function private _getgibbedstate(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x53cd4ab8, Offset: 0xdf8
 // Size: 0x142
 function private _getgibbedtorsomodel(entity) {
@@ -254,7 +253,7 @@ function private _getgibbedtorsomodel(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xea0030f7, Offset: 0xf48
 // Size: 0x5c
 function private _hasgibdef(entity, var_c3317960) {
@@ -267,7 +266,7 @@ function private _hasgibdef(entity, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x6b4ba078, Offset: 0xfb0
 // Size: 0xe2
 function private _hasgibpieces(entity, gibflag, var_c3317960) {
@@ -285,7 +284,7 @@ function private _hasgibpieces(entity, gibflag, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x77e2ae22, Offset: 0x10a0
 // Size: 0x16c
 function private _setgibbed(entity, gibflag, gibdir, var_c3317960) {
@@ -305,7 +304,7 @@ function private _setgibbed(entity, gibflag, gibdir, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf0da7a68, Offset: 0x1218
 // Size: 0xa4
 function annihilate(entity) {
@@ -324,7 +323,7 @@ function annihilate(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x545ad488, Offset: 0x12c8
 // Size: 0x8c
 function copygibstate(originalentity, newentity) {
@@ -335,7 +334,7 @@ function copygibstate(originalentity, newentity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x56803c52, Offset: 0x1360
 // Size: 0x30
 function isgibbed(entity, gibflag) {
@@ -343,7 +342,7 @@ function isgibbed(entity, gibflag) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1aa4b6fb, Offset: 0x1398
 // Size: 0x32
 function gibhat(entity, var_c3317960) {
@@ -351,7 +350,7 @@ function gibhat(entity, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3efcccbd, Offset: 0x13d8
 // Size: 0xd2
 function gibhead(entity, var_c3317960 = 0) {
@@ -362,7 +361,7 @@ function gibhead(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfd6f527a, Offset: 0x14b8
 // Size: 0xd0
 function gibleftarm(entity, var_c3317960 = 0) {
@@ -378,7 +377,7 @@ function gibleftarm(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x43cd354f, Offset: 0x1590
 // Size: 0xe8
 function gibrightarm(entity, var_c3317960 = 0) {
@@ -395,7 +394,7 @@ function gibrightarm(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbe5f36c1, Offset: 0x1680
 // Size: 0xb0
 function gibleftleg(entity, var_c3317960 = 0) {
@@ -408,7 +407,7 @@ function gibleftleg(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe8511ff, Offset: 0x1738
 // Size: 0xb0
 function gibrightleg(entity, var_c3317960 = 0) {
@@ -421,7 +420,7 @@ function gibrightleg(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb94155b9, Offset: 0x17f0
 // Size: 0xc8
 function giblegs(entity, var_c3317960 = 0) {
@@ -435,7 +434,7 @@ function giblegs(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/player_gibleftarmvel
-// Params 1, eflags: 0x22 linked
+// Params 1, eflags: 0x20
 // Checksum 0x38c05569, Offset: 0x18c0
 // Size: 0x5c
 function event_handler[player_gibleftarmvel] playergibleftarmvel(entitystruct) {
@@ -445,7 +444,7 @@ function event_handler[player_gibleftarmvel] playergibleftarmvel(entitystruct) {
 }
 
 // Namespace gibserverutils/player_gibrightarmvel
-// Params 1, eflags: 0x22 linked
+// Params 1, eflags: 0x20
 // Checksum 0x36bbc44e, Offset: 0x1928
 // Size: 0x5c
 function event_handler[player_gibrightarmvel] playergibrightarmvel(entitystruct) {
@@ -475,7 +474,7 @@ function event_handler[player_gibrightlegvel] playergibrightlegvel(entitystruct)
 }
 
 // Namespace gibserverutils/player_gibbothlegsvel
-// Params 1, eflags: 0x22 linked
+// Params 1, eflags: 0x20
 // Checksum 0x50b034cf, Offset: 0x1a60
 // Size: 0x94
 function event_handler[player_gibbothlegsvel] playergiblegsvel(entitystruct) {
@@ -486,7 +485,7 @@ function event_handler[player_gibbothlegsvel] playergiblegsvel(entitystruct) {
 }
 
 // Namespace gibserverutils/event_5d8d772d
-// Params 1, eflags: 0x22 linked
+// Params 1, eflags: 0x20
 // Checksum 0x8b4beecb, Offset: 0x1b00
 // Size: 0x5c
 function event_handler[event_5d8d772d] function_b14ffba8(entitystruct) {
@@ -496,7 +495,7 @@ function event_handler[event_5d8d772d] function_b14ffba8(entitystruct) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd8904bac, Offset: 0x1b68
 // Size: 0x178
 function reapplyhiddengibpieces(entity, var_c3317960) {
@@ -520,7 +519,7 @@ function reapplyhiddengibpieces(entity, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2070f56f, Offset: 0x1ce8
 // Size: 0x128
 function showhiddengibpieces(entity, var_c3317960) {
@@ -539,7 +538,7 @@ function showhiddengibpieces(entity, var_c3317960) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x766c2149, Offset: 0x1e18
 // Size: 0x94
 function togglespawngibs(entity, shouldspawngibs) {
@@ -596,7 +595,7 @@ function function_96bedd91(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb5387d32, Offset: 0x21d0
 // Size: 0x8a
 function function_de4d9d(weapon, var_fd90b0bb) {

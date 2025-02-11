@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_pack_a_punch_util.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_pack_a_punch_util;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_weapon_rotation;
 
@@ -213,7 +212,7 @@ function private function_413cffae(n_interval, e_player) {
             }
         }
         e_player val::reset("weapon_rotation", "disable_weapons");
-        wait(n_interval);
+        wait n_interval;
         e_player function_27cd9d6();
         e_player val::set("weapon_rotation", "disable_weapons", 1);
         e_player function_27cd9d6(0.15);
@@ -231,11 +230,11 @@ function private function_413cffae(n_interval, e_player) {
     // Checksum 0x35a9fa98, Offset: 0x1118
     // Size: 0xf2
     function function_579553d8(n_interval) {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x38>");
+        self endon("<dev string:x38>");
         level endon(#"hash_7646638df88a3656", #"end_game");
         while (true) {
-            debug2dtext((8, 400, 0), "<unknown string>" + n_interval, undefined, undefined, undefined, 1);
+            debug2dtext((8, 400, 0), "<dev string:x4c>" + n_interval, undefined, undefined, undefined, 1);
             waitframe(1);
             n_interval -= float(function_60d95f53()) / 1000;
             n_interval = math::clamp(n_interval, 0, 999);

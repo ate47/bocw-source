@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\ability_player.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\userspawnselection.gsc;
-#using scripts\mp_common\teams\team_assignment.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\player\player.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\draft.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
 #using script_3d703ef87a841fe4;
 #using script_45fdb6cec5580007;
-#using scripts\core_common\spectating.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\gamestate_util.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\spectating;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\mp_common\draft;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\player\player;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\teams\team_assignment;
+#using scripts\mp_common\userspawnselection;
+#using scripts\mp_common\util;
 
 #namespace globallogic_ui;
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1c0
 // Size: 0x4
 function init() {
@@ -31,7 +30,7 @@ function init() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4dd1b91, Offset: 0x1d0
 // Size: 0x94
 function setupcallbacks() {
@@ -100,7 +99,7 @@ function setupcallbacks() {
 #/
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x1b7e1966, Offset: 0x500
 // Size: 0x100
 function private function_34a60b2f(original_team, new_team) {
@@ -115,7 +114,7 @@ function private function_34a60b2f(original_team, new_team) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x49ebb9e9, Offset: 0x608
 // Size: 0x47c
 function menuautoassign(comingfrommenu, var_4c542e39, var_432c77c2) {
@@ -135,7 +134,7 @@ function menuautoassign(comingfrommenu, var_4c542e39, var_432c77c2) {
     }
     /#
         assignmentoverride = getdvarstring(#"autoassignteam");
-        if (assignmentoverride != "<unknown string>" && (assignmentoverride != #"spectator" || !isbot(self))) {
+        if (assignmentoverride != "<dev string:x38>" && (assignmentoverride != #"spectator" || !isbot(self))) {
             assignment = assignmentoverride;
         }
     #/
@@ -180,7 +179,7 @@ function menuautoassign(comingfrommenu, var_4c542e39, var_432c77c2) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf93133c2, Offset: 0xa90
 // Size: 0x1b4
 function updateobjectivetext() {
@@ -204,7 +203,7 @@ function updateobjectivetext() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbe3c5628, Offset: 0xc50
 // Size: 0x1c
 function closemenus() {
@@ -212,7 +211,7 @@ function closemenus() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x90d25914, Offset: 0xc78
 // Size: 0x134
 function beginclasschoice(*comingfrommenu) {
@@ -233,7 +232,7 @@ function beginclasschoice(*comingfrommenu) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeb225dda, Offset: 0xdb8
 // Size: 0x8c
 function showmainmenuforteam() {
@@ -244,7 +243,7 @@ function showmainmenuforteam() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3e5e625, Offset: 0xe50
 // Size: 0x314
 function menuteam(team) {
@@ -288,7 +287,7 @@ function menuteam(team) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9c1dbf4, Offset: 0x1170
 // Size: 0x1d4
 function menuspectator() {
@@ -316,7 +315,7 @@ function menuspectator() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xff7c95eb, Offset: 0x1350
 // Size: 0x8d8
 function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
@@ -388,7 +387,7 @@ function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
             timepassed = undefined;
             if (!is_true(level.var_d0252074) || !is_true(self.hasspawned)) {
                 if (isdefined(self.respawntimerstarttime)) {
-                    println("<unknown string>" + self.name + "<unknown string>");
+                    println("<dev string:x3c>" + self.name + "<dev string:x4c>");
                     timepassed = float(gettime() - self.respawntimerstarttime) / 1000;
                 }
                 self thread [[ level.spawnclient ]](timepassed);
@@ -421,7 +420,7 @@ function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x21613487, Offset: 0x1c30
 // Size: 0x5c
 function function_4538a730(playerclass) {
@@ -430,7 +429,7 @@ function function_4538a730(playerclass) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2f04b297, Offset: 0x1c98
 // Size: 0x5c
 function menuautocontrolplayer() {
@@ -441,7 +440,7 @@ function menuautocontrolplayer() {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3759c3f9, Offset: 0x1d00
 // Size: 0x16c
 function menupositiondraft(response, *intpayload) {
@@ -476,19 +475,19 @@ function menupositiondraft(response, *intpayload) {
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x646d8f6e, Offset: 0x1e78
 // Size: 0x54
 function removespawnmessageshortly(delay) {
     self endon(#"disconnect");
     waittillframeend();
     self endon(#"end_respawn");
-    wait(delay);
+    wait delay;
     self hud_message::clearlowermessage();
 }
 
 // Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc5b2b5fa, Offset: 0x1ed8
 // Size: 0x24
 function function_bc2eb1b8() {

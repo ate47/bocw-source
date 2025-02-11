@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_bonus_points_team;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_bonus_points_team/zm_powerup_bonus_points_team
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x25da5df0, Offset: 0x158
 // Size: 0x84
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_bonus_points_team/zm_powerup_bonus_points_team
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe362815a, Offset: 0x1e8
 // Size: 0x44
 function grab_bonus_points_team(player) {
@@ -37,7 +36,7 @@ function grab_bonus_points_team(player) {
 }
 
 // Namespace zm_powerup_bonus_points_team/zm_powerup_bonus_points_team
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d0906ec, Offset: 0x238
 // Size: 0x1a0
 function bonus_points_team_powerup(item, player) {

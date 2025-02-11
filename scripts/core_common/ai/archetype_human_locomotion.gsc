@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\ai\archetype_locomotion_utility.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
+#using scripts\core_common\ai\archetype_locomotion_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai_shared;
 
 #namespace namespace_2dd2c4d8;
 
@@ -108,7 +107,7 @@ function autoexec registerbehaviorscriptfunctions() {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xebed3b61, Offset: 0x1500
 // Size: 0x6e
 function private shouldtacticalwalkpain(entity) {
@@ -119,7 +118,7 @@ function private shouldtacticalwalkpain(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaa3a9f62, Offset: 0x1578
 // Size: 0x1a
 function private begintacticalwalkpain(entity) {
@@ -128,7 +127,7 @@ function private begintacticalwalkpain(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6c6f5d14, Offset: 0x15a0
 // Size: 0x20
 function private shouldcontinuetacticalwalkpain(entity) {
@@ -136,7 +135,7 @@ function private shouldcontinuetacticalwalkpain(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2da3d5f3, Offset: 0x15c8
 // Size: 0x2a
 function private bsmlocomotionhasvalidpaininterrupt(entity) {
@@ -144,7 +143,7 @@ function private bsmlocomotionhasvalidpaininterrupt(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd9c597f9, Offset: 0x1600
 // Size: 0x3c
 function private preparetostopnearenemy(behaviortreeentity) {
@@ -153,7 +152,7 @@ function private preparetostopnearenemy(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd9ce52ed, Offset: 0x1648
 // Size: 0x3c
 function private preparetomoveawayfromnearbyenemy(behaviortreeentity) {
@@ -162,7 +161,7 @@ function private preparetomoveawayfromnearbyenemy(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa1e605c3, Offset: 0x1690
 // Size: 0x2ba
 function private shouldplanarrivalintocover(behaviortreeentity) {
@@ -201,7 +200,7 @@ function private shouldplanarrivalintocover(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x70f07c2d, Offset: 0x1958
 // Size: 0x128
 function private combatlocomotionstart(behaviortreeentity) {
@@ -222,7 +221,7 @@ function private combatlocomotionstart(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5a3ab914, Offset: 0x1a88
 // Size: 0x38
 function private function_52950d3d(behaviortreeentity) {
@@ -232,7 +231,7 @@ function private function_52950d3d(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x59626471, Offset: 0x1ac8
 // Size: 0x4c
 function function_3b9e6ead(entity, var_cddf6299) {
@@ -242,7 +241,7 @@ function function_3b9e6ead(entity, var_cddf6299) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb9d89cfd, Offset: 0x1b20
 // Size: 0x138
 function private function_4937d436(behaviortreeentity) {
@@ -265,7 +264,7 @@ function private function_4937d436(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7aaccaef, Offset: 0x1c60
 // Size: 0x94
 function private function_145df88b(entity) {
@@ -283,7 +282,7 @@ function private function_145df88b(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbaf6ad1, Offset: 0x1d00
 // Size: 0x52
 function private function_2985b5fa(behaviortreeentity) {
@@ -294,7 +293,7 @@ function private function_2985b5fa(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x57040f55, Offset: 0x1d60
 // Size: 0x70
 function private function_31a6aada(behaviortreeentity) {
@@ -305,7 +304,7 @@ function private function_31a6aada(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd9a2c6da, Offset: 0x1dd8
 // Size: 0x4c
 function private function_41ae663f(entity) {
@@ -317,7 +316,7 @@ function private function_41ae663f(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfda30926, Offset: 0x1e30
 // Size: 0x48
 function private function_76ff98aa(behaviortreeentity) {
@@ -327,7 +326,7 @@ function private function_76ff98aa(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfff4d052, Offset: 0x1e80
 // Size: 0x28
 function private function_e20dbfa4(behaviortreeentity) {
@@ -336,7 +335,7 @@ function private function_e20dbfa4(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb7a629cb, Offset: 0x1eb0
 // Size: 0x28
 function private function_888d9ea5(behaviortreeentity) {
@@ -345,7 +344,7 @@ function private function_888d9ea5(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x70ea8ccb, Offset: 0x1ee0
 // Size: 0x28
 function private function_45d8f364(behaviortreeentity) {
@@ -354,7 +353,7 @@ function private function_45d8f364(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x364049e3, Offset: 0x1f10
 // Size: 0x28
 function private function_27c368b1(behaviortreeentity) {
@@ -363,7 +362,7 @@ function private function_27c368b1(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8b61e62e, Offset: 0x1f40
 // Size: 0x38
 function private prepareformovement(behaviortreeentity) {
@@ -372,7 +371,7 @@ function private prepareformovement(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf27565b9, Offset: 0x1f80
 // Size: 0x32
 function private isarrivingfour(arrivalangle) {
@@ -383,7 +382,7 @@ function private isarrivingfour(arrivalangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x62992e38, Offset: 0x1fc0
 // Size: 0x32
 function private isarrivingone(arrivalangle) {
@@ -394,7 +393,7 @@ function private isarrivingone(arrivalangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4da71372, Offset: 0x2000
 // Size: 0x32
 function private isarrivingtwo(arrivalangle) {
@@ -405,7 +404,7 @@ function private isarrivingtwo(arrivalangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x31a05a44, Offset: 0x2040
 // Size: 0x32
 function private isarrivingthree(arrivalangle) {
@@ -416,7 +415,7 @@ function private isarrivingthree(arrivalangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe66f75d1, Offset: 0x2080
 // Size: 0x32
 function private isarrivingsix(arrivalangle) {
@@ -427,7 +426,7 @@ function private isarrivingsix(arrivalangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x67adc186, Offset: 0x20c0
 // Size: 0x32
 function private isfacingfour(facingangle) {
@@ -438,7 +437,7 @@ function private isfacingfour(facingangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb989d407, Offset: 0x2100
 // Size: 0x32
 function private isfacingeight(facingangle) {
@@ -449,7 +448,7 @@ function private isfacingeight(facingangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xad5fafa4, Offset: 0x2140
 // Size: 0x30
 function private isfacingseven(facingangle) {
@@ -460,7 +459,7 @@ function private isfacingseven(facingangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7b79d2d4, Offset: 0x2178
 // Size: 0x32
 function private isfacingsix(facingangle) {
@@ -471,7 +470,7 @@ function private isfacingsix(facingangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8cba065e, Offset: 0x21b8
 // Size: 0x30
 function private isfacingnine(facingangle) {
@@ -482,7 +481,7 @@ function private isfacingnine(facingangle) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf95bc452, Offset: 0x21f0
 // Size: 0x3fa
 function private shouldtacticalarrivecondition(behaviortreeentity) {
@@ -543,7 +542,7 @@ function private shouldtacticalarrivecondition(behaviortreeentity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x62f30268, Offset: 0x25f8
 // Size: 0x68c
 function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
@@ -585,10 +584,10 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                 var_c7c8e445 = nodeoffsetposition + (0, 0, 8);
                 var_6c21c197 = coverenterpos + (0, 0, 8);
                 /#
-                    recordline(var_5fd77fe1, var_c7c8e445, (1, 0.5, 0), "<unknown string>");
-                    record3dtext("<unknown string>", var_5fd77fe1, (1, 0.5, 0), "<unknown string>");
-                    recordline(var_6c21c197, var_5fd77fe1, (1, 0.5, 0), "<unknown string>");
-                    record3dtext("<unknown string>", var_6c21c197, (1, 0.5, 0), "<unknown string>");
+                    recordline(var_5fd77fe1, var_c7c8e445, (1, 0.5, 0), "<dev string:x38>");
+                    record3dtext("<dev string:x46>", var_5fd77fe1, (1, 0.5, 0), "<dev string:x38>");
+                    recordline(var_6c21c197, var_5fd77fe1, (1, 0.5, 0), "<dev string:x38>");
+                    record3dtext("<dev string:x5e>", var_6c21c197, (1, 0.5, 0), "<dev string:x38>");
                 #/
                 if (!behaviortreeentity maymovefrompointtopoint(var_5fd77fe1, var_c7c8e445, 1, 1, behaviortreeentity, 0.05)) {
                     return false;
@@ -603,8 +602,8 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                 var_c7c8e445 = nodeoffsetposition + (0, 0, 8);
                 var_6c21c197 = coverenterpos + (0, 0, 8);
                 /#
-                    recordline(var_6c21c197, var_c7c8e445, (1, 0.5, 0), "<unknown string>");
-                    record3dtext("<unknown string>", var_6c21c197, (1, 0.5, 0), "<unknown string>");
+                    recordline(var_6c21c197, var_c7c8e445, (1, 0.5, 0), "<dev string:x38>");
+                    record3dtext("<dev string:x5e>", var_6c21c197, (1, 0.5, 0), "<dev string:x38>");
                 #/
                 if (!behaviortreeentity maymovefrompointtopoint(var_6c21c197, var_c7c8e445, 1, 1, behaviortreeentity, 0.05)) {
                     return false;
@@ -616,7 +615,7 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
             if (ispointonnavmesh(coverenterpos, behaviortreeentity)) {
                 behaviortreeentity.var_2dc0ed5e = function_15a5703b(#"human", behaviortreeentity function_28e7d252());
                 /#
-                    recordcircle(coverenterpos, 2, (1, 0, 0), "<unknown string>");
+                    recordcircle(coverenterpos, 2, (1, 0, 0), "<dev string:x74>");
                 #/
                 behaviortreeentity function_a57c34b7(coverenterpos, nodeoffsetposition, "arrival");
                 return true;
@@ -627,7 +626,7 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe234e144, Offset: 0x2c90
 // Size: 0x2ec
 function private checkcoverarrivalconditions(coverenterpos, coverpos) {
@@ -641,12 +640,12 @@ function private checkcoverarrivalconditions(coverenterpos, coverpos) {
     if (isdefined(trace[#"position"]) && abs(trace[#"position"][2] - coverpos[2]) > 30) {
         /#
             if (getdvarint(#"ai_debugarrivals", 0)) {
-                recordcircle(coverenterpos, 1, (1, 0, 0), "<unknown string>");
-                record3dtext("<unknown string>", coverenterpos, (1, 0, 0), "<unknown string>", undefined, 0.4);
-                recordcircle(trace[#"position"], 1, (1, 0, 0), "<unknown string>");
-                record3dtext("<unknown string>" + int(abs(trace[#"position"][2] - coverpos[2])), trace[#"position"] + (0, 0, 5), (1, 0, 0), "<unknown string>", undefined, 0.4);
-                record3dtext("<unknown string>" + 30, trace[#"position"], (1, 0, 0), "<unknown string>", undefined, 0.4);
-                recordline(coverenterpos, trace[#"position"], (1, 0, 0), "<unknown string>");
+                recordcircle(coverenterpos, 1, (1, 0, 0), "<dev string:x38>");
+                record3dtext("<dev string:x7e>", coverenterpos, (1, 0, 0), "<dev string:x38>", undefined, 0.4);
+                recordcircle(trace[#"position"], 1, (1, 0, 0), "<dev string:x38>");
+                record3dtext("<dev string:x98>" + int(abs(trace[#"position"][2] - coverpos[2])), trace[#"position"] + (0, 0, 5), (1, 0, 0), "<dev string:x38>", undefined, 0.4);
+                record3dtext("<dev string:xb0>" + 30, trace[#"position"], (1, 0, 0), "<dev string:x38>", undefined, 0.4);
+                recordline(coverenterpos, trace[#"position"], (1, 0, 0), "<dev string:x38>");
             }
         #/
         return false;
@@ -655,7 +654,7 @@ function private checkcoverarrivalconditions(coverenterpos, coverpos) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x99ed455d, Offset: 0x2f88
 // Size: 0x240
 function private getarrivalsplittime(arrivalanim) {
@@ -668,15 +667,15 @@ function private getarrivalsplittime(arrivalanim) {
     bestsplit = -1;
     if (animhasnotetrack(arrivalanim, "corner")) {
         times = getnotetracktimes(arrivalanim, "corner");
-        assert(times.size == 1, "<unknown string>" + function_9e72a96(arrivalanim) + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        assert(times.size == 1, "<dev string:xde>" + function_9e72a96(arrivalanim) + "<dev string:xf0>" + "<dev string:x10f>" + "<dev string:x119>");
         bestsplit = times[0];
     } else {
         /#
             var_1e582813 = function_9e72a96(arrivalanim);
-            var_ccd34262 = issubstr(var_1e582813, "<unknown string>") || issubstr(var_1e582813, "<unknown string>") || issubstr(var_1e582813, "<unknown string>");
-            var_ffc4381b = issubstr(var_1e582813, "<unknown string>");
+            var_ccd34262 = issubstr(var_1e582813, "<dev string:x128>") || issubstr(var_1e582813, "<dev string:x12e>") || issubstr(var_1e582813, "<dev string:x134>");
+            var_ffc4381b = issubstr(var_1e582813, "<dev string:x13a>");
             if (var_ccd34262 && !var_ffc4381b && self.archetype == #"human") {
-                assertmsg("<unknown string>" + var_1e582813 + "<unknown string>" + "<unknown string>" + "<unknown string>");
+                assertmsg("<dev string:xde>" + var_1e582813 + "<dev string:x145>" + "<dev string:x10f>" + "<dev string:x154>");
             }
         #/
     }
@@ -695,7 +694,7 @@ function private deltarotate(delta, yaw) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6cd999a9, Offset: 0x3270
 // Size: 0x72
 function private function_e7f9cf11() {
@@ -705,7 +704,7 @@ function private function_e7f9cf11() {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x32e7145d, Offset: 0x32f0
 // Size: 0x5a
 function private function_3298688b() {
@@ -715,7 +714,7 @@ function private function_3298688b() {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xecd79f3c, Offset: 0x3358
 // Size: 0x3a
 function private function_eb731440() {
@@ -724,7 +723,7 @@ function private function_eb731440() {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd46fe5b5, Offset: 0x33a0
 // Size: 0x5e
 function private function_631d7179() {
@@ -736,7 +735,7 @@ function private function_631d7179() {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9998eacb, Offset: 0x3408
 // Size: 0x164
 function private function_cb9c22a2(entity) {
@@ -762,7 +761,7 @@ function private function_cb9c22a2(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5bce60a2, Offset: 0x3578
 // Size: 0x2e
 function private function_1972c057(entity) {
@@ -773,7 +772,7 @@ function private function_1972c057(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfbf620e, Offset: 0x35b0
 // Size: 0x2e
 function private function_968efd1f(entity) {
@@ -784,7 +783,7 @@ function private function_968efd1f(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8d13e9aa, Offset: 0x35e8
 // Size: 0x5e
 function private function_c2fb1a1e(entity) {
@@ -802,7 +801,7 @@ function private function_c2fb1a1e(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdc1f1757, Offset: 0x3650
 // Size: 0xb8
 function private function_aede5c43(entity) {
@@ -820,7 +819,7 @@ function private function_aede5c43(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe7981c97, Offset: 0x3710
 // Size: 0xf6
 function private function_c34dd9f8(entity) {
@@ -840,7 +839,7 @@ function private function_c34dd9f8(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xad3e6dc8, Offset: 0x3810
 // Size: 0x106
 function private function_f2c9142(entity) {
@@ -860,7 +859,7 @@ function private function_f2c9142(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x595f9bf7, Offset: 0x3920
 // Size: 0xca
 function private function_d8a81861(entity) {
@@ -880,7 +879,7 @@ function private function_d8a81861(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b9a3ac9, Offset: 0x39f8
 // Size: 0x90
 function private function_ab6f96b6(entity) {
@@ -897,7 +896,7 @@ function private function_ab6f96b6(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1b8908cc, Offset: 0x3a90
 // Size: 0x66
 function function_7ba867a8(entity) {
@@ -910,7 +909,7 @@ function function_7ba867a8(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ec06549, Offset: 0x3b00
 // Size: 0x150
 function function_52c3ab28(entity) {
@@ -931,7 +930,7 @@ function function_52c3ab28(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe79e24cf, Offset: 0x3c58
 // Size: 0x1b0
 function function_b1092561(entity) {
@@ -939,7 +938,7 @@ function function_b1092561(entity) {
         splittime = 0.5;
         if (animhasnotetrack(entity.var_7b1f015a.animation, "corner")) {
             times = getnotetracktimes(entity.var_7b1f015a.animation, "corner");
-            assert(times.size == 1, "<unknown string>" + function_9e72a96(entity.var_7b1f015a.animation) + "<unknown string>" + "<unknown string>" + "<unknown string>");
+            assert(times.size == 1, "<dev string:x183>" + function_9e72a96(entity.var_7b1f015a.animation) + "<dev string:xf0>" + "<dev string:x10f>" + "<dev string:x119>");
             splittime = times[0];
         }
         localdeltahalfvector = getmovedelta(entity.var_7b1f015a.animation, 0, splittime);
@@ -951,7 +950,7 @@ function function_b1092561(entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x51882e11, Offset: 0x3e10
 // Size: 0x12
 function private function_80c579d8(*entity) {
@@ -959,7 +958,7 @@ function private function_80c579d8(*entity) {
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe52d80d, Offset: 0x3e30
 // Size: 0x108
 function function_2fa3d847() {
@@ -977,13 +976,13 @@ function function_2fa3d847() {
     var_d4699b3f = self.var_e62db63f + var_b3aae738 * var_7c8caf6;
     self.var_e62db63f = var_d4699b3f;
     /#
-        recordenttext("<unknown string>" + var_d4699b3f, self, (1, 0, 0), "<unknown string>");
+        recordenttext("<dev string:x192>" + var_d4699b3f, self, (1, 0, 0), "<dev string:x38>");
     #/
     return var_d4699b3f;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x45e2e59a, Offset: 0x3f40
 // Size: 0x6a
 function private function_d68785cf(entity) {

@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace zm_gold_ffotd;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_gold_ffotd/zm_gold_ffotd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x280
 // Size: 0x4
 function private preinit() {
@@ -20,7 +19,7 @@ function private preinit() {
 }
 
 // Namespace zm_gold_ffotd/zm_gold_ffotd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x31ef8eb8, Offset: 0x290
 // Size: 0xa64
 function private postinit() {

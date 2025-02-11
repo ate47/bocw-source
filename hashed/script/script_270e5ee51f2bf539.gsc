@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_774302f762d76254;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_shared.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\globallogic\globallogic_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\zm_gametype;
 
 #namespace doa;
 
@@ -79,7 +78,7 @@ function mayspawn() {
 function onallplayersready() {
     level endon(#"game_ended");
     while (!getnumexpectedplayers(1)) {
-        wait(0.1);
+        wait 0.1;
     }
     level.var_3fd55ae0 = 0;
     level.var_5c6783e9 = getnumexpectedplayers(1);
@@ -93,8 +92,8 @@ function onallplayersready() {
                 player_count_actual++;
             }
         }
-        println("<unknown string>" + getnumconnectedplayers() + "<unknown string>" + getnumexpectedplayers(1));
-        wait(0.1);
+        println("<dev string:x38>" + getnumconnectedplayers() + "<dev string:x52>" + getnumexpectedplayers(1));
+        wait 0.1;
     }
     setinitialplayersconnected();
     level flag::set("all_players_connected");
@@ -109,7 +108,7 @@ function onallplayersready() {
 // Checksum 0x9743f7bb, Offset: 0x688
 // Size: 0x3c
 function function_d797f41f(n_waittime = 1) {
-    wait(n_waittime);
+    wait n_waittime;
     music::setmusicstate("none");
 }
 
@@ -119,7 +118,7 @@ function function_d797f41f(n_waittime = 1) {
 // Size: 0xce
 function function_9a8ab40f() {
     do {
-        wait(0.1);
+        wait 0.1;
         var_183929a8 = 0;
         a_players = getplayers();
         foreach (player in a_players) {

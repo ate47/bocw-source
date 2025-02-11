@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace clientids;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace clientids/clientids
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdb903754, Offset: 0xe0
 // Size: 0x44
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace clientids/clientids
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa57c26c7, Offset: 0x130
 // Size: 0x10
 function init() {
@@ -31,7 +30,7 @@ function init() {
 }
 
 // Namespace clientids/clientids
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe7e6f056, Offset: 0x148
 // Size: 0x9c
 function on_player_connect() {
@@ -40,6 +39,6 @@ function on_player_connect() {
         self.clientid = level.clientid;
         level.clientid++;
     }
-    println("<unknown string>" + self.name + "<unknown string>" + self.clientid);
+    println("<dev string:x38>" + self.name + "<dev string:x44>" + self.clientid);
 }
 

@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace rank;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3954219, Offset: 0x150
 // Size: 0x24
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44f8334, Offset: 0x180
 // Size: 0x1c4
 function init() {
@@ -50,7 +49,7 @@ function init() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c833543, Offset: 0x350
 // Size: 0x524
 function initscoreinfo() {
@@ -101,7 +100,7 @@ function initscoreinfo() {
 }
 
 // Namespace rank/rank_shared
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x897ed326, Offset: 0x880
 // Size: 0x602
 function registerscoreinfo(type, row, lp, xp, sp, hs, res, dp, is_obj, label, medalname, var_b6cc2245, is_deprecated, bounty_reward, var_65181181) {
@@ -181,7 +180,7 @@ function registerscoreinfo(type, row, lp, xp, sp, hs, res, dp, is_obj, label, me
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd15a6745, Offset: 0xe90
 // Size: 0x14e
 function getscoreinfovalue(type) {
@@ -202,7 +201,7 @@ function getscoreinfovalue(type) {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa654e918, Offset: 0xfe8
 // Size: 0x22
 function function_4587103(*type) {
@@ -210,7 +209,7 @@ function function_4587103(*type) {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4920234, Offset: 0x1018
 // Size: 0xa
 function getrole() {
@@ -218,7 +217,7 @@ function getrole() {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94f25a60, Offset: 0x1030
 // Size: 0xce
 function getscoreinfoposition(type) {
@@ -277,7 +276,7 @@ function shouldskipmomentumdisplay(*type) {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb141e96e, Offset: 0x12e0
 // Size: 0x2a
 function getscoreinfolabel(type) {
@@ -293,7 +292,7 @@ function getcombatefficiencyevent(type) {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9204461e, Offset: 0x1350
 // Size: 0x84
 function function_f7b5d9fa(type) {
@@ -305,7 +304,7 @@ function function_f7b5d9fa(type) {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae2bbc94, Offset: 0x13e0
 // Size: 0x24
 function shouldkickbyrank() {
@@ -316,7 +315,7 @@ function shouldkickbyrank() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe23d4d41, Offset: 0x1410
 // Size: 0x70
 function getarenapointsstat() {
@@ -326,7 +325,7 @@ function getarenapointsstat() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7e9f32ee, Offset: 0x1488
 // Size: 0x7c
 function getrankxp() {
@@ -342,7 +341,7 @@ function getrankxp() {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x17955094, Offset: 0x1510
 // Size: 0x84
 function function_5b197def(var_9169ac47) {
@@ -358,7 +357,7 @@ function function_5b197def(var_9169ac47) {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x861a3ba4, Offset: 0x15a0
 // Size: 0x6e
 function getrank() {
@@ -370,7 +369,7 @@ function getrank() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd66e0ef7, Offset: 0x1618
 // Size: 0x6e
 function getprestige() {
@@ -382,7 +381,7 @@ function getprestige() {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5aab2e16, Offset: 0x1690
 // Size: 0x5dc
 function on_player_connect() {
@@ -488,7 +487,7 @@ function updaterank() {
         rankid++;
     }
     /#
-        print("<unknown string>" + oldrank + "<unknown string>" + newrankid + "<unknown string>" + self stats::get_stat_global(#"time_played_total"));
+        print("<dev string:x38>" + oldrank + "<dev string:x4a>" + newrankid + "<dev string:x52>" + self stats::get_stat_global(#"time_played_total"));
     #/
     self setrank(newrankid);
     return true;
@@ -516,12 +515,12 @@ function event_handler[player_rankup] codecallback_rankup(eventstruct) {
 // Size: 0x68
 function getitemindex(refstring) {
     itemindex = getitemindexfromref(refstring);
-    assert(itemindex > 0, "<unknown string>" + refstring + "<unknown string>" + itemindex);
+    assert(itemindex > 0, "<dev string:x63>" + refstring + "<dev string:x81>" + itemindex);
     return itemindex;
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae1f6852, Offset: 0x2050
 // Size: 0x12
 function endgameupdate() {
@@ -538,7 +537,7 @@ function getspm() {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeedf1530, Offset: 0x20c0
 // Size: 0x62
 function function_bcb5e246(type) {

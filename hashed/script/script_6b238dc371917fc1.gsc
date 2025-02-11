@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace namespace_ef91ed26;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_ef91ed26/namespace_ef91ed26
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc3a22b9a, Offset: 0x158
 // Size: 0x2c
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace namespace_ef91ed26/namespace_ef91ed26
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x76be0dcf, Offset: 0x190
 // Size: 0xc2
 function private function_f9bdbd82() {
@@ -37,7 +36,7 @@ function private function_f9bdbd82() {
 }
 
 // Namespace namespace_ef91ed26/namespace_ef91ed26
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7bbf547a, Offset: 0x260
 // Size: 0x94
 function private function_8a413afb(params) {
@@ -52,7 +51,7 @@ function private function_8a413afb(params) {
 }
 
 // Namespace namespace_ef91ed26/namespace_ef91ed26
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4eac7e21, Offset: 0x300
 // Size: 0x94
 function private function_f7158176(params) {

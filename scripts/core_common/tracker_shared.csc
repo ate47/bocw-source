@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\serverfield_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace tracker;
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdee9ac5c, Offset: 0x120
 // Size: 0x24
 function init_shared() {
@@ -17,17 +16,17 @@ function init_shared() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe8bcf691, Offset: 0x150
 // Size: 0xc4
 function private registerclientfields() {
-    clientfield::register_clientuimodel("huditems.isExposedOnMinimap", #"hash_6f4b11a0bee9b73d", #"isexposedonminimap", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("huditems.isExposedOnMinimap", #"hud_items", #"isexposedonminimap", 1, 1, "int", undefined, 0, 0);
     serverfield::register("sf_tracker_spotting", 1, 6, "int");
-    clientfield::register("allplayers", "cf_tracker_spotting", 1, 6, "int", &function_308cd741, 0, 0);
+    clientfield::register("allplayers", "cf_tracker_spotting", 1, 6, "int", &player_spotted, 0, 0);
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb768a338, Offset: 0x220
 // Size: 0x19c
 function function_fa884ccf() {
@@ -46,7 +45,7 @@ function function_fa884ccf() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf21faa, Offset: 0x3c8
 // Size: 0x8c
 function on_player_spawned(localclientnum) {
@@ -54,7 +53,7 @@ function on_player_spawned(localclientnum) {
         return;
     }
     self function_bcc73387(localclientnum);
-    wait(0.5);
+    wait 0.5;
     if (!isdefined(self)) {
         return;
     }
@@ -64,7 +63,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc4eea0bf, Offset: 0x460
 // Size: 0x7c
 function function_56df655f(params) {
@@ -77,7 +76,7 @@ function function_56df655f(params) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x216a8d10, Offset: 0x4e8
 // Size: 0x1fc
 function private function_8c47bbe5(localclientnum) {
@@ -110,12 +109,12 @@ function private function_8c47bbe5(localclientnum) {
         if (!isalive(self)) {
             return;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x63220f2c, Offset: 0x6f0
 // Size: 0xa2
 function function_b6e83a42(localclientnum, ent) {
@@ -135,12 +134,12 @@ function function_b6e83a42(localclientnum, ent) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x618be3b2, Offset: 0x7a0
 // Size: 0x1de
-function private function_e018cdc7(localclientnum) {
-    self notify(#"hash_38a08eaa34e05df7");
-    self endon(#"death", #"hash_38a08eaa34e05df7");
+function private spot_target(localclientnum) {
+    self notify(#"spot_target");
+    self endon(#"death", #"spot_target");
     level endon(#"game_ended");
     var_b117d19 = 0;
     var_cf075ce6 = 0;
@@ -172,10 +171,10 @@ function private function_e018cdc7(localclientnum) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x39ab6855, Offset: 0x988
 // Size: 0x1ce
-function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function player_spotted(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (function_1cbf351b(binitialsnap) || fieldname == bwastimejump) {
         return;
     }
@@ -189,7 +188,7 @@ function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsn
                 newtarget.var_ee1cc1c2 = [];
             }
             newtarget.var_ee1cc1c2[var_f6536836] = self;
-            newtarget thread function_e018cdc7(binitialsnap);
+            newtarget thread spot_target(binitialsnap);
         }
     }
     if (fieldname) {
@@ -208,7 +207,7 @@ function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6cbd11d, Offset: 0xb60
 // Size: 0x188
 function function_bcc73387(localclientnum, var_540abea5 = 0) {
@@ -221,11 +220,11 @@ function function_bcc73387(localclientnum, var_540abea5 = 0) {
         entnum = player getentitynumber();
         var_db7bdbeb = isdefined(level.var_8fda87cb[entnum]) ? level.var_8fda87cb[entnum] : 0;
         if (val != var_db7bdbeb) {
-            player function_308cd741(localclientnum, var_db7bdbeb, val);
+            player player_spotted(localclientnum, var_db7bdbeb, val);
             continue;
         }
         if (val) {
-            player function_308cd741(localclientnum, 0, val);
+            player player_spotted(localclientnum, 0, val);
         }
     }
 }

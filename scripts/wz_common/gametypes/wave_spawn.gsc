@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\spawn.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\death_circle.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\wz_common\spawn;
 
 #namespace wave_spawn;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20dabf5, Offset: 0x160
 // Size: 0x16c
 function __init__() {
@@ -34,7 +33,7 @@ function __init__() {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x934af55a, Offset: 0x2d8
 // Size: 0x64
 function function_301b775b() {
@@ -43,7 +42,7 @@ function function_301b775b() {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf11ea61, Offset: 0x348
 // Size: 0xd8
 function private function_a27362d0(*params) {
@@ -56,7 +55,7 @@ function private function_a27362d0(*params) {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdbc9eaa1, Offset: 0x428
 // Size: 0x108
 function function_ca1398a7() {
@@ -77,7 +76,7 @@ function function_ca1398a7() {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x976e0605, Offset: 0x538
 // Size: 0x90
 function function_1540761c(*params) {
@@ -89,7 +88,7 @@ function function_1540761c(*params) {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb451c0c, Offset: 0x5d0
 // Size: 0xa0
 function function_832ecb3d(*params) {
@@ -99,10 +98,10 @@ function function_832ecb3d(*params) {
 }
 
 // Namespace wave_spawn/wave_spawn
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaa1bc202, Offset: 0x678
 // Size: 0x124
-function private function_14a68e0b(*var_a2f12b49) {
+function private function_14a68e0b(*death_params) {
     if (is_true(level.var_1766510)) {
         return;
     }

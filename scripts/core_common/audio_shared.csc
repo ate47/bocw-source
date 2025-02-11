@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\trigger_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
 #using script_59f62971655f7103;
-#using scripts\core_common\battlechatter.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
 
 #namespace audio;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3f51ca34, Offset: 0x618
 // Size: 0x184
 function private preinit() {
@@ -39,7 +38,7 @@ function private preinit() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x135ee185, Offset: 0x7a8
 // Size: 0x2c
 function function_d3790fe() {
@@ -65,7 +64,7 @@ function function_843dc46a() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfe22ab03, Offset: 0x848
 // Size: 0x2c
 function function_a022576e() {
@@ -73,7 +72,7 @@ function function_a022576e() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x66269a97, Offset: 0x880
 // Size: 0x43c
 function register_clientfields() {
@@ -95,7 +94,7 @@ function register_clientfields() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdd6491bd, Offset: 0xcc8
 // Size: 0x9c
 function local_player_spawn(localclientnum) {
@@ -110,7 +109,7 @@ function local_player_spawn(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8c905562, Offset: 0xd70
 // Size: 0x9c
 function player_init(localclientnum) {
@@ -125,7 +124,7 @@ function player_init(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8c567456, Offset: 0xe18
 // Size: 0x54
 function snddeactivatesquadspawnmusic(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -135,7 +134,7 @@ function snddeactivatesquadspawnmusic(*localclientnum, *oldval, newval, *bnewent
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xec31e4db, Offset: 0xe78
 // Size: 0x84
 function function_45e99595(*localclientnum) {
@@ -148,7 +147,7 @@ function function_45e99595(*localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbd693285, Offset: 0xf08
 // Size: 0x84
 function function_bc0a8bd8(*localclientnum) {
@@ -161,7 +160,7 @@ function function_bc0a8bd8(*localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x59107bef, Offset: 0xf98
 // Size: 0x34
 function function_c037c7cd(*clientnum, state, *oldstate) {
@@ -190,7 +189,7 @@ function snddoublejump_watcher() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8a82e6da, Offset: 0x10e8
 // Size: 0xbc
 function clientvoicesetup(localclientnum) {
@@ -205,7 +204,7 @@ function clientvoicesetup(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xca5ec6dd, Offset: 0x11b0
 // Size: 0xd8
 function sndvonotify(notifystring, dialog) {
@@ -226,7 +225,7 @@ function sndvonotify(notifystring, dialog) {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeb200c3a, Offset: 0x1290
 // Size: 0x11c
 function snd_snapshot_init() {
@@ -248,7 +247,7 @@ function snd_snapshot_init() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae7f9662, Offset: 0x13b8
 // Size: 0x34
 function sndlevelstartduck_shutoff() {
@@ -257,7 +256,7 @@ function sndlevelstartduck_shutoff() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xff471cfd, Offset: 0x13f8
 // Size: 0xfe
 function function_22a92b8b() {
@@ -282,7 +281,7 @@ function function_22a92b8b() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec76d7e8, Offset: 0x1500
 // Size: 0x86
 function function_c9705ad4() {
@@ -298,17 +297,17 @@ function function_c9705ad4() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeabe45ca, Offset: 0x1590
 // Size: 0x60
 function snd_set_snapshot(state) {
     level._sndnextsnapshot = state;
-    println("swimming_end" + state + "<unknown string>");
+    println("<dev string:x38>" + state + "<dev string:x57>");
     level notify(#"new_bus");
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa21a1dc3, Offset: 0x15f8
 // Size: 0xc4
 function snd_snapshot_think() {
@@ -327,7 +326,7 @@ function snd_snapshot_think() {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc53f058a, Offset: 0x16c8
 // Size: 0x280
 function soundrandom_thread(localclientnum, randsound) {
@@ -346,7 +345,7 @@ function soundrandom_thread(localclientnum, randsound) {
             createsoundrandom(randsound.origin, randsound.script_sound, randsound.script_wait_min, randsound.script_wait_max);
             return;
         }
-        println("<unknown string>" + randsound.origin[0] + "<unknown string>" + randsound.origin[1] + "<unknown string>" + randsound.origin[2] + "<unknown string>");
+        println("<dev string:x5c>" + randsound.origin[0] + "<dev string:x78>" + randsound.origin[1] + "<dev string:x78>" + randsound.origin[2] + "<dev string:x7e>");
         return;
     }
     randsound.playing = 1;
@@ -355,7 +354,7 @@ function soundrandom_thread(localclientnum, randsound) {
     }
     level thread soundrandom_notifywait(notify_name, randsound);
     while (true) {
-        wait(randomfloatrange(randsound.script_wait_min, randsound.script_wait_max));
+        wait randomfloatrange(randsound.script_wait_min, randsound.script_wait_max);
         if (isdefined(randsound.script_sound) && is_true(randsound.playing)) {
             playsound(localclientnum, randsound.script_sound, randsound.origin);
         }
@@ -368,7 +367,7 @@ function soundrandom_thread(localclientnum, randsound) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4cc83be, Offset: 0x1950
 // Size: 0x66
 function soundrandom_notifywait(notify_name, randsound) {
@@ -383,7 +382,7 @@ function soundrandom_notifywait(notify_name, randsound) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94fdb0ce, Offset: 0x19c0
 // Size: 0x134
 function startsoundrandoms(localclientnum) {
@@ -404,7 +403,7 @@ function startsoundrandoms(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xee8759ea, Offset: 0x1b00
 // Size: 0x16a
 function soundloopthink() {
@@ -442,7 +441,7 @@ function soundloopthink() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa3fc6d9a, Offset: 0x1c78
 // Size: 0x3c
 function soundloopcheckpointrestore() {
@@ -451,7 +450,7 @@ function soundloopcheckpointrestore() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbdd6a0f9, Offset: 0x1cc0
 // Size: 0x17a
 function soundlinethink() {
@@ -488,7 +487,7 @@ function soundlinethink() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x32b93212, Offset: 0x1e48
 // Size: 0x4c
 function soundlinecheckpointrestore(target) {
@@ -497,7 +496,7 @@ function soundlinecheckpointrestore(target) {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3649ed8, Offset: 0x1ea0
 // Size: 0x1a4
 function startsoundloops() {
@@ -506,7 +505,7 @@ function startsoundloops() {
         delay = 0;
         /#
             if (getdvarint(#"debug_audio", 0) > 0) {
-                println("<unknown string>" + level.loopers.size + "<unknown string>");
+                println("<dev string:xd0>" + level.loopers.size + "<dev string:xfe>");
             }
         #/
         for (i = 0; i < level.loopers.size; i++) {
@@ -522,13 +521,13 @@ function startsoundloops() {
     }
     /#
         if (getdvarint(#"debug_audio", 0) > 0) {
-            println("<unknown string>");
+            println("<dev string:x10c>");
         }
     #/
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x94272be1, Offset: 0x2050
 // Size: 0x1a4
 function startlineemitters() {
@@ -537,7 +536,7 @@ function startlineemitters() {
         delay = 0;
         /#
             if (getdvarint(#"debug_audio", 0) > 0) {
-                println("<unknown string>" + level.lineemitters.size + "<unknown string>");
+                println("<dev string:x12e>" + level.lineemitters.size + "<dev string:xfe>");
             }
         #/
         for (i = 0; i < level.lineemitters.size; i++) {
@@ -553,19 +552,19 @@ function startlineemitters() {
     }
     /#
         if (getdvarint(#"debug_audio", 0) > 0) {
-            println("<unknown string>");
+            println("<dev string:x162>");
         }
     #/
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a33e4d2, Offset: 0x2200
 // Size: 0x160
 function startrattles() {
     rattles = struct::get_array("sound_rattle", "script_label");
     if (isdefined(rattles)) {
-        println("<unknown string>" + rattles.size + "<unknown string>");
+        println("<dev string:x18a>" + rattles.size + "<dev string:x194>");
         delay = 0;
         for (i = 0; i < rattles.size; i++) {
             soundrattlesetup(rattles[i].script_sound, rattles[i].origin);
@@ -581,7 +580,7 @@ function startrattles() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x779bf70d, Offset: 0x2368
 // Size: 0x14c
 function init_audio_triggers(localclientnum) {
@@ -590,8 +589,8 @@ function init_audio_triggers(localclientnum) {
     materialtrigs = getentarray(localclientnum, "audio_material_trigger", "targetname");
     /#
         if (getdvarint(#"debug_audio", 0) > 0) {
-            println("<unknown string>" + steptrigs.size + "<unknown string>");
-            println("<unknown string>" + materialtrigs.size + "<unknown string>");
+            println("<dev string:x1a0>" + steptrigs.size + "<dev string:x1ad>");
+            println("<dev string:x1a0>" + materialtrigs.size + "<dev string:x1c6>");
         }
     #/
     array::thread_all(steptrigs, &audio_step_trigger, localclientnum);
@@ -599,7 +598,7 @@ function init_audio_triggers(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe4c09a7d, Offset: 0x24c0
 // Size: 0xbe
 function audio_step_trigger(*localclientnum) {
@@ -614,7 +613,7 @@ function audio_step_trigger(*localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbfcaa109, Offset: 0x2588
 // Size: 0x70
 function audio_material_trigger(*trig) {
@@ -625,7 +624,7 @@ function audio_material_trigger(*trig) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4c793c41, Offset: 0x2600
 // Size: 0x6c
 function trig_enter_audio_material_trigger(player) {
@@ -640,7 +639,7 @@ function trig_enter_audio_material_trigger(player) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb086a6ea, Offset: 0x2678
 // Size: 0x8c
 function trig_leave_audio_material_trigger(player) {
@@ -656,7 +655,7 @@ function trig_leave_audio_material_trigger(player) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3c4c43d3, Offset: 0x2710
 // Size: 0x13c
 function trig_enter_audio_step_trigger(trigplayer) {
@@ -680,7 +679,7 @@ function trig_enter_audio_step_trigger(trigplayer) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1ca93ecb, Offset: 0x2858
 // Size: 0x15c
 function trig_leave_audio_step_trigger(trigplayer) {
@@ -697,7 +696,7 @@ function trig_leave_audio_step_trigger(trigplayer) {
         trigplayer.insteptrigger -= 1;
     }
     if (trigplayer.insteptrigger < 0) {
-        println("<unknown string>");
+        println("<dev string:x1e3>");
         trigplayer.insteptrigger = 0;
     }
     if (trigplayer.insteptrigger == 0) {
@@ -707,7 +706,7 @@ function trig_leave_audio_step_trigger(trigplayer) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7ba84110, Offset: 0x29c0
 // Size: 0x7c
 function bump_trigger_start(localclientnum) {
@@ -718,7 +717,7 @@ function bump_trigger_start(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x856d09e7, Offset: 0x2a48
 // Size: 0xa8
 function thread_bump_trigger(localclientnum) {
@@ -734,7 +733,7 @@ function thread_bump_trigger(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe71a5a47, Offset: 0x2af8
 // Size: 0x1f4
 function trig_enter_bump(ent) {
@@ -766,7 +765,7 @@ function trig_enter_bump(ent) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x93f4bc53, Offset: 0x2cf8
 // Size: 0x6c
 function mantle_wait(alias, localclientnum) {
@@ -777,16 +776,16 @@ function mantle_wait(alias, localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x377ebfe6, Offset: 0x2d70
 // Size: 0x28
 function trig_leave_bump(ent) {
-    wait(1);
+    wait 1;
     ent notify(#"left_mantle");
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbf270b80, Offset: 0x2da0
 // Size: 0x2a
 function bump_trigger_listener() {
@@ -797,7 +796,7 @@ function bump_trigger_listener() {
 }
 
 // Namespace audio/audio_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa298f647, Offset: 0x2dd8
 // Size: 0xa4
 function scale_speed(x1, x2, y1, y2, z) {
@@ -815,7 +814,7 @@ function scale_speed(x1, x2, y1, y2, z) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2014221c, Offset: 0x2e88
 // Size: 0xca
 function get_vol_from_speed(player) {
@@ -830,7 +829,7 @@ function get_vol_from_speed(player) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c5341df, Offset: 0x2f60
 // Size: 0x2c
 function absolute_value(fowd) {
@@ -841,7 +840,7 @@ function absolute_value(fowd) {
 }
 
 // Namespace audio/audio_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xae9a60d, Offset: 0x2f98
 // Size: 0x1ae
 function closest_point_on_line_to_point(point, linestart, lineend) {
@@ -878,7 +877,7 @@ function snd_play_auto_fx(fxid, alias, offsetx, offsety, offsetz, onground, area
     // Size: 0x74
     function snd_print_fx_id(fxid, type, *ent) {
         if (getdvarint(#"debug_audio", 0) > 0) {
-            println("<unknown string>" + type + "<unknown string>" + ent);
+            println("<dev string:x22d>" + type + "<dev string:x242>" + ent);
         }
     }
 
@@ -893,8 +892,8 @@ function debug_line_emitter() {
         /#
             if (getdvarint(#"debug_audio", 0) > 0) {
                 line(self.start, self.end, (0, 1, 0));
-                print3d(self.start, "<unknown string>", (0, 0.8, 0), 1, 3, 1);
-                print3d(self.end, "<unknown string>", (0, 0.8, 0), 1, 3, 1);
+                print3d(self.start, "<dev string:x24f>", (0, 0.8, 0), 1, 3, 1);
+                print3d(self.end, "<dev string:x258>", (0, 0.8, 0), 1, 3, 1);
                 print3d(self.origin, self.script_sound, (0, 0.8, 0), 1, 3, 1);
             }
             waitframe(1);
@@ -918,19 +917,19 @@ function move_sound_along_line() {
         }
         closest_dist = distancesquared(getlocalclientpos(0), self.origin);
         if (closest_dist > 1048576) {
-            wait(2);
+            wait 2;
             continue;
         }
         if (closest_dist > 262144) {
-            wait(0.2);
+            wait 0.2;
             continue;
         }
-        wait(0.05);
+        wait 0.05;
     }
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x39a33584, Offset: 0x3470
 // Size: 0x2c
 function playloopat(aliasname, origin) {
@@ -938,7 +937,7 @@ function playloopat(aliasname, origin) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc70099bc, Offset: 0x34a8
 // Size: 0x2c
 function stoploopat(aliasname, origin) {
@@ -951,12 +950,12 @@ function stoploopat(aliasname, origin) {
 // Size: 0x34
 function soundwait(id) {
     while (soundplaying(id)) {
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7f917d0c, Offset: 0x3520
 // Size: 0x378
 function snd_underwater(localclientnum) {
@@ -1013,7 +1012,7 @@ function snd_underwater(localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x11e5982, Offset: 0x38a0
 // Size: 0x34
 function underwaterbegin() {
@@ -1022,7 +1021,7 @@ function underwaterbegin() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc9e7e23f, Offset: 0x38e0
 // Size: 0x34
 function underwaterend() {
@@ -1031,7 +1030,7 @@ function underwaterend() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99127b7c, Offset: 0x3920
 // Size: 0x12
 function swimbegin() {
@@ -1039,7 +1038,7 @@ function swimbegin() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x52a8c871, Offset: 0x3940
 // Size: 0x16
 function swimend(*localclientnum) {
@@ -1047,7 +1046,7 @@ function swimend(*localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe46f5cff, Offset: 0x3960
 // Size: 0x16
 function swimcancel(*localclientnum) {
@@ -1055,7 +1054,7 @@ function swimcancel(*localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x36288bdc, Offset: 0x3980
 // Size: 0xd6
 function soundplayuidecodeloop(*decodestring, playtimems) {
@@ -1064,7 +1063,7 @@ function soundplayuidecodeloop(*decodestring, playtimems) {
         fake_ent = spawn(0, (0, 0, 0), "script_origin");
         if (isdefined(fake_ent)) {
             fake_ent playloopsound(#"uin_notify_data_loop");
-            wait(float(playtimems) / 1000);
+            wait float(playtimems) / 1000;
             fake_ent stopallloopsounds(0);
         }
         level.playinguidecodeloop = undefined;
@@ -1072,7 +1071,7 @@ function soundplayuidecodeloop(*decodestring, playtimems) {
 }
 
 // Namespace audio/audio_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x932893c1, Offset: 0x3a60
 // Size: 0x2c
 function setcurrentambientstate(*ambientroom, *ambientpackage, *roomcollidercent, *packagecollidercent, *defaultroom) {
@@ -1080,7 +1079,7 @@ function setcurrentambientstate(*ambientroom, *ambientpackage, *roomcollidercent
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa1122d7a, Offset: 0x3a98
 // Size: 0x11e
 function sndcriticalhealth(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1107,7 +1106,7 @@ function sndcriticalhealth(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x883a3142, Offset: 0x3bc0
 // Size: 0x11e
 function sndlaststand(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1134,7 +1133,7 @@ function sndlaststand(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x53a5d581, Offset: 0x3ce8
 // Size: 0x62
 function sndtacrig(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1146,7 +1145,7 @@ function sndtacrig(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *f
 }
 
 // Namespace audio/audio_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc70bf577, Offset: 0x3d58
 // Size: 0x64
 function dorattle(origin, min, max) {
@@ -1159,7 +1158,7 @@ function dorattle(origin, min, max) {
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xffa8174, Offset: 0x3dc8
 // Size: 0xec
 function sndrattle_server(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1182,7 +1181,7 @@ function event_handler[event_74314d75] function_b51c1cb9(eventstruct) {
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xffe35261, Offset: 0x3f18
 // Size: 0xb4
 function weapon_butt_sounds(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1198,7 +1197,7 @@ function weapon_butt_sounds(localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe771c505, Offset: 0x3fd8
 // Size: 0x114
 function sndmatchsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1223,7 +1222,7 @@ function sndmatchsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfbca1f54, Offset: 0x40f8
 // Size: 0x34
 function sndkillcam() {
@@ -1264,7 +1263,7 @@ function sndfinalkillcam_activate() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcb49a573, Offset: 0x41f8
 // Size: 0x28
 function sndfinalkillcam_slowdown() {
@@ -1274,7 +1273,7 @@ function sndfinalkillcam_slowdown() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe3b511e1, Offset: 0x4228
 // Size: 0x40
 function sndfinalkillcam_deactivate() {
@@ -1285,7 +1284,7 @@ function sndfinalkillcam_deactivate() {
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdccc7c3e, Offset: 0x4270
 // Size: 0xc4
 function sndswitchvehiclecontext(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1300,7 +1299,7 @@ function sndswitchvehiclecontext(*localclientnum, *oldval, *newval, *bnewent, *b
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbe0ab4ca, Offset: 0x4340
 // Size: 0x1a
 function sndmusicdeathwatcher() {
@@ -1308,7 +1307,7 @@ function sndmusicdeathwatcher() {
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb1c21dae, Offset: 0x4368
 // Size: 0x1cc
 function sndcchacking(*localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1338,7 +1337,7 @@ function sndcchacking(*localclientnum, oldval, newval, *bnewent, *binitialsnap, 
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xec6f536b, Offset: 0x4540
 // Size: 0x184
 function sndigcsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1371,7 +1370,7 @@ function sndigcsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitialsna
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x556f87ef, Offset: 0x46d0
 // Size: 0x5e
 function sndlevelstartsnapoff(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1382,7 +1381,7 @@ function sndlevelstartsnapoff(*localclientnum, *oldval, newval, *bnewent, *binit
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x19f713b, Offset: 0x4738
 // Size: 0x5c
 function sndzmbfadein(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1392,7 +1391,7 @@ function sndzmbfadein(*localclientnum, *oldval, newval, *bnewent, *binitialsnap,
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x72804f9b, Offset: 0x47a0
 // Size: 0xd4
 function sndchyronloop(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1409,7 +1408,7 @@ function sndchyronloop(*localclientnum, *oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43b1d662, Offset: 0x4880
 // Size: 0x188
 function function_aa906715() {
@@ -1427,13 +1426,13 @@ function function_aa906715() {
             self thread function_f041ffdb(var_1b0c36cc, var_7f9cdb4f);
             self waittill(#"hash_71bef43cb9e9e9f4");
             self thread function_deedd8d0(var_78ca4238);
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdbe3ba52, Offset: 0x4a10
 // Size: 0x64
 function function_f041ffdb(var_1b0c36cc, var_7f9cdb4f) {
@@ -1445,7 +1444,7 @@ function function_f041ffdb(var_1b0c36cc, var_7f9cdb4f) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x50a32e0e, Offset: 0x4a80
 // Size: 0xf8
 function function_5e73e105(var_1b0c36cc, var_7f9cdb4f) {
@@ -1458,12 +1457,12 @@ function function_5e73e105(var_1b0c36cc, var_7f9cdb4f) {
         } else {
             self playsound(0, var_7f9cdb4f);
         }
-        wait(randomfloatrange(1.5, 3.5));
+        wait randomfloatrange(1.5, 3.5);
     }
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xebb5ab66, Offset: 0x4b80
 // Size: 0x96
 function function_deedd8d0(var_78ca4238) {
@@ -1475,7 +1474,7 @@ function function_deedd8d0(var_78ca4238) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14129c69, Offset: 0x4c20
 // Size: 0x18c
 function sndsprintbreath(*localclientnum) {
@@ -1498,13 +1497,13 @@ function sndsprintbreath(*localclientnum) {
                     }
                 }
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x36ab454e, Offset: 0x4db8
 // Size: 0x64
 function sndbreathstart(sound) {
@@ -1517,7 +1516,7 @@ function sndbreathstart(sound) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf675b857, Offset: 0x4e28
 // Size: 0x68
 function function_d6bc7279(sound) {
@@ -1526,12 +1525,12 @@ function function_d6bc7279(sound) {
     self.var_29054134 = 1;
     while (true) {
         self playsound(0, sound);
-        wait(2.5);
+        wait 2.5;
     }
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf09255a2, Offset: 0x4e98
 // Size: 0x5e
 function function_ee6d1a7f(sound) {
@@ -1555,7 +1554,7 @@ function function_5da61577(*localclientnum) {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x631ae296, Offset: 0x4f48
 // Size: 0xb8
 function function_bd07593a() {
@@ -1564,18 +1563,18 @@ function function_bd07593a() {
         if (self util::is_on_side(#"allies")) {
             if (self isplayersprinting()) {
                 self playsound(0, #"hash_2dc9c76844261d06");
-                wait(1);
+                wait 1;
             } else {
                 self playsound(0, #"hash_70b507d0e243536d");
-                wait(2.5);
+                wait 2.5;
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace audio/audio_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2964688f, Offset: 0x5008
 // Size: 0x64
 function sndvehicledamagealarm(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -1584,7 +1583,7 @@ function sndvehicledamagealarm(*localclientnum, *oldval, *newval, *bnewent, *bin
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcab45de5, Offset: 0x5078
 // Size: 0xc4
 function function_350920b9() {
@@ -1594,7 +1593,7 @@ function function_350920b9() {
     if (!isdefined(self.var_5730fa36)) {
         self.var_5730fa36 = self playloopsound(#"hash_7a6b427867364957");
     }
-    wait(2);
+    wait 2;
     if (isdefined(self.var_5730fa36)) {
         self stoploopsound(self.var_5730fa36);
         self.var_5730fa36 = undefined;
@@ -1714,7 +1713,7 @@ function function_350920b9() {
         if (isdefined(level.lineemitters)) {
             index = scriptstruct.index;
             if (index >= 0 && index < level.lineemitters.size) {
-                target = struct::get(level.lineemitters[index].target, "<unknown string>");
+                target = struct::get(level.lineemitters[index].target, "<dev string:x25f>");
                 soundstoplineemitter(level.lineemitters[index].script_sound, level.lineemitters[index].origin, target.origin);
                 level.lineemitters[index].origin = (0, 0, 0);
                 level.lineemitters[index].script_sound = undefined;
@@ -1734,7 +1733,7 @@ function function_350920b9() {
                 level.lineemitters[index].origin = var_2f7118b0.origin;
                 level.lineemitters[index].script_sound = var_2f7118b0.script_sound;
                 level.lineemitters[index].target = var_2f7118b0.target;
-                target = struct::get(level.lineemitters[index].target, "<unknown string>");
+                target = struct::get(level.lineemitters[index].target, "<dev string:x25f>");
                 if (isdefined(target)) {
                     function_15b81494(index, level.lineemitters[index].script_sound, level.lineemitters[index].origin, target.origin);
                 }

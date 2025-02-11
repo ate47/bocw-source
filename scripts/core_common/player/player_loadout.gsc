@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
 
 #namespace loadout;
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbe289078, Offset: 0xf8
 // Size: 0x14
 function function_87bcb1b() {
@@ -12,7 +11,7 @@ function function_87bcb1b() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5fd512b, Offset: 0x118
 // Size: 0x12c
 function function_c67222df() {
@@ -29,7 +28,7 @@ function function_c67222df() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb9627cea, Offset: 0x250
 // Size: 0x90
 function init_loadout_slot(slot_index) {
@@ -37,7 +36,7 @@ function init_loadout_slot(slot_index) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c8095f2, Offset: 0x2e8
 // Size: 0x50
 function get_loadout_slot(slot_index) {
@@ -48,7 +47,7 @@ function get_loadout_slot(slot_index) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb2249fd, Offset: 0x340
 // Size: 0xcc
 function function_8435f729(weapon) {
@@ -63,7 +62,7 @@ function function_8435f729(weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x35f0ec75, Offset: 0x418
 // Size: 0xcc
 function find_loadout_slot(weapon) {
@@ -78,7 +77,7 @@ function find_loadout_slot(weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x323ba584, Offset: 0x4f0
 // Size: 0xb6
 function function_18a77b37(slot_index) {
@@ -90,7 +89,7 @@ function function_18a77b37(slot_index) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x90fe3732, Offset: 0x5b0
 // Size: 0xb6
 function function_442539(slot_index, weapon) {

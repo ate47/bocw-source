@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_4a1e83805671ae57;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
 #using script_725554a59d6a75b9;
+#using scripts\abilities\ability_player;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace gadget_health_regen;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xed0a190b, Offset: 0x1a0
 // Size: 0x28c
 function private preinit() {
@@ -46,11 +45,11 @@ function private preinit() {
     if (!isdefined(level.var_a77fcfbe)) {
         level.var_a77fcfbe = &function_dafd9cd;
     }
-    assert(level.var_3a536ce3.name != "<unknown string>", "<unknown string>");
+    assert(level.var_3a536ce3.name != "<dev string:x38>", "<dev string:x40>");
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x460aab3, Offset: 0x438
 // Size: 0x3c
 function on_status_effect(var_756fda07) {
@@ -60,7 +59,7 @@ function on_status_effect(var_756fda07) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x13c3c6ec, Offset: 0x480
 // Size: 0x1c
 function on_buff() {
@@ -68,7 +67,7 @@ function on_buff() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcb8bae05, Offset: 0x4a8
 // Size: 0x84
 function gadget_health_regen_on_give(slot, weapon) {
@@ -83,7 +82,7 @@ function gadget_health_regen_on_give(slot, weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x16c3b049, Offset: 0x538
 // Size: 0x34
 function gadget_health_regen_on_take(*slot, *weapon) {
@@ -92,7 +91,7 @@ function gadget_health_regen_on_take(*slot, *weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4b9288d2, Offset: 0x578
 // Size: 0xdc
 function on_player_spawned() {
@@ -111,7 +110,7 @@ function on_player_spawned() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9fb07ec1, Offset: 0x660
 // Size: 0x64
 function function_6eef7f4f(stim_count) {
@@ -123,7 +122,7 @@ function function_6eef7f4f(stim_count) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x84810d0a, Offset: 0x6d0
 // Size: 0x24
 function function_36ac3c21() {
@@ -131,7 +130,7 @@ function function_36ac3c21() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d79d7e3, Offset: 0x700
 // Size: 0x3c
 function function_ddfdddb1() {
@@ -140,7 +139,7 @@ function function_ddfdddb1() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x25589d8e, Offset: 0x748
 // Size: 0x34
 function function_1e02d458() {
@@ -149,7 +148,7 @@ function function_1e02d458() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9fe372f0, Offset: 0x788
 // Size: 0xcc
 function function_7993d50e() {
@@ -167,7 +166,7 @@ function function_7993d50e() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d13ba1f, Offset: 0x860
 // Size: 0xb6
 function function_a1a8b5e5() {
@@ -179,7 +178,7 @@ function function_a1a8b5e5() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xce9dd830, Offset: 0x920
 // Size: 0x10e
 function function_ef6c7869(now) {
@@ -199,7 +198,7 @@ function function_ef6c7869(now) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x186106e9, Offset: 0xa38
 // Size: 0xd4
 function function_34daf34a(slot, weapon) {
@@ -215,7 +214,7 @@ function function_34daf34a(slot, weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaa1dc20d, Offset: 0xb18
 // Size: 0x12e
 function function_bc0ce7d5(slot, weapon) {
@@ -237,7 +236,7 @@ function function_bc0ce7d5(slot, weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa03ef8e5, Offset: 0xc50
 // Size: 0x5a
 function function_941ed5d6() {
@@ -250,7 +249,7 @@ function function_941ed5d6() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62b2af5f, Offset: 0xcb8
 // Size: 0x66
 function function_aa2c622b(weapon) {
@@ -258,7 +257,7 @@ function function_aa2c622b(weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6dddcc41, Offset: 0xd28
 // Size: 0x6c
 function gadget_health_regen_on(slot, weapon) {
@@ -270,7 +269,7 @@ function gadget_health_regen_on(slot, weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc14d98c3, Offset: 0xda0
 // Size: 0x126
 function gadget_health_regen_off(slot, weapon) {
@@ -293,7 +292,7 @@ function gadget_health_regen_off(slot, weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc7010bc1, Offset: 0xed0
 // Size: 0xe4
 function enable_healing_after_wait(slot, weapon, wait_time, var_5818bd22, player) {
@@ -307,7 +306,7 @@ function enable_healing_after_wait(slot, weapon, wait_time, var_5818bd22, player
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9df48e55, Offset: 0xfc0
 // Size: 0x6a4
 function enable_healing(slot, weapon, player) {
@@ -410,7 +409,7 @@ function enable_healing(slot, weapon, player) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa083e7d2, Offset: 0x1670
 // Size: 0x4a
 function function_b5b7d60e(var_b16fafc9, weapon) {
@@ -418,7 +417,7 @@ function function_b5b7d60e(var_b16fafc9, weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3319de1, Offset: 0x16c8
 // Size: 0x16
 function function_582035b1(var_337562a8) {
@@ -426,7 +425,7 @@ function function_582035b1(var_337562a8) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2075e4ec, Offset: 0x16e8
 // Size: 0x7c
 function function_d91a057d(slot = ability_util::gadget_slot_for_type(23)) {
@@ -439,7 +438,7 @@ function function_d91a057d(slot = ability_util::gadget_slot_for_type(23)) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xefce8a3f, Offset: 0x1770
 // Size: 0x3c
 function is_healing() {
@@ -447,7 +446,7 @@ function is_healing() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99bca272, Offset: 0x17b8
 // Size: 0xe4
 function function_4e449209() {
@@ -468,7 +467,7 @@ function function_4e449209() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd2db4924, Offset: 0x18a8
 // Size: 0xcc
 function on_player_damage(params) {
@@ -485,7 +484,7 @@ function on_player_damage(params) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6bb0bdaa, Offset: 0x1980
 // Size: 0x34
 function function_aba28004() {
@@ -496,7 +495,7 @@ function function_aba28004() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2186ec7f, Offset: 0x19c0
 // Size: 0x34
 function private function_18e0320b() {
@@ -506,7 +505,7 @@ function private function_18e0320b() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9d94fcbd, Offset: 0x1a00
 // Size: 0xa6
 function private function_dafd9cd(attacker, damage) {
@@ -523,7 +522,7 @@ function private function_dafd9cd(attacker, damage) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x89ef537, Offset: 0x1ab0
 // Size: 0x4a
 function function_831bf182() {
@@ -535,7 +534,7 @@ function function_831bf182() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x93f25c74, Offset: 0x1b08
 // Size: 0x3c
 function power_off() {
@@ -555,7 +554,7 @@ function power_on() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa4f3b861, Offset: 0x1ba8
 // Size: 0x1c4
 function function_3a6741ee(params) {

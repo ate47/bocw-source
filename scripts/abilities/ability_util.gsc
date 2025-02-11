@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\util_shared;
 
 #namespace ability_util;
 
 // Namespace ability_util/ability_util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x24de30a0, Offset: 0xa8
 // Size: 0x58
 function gadget_is_type(slot, type) {
@@ -16,7 +15,7 @@ function gadget_is_type(slot, type) {
 }
 
 // Namespace ability_util/ability_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb7609267, Offset: 0x108
 // Size: 0x6c
 function gadget_slot_for_type(type) {
@@ -31,7 +30,7 @@ function gadget_slot_for_type(type) {
 }
 
 // Namespace ability_util/ability_util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x571bfd86, Offset: 0x180
 // Size: 0x1a
 function gadget_combat_efficiency_enabled() {
@@ -140,10 +139,10 @@ function gadget_power_reset(gadgetweapon) {
 }
 
 // Namespace ability_util/ability_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe6cef6a7, Offset: 0x658
 // Size: 0xd4
-function function_36a15b60(gadgetweapon) {
+function gadget_power_full(gadgetweapon) {
     if (isdefined(gadgetweapon)) {
         slot = self gadgetgetslot(gadgetweapon);
         if (slot >= 0 && slot < 3) {
@@ -159,7 +158,7 @@ function function_36a15b60(gadgetweapon) {
 }
 
 // Namespace ability_util/ability_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x50ae49b2, Offset: 0x738
 // Size: 0xac
 function function_1a38f0b0(gadgetweapon) {
@@ -176,7 +175,7 @@ function function_1a38f0b0(gadgetweapon) {
 }
 
 // Namespace ability_util/ability_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5de61574, Offset: 0x7f0
 // Size: 0xe4
 function function_e8aa75b8(gadgetweapon) {
@@ -204,7 +203,7 @@ function function_46b37314(fill_power) {
         if (isdefined(gadget_weapon)) {
             self function_1a38f0b0(gadget_weapon);
             if (is_true(fill_power)) {
-                self function_36a15b60(gadget_weapon);
+                self gadget_power_full(gadget_weapon);
             }
         }
     }
@@ -220,7 +219,7 @@ function function_ffd29673(fill_power) {
         if (isdefined(gadget_weapon)) {
             self function_1a38f0b0(gadget_weapon);
             if (is_true(fill_power)) {
-                self function_36a15b60(gadget_weapon);
+                self gadget_power_full(gadget_weapon);
             }
         }
     }
@@ -236,7 +235,7 @@ function function_b6d7e7e0(fill_power) {
         if (isdefined(gadget_weapon)) {
             self function_1a38f0b0(gadget_weapon);
             if (is_true(fill_power)) {
-                self function_36a15b60(gadget_weapon);
+                self gadget_power_full(gadget_weapon);
             }
         }
     }
@@ -282,7 +281,7 @@ function function_791aef0d() {
 }
 
 // Namespace ability_util/ability_util
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7af8bc93, Offset: 0xc58
 // Size: 0x654
 function gadget_reset(gadgetweapon, changedclass, roundbased, firstround, changedspecialist) {
@@ -337,7 +336,7 @@ function gadget_reset(gadgetweapon, changedclass, roundbased, firstround, change
 }
 
 // Namespace ability_util/ability_util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe348510c, Offset: 0x12b8
 // Size: 0x1a
 function gadget_power_armor_on() {
@@ -345,7 +344,7 @@ function gadget_power_armor_on() {
 }
 
 // Namespace ability_util/ability_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x22d22a56, Offset: 0x12e0
 // Size: 0x6e
 function gadget_is_active(gadgettype) {
@@ -448,7 +447,7 @@ function aoe_trace_entity(entity, origin, trace_z_offset) {
 }
 
 // Namespace ability_util/ability_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1b6eb383, Offset: 0x17f0
 // Size: 0x46
 function is_hero_weapon(gadgetweapon) {

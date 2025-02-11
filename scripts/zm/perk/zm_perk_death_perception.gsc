@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_perks.gsc;
 #using script_18077945bb84ede7;
 #using script_5f261a5d57de5f7c;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_perks;
 
 #namespace zm_perk_death_perception;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x52f7932e, Offset: 0x308
 // Size: 0x4c
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x360
 // Size: 0x4
 function private postinit() {
@@ -36,21 +35,21 @@ function private postinit() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14430300, Offset: 0x370
 // Size: 0x1ac
 function enable_death_perception_perk_for_level() {
     callback::on_item_pickup(&on_item_pickup);
-    zm_perks::register_perk_basic_info(#"hash_1ea1a9cfee998e89", #"perk_death_perception", 2000, #"hash_a81bac8ed8357c6", getweapon("zombie_perk_bottle_death_perception"), undefined, #"zmperksdeathperception");
-    zm_perks::register_perk_precache_func(#"hash_1ea1a9cfee998e89", &function_f9d745da);
-    zm_perks::register_perk_clientfields(#"hash_1ea1a9cfee998e89", &function_14ab8b5c, &function_a19424cd);
-    zm_perks::register_perk_machine(#"hash_1ea1a9cfee998e89", &function_6bdb193c, &function_9b484511);
-    zm_perks::register_perk_host_migration_params(#"hash_1ea1a9cfee998e89", "vending_deathperception", "deathperception_light");
-    zm_perks::register_perk_threads(#"hash_1ea1a9cfee998e89", &function_79d54e51, &function_86a6368e);
+    zm_perks::register_perk_basic_info(#"talent_deathperception", #"perk_death_perception", 2000, #"hash_a81bac8ed8357c6", getweapon("zombie_perk_bottle_death_perception"), undefined, #"zmperksdeathperception");
+    zm_perks::register_perk_precache_func(#"talent_deathperception", &function_f9d745da);
+    zm_perks::register_perk_clientfields(#"talent_deathperception", &function_14ab8b5c, &function_a19424cd);
+    zm_perks::register_perk_machine(#"talent_deathperception", &function_6bdb193c, &function_9b484511);
+    zm_perks::register_perk_host_migration_params(#"talent_deathperception", "vending_deathperception", "deathperception_light");
+    zm_perks::register_perk_threads(#"talent_deathperception", &function_79d54e51, &function_86a6368e);
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ce4afe9, Offset: 0x528
 // Size: 0x274
 function on_item_pickup(s_params) {
@@ -92,7 +91,7 @@ function on_item_pickup(s_params) {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x7a8
 // Size: 0x4
 function function_9b484511() {
@@ -100,19 +99,19 @@ function function_9b484511() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3d592b97, Offset: 0x7b8
 // Size: 0xd6
 function function_f9d745da() {
     level._effect[#"deathperception_light"] = "zombie/fx9_perk_death_perception";
-    level.machine_assets[#"hash_1ea1a9cfee998e89"] = spawnstruct();
-    level.machine_assets[#"hash_1ea1a9cfee998e89"].weapon = getweapon("zombie_perk_bottle_death_perception");
-    level.machine_assets[#"hash_1ea1a9cfee998e89"].off_model = "p9_sur_machine_death_perception";
-    level.machine_assets[#"hash_1ea1a9cfee998e89"].on_model = "p9_sur_machine_death_perception";
+    level.machine_assets[#"talent_deathperception"] = spawnstruct();
+    level.machine_assets[#"talent_deathperception"].weapon = getweapon("zombie_perk_bottle_death_perception");
+    level.machine_assets[#"talent_deathperception"].off_model = "p9_sur_machine_death_perception";
+    level.machine_assets[#"talent_deathperception"].on_model = "p9_sur_machine_death_perception";
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2da397e5, Offset: 0x898
 // Size: 0xf4
 function function_14ab8b5c() {
@@ -124,7 +123,7 @@ function function_14ab8b5c() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd95046c3, Offset: 0x998
 // Size: 0xc
 function function_a19424cd(*state) {
@@ -132,7 +131,7 @@ function function_a19424cd(*state) {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf097a862, Offset: 0x9b0
 // Size: 0x9a
 function function_6bdb193c(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -148,7 +147,7 @@ function function_6bdb193c(use_trigger, perk_machine, bump_trigger, *collision) 
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdb0b6f13, Offset: 0xa58
 // Size: 0x94
 function function_79d54e51() {
@@ -162,7 +161,7 @@ function function_79d54e51() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x37308137, Offset: 0xaf8
 // Size: 0x84
 function function_86a6368e(*b_pause, *str_perk, *str_result, *n_slot) {

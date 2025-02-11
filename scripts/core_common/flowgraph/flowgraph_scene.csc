@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\scene_shared.csc;
+#using scripts\core_common\scene_shared;
 
 #namespace flowgraph_scene;
 

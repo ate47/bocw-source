@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\mp_common\player\player_utils;
 
 #namespace high_value_target;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace high_value_target/high_value_target
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdb8a236d, Offset: 0x118
 // Size: 0xdc
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace high_value_target/high_value_target
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x601764a7, Offset: 0x200
 // Size: 0xda
 function onplayerspawned() {
@@ -52,7 +51,7 @@ function onplayerspawned() {
 }
 
 // Namespace high_value_target/high_value_target
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xab9cc360, Offset: 0x2e8
 // Size: 0x2a4
 function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -82,7 +81,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
 }
 
 // Namespace high_value_target/high_value_target
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x665bdbce, Offset: 0x598
 // Size: 0x1e
 function function_66a9a1e4(event) {

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_dot;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdf949bae, Offset: 0x150
 // Size: 0xec
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x248
 // Size: 0x4
 function on_player_spawned() {
@@ -36,7 +35,7 @@ function on_player_spawned() {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x808f3a50, Offset: 0x258
 // Size: 0x1bc
 function dot_apply(var_756fda07, weapon, applicant) {
@@ -69,7 +68,7 @@ function dot_apply(var_756fda07, weapon, applicant) {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x295858c7, Offset: 0x420
 // Size: 0xd8
 function private dot_rumble_loop() {
@@ -83,12 +82,12 @@ function private dot_rumble_loop() {
     rumble = isdefined(self.dotrumble) ? self.dotrumble : "status_effect_dot";
     while (isdefined(self) && isdefined(self.owner)) {
         self.owner playrumbleonentity(rumble);
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcfbaa242, Offset: 0x500
 // Size: 0x5a
 function dot_end() {
@@ -100,7 +99,7 @@ function dot_end() {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9fc8b4f9, Offset: 0x568
 // Size: 0xbc
 function private function_3b694684(count) {
@@ -121,7 +120,7 @@ function private function_3b694684(count) {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7d99ac5e, Offset: 0x630
 // Size: 0x280
 function private function_5236325e(applicant, killcament) {
@@ -154,13 +153,13 @@ function private function_5236325e(applicant, killcament) {
                 var_6307def9 -= var_4ba055ed;
             }
         }
-        wait(self.var_5cf129b8 / 1000);
+        wait self.var_5cf129b8 / 1000;
         self function_ae0405e2(applicant);
     }
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2f903e67, Offset: 0x8b8
 // Size: 0xe2
 function private function_ae0405e2(applicant) {
@@ -182,7 +181,7 @@ function private function_ae0405e2(applicant) {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x57689d58, Offset: 0x9a8
 // Size: 0x174
 function private dot_report(applicant) {
@@ -209,7 +208,7 @@ function private dot_report(applicant) {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5132e006, Offset: 0xb28
 // Size: 0xda
 function private function_1d5bd9af() {

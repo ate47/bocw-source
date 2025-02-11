@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\damagefeedback_shared.gsc;
 #using script_68d08b784c92da95;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace smart_object;
 
@@ -22,19 +21,19 @@ function private autoexec __init__system__() {
 }
 
 // Namespace smart_object/smart_object
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd884a2d8, Offset: 0x258
 // Size: 0x5c
 function private preinit() {
     function_b3ec7529();
     /#
-        util::init_dvar("<unknown string>", 0, &function_5bfb6b3);
+        util::init_dvar("<dev string:x38>", 0, &function_5bfb6b3);
         level thread function_ed7733c7();
     #/
 }
 
 // Namespace smart_object/smart_object
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb48dd42a, Offset: 0x2c0
 // Size: 0x334
 function private function_b3ec7529() {
@@ -95,7 +94,7 @@ function private function_b3ec7529() {
 }
 
 // Namespace smart_object/smart_object
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbac7a516, Offset: 0x600
 // Size: 0x2d4
 function private function_6e730e66() {
@@ -138,7 +137,7 @@ function private function_6e730e66() {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc0cdf337, Offset: 0x8e0
 // Size: 0xb6
 function private function_3b013edc(shotname) {
@@ -159,7 +158,7 @@ function private function_3b013edc(shotname) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbc56f2dc, Offset: 0x9a0
 // Size: 0x15a
 function private function_27844fc(debounce) {
@@ -183,7 +182,7 @@ function private function_27844fc(debounce) {
 }
 
 // Namespace smart_object/smart_object
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb130599f, Offset: 0xb08
 // Size: 0xb2
 function private function_5ff18583(shots, substr) {
@@ -196,7 +195,7 @@ function private function_5ff18583(shots, substr) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b8d42b9, Offset: 0xbc8
 // Size: 0x62
 function play(ai) {
@@ -206,7 +205,7 @@ function play(ai) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe4d3b849, Offset: 0xc38
 // Size: 0x49a
 function function_5e77c231(ai) {
@@ -247,7 +246,7 @@ function function_5e77c231(ai) {
     }
     if (array::contains(self.shots, "main") && (!isdefined(intro) || intro.shot != "main")) {
         /#
-            ai thread function_6ab41bf7("<unknown string>");
+            ai thread function_6ab41bf7("<dev string:x4e>");
         #/
         self scene::play(self.scriptbundlename, "main", ai);
     }
@@ -256,7 +255,7 @@ function function_5e77c231(ai) {
         var_e0134196 = 1;
         var_ee9cbc26.var_fd84bab2 = 1;
         /#
-            ai thread function_6ab41bf7("<unknown string>");
+            ai thread function_6ab41bf7("<dev string:x56>");
         #/
         self scene::play(self.scriptbundlename, "outro", ai);
     }
@@ -265,7 +264,7 @@ function function_5e77c231(ai) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x93363a2d, Offset: 0x10e0
 // Size: 0x98
 function private function_b150ae10(ai) {
@@ -277,7 +276,7 @@ function private function_b150ae10(ai) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4b4381ac, Offset: 0x1180
 // Size: 0x140
 function function_8ffc948d(var_4bb4b841) {
@@ -304,7 +303,7 @@ function function_8ffc948d(var_4bb4b841) {
 }
 
 // Namespace smart_object/smart_object
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xbf00040d, Offset: 0x12c8
 // Size: 0x100
 function private function_8b855873(&shots, ai, var_ee9cbc26) {
@@ -320,7 +319,7 @@ function private function_8b855873(&shots, ai, var_ee9cbc26) {
 }
 
 // Namespace smart_object/smart_object
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xbb49000c, Offset: 0x13d0
 // Size: 0x426
 function private function_ca2d3925(&shots, ai, var_ee9cbc26, result) {
@@ -373,7 +372,7 @@ function private function_ca2d3925(&shots, ai, var_ee9cbc26, result) {
 }
 
 // Namespace smart_object/smart_object
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x4a7add10, Offset: 0x1800
 // Size: 0x20c
 function private function_1ec70779(react, ai, isdeath = 0) {
@@ -413,7 +412,7 @@ function private function_1ec70779(react, ai, isdeath = 0) {
 }
 
 // Namespace smart_object/smart_object
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x5810d78f, Offset: 0x1a18
 // Size: 0x11a
 function private function_2e6e8631(&shots, var_68a5d6c0, yaw) {
@@ -433,25 +432,25 @@ function private function_2e6e8631(&shots, var_68a5d6c0, yaw) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x767f8f78, Offset: 0x1b40
 // Size: 0x8a
 function claim(obj) {
     assert(issentient(self));
-    assert(!isdefined(obj.claimer) || obj.claimer == self, "<unknown string>");
+    assert(!isdefined(obj.claimer) || obj.claimer == self, "<dev string:x5f>");
     obj.claimer = self;
     self.smart_object = obj;
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3399f4d9, Offset: 0x1bd8
 // Size: 0xee
 function function_a59dc8a8(obj) {
     if (!isdefined(obj)) {
         return;
     }
-    assert(!isdefined(obj.claimer) || obj.claimer == self, "<unknown string>");
+    assert(!isdefined(obj.claimer) || obj.claimer == self, "<dev string:x8f>");
     if (isdefined(obj.claimer)) {
         if (!is_true(obj.claimer.var_29133295)) {
             obj.claimer val::reset_all(#"smart_object");
@@ -465,7 +464,7 @@ function function_a59dc8a8(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2591dbad, Offset: 0x1cd0
 // Size: 0x26
 function can_claim(obj) {
@@ -476,7 +475,7 @@ function can_claim(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49e93eaa, Offset: 0x1d00
 // Size: 0xba
 function can_use(obj) {
@@ -496,7 +495,7 @@ function can_use(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xafc61373, Offset: 0x1dc8
 // Size: 0x138
 function get_goal() {
@@ -554,7 +553,7 @@ function function_ab981ed(desiredpos, volume, var_ce60cc2e, var_2889f642 = 0) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ada9b2f, Offset: 0x20d8
 // Size: 0x5c
 function function_1631909f(obj) {
@@ -571,7 +570,7 @@ function function_1631909f(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe8b31c0f, Offset: 0x2140
 // Size: 0x98
 function function_b69b2de4(obj) {
@@ -588,7 +587,7 @@ function function_b69b2de4(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeddddabc, Offset: 0x21e0
 // Size: 0x17e
 function function_b03cc199(obj) {
@@ -651,7 +650,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xc4>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -660,7 +659,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xcb>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -669,7 +668,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xd2>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -678,7 +677,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xda>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -689,7 +688,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xe5>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -698,7 +697,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xec>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -708,7 +707,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xf3>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -721,7 +720,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xf8>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -730,7 +729,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             /#
                 if (var_1d23c510) {
                     box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:xff>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -753,7 +752,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             score *= var_d5260937;
             /#
                 if (var_1d23c510) {
-                    print3d(obj.origin + (0, 0, 20), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 20), "<dev string:x107>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
         }
@@ -771,7 +770,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         /#
             if (var_1d23c510) {
                 box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.8, 0.8, 0), 0, drawtime);
-                print3d(obj.origin + (0, 0, 24), "<unknown string>" + score, (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                print3d(obj.origin + (0, 0, 24), "<dev string:x10c>" + score, (0.5, 0.5, 0.5), 1, 0.2, drawtime);
             }
         #/
     }
@@ -779,7 +778,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
 }
 
 // Namespace smart_object/smart_object
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6c8884dc, Offset: 0x3100
 // Size: 0x10a
 function function_b5ba6914(obj, optorigin, volume, *var_2889f642) {
@@ -816,7 +815,7 @@ function set(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d7b2e08, Offset: 0x32b0
 // Size: 0x9c
 function function_2677ed08(smartobj) {
@@ -831,7 +830,7 @@ function function_2677ed08(smartobj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x26a8d908, Offset: 0x3358
 // Size: 0x26
 function function_bd54ea4c() {
@@ -880,7 +879,7 @@ function function_97a10998(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa2ca2052, Offset: 0x3588
 // Size: 0x22e
 function private function_92be8cbf(localyaw = 0) {
@@ -965,14 +964,14 @@ function private function_92be8cbf(localyaw = 0) {
                 }
                 if (isdefined(obj.var_175b0e60) && obj.var_175b0e60.size > 0) {
                     foreach (intro in obj.var_175b0e60) {
-                        print3d(intro.var_93d6832 + (0, 0, 5), intro.shot + "<unknown string>", (1, 0, 0), 0.5, 0.1, 1, 1);
+                        print3d(intro.var_93d6832 + (0, 0, 5), intro.shot + "<dev string:x110>", (1, 0, 0), 0.5, 0.1, 1, 1);
                         line(intro.var_93d6832 + (0, 0, 1), obj.origin + (0, 0, 1), (1, 0, 0), 0.5, 1, 1);
                     }
                 }
                 if (isdefined(obj.nextusetime) && (obj.nextusetime < 0 || gettime() < obj.nextusetime)) {
-                    msg = "<unknown string>";
+                    msg = "<dev string:x11e>";
                     if (obj.nextusetime >= 0) {
-                        msg = msg + "<unknown string>" + int(float(obj.nextusetime - gettime()) / 1000) + 1;
+                        msg = msg + "<dev string:x126>" + int(float(obj.nextusetime - gettime()) / 1000) + 1;
                     }
                     print3d(obj.origin + (0, 0, 75), msg, (0.5, 0.3, 0), 1, 0.25, 1, 1);
                 }
@@ -995,7 +994,7 @@ function private function_92be8cbf(localyaw = 0) {
                     scriptbundlename = function_9e72a96(scriptbundlename);
                 }
                 print3d(obj.origin + (0, 0, 80), scriptbundlename, (0.5, 0, 0), 1, 0.25, 1, 1);
-                print3d(obj.origin + (0, 0, 70), "<unknown string>", (0.5, 0, 0), 1, 0.25, 1, 1);
+                print3d(obj.origin + (0, 0, 70), "<dev string:x12b>", (0.5, 0, 0), 1, 0.25, 1, 1);
                 util::draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, (0.5, 0, 0));
             }
             if (level.var_49430738.size == 0) {
@@ -1010,8 +1009,8 @@ function private function_92be8cbf(localyaw = 0) {
     // Checksum 0xb05213c, Offset: 0x3fa0
     // Size: 0xde
     function private function_6ab41bf7(shot) {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x144>");
+        self endon("<dev string:x144>");
         if (isstring(shot)) {
             self endon(#"death", #"scene_done");
             while (true) {

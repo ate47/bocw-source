@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\wz_ignore_systems.gsc;
-#using scripts\wz_common\wz_rat.gsc;
-#using scripts\wz_common\player.gsc;
-#using scripts\wz_common\vehicle.gsc;
-#using scripts\wz_common\hud.gsc;
-#using scripts\wz_common\wz_loadouts.gsc;
-#using script_5495f0bb06045dc7;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\core_common\player\player_free_fall.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_5495f0bb06045dc7;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\player\player_free_fall;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\wz_common\hud;
+#using scripts\wz_common\player;
+#using scripts\wz_common\vehicle;
+#using scripts\wz_common\wz_ignore_systems;
+#using scripts\wz_common\wz_loadouts;
+#using scripts\wz_common\wz_rat;
 
 #namespace warzone;
 

@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5f261a5d57de5f7c;
 #using script_3751b21462a54a7d;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_5f261a5d57de5f7c;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
-#namespace namespace_7461932d;
+#namespace zm_perk_juggernaut;
 
-// Namespace namespace_7461932d/namespace_7461932d
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
 // Params 0, eflags: 0x5
 // Checksum 0x99c0604d, Offset: 0x1e0
 // Size: 0x44
@@ -24,8 +23,8 @@ function private autoexec __init__system__() {
     system::register(#"hash_6f1ab109254f7a8e", &preinit, undefined, undefined, #"hash_2d064899850813e2");
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x6 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x4
 // Checksum 0x640127e9, Offset: 0x230
 // Size: 0x44
 function private preinit() {
@@ -34,8 +33,8 @@ function private preinit() {
     level.var_bb0b2298 = &function_297a5142;
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x0
 // Checksum 0x523b33be, Offset: 0x280
 // Size: 0x4c
 function function_297a5142() {
@@ -48,8 +47,8 @@ function function_297a5142() {
     return 1;
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 1, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 1, eflags: 0x0
 // Checksum 0xceb79601, Offset: 0x2d8
 // Size: 0x22
 function function_7486dbf4(var_2cacdde7) {
@@ -57,8 +56,8 @@ function function_7486dbf4(var_2cacdde7) {
     return var_2cacdde7;
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 10, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 10, eflags: 0x0
 // Checksum 0x32e04bbe, Offset: 0x308
 // Size: 0x11e
 function function_366a682a(*einflictor, *eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {
@@ -76,8 +75,8 @@ function function_366a682a(*einflictor, *eattacker, idamage, *idflags, smeansofd
     return shitloc;
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x0
 // Checksum 0xf4989ecb, Offset: 0x430
 // Size: 0x1ac
 function function_485b89e9() {
@@ -90,16 +89,16 @@ function function_485b89e9() {
     zm_perks::register_perk_damage_override_func(&function_366a682a);
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x5e8
 // Size: 0x4
 function init_juggernaut() {
     
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x0
 // Checksum 0x81d5cf6c, Offset: 0x5f8
 // Size: 0xf6
 function function_166eeafc() {
@@ -114,24 +113,24 @@ function function_166eeafc() {
     level.machine_assets[#"hash_47d7a8105237c88"].on_model = "p9_sur_machine_juggernog";
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x6f8
 // Size: 0x4
 function function_370cba1f() {
     
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 1, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 1, eflags: 0x0
 // Checksum 0x934b7a19, Offset: 0x708
 // Size: 0xc
 function function_a710e34a(*state) {
     
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 4, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 4, eflags: 0x0
 // Checksum 0x61d638d1, Offset: 0x720
 // Size: 0xa6
 function function_1ff28887(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -147,8 +146,8 @@ function function_1ff28887(use_trigger, perk_machine, bump_trigger, *collision) 
     }
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 0, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 0, eflags: 0x0
 // Checksum 0x432c489, Offset: 0x7d0
 // Size: 0x7a
 function function_535de102() {
@@ -159,8 +158,8 @@ function function_535de102() {
     }
 }
 
-// Namespace namespace_7461932d/namespace_7461932d
-// Params 4, eflags: 0x2 linked
+// Namespace zm_perk_juggernaut/zm_perk_juggernaut
+// Params 4, eflags: 0x0
 // Checksum 0xbd0412f9, Offset: 0x858
 // Size: 0x24
 function function_8a2f8354(*b_pause, *str_perk, *str_result, *n_slot) {

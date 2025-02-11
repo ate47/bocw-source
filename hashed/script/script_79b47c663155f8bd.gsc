@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bots\bot.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_ffbf548b;
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x921f23b2, Offset: 0xc0
 // Size: 0x1a8
 function preinit() {
@@ -33,7 +32,7 @@ function preinit() {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7307ece3, Offset: 0x270
 // Size: 0x6c
 function private on_start_gametype() {
@@ -45,7 +44,7 @@ function private on_start_gametype() {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x309e7f8b, Offset: 0x2e8
 // Size: 0x174
 function private function_8958c312() {
@@ -64,7 +63,7 @@ function private function_8958c312() {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xac18a3d3, Offset: 0x468
 // Size: 0x134
 function private function_ba1ef25b(maxplayers) {
@@ -82,7 +81,7 @@ function private function_ba1ef25b(maxplayers) {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x44c538a9, Offset: 0x5a8
 // Size: 0x254
 function private function_31a989f7(waitforplayers = 1) {
@@ -119,7 +118,7 @@ function private function_31a989f7(waitforplayers = 1) {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x77e47b27, Offset: 0x808
 // Size: 0x8e
 function private function_bbeb8bbe(maxplayers) {
@@ -136,7 +135,7 @@ function private function_bbeb8bbe(maxplayers) {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9c6b965a, Offset: 0x8a0
 // Size: 0xf6
 function private function_9bead880(var_8a291590, maxplayers) {
@@ -154,7 +153,7 @@ function private function_9bead880(var_8a291590, maxplayers) {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x529329b9, Offset: 0x9a0
 // Size: 0x18e
 function private function_38a06234() {
@@ -185,7 +184,7 @@ function private function_38a06234() {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8be2f563, Offset: 0xb38
 // Size: 0x1e4
 function private function_e88d0cf4() {
@@ -225,7 +224,7 @@ function private function_e88d0cf4() {
 }
 
 // Namespace namespace_ffbf548b/namespace_ffbf548b
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x80d99340, Offset: 0xd28
 // Size: 0xfc
 function private function_f992463c(bots) {

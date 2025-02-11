@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_tank;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_tank/player_tank
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9a438fd4, Offset: 0x1d0
 // Size: 0xc4
 function private preinit(*localclientnum) {
@@ -25,7 +24,7 @@ function private preinit(*localclientnum) {
 }
 
 // Namespace player_tank/player_tank
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa77e3950, Offset: 0x2a0
 // Size: 0xc
 function private function_c0f1d81b(*localclientnum) {
@@ -33,7 +32,7 @@ function private function_c0f1d81b(*localclientnum) {
 }
 
 // Namespace player_tank/player_tank
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xf65c885f, Offset: 0x2b8
 // Size: 0x6c
 function private function_de69d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -43,7 +42,7 @@ function private function_de69d(localclientnum, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace player_tank/player_tank
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xfd576a45, Offset: 0x330
 // Size: 0x6c
 function private function_5c44d585(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

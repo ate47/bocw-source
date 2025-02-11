@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\weapons\weapons.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\loadout_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\loadout_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\weapons\weapons;
 
 #namespace killstreak_weapons;
 
@@ -23,7 +22,7 @@ function init() {
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8709d235, Offset: 0x188
 // Size: 0xa4
 function on_player_spawned() {
@@ -38,7 +37,7 @@ function on_player_spawned() {
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf2a5df5d, Offset: 0x238
 // Size: 0x1e0
 function function_d75d084a() {
@@ -51,7 +50,7 @@ function function_d75d084a() {
             return;
         }
         if (!killstreaks::is_killstreak_weapon(newweapon)) {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         killstreak = killstreaks::get_killstreak_for_weapon(newweapon);
@@ -62,7 +61,7 @@ function function_d75d084a() {
             }
             self iprintlnbold(#"hash_55a79f95e07a10bc", " " + timeleft + " ", #"hash_79a58948c3b976f5");
             self switchtoweapon(currentweapon);
-            wait(0.5);
+            wait 0.5;
         }
     }
 }
@@ -150,7 +149,7 @@ function function_82ea8e15(hardpointtype) {
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd5889576, Offset: 0xa98
 // Size: 0x166
 function usekillstreakweaponfromcrate(hardpointtype) {
@@ -180,7 +179,7 @@ function usekillstreakweaponfromcrate(hardpointtype) {
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x68d8c798, Offset: 0xc08
 // Size: 0x4c4
 function watchkillstreakweaponswitch(killstreakweapon, killstreak_id, isfrominventory) {
@@ -250,7 +249,7 @@ function watchkillstreakweaponswitch(killstreakweapon, killstreak_id, isfrominve
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x60bba9d2, Offset: 0x10d8
 // Size: 0x4a6
 function watchkillstreakweapondeath(killstreakweapon, killstreak_id, isfrominventory) {
@@ -313,7 +312,7 @@ function watchkillstreakweapondeath(killstreakweapon, killstreak_id, isfrominven
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x79737ce7, Offset: 0x1588
 // Size: 0xbe
 function watchplayerdeath(killstreakweapon) {
@@ -326,7 +325,7 @@ function watchplayerdeath(killstreakweapon) {
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5c4a8f98, Offset: 0x1650
 // Size: 0x116
 function watchkillstreakremoval(killstreaktype, killstreak_id) {
@@ -347,7 +346,7 @@ function watchkillstreakremoval(killstreaktype, killstreak_id) {
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7d0ffb60, Offset: 0x1770
 // Size: 0x196
 function watchkillstreakroundchange(isfrominventory, killstreak_id) {
@@ -407,7 +406,7 @@ function checkifswitchableweapon(currentweapon, newweapon, killstreakweapon, cur
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x29ce1d99, Offset: 0x1b18
 // Size: 0x3f8
 function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -458,7 +457,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x32cd1d0e, Offset: 0x1f18
 // Size: 0x34
 function function_11a9ad5(killstreaktype, weapon) {

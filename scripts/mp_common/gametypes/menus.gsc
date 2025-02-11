@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\draft.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\system_shared;
+#using scripts\mp_common\draft;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\util;
 
 #namespace menus;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3b44a654, Offset: 0x2f8
 // Size: 0x64
 function private preinit() {
@@ -31,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa22f24ea, Offset: 0x368
 // Size: 0x1bc
 function init() {
@@ -51,7 +50,7 @@ function init() {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x963239c, Offset: 0x530
 // Size: 0x24
 function on_player_connect() {
@@ -60,7 +59,7 @@ function on_player_connect() {
 }
 
 // Namespace menus/menus
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa59c4ddd, Offset: 0x560
 // Size: 0x7e4
 function on_menu_response(params) {
@@ -98,7 +97,7 @@ function on_menu_response(params) {
         }
         if (response == "endround") {
             if (sessionmodeiswarzonegame()) {
-                level.var_67a68459 = 1;
+                level.skip_outcome = 1;
             }
             if (!level.gameended) {
                 self globallogic::gamehistoryplayerquit();
@@ -121,7 +120,7 @@ function on_menu_response(params) {
         return;
     }
     if (response == #"first_snapshot") {
-        level flag::set(#"hash_321357f5b78401ef");
+        level flag::set(#"hud_initialized");
         self callback::callback(#"hash_4fd893d99ecc3458");
     }
     if (response == #"skip_deathcam") {
@@ -177,7 +176,7 @@ function on_menu_response(params) {
     }
     if (menu == "sprays_and_gestures") {
         /#
-            iprintlnbold("<unknown string>" + intpayload);
+            iprintlnbold("<dev string:x38>" + intpayload);
         #/
         return;
     }
@@ -187,7 +186,7 @@ function on_menu_response(params) {
 }
 
 // Namespace menus/menus
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc5a843e8, Offset: 0xd50
 // Size: 0x466
 function function_2d1eb0ec(intpayload) {
@@ -202,7 +201,7 @@ function function_2d1eb0ec(intpayload) {
     if (var_f4cd8d56 == 1) {
         var_e7a0076b = isdefined(callout.var_82887152) ? callout.var_82887152 : callout.var_799fa983;
     } else if (var_f4cd8d56 == 2) {
-        var_e7a0076b = callout.var_3c799f50;
+        var_e7a0076b = callout.titleready;
     }
     if (isdefined(callout)) {
         if (!isdefined(self.calloutspamtimeout)) {
@@ -250,7 +249,7 @@ function function_2d1eb0ec(intpayload) {
 }
 
 // Namespace menus/menus
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0247af6, Offset: 0x11c0
 // Size: 0x86
 function function_8e00969() {

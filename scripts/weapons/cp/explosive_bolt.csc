@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\math_shared.csc;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
 
 #namespace explosive_bolt;
 
@@ -13,7 +12,7 @@ function main() {
 }
 
 // Namespace explosive_bolt/explosive_bolt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14b51af, Offset: 0xf8
 // Size: 0x3c
 function spawned(localclientnum) {
@@ -24,7 +23,7 @@ function spawned(localclientnum) {
 }
 
 // Namespace explosive_bolt/explosive_bolt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf40234a3, Offset: 0x140
 // Size: 0x132
 function fx_think(localclientnum) {
@@ -42,7 +41,7 @@ function fx_think(localclientnum) {
 }
 
 // Namespace explosive_bolt/explosive_bolt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7e110925, Offset: 0x280
 // Size: 0x4a
 function start_light_fx(localclientnum) {
@@ -50,7 +49,7 @@ function start_light_fx(localclientnum) {
 }
 
 // Namespace explosive_bolt/explosive_bolt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x776dbf39, Offset: 0x2d8
 // Size: 0x4e
 function stop_light_fx(localclientnum) {
@@ -61,7 +60,7 @@ function stop_light_fx(localclientnum) {
 }
 
 // Namespace explosive_bolt/explosive_bolt
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x92c4c9c8, Offset: 0x330
 // Size: 0x9c
 function fullscreen_fx(localclientnum) {

@@ -1,38 +1,37 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\core_common\spectating.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\gametypes\spawning.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_ui.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic_defaults.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using script_44b0b8420eabacad;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_defaults;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_ui;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\gametypes\spawning;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
+#using scripts\weapons\weapon_utils;
+#using scripts\weapons\weaponobjects;
 
 #namespace sas;
 
@@ -71,7 +70,7 @@ function event_handler[gametype_init] main(*eventstruct) {
         level.setbackweapon = level.weapon_sas_secondary_weapon;
         break;
     default:
-        assert(1, "<unknown string>");
+        assert(1, "<dev string:x38>");
         break;
     }
     gameobjects::register_allowed_gameobject(level.gametype);
@@ -160,7 +159,7 @@ function givecustomloadout() {
     loadout.weapon = offhandprimary;
     loadout.count = 1;
     self ability_util::gadget_reset(offhandprimary, 0, 0, 1, 0);
-    self ability_util::function_36a15b60(offhandprimary);
+    self ability_util::gadget_power_full(offhandprimary);
     self.heroweapon = undefined;
     self switchtoweapon(defaultweapon);
     self setspawnweapon(defaultweapon);

@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace empgrenade;
 
@@ -117,7 +116,7 @@ function applyemp(attacker, explosionpoint) {
     self setempjammed(1);
     self thread empgrenadedeathwaiter();
     if (self.empduration > 0) {
-        wait(self.empduration);
+        wait self.empduration;
     }
     if (isdefined(self)) {
         self notify(#"empgrenadetimedout");

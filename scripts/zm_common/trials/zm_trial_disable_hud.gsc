@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_trial;
 
 #namespace zm_trial_disable_hud;
 
@@ -39,7 +38,7 @@ function private on_begin() {
 // Size: 0x110
 function function_afe4a356() {
     level endon(#"hash_7646638df88a3656", #"end_game");
-    wait(12);
+    wait 12;
     level.var_dc60105c = 1;
     level clientfield::set_world_uimodel("ZMHudGlobal.trials.hudDeactivated", 1);
     foreach (player in getplayers()) {

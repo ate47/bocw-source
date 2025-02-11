@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_tactical_raft;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_tactical_raft/player_tactical_raft
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xba46426f, Offset: 0x120
 // Size: 0x54
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace player_tactical_raft/player_tactical_raft
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xba6fffe, Offset: 0x180
 // Size: 0xbc
 function private function_9941dc42() {
@@ -36,7 +35,7 @@ function private function_9941dc42() {
 }
 
 // Namespace player_tactical_raft/player_tactical_raft
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x480ce6d1, Offset: 0x248
 // Size: 0xc
 function private function_6d4de854(*params) {
@@ -44,7 +43,7 @@ function private function_6d4de854(*params) {
 }
 
 // Namespace player_tactical_raft/player_tactical_raft
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf092257d, Offset: 0x260
 // Size: 0x24
 function private function_a5838bb7(*params) {
@@ -52,7 +51,7 @@ function private function_a5838bb7(*params) {
 }
 
 // Namespace player_tactical_raft/player_tactical_raft
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xae477339, Offset: 0x290
 // Size: 0xc
 function private function_a41bd019(*params) {

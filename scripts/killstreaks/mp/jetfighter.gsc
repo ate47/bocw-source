@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace jetfighter;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5b2ca576, Offset: 0x308
 // Size: 0x1d4
 function private preinit() {
@@ -48,7 +47,7 @@ function private preinit() {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x19c5c506, Offset: 0x4e8
 // Size: 0x144
 function function_fee93694(killstreakbundle) {
@@ -66,7 +65,7 @@ function function_fee93694(killstreakbundle) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x382cddc8, Offset: 0x638
 // Size: 0x90
 function function_6384fa58() {
@@ -76,7 +75,7 @@ function function_6384fa58() {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x33380732, Offset: 0x6d0
 // Size: 0x68
 function usekillstreak(*hardpointtype) {
@@ -89,7 +88,7 @@ function usekillstreak(*hardpointtype) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x967e7045, Offset: 0x740
 // Size: 0x4b4
 function private function_4b3b25af(killstreak_id) {
@@ -123,7 +122,7 @@ function private function_4b3b25af(killstreak_id) {
     }
     level.var_3e99cf4e[level.var_3e99cf4e.size] = var_ce2c18d3;
     right = anglestoright(angles);
-    var_d86e4fe0 = bundle.var_8ddf638c / 5;
+    horizontal_offset = bundle.var_8ddf638c / 5;
     var_f77cb43b = 0;
     var_196fbc4d = [];
     for (i = 1; i <= 5; i++) {
@@ -133,7 +132,7 @@ function private function_4b3b25af(killstreak_id) {
         } else {
             var_ab422cc1 = 1;
         }
-        var_367ba7d3 = startposition + vectorscale(right, var_ab422cc1 * var_d86e4fe0 * var_f77cb43b);
+        var_367ba7d3 = startposition + vectorscale(right, var_ab422cc1 * horizontal_offset * var_f77cb43b);
         if (!isdefined(var_196fbc4d)) {
             var_196fbc4d = [];
         } else if (!isarray(var_196fbc4d)) {
@@ -144,7 +143,7 @@ function private function_4b3b25af(killstreak_id) {
     targets = level function_ce402c10(bundle, team, var_d44b8c3e);
     playsoundatposition(#"hash_2fbfd58a6c32dd81", var_ce2c18d3.origin);
     var_ce2c18d3 function_c578ef61(targets, killstreak_id);
-    wait(4);
+    wait 4;
     if (!isdefined(var_ce2c18d3)) {
         return;
     }
@@ -155,7 +154,7 @@ function private function_4b3b25af(killstreak_id) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x83a3033d, Offset: 0xc00
 // Size: 0x284
 function private function_6ff76fc6() {
@@ -188,7 +187,7 @@ function private function_6ff76fc6() {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7d94c8ec, Offset: 0xe90
 // Size: 0x454
 function private function_8f304847(var_d44b8c3e, startangles) {
@@ -251,7 +250,7 @@ function private function_8f304847(var_d44b8c3e, startangles) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xc762052b, Offset: 0x12f0
 // Size: 0x274
 function private function_ce402c10(bundle, team, var_d44b8c3e) {
@@ -285,7 +284,7 @@ function private function_ce402c10(bundle, team, var_d44b8c3e) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7e5cb081, Offset: 0x1570
 // Size: 0x268
 function private function_a0624137(var_be96ce4e) {
@@ -321,7 +320,7 @@ function private function_a0624137(var_be96ce4e) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xcc16a88, Offset: 0x17e0
 // Size: 0x170
 function private function_86d35bfe(targets, var_196fbc4d, owner) {
@@ -336,14 +335,14 @@ function private function_86d35bfe(targets, var_196fbc4d, owner) {
             var_5ed3a06 = arraysortclosest(var_196fbc4d, target.origin);
             self thread function_a04ffd9d(target, var_5ed3a06, owner);
             if (index < targets.size - 1) {
-                wait(randomfloatrange(0.5, 2));
+                wait randomfloatrange(0.5, 2);
             }
         }
     }
 }
 
 // Namespace jetfighter/jetfighter
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x92df70d2, Offset: 0x1958
 // Size: 0x22c
 function private function_a04ffd9d(target, var_196fbc4d, owner) {
@@ -368,18 +367,18 @@ function private function_a04ffd9d(target, var_196fbc4d, owner) {
             break;
         }
         if (var_6a709ea1) {
-            wait(randomfloatrange(0.5, 2.5));
+            wait randomfloatrange(0.5, 2.5);
             continue;
         }
         waitframe(1);
     }
-    wait(4);
+    wait 4;
     target dodamage(9999, target.origin, owner, undefined, undefined, "MOD_PROJECTILE", 0, weapon);
     self function_8f23fd43();
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9f904b9e, Offset: 0x1b90
 // Size: 0x5c
 function private function_165f8cad(*_notify) {
@@ -389,7 +388,7 @@ function private function_165f8cad(*_notify) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x32146292, Offset: 0x1bf8
 // Size: 0x10c
 function private function_8f23fd43() {
@@ -398,12 +397,12 @@ function private function_8f23fd43() {
         scoreevents::processscoreevent(#"hash_5432fd0f11d1c9c4", self.owner, undefined, getweapon("jetfighter"));
         self.owner contracts::increment_contract(#"hash_566ff65991651a40");
         self.owner stats::function_8fb23f94("jetfighter", #"destructions", 1);
-        self.owner stats::function_b04e7184("jetfighter", #"hash_98b8582b08abfa5");
+        self.owner stats::function_b04e7184("jetfighter", #"best_destructions");
     }
 }
 
 // Namespace jetfighter/jetfighter
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x757ad531, Offset: 0x1d10
 // Size: 0x1cc
 function private firemissile(target, spawnpoint, weapon, owner) {
@@ -423,12 +422,12 @@ function private firemissile(target, spawnpoint, weapon, owner) {
     missile.var_30dc969d = 1;
     missile.var_b324d423 = 1;
     target heatseekingmissile::function_a439ae56(missile, weapon, owner);
-    wait(randomfloatrange(0.1, 0.75));
+    wait randomfloatrange(0.1, 0.75);
     arrayremovevalue(self.var_fb24e6b5, spawnpoint);
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x649ed308, Offset: 0x1ee8
 // Size: 0x6c
 function private function_644ef4bf(target) {
@@ -438,7 +437,7 @@ function private function_644ef4bf(target) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1a6dc9da, Offset: 0x1f60
 // Size: 0x150
 function private function_3fbf2154(var_593a7842 = 1) {
@@ -459,14 +458,14 @@ function private function_3fbf2154(var_593a7842 = 1) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4e51086e, Offset: 0x20b8
 // Size: 0xfc
 function private function_593a7842(var_6709bbd6) {
     self endon(#"death");
     arrayremovevalue(level.var_3e99cf4e, var_6709bbd6);
     var_6709bbd6 notify(#"hash_658778b8e9e9d13a");
-    wait(2);
+    wait 2;
     if (isdefined(var_6709bbd6)) {
         self thread function_1e2a93a2(var_6709bbd6);
     }
@@ -480,16 +479,16 @@ function private function_593a7842(var_6709bbd6) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa9678540, Offset: 0x21c0
 // Size: 0x4c
 function function_cc4c1fca() {
-    wait(4);
+    wait 4;
     scoreevents::processscoreevent(#"hash_52373301253712bb", self.owner, undefined, getweapon("jetfighter"));
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7ed38de9, Offset: 0x2218
 // Size: 0x54
 function private function_da1b219d() {
@@ -500,7 +499,7 @@ function private function_da1b219d() {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x66c8bcd6, Offset: 0x2278
 // Size: 0x44
 function private function_47cd37b6(*notifyhash) {
@@ -509,7 +508,7 @@ function private function_47cd37b6(*notifyhash) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc0d72e27, Offset: 0x22c8
 // Size: 0x5c
 function private function_f7961216() {
@@ -519,7 +518,7 @@ function private function_f7961216() {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbc5adb23, Offset: 0x2330
 // Size: 0x1e8
 function private function_c3c5d5e1(var_f7d31a7) {
@@ -530,17 +529,17 @@ function private function_c3c5d5e1(var_f7d31a7) {
         jet playloopsound(#"hash_1245719ce362e37");
     }
     scenelength = scene::function_12479eba(#"p9_fxanim_mp_jetfighter_bundle");
-    wait(scenelength - 1.5);
+    wait scenelength - 1.5;
     foreach (jet in var_f7d31a7) {
         if (isdefined(jet)) {
             jet clientfield::set("jetfighter_contrail", 0);
-            jet thread killstreaks::function_3696d106();
+            jet thread killstreaks::outro_scaling();
         }
     }
 }
 
 // Namespace jetfighter/jetfighter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaf11e3bc, Offset: 0x2520
 // Size: 0x64
 function function_c578ef61(targets, killstreak_id) {
@@ -553,7 +552,7 @@ function function_c578ef61(targets, killstreak_id) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x20279e89, Offset: 0x2590
 // Size: 0x114
 function function_568f6426(targets, killstreak_id) {
@@ -579,7 +578,7 @@ function function_568f6426(targets, killstreak_id) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x59a90f20, Offset: 0x26b0
 // Size: 0xac
 function function_1e2a93a2(var_6709bbd6) {
@@ -590,7 +589,7 @@ function function_1e2a93a2(var_6709bbd6) {
 }
 
 // Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c3c5e66, Offset: 0x2768
 // Size: 0x34
 function function_6fe870ea() {
@@ -604,9 +603,9 @@ function function_6fe870ea() {
     // Checksum 0xea724d4d, Offset: 0x27a8
     // Size: 0x5c
     function function_35b87c52() {
-        util::init_dvar("<unknown string>", 0, &function_2f5700b4);
+        util::init_dvar("<dev string:x38>", 0, &function_2f5700b4);
         util::waittill_can_add_debug_command();
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x54>");
     }
 
     // Namespace jetfighter/jetfighter
@@ -622,8 +621,8 @@ function function_6fe870ea() {
             adjustedpath = function_8f304847(var_d44b8c3e, angles);
             startposition = adjustedpath[#"startposition"];
             angles = adjustedpath[#"angles"];
-            var_a50bad8f = util::spawn_model("<unknown string>", (var_d44b8c3e[0], var_d44b8c3e[1], startposition[2]), angles);
-            playsoundatposition("<unknown string>", var_a50bad8f.origin);
+            var_a50bad8f = util::spawn_model("<dev string:xc1>", (var_d44b8c3e[0], var_d44b8c3e[1], startposition[2]), angles);
+            playsoundatposition("<dev string:xcf>", var_a50bad8f.origin);
             var_a50bad8f scene::play(#"p9_fxanim_mp_dogfight_01_bundle");
             var_a50bad8f delete();
             setdvar(#"hash_62c0e40b6a2a602d", 0);

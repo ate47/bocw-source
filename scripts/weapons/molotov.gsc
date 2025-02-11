@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\weapons\weapons.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\entityheadicons_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\entityheadicons_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
+#using scripts\weapons\weapons;
 
 #namespace molotov;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace molotov/molotov
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb2e55ed6, Offset: 0x288
 // Size: 0x12c
 function init_shared() {
@@ -40,7 +39,7 @@ function init_shared() {
 }
 
 // Namespace molotov/molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb91b5a58, Offset: 0x3c0
 // Size: 0x22
 function function_853f8cff(watcher) {
@@ -48,7 +47,7 @@ function function_853f8cff(watcher) {
 }
 
 // Namespace molotov/molotov
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x52dd8a2a, Offset: 0x3f0
 // Size: 0x9c
 function function_f37c777a(*watcher, player) {
@@ -59,7 +58,7 @@ function function_f37c777a(*watcher, player) {
 }
 
 // Namespace molotov/molotov
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x516154fd, Offset: 0x498
 // Size: 0x2e
 function function_bba54dca() {
@@ -69,12 +68,12 @@ function function_bba54dca() {
 }
 
 // Namespace molotov/molotov
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd07ef807, Offset: 0x4d0
 // Size: 0x3ac
 function function_1cdbb1e5(owner, weapon) {
     self endon(#"hacked", #"molotov_deleted");
-    assert(isdefined(weapon.customsettings), "<unknown string>" + weapon.name);
+    assert(isdefined(weapon.customsettings), "<dev string:x38>" + weapon.name);
     self thread function_bba54dca();
     team = self.team;
     var_3e7a440 = getscriptbundle(weapon.customsettings);
@@ -110,7 +109,7 @@ function function_1cdbb1e5(owner, weapon) {
 }
 
 // Namespace molotov/molotov
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xf18733d7, Offset: 0x888
 // Size: 0x94
 function function_462c8632(owner, origin, normal, velocity, killcament, team, customsettings, var_cb4f434e = 0) {
@@ -119,7 +118,7 @@ function function_462c8632(owner, origin, normal, velocity, killcament, team, cu
 }
 
 // Namespace molotov/molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9c58f8ed, Offset: 0x928
 // Size: 0x42
 function is_under_water(position) {
@@ -128,7 +127,7 @@ function is_under_water(position) {
 }
 
 // Namespace molotov/molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x80d853e4, Offset: 0x978
 // Size: 0x24
 function function_a66ba8cc(water_depth) {
@@ -136,7 +135,7 @@ function function_a66ba8cc(water_depth) {
 }
 
 // Namespace molotov/molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbae91a27, Offset: 0x9a8
 // Size: 0x2c
 function get_water_depth(position) {
@@ -144,19 +143,19 @@ function get_water_depth(position) {
 }
 
 // Namespace molotov/molotov
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9848a927, Offset: 0x9e0
 // Size: 0x7a
 function function_71c73ece() {
     self endon(#"projectile_impact_explode", #"death");
     while (true) {
         self.var_59ba00f5 = self getvelocity();
-        wait(float(function_60d95f53()) / 1000);
+        wait float(function_60d95f53()) / 1000;
     }
 }
 
 // Namespace molotov/molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7158e57e, Offset: 0xa68
 // Size: 0x84
 function function_7cbeb2f0(normal) {
@@ -169,7 +168,7 @@ function function_7cbeb2f0(normal) {
 }
 
 // Namespace molotov/molotov
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xe90034ce, Offset: 0xaf8
 // Size: 0x994
 function function_e8ad1d81(position, owner, normal, velocity, killcament, team, customsettings, var_cb4f434e) {
@@ -198,7 +197,7 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
             var_1b1117c6 = 1.2 * var_69d15ad0[#"fraction"];
             var_1f254a06 = normal;
             if (var_1b1117c6 > 0) {
-                wait(var_1b1117c6);
+                wait var_1b1117c6;
             }
         } else {
             return;
@@ -258,7 +257,7 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
             }
             var_bc9ec158 = 0.6 * var_69d15ad0[#"fraction"];
             if (var_bc9ec158 > 0) {
-                wait(var_bc9ec158);
+                wait var_bc9ec158;
             }
         }
     }
@@ -285,7 +284,7 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
 }
 
 // Namespace molotov/molotov
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x2b8c2711, Offset: 0x1498
 // Size: 0x8c
 function function_523961e2(startpos, normal, var_4997e17c, fxindex, fxcount, defaultdistance, rotation) {
@@ -295,7 +294,7 @@ function function_523961e2(startpos, normal, var_4997e17c, fxindex, fxcount, def
 }
 
 // Namespace molotov/molotov
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf4a930d5, Offset: 0x1530
 // Size: 0xe4
 function function_31cc6bd9() {
@@ -312,7 +311,7 @@ function function_31cc6bd9() {
 }
 
 // Namespace molotov/molotov
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2bd511cb, Offset: 0x1620
 // Size: 0xfe
 function function_31f342a2(origin, var_9c7e3678) {
@@ -331,7 +330,7 @@ function function_31f342a2(origin, var_9c7e3678) {
 }
 
 // Namespace molotov/molotov
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x2fe2543e, Offset: 0x1728
 // Size: 0xf00
 function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotation, killcament, customsettings, team, var_e76400c0, wallnormal, var_693f108f, var_cb4f434e) {
@@ -478,12 +477,12 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
 }
 
 // Namespace molotov/molotov
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x85655051, Offset: 0x2630
 // Size: 0x7c
 function function_42b9fdbe(weapon, loc, normal, duration, team) {
     fxnormal = normal;
-    wait(randomfloatrange(0, 0.5));
+    wait randomfloatrange(0, 0.5);
     spawntimedfx(weapon, loc, fxnormal, duration, team);
 }
 
@@ -509,7 +508,7 @@ function function_42b9fdbe(weapon, loc, normal, duration, team) {
 #/
 
 // Namespace molotov/molotov
-// Params 12, eflags: 0x6 linked
+// Params 12, eflags: 0x4
 // Checksum 0xbf408cc7, Offset: 0x2778
 // Size: 0x720
 function private damageeffectarea(owner, position, killcament, *normal, weapon, customsettings, radius_multiplier, var_e76400c0, wallnormal, var_cbaaea69, damageendtime, var_d58f4be) {
@@ -527,7 +526,7 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
         var_d58f4be.var_289a74bc = var_289a74bc;
         /#
             if (getdvarint(#"scr_draw_triggers", 0)) {
-                level thread util::drawcylinder(var_21f4217c, 12, var_cbaaea69, undefined, "<unknown string>", (1, 0, 0), 0.9);
+                level thread util::drawcylinder(var_21f4217c, 12, var_cbaaea69, undefined, "<dev string:x75>", (1, 0, 0), 0.9);
             }
         #/
     }
@@ -542,7 +541,7 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
     }
     /#
         if (getdvarint(#"scr_draw_triggers", 0)) {
-            level thread util::drawcylinder(trigger_radius_position, radius, trigger_radius_height, undefined, "<unknown string>");
+            level thread util::drawcylinder(trigger_radius_position, radius, trigger_radius_height, undefined, "<dev string:x75>");
         }
     #/
     self.var_ebf0b1c9 = [];
@@ -573,7 +572,7 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
                 var_d0603aba = 0;
             }
         }
-        wait(customsettings.var_90bd7d92);
+        wait customsettings.var_90bd7d92;
     }
     arrayremovevalue(self.var_ebf0b1c9, undefined);
     foreach (target in self.var_ebf0b1c9) {
@@ -603,20 +602,20 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
 }
 
 // Namespace molotov/molotov
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0919dd3, Offset: 0x2ea0
 // Size: 0x54
 function stopfiresound() {
     firesound = self;
     firesound stoploopsound(2);
-    wait(0.5);
+    wait 0.5;
     if (isdefined(firesound)) {
         firesound delete();
     }
 }
 
 // Namespace molotov/molotov
-// Params 8, eflags: 0x6 linked
+// Params 8, eflags: 0x4
 // Checksum 0x8ba9b9e9, Offset: 0x2f00
 // Size: 0x2fc
 function private function_9464e4ad(owner, position, killcament, weapon, customsettings, radius_multiplier, damageendtime, var_d58f4be) {
@@ -640,7 +639,7 @@ function private function_9464e4ad(owner, position, killcament, weapon, customse
             }
             self trytoapplyfiredamage(target, owner, position, var_d58f4be.fireeffectarea, var_d58f4be.var_289a74bc, killcament, weapon, customsettings);
         }
-        wait(customsettings.var_8fbd03cb);
+        wait customsettings.var_8fbd03cb;
     }
     arrayremovevalue(self.var_ebf0b1c9, undefined);
     foreach (target in self.var_ebf0b1c9) {
@@ -653,7 +652,7 @@ function private function_9464e4ad(owner, position, killcament, weapon, customse
 }
 
 // Namespace molotov/molotov
-// Params 8, eflags: 0x6 linked
+// Params 8, eflags: 0x4
 // Checksum 0x927b5286, Offset: 0x3208
 // Size: 0x120
 function private function_f8f4d9fc(damageendtime, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings) {
@@ -665,12 +664,12 @@ function private function_f8f4d9fc(damageendtime, owner, position, fireeffectare
             }
             self trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings);
         }
-        wait(customsettings.var_4bf1fc1f);
+        wait customsettings.var_4bf1fc1f;
     }
 }
 
 // Namespace molotov/molotov
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2a5b50a0, Offset: 0x3330
 // Size: 0x346
 function getpotentialtargets(owner, customsettings) {
@@ -733,7 +732,7 @@ function getpotentialtargets(owner, customsettings) {
 }
 
 // Namespace molotov/molotov
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x79e8a07d, Offset: 0x3680
 // Size: 0x35c
 function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings) {
@@ -786,7 +785,7 @@ function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a7
 }
 
 // Namespace molotov/molotov
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xb0673954, Offset: 0x39e8
 // Size: 0x1cc
 function private damageinfirearea(origin, killcament, weapon, customsettings, owner) {
@@ -818,7 +817,7 @@ function private damageinfirearea(origin, killcament, weapon, customsettings, ow
 }
 
 // Namespace molotov/molotov
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa36cc916, Offset: 0x3bc0
 // Size: 0x19a
 function private function_8422dabd(killcament, weapon, customsettings, owner) {
@@ -836,14 +835,14 @@ function private function_8422dabd(killcament, weapon, customsettings, owner) {
         /#
             time = gettime();
             ent_num = self getentitynumber();
-            println("<unknown string>" + ent_num + "<unknown string>" + string(var_341dfe48) + "<unknown string>" + time);
+            println("<dev string:x93>" + ent_num + "<dev string:x9a>" + string(var_341dfe48) + "<dev string:xb4>" + time);
         #/
         self.var_ae639436 = var_4dd4e6ee;
     }
 }
 
 // Namespace molotov/molotov
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xce9f29d3, Offset: 0x3d68
 // Size: 0x11a
 function private function_37ddab3(killcament, weapon, customsettings, owner) {
@@ -863,7 +862,7 @@ function private function_37ddab3(killcament, weapon, customsettings, owner) {
 }
 
 // Namespace molotov/molotov
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x905fcb25, Offset: 0x3e90
 // Size: 0x1a6
 function sndfiredamage() {
@@ -880,7 +879,7 @@ function sndfiredamage() {
         self thread sndfiredamage_deleteent(self.sndfireent);
     }
     self.sndfireent playloopsound(#"chr_burn_start_loop", 0.5);
-    wait(3);
+    wait 3;
     if (isdefined(self.sndfireent)) {
         self.sndfireent delete();
         self.sndfireent = undefined;
@@ -888,7 +887,7 @@ function sndfiredamage() {
 }
 
 // Namespace molotov/molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x21648c09, Offset: 0x4040
 // Size: 0x4c
 function sndfiredamage_deleteent(ent) {
@@ -899,7 +898,7 @@ function sndfiredamage_deleteent(ent) {
 }
 
 // Namespace molotov/molotov
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb1ae4245, Offset: 0x4098
 // Size: 0xe0
 function hitpos(start, end, color) {
@@ -915,7 +914,7 @@ function hitpos(start, end, color) {
 }
 
 // Namespace molotov/molotov
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf1ccfd76, Offset: 0x4180
 // Size: 0xc4
 function candofiredamage(*killcament, victim, resetfiretime) {
@@ -932,27 +931,27 @@ function candofiredamage(*killcament, victim, resetfiretime) {
 }
 
 // Namespace molotov/molotov
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd0f92fdb, Offset: 0x4250
 // Size: 0x7c
 function resetfiredamage(entnum, time) {
     if (time > 0.05) {
-        wait(time - 0.05);
+        wait time - 0.05;
     }
     level.var_e8a6b3ee[entnum] = undefined;
     /#
         current_time = gettime();
-        println("<unknown string>" + entnum + "<unknown string>" + current_time);
+        println("<dev string:x93>" + entnum + "<dev string:xc2>" + current_time);
     #/
 }
 
 // Namespace molotov/molotov
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa967710c, Offset: 0x42d8
 // Size: 0xac
 function function_1493c734(origin, radius, color, alpha, time) {
     /#
-        debug_fire = getdvarint(#"hash_58042b6209e0c2a6", 0);
+        debug_fire = getdvarint(#"debug_molotov_fire", 0);
         if (debug_fire > 0) {
             if (debug_fire > 1) {
                 radius = int(radius / debug_fire);

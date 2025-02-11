@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_725554a59d6a75b9;
-#using script_6d9bde564029bdf6;
-#using script_396f7d71538c9677;
 #using script_1f17c601c8e8824c;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
+#using script_396f7d71538c9677;
+#using script_6d9bde564029bdf6;
+#using script_725554a59d6a75b9;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weapon_utils;
 
 #namespace battlechatter;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6c1a516e, Offset: 0x4c0
 // Size: 0x408
 function private preinit() {
@@ -55,7 +54,7 @@ function private preinit() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb343551d, Offset: 0x8d0
 // Size: 0xec
 function on_player_spawned() {
@@ -76,7 +75,7 @@ function on_player_spawned() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcceac07b, Offset: 0x9c8
 // Size: 0x32
 function function_33f0ddd3(*eventstruct) {
@@ -94,7 +93,7 @@ function wait_play_dialog(waittime, dialogkey, dialogflags, dialogbuffer, enemy,
         if (isdefined(endnotify)) {
             self endon(endnotify);
         }
-        wait(waittime);
+        wait waittime;
     }
     self thread play_dialog(dialogkey, dialogflags, dialogbuffer, enemy);
 }
@@ -111,7 +110,7 @@ function function_f57e565f(dialogkey, entity, waittime) {
     }
     dialogalias = entity get_player_dialog_alias(dialogkey, undefined);
     if (isdefined(waittime) && waittime > 0) {
-        wait(waittime);
+        wait waittime;
         if (!isdefined(self) || is_true(self.playingdialog) || !isplayer(self) || !isdefined(entity) || self == entity && self isplayerunderwater() || !isplayer(entity)) {
             return;
         }
@@ -123,7 +122,7 @@ function function_f57e565f(dialogkey, entity, waittime) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x8c28ef67, Offset: 0xca8
 // Size: 0x64
 function play_dialog(dialogkey, dialogflags, dialogbuffer, enemy) {
@@ -132,7 +131,7 @@ function play_dialog(dialogkey, dialogflags, dialogbuffer, enemy) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x2aa44eb5, Offset: 0xd18
 // Size: 0xa4
 function function_5896274(waittime, dialogalias, dialogflags, dialogbuffer, enemy, endnotify) {
@@ -142,13 +141,13 @@ function function_5896274(waittime, dialogalias, dialogflags, dialogbuffer, enem
         if (isdefined(endnotify)) {
             self endon(endnotify);
         }
-        wait(waittime);
+        wait waittime;
     }
     self thread function_a48c33ff(dialogalias, dialogflags, dialogbuffer, enemy);
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5952a709, Offset: 0xdc8
 // Size: 0x474
 function function_a48c33ff(dialogalias, dialogflags, dialogbuffer, enemy) {
@@ -219,7 +218,7 @@ function function_a48c33ff(dialogalias, dialogflags, dialogbuffer, enemy) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a48e6d6, Offset: 0x1248
 // Size: 0xae
 function wait_dialog_buffer(dialogbuffer) {
@@ -227,7 +226,7 @@ function wait_dialog_buffer(dialogbuffer) {
     level endon(#"game_ended");
     self.playingdialog = 1;
     if (isdefined(dialogbuffer) && dialogbuffer > 0) {
-        wait(dialogbuffer);
+        wait dialogbuffer;
     }
     self.playingdialog = 0;
     self.var_6765d33e = 0;
@@ -236,7 +235,7 @@ function wait_dialog_buffer(dialogbuffer) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6e5f37a9, Offset: 0x1300
 // Size: 0x8a
 function stop_dialog(var_cdaf7797) {
@@ -253,7 +252,7 @@ function stop_dialog(var_cdaf7797) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x4e57246, Offset: 0x1398
 // Size: 0x154
 function function_9d4a3d68(var_11317dc8, speakingplayer, secondplayer, weapon, startdelay, var_44e63719) {
@@ -268,7 +267,7 @@ function function_9d4a3d68(var_11317dc8, speakingplayer, secondplayer, weapon, s
         var_44e63719 = isdefined(var_44e63719) ? var_44e63719 : 4;
     }
     if (startdelay > 0) {
-        wait(startdelay);
+        wait startdelay;
         if (!isdefined(speakingplayer)) {
             return;
         }
@@ -306,7 +305,7 @@ function check_boost_start_conversation() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa6ede46a, Offset: 0x16b8
 // Size: 0x124
 function function_e6457410(var_5c238c21, attacker, victim, weapon, *inflictor) {
@@ -330,7 +329,7 @@ function function_e6457410(var_5c238c21, attacker, victim, weapon, *inflictor) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x809027c2, Offset: 0x17e8
 // Size: 0x86
 function function_46ac5cbb(victim) {
@@ -373,7 +372,7 @@ function function_551980b7(speakingplayer, var_76787d10) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x599e13f4, Offset: 0x19b8
 // Size: 0x5ca
 function function_bd715920(var_28b40381, attacker, eventorigin, eventobject, timedelay) {
@@ -451,7 +450,7 @@ function function_bd715920(var_28b40381, attacker, eventorigin, eventobject, tim
 }
 
 // Namespace battlechatter/battlechatter
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd901a151, Offset: 0x1f90
 // Size: 0x402
 function function_fc82b10(weapon, eventorigin, eventobject) {
@@ -511,7 +510,7 @@ function function_fc82b10(weapon, eventorigin, eventobject) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5023a4dc, Offset: 0x23a0
 // Size: 0xe4
 function function_95e44f78(weapon, *timedelay) {
@@ -528,7 +527,7 @@ function function_95e44f78(weapon, *timedelay) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x92496e39, Offset: 0x2490
 // Size: 0x2f4
 function function_b06bbccf(sniper) {
@@ -571,7 +570,7 @@ function function_b06bbccf(sniper) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4830b70d, Offset: 0x2790
 // Size: 0xb0
 function function_bafe1ee4(weapon) {
@@ -592,7 +591,7 @@ function function_bafe1ee4(weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xd374dafe, Offset: 0x2848
 // Size: 0x15c
 function function_d2600afc(attacker, owner, gadgetweapon, attackerweapon) {
@@ -615,7 +614,7 @@ function function_d2600afc(attacker, owner, gadgetweapon, attackerweapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9882fe80, Offset: 0x29b0
 // Size: 0x54c
 function playkillbattlechatter(dialogkey, attacker, weapon, victim, inflictor) {
@@ -685,7 +684,7 @@ function playkillbattlechatter(dialogkey, attacker, weapon, victim, inflictor) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6b1bcb1c, Offset: 0x2f08
 // Size: 0x3b4
 function function_b5242998() {
@@ -707,9 +706,9 @@ function function_b5242998() {
         }
         allies[allies.size] = player;
     }
-    wait(mpdialog_value("enemyKillDelay", 0) + 0.1);
+    wait mpdialog_value("enemyKillDelay", 0) + 0.1;
     while (self.playingdialog) {
-        wait(0.5);
+        wait 0.5;
     }
     allies = arraysort(allies, self.origin);
     foreach (player in allies) {
@@ -726,7 +725,7 @@ function function_b5242998() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x42831ae7, Offset: 0x32c8
 // Size: 0x34c
 function function_f5b398b6() {
@@ -738,7 +737,7 @@ function function_f5b398b6() {
     if (!level.teambased) {
         return;
     }
-    wait(9);
+    wait 9;
     players = self get_friendly_players();
     players = arraysort(players, self.origin);
     selfdialog = self getmpdialogname();
@@ -770,7 +769,7 @@ function function_f5b398b6() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xac62749e, Offset: 0x3620
 // Size: 0x154
 function function_576ff6fe(killstreaktype) {
@@ -792,7 +791,7 @@ function function_576ff6fe(killstreaktype) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x65af242, Offset: 0x3780
 // Size: 0x19c
 function playkillstreakthreat(killstreaktype) {
@@ -818,7 +817,7 @@ function playkillstreakthreat(killstreaktype) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xecfe7f3f, Offset: 0x3928
 // Size: 0x144
 function function_eebf94f6(killstreaktype, *weapon) {
@@ -841,7 +840,7 @@ function function_eebf94f6(killstreaktype, *weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfc95dcf3, Offset: 0x3a78
 // Size: 0x4d4
 function playgadgetready(weapon, userflip = 0) {
@@ -949,7 +948,7 @@ function function_1d4b0ec0(dogstate, *dog) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa0605433, Offset: 0x40e0
 // Size: 0x264
 function function_e3ebbf87(var_aa988d26, var_c1132df6) {
@@ -963,7 +962,7 @@ function function_e3ebbf87(var_aa988d26, var_c1132df6) {
         level endon(#"game_ended");
     }
     waittime = mpdialog_value("calloutTriggerDelay", 0);
-    wait(waittime);
+    wait waittime;
     if (!isdefined(self) || !isplayer(self) || self isplayerunderwater()) {
         return;
     }
@@ -984,7 +983,7 @@ function function_e3ebbf87(var_aa988d26, var_c1132df6) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfc42c5f6, Offset: 0x4350
 // Size: 0x204
 function function_fff18afc(dialogkey, var_4d5833c) {
@@ -1014,7 +1013,7 @@ function function_fff18afc(dialogkey, var_4d5833c) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x81d52812, Offset: 0x4560
 // Size: 0x10c
 function function_cad61ec(weapon) {
@@ -1032,7 +1031,7 @@ function function_cad61ec(weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4a8e2180, Offset: 0x4678
 // Size: 0x21c
 function function_916b4c72(weapon) {
@@ -1057,7 +1056,7 @@ function function_916b4c72(weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x93b5f38e, Offset: 0x48a0
 // Size: 0x12c
 function function_4b6a650d(weapon) {
@@ -1079,7 +1078,7 @@ function function_4b6a650d(weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60814034, Offset: 0x49d8
 // Size: 0x1cc
 function function_26dd1669(weapon) {
@@ -1109,7 +1108,7 @@ function function_26dd1669(weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe25222ea, Offset: 0x4bb0
 // Size: 0x2b0
 function private function_253c2ba4(var_cf210c5b, dialogbuffer) {
@@ -1139,7 +1138,7 @@ function private function_253c2ba4(var_cf210c5b, dialogbuffer) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x74b75e79, Offset: 0x4e68
 // Size: 0x1ac
 function play_gadget_success(weapon, *waitkey, *victim, var_5d738b56) {
@@ -1246,7 +1245,7 @@ function function_72b65730() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x67cd0170, Offset: 0x54d8
 // Size: 0xc4
 function heavyweaponkilllogic(attacker, weapon, victim) {
@@ -1261,7 +1260,7 @@ function heavyweaponkilllogic(attacker, weapon, victim) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0ab2478, Offset: 0x55a8
 // Size: 0x318
 function function_9cc82a74() {
@@ -1308,20 +1307,20 @@ function function_9cc82a74() {
             foreach (entry in var_d465d941) {
                 arrayremovevalue(level.var_648e79b7, entry, 1);
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x20419784, Offset: 0x58c8
 // Size: 0x31c
 function function_d8bd5eb9(player, var_e76fd8fa) {
     if (!isdefined(var_e76fd8fa) || randomfloatrange(0, 1) < 0.25) {
         return;
     }
-    wait(3);
+    wait 3;
     if (!isplayer(player) || player hasperk(#"specialty_quieter")) {
         return;
     }
@@ -1382,7 +1381,7 @@ function event_handler[event_8da88658] function_382adb6c(params) {
         return;
     }
     if (isdefined(delay)) {
-        wait(delay);
+        wait delay;
     }
     self function_a48c33ff(dialogbundle.voiceprefix + suffix, 2);
 }
@@ -1423,7 +1422,7 @@ function event_handler[player_callout] function_6bd27812(params) {
         return;
     }
     if (isdefined(delay)) {
-        wait(delay);
+        wait delay;
     }
     if (isdefined(self)) {
         self function_a48c33ff(dialogbundle.voiceprefix + suffix, 2);

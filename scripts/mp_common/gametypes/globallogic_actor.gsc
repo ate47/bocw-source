@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapons.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_player.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\globallogic\globallogic_player;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\player\player_utils;
+#using scripts\weapons\weapon_utils;
+#using scripts\weapons\weapons;
 
 #namespace globallogic_actor;
 
@@ -30,7 +29,7 @@ function autoexec init() {
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x56daa825, Offset: 0x1d8
 // Size: 0x24
 function callback_actorspawned(spawner) {
@@ -38,7 +37,7 @@ function callback_actorspawned(spawner) {
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 16, eflags: 0x2 linked
+// Params 16, eflags: 0x0
 // Checksum 0x6cd5dc82, Offset: 0x208
 // Size: 0xdbe
 function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, modelindex, surfacetype, vsurfacenormal) {
@@ -192,7 +191,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
     self thread weapons::on_damage(eattacker, einflictor, weapon, smeansofdeath, idamage);
     /#
         if (getdvarint(#"g_debugdamage", 0)) {
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.health + "<unknown string>" + eattacker.clientid + "<unknown string>" + isplayer(einflictor) + "<unknown string>" + idamage + "<unknown string>" + shitloc);
+            println("<dev string:x38>" + self getentitynumber() + "<dev string:x42>" + self.health + "<dev string:x4e>" + eattacker.clientid + "<dev string:x5c>" + isplayer(einflictor) + "<dev string:x75>" + idamage + "<dev string:x81>" + shitloc);
         }
     #/
     if (true) {
@@ -216,7 +215,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xb63f794, Offset: 0xfd0
 // Size: 0x1c4
 function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime) {
@@ -246,7 +245,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3889e766, Offset: 0x11a0
 // Size: 0x3c
 function callback_actorcloned(original) {

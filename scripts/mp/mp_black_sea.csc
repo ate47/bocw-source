@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\util_shared;
 
 #namespace mp_black_sea;
 
@@ -28,7 +27,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf856450a, Offset: 0x340
 // Size: 0x90
 function on_gameplay_started(*localclientnum) {
@@ -40,7 +39,7 @@ function on_gameplay_started(*localclientnum) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4c2bc8f9, Offset: 0x3d8
 // Size: 0x2c
 function on_end_game(*localclientnum) {
@@ -48,7 +47,7 @@ function on_end_game(*localclientnum) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9c75ce59, Offset: 0x410
 // Size: 0x174
 function function_22faec66() {
@@ -66,7 +65,7 @@ function function_22faec66() {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xeffccb08, Offset: 0x590
 // Size: 0xde
 function function_74feb59(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -83,7 +82,7 @@ function function_74feb59(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe002068a, Offset: 0x678
 // Size: 0x1e0
 function function_7f639bc1() {

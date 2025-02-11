@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\util;
 
 #namespace contracts;
 
@@ -285,9 +284,9 @@ function private function_902ef0de(var_38280f2f, delta) {
     }
     /#
         if (getdvarint(#"scr_contract_debug", 0) > 0) {
-            iprintln(function_9e72a96(var_38280f2f) + "<unknown string>" + new_progress + "<unknown string>" + target_value);
+            iprintln(function_9e72a96(var_38280f2f) + "<dev string:x38>" + new_progress + "<dev string:x47>" + target_value);
             if (old_progress < target_value && target_value <= new_progress) {
-                iprintln(function_9e72a96(var_38280f2f) + "<unknown string>");
+                iprintln(function_9e72a96(var_38280f2f) + "<dev string:x4c>");
             }
         }
     #/
@@ -327,8 +326,8 @@ function function_a4c8ce2a(data) {
     }
     team = player.team;
     if (isdefined(level.placement[team]) && player.score > 0) {
-        var_414a209b = min(level.placement.size, 3);
-        for (i = 0; i < var_414a209b; i++) {
+        last_check = min(level.placement.size, 3);
+        for (i = 0; i < last_check; i++) {
             if (level.placement[team][i] == player) {
                 player increment_contract(#"contract_wl_top_3_team");
                 break;
@@ -380,8 +379,8 @@ function contract_win(winner) {
     // Checksum 0xa56fedf3, Offset: 0x1700
     // Size: 0xcc
     function devgui_setup() {
-        devgui_base = "<unknown string>";
-        wait(3);
+        devgui_base = "<dev string:x6e>";
+        wait 3;
         function_e07e542b(devgui_base, undefined);
         function_17a92a99(devgui_base);
         function_7f05e018(devgui_base);
@@ -396,14 +395,14 @@ function contract_win(winner) {
     // Checksum 0x4cb2212b, Offset: 0x17d8
     // Size: 0x12c
     function function_17a92a99(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        var_78a6fb52 = var_1d89ece6 + "<dev string:x83>";
+        var_c8d599b5 = "<dev string:x98>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:xd5>", var_c8d599b5 + "<dev string:xf2>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x11b>", var_c8d599b5 + "<dev string:x137>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x15f>", var_c8d599b5 + "<dev string:x182>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x19c>", var_c8d599b5 + "<dev string:x1b1>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x1d2>", var_c8d599b5 + "<dev string:x1f2>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x217>", var_c8d599b5 + "<dev string:x237>");
     }
 
     // Namespace contracts/cwl_contracts
@@ -411,11 +410,11 @@ function contract_win(winner) {
     // Checksum 0xc535f75f, Offset: 0x1910
     // Size: 0xb4
     function function_7f05e018(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        var_78a6fb52 = var_1d89ece6 + "<dev string:x25c>";
+        var_c8d599b5 = "<dev string:x98>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x272>", var_c8d599b5 + "<dev string:x27a>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x28e>", var_c8d599b5 + "<dev string:x29c>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x2b6>", var_c8d599b5 + "<dev string:x2c7>");
     }
 
     // Namespace contracts/cwl_contracts
@@ -423,15 +422,15 @@ function contract_win(winner) {
     // Checksum 0x4fd78d33, Offset: 0x19d0
     // Size: 0x154
     function function_bdc473ef(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        var_78a6fb52 = var_1d89ece6 + "<dev string:x2e8>";
+        var_c8d599b5 = "<dev string:x98>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x300>", var_c8d599b5 + "<dev string:x32c>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x350>", var_c8d599b5 + "<dev string:x36e>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x38c>", var_c8d599b5 + "<dev string:x3c2>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x3e1>", var_c8d599b5 + "<dev string:x417>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x43d>", var_c8d599b5 + "<dev string:x47d>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x4ad>", var_c8d599b5 + "<dev string:x4ea>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x512>", var_c8d599b5 + "<dev string:x545>");
     }
 
     // Namespace contracts/cwl_contracts
@@ -439,15 +438,15 @@ function contract_win(winner) {
     // Checksum 0xd3619160, Offset: 0x1b30
     // Size: 0x154
     function function_936f8390(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        var_78a6fb52 = var_1d89ece6 + "<dev string:x565>";
+        var_c8d599b5 = "<dev string:x98>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x57b>", var_c8d599b5 + "<dev string:x5a5>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x5c7>", var_c8d599b5 + "<dev string:x5e3>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x5ff>", var_c8d599b5 + "<dev string:x633>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x650>", var_c8d599b5 + "<dev string:x682>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x6a6>", var_c8d599b5 + "<dev string:x6e4>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x712>", var_c8d599b5 + "<dev string:x74b>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x775>", var_c8d599b5 + "<dev string:x7a6>");
     }
 
     // Namespace contracts/cwl_contracts
@@ -455,15 +454,15 @@ function contract_win(winner) {
     // Checksum 0x3afa78ef, Offset: 0x1c90
     // Size: 0x154
     function function_2e9917ec(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        var_78a6fb52 = var_1d89ece6 + "<dev string:x7c4>";
+        var_c8d599b5 = "<dev string:x98>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x7e5>", var_c8d599b5 + "<dev string:x81a>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x83b>", var_c8d599b5 + "<dev string:x862>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x87d>", var_c8d599b5 + "<dev string:x8bb>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x8d7>", var_c8d599b5 + "<dev string:x913>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x936>", var_c8d599b5 + "<dev string:x97d>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:x9aa>", var_c8d599b5 + "<dev string:x9eb>");
+        util::function_3f749abc(var_78a6fb52 + "<dev string:xa18>", var_c8d599b5 + "<dev string:xa53>");
     }
 
     // Namespace contracts/cwl_contracts
@@ -471,8 +470,8 @@ function contract_win(winner) {
     // Checksum 0xebe1e365, Offset: 0x1df0
     // Size: 0x3a
     function function_ef925b75(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
+        var_78a6fb52 = var_1d89ece6 + "<dev string:xa70>";
+        var_c8d599b5 = "<dev string:x98>";
     }
 
     // Namespace contracts/cwl_contracts
@@ -480,9 +479,9 @@ function contract_win(winner) {
     // Checksum 0xb2882e85, Offset: 0x1e38
     // Size: 0x64
     function function_295a8005(var_1d89ece6) {
-        var_78a6fb52 = var_1d89ece6 + "<unknown string>";
-        var_c8d599b5 = "<unknown string>";
-        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        var_78a6fb52 = var_1d89ece6 + "<dev string:xa88>";
+        var_c8d599b5 = "<dev string:x98>";
+        util::function_3f749abc(var_78a6fb52 + "<dev string:xa9b>", var_c8d599b5 + "<dev string:xaad>");
     }
 
 #/

@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreak_detect.csc;
-#using scripts\core_common\array_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\battlechatter.csc;
-#using scripts\core_common\player\player_role.csc;
-#using scripts\core_common\character_customization.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\serverfield_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\character_customization;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreak_detect;
 
 #namespace draft;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6086c7a6, Offset: 0x2780
 // Size: 0xa48
 function private preinit() {
@@ -30,8 +29,8 @@ function private preinit() {
     clientfield::register_clientuimodel("PositionDraft.stage", #"hash_6797d4cd7534952f", #"stage", 1, 4, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("PositionDraft.autoSelected", #"hash_6797d4cd7534952f", #"autoselected", 1, 1, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("PositionDraft.cooldown", #"hash_6797d4cd7534952f", #"cooldown", 1, 5, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("PositionDraft.timeRemaining", #"hash_512fa2b9d2d44eda", #"timeremaining", 1, 7, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("PositionDraft.waitingForPlayers", #"hash_512fa2b9d2d44eda", #"waitingforplayers", 1, 1, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("PositionDraft.timeRemaining", #"position_draft", #"timeremaining", 1, 7, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("PositionDraft.waitingForPlayers", #"position_draft", #"waitingforplayers", 1, 1, "int", undefined, 0, 0);
     serverfield::register("PositionDraft.uiLoaded", 1, 1, "int");
     level.var_a968beb = [];
     level.var_a968beb[0] = #"none";
@@ -101,7 +100,7 @@ function private preinit() {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8e4ba320, Offset: 0x31d0
 // Size: 0x6e
 function function_c4dfe16e(localclientnum) {
@@ -125,7 +124,7 @@ function function_75442e78(team, index) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9542c5d7, Offset: 0x32b8
 // Size: 0x25a
 function play_intro_cinematic(localclientnum) {
@@ -139,7 +138,7 @@ function play_intro_cinematic(localclientnum) {
             level.var_368aaeb9[localclientnum] = "cam_draft_intro";
             playmaincamxcam(localclientnum, level.var_99ef4320[team], 0, "cam_draft_intro", "", var_17e3fc35.origin, var_17e3fc35.angles);
             duration = getcamanimtime(level.var_99ef4320[team]);
-            wait(float(duration) / 1000);
+            wait float(duration) / 1000;
             level.draftintroplayed[localclientnum] = 1;
         }
     }
@@ -156,7 +155,7 @@ function play_intro_cinematic(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x44417719, Offset: 0x3520
 // Size: 0x1a4
 function show_cam(localclientnum, xcam, animname, lerpduration) {
@@ -184,7 +183,7 @@ function show_cam(localclientnum, xcam, animname, lerpduration) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x237e2d00, Offset: 0x36d0
 // Size: 0x44
 function stop_cameras(localclientnum) {
@@ -194,7 +193,7 @@ function stop_cameras(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9ce040b9, Offset: 0x3720
 // Size: 0x3c
 function function_532dfc0b(localclientnum, lerpduration) {
@@ -202,7 +201,7 @@ function function_532dfc0b(localclientnum, lerpduration) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe463ff6c, Offset: 0x3768
 // Size: 0x3c
 function function_e79c182b(localclientnum, lerpduration) {
@@ -218,7 +217,7 @@ function function_fccaf2ed(localclientnum, lerpduration) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x460552e2, Offset: 0x37f8
 // Size: 0x7c
 function enable_lights(localclientnum) {
@@ -230,7 +229,7 @@ function enable_lights(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x76bb5146, Offset: 0x3880
 // Size: 0x46
 function function_2c486f35(localclientnum) {
@@ -241,7 +240,7 @@ function function_2c486f35(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb14fbf4d, Offset: 0x38d0
 // Size: 0x10c
 function handledraftstage(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -260,7 +259,7 @@ function handledraftstage(localclientnum, oldval, newval, *bnewent, *binitialsna
 }
 
 // Namespace draft/draft
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x204e2f31, Offset: 0x39e8
 // Size: 0xe2
 function function_799e0ac1(*localclientnum, draftcharacter, masked) {
@@ -276,7 +275,7 @@ function function_799e0ac1(*localclientnum, draftcharacter, masked) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb67080de, Offset: 0x3ad8
 // Size: 0xcc
 function function_236a944e(localclientnum) {
@@ -289,7 +288,7 @@ function function_236a944e(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x815f0c67, Offset: 0x3bb0
 // Size: 0xb4
 function function_26c00d58(localclientnum) {
@@ -300,7 +299,7 @@ function function_26c00d58(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcdbdcc5, Offset: 0x3c70
 // Size: 0xdc
 function function_b139ecfb(localclientnum) {
@@ -317,7 +316,7 @@ function function_b139ecfb(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x41c663b7, Offset: 0x3d58
 // Size: 0xdc
 function function_1cf2437c(localclientnum, draftcharacter, *oldcharacterindex, *var_121d6e9a) {
@@ -330,7 +329,7 @@ function function_1cf2437c(localclientnum, draftcharacter, *oldcharacterindex, *
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49ed4bf8, Offset: 0x3e40
 // Size: 0x17bc
 function function_bb0565d0(var_de58f286) {
@@ -360,7 +359,7 @@ function function_bb0565d0(var_de58f286) {
 }
 
 // Namespace draft/draft
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x36da8c0c, Offset: 0x5608
 // Size: 0x3f6
 function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
@@ -368,14 +367,14 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
     anim_intro_name = undefined;
     anim_name = undefined;
     weapongroupanim = function_bb0565d0(var_de58f286);
-    if (isdefined(var_de58f286.var_625ec6da) && player_role::is_valid(var_de58f286.var_625ec6da.charactertype)) {
+    if (isdefined(var_de58f286.activecharacter) && player_role::is_valid(var_de58f286.activecharacter.charactertype)) {
         if (!isdefined(var_de58f286) || !isdefined(var_de58f286.var_91065a59) || !isdefined(var_de58f286.var_3afd181d)) {
             assert(isdefined(var_de58f286));
             assert(isdefined(var_de58f286.var_91065a59));
             assert(isdefined(var_de58f286.var_3afd181d));
             return;
         }
-        gender = getherogender(var_de58f286.var_625ec6da.charactertype, sessionmode);
+        gender = getherogender(var_de58f286.activecharacter.charactertype, sessionmode);
         if (var_de58f286.var_91065a59 != var_de58f286.var_3afd181d) {
             if (var_de58f286.var_91065a59) {
                 var_ca1716fe = weapongroupanim[#"ready"][gender];
@@ -413,7 +412,7 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6af6eabe, Offset: 0x5a08
 // Size: 0x220
 function function_93a4f3c5(localclientnum, draftcharacter) {
@@ -421,17 +420,17 @@ function function_93a4f3c5(localclientnum, draftcharacter) {
     var_de58f286 = [[ draftcharacter ]]->function_82e05d64();
     if (player_role::is_valid(var_de58f286.focusedcharacterindex)) {
         var_3f83e0ee = character_customization::function_7474681d(localclientnum, sessionmode, [[ draftcharacter ]]->function_82e05d64().focusedcharacterindex);
-        if (!character_customization::function_aa5382ed(var_de58f286.var_625ec6da, var_3f83e0ee)) {
+        if (!character_customization::function_aa5382ed(var_de58f286.activecharacter, var_3f83e0ee)) {
             return false;
         }
-        [[ draftcharacter ]]->function_82e05d64().var_625ec6da = var_3f83e0ee;
-    } else if (!isdefined(var_de58f286.var_625ec6da) || character_customization::function_aa5382ed(var_de58f286.var_625ec6da, var_de58f286.var_c018da16)) {
-        function_1cf2437c(localclientnum, draftcharacter, var_de58f286.var_625ec6da, var_de58f286.var_c018da16);
-        var_de58f286.var_625ec6da = var_de58f286.var_c018da16;
+        [[ draftcharacter ]]->function_82e05d64().activecharacter = var_3f83e0ee;
+    } else if (!isdefined(var_de58f286.activecharacter) || character_customization::function_aa5382ed(var_de58f286.activecharacter, var_de58f286.var_c018da16)) {
+        function_1cf2437c(localclientnum, draftcharacter, var_de58f286.activecharacter, var_de58f286.var_c018da16);
+        var_de58f286.activecharacter = var_de58f286.var_c018da16;
     }
-    if (isdefined(var_de58f286.var_625ec6da) && player_role::is_valid(var_de58f286.var_625ec6da.charactertype)) {
+    if (isdefined(var_de58f286.activecharacter) && player_role::is_valid(var_de58f286.activecharacter.charactertype)) {
         [[ draftcharacter ]]->function_1ec9448d(0);
-        [[ draftcharacter ]]->function_15a8906a([[ draftcharacter ]]->function_82e05d64().var_625ec6da);
+        [[ draftcharacter ]]->function_15a8906a([[ draftcharacter ]]->function_82e05d64().activecharacter);
         function_799e0ac1(localclientnum, draftcharacter, 0);
     } else {
         [[ draftcharacter ]]->function_1ec9448d(1);
@@ -442,7 +441,7 @@ function function_93a4f3c5(localclientnum, draftcharacter) {
 }
 
 // Namespace draft/draft
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x350d9e1a, Offset: 0x5c30
 // Size: 0x24
 function function_2dfe152c(*localclientnum, *draftcharacter, *oldweapon, *newweapon) {
@@ -450,7 +449,7 @@ function function_2dfe152c(*localclientnum, *draftcharacter, *oldweapon, *newwea
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4eb73535, Offset: 0x5c60
 // Size: 0x20a
 function function_4ccc033d(*localclientnum, draftcharacter) {
@@ -475,7 +474,7 @@ function function_4ccc033d(*localclientnum, draftcharacter) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x74b3ffbf, Offset: 0x5e78
 // Size: 0x33e
 function update_player_weapon(localclientnum, draftcharacter) {
@@ -509,7 +508,7 @@ function update_player_weapon(localclientnum, draftcharacter) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa6d41be0, Offset: 0x61c0
 // Size: 0xe0
 function function_71a9fb67(localclientnum, draftcharacter) {
@@ -529,7 +528,7 @@ function function_71a9fb67(localclientnum, draftcharacter) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8c292b2c, Offset: 0x62a8
 // Size: 0x844
 function update_team(localclientnum, var_4123f2c1) {
@@ -559,7 +558,7 @@ function update_team(localclientnum, var_4123f2c1) {
                     [[ draftcharacter ]]->function_82e05d64().player = player;
                     [[ draftcharacter ]]->function_82e05d64().var_c018da16 = player function_79a48799();
                     if (isdefined([[ draftcharacter ]]->function_82e05d64().var_c018da16) && player_role::is_valid([[ draftcharacter ]]->function_82e05d64().var_c018da16.charactertype) && player_role::is_valid([[ draftcharacter ]]->function_82e05d64().focusedcharacterindex)) {
-                        [[ draftcharacter ]]->function_82e05d64().var_625ec6da = undefined;
+                        [[ draftcharacter ]]->function_82e05d64().activecharacter = undefined;
                         [[ draftcharacter ]]->function_82e05d64().focusedcharacterindex = 0;
                     }
                     [[ draftcharacter ]]->function_82e05d64().primaryweapon = player getprimaryweapon();
@@ -612,7 +611,7 @@ function update_team(localclientnum, var_4123f2c1) {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7f1a659e, Offset: 0x6af8
 // Size: 0x64
 function function_9e9e1117(*localclientnum, draftcharacter) {
@@ -622,7 +621,7 @@ function function_9e9e1117(*localclientnum, draftcharacter) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5ce4f287, Offset: 0x6b68
 // Size: 0x12a
 function function_20811f66(localclientnum) {
@@ -635,7 +634,7 @@ function function_20811f66(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcc383501, Offset: 0x6ca0
 // Size: 0x250
 function setup_team(localclientnum) {
@@ -666,7 +665,7 @@ function setup_team(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x38fbbe47, Offset: 0x6ef8
 // Size: 0xc8
 function watchupdate(localclientnum) {
@@ -683,7 +682,7 @@ function watchupdate(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5a2ceb84, Offset: 0x6fc8
 // Size: 0xa0
 function watchteamchange(localclientnum) {
@@ -698,7 +697,7 @@ function watchteamchange(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb25ef4b1, Offset: 0x7070
 // Size: 0xa0
 function watchkillcam() {
@@ -713,7 +712,7 @@ function watchkillcam() {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xff542d81, Offset: 0x7118
 // Size: 0x13c
 function function_9afd868e(localclientnum) {
@@ -736,7 +735,7 @@ function function_9afd868e(localclientnum) {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a8b154, Offset: 0x7260
 // Size: 0xb0
 function function_ca03ab69() {
@@ -751,7 +750,7 @@ function function_ca03ab69() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x77cd04b5, Offset: 0x7318
 // Size: 0x118
 function function_91858511() {

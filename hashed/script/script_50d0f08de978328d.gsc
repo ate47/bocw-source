@@ -1,38 +1,37 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using script_43f7c47906da34c7;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\outcome.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\trigger_shared.gsc;
-#using script_44b0b8420eabacad;
-#using script_335d0650ed05d36d;
-#using script_7d712f77ab8d0c16;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\medals_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
 #using script_1435f3c9fc699e04;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_1cc417743d7c262d;
+#using script_335d0650ed05d36d;
+#using script_43f7c47906da34c7;
+#using script_44b0b8420eabacad;
+#using script_7a8059ca02b7b09e;
+#using script_7d712f77ab8d0c16;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\medals_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\outcome;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace namespace_d150537f;
 
@@ -248,7 +247,7 @@ function function_785aa606(var_5ed6bcb0, var_514c251c) {
         return;
     }
     /#
-        print("fallback" + zone.trigorigin[0] + "<unknown string>" + zone.trigorigin[1] + "<unknown string>" + zone.trigorigin[2] + "<unknown string>");
+        print("<dev string:x38>" + zone.trigorigin[0] + "<dev string:x4b>" + zone.trigorigin[1] + "<dev string:x4b>" + zone.trigorigin[2] + "<dev string:x50>");
     #/
     zone enable_influencers(1);
     zone.gameobject.trigger allowtacticalinsertion(0);
@@ -267,11 +266,11 @@ function function_785aa606(var_5ed6bcb0, var_514c251c) {
 function function_86a05ad0(*delay) {
     var_7cd85719 = int(level.var_1be269a9);
     if (!function_14c852b6()) {
-        function_785aa606(&function_f879e0c9, 1);
+        function_785aa606(&get_first_zone, 1);
         var_7cd85719--;
     }
     for (i = 0; i < var_7cd85719; i++) {
-        function_785aa606(&function_1280e8f4);
+        function_785aa606(&get_next_zone);
     }
     matchrecordroundstart();
     if (function_469127d2()) {
@@ -292,7 +291,7 @@ function function_5bd81f4f() {
     }
     matchrecordroundend();
     for (i = 0; i < level.var_a495fcf1; i++) {
-        function_785aa606(&function_1280e8f4);
+        function_785aa606(&get_next_zone);
     }
     matchrecordroundstart();
     if (function_469127d2()) {
@@ -335,10 +334,10 @@ function function_fbce3808(enabled) {
 // Checksum 0xfcd496a0, Offset: 0x1950
 // Size: 0x26c
 function function_e221a1d1(zone) {
-    zone.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    zone.gameobject gameobjects::allow_use(#"group_all");
     zone.gameobject gameobjects::set_use_time(level.capturetime);
     zone.gameobject gameobjects::set_use_text(#"mp/capturing_objective");
-    zone.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    zone.gameobject gameobjects::set_visible(#"group_all");
     zone.gameobject gameobjects::must_maintain_claim(0);
     zone.gameobject gameobjects::can_contest_claim(1);
     zone.gameobject set_model_visibility(1);
@@ -368,7 +367,7 @@ function function_50a7f9ac(zone) {
             continue;
         }
         ownerteam = zone.gameobject gameobjects::get_owner_team();
-        zone.gameobject gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+        zone.gameobject gameobjects::allow_use(#"group_none");
         zone.gameobject.onuse = undefined;
         zone.gameobject.onunoccupied = &function_32b7bf67;
         zone.gameobject.oncontested = &function_e4bd126f;
@@ -404,8 +403,8 @@ function function_ee725386() {
             waitframe(1);
         }
     }
-    wait(5);
-    luinotifyevent(#"hash_12fdd5eec28f50ae");
+    wait 5;
+    luinotifyevent(#"hardpoint_unlocked");
     foreach (zone in level.zones) {
         if (isdefined(zone.target)) {
             othervisuals = getentarray(zone.target, "targetname");
@@ -468,7 +467,7 @@ function function_ee725386() {
             zone enable_influencers(0);
             zone.gameobject.lastcaptureteam = undefined;
             zone.gameobject gameobjects::disable_object();
-            zone.gameobject gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+            zone.gameobject gameobjects::allow_use(#"group_none");
             zone.gameobject gameobjects::set_owner_team(#"neutral");
             zone.gameobject gameobjects::must_maintain_claim(0);
             zone.gameobject set_model_visibility(0);
@@ -478,16 +477,16 @@ function function_ee725386() {
         setmatchflag("bomb_timer_a", 0);
         level.active_zones = [];
         function_5bd81f4f();
-        wait(0.5);
+        wait 0.5;
         foreach (team in var_2db50872) {
             thread function_7828f363(team);
         }
-        wait(0.5);
+        wait 0.5;
         if (level.zonespawntime) {
             resume_time();
             setmatchflag("bomb_timer_a", 1);
             setbombtimer("A", int(gettime() + 1000 + int(level.zonespawntime * 1000)));
-            wait(level.zonespawntime);
+            wait level.zonespawntime;
         }
         if (isdefined(level.var_73377ee4) && level.var_73377ee4.size > 0) {
             function_9695c3e3();
@@ -500,8 +499,8 @@ function function_ee725386() {
 // Checksum 0x7def29e4, Offset: 0x28d8
 // Size: 0x2c
 function function_899cf0b8() {
-    wait(0.1);
-    luinotifyevent(#"hash_12fdd5eec28f50ae");
+    wait 0.1;
+    luinotifyevent(#"hardpoint_unlocked");
 }
 
 // Namespace namespace_d150537f/namespace_d150537f
@@ -517,7 +516,7 @@ function function_7828f363(team) {
         }
         if (player.pers[#"team"] == team) {
             player notify(#"force_spawn");
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
@@ -555,7 +554,7 @@ function function_9d7664e3() {
                     }
                     player = struct.player;
                     if (isdefined(player) && isplayer(player) && (isdefined(player.var_c8d27c06) ? player.var_c8d27c06 : 0) < gettime()) {
-                        player playsoundtoplayer(#"hash_5daa27b37c13bc01", player);
+                        player playsoundtoplayer(#"mpl_control_capture_contested", player);
                         player.var_c8d27c06 = gettime() + 5000;
                     }
                 }
@@ -573,7 +572,7 @@ function function_ab09ff18(sentient) {
         self.var_464f0169 = self.iscontested;
         if (is_zone_contested(self)) {
             if ((isdefined(sentient.var_c8d27c06) ? sentient.var_c8d27c06 : 0) < gettime()) {
-                sentient playsoundtoplayer(#"hash_5daa27b37c13bc01", sentient);
+                sentient playsoundtoplayer(#"mpl_control_capture_contested", sentient);
                 sentient.var_c8d27c06 = gettime() + 5000;
             }
         } else if (sentient.team !== self gameobjects::get_owner_team()) {
@@ -630,7 +629,7 @@ function function_631c3afc(sentient) {
     capture_team = player.team;
     capturetime = gettime();
     /#
-        print("<unknown string>");
+        print("<dev string:x55>");
     #/
     pause_time();
     string = #"hash_446b7b0b3e4df72e";
@@ -715,7 +714,7 @@ function give_capture_credit(touchlist, string, capturetime, capture_team, lastc
             player recordgameevent("capture");
             level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"capture"});
             player recordgameevent("hardpoint_captured");
-            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"hash_186f4aa4b9a5ddc1"});
+            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"hardpoint_captured"});
             battlechatter::function_924699f4(player, self);
             if (level.var_bc5a3eed !== 1) {
                 level thread popups::displayteammessagetoall(string, player);
@@ -737,7 +736,7 @@ function give_capture_credit(touchlist, string, capturetime, capture_team, lastc
             continue;
         }
         /#
-            player iprintlnbold("<unknown string>");
+            player iprintlnbold("<dev string:x66>");
         #/
     }
 }
@@ -766,7 +765,7 @@ function function_e4bd126f() {
     self.wascontested = 1;
     self.iscontested = 1;
     self recordgameeventnonplayer("hardpoint_contested");
-    level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"hash_5b03673c97cf0c"});
+    level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"hardpoint_contested"});
     resume_time();
     util::function_a3f7de13(8, #"none");
     foreach (team, _ in level.teams) {
@@ -813,16 +812,16 @@ function function_4a415293(time) {
         }
         if (var_f03a7dfd <= 0) {
             function_9f81bb75();
-            wait(time);
+            wait time;
         } else if (var_f03a7dfd > time) {
-            wait(time);
+            wait time;
         } else {
-            wait(var_f03a7dfd);
+            wait var_f03a7dfd;
             function_9f81bb75();
-            wait(var_9217cadc);
+            wait var_9217cadc;
         }
     } else {
-        wait(time);
+        wait time;
     }
     if (is_true(level.overtime)) {
         return;
@@ -837,7 +836,7 @@ function function_4a415293(time) {
         }
         zone.gameobject recordgameeventnonplayer("hardpoint_moved");
     }
-    level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"hash_2cf7d6b871a8f27e"});
+    level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"hardpoint_moved"});
     playsoundatposition(#"mpl_hardpoint_move", (0, 0, 0));
     foreach (zone in level.active_zones) {
         zone.gameobject.onuse = undefined;
@@ -912,7 +911,7 @@ function award_capture_points(team, *lastcaptureteam) {
         var_560f3751 = 0;
         foreach (zone in level.active_zones) {
             if (isdefined(zone.var_72767cc4) && time - zone.var_72767cc4 < 1000) {
-                wait(float(1000 - time - zone.var_72767cc4) / 1000);
+                wait float(1000 - time - zone.var_72767cc4) / 1000;
                 break;
             }
         }
@@ -920,7 +919,7 @@ function award_capture_points(team, *lastcaptureteam) {
     seconds = 1;
     while (!level.gameended) {
         self.var_72767cc4 = gettime();
-        wait(seconds);
+        wait seconds;
         hostmigration::waittillhostmigrationdone();
         if (level.var_5e8ffd3b) {
             var_95e19dc6 = self.gameobject gameobjects::function_e4cad37();
@@ -970,11 +969,11 @@ function function_3c70f13f(zone_a, zone_b) {
         return false;
     }
     if (!isdefined(script_index_a) && isdefined(script_index_b)) {
-        println("<unknown string>" + zone_a.origin);
+        println("<dev string:xae>" + zone_a.origin);
         return true;
     }
     if (isdefined(script_index_a) && !isdefined(script_index_b)) {
-        println("<unknown string>" + zone_b.origin);
+        println("<dev string:xae>" + zone_b.origin);
         return false;
     }
     if (script_index_a > script_index_b) {
@@ -1019,7 +1018,7 @@ function setup_zones() {
     trigs = getentarray("koth_zone_trigger", "targetname");
     var_4cb5e04 = getentarray("koth_zone_trigger", "script_noteworthy");
     trigs = arraycombine(trigs, var_4cb5e04);
-    assert(zones.size == trigs.size, "<unknown string>");
+    assert(zones.size == trigs.size, "<dev string:xd8>");
     for (i = 0; i < zones.size; i++) {
         errored = 0;
         zone = zones[i];
@@ -1071,7 +1070,7 @@ function setup_zones() {
         level.var_73377ee4 = [];
         for (i = 0; i < level.var_a495fcf1; i++) {
             obj_id = gameobjects::get_next_obj_id();
-            objective_add(obj_id, "invisible", undefined, #"hash_6b3b9caf849099d6");
+            objective_add(obj_id, "invisible", undefined, #"hardpoint_next");
             function_18fbab10(obj_id, #"hash_1ff7adbf21cf79eb");
             if (!isdefined(level.var_73377ee4)) {
                 level.var_73377ee4 = [];
@@ -1163,7 +1162,7 @@ function function_ac4c0c88(var_6075f900, count) {
 // Params 0, eflags: 0x0
 // Checksum 0xdd4306a6, Offset: 0x53f0
 // Size: 0x80
-function function_f879e0c9() {
+function get_first_zone() {
     zone = level.zones[0];
     level.prevzone2 = level.prevzone;
     level.prevzone = zone;
@@ -1177,7 +1176,7 @@ function function_f879e0c9() {
 // Params 0, eflags: 0x0
 // Checksum 0xbf5801e9, Offset: 0x5478
 // Size: 0x78
-function function_1280e8f4() {
+function get_next_zone() {
     nextzoneindex = function_ac4c0c88(0);
     zone = level.zones[nextzoneindex];
     level.prevzone2 = level.prevzone;
@@ -1681,8 +1680,8 @@ function on_player_spawned() {
     // Checksum 0x9bcc3798, Offset: 0x7200
     // Size: 0x74
     function function_ed2b0a19() {
-                for (index = 0; index < 10; index++) {
-            spawning::function_25e7711a(function_9dc6016e(index), #"none", "<unknown string>" + index + "<unknown string>", "<unknown string>");
+        for (index = 0; index < 10; index++) {
+            spawning::function_25e7711a(function_9dc6016e(index), #"none", "<dev string:x119>" + index + "<dev string:x128>", "<dev string:x12f>");
         }
     }
 
@@ -1786,7 +1785,7 @@ function function_a38cc2d7(state) {
     }
     str_alias = undefined;
     switch (state) {
-    case #"hash_640a5184fc18e57e":
+    case #"cap_low":
         str_alias = #"hash_1c518fb856754e14";
         n_waittime = 2.5;
         break;
@@ -1794,7 +1793,7 @@ function function_a38cc2d7(state) {
         str_alias = #"hash_1c5192b85675532d";
         n_waittime = 2.5;
         break;
-    case #"hash_6f256b850314afde":
+    case #"cap_mid":
         str_alias = #"hash_1c5191b85675517a";
         n_waittime = 2.5;
         break;
@@ -1802,11 +1801,11 @@ function function_a38cc2d7(state) {
         str_alias = #"hash_1c518cb8567548fb";
         n_waittime = 2.5;
         break;
-    case #"hash_2e61c11bc0c92a20":
+    case #"cap_high":
         str_alias = #"hash_1c518cb8567548fb";
         n_waittime = 1.25;
         break;
-    case #"hash_510115bff25681fd":
+    case #"cap_contested":
         str_alias = #"hash_43014e1f7354354f";
         n_waittime = 1.25;
         break;

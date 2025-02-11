@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace player_role;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xd8
 // Size: 0x4
 function __postload_init__() {
@@ -21,7 +20,7 @@ function __postload_init__() {
 }
 
 // Namespace player_role/player_role
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2237e382, Offset: 0xe8
 // Size: 0xb6
 function is_valid(index) {

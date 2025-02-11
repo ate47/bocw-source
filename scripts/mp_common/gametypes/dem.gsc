@@ -1,40 +1,39 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\hud_message.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_defaults.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic_audio.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\mp_common\bb.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\spectating.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using script_44b0b8420eabacad;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\medals_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
+#using script_44b0b8420eabacad;
+#using script_7a8059ca02b7b09e;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\medals_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_audio;
+#using scripts\mp_common\gametypes\globallogic_defaults;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\hud_message;
+#using scripts\mp_common\gametypes\overtime;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace dem;
 
@@ -268,7 +267,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, vd
                 attacker.objectives = attacker.pers[#"objectives"];
             } else {
                 /#
-                    attacker iprintlnbold("<unknown string>");
+                    attacker iprintlnbold("<dev string:x38>");
                 #/
             }
         } else {
@@ -292,7 +291,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, vd
                 attacker.objectives = attacker.pers[#"objectives"];
             } else {
                 /#
-                    attacker iprintlnbold("<unknown string>");
+                    attacker iprintlnbold("<dev string:x82>");
                 #/
             }
         }
@@ -333,7 +332,7 @@ function checkallowspectating() {
 // Size: 0xc4
 function function_92164b1c(winningteam, var_c1e98979) {
     foreach (bombzone in level.bombzones) {
-        bombzone gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        bombzone gameobjects::set_visible(#"group_none");
     }
     thread globallogic::function_a3e3bd39(winningteam, var_c1e98979);
 }
@@ -344,7 +343,7 @@ function function_92164b1c(winningteam, var_c1e98979) {
 // Size: 0xd4
 function function_6e7465ab(var_c1e98979) {
     foreach (bombzone in level.bombzones) {
-        bombzone gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        bombzone gameobjects::set_visible(#"group_none");
     }
     round::set_flag("tie");
     thread globallogic::end_round(var_c1e98979);
@@ -456,7 +455,7 @@ function givelastattackerwarning() {
         } else {
             fullhealthtime += interval;
         }
-        wait(interval);
+        wait interval;
         if (self.health == self.maxhealth && fullhealthtime >= 3) {
             break;
         }
@@ -489,12 +488,12 @@ function updategametypedvars() {
 function resetbombzone() {
     if (overtime::is_overtime_round()) {
         self gameobjects::set_owner_team(#"neutral");
-        self gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+        self gameobjects::allow_use(#"group_all");
     } else {
-        self gameobjects::allow_use(#"hash_33c49a99551acae7");
+        self gameobjects::allow_use(#"group_enemy");
     }
     self gameobjects::set_use_time(level.planttime);
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::set_visible(#"group_all");
     self.useweapon = getweapon(#"briefcase_bomb");
 }
 
@@ -503,9 +502,9 @@ function resetbombzone() {
 // Checksum 0x5ba5aef, Offset: 0x2170
 // Size: 0x64
 function setupfordefusing() {
-    self gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
+    self gameobjects::allow_use(#"group_friendly");
     self gameobjects::set_use_time(level.defusetime);
-    self gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    self gameobjects::set_visible(#"group_all");
 }
 
 // Namespace dem/dem
@@ -528,28 +527,28 @@ function bombs() {
         trigger = bombzones[index];
         scriptlabel = trigger.script_label;
         visuals = getentarray(bombzones[index].target, "targetname");
-        var_d584ad9f = getentarray("bombzone_clip" + scriptlabel, "targetname");
+        clipbrushes = getentarray("bombzone_clip" + scriptlabel, "targetname");
         defusetrig = getent(visuals[0].target, "targetname");
         var_b3c46dd0 = game.defenders;
-        var_2b4ef22b = #"hash_33c49a99551acae7";
+        var_2b4ef22b = #"group_enemy";
         if (overtime::is_overtime_round()) {
             if (scriptlabel != "_overtime") {
                 trigger delete();
                 defusetrig delete();
                 visuals[0] delete();
-                foreach (clip in var_d584ad9f) {
+                foreach (clip in clipbrushes) {
                     clip delete();
                 }
                 continue;
             }
             var_b3c46dd0 = #"neutral";
-            var_2b4ef22b = #"hash_5ccfd7bbbf07c770";
+            var_2b4ef22b = #"group_all";
             scriptlabel = "_a";
         } else if (scriptlabel == "_overtime") {
             trigger delete();
             defusetrig delete();
             visuals[0] delete();
-            foreach (clip in var_d584ad9f) {
+            foreach (clip in clipbrushes) {
                 clip delete();
             }
             continue;
@@ -564,10 +563,10 @@ function bombs() {
         bombzone gameobjects::set_use_time(level.planttime);
         bombzone.label = scriptlabel;
         bombzone.index = index;
-        bombzone gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+        bombzone gameobjects::set_visible(#"group_all");
         bombzone.onbeginuse = &onbeginuse;
         bombzone.onenduse = &onenduse;
-        bombzone.onuse = &function_41ba5f03;
+        bombzone.onuse = &onuseobject;
         bombzone.oncantuse = &oncantuse;
         bombzone.useweapon = getweapon(#"briefcase_bomb");
         bombzone.visuals[0].killcament = spawn("script_model", bombzone.visuals[0].origin + (0, 0, 128));
@@ -710,7 +709,7 @@ function oncantuse(player) {
 // Params 1, eflags: 0x0
 // Checksum 0xf5380fed, Offset: 0x2f38
 // Size: 0x61c
-function function_41ba5f03(player) {
+function onuseobject(player) {
     team = player.team;
     enemyteam = util::getotherteam(team);
     self function_1e4847e();
@@ -719,7 +718,7 @@ function function_41ba5f03(player) {
         self gameobjects::set_flags(1);
         level thread bombplanted(self, player);
         /#
-            print("<unknown string>" + self.label);
+            print("<dev string:xcc>" + self.label);
         #/
         bb::function_95a5b5c2("dem_bombplant", self.label, team, player.origin);
         player notify(#"bomb_planted");
@@ -739,7 +738,7 @@ function function_41ba5f03(player) {
             level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"plant"});
         } else {
             /#
-                player iprintlnbold("<unknown string>");
+                player iprintlnbold("<dev string:xde>");
             #/
         }
         level thread popups::displayteammessagetoall(#"hash_12473d7e6ed6e752", player);
@@ -749,7 +748,7 @@ function function_41ba5f03(player) {
     self gameobjects::set_flags(0);
     player notify(#"bomb_defused");
     /#
-        print("<unknown string>" + self.label);
+        print("<dev string:x124>" + self.label);
     #/
     self thread bombdefused(player);
     self resetbombzone();
@@ -769,7 +768,7 @@ function function_41ba5f03(player) {
         level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"defuse"});
     } else {
         /#
-            player iprintlnbold("<unknown string>");
+            player iprintlnbold("<dev string:x136>");
         #/
     }
     level thread popups::displayteammessagetoall(#"hash_53c3f7bb9aec1bcc", player);
@@ -785,9 +784,9 @@ function ondrop(player) {
         globallogic_audio::leader_dialog("bombFriendlyDropped", player.pers[#"team"]);
         /#
             if (isdefined(player)) {
-                print("<unknown string>");
+                print("<dev string:x17d>");
             } else {
-                print("<unknown string>");
+                print("<dev string:x17d>");
             }
         #/
     }
@@ -806,7 +805,7 @@ function onpickup(player) {
         thread sound::play_on_players("mus_sd_pickup" + "_" + level.teampostfix[player.pers[#"team"]], player.pers[#"team"]);
         globallogic_audio::leader_dialog("bombFriendlyTaken", player.pers[#"team"]);
         /#
-            print("<unknown string>");
+            print("<dev string:x18d>");
         #/
     }
     sound::play_on_players(game.bomb_recovered_sound, game.attackers);
@@ -839,7 +838,7 @@ function function_c15fc31f(label, reason) {
     }
     self.visuals[0] globallogic_utils::stoptickingsound();
     if (reason == "bomb_exploded") {
-        self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+        self gameobjects::allow_use(#"group_none");
         self gameobjects::set_flags(2);
         self gameobjects::disable_object(0, 0);
     }
@@ -930,8 +929,8 @@ function bombplanted(destroyedobj, player) {
     destroyedobj.detonatetime = detonatetime;
     trace = bullettrace(player.origin + (0, 0, 20), player.origin - (0, 0, 2000), 0, player);
     self dropbombmodel(player, destroyedobj.label);
-    destroyedobj gameobjects::allow_use(#"hash_161f03feaadc9b8f");
-    destroyedobj gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    destroyedobj gameobjects::allow_use(#"group_none");
+    destroyedobj gameobjects::set_visible(#"group_none");
     if (overtime::is_overtime_round()) {
         destroyedobj gameobjects::set_owner_team(util::getotherteam(player.team));
     }
@@ -993,7 +992,7 @@ function bombplanted(destroyedobj, player) {
         globallogic_utils::pausetimer();
         level.timerpaused = 1;
         setgameendtime(0);
-        wait(3);
+        wait 3;
         function_92164b1c(team, 1);
         return;
     }
@@ -1025,7 +1024,7 @@ function function_98274264() {
     var_d46e7070 = self.visuals[0].origin;
     var_e6397375 = anglestoforward(self.visuals[0].angles);
     var_213527e2 = anglestoup(self.visuals[0].angles);
-    wait(0.1);
+    wait 0.1;
     var_238e7468 = spawnfx(level._effect[#"hash_568509fa2561a75d"], var_d46e7070, var_e6397375, var_213527e2);
     triggerfx(var_238e7468);
 }
@@ -1075,18 +1074,18 @@ function function_473a1738(var_d40f7c9f, duration) {
         while (isdefined(level.hostmigrationtimer)) {
             endtime += 250;
             function_789dbdd3(var_d40f7c9f, endtime);
-            wait(0.25);
+            wait 0.25;
         }
     }
     /#
         if (gettime() != endtime) {
-            println("<unknown string>" + gettime() + "<unknown string>" + endtime);
+            println("<dev string:x19b>" + gettime() + "<dev string:x1bb>" + endtime);
         }
     #/
     while (isdefined(level.hostmigrationtimer)) {
         endtime += 250;
         function_789dbdd3(var_d40f7c9f, endtime);
-        wait(0.25);
+        wait 0.25;
     }
     return gettime() - starttime;
 }
@@ -1112,8 +1111,8 @@ function function_789dbdd3(var_d40f7c9f, detonatetime) {
 // Size: 0x10c
 function bombdefused(player) {
     self.tickingobject globallogic_utils::stoptickingsound();
-    self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
-    self gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    self gameobjects::allow_use(#"group_none");
+    self gameobjects::set_visible(#"group_none");
     self.bombdefused = 1;
     self notify(#"bomb_defused");
     self.bombplanted = 0;
@@ -1128,7 +1127,7 @@ function bombdefused(player) {
 // Checksum 0x4b80e206, Offset: 0x4ca8
 // Size: 0x32
 function function_ae26fe4(team, enemyteam) {
-    wait(3);
+    wait 3;
     if (!isdefined(team) || !isdefined(enemyteam)) {
         return;
     }

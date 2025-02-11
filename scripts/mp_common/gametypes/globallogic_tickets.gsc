@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
 
 #namespace tickets;
 
@@ -26,7 +25,7 @@ function reset_match_start(total_stages) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaf0e1840, Offset: 0x120
 // Size: 0xf4
 function reset_stages(total_stages) {
@@ -40,7 +39,7 @@ function reset_stages(total_stages) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7967f637, Offset: 0x220
 // Size: 0xaa
 function reset_tickets() {
@@ -61,7 +60,7 @@ function setup_mission_ticket_logic(team, zone_index) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x97f58757, Offset: 0x340
 // Size: 0x5c
 function setup_stage_start_tickets(team, zone_index) {
@@ -71,7 +70,7 @@ function setup_stage_start_tickets(team, zone_index) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba7af6a4, Offset: 0x3a8
 // Size: 0x68
 function get_zone_start_tickets(zone_index) {
@@ -79,7 +78,7 @@ function get_zone_start_tickets(zone_index) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5fe033e3, Offset: 0x418
 // Size: 0x190
 function watch_time_penalties(team) {
@@ -88,7 +87,7 @@ function watch_time_penalties(team) {
     while (true) {
         penalty_interval = isdefined(getgametypesetting(#"ticketslostontimeinterval")) ? getgametypesetting(#"ticketslostontimeinterval") : 0;
         if (penalty_interval <= 0) {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         frames_to_wait = int(ceil(penalty_interval / float(function_60d95f53()) / 1000));
@@ -98,7 +97,7 @@ function watch_time_penalties(team) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa623e60e, Offset: 0x5b0
 // Size: 0x1c
 function setup_death_penalties(team) {
@@ -106,7 +105,7 @@ function setup_death_penalties(team) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x17a83e08, Offset: 0x5d8
 // Size: 0x120
 function on_player_killed(*params) {
@@ -130,7 +129,7 @@ function on_player_killed(*params) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6fa18aea, Offset: 0x700
 // Size: 0x6c
 function set_tickets(team, tickets) {
@@ -140,7 +139,7 @@ function set_tickets(team, tickets) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x311bd5f, Offset: 0x778
 // Size: 0xa4
 function earn_tickets(team, tickets) {
@@ -151,7 +150,7 @@ function earn_tickets(team, tickets) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaf838f22, Offset: 0x828
 // Size: 0xa4
 function lose_tickets(team, tickets) {
@@ -162,7 +161,7 @@ function lose_tickets(team, tickets) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb66c4423, Offset: 0x8d8
 // Size: 0x18c
 function notify_tickets_updated(team, original_total) {
@@ -183,7 +182,7 @@ function notify_tickets_updated(team, original_total) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7b51c0d7, Offset: 0xa70
 // Size: 0x5e
 function private clamp_tickets(team) {
@@ -211,7 +210,7 @@ function award_stage_win(team, stage) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd1e21aa9, Offset: 0xbb8
 // Size: 0x68
 function get_stage_win_tickets(stage) {
@@ -230,7 +229,7 @@ function get_tickets(team) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xced4dc22, Offset: 0xc80
 // Size: 0x58
 function get_stage_tickets(team, stage) {
@@ -241,7 +240,7 @@ function get_stage_tickets(team, stage) {
 }
 
 // Namespace tickets/globallogic_tickets
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5727b4f0, Offset: 0xce0
 // Size: 0x78
 function notify_stage_tickets_updated(team, stage) {

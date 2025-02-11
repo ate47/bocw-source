@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_eye_glow.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\ai_shared.csc;
+#using scripts\core_common\ai\zombie_eye_glow;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace zm_transform;
 
@@ -17,7 +16,7 @@ function private preinit() {
 }
 
 // Namespace zm_transform/zm_transformation
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xde49f858, Offset: 0x190
 // Size: 0x74
 function function_201c2cb7(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -25,7 +24,7 @@ function function_201c2cb7(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace zm_transform/zm_transformation
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7b299446, Offset: 0x210
 // Size: 0x15e
 function function_341e5a97(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -46,7 +45,7 @@ function function_341e5a97(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_transform/zm_transformation
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x167d3eb1, Offset: 0x378
 // Size: 0x4c
 function function_8a817bd6(model) {

@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace namespace_47c5b560;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x779b31f8, Offset: 0x2c8
 // Size: 0x14
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x78f9c9c6, Offset: 0x2e8
 // Size: 0x1c
 function private init() {
@@ -37,7 +36,7 @@ function private init() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x71d1f6bc, Offset: 0x310
 // Size: 0x54
 function private function_93a22b64() {
@@ -48,7 +47,7 @@ function private function_93a22b64() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb1abca8a, Offset: 0x370
 // Size: 0x534
 function private function_cb019e1f() {
@@ -78,7 +77,7 @@ function private function_cb019e1f() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x84856383, Offset: 0x8b0
 // Size: 0x1c8
 function private function_73773e63() {
@@ -107,7 +106,7 @@ function private function_73773e63() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe3319800, Offset: 0xa80
 // Size: 0x3e4
 function private function_52c99a4f(entity) {
@@ -156,7 +155,7 @@ function private function_52c99a4f(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x925ea039, Offset: 0xe70
 // Size: 0xc9e
 function aileapgoalservice(entity) {
@@ -167,7 +166,7 @@ function aileapgoalservice(entity) {
         if (function_673035b3(entity.var_6da37a9a)) {
             /#
                 if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                    println("<unknown string>" + "<unknown string>" + entity getentitynumber() + "<unknown string>");
+                    println("<dev string:x38>" + "<dev string:x42>" + entity getentitynumber() + "<dev string:x4b>");
                 }
             #/
             entity.var_2b5f41fd = undefined;
@@ -202,7 +201,7 @@ function aileapgoalservice(entity) {
     dir = vectornormalize(dir);
     time = mapfloat(var_ab0e4f00, 10000, 1, 3.5, distance2d);
     /#
-        record3dtext(time, entity.origin, (0, 0, 1), "<unknown string>", entity);
+        record3dtext(time, entity.origin, (0, 0, 1), "<dev string:x61>", entity);
     #/
     time /= float(function_60d95f53()) / 1000;
     var_199c57d2 = distance2d / time;
@@ -210,17 +209,17 @@ function aileapgoalservice(entity) {
     entity.var_862cb24b = {#time:1, #startpos:startpos, #nextpos:startpos, #goal:goalpos, #to_goal:goalpos - startpos, #vel:(dir[0] * var_199c57d2, dir[1] * var_199c57d2, var_ef97a46c), #var_af225c86:isdefined(var_af225c86)};
     entity.var_862cb24b.nextpos = entity.var_862cb24b.startpos + entity.var_862cb24b.vel * entity.var_862cb24b.time + 0.5 * (0, 0, -1) * gravity * sqr(entity.var_862cb24b.time);
     /#
-        recordsphere(entity.var_862cb24b.goal, 10, (0, 0, 1), "<unknown string>", entity);
-        recordline(startpos, entity.var_862cb24b.goal, (0, 0, 1), "<unknown string>", entity);
+        recordsphere(entity.var_862cb24b.goal, 10, (0, 0, 1), "<dev string:x61>", entity);
+        recordline(startpos, entity.var_862cb24b.goal, (0, 0, 1), "<dev string:x61>", entity);
         prev_origin = startpos;
         for (i = 1; i <= time; i++) {
             pos = entity.var_862cb24b.startpos + entity.var_862cb24b.vel * i + 0.5 * (0, 0, -1) * gravity * sqr(i);
-            recordline(prev_origin, pos, (0, 0, 1), "<unknown string>", entity);
-            record3dtext(i, pos, (0, 0, 1), "<unknown string>", entity);
+            recordline(prev_origin, pos, (0, 0, 1), "<dev string:x61>", entity);
+            record3dtext(i, pos, (0, 0, 1), "<dev string:x61>", entity);
             prev_origin = pos;
         }
-        recordline(prev_origin, entity.var_862cb24b.goal, (0, 0, 1), "<unknown string>", entity);
-        record3dtext(i, entity.var_862cb24b.goal, (0, 0, 1), "<unknown string>", entity);
+        recordline(prev_origin, entity.var_862cb24b.goal, (0, 0, 1), "<dev string:x61>", entity);
+        record3dtext(i, entity.var_862cb24b.goal, (0, 0, 1), "<dev string:x61>", entity);
     #/
     prev_origin = entity.origin;
     passed = 1;
@@ -230,7 +229,7 @@ function aileapgoalservice(entity) {
             pos = entity.var_862cb24b.startpos + entity.var_862cb24b.vel * var_21dd2ef6 + 0.5 * (0, 0, -1) * gravity * sqr(var_21dd2ef6);
             if (isdefined(entity.var_e9a867e0) && !entity [[ entity.var_e9a867e0 ]](pos)) {
                 /#
-                    recordline(prev_origin, pos, (1, 0, 0), "<unknown string>", entity);
+                    recordline(prev_origin, pos, (1, 0, 0), "<dev string:x61>", entity);
                 #/
                 passed = 0;
                 break;
@@ -246,9 +245,9 @@ function aileapgoalservice(entity) {
             if (traceresult[#"fraction"] != 1) {
                 if (traceresult[#"normal"][2] < sin(10)) {
                     /#
-                        recordline(prev_origin, pos, (1, 0, 0), "<unknown string>", entity);
-                        recordsphere(traceresult[#"position"], 5, (1, 1, 0), "<unknown string>", entity);
-                        recordline(traceresult[#"position"], traceresult[#"position"] + traceresult[#"normal"] * 20, (1, 1, 0), "<unknown string>", entity);
+                        recordline(prev_origin, pos, (1, 0, 0), "<dev string:x61>", entity);
+                        recordsphere(traceresult[#"position"], 5, (1, 1, 0), "<dev string:x61>", entity);
+                        recordline(traceresult[#"position"], traceresult[#"position"] + traceresult[#"normal"] * 20, (1, 1, 0), "<dev string:x61>", entity);
                     #/
                     passed = 0;
                     break;
@@ -256,21 +255,21 @@ function aileapgoalservice(entity) {
                 pointonnavmesh = function_9cc082d2(traceresult[#"position"], 2 * 39.3701);
                 if (!isdefined(pointonnavmesh)) {
                     /#
-                        recordline(prev_origin, pos, (1, 0, 0), "<unknown string>", entity);
+                        recordline(prev_origin, pos, (1, 0, 0), "<dev string:x61>", entity);
                     #/
                     passed = 0;
                     break;
                 }
                 if (isdefined(entity.var_e9a867e0) && !entity [[ entity.var_e9a867e0 ]](pointonnavmesh[#"point"])) {
                     /#
-                        recordline(prev_origin, pos, (1, 0, 0), "<unknown string>", entity);
+                        recordline(prev_origin, pos, (1, 0, 0), "<dev string:x61>", entity);
                     #/
                     passed = 0;
                     break;
                 }
             }
             /#
-                recordline(prev_origin, pos, (0, 1, 0), "<unknown string>", entity);
+                recordline(prev_origin, pos, (0, 1, 0), "<dev string:x61>", entity);
             #/
             prev_origin = pos;
         }
@@ -292,7 +291,7 @@ function aileapgoalservice(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8cde51ca, Offset: 0x1b18
 // Size: 0x36
 function aishouldleap(entity) {
@@ -303,7 +302,7 @@ function aishouldleap(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc373e1ae, Offset: 0x1b58
 // Size: 0x24
 function aiisleaping(entity) {
@@ -314,7 +313,7 @@ function aiisleaping(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb1b12d15, Offset: 0x1b88
 // Size: 0x36
 function private aishouldleapfollowpath(entity) {
@@ -325,7 +324,7 @@ function private aishouldleapfollowpath(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x56dd7fa5, Offset: 0x1bc8
 // Size: 0x398
 function function_b12119f0(entity, asmstatename) {
@@ -341,8 +340,8 @@ function function_b12119f0(entity, asmstatename) {
     var_f423e961 = entity.var_862cb24b.goal - entity.var_862cb24b.nextpos;
     if (vectordot((var_f423e961[0], var_f423e961[1], 0), (entity.var_862cb24b.to_goal[0], entity.var_862cb24b.to_goal[1], 0)) < 0) {
         /#
-            recordsphere(entity.var_862cb24b.goal, 10, (0, 1, 0), "<unknown string>", entity);
-            recordline(entity.origin, entity.var_862cb24b.goal, (0, 1, 0), "<unknown string>", entity);
+            recordsphere(entity.var_862cb24b.goal, 10, (0, 1, 0), "<dev string:x61>", entity);
+            recordline(entity.origin, entity.var_862cb24b.goal, (0, 1, 0), "<dev string:x61>", entity);
         #/
         entity.var_862cb24b.endpos = entity.var_862cb24b.goal;
         return 4;
@@ -351,8 +350,8 @@ function function_b12119f0(entity, asmstatename) {
         traceresult = physicstraceex(entity.origin, entity.var_862cb24b.nextpos, entity getmins(), entity getmaxs(), entity);
         if (traceresult[#"fraction"] != 1) {
             /#
-                recordsphere(traceresult[#"position"], 10, (0, 1, 0), "<unknown string>", entity);
-                recordline(entity.origin, traceresult[#"position"], (0, 1, 0), "<unknown string>", entity);
+                recordsphere(traceresult[#"position"], 10, (0, 1, 0), "<dev string:x61>", entity);
+                recordline(entity.origin, traceresult[#"position"], (0, 1, 0), "<dev string:x61>", entity);
             #/
             entity.var_862cb24b.endpos = traceresult[#"position"];
             return 4;
@@ -362,7 +361,7 @@ function function_b12119f0(entity, asmstatename) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3da94a6b, Offset: 0x1f68
 // Size: 0x4a
 function private function_21a9aefd(entity, asmstatename) {
@@ -374,7 +373,7 @@ function private function_21a9aefd(entity, asmstatename) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xce60304a, Offset: 0x1fc0
 // Size: 0x236
 function private function_3cc9b7f6(entity, asmstatename) {
@@ -407,7 +406,7 @@ function private function_3cc9b7f6(entity, asmstatename) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x44166d20, Offset: 0x2200
 // Size: 0x2c
 function private function_9952445c(entity, *asmstatename) {
@@ -416,13 +415,13 @@ function private function_9952445c(entity, *asmstatename) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb303eaf4, Offset: 0x2238
 // Size: 0xb4
 function private aileapstart(entity) {
     /#
         if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-            println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + entity.origin);
+            println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x6b>" + entity.origin);
         }
     #/
     entity.var_1eb8b1ad = 1;
@@ -430,7 +429,7 @@ function private aileapstart(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5eb67afc, Offset: 0x22f8
 // Size: 0x104
 function private aileapterminate(entity) {
@@ -446,7 +445,7 @@ function private aileapterminate(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x5dbcc831, Offset: 0x2408
 // Size: 0x13c
 function private function_92a98e31(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -462,7 +461,7 @@ function private function_92a98e31(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xdaa95501, Offset: 0x2550
 // Size: 0x74
 function private function_f14ad812(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -472,7 +471,7 @@ function private function_f14ad812(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x2993e372, Offset: 0x25d0
 // Size: 0xb6
 function private function_a8ad5ef0(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -482,11 +481,11 @@ function private function_a8ad5ef0(entity, *mocompanim, *mocompanimblendouttime,
     mocompduration pathmode("move allowed", 1);
     mocompduration.blockingpain = 0;
     mocompduration.var_862cb24b = undefined;
-    mocompduration.var_c93384f1 = undefined;
+    mocompduration.jumpgoal = undefined;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x3df64572, Offset: 0x2690
 // Size: 0x154
 function private function_f4e094cf(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -503,7 +502,7 @@ function private function_f4e094cf(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x61afe84f, Offset: 0x27f0
 // Size: 0x56
 function private function_4e828c3b(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -512,7 +511,7 @@ function private function_4e828c3b(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x9ab1c5b5, Offset: 0x2850
 // Size: 0x8c
 function private function_384fce1f(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -523,7 +522,7 @@ function private function_384fce1f(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xb3f1c12f, Offset: 0x28e8
 // Size: 0x8c
 function private function_a53a095f(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -534,15 +533,15 @@ function private function_a53a095f(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x2b67da20, Offset: 0x2980
 // Size: 0x10c
 function private function_2534f25d(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     if (isdefined(mocompduration.var_ed09bf93)) {
         radius = mocompduration getpathfindingradius();
-        var_4c85436b = getclosestpointonnavmesh(mocompduration.var_ed09bf93.origin, radius * 2, radius * 1.2);
-        if (isdefined(var_4c85436b)) {
-            mocompduration forceteleport(var_4c85436b, mocompduration.angles, 1);
+        closestnavmeshpoint = getclosestpointonnavmesh(mocompduration.var_ed09bf93.origin, radius * 2, radius * 1.2);
+        if (isdefined(closestnavmeshpoint)) {
+            mocompduration forceteleport(closestnavmeshpoint, mocompduration.angles, 1);
         }
     }
     mocompduration pathmode("move allowed", 1);
@@ -551,7 +550,7 @@ function private function_2534f25d(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa303ecf7, Offset: 0x2a98
 // Size: 0xa4
 function private function_37e9153e(entity) {
@@ -565,7 +564,7 @@ function private function_37e9153e(entity) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x60ba41b4, Offset: 0x2b48
 // Size: 0x376
 function private function_376516c9() {
@@ -591,7 +590,7 @@ function private function_376516c9() {
             if (!aiisleaping(self)) {
                 /#
                     if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                        println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>");
+                        println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x7d>");
                     }
                 #/
                 self function_c2576f59();
@@ -601,7 +600,7 @@ function private function_376516c9() {
             } else {
                 /#
                     if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                        println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>");
+                        println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:xad>");
                     }
                 #/
             }
@@ -613,7 +612,7 @@ function private function_376516c9() {
             if (distance2dsquared(self.origin, self.v_zombie_custom_goal_pos) <= sqr(self.goalradius)) {
                 /#
                     if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                        println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + self.v_zombie_custom_goal_pos);
+                        println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:xc2>" + self.v_zombie_custom_goal_pos);
                     }
                 #/
                 if (isdefined(self.var_bfd4c4c4)) {
@@ -630,7 +629,7 @@ function private function_376516c9() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4578ca37, Offset: 0x2ec8
 // Size: 0x3ae
 function private function_3e83b6c5(targetpos) {
@@ -668,7 +667,7 @@ function private function_3e83b6c5(targetpos) {
             if (isdefined(self.var_60d1126a)) {
                 struct = [[ self.var_60d1126a ]](self, targetpos);
                 if (isdefined(struct)) {
-                    assert(isdefined(struct.angle) && isdefined(struct.dist), "<unknown string>");
+                    assert(isdefined(struct.angle) && isdefined(struct.dist), "<dev string:xe0>");
                     angle = struct.angle;
                     distance = struct.dist;
                 }
@@ -683,7 +682,7 @@ function private function_3e83b6c5(targetpos) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x31fe77fb, Offset: 0x3280
 // Size: 0x1c0
 function private function_b3069b6c(target) {
@@ -717,7 +716,7 @@ function private function_b3069b6c(target) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa5eff28d, Offset: 0x3448
 // Size: 0x19c
 function function_fe23c655(var_8787728e, str_target_zone) {
@@ -727,7 +726,7 @@ function function_fe23c655(var_8787728e, str_target_zone) {
     if (self function_72371f2a() || aishouldleap(self) || aiisleaping(self)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + str_target_zone + "<unknown string>");
+                println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x102>" + var_8787728e + "<dev string:x129>" + str_target_zone + "<dev string:x131>");
             }
         #/
         self.var_7df7df47 = str_target_zone;
@@ -735,14 +734,14 @@ function function_fe23c655(var_8787728e, str_target_zone) {
     }
     /#
         if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-            println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + str_target_zone);
+            println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x14a>" + var_8787728e + "<dev string:x129>" + str_target_zone);
         }
     #/
     self function_a6b0387d(var_8787728e, str_target_zone);
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x684b59b4, Offset: 0x35f0
 // Size: 0x11c
 function function_3113dfa4() {
@@ -773,7 +772,7 @@ function function_3113dfa4() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc17f3b5c, Offset: 0x3718
 // Size: 0x1a
 function function_72371f2a() {
@@ -781,7 +780,7 @@ function function_72371f2a() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8a7aeed7, Offset: 0x3740
 // Size: 0xcc
 function private function_951ed389() {
@@ -803,44 +802,44 @@ function private function_951ed389() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe1e0be1b, Offset: 0x3818
 // Size: 0x22a
 function private function_ca7b4071(origin) {
     radius = self getpathfindingradius();
-    var_4c85436b = getclosestpointonnavmesh(origin, radius * 2, radius);
-    if (!isdefined(var_4c85436b)) {
-        var_4c85436b = getclosestpointonnavmesh(origin, radius * 3, radius);
-        if (!isdefined(var_4c85436b)) {
+    closestnavmeshpoint = getclosestpointonnavmesh(origin, radius * 2, radius);
+    if (!isdefined(closestnavmeshpoint)) {
+        closestnavmeshpoint = getclosestpointonnavmesh(origin, radius * 3, radius);
+        if (!isdefined(closestnavmeshpoint)) {
             /#
                 if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                    println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + origin);
+                    println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x16a>" + origin);
                 }
             #/
             return;
         }
     }
-    if (!zm_zonemgr::function_66bf6a43(var_4c85436b, 0)) {
+    if (!zm_zonemgr::function_66bf6a43(closestnavmeshpoint, 0)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_4c85436b + "<unknown string>");
+                println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x197>" + closestnavmeshpoint + "<dev string:x1b3>");
             }
         #/
         return;
     }
-    if (!zm_utility::check_point_in_enabled_zone(var_4c85436b)) {
+    if (!zm_utility::check_point_in_enabled_zone(closestnavmeshpoint)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_4c85436b + "<unknown string>");
+                println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x197>" + closestnavmeshpoint + "<dev string:x1cc>");
             }
         #/
         return;
     }
-    return var_4c85436b;
+    return closestnavmeshpoint;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd0a70471, Offset: 0x3a50
 // Size: 0x1a0
 function private function_1c7692a4(var_441e6fcc, var_22043f8e) {
@@ -855,7 +854,7 @@ function private function_1c7692a4(var_441e6fcc, var_22043f8e) {
             self clearpath();
             /#
                 if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                    println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + self.v_zombie_custom_goal_pos + "<unknown string>" + self.var_bfd4c4c4);
+                    println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x1e4>" + self.v_zombie_custom_goal_pos + "<dev string:x129>" + self.var_bfd4c4c4);
                 }
             #/
             if (isdefined(self.var_952959e1)) {
@@ -868,7 +867,7 @@ function private function_1c7692a4(var_441e6fcc, var_22043f8e) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9225c6bf, Offset: 0x3bf8
 // Size: 0x26
 function function_c2576f59() {
@@ -879,7 +878,7 @@ function function_c2576f59() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2aaec480, Offset: 0x3c28
 // Size: 0x24
 function function_904442b2() {
@@ -888,7 +887,7 @@ function function_904442b2() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x10ee7698, Offset: 0x3c58
 // Size: 0x160
 function private function_72451c14() {
@@ -913,7 +912,7 @@ function private function_72451c14() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xecc79b25, Offset: 0x3dc0
 // Size: 0x130
 function private function_236cda12() {
@@ -943,7 +942,7 @@ function private function_236cda12() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x304169a4, Offset: 0x3ef8
 // Size: 0x198
 function private function_18867744(navmeshpoint, var_7d6b86d8) {
@@ -951,7 +950,7 @@ function private function_18867744(navmeshpoint, var_7d6b86d8) {
     if (isdefined(v_ground)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + v_ground);
+                println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x1fe>" + v_ground);
             }
         #/
         self.var_6da37a9a = var_7d6b86d8;
@@ -961,7 +960,7 @@ function private function_18867744(navmeshpoint, var_7d6b86d8) {
         self clearpath();
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self.v_zombie_custom_goal_pos);
+                println("<dev string:x38>" + "<dev string:x21a>" + self.v_zombie_custom_goal_pos);
             }
         #/
         if (isdefined(self.var_952959e1)) {
@@ -973,7 +972,7 @@ function private function_18867744(navmeshpoint, var_7d6b86d8) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8a439e49, Offset: 0x4098
 // Size: 0x132
 function private function_550876f3(start_node) {
@@ -986,8 +985,8 @@ function private function_550876f3(start_node) {
         }
         if (array::contains(path, next_target)) {
             /#
-                println("<unknown string>" + start_node.origin + "<unknown string>");
-                iprintlnbold("<unknown string>" + start_node.origin + "<unknown string>");
+                println("<dev string:x231>" + start_node.origin + "<dev string:x261>");
+                iprintlnbold("<dev string:x231>" + start_node.origin + "<dev string:x27c>");
             #/
             return undefined;
         }
@@ -1000,7 +999,7 @@ function private function_550876f3(start_node) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe779b800, Offset: 0x41d8
 // Size: 0x3a
 function private function_c8c99c9f(node) {
@@ -1009,7 +1008,7 @@ function private function_c8c99c9f(node) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdb029ad7, Offset: 0x4220
 // Size: 0x24
 function private function_673035b3(path_start_node) {
@@ -1017,7 +1016,7 @@ function private function_673035b3(path_start_node) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xaf280d9e, Offset: 0x4250
 // Size: 0x4c
 function private function_56c12f58(path_start_node, use) {
@@ -1028,7 +1027,7 @@ function private function_56c12f58(path_start_node, use) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x30dafb75, Offset: 0x42a8
 // Size: 0xc6
 function private function_43f5477a(path_start_node) {
@@ -1036,14 +1035,14 @@ function private function_43f5477a(path_start_node) {
     self waittill(#"death", #"hash_607879be8202b639");
     /#
         if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-            println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
+            println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x296>" + self.origin);
         }
     #/
     path_start_node.var_79b30398 = 0;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x524d3bb9, Offset: 0x4378
 // Size: 0x26
 function function_240680df() {
@@ -1079,7 +1078,7 @@ function function_470c9a51(var_178aa03b) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc8fe3abe, Offset: 0x45d8
 // Size: 0x52
 function private function_84f4a6c7(var_e1117576) {
@@ -1089,12 +1088,12 @@ function private function_84f4a6c7(var_e1117576) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x210a1ed8, Offset: 0x4638
 // Size: 0x11c
 function private function_d21249bf() {
     var_182df905 = self.var_c7f5b6e1[0];
-    assert(var_182df905.type == "<unknown string>");
+    assert(var_182df905.type == "<dev string:x2ab>");
     assert(isdefined(var_182df905.var_7d6b86d8));
     var_f55b98ef = struct::get(var_182df905.var_7d6b86d8.target, "targetname");
     if (isdefined(var_f55b98ef.origin)) {
@@ -1108,7 +1107,7 @@ function private function_d21249bf() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x26fd6b8, Offset: 0x4760
 // Size: 0x116
 function private function_91d135a3(start_pos, end_pos, type, var_7d6b86d8) {
@@ -1129,7 +1128,7 @@ function private function_91d135a3(start_pos, end_pos, type, var_7d6b86d8) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa60ae7d1, Offset: 0x4880
 // Size: 0x10
 function function_fcfdadcd() {
@@ -1137,7 +1136,7 @@ function function_fcfdadcd() {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x92cb569d, Offset: 0x4898
 // Size: 0x30
 function private function_512cbdfa(str_target_zone) {
@@ -1148,7 +1147,7 @@ function private function_512cbdfa(str_target_zone) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa242cce3, Offset: 0x48d0
 // Size: 0x4c6
 function private function_259b61b6(var_8787728e, var_266a0de8) {
@@ -1227,7 +1226,7 @@ function private function_259b61b6(var_8787728e, var_266a0de8) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6cadff28, Offset: 0x4da0
 // Size: 0x9c
 function private function_6b400792(path) {
@@ -1241,7 +1240,7 @@ function private function_6b400792(path) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc1943012, Offset: 0x4e48
 // Size: 0x9c
 function private function_af3889fa(zone_name, path) {
@@ -1254,10 +1253,10 @@ function private function_af3889fa(zone_name, path) {
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x19f68bfb, Offset: 0x4ef0
 // Size: 0x25a
-function function_a6b0387d(str_start, var_bee7a3d9, is_point = 0, var_f6e819e4 = 1) {
+function function_a6b0387d(str_start, str_end, is_point = 0, var_f6e819e4 = 1) {
     if (is_true(is_point)) {
         radius = self getpathfindingradius();
         pointonnavmesh = getclosestpointonnavmesh(str_start, radius * 2, radius * 1.2);
@@ -1265,14 +1264,14 @@ function function_a6b0387d(str_start, var_bee7a3d9, is_point = 0, var_f6e819e4 =
             return false;
         }
         var_8787728e = zm_zonemgr::get_zone_from_position(pointonnavmesh, 1);
-        pointonnavmesh = getclosestpointonnavmesh(var_bee7a3d9, radius * 2, radius * 1.2);
+        pointonnavmesh = getclosestpointonnavmesh(str_end, radius * 2, radius * 1.2);
         if (!isdefined(pointonnavmesh)) {
             return false;
         }
         var_266a0de8 = zm_zonemgr::get_zone_from_position(pointonnavmesh, 1);
     } else {
         var_8787728e = str_start;
-        var_266a0de8 = var_bee7a3d9;
+        var_266a0de8 = str_end;
     }
     path = function_259b61b6(var_8787728e, var_266a0de8);
     if (!isdefined(path)) {
@@ -1310,7 +1309,7 @@ function function_765e9504(end_pos) {
 function function_99487333() {
     /#
         if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-            println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
+            println("<dev string:x38>" + "<dev string:x42>" + self getentitynumber() + "<dev string:x2b5>" + self.origin);
         }
     #/
     if (isdefined(self.var_7df7df47)) {

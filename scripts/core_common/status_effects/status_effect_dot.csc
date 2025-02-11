@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_dot;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd35cf6f1, Offset: 0x118
 // Size: 0x94
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7d8197d7, Offset: 0x1b8
 // Size: 0x4a
 function on_dot_splatter(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -30,7 +29,7 @@ function on_dot_splatter(*localclientnum, *oldval, *newval, *bnewent, *binitials
 }
 
 // Namespace status_effect_dot/status_effect_dot
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x85f6903f, Offset: 0x210
 // Size: 0x4a
 function on_dot_no_splatter(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

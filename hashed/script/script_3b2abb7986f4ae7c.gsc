@@ -1,47 +1,46 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_176597095ddfaa17;
 #using script_34ab99a4ca1a43d;
-#using script_3a88f428c6d8ef90;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using script_437ce686d29bb81b;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\gametypes\hostmigration.gsc;
-#using scripts\zm_common\zm_stats.gsc;
 #using script_36f4be19da8eb6d0;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\item_supply_drop.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_3a88f428c6d8ef90;
+#using script_437ce686d29bb81b;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_supply_drop;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\zm_common\gametypes\hostmigration;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
-#namespace namespace_dedc3cb9;
+#namespace helicopter_escape;
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
+// Namespace helicopter_escape/namespace_2291eec4
 // Params 0, eflags: 0x5
 // Checksum 0xb0547ff1, Offset: 0x3e0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_146fecdc090c227e", &preinit, undefined, undefined, #"content_manager");
+    system::register(#"helicopter_escape", &preinit, undefined, undefined, #"content_manager");
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x6 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x4
 // Checksum 0xc0f09ec4, Offset: 0x430
 // Size: 0x1dc
 function private preinit() {
@@ -57,11 +56,11 @@ function private preinit() {
     scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_2842c984, "done");
     scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_2842c984, "stop");
     scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", &function_76b49bd8, "open");
-    content_manager::register_script(#"hash_146fecdc090c227e", &function_685a8288);
+    content_manager::register_script(#"helicopter_escape", &function_685a8288);
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x401b77ed, Offset: 0x618
 // Size: 0x4bc
 function function_95c09591(destination) {
@@ -80,7 +79,7 @@ function function_95c09591(destination) {
     }
     var_4a91da6d = [];
     foreach (location in destination.locations) {
-        instance = location.instances[#"hash_146fecdc090c227e"];
+        instance = location.instances[#"helicopter_escape"];
         if (isdefined(instance)) {
             if (!isdefined(level.var_fcb2823)) {
                 level.var_fcb2823 = [];
@@ -126,15 +125,15 @@ function function_95c09591(destination) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x2d3a4e18, Offset: 0xae0
 // Size: 0x704
 function function_685a8288(instance) {
     level endon(#"end_game");
     instance.var_422ae63e = #"p9_fxanim_mp_care_package_bundle";
     var_28bf3706 = instance.contentgroups[#"heli_spawn"][0];
-    assert(isdefined(var_28bf3706.target), "<unknown string>");
+    assert(isdefined(var_28bf3706.target), "<dev string:x38>");
     nd_start = getvehiclenode(var_28bf3706.target, "targetname");
     do {
         vh_heli = vehicle::spawn(undefined, "helicopter_escape_heli", #"hash_669d01ea5db4e10c", nd_start.origin, nd_start.angles);
@@ -188,13 +187,13 @@ function function_685a8288(instance) {
             }
         }
         if (level.contentmanager.activeobjective.content_script_name === "holdout") {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         if (var_be19a72a) {
             break;
         }
-        wait(0.5);
+        wait 0.5;
     }
     if (!isdefined(vh_heli)) {
         return;
@@ -217,8 +216,8 @@ function function_685a8288(instance) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0x8fa119b0, Offset: 0x11f0
 // Size: 0xf8
 function function_90bceefd() {
@@ -238,8 +237,8 @@ function function_90bceefd() {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 2, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 2, eflags: 0x0
 // Checksum 0xdc41a7b2, Offset: 0x12f0
 // Size: 0x17a
 function function_a0861762(n_health_min, n_health_max) {
@@ -270,8 +269,8 @@ function function_a0861762(n_health_min, n_health_max) {
     return var_c835c552;
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x6d44a321, Offset: 0x1478
 // Size: 0x144
 function function_36564c7c(*params) {
@@ -289,8 +288,8 @@ function function_36564c7c(*params) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 16, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 16, eflags: 0x0
 // Checksum 0x6da16bb9, Offset: 0x15c8
 // Size: 0x47a
 function function_be51796c(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, *vdamageorigin, psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
@@ -343,8 +342,8 @@ function function_be51796c(einflictor, eattacker, idamage, idflags, smeansofdeat
     return int(damage);
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x5a749d95, Offset: 0x1a50
 // Size: 0x12c
 function function_71b5509(b_delete = 0) {
@@ -366,8 +365,8 @@ function function_71b5509(b_delete = 0) {
     self thread util::delay(2.7, "death", &delete);
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0xb87ee154, Offset: 0x1b88
 // Size: 0xb4
 function function_2a05a8c6(params) {
@@ -380,8 +379,8 @@ function function_2a05a8c6(params) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 3, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 3, eflags: 0x0
 // Checksum 0xcef64c14, Offset: 0x1c48
 // Size: 0xf0
 function function_974be700(v_origin, v_angles, instance) {
@@ -396,8 +395,8 @@ function function_974be700(v_origin, v_angles, instance) {
     return crate;
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 3, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 3, eflags: 0x0
 // Checksum 0x7e9fd174, Offset: 0x1d40
 // Size: 0x254
 function drop_crate(instance, var_f9972216, var_f16f4b37) {
@@ -419,8 +418,8 @@ function drop_crate(instance, var_f9972216, var_f16f4b37) {
     self.e_crate thread cratecontrolleddrop(instance, v_target_location, n_drop_time);
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 4, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 4, eflags: 0x0
 // Checksum 0x732829b9, Offset: 0x1fa0
 // Size: 0x474
 function cratecontrolleddrop(instance, v_target_location, n_drop_time = 10, var_72886e11) {
@@ -452,7 +451,7 @@ function cratecontrolleddrop(instance, v_target_location, n_drop_time = 10, var_
         hostmigration::waittillhostmigrationdone();
         crate moveto(target, params.kstotaldroptime, acceltime, deceltime);
         crate thread function_2defd397();
-        wait(acceltime);
+        wait acceltime;
         if (!is_true(crate.pop_parachute)) {
             crate waittill(#"movedone", #"pop_parachute");
         }
@@ -480,8 +479,8 @@ function cratecontrolleddrop(instance, v_target_location, n_drop_time = 10, var_
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0xe5a591e0, Offset: 0x2420
 // Size: 0x84
 function update_crate_velocity() {
@@ -495,8 +494,8 @@ function update_crate_velocity() {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0xc0f6da75, Offset: 0x24b0
 // Size: 0x124
 function cratephysics(instance) {
@@ -512,8 +511,8 @@ function cratephysics(instance) {
     self function_d2d0a813();
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x93ceb336, Offset: 0x25e0
 // Size: 0x74
 function function_f7155f4f(params) {
@@ -523,8 +522,8 @@ function function_f7155f4f(params) {
     e_crate thread function_960ea519(params.activator);
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x149f49fa, Offset: 0x2660
 // Size: 0x114
 function function_960ea519(owner) {
@@ -534,7 +533,7 @@ function function_960ea519(owner) {
     bundle = getscriptbundle(#"killstreak_supply_drop_zm");
     detonationdelay = bundle.var_18d14afd;
     self thread function_71c8970c(0.84);
-    wait(detonationdelay);
+    wait detonationdelay;
     if (isdefined(self)) {
         self function_345ada65(owner);
     }
@@ -547,8 +546,8 @@ function function_960ea519(owner) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x3148e519, Offset: 0x2780
 // Size: 0x328
 function function_345ada65(attacker) {
@@ -580,8 +579,8 @@ function function_345ada65(attacker) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0xa9a4af00, Offset: 0x2ab0
 // Size: 0x17a
 function function_71c8970c(interval) {
@@ -598,7 +597,7 @@ function function_71c8970c(interval) {
         playfxontag(#"hash_73dda66347b73ddd", self, "tag_fx_03");
         playfxontag(#"hash_73dda66347b73ddd", self, "tag_fx_04");
         playfxontag(#"hash_3e6e2a2df9fd889", self, "tag_body");
-        wait(interval);
+        wait interval;
         interval /= 1.2;
         if (interval < 0.08) {
             break;
@@ -606,18 +605,18 @@ function function_71c8970c(interval) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0xe69518c6, Offset: 0x2c38
 // Size: 0x44
 function timeoutcratewaiter() {
     self endon(#"death", #"stationary");
-    wait(20);
+    wait 20;
     self cratedelete(1);
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x9f179cd9, Offset: 0x2c88
 // Size: 0x84
 function cratedelete(drop_all_to_ground = 1) {
@@ -633,8 +632,8 @@ function cratedelete(drop_all_to_ground = 1) {
     self deletedelay();
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0xc0722c94, Offset: 0x2d18
 // Size: 0xdc
 function function_d2d0a813() {
@@ -646,8 +645,8 @@ function function_d2d0a813() {
     badplace_box(var_3b0688ef, 0, origin, halfsize, "all");
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x6 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x4
 // Checksum 0x78f8cbf1, Offset: 0x2e00
 // Size: 0x3c
 function private function_9813d292() {
@@ -656,8 +655,8 @@ function private function_9813d292() {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x190f9691, Offset: 0x2e48
 // Size: 0x54
 function function_4bf116ab(ents) {
@@ -666,8 +665,8 @@ function function_4bf116ab(ents) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0x6a1770d7, Offset: 0x2ea8
 // Size: 0x34
 function function_2842c984(*ents) {
@@ -676,8 +675,8 @@ function function_2842c984(*ents) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0xfd0c4053, Offset: 0x2ee8
 // Size: 0x56
 function function_76b49bd8(ents) {
@@ -685,8 +684,8 @@ function function_76b49bd8(ents) {
     self.parachute = ents[#"parachute"];
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0x4294dd73, Offset: 0x2f48
 // Size: 0x114
 function function_2defd397() {
@@ -696,14 +695,14 @@ function function_2defd397() {
     self waittill(#"movedone");
     self scene::stop(#"p9_fxanim_wz_parachute_supplydrop_01_bundle");
     self.parachute thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "detach", self.parachute);
-    wait(1);
+    wait 1;
     if (isdefined(self.parachute)) {
         self.parachute clientfield::set("supply_drop_parachute_rob", 0);
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 1, eflags: 0x0
 // Checksum 0xca172121, Offset: 0x3068
 // Size: 0x152
 function watchforcratekill(start_kill_watch_z_threshold) {
@@ -737,8 +736,8 @@ function watchforcratekill(start_kill_watch_z_threshold) {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0xaaa053f, Offset: 0x31c8
 // Size: 0x3c4
 function is_touching_crate() {
@@ -779,8 +778,8 @@ function is_touching_crate() {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0xeb70ab1f, Offset: 0x3598
 // Size: 0x1c4
 function is_clone_touching_crate() {
@@ -799,8 +798,8 @@ function is_clone_touching_crate() {
     }
 }
 
-// Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x2 linked
+// Namespace helicopter_escape/namespace_2291eec4
+// Params 0, eflags: 0x0
 // Checksum 0x54d10a54, Offset: 0x3768
 // Size: 0x198
 function is_equipment_touching_crate() {

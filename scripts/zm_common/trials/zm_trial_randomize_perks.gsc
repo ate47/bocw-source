@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_bgb_pack.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_bgb_pack;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_randomize_perks;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x23de8fe1, Offset: 0x118
 // Size: 0x5c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdade7cc, Offset: 0x180
 // Size: 0xa0
 function private on_begin() {
@@ -40,7 +39,7 @@ function private on_begin() {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe142dbb4, Offset: 0x228
 // Size: 0xcc
 function private on_end(*round_reset) {
@@ -51,7 +50,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8647ce2c, Offset: 0x300
 // Size: 0x2d4
 function private function_83fa47e8() {
@@ -59,14 +58,14 @@ function private function_83fa47e8() {
     level endon(#"hash_7646638df88a3656");
     self bgb_pack::function_59004002(#"zm_bgb_perk_up", 1);
     self bgb_pack::function_59004002(#"zm_bgb_perkaholic", 1);
-    wait(8);
+    wait 8;
     if (isdefined(self.var_2a62e678)) {
         self.var_cdc2b986 = self zm_weapons::get_player_weapondata(self.var_2a62e678);
     }
     var_45a6b64a = arraycopy(self.var_cd5d9345);
     self.var_5046ea5e = self zm_trial_util::function_3f8a4145(0);
     self.var_5046ea5e.var_cd5d9345 = var_45a6b64a;
-    wait(1);
+    wait 1;
     self.var_cd5d9345 = [];
     for (n_slot = 0; n_slot < 4; n_slot++) {
         var_67017da5 = self.var_5046ea5e.var_8f0c164f[n_slot];
@@ -94,7 +93,7 @@ function private function_83fa47e8() {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1ded006e, Offset: 0x5e0
 // Size: 0x23c
 function private function_50b92441() {
@@ -124,7 +123,7 @@ function private function_50b92441() {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x11161645, Offset: 0x828
 // Size: 0x32
 function is_active() {
@@ -133,7 +132,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_randomize_perks/zm_trial_randomize_perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3058be34, Offset: 0x868
 // Size: 0x10c
 function private function_3a95c571() {

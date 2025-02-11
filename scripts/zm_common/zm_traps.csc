@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\visionset_mgr_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace zm_traps;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_traps/zm_traps
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x62e43719, Offset: 0x100
 // Size: 0xe4
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace zm_traps/zm_traps
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x75db15b2, Offset: 0x1f0
 // Size: 0x18
 function is_trap_registered(a_registered_traps) {

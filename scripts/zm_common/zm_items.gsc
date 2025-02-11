@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_items;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_items/zm_items
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2c4d6c0b, Offset: 0x170
 // Size: 0xe4
 function private preinit() {
@@ -49,7 +48,7 @@ function private preinit() {
 }
 
 // Namespace zm_items/zm_items
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa279e73b, Offset: 0x260
 // Size: 0x3a0
 function private postinit() {
@@ -102,7 +101,7 @@ function private postinit() {
 }
 
 // Namespace zm_items/zm_items
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b4eda0c, Offset: 0x608
 // Size: 0x32
 function player_on_spawned() {
@@ -115,7 +114,7 @@ function player_on_spawned() {
 }
 
 // Namespace zm_items/zm_items
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe98aab1, Offset: 0x648
 // Size: 0xf2
 function function_4d230236(w_item, fn_callback) {
@@ -134,7 +133,7 @@ function function_4d230236(w_item, fn_callback) {
 }
 
 // Namespace zm_items/zm_items
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x39a0643d, Offset: 0x748
 // Size: 0x68
 function private function_307756a0() {
@@ -146,14 +145,14 @@ function private function_307756a0() {
 }
 
 // Namespace zm_items/zm_items
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x32c61b32, Offset: 0x7b8
 // Size: 0x108
 function private function_b64c32cf(player) {
     foreach (item in level.item_list) {
         if (item.var_337fc1cf && is_true(player.item_inventory[item])) {
             if (item.var_9fffdcee) {
-                assertmsg("<unknown string>" + item.name + "<unknown string>");
+                assertmsg("<dev string:x38>" + item.name + "<dev string:x47>");
                 continue;
             }
             function_ab3bb6bf(player, item);
@@ -162,13 +161,13 @@ function private function_b64c32cf(player) {
 }
 
 // Namespace zm_items/zm_items
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcdda96ed, Offset: 0x8c8
 // Size: 0xf2
 function player_has(player, w_item) {
     if (!is_true(w_item.craftitem) && isdefined(player)) {
         if (w_item.var_9fffdcee) {
-            assertmsg("<unknown string>" + w_item.name + "<unknown string>");
+            assertmsg("<dev string:x9c>" + w_item.name + "<dev string:xa7>");
         } else {
             return player hasweapon(w_item);
         }
@@ -185,7 +184,7 @@ function player_has(player, w_item) {
 }
 
 // Namespace zm_items/zm_items
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb08618c9, Offset: 0x9c8
 // Size: 0x23c
 function player_pick_up(player, w_item) {
@@ -217,13 +216,13 @@ function player_pick_up(player, w_item) {
 }
 
 // Namespace zm_items/zm_items
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbf8e82b6, Offset: 0xc10
 // Size: 0x100
 function player_take(player, w_item) {
     if (!is_true(w_item.craftitem) && isdefined(player)) {
         if (w_item.var_9fffdcee) {
-            assertmsg("<unknown string>" + w_item.name + "<unknown string>");
+            assertmsg("<dev string:x9c>" + w_item.name + "<dev string:xa7>");
         } else {
             player zm_weapons::weapon_take(w_item);
         }
@@ -241,7 +240,7 @@ function player_take(player, w_item) {
 }
 
 // Namespace zm_items/zm_items
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1e29a655, Offset: 0xd18
 // Size: 0x12a
 function function_ab3bb6bf(holder, w_item) {
@@ -259,7 +258,7 @@ function function_ab3bb6bf(holder, w_item) {
 }
 
 // Namespace zm_items/zm_items
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x69a94a76, Offset: 0xe50
 // Size: 0x62
 function spawn_item(w_item, v_origin, v_angles, var_f93e465d = 1) {
@@ -282,7 +281,7 @@ function spawn_item(w_item, v_origin, v_angles, var_f93e465d = 1) {
                     sphere(item.origin, 6, (0, 0, 1), 1, 0, 12, 20);
                 }
             }
-            wait(1);
+            wait 1;
         }
     }
 

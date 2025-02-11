@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\gadgets\gadget_health_regen.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\weapons\weapons.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\abilities\gadgets\gadget_health_regen;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\weapons\deployable;
+#using scripts\weapons\weaponobjects;
+#using scripts\weapons\weapons;
 
 #namespace spy_med_pack;
 
@@ -41,7 +40,7 @@ function private preinit() {
     level.var_c9404b0a = spawnstruct();
     level.var_c9404b0a.var_8e10bc5d = [];
     level.var_c9404b0a.medpacks = [];
-    level.var_c9404b0a.var_d741a6a4 = [];
+    level.var_c9404b0a.audiothrottletracker = [];
     level.var_c9404b0a.bundle = getscriptbundle("killstreak_spy_med_pack");
     level.var_c9404b0a.weapon = getweapon("spy_med_pack");
     level.var_c9404b0a.bundle.var_bdc8276 = 2;
@@ -279,9 +278,9 @@ function function_cb436f32(object) {
     var_a7edcaed = level.var_c9404b0a.var_8e10bc5d.size + 1;
     array::push(level.var_c9404b0a.var_8e10bc5d[player.clientid], medpack, var_a7edcaed);
     medpack setcandamage(1);
-    medpack.var_99d2556b = gettime();
+    medpack.builttime = gettime();
     medpack.uniqueid = function_530817e7();
-    function_d7cd849c(level.var_c9404b0a.bundle.var_69b1ff7);
+    playcommanderaudio(level.var_c9404b0a.bundle.var_69b1ff7);
     if (isdefined(level.var_c9404b0a.bundle.var_a0db3d4d)) {
         medpack playloopsound(level.var_c9404b0a.bundle.var_a0db3d4d);
     }
@@ -296,20 +295,20 @@ function function_cb436f32(object) {
     usetrigger triggerenable(1);
     medpack.gameobject = gameobjects::create_use_object(player getteam(), usetrigger, [], undefined, level.var_c9404b0a.bundle.var_9333131b, 1);
     medpack.gameobject gameobjects::set_objective_entity(medpack);
-    medpack.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-    medpack.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    medpack.gameobject gameobjects::set_visible(#"group_all");
+    medpack.gameobject gameobjects::allow_use(#"group_all");
     medpack.gameobject gameobjects::set_use_time(var_b1a6d849);
     usetrigger function_9b047eda(1);
     medpack.gameobject.onbeginuse = &function_8c8fb7b5;
     medpack.gameobject.onenduse = &function_a1434496;
-    medpack.gameobject.var_5ecd70 = medpack;
+    medpack.gameobject.parentobj = medpack;
     medpack.gameobject.var_33d50507 = 1;
     player deployable::function_6ec9ee30(medpack, level.var_c9404b0a.weapon);
     medpack animation::play(#"hash_7540bb5a61e603a");
     medpack thread function_438ca4e0();
     medpack thread watchfordamage();
     medpack thread watchfordeath();
-    player notify(#"hash_4d8de48e4e1f053c", {#medpack:medpack});
+    player notify(#"medpack_placed", {#medpack:medpack});
 }
 
 // Namespace spy_med_pack/spy_med_pack
@@ -332,7 +331,7 @@ function private function_a1434496(*team, player, result) {
     if (playerhealth >= 0.99) {
         return;
     }
-    medpack = self.var_5ecd70;
+    medpack = self.parentobj;
     medpack.isdisabled = 0;
     if (is_true(result)) {
         medpack.usecount++;
@@ -447,7 +446,7 @@ function function_134ae768() {
 // Params 2, eflags: 0x0
 // Checksum 0x1b280605, Offset: 0x1c08
 // Size: 0x186
-function function_e6d37a78(*var_d3213f00, var_7497ba51 = 1) {
+function function_e6d37a78(*destroyedbyenemy, var_7497ba51 = 1) {
     self notify(#"hash_523ddcbd662010e5");
     self.var_ab0875aa = 1;
     if (isdefined(self.var_1ba7e28e) && self.var_1ba7e28e) {
@@ -464,7 +463,7 @@ function function_e6d37a78(*var_d3213f00, var_7497ba51 = 1) {
     level.var_c9404b0a.medpacks[self.objectiveid] = undefined;
     self function_134ae768();
     if (var_7497ba51 && self.var_8d834202 === 1) {
-        wait((isdefined(level.var_c9404b0a.bundle.var_fd663ee0) ? level.var_c9404b0a.bundle.var_fd663ee0 : 0) / 1000);
+        wait (isdefined(level.var_c9404b0a.bundle.var_fd663ee0) ? level.var_c9404b0a.bundle.var_fd663ee0 : 0) / 1000;
     }
     profilestart();
     function_897b13a9();
@@ -489,7 +488,7 @@ function function_897b13a9() {
                 self playsound(level.var_c9404b0a.bundle.var_b3756378);
             }
         }
-        function_d7cd849c(level.var_c9404b0a.bundle.var_10c9ba2d);
+        playcommanderaudio(level.var_c9404b0a.bundle.var_10c9ba2d);
     }
     if (self.var_8d834202 === 1) {
         function_263be969();
@@ -512,17 +511,17 @@ function function_897b13a9() {
 // Params 1, eflags: 0x0
 // Checksum 0x730cf7c0, Offset: 0x2010
 // Size: 0xc4
-function function_d7cd849c(soundbank) {
+function playcommanderaudio(soundbank) {
     if (!isdefined(soundbank)) {
         return;
     }
-    if (!isdefined(level.var_c9404b0a.var_d741a6a4[soundbank])) {
-        level.var_c9404b0a.var_d741a6a4[soundbank] = 0;
+    if (!isdefined(level.var_c9404b0a.audiothrottletracker[soundbank])) {
+        level.var_c9404b0a.audiothrottletracker[soundbank] = 0;
     }
-    var_ad7969ca = level.var_c9404b0a.var_d741a6a4[soundbank];
-    if (var_ad7969ca != 0 && gettime() < int(5 * 1000) + var_ad7969ca) {
+    lasttimeplayed = level.var_c9404b0a.audiothrottletracker[soundbank];
+    if (lasttimeplayed != 0 && gettime() < int(5 * 1000) + lasttimeplayed) {
         return;
     }
-    level.var_c9404b0a.var_d741a6a4[soundbank] = gettime();
+    level.var_c9404b0a.audiothrottletracker[soundbank] = gettime();
 }
 

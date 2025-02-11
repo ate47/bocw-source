@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace namespace_9bcd7d72;
 
 // Namespace namespace_9bcd7d72/namespace_9bcd7d72
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd770639c, Offset: 0x80
 // Size: 0x74
 function function_bdda909b() {

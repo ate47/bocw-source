@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_motorcycle_2wd;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xffccdefb, Offset: 0x128
 // Size: 0x2c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xeb5e320e, Offset: 0x160
 // Size: 0x134
 function private function_9835edf5() {
@@ -40,7 +39,7 @@ function private function_9835edf5() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8641e365, Offset: 0x2a0
 // Size: 0x1b4
 function private function_e1f72671(params) {
@@ -55,7 +54,7 @@ function private function_e1f72671(params) {
         } else {
             self vehicle::toggle_control_bone_group(1, 1);
         }
-        self notify(#"hash_579b16a6f8cc0305");
+        self notify(#"no_occupants");
         return;
     }
     if (isdefined(occupants) && occupants.size >= 0 && params.eventstruct.seat_index === 0) {
@@ -64,7 +63,7 @@ function private function_e1f72671(params) {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4abae51, Offset: 0x460
 // Size: 0x5c
 function private function_d0a9a026(params) {
@@ -77,7 +76,7 @@ function private function_d0a9a026(params) {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9c541c23, Offset: 0x4c8
 // Size: 0xa4
 function function_177abcbb(params) {
@@ -95,7 +94,7 @@ function function_177abcbb(params) {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd31b5a6d, Offset: 0x578
 // Size: 0x4e
 function private function_8892a46e() {
@@ -105,7 +104,7 @@ function private function_8892a46e() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfcda4c12, Offset: 0x5d0
 // Size: 0x6c
 function private function_164c8246() {
@@ -117,7 +116,7 @@ function private function_164c8246() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd7d26161, Offset: 0x648
 // Size: 0xc0
 function private function_45cb4291() {
@@ -125,7 +124,7 @@ function private function_45cb4291() {
     self endon("5e6d62a7a17f26b6");
     self endon(#"death", #"hash_7d134b21d3606f90");
     while (true) {
-        wait(1);
+        wait 1;
         if (isalive(self)) {
             if (lengthsquared(self.velocity) <= sqr(200)) {
                 self vehicle::toggle_control_bone_group(1, 1);
@@ -138,7 +137,7 @@ function private function_45cb4291() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2e4fd3b, Offset: 0x710
 // Size: 0x84
 function private function_8ba31952(*params) {
@@ -152,12 +151,12 @@ function private function_8ba31952(*params) {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xccae92af, Offset: 0x7a0
 // Size: 0x1e4
 function function_1f6bee9c() {
     self notify(#"hash_654356262621e15f");
-    self endoncallback(&function_e972bd62, #"death", #"hash_579b16a6f8cc0305", #"hash_654356262621e15f");
+    self endoncallback(&function_e972bd62, #"death", #"no_occupants", #"hash_654356262621e15f");
     self.var_fbc196ab = 1;
     while (true) {
         self waittill(#"veh_inair");
@@ -180,7 +179,7 @@ function function_1f6bee9c() {
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x74599d0c, Offset: 0x990
 // Size: 0x32
 function function_e972bd62(*str_notify) {

@@ -1,28 +1,27 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_774302f762d76254;
-#using script_1ee011cd0961afd7;
-#using script_1b0b07ff57d1dde3;
-#using script_634ae70c663d1cc9;
 #using script_17dcb1172e441bf6;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_47851dbeea22fe66;
+#using script_634ae70c663d1cc9;
+#using script_774302f762d76254;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_2a2a39d4;
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5edb678, Offset: 0x278
 // Size: 0x52
 function init() {
@@ -31,7 +30,7 @@ function init() {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a038bed, Offset: 0x2d8
 // Size: 0x16
 function main() {
@@ -39,14 +38,14 @@ function main() {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc636872b, Offset: 0x2f8
 // Size: 0x11c
 function function_cddc7db1() {
     self notify("aa86a08f233597e");
     self endon("aa86a08f233597e");
     self thread namespace_268747c0::function_978c05b5();
-    result = self waittill(#"hash_3e251384a5400dce");
+    result = self waittill(#"destroy_hazard");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_a8a43931, self);
         namespace_1e25ad94::debugmsg("Deleting Fireball trap permenently at:" + self.origin);
@@ -58,7 +57,7 @@ function function_cddc7db1() {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd6ef386, Offset: 0x420
 // Size: 0x400
 function function_b9c75c0(trap, var_7c56394 = 0) {
@@ -126,7 +125,7 @@ function function_b9c75c0(trap, var_7c56394 = 0) {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfcdf79a, Offset: 0x828
 // Size: 0x14c
 function function_7a2f725d(trap, page = 0) {
@@ -152,7 +151,7 @@ function function_7a2f725d(trap, page = 0) {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65433b15, Offset: 0x980
 // Size: 0x30c
 function function_d4a86caf() {
@@ -160,7 +159,7 @@ function function_d4a86caf() {
     self endon("c1672b60ea15110");
     level endon(#"game_over");
     while (true) {
-        wait(0.5);
+        wait 0.5;
         foreach (trap in level.doa.var_a8a43931) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
@@ -195,7 +194,7 @@ function function_d4a86caf() {
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
-                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                trap notify(#"destroy_hazard", {#var_760a0807:0});
                 namespace_1e25ad94::debugmsg("Paging out fireball trap at:" + trap.origin);
             }
         }
@@ -203,7 +202,7 @@ function function_d4a86caf() {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8c7129f, Offset: 0xc98
 // Size: 0x130
 function function_3a25f62f() {
@@ -221,17 +220,17 @@ function function_3a25f62f() {
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcc73bd8c, Offset: 0xdd0
 // Size: 0x3c8
 function function_14a55bfa() {
     self notify("74d7ef0e3ce7fc9c");
     self endon("74d7ef0e3ce7fc9c");
     level endon(#"game_over");
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self thread function_cddc7db1();
     if (!isdefined(self.script_model)) {
-        self notify(#"hash_3e251384a5400dce");
+        self notify(#"destroy_hazard");
     }
     origin = self.script_model gettagorigin("tag_flash_lvl3_le");
     angles = self.script_model gettagangles("tag_flash_lvl3_le");
@@ -243,7 +242,7 @@ function function_14a55bfa() {
     while (true) {
         var_37deefd = namespace_7f5aeb59::function_aab26933(self.origin, 1800);
         if (var_37deefd == 0) {
-            wait(2);
+            wait 2;
             continue;
         }
         for (rounds = isdefined(self.maxrounds) ? self.maxrounds : randomint(3) + 1; rounds; rounds--) {
@@ -257,11 +256,11 @@ function function_14a55bfa() {
                 missile = self.script_model magicmissile(self.weapon, origin, velocity);
                 self.script_model namespace_e32bb68::function_3a59ec34("zmb_doa_fireball_emit");
             } else {
-                wait(6);
+                wait 6;
             }
-            wait(randomfloatrange(1, 4));
+            wait randomfloatrange(1, 4);
         }
-        wait(randomfloatrange(minwait, maxwait));
+        wait randomfloatrange(minwait, maxwait);
     }
 }
 

@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\mp_common\teams\teams.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\weapons\heatseekingmissile.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreak_hacking.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\killstreak_detect.gsc;
-#using scripts\killstreaks\airsupport.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\airsupport;
+#using scripts\killstreaks\killstreak_detect;
+#using scripts\killstreaks\killstreak_hacking;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\teams\teams;
+#using scripts\weapons\heatseekingmissile;
 
 #namespace counteruav;
 
@@ -34,7 +33,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x174774cb, Offset: 0x300
 // Size: 0x2c
 function private function_1f11d560() {
@@ -45,7 +44,7 @@ function private function_1f11d560() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x14f3409, Offset: 0x338
 // Size: 0x22c
 function private preinit() {
@@ -74,7 +73,7 @@ function private preinit() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95c2df94, Offset: 0x570
 // Size: 0x32
 function function_337a8f70() {
@@ -82,7 +81,7 @@ function function_337a8f70() {
 }
 
 // Namespace counteruav/counteruav
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc04d07c, Offset: 0x5b0
 // Size: 0x144
 function function_c9938281(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
@@ -98,7 +97,7 @@ function function_c9938281(attacker, victim, *weapon, *attackerweapon, *meansofd
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x82e4bc26, Offset: 0x700
 // Size: 0x6c
 function function_d15ea3d8(params) {
@@ -108,7 +107,7 @@ function function_d15ea3d8(params) {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4f183d8a, Offset: 0x778
 // Size: 0x290
 function fx_flesh_hit_neck_fatal(params) {
@@ -122,7 +121,7 @@ function fx_flesh_hit_neck_fatal(params) {
                         if (isdefined(scoregiven)) {
                             player challenges::earnedcuavassistscore(scoregiven);
                             player stats::function_8fb23f94("counteruav", #"assists", 1);
-                            player stats::function_b04e7184("counteruav", #"hash_54b8c7eda311cba4");
+                            player stats::function_b04e7184("counteruav", #"best_assists");
                             killstreakindex = level.killstreakindices[#"counteruav"];
                             killstreaks::killstreak_assist(player, self, killstreakindex);
                             if (isdefined(level.var_b7bc3c75.var_e2298731)) {
@@ -137,7 +136,7 @@ function fx_flesh_hit_neck_fatal(params) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x63f8cb86, Offset: 0xa10
 // Size: 0xa8
 function function_3675de8b() {
@@ -152,7 +151,7 @@ function function_3675de8b() {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc0d67131, Offset: 0xac0
 // Size: 0xe0
 function private function_eb065a52(ent) {
@@ -170,7 +169,7 @@ function private function_eb065a52(ent) {
 }
 
 // Namespace counteruav/counteruav
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xece746d5, Offset: 0xba8
 // Size: 0x124
 function function_bff5c062(cuav, attackingplayer) {
@@ -187,7 +186,7 @@ function function_bff5c062(cuav, attackingplayer) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae6caad4, Offset: 0xcd8
 // Size: 0x34
 function assignfirstavailableoffsetindex() {
@@ -196,7 +195,7 @@ function assignfirstavailableoffsetindex() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x489a9aaf, Offset: 0xd18
 // Size: 0x11e
 function getfirstavailableoffsetindex() {
@@ -215,7 +214,7 @@ function getfirstavailableoffsetindex() {
         }
     }
     /#
-        util::warning("<unknown string>");
+        util::warning("<dev string:x38>");
     #/
     return 0;
 }
@@ -228,7 +227,7 @@ function getfirstavailableoffsetindex() {
     // Size: 0x34
     function waitanddebugdrawoffsetlist() {
         level endon(#"game_ended");
-        wait(10);
+        wait 10;
         debugdrawoffsetlist();
     }
 
@@ -246,7 +245,7 @@ function getfirstavailableoffsetindex() {
 #/
 
 // Namespace counteruav/counteruav
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x762c09c9, Offset: 0xf60
 // Size: 0x120
 function buildoffsetlist(startoffset, depth, offset_x, offset_y) {
@@ -269,7 +268,7 @@ function buildoffsetlist(startoffset, depth, offset_x, offset_y) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6c598756, Offset: 0x1088
 // Size: 0x6c
 function function_af281272() {
@@ -282,7 +281,7 @@ function function_af281272() {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf6aa4d26, Offset: 0x1100
 // Size: 0x6c0
 function activatecounteruav(killstreaktype) {
@@ -342,7 +341,7 @@ function activatecounteruav(killstreaktype) {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x983e2adf, Offset: 0x17c8
 // Size: 0x1e
 function function_f724cfe4(health) {
@@ -351,7 +350,7 @@ function function_f724cfe4(health) {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfc8d5ae8, Offset: 0x17f0
 // Size: 0x2c
 function hackedprefunction(*hacker) {
@@ -360,7 +359,7 @@ function hackedprefunction(*hacker) {
 }
 
 // Namespace counteruav/counteruav
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x28cb433d, Offset: 0x1828
 // Size: 0x2bc
 function spawncounteruav(owner, killstreak_id, bundle, killstreaktype) {
@@ -392,7 +391,7 @@ function spawncounteruav(owner, killstreak_id, bundle, killstreaktype) {
 }
 
 // Namespace counteruav/counteruav
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x92f6d99e, Offset: 0x1af0
 // Size: 0x9c
 function configureteampost(owner, *ishacked) {
@@ -402,19 +401,19 @@ function configureteampost(owner, *ishacked) {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x571fd1a6, Offset: 0x1b98
 // Size: 0x54
 function playfx(name) {
     self endon(#"death");
-    wait(0.1);
+    wait 0.1;
     if (isdefined(self)) {
         playfxontag(name, self, "tag_origin");
     }
 }
 
 // Namespace counteruav/counteruav
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x231cf1bd, Offset: 0x1bf8
 // Size: 0x94
 function onlowhealth(*attacker, *weapon) {
@@ -427,7 +426,7 @@ function onlowhealth(*attacker, *weapon) {
 }
 
 // Namespace counteruav/counteruav
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8a58de3b, Offset: 0x1c98
 // Size: 0x2c
 function onteamchange(*entnum, *event) {
@@ -435,7 +434,7 @@ function onteamchange(*entnum, *event) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5d656ab3, Offset: 0x1cd0
 // Size: 0x19c
 function ontimeout() {
@@ -456,15 +455,15 @@ function ontimeout() {
         var_384be02f = 4000;
     }
     self airsupport::leave(5, var_384be02f);
-    self util::delay(5 - 2, undefined, &killstreaks::function_3696d106);
-    wait(5);
+    self util::delay(5 - 2, undefined, &killstreaks::outro_scaling);
+    wait 5;
     self killstreaks::function_90e951f2();
     waitframe(1);
     self delete();
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f843da2, Offset: 0x1e78
 // Size: 0x34
 function ontimecheck() {
@@ -472,7 +471,7 @@ function ontimecheck() {
 }
 
 // Namespace counteruav/counteruav
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa1ca499, Offset: 0x1eb8
 // Size: 0x44
 function destroycounteruavbyemp(attacker, *arg) {
@@ -480,12 +479,12 @@ function destroycounteruavbyemp(attacker, *arg) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8e88909, Offset: 0x1f08
 // Size: 0xf0
 function function_7017e1bf() {
     self endon(#"death");
-    wait(0.1);
+    wait 0.1;
     if (isdefined(self)) {
         self stoploopsound();
         teams = util::function_668e9d6c(self.team);
@@ -496,7 +495,7 @@ function function_7017e1bf() {
 }
 
 // Namespace counteruav/counteruav
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x534f7e1b, Offset: 0x2000
 // Size: 0x204
 function destroycounteruav(attacker, weapon) {
@@ -524,7 +523,7 @@ function destroycounteruav(attacker, weapon) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0af6900, Offset: 0x2210
 // Size: 0x18c
 function deletecounteruav() {
@@ -538,12 +537,12 @@ function deletecounteruav() {
     }
     self killstreaks::function_90e951f2();
     self killstreaks::function_7d265bd3();
-    wait(0.1);
+    wait 0.1;
     if (isdefined(self)) {
         self setmodel(#"tag_origin");
         self setenemymodel(#"tag_origin");
     }
-    wait(0.2);
+    wait 0.2;
     if (isdefined(self)) {
         self notify(#"delete");
         self delete();
@@ -551,7 +550,7 @@ function deletecounteruav() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6beef22a, Offset: 0x23a8
 // Size: 0x11c
 function private function_4148fbc9() {
@@ -568,7 +567,7 @@ function private function_4148fbc9() {
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x56b3abf, Offset: 0x24d0
 // Size: 0x36
 function hasindexactivecounteruav(team_or_entnum) {
@@ -576,7 +575,7 @@ function hasindexactivecounteruav(team_or_entnum) {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xac729899, Offset: 0x2510
 // Size: 0x148
 function addactivecounteruav() {
@@ -600,7 +599,7 @@ function addactivecounteruav() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x94dacd9e, Offset: 0x2660
 // Size: 0x7c
 function removeactivecounteruav() {
@@ -616,7 +615,7 @@ function removeactivecounteruav() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14b950cc, Offset: 0x26e8
 // Size: 0x118
 function resetactivecounteruav() {

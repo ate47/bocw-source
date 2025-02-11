@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\debug.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\debug;
 
 #namespace poi;
 
@@ -19,12 +18,12 @@ function private autoexec __init__system__() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xcb357765, Offset: 0x178
 // Size: 0x4ae
 function enable(shouldenable, firstpoint, var_8fbcda45) {
     assert(isactor(self));
-    assert(shouldenable === 1 || shouldenable === 0, "<unknown string>");
+    assert(shouldenable === 1 || shouldenable === 0, "<dev string:x38>");
     if (is_true(shouldenable)) {
         if (!isdefined(self.poi)) {
             self.poi = {};
@@ -40,7 +39,7 @@ function enable(shouldenable, firstpoint, var_8fbcda45) {
     self.poi.doingpoi = shouldenable;
     self.poi.var_8fbcda45 = var_8fbcda45;
     if (!shouldenable) {
-        assert(isdefined(level.poi.var_5ee53e3), "<unknown string>");
+        assert(isdefined(level.poi.var_5ee53e3), "<dev string:x69>");
         arrayremovevalue(level.poi.var_5ee53e3, self);
         self.turnrate = isdefined(self.poi.poi_oldturnrate) ? self.poi.poi_oldturnrate : self.turnrate;
         self.gunadditiveoverride = undefined;
@@ -50,7 +49,7 @@ function enable(shouldenable, firstpoint, var_8fbcda45) {
         } else {
             self.poi = undefined;
         }
-        self notify(#"hash_540a2c03e6d27b24");
+        self notify(#"poi_disabled");
         return;
     }
     if (!isdefined(self.poi.var_1365068)) {
@@ -79,13 +78,13 @@ function enable(shouldenable, firstpoint, var_8fbcda45) {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x1476d96e, Offset: 0x630
 // Size: 0x186
 function function_fc1d22bd(shouldenable, yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45) {
     shouldenable = is_true(shouldenable);
     if (shouldenable && !isdefined(self.poi.auto)) {
-        self function_4d1af993(yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45);
+        self auto_init(yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45);
         self thread function_c6ff2ee5();
         self notify(#"hash_4f88221ad3977829");
         return;
@@ -99,7 +98,7 @@ function function_fc1d22bd(shouldenable, yawmin, yawmax, pitchmin, pitchmax, var
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7fdaadb6, Offset: 0x7c0
 // Size: 0xdc
 function private function_f64316de() {
@@ -109,14 +108,14 @@ function private function_f64316de() {
     level.poi.fnenable = &enable;
     level.poi.var_38974483 = &function_fc1d22bd;
     /#
-        function_5ac4dc99("<unknown string>", 0);
-        function_cd140ee9("<unknown string>", &function_c30fad9a);
+        function_5ac4dc99("<dev string:xa7>", 0);
+        function_cd140ee9("<dev string:xa7>", &function_c30fad9a);
     #/
     thread function_4de58b23();
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa2e645b2, Offset: 0x8a8
 // Size: 0x11a
 function private function_4de58b23() {
@@ -132,7 +131,7 @@ function private function_4de58b23() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x317dec04, Offset: 0x9d0
 // Size: 0x3c4
 function private function_b31aaef9() {
@@ -174,13 +173,13 @@ function private function_b31aaef9() {
             arrayremovevalue(level.poi.var_5ee53e3, guy);
         }
         if (!waited) {
-            wait(0.25);
+            wait 0.25;
         }
     }
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa368a1ef, Offset: 0xda0
 // Size: 0x352
 function private function_f3a2a643() {
@@ -229,7 +228,7 @@ function private function_f3a2a643() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6e3326e6, Offset: 0x1100
 // Size: 0xf4
 function private function_aabc1f4c() {
@@ -250,7 +249,7 @@ function private function_aabc1f4c() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xeee4a349, Offset: 0x1200
 // Size: 0x348
 function private function_75334336(haspoi) {
@@ -300,7 +299,7 @@ function private function_75334336(haspoi) {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x269e583f, Offset: 0x1550
 // Size: 0x100
 function private function_a6d41d6e(poi) {
@@ -314,7 +313,7 @@ function private function_a6d41d6e(poi) {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x555e7145, Offset: 0x1658
 // Size: 0x84
 function private function_b4d1a9bb() {
@@ -329,7 +328,7 @@ function private function_b4d1a9bb() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd0a0e1e, Offset: 0x16e8
 // Size: 0xb4
 function private function_d0341c76(priority, var_9ced4e21) {
@@ -341,10 +340,10 @@ function private function_d0341c76(priority, var_9ced4e21) {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x995f9ddb, Offset: 0x17a8
 // Size: 0x11e
-function private function_4d1af993(yawmin = 15, yawmax = 35, pitchmin = -20, pitchmax = 0, var_8fbcda45) {
+function private auto_init(yawmin = 15, yawmax = 35, pitchmin = -20, pitchmax = 0, var_8fbcda45) {
     if (!isdefined(self.poi)) {
         self.poi = {};
     }
@@ -357,7 +356,7 @@ function private function_4d1af993(yawmin = 15, yawmax = 35, pitchmin = -20, pit
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaf04a1c5, Offset: 0x18d0
 // Size: 0x242
 function private function_c6ff2ee5() {
@@ -369,7 +368,7 @@ function private function_c6ff2ee5() {
     var_8dfbd33c = 0;
     var_960224ae = gettime() + 30000;
     if (!isdefined(self.poi.auto)) {
-        self function_4d1af993();
+        self auto_init();
     }
     /#
         self childthread function_4c4e4ab0();
@@ -401,7 +400,7 @@ function private function_c6ff2ee5() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc77edd4f, Offset: 0x1b20
 // Size: 0x96
 function private function_34ed055a(angles) {
@@ -426,13 +425,13 @@ function private function_e019f08b() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x290bea74, Offset: 0x1c98
 // Size: 0x4a
 function private function_18a11ca3() {
     self notify(#"poiauto_glanceend");
     self endon(#"poiauto_glanceend");
-    wait(0.55);
+    wait 0.55;
     self.poi.auto.glancing = 0;
 }
 
@@ -445,7 +444,7 @@ function private function_28f716d5() {
 }
 
 // Namespace poi/namespace_b1048555
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x27accee1, Offset: 0x1d28
 // Size: 0x28c
 function private function_504eb38e(var_bed66f89) {
@@ -534,7 +533,7 @@ function private function_d60aa558() {
     function private debug() {
         self notify(#"hash_4821a87b2782d121");
         self endon(#"hash_4821a87b2782d121");
-        var_3b1af2ae = struct::get_array("<unknown string>", "<unknown string>");
+        var_3b1af2ae = struct::get_array("<dev string:xb7>", "<dev string:xbe>");
         while (true) {
             if (isdefined(level.poi.var_5ee53e3)) {
                 foreach (ai in level.poi.var_5ee53e3) {
@@ -580,12 +579,12 @@ function private function_d60aa558() {
     function private function_9c52ce45(poi) {
         hs = 4;
         color = (0, 0, 1);
-        text = "<unknown string>";
+        text = "<dev string:xcd>";
         auto = 1;
         if (!is_true(poi.script_auto_use)) {
             hs = 2;
             color = (0.2, 0.2, 0.2);
-            text = "<unknown string>";
+            text = "<dev string:xb7>";
             auto = 0;
         }
         var_711c17c1 = float(isdefined(poi.var_715fc83d) ? poi.var_715fc83d : 0) * 1000;
@@ -596,36 +595,36 @@ function private function_d60aa558() {
         prev = undefined;
         next = undefined;
         if (isdefined(poi.target)) {
-            next = struct::get(poi.target, "<unknown string>");
+            next = struct::get(poi.target, "<dev string:xd4>");
         }
         if (isdefined(poi.targetname)) {
-            prev = struct::get(poi.targetname, "<unknown string>");
+            prev = struct::get(poi.targetname, "<dev string:xe2>");
         }
         if (auto && isdefined(poi.var_3b03815e) && gettime() < poi.var_3b03815e + var_711c17c1) {
-            print3d(poi.origin, "<unknown string>" + float(poi.var_3b03815e + var_711c17c1 - gettime()) / 1000, (0.2, 0.2, 0.2), 1, 0.25, 1);
+            print3d(poi.origin, "<dev string:xec>" + float(poi.var_3b03815e + var_711c17c1 - gettime()) / 1000, (0.2, 0.2, 0.2), 1, 0.25, 1);
         } else {
             line(poi.origin + (0, 0, hs), poi.origin + (0, 0, hs * -1), color, 1, 1, 1);
             line(poi.origin + (0, hs, 0), poi.origin + (0, hs * -1, 0), color, 1, 1, 1);
             line(poi.origin + (hs, 0, 0), poi.origin + (hs * -1, 0, 0), color, 1, 1, 1);
-            time = "<unknown string>" + float(2000) / 1000;
+            time = "<dev string:xec>" + float(2000) / 1000;
             waittime = poi util::function_4b93f9c2();
             if (waittime > 0) {
-                time = "<unknown string>";
+                time = "<dev string:xec>";
                 if (isdefined(poi.script_wait)) {
                     time += float(poi.script_wait);
                 }
                 if (isdefined(poi.script_wait_min) || isdefined(poi.script_wait_min)) {
                     if (time.size > 0) {
-                        time += "<unknown string>";
+                        time += "<dev string:xf0>";
                     }
                     time += isdefined(poi.script_wait_min) ? poi.script_wait_min : 0;
                     if (isdefined(poi.script_wait_max) && float(poi.script_wait_max) > float(isdefined(poi.script_wait_min) ? poi.script_wait_min : 0)) {
-                        time = time + "<unknown string>" + poi.script_wait_max;
+                        time = time + "<dev string:xf7>" + poi.script_wait_max;
                     }
                 }
             }
             if (auto) {
-                time = time + "<unknown string>" + (float(isdefined(poi.var_715fc83d) ? poi.var_715fc83d : 0) < 0 ? float(5000) / 1000 : float(poi.var_715fc83d));
+                time = time + "<dev string:xfe>" + (float(isdefined(poi.var_715fc83d) ? poi.var_715fc83d : 0) < 0 ? float(5000) / 1000 : float(poi.var_715fc83d));
             }
             print3d(poi.origin + (0, 0, 5), text, color, 1, 0.25, 1, 1);
             print3d(poi.origin + (0, 0, -10), time, color, 1, 0.25, 1, 1);

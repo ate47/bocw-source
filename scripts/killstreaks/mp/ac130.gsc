@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_590bc513b5881751;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\teams\teams;
+#using scripts\mp_common\util;
 
 #namespace ac130_mp;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ac130_mp/ac130
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x21170833, Offset: 0x138
 // Size: 0x5e
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace ac130_mp/ac130
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe13769ec, Offset: 0x1a0
 // Size: 0x14
 function private function_3675de8b() {
@@ -38,7 +37,7 @@ function private function_3675de8b() {
 }
 
 // Namespace ac130_mp/ac130
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbf84859, Offset: 0x1c0
 // Size: 0x118
 function private spawnac130(killstreaktype) {
@@ -55,7 +54,7 @@ function private spawnac130(killstreaktype) {
 }
 
 // Namespace ac130_mp/ac130
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x22bd7eef, Offset: 0x2e0
 // Size: 0x16c
 function function_d45a1f8d(einflictor, attacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -83,7 +82,7 @@ function function_d45a1f8d(einflictor, attacker, *idamage, *smeansofdeath, weapo
 function function_6b26dd0c(player) {
     self endon(#"death", #"ac130_shutdown");
     player endon(#"disconnect");
-    wait(2);
+    wait 2;
     player thread ac130_shared::function_8721028e(player, 0, 1);
 }
 

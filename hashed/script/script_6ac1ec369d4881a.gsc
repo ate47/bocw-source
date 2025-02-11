@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\armor.gsc;
+#using scripts\core_common\armor;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace weapon_armor;
 

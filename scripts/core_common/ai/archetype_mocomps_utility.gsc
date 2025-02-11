@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\math_shared.gsc;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\math_shared;
 
 #namespace archetype_mocomps_utility;
 
@@ -37,8 +36,8 @@ function private drawtraversal(traversal, entity, animation, *mocompanimblendout
         return;
     }
     /#
-        recordsphere(mocompanimblendouttime.startposition, 2, (1, 0.5, 0), "<unknown string>", mocompanimflag);
-        recordsphere(mocompanimblendouttime.endposition, 2, (1, 0.5, 0), "<unknown string>", mocompanimflag);
+        recordsphere(mocompanimblendouttime.startposition, 2, (1, 0.5, 0), "<dev string:x38>", mocompanimflag);
+        recordsphere(mocompanimblendouttime.endposition, 2, (1, 0.5, 0), "<dev string:x38>", mocompanimflag);
     #/
     animlength = getanimlength(mocompduration);
     currentposition = mocompanimblendouttime.startposition;
@@ -52,18 +51,18 @@ function private drawtraversal(traversal, entity, animation, *mocompanimblendout
         movedelta = getmovedelta(mocompduration, segmenttime / animlength, nexttime / animlength);
         nextposition = currentposition + rotatepoint(movedelta, mocompanimblendouttime.startangles);
         /#
-            recordline(currentposition, nextposition, (1, 0.5, 0), "<unknown string>", mocompanimflag);
+            recordline(currentposition, nextposition, (1, 0.5, 0), "<dev string:x38>", mocompanimflag);
         #/
         currentposition = nextposition;
     }
     /#
-        recordsphere(nextposition, 2, (1, 0, 0), "<unknown string>", mocompanimflag);
+        recordsphere(nextposition, 2, (1, 0, 0), "<dev string:x38>", mocompanimflag);
     #/
     if (isdefined(mocompanimblendouttime.mantlenode)) {
         edgepoints = getnodeedge(mocompanimblendouttime.mantlenode);
         for (index = 1; index < edgepoints.size; index++) {
             /#
-                recordline(edgepoints[index - 1], edgepoints[index], (1, 0, 0), "<unknown string>", mocompanimflag);
+                recordline(edgepoints[index - 1], edgepoints[index], (1, 0, 0), "<dev string:x38>", mocompanimflag);
             #/
         }
     }
@@ -71,13 +70,13 @@ function private drawtraversal(traversal, entity, animation, *mocompanimblendout
         edgepoints = getnodeedge(mocompanimblendouttime.startnode);
         for (index = 1; index < edgepoints.size; index++) {
             /#
-                recordline(edgepoints[index - 1], edgepoints[index], (1, 0, 0), "<unknown string>", mocompanimflag);
+                recordline(edgepoints[index - 1], edgepoints[index], (1, 0, 0), "<dev string:x38>", mocompanimflag);
             #/
         }
         edgepoints = getnodeedge(mocompanimblendouttime.endnode);
         for (index = 1; index < edgepoints.size; index++) {
             /#
-                recordline(edgepoints[index - 1], edgepoints[index], (1, 0, 0), "<unknown string>", mocompanimflag);
+                recordline(edgepoints[index - 1], edgepoints[index], (1, 0, 0), "<dev string:x38>", mocompanimflag);
             #/
         }
     }
@@ -92,10 +91,10 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
         return;
     }
     /#
-        recordsphere(mocompanimblendouttime.startposition, 2, (1, 0.5, 0), "<unknown string>", mocompanimflag);
-        recordsphere(mocompanimblendouttime.endposition, 2, (1, 0.5, 0), "<unknown string>", mocompanimflag);
-        recordsphere(mocompanimblendouttime.mocompstartposition, 2, (0, 1, 0), "<unknown string>", mocompanimflag);
-        recordsphere(mocompanimblendouttime.adjustedmocompendposition, 2, (0, 1, 0), "<unknown string>", mocompanimflag);
+        recordsphere(mocompanimblendouttime.startposition, 2, (1, 0.5, 0), "<dev string:x38>", mocompanimflag);
+        recordsphere(mocompanimblendouttime.endposition, 2, (1, 0.5, 0), "<dev string:x38>", mocompanimflag);
+        recordsphere(mocompanimblendouttime.mocompstartposition, 2, (0, 1, 0), "<dev string:x38>", mocompanimflag);
+        recordsphere(mocompanimblendouttime.adjustedmocompendposition, 2, (0, 1, 0), "<dev string:x38>", mocompanimflag);
     #/
     animlength = getanimlength(mocompduration);
     currentposition = mocompanimblendouttime.startposition;
@@ -117,11 +116,11 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
             }
             nextposition += adjusteddeltaperframe;
             /#
-                recordline(currentposition, nextposition, (0, 1, 0), "<unknown string>", mocompanimflag);
+                recordline(currentposition, nextposition, (0, 1, 0), "<dev string:x38>", mocompanimflag);
             #/
         } else {
             /#
-                recordline(currentposition, nextposition, (1, 0.5, 0), "<unknown string>", mocompanimflag);
+                recordline(currentposition, nextposition, (1, 0.5, 0), "<dev string:x38>", mocompanimflag);
             #/
         }
         currentposition = nextposition;
@@ -129,7 +128,7 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 10, eflags: 0x6 linked
+// Params 10, eflags: 0x4
 // Checksum 0xe2f12936, Offset: 0x10c0
 // Size: 0x662
 function private function_54b5f203(*entity, *traversal, animation, starttime, endtime, startposition, endposition, startangles, timescale = 1, animlength) {
@@ -209,7 +208,7 @@ function private function_54b5f203(*entity, *traversal, animation, starttime, en
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 9, eflags: 0x6 linked
+// Params 9, eflags: 0x4
 // Checksum 0x4241196c, Offset: 0x1730
 // Size: 0x74a
 function private calculatetraveralsection(*entity, traversal, animation, starttime, endtime, startposition, endposition, startangles, timescale = 1) {
@@ -301,7 +300,7 @@ function private calculatetraveralsection(*entity, traversal, animation, startti
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xaf289fd8, Offset: 0x1e88
 // Size: 0x3b8
 function private function_39c2a42c(entity, traversalstart) {
@@ -336,18 +335,18 @@ function private function_39c2a42c(entity, traversalstart) {
         mantleorigin = mantleend;
     }
     /#
-        recordline(mantleoriginproj, mantleendproj, (0, 0, 1), "<unknown string>", entity);
-        recordline(mantlestartproj, traversalstartproj, (0, 0, 1), "<unknown string>", entity);
-        recordline(traversalstartproj, mantleoriginproj, (0, 0, 1), "<unknown string>", entity);
-        recordline(mantlestart, mantleend, (1, 0, 0), "<unknown string>", entity);
-        recordline(mantlestart, mantleoriginproj, (1, 0, 0), "<unknown string>", entity);
-        recordline(mantleoriginproj, mantleorigin, (1, 0, 0), "<unknown string>", entity);
+        recordline(mantleoriginproj, mantleendproj, (0, 0, 1), "<dev string:x38>", entity);
+        recordline(mantlestartproj, traversalstartproj, (0, 0, 1), "<dev string:x38>", entity);
+        recordline(traversalstartproj, mantleoriginproj, (0, 0, 1), "<dev string:x38>", entity);
+        recordline(mantlestart, mantleend, (1, 0, 0), "<dev string:x38>", entity);
+        recordline(mantlestart, mantleoriginproj, (1, 0, 0), "<dev string:x38>", entity);
+        recordline(mantleoriginproj, mantleorigin, (1, 0, 0), "<dev string:x38>", entity);
     #/
     return mantleorigin;
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xcef5c089, Offset: 0x2248
 // Size: 0x548
 function calculatepivotoriginfromedge(entity, mantlenode, traversalstart) {
@@ -400,18 +399,18 @@ function calculatepivotoriginfromedge(entity, mantlenode, traversalstart) {
         mantleorigin = physicstraceex(mantleoriginproj + (0, 0, mantlenode.aabb_extents[2]), mantleoriginproj - (0, 0, mantlenode.aabb_extents[2]), (0, 0, 0), (0, 0, 0), entity)[#"position"];
     }
     /#
-        recordline(mantleoriginproj, mantleendproj, (0, 0, 1), "<unknown string>", entity);
-        recordline(mantlestartproj, traversalstartproj, (0, 0, 1), "<unknown string>", entity);
-        recordline(traversalstartproj, mantleoriginproj, (0, 0, 1), "<unknown string>", entity);
-        recordline(mantlestart, mantleend, (1, 0, 0), "<unknown string>", entity);
-        recordline(mantlestart, mantleoriginproj, (1, 0, 0), "<unknown string>", entity);
-        recordline(mantleoriginproj, mantleorigin, (1, 0, 0), "<unknown string>", entity);
+        recordline(mantleoriginproj, mantleendproj, (0, 0, 1), "<dev string:x38>", entity);
+        recordline(mantlestartproj, traversalstartproj, (0, 0, 1), "<dev string:x38>", entity);
+        recordline(traversalstartproj, mantleoriginproj, (0, 0, 1), "<dev string:x38>", entity);
+        recordline(mantlestart, mantleend, (1, 0, 0), "<dev string:x38>", entity);
+        recordline(mantlestart, mantleoriginproj, (1, 0, 0), "<dev string:x38>", entity);
+        recordline(mantleoriginproj, mantleorigin, (1, 0, 0), "<dev string:x38>", entity);
     #/
     return mantleorigin;
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xbc21e92a, Offset: 0x2798
 // Size: 0x4c
 function function_5f0e6de2(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -419,7 +418,7 @@ function function_5f0e6de2(entity, mocompanim, mocompanimblendouttime, mocompani
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x2e7a6986, Offset: 0x27f0
 // Size: 0x49c
 function mocomptraversalproceduralinit(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration, timescale = 1) {
@@ -465,7 +464,7 @@ function mocomptraversalproceduralinit(entity, mocompanim, mocompanimblendouttim
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xcd00f913, Offset: 0x2c98
 // Size: 0x4c
 function function_41323d2(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -473,7 +472,7 @@ function function_41323d2(entity, mocompanim, mocompanimblendouttime, mocompanim
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xadccb9ca, Offset: 0x2cf0
 // Size: 0x814
 function mocomptraversalproceduralpivotinit(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration, timescale = 1) {
@@ -520,9 +519,9 @@ function mocomptraversalproceduralpivotinit(entity, mocompanim, mocompanimblendo
     pivotorigin = traversal.startposition + rotatepoint(getmovedelta(mocompanim, 0, animlen), traversal.startangles) + pivotoffset;
     /#
         if (getdvarint(#"ai_debugvolumetool", 0) > 1) {
-            recordsphere(animpivotorigin, 2, (0, 0, 1), "<unknown string>", entity);
-            recordline(traversal.pivotorigin, animpivotorigin, (1, 0, 0), "<unknown string>", entity);
-            recordsphere(traversal.pivotorigin, 2, (1, 0, 0), "<unknown string>", entity);
+            recordsphere(animpivotorigin, 2, (0, 0, 1), "<dev string:x38>", entity);
+            recordline(traversal.pivotorigin, animpivotorigin, (1, 0, 0), "<dev string:x38>", entity);
+            recordsphere(traversal.pivotorigin, 2, (1, 0, 0), "<dev string:x38>", entity);
         }
     #/
     traversal.sections = [];
@@ -548,7 +547,7 @@ function mocomptraversalproceduralpivotinit(entity, mocompanim, mocompanimblendo
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x1f12ee6a, Offset: 0x3510
 // Size: 0x5ac
 function mocomptraversalproceduralpivotupdate(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -614,7 +613,7 @@ function mocomptraversalproceduralpivotupdate(entity, mocompanim, mocompanimblen
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x766a5959, Offset: 0x3ac8
 // Size: 0x18c
 function mocomptraversalproceduralpivotterminate(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -641,7 +640,7 @@ function mocomptraversalproceduralpivotterminate(entity, mocompanim, mocompanimb
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x48e1bc58, Offset: 0x3c60
 // Size: 0x87c
 function function_f8a10630(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration, *timescale) {
@@ -694,9 +693,9 @@ function function_f8a10630(entity, mocompanim, mocompanimblendouttime, mocompani
     pivotorigin = traversal.startposition + rotatepoint(getmovedelta(mocompanimblendouttime, 0, animlen), traversal.startangles) + pivotoffset;
     /#
         if (getdvarint(#"ai_debugvolumetool", 0) > 1) {
-            recordsphere(animpivotorigin, 2, (0, 0, 1), "<unknown string>", mocompanim);
-            recordline(traversal.pivotorigin, animpivotorigin, (1, 0, 0), "<unknown string>", mocompanim);
-            recordsphere(traversal.pivotorigin, 2, (1, 0, 0), "<unknown string>", mocompanim);
+            recordsphere(animpivotorigin, 2, (0, 0, 1), "<dev string:x38>", mocompanim);
+            recordline(traversal.pivotorigin, animpivotorigin, (1, 0, 0), "<dev string:x38>", mocompanim);
+            recordsphere(traversal.pivotorigin, 2, (1, 0, 0), "<dev string:x38>", mocompanim);
         }
     #/
     traversal.sections = [];
@@ -720,7 +719,7 @@ function function_f8a10630(entity, mocompanim, mocompanimblendouttime, mocompani
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7c3f34d8, Offset: 0x44e8
 // Size: 0x414
 function function_74ff11d0(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -771,7 +770,7 @@ function function_74ff11d0(entity, mocompanim, mocompanimblendouttime, mocompani
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x583cc8aa, Offset: 0x4908
 // Size: 0x134
 function function_56a2bbe4(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -809,7 +808,7 @@ function autoexec initadjusttocoverparams() {
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 19, eflags: 0x6 linked
+// Params 19, eflags: 0x4
 // Checksum 0x791915fb, Offset: 0x50e8
 // Size: 0x210
 function private _addadjusttocover(archetype, node, stance, rot2, rot32, rot3, rot36, rot6, rot69, rot9, rot98, rot8, rot87, rot7, rot47, rot4, rot14, rot1, rot21) {
@@ -843,7 +842,7 @@ function private _addadjusttocover(archetype, node, stance, rot2, rot32, rot3, r
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xc1e8a1c8, Offset: 0x5300
 // Size: 0x396
 function private _getadjusttocoverrotation(archetype, node, stance, angletonode) {
@@ -913,16 +912,16 @@ function private debuglocoexplosion(entity) {
         damageyawforward = anglestoforward((0, entity.damageyaw - entity.angles[1], 0));
         starttime = gettime();
         while (gettime() - starttime < 10000) {
-            recordsphere(startorigin, 5, (1, 0, 0), "<unknown string>", entity);
-            recordline(startorigin, startorigin + startyawforward * 100, (0, 0, 1), "<unknown string>", entity);
-            recordline(startorigin, startorigin + damageyawforward * 100, (1, 0, 0), "<unknown string>", entity);
+            recordsphere(startorigin, 5, (1, 0, 0), "<dev string:x38>", entity);
+            recordline(startorigin, startorigin + startyawforward * 100, (0, 0, 1), "<dev string:x38>", entity);
+            recordline(startorigin, startorigin + damageyawforward * 100, (1, 0, 0), "<dev string:x38>", entity);
             waitframe(1);
         }
     #/
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xf907e80e, Offset: 0x5800
 // Size: 0xac
 function private mocomplocoexplosioninit(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -936,7 +935,7 @@ function private mocomplocoexplosioninit(entity, *mocompanim, *mocompanimblendou
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x594bf545, Offset: 0x58b8
 // Size: 0x31e
 function private mocompadjusttocoverinit(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -968,7 +967,7 @@ function private mocompadjusttocoverinit(entity, mocompanim, *mocompanimblendout
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x2d46503b, Offset: 0x5be0
 // Size: 0x3bc
 function private mocompadjusttocoverupdate(entity, mocompanim, mocompanimblendouttime, *mocompanimflag, mocompduration) {
@@ -979,7 +978,7 @@ function private mocompadjusttocoverupdate(entity, mocompanim, mocompanimblendou
     var_9efa995e = lengthsquared(movevector);
     if (var_9efa995e > sqr(65)) {
         /#
-            record3dtext("<unknown string>" + sqrt(var_9efa995e), mocompanim.origin + (0, 0, 5), (0, 1, 0), "<unknown string>");
+            record3dtext("<dev string:x46>" + sqrt(var_9efa995e), mocompanim.origin + (0, 0, 5), (0, 1, 0), "<dev string:x38>");
         #/
         return;
     }
@@ -994,18 +993,18 @@ function private mocompadjusttocoverupdate(entity, mocompanim, mocompanimblendou
     }
     /#
         if (getdvarint(#"ai_debugadjustmocomp", 0)) {
-            record3dtext(mocompanim.mocompanglestarttime, mocompanim.origin + (0, 0, 5), (0, 1, 0), "<unknown string>");
-            hiptagorigin = mocompanim gettagorigin("<unknown string>");
-            recordline(mocompanim.nodeoffsetorigin, mocompanim.nodeoffsetorigin + mocompanim.nodeoffsetforward * 30, (1, 0.5, 0), "<unknown string>", mocompanim);
-            recordline(mocompanim.adjustnode.origin, mocompanim.adjustnode.origin + mocompanim.nodeforward * 20, (0, 1, 0), "<unknown string>", mocompanim);
-            recordline(mocompanim.origin, mocompanim.origin + anglestoforward(mocompanim.angles) * 10, (1, 0, 0), "<unknown string>", mocompanim);
-            recordline(hiptagorigin, (hiptagorigin[0], hiptagorigin[1], mocompanim.origin[2]), (0, 0, 1), "<unknown string>", mocompanim);
+            record3dtext(mocompanim.mocompanglestarttime, mocompanim.origin + (0, 0, 5), (0, 1, 0), "<dev string:x38>");
+            hiptagorigin = mocompanim gettagorigin("<dev string:x6d>");
+            recordline(mocompanim.nodeoffsetorigin, mocompanim.nodeoffsetorigin + mocompanim.nodeoffsetforward * 30, (1, 0.5, 0), "<dev string:x38>", mocompanim);
+            recordline(mocompanim.adjustnode.origin, mocompanim.adjustnode.origin + mocompanim.nodeforward * 20, (0, 1, 0), "<dev string:x38>", mocompanim);
+            recordline(mocompanim.origin, mocompanim.origin + anglestoforward(mocompanim.angles) * 10, (1, 0, 0), "<dev string:x38>", mocompanim);
+            recordline(hiptagorigin, (hiptagorigin[0], hiptagorigin[1], mocompanim.origin[2]), (0, 0, 1), "<dev string:x38>", mocompanim);
         }
     #/
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xe09d5604, Offset: 0x5fa8
 // Size: 0x20a
 function private mocompadjusttocoverterminate(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1030,7 +1029,7 @@ function private mocompadjusttocoverterminate(entity, mocompanim, *mocompanimble
                 mocompanimflag forceteleport(mocompanimflag.nodeoffsetorigin, mocompanimflag.nodeoffsetangles, 0);
             } else {
                 /#
-                    record3dtext("<unknown string>" + sqrt(var_9efa995e), mocompanimflag.origin + (0, 0, 5), (0, 1, 0), "<unknown string>");
+                    record3dtext("<dev string:x46>" + sqrt(var_9efa995e), mocompanimflag.origin + (0, 0, 5), (0, 1, 0), "<dev string:x38>");
                 #/
             }
         }
@@ -1042,7 +1041,7 @@ function private mocompadjusttocoverterminate(entity, mocompanim, *mocompanimble
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xfdc2c56f, Offset: 0x61c0
 // Size: 0x16c
 function private function_82b9d7b7(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1050,8 +1049,8 @@ function private function_82b9d7b7(entity, *mocompanim, *mocompanimblendouttime,
     mocompduration animmode("normal");
     if (isdefined(mocompduration.traverseendnode)) {
         /#
-            print3d(mocompduration.traversestartnode.origin, "<unknown string>", (1, 0, 0), 1, 1, 60);
-            print3d(mocompduration.traverseendnode.origin, "<unknown string>", (0, 1, 0), 1, 1, 60);
+            print3d(mocompduration.traversestartnode.origin, "<dev string:x7b>", (1, 0, 0), 1, 1, 60);
+            print3d(mocompduration.traverseendnode.origin, "<dev string:x7b>", (0, 1, 0), 1, 1, 60);
             line(mocompduration.traversestartnode.origin, mocompduration.traverseendnode.origin, (0, 1, 0), 1, 0, 60);
         #/
         mocompduration forceteleport(mocompduration.traverseendnode.origin, mocompduration.traverseendnode.angles, 0);
@@ -1059,7 +1058,7 @@ function private function_82b9d7b7(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x375f53ea, Offset: 0x6338
 // Size: 0x64
 function private function_372bf819(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1070,7 +1069,7 @@ function private function_372bf819(entity, *mocompanim, *mocompanimblendouttime,
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x61bff4f8, Offset: 0x63a8
 // Size: 0x6c
 function function_9b568914(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1079,7 +1078,7 @@ function function_9b568914(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x4fd4d268, Offset: 0x6420
 // Size: 0xa6
 function function_7ea5e21f(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1092,7 +1091,7 @@ function function_7ea5e21f(entity, mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7813ed26, Offset: 0x64d0
 // Size: 0xa4
 function function_8def77d1(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1103,7 +1102,7 @@ function function_8def77d1(entity, mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xcee2b6ff, Offset: 0x6580
 // Size: 0x104
 function function_37dd625c(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1119,7 +1118,7 @@ function function_37dd625c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2e071358, Offset: 0x6690
 // Size: 0x12c
 function function_f79866a1(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1133,7 +1132,7 @@ function function_f79866a1(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x6342c071, Offset: 0x67c8
 // Size: 0x14e
 function function_116f8e5(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -1148,7 +1147,7 @@ function function_116f8e5(entity, mocompanim, mocompanimblendouttime, mocompanim
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x95ab31ed, Offset: 0x6920
 // Size: 0x114
 function function_6fd3b59(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration) {
@@ -1170,7 +1169,7 @@ function function_6fd3b59(entity, mocompanim, mocompanimblendouttime, mocompanim
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x3d6d73a6, Offset: 0x6a40
 // Size: 0x2e4
 function function_fe81623b(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1208,7 +1207,7 @@ function function_fe81623b(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xee46e8a4, Offset: 0x6d30
 // Size: 0x44
 function function_62e758f2(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1216,7 +1215,7 @@ function function_62e758f2(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xb0dcf3ca, Offset: 0x6d80
 // Size: 0x6c
 function function_ca49e713(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1224,7 +1223,7 @@ function function_ca49e713(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa0d8e9a0, Offset: 0x6df8
 // Size: 0x44
 function function_c95a9f41(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1232,7 +1231,7 @@ function function_c95a9f41(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf66be52b, Offset: 0x6e48
 // Size: 0x4a4
 function private function_c0c49b7f(entity) {
@@ -1278,7 +1277,7 @@ function private function_c0c49b7f(entity) {
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc911c990, Offset: 0x72f8
 // Size: 0x74
 function function_59fe75e2(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1288,7 +1287,7 @@ function function_59fe75e2(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x86186090, Offset: 0x7378
 // Size: 0x74
 function function_8559a6cd(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1298,7 +1297,7 @@ function function_8559a6cd(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x64d96ef3, Offset: 0x73f8
 // Size: 0x74
 function function_4b95cde(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1308,7 +1307,7 @@ function function_4b95cde(entity, *mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x7c445d5a, Offset: 0x7478
 // Size: 0xa4
 function private mocompignorepainfaceenemyinit(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1322,7 +1321,7 @@ function private mocompignorepainfaceenemyinit(entity, *mocompanim, *mocompanimb
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xd0cd830f, Offset: 0x7528
 // Size: 0x9c
 function private mocompignorepainfaceenemyupdate(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1334,7 +1333,7 @@ function private mocompignorepainfaceenemyupdate(entity, mocompanim, *mocompanim
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x52f8b4f9, Offset: 0x75d0
 // Size: 0x36
 function private mocompignorepainfaceenemyterminate(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace audio;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x40501ff0, Offset: 0x360
 // Size: 0xb4
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd7e8c56, Offset: 0x420
 // Size: 0x2d4
 function register_clientfields() {
@@ -79,7 +78,7 @@ function sndchyronwatcher() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6772bb2f, Offset: 0x810
 // Size: 0xa4
 function sndresetsoundsettings() {
@@ -93,7 +92,7 @@ function sndresetsoundsettings() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1bac64f7, Offset: 0x8c0
 // Size: 0x64
 function on_player_connect() {
@@ -102,7 +101,7 @@ function on_player_connect() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc50f0610, Offset: 0x930
 // Size: 0x74
 function on_player_killed(*params) {
@@ -116,7 +115,7 @@ function on_player_killed(*params) {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9949358b, Offset: 0x9b0
 // Size: 0x54
 function vehiclespawncontext() {
@@ -126,7 +125,7 @@ function vehiclespawncontext() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x23964683, Offset: 0xa10
 // Size: 0x84
 function sndupdatevehiclecontext(added) {
@@ -145,7 +144,7 @@ function sndupdatevehiclecontext(added) {
 }
 
 // Namespace audio/audio_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf44d831, Offset: 0xaa0
 // Size: 0xba
 function playtargetmissilesound(alias, looping) {
@@ -156,14 +155,14 @@ function playtargetmissilesound(alias, looping) {
         if (time > 0) {
             do {
                 self playlocalsound(alias);
-                wait(time);
+                wait time;
             } while (looping);
         }
     }
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb4e547e3, Offset: 0xb68
 // Size: 0xce
 function on_missile_lock(params) {
@@ -176,7 +175,7 @@ function on_missile_lock(params) {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf4ac4b3f, Offset: 0xc40
 // Size: 0x10c
 function function_c25f7d1(params) {
@@ -198,7 +197,7 @@ function unlockfrontendmusic(*unlockname, *allplayers) {
 }
 
 // Namespace audio/audio_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7f677b2e, Offset: 0xd78
 // Size: 0x144
 function function_30d4f8c4(attacker, smeansofdeath, weapon) {
@@ -225,7 +224,7 @@ function function_30d4f8c4(attacker, smeansofdeath, weapon) {
 }
 
 // Namespace audio/audio_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9f8efef4, Offset: 0xec8
 // Size: 0x148
 function function_bd53fa92(*attacker, mod, weapon) {

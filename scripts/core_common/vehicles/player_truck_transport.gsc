@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_truck_transport;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5a2b2842, Offset: 0x118
 // Size: 0x2c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x585beff4, Offset: 0x150
 // Size: 0x18c
 function private function_3391a69f() {
@@ -45,7 +44,7 @@ function private function_3391a69f() {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x37203768, Offset: 0x2e8
 // Size: 0x44
 function private function_135c137c(player) {
@@ -58,7 +57,7 @@ function private function_135c137c(player) {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x62f080a, Offset: 0x338
 // Size: 0x1a
 function private function_3a991b11() {
@@ -68,7 +67,7 @@ function private function_3a991b11() {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe34e96c, Offset: 0x360
 // Size: 0x1c
 function private function_e2ade94b() {
@@ -76,7 +75,7 @@ function private function_e2ade94b() {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x62e80668, Offset: 0x388
 // Size: 0x24
 function private function_86c4506d() {
@@ -84,7 +83,7 @@ function private function_86c4506d() {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe26a548b, Offset: 0x3b8
 // Size: 0xc2
 function private player_enter(params) {
@@ -106,7 +105,7 @@ function private player_enter(params) {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8ee41fcb, Offset: 0x488
 // Size: 0xb2
 function private player_exit(params) {
@@ -125,7 +124,7 @@ function private player_exit(params) {
 }
 
 // Namespace player_truck_transport/player_truck_transport
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x53e465b1, Offset: 0x548
 // Size: 0x13a
 function private function_379a71bd(params) {

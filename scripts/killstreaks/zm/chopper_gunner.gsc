@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using script_7bdcff4f92f3d220;
 #using script_61828ad9e71c6616;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\item_world.gsc;
 #using script_72d96920f15049b8;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_7bdcff4f92f3d220;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace chopper_gunner;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1ac8b633, Offset: 0x220
 // Size: 0x15e
 function private preinit() {
@@ -44,7 +43,7 @@ function private preinit() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf92a0667, Offset: 0x388
 // Size: 0xe4
 function private function_3675de8b() {
@@ -58,7 +57,7 @@ function private function_3675de8b() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd007b8f0, Offset: 0x478
 // Size: 0xcc
 function on_ai_killed(params) {
@@ -70,7 +69,7 @@ function on_ai_killed(params) {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c929668, Offset: 0x550
 // Size: 0x44
 function function_7948e616() {
@@ -83,7 +82,7 @@ function function_7948e616() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeff042b4, Offset: 0x5a0
 // Size: 0x8c
 function function_e08f14b3() {
@@ -102,7 +101,7 @@ function function_e08f14b3() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xadd7dd98, Offset: 0x638
 // Size: 0x388
 function private function_5160bb1e(killstreaktype) {
@@ -123,7 +122,7 @@ function private function_5160bb1e(killstreaktype) {
     if (player flag::get(#"hash_9f062ac608bb7e4")) {
         return;
     }
-    if (level flag::get(#"hash_6868b1aab2d20ef4")) {
+    if (level flag::get(#"gp_started")) {
         return;
     }
     player.var_1bee6f4b = 1;
@@ -165,7 +164,7 @@ function private function_5160bb1e(killstreaktype) {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa63ba414, Offset: 0x9c8
 // Size: 0x34
 function function_425e60e5() {
@@ -173,7 +172,7 @@ function function_425e60e5() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeb2ea452, Offset: 0xa08
 // Size: 0x3c
 function function_6c2b8199() {
@@ -182,7 +181,7 @@ function function_6c2b8199() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x92a0a26, Offset: 0xa50
 // Size: 0x11c
 function function_e6d10d94() {
@@ -205,7 +204,7 @@ function function_e6d10d94() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5362b309, Offset: 0xb78
 // Size: 0xa4
 function function_24fbd61e() {
@@ -222,7 +221,7 @@ function function_24fbd61e() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x78dac5b0, Offset: 0xc28
 // Size: 0xf4
 function function_bfba820f() {
@@ -243,7 +242,7 @@ function function_bfba820f() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf4538ebc, Offset: 0xd28
 // Size: 0x194
 function function_48170f5e() {
@@ -257,7 +256,7 @@ function function_48170f5e() {
     self thread val::set_for_time(30, #"chopper_gunner", "ignoreme", 1);
     self thread val::set_for_time(30, #"chopper_gunner", "takedamage", 0);
     self waittill(#"gunner_left");
-    wait(2);
+    wait 2;
     if (isplayer(self)) {
         self.var_1bee6f4b = undefined;
         self val::reset(#"chopper_gunner", "ignoreme");
@@ -266,7 +265,7 @@ function function_48170f5e() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7ad4c43e, Offset: 0xec8
 // Size: 0x12c
 function function_8afd7b25() {
@@ -288,7 +287,7 @@ function function_8afd7b25() {
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x53dd6f33, Offset: 0x1000
 // Size: 0x294
 function function_25d9a09f(vehicle) {
@@ -313,15 +312,15 @@ function function_25d9a09f(vehicle) {
             vehicle turretcleartarget(0);
             vehicle turretsettargetangles(0, (15, 0, 0));
             if (isdefined(enemy)) {
-                wait(2 + randomfloat(0.5));
+                wait 2 + randomfloat(0.5);
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace chopper_gunner/chopper_gunner
-// Params 10, eflags: 0x6 linked
+// Params 10, eflags: 0x4
 // Checksum 0xc38ec719, Offset: 0x12a0
 // Size: 0x92
 function private function_728f72a5(*einflictor, eattacker, *idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

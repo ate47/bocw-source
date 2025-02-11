@@ -1,42 +1,41 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_698dd790cdc4965f;
-#using scripts\zm_common\trials\zm_trial_disable_buys.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_power.gsc;
-#using scripts\zm_common\zm_pack_a_punch_util.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
 #using script_301f64a4090c381a;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_challenges.gsc;
-#using scripts\zm_common\zm_camos.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\util.gsc;
 #using script_7f6cd71c43c45c57;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\zm_common\trials\zm_trial_disable_buys;
+#using scripts\zm_common\trials\zm_trial_disable_upgraded_weapons;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_camos;
+#using scripts\zm_common\zm_challenges;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_pack_a_punch_util;
+#using scripts\zm_common\zm_power;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_pack_a_punch;
 
@@ -49,7 +48,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa3e45de7, Offset: 0x550
 // Size: 0x14c
 function private preinit() {
@@ -72,7 +71,7 @@ function private preinit() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe841c4b3, Offset: 0x6a8
 // Size: 0x188
 function private postinit() {
@@ -96,7 +95,7 @@ function private postinit() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5a1e55d, Offset: 0x838
 // Size: 0xa34
 function private spawn_init() {
@@ -210,7 +209,7 @@ function private spawn_init() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xac9025ff, Offset: 0x1278
 // Size: 0x270
 function function_a2e4892a() {
@@ -246,7 +245,7 @@ function function_a2e4892a() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5e1a0b64, Offset: 0x14f0
 // Size: 0x94
 function private function_6309e7d5() {
@@ -259,7 +258,7 @@ function private function_6309e7d5() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x77d43ad8, Offset: 0x1590
 // Size: 0xf4
 function private function_c6d69354() {
@@ -272,7 +271,7 @@ function private function_c6d69354() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc41e1daf, Offset: 0x1690
 // Size: 0x7e
 function private get_start_state() {
@@ -286,7 +285,7 @@ function private get_start_state() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19416081, Offset: 0x1718
 // Size: 0x4c
 function function_615ef6fe() {
@@ -296,7 +295,7 @@ function function_615ef6fe() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc07e3932, Offset: 0x1770
 // Size: 0x80
 function pap_power_on_init() {
@@ -332,7 +331,7 @@ function function_bb629351(b_on, str_state = "power_on", str_waittill) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x25b10cab, Offset: 0x1900
 // Size: 0x31c
 function private turn_on(*origin, *radius) {
@@ -342,7 +341,7 @@ function private turn_on(*origin, *radius) {
         pap_machine = self;
     }
     if (!isdefined(pap_machine)) {
-        assert(0, "<unknown string>");
+        assert(0, "<dev string:x38>");
         return;
     }
     if (isdefined(level.pack_a_punch.custom_power_think)) {
@@ -353,11 +352,11 @@ function private turn_on(*origin, *radius) {
     if (zm_utility::get_story() != 1) {
         self clientfield::set("pap_idle_fx", 1);
     }
-    println("<unknown string>");
+    println("<dev string:x80>");
     var_45fd85a3 = vectornormalize(anglestoright(pap_machine.angles)) * level.pack_a_punch.var_11fdb083;
     level.pack_a_punch.var_fcdf795b = var_45fd85a3 + (0, 0, level.pack_a_punch.interaction_height);
     if (!isdefined(pap_machine.unitrigger_stub)) {
-        assert(0, "<unknown string>");
+        assert(0, "<dev string:x8d>");
         return;
     }
     pap_machine.unitrigger_stub.origin = pap_machine.origin + level.pack_a_punch.var_fcdf795b;
@@ -373,7 +372,7 @@ function private turn_on(*origin, *radius) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x2680e354, Offset: 0x1c28
 // Size: 0x1fc
 function private turn_off(*origin, *radius) {
@@ -383,7 +382,7 @@ function private turn_off(*origin, *radius) {
         pap_machine = self.target;
     }
     if (!isdefined(pap_machine)) {
-        assert(0, "<unknown string>");
+        assert(0, "<dev string:xb9>");
     }
     if (isdefined(level.pack_a_punch.custom_power_think)) {
         if (!pap_machine is_on()) {
@@ -394,7 +393,7 @@ function private turn_off(*origin, *radius) {
     if (zm_utility::get_story() != 1) {
         self clientfield::set("pap_idle_fx", 0);
     }
-    println("<unknown string>");
+    println("<dev string:x102>");
     zm_unitrigger::unregister_unitrigger(pap_machine.unitrigger_stub);
     pap_machine flag::set("Pack_A_Punch_off");
     pap_machine flag::clear("Pack_A_Punch_on");
@@ -405,7 +404,7 @@ function private turn_off(*origin, *radius) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5dc0562a, Offset: 0x1e30
 // Size: 0x22
 function is_on() {
@@ -416,7 +415,7 @@ function is_on() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb20666d8, Offset: 0x1e60
 // Size: 0x76
 function private function_e13fa347() {
@@ -435,7 +434,7 @@ function private function_e13fa347() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd8e1919e, Offset: 0x1ee0
 // Size: 0xf0
 function private toggle_think(powered_on) {
@@ -455,7 +454,7 @@ function private toggle_think(powered_on) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x1e7b031a, Offset: 0x1fd8
 // Size: 0xdc
 function private function_64416c32(*delta, origin, radius) {
@@ -493,7 +492,7 @@ function function_c0bdaa76(b_on) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf91f4057, Offset: 0x2190
 // Size: 0x466
 function private function_72cf5db2() {
@@ -515,7 +514,7 @@ function private function_72cf5db2() {
                 waitresult = self waittill(#"trigger");
                 player = waitresult.activator;
                 /#
-                    iprintlnbold("<unknown string>" + player getentnum());
+                    iprintlnbold("<dev string:x110>" + player getentnum());
                 #/
                 if (!pap_machine flag::get("pap_waiting_for_user") || is_true(player.var_486c9d59)) {
                     continue;
@@ -553,7 +552,7 @@ function private function_72cf5db2() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x93a0e57e, Offset: 0x2600
 // Size: 0x56
 function function_ec9ac3b2(e_player, current_weapon) {
@@ -567,7 +566,7 @@ function function_ec9ac3b2(e_player, current_weapon) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x31820257, Offset: 0x2660
 // Size: 0x1a6
 function private function_8a5fe651(pap_machine, current_weapon) {
@@ -577,11 +576,11 @@ function private function_8a5fe651(pap_machine, current_weapon) {
             return false;
         }
     }
-    if (!self zm_magicbox::can_buy_weapon(0) || self laststand::player_is_in_laststand() || is_true(self.intermission) || self isthrowinggrenade() || zm_trial_disable_buys::is_active() || namespace_83dc3729::is_active() || !self zm_weapons::can_upgrade_weapon(current_weapon) && !zm_weapons::weapon_supports_aat(current_weapon)) {
+    if (!self zm_magicbox::can_buy_weapon(0) || self laststand::player_is_in_laststand() || is_true(self.intermission) || self isthrowinggrenade() || zm_trial_disable_buys::is_active() || zm_trial_disable_upgraded_weapons::is_active() || !self zm_weapons::can_upgrade_weapon(current_weapon) && !zm_weapons::weapon_supports_aat(current_weapon)) {
         return false;
     }
     if (self isswitchingweapons()) {
-        wait(0.1);
+        wait 0.1;
         if (!isdefined(self) || isdefined(self) && self isswitchingweapons()) {
             return false;
         }
@@ -593,7 +592,7 @@ function private function_8a5fe651(pap_machine, current_weapon) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x336b23fc, Offset: 0x2810
 // Size: 0x80c
 function private function_222c0292(current_weapon, packa_rollers, pap_machine, var_376755db, var_9c076b6 = 0) {
@@ -620,7 +619,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
     pap_machine thread wait_for_disconnect(self);
     pap_machine thread destroy_weapon_in_blackout();
     /#
-        iprintlnbold("<unknown string>" + self getentnum());
+        iprintlnbold("<dev string:x12c>" + self getentnum());
     #/
     demo::bookmark(#"zm_player_use_packapunch", gettime(), self);
     potm::bookmark(#"zm_player_use_packapunch", gettime(), self);
@@ -658,7 +657,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
                 self recordmapevent(19, gettime(), self.origin, level.round_number, weaponidx, var_376755db);
             }
             /#
-                self zm_challenges::debug_print("<unknown string>");
+                self zm_challenges::debug_print("<dev string:x149>");
             #/
             self zm_stats::increment_challenge_stat(#"pap_weapon_packed");
             self zm_stats::increment_challenge_stat(#"hash_2126e77556d8e66b");
@@ -671,7 +670,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
             if (is_true(pap_machine.unitrigger_stub.var_59f1d079)) {
                 pap_machine.unitrigger_stub.var_59f1d079 = undefined;
                 /#
-                    self zm_challenges::debug_print("<unknown string>");
+                    self zm_challenges::debug_print("<dev string:x171>");
                 #/
                 self zm_stats::increment_challenge_stat(#"pap_weapon_double_packed", undefined, 1);
                 self stats::inc_stat(#"item_stats", current_weapon.name, #"doublepacked", #"statvalue", 1);
@@ -694,7 +693,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x8d79b758, Offset: 0x3028
 // Size: 0x5ea
 function private third_person_weapon_upgrade(current_weapon, current_weaponoptions, upgrade_weapon, *packa_rollers, pap_machine) {
@@ -741,7 +740,7 @@ function private third_person_weapon_upgrade(current_weapon, current_weaponoptio
     } else {
         pap_machine playsound(#"zmb_perks_packa_upgrade");
     }
-    wait(var_397d50da);
+    wait var_397d50da;
     pap_machine setweapon(pap_machine.unitrigger_stub.upgrade_weapon);
     pap_machine function_44adade0(pap_machine.unitrigger_stub.upgrade_weapon_options);
     pap_machine function_9affc544(pap_machine.unitrigger_stub.var_aab42a31);
@@ -754,17 +753,17 @@ function private third_person_weapon_upgrade(current_weapon, current_weaponoptio
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x92da1141, Offset: 0x3620
 // Size: 0x4c
 function private function_ecb78870() {
     self flag::set("pap_in_retrigger_delay");
-    wait(level.var_a3b71a00);
+    wait level.var_a3b71a00;
     self flag::clear("pap_in_retrigger_delay");
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x44074ce6, Offset: 0x3678
 // Size: 0x914
 function private wait_for_player_to_take(player, weapon, packa_timer, var_a86430cb, var_9c076b6 = 0) {
@@ -772,8 +771,8 @@ function private wait_for_player_to_take(player, weapon, packa_timer, var_a86430
     pap_machine = self.stub.zbarrier;
     current_weapon = pap_machine.unitrigger_stub.current_weapon;
     upgrade_weapon = pap_machine.unitrigger_stub.upgrade_weapon;
-    assert(isdefined(current_weapon), "<unknown string>");
-    assert(isdefined(upgrade_weapon), "<unknown string>");
+    assert(isdefined(current_weapon), "<dev string:x1a0>");
+    assert(isdefined(upgrade_weapon), "<dev string:x1d2>");
     pap_machine endon(#"pap_timeout", #"hash_672bc8ddbec0fa33");
     while (isdefined(player)) {
         packa_timer playloopsound(#"zmb_perks_packa_ticktock");
@@ -789,7 +788,7 @@ function private wait_for_player_to_take(player, weapon, packa_timer, var_a86430
             current_weapon = player getcurrentweapon();
             /#
                 if (level.weaponnone == current_weapon) {
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:x20c>");
                 }
             #/
             if (zm_utility::is_player_valid(player) && !player zm_utility::is_drinking() && !zm_loadout::is_placeable_mine(current_weapon) && !zm_equipment::is_equipment(current_weapon) && !player zm_laststand::function_94cd8c0f() && level.weaponnone != current_weapon && !player zm_equipment::hacker_active()) {
@@ -874,7 +873,7 @@ function private wait_for_player_to_take(player, weapon, packa_timer, var_a86430
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x2556439d, Offset: 0x3f98
 // Size: 0x30c
 function private wait_for_timeout(weapon, packa_timer, player, var_a86430cb, var_9c076b6 = 0) {
@@ -884,7 +883,7 @@ function private wait_for_timeout(weapon, packa_timer, player, var_a86430cb, var
     } else {
         n_timeout = level.pack_a_punch.timeout;
     }
-    wait(n_timeout);
+    wait n_timeout;
     level notify(#"pap_timeout", {#var_5e879929:self, #e_player:player});
     self notify(#"pap_timeout", {#e_player:player});
     packa_timer stoploopsound(0.05);
@@ -918,20 +917,20 @@ function private wait_for_timeout(weapon, packa_timer, player, var_a86430cb, var
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x17fbec65, Offset: 0x42b0
 // Size: 0x76
 function private wait_for_disconnect(player) {
     self endon(#"pap_taken", #"pap_timeout");
     while (isdefined(player)) {
-        wait(0.1);
+        wait 0.1;
     }
-    println("<unknown string>");
+    println("<dev string:x23b>");
     self notify(#"pap_player_disconnected");
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x98f212ef, Offset: 0x4330
 // Size: 0xcc
 function private destroy_weapon_in_blackout() {
@@ -940,12 +939,12 @@ function private destroy_weapon_in_blackout() {
     pap_machine flag::wait_till("Pack_A_Punch_off");
     pap_machine set_pap_zbarrier_state("take_gun");
     pap_machine.pack_player playlocalsound(level.zmb_laugh_alias);
-    wait(1.5);
+    wait 1.5;
     pap_machine set_pap_zbarrier_state("power_off");
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf984a743, Offset: 0x4408
 // Size: 0x19c
 function private function_f0fe4bae(s_unitrigger_stub) {
@@ -969,7 +968,7 @@ function private function_f0fe4bae(s_unitrigger_stub) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xdb998e5, Offset: 0x45b0
 // Size: 0xf0
 function private shutoffpapsounds(pap_machine, var_884bde3, var_1e9dad36) {
@@ -985,7 +984,7 @@ function private shutoffpapsounds(pap_machine, var_884bde3, var_1e9dad36) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4ac80856, Offset: 0x46a8
 // Size: 0x4c
 function private turnonpapsounds(pap_machine) {
@@ -994,7 +993,7 @@ function private turnonpapsounds(pap_machine) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7bf2e282, Offset: 0x4700
 // Size: 0x5c
 function private pap_initial() {
@@ -1005,7 +1004,7 @@ function private pap_initial() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbbe98ebc, Offset: 0x4768
 // Size: 0x24
 function private pap_power_off() {
@@ -1013,7 +1012,7 @@ function private pap_power_off() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd54be7c6, Offset: 0x4798
 // Size: 0xa4
 function private pap_power_on() {
@@ -1027,7 +1026,7 @@ function private pap_power_on() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa26fbe26, Offset: 0x4848
 // Size: 0x84
 function private pap_powered() {
@@ -1039,20 +1038,20 @@ function private pap_powered() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfb4a800b, Offset: 0x48d8
 // Size: 0x94
 function private pap_take_gun() {
     self setzbarrierpiecestate(1, "opening");
     self setzbarrierpiecestate(3, "opening");
-    wait(0.1);
+    wait 0.1;
     if (self.classname === "zbarrier_zm_castle_packapunch" || self.classname === "zbarrier_zm_tomb_packapunch") {
         self clientfield::set("pap_working_FX", 1);
     }
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1deb9781, Offset: 0x4978
 // Size: 0x44
 function private pap_eject_gun() {
@@ -1061,7 +1060,7 @@ function private pap_eject_gun() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2e565ae9, Offset: 0x49c8
 // Size: 0x86
 function private pap_leaving() {
@@ -1074,7 +1073,7 @@ function private pap_leaving() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcd694c3a, Offset: 0x4a58
 // Size: 0x7c
 function private pap_arriving() {
@@ -1095,7 +1094,7 @@ function private get_pap_zbarrier_state() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8d4aabc6, Offset: 0x4af8
 // Size: 0xdc
 function private set_pap_zbarrier_state(state) {
@@ -1116,7 +1115,7 @@ function private set_pap_zbarrier_state(state) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5b9498e4, Offset: 0x4be0
 // Size: 0x32a
 function private process_pap_zbarrier_state(state) {
@@ -1175,7 +1174,7 @@ function private process_pap_zbarrier_state(state) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0ee3074, Offset: 0x4f18
 // Size: 0xea
 function function_bdbf43e6(str_state) {
@@ -1195,21 +1194,21 @@ function function_bdbf43e6(str_state) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5e34327e, Offset: 0x5010
 // Size: 0x98
 function function_ea57e209() {
     self endon(#"zbarrier_state_change");
     while (true) {
-        wait(randomfloatrange(180, 1800));
+        wait randomfloatrange(180, 1800);
         self setzbarrierpiecestate(4, "opening");
-        wait(randomfloatrange(180, 1800));
+        wait randomfloatrange(180, 1800);
         self setzbarrierpiecestate(4, "closing");
     }
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc5f2c22, Offset: 0x50b0
 // Size: 0x186
 function function_41cd6368(str_state) {
@@ -1241,7 +1240,7 @@ function function_41cd6368(str_state) {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x25f69baa, Offset: 0x5240
 // Size: 0x6c
 function private function_7c1b15f2() {
@@ -1252,7 +1251,7 @@ function private function_7c1b15f2() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd527eca5, Offset: 0x52b8
 // Size: 0x6c
 function private function_2bb87d58() {
@@ -1263,7 +1262,7 @@ function private function_2bb87d58() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa81cde91, Offset: 0x5330
 // Size: 0x172
 function private function_acd31f7d() {
@@ -1287,7 +1286,7 @@ function private function_acd31f7d() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ee2344a, Offset: 0x54b0
 // Size: 0x194
 function function_e0fbd38a() {
@@ -1311,7 +1310,7 @@ function function_e0fbd38a() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x51f9e4c9, Offset: 0x5650
 // Size: 0xd6
 function function_d896758() {
@@ -1361,7 +1360,7 @@ function set_state_power_on() {
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4e884151, Offset: 0x57f0
 // Size: 0x24
 function function_85a7202d() {

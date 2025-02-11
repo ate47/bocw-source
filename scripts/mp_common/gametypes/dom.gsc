@@ -1,26 +1,25 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\spawnbeacon.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
 #using script_1304295570304027;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\mp_common\bb.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
+#using script_7a8059ca02b7b09e;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\spawnbeacon;
+#using scripts\mp_common\util;
 
 #namespace dom;
 
@@ -52,7 +51,7 @@ function onstartgametype() {
     level.flagbasefxid = [];
     level thread function_873b25c7();
     foreach (var_85344832 in level.domflags) {
-        spawn_beacon::function_18f38647(var_85344832.trigger);
+        spawn_beacon::addprotectedzone(var_85344832.trigger);
     }
     function_4e5d7f76();
     level.var_882f7b6a[1] = "a";
@@ -133,7 +132,7 @@ function function_873b25c7() {
 // Size: 0x40
 function function_e2073ee4(*time) {
     level endon(#"game_ended");
-    wait(60);
+    wait 60;
     level notify(#"hash_62be49427d942098");
 }
 
@@ -226,7 +225,7 @@ function function_610d3790(einflictor, victim, *idamage, weapon) {
                         break;
                     } else {
                         /#
-                            attacker iprintlnbold("<unknown string>");
+                            attacker iprintlnbold("<dev string:x38>");
                         #/
                     }
                 }
@@ -262,7 +261,7 @@ function function_610d3790(einflictor, victim, *idamage, weapon) {
                         break;
                     }
                     /#
-                        attacker iprintlnbold("<unknown string>");
+                        attacker iprintlnbold("<dev string:x82>");
                     #/
                 }
             }
@@ -381,7 +380,7 @@ function updateattackermultikills() {
         self.recentdomattackerkillcount = 0;
     }
     self.recentdomattackerkillcount++;
-    wait(4);
+    wait 4;
     if (self.recentdomattackerkillcount > 1) {
         self challenges::domattackermultikill(self.recentdomattackerkillcount);
     }

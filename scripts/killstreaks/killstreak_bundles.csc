@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreak_detect.csc;
-#using scripts\core_common\renderoverridebundle.csc;
 #using script_4daa124bc391e7ed;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\killstreaks\killstreak_detect;
 
 #namespace killstreak_bundles;
 
 // Namespace killstreak_bundles/killstreak_bundles
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60abfce3, Offset: 0x98
 // Size: 0xf4
 function spawned(local_client_num, bundle) {
@@ -27,7 +26,7 @@ function spawned(local_client_num, bundle) {
 }
 
 // Namespace killstreak_bundles/killstreak_bundles
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd3be5641, Offset: 0x198
 // Size: 0xa
 function function_48e9536e() {

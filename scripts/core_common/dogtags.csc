@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace dogtags;
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2f887d91, Offset: 0xf8
 // Size: 0xc8
 function init() {
@@ -16,7 +15,7 @@ function init() {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcfb7ac88, Offset: 0x1c8
 // Size: 0xc0
 function function_3e0d8ba2() {
@@ -30,7 +29,7 @@ function function_3e0d8ba2() {
 }
 
 // Namespace dogtags/dogtags
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x4cfb84f2, Offset: 0x290
 // Size: 0x43c
 function function_319c73b1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -79,7 +78,7 @@ function function_319c73b1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69a5abf1, Offset: 0x6d8
 // Size: 0x3e
 function function_81431153(localclientnum) {
@@ -90,7 +89,7 @@ function function_81431153(localclientnum) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x494f2300, Offset: 0x720
 // Size: 0x5e
 function delete_objective(localclientnum) {
@@ -102,7 +101,7 @@ function delete_objective(localclientnum) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x75907843, Offset: 0x788
 // Size: 0x86
 function function_bcb88fb7(localclientnum) {
@@ -116,7 +115,7 @@ function function_bcb88fb7(localclientnum) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed963176, Offset: 0x818
 // Size: 0x174
 function function_2eee13af() {
@@ -139,7 +138,7 @@ function function_2eee13af() {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdaa24d83, Offset: 0x998
 // Size: 0x1a
 function private function_ef9de5ae() {
@@ -147,7 +146,7 @@ function private function_ef9de5ae() {
 }
 
 // Namespace dogtags/dogtags
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa91963c2, Offset: 0x9c0
 // Size: 0x82
 function function_eb14e659(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

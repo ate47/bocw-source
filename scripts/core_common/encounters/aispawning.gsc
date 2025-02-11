@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
 
 #namespace aispawningutility;
 
 // Namespace aispawningutility/aispawning
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf6e8615f, Offset: 0x98
 // Size: 0x502
 function function_e312ad4d(str_team, var_f8de2ad5, var_82706add) {
@@ -30,8 +29,8 @@ function function_e312ad4d(str_team, var_f8de2ad5, var_82706add) {
         }
         if (!var_9e81c42.size) {
             /#
-                println("<unknown string>" + var_82706add + "<unknown string>");
-                iprintln("<unknown string>" + var_82706add + "<unknown string>");
+                println("<dev string:x38>" + var_82706add + "<dev string:x5d>");
+                iprintln("<dev string:x38>" + var_82706add + "<dev string:x5d>");
             #/
             return undefined;
         }
@@ -73,8 +72,8 @@ function function_e312ad4d(str_team, var_f8de2ad5, var_82706add) {
             return spawn_point;
         }
         /#
-            println("<unknown string>" + var_82706add + "<unknown string>" + str_team + "<unknown string>");
-            iprintln("<unknown string>" + var_82706add + "<unknown string>" + str_team + "<unknown string>");
+            println("<dev string:x62>" + var_82706add + "<dev string:x8e>" + str_team + "<dev string:x97>");
+            iprintln("<dev string:x62>" + var_82706add + "<dev string:x8e>" + str_team + "<dev string:x97>");
         #/
         return undefined;
     }

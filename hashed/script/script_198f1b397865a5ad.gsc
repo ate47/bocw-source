@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_85cd2e9a28ea8a1;
-#using scripts\cp_common\snd_utility.gsc;
 #using script_3dc93ca9902a9cda;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_85cd2e9a28ea8a1;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\snd_utility;
 
 #namespace snd;
 
 // Namespace snd/namespace_d16177a1
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x39dd4352, Offset: 0xc8
 // Size: 0x15a
 function private function_20b6bc92() {
-    assert(isdefined(level.var_a00c303b), "<unknown string>");
+    assert(isdefined(level.var_a00c303b), "<dev string:x38>");
     level endon(#"hash_20f3988ee2416a3d");
     level.var_a00c303b.mainthread = 1;
     while (isdefined(level.var_a00c303b)) {
@@ -57,7 +56,7 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, isver
         hud = newdebughudelem();
         hud.x = var_dfd5412c.var_ca1ec566[0];
         hud.y = var_dfd5412c.var_ca1ec566[1];
-        hud.alignx = "<unknown string>";
+        hud.alignx = "<dev string:x5f>";
         hud.color = backgroundcolor;
         hud.alpha = backgroundalpha;
         hud.foreground = 0;
@@ -102,7 +101,7 @@ function function_9b4ec5ed(var_dfd5412c) {
 }
 
 // Namespace snd/namespace_d16177a1
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfb896adc, Offset: 0x710
 // Size: 0x3fc
 function function_fee448d5(var_dfd5412c, value) {
@@ -148,7 +147,7 @@ function function_fee448d5(var_dfd5412c, value) {
         /#
             var_dfd5412c.valuehud.x = var_ca1ec566[0];
             var_dfd5412c.valuehud.y = var_ca1ec566[1];
-            var_dfd5412c.valuehud.alignx = "<unknown string>";
+            var_dfd5412c.valuehud.alignx = "<dev string:x5f>";
             var_dfd5412c.valuehud.color = var_dfd5412c.var_4a70ec60;
             var_dfd5412c.valuehud.alpha = var_dfd5412c.var_e2c0fdcb;
             var_dfd5412c.valuehud.foreground = 0;
@@ -159,7 +158,7 @@ function function_fee448d5(var_dfd5412c, value) {
 }
 
 // Namespace snd/namespace_d16177a1
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x96c05ee1, Offset: 0xb18
 // Size: 0x1c2
 function private function_ef6f1667() {
@@ -181,7 +180,7 @@ function private function_ef6f1667() {
                     hud.duration -= 1;
                     if (hud.var_1119082e <= now) {
                         hud.alpha = 0;
-                        hud settext("<unknown string>");
+                        hud settext("<dev string:x67>");
                     }
                     continue;
                 }
@@ -222,20 +221,20 @@ function private function_b506ee85(duration) {
 }
 
 // Namespace snd/namespace_d16177a1
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xa6344e48, Offset: 0xe70
 // Size: 0x27e
 function private function_2f282ca2(posx, posy, text, color, alpha, scale, duration) {
-    var_51d80f45 = 640;
-    var_a265fbc6 = 480;
-    var_b03b36b6 = var_51d80f45 / var_a265fbc6;
+    hud_width = 640;
+    hud_height = 480;
+    var_b03b36b6 = hud_width / hud_height;
     var_1790a507 = function_827811b5();
     var_38c41a5e = var_1790a507[0];
     var_c13d121d = var_1790a507[1];
     var_60d4d877 = var_38c41a5e / var_c13d121d;
-    widthoffset = -0.5 * (var_a265fbc6 * var_60d4d877 - var_51d80f45);
-    var_11ea799a = posx / var_38c41a5e * var_51d80f45 + (1 - posx / var_38c41a5e * 0.5) * widthoffset;
-    var_39fdd05 = posy / var_c13d121d * var_a265fbc6;
+    widthoffset = -0.5 * (hud_height * var_60d4d877 - hud_width);
+    var_11ea799a = posx / var_38c41a5e * hud_width + (1 - posx / var_38c41a5e * 0.5) * widthoffset;
+    var_39fdd05 = posy / var_c13d121d * hud_height;
     if (isdefined(level.var_9c2f3e27) == 0) {
         level.var_9c2f3e27 = array();
     }
@@ -248,11 +247,11 @@ function private function_2f282ca2(posx, posy, text, color, alpha, scale, durati
         hud.color = color;
         hud.alpha = alpha;
         hud.fontscale = scale * 0.5;
-        hud.font = "<unknown string>";
-        hud.alignx = "<unknown string>";
-        hud.aligny = "<unknown string>";
-        hud.var_eeaee6a5 = "<unknown string>";
-        hud.vertalign = "<unknown string>";
+        hud.font = "<dev string:x6b>";
+        hud.alignx = "<dev string:x5f>";
+        hud.aligny = "<dev string:x79>";
+        hud.var_eeaee6a5 = "<dev string:x83>";
+        hud.vertalign = "<dev string:x83>";
         hud.xoffset = 0;
         hud.yoffset = 0;
         hud.xpadding = 0;

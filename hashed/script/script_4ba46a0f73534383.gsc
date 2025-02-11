@@ -1,25 +1,24 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\weapons\weapons.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\serverfield_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\armor.gsc;
+#using scripts\core_common\armor;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weapons;
 
-#namespace namespace_2ed67032;
+#namespace armor_carrier;
 
-// Namespace namespace_2ed67032/namespace_2ed67032
+// Namespace armor_carrier/armor_carrier
 // Params 0, eflags: 0x5
 // Checksum 0x2907d96, Offset: 0x120
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7aac5c09cf9461e3", &preinit, undefined, &finalize, undefined);
+    system::register(#"armor_carrier", &preinit, undefined, &finalize, undefined);
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xe0bc9b2f, Offset: 0x170
 // Size: 0x124
 function private preinit() {
@@ -32,16 +31,16 @@ function private preinit() {
     serverfield::register("armor_plate_behavior", 1, 1, "int", &function_deb3cb98);
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xb0a75533, Offset: 0x2a0
 // Size: 0x34
 function private finalize() {
     item_world::function_861f348d(#"generic_pickup", &function_e74225a7);
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 2, eflags: 0x2 linked
+// Namespace armor_carrier/armor_carrier
+// Params 2, eflags: 0x0
 // Checksum 0x22c90b24, Offset: 0x2e0
 // Size: 0x3e
 function function_deb3cb98(*oldval, newval) {
@@ -51,8 +50,8 @@ function function_deb3cb98(*oldval, newval) {
     self.armor_plate_behavior = newval;
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xf419b241, Offset: 0x328
 // Size: 0x5a
 function private on_player_connect() {
@@ -61,8 +60,8 @@ function private on_player_connect() {
     }
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xf9ddc0db, Offset: 0x390
 // Size: 0x64
 function private on_player_spawned() {
@@ -72,8 +71,8 @@ function private on_player_spawned() {
     self clientfield::set_player_uimodel("hudItems.armorPlateMaxCarry", self.var_c52363ab);
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xaec68972, Offset: 0x400
 // Size: 0x1a4
 function private on_player_loadout() {
@@ -88,8 +87,8 @@ function private on_player_loadout() {
     }
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 7, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 7, eflags: 0x4
 // Checksum 0x7969a433, Offset: 0x5b0
 // Size: 0xf0
 function private function_e74225a7(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slot) {
@@ -102,8 +101,8 @@ function private function_e74225a7(item, player, *networkid, *itemid, itemcount,
     return slot;
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xf08bef71, Offset: 0x6a8
 // Size: 0xc2
 function private function_86b9a404() {
@@ -113,8 +112,8 @@ function private function_86b9a404() {
     return self.var_7d7d976a > 0 && armor::get_armor() < 225;
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x2 linked
+// Namespace armor_carrier/armor_carrier
+// Params 1, eflags: 0x0
 // Checksum 0xc4f59276, Offset: 0x778
 // Size: 0x84
 function function_e12c220a(var_16888a24) {
@@ -126,8 +125,8 @@ function function_e12c220a(var_16888a24) {
     self clientfield::set_player_uimodel("hudItems.armorPlateMaxCarry", self.var_c52363ab);
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0xbf28c2dd, Offset: 0x808
 // Size: 0x114
 function private function_d66636df() {
@@ -143,8 +142,8 @@ function private function_d66636df() {
     return false;
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 1, eflags: 0x4
 // Checksum 0xb0690d58, Offset: 0x928
 // Size: 0x3c4
 function private function_a7879258(lastweapon) {
@@ -197,8 +196,8 @@ function private function_a7879258(lastweapon) {
     }
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 1, eflags: 0x4
 // Checksum 0x5e9e5e8, Offset: 0xcf8
 // Size: 0xe8
 function private function_ce353466(last_weapon) {
@@ -220,8 +219,8 @@ function private function_ce353466(last_weapon) {
     return true;
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x6 linked
+// Namespace armor_carrier/armor_carrier
+// Params 0, eflags: 0x4
 // Checksum 0x1ce0a549, Offset: 0xde8
 // Size: 0xba
 function private function_c81e4a7c() {
@@ -233,7 +232,7 @@ function private function_c81e4a7c() {
     self.var_32b4a72a = 1;
 }
 
-// Namespace namespace_2ed67032/weapon_change
+// Namespace armor_carrier/weapon_change
 // Params 1, eflags: 0x20
 // Checksum 0x1cd884f2, Offset: 0xeb0
 // Size: 0x44

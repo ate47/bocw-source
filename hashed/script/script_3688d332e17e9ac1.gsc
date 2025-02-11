@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
 
 #namespace namespace_ae2d0839;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1adcdc74, Offset: 0x130
 // Size: 0x5c
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6b07e7d0, Offset: 0x198
 // Size: 0x364
 function private on_begin(var_59803fa8) {
@@ -57,7 +56,7 @@ function private on_begin(var_59803fa8) {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc55d693a, Offset: 0x508
 // Size: 0x34c
 function private on_end(*round_reset) {
@@ -87,7 +86,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1ae0c578, Offset: 0x860
 // Size: 0xce
 function private on_ai_damage(params) {
@@ -97,7 +96,7 @@ function private on_ai_damage(params) {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc83b749f, Offset: 0x938
 // Size: 0x194
 function private on_weapon_fired(params) {
@@ -123,7 +122,7 @@ function private on_weapon_fired(params) {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x225d1fd, Offset: 0xad8
 // Size: 0x7e
 function function_b33ed7bd() {
@@ -135,7 +134,7 @@ function function_b33ed7bd() {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb3bf8076, Offset: 0xb60
 // Size: 0x32
 function is_active() {
@@ -144,7 +143,7 @@ function is_active() {
 }
 
 // Namespace namespace_ae2d0839/namespace_ae2d0839
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x41b4a498, Offset: 0xba0
 // Size: 0xcc
 function private function_33f0ddd3(s_event) {

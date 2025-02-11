@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\killstreaks\remotemissile_shared.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\remotemissile_shared;
 
 #namespace remotemissile;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x39b9f59d, Offset: 0x158
 // Size: 0x9c
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa75ffd4d, Offset: 0x200
 // Size: 0x3c
 function function_5951cb24(*killstreak_id, *team) {
@@ -38,7 +37,7 @@ function function_5951cb24(*killstreak_id, *team) {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x93665817, Offset: 0x248
 // Size: 0x1b8
 function function_dab39bb8(rocket) {
@@ -62,12 +61,12 @@ function function_dab39bb8(rocket) {
             enemy thread battlechatter::playkillstreakthreat("remote_missile");
             var_b5e50364 = 1;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace remotemissile/remotemissile
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xad45b3ca, Offset: 0x408
 // Size: 0x34
 function function_feddd85a(attacker, *weapon) {

@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_round_spawning.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_cleanup_mgr.gsc;
-#using scripts\zm_common\zm_behavior.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\archetype_avogadro.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\archetype_avogadro;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\zm_behavior;
+#using scripts\zm_common\zm_cleanup_mgr;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_round_spawning;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_ai_avogadro;
 
@@ -265,7 +264,7 @@ function function_c9791011() {
         return true;
     }
     /#
-        iprintln("<unknown string>" + self.origin + "<unknown string>" + var_b2aa54a9.origin);
+        iprintln("<dev string:x38>" + self.origin + "<dev string:x5a>" + var_b2aa54a9.origin);
     #/
     self zm_ai_utility::function_a8dc3363(var_b2aa54a9);
     return true;
@@ -276,11 +275,11 @@ function function_c9791011() {
 // Checksum 0xfee8d19f, Offset: 0xfa8
 // Size: 0xba
 function function_d9f5ec34(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_56f0d32c15d82318"]) && level.zm_loc_types[#"hash_56f0d32c15d82318"].size) {
+    if (isdefined(level.zm_loc_types[#"avogadro_location"]) && level.zm_loc_types[#"avogadro_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_56f0d32c15d82318"];
+            s_spawn_loc = level.zm_loc_types[#"avogadro_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_56f0d32c15d82318"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"avogadro_location"]);
         }
     }
     return s_spawn_loc;
@@ -364,7 +363,7 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
     if (!isdefined(s_spawn_loc)) {
         /#
             if (getdvarint(#"hash_1f8efa579fee787c", 0)) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x62>");
             }
         #/
         return undefined;

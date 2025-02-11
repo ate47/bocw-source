@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreak_bundles.csc;
-#using scripts\killstreaks\flak_drone.csc;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\helicopter_sounds_shared.csc;
-#using scripts\core_common\fx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\helicopter_sounds_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\flak_drone;
+#using scripts\killstreaks\killstreak_bundles;
 
 #namespace helicopter;
 
 // Namespace helicopter/helicopter_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d189996, Offset: 0x210
 // Size: 0x2b4
 function init_shared() {
@@ -37,7 +36,7 @@ function init_shared() {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x296a9bee, Offset: 0x4d0
 // Size: 0x9e
 function on_player_spawned(localclientnum) {
@@ -54,7 +53,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x599fadc6, Offset: 0x578
 // Size: 0x34
 function on_vehicle_spawned(localclientnum) {
@@ -74,7 +73,7 @@ function setupanimtree() {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9896544b, Offset: 0x610
 // Size: 0xb4
 function active_camo_changed(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -88,7 +87,7 @@ function active_camo_changed(localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5dc774c0, Offset: 0x6d0
 // Size: 0x184
 function doreveal(local_client_num, direction) {
@@ -121,7 +120,7 @@ function doreveal(local_client_num, direction) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x28f27e41, Offset: 0x860
 // Size: 0x50
 function heli_comlink_bootup_anim(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -129,7 +128,7 @@ function heli_comlink_bootup_anim(*localclientnum, *oldval, *newval, *bnewent, *
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xfc40e200, Offset: 0x8b8
 // Size: 0x7c
 function warnmissilelocking(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -140,7 +139,7 @@ function warnmissilelocking(*localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xfcb436d9, Offset: 0x940
 // Size: 0x7c
 function warnmissilelocked(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -151,7 +150,7 @@ function warnmissilelocked(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x421f133a, Offset: 0x9c8
 // Size: 0x7c
 function warnmissilefired(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -162,7 +161,7 @@ function warnmissilefired(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdd4d8a9b, Offset: 0xa50
 // Size: 0x156
 function heli_deletefx(localclientnum) {
@@ -193,7 +192,7 @@ function heli_deletefx(localclientnum) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7a73dc3e, Offset: 0xbb0
 // Size: 0x22a
 function startfx(localclientnum) {
@@ -215,7 +214,7 @@ function startfx(localclientnum) {
             self.exhaustrightfxhandle = util::playfxontag(localclientnum, self.exhaustfx, self, "tag_engine_right");
         }
     } else {
-        println("<unknown string>");
+        println("<dev string:x38>");
     }
     if (isdefined(self.vehicletype)) {
         light_fx = undefined;
@@ -234,7 +233,7 @@ function startfx(localclientnum) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf798b427, Offset: 0xde8
 // Size: 0xe2
 function startfx_loop(localclientnum) {
@@ -255,18 +254,18 @@ function startfx_loop(localclientnum) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2721c00e, Offset: 0xed8
 // Size: 0x54
 function heli_comlink_lights_on_after_wait(localclientnum, wait_time) {
     self endon(#"death");
     self endon(#"heli_comlink_lights_off");
-    wait(wait_time);
+    wait wait_time;
     self heli_comlink_lights_on(localclientnum);
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x86cec928, Offset: 0xf38
 // Size: 0x194
 function heli_comlink_lights_on(localclientnum) {
@@ -286,7 +285,7 @@ function heli_comlink_lights_on(localclientnum) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x244ac27f, Offset: 0x10d8
 // Size: 0x96
 function heli_comlink_lights_off(localclientnum) {

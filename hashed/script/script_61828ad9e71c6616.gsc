@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\zm_common\zm_stats;
 
 #namespace killstreakrules;
 
 // Namespace killstreakrules/killstreakrules
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x13aee345, Offset: 0x540
 // Size: 0xfdc
 function init() {
@@ -122,7 +121,7 @@ function init() {
 }
 
 // Namespace killstreakrules/killstreakrules
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1f9aa169, Offset: 0x1528
 // Size: 0x564
 function private function_7256bae2() {
@@ -172,7 +171,7 @@ function private function_7256bae2() {
 }
 
 // Namespace killstreakrules/killstreakrules
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9ee5d25b, Offset: 0x1a98
 // Size: 0x170
 function function_65739e7b(hardpointtype, *team, isemped) {
@@ -196,7 +195,7 @@ function function_65739e7b(hardpointtype, *team, isemped) {
 }
 
 // Namespace killstreakrules/killstreakrules
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x117c0279, Offset: 0x1c10
 // Size: 0xb0
 function function_2912fa8(var_d3413870) {
@@ -211,7 +210,7 @@ function function_2912fa8(var_d3413870) {
 }
 
 // Namespace killstreakrules/killstreakrules
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb78f17d3, Offset: 0x1cc8
 // Size: 0x62
 function function_71e94a3b(var_d3413870) {
@@ -225,12 +224,12 @@ function function_71e94a3b(var_d3413870) {
 }
 
 // Namespace killstreakrules/killstreakrules
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x66e713ba, Offset: 0x1d38
 // Size: 0x7c
 function function_24241971() {
-    var_f8ca59a8 = getentitiesinradius(self.origin, 128, 15);
-    if (isarray(var_f8ca59a8) && var_f8ca59a8.size >= 5) {
+    nearby_ai = getentitiesinradius(self.origin, 128, 15);
+    if (isarray(nearby_ai) && nearby_ai.size >= 5) {
         self zm_stats::increment_challenge_stat(#"hash_1c0f761ca8920f0b");
     }
 }

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\system_shared;
 
 #namespace aisquads;
 
@@ -15,7 +14,7 @@ class aisquad {
     var squadmembers;
 
     // Namespace aisquad/ai_squads
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x51397290, Offset: 0x188
     // Size: 0x26
     constructor() {
@@ -25,7 +24,7 @@ class aisquad {
     }
 
     // Namespace aisquad/ai_squads
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xed6f75d4, Offset: 0x290
     // Size: 0xa
     function getmembers() {
@@ -33,7 +32,7 @@ class aisquad {
     }
 
     // Namespace aisquad/ai_squads
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x88dac8df, Offset: 0x330
     // Size: 0x5e
     function removeaifromsqaud(ai) {
@@ -46,7 +45,7 @@ class aisquad {
     }
 
     // Namespace aisquad/ai_squads
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xf7785400, Offset: 0x260
     // Size: 0xa
     function getsquadbreadcrumb() {
@@ -54,7 +53,7 @@ class aisquad {
     }
 
     // Namespace aisquad/ai_squads
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xcf91a374, Offset: 0x398
     // Size: 0x86
     function think() {
@@ -70,21 +69,21 @@ class aisquad {
     }
 
     // Namespace aisquad/ai_squads
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xc15294c5, Offset: 0x1b8
     // Size: 0x9e
     function addsquadbreadcrumbs(ai) {
         assert(squadleader == ai);
         if (distance2dsquared(squadbreadcrumb, ai.origin) >= 9216) {
             /#
-                recordcircle(ai.origin, 4, (0, 0, 1), "<unknown string>", ai);
+                recordcircle(ai.origin, 4, (0, 0, 1), "<dev string:x38>", ai);
             #/
             squadbreadcrumb = ai.origin;
         }
     }
 
     // Namespace aisquad/ai_squads
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x5140d50d, Offset: 0x2a8
     // Size: 0x7c
     function addaitosquad(ai) {
@@ -97,7 +96,7 @@ class aisquad {
     }
 
     // Namespace aisquad/ai_squads
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x8932a8e6, Offset: 0x278
     // Size: 0xa
     function getleader() {
@@ -115,7 +114,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace aisquads/ai_squads
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9a3ee5a5, Offset: 0x110
 // Size: 0x6c
 function private preinit() {
@@ -125,7 +124,7 @@ function private preinit() {
 }
 
 // Namespace aisquads/ai_squads
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfcd440c6, Offset: 0x610
 // Size: 0x3c
 function private createsquad(squadname) {
@@ -134,7 +133,7 @@ function private createsquad(squadname) {
 }
 
 // Namespace aisquads/ai_squads
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6f1cbe8f, Offset: 0x658
 // Size: 0x44
 function private removesquad(squadname) {
@@ -144,7 +143,7 @@ function private removesquad(squadname) {
 }
 
 // Namespace aisquads/ai_squads
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x90e46b14, Offset: 0x6a8
 // Size: 0x1c
 function private getsquad(squadname) {
@@ -152,13 +151,13 @@ function private getsquad(squadname) {
 }
 
 // Namespace aisquads/ai_squads
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2a075094, Offset: 0x6d0
 // Size: 0x5c
 function private thinksquad(squadname) {
     while (true) {
         if ([[ level._squads[squadname] ]]->think()) {
-            wait(0.5);
+            wait 0.5;
             continue;
         }
         removesquad(squadname);
@@ -167,7 +166,7 @@ function private thinksquad(squadname) {
 }
 
 // Namespace aisquads/ai_squads
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe7969a, Offset: 0x738
 // Size: 0x60
 function private squadmemberdeath() {
@@ -178,7 +177,7 @@ function private squadmemberdeath() {
 }
 
 // Namespace aisquads/ai_squads
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xeb0c129c, Offset: 0x7a0
 // Size: 0x40e
 function private squadmemberthink() {
@@ -186,7 +185,7 @@ function private squadmemberthink() {
     if (!isdefined(self.script_aisquadname)) {
         return;
     }
-    wait(0.5);
+    wait 0.5;
     self.squadname = self.script_aisquadname;
     if (isdefined(self.squadname)) {
         if (!isdefined(level._squads[self.squadname])) {
@@ -205,13 +204,13 @@ function private squadmemberthink() {
             if (isdefined(squadleader) && !(isint(squadleader) && squadleader == 0)) {
                 if (squadleader == self) {
                     /#
-                        recordenttext(self.squadname + "<unknown string>", self, (0, 1, 0), "<unknown string>");
+                        recordenttext(self.squadname + "<dev string:x46>", self, (0, 1, 0), "<dev string:x38>");
                     #/
                     /#
-                        recordenttext(self.squadname + "<unknown string>", self, (0, 1, 0), "<unknown string>");
+                        recordenttext(self.squadname + "<dev string:x46>", self, (0, 1, 0), "<dev string:x38>");
                     #/
                     /#
-                        recordcircle(self.origin, 300, (1, 0.5, 0), "<unknown string>", self);
+                        recordcircle(self.origin, 300, (1, 0.5, 0), "<dev string:x38>", self);
                     #/
                     if (isdefined(self.enemy)) {
                         self setgoal(self.enemy);
@@ -219,10 +218,10 @@ function private squadmemberthink() {
                     [[ squad ]]->addsquadbreadcrumbs(self);
                 } else {
                     /#
-                        recordline(self.origin, squadleader.origin, (0, 1, 0), "<unknown string>", self);
+                        recordline(self.origin, squadleader.origin, (0, 1, 0), "<dev string:x38>", self);
                     #/
                     /#
-                        recordenttext(self.squadname + "<unknown string>", self, (0, 1, 0), "<unknown string>");
+                        recordenttext(self.squadname + "<dev string:x52>", self, (0, 1, 0), "<dev string:x38>");
                     #/
                     followposition = [[ squad ]]->getsquadbreadcrumb();
                     followdistsq = distance2dsquared(self.goalpos, followposition);
@@ -241,7 +240,7 @@ function private squadmemberthink() {
                     }
                 }
             }
-            wait(1);
+            wait 1;
         }
     }
 }
@@ -264,7 +263,7 @@ function isfollowingsquadleader(ai) {
 }
 
 // Namespace aisquads/ai_squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7bef44b1, Offset: 0xc78
 // Size: 0x66
 function issquadmember(ai) {
@@ -293,7 +292,7 @@ function issquadleader(ai) {
 }
 
 // Namespace aisquads/ai_squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd1be2f8, Offset: 0xd68
 // Size: 0x56
 function getsquadleader(ai) {

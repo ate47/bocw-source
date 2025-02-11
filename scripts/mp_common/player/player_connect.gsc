@@ -1,41 +1,40 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\mp\uav.gsc;
-#using scripts\mp_common\gamerep.gsc;
-#using scripts\mp_common\draft.gsc;
-#using scripts\mp_common\player\player_monitor.gsc;
-#using scripts\mp_common\player\player_record.gsc;
-#using scripts\mp_common\player\player_killed.gsc;
-#using scripts\mp_common\player\player.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_ui.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spectating.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_3d703ef87a841fe4;
+#using script_44b0b8420eabacad;
 #using script_45fdb6cec5580007;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\persistence_shared.gsc;
 #using script_67ce8e728d8f37ba;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\high_value_operative.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\high_value_operative;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\persistence_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\mp\uav;
+#using scripts\mp_common\draft;
+#using scripts\mp_common\gamerep;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_ui;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\player\player;
+#using scripts\mp_common\player\player_killed;
+#using scripts\mp_common\player\player_monitor;
+#using scripts\mp_common\player\player_record;
 
 #namespace player;
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd43a1ea, Offset: 0x2e0
 // Size: 0x1234
 function callback_playerconnect() {
@@ -255,7 +254,7 @@ function callback_playerconnect() {
     self hvo::function_2ce5cb7e();
     num_con = getnumconnectedplayers(0);
     num_exp = getnumexpectedplayers(1);
-    println("<unknown string>", num_con, "<unknown string>", num_exp);
+    println("<dev string:x38>", num_con, "<dev string:x6c>", num_exp);
     if (num_con == num_exp && num_exp != 0) {
         level flag::set("all_players_connected");
     }
@@ -266,7 +265,7 @@ function callback_playerconnect() {
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x328fa06, Offset: 0x1520
 // Size: 0x1bc
 function function_b7c4c231() {
@@ -295,19 +294,19 @@ function function_b7c4c231() {
         return;
     }
     /#
-        util::error("<unknown string>");
+        util::error("<dev string:x86>");
     #/
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7d968624, Offset: 0x16e8
 // Size: 0xf8
 function private function_2a8a03ed() {
     var_4c542e39 = getassignedteamname(self);
     /#
-        var_b417b3ee = getdvarstring(#"scr_playerteams", "<unknown string>");
-        playerteams = strtok(var_b417b3ee, "<unknown string>");
+        var_b417b3ee = getdvarstring(#"scr_playerteams", "<dev string:xb6>");
+        playerteams = strtok(var_b417b3ee, "<dev string:xba>");
         if (playerteams.size > 0) {
             playerteam = playerteams[self getentitynumber()];
             if (isdefined(playerteam) && (isdefined(level.teams[playerteam]) || playerteam == #"spectator")) {
@@ -319,7 +318,7 @@ function private function_2a8a03ed() {
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb65eef45, Offset: 0x17e8
 // Size: 0xa4
 function private force_radar() {
@@ -335,7 +334,7 @@ function private force_radar() {
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5da1500c, Offset: 0x1898
 // Size: 0xacc
 function private function_db0c0406() {
@@ -452,7 +451,7 @@ function private function_db0c0406() {
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb3e136fe, Offset: 0x2370
 // Size: 0x6cc
 function private init_character_index() {
@@ -463,7 +462,7 @@ function private init_character_index() {
             return;
         }
         autoselection = getdvarstring(#"character");
-        if (autoselection != "<unknown string>") {
+        if (autoselection != "<dev string:xb6>") {
             var_6a3f295d = hash(autoselection);
             playerroletemplatecount = getplayerroletemplatecount(currentsessionmode());
             for (i = 0; i < playerroletemplatecount; i++) {
@@ -557,7 +556,7 @@ function private init_character_index() {
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8ef14908, Offset: 0x2a48
 // Size: 0xf74
 function private function_efa6e25f() {
@@ -616,7 +615,7 @@ function private function_efa6e25f() {
     self globallogic_score::initpersstat(#"ekia");
     self.ekia = self globallogic_score::getpersstat(#"ekia");
     if (level.hardcoremode === 1) {
-        self globallogic_score::initpersstat(#"hash_d743e7d31079bad");
+        self globallogic_score::initpersstat(#"ekia_hc");
     }
     self globallogic_score::initpersstat(#"objectiveekia");
     self.objectiveekia = self globallogic_score::getpersstat(#"objectiveekia");
@@ -697,7 +696,7 @@ function private function_efa6e25f() {
 }
 
 // Namespace player/player_connect
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x586f99ec, Offset: 0x39c8
 // Size: 0x5c
 function private function_3bd86b5d() {

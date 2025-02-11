@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\flag_shared;
 
 #namespace namespace_b2b86d39;
 
@@ -19,15 +18,15 @@ function init_callbacks() {
 }
 
 // Namespace namespace_b2b86d39/callbacks
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x89b3110d, Offset: 0x2b8
 // Size: 0x4c
 function global_empty_callback(*empty1, *empty2, *empty3, *empty4, *empty5) {
-    assertmsg("<unknown string>");
+    assertmsg("<dev string:x38>");
 }
 
 // Namespace namespace_b2b86d39/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa40133f7, Offset: 0x310
 // Size: 0xa4
 function stealth_get_func(type) {
@@ -41,7 +40,7 @@ function stealth_get_func(type) {
 }
 
 // Namespace namespace_b2b86d39/callbacks
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6acb1ebd, Offset: 0x3c0
 // Size: 0xba
 function stealth_call(type, parm1, parm2, parm3) {
@@ -61,7 +60,7 @@ function stealth_call(type, parm1, parm2, parm3) {
 }
 
 // Namespace namespace_b2b86d39/callbacks
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xbf6c9641, Offset: 0x488
 // Size: 0xba
 function stealth_call_thread(type, parm1, parm2, parm3) {

@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_traps.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_traps;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_trial_headshots_only;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbdaa25d, Offset: 0x138
 // Size: 0x5c
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x44981bea, Offset: 0x1a0
 // Size: 0x234
 function private on_begin(*weapon_name) {
@@ -52,7 +51,7 @@ function private on_begin(*weapon_name) {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x71a525dc, Offset: 0x3e0
 // Size: 0x2cc
 function private on_end(*round_reset) {
@@ -79,7 +78,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5fe6b073, Offset: 0x6b8
 // Size: 0x32
 function is_active() {
@@ -88,7 +87,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc5e78d69, Offset: 0x6f8
 // Size: 0x6c
 function private function_33f0ddd3(s_event) {

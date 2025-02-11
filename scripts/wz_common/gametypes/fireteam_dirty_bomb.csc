@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.csc;
-#using script_72587ba89a212e22;
+#using script_4a04e1760d0523d3;
 #using script_6741a9edbcf6c25e;
+#using script_680dddbda86931fa;
 #using script_6a72d858ff1942eb;
 #using script_7222862da5baa189;
-#using script_4a04e1760d0523d3;
-#using script_680dddbda86931fa;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using script_72587ba89a212e22;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
 
 #namespace fireteam_dirty_bomb;
 
@@ -22,9 +21,9 @@ function event_handler[gametype_init] main(*eventstruct) {
     namespace_2938acdc::init();
     dirtybomb_usebar::register(undefined, &function_866f5f2c);
     clientfield::register("toplayer", "using_bomb", 1, 2, "int", &function_18272d54, 0, 0);
-    clientfield::register_clientuimodel("hudItems.uraniumCarryCount", #"hash_6f4b11a0bee9b73d", #"hash_556b3df8ae964e7c", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.uraniumMaxCarry", #"hash_6f4b11a0bee9b73d", #"hash_1879fbcae78c5417", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.uraniumFullCarry", #"hash_6f4b11a0bee9b73d", #"hash_451ab3abde68434a", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.uraniumCarryCount", #"hud_items", #"hash_556b3df8ae964e7c", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.uraniumMaxCarry", #"hud_items", #"hash_1879fbcae78c5417", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.uraniumFullCarry", #"hud_items", #"hash_451ab3abde68434a", 1, 1, "int", undefined, 0, 0);
     clientfield::register("allplayers", "carryingUranium", 1, 1, "int", &function_46afac0, 0, 1);
     clientfield::register("scriptmover", "bombsound", 1, 1, "int", &function_f20fb48, 0, 0);
     clientfield::function_5b7d846d("hud_items_dirty_bomb.bomb_respawn_disabled", #"hash_1115137708f64303", #"hash_611630c939ad1b67", 1, 1, "int", undefined, 0, 0);
@@ -47,7 +46,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x516b949d, Offset: 0x720
 // Size: 0x94
 function on_localclient_connect(localclientnum) {
@@ -58,7 +57,7 @@ function on_localclient_connect(localclientnum) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2c7589b0, Offset: 0x7c0
 // Size: 0x2f6
 function private function_bb2f717e(localclientnum) {
@@ -73,7 +72,7 @@ function private function_bb2f717e(localclientnum) {
     }
     while (true) {
         if (!isdefined(level.item_spawn_stashes)) {
-            wait(1);
+            wait 1;
             continue;
         }
         draworigin = getcamposbylocalclientnum(localclientnum);
@@ -104,22 +103,22 @@ function private function_bb2f717e(localclientnum) {
             var_61efd7d9[index].var_95f008e = undefined;
             var_61efd7d9[index] hide();
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8beec1a4, Offset: 0xac0
 // Size: 0x148
 function private function_e99f251a(*localclientnum, itementry) {
     if (itementry.itemtype == #"generic") {
         switch (itementry.name) {
-        case #"hash_44cca2edb9c2041c":
+        case #"armor_pouch_item_t9":
             return (self clientfield::get_player_uimodel("hudItems.armorPlateMaxCarry") != 10);
         case #"hash_b8b2580ac5556e1":
             return (self clientfield::get_player_uimodel("hud_items.selfReviveAvailable") == 0);
-        case #"hash_1aec65ecd6b7a5f2":
+        case #"uranium_pouch_item_t9":
             return (self clientfield::get_player_uimodel("hudItems.uraniumMaxCarry") != 10);
         case #"hash_583f1687cefbd3f3":
             return !namespace_234f0efc::function_d1aaf7a4();
@@ -132,7 +131,7 @@ function private function_e99f251a(*localclientnum, itementry) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x2b90350c, Offset: 0xc10
 // Size: 0xee
 function private function_218c0417(*localclientnum, itementry) {
@@ -152,7 +151,7 @@ function private function_218c0417(*localclientnum, itementry) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x308dd0fe, Offset: 0xd08
 // Size: 0x12a
 function private function_a2807fc5(localclientnum, itementry) {
@@ -174,7 +173,7 @@ function private function_a2807fc5(localclientnum, itementry) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xdabdd839, Offset: 0xe40
 // Size: 0x16e
 function private function_18272d54(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -200,7 +199,7 @@ function private function_18272d54(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdf90914, Offset: 0xfb8
 // Size: 0x2c4
 function private function_c24ee98c(localclientnum) {
@@ -211,12 +210,12 @@ function private function_c24ee98c(localclientnum) {
         waitframe(1);
         if (getcurrentweapon(localclientnum) == level.var_696298a2) {
             level.var_c21cfcdf[localclientnum] = 1;
-            var_de8c9d40 = level.var_184c9036[localclientnum];
-            if (!isdefined(var_de8c9d40)) {
+            activatorCount = level.var_184c9036[localclientnum];
+            if (!isdefined(activatorCount)) {
                 continue;
             }
             for (i = 0; i < 4; i++) {
-                if (var_de8c9d40 > i && !isdefined(level.var_5976039d[i][localclientnum])) {
+                if (activatorCount > i && !isdefined(level.var_5976039d[i][localclientnum])) {
                     fxtag = "tag_fx";
                     if (i < 3) {
                         fxtag += string(3 - i);
@@ -224,7 +223,7 @@ function private function_c24ee98c(localclientnum) {
                     level.var_5976039d[i][localclientnum] = playviewmodelfx(localclientnum, "weapon/fx9_equip_dirtybomb_detonator_light", fxtag);
                     continue;
                 }
-                if (var_de8c9d40 <= i && isdefined(level.var_5976039d[i][localclientnum])) {
+                if (activatorCount <= i && isdefined(level.var_5976039d[i][localclientnum])) {
                     killfx(localclientnum, level.var_5976039d[i][localclientnum]);
                     level.var_5976039d[i][localclientnum] = undefined;
                 }
@@ -245,7 +244,7 @@ function private function_c24ee98c(localclientnum) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc97307dc, Offset: 0x1288
 // Size: 0x130
 function private function_ea6da5f6() {
@@ -264,7 +263,7 @@ function private function_ea6da5f6() {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xc8066718, Offset: 0x13c0
 // Size: 0x4c
 function private function_866f5f2c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -272,7 +271,7 @@ function private function_866f5f2c(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3dfec195, Offset: 0x1418
 // Size: 0xc6
 function private function_6e9e7ead(localclientnum) {
@@ -293,7 +292,7 @@ function private function_6e9e7ead(localclientnum) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x8f1daeb2, Offset: 0x14e8
 // Size: 0xde
 function private function_46afac0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -311,7 +310,7 @@ function private function_46afac0(localclientnum, *oldval, newval, *bnewent, *bi
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3c6138fe, Offset: 0x15d0
 // Size: 0x178
 function private function_f4f21a7f(localclientnum) {
@@ -320,10 +319,10 @@ function private function_f4f21a7f(localclientnum) {
     }
     var_53b9c763 = [];
     foreach (fxid, entity in level.var_53b9c763[localclientnum]) {
-        if (isdefined(entity) && isdefined(entity.var_67899e33[localclientnum])) {
-            deletefx(localclientnum, entity.var_67899e33[localclientnum], 1);
-            entity.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone_spawn", entity.origin + (0, 0, 80));
-            var_53b9c763[entity.var_67899e33[localclientnum]] = entity;
+        if (isdefined(entity) && isdefined(entity.zonefx[localclientnum])) {
+            deletefx(localclientnum, entity.zonefx[localclientnum], 1);
+            entity.zonefx[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone_spawn", entity.origin + (0, 0, 80));
+            var_53b9c763[entity.zonefx[localclientnum]] = entity;
             continue;
         }
         deletefx(localclientnum, fxid, 1);
@@ -332,7 +331,7 @@ function private function_f4f21a7f(localclientnum) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xacaf8912, Offset: 0x1750
 // Size: 0x170
 function private function_ba474e49(localclientnum) {
@@ -341,10 +340,10 @@ function private function_ba474e49(localclientnum) {
     }
     var_53b9c763 = [];
     foreach (fxid, entity in level.var_53b9c763[localclientnum]) {
-        if (isdefined(entity) && isdefined(entity.var_67899e33)) {
-            deletefx(localclientnum, entity.var_67899e33[localclientnum], 1);
-            entity.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone", entity.origin + (0, 0, 80));
-            var_53b9c763[entity.var_67899e33[localclientnum]] = entity;
+        if (isdefined(entity) && isdefined(entity.zonefx)) {
+            deletefx(localclientnum, entity.zonefx[localclientnum], 1);
+            entity.zonefx[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone", entity.origin + (0, 0, 80));
+            var_53b9c763[entity.zonefx[localclientnum]] = entity;
             continue;
         }
         deletefx(localclientnum, fxid, 1);
@@ -353,7 +352,7 @@ function private function_ba474e49(localclientnum) {
 }
 
 // Namespace fireteam_dirty_bomb/fireteam_dirty_bomb
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7798c5df, Offset: 0x18c8
 // Size: 0xaa
 function function_f20fb48(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

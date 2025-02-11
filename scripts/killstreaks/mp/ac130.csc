@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_79917113c7593edd;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using script_79917113c7593edd;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace ac130;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ac130/ac130
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbe576fdb, Offset: 0x130
 // Size: 0x7c
 function private preinit() {
@@ -29,11 +28,11 @@ function private preinit() {
 }
 
 // Namespace ac130/ac130
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xabb52ed7, Offset: 0x1b8
 // Size: 0x11c
 function function_555656fe(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    postfxbundle = level.var_3e7d252b.var_fa6a1c8c;
+    postfxbundle = level.var_3e7d252b.ksvehicleposteffectbun;
     if (!isdefined(postfxbundle)) {
         return;
     }
@@ -56,7 +55,7 @@ function function_555656fe(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace ac130/ac130
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8fcb8764, Offset: 0x2e0
 // Size: 0xa4
 function function_74f5faf8(eventparams) {

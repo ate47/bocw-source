@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_loadout.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_44b0b8420eabacad;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\round;
+#using scripts\mp_common\player\player_loadout;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace oic;
 
@@ -96,22 +95,22 @@ function private function_1ccf32e3() {
 function function_180dbd15() {
     loadouts = getscriptbundle(#"hash_70f762f93571635a");
     if (!isdefined(loadouts)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         return;
     }
     var_c669d611 = isdefined(loadouts.var_4509f8e) ? loadouts.var_4509f8e : [];
     if (var_c669d611.size == 0) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x52>");
         return;
     }
     tiers = isdefined(var_c669d611[0].tiers) ? var_c669d611[0].tiers : [];
     if (tiers.size == 0) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x84>");
         return;
     }
     weaponoptions = isdefined(tiers[0].options) ? tiers[0].options : [];
     if (weaponoptions.size == 0) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:xaa>");
         return;
     }
     weaponoptions = array::randomize(weaponoptions);
@@ -122,7 +121,7 @@ function function_180dbd15() {
         }
     }
     if (!isdefined(level.var_bf82f6b0)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:xdc>");
         return;
     }
 }
@@ -177,7 +176,7 @@ function givecustomloadout() {
         loadout = self loadout::get_loadout_slot("specialgrenade");
         loadout.weapon = secondaryoffhand;
         loadout.count = secondaryoffhandcount;
-        self ability_util::function_36a15b60(secondaryoffhand);
+        self ability_util::gadget_power_full(secondaryoffhand);
     }
     self disableweaponpickup();
     self loadout::function_6573eeeb();
@@ -229,7 +228,7 @@ function onspawnplayer(predictedspawn) {
 // Size: 0x7c
 function function_1929a66c() {
     level endon(#"game_ended");
-    wait(0.5);
+    wait 0.5;
     if (!isplayer(self) || !isalive(self)) {
         return;
     }
@@ -250,7 +249,7 @@ function onendgame(*var_c1e98979) {
 // Checksum 0xa2dcd2df, Offset: 0x1070
 // Size: 0xfc
 function saveoffallplayersammo() {
-    wait(1);
+    wait 1;
     for (playerindex = 0; playerindex < level.players.size; playerindex++) {
         player = level.players[playerindex];
         if (!isdefined(player)) {
@@ -341,10 +340,10 @@ function onplayerkilled(*einflictor, attacker, *idamage, smeansofdeath, weapon, 
 // Checksum 0x701b823e, Offset: 0x1568
 // Size: 0x74
 function private function_864bcb5c() {
-    self luinotifyevent(#"hash_30d8b0d7b1498f03", 1, 1);
+    self luinotifyevent(#"oic_eliminated", 1, 1);
     self function_665f1a43();
     if (isdefined(self)) {
-        self luinotifyevent(#"hash_30d8b0d7b1498f03", 1, 0);
+        self luinotifyevent(#"oic_eliminated", 1, 0);
     }
 }
 

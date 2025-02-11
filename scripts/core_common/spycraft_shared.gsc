@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
 
-#namespace namespace_1ec2f789;
+#namespace spycraft_shared;
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
+// Namespace spycraft_shared/spycraft_shared
 // Params 0, eflags: 0x5
 // Checksum 0x8d9d8a5c, Offset: 0x1a8
 // Size: 0x3c
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
     system::register(#"spycraft", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_1ec2f789/player_disconnect
+// Namespace spycraft_shared/player_disconnect
 // Params 1, eflags: 0x20
 // Checksum 0xc46a1c2a, Offset: 0x1f0
 // Size: 0x74
@@ -27,8 +26,8 @@ function event_handler[player_disconnect] codecallback_playerdisconnect(*eventst
     }
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 0, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 0, eflags: 0x0
 // Checksum 0x1e9d980c, Offset: 0x270
 // Size: 0x42
 function getscriptbundle() {
@@ -36,8 +35,8 @@ function getscriptbundle() {
     return getscriptbundle(var_526b0ab0);
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 0, eflags: 0x6 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 0, eflags: 0x4
 // Checksum 0x8764fca5, Offset: 0x2c0
 // Size: 0xb4
 function private preinit() {
@@ -53,8 +52,8 @@ function private preinit() {
     level.var_1b900c1d = &function_1b900c1d;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 0, eflags: 0x6 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 0, eflags: 0x4
 // Checksum 0x9e967194, Offset: 0x380
 // Size: 0x84
 function private register_clientfields() {
@@ -62,8 +61,8 @@ function private register_clientfields() {
     clientfield::register("missile", "" + #"hash_2d5a2cd7892a4fdc", 1, 1, "counter");
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 2, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 2, eflags: 0x0
 // Checksum 0xbbe85b54, Offset: 0x410
 // Size: 0x44
 function function_1b900c1d(weapon, var_5651313e) {
@@ -73,8 +72,8 @@ function function_1b900c1d(weapon, var_5651313e) {
     level.var_ff6f539f[weapon.name] = var_5651313e;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 0, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 0, eflags: 0x0
 // Checksum 0xdac8bfee, Offset: 0x460
 // Size: 0x1e2
 function on_loadout() {
@@ -101,8 +100,8 @@ function on_loadout() {
     }
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 0, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 0, eflags: 0x0
 // Checksum 0xcc83556e, Offset: 0x650
 // Size: 0x126
 function function_ad98ca86() {
@@ -120,8 +119,8 @@ function function_ad98ca86() {
     level.spycraft.var_b274cf54 = 0;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 1, eflags: 0x6 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 1, eflags: 0x4
 // Checksum 0xa64ccef3, Offset: 0x780
 // Size: 0xb2
 function private findweapon(entity) {
@@ -137,8 +136,8 @@ function private findweapon(entity) {
     return level.weaponnone;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 2, eflags: 0x6 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 2, eflags: 0x4
 // Checksum 0x9bbbb5f9, Offset: 0x840
 // Size: 0xfe
 function private function_808efdee(hacker, entity) {
@@ -164,8 +163,8 @@ function private function_808efdee(hacker, entity) {
     return true;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 2, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 2, eflags: 0x0
 // Checksum 0x790be27, Offset: 0x948
 // Size: 0x48c
 function function_3e9e9071(player, var_f4452fa1) {
@@ -213,8 +212,8 @@ function function_3e9e9071(player, var_f4452fa1) {
     }
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 2, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 2, eflags: 0x0
 // Checksum 0x6303775, Offset: 0xde0
 // Size: 0x10a
 function function_fa58758(objid, var_288da8b5) {
@@ -228,8 +227,8 @@ function function_fa58758(objid, var_288da8b5) {
     var_288da8b5.var_8f044438 = 1;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 4, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 4, eflags: 0x0
 // Checksum 0x312cad54, Offset: 0xef8
 // Size: 0x10e
 function function_56762cd0(objid, var_288da8b5, hacktimems, targetentity) {
@@ -247,8 +246,8 @@ function function_56762cd0(objid, var_288da8b5, hacktimems, targetentity) {
     return currentprogress >= 1;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 3, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 3, eflags: 0x0
 // Checksum 0x3354ffbf, Offset: 0x1010
 // Size: 0x154
 function function_dce89a3e(entityweapon, targetentity, var_288da8b5) {
@@ -268,8 +267,8 @@ function function_dce89a3e(entityweapon, targetentity, var_288da8b5) {
     targetentity clientfield::increment("" + #"hash_2d5a2cd7892a4fdc");
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 2, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 2, eflags: 0x0
 // Checksum 0xa92c6c92, Offset: 0x1170
 // Size: 0xee
 function function_b82a484d(objid, var_288da8b5) {
@@ -282,8 +281,8 @@ function function_b82a484d(objid, var_288da8b5) {
     var_288da8b5.var_8f044438 = 0;
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 1, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 1, eflags: 0x0
 // Checksum 0xf43d3c0f, Offset: 0x1268
 // Size: 0x4c
 function function_31502dd(*notifyhash) {
@@ -293,8 +292,8 @@ function function_31502dd(*notifyhash) {
     function_b82a484d(self.var_c1e0dff3.objid, self);
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 3, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 3, eflags: 0x0
 // Checksum 0x454535d2, Offset: 0x12c0
 // Size: 0x154
 function function_d3d359e7(objid, targetentity, var_288da8b5) {
@@ -312,8 +311,8 @@ function function_d3d359e7(objid, targetentity, var_288da8b5) {
     function_b82a484d(objid, var_288da8b5);
 }
 
-// Namespace namespace_1ec2f789/namespace_1ec2f789
-// Params 2, eflags: 0x2 linked
+// Namespace spycraft_shared/spycraft_shared
+// Params 2, eflags: 0x0
 // Checksum 0xc0c50bdd, Offset: 0x1420
 // Size: 0xb8
 function function_73e0b42c(player, trigger) {

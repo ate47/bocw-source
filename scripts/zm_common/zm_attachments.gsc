@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_24c32478acf44108;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_attachments;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_attachments/zm_attachments
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdcecf52a, Offset: 0xf8
 // Size: 0xbc
 function private preinit() {
@@ -87,7 +86,7 @@ function dragons_breath(e_attacker, n_damage, weapon) {
 }
 
 // Namespace zm_attachments/zm_attachments
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa73b107f, Offset: 0x468
 // Size: 0x44
 function private function_ddda26e(e_attacker) {

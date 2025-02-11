@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\struct;
 
 #namespace multi_extracam;
 
 // Namespace multi_extracam/multi_extracam
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x91a067e7, Offset: 0xa8
 // Size: 0xb6
 function extracam_reset_index(localclientnum, index) {
@@ -19,7 +18,7 @@ function extracam_reset_index(localclientnum, index) {
 }
 
 // Namespace multi_extracam/multi_extracam
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe1cbe91, Offset: 0x168
 // Size: 0x5a
 function extracam_init_index(localclientnum, target, index) {
@@ -28,7 +27,7 @@ function extracam_init_index(localclientnum, target, index) {
 }
 
 // Namespace multi_extracam/multi_extracam
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xba714c5, Offset: 0x1d0
 // Size: 0x16a
 function extracam_init_item(localclientnum, copy_ent, index) {

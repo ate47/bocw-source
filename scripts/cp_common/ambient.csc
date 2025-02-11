@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\sound_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace ambient;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ambient/ambient
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd1bd23b, Offset: 0x308
 // Size: 0x24
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf80cece2, Offset: 0x338
 // Size: 0x54
 function on_player_connect(localclientnum) {
@@ -59,7 +58,7 @@ function setup_point_fx(point, fx_id) {
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4f8515aa, Offset: 0x4b8
 // Size: 0x1a0
 function ambient_flak_think(point) {
@@ -78,15 +77,15 @@ function ambient_flak_think(point) {
             point.is_firing = 1;
             playfx(0, level._effect[point.fx_id], point.origin, point.forward, point.up);
             thread sound::play_in_space(0, "wpn_triple25_fire", point.origin);
-            wait(0.2);
+            wait 0.2;
         }
         point.is_firing = 0;
-        wait(randomfloatrange(min_delay, max_delay));
+        wait randomfloatrange(min_delay, max_delay);
     }
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1bc823b4, Offset: 0x660
 // Size: 0x1d6
 function ambient_flak_rotate(point) {
@@ -108,7 +107,7 @@ function ambient_flak_rotate(point) {
         for (i = 0; i < steps; i++) {
             point.forward += diff_forward;
             point.up += diff_up;
-            wait(0.1);
+            wait 0.1;
         }
         point.forward = forward;
         point.up = up;
@@ -116,7 +115,7 @@ function ambient_flak_rotate(point) {
 }
 
 // Namespace ambient/ambient
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbb1604a2, Offset: 0x840
 // Size: 0x1a0
 function ambient_flak_flash(point, min_burst_time, max_burst_time) {
@@ -133,7 +132,7 @@ function ambient_flak_flash(point, min_burst_time, max_burst_time) {
     fxpos = undefined;
     while (true) {
         if (!point.is_firing) {
-            wait(0.25);
+            wait 0.25;
             continue;
         }
         fxpos = point.origin + vectorscale(point.forward, randomintrange(min_dist, max_dist));
@@ -141,12 +140,12 @@ function ambient_flak_flash(point, min_burst_time, max_burst_time) {
         if (isdefined(level.timeofday) && (level.timeofday == "evening" || level.timeofday == "night")) {
             playfx(0, level._effect[#"flak_cloudflash_night"], fxpos);
         }
-        wait(randomfloatrange(min_burst_time, max_burst_time));
+        wait randomfloatrange(min_burst_time, max_burst_time);
     }
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x680c83c7, Offset: 0x9e8
 // Size: 0x798
 function ambient_fakefire_think(point) {
@@ -284,7 +283,7 @@ function ambient_fakefire_think(point) {
         weaptype = "turret";
         break;
     default:
-        assertmsg("<unknown string>" + point.weaponinfo + "<unknown string>");
+        assertmsg("<dev string:x38>" + point.weaponinfo + "<dev string:x5b>");
         break;
     }
     while (true) {
@@ -296,14 +295,14 @@ function ambient_fakefire_think(point) {
                 bullettracer(point.origin, target);
             }
             playfx(0, level._effect[point.fx_id], point.origin, point.forward);
-            wait(randomfloatrange(betweenshotsmin, betweenshotsmax));
+            wait randomfloatrange(betweenshotsmin, betweenshotsmax);
         }
-        wait(randomfloatrange(reloadtimemin, reloadtimemax));
+        wait randomfloatrange(reloadtimemin, reloadtimemax);
     }
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x37258643, Offset: 0x1188
 // Size: 0x64
 function ceiling_fans_init(clientnum) {
@@ -314,7 +313,7 @@ function ceiling_fans_init(clientnum) {
 }
 
 // Namespace ambient/ambient
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb4e062cb, Offset: 0x11f8
 // Size: 0x1c6
 function spin_fan() {
@@ -349,7 +348,7 @@ function spin_fan() {
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xae061b62, Offset: 0x13c8
 // Size: 0x384
 function clocks_init(clientnum) {
@@ -395,7 +394,7 @@ function clocks_init(clientnum) {
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x98d1435a, Offset: 0x1758
 // Size: 0x418
 function clock_run(time_values) {
@@ -468,12 +467,12 @@ function clock_run(time_values) {
             self rotatepitch(time_values[#"rotate_bit"], 0.05);
             prev_time = curr_time;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace ambient/ambient
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x379d1dc6, Offset: 0x1b78
 // Size: 0xbc
 function spin_anemometers(clientnum) {
@@ -488,7 +487,7 @@ function spin_anemometers(clientnum) {
 }
 
 // Namespace ambient/ambient
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2331192d, Offset: 0x1c40
 // Size: 0xae
 function spoon_spin_func() {
@@ -506,7 +505,7 @@ function spoon_spin_func() {
 }
 
 // Namespace ambient/ambient
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf985fb7, Offset: 0x1cf8
 // Size: 0x146
 function arrow_spin_func() {

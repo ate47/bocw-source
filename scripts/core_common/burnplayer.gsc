@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace burnplayer;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace burnplayer/burnplayer
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfec55e4f, Offset: 0x138
 // Size: 0x94
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace burnplayer/burnplayer
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x83951295, Offset: 0x1d8
 // Size: 0x104
 function setplayerburning(duration, interval, damageperinterval, attacker, weapon, var_852d429a = 0) {
@@ -38,7 +37,7 @@ function setplayerburning(duration, interval, damageperinterval, attacker, weapo
 }
 
 // Namespace burnplayer/burnplayer
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x45715098, Offset: 0x2e8
 // Size: 0xbc
 function takingburndamage(eattacker, weapon, *smeansofdeath) {
@@ -56,7 +55,7 @@ function takingburndamage(eattacker, weapon, *smeansofdeath) {
 }
 
 // Namespace burnplayer/burnplayer
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc73d5721, Offset: 0x3b0
 // Size: 0x7c
 function watchburnfinished() {
@@ -67,18 +66,18 @@ function watchburnfinished() {
 }
 
 // Namespace burnplayer/burnplayer
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x181a5f0b, Offset: 0x438
 // Size: 0x66
 function watchburntimer(duration) {
     self notify(#"burnplayer_watchburntimer");
     self endon(#"burnplayer_watchburntimer", #"disconnect", #"death");
-    wait(duration);
+    wait duration;
     self notify(#"burn_finished");
 }
 
 // Namespace burnplayer/burnplayer
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x89c6ebb3, Offset: 0x4a8
 // Size: 0xd2
 function watchburndamage(interval, damage, attacker, weapon) {
@@ -87,7 +86,7 @@ function watchburndamage(interval, damage, attacker, weapon) {
     }
     self endon(#"disconnect", #"death", #"burnplayer_watchburntimer", #"burn_finished");
     while (true) {
-        wait(interval);
+        wait interval;
         self.doing_scripted_burn_damage = 1;
         self dodamage(damage, self.origin, attacker, undefined, undefined, "MOD_BURNED", 0, weapon);
         self.doing_scripted_burn_damage = undefined;
@@ -95,7 +94,7 @@ function watchburndamage(interval, damage, attacker, weapon) {
 }
 
 // Namespace burnplayer/burnplayer
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb7ffb8a7, Offset: 0x588
 // Size: 0x74
 function watchforwater() {
@@ -104,7 +103,7 @@ function watchforwater() {
         if (self isplayerunderwater()) {
             self notify(#"burn_finished");
         }
-        wait(0.05);
+        wait 0.05;
     }
 }
 

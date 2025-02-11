@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using script_7f6cd71c43c45c57;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
 #using script_7a8059ca02b7b09e;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\activecamo_shared.gsc;
+#using script_7f6cd71c43c45c57;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\activecamo_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\util;
+#using scripts\weapons\weapon_utils;
 
 #namespace scoreevents;
 
@@ -34,7 +33,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9fbdf87e, Offset: 0x9f8
 // Size: 0x44
 function private preinit() {
@@ -43,7 +42,7 @@ function private preinit() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc59fba54, Offset: 0xa48
 // Size: 0xfa8
 function init() {
@@ -59,7 +58,7 @@ function init() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x51a393e5, Offset: 0x19f8
 // Size: 0x152
 function function_4013aee1(status_effect, var_3bc85d80) {
@@ -81,7 +80,7 @@ function function_4013aee1(status_effect, var_3bc85d80) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5f2bf26d, Offset: 0x1b58
 // Size: 0x5e
 function on_player_spawned() {
@@ -92,7 +91,7 @@ function on_player_spawned() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc18ea183, Offset: 0x1bc0
 // Size: 0x1de
 function private on_weapon_change(params) {
@@ -117,7 +116,7 @@ function private on_weapon_change(params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1894d6cd, Offset: 0x1da8
 // Size: 0x5c
 function function_abe2675d() {
@@ -127,7 +126,7 @@ function function_abe2675d() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4643565d, Offset: 0x1e10
 // Size: 0x7c
 function function_9c3085c8() {
@@ -154,7 +153,7 @@ function scoreeventtablelookup(index, scoreeventcolumn) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6938ea8c, Offset: 0x1f48
 // Size: 0x4004
 function scoreeventplayerkill(data, time) {
@@ -174,7 +173,7 @@ function scoreeventplayerkill(data, time) {
     victimwasonground = data.victimonground;
     attackerorigin = data.attackerorigin;
     victimorigin = data.victimorigin;
-    var_5fceefd4 = data.var_5fceefd4;
+    victimangles = data.victimangles;
     meansofdeath = data.smeansofdeath;
     attackertraversing = data.attackertraversing;
     attackersliding = data.attackersliding;
@@ -282,7 +281,7 @@ function scoreeventplayerkill(data, time) {
             }
         }
         if (var_4d1f1cc0 === 1) {
-            attacker contracts::player_contract_event(#"hash_31940a13f77a7a79");
+            attacker contracts::player_contract_event(#"objective_kill");
         }
         if (isgrenade == 0 || weapon.name == #"hero_gravityspikes") {
             if (attackersliding == 1 || time - attacker_slide_end < 350) {
@@ -488,7 +487,7 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"hash_56ede06b1821a561", attacker, victim, weapon);
                 challenges::function_ffdecc69(attacker, weapon, weaponclass);
                 if (weaponclass === #"weapon_pistol") {
-                    victimyaw = var_5fceefd4[1];
+                    victimyaw = victimangles[1];
                     var_a48ab0d6 = vectortoyaw(victimorigin - attackerorigin);
                     anglediff = angleclamp180(victimyaw - var_a48ab0d6);
                     if (85 > anglediff && anglediff > -55) {
@@ -555,8 +554,8 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"hash_7036af264dd467b", attacker, victim, weapon);
                 attacker stats::function_42277145(#"hash_5135a4983fb81980", 1);
             }
-            victimyaw = var_5fceefd4[1];
-            attackeryaw = data.var_83634238[1];
+            victimyaw = victimangles[1];
+            attackeryaw = data.attackerangles[1];
             anglediff = angleclamp180(victimyaw - attackeryaw);
             if (is_true(weapon.var_cfc07f04) && anglediff > -30 && anglediff < 70) {
                 level.globalbackstabs++;
@@ -587,15 +586,15 @@ function scoreeventplayerkill(data, time) {
             }
         }
         if (isdefined(victim.var_d6f11c60) && attacker == victim.var_d6f11c60 && victim.var_e6c1bab8 + 2000 > gettime()) {
-            var_21877ec1 = 1;
+            destroyedarmor = 1;
         } else if (meansofdeath == "MOD_HEAD_SHOT" && (isdefined(victim.armor) ? victim.armor : 0) > 0) {
-            var_21877ec1 = 1;
+            destroyedarmor = 1;
         }
-        if (is_true(var_21877ec1)) {
+        if (is_true(destroyedarmor)) {
             processscoreevent(#"kill_enemy_with_armor", attacker, victim, weapon);
         }
         assert(isdefined(attacker));
-        assert(isdefined(attacker.tookweaponfrom), "MOD_PROJECTILE" + attacker getentnum() + "MOD_CRUSH");
+        assert(isdefined(attacker.tookweaponfrom), "<dev string:x38>" + attacker getentnum() + "<dev string:x43>");
         if (isdefined(attacker) && isdefined(attacker.tookweaponfrom) && isdefined(attacker.tookweaponfrom[weapon]) && isdefined(attacker.tookweaponfrom[weapon].previousowner)) {
             pickedupweapon = attacker.tookweaponfrom[weapon];
             if (pickedupweapon.previousowner == victim) {
@@ -623,9 +622,9 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"hash_e0ebdc669e8fd7", attacker, victim, undefined, undefined, undefined, undefined, undefined, inflictor);
                 attacker contracts::increment_contract(#"hash_f3693a9e9cfb10a");
                 if (data.var_ee70dcab) {
-                    processscoreevent(#"hash_3ae4d5d2b66fd960", attacker, victim, weapon);
+                    processscoreevent(#"pilot_ekia", attacker, victim, weapon);
                 } else {
-                    processscoreevent(#"hash_725686a5570cf00a", attacker, victim, weapon);
+                    processscoreevent(#"driver_ekia", attacker, victim, weapon);
                 }
                 attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_79b6d5046add3690", 1);
                 attacker stats::function_7fd36562(data.var_b840fc2a, #"driver_kills", 1);
@@ -633,7 +632,7 @@ function scoreeventplayerkill(data, time) {
                     if (isdefined(data.attackervehicle.session)) {
                         data.attackervehicle.session.var_9678e53b++;
                     }
-                    attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_390729ed851d5efe", 1);
+                    attacker stats::function_7fd36562(data.var_b840fc2a, #"objective_kills", 1);
                 }
                 data.var_7b4d33ac = 1;
             } else if (weapon.var_29d24e37) {
@@ -646,20 +645,20 @@ function scoreeventplayerkill(data, time) {
                         processscoreevent(#"hash_7f8f6ec19f91d88a", attacker, victim, weapon);
                         attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_7a6c20f80f626451", 1);
                         if (data.var_ee70dcab) {
-                            processscoreevent(#"hash_3ae4d5d2b66fd960", attacker, victim, weapon);
+                            processscoreevent(#"pilot_ekia", attacker, victim, weapon);
                         } else {
-                            processscoreevent(#"hash_725686a5570cf00a", attacker, victim, weapon);
+                            processscoreevent(#"driver_ekia", attacker, victim, weapon);
                         }
                         attacker stats::function_7fd36562(data.var_b840fc2a, #"driver_kills", 1);
                         if (var_4d1f1cc0 === 1) {
                             if (isdefined(data.attackervehicle.session)) {
                                 data.attackervehicle.session.var_9678e53b++;
                             }
-                            attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_390729ed851d5efe", 1);
+                            attacker stats::function_7fd36562(data.var_b840fc2a, #"objective_kills", 1);
                         }
                     } else {
                         processscoreevent(#"hash_203460376d5e46e8", attacker, victim, weapon);
-                        processscoreevent(#"hash_5429e1f8389910a9", attacker, victim, weapon);
+                        processscoreevent(#"gunner_ekia", attacker, victim, weapon);
                         if (isdefined(data.var_adb68654)) {
                             if (data.var_b840fc2a === "player_fav_light" || data.var_b840fc2a === "player_btr40") {
                                 processscoreevent(#"hash_55fdfc040c784853", data.var_adb68654);
@@ -667,13 +666,13 @@ function scoreeventplayerkill(data, time) {
                             }
                             if (var_4d1f1cc0 === 1) {
                                 processscoreevent(#"hash_32393e7bdd5d6163", data.var_adb68654);
-                                data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"hash_644739338e1e1d67", 1);
+                                data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"objective_assists", 1);
                             } else {
-                                processscoreevent(#"hash_6e016b8588c56243", data.var_adb68654);
+                                processscoreevent(#"passenger_assist", data.var_adb68654);
                             }
-                            data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"hash_31cbe3e76765d790", 1);
+                            data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"passenger_assists", 1);
                         }
-                        attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_4c09c6ee2ec16f04", 1);
+                        attacker stats::function_7fd36562(data.var_b840fc2a, #"gunner_kills", 1);
                         if (var_4d1f1cc0 === 1) {
                             if (isdefined(data.attackervehicle.session)) {
                                 data.attackervehicle.session.var_afb151ad++;
@@ -687,16 +686,16 @@ function scoreeventplayerkill(data, time) {
                 attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_368d390a483d963a", 1);
                 if (data.var_123eada) {
                     if (data.var_ee70dcab) {
-                        processscoreevent(#"hash_3ae4d5d2b66fd960", attacker, victim, weapon);
+                        processscoreevent(#"pilot_ekia", attacker, victim, weapon);
                     } else {
-                        processscoreevent(#"hash_725686a5570cf00a", attacker, victim, weapon);
+                        processscoreevent(#"driver_ekia", attacker, victim, weapon);
                     }
                     attacker stats::function_7fd36562(data.var_b840fc2a, #"driver_kills", 1);
                     if (var_4d1f1cc0 === 1) {
                         if (isdefined(data.attackervehicle.session)) {
                             data.attackervehicle.session.var_9678e53b++;
                         }
-                        attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_390729ed851d5efe", 1);
+                        attacker stats::function_7fd36562(data.var_b840fc2a, #"objective_kills", 1);
                     }
                 } else {
                     processscoreevent(#"hash_5b50fec911597745", attacker, victim, weapon);
@@ -704,9 +703,9 @@ function scoreeventplayerkill(data, time) {
                         if (var_4d1f1cc0 === 1) {
                             processscoreevent(#"hash_32393e7bdd5d6163", data.var_adb68654);
                         } else {
-                            processscoreevent(#"hash_6e016b8588c56243", data.var_adb68654);
+                            processscoreevent(#"passenger_assist", data.var_adb68654);
                         }
-                        data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"hash_31cbe3e76765d790", 1);
+                        data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"passenger_assists", 1);
                     }
                     attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_66e44aa1270586a0", 1);
                 }
@@ -719,8 +718,8 @@ function scoreeventplayerkill(data, time) {
                 if (var_4d1f1cc0 === 1) {
                     processscoreevent(#"hash_32393e7bdd5d6163", data.var_adb68654);
                 } else {
-                    processscoreevent(#"hash_6e016b8588c56243", data.var_adb68654);
-                    data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"hash_31cbe3e76765d790", 1);
+                    processscoreevent(#"passenger_assist", data.var_adb68654);
+                    data.var_adb68654 stats::function_7fd36562(data.var_b840fc2a, #"passenger_assists", 1);
                 }
                 attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_66e44aa1270586a0", 1);
             }
@@ -839,7 +838,7 @@ function get_equipped_hero_ability(ability_name) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x8471130d, Offset: 0x5f90
 // Size: 0x28c
 function heavyweaponkill(attacker, victim, weapon) {
@@ -893,7 +892,7 @@ function heavyweaponkill(attacker, victim, weapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x96fcfdf5, Offset: 0x6228
 // Size: 0x19c
 function killedheavyweaponenemy(attacker, victim, weapon, victim_weapon, victim_gadget_power) {
@@ -934,7 +933,7 @@ function killedheavyweaponenemy(attacker, victim, weapon, victim_weapon, victim_
 }
 
 // Namespace scoreevents/scoreevents
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa97f1023, Offset: 0x63d0
 // Size: 0x40c
 function specificweaponkill(attacker, victim, weapon, killstreak, inflictor) {
@@ -1009,7 +1008,7 @@ function specificweaponkill(attacker, victim, weapon, killstreak, inflictor) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d7a53ec, Offset: 0x67e8
 // Size: 0x174
 function function_8fe4629e(killcount, weapon) {
@@ -1032,7 +1031,7 @@ function function_8fe4629e(killcount, weapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe8f83280, Offset: 0x6968
 // Size: 0x404
 function multikill(killcount, weapon) {
@@ -1087,7 +1086,7 @@ function multikill(killcount, weapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x73235973, Offset: 0x6d78
 // Size: 0x1f0
 function is_weapon_valid(meansofdeath, weapon, weaponclass, killstreak) {
@@ -1122,7 +1121,7 @@ function is_weapon_valid(meansofdeath, weapon, weaponclass, killstreak) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xabe93090, Offset: 0x6f70
 // Size: 0x1824
 function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meansofdeath) {
@@ -1464,7 +1463,7 @@ function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meanso
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5dbe191f, Offset: 0x87a0
 // Size: 0x1c2
 function private resetrecentkillvariables() {
@@ -1510,7 +1509,7 @@ function private resetrecentkillvariables() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xb385fc05, Offset: 0x8970
 // Size: 0x266
 function updateoneshotmultikills(victim, weapon, firsttimedamaged, meansofdeath, time) {
@@ -1525,7 +1524,7 @@ function updateoneshotmultikills(victim, weapon, firsttimedamaged, meansofdeath,
     if (self.oneshotmultikills > 1) {
         function_644d867a(self, time, #"hash_7eea303a50912c2a");
     }
-    wait(1);
+    wait 1;
     if (!isplayer(self)) {
         return;
     }
@@ -1547,7 +1546,7 @@ function updateoneshotmultikills(victim, weapon, firsttimedamaged, meansofdeath,
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1ba7b94a, Offset: 0x8be0
 // Size: 0x1fc
 function get_distance_for_weapon(weapon, weaponclass) {
@@ -1590,7 +1589,7 @@ function get_distance_for_weapon(weapon, weaponclass) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8399f3e8, Offset: 0x8de8
 // Size: 0x18c
 function ongameend(data) {
@@ -1617,7 +1616,7 @@ function ongameend(data) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae6fb6bf, Offset: 0x8f80
 // Size: 0x84
 function specialistmedalachievement() {
@@ -1631,7 +1630,7 @@ function specialistmedalachievement() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3c26f8f3, Offset: 0x9010
 // Size: 0x6c
 function function_9aef690a(weapon) {
@@ -1640,7 +1639,7 @@ function function_9aef690a(weapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf094fd4, Offset: 0x9088
 // Size: 0x2c
 function multikillmedalachievement() {
@@ -1650,7 +1649,7 @@ function multikillmedalachievement() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf465b3b4, Offset: 0x90c0
 // Size: 0x7a
 function function_c01cb128(entity, sensor_darts) {
@@ -1661,7 +1660,7 @@ function function_c01cb128(entity, sensor_darts) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x369cafe, Offset: 0x9148
 // Size: 0x132
 function function_c28e2c05(entity_origin, sensor_darts, var_e13a103a) {
@@ -1736,14 +1735,14 @@ function function_43ee1b3d(attacker, victim, attackerweapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x71cde37b, Offset: 0x95e0
 // Size: 0x1ac
 function function_b8495e95(data, time) {
     vehicle = data.vehicle;
     isoccupied = data.isoccupied;
     var_da46f58a = data.var_da46f58a;
-    var_2879347f = data.var_2879347f;
+    isenemyvehicle = data.isenemyvehicle;
     inflictor = data.inflictor;
     attacker = data.attacker;
     damage = data.damage;
@@ -1752,7 +1751,7 @@ function function_b8495e95(data, time) {
     hitloc = data.hitloc;
     time = data.time;
     var_c8757561 = data.var_c8757561;
-    if (var_2879347f && isoccupied || var_da46f58a) {
+    if (isenemyvehicle && isoccupied || var_da46f58a) {
         if (var_c8757561) {
             processscoreevent(#"hash_429ae888806770a4", attacker, undefined, weapon);
             attacker stats::function_561716e6(weapon.name, #"hash_109b0615c82fd4af", 1);
@@ -1763,7 +1762,7 @@ function function_b8495e95(data, time) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xde9de1d5, Offset: 0x9798
 // Size: 0x3c
 function private function_e7152385(params) {

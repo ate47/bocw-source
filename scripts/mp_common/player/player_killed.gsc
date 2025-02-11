@@ -1,64 +1,63 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\userspawnselection.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\mp_common\bb.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\player\player_record.gsc;
-#using scripts\mp_common\player\player_damage.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\display_transition.gsc;
-#using scripts\mp_common\gametypes\deathicons.gsc;
-#using script_725554a59d6a75b9;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\weapons\weapons.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using script_7f6cd71c43c45c57;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\medals_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\match_record.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\core_common\spectating.gsc;
 #using script_6167e26342be354b;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_vehicle.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\globallogic\globallogic_player.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\audio_shared.gsc;
-#using scripts\core_common\activecamo_shared.gsc;
+#using script_725554a59d6a75b9;
+#using script_7a8059ca02b7b09e;
+#using script_7f6cd71c43c45c57;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\activecamo_shared;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\globallogic\globallogic_player;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\globallogic\globallogic_vehicle;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\match_record;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\medals_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\deathicons;
+#using scripts\mp_common\gametypes\display_transition;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\player\player_damage;
+#using scripts\mp_common\player\player_record;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\teams\teams;
+#using scripts\mp_common\userspawnselection;
+#using scripts\mp_common\util;
+#using scripts\weapons\weapon_utils;
+#using scripts\weapons\weapons;
 
 #namespace player;
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3e239efd, Offset: 0x888
 // Size: 0x72c
 function function_df36a02d(attacker, weapon, mod) {
@@ -117,8 +116,8 @@ function function_df36a02d(attacker, weapon, mod) {
             var_22938e87 = #"ekia";
             break;
         }
-        var_b9d38f6c = attacker stats::function_1bb1c57c(#"hash_3765eca4e4359498", weapon.statname, var_f2c36eba, #"challengetier") > 0;
-        var_4175f0ae = attacker stats::function_1bb1c57c(#"hash_3765eca4e4359498", weapon.statname, #"challenges", #"challengetier") > 0;
+        var_b9d38f6c = attacker stats::function_1bb1c57c(#"weapon_challenges", weapon.statname, var_f2c36eba, #"challengetier") > 0;
+        var_4175f0ae = attacker stats::function_1bb1c57c(#"weapon_challenges", weapon.statname, #"challenges", #"challengetier") > 0;
         var_b4f9ec1a = var_e28d611d && var_b9d38f6c && var_4175f0ae;
         if (attacker stats::function_1bb1c57c(#"globalchallenges", #"weapons_mastery", #"challengetier") > 0) {
             var_89ea0a9f = 3;
@@ -128,7 +127,7 @@ function function_df36a02d(attacker, weapon, mod) {
                 if (attacker stats::function_1bb1c57c(#"globalchallenges", #"hash_7f0ce2a2e0a76e67", #"challengetier") > 0) {
                     var_89ea0a9f = 2;
                 }
-            } else if (attacker stats::function_1bb1c57c(#"hash_78666913f57209e4", weaponclass, #"hash_7fce4a14fec05da1", #"challengetier") > 0) {
+            } else if (attacker stats::function_1bb1c57c(#"hash_78666913f57209e4", weaponclass, #"challenges_completed", #"challengetier") > 0) {
                 var_89ea0a9f = 2;
             }
         }
@@ -146,7 +145,7 @@ function function_df36a02d(attacker, weapon, mod) {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x95012716, Offset: 0xfc0
 // Size: 0x104
 function function_7622d447(attacker) {
@@ -164,7 +163,7 @@ function function_7622d447(attacker) {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdfeb1870, Offset: 0x10d0
 // Size: 0xb4
 function function_7eea9ada(player) {
@@ -179,7 +178,7 @@ function function_7eea9ada(player) {
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1b29bc47, Offset: 0x1190
 // Size: 0xee
 function function_ca27b62b(attacker, player) {
@@ -202,7 +201,7 @@ function function_ca27b62b(attacker, player) {
 }
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7d00e323, Offset: 0x1288
 // Size: 0x204
 function function_284c61bd(attacker, meansofdeath, bledout = 0) {
@@ -238,7 +237,7 @@ function function_284c61bd(attacker, meansofdeath, bledout = 0) {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb3c11ce9, Offset: 0x1498
 // Size: 0xfe
 function private function_66cec679() {
@@ -256,7 +255,7 @@ function private function_66cec679() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x76931ec4, Offset: 0x15a0
 // Size: 0x1ae
 function private function_448f7ed2() {
@@ -285,7 +284,7 @@ function private function_448f7ed2() {
 }
 
 // Namespace player/player_killed
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0xddb47118, Offset: 0x1758
 // Size: 0xccc
 function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime, deathanimduration, enteredresurrect = 0) {
@@ -325,7 +324,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
     attacker callback::callback(#"on_killed_player");
     self thread globallogic_audio::flush_leader_dialog_key_on_player("equipmentDestroyed");
     weapon = update_weapon(einflictor, weapon);
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self thread audio::function_30d4f8c4(attacker, smeansofdeath, weapon);
     wasinlaststand = 0;
     bledout = 0;
@@ -339,7 +338,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
     var_8efc9727 = isplayer(attacker) && self util::isenemyplayer(attacker) == 0;
     var_41c4d474 = isplayer(attacker) && self == attacker;
     vattacker = isdefined(attacker) ? attacker : self;
-    var_a44c7fd8 = {#victimorigin:self.origin, #var_5fceefd4:self getplayerangles(), #victimweapon:self.currentweapon, #einflictor:einflictor, #attacker:attacker, #attackerorigin:vattacker.origin, #var_83634238:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:idamage, #smeansofdeath:smeansofdeath, #weapon:weapon, #var_fd90b0bb:var_fd90b0bb, #vdir:vdir, #shitloc:shitloc, #matchtime:function_f8d53445()};
+    var_a44c7fd8 = {#victimorigin:self.origin, #victimangles:self getplayerangles(), #victimweapon:self.currentweapon, #einflictor:einflictor, #attacker:attacker, #attackerorigin:vattacker.origin, #attackerangles:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:idamage, #smeansofdeath:smeansofdeath, #weapon:weapon, #var_fd90b0bb:var_fd90b0bb, #vdir:vdir, #shitloc:shitloc, #matchtime:function_f8d53445()};
     if (isdefined(self.uselaststandparams) && enteredresurrect == 0) {
         self.uselaststandparams = undefined;
         assert(isdefined(self.laststandparams));
@@ -382,7 +381,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
     self thread function_8826f676();
     self function_a3030357(var_c391d0a8.var_23da26bf, einflictor, var_c391d0a8.var_60851fcf, var_c391d0a8.var_4b5379af, bledout);
     self function_c2c4d6e9(var_c391d0a8, bledout, enteredresurrect, countdeath);
-    profileNamedStop();
+    pixendevent();
     var_a35e901f = var_a44c7fd8;
     if (isdefined(self.var_5b73c96a)) {
         self.var_5b73c96a = undefined;
@@ -417,7 +416,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x9f54eb2a, Offset: 0x2430
 // Size: 0xdc
 function private function_e3cd54bf(attacker, einflictor, var_41c4d474, assistedsuicide) {
@@ -451,7 +450,7 @@ function private function_e3cd54bf(attacker, einflictor, var_41c4d474, assisteds
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x622d0a61, Offset: 0x2518
 // Size: 0x10a
 function private function_388d8a53(attacker, einflictor, var_41c4d474, assistedsuicide) {
@@ -471,25 +470,25 @@ function private function_388d8a53(attacker, einflictor, var_41c4d474, assisteds
 }
 
 // Namespace player/player_killed
-// Params 9, eflags: 0x6 linked
+// Params 9, eflags: 0x4
 // Checksum 0xc101fcec, Offset: 0x2630
 // Size: 0xb2c
-function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psoffsettime, deathanimduration, var_8efc9727, var_41c4d474, assistedsuicide, enteredresurrect) {
+function private function_42862f77(death_params, attacker, deathtimeoffset, psoffsettime, deathanimduration, var_8efc9727, var_41c4d474, assistedsuicide, enteredresurrect) {
     if (isdefined(self.killcam_entity_info_cached)) {
         killcam_entity_info = self.killcam_entity_info_cached;
         self.killcam_entity_info_cached = undefined;
     } else {
-        killcam_entity_info = killcam::get_killcam_entity_info(var_a2f12b49.attacker, var_a2f12b49.einflictor, var_a2f12b49.weapon);
+        killcam_entity_info = killcam::get_killcam_entity_info(death_params.attacker, death_params.einflictor, death_params.weapon);
     }
     perks = [];
-    killstreaks = globallogic::getkillstreaks(var_a2f12b49.attacker);
-    var_c547267e = function_388d8a53(attacker, var_a2f12b49.einflictor, var_41c4d474, assistedsuicide);
-    self thread killcam::function_eb3deeec(var_c547267e, self getentitynumber(), killcam_entity_info, var_a2f12b49.weapon, var_a2f12b49.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, var_a2f12b49.attacker);
+    killstreaks = globallogic::getkillstreaks(death_params.attacker);
+    var_c547267e = function_388d8a53(attacker, death_params.einflictor, var_41c4d474, assistedsuicide);
+    self thread killcam::function_eb3deeec(var_c547267e, self getentitynumber(), killcam_entity_info, death_params.weapon, death_params.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, death_params.attacker);
     wasteamkill = var_8efc9727 && !(var_41c4d474 || assistedsuicide);
-    if (wasteamkill == 0 && assistedsuicide == 0 && var_a2f12b49.smeansofdeath != "MOD_SUICIDE" && !(!isdefined(var_a2f12b49.attacker) || var_a2f12b49.attacker.classname == "trigger_hurt" || var_a2f12b49.attacker.classname == "worldspawn" || var_41c4d474 || isdefined(var_a2f12b49.attacker.disablefinalkillcam))) {
-        level thread killcam::record_settings(var_c547267e, self getentitynumber(), killcam_entity_info, var_a2f12b49.weapon, var_a2f12b49.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, var_a2f12b49.attacker);
-        var_c8fa9c41 = isplayer(var_a2f12b49.attacker) ? var_a2f12b49.attacker getxuid() : 0;
-        level thread potm::function_5523a49a(#"kill", var_c547267e, var_c8fa9c41, self, killcam_entity_info, var_a2f12b49.weapon, var_a2f12b49.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, var_a2f12b49.attacker, var_a2f12b49.einflictor);
+    if (wasteamkill == 0 && assistedsuicide == 0 && death_params.smeansofdeath != "MOD_SUICIDE" && !(!isdefined(death_params.attacker) || death_params.attacker.classname == "trigger_hurt" || death_params.attacker.classname == "worldspawn" || var_41c4d474 || isdefined(death_params.attacker.disablefinalkillcam))) {
+        level thread killcam::record_settings(var_c547267e, self getentitynumber(), killcam_entity_info, death_params.weapon, death_params.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, death_params.attacker);
+        var_c8fa9c41 = isplayer(death_params.attacker) ? death_params.attacker getxuid() : 0;
+        level thread potm::function_5523a49a(#"kill", var_c547267e, var_c8fa9c41, self, killcam_entity_info, death_params.weapon, death_params.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, death_params.attacker, death_params.einflictor);
     }
     if (enteredresurrect) {
         return;
@@ -500,10 +499,10 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
         self function_6bf621ea(#"respawn_timer", 2, int(timeuntilspawn + deathanimduration + level.playerrespawndelay * 1000 - 250), self getentitynumber());
     }
     if (!self.var_4ef33446) {
-        if (is_true(self.var_342564dd) && self == var_a2f12b49.attacker) {
+        if (is_true(self.var_342564dd) && self == death_params.attacker) {
             waitframe(1);
         } else {
-            wait(0.25);
+            wait 0.25;
         }
     }
     self.cancelkillcam = 0;
@@ -511,7 +510,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
         self thread killcam::cancel_on_use();
     }
     if (!self.var_4ef33446) {
-        self watch_death(var_a2f12b49.weapon, var_a2f12b49.attacker, var_a2f12b49.smeansofdeath, deathanimduration);
+        self watch_death(death_params.weapon, death_params.attacker, death_params.smeansofdeath, deathanimduration);
     }
     self.respawntimerstarttime = gettime();
     keep_deathcam = 0;
@@ -547,13 +546,13 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
             keep_deathcam = self [[ self.overrideplayerdeadstatus ]]();
         }
     }
-    dokillcam = self function_e3cd54bf(attacker, var_a2f12b49.einflictor, var_41c4d474, assistedsuicide);
+    dokillcam = self function_e3cd54bf(attacker, death_params.einflictor, var_41c4d474, assistedsuicide);
     if (!self.cancelkillcam && dokillcam && level.killcammode == 1 && wasteamkill == 0) {
         self clientfield::set_player_uimodel("hudItems.killcamActive", 1);
         livesleft = !(level.numlives && !self.pers[#"lives"]) && !(level.numteamlives && !game.lives[self.team]);
         timeuntilspawn = globallogic_spawn::timeuntilspawn(1);
         willrespawnimmediately = livesleft && timeuntilspawn <= 0 && !level.playerqueuedrespawn && !userspawnselection::isspawnselectenabled();
-        self killcam::killcam(var_c547267e, self getentitynumber(), killcam_entity_info, var_a2f12b49.weapon, var_a2f12b49.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, willrespawnimmediately, globallogic_utils::timeuntilroundend(), perks, killstreaks, var_a2f12b49.attacker, keep_deathcam);
+        self killcam::killcam(var_c547267e, self getentitynumber(), killcam_entity_info, death_params.weapon, death_params.smeansofdeath, self.deathtime, deathtimeoffset, psoffsettime, willrespawnimmediately, globallogic_utils::timeuntilroundend(), perks, killstreaks, death_params.attacker, keep_deathcam);
         if (sessionmodeiswarzonegame()) {
             self luinotifyevent(#"hash_5b2d65a026de792d", 0);
         }
@@ -596,7 +595,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa37ac768, Offset: 0x3168
 // Size: 0x134
 function function_fcaec253() {
@@ -621,41 +620,41 @@ function function_fcaec253() {
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xe0d8f064, Offset: 0x32a8
 // Size: 0x29e
-function private function_7804764f(var_a2f12b49, deathanimduration, psoffsettime, enteredresurrect) {
-    profileNamedStart(#"");
+function private function_7804764f(death_params, deathanimduration, psoffsettime, enteredresurrect) {
+    pixbeginevent(#"");
     if (enteredresurrect == 0) {
-        var_86825274 = var_a2f12b49.weapon;
-        if (weapons::ismeleemod(var_a2f12b49.smeansofdeath) && var_86825274.type != "melee") {
+        var_86825274 = death_params.weapon;
+        if (weapons::ismeleemod(death_params.smeansofdeath) && var_86825274.type != "melee") {
             var_86825274 = level.weaponnone;
         }
-        body = self cloneplayer(deathanimduration, var_86825274, var_a2f12b49.attacker, var_a2f12b49.vdir);
+        body = self cloneplayer(deathanimduration, var_86825274, death_params.attacker, death_params.vdir);
         if (isdefined(body) && !level.inprematchperiod) {
             body notsolid();
             if (is_true(self.var_6f9e9dc9)) {
                 body.var_6f9e9dc9 = 1;
             }
             vattackerorigin = undefined;
-            if (isdefined(var_a2f12b49.attacker)) {
-                vattackerorigin = var_a2f12b49.attacker.origin;
+            if (isdefined(death_params.attacker)) {
+                vattackerorigin = death_params.attacker.origin;
             }
-            self create_body(var_a2f12b49, vattackerorigin, deathanimduration, body);
-            self battlechatter::play_death_vox(body, var_a2f12b49.attacker, var_a2f12b49.weapon, var_a2f12b49.smeansofdeath);
+            self create_body(death_params, vattackerorigin, deathanimduration, body);
+            self battlechatter::play_death_vox(body, death_params.attacker, death_params.weapon, death_params.smeansofdeath);
             var_a1d415ee = self.var_a1d415ee;
             if (isdefined(var_a1d415ee)) {
                 globallogic::doweaponspecificcorpseeffects(body, var_a1d415ee.einflictor, var_a1d415ee.attacker, var_a1d415ee.idamage, var_a1d415ee.smeansofdeath, var_a1d415ee.weapon, var_a1d415ee.var_fd90b0bb, var_a1d415ee.vdir, var_a1d415ee.shitloc, psoffsettime);
             } else if (!isdefined(self.laststandparams) || !is_true(self.laststandparams.bledout)) {
-                globallogic::doweaponspecificcorpseeffects(body, var_a2f12b49.einflictor, var_a2f12b49.attacker, var_a2f12b49.idamage, var_a2f12b49.smeansofdeath, var_a2f12b49.weapon, var_a2f12b49.var_fd90b0bb, var_a2f12b49.vdir, var_a2f12b49.shitloc, psoffsettime);
+                globallogic::doweaponspecificcorpseeffects(body, death_params.einflictor, death_params.attacker, death_params.idamage, death_params.smeansofdeath, death_params.weapon, death_params.var_fd90b0bb, death_params.vdir, death_params.shitloc, psoffsettime);
             }
         }
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x369cae4a, Offset: 0x3550
 // Size: 0x7ac
 function private function_c220950f(var_c391d0a8, idamage, weapon_at_time_of_death) {
@@ -741,20 +740,20 @@ function private function_c220950f(var_c391d0a8, idamage, weapon_at_time_of_deat
     matchrecordlogadditionaldeathinfo(self, killer, victimweapon, weapon, paramstruct);
     self player_record::record_special_move_data_for_life(killer);
     /#
-        attackerstring = "controlLowLivesEnemy";
+        attackerstring = "<dev string:x38>";
         if (isdefined(killer)) {
-            attackerstring = killer getxuid() + "gamePlayerKicked" + killer.name + "grenade";
+            attackerstring = killer getxuid() + "<dev string:x40>" + killer.name + "<dev string:x45>";
         }
-        print("vehicle_" + var_c391d0a8.smeansofdeath + "gamePlayerKicked" + weapon.name + "<unknown string>" + attackerstring + "<unknown string>" + idamage + "<unknown string>" + (isdefined(var_c391d0a8.shitloc) ? var_c391d0a8.shitloc : "<unknown string>") + "<unknown string>" + int(self.origin[0]) + "<unknown string>" + int(self.origin[1]) + "<unknown string>" + int(self.origin[2]));
+        print("<dev string:x4a>" + var_c391d0a8.smeansofdeath + "<dev string:x40>" + weapon.name + "<dev string:x50>" + attackerstring + "<dev string:x58>" + idamage + "<dev string:x5f>" + (isdefined(var_c391d0a8.shitloc) ? var_c391d0a8.shitloc : "<dev string:x66>") + "<dev string:x6a>" + int(self.origin[0]) + "<dev string:x71>" + int(self.origin[1]) + "<dev string:x71>" + int(self.origin[2]));
     #/
 }
 
 // Namespace player/player_killed
-// Params 10, eflags: 0x6 linked
+// Params 10, eflags: 0x4
 // Checksum 0xe35b6e15, Offset: 0x3d08
 // Size: 0xbae
 function private function_4a762be0(var_c391d0a8, var_a44c7fd8, weapon_at_time_of_death, attackerstance, countdeath, var_41c4d474, var_8efc9727, wasinlaststand, bledout, enteredresurrect) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     awardassists = 0;
     wasteamkill = 0;
     wassuicide = 0;
@@ -784,7 +783,7 @@ function private function_4a762be0(var_c391d0a8, var_a44c7fd8, weapon_at_time_of
                 }
             }
         } else {
-            profileNamedStart(#"");
+            pixbeginevent(#"");
             if (var_8efc9727 && var_c391d0a8.smeansofdeath == "MOD_GRENADE" && level.friendlyfire == 0) {
             } else if (var_8efc9727) {
                 wasteamkill = 1;
@@ -804,7 +803,7 @@ function private function_4a762be0(var_c391d0a8, var_a44c7fd8, weapon_at_time_of
             var_c391d0a8.prevlastkilltime = var_c391d0a8.lastkilltime;
             var_c391d0a8.attacker.lastkilltime = gettime();
             var_c391d0a8.attacker.var_e03e3ae5 = gettime();
-            profileNamedStop();
+            pixendevent();
         }
         if (!var_41c4d474 && !var_8efc9727) {
             var_c391d0a8.attacker notify(#"killed_enemy_player", {#victim:self, #weapon:var_c391d0a8.weapon, #time:gettime()});
@@ -877,11 +876,11 @@ function private function_4a762be0(var_c391d0a8, var_a44c7fd8, weapon_at_time_of
     if (awardassists) {
         self function_48a1200f(var_a44c7fd8.einflictor, var_c391d0a8.attacker, var_c391d0a8.weapon);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x99b6df, Offset: 0x48c0
 // Size: 0x164
 function private function_c2c4d6e9(var_c391d0a8, *bledout, enteredresurrect, countdeath) {
@@ -907,11 +906,11 @@ function private function_c2c4d6e9(var_c391d0a8, *bledout, enteredresurrect, cou
         }
         self.deathcount++;
     }
-    println("<unknown string>" + self.clientid + "<unknown string>" + self.deathcount);
+    println("<dev string:x76>" + self.clientid + "<dev string:x82>" + self.deathcount);
 }
 
 // Namespace player/player_killed
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xf4c363de, Offset: 0x4a30
 // Size: 0x486
 function private function_fc51dcf8(attacker, weapon, smeansofdeath, shitloc, var_20227168) {
@@ -973,7 +972,7 @@ function private function_fc51dcf8(attacker, weapon, smeansofdeath, shitloc, var
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x825b4431, Offset: 0x4ec0
 // Size: 0xf2
 function private function_5f6cde96(var_41c4d474, var_8efc9727) {
@@ -998,12 +997,12 @@ function private function_5f6cde96(var_41c4d474, var_8efc9727) {
 // Checksum 0xbe97f031, Offset: 0x4fc0
 // Size: 0x1c
 function function_e3d34c3b() {
-    wait(20);
+    wait 20;
     function_93115f65();
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1d272afc, Offset: 0x4fe8
 // Size: 0x90
 function function_6faccb24() {
@@ -1018,7 +1017,7 @@ function function_6faccb24() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe80468e, Offset: 0x5080
 // Size: 0x40
 function function_9956f107() {
@@ -1029,7 +1028,7 @@ function function_9956f107() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9f821e1b, Offset: 0x50c8
 // Size: 0x132
 function function_21695e86() {
@@ -1053,7 +1052,7 @@ function function_21695e86() {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf50582af, Offset: 0x5208
 // Size: 0x18e
 function private function_93115f65(enteredresurrect) {
@@ -1087,7 +1086,7 @@ function private function_93115f65(enteredresurrect) {
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x90fa9668, Offset: 0x53a0
 // Size: 0x33c
 function private function_caabcf70(victim, callbackparams, laststandparams, var_a1d415ee) {
@@ -1098,7 +1097,7 @@ function private function_caabcf70(victim, callbackparams, laststandparams, var_
     }
     var_f53d817d = isdefined(laststandparams) ? laststandparams : callbackparams;
     var_ee2f4691 = isdefined(var_a1d415ee) ? var_a1d415ee : callbackparams;
-    function_ad11630f(victim, var_f53d817d.victimorigin, var_f53d817d.var_5fceefd4, var_f53d817d.victimweapon, var_f53d817d.attacker, var_f53d817d.attackerorigin, var_f53d817d.var_83634238, var_f53d817d.weapon, var_f53d817d.matchtime, var_f53d817d.shitloc, var_f53d817d.smeansofdeath, var_ee2f4691.attacker, var_ee2f4691.attackerorigin, var_ee2f4691.var_83634238, var_ee2f4691.weapon, var_ee2f4691.matchtime, var_ee2f4691.shitloc, var_ee2f4691.smeansofdeath);
+    function_ad11630f(victim, var_f53d817d.victimorigin, var_f53d817d.victimangles, var_f53d817d.victimweapon, var_f53d817d.attacker, var_f53d817d.attackerorigin, var_f53d817d.attackerangles, var_f53d817d.weapon, var_f53d817d.matchtime, var_f53d817d.shitloc, var_f53d817d.smeansofdeath, var_ee2f4691.attacker, var_ee2f4691.attackerorigin, var_ee2f4691.attackerangles, var_ee2f4691.weapon, var_ee2f4691.matchtime, var_ee2f4691.shitloc, var_ee2f4691.smeansofdeath);
     lifeindex = victim match_record::get_player_stat(#"hash_ec4aea1a8bbd82");
     if (isdefined(lifeindex) && isdefined(victim) && isplayer(victim)) {
         victimindex = victim match_record::get_player_index();
@@ -1121,7 +1120,7 @@ function private function_caabcf70(victim, callbackparams, laststandparams, var_
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf89c0e6f, Offset: 0x56e8
 // Size: 0x184
 function private function_7b0f4389() {
@@ -1149,7 +1148,7 @@ function private function_7b0f4389() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xab7a9d45, Offset: 0x5878
 // Size: 0x38
 function private function_d1be915f() {
@@ -1163,7 +1162,7 @@ function private function_d1be915f() {
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xd3bfaeb, Offset: 0x58b8
 // Size: 0x15e
 function private watch_death(weapon, attacker, smeansofdeath, deathanimduration) {
@@ -1188,7 +1187,7 @@ function private watch_death(weapon, attacker, smeansofdeath, deathanimduration)
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x8f538f0f, Offset: 0x5a20
 // Size: 0xee
 function private function_b029639e(attacker, weapon, smeansofdeath, shitloc) {
@@ -1208,7 +1207,7 @@ function private function_b029639e(attacker, weapon, smeansofdeath, shitloc) {
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd9b2cfa4, Offset: 0x5b18
 // Size: 0x630
 function private update_killstreaks(attacker, weapon) {
@@ -1277,7 +1276,7 @@ function private update_killstreaks(attacker, weapon) {
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x98647aae, Offset: 0x6150
 // Size: 0x654
 function private function_abbc84ad(attacker, weapon, smeansofdeath, inflictor) {
@@ -1320,7 +1319,7 @@ function private function_abbc84ad(attacker, weapon, smeansofdeath, inflictor) {
         if (smeansofdeath == "MOD_HEAD_SHOT") {
             attacker stats::function_eec52333(weapon, #"headshots", 1, attacker.class_num, attackerweaponpickedup);
             if (weapon.statname === #"special_crossbow_t9") {
-                attacker stats::function_e24eec31(weapon, #"hash_114572b44a79e990", 1);
+                attacker stats::function_e24eec31(weapon, #"destroy_any", 1);
             }
             level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#player:attacker, #weapon:weapon, #statname:#"headshots", #value:1, #weaponpickedup:attackerweaponpickedup});
         }
@@ -1331,7 +1330,7 @@ function private function_abbc84ad(attacker, weapon, smeansofdeath, inflictor) {
 }
 
 // Namespace player/player_killed
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xa991ebd5, Offset: 0x67b0
 // Size: 0x3c4
 function function_a3030357(attacker, einflictor, weapon, smeansofdeath, bledout, *var_bee367e6) {
@@ -1387,7 +1386,7 @@ function function_a3030357(attacker, einflictor, weapon, smeansofdeath, bledout,
 }
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe2476, Offset: 0x6b80
 // Size: 0x14a
 function function_faf77690(weapon, einflictor, attacker) {
@@ -1409,7 +1408,7 @@ function function_faf77690(weapon, einflictor, attacker) {
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x441ae741, Offset: 0x6cd8
 // Size: 0x62
 function function_c0f28ff9(attacker, weapon) {
@@ -1424,7 +1423,7 @@ function function_c0f28ff9(attacker, weapon) {
 }
 
 // Namespace player/player_killed
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xd397143c, Offset: 0x6d48
 // Size: 0x348
 function private player_suicide(einflictor, attacker, smeansofdeath, weapon, shitloc) {
@@ -1467,7 +1466,7 @@ function private player_suicide(einflictor, attacker, smeansofdeath, weapon, shi
 }
 
 // Namespace player/player_killed
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x5ef6ee66, Offset: 0x7098
 // Size: 0x334
 function private team_kill(einflictor, attacker, smeansofdeath, weapon, *shitloc) {
@@ -1509,23 +1508,23 @@ function private team_kill(einflictor, attacker, smeansofdeath, weapon, *shitloc
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4e2c14a1, Offset: 0x73d8
 // Size: 0x8c
 function private wait_and_suicide() {
     self endon(#"disconnect");
     self val::set(#"wait_and_suicide", "freezecontrols");
-    wait(0.25);
+    wait 0.25;
     self val::reset(#"wait_and_suicide", "freezecontrols");
     self suicide();
 }
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb882f6ab, Offset: 0x7470
 // Size: 0x2c6
 function private function_48a1200f(einflictor, attacker, weapon) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     if (isdefined(self.attackers)) {
         for (j = 0; j < self.attackers.size; j++) {
             player = self.attackers[j];
@@ -1553,11 +1552,11 @@ function private function_48a1200f(einflictor, attacker, weapon) {
             self.lastattackedshieldplayer thread globallogic_score::processshieldassist(self);
         }
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa6a48c40, Offset: 0x7740
 // Size: 0x10c
 function function_f632c17e(weapon) {
@@ -1579,7 +1578,7 @@ function function_f632c17e(weapon) {
 }
 
 // Namespace player/player_killed
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xfebcaac3, Offset: 0x7858
 // Size: 0x60c
 function private function_4e3e8bee(einflictor, attacker, smeansofdeath, weapon, var_e7a369ea) {
@@ -1652,7 +1651,7 @@ function private function_4e3e8bee(einflictor, attacker, smeansofdeath, weapon, 
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x589edf70, Offset: 0x7e70
 // Size: 0xce
 function function_63aa4562() {
@@ -1666,7 +1665,7 @@ function function_63aa4562() {
 }
 
 // Namespace player/player_killed
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x94f4b140, Offset: 0x7f48
 // Size: 0x21c
 function private kill(einflictor, attacker, smeansofdeath, weapon, *shitloc) {
@@ -1690,7 +1689,7 @@ function private kill(einflictor, attacker, smeansofdeath, weapon, *shitloc) {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa14fabb2, Offset: 0x8170
 // Size: 0x24
 function private should_allow_postgame_death(smeansofdeath) {
@@ -1701,7 +1700,7 @@ function private should_allow_postgame_death(smeansofdeath) {
 }
 
 // Namespace player/player_killed
-// Params 9, eflags: 0x6 linked
+// Params 9, eflags: 0x4
 // Checksum 0xea9230d7, Offset: 0x81a0
 // Size: 0x2e4
 function private post_game_death(einflictor, attacker, idamage, smeansofdeath, weapon, vdir, shitloc, *psoffsettime, deathanimduration) {
@@ -1722,13 +1721,13 @@ function private post_game_death(einflictor, attacker, idamage, smeansofdeath, w
     if (isdefined(body)) {
         body notsolid();
         vattacker = isdefined(idamage) ? idamage : self;
-        var_a2f12b49 = {#victimorigin:self.origin, #var_5fceefd4:self getplayerangles(), #victimweapon:self.currentweapon, #einflictor:attacker, #attacker:idamage, #attackerorigin:vattacker.origin, #var_83634238:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:smeansofdeath, #smeansofdeath:weapon, #weapon:vdir, #vdir:shitloc, #shitloc:psoffsettime, #matchtime:function_f8d53445()};
-        self create_body(var_a2f12b49, (0, 0, 0), deathanimduration, body);
+        death_params = {#victimorigin:self.origin, #victimangles:self getplayerangles(), #victimweapon:self.currentweapon, #einflictor:attacker, #attacker:idamage, #attackerorigin:vattacker.origin, #attackerangles:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:smeansofdeath, #smeansofdeath:weapon, #weapon:vdir, #vdir:shitloc, #shitloc:psoffsettime, #matchtime:function_f8d53445()};
+        self create_body(death_params, (0, 0, 0), deathanimduration, body);
     }
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb6b215ea, Offset: 0x8490
 // Size: 0x660
 function private function_395ef176() {
@@ -1793,7 +1792,7 @@ function private function_395ef176() {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdba39ea7, Offset: 0x8af8
 // Size: 0x46
 function private function_5c5a8dad(lives) {
@@ -1804,7 +1803,7 @@ function private function_5c5a8dad(lives) {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x90fda496, Offset: 0x8b48
 // Size: 0x224
 function private start_generator_captureshouldshowpain() {
@@ -1846,50 +1845,50 @@ function private start_generator_captureshouldshowpain() {
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x86a82bf3, Offset: 0x8d78
 // Size: 0x414
-function private create_body(var_a2f12b49, vattackerorigin, deathanimduration, body) {
-    if (var_a2f12b49.smeansofdeath == "MOD_HIT_BY_OBJECT" && self getstance() == "prone") {
+function private create_body(death_params, vattackerorigin, deathanimduration, body) {
+    if (death_params.smeansofdeath == "MOD_HIT_BY_OBJECT" && self getstance() == "prone") {
         self.body = body;
         if (!isdefined(self.switching_teams)) {
             thread deathicons::add(body, self, self.team);
         }
         return;
     }
-    if (isdefined(level.ragdoll_override) && self [[ level.ragdoll_override ]](var_a2f12b49.idamage, var_a2f12b49.smeansofdeath, var_a2f12b49.weapon, var_a2f12b49.shitloc, var_a2f12b49.vdir, vattackerorigin, deathanimduration, var_a2f12b49.einflictor, 0, body)) {
+    if (isdefined(level.ragdoll_override) && self [[ level.ragdoll_override ]](death_params.idamage, death_params.smeansofdeath, death_params.weapon, death_params.shitloc, death_params.vdir, vattackerorigin, deathanimduration, death_params.einflictor, 0, body)) {
         return;
     }
-    if (self isonladder() || self function_b4813488() || self isziplining() || self ismantling() || var_a2f12b49.smeansofdeath == "MOD_CRUSH" || var_a2f12b49.smeansofdeath == "MOD_HIT_BY_OBJECT") {
+    if (self isonladder() || self function_b4813488() || self isziplining() || self ismantling() || death_params.smeansofdeath == "MOD_CRUSH" || death_params.smeansofdeath == "MOD_HIT_BY_OBJECT") {
         body startragdoll();
     }
-    if (!self isonground() && var_a2f12b49.smeansofdeath != "MOD_FALLING") {
+    if (!self isonground() && death_params.smeansofdeath != "MOD_FALLING") {
         if (getdvarint(#"scr_disable_air_death_ragdoll", 0) == 0) {
             body startragdoll();
         }
     }
-    if (var_a2f12b49.smeansofdeath == "MOD_MELEE_ASSASSINATE" && !var_a2f12b49.attacker isonground()) {
-        body start_death_from_above_ragdoll(var_a2f12b49.vdir);
+    if (death_params.smeansofdeath == "MOD_MELEE_ASSASSINATE" && !death_params.attacker isonground()) {
+        body start_death_from_above_ragdoll(death_params.vdir);
     }
-    if (self is_explosive_ragdoll(var_a2f12b49.weapon, var_a2f12b49.einflictor)) {
-        body start_explosive_ragdoll(var_a2f12b49.vdir, var_a2f12b49.weapon);
+    if (self is_explosive_ragdoll(death_params.weapon, death_params.einflictor)) {
+        body start_explosive_ragdoll(death_params.vdir, death_params.weapon);
     }
-    thread delayed_ragdoll(body, var_a2f12b49.shitloc, var_a2f12b49.vdir, var_a2f12b49.weapon, var_a2f12b49.einflictor, var_a2f12b49.smeansofdeath);
-    if (var_a2f12b49.smeansofdeath == "MOD_CRUSH") {
-        body globallogic_vehicle::vehiclecrush(var_a2f12b49.attacker, var_a2f12b49.einflictor);
+    thread delayed_ragdoll(body, death_params.shitloc, death_params.vdir, death_params.weapon, death_params.einflictor, death_params.smeansofdeath);
+    if (death_params.smeansofdeath == "MOD_CRUSH") {
+        body globallogic_vehicle::vehiclecrush(death_params.attacker, death_params.einflictor);
     }
-    hidedeathicon = isplayer(var_a2f12b49.attacker) && var_a2f12b49.attacker hasperk(#"hash_67340eb8c5d0f17f");
+    hidedeathicon = isplayer(death_params.attacker) && death_params.attacker hasperk(#"hash_67340eb8c5d0f17f");
     self.body = body;
     if (!isdefined(self.switching_teams) && !hidedeathicon) {
         thread deathicons::add(body, self, self.team);
     }
     body.player = self;
     body.iscorpse = 1;
-    self.body callback::callback(#"on_player_corpse", var_a2f12b49);
+    self.body callback::callback(#"on_player_corpse", death_params);
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xdafec53a, Offset: 0x9198
 // Size: 0x8c
 function private should_drop_weapon_on_death(wasteamkill, wassuicide, current_weapon, smeansofdeath) {
@@ -1909,7 +1908,7 @@ function private should_drop_weapon_on_death(wasteamkill, wassuicide, current_we
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd0dfb4d3, Offset: 0x9230
 // Size: 0x28
 function private function_8826f676() {
@@ -1919,21 +1918,21 @@ function private function_8826f676() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xea0c77aa, Offset: 0x9260
 // Size: 0x44
 function private function_f9dc085a() {
     if (isdefined(self.killstreak_delay_killcam)) {
         while (isdefined(self.killstreak_delay_killcam)) {
-            wait(0.1);
+            wait 0.1;
         }
-        wait(2);
+        wait 2;
         self killstreaks::reset_killstreak_delay_killcam();
     }
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2c72c6af, Offset: 0x92b0
 // Size: 0x94
 function private function_3c238bc5() {
@@ -1946,7 +1945,7 @@ function private function_3c238bc5() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2585ba68, Offset: 0x9350
 // Size: 0x1f4
 function private function_dd602974() {
@@ -1970,7 +1969,7 @@ function private function_dd602974() {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4f69c2b8, Offset: 0x9550
 // Size: 0xe2
 function function_821200bb() {
@@ -1992,7 +1991,7 @@ function function_821200bb() {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe1712693, Offset: 0x9640
 // Size: 0xdc
 function private function_78a6af2d(var_821200bb) {
@@ -2017,7 +2016,7 @@ function private function_78a6af2d(var_821200bb) {
 }
 
 // Namespace player/player_killed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x965cca50, Offset: 0x9728
 // Size: 0xf2
 function function_a932bf9c() {
@@ -2034,12 +2033,12 @@ function function_a932bf9c() {
                 break;
             }
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x83c67b92, Offset: 0x9828
 // Size: 0xfe
 function private ignore_team_kills(weapon, smeansofdeath, einflictor) {
@@ -2062,7 +2061,7 @@ function private ignore_team_kills(weapon, smeansofdeath, einflictor) {
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xca86723e, Offset: 0x9930
 // Size: 0xb2
 function private is_explosive_ragdoll(weapon, inflictor) {
@@ -2083,7 +2082,7 @@ function private is_explosive_ragdoll(weapon, inflictor) {
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa2b5dbec, Offset: 0x99f0
 // Size: 0x1a4
 function private start_explosive_ragdoll(dir, weapon) {
@@ -2111,7 +2110,7 @@ function private start_explosive_ragdoll(dir, weapon) {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5eec1352, Offset: 0x9ba0
 // Size: 0x4c
 function private start_death_from_above_ragdoll(*dir) {
@@ -2123,7 +2122,7 @@ function private start_death_from_above_ragdoll(*dir) {
 }
 
 // Namespace player/player_killed
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0x815cefc5, Offset: 0x9bf8
 // Size: 0x1fc
 function private delayed_ragdoll(ent, *shitloc, *vdir, *weapon, *einflictor, *smeansofdeath) {
@@ -2159,7 +2158,7 @@ function private delayed_ragdoll(ent, *shitloc, *vdir, *weapon, *einflictor, *sm
     }
     waittime = startfrac * getanimlength(deathanim);
     if (waittime > 0) {
-        wait(waittime);
+        wait waittime;
     }
     if (isdefined(smeansofdeath)) {
         smeansofdeath startragdoll();
@@ -2167,7 +2166,7 @@ function private delayed_ragdoll(ent, *shitloc, *vdir, *weapon, *einflictor, *sm
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x11628e13, Offset: 0x9e00
 // Size: 0x364
 function private update_attacker(attacker, weapon) {
@@ -2218,7 +2217,7 @@ function private update_attacker(attacker, weapon) {
 }
 
 // Namespace player/player_killed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6ca82775, Offset: 0xa170
 // Size: 0x74
 function private function_813829e3(einflictor) {
@@ -2231,7 +2230,7 @@ function private function_813829e3(einflictor) {
 }
 
 // Namespace player/player_killed
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xfd8fee36, Offset: 0xa1f0
 // Size: 0xe2
 function private update_weapon(einflictor, weapon) {
@@ -2246,7 +2245,7 @@ function private update_weapon(einflictor, weapon) {
 }
 
 // Namespace player/player_killed
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x74930c3a, Offset: 0xa2e0
 // Size: 0x1e0
 function private function_e8decd0b(attacker, weapon, victim, einflictor, smeansofdeath) {
@@ -2269,12 +2268,12 @@ function private function_e8decd0b(attacker, weapon, victim, einflictor, smeanso
 }
 
 // Namespace player/player_killed
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x721dcc63, Offset: 0xa4c8
 // Size: 0xb2e
 function updatekillstreak(einflictor, attacker, weapon) {
     if (isalive(attacker)) {
-        profileNamedStart(#"");
+        pixbeginevent(#"");
         if (!isdefined(einflictor) || !isdefined(einflictor.requireddeathcount) || attacker.deathcount == einflictor.requireddeathcount) {
             shouldgivekillstreak = killstreaks::should_give_killstreak(weapon);
             shouldgivekillstreak &= !attacker isinvehicle();
@@ -2364,7 +2363,7 @@ function updatekillstreak(einflictor, attacker, weapon) {
                 }
             }
         }
-        profileNamedStop();
+        pixendevent();
     }
     if (isdefined(attacker.gametype_kill_streak) && attacker.pers[#"cur_kill_streak"] > attacker.gametype_kill_streak) {
         attacker stats::function_baa25a23(#"kill_streak", attacker.pers[#"cur_kill_streak"]);
@@ -2377,7 +2376,7 @@ function updatekillstreak(einflictor, attacker, weapon) {
 }
 
 // Namespace player/player_killed
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0xb5f620d, Offset: 0xb000
 // Size: 0x126
 function function_ff3ec0d4(einflictor, attacker, idamage, smeansofdeath, weapon, *var_fd90b0bb, vdir, shitloc, psoffsettime, deathanimduration) {
@@ -2393,7 +2392,7 @@ function function_ff3ec0d4(einflictor, attacker, idamage, smeansofdeath, weapon,
 }
 
 // Namespace player/player_killed
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x15e3983b, Offset: 0xb130
 // Size: 0xe6
 function function_b8871aa2(einflictor, victim, idamage, weapon) {

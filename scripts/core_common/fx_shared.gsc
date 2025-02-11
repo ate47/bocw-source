@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
 
 #namespace fx;
 
@@ -14,7 +13,7 @@ function set_forward_and_up_vectors() {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd1be871f, Offset: 0x310
 // Size: 0x36
 function get(fx) {
@@ -25,7 +24,7 @@ function get(fx) {
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x756020ea, Offset: 0x350
 // Size: 0x136
 function create_effect(type, fxid) {
@@ -72,7 +71,7 @@ function create_oneshot_effect(fxid) {
 }
 
 // Namespace fx/fx_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xf0a9562c, Offset: 0x540
 // Size: 0x294
 function play(str_fx, v_origin = (0, 0, 0), v_angles = (0, 0, 0), time_to_delete_or_notify, b_link_to_self = 0, str_tag, b_no_cull, b_ignore_pause_world) {
@@ -101,7 +100,7 @@ function play(str_fx, v_origin = (0, 0, 0), v_angles = (0, 0, 0), time_to_delete
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x129c9fea, Offset: 0x7e0
 // Size: 0xd4
 function _play_fx_delete(ent, time_to_delete_or_notify = -1) {
@@ -204,7 +203,7 @@ function function_82104e32(var_486f31cd, var_e9f7aace) {
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd6270cf8, Offset: 0x1028
 // Size: 0x84
 function private function_13fa0731() {
@@ -219,7 +218,7 @@ function private function_13fa0731() {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x546ef3fc, Offset: 0x10b8
 // Size: 0x19c
 function private function_e592b635(*eventstruct) {

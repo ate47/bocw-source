@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_ce472ff1;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_ce472ff1/namespace_ce472ff1
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd779e2a8, Offset: 0xe0
 // Size: 0x30
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace namespace_ce472ff1/namespace_ce472ff1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7389fbc1, Offset: 0x118
 // Size: 0x4c
 function on_spawn_player(predictedspawn) {

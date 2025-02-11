@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace killcam;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace killcam/killcam_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x55891fcd, Offset: 0x100
 // Size: 0xcc
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69f59d6e, Offset: 0x1d8
 // Size: 0x50
 function on_localclient_connect(localclientnum) {
@@ -43,7 +42,7 @@ function on_localclient_connect(localclientnum) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb2864c2a, Offset: 0x230
 // Size: 0x44
 function function_c8bff20a(eventstruct) {
@@ -53,7 +52,7 @@ function function_c8bff20a(eventstruct) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8f1a4772, Offset: 0x280
 // Size: 0x114
 function function_549a01b9(localclientnum) {
@@ -68,7 +67,7 @@ function function_549a01b9(localclientnum) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9e3b85d, Offset: 0x3a0
 // Size: 0xa6
 function function_bb763df8(localclientnum) {
@@ -80,7 +79,7 @@ function function_bb763df8(localclientnum) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x296a63f, Offset: 0x450
 // Size: 0xec
 function on_killcam_begin(params) {
@@ -99,7 +98,7 @@ function on_killcam_begin(params) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4d54b96, Offset: 0x548
 // Size: 0x6c
 function on_killcam_end(params) {
@@ -112,7 +111,7 @@ function on_killcam_end(params) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x411fdde1, Offset: 0x5c0
 // Size: 0xb4
 function function_9fcd5f60(params) {
@@ -127,7 +126,7 @@ function function_9fcd5f60(params) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x185007db, Offset: 0x680
 // Size: 0x86
 function function_2362a697(localclientnum, script_bundle) {
@@ -141,7 +140,7 @@ function function_2362a697(localclientnum, script_bundle) {
 }
 
 // Namespace killcam/killcam_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe810b98f, Offset: 0x710
 // Size: 0x6e
 function function_dc3fa738(localclientnum) {

@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_52ba5a8a;
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x207bbcbc, Offset: 0x240
 // Size: 0x1aa
 function function_124c1a34(player, model, note) {
@@ -56,7 +55,7 @@ function function_124c1a34(player, model, note) {
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3947973e, Offset: 0x3f8
 // Size: 0x228
 function sawbladeupdate(model = "zombietron_sawblade") {
@@ -66,7 +65,7 @@ function sawbladeupdate(model = "zombietron_sawblade") {
         self endon(#"disconnect");
     }
     waitframe(1);
-    self endon(#"hash_5c1fd96dc1cc50e7");
+    self endon(#"blades_done");
     if (!isdefined(self.doa.var_1739bd8e)) {
         self.doa.var_1739bd8e = [];
     }
@@ -87,12 +86,12 @@ function sawbladeupdate(model = "zombietron_sawblade") {
     }
     while (isdefined(org)) {
         org rotateto(org.angles + (0, 180, 0), 0.4);
-        wait(0.4);
+        wait 0.4;
     }
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xfaa6d6fb, Offset: 0x628
 // Size: 0x2a8
 function private function_7daf5356(player, endnote) {
@@ -130,7 +129,7 @@ function private function_7daf5356(player, endnote) {
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xac128985, Offset: 0x8d8
 // Size: 0xd6
 function private function_40fc311d(*org, endnote) {
@@ -142,16 +141,16 @@ function private function_40fc311d(*org, endnote) {
     while (!namespace_dfc652ee::function_f759a457()) {
         waitframe(1);
     }
-    wait(timeout);
+    wait timeout;
     self notify(endnote);
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc899a5f5, Offset: 0x9b8
 // Size: 0x214
 function private function_20139eee(org, endnote) {
-    self waittill(endnote, #"player_died", #"hash_77af89fb2b44942f", #"disconnect", #"death", #"enter_vehicle", #"hash_df25520ab279dff", #"clone_shutdown");
+    self waittill(endnote, #"player_died", #"kill_shield", #"disconnect", #"death", #"enter_vehicle", #"hash_df25520ab279dff", #"clone_shutdown");
     if (isdefined(self)) {
         self notify(endnote);
     }
@@ -168,7 +167,7 @@ function private function_20139eee(org, endnote) {
         org.blade physicslaunch(org.blade.origin, vel);
         org.blade namespace_e32bb68::function_ae271c0b("evt_doa_pickup_sawblade_active_lp");
         org.blade namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sawblade_lose_blade");
-        wait(5);
+        wait 5;
         org.blade delete();
     }
     if (isdefined(self)) {

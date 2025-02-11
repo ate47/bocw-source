@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spectating.gsc;
-#using script_7dc3a36c222eaf22;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using script_305d57cf0618009d;
-#using scripts\core_common\player\player_insertion.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_305d57cf0618009d;
+#using script_44b0b8420eabacad;
+#using script_7dc3a36c222eaf22;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\player\player_insertion;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\territory_util;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace namespace_aaddef5a;
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e2d47b4, Offset: 0x180
 // Size: 0x25c
 function function_98ebe1b4() {
@@ -45,7 +44,7 @@ function function_98ebe1b4() {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6ca7c798, Offset: 0x3e8
 // Size: 0x44
 function function_7d709aa4(*params) {
@@ -56,7 +55,7 @@ function function_7d709aa4(*params) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc3061959, Offset: 0x438
 // Size: 0x6c
 function function_9505e24b() {
@@ -71,7 +70,7 @@ function function_9505e24b() {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbeaaf5ae, Offset: 0x4b0
 // Size: 0xe4
 function function_c3144b08() {
@@ -80,7 +79,7 @@ function function_c3144b08() {
     waitresult = self waittill(#"waitingtospawn");
     var_fa9f2461 = waitresult.timeuntilspawn + -0.5;
     if (var_fa9f2461 > 0) {
-        wait(var_fa9f2461);
+        wait var_fa9f2461;
     }
     if (self.sessionstate != "playing") {
         self.var_d95e672b = 1;
@@ -97,7 +96,7 @@ function function_403f2d91() {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x33c1176d, Offset: 0x5d0
 // Size: 0x22a
 function function_46fcf917(player) {
@@ -121,7 +120,7 @@ function function_46fcf917(player) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb877c530, Offset: 0x808
 // Size: 0x20c
 function function_e624cfcf(player, origin, angles) {
@@ -142,7 +141,7 @@ function function_e624cfcf(player, origin, angles) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe58ac88e, Offset: 0xa20
 // Size: 0x34c
 function function_96d350e9(spawn) {
@@ -198,7 +197,7 @@ function function_96d350e9(spawn) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2be3c57b, Offset: 0xd78
 // Size: 0x6c
 function function_598b9aa7() {
@@ -206,7 +205,7 @@ function function_598b9aa7() {
         self luinotifyevent(#"hash_300ac247ca9e52d3", 0);
         return;
     }
-    wait(0.5);
+    wait 0.5;
     if (!isdefined(self)) {
         return;
     }
@@ -214,7 +213,7 @@ function function_598b9aa7() {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4cb0f5e9, Offset: 0xdf0
 // Size: 0x22a
 function function_70f1d702() {
@@ -281,7 +280,7 @@ function function_b74c009d(groundpoint, angles) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x890d79ad, Offset: 0x11c0
 // Size: 0x2cc
 function function_2613549d(origin, angles) {
@@ -303,7 +302,7 @@ function function_2613549d(origin, angles) {
         self setclientthirdperson(1);
         self function_648c1f6(vehicle, undefined, 0, 180, 180, 180, 180, 0);
         self setplayerangles(angles);
-        wait(0);
+        wait 0;
         self setclientthirdperson(0);
         self startcameratween(0);
         self show();
@@ -319,11 +318,11 @@ function function_2613549d(origin, angles) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x32c207d4, Offset: 0x1498
 // Size: 0x58
 function function_5d5011dc(var_b1cf3b20) {
-    wait(1);
+    wait 1;
     if (!isdefined(var_b1cf3b20)) {
         return;
     }
@@ -332,7 +331,7 @@ function function_5d5011dc(var_b1cf3b20) {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab02dc72, Offset: 0x14f8
 // Size: 0x4fe
 function function_1e077098() {
@@ -403,7 +402,7 @@ function function_1e077098() {
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x91e14b84, Offset: 0x1a00
 // Size: 0x34
 function function_c147c6c5() {

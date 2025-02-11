@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_35ae72be7b4fec10;
 #using script_3dc93ca9902a9cda;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace namespace_9fe28d6e;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xba7a07ee, Offset: 0x158
 // Size: 0x34
 function private _preload() {
@@ -30,7 +29,7 @@ function private _preload() {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x198
 // Size: 0x4
 function private function_fa076c68() {
@@ -38,7 +37,7 @@ function private function_fa076c68() {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc3a9a02e, Offset: 0x1a8
 // Size: 0xba
 function private function_ad272ef4() {
@@ -57,7 +56,7 @@ function private function_ad272ef4() {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1c622e04, Offset: 0x270
 // Size: 0xac
 function private function_7c9b0132() {
@@ -70,7 +69,7 @@ function private function_7c9b0132() {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc262374c, Offset: 0x328
 // Size: 0x24
 function private function_90ceecf8() {
@@ -78,7 +77,7 @@ function private function_90ceecf8() {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x32f22bd2, Offset: 0x358
 // Size: 0x52
 function private _on_player_spawned(*localclientnum) {
@@ -99,17 +98,17 @@ function private _on_player_spawned(*localclientnum) {
     function private function_93945397(parms) {
         if (parms.value == 1) {
             setdvar(#"hash_1614a5a56768d221", 0);
-            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 0);
-            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
-            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
-            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
-            adddebugcommand("<unknown string>");
-            adddebugcommand("<unknown string>");
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<dev string:x38>", 0);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<dev string:x44>", 1);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<dev string:x57>", 1);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<dev string:x72>", 1);
+            adddebugcommand("<dev string:x84>");
+            adddebugcommand("<dev string:x95>");
             function_8af93a7();
             return;
         }
         function_263df0ea();
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:xa6>");
         level._fx.player val::reset_all(#"hash_36c3761ec21ee4ac");
     }
 
@@ -134,9 +133,9 @@ function private _on_player_spawned(*localclientnum) {
             function_d885deda(0);
             level thread function_2e225b16();
             buttons = [];
-            buttons[buttons.size] = "<unknown string>";
-            buttons[buttons.size] = "<unknown string>";
-            buttons[buttons.size] = "<unknown string>";
+            buttons[buttons.size] = "<dev string:xbc>";
+            buttons[buttons.size] = "<dev string:xc7>";
+            buttons[buttons.size] = "<dev string:xd4>";
             level._fx.player thread function_5402d440(level._fx.ambientwar.input, buttons);
             level._fx.player thread function_a11a465a(level._fx.ambientwar.input);
         }
@@ -147,8 +146,8 @@ function private _on_player_spawned(*localclientnum) {
     // Checksum 0xf4e0fce7, Offset: 0x7c8
     // Size: 0x418
     function private function_56e7d0e3() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:xe0>");
+        self endon("<dev string:xe0>");
         level endon(#"hash_d28501bd896672c");
         while (true) {
             if (namespace_61e6d095::exists(#"hash_2f8c229e8241a3a0")) {
@@ -158,14 +157,14 @@ function private _on_player_spawned(*localclientnum) {
                 count = 0;
                 foreach (entry in level._fx.ambientwar.data) {
                     namespace_61e6d095::set_count(#"hash_2f8c229e8241a3a0", count);
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.var_c6bf081d);
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.is_active);
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.group_id);
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.locations.size);
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.distance.min), 1));
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.distance.max), 1));
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.delay.min), 1));
-                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.delay.max), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:xf4>", entry.var_c6bf081d);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x105>", entry.is_active);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x111>", entry.group_id);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x11c>", entry.locations.size);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x12d>", string(float(entry.distance.min), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x138>", string(float(entry.distance.max), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x143>", string(float(entry.delay.min), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<dev string:x14f>", string(float(entry.delay.max), 1));
                     count++;
                 }
                 level._fx.ambientwar.var_bebc9d74 = count;
@@ -193,13 +192,13 @@ function private _on_player_spawned(*localclientnum) {
         level endon(#"hash_d28501bd896672c");
         while (true) {
             foreach (button in buttons) {
-                input.(button + "<unknown string>") = input.(button);
+                input.(button + "<dev string:x15b>") = input.(button);
                 input.(button) = self buttonpressed(button);
-                if (input.(button) && !isdefined(input.(button + "<unknown string>"))) {
-                    input.(button + "<unknown string>") = gettime();
+                if (input.(button) && !isdefined(input.(button + "<dev string:x164>"))) {
+                    input.(button + "<dev string:x164>") = gettime();
                 }
                 if (!input.(button)) {
-                    input.(button + "<unknown string>") = undefined;
+                    input.(button + "<dev string:x164>") = undefined;
                 }
             }
             waitframe(1);
@@ -211,8 +210,8 @@ function private _on_player_spawned(*localclientnum) {
     // Checksum 0x95d187da, Offset: 0xdc0
     // Size: 0x224
     function private function_a11a465a(input) {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x170>");
+        self endon("<dev string:x170>");
         level endon(#"hash_d28501bd896672c");
         while (true) {
             selection = isdefined(level._fx.ambientwar.selection) ? level._fx.ambientwar.selection : 0;
@@ -244,7 +243,7 @@ function private _on_player_spawned(*localclientnum) {
         level endon(#"hash_d28501bd896672c");
         if (isdefined(level._fx.ambientwar.selection)) {
             level._fx.ambientwar.data[function_be6420e7(level._fx.ambientwar.selection)].var_c6bf081d = 0;
-            namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", level._fx.ambientwar.selection, "<unknown string>", 0);
+            namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", level._fx.ambientwar.selection, "<dev string:xf4>", 0);
         }
         if (selection < 0) {
             selection = level._fx.ambientwar.data.size - 1;
@@ -252,9 +251,9 @@ function private _on_player_spawned(*localclientnum) {
         if (selection >= level._fx.ambientwar.data.size) {
             selection = 0;
         }
-        snd::play("<unknown string>", level._fx.player);
+        snd::play("<dev string:x184>", level._fx.player);
         level._fx.ambientwar.data[function_be6420e7(selection)].var_c6bf081d = 1;
-        namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", selection, "<unknown string>", 1);
+        namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", selection, "<dev string:xf4>", 1);
         level._fx.ambientwar.selection = selection;
     }
 
@@ -263,8 +262,8 @@ function private _on_player_spawned(*localclientnum) {
     // Checksum 0xd110be15, Offset: 0x11d8
     // Size: 0x2be
     function private function_2e225b16() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x1a2>");
+        self endon("<dev string:x1a2>");
         level endon(#"hash_d28501bd896672c");
         while (true) {
             if (isdefined(level._fx.ambientwar.selection)) {
@@ -306,7 +305,7 @@ function private function_be6420e7(selection) {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x6718497d, Offset: 0x1560
 // Size: 0xc4
 function private function_20e12458(location, dist_min, dist_max) {
@@ -318,7 +317,7 @@ function private function_20e12458(location, dist_min, dist_max) {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x742e070a, Offset: 0x1630
 // Size: 0x82
 function private function_4c6d8fd3(location, fov) {
@@ -329,7 +328,7 @@ function private function_4c6d8fd3(location, fov) {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x88c7146f, Offset: 0x16c0
 // Size: 0xa4
 function private function_1913c46(location) {
@@ -344,7 +343,7 @@ function private function_1913c46(location) {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc3eb75b9, Offset: 0x1770
 // Size: 0x506
 function private function_613e65ee(group_id) {
@@ -384,12 +383,12 @@ function private function_613e65ee(group_id) {
                         display_time = getdvarfloat(#"hash_79ddea850d94a804", 0.5) / float(function_60d95f53()) / 1000;
                         start = var_5fd45f33.origin + (0, 0, 20);
                         end = var_5fd45f33.origin + (0, 0, 100);
-                        str = isdefined(var_5fd45f33.var_b17f3758) ? "<unknown string>" + effect : effect;
+                        str = isdefined(var_5fd45f33.var_b17f3758) ? "<dev string:x1b6>" + effect : effect;
                         line(start, end, (1, 0.65, 0), 1, 0, int(display_time));
                         print3d(end, str, (1, 1, 1), 1, 0.5, int(display_time), 0);
                     }
                 #/
-                wait(randomfloatrange(delay.min, delay.max));
+                wait randomfloatrange(delay.min, delay.max);
             }
         }
         waitframe(1);
@@ -425,7 +424,7 @@ function create(group_id, var_6f2c5280 = undefined, min_delay = 0.5, max_delay =
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1ec9f1e0, Offset: 0x1e40
 // Size: 0x90
 function start(group_id) {
@@ -439,7 +438,7 @@ function start(group_id) {
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x856e69e7, Offset: 0x1ed8
 // Size: 0x88
 function stop(group_id) {

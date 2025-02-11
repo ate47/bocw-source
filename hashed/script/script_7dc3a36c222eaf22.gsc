@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spectating.gsc;
 #using script_306215d6cfd5f1f4;
 #using script_6167e26342be354b;
+#using scripts\core_common\spectating;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\territory_util;
 
 #namespace spectate_view;
 
@@ -52,7 +51,7 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
 }
 
 // Namespace spectate_view/spectate_view
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa45376d5, Offset: 0x2d0
 // Size: 0x9c
 function private preinit() {
@@ -63,7 +62,7 @@ function private preinit() {
 }
 
 // Namespace spectate_view/spectate_view
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62ad58a8, Offset: 0x378
 // Size: 0x24
 function function_500047aa(view) {
@@ -74,7 +73,7 @@ function function_500047aa(view) {
 }
 
 // Namespace spectate_view/spectate_view
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcea0a5e1, Offset: 0x3a8
 // Size: 0x44
 function function_363802ea(*players, *attacker) {
@@ -83,7 +82,7 @@ function function_363802ea(*players, *attacker) {
 }
 
 // Namespace spectate_view/spectate_view
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfadfd63f, Offset: 0x3f8
 // Size: 0x2c
 function function_86df9236() {
@@ -92,7 +91,7 @@ function function_86df9236() {
 }
 
 // Namespace spectate_view/spectate_view
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x54216a65, Offset: 0x430
 // Size: 0x24
 function function_888901cb() {

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_wound;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfaba60c9, Offset: 0x110
 // Size: 0x6c
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x786997d6, Offset: 0x188
 // Size: 0x1ec
 function wound_apply(var_756fda07, *weapon, *applicant) {
@@ -56,7 +55,7 @@ function wound_apply(var_756fda07, *weapon, *applicant) {
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x50506bf7, Offset: 0x380
 // Size: 0xca
 function function_a54d41f7(starttime) {
@@ -72,7 +71,7 @@ function function_a54d41f7(starttime) {
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6491a2ed, Offset: 0x458
 // Size: 0xf0
 function private function_f6fec56f() {
@@ -90,7 +89,7 @@ function private function_f6fec56f() {
 }
 
 // Namespace status_effect_wound/status_effect_wound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf62d449f, Offset: 0x550
 // Size: 0x24
 function wound_end() {

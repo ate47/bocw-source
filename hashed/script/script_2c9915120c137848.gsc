@@ -1,36 +1,35 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_77357b2d180aa2b8;
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
-#using script_1ce46999727f2f2b;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_1b0b07ff57d1dde3;
-#using script_1ee011cd0961afd7;
-#using script_350cffecd05ef6cf;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
 #using script_17dcb1172e441bf6;
-#using script_74a56359b7d02ab6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ce46999727f2f2b;
+#using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_2e9202713de2b353;
+#using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
 #using script_41fbdfb1149a433e;
-#using script_73ad7687b437e468;
+#using script_47851dbeea22fe66;
 #using script_48e04a393ec6d855;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_4d748e58ce25b60c;
+#using script_5701633066d199f2;
+#using script_5f20d3b434d24884;
+#using script_73ad7687b437e468;
+#using script_74a56359b7d02ab6;
+#using script_77357b2d180aa2b8;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_a6056a45;
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd2221b12, Offset: 0x1b8
 // Size: 0x2c
 function init() {
@@ -39,7 +38,7 @@ function init() {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdd75d757, Offset: 0x1f0
 // Size: 0x26
 function main() {
@@ -48,7 +47,7 @@ function main() {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x168203e9, Offset: 0x220
 // Size: 0xe4
 function function_e2f97f03(context = 0) {
@@ -66,7 +65,7 @@ function function_e2f97f03(context = 0) {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x768702b3, Offset: 0x310
 // Size: 0x6f8
 function function_de7fb95(var_c904ca7c, context = 0) {
@@ -75,11 +74,11 @@ function function_de7fb95(var_c904ca7c, context = 0) {
     var_7b8ab46d = arraycombine(var_8f43e5f8, var_baf628cc);
     foreach (target in var_7b8ab46d) {
         action = 0;
-        assert(isdefined(target.script_parameters) && isdefined("<unknown string>"));
+        assert(isdefined(target.script_parameters) && isdefined("<dev string:x38>"));
         toks = strtok(target.script_parameters, ";");
         assert(toks.size > 0);
         switch (toks[0]) {
-        case #"hash_4803a23362395345":
+        case #"elevator_brushmodel":
             action = 3;
             var_41157a40 = &function_92bae57c;
             var_4af56c19 = &function_2efb907a;
@@ -103,23 +102,23 @@ function function_de7fb95(var_c904ca7c, context = 0) {
             target.script_model = namespace_ec06fe4a::spawnmodel(target.origin, target.model, target.angles, "pressure_plate_object");
         }
         if (target.type == 2) {
-            assert(toks.size > 1, "<unknown string>");
+            assert(toks.size > 1, "<dev string:x6d>");
             target.doortype = int(toks[1]);
-            assert(target.doortype >= 1 && target.doortype <= 3, "<unknown string>");
+            assert(target.doortype >= 1 && target.doortype <= 3, "<dev string:x99>");
             target.script_model namespace_f63bdb08::function_94c7c0d9(target.doortype, 8, context);
         } else if (target.type == 1 || target.type == 3) {
             if (isdefined(target.script_model)) {
                 target.script_model setmovingplatformenabled(1);
             }
-            assert(toks.size > 2, "<unknown string>");
+            assert(toks.size > 2, "<dev string:xae>");
             target.verticaldistance = int(toks[1]);
             target.var_edf3aca7 = int(toks[2]);
             if (toks.size > 3) {
                 switch (toks[3]) {
                 case #"loot":
-                    assert(isdefined(target.target), "<unknown string>");
+                    assert(isdefined(target.target), "<dev string:xde>");
                     target.lootitems = struct::get_array(target.target, "targetname");
-                    assert(target.lootitems.size, "<unknown string>");
+                    assert(target.lootitems.size, "<dev string:x112>");
                     break;
                 }
             }
@@ -153,22 +152,22 @@ function function_de7fb95(var_c904ca7c, context = 0) {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaef90ac8, Offset: 0xa10
 // Size: 0x328
 function function_9592df27() {
     self.script_model endon(#"death");
     if (isdefined(self.lootitems)) {
         foreach (item in self.lootitems) {
-            assert(isdefined(item.script_noteworthy), "<unknown string>");
+            assert(isdefined(item.script_noteworthy), "<dev string:x14c>");
             switch (item.script_noteworthy) {
             case #"pickup_item":
                 if (!isdefined(self.var_152b081b)) {
                     self.var_152b081b = [];
                 }
-                assert(isdefined(item.script_parameters), "<unknown string>");
+                assert(isdefined(item.script_parameters), "<dev string:x171>");
                 def = namespace_dfc652ee::function_6265bde4(item.script_parameters);
-                assert(isdefined(def), "<unknown string>");
+                assert(isdefined(def), "<dev string:x199>");
                 pickupitem = namespace_dfc652ee::itemspawn(def, item.origin, item.angles, undefined, 1);
                 if (isdefined(pickupitem)) {
                     pickupitem thread namespace_ec06fe4a::function_73d79e7d(self.script_model, 1, (0, 0, 20));
@@ -195,7 +194,7 @@ function function_9592df27() {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbb2c9a59, Offset: 0xd40
 // Size: 0x12c
 function function_1efdf194(var_705bb15a, totaltime, totaldist) {
@@ -212,21 +211,21 @@ function function_1efdf194(var_705bb15a, totaltime, totaldist) {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x75dc6723, Offset: 0xe78
 // Size: 0x328
 function function_92bae57c() {
     if (isdefined(self.lootitems)) {
         foreach (item in self.lootitems) {
-            assert(isdefined(item.script_noteworthy), "<unknown string>");
+            assert(isdefined(item.script_noteworthy), "<dev string:x14c>");
             switch (item.script_noteworthy) {
             case #"pickup_item":
                 if (!isdefined(self.var_152b081b)) {
                     self.var_152b081b = [];
                 }
-                assert(isdefined(item.script_parameters), "<unknown string>");
+                assert(isdefined(item.script_parameters), "<dev string:x171>");
                 def = namespace_dfc652ee::function_6265bde4(item.script_parameters);
-                assert(isdefined(def), "<unknown string>");
+                assert(isdefined(def), "<dev string:x199>");
                 pickupitem = namespace_dfc652ee::itemspawn(def, item.origin, item.angles, undefined, 1);
                 if (isdefined(pickupitem)) {
                     pickupitem thread namespace_ec06fe4a::function_73d79e7d(self, 1, (0, 0, 20));
@@ -255,7 +254,7 @@ function function_92bae57c() {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x18ff1bdd, Offset: 0x11a8
 // Size: 0x11c
 function function_4b059395(var_705bb15a, totaltime, totaldist) {
@@ -272,7 +271,7 @@ function function_4b059395(var_705bb15a, totaltime, totaldist) {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x79efdfc6, Offset: 0x12d0
 // Size: 0xfc
 function function_2efb907a() {
@@ -294,7 +293,7 @@ function function_2efb907a() {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44947ffc, Offset: 0x13d8
 // Size: 0xc0
 function function_8a173823() {
@@ -309,7 +308,7 @@ function function_8a173823() {
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x69d715, Offset: 0x14a0
 // Size: 0x7c
 function function_1e0322f() {

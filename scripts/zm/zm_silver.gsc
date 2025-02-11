@@ -1,51 +1,50 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_c08f3519167b630;
-#using scripts\zm\zm_silver_sound.gsc;
-#using scripts\zm\zm_silver_vo.gsc;
-#using scripts\zm\zm_silver_util.gsc;
-#using scripts\zm\zm_silver_zones.gsc;
-#using scripts\zm\zm_silver_ww_quest.gsc;
-#using scripts\zm\zm_silver_pap_quest.gsc;
-#using script_432a18be09b697bd;
-#using scripts\zm\zm_silver_main_quest.gsc;
-#using script_5882f53c3e1f693f;
-#using script_4cf51a28ef39b750;
-#using script_3e57cc1a9084fdd6;
-#using script_3b5e488c4d278da3;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using script_7b1cd3908a825fdd;
 #using script_3411bb48d41bd3b;
-#using scripts\zm_common\zm_devgui.gsc;
-#using script_4ce5d94e8c797350;
-#using script_4d1e366b77f0b4b;
-#using script_ab862743b3070a;
-#using scripts\zm_common\callbacks.gsc;
-#using scripts\zm_common\zm_intel.gsc;
-#using scripts\zm_common\zm_hazard.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_round_spawning.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
+#using script_3b5e488c4d278da3;
+#using script_3e57cc1a9084fdd6;
+#using script_432a18be09b697bd;
 #using script_448683444db21d61;
-#using scripts\zm_common\zm_fasttravel.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scriptmodels_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_4ce5d94e8c797350;
+#using script_4cf51a28ef39b750;
+#using script_4d1e366b77f0b4b;
+#using script_5882f53c3e1f693f;
+#using script_7b1cd3908a825fdd;
+#using script_c08f3519167b630;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scriptmodels_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm\zm_silver_main_quest;
+#using scripts\zm\zm_silver_pap_quest;
+#using scripts\zm\zm_silver_sound;
+#using scripts\zm\zm_silver_util;
+#using scripts\zm\zm_silver_vo;
+#using scripts\zm\zm_silver_ww_quest;
+#using scripts\zm\zm_silver_zones;
+#using scripts\zm_common\callbacks;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\util\ai_dog_util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_fasttravel;
+#using scripts\zm_common\zm_hazard;
+#using scripts\zm_common\zm_intel;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_round_spawning;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_silver;
 
@@ -79,9 +78,9 @@ function event_handler[level_init] main(*eventstruct) {
     scene::function_497689f6(#"hash_1c6b6adda3e5f98", "helicopter", "tag_probe_attach", "prb_tn_zm_silver_heli_light_cabin");
     level thread function_a6101b7();
     zm::init_fx();
-    zm_perks::function_9760a58b(#"hash_7f98b3dd3cce95aa");
+    zm_perks::function_9760a58b(#"talent_quickrevive");
     zm_perks::function_9760a58b(#"hash_47d7a8105237c88");
-    zm_perks::function_9760a58b(#"hash_602a1b6107105f07");
+    zm_perks::function_9760a58b(#"talent_staminup");
     level.var_7f72eddd = "default_zombies_silver";
     level.var_dafeed10 = "exfil_silver_";
     level.var_26ed6a07 = 600;
@@ -93,8 +92,8 @@ function event_handler[level_init] main(*eventstruct) {
     clientfield::register_clientuimodel("player_lives", 1, 2, "int");
     clientfield::register("world", "" + #"hash_5e38b0496d9664bb", 1, 3, "int");
     clientfield::register("world", "" + #"hash_2690e69916d071d9", 1, 1, "int");
-    clientfield::register("toplayer", "" + #"hash_464e0cd19b3b8c12", 1, 1, "int");
-    clientfield::register("toplayer", "" + #"hash_4be33f9c734f0cb9", 1, 2, "int");
+    clientfield::register("toplayer", "" + #"minimap_underground", 1, 1, "int");
+    clientfield::register("toplayer", "" + #"music_underscore", 1, 2, "int");
     clientfield::register("toplayer", "" + #"hash_6696d96a08b9701d", 1, 1, "counter");
     clientfield::register("toplayer", "" + #"hash_7a769c728c89b6b5", 1, 1, "counter");
     clientfield::register("toplayer", "" + #"hash_20d620050345e82", 6000, 1, "int");
@@ -147,7 +146,7 @@ function event_handler[level_init] main(*eventstruct) {
     level.var_bb6bf2e0 = 1;
     namespace_591b4396::function_fa5bd408(array("zone_proto_exterior_rear2", "zone_proto_exterior_rear"));
     /#
-        execdevgui("round_start_special_00");
+        execdevgui("<dev string:x38>");
         level thread function_ec9000ea();
     #/
     setdvar(#"hash_7b06b8037c26b99b", 72);
@@ -163,7 +162,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5027c689, Offset: 0x1588
 // Size: 0xb0
 function function_44ed971() {
@@ -173,7 +172,7 @@ function function_44ed971() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cdcaf58, Offset: 0x1640
 // Size: 0x44
 function function_963beb87() {
@@ -181,7 +180,7 @@ function function_963beb87() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x36f1b9c9, Offset: 0x1690
 // Size: 0x2c
 function function_4b29f610() {
@@ -189,7 +188,7 @@ function function_4b29f610() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x192bb326, Offset: 0x16c8
 // Size: 0x3cc
 function function_c260f7a1(var_e9ea5e13) {
@@ -224,7 +223,7 @@ function function_c260f7a1(var_e9ea5e13) {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x69db8566, Offset: 0x1aa0
 // Size: 0x3c
 function function_a58c1ef7() {
@@ -234,7 +233,7 @@ function function_a58c1ef7() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4f908ead, Offset: 0x1ae8
 // Size: 0x30e
 function function_ddc13fd6() {
@@ -296,7 +295,7 @@ function offhand_weapon_give_override(str_weapon) {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec1a56ae, Offset: 0x1f08
 // Size: 0x54
 function sndfunctions() {
@@ -306,7 +305,7 @@ function sndfunctions() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x17825df4, Offset: 0x1f68
 // Size: 0x3c2
 function setup_personality_character_exerts() {
@@ -337,7 +336,7 @@ function setup_personality_character_exerts() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x55f60c03, Offset: 0x2338
 // Size: 0x1dc
 function setupmusic() {
@@ -354,23 +353,23 @@ function setupmusic() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x32043160, Offset: 0x2520
 // Size: 0x178
 function function_65c65feb(b_active = 0) {
     if (b_active) {
         foreach (player in getplayers()) {
-            player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 2);
+            player clientfield::set_to_player("" + #"music_underscore", 2);
         }
         return;
     }
     foreach (player in getplayers()) {
-        player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 3);
+        player clientfield::set_to_player("" + #"music_underscore", 3);
     }
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ae63520, Offset: 0x26a0
 // Size: 0x13a
 function function_cd3a65e0() {
@@ -391,7 +390,7 @@ function function_cd3a65e0() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x87ec117f, Offset: 0x27e8
 // Size: 0x180
 function private function_360fb84d() {
@@ -409,7 +408,7 @@ function private function_360fb84d() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xde4955c2, Offset: 0x2970
 // Size: 0x7c
 function private function_a95110c(n_round) {
@@ -431,7 +430,7 @@ function function_87f4bdb0() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x723231c8, Offset: 0x2a80
 // Size: 0xba
 function function_55b0a71e(get_all = 0) {
@@ -446,7 +445,7 @@ function function_55b0a71e(get_all = 0) {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x2b48
 // Size: 0x4
 function function_74872db6() {
@@ -454,7 +453,7 @@ function function_74872db6() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x2b58
 // Size: 0x4
 function on_round_end() {
@@ -478,17 +477,17 @@ function function_ccf0175a() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe510b0b4, Offset: 0x2c00
 // Size: 0x42
 function function_93abe410() {
     var_bcb1a003 = function_1401e135();
     level.var_5fe8eeaa += var_bcb1a003 * 1000;
-    wait(var_bcb1a003);
+    wait var_bcb1a003;
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x31aad3de, Offset: 0x2c50
 // Size: 0x1d2
 function function_1401e135() {
@@ -522,7 +521,7 @@ function function_1401e135() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x11e3a541, Offset: 0x2e30
 // Size: 0x1b2
 function function_7040caed() {
@@ -559,7 +558,7 @@ function function_7040caed() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xefd8de2d, Offset: 0x2ff0
 // Size: 0xf4
 function function_3ada378c() {
@@ -577,7 +576,7 @@ function function_3ada378c() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x45ce3c68, Offset: 0x30f0
 // Size: 0x184
 function dog_round_tracker(*var_634c65f0) {
@@ -593,19 +592,19 @@ function dog_round_tracker(*var_634c65f0) {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb7505ab8, Offset: 0x3280
 // Size: 0x50
 function function_be03ceef(time) {
     level.var_61a89694 = time;
     while (level.var_61a89694 > 0) {
-        wait(1);
+        wait 1;
         level.var_61a89694 -= 1;
     }
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x62c72c5e, Offset: 0x32d8
 // Size: 0x76
 function function_e4e257b6() {
@@ -614,12 +613,12 @@ function function_e4e257b6() {
     while (true) {
         level waittill(#"dog_round");
         function_7bb4a5d7("dog_round");
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa5b614b, Offset: 0x3358
 // Size: 0x104
 function function_b935b15c() {
@@ -636,7 +635,7 @@ function function_b935b15c() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x868809e9, Offset: 0x3468
 // Size: 0x234
 function function_7cdd91fd() {
@@ -662,7 +661,7 @@ function function_7cdd91fd() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d7e47d9, Offset: 0x36a8
 // Size: 0x130
 function function_a6308ec9() {
@@ -680,7 +679,7 @@ function function_a6308ec9() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa31607ab, Offset: 0x37e0
 // Size: 0x472
 function function_7bb4a5d7(state) {
@@ -731,7 +730,7 @@ function function_7bb4a5d7(state) {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ee01409, Offset: 0x3c60
 // Size: 0xb0
 function function_706bc947() {
@@ -740,13 +739,13 @@ function function_706bc947() {
         level flag::wait_till("dog_round");
         setdvar(#"hash_7b06b8037c26b99b", 220);
         level flag::wait_till_clear("dog_round");
-        wait(9);
+        wait 9;
         setdvar(#"hash_7b06b8037c26b99b", 72);
     }
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4abd3e7c, Offset: 0x3d18
 // Size: 0x1b2
 function function_7a15a086() {
@@ -768,7 +767,7 @@ function function_7a15a086() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4f9fdbe8, Offset: 0x3ed8
 // Size: 0xcc
 function function_85bd89cb() {
@@ -782,7 +781,7 @@ function function_85bd89cb() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2ac23004, Offset: 0x3fb0
 // Size: 0xe4
 function waiting_for_next_dog_spawn(count, max) {
@@ -795,14 +794,14 @@ function waiting_for_next_dog_spawn(count, max) {
         default_wait = 3;
     }
     if (isdefined(count) && isdefined(max)) {
-        wait(max(default_wait - count / max, 0.05));
+        wait max(default_wait - count / max, 0.05);
         return;
     }
-    wait(max(default_wait - 0.5, 0.05));
+    wait max(default_wait - 0.5, 0.05);
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x86044cb0, Offset: 0x40a0
 // Size: 0xd4
 function function_a6101b7() {
@@ -813,7 +812,7 @@ function function_a6101b7() {
 }
 
 // Namespace zm_silver/zm_silver
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8b311e05, Offset: 0x4180
 // Size: 0x2ba
 function function_452e5ad6() {
@@ -853,7 +852,7 @@ function function_452e5ad6() {
     // Checksum 0xa11ea605, Offset: 0x4448
     // Size: 0x44
     function private function_ec9000ea() {
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x5c>");
         zm_devgui::add_custom_devgui_callback(&function_3ab942cb);
     }
 

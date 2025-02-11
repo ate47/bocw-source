@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\bb.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_7cc5fb39b97494c4;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\doors_shared.gsc;
-#using scripts\core_common\serverfield_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\doors_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\bb;
 
 #namespace lockpick;
 
@@ -25,7 +24,7 @@ class class_d28acd06 : class_9e71c1a2 {
     var var_b5a03b21;
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x42a5ba89, Offset: 0x878
     // Size: 0xc4
     function _reset(*str_team) {
@@ -38,7 +37,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x383cfa4d, Offset: 0x448
     // Size: 0x374
     function _init() {
@@ -68,7 +67,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x76dd936a, Offset: 0xcb0
     // Size: 0x38
     function function_309c16b5(e_player, n_new_val) {
@@ -76,7 +75,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x38ff24cc, Offset: 0xc50
     // Size: 0x34
     function function_6084622f(e_player) {
@@ -85,7 +84,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x8b3645c0, Offset: 0xac8
     // Size: 0xc
     function function_613e65ee(*e_player) {
@@ -93,7 +92,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xaee52e, Offset: 0x848
     // Size: 0x28
     function _start(e_player) {
@@ -101,7 +100,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x21f48a40, Offset: 0xae0
     // Size: 0x34
     function _stop(e_player) {
@@ -111,7 +110,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x99c35ad6, Offset: 0x7c8
     // Size: 0x74
     function function_89999e9c(*player, stream) {
@@ -121,7 +120,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xda40691c, Offset: 0xc90
     // Size: 0x18
     function function_91ef58fb(var_f8d01c02) {
@@ -129,7 +128,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x1f1a58d2, Offset: 0x948
     // Size: 0x178
     function function_a466ed26(e_player) {
@@ -150,7 +149,7 @@ class class_d28acd06 : class_9e71c1a2 {
     }
 
     // Namespace namespace_d28acd06/lockpick
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x675c8bc6, Offset: 0xb20
     // Size: 0x124
     function function_e28586b3(e_player) {
@@ -182,7 +181,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace lockpick/lockpick
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x45e87069, Offset: 0x238
 // Size: 0xcc
 function private preinit() {
@@ -193,7 +192,7 @@ function private preinit() {
 }
 
 // Namespace lockpick/lockpick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf9b86e96, Offset: 0x310
 // Size: 0x14
 function function_8d584152() {
@@ -205,14 +204,14 @@ function function_8d584152() {
 // Checksum 0x8bb6cdc9, Offset: 0x330
 // Size: 0x6c
 function cancel() {
-    assert(isplayer(self), "<unknown string>");
+    assert(isplayer(self), "<dev string:x38>");
     if (self.var_97c1c267.last_player === self) {
         self.var_97c1c267 minigame::function_c09ff52(undefined, undefined, self);
     }
 }
 
 // Namespace lockpick/lockpick
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc873210c, Offset: 0x3a8
 // Size: 0x58
 function private function_74ad25ad(*oldval, newval) {

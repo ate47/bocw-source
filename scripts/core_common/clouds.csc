@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace clouds;
 
@@ -14,18 +13,18 @@ function private autoexec __init__system__() {
 }
 
 // Namespace clouds/clouds
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x55dc8f90, Offset: 0xf8
 // Size: 0xac
 function private preinit() {
     level.clouds = {#layers:[]};
     function_f75dd8e0("low", 6000, #"hash_3cb3a6fc9eb00337");
     callback::add_callback(#"freefall", &function_c9a18304);
-    callback::add_callback(#"hash_171443902e2a22ee", &function_f99c2453);
+    callback::add_callback(#"skydive_end", &function_f99c2453);
 }
 
 // Namespace clouds/clouds
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2a4f2b3, Offset: 0x1b0
 // Size: 0x74
 function private function_c9a18304(eventstruct) {
@@ -38,7 +37,7 @@ function private function_c9a18304(eventstruct) {
 }
 
 // Namespace clouds/clouds
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xff5eefa6, Offset: 0x230
 // Size: 0x5c
 function private function_f99c2453(eventstruct) {
@@ -51,7 +50,7 @@ function private function_f99c2453(eventstruct) {
 }
 
 // Namespace clouds/clouds
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x72a20993, Offset: 0x298
 // Size: 0x9c
 function function_f75dd8e0(name, min_height, fx) {
@@ -60,7 +59,7 @@ function function_f75dd8e0(name, min_height, fx) {
 }
 
 // Namespace clouds/clouds
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xabc91936, Offset: 0x340
 // Size: 0x32
 function private function_59a04cbf() {
@@ -71,7 +70,7 @@ function private function_59a04cbf() {
 }
 
 // Namespace clouds/clouds
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbe2689a5, Offset: 0x380
 // Size: 0x14c
 function start(localclientnum) {
@@ -93,7 +92,7 @@ function start(localclientnum) {
 }
 
 // Namespace clouds/clouds
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3541e0a, Offset: 0x4d8
 // Size: 0x134
 function update(localclientnum) {
@@ -108,12 +107,12 @@ function update(localclientnum) {
         if (self.clouds.size == 0) {
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace clouds/clouds
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa648881f, Offset: 0x618
 // Size: 0xd2
 function cleanup(localclientnum) {
@@ -128,7 +127,7 @@ function cleanup(localclientnum) {
 }
 
 // Namespace clouds/clouds
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x878cc5a9, Offset: 0x6f8
 // Size: 0x5c
 function function_2baaca3c(localclientnum, name) {

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using script_67c87580908a0a00;
+#using scripts\core_common\activecamo_shared_util;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
 
 #namespace activecamo;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3dbfc5b, Offset: 0x138
 // Size: 0x5c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x86f1f447, Offset: 0x1a0
 // Size: 0xa0
 function on_weapon_change(params) {
@@ -44,7 +43,7 @@ function on_weapon_change(params) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x861305d, Offset: 0x248
 // Size: 0x3c
 function on_player_death(*params) {
@@ -55,7 +54,7 @@ function on_player_death(*params) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5276620b, Offset: 0x290
 // Size: 0x184
 function function_27779784() {
@@ -72,7 +71,7 @@ function function_27779784() {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc35a8cb2, Offset: 0x420
 // Size: 0xd0
 function on_player_loadout() {
@@ -84,7 +83,7 @@ function on_player_loadout() {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3f27b3aa, Offset: 0x4f8
 // Size: 0x84
 function function_8d3b94ea(weapon, owned, b_has_weapon) {
@@ -96,7 +95,7 @@ function function_8d3b94ea(weapon, owned, b_has_weapon) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x44f6af74, Offset: 0x588
 // Size: 0x274
 function init_activecamo(weapon, var_f4eb4a50, owned) {
@@ -130,7 +129,7 @@ function init_activecamo(weapon, var_f4eb4a50, owned) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x61396aaf, Offset: 0x808
 // Size: 0x5fa
 function function_8a6ced15(var_f4eb4a50) {
@@ -173,7 +172,7 @@ function function_8a6ced15(var_f4eb4a50) {
                 }
                 /#
                     if (!isdefined(stage.var_19b6044e)) {
-                        self debug_error("<unknown string>" + var_13949c61.name + "<unknown string>" + function_9e72a96(isdefined(var_3594168e.camooption) ? var_3594168e.camooption : "<unknown string>") + "<unknown string>" + key);
+                        self debug_error("<dev string:x38>" + var_13949c61.name + "<dev string:x3e>" + function_9e72a96(isdefined(var_3594168e.camooption) ? var_3594168e.camooption : "<dev string:x5b>") + "<dev string:x66>" + key);
                     } else {
                         activecamoname = getactivecamo(stage.var_19b6044e);
                         var_7216636e = undefined;
@@ -181,9 +180,9 @@ function function_8a6ced15(var_f4eb4a50) {
                             var_7216636e = getscriptbundle(activecamoname);
                         }
                         if (!isdefined(var_7216636e)) {
-                            self debug_error("<unknown string>" + var_13949c61.name + "<unknown string>" + stage.var_19b6044e + "<unknown string>" + key);
+                            self debug_error("<dev string:x38>" + var_13949c61.name + "<dev string:x78>" + stage.var_19b6044e + "<dev string:x66>" + key);
                         } else if (!isdefined(var_7216636e.name) || var_7216636e.name != var_13949c61.name) {
-                            self debug_error("<unknown string>" + var_13949c61.name + "<unknown string>" + stage.var_19b6044e + "<unknown string>" + (isdefined(var_7216636e.name) ? var_7216636e.name : "<unknown string>") + "<unknown string>" + key);
+                            self debug_error("<dev string:x38>" + var_13949c61.name + "<dev string:xa3>" + stage.var_19b6044e + "<dev string:xb7>" + (isdefined(var_7216636e.name) ? var_7216636e.name : "<dev string:x5b>") + "<dev string:x66>" + key);
                         }
                         activecamoname = undefined;
                         var_7216636e = undefined;
@@ -221,7 +220,7 @@ function function_8a6ced15(var_f4eb4a50) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7b19eb92, Offset: 0xe10
 // Size: 0xc2
 function function_37a45562(camoindex, activecamo) {
@@ -234,7 +233,7 @@ function function_37a45562(camoindex, activecamo) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7d79228d, Offset: 0xee0
 // Size: 0xaf4
 function init_stages(activecamo, var_3a8a1e00, isdeath) {
@@ -366,7 +365,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x27c1d5ad, Offset: 0x19e0
 // Size: 0x634
 function function_896ac347(oweapon, statname, value) {
@@ -377,12 +376,12 @@ function function_896ac347(oweapon, statname, value) {
         return;
     }
     if (!isdefined(oweapon)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:xd2>");
         return;
     }
     weapon = function_94c2605(oweapon);
     if (!isdefined(weapon)) {
-        assertmsg("<unknown string>" + function_9e72a96(oweapon.name));
+        assertmsg("<dev string:x107>" + function_9e72a96(oweapon.name));
         return;
     }
     activecamoname = self function_b004e227(weapon);
@@ -398,11 +397,11 @@ function function_896ac347(oweapon, statname, value) {
             activecamo.weapon = weapon;
             activecamo.baseweapon = function_c14cb514(activecamo.weapon);
             if (!isdefined(activecamo.baseweapon)) {
-                assertmsg("<unknown string>" + function_9e72a96(activecamo.weapon.name));
+                assertmsg("<dev string:x14d>" + function_9e72a96(activecamo.weapon.name));
                 return;
             }
             if (!isdefined(activecamo.var_dd54a13b[activecamo.baseweapon])) {
-                assertmsg("<unknown string>" + function_9e72a96(activecamo.baseweapon.name) + "<unknown string>");
+                assertmsg("<dev string:x19c>" + function_9e72a96(activecamo.baseweapon.name) + "<dev string:x1cd>");
                 return;
             }
             if (isdefined(activecamo.stages)) {
@@ -452,7 +451,7 @@ function function_896ac347(oweapon, statname, value) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3d2e560, Offset: 0x2020
 // Size: 0x1ba
 function function_e2212969(activecamo, value) {
@@ -473,7 +472,7 @@ function function_e2212969(activecamo, value) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb7ceb218, Offset: 0x21e8
 // Size: 0x6c
 function function_f0d83504(activecamo, stage, stagenum) {
@@ -481,7 +480,7 @@ function function_f0d83504(activecamo, stage, stagenum) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0eb7793, Offset: 0x2260
 // Size: 0x18c
 function function_e44edbd1(activecamo) {
@@ -508,7 +507,7 @@ function function_e44edbd1(activecamo) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb64800b4, Offset: 0x23f8
 // Size: 0xb4
 function function_b9119037(activecamo) {
@@ -525,7 +524,7 @@ function function_b9119037(activecamo) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51763265, Offset: 0x24b8
 // Size: 0x304
 function function_5d692cf(activecamo) {
@@ -576,7 +575,7 @@ function function_5d692cf(activecamo) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf78a4cf3, Offset: 0x27c8
 // Size: 0x42c
 function function_8eac065(activecamo) {
@@ -636,7 +635,7 @@ function function_8eac065(activecamo) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc1000951, Offset: 0x2c00
 // Size: 0x154
 function set_stage_activecamo(activecamo, stagenum) {
@@ -650,13 +649,13 @@ function set_stage_activecamo(activecamo, stagenum) {
         self setcamo(activecamo.weapon, stage.var_62b564ee.var_19b6044e);
     }
     /#
-        self debug_print("<unknown string>" + activecamo.var_13949c61.name + "<unknown string>" + stagenum + "<unknown string>" + (isdefined(stage.var_62b564ee.var_19b6044e) ? stage.var_62b564ee.var_19b6044e : "<unknown string>"));
+        self debug_print("<dev string:x38>" + activecamo.var_13949c61.name + "<dev string:x1f7>" + stagenum + "<dev string:x207>" + (isdefined(stage.var_62b564ee.var_19b6044e) ? stage.var_62b564ee.var_19b6044e : "<dev string:x219>"));
     #/
     self thread function_a80cb651(activecamo, stagenum);
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc6981e42, Offset: 0x2d60
 // Size: 0x2ac
 function function_a80cb651(activecamo, stagenum) {
@@ -686,7 +685,7 @@ function function_a80cb651(activecamo, stagenum) {
             }
         }
     } else if (stage.var_62b564ee.resettimer > 0) {
-        wait(float(stage.var_62b564ee.resettimer) / 1000);
+        wait float(stage.var_62b564ee.resettimer) / 1000;
     } else {
         return;
     }
@@ -701,7 +700,7 @@ function function_a80cb651(activecamo, stagenum) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4816c0c7, Offset: 0x3018
 // Size: 0x82
 function function_5aa1d2c8(weapon, b_has_weapon) {
@@ -715,7 +714,7 @@ function function_5aa1d2c8(weapon, b_has_weapon) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6ea096ad, Offset: 0x30a8
 // Size: 0xfa
 function function_155299d(weapon, b_has_weapon = 1) {
@@ -736,7 +735,7 @@ function function_155299d(weapon, b_has_weapon = 1) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa96a3f27, Offset: 0x31b0
 // Size: 0xda
 function function_b004e227(weapon, b_has_weapon = 1) {
@@ -761,12 +760,12 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Size: 0xe4
     function debug_error(message, weapon) {
         if (getdvarint(#"activecamo_debug", 0) > 0) {
-            weaponname = "<unknown string>";
+            weaponname = "<dev string:x226>";
             if (isdefined(weapon)) {
-                weaponname = "<unknown string>" + function_9e72a96(weapon.name);
+                weaponname = "<dev string:x22a>" + function_9e72a96(weapon.name);
             }
-            self iprintlnbold("<unknown string>" + message + weaponname);
-            println("<unknown string>" + self.playername + "<unknown string>" + message + weaponname);
+            self iprintlnbold("<dev string:x238>" + message + weaponname);
+            println("<dev string:x259>" + self.playername + "<dev string:x26f>" + message + weaponname);
         }
     }
 
@@ -776,12 +775,12 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Size: 0xe4
     function debug_print(message, weapon) {
         if (getdvarint(#"activecamo_debug", 0) > 0) {
-            weaponname = "<unknown string>";
+            weaponname = "<dev string:x226>";
             if (isdefined(weapon)) {
-                weaponname = "<unknown string>" + function_9e72a96(weapon.name);
+                weaponname = "<dev string:x22a>" + function_9e72a96(weapon.name);
             }
-            self iprintlnbold("<unknown string>" + message + weaponname);
-            println("<unknown string>" + self.playername + "<unknown string>" + message + weaponname);
+            self iprintlnbold("<dev string:x259>" + message + weaponname);
+            println("<dev string:x259>" + self.playername + "<dev string:x26f>" + message + weaponname);
         }
     }
 
@@ -792,8 +791,8 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     function function_265047c1() {
         callback::on_connect(&on_player_connect);
         callback::on_disconnect(&on_player_disconnect);
-        level.var_630fbd77 = "<unknown string>" + 30 + "<unknown string>";
-        root = "<unknown string>" + level.var_630fbd77;
+        level.var_630fbd77 = "<dev string:x275>" + 30 + "<dev string:x294>";
+        root = "<dev string:x299>" + level.var_630fbd77;
         function_1039ce5c(root);
         thread devgui_think();
         thread function_12e53b2d();
@@ -827,8 +826,8 @@ function function_b004e227(weapon, b_has_weapon = 1) {
         if (!isdefined(level.var_630fbd77)) {
             return;
         }
-        wait(2);
-        root = level.var_630fbd77 + "<unknown string>";
+        wait 2;
+        root = level.var_630fbd77 + "<dev string:x2a8>";
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (players[i] != self) {
@@ -847,8 +846,8 @@ function function_b004e227(weapon, b_has_weapon = 1) {
         if (!isdefined(level.var_630fbd77)) {
             return;
         }
-        root = level.var_630fbd77 + "<unknown string>";
-        cmd = "<unknown string>" + root + self.playername + "<unknown string>";
+        root = level.var_630fbd77 + "<dev string:x2a8>";
+        cmd = "<dev string:x2b4>" + root + self.playername + "<dev string:x2c6>";
         thread util::add_debug_command(cmd);
     }
 
@@ -857,7 +856,7 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0xfa5a38e1, Offset: 0x3710
     // Size: 0xac
     function devgui_add_player_commands(root, pname, index) {
-        add_cmd_with_root = "<unknown string>" + root + pname + "<unknown string>";
+        add_cmd_with_root = "<dev string:x299>" + root + pname + "<dev string:x294>";
         function_f1d01720(add_cmd_with_root, index);
         function_85cb822d(add_cmd_with_root, index);
         function_de358bfd(add_cmd_with_root, index);
@@ -869,7 +868,7 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0xe9bb8c92, Offset: 0x37c8
     // Size: 0x44
     function function_1039ce5c(root) {
-        cmd = root + "<unknown string>" + "<unknown string>";
+        cmd = root + "<dev string:x2cc>" + "<dev string:x2dc>";
         thread util::add_debug_command(cmd);
     }
 
@@ -882,9 +881,9 @@ function function_b004e227(weapon, b_has_weapon = 1) {
         if (!isdefined(index)) {
             index = 0;
         }
-        cmd = root + "<unknown string>" + "<unknown string>" + index + "<unknown string>";
+        cmd = root + "<dev string:x2ff>" + "<dev string:x30a>" + index + "<dev string:x340>";
         thread util::add_debug_command(cmd);
-        cmd = root + "<unknown string>" + "<unknown string>" + index + "<unknown string>";
+        cmd = root + "<dev string:x347>" + "<dev string:x352>" + index + "<dev string:x340>";
         thread util::add_debug_command(cmd);
     }
 
@@ -893,7 +892,7 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0x385d6f70, Offset: 0x38e0
     // Size: 0x158
     function function_85cb822d(root, index) {
-        var_37949de1 = root + "<unknown string>";
+        var_37949de1 = root + "<dev string:x383>";
         if (!isdefined(index)) {
             index = 0;
         }
@@ -903,7 +902,7 @@ function function_b004e227(weapon, b_has_weapon = 1) {
                 continue;
             }
             activecamoname = function_9e72a96(activecamo);
-            cmd = var_37949de1 + activecamoname + "<unknown string>" + activecamoname + "<unknown string>" + index + "<unknown string>";
+            cmd = var_37949de1 + activecamoname + "<dev string:x38d>" + activecamoname + "<dev string:x3be>" + index + "<dev string:x340>";
             thread util::add_debug_command(cmd);
         }
     }
@@ -913,17 +912,17 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0xccf01653, Offset: 0x3a40
     // Size: 0x148
     function function_de358bfd(root, index) {
-        var_1520a1da = root + "<unknown string>";
+        var_1520a1da = root + "<dev string:x3d9>";
         if (!isdefined(index)) {
             index = 0;
         }
         weapons = [];
-        weapons[0] = "<unknown string>";
-        weapons[1] = "<unknown string>";
-        weapons[2] = "<unknown string>";
-        weapons[3] = "<unknown string>";
+        weapons[0] = "<dev string:x3e5>";
+        weapons[1] = "<dev string:x3f7>";
+        weapons[2] = "<dev string:x40d>";
+        weapons[3] = "<dev string:x420>";
         foreach (weapon in weapons) {
-            cmd = var_1520a1da + weapon + "<unknown string>" + weapon + "<unknown string>" + index + "<unknown string>";
+            cmd = var_1520a1da + weapon + "<dev string:x433>" + weapon + "<dev string:x3be>" + index + "<dev string:x340>";
             thread util::add_debug_command(cmd);
         }
     }
@@ -933,13 +932,13 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0xf990e831, Offset: 0x3b90
     // Size: 0x168
     function function_50d79d31(root, index) {
-        var_82c49718 = root + "<unknown string>";
+        var_82c49718 = root + "<dev string:x467>";
         if (!isdefined(index)) {
             index = 0;
         }
         stages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         foreach (stage in stages) {
-            cmd = var_82c49718 + stage + "<unknown string>" + stage + "<unknown string>" + index + "<unknown string>";
+            cmd = var_82c49718 + stage + "<dev string:x475>" + stage + "<dev string:x3be>" + index + "<dev string:x340>";
             thread util::add_debug_command(cmd);
         }
     }
@@ -949,10 +948,10 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0x8d77acc0, Offset: 0x3d00
     // Size: 0x330
     function devgui_think() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x4a7>");
+        self endon("<dev string:x4a7>");
         for (;;) {
-            wait(0.5);
+            wait 0.5;
             reset = 1;
             host = util::gethostplayer();
             switch (getdvarstring(#"hash_3e1bb44a57b02ed8")) {
@@ -982,9 +981,9 @@ function function_b004e227(weapon, b_has_weapon = 1) {
                 break;
             }
             if (reset) {
-                setdvar(#"hash_3e1bb44a57b02ed8", "<unknown string>");
-                setdvar(#"hash_3fe8dd280c325e8", "<unknown string>");
-                setdvar(#"hash_324a391b56cb100", "<unknown string>");
+                setdvar(#"hash_3e1bb44a57b02ed8", "<dev string:x226>");
+                setdvar(#"hash_3fe8dd280c325e8", "<dev string:x226>");
+                setdvar(#"hash_324a391b56cb100", "<dev string:x226>");
             }
         }
     }
@@ -1206,8 +1205,8 @@ function function_b004e227(weapon, b_has_weapon = 1) {
     // Checksum 0xf990ac57, Offset: 0x4cb8
     // Size: 0x20c
     function function_12e53b2d() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x4bb>");
+        self endon("<dev string:x4bb>");
         while (true) {
             var_f4eb4a50 = undefined;
             waitresult = level waittill(#"liveupdate");

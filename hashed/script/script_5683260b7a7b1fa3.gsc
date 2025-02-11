@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_193d6fcd3b319d05;
-#using script_34e9dd62fc371077;
-#using scripts\zm_common\aats\zm_aat.gsc;
-#using scripts\zm_common\objective_manager.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\core_common\values_shared.gsc;
 #using script_340a2e805e35f7a2;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_34e9dd62fc371077;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\aats\zm_aat;
+#using scripts\zm_common\objective_manager;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_e6fea84d;
 
@@ -43,10 +42,10 @@ function private preinit() {
         clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_rarity", 1, 2, "int");
         clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_atttype", 1, 4, "int");
         /#
-            util::add_debug_command("<unknown string>");
-            util::add_debug_command("<unknown string>");
-            util::add_debug_command("<unknown string>");
-            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<dev string:x38>");
+            util::add_debug_command("<dev string:xbf>");
+            util::add_debug_command("<dev string:x141>");
+            util::add_debug_command("<dev string:x1c5>");
             zm_devgui::add_custom_devgui_callback(&function_8df2fc68);
         #/
     }
@@ -116,7 +115,7 @@ function function_4e9f972a(var_4d2ad93e) {
         player thread function_e3871553(var_4d2ad93e);
         player playlocalsound(#"hash_6ff6896abbcdb20e");
     }
-    wait(1.5);
+    wait 1.5;
     level flag::clear(#"hash_554d70a6779336e1");
 }
 
@@ -152,7 +151,7 @@ function function_e3871553(var_4d2ad93e) {
         waitframe(1);
     }
     self val::set(#"hash_20448189c8ad7c6f", "disable_weapons", 1);
-    wait(0.25);
+    wait 0.25;
     foreach (weapon in self getweaponslistprimaries()) {
         if (weapon != level.weaponbasemeleeheld) {
             self zm_weapons::weapon_take(weapon);
@@ -186,7 +185,7 @@ function function_e3871553(var_4d2ad93e) {
             self.var_5f08a4b1[self.var_5f08a4b1.size] = str_weapon_name;
         }
     } else {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x24e>");
         return;
     }
     switch (var_2b930188) {
@@ -222,7 +221,7 @@ function function_e3871553(var_4d2ad93e) {
     if (isdefined(str_item_name)) {
         point = function_4ba8fde(str_item_name);
         if (isdefined(point.itementry) && var_27751b99 > 0 && isdefined(level.var_fee1eaaf)) {
-            var_a53e9db0 = point.itementry.var_a53e9db0;
+            random_attachments = point.itementry.random_attachments;
             var_d0e99a2a = point.itementry.var_d0e99a2a;
             var_8e212f46 = point.itementry.var_8e212f46;
             var_3e805062 = point.itementry.var_3e805062;
@@ -230,7 +229,7 @@ function function_e3871553(var_4d2ad93e) {
             if (isdefined(new_item)) {
                 point = new_item;
                 point.paplv = var_27751b99;
-                point.itementry.var_a53e9db0 = var_a53e9db0;
+                point.itementry.random_attachments = random_attachments;
                 point.itementry.var_d0e99a2a = var_d0e99a2a;
                 point.itementry.var_8e212f46 = var_8e212f46;
                 point.itementry.var_3e805062 = var_3e805062;
@@ -239,7 +238,7 @@ function function_e3871553(var_4d2ad93e) {
         if (isdefined(point) && isdefined(str_aat)) {
             point.aat = str_aat;
         }
-        if (isdefined(point.itementry.var_a53e9db0)) {
+        if (isdefined(point.itementry.random_attachments)) {
             weapon = namespace_65181344::function_67456242(point.itementry);
             dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles);
             dropitem.hidetime = 1;
@@ -263,7 +262,7 @@ function function_e3871553(var_4d2ad93e) {
             self thread zm_vo::function_8abe0568(#"game_over");
         }
     }
-    wait(0.25);
+    wait 0.25;
     self val::reset(#"hash_20448189c8ad7c6f", "disable_weapons");
     self val::reset("#lotto_loadouts", "disable_offhand_weapons");
     if (isdefined(str_aat)) {
@@ -355,7 +354,7 @@ function function_525c846d(ammomod) {
 // Size: 0x3c
 function function_3c487e20() {
     self endon(#"disconnect");
-    wait(2);
+    wait 2;
     level.onslaught_hud onslaught_hud::function_71fd1345(self, 0);
 }
 

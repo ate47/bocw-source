@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace bb;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6fb7dfa1, Offset: 0x228
 // Size: 0x94
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x29beb302, Offset: 0x2c8
 // Size: 0xb8
 function private function_3872d0f0() {
@@ -45,7 +44,7 @@ function private function_3872d0f0() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x21c0155c, Offset: 0x388
 // Size: 0x1a0
 function private function_70635e9d() {
@@ -55,7 +54,7 @@ function private function_70635e9d() {
     self endon("757ff94f2b51b3cb");
     waitframe(1);
     while (isdefined(level.var_a8072505)) {
-        event = self waittill(#"hash_543e034b500f035d");
+        event = self waittill(#"stealth_alert");
         enemies = getaiteamarray("axis");
         var_f5c94561 = -1;
         foreach (var_9e578de5 in enemies) {
@@ -74,7 +73,7 @@ function private function_70635e9d() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf40b83fb, Offset: 0x530
 // Size: 0x1e8
 function private function_88a4e45c() {
@@ -104,7 +103,7 @@ function private function_88a4e45c() {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdc69cb04, Offset: 0x720
 // Size: 0xc8
 function private function_85a6ae83() {
@@ -116,12 +115,12 @@ function private function_85a6ae83() {
         if (getdvarint(#"hash_7b899094cda20ec3", 1)) {
             recordbreadcrumbdataforplayer(self);
         }
-        wait(getdvarfloat(#"hash_48fe774d185ff64a", 2));
+        wait getdvarfloat(#"hash_48fe774d185ff64a", 2);
     }
 }
 
 // Namespace bb/bb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc7c225ac, Offset: 0x7f0
 // Size: 0xb6
 function private function_56f03b13(player) {
@@ -140,7 +139,7 @@ function private function_56f03b13(player) {
 }
 
 // Namespace bb/bb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcb13d47a, Offset: 0x8b0
 // Size: 0x56
 function private function_bb412e85() {
@@ -154,7 +153,7 @@ function private function_bb412e85() {
 }
 
 // Namespace bb/bb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x24a4c62a, Offset: 0x910
 // Size: 0x90c
 function function_74cad77c(player) {
@@ -256,9 +255,9 @@ function function_74cad77c(player) {
     var_2084f739.currentweapon = currentweapon;
     var_2084f739.grenadesused = grenadesused;
     var_2084f739.bestkillstreak = bestkillstreak;
-    var_2084f739.var_416a3780 = var_18e1bf78;
+    var_2084f739.dj_dist = var_18e1bf78;
     var_2084f739.var_5f11b3b0 = var_34a1cd0e;
-    var_2084f739.var_4ee734c0 = var_8ee7643d;
+    var_2084f739.dj_time = var_8ee7643d;
     var_2084f739.var_eeb75a04 = var_3ce237d6;
     var_2084f739.var_c595ee7d = var_1940d7af;
     var_2084f739.wallrun_time = var_da1d706e;
@@ -274,7 +273,7 @@ function function_74cad77c(player) {
 }
 
 // Namespace bb/bb
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xebcaa66e, Offset: 0x1228
 // Size: 0x1f4
 function function_47cb52f6(objectivename, player, status) {
@@ -311,7 +310,7 @@ function function_47cb52f6(objectivename, player, status) {
 }
 
 // Namespace bb/bb
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x9676c80c, Offset: 0x1428
 // Size: 0x63c
 function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, victimkilled, victimdowned) {
@@ -430,7 +429,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
 }
 
 // Namespace bb/bb
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x106af84d, Offset: 0x1a70
 // Size: 0x14
 function logaispawn(*aient, *spawner) {
@@ -438,7 +437,7 @@ function logaispawn(*aient, *spawner) {
 }
 
 // Namespace bb/bb
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x77ff7ee7, Offset: 0x1a90
 // Size: 0x20c
 function function_cd497743(notificationtype, player = getplayers()[0]) {
@@ -473,7 +472,7 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
 }
 
 // Namespace bb/bb
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xce6632b7, Offset: 0x1ca8
 // Size: 0xdc
 function function_7977c093(scriptbundle, selection, player) {
@@ -490,7 +489,7 @@ function function_7977c093(scriptbundle, selection, player) {
 }
 
 // Namespace bb/bb
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6c2f8112, Offset: 0x1d90
 // Size: 0x114
 function function_a0d15803(var_4d98c3ce, var_393b6e18, player) {
@@ -512,7 +511,7 @@ function function_a0d15803(var_4d98c3ce, var_393b6e18, player) {
 }
 
 // Namespace bb/bb
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x69417e75, Offset: 0x1eb0
 // Size: 0x19c
 function function_8fca6a2e(event, player) {
@@ -533,7 +532,7 @@ function function_8fca6a2e(event, player) {
 }
 
 // Namespace bb/bb
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x941b78b6, Offset: 0x2058
 // Size: 0xdc
 function function_141c945e(action, weapon, player) {

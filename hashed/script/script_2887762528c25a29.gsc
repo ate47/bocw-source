@@ -1,25 +1,24 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_47851dbeea22fe66;
-#using script_774302f762d76254;
-#using script_1ee011cd0961afd7;
-#using script_634ae70c663d1cc9;
 #using script_17dcb1172e441bf6;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_47851dbeea22fe66;
+#using script_634ae70c663d1cc9;
+#using script_774302f762d76254;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_9529b92d;
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x288
 // Size: 0x4
 function init() {
@@ -27,7 +26,7 @@ function init() {
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8040ddd, Offset: 0x298
 // Size: 0x16
 function main() {
@@ -35,14 +34,14 @@ function main() {
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e741a7, Offset: 0x2b8
 // Size: 0x1b6
 function function_e073d92f() {
     self notify("3b218896f68a5246");
     self endon("3b218896f68a5246");
     self thread namespace_268747c0::function_978c05b5();
-    result = self waittill(#"hash_3e251384a5400dce");
+    result = self waittill(#"destroy_hazard");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_6733605b, self);
         namespace_1e25ad94::debugmsg("Deleting Pressure Plate trap permenently at:" + self.origin);
@@ -67,11 +66,11 @@ function function_e073d92f() {
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdb1f34d3, Offset: 0x478
 // Size: 0x1b8
 function function_a2e3342e(trap, var_7c56394 = 0) {
-    assert(isdefined(trap.target), "<unknown string>");
+    assert(isdefined(trap.target), "<dev string:x38>");
     trap.script_model = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_pressure_plate", trap.angles);
     if (isdefined(trap.script_model)) {
         trap.script_model.targetname = "hazard";
@@ -83,14 +82,14 @@ function function_a2e3342e(trap, var_7c56394 = 0) {
     if (trap.var_84a0207b.size == 0) {
         trap.var_84a0207b = struct::get_array(trap.target, "targetname");
     }
-    assert(trap.var_84a0207b.size > 0, "<unknown string>");
+    assert(trap.var_84a0207b.size > 0, "<dev string:x5e>");
     array::notify_all(trap.var_84a0207b, "plate_assigned");
     trap thread function_3864f6a5();
     return trap;
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9589b3d3, Offset: 0x638
 // Size: 0x10c
 function function_b3e13787(trap, page = 0) {
@@ -110,7 +109,7 @@ function function_b3e13787(trap, page = 0) {
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa8906e3a, Offset: 0x750
 // Size: 0x304
 function function_865e002e() {
@@ -118,7 +117,7 @@ function function_865e002e() {
     self endon("3403e7d2fd3d360f");
     level endon(#"game_over", #"hash_15db1223146bc923");
     while (true) {
-        wait(0.5);
+        wait 0.5;
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {
             continue;
@@ -152,7 +151,7 @@ function function_865e002e() {
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1200);
             if (!isdefined(trap.var_f8660931)) {
-                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                trap notify(#"destroy_hazard", {#var_760a0807:0});
                 namespace_1e25ad94::debugmsg("Paging out pressure plate trap at:" + trap.origin);
             }
         }
@@ -160,7 +159,7 @@ function function_865e002e() {
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15c5163b, Offset: 0xa60
 // Size: 0x130
 function function_b2a0e8d2() {
@@ -178,17 +177,17 @@ function function_b2a0e8d2() {
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf87b5c3, Offset: 0xb98
 // Size: 0x2a8
 function function_3864f6a5() {
     self notify("328702548bd94911");
     self endon("328702548bd94911");
     level endon(#"game_over");
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self thread function_e073d92f();
     if (!isdefined(self.script_model)) {
-        self notify(#"hash_3e251384a5400dce");
+        self notify(#"destroy_hazard");
     }
     var_d71f280f = self.origin;
     upposition = var_d71f280f + (0, 0, 12);

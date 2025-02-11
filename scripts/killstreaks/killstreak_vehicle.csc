@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\visionset_mgr_shared.csc;
-#using scripts\core_common\vehicles\driving_fx.csc;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\killstreaks\killstreak_bundles.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicles\driving_fx;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\killstreaks\killstreak_bundles;
 
 #namespace killstreak_vehicle;
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbb23dfe8, Offset: 0x120
 // Size: 0x2c
 function init() {
@@ -17,7 +16,7 @@ function init() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7f50863d, Offset: 0x158
 // Size: 0x7c
 function init_killstreak(bundle) {
@@ -30,7 +29,7 @@ function init_killstreak(bundle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbc0bc251, Offset: 0x1e0
 // Size: 0xbc
 function spawned(localclientnum, bundle) {
@@ -44,7 +43,7 @@ function spawned(localclientnum, bundle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9fba2aa2, Offset: 0x2a8
 // Size: 0x78
 function demo_think(localclientnum) {
@@ -59,20 +58,20 @@ function demo_think(localclientnum) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5e0e7c3e, Offset: 0x328
 // Size: 0x114
 function boost_blur(localclientnum) {
     self endon(#"death");
     if (isdefined(self.owner) && self.owner function_21c0fa55()) {
         enablespeedblur(localclientnum, getdvarfloat(#"scr_rcbomb_amount", 0.1), getdvarfloat(#"scr_rcbomb_inner_radius", 0.5), getdvarfloat(#"scr_rcbomb_outer_radius", 0.75), 0, 0);
-        wait(getdvarfloat(#"scr_rcbomb_duration", 1));
+        wait getdvarfloat(#"scr_rcbomb_duration", 1);
         disablespeedblur(localclientnum);
     }
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb12a9fff, Offset: 0x448
 // Size: 0x50
 function boost_think(localclientnum) {
@@ -84,7 +83,7 @@ function boost_think(localclientnum) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x274945e6, Offset: 0x4a0
 // Size: 0x34
 function shutdown_think(localclientnum) {
@@ -109,7 +108,7 @@ function play_boost_fx(localclientnum) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1c7cf202, Offset: 0x588
 // Size: 0xa0
 function stunnedhandler(localclientnum) {
@@ -124,7 +123,7 @@ function stunnedhandler(localclientnum) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbb24b3cb, Offset: 0x630
 // Size: 0x5c
 function notstunnedhandler(*localclientnum) {
@@ -135,7 +134,7 @@ function notstunnedhandler(*localclientnum) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa011feb7, Offset: 0x698
 // Size: 0x90
 function play_stunned_fx_handler(localclientnum) {
@@ -144,12 +143,12 @@ function play_stunned_fx_handler(localclientnum) {
     self endon(#"not_stunned");
     while (true) {
         util::playfxontag(localclientnum, level._effect[#"rcbomb_stunned"], self, "tag_origin");
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xffa6b0f, Offset: 0x730
 // Size: 0x70
 function enginestutterhandler(localclientnum) {
@@ -163,7 +162,7 @@ function enginestutterhandler(localclientnum) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x3805ca7e, Offset: 0x7a8
 // Size: 0x11c
 function ondrivingfxcollision(localclientnum, player, *hip, *hitn, hit_intensity) {
@@ -181,7 +180,7 @@ function ondrivingfxcollision(localclientnum, player, *hip, *hitn, hit_intensity
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9c3a3743, Offset: 0x8d0
 // Size: 0x14
 function ondrivingfxjumplanding(*localclientnum, *player) {

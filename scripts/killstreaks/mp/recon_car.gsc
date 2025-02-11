@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreak_vehicle.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\killstreaks\remote_weapons.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreak_detect.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\killstreak_detect;
+#using scripts\killstreaks\killstreak_vehicle;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\remote_weapons;
 
 #namespace recon_car;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x51fac6d4, Offset: 0x170
 // Size: 0x44
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x59c35f13, Offset: 0x1c0
 // Size: 0x94
 function init_killstreak() {
@@ -43,7 +42,7 @@ function init_killstreak() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc5a8a483, Offset: 0x260
 // Size: 0x154
 function function_d1661ada() {
@@ -69,7 +68,7 @@ function function_d1661ada() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a9cf7dc, Offset: 0x3c0
 // Size: 0x12
 function function_d4789bf5() {
@@ -77,7 +76,7 @@ function function_d4789bf5() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8012e615, Offset: 0x3e0
 // Size: 0x108
 function function_819fff9d() {
@@ -86,7 +85,7 @@ function function_819fff9d() {
         waitresult = self waittill(#"veh_predictedcollision");
         if (isplayer(waitresult.target) && util::function_fbce7263(self.team, waitresult.target.team)) {
             if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
-                self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"hash_20e53d0989f408e6");
+                self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"auto_detonation");
             }
             self killstreak_vehicle::function_1f46c433();
         }
@@ -94,7 +93,7 @@ function function_819fff9d() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95d6cf5e, Offset: 0x4f0
 // Size: 0x128
 function function_f3170551() {
@@ -111,7 +110,7 @@ function function_f3170551() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1638fa36, Offset: 0x620
 // Size: 0x134
 function function_2087b17f() {
@@ -129,12 +128,12 @@ function function_2087b17f() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x58ee5b75, Offset: 0x760
 // Size: 0x64
 function function_76817ccc() {
     if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
-        self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"hash_b7109f8dd0ceb9");
+        self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"manual_detonation");
     }
 }
 

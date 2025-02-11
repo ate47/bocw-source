@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_record.gsc;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
 #using script_1d29de500c266470;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\match_record.gsc;
-#using scripts\core_common\loot_tracking.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\loot_tracking;
+#using scripts\core_common\match_record;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\player\player_record;
 
 #namespace wz_medals;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wz_medals/wz_medals
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4d04db6a, Offset: 0x140
 // Size: 0x44
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace wz_medals/wz_medals
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc99c1082, Offset: 0x190
 // Size: 0xe4
 function function_843da215(params) {
@@ -50,7 +49,7 @@ function function_843da215(params) {
 }
 
 // Namespace wz_medals/wz_medals
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf68c4e1b, Offset: 0x280
 // Size: 0x104
 function function_f4837321(*params) {

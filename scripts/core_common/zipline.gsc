@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace zipline;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdb7ca8b2, Offset: 0x268
 // Size: 0x44
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x392b4504, Offset: 0x2b8
 // Size: 0x6a4
 function private registerbehaviorscriptfunctions() {
@@ -62,7 +61,7 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x67f619de, Offset: 0x968
 // Size: 0x24
 function private function_c4306be2() {
@@ -70,7 +69,7 @@ function private function_c4306be2() {
 }
 
 // Namespace zipline/zipline
-// Params 9, eflags: 0x6 linked
+// Params 9, eflags: 0x4
 // Checksum 0x5cfdad1b, Offset: 0x998
 // Size: 0x2ac
 function private function_d271a025(*inflictor, *attacker, *damage, *meansofdeath, *weapon, *var_fd90b0bb, vdir, *hitloc, *offsettime) {
@@ -111,7 +110,7 @@ function private function_d271a025(*inflictor, *attacker, *damage, *meansofdeath
 }
 
 // Namespace zipline/zipline
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x636bae4d, Offset: 0xc50
 // Size: 0x44
 function private isziplining(entity) {
@@ -119,7 +118,7 @@ function private isziplining(entity) {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa687f4df, Offset: 0xca0
 // Size: 0x30
 function private function_8de15fec(entity, asmstatename) {
@@ -128,7 +127,7 @@ function private function_8de15fec(entity, asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x91be8c48, Offset: 0xcd8
 // Size: 0x90
 function private function_dedfe444(entity) {
@@ -139,7 +138,7 @@ function private function_dedfe444(entity) {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4bc8a32f, Offset: 0xd70
 // Size: 0x52
 function private function_536ff6cf() {
@@ -148,7 +147,7 @@ function private function_536ff6cf() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xee6ce52c, Offset: 0xdd0
 // Size: 0x36
 function private function_11a51c07() {
@@ -158,7 +157,7 @@ function private function_11a51c07() {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7c1bb0a, Offset: 0xe10
 // Size: 0x98
 function private function_54e23559(entity, asmstatename) {
@@ -174,7 +173,7 @@ function private function_54e23559(entity, asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3d05e6f8, Offset: 0xeb0
 // Size: 0x64
 function private function_6d7d599e() {
@@ -184,7 +183,7 @@ function private function_6d7d599e() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa002be9d, Offset: 0xf20
 // Size: 0x72
 function private function_4fa6735c() {
@@ -194,7 +193,7 @@ function private function_4fa6735c() {
 }
 
 // Namespace zipline/zipline
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe1befb7, Offset: 0xfa0
 // Size: 0x2bc
 function private function_daabc8cc(entity) {
@@ -210,7 +209,7 @@ function private function_daabc8cc(entity) {
             var_6d7d599e = entity function_6d7d599e();
             var_4fa6735c = entity function_4fa6735c();
             /#
-                record3dtext("<unknown string>", var_6d7d599e, (0, 1, 0));
+                record3dtext("<dev string:x38>", var_6d7d599e, (0, 1, 0));
                 recordsphere(var_6d7d599e, 5, (0, 1, 0));
                 recordline(var_6d7d599e, var_6d7d599e + anglestoforward(entity.zipline_start.angles) * 30, (0, 1, 0));
                 recordsphere(entity.var_a4d91a0d.origin, 5, (1, 0, 0));
@@ -225,7 +224,7 @@ function private function_daabc8cc(entity) {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x319e5d54, Offset: 0x1268
 // Size: 0x264
 function private function_f5e4c85b(entity, *asmstatename) {
@@ -244,7 +243,7 @@ function private function_f5e4c85b(entity, *asmstatename) {
             }
             asmstatename.var_a4d91a0d.origin = self.origin;
             /#
-                record3dtext("<unknown string>", self.origin, (1, 0.5, 0), "<unknown string>");
+                record3dtext("<dev string:x61>", self.origin, (1, 0.5, 0), "<dev string:x8d>");
             #/
             asmstatename linkto(asmstatename.var_a4d91a0d);
             asmstatename.var_a4d91a0d.var_14e53eac = 1;
@@ -257,7 +256,7 @@ function private function_f5e4c85b(entity, *asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc4f32047, Offset: 0x14d8
 // Size: 0x6e
 function private function_3564615d(zipline_start) {
@@ -267,7 +266,7 @@ function private function_3564615d(zipline_start) {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x56b6631d, Offset: 0x1550
 // Size: 0x21c
 function private function_85ce22b4() {
@@ -284,14 +283,14 @@ function private function_85ce22b4() {
         self.var_e8f98e9d = undefined;
     }
     /#
-        record3dtext("<unknown string>", self.var_b20b0960.origin, (1, 0, 0));
+        record3dtext("<dev string:x97>", self.var_b20b0960.origin, (1, 0, 0));
         recordsphere(self.var_b20b0960.origin, 5, (1, 0, 0));
         recordline(self.var_b20b0960.origin, self.var_b20b0960.origin + anglestoforward(self.var_b20b0960.angles) * 100, (1, 0, 0));
     #/
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x4f284fa0, Offset: 0x1778
 // Size: 0xb0
 function private function_8956c060(entity, asmstatename) {
@@ -307,7 +306,7 @@ function private function_8956c060(entity, asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x952f4ca3, Offset: 0x1830
 // Size: 0xc4
 function private function_55f3b1df(var_1948a97, zipline_start, normalized_distance) {
@@ -323,7 +322,7 @@ function private function_55f3b1df(var_1948a97, zipline_start, normalized_distan
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xad8c4310, Offset: 0x1900
 // Size: 0x292
 function private function_c7c70177(entity, *asmstatename) {
@@ -366,7 +365,7 @@ function private function_c7c70177(entity, *asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x81919bdc, Offset: 0x1ba0
 // Size: 0x8c
 function private function_aeb6539c() {
@@ -380,7 +379,7 @@ function private function_aeb6539c() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x673e151, Offset: 0x1c38
 // Size: 0xae
 function private function_25f7c630() {
@@ -395,7 +394,7 @@ function private function_25f7c630() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe810e11d, Offset: 0x1cf0
 // Size: 0x11c
 function private function_9dac9d34() {
@@ -415,7 +414,7 @@ function private function_9dac9d34() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x38190890, Offset: 0x1e18
 // Size: 0xac
 function private function_56e443d9() {
@@ -428,7 +427,7 @@ function private function_56e443d9() {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x602e1ff3, Offset: 0x1ed0
 // Size: 0x38
 function private function_c4cfe0f5() {
@@ -439,7 +438,7 @@ function private function_c4cfe0f5() {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8f26bc5d, Offset: 0x1f10
 // Size: 0x80
 function private function_11b30321(entity, *asmstatename) {
@@ -454,7 +453,7 @@ function private function_11b30321(entity, *asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd9ef663d, Offset: 0x1f98
 // Size: 0x96
 function private function_dd8aadf1(entity, asmstatename) {
@@ -467,7 +466,7 @@ function private function_dd8aadf1(entity, asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x111591f7, Offset: 0x2038
 // Size: 0x240
 function private function_28c69db4(entity, *asmstatename) {
@@ -494,7 +493,7 @@ function private function_28c69db4(entity, *asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x1932c21d, Offset: 0x2280
 // Size: 0x22
 function private function_97a75ffc(entity, *asmstatename) {
@@ -503,7 +502,7 @@ function private function_97a75ffc(entity, *asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc56bfc5e, Offset: 0x22b0
 // Size: 0x1fc
 function function_63d01c33() {
@@ -544,7 +543,7 @@ function function_63d01c33() {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x33402657, Offset: 0x24b8
 // Size: 0x58
 function private function_574f0280(entity, asmstatename) {
@@ -554,7 +553,7 @@ function private function_574f0280(entity, asmstatename) {
 }
 
 // Namespace zipline/zipline
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x5e0364b3, Offset: 0x2518
 // Size: 0x32
 function private function_c0a3f837(entity, *asmstatename) {

@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_72d96920f15049b8;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
 
 #namespace wz_sanatorium;
 
@@ -45,7 +44,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace wz_sanatorium/wz_sanatorium
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xca9f5b33, Offset: 0x5e0
 // Size: 0x1fc
 function function_e8fa58f2() {
@@ -73,7 +72,7 @@ function function_e8fa58f2() {
 }
 
 // Namespace wz_sanatorium/wz_sanatorium
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x32e5f6fe, Offset: 0x7e8
 // Size: 0xac
 function function_564698fd() {
@@ -87,7 +86,7 @@ function function_564698fd() {
 }
 
 // Namespace wz_sanatorium/wz_sanatorium
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1b76a60, Offset: 0x8a0
 // Size: 0x214
 function function_a387f4f5() {
@@ -142,7 +141,7 @@ function function_a387f4f5() {
         level.var_6eef6733[function_9e72a96(self.vehicletype)][level.var_6eef6733[function_9e72a96(self.vehicletype)].size] = self;
         v_spawn_pos = self.origin;
         level thread function_f567f0cd();
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x38>");
         str_type = function_9e72a96(self.vehicletype);
         v_color = self function_b2775b52();
         while (getdvarint(#"hash_57a9b32c8a8503f1", 0)) {
@@ -180,12 +179,12 @@ function function_a387f4f5() {
                 n_total += var_f0ffe8b2.size;
                 foreach (var_3ed342fe in var_f0ffe8b2) {
                     if (isvehicle(var_3ed342fe) && isdefined(var_f0ffe8b2) && isdefined(var_f0ffe8b2[0]) && isdefined(var_f0ffe8b2[0].vehicletype)) {
-                        debug2dtext((810, var_bd9acc19, 0), function_9e72a96(var_f0ffe8b2[0].vehicletype) + "<unknown string>" + var_f0ffe8b2.size, var_3ed342fe function_b2775b52());
+                        debug2dtext((810, var_bd9acc19, 0), function_9e72a96(var_f0ffe8b2[0].vehicletype) + "<dev string:x50>" + var_f0ffe8b2.size, var_3ed342fe function_b2775b52());
                         break;
                     }
                 }
             }
-            debug2dtext((810, 176, 0), "<unknown string>" + n_total, (1, 1, 1));
+            debug2dtext((810, 176, 0), "<dev string:x56>" + n_total, (1, 1, 1));
             waitframe(1);
         }
     }
@@ -254,7 +253,7 @@ function function_a387f4f5() {
         if (!getdvarint(#"hash_31ae3e289b7b921d", 0)) {
             return;
         }
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x38>");
         if (!isdefined(level.dirtybombs)) {
             return;
         }
@@ -276,7 +275,7 @@ function function_a387f4f5() {
     // Checksum 0x914d138, Offset: 0x1738
     // Size: 0xbe
     function function_d72aa67e(str_list, str_name) {
-        a_str_tok = strtok(str_list, "<unknown string>");
+        a_str_tok = strtok(str_list, "<dev string:x70>");
         foreach (tok in a_str_tok) {
             if (tok == str_name) {
                 return 1;

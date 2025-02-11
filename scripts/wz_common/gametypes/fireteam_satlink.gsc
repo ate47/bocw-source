@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
+#using script_1cc417743d7c262d;
+#using script_335d0650ed05d36d;
+#using script_46192c58ea066d7f;
+#using script_471b31bd963b388e;
 #using script_4e6bcfa8856b2a96;
 #using script_b9a55edd207e4ca;
-#using script_46192c58ea066d7f;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using script_1cc417743d7c262d;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using script_335d0650ed05d36d;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_world;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic_score;
 
 #namespace fireteam_satlink;
 
@@ -61,7 +60,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.var_65a0fe4d = isdefined(getgametypesetting(#"hash_7b3feba4324cd527")) ? getgametypesetting(#"hash_7b3feba4324cd527") : 30;
     level thread namespace_234f0efc::function_8d066de9(level.var_b9f31e66, level.var_89a6bd00, level.var_65a0fe4d, level.var_8c05a764);
     level.var_574cc797 = &namespace_234f0efc::function_588a586d;
-    item_world::function_861f348d(#"hash_75a7db904ba5faed", &function_18f58ab2);
+    item_world::function_861f348d(#"gamemode_pickup", &function_18f58ab2);
     level.var_d539e0dd = &function_3f63e44f;
     setdvar(#"scr_maxinventory_scorestreaks", 1);
     level.var_e2636f91 = 0;
@@ -222,7 +221,7 @@ function function_a893466c() {
             }
         }
         level function_28039abb();
-        wait(3);
+        wait 3;
     }
 }
 
@@ -787,7 +786,7 @@ function private function_d0a78df6(activator) {
             }
         }
         prevtime = gettime();
-        wait(0.05);
+        wait 0.05;
     }
 }
 
@@ -1029,9 +1028,9 @@ function private function_3f63e44f(item) {
     assert(isdefined(item.itementry));
     if (item.itementry.itemtype == #"generic") {
         switch (item.itementry.name) {
-        case #"hash_44cca2edb9c2041c":
+        case #"armor_pouch_item_t9":
             return !namespace_234f0efc::function_d912fa6e(self);
-        case #"hash_742db17ef9ee9c3e":
+        case #"signal_booster_item_t9":
             var_e3483afe = self clientfield::get_player_uimodel("hudItems.uraniumCarryCount");
             canpickup = 5 > var_e3483afe;
             self thread function_c50d8500(canpickup);
@@ -1086,7 +1085,7 @@ function private function_c50d8500(canpickup) {
     }
     self.var_2717d932 = gettime() + int(4 * 1000);
     self clientfield::set_player_uimodel("hudItems.uraniumFullCarry", 1);
-    wait(2);
+    wait 2;
     if (isplayer(self)) {
         self clientfield::set_player_uimodel("hudItems.uraniumFullCarry", 0);
     }
@@ -1099,13 +1098,13 @@ function private function_c50d8500(canpickup) {
 function private function_18f58ab2(item, player, networkid, itemid, itemcount, var_aec6fa7f, slot) {
     pickup = 0;
     switch (item.itementry.name) {
-    case #"hash_44cca2edb9c2041c":
+    case #"armor_pouch_item_t9":
         pickup = namespace_234f0efc::function_dd8cb464(item, player, networkid, itemid, itemcount, var_aec6fa7f, slot);
         break;
-    case #"hash_59b05128a1472855":
+    case #"satlink_battery_large_item_t9":
         pickup = function_a22bb806(item, player, networkid, itemid, itemcount, var_aec6fa7f, slot);
         break;
-    case #"hash_742db17ef9ee9c3e":
+    case #"signal_booster_item_t9":
         pickup = function_60d1226(item, player, networkid, itemid, itemcount, var_aec6fa7f, slot);
         break;
     }
@@ -1253,7 +1252,7 @@ function function_c0e544cc(params) {
         if (player isonground()) {
             break;
         }
-        wait(1);
+        wait 1;
     }
     player luinotifyevent(#"hash_6b67aa04e378d681", 1, 16);
 }

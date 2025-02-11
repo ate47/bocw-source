@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\compass.gsc;
+#using scripts\core_common\compass;
+#using scripts\core_common\load_shared;
 
 #namespace mp_sm_finance;
 

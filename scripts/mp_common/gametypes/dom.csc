@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace dom;
 
@@ -19,22 +18,22 @@ function event_handler[gametype_init] main(*eventstruct) {
     }
     clientfield::register("scriptmover", "scriptid", 1, 5, "int", &function_e116df6c, 0, 0);
     level._effect[#"zoneedgemarker"] = [];
-    level._effect[#"zoneedgemarker"][0] = #"hash_1f447aeb1973f7b6";
+    level._effect[#"zoneedgemarker"][0] = #"ui/fx8_infil_marker_neutral";
     level._effect[#"zoneedgemarker"][1] = #"hash_5c2ae9f4f331d4b9";
     level._effect[#"zoneedgemarker"][2] = #"hash_7d1b0f001ea88b82";
     level._effect[#"zoneedgemarker"][3] = #"hash_7981eb245ea536fc";
     level._effect[#"zoneedgemarkerwndw"] = [];
-    level._effect[#"zoneedgemarkerwndw"][0] = #"hash_35ab4f45bbfba6b3";
+    level._effect[#"zoneedgemarkerwndw"][0] = #"ui/fx8_infil_marker_neutral_window";
     level._effect[#"zoneedgemarkerwndw"][1] = #"hash_5565c3fc2c7742fe";
     level._effect[#"zoneedgemarkerwndw"][2] = #"hash_3283b765fe480df7";
     level._effect[#"zoneedgemarkerwndw"][3] = #"hash_6a512c225256a2e9";
-    level.var_67ca171e = [];
-    level.var_67ca171e[#"a"] = struct::get_array("doma", "targetname");
-    level.var_67ca171e[#"b"] = struct::get_array("domb", "targetname");
-    level.var_67ca171e[#"c"] = struct::get_array("domc", "targetname");
-    level.var_67ca171e[#"d"] = struct::get_array("domd", "targetname");
-    level.var_67ca171e[#"e"] = struct::get_array("dome", "targetname");
-    level.var_67ca171e[#"f"] = struct::get_array("domf", "targetname");
+    level.zonemarkers = [];
+    level.zonemarkers[#"a"] = struct::get_array("doma", "targetname");
+    level.zonemarkers[#"b"] = struct::get_array("domb", "targetname");
+    level.zonemarkers[#"c"] = struct::get_array("domc", "targetname");
+    level.zonemarkers[#"d"] = struct::get_array("domd", "targetname");
+    level.zonemarkers[#"e"] = struct::get_array("dome", "targetname");
+    level.zonemarkers[#"f"] = struct::get_array("domf", "targetname");
     level.othervisuals = [];
     fields = getmapfields();
     level.var_117b4a3a = [];
@@ -47,7 +46,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.var_117b4a3a[6] = isdefined(fields.var_43647dc0) ? fields.var_43647dc0 : #"hash_5a5907512d97c7dc";
     level.var_117b4a3a[7] = isdefined(fields.var_f605c142) ? fields.var_f605c142 : #"hash_1ebd257fc3bf9843";
     callback::on_spawned(&function_df78674f);
-    callback::add_callback(#"hash_34e39ee0c9fa0092", &function_3022f6ba);
+    callback::add_callback(#"server_objective", &function_3022f6ba);
 }
 
 // Namespace dom/dom
@@ -117,7 +116,7 @@ function on_localclient_connect(localclientnum) {
     }
     var_f06ec6c3 = getentarray(localclientnum, "flag_descriptor", "targetname");
     foreach (descriptor in var_f06ec6c3) {
-        assert(isdefined(descriptor.target), "<unknown string>" + descriptor.origin + "<unknown string>");
+        assert(isdefined(descriptor.target), "<dev string:x38>" + descriptor.origin + "<dev string:x53>");
         function_ca036b2c(localclientnum, descriptor.target);
     }
     foreach (key, flag_objective in level.domflags) {
@@ -337,9 +336,9 @@ function function_7f6bca11(local_client_num, zone, state) {
         level.var_4c3d5929[local_client_num] = [];
     }
     level.var_4c3d5929[local_client_num][zone] = [];
-    if (isdefined(level.var_67ca171e[zone])) {
+    if (isdefined(level.zonemarkers[zone])) {
         fx_state = get_fx_state(local_client_num, state, codcaster::function_b8fe9b52(local_client_num));
-        foreach (visual in level.var_67ca171e[zone]) {
+        foreach (visual in level.zonemarkers[zone]) {
             if (!isdefined(visual.script_fxid)) {
                 continue;
             }

@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_placeable_mine;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe115c69, Offset: 0x1d0
 // Size: 0x2c
 function private postinit() {
@@ -36,7 +35,7 @@ function private postinit() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe0219aae, Offset: 0x208
 // Size: 0x78
 function private init_internal() {
@@ -108,7 +107,7 @@ function add_planted_callback(fn_planted_cb, wpn_name) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x578eb324, Offset: 0x510
 // Size: 0x9c
 function private run_planted_callbacks(e_planter) {
@@ -118,7 +117,7 @@ function private run_planted_callbacks(e_planter) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1419a47d, Offset: 0x5b8
 // Size: 0x3e
 function private safe_to_plant() {
@@ -129,16 +128,16 @@ function private safe_to_plant() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2af2b120, Offset: 0x600
 // Size: 0x2c
 function private wait_and_detonate() {
-    wait(0.1);
+    wait 0.1;
     self detonate(self.owner);
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xca6545bf, Offset: 0x638
 // Size: 0x188
 function private mine_watch(wpn_type) {
@@ -166,7 +165,7 @@ function private mine_watch(wpn_type) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc0698e55, Offset: 0x7c8
 // Size: 0x3e
 function is_true_placeable_mine(mine_name) {
@@ -180,7 +179,7 @@ function is_true_placeable_mine(mine_name) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe39a60a, Offset: 0x810
 // Size: 0x15a
 function setup_for_player(wpn_type, ui_model = "hudItems.showDpadRight") {
@@ -207,7 +206,7 @@ function setup_for_player(wpn_type, ui_model = "hudItems.showDpadRight") {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbb0c305, Offset: 0x978
 // Size: 0x2c
 function disable_prompt_for_player(wpn_type) {
@@ -215,7 +214,7 @@ function disable_prompt_for_player(wpn_type) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6f5d2c1a, Offset: 0x9b0
 // Size: 0x98
 function disable_all_prompts_for_player() {
@@ -225,7 +224,7 @@ function disable_all_prompts_for_player() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x33875081, Offset: 0xa50
 // Size: 0x264
 function private pickup_placeable_mine() {
@@ -265,7 +264,7 @@ function private pickup_placeable_mine() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7890d1d4, Offset: 0xcc0
 // Size: 0x44
 function private pickup_placeable_mine_trigger_listener(trigger, player) {
@@ -274,7 +273,7 @@ function private pickup_placeable_mine_trigger_listener(trigger, player) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb94ccc9e, Offset: 0xd10
 // Size: 0xb8
 function private pickup_placeable_mine_trigger_listener_enable(trigger, player) {
@@ -290,7 +289,7 @@ function private pickup_placeable_mine_trigger_listener_enable(trigger, player) 
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9916893b, Offset: 0xdd0
 // Size: 0xa8
 function private pickup_placeable_mine_trigger_listener_disable(trigger, player) {
@@ -306,7 +305,7 @@ function private pickup_placeable_mine_trigger_listener_disable(trigger, player)
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7acda5b6, Offset: 0xe80
 // Size: 0x1ec
 function private placeable_mine_damage() {
@@ -333,7 +332,7 @@ function private placeable_mine_damage() {
         break;
     }
     if (level.satchelexplodethisframe) {
-        wait(0.1 + randomfloat(0.4));
+        wait 0.1 + randomfloat(0.4);
     } else {
         waitframe(1);
     }
@@ -346,7 +345,7 @@ function private placeable_mine_damage() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x406b6d98, Offset: 0x1078
 // Size: 0x18
 function private reset_satchel_explode_this_frame() {
@@ -355,7 +354,7 @@ function private reset_satchel_explode_this_frame() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe7772537, Offset: 0x1098
 // Size: 0x208
 function private replenish_after_rounds() {
@@ -395,7 +394,7 @@ function setup_watchers() {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1e86d78e, Offset: 0x1380
 // Size: 0x9a
 function zm_red_challenges_hud_wear(watcher) {
@@ -410,7 +409,7 @@ function zm_red_challenges_hud_wear(watcher) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x893895da, Offset: 0x1428
 // Size: 0x54
 function private on_spawn_retrieve_trigger(watcher, player) {
@@ -421,7 +420,7 @@ function private on_spawn_retrieve_trigger(watcher, player) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x611fc9c1, Offset: 0x1488
 // Size: 0x26
 function private adjust_trigger_origin(origin) {
@@ -430,7 +429,7 @@ function private adjust_trigger_origin(origin) {
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x61c35d9e, Offset: 0x14b8
 // Size: 0xbc
 function private placeable_mine_detonate(attacker, weapon, *target) {

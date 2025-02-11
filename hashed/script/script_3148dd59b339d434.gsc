@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
 
 #namespace zombie_horde;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4f8f969a, Offset: 0x150
 // Size: 0x3c
 function private preinit() {
@@ -34,21 +33,21 @@ function private preinit() {
     function private debug() {
         while (true) {
             foreach (var_31f1a7be in level.var_e051b3bc) {
-                recordcircle(var_31f1a7be.origin, var_31f1a7be.radius, (0, 0, 1), "<unknown string>");
-                recordcircle(var_31f1a7be.origin, 20, (0, 0, 1), "<unknown string>");
+                recordcircle(var_31f1a7be.origin, var_31f1a7be.radius, (0, 0, 1), "<dev string:x38>");
+                recordcircle(var_31f1a7be.origin, 20, (0, 0, 1), "<dev string:x38>");
                 foreach (var_812bc6e0 in var_31f1a7be.goal_points) {
-                    recordline(var_31f1a7be.origin, var_812bc6e0.origin, (0, 1, 0), "<unknown string>");
-                    recordcircle(var_812bc6e0.origin, 20, (0, 1, 0), "<unknown string>");
+                    recordline(var_31f1a7be.origin, var_812bc6e0.origin, (0, 1, 0), "<dev string:x38>");
+                    recordcircle(var_812bc6e0.origin, 20, (0, 1, 0), "<dev string:x38>");
                 }
                 if (isdefined(var_31f1a7be.path)) {
                     for (i = 0; i < var_31f1a7be.path.pathpoints.size - 1; i++) {
                         point = var_31f1a7be.path.pathpoints[i];
                         next_point = var_31f1a7be.path.pathpoints[i + 1];
-                        recordline(point, next_point, (1, 0, 0), "<unknown string>");
-                        recordcircle(point, 20, (1, 0, 0), "<unknown string>");
+                        recordline(point, next_point, (1, 0, 0), "<dev string:x38>");
+                        recordcircle(point, 20, (1, 0, 0), "<dev string:x38>");
                     }
                     point = var_31f1a7be.path.pathpoints[i];
-                    recordcircle(point, 20, (1, 0, 0), "<unknown string>");
+                    recordcircle(point, 20, (1, 0, 0), "<dev string:x38>");
                 }
             }
             waitframe(1);
@@ -58,7 +57,7 @@ function private preinit() {
 #/
 
 // Namespace zombie_horde/zombie_horde
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x339a4373, Offset: 0x468
 // Size: 0xa4
 function function_86d29fe1(var_f9289185, origin, angles, radius) {
@@ -67,7 +66,7 @@ function function_86d29fe1(var_f9289185, origin, angles, radius) {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x936f4279, Offset: 0x518
 // Size: 0x292
 function private function_88b2dd98(numpoints) {
@@ -120,7 +119,7 @@ function function_11280436(var_f9289185, origin, angles, radius, var_aae3fc82) {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8de9b978, Offset: 0x950
 // Size: 0x110
 function private think() {
@@ -142,12 +141,12 @@ function private think() {
                 var_31f1a7be function_684b4879();
             }
         }
-        wait(0.2);
+        wait 0.2;
     }
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb51e269d, Offset: 0xa68
 // Size: 0x152
 function private function_3e88b567() {
@@ -171,7 +170,7 @@ function private function_3e88b567() {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa7bce9db, Offset: 0xbc8
 // Size: 0x1d0
 function private function_18ca9034() {
@@ -182,7 +181,7 @@ function private function_18ca9034() {
             continue;
         }
         if (!zombie.allowoffnavmesh) {
-            zombie function_d1e55248(#"hash_63080f1458dca706", 1);
+            zombie function_d1e55248(#"zombie_moving", 1);
         }
         zombie function_a57c34b7(var_812bc6e0.origin);
         distancetogoalsq = distance2dsquared(var_812bc6e0.origin, zombie.origin);
@@ -214,7 +213,7 @@ function function_9defb9e0(goal) {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1fce243b, Offset: 0xe80
 // Size: 0xb2
 function function_9758722(speed) {
@@ -231,7 +230,7 @@ function function_9758722(speed) {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x82c60b00, Offset: 0xf40
 // Size: 0xac
 function private function_8ac809ae() {
@@ -245,7 +244,7 @@ function private function_8ac809ae() {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e277beb, Offset: 0xff8
 // Size: 0x94
 function function_e20d964f() {
@@ -256,7 +255,7 @@ function function_e20d964f() {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe3affe64, Offset: 0x1098
 // Size: 0x7c
 function private function_d1e55248(id, value) {
@@ -268,7 +267,7 @@ function private function_d1e55248(id, value) {
 }
 
 // Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcd42590b, Offset: 0x1120
 // Size: 0x118
 function private function_684b4879() {
@@ -277,7 +276,7 @@ function private function_684b4879() {
         if (isdefined(zombie) && isalive(zombie)) {
             distsq = distancesquared(zombie.origin, zombie.overridegoalpos);
             if (distsq < 400 && zombie.allowoffnavmesh) {
-                zombie function_d1e55248(#"hash_63080f1458dca706", 0);
+                zombie function_d1e55248(#"zombie_moving", 0);
             }
         }
     }

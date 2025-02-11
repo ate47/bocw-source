@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace blackboard;
 
 // Namespace blackboard/ai_blackboard
@@ -10,7 +9,7 @@ function autoexec main() {
 }
 
 // Namespace blackboard/ai_blackboard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb0020fab, Offset: 0xa0
 // Size: 0x24
 function private _initializeblackboard() {
@@ -19,7 +18,7 @@ function private _initializeblackboard() {
 }
 
 // Namespace blackboard/ai_blackboard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x187886e2, Offset: 0xd0
 // Size: 0x1ae
 function private _updateevents() {
@@ -36,19 +35,19 @@ function private _updateevents() {
             }
             level.__ai_blackboard[eventname] = liveevents;
         }
-        wait(waittime);
+        wait waittime;
     }
 }
 
 // Namespace blackboard/ai_blackboard
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd22e2c8d, Offset: 0x288
 // Size: 0x1a2
 function addblackboardevent(eventname, data, timetoliveinmillis) {
     /#
-        assert(isstring(eventname) || ishash(eventname), "<unknown string>");
-        assert(isdefined(data), "<unknown string>");
-        assert(isint(timetoliveinmillis) && timetoliveinmillis > 0, "<unknown string>");
+        assert(isstring(eventname) || ishash(eventname), "<dev string:x38>");
+        assert(isdefined(data), "<dev string:x7e>");
+        assert(isint(timetoliveinmillis) && timetoliveinmillis > 0, "<dev string:xb6>");
     #/
     event = spawnstruct();
     event.data = data;
@@ -63,7 +62,7 @@ function addblackboardevent(eventname, data, timetoliveinmillis) {
 }
 
 // Namespace blackboard/ai_blackboard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1fcb3744, Offset: 0x438
 // Size: 0x34
 function getblackboardevents(eventname) {

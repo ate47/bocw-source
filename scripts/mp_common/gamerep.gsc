@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\core_common\rank_shared.gsc;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\rank_shared;
 
 #namespace gamerep;
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdb19ae48, Offset: 0x160
 // Size: 0xb4
 function init() {
@@ -25,7 +24,7 @@ function init() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb323432b, Offset: 0x220
 // Size: 0x2e
 function isgamerepinitialized() {
@@ -36,7 +35,7 @@ function isgamerepinitialized() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc74a0494, Offset: 0x258
 // Size: 0x2e
 function isgamerepenabled() {
@@ -50,7 +49,7 @@ function isgamerepenabled() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf508e6b2, Offset: 0x290
 // Size: 0x1118
 function gamerepinitializeparams() {
@@ -148,7 +147,7 @@ function gamerepinitializeparams() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x377761b, Offset: 0x13b0
 // Size: 0x2f0
 function gamerepplayerconnected() {
@@ -180,7 +179,7 @@ function gamerepplayerconnected() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5dd8a491, Offset: 0x16a8
 // Size: 0xd0
 function gamerepplayerdisconnected() {
@@ -199,7 +198,7 @@ function gamerepplayerdisconnected() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa270c3de, Offset: 0x1780
 // Size: 0x198
 function gamerepupdatenonpersistentplayerinformation() {
@@ -219,7 +218,7 @@ function gamerepupdatenonpersistentplayerinformation() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8eca026c, Offset: 0x1920
 // Size: 0x4f0
 function gamerepupdatepersistentplayerinformation() {
@@ -251,18 +250,18 @@ function gamerepupdatepersistentplayerinformation() {
 }
 
 // Namespace gamerep/gamerep
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xffa72479, Offset: 0x1e18
 // Size: 0x84
 function getparamvalueforplayer(playername, paramname) {
     if (isdefined(game.gamerep[#"players"][playername][paramname])) {
         return game.gamerep[#"players"][playername][paramname];
     }
-    assertmsg("<unknown string>" + paramname + "<unknown string>");
+    assertmsg("<dev string:x38>" + paramname + "<dev string:x4e>");
 }
 
 // Namespace gamerep/gamerep
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe18f1e32, Offset: 0x1ea8
 // Size: 0x112
 function isgamerepparamvalid(paramname) {
@@ -286,7 +285,7 @@ function isgamerepparamvalid(paramname) {
 }
 
 // Namespace gamerep/gamerep
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51d19ff3, Offset: 0x1fc8
 // Size: 0x34
 function isgamerepparamignoredforreporting(paramname) {
@@ -297,7 +296,7 @@ function isgamerepparamignoredforreporting(paramname) {
 }
 
 // Namespace gamerep/gamerep
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd82300d7, Offset: 0x2008
 // Size: 0x11c
 function getgamerepparamlimit(paramname) {
@@ -310,11 +309,11 @@ function getgamerepparamlimit(paramname) {
     if (isdefined(game.gamerep[#"gamelimit"][#"default"][paramname])) {
         return game.gamerep[#"gamelimit"][#"default"][paramname];
     }
-    assertmsg("<unknown string>" + paramname + "<unknown string>");
+    assertmsg("<dev string:x67>" + paramname + "<dev string:x88>");
 }
 
 // Namespace gamerep/gamerep
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4f104a06, Offset: 0x2130
 // Size: 0x96
 function setmaximumparamvalueforcurrentgame(paramname, value) {
@@ -328,7 +327,7 @@ function setmaximumparamvalueforcurrentgame(paramname, value) {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaaf923f8, Offset: 0x21d0
 // Size: 0x7c
 function gamerepupdateinformationforround() {
@@ -343,7 +342,7 @@ function gamerepupdateinformationforround() {
 }
 
 // Namespace gamerep/gamerep
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x59be78, Offset: 0x2258
 // Size: 0x2ec
 function gamerepanalyzeandreport() {
@@ -381,7 +380,7 @@ function gamerepanalyzeandreport() {
 }
 
 // Namespace gamerep/gamerep
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaeddf79b, Offset: 0x2550
 // Size: 0x9c
 function gamerepprepareandreport(paramname) {

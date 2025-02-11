@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_47851dbeea22fe66;
-#using script_774302f762d76254;
-#using script_1ee011cd0961afd7;
-#using script_1b0b07ff57d1dde3;
-#using script_634ae70c663d1cc9;
 #using script_17dcb1172e441bf6;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_47851dbeea22fe66;
+#using script_634ae70c663d1cc9;
+#using script_774302f762d76254;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_a7c12078;
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x238
 // Size: 0x4
 function init() {
@@ -29,7 +28,7 @@ function init() {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24da7304, Offset: 0x248
 // Size: 0x16
 function main() {
@@ -37,14 +36,14 @@ function main() {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c975714, Offset: 0x268
 // Size: 0x14c
 function function_c6453062() {
     self notify("2f25b26e22f30a5c");
     self endon("2f25b26e22f30a5c");
     self thread namespace_268747c0::function_978c05b5();
-    result = self waittill(#"hash_3e251384a5400dce");
+    result = self waittill(#"destroy_hazard");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_ea40471b, self);
         namespace_1e25ad94::debugmsg("Deleting LogDrop trap permenently at:" + self.origin);
@@ -60,7 +59,7 @@ function function_c6453062() {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb99c1384, Offset: 0x3c0
 // Size: 0x100
 function function_cb1b5203(trap, var_7c56394 = 0) {
@@ -82,7 +81,7 @@ function function_cb1b5203(trap, var_7c56394 = 0) {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3fb4a9e2, Offset: 0x4c8
 // Size: 0x10c
 function function_7f3d5e5d(trap, page = 0) {
@@ -102,7 +101,7 @@ function function_7f3d5e5d(trap, page = 0) {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2bc44375, Offset: 0x5e0
 // Size: 0x344
 function function_d4a86caf() {
@@ -110,7 +109,7 @@ function function_d4a86caf() {
     self endon("599e6beca01ea7e4");
     level endon(#"game_over", #"hash_15db1223146bc923");
     while (true) {
-        wait(0.5);
+        wait 0.5;
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {
             continue;
@@ -149,7 +148,7 @@ function function_d4a86caf() {
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
-                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                trap notify(#"destroy_hazard", {#var_760a0807:0});
                 namespace_1e25ad94::debugmsg("Paging out logdrop trap at:" + trap.origin);
             }
         }
@@ -157,7 +156,7 @@ function function_d4a86caf() {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x25bba857, Offset: 0x930
 // Size: 0x130
 function function_237de89e() {
@@ -175,11 +174,11 @@ function function_237de89e() {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3c16f55b, Offset: 0xa68
 // Size: 0x36e
 function function_b31750de(lifetime) {
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self notify("31632961de933827");
     self endon("31632961de933827");
     while (isdefined(self) && self.state === 1) {
@@ -223,7 +222,7 @@ function function_b31750de(lifetime) {
             }
             continue;
         }
-        wait(0.25);
+        wait 0.25;
     }
     if (isdefined(self.trigger)) {
         self.trigger namespace_268747c0::function_54f185a();
@@ -232,17 +231,17 @@ function function_b31750de(lifetime) {
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f212823, Offset: 0xde0
 // Size: 0x380
 function function_62ba9be4() {
     self notify("453fade6619d7141");
     self endon("453fade6619d7141");
     level endon(#"game_over");
-    self endon(#"hash_3e251384a5400dce");
+    self endon(#"destroy_hazard");
     self thread function_c6453062();
     if (!isdefined(self.script_model)) {
-        self notify(#"hash_3e251384a5400dce");
+        self notify(#"destroy_hazard");
     }
     self.state = 0;
     self.script_model useanimtree("generic");
@@ -253,7 +252,7 @@ function function_62ba9be4() {
     while (true) {
         self.script_model stopanimscripted();
         self.state = 0;
-        wait(8 + randomint(5));
+        wait 8 + randomint(5);
         self.script_model namespace_268747c0::play_anim(#"p8_fxanim_zm_towers_trap_blade_01_start_anim", 1);
         self.script_model waittilltimeout(var_ba28dc68, #"end", #"scriptedanim", #"new_scripted_anim");
         self.state = 1;

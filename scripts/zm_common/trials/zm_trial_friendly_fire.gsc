@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_pack_a_punch_util.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\core_common\bots\bot.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\bots\bot;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_pack_a_punch_util;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_trial_friendly_fire;
 
@@ -72,7 +71,7 @@ function private on_begin(var_9e0a2a85 = 1) {
             bot = bot::add_bot(var_be33ceec);
         } while (!isdefined(bot));
         bot.var_247fdf5 = 1;
-        wait(1);
+        wait 1;
         if (bot util::is_spectating()) {
             bot zm_player::spectator_respawn_player();
         }
@@ -137,11 +136,11 @@ function private function_e2c5e34c() {
     level endon(#"hash_7646638df88a3656");
     while (true) {
         self val::reset("zm_trial_friendly_fire", "ignoreme");
-        wait(randomintrange(3, 5));
+        wait randomintrange(3, 5);
         if (function_e1378d07()) {
             self val::set("zm_trial_friendly_fire", "ignoreme", 1);
         }
-        wait(randomintrange(5, 10));
+        wait randomintrange(5, 10);
     }
 }
 

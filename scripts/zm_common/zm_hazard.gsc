@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_aoe.gsc;
 #using script_36f4be19da8eb6d0;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai\zombie_eye_glow.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\zombie_eye_glow;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_aoe;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_hazard;
 
@@ -129,7 +128,7 @@ function private function_1c2829b5() {
     self endon(#"death");
     while (true) {
         s_waitresult = self waittill(#"aoe_damage");
-        if (s_waitresult.var_159100b7 == "zm_aoe_radiation_hazard") {
+        if (s_waitresult.str_source == "zm_aoe_radiation_hazard") {
             self status_effect::status_effect_apply(getstatuseffect(#"hash_48bb9c4c96e64c3d"), undefined, self);
         }
     }
@@ -153,7 +152,7 @@ function private function_6fa1e587() {
                 level notify(#"hash_4a62d4959b0dbb0e", {#e_player:s_result.attacker});
                 if (namespace_b376a999::function_7c292369(s_result.weapon)) {
                     zm_aoe::function_389bf7bf(self, 1);
-                    println("<unknown string>");
+                    println("<dev string:x38>");
                     s_result.attacker notify(#"hash_7f30d2acb25cc4d9");
                     return;
                 }
@@ -170,7 +169,7 @@ function function_4685c5f8(attacker, time) {
     if (time >= 4000) {
         if (isdefined(self.owner)) {
             zm_aoe::function_389bf7bf(self.owner, 1);
-            println("<unknown string>");
+            println("<dev string:x6b>");
             attacker notify(#"hash_7f30d2acb25cc4d9");
         }
     }
@@ -213,9 +212,9 @@ function function_9e3de60() {
     // Checksum 0x28afc4c1, Offset: 0xb68
     // Size: 0x7c
     function function_b5cd0ae5() {
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        level flag::wait_till("<unknown string>");
+        adddebugcommand("<dev string:x9b>");
+        adddebugcommand("<dev string:xf4>");
+        level flag::wait_till("<dev string:x150>");
         zm_devgui::add_custom_devgui_callback(&function_2499fe1b);
     }
 
@@ -230,12 +229,12 @@ function function_9e3de60() {
         eye = player geteye();
         trace = bullettrace(eye, eye + v_direction, 0, undefined);
         var_770ed480 = positionquery_source_navigation(trace[#"position"], 64, 256, 512, 20);
-        spot = spawn("<unknown string>", player.origin);
-        spot setmodel("<unknown string>");
+        spot = spawn("<dev string:x16c>", player.origin);
+        spot setmodel("<dev string:x17c>");
         if (isdefined(var_770ed480) && var_770ed480.data.size > 0) {
             spot.origin = var_770ed480.data[0].origin;
         }
-        println("<unknown string>" + spot.origin);
+        println("<dev string:x18a>" + spot.origin);
         level thread function_47187ffc(spot);
     }
 

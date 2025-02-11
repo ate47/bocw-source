@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace zm_silver_gamemodes;
 
 // Namespace zm_silver_gamemodes/zm_silver_gamemodes

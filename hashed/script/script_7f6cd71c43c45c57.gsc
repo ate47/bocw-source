@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace weapons;
 
 // Namespace weapons/namespace_53508120
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7a57d6ba, Offset: 0x80
 // Size: 0x13a
 function function_251ec78c(weapon = level.weaponnone, var_a4bc20c2 = 1) {
@@ -23,7 +22,7 @@ function function_251ec78c(weapon = level.weaponnone, var_a4bc20c2 = 1) {
 }
 
 // Namespace weapons/namespace_53508120
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x526b73ab, Offset: 0x1c8
 // Size: 0x36
 function getbaseweapon(weapon) {

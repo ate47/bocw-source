@@ -1,43 +1,42 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using script_5f261a5d57de5f7c;
-#using script_3751b21462a54a7d;
-#using scripts\zm_common\trials\zm_trial_randomize_perks.gsc;
-#using scripts\zm_common\trials\zm_trial_disable_perks.gsc;
-#using scripts\zm_common\trials\zm_trial_disable_buys.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
 #using script_301f64a4090c381a;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\perks.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_3751b21462a54a7d;
+#using script_5f261a5d57de5f7c;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\trials\zm_trial_disable_buys;
+#using scripts\zm_common\trials\zm_trial_disable_perks;
+#using scripts\zm_common\trials\zm_trial_randomize_perks;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_perks;
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99babeb1, Offset: 0x6b0
 // Size: 0x480
 function init() {
@@ -110,7 +109,7 @@ function init() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19b7ac90, Offset: 0xb38
 // Size: 0x428
 function on_player_connect() {
@@ -169,7 +168,7 @@ function on_player_connect() {
             }
         } else {
             /#
-                iprintlnbold("counter" + self.name + "<unknown string>");
+                iprintlnbold("<dev string:x38>" + self.name + "<dev string:x5a>");
             #/
         }
         self.var_c27f1e90[j] = str_perk;
@@ -180,7 +179,7 @@ function on_player_connect() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeed6fb02, Offset: 0xf68
 // Size: 0x1c
 function on_player_spawned() {
@@ -188,7 +187,7 @@ function on_player_spawned() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2c885250, Offset: 0xf90
 // Size: 0x2a
 function get_perk_machines() {
@@ -199,7 +198,7 @@ function get_perk_machines() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x73e23ef2, Offset: 0xfc8
 // Size: 0x708
 function perk_machine_think(str_key, s_custom_perk) {
@@ -220,7 +219,7 @@ function perk_machine_think(str_key, s_custom_perk) {
             zm_utility::function_ca960904(machine[i]);
             if (!isdefined(machine[i].n_obj_id)) {
                 switch (str_key) {
-                case #"hash_210097a75bb6c49a":
+                case #"talent_deadshot":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_18affc9c62259b97", machine[i]);
                     break;
                 case #"hash_51b6cc6dbafb7f31":
@@ -229,25 +228,25 @@ function perk_machine_think(str_key, s_custom_perk) {
                 case #"hash_47d7a8105237c88":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_1beb3b600b93acae", machine[i]);
                     break;
-                case #"hash_7f98b3dd3cce95aa":
+                case #"talent_quickrevive":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_366d84a7a7556fa4", machine[i]);
                     break;
-                case #"hash_5930cf0eb070e35a":
+                case #"talent_speedcola":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_1222f02fd5f3dc90", machine[i]);
                     break;
-                case #"hash_602a1b6107105f07":
+                case #"talent_staminup":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_4461e8f7ec3c9836", machine[i]);
                     break;
                 case #"hash_38c08136902fd553":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_5a1f67cc9ebe8f78", machine[i]);
                     break;
-                case #"hash_17e4ae593eaf4a47":
+                case #"talent_mulekick":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_4ee5d6142a3e1e93", machine[i]);
                     break;
-                case #"hash_1ea1a9cfee998e89":
+                case #"talent_deathperception":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_1e4e6f5e54d92b01", machine[i]);
                     break;
-                case #"hash_3417450e1347185":
+                case #"talent_phdslider":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_111451daa3600bb1", machine[i]);
                     break;
                 default:
@@ -285,7 +284,7 @@ function perk_machine_think(str_key, s_custom_perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf53688bc, Offset: 0x16d8
 // Size: 0xa0
 function default_vending_precaching() {
@@ -300,7 +299,7 @@ function default_vending_precaching() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x139cfe76, Offset: 0x1780
 // Size: 0x14c
 function do_initial_power_off_callback(machine_array, perkname) {
@@ -310,7 +309,7 @@ function do_initial_power_off_callback(machine_array, perkname) {
         }
     }
     if (!isdefined(level.machine_assets[perkname])) {
-        println("<unknown string>");
+        println("<dev string:x82>");
         return;
     }
     if (!isdefined(level.machine_assets[perkname].power_off_callback)) {
@@ -321,7 +320,7 @@ function do_initial_power_off_callback(machine_array, perkname) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd2428f63, Offset: 0x18d8
 // Size: 0xa6
 function set_power_on(state) {
@@ -337,7 +336,7 @@ function set_power_on(state) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x400eb8e4, Offset: 0x1988
 // Size: 0x134
 function turn_perk_off(ishidden) {
@@ -362,7 +361,7 @@ function turn_perk_off(ishidden) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x28977aa6, Offset: 0x1ac8
 // Size: 0x104
 function play_loop_on_machine() {
@@ -380,7 +379,7 @@ function play_loop_on_machine() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe9bb0215, Offset: 0x1bd8
 // Size: 0x182
 function perk_fx(fx, turnofffx) {
@@ -391,7 +390,7 @@ function perk_fx(fx, turnofffx) {
         }
         return;
     }
-    wait(3);
+    wait 3;
     if (!isdefined(self)) {
         return;
     }
@@ -410,12 +409,12 @@ function perk_fx(fx, turnofffx) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5ec16ec, Offset: 0x1d68
 // Size: 0x1f0
 function electric_perks_dialog() {
     self endon(#"death");
-    wait(0.01);
+    wait 0.01;
     level flag::wait_till("start_zombie_round_logic");
     players = getplayers();
     if (players.size == 1) {
@@ -425,7 +424,7 @@ function electric_perks_dialog() {
     level endon(#"switch_flipped");
     timer = 0;
     while (true) {
-        wait(0.5);
+        wait 0.5;
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (!isdefined(players[i])) {
@@ -437,7 +436,7 @@ function electric_perks_dialog() {
                 continue;
             }
             if (dist < 4900 && timer < 3) {
-                wait(0.5);
+                wait 0.5;
                 timer++;
             }
             if (dist < 4900 && timer == 3) {
@@ -445,10 +444,10 @@ function electric_perks_dialog() {
                     continue;
                 }
                 players[i] thread zm_utility::do_player_vo("vox_start", 5);
-                wait(3);
+                wait 3;
                 self notify(#"warning_dialog");
                 /#
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:xe4>");
                 #/
             }
         }
@@ -470,7 +469,7 @@ function reset_vending_hint_string() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7e03cbf, Offset: 0x2028
 // Size: 0x7a
 function function_6f418fda(perk) {
@@ -483,7 +482,7 @@ function function_6f418fda(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5427428c, Offset: 0x20b0
 // Size: 0x1ce
 function vending_trigger_can_player_use(player, var_93e7ba4f) {
@@ -523,15 +522,15 @@ function vending_trigger_can_player_use(player, var_93e7ba4f) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6566fb9f, Offset: 0x2288
 // Size: 0x26e
 function function_f29c0595() {
     self endon(#"death");
-    wait(0.01);
+    wait 0.01;
     perk = self.script_noteworthy;
     level.revive_machine_is_solo = 0;
-    if (isdefined(perk) && perk == #"hash_7f98b3dd3cce95aa") {
+    if (isdefined(perk) && perk == #"talent_quickrevive") {
         level flag::wait_till("start_zombie_round_logic");
         self endon(#"stop_quickrevive_logic");
         level.quick_revive_trigger = self;
@@ -565,7 +564,7 @@ function function_f29c0595() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6f37a34c, Offset: 0x2500
 // Size: 0x568
 function vending_trigger_think() {
@@ -582,12 +581,12 @@ function vending_trigger_think() {
             var_f2a92d5e = machine.power_on;
         }
         if (!var_f2a92d5e) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         index = zm_utility::get_player_index(player);
         if (!vending_trigger_can_player_use(player, 0)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (player namespace_e86ffa8::function_8b313976(perk) || player has_perk_paused(perk)) {
@@ -647,7 +646,7 @@ function vending_trigger_think() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x75cc9882, Offset: 0x2a70
 // Size: 0x23c
 function vending_trigger_post_think(player, perk) {
@@ -667,7 +666,7 @@ function vending_trigger_post_think(player, perk) {
     }
     player.perk_purchased = undefined;
     if (isdefined(self) && !is_true(self.stub.machine.power_on)) {
-        wait(1);
+        wait 1;
         if (isdefined(self)) {
             perk_pause(self.script_noteworthy);
         }
@@ -675,7 +674,7 @@ function vending_trigger_post_think(player, perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd5eb2810, Offset: 0x2cb8
 // Size: 0x144
 function wait_give_perk(perk) {
@@ -689,7 +688,7 @@ function wait_give_perk(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x33aba50d, Offset: 0x2e08
 // Size: 0x84
 function give_perk_presentation(perk) {
@@ -699,7 +698,7 @@ function give_perk_presentation(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x68770ab5, Offset: 0x2e98
 // Size: 0x94
 function function_305131b1(perk) {
@@ -711,7 +710,7 @@ function function_305131b1(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfa29d0c0, Offset: 0x2f38
 // Size: 0x378
 function function_a7ae070c(var_16c042b8, var_b169f6df = 0) {
@@ -805,7 +804,7 @@ function perk_think(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa9ddfdca, Offset: 0x3630
 // Size: 0x68
 function set_perk_clientfield(perk, state) {
@@ -815,7 +814,7 @@ function set_perk_clientfield(perk, state) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb76216a5, Offset: 0x36a0
 // Size: 0x84
 function perk_give_bottle_begin(str_perk) {
@@ -826,12 +825,12 @@ function perk_give_bottle_begin(str_perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd5f53e77, Offset: 0x3730
 // Size: 0xca
 function get_perk_weapon(str_perk) {
     weapon = "";
-    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:xf5>");
     if (!isdefined(str_perk)) {
         return weapon;
     }
@@ -846,14 +845,14 @@ function get_perk_weapon(str_perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcc4c7a49, Offset: 0x3808
 // Size: 0xc6
 function get_perk_weapon_model(str_perk) {
     weapon = get_perk_weapon(str_perk);
     /#
-        assert(isdefined(weapon), "<unknown string>" + function_9e72a96(str_perk));
-        assert(isdefined(weapon.worldmodel), "<unknown string>" + function_9e72a96(str_perk));
+        assert(isdefined(weapon), "<dev string:x11b>" + function_9e72a96(str_perk));
+        assert(isdefined(weapon.worldmodel), "<dev string:x138>" + function_9e72a96(str_perk));
     #/
     if (isdefined(weapon)) {
         return weapon.worldmodel;
@@ -869,13 +868,13 @@ function perk_abort_drinking(post_delay) {
     if (zm_utility::is_drinking()) {
         self notify(#"perk_abort_drinking");
         if (isdefined(post_delay)) {
-            wait(post_delay);
+            wait post_delay;
         }
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6b30cfc2, Offset: 0x3920
 // Size: 0x54
 function function_b2cba45a(var_9bf8fb5c) {
@@ -912,7 +911,7 @@ function lose_random_perk() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x28a87389, Offset: 0x3aa0
 // Size: 0x82
 function quantum_bomb_give_nearest_perk_validation(position) {
@@ -927,7 +926,7 @@ function quantum_bomb_give_nearest_perk_validation(position) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba925439, Offset: 0x3b30
 // Size: 0x1d8
 function quantum_bomb_give_nearest_perk_result(position) {
@@ -954,7 +953,7 @@ function quantum_bomb_give_nearest_perk_result(position) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x99993ad0, Offset: 0x3d10
 // Size: 0x350
 function perk_pause(perk) {
@@ -986,13 +985,13 @@ function perk_pause(perk) {
             if (isdefined(level._custom_perks[perk]) && isdefined(level._custom_perks[perk].player_thread_take)) {
                 player thread [[ level._custom_perks[perk].player_thread_take ]](1, undefined, undefined, -1);
             }
-            println("<unknown string>" + player.name + "<unknown string>" + perk + "<unknown string>");
+            println("<dev string:x161>" + player.name + "<dev string:x16f>" + perk + "<dev string:x180>");
         }
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf69a8a0, Offset: 0x4068
 // Size: 0x318
 function perk_unpause(perk) {
@@ -1018,7 +1017,7 @@ function perk_unpause(perk) {
                     perks::perk_setperk(level._custom_perks[perk].var_658e2856);
                 }
             }
-            println("<unknown string>" + player.name + "<unknown string>" + perk + "<unknown string>");
+            println("<dev string:x161>" + player.name + "<dev string:x185>" + perk + "<dev string:x180>");
             player zm_utility::set_max_health();
             if (isdefined(level._custom_perks[perk]) && isdefined(level._custom_perks[perk].player_thread_give)) {
                 player thread [[ level._custom_perks[perk].player_thread_give ]]();
@@ -1028,7 +1027,7 @@ function perk_unpause(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8e700556, Offset: 0x4388
 // Size: 0x100
 function perk_pause_all_perks(power_zone) {
@@ -1045,7 +1044,7 @@ function perk_pause_all_perks(power_zone) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbd997825, Offset: 0x4490
 // Size: 0x100
 function perk_unpause_all_perks(power_zone) {
@@ -1086,7 +1085,7 @@ function function_d087adc6() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd7de273, Offset: 0x46d8
 // Size: 0x46
 function has_perk_paused(perk) {
@@ -1097,7 +1096,7 @@ function has_perk_paused(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d9741f0, Offset: 0x4728
 // Size: 0x7a
 function getvendingmachinenotify() {
@@ -1112,7 +1111,7 @@ function getvendingmachinenotify() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0548b2b, Offset: 0x47b0
 // Size: 0x12
 function function_80cb4982() {
@@ -1164,7 +1163,7 @@ function perk_machine_removal(machine, replacement_model) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15320492, Offset: 0x4a28
 // Size: 0x974
 function perk_machine_spawn_init() {
@@ -1304,7 +1303,7 @@ function perk_machine_spawn_init() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf7dcd4fe, Offset: 0x53a8
 // Size: 0x34a
 function function_5296af32(player) {
@@ -1370,7 +1369,7 @@ function check_player_has_perk(perk) {
                 self setinvisibletoplayer(players[i], 1);
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -1386,7 +1385,7 @@ function function_9760a58b(perk, b_enable = 1) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdc7d3ad, Offset: 0x5948
 // Size: 0x9a
 function get_perk_machine_start_state(perk) {
@@ -1396,7 +1395,7 @@ function get_perk_machine_start_state(perk) {
     if (is_true(level.var_b023322[perk])) {
         return 1;
     }
-    if (perk == #"hash_7f98b3dd3cce95aa") {
+    if (perk == #"talent_quickrevive") {
         assert(isdefined(level.revive_machine_is_solo));
         return level.revive_machine_is_solo;
     }
@@ -1404,7 +1403,7 @@ function get_perk_machine_start_state(perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5a3b0580, Offset: 0x59f0
 // Size: 0xe0
 function perks_register_clientfield() {
@@ -1459,19 +1458,19 @@ function function_89e748a7() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x118d31c9, Offset: 0x5fd8
 // Size: 0x7e
 function function_ad1814a1(n_index, var_b0ab4cec) {
     if (isdefined(n_index) && n_index >= 0 && n_index < 9) {
         return true;
     }
-    println("<unknown string>" + function_9e72a96(var_b0ab4cec) + "<unknown string>");
+    println("<dev string:x198>" + function_9e72a96(var_b0ab4cec) + "<dev string:x1a7>");
     return false;
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9079b711, Offset: 0x6060
 // Size: 0x56
 function function_81bc6765(var_481d50cb, var_b0ab4cec) {
@@ -1485,7 +1484,7 @@ function function_81bc6765(var_481d50cb, var_b0ab4cec) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4e51ae53, Offset: 0x60c0
 // Size: 0x1c
 function function_2ac7579(var_481d50cb, *var_dc149467, var_b0ab4cec) {
@@ -1497,7 +1496,7 @@ function function_2ac7579(var_481d50cb, *var_dc149467, var_b0ab4cec) {
 // Checksum 0x7a79e9a, Offset: 0x6160
 // Size: 0x11e
 function function_13880aa5(var_481d50cb, var_87eb3522 = 0, var_b0ab4cec) {
-    assert(isdefined(var_481d50cb), "<unknown string>");
+    assert(isdefined(var_481d50cb), "<dev string:x1e1>");
     if (!isdefined(var_481d50cb)) {
         return;
     }
@@ -1523,7 +1522,7 @@ function function_13880aa5(var_481d50cb, var_87eb3522 = 0, var_b0ab4cec) {
 // Checksum 0xad73bef3, Offset: 0x6288
 // Size: 0x8a
 function function_f2ff97a6(var_481d50cb, *var_c3d1c893, var_b0ab4cec) {
-    assert(isdefined(var_c3d1c893), "<unknown string>");
+    assert(isdefined(var_c3d1c893), "<dev string:x1e1>");
     if (!isdefined(var_c3d1c893)) {
         return;
     }
@@ -1538,7 +1537,7 @@ function function_f2ff97a6(var_481d50cb, *var_c3d1c893, var_b0ab4cec) {
 // Checksum 0x99f1c162, Offset: 0x6320
 // Size: 0x8a
 function function_f0ac059f(var_481d50cb, *b_active, var_b0ab4cec) {
-    assert(isdefined(b_active), "<unknown string>");
+    assert(isdefined(b_active), "<dev string:x1e1>");
     if (!isdefined(b_active)) {
         return;
     }
@@ -1553,7 +1552,7 @@ function function_f0ac059f(var_481d50cb, *b_active, var_b0ab4cec) {
 // Checksum 0x6e0c4130, Offset: 0x63b8
 // Size: 0x8a
 function function_c8c7bc5(var_481d50cb, *b_active, var_b0ab4cec) {
-    assert(isdefined(b_active), "<unknown string>");
+    assert(isdefined(b_active), "<dev string:x1e1>");
     if (!isdefined(b_active)) {
         return;
     }
@@ -1564,7 +1563,7 @@ function function_c8c7bc5(var_481d50cb, *b_active, var_b0ab4cec) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x49825dc2, Offset: 0x6450
 // Size: 0x20
 function function_b8c12b0f(var_481d50cb, *b_active) {
@@ -1573,7 +1572,7 @@ function function_b8c12b0f(var_481d50cb, *b_active) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd4df2efb, Offset: 0x6478
 // Size: 0x7c
 function function_4acf7b43(n_slot, var_16c042b8) {
@@ -1589,7 +1588,7 @@ function function_4acf7b43(n_slot, var_16c042b8) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb1892da, Offset: 0x6500
 // Size: 0x136
 function players_are_in_perk_area(perk_machine) {
@@ -1612,7 +1611,7 @@ function players_are_in_perk_area(perk_machine) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbb88832b, Offset: 0x6640
 // Size: 0x17c
 function perk_hostmigration() {
@@ -1633,7 +1632,7 @@ function perk_hostmigration() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe410a3e5, Offset: 0x67c8
 // Size: 0x150
 function host_migration_func(s_custom_perk, keyname) {
@@ -1660,7 +1659,7 @@ function spare_change(str_trigger = "audio_bump_trigger", str_sound = "zmb_perks
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x10f6b095, Offset: 0x6a18
 // Size: 0x10c
 function check_for_change() {
@@ -1674,7 +1673,7 @@ function check_for_change() {
             player playrumbleonentity(#"zm_interact_rumble");
             break;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -1707,15 +1706,15 @@ function register_revive_success_perk_func(revive_func) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdc76e317, Offset: 0x6c28
 // Size: 0x330
 function register_perk_basic_info(str_perk, str_alias, n_perk_cost, str_hint_string, w_perk_bottle_weapon, var_1408cd4c, *var_6334ae50) {
-    assert(isdefined(str_alias), "<unknown string>");
-    assert(isdefined(n_perk_cost), "<unknown string>");
-    assert(isdefined(str_hint_string), "<unknown string>");
-    assert(isdefined(w_perk_bottle_weapon), "<unknown string>");
-    assert(isdefined(var_1408cd4c), "<unknown string>");
+    assert(isdefined(str_alias), "<dev string:x206>");
+    assert(isdefined(n_perk_cost), "<dev string:x247>");
+    assert(isdefined(str_hint_string), "<dev string:x289>");
+    assert(isdefined(w_perk_bottle_weapon), "<dev string:x2cd>");
+    assert(isdefined(var_1408cd4c), "<dev string:x315>");
     _register_undefined_perk(str_alias);
     level._custom_perks[str_alias].alias = n_perk_cost;
     level._custom_perks[str_alias].cost = 2500;
@@ -1756,10 +1755,10 @@ function register_perk_basic_info(str_perk, str_alias, n_perk_cost, str_hint_str
 // Checksum 0x7b7b82bf, Offset: 0x6f60
 // Size: 0x17c
 function register_perk_mod_basic_info(str_perk, str_alias, var_771fabd4, var_5a736864, n_cost) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(str_alias), "<unknown string>");
-    assert(isdefined(var_5a736864), "<unknown string>");
-    assert(isdefined(n_cost), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x362>");
+    assert(isdefined(str_alias), "<dev string:x3a7>");
+    assert(isdefined(var_5a736864), "<dev string:x3ed>");
+    assert(isdefined(n_cost), "<dev string:x439>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].alias = str_alias;
     level._custom_perks[str_perk].var_60e3692f = var_771fabd4;
@@ -1773,12 +1772,12 @@ function register_perk_mod_basic_info(str_perk, str_alias, var_771fabd4, var_5a7
 }
 
 // Namespace zm_perks/zm_perks
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x761d807f, Offset: 0x70e8
 // Size: 0xd6
 function register_perk_machine(str_perk, func_perk_machine_setup, func_perk_machine_thread, var_4a48be24) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(func_perk_machine_setup), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x47c>");
+    assert(isdefined(func_perk_machine_setup), "<dev string:x4ba>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].perk_machine_set_kvps = func_perk_machine_setup;
     if (isdefined(func_perk_machine_thread)) {
@@ -1790,12 +1789,12 @@ function register_perk_machine(str_perk, func_perk_machine_setup, func_perk_mach
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfe330aa3, Offset: 0x71c8
 // Size: 0x8e
 function register_perk_machine_power_override(str_perk, func_perk_machine_power_override) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(func_perk_machine_power_override), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x507>");
+    assert(isdefined(func_perk_machine_power_override), "<dev string:x554>");
     _register_undefined_perk(str_perk);
     if (isdefined(func_perk_machine_power_override)) {
         level._custom_perks[str_perk].perk_machine_power_override_thread = func_perk_machine_power_override;
@@ -1803,23 +1802,23 @@ function register_perk_machine_power_override(str_perk, func_perk_machine_power_
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4a7e1d24, Offset: 0x7260
 // Size: 0x86
 function register_perk_precache_func(str_perk, func_precache) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(func_precache), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x5b9>");
+    assert(isdefined(func_precache), "<dev string:x5fd>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].precache_func = func_precache;
 }
 
 // Namespace zm_perks/zm_perks
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x2402653f, Offset: 0x72f0
 // Size: 0xce
 function register_perk_threads(str_perk, func_give_player_perk, func_take_player_perk, var_9a0b6a21) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(func_give_player_perk), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x646>");
+    assert(isdefined(func_give_player_perk), "<dev string:x684>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].player_thread_give = func_give_player_perk;
     level._custom_perks[str_perk].player_thread_take = func_take_player_perk;
@@ -1829,33 +1828,33 @@ function register_perk_threads(str_perk, func_give_player_perk, func_take_player
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc807711b, Offset: 0x73c8
 // Size: 0xc6
 function register_perk_clientfields(str_perk, func_clientfield_register, func_clientfield_set) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(func_clientfield_register), "<unknown string>");
-    assert(isdefined(func_clientfield_set), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x6cf>");
+    assert(isdefined(func_clientfield_register), "<dev string:x712>");
+    assert(isdefined(func_clientfield_set), "<dev string:x766>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].clientfield_register = func_clientfield_register;
     level._custom_perks[str_perk].clientfield_set = func_clientfield_set;
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x97c982c5, Offset: 0x7498
 // Size: 0xc6
 function register_perk_host_migration_params(str_perk, str_radiant_name, str_effect_name) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(str_radiant_name), "<unknown string>");
-    assert(isdefined(str_effect_name), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x7b5>");
+    assert(isdefined(str_radiant_name), "<dev string:x801>");
+    assert(isdefined(str_effect_name), "<dev string:x855>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].radiant_machine_name = str_radiant_name;
     level._custom_perks[str_perk].machine_light_effect = str_effect_name;
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x497c22f6, Offset: 0x7568
 // Size: 0x60
 function _register_undefined_perk(str_perk) {
@@ -1868,11 +1867,11 @@ function _register_undefined_perk(str_perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd49200d5, Offset: 0x75d0
 // Size: 0x6c
 function register_perk_damage_override_func(func_damage_override) {
-    assert(isdefined(func_damage_override), "<unknown string>");
+    assert(isdefined(func_damage_override), "<dev string:x8a8>");
     if (!isdefined(level.perk_damage_override)) {
         level.perk_damage_override = [];
     }
@@ -1884,8 +1883,8 @@ function register_perk_damage_override_func(func_damage_override) {
 // Checksum 0xe302d41b, Offset: 0x7648
 // Size: 0x86
 function function_2ae97a14(str_perk, var_feae8586) {
-    assert(isdefined(str_perk), "<unknown string>");
-    assert(isdefined(var_feae8586), "<unknown string>");
+    assert(isdefined(str_perk), "<dev string:x8ff>");
+    assert(isdefined(var_feae8586), "<dev string:x93e>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].var_658e2856 = var_feae8586;
 }
@@ -1899,7 +1898,7 @@ function function_6b2d8dc0() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19a876b1, Offset: 0x7700
 // Size: 0x32
 function function_9a0e9d65() {
@@ -1910,7 +1909,7 @@ function function_9a0e9d65() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a251f7e, Offset: 0x7740
 // Size: 0x50
 function function_80514167() {
@@ -2003,7 +2002,7 @@ function perk_vapor_altar_init() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x205cc43, Offset: 0x7d10
 // Size: 0x43c
 function function_8c7cee86() {
@@ -2057,7 +2056,7 @@ function function_8c7cee86() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1616591e, Offset: 0x8158
 // Size: 0xae
 function function_c210fc2e(n_index, a_structs) {
@@ -2070,7 +2069,7 @@ function function_c210fc2e(n_index, a_structs) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xed226645, Offset: 0x8210
 // Size: 0x666
 function function_b7f2c635(player) {
@@ -2147,7 +2146,7 @@ function function_b7f2c635(player) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f7482e7, Offset: 0x8880
 // Size: 0x6d8
 function function_f5da744e() {
@@ -2161,7 +2160,7 @@ function function_f5da744e() {
             continue;
         }
         if (!vending_trigger_can_player_use(player, 1) || zm_trial_disable_buys::is_active() || zm_trial_disable_perks::is_active() || !zm_custom::function_901b751c(#"zmperksactive")) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         perk = player.var_47654123[n_slot] ? #"specialty_mystery" : player.var_c27f1e90[n_slot];
@@ -2220,12 +2219,12 @@ function function_f5da744e() {
             perkhash = level._custom_perks[perk].alias;
         }
         if (!ishash(perkhash)) {
-            assertmsg("<unknown string>");
+            assertmsg("<dev string:x983>");
             perkhash = -1;
         }
         n_round_number = level.round_number;
         if (!isint(n_round_number)) {
-            assertmsg("<unknown string>");
+            assertmsg("<dev string:x9bb>");
             n_round_number = 0;
         }
         player recordmapevent(29, gettime(), self.origin, n_round_number, perkhash);
@@ -2239,7 +2238,7 @@ function function_f5da744e() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x415aedb0, Offset: 0x8f60
 // Size: 0x284
 function taking_cover_tanks_(player, perk, n_slot, var_3468124) {
@@ -2271,7 +2270,7 @@ function taking_cover_tanks_(player, perk, n_slot, var_3468124) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x39f75efd, Offset: 0x91f0
 // Size: 0xea
 function private function_44915d1(var_16c042b8, n_slot) {
@@ -2295,14 +2294,14 @@ function private function_44915d1(var_16c042b8, n_slot) {
 // Size: 0x1d8
 function function_d11d4952() {
     self endon(#"death");
-    wait(0.01);
+    wait 0.01;
     level flag::wait_till("start_zombie_round_logic");
     players = getplayers();
     self endon(#"warning_dialog");
     level endon(#"switch_flipped");
     timer = 0;
     for (;;) {
-        wait(0.5);
+        wait 0.5;
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (!isdefined(players[i])) {
@@ -2314,7 +2313,7 @@ function function_d11d4952() {
                 continue;
             }
             if (dist < 4900 && timer < 3) {
-                wait(0.5);
+                wait 0.5;
                 timer++;
             }
             if (dist < 4900 && timer == 3) {
@@ -2322,10 +2321,10 @@ function function_d11d4952() {
                     continue;
                 }
                 players[i] thread zm_utility::do_player_vo("vox_start", 5);
-                wait(3);
+                wait 3;
                 self notify(#"warning_dialog");
                 /#
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:xe4>");
                 #/
             }
         }
@@ -2333,12 +2332,12 @@ function function_d11d4952() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd71a1b9c, Offset: 0x94c8
 // Size: 0x14a
 function function_b2ac6ee7() {
     self endon(#"death");
-    wait(0.01);
+    wait 0.01;
     n_slot = self.script_int;
     start_on = 1;
     if (!isdefined(self.cost)) {
@@ -2363,7 +2362,7 @@ function function_b2ac6ee7() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xedad48e5, Offset: 0x9620
 // Size: 0x92c
 function function_9bdf581f(perk, n_slot, b_bought = 0) {
@@ -2459,7 +2458,7 @@ function function_9bdf581f(perk, n_slot, b_bought = 0) {
             if (isstring(var_7bc3cbfd)) {
                 var_7bc3cbfd = hash(var_7bc3cbfd);
             }
-            assert(isdefined(var_f53f24dd), "<unknown string>" + function_9e72a96(var_7bc3cbfd));
+            assert(isdefined(var_f53f24dd), "<dev string:x9f8>" + function_9e72a96(var_7bc3cbfd));
         #/
         if (isdefined(var_f53f24dd) && !isinarray(self.var_466b927f, var_f53f24dd)) {
             self notify(#"hash_13948ef3726b968f", {#var_f53f24dd:var_f53f24dd});
@@ -2469,30 +2468,30 @@ function function_9bdf581f(perk, n_slot, b_bought = 0) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x48bd7925, Offset: 0x9f58
 // Size: 0x5c
 function function_ef7f9ab0(n_slot) {
     self endon(#"disconnect");
     while (self zm_utility::is_drinking()) {
-        wait(0.1);
+        wait 0.1;
     }
     self function_fb633f9d(n_slot, 0);
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x427b186f, Offset: 0x9fc0
 // Size: 0x5c
 function function_fc0e5f36() {
     var_1108cad = array::exclude(level.var_fa3df1eb, self.perk_history);
     if (!var_1108cad.size) {
-        self zm_utility::function_659819fa(#"zm_trophy_perkaholic_relapse");
+        self zm_utility::give_achievement(#"zm_trophy_perkaholic_relapse");
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x639e5fa0, Offset: 0xa028
 // Size: 0x494
 function function_329ae65e(perk, n_slot) {
@@ -2553,7 +2552,7 @@ function function_329ae65e(perk, n_slot) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x211764c9, Offset: 0xa4c8
 // Size: 0x54
 function function_c1efcc57(str_name) {
@@ -2599,7 +2598,7 @@ function function_9829d4a9(n_slot) {
 // Size: 0x244
 function function_59fb56ff(b_show) {
     if (is_true(b_show)) {
-        assert(isdefined(self.var_3468124), "<unknown string>");
+        assert(isdefined(self.var_3468124), "<dev string:xa21>");
         self.var_e80aca0a = 0;
         if (isdefined(self.var_3468124.mdl_altar)) {
             self.var_3468124.mdl_altar show();
@@ -2615,7 +2614,7 @@ function function_59fb56ff(b_show) {
         }
         return;
     }
-    assert(isdefined(self.var_3468124), "<unknown string>");
+    assert(isdefined(self.var_3468124), "<dev string:xa21>");
     self.var_e80aca0a = 1;
     if (isdefined(self.var_3468124.mdl_altar)) {
         self.var_3468124.mdl_altar ghost();
@@ -2652,7 +2651,7 @@ function function_cc24f525() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5b3ae351, Offset: 0xa9f0
 // Size: 0x1ac
 function function_29387491(var_16c042b8, n_slot) {
@@ -2683,7 +2682,7 @@ function function_29387491(var_16c042b8, n_slot) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaae0b944, Offset: 0xaba8
 // Size: 0x112
 function function_f9385a02(var_330ce459, n_slot) {
@@ -2706,7 +2705,7 @@ function function_f9385a02(var_330ce459, n_slot) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x80f1c2fc, Offset: 0xacc8
 // Size: 0x152
 function function_5ea0c6cf(var_9bf8fb5c) {
@@ -2726,7 +2725,7 @@ function function_5ea0c6cf(var_9bf8fb5c) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2d3171f3, Offset: 0xae28
 // Size: 0x24c
 function private function_7723353c() {
@@ -2767,7 +2766,7 @@ function private function_7723353c() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf4c74c99, Offset: 0xb080
 // Size: 0x244
 function function_8b413937(var_3468124) {
@@ -2803,7 +2802,7 @@ function function_8b413937(var_3468124) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd3f12f45, Offset: 0xb2d0
 // Size: 0x2e
 function function_72c30be7(var_dd74d130, var_3468124) {
@@ -2811,7 +2810,7 @@ function function_72c30be7(var_dd74d130, var_3468124) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1af43702, Offset: 0xb308
 // Size: 0x34c
 function function_a30c73b9(str_state) {
@@ -2862,7 +2861,7 @@ function function_a30c73b9(str_state) {
                 }
             }
         }
-        assert(isdefined(var_1d373a09), "<unknown string>");
+        assert(isdefined(var_1d373a09), "<dev string:xa55>");
         self.mdl_altar = util::spawn_model(var_1d373a09, s_statue.origin, s_statue.angles);
         if (is_true(var_30a7cd8c)) {
             waitframe(1);
@@ -2873,7 +2872,7 @@ function function_a30c73b9(str_state) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2ca472cc, Offset: 0xb660
 // Size: 0x17e
 function function_a1bad730() {
@@ -2895,7 +2894,7 @@ function function_a1bad730() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x76914e34, Offset: 0xb7e8
 // Size: 0xaa
 function function_e9df56d1() {
@@ -2911,7 +2910,7 @@ function function_e9df56d1() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb988738a, Offset: 0xb8a0
 // Size: 0x10e
 function function_efd2c9e6() {
@@ -2929,7 +2928,7 @@ function function_efd2c9e6() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd80bc24a, Offset: 0xb9b8
 // Size: 0x170
 function function_1e721859() {
@@ -2953,7 +2952,7 @@ function function_1e721859() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x22cddc1a, Offset: 0xbb30
 // Size: 0xf4
 function function_adc671f5(n_slot) {
@@ -2966,11 +2965,11 @@ function function_adc671f5(n_slot) {
             return 0;
         }
     }
-    assertmsg("<unknown string>" + n_slot);
+    assertmsg("<dev string:xa83>" + n_slot);
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x63c34a79, Offset: 0xbc30
 // Size: 0x1f4
 function function_fb633f9d(n_slot, n_state) {
@@ -3012,7 +3011,7 @@ function function_fb633f9d(n_slot, n_state) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe045cdac, Offset: 0xbe30
 // Size: 0x116
 function function_ba56adf1(var_c188cf87, var_59ad3e22) {
@@ -3025,12 +3024,12 @@ function function_ba56adf1(var_c188cf87, var_59ad3e22) {
         if (a_e_players.size) {
             a_e_players[0] function_c99f4d81(var_c188cf87, var_59ad3e22);
         }
-        wait(4);
+        wait 4;
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe0edf5eb, Offset: 0xbf50
 // Size: 0x10e
 function function_c99f4d81(var_c188cf87, var_59ad3e22) {
@@ -3043,14 +3042,14 @@ function function_c99f4d81(var_c188cf87, var_59ad3e22) {
             n_clientfield_val = self getentitynumber() + 1;
             self clientfield::set("" + #"hash_222c3403d2641ea6", n_clientfield_val);
         }
-        wait(1);
+        wait 1;
     }
     self clientfield::set("" + #"hash_222c3403d2641ea6", 0);
     level.var_223d9df6 = undefined;
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x614b6a99, Offset: 0xc068
 // Size: 0xec
 function function_66c0d837(e_player, var_c188cf87, var_59ad3e22) {
@@ -3061,7 +3060,7 @@ function function_66c0d837(e_player, var_c188cf87, var_59ad3e22) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfeb390be, Offset: 0xc160
 // Size: 0xb4
 function function_df87281a(var_16c042b8, b_extra = 0) {
@@ -3076,22 +3075,22 @@ function function_df87281a(var_16c042b8, b_extra = 0) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9dd10704, Offset: 0xc220
 // Size: 0x44
 function function_4d342a8f() {
-    if (!self hasperk(#"hash_5930cf0eb070e35a")) {
-        perks::perk_setperk(#"hash_5930cf0eb070e35a");
+    if (!self hasperk(#"talent_speedcola")) {
+        perks::perk_setperk(#"talent_speedcola");
     }
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec6fe94, Offset: 0xc270
 // Size: 0x44
 function function_528f82a9() {
-    if (self hasperk(#"hash_5930cf0eb070e35a")) {
-        perks::perk_unsetperk(#"hash_5930cf0eb070e35a");
+    if (self hasperk(#"talent_speedcola")) {
+        perks::perk_unsetperk(#"talent_speedcola");
     }
 }
 
@@ -3104,7 +3103,7 @@ function function_c709e667(str_name) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2f86b17, Offset: 0xc2f8
 // Size: 0x1cc
 function function_b4c0e0ee(n_bleedout_time) {
@@ -3132,7 +3131,7 @@ function function_b4c0e0ee(n_bleedout_time) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x82de3f7a, Offset: 0xc4d0
 // Size: 0x6c
 function function_d3b5e743() {
@@ -3143,14 +3142,14 @@ function function_d3b5e743() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2cfba963, Offset: 0xc548
 // Size: 0x1a8
 function function_28ac0614(var_bbb2c705, *var_613b7621) {
     var_cd0340f4 = isdefined(var_613b7621) && zombie_utility::get_zombie_var("perks_decay") && zm_custom::function_901b751c(#"zmperkdecay") == 1;
     if (var_cd0340f4) {
         for (i = 2; i >= 0; i--) {
-            wait(var_613b7621);
+            wait var_613b7621;
             if (isdefined(self.var_7341f980[i])) {
                 self namespace_791d0451::function_4c1d0e25(self.var_7341f980[i], 1, 1);
             }
@@ -3165,7 +3164,7 @@ function function_28ac0614(var_bbb2c705, *var_613b7621) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9eb65fae, Offset: 0xc6f8
 // Size: 0x1f0
 function function_50691178() {
@@ -3217,7 +3216,7 @@ function function_2babacc2() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x74bc1c13, Offset: 0xcaa0
 // Size: 0x2e
 function function_e56d8ef4(str_perk_name) {
@@ -3228,7 +3227,7 @@ function function_e56d8ef4(str_perk_name) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc7526975, Offset: 0xcad8
 // Size: 0x2e
 function private function_d1cad55c(var_16c042b8) {
@@ -3239,7 +3238,7 @@ function private function_d1cad55c(var_16c042b8) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1dd48b87, Offset: 0xcb10
 // Size: 0x88
 function register_lost_perk_override(func_override) {
@@ -3252,7 +3251,7 @@ function register_lost_perk_override(func_override) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1c973e07, Offset: 0xcba0
 // Size: 0xb4
 function lost_perk_override(perk) {
@@ -3315,7 +3314,7 @@ function function_b2dfd295(perk, var_8c7df7fc) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xddef0078, Offset: 0xcf10
 // Size: 0x40
 function register_actor_damage_override(str_perk, actor_damage_override_func) {
@@ -3326,7 +3325,7 @@ function register_actor_damage_override(str_perk, actor_damage_override_func) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0xcb26d19a, Offset: 0xcf58
 // Size: 0x30c
 function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype) {
@@ -3365,39 +3364,39 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
     // Size: 0xa7c
     function function_756e6a6d() {
         ip1 = self getentitynumber() + 1;
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + self.name + "<unknown string>" + ip1 + "<unknown string>" + ip1 + "<unknown string>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xac5>" + ip1 + "<dev string:xb07>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xb22>" + ip1 + "<dev string:xb64>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xb7e>" + ip1 + "<dev string:xbc7>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xbe9>" + ip1 + "<dev string:xc2c>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xc48>" + ip1 + "<dev string:xc90>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xcb0>" + ip1 + "<dev string:xcf7>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xd17>" + ip1 + "<dev string:xd59>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xd73>" + ip1 + "<dev string:xdb8>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xdd5>" + ip1 + "<dev string:xe1a>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xe38>" + ip1 + "<dev string:xe77>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xe8f>" + ip1 + "<dev string:xed0>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xeea>" + ip1 + "<dev string:xf2d>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xf49>" + ip1 + "<dev string:xf8a>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:xfa4>" + ip1 + "<dev string:xff0>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x100a>" + ip1 + "<dev string:x104e>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x106a>" + ip1 + "<dev string:x10b1>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x10d1>" + ip1 + "<dev string:x1113>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x112e>" + ip1 + "<dev string:x1164>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x117c>" + ip1 + "<dev string:x11b2>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x11ca>" + ip1 + "<dev string:x1200>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x1218>" + ip1 + "<dev string:x124e>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x1266>" + ip1 + "<dev string:x129e>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x12b4>" + ip1 + "<dev string:x12ea>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x1302>" + ip1 + "<dev string:x1338>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x1350>" + ip1 + "<dev string:x1386>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x139e>" + ip1 + "<dev string:x13d4>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x13ec>" + ip1 + "<dev string:x1424>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x143a>" + ip1 + "<dev string:x147a>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x149c>" + ip1 + "<dev string:x14dc>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x14fe>" + ip1 + "<dev string:x153e>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x1560>" + ip1 + "<dev string:x15a0>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x15c2>" + ip1 + "<dev string:x1604>");
+        adddebugcommand("<dev string:xaa4>" + self.name + "<dev string:xabe>" + ip1 + "<dev string:x1624>" + ip1 + "<dev string:x165c>");
     }
 
     // Namespace zm_perks/zm_perks
@@ -3423,7 +3422,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_714bd7d5b19367cb":
             case #"hash_2b731e891eadd00a":
                 str_perk = #"specialty_shield";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_2c6e9bd17e4c70e5":
@@ -3431,15 +3430,15 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_3547aac06cbbd656":
             case #"hash_1fc0acc0b9c31200":
                 str_perk = #"specialty_berserker";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_72cd05a9f7096d18":
             case #"hash_696b25a08319319f":
             case #"hash_5fdbbc96a07023ea":
             case #"hash_59dfac7d036a7f11":
-                str_perk = #"hash_1ea1a9cfee998e89";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                str_perk = #"talent_deathperception";
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_20e1f2a12f575ad":
@@ -3447,7 +3446,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_1067d35a903aa090":
             case #"hash_60a8ca620122ce03":
                 str_perk = #"specialty_camper";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_4d8a429ced485336":
@@ -3455,15 +3454,15 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_4e334d102e76aa39":
             case #"hash_3797acd439d9338b":
                 str_perk = #"specialty_mystery";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_582c07780b2a70d7":
             case #"hash_460157accd31661c":
             case #"hash_7a8b3d3703b1d56e":
             case #"hash_2ad319babe68ddd9":
-                str_perk = #"hash_3417450e1347185";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                str_perk = #"talent_phdslider";
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_7237eda7099e624d":
@@ -3471,7 +3470,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_b5286c82d1f26c3":
             case #"hash_3fe4509a2ac36a60":
                 str_perk = #"specialty_cooldown";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_1e0b58a0910c3247":
@@ -3479,31 +3478,31 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_17377d35be324020":
             case #"hash_4d0551e8fc1a3eaa":
                 str_perk = #"specialty_additionalprimaryweapon";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_215605bc01af2e0":
             case #"hash_272741eeae13ac9a":
             case #"hash_3c2392a146da0ca1":
             case #"hash_77c9ba94611f14a7":
-                str_perk = #"hash_210097a75bb6c49a";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                str_perk = #"talent_deadshot";
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_6650c5a8596d4707":
             case #"hash_4b97c729fbbb68e5":
             case #"hash_2ad8c584d069c098":
             case #"hash_12b3c2d6eb971006":
-                str_perk = #"hash_602a1b6107105f07";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                str_perk = #"talent_staminup";
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_591f1871abf8a417":
             case #"hash_77bfaaec70d8daa":
             case #"hash_1f2e309303a233e8":
             case #"hash_30bfdad9100956cd":
-                str_perk = #"hash_7f98b3dd3cce95aa";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                str_perk = #"talent_quickrevive";
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_2b9b74bc8b7a95b9":
@@ -3511,7 +3510,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_338cf8868ad12888":
             case #"hash_3985b954c5d57fd7":
                 str_perk = #"specialty_electriccherry";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_3e92ee8a1f94e218":
@@ -3519,7 +3518,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_73cbb686dc065831":
             case #"hash_6bc1e0d615f04132":
                 str_perk = #"specialty_widowswine";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_74a3737c1fa820fa":
@@ -3527,7 +3526,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_3419add8481e7fa1":
             case #"hash_4d21953ef7610b73":
                 str_perk = #"specialty_extraammo";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_4c6b49a740457f87":
@@ -3535,7 +3534,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_5d8694f5297752a4":
             case #"hash_31f8545325031336":
                 str_perk = #"specialty_etherealrazor";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_5ffd9216593e9fb":
@@ -3543,7 +3542,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_23b50d4339535dd5":
             case #"hash_6e7de8150825b688":
                 str_perk = #"specialty_zombshell";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_42ed16109e9963d6":
@@ -3551,7 +3550,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_3eb60ad87ca70645":
             case #"hash_2bc2dabec1637ab7":
                 str_perk = #"specialty_wolf_protector";
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_36d28b98c683b0ed":
@@ -3559,7 +3558,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_122b73a9059c70bc":
             case #"hash_796b16a6e51d3223":
                 var_f79903dc = 0;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_2621dac67d96d503":
@@ -3567,7 +3566,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_36d28898c683abd4":
             case #"hash_796b17a6e51d33d6":
                 var_f79903dc = 1;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_122b75a9059c7422":
@@ -3575,7 +3574,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_2621d9c67d96d350":
             case #"hash_796b18a6e51d3589":
                 var_f79903dc = 2;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_36d28698c683a86e":
@@ -3583,7 +3582,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_2621e0c67d96df35":
             case #"hash_796b19a6e51d373c":
                 var_f79903dc = 3;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_63368be670c1631":
@@ -3591,7 +3590,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_2227c4347bf7aff7":
             case #"hash_56baf79467fa8098":
                 var_f79903dc = 4;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_2a94a682beedaf35":
@@ -3599,7 +3598,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_4205942f3e57758a":
             case #"hash_75d5e1ee4bb9b063":
                 var_4ee327af = 0;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_2a94a382beedaa1c":
@@ -3607,7 +3606,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_75d5e2ee4bb9b216":
             case #"hash_5c050a66529e88c1":
                 var_4ee327af = 1;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_75d5e3ee4bb9b3c9":
@@ -3615,7 +3614,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_4205922f3e577224":
             case #"hash_2a94a482beedabcf":
                 var_4ee327af = 2;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_5c050c66529e8c27":
@@ -3623,7 +3622,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_2a94a182beeda6b6":
             case #"hash_4205912f3e577071":
                 var_4ee327af = 3;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_20102f0482e5bdb9":
@@ -3631,7 +3630,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_19d7dd5f676b170c":
             case #"hash_e3aea524ee28666":
                 var_4ee327af = 4;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_21a07f54e2de98fe":
@@ -3639,7 +3638,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_57ed1fb7940f33b5":
             case #"hash_37e9f4522a62290f":
                 var_dfa7102 = 0;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_21a07e54e2de974b":
@@ -3647,7 +3646,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_6fa3e67013c04e99":
             case #"hash_37e9f5522a622ac2":
                 var_dfa7102 = 1;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_21a07d54e2de9598":
@@ -3655,7 +3654,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_57ed1db7940f304f":
             case #"hash_37e9f6522a622c75":
                 var_dfa7102 = 2;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_57ed1ab7940f2b36":
@@ -3663,7 +3662,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_21a08454e2dea17d":
             case #"hash_6fa3e87013c051ff":
                 var_dfa7102 = 3;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_11bcb93b01611b04":
@@ -3671,7 +3670,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_58bb5da598842e39":
             case #"hash_79a3bb05585eb7fb":
                 var_dfa7102 = 4;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case #"hash_5eee967ea5d92169":
@@ -3679,7 +3678,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
             case #"hash_560a015fd8fc8f56":
             case #"hash_4a38f3e91e628364":
                 var_c4819a86 = 1;
-                var_8d1a1acc = strtok(cmd, "<unknown string>");
+                var_8d1a1acc = strtok(cmd, "<dev string:x1673>");
                 var_eb4c64e8 = int(var_8d1a1acc[1]) - 1;
                 break;
             case 0:
@@ -3708,8 +3707,8 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
                     var_b1cb5669 function_b2cba45a();
                 }
             }
-            setdvar(#"zombie_vapor_devgui", "<unknown string>");
-            wait(0.5);
+            setdvar(#"zombie_vapor_devgui", "<dev string:x1678>");
+            wait 0.5;
         }
     }
 
@@ -3719,11 +3718,11 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
     // Size: 0x146
     function function_36710277(var_16c042b8) {
         if (self.var_466b927f.size >= 4) {
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x167c>");
             return;
         }
         if (isinarray(self.var_c27f1e90, var_16c042b8)) {
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x1695>");
             return;
         }
         for (i = 0; i < 4; i++) {
@@ -3747,7 +3746,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
         if (n_slot < 4) {
             var_16c042b8 = self.var_c27f1e90[n_slot];
             if (isinarray(self.var_466b927f, var_16c042b8)) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x16b8>");
                 return;
             }
             self function_29387491(var_16c042b8, n_slot);
@@ -3764,15 +3763,15 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
         if (n_slot < 4) {
             var_16c042b8 = self.var_c27f1e90[n_slot];
             if (!isinarray(self.var_466b927f, var_16c042b8)) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x16d7>");
                 return;
             }
-            self notify(var_16c042b8 + "<unknown string>", {#var_613b7621:1});
+            self notify(var_16c042b8 + "<dev string:x16ef>", {#var_613b7621:1});
             return;
         }
         foreach (var_16c042b8 in self.var_c27f1e90) {
             if (isinarray(self.var_466b927f, var_16c042b8)) {
-                self notify(var_16c042b8 + "<unknown string>", {#var_613b7621:1});
+                self notify(var_16c042b8 + "<dev string:x16ef>", {#var_613b7621:1});
             }
         }
     }

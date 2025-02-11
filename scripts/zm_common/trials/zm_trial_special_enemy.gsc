@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_trial_special_enemy;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcec6ab1e, Offset: 0x100
 // Size: 0x5c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xfd75b85e, Offset: 0x168
 // Size: 0x1ac
 function private on_begin(enemy_type, var_6b96eb7b, var_46cce0c5, var_6ad4e7c6, var_44445188) {
@@ -58,7 +57,7 @@ function private on_begin(enemy_type, var_6b96eb7b, var_46cce0c5, var_6ad4e7c6, 
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b5ebf4f, Offset: 0x320
 // Size: 0x9c
 function private on_end(*round_reset) {
@@ -73,12 +72,12 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaaf6aa0b, Offset: 0x3c8
 // Size: 0x17c
 function private on_ai_killed(params) {
     challenge = zm_trial::function_a36e8c38(#"special_enemy");
-    assert(isdefined(challenge), "<unknown string>");
+    assert(isdefined(challenge), "<dev string:x38>");
     if (challenge.enemy_type !== self.archetype) {
         return;
     }
@@ -96,7 +95,7 @@ function private on_ai_killed(params) {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x15c2980, Offset: 0x550
 // Size: 0x1e
 function private get_zombie_count_for_round(*round_number, *player_count) {
@@ -104,7 +103,7 @@ function private get_zombie_count_for_round(*round_number, *player_count) {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x910c4a3d, Offset: 0x578
 // Size: 0x22c
 function private spawn_enemy() {
@@ -125,7 +124,7 @@ function private spawn_enemy() {
     assert(isdefined(challenge));
     /#
         assert(isdefined(level.var_1cc18005));
-        assert(isdefined(level.var_1cc18005[challenge.enemy_type]), "<unknown string>" + function_9e72a96(challenge.enemy_type));
+        assert(isdefined(level.var_1cc18005[challenge.enemy_type]), "<dev string:x5b>" + function_9e72a96(challenge.enemy_type));
     #/
     spawn_callback = level.var_1cc18005[challenge.enemy_type];
     spawn_success = [[ spawn_callback ]]();
@@ -136,7 +135,7 @@ function private spawn_enemy() {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf74cbe77, Offset: 0x7b0
 // Size: 0x8c
 function function_95c1dd81(name, spawn_callback) {
@@ -146,7 +145,7 @@ function function_95c1dd81(name, spawn_callback) {
     if (!isdefined(level.var_1cc18005)) {
         level.var_1cc18005 = [];
     }
-    assert(!isdefined(level.var_1cc18005[name]), "<unknown string>" + name);
+    assert(!isdefined(level.var_1cc18005[name]), "<dev string:x90>" + name);
     level.var_1cc18005[name] = spawn_callback;
 }
 

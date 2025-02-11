@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace throttle;
 
 // Namespace throttle
@@ -12,7 +11,7 @@ class throttle {
     var var_3cd6b18f;
 
     // Namespace throttle/throttle_shared
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x106aa11d, Offset: 0xd0
     // Size: 0x42
     constructor() {
@@ -24,7 +23,7 @@ class throttle {
     }
 
     // Namespace throttle/throttle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x7b06d5c2, Offset: 0x428
     // Size: 0x22
     function wm_ht_posidlestart(entity) {
@@ -32,18 +31,18 @@ class throttle {
     }
 
     // Namespace throttle/throttle_shared
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0xea871137, Offset: 0x90
     // Size: 0x34
     function private _updatethrottlethread(throttle) {
         while (isdefined(throttle)) {
             [[ throttle ]]->_updatethrottle();
-            wait(throttle.updaterate_);
+            wait throttle.updaterate_;
         }
     }
 
     // Namespace throttle/throttle_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x17397c31, Offset: 0x280
     // Size: 0x44
     function initialize(processlimit, updaterate) {
@@ -53,7 +52,7 @@ class throttle {
     }
 
     // Namespace throttle/throttle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x786be36b, Offset: 0x458
     // Size: 0x24
     function leavequeue(entity) {
@@ -61,7 +60,7 @@ class throttle {
     }
 
     // Namespace throttle/throttle_shared
-    // Params 0, eflags: 0x6 linked
+    // Params 0, eflags: 0x4
     // Checksum 0x5c9fecc9, Offset: 0x130
     // Size: 0x146
     function private _updatethrottle() {
@@ -83,7 +82,7 @@ class throttle {
     }
 
     // Namespace throttle/throttle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x52000ad, Offset: 0x2d0
     // Size: 0x150
     function waitinqueue(entity = randomint(2147483647)) {
@@ -102,20 +101,20 @@ class throttle {
                     continue;
                 }
                 var_3cd6b18f[var_3cd6b18f.size] = entity;
-                wait(updaterate_);
+                wait updaterate_;
             }
         }
         processed_++;
     }
 
     // Namespace throttle/throttle_shared
-    // Params 1, eflags: 0x6 linked
+    // Params 1, eflags: 0x4
     // Checksum 0x36bf3d63, Offset: 0x660
     // Size: 0x34
     function private function_f629508d(throttle) {
         while (isdefined(throttle)) {
             [[ throttle ]]->function_eba90b67();
-            wait(throttle.updaterate_);
+            wait throttle.updaterate_;
         }
     }
 
@@ -132,7 +131,7 @@ class class_c6c0e94 {
     var var_53070152;
 
     // Namespace class_c6c0e94/throttle_shared
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0xcd738550, Offset: 0x6a0
     // Size: 0x2a
     constructor() {
@@ -142,7 +141,7 @@ class class_c6c0e94 {
     }
 
     // Namespace namespace_c6c0e94/throttle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x60fed7f5, Offset: 0x950
     // Size: 0x22
     function wm_ht_posidlestart(entity) {
@@ -150,7 +149,7 @@ class class_c6c0e94 {
     }
 
     // Namespace namespace_c6c0e94/throttle_shared
-    // Params 4, eflags: 0x2 linked
+    // Params 4, eflags: 0x0
     // Checksum 0xaeb03c93, Offset: 0x7d8
     // Size: 0x7c
     function initialize(name, processlimit, updaterate, queuelimit) {
@@ -162,7 +161,7 @@ class class_c6c0e94 {
     }
 
     // Namespace namespace_c6c0e94/throttle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x7ac420ca, Offset: 0x980
     // Size: 0x24
     function leavequeue(entity) {
@@ -170,7 +169,7 @@ class class_c6c0e94 {
     }
 
     // Namespace namespace_c6c0e94/throttle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xeb4c8e3e, Offset: 0x860
     // Size: 0xe4
     function waitinqueue(entity) {
@@ -191,7 +190,7 @@ class class_c6c0e94 {
     }
 
     // Namespace namespace_c6c0e94/throttle_shared
-    // Params 0, eflags: 0x6 linked
+    // Params 0, eflags: 0x4
     // Checksum 0x23966eef, Offset: 0x6e8
     // Size: 0xe8
     function private function_eba90b67() {

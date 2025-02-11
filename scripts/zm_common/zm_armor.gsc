@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_437ce686d29bb81b;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_net.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\callbacks.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\callbacks;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_net;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_armor;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_armor/zm_armor
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x99742dd1, Offset: 0x150
 // Size: 0x24
 function private preinit() {
@@ -34,7 +33,7 @@ function private preinit() {
 }
 
 // Namespace zm_armor/zm_armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x94d5b53a, Offset: 0x180
 // Size: 0x2c
 function on_connect() {
@@ -42,7 +41,7 @@ function on_connect() {
 }
 
 // Namespace zm_armor/zm_armor
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2a20edf, Offset: 0x1b8
 // Size: 0xfc
 function private function_83fbb13c(params) {
@@ -130,7 +129,7 @@ function add(var_7c8fcded, var_3ed63752, var_28066539, var_df7ee5d1 = #"hash_208
 }
 
 // Namespace zm_armor/zm_armor
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdfd4b8c1, Offset: 0x608
 // Size: 0x1b4
 function remove(var_7c8fcded, var_2cd89ceb = 0) {
@@ -152,7 +151,7 @@ function remove(var_7c8fcded, var_2cd89ceb = 0) {
 }
 
 // Namespace zm_armor/zm_armor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdfb809cb, Offset: 0x7c8
 // Size: 0x30
 function get(var_7c8fcded) {

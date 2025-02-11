@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5450c003e8a913b7;
-#using scripts\core_common\stealth\utility.gsc;
 #using script_2d443451ce681a;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using script_5450c003e8a913b7;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\utility;
+#using scripts\cp_common\util;
 
 #namespace corpse;
 
@@ -18,7 +17,7 @@ function scalevolume(*ent, *vol) {
 #namespace namespace_cc4354b9;
 
 // Namespace namespace_cc4354b9/corpse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb2ee8469, Offset: 0x130
 // Size: 0x42
 function corpse_init_entity() {
@@ -27,7 +26,7 @@ function corpse_init_entity() {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x57de38f9, Offset: 0x180
 // Size: 0xe4
 function corpse_init_level() {
@@ -43,23 +42,23 @@ function corpse_init_level() {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa68f3d83, Offset: 0x270
 // Size: 0x64
 function set_corpse_ranges_default() {
-    array[#"hash_256cce7120ab0043"] = 600;
-    array[#"hash_17048ea9eae820a7"] = 300;
-    array[#"hash_2655f95437d45490"] = 100;
+    array[#"sight_dist"] = 600;
+    array[#"detect_dist"] = 300;
+    array[#"found_dist"] = 100;
     set_corpse_ranges(array);
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xab4d29aa, Offset: 0x2e0
 // Size: 0x66
 function set_corpse_ranges(array) {
-    if (!isdefined(array[#"hash_67ecb968e26f1dee"])) {
-        array[#"hash_67ecb968e26f1dee"] = array[#"hash_2655f95437d45490"];
+    if (!isdefined(array[#"shadow_dist"])) {
+        array[#"shadow_dist"] = array[#"found_dist"];
     }
     level.stealth.corpse.dists = array;
 }
@@ -85,7 +84,7 @@ function set_corpse_entity() {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3a636a36, Offset: 0x450
 // Size: 0x152
 function corpse_check_shadow(origin) {
@@ -105,7 +104,7 @@ function corpse_check_shadow(origin) {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaaedcf90, Offset: 0x5b0
 // Size: 0x874
 function corpse_sight() {
@@ -129,22 +128,22 @@ function corpse_sight() {
     } else {
         self.stealth.corpse_nexttime = gettime() + 1500;
     }
-    var_4aaee197 = level.stealth.corpse.dists[#"hash_2655f95437d45490"];
+    found_dist = level.stealth.corpse.dists[#"found_dist"];
     if (isdefined(self.stealth.override_corpse_found_dist)) {
-        var_4aaee197 = self.stealth.override_corpse_found_dist;
+        found_dist = self.stealth.override_corpse_found_dist;
     }
-    var_2a6bd4de = level.stealth.corpse.dists[#"hash_256cce7120ab0043"];
+    sight_dist = level.stealth.corpse.dists[#"sight_dist"];
     if (isdefined(self.stealth.override_corpse_sight_dist)) {
-        var_2a6bd4de = self.stealth.override_corpse_sight_dist;
+        sight_dist = self.stealth.override_corpse_sight_dist;
     }
-    var_64df9187 = level.stealth.corpse.dists[#"hash_17048ea9eae820a7"];
+    detect_dist = level.stealth.corpse.dists[#"detect_dist"];
     if (isdefined(self.stealth.override_corpse_detect_dist)) {
-        var_64df9187 = self.stealth.override_corpse_detect_dist;
+        detect_dist = self.stealth.override_corpse_detect_dist;
     }
-    var_9f3728b2 = sqr(var_4aaee197);
-    var_1adb66c8 = sqr(var_2a6bd4de);
-    var_3ff1021a = sqr(var_64df9187);
-    check_dist = max(var_4aaee197, max(var_2a6bd4de, var_64df9187));
+    var_9f3728b2 = sqr(found_dist);
+    var_1adb66c8 = sqr(sight_dist);
+    var_3ff1021a = sqr(detect_dist);
+    check_dist = max(found_dist, max(sight_dist, detect_dist));
     corpses = [];
     if (isdefined(level.fngetcorpsearrayfunc)) {
         corpses = [[ level.fngetcorpsearrayfunc ]](self.origin, check_dist);
@@ -164,8 +163,8 @@ function corpse_sight() {
         }
         distsq = distancesquared(self.origin, corpseorigin);
         if (corpse corpse_check_shadow(corpseorigin)) {
-            assert(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"] <= check_dist);
-            var_1adb66c8 = sqr(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"]);
+            assert(level.stealth.corpse.dists[#"shadow_dist"] <= check_dist);
+            var_1adb66c8 = sqr(level.stealth.corpse.dists[#"shadow_dist"]);
             var_3ff1021a = var_1adb66c8;
         }
         if (distsq < var_9f3728b2) {
@@ -220,7 +219,7 @@ function corpse_sight() {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3f3466e0, Offset: 0xe30
 // Size: 0x11c
 function corpse_found(event) {
@@ -240,7 +239,7 @@ function corpse_found(event) {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xae0ff27a, Offset: 0xf58
 // Size: 0x84
 function corpse_seen(event) {
@@ -252,7 +251,7 @@ function corpse_seen(event) {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x31f650f7, Offset: 0xfe8
 // Size: 0xdc
 function corpse_seen_claim(corpse) {
@@ -273,7 +272,7 @@ function corpse_seen_claim(corpse) {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x22536ff7, Offset: 0x10d0
 // Size: 0x82
 function corpse_clear() {
@@ -378,7 +377,7 @@ function suspicious_door_sighting() {
 }
 
 // Namespace namespace_cc4354b9/corpse
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf0cb03c1, Offset: 0x17b0
 // Size: 0x16c
 function suspicious_door_found(event) {
@@ -401,6 +400,6 @@ function suspicious_door_found(event) {
     if (!isdefined(event.investigate_pos)) {
         event.investigate_pos = event.origin;
     }
-    self namespace_f1f700ac::bt_set_stealth_state("investigate", event);
+    self stealth_enemy::bt_set_stealth_state("investigate", event);
 }
 

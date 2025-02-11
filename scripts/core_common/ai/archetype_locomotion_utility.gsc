@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\archetype_cover_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
+#using scripts\core_common\ai\archetype_cover_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\math_shared;
 
 #namespace aiutility;
 
@@ -133,7 +132,7 @@ function autoexec registerbehaviorscriptfunctions() {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x942e6630, Offset: 0x1b30
 // Size: 0x186
 function private locomotionisonstairs(behaviortreeentity) {
@@ -145,7 +144,7 @@ function private locomotionisonstairs(behaviortreeentity) {
         if (isdefined(startnode.animscript) && issubstr(tolower(startnode.animscript), "stairs")) {
             /#
                 if (behaviortreeentity function_3b027260()) {
-                    println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+                    println("<dev string:x38>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
                 }
             #/
             return true;
@@ -153,14 +152,14 @@ function private locomotionisonstairs(behaviortreeentity) {
     }
     /#
         if (behaviortreeentity function_3b027260()) {
-            println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+            println("<dev string:x67>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
         }
     #/
     return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6c2ba2da, Offset: 0x1cc0
 // Size: 0x1ac
 function private locomotionshouldskipstairs(behaviortreeentity) {
@@ -180,7 +179,7 @@ function private locomotionshouldskipstairs(behaviortreeentity) {
     if (remainingsteps >= 3 || remainingsteps >= 6 || remainingsteps >= 8) {
         /#
             if (behaviortreeentity function_3b027260()) {
-                println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+                println("<dev string:x91>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
             }
         #/
         return true;
@@ -189,7 +188,7 @@ function private locomotionshouldskipstairs(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc9066706, Offset: 0x1e78
 // Size: 0x194
 function private locomotionshouldlooponstairs(behaviortreeentity) {
@@ -219,13 +218,13 @@ function private locomotionshouldlooponstairs(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x257c4f25, Offset: 0x2018
 // Size: 0x400
 function private locomotionstairsstart(behaviortreeentity) {
     /#
         if (behaviortreeentity function_3b027260()) {
-            println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+            println("<dev string:xb0>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
         }
     #/
     startnode = behaviortreeentity.traversestartnode;
@@ -281,13 +280,13 @@ function private locomotionstairsstart(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xab9a9f6f, Offset: 0x2420
 // Size: 0xb4
 function private locomotionstairsend(behaviortreeentity) {
     /#
         if (behaviortreeentity function_3b027260()) {
-            println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+            println("<dev string:xcd>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
         }
     #/
     behaviortreeentity setblackboardattribute("_staircase_state", undefined);
@@ -295,7 +294,7 @@ function private locomotionstairsend(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb64db942, Offset: 0x24e0
 // Size: 0x342
 function private function_bb046570() {
@@ -341,7 +340,7 @@ function private function_bb046570() {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf4c539e5, Offset: 0x2830
 // Size: 0x4ba
 function private function_37ae0b11() {
@@ -391,7 +390,7 @@ function private function_37ae0b11() {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbf35d71a, Offset: 0x2cf8
 // Size: 0x61e
 function private function_7589776c(behaviortreeentity) {
@@ -408,13 +407,13 @@ function private function_7589776c(behaviortreeentity) {
         var_4226005f = self function_37ae0b11();
         /#
             if (behaviortreeentity function_3b027260()) {
-                recordcircle(self.origin, 2, (0, 1, 1), "<unknown string>", self);
-                recordcircle(self.ai.var_4183a6fc.startpos, 2, (0, 1, 0), "<unknown string>", self);
-                recordcircle(self.ai.var_4183a6fc.endpos, 2, (1, 0, 0), "<unknown string>", self);
+                recordcircle(self.origin, 2, (0, 1, 1), "<dev string:xe8>", self);
+                recordcircle(self.ai.var_4183a6fc.startpos, 2, (0, 1, 0), "<dev string:xe8>", self);
+                recordcircle(self.ai.var_4183a6fc.endpos, 2, (1, 0, 0), "<dev string:xe8>", self);
                 if (isdefined(self.ai.var_4183a6fc.var_ba319abd)) {
-                    recordcircle(self.ai.var_4183a6fc.var_ba319abd, 2, (1, 0.5, 0), "<unknown string>", self);
+                    recordcircle(self.ai.var_4183a6fc.var_ba319abd, 2, (1, 0.5, 0), "<dev string:xe8>", self);
                 }
-                recordcircle(self.var_14b548c5, 3, (0, 0, 1), "<unknown string>", self);
+                recordcircle(self.var_14b548c5, 3, (0, 0, 1), "<dev string:xe8>", self);
             }
         #/
         if (self.ai.var_4183a6fc.direction == "staircase_down") {
@@ -422,14 +421,14 @@ function private function_7589776c(behaviortreeentity) {
                 behaviortreeentity setblackboardattribute("_staircase_direction", self.ai.var_4183a6fc.direction);
                 /#
                     if (behaviortreeentity function_3b027260()) {
-                        record3dtext("<unknown string>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0, 0), "<unknown string>", behaviortreeentity);
+                        record3dtext("<dev string:xf2>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0, 0), "<dev string:x101>", behaviortreeentity);
                     }
                 #/
                 return true;
             } else {
                 /#
                     if (behaviortreeentity function_3b027260()) {
-                        record3dtext("<unknown string>" + var_4226005f + "<unknown string>" + length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                        record3dtext("<dev string:x10f>" + var_4226005f + "<dev string:x129>" + length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<dev string:x101>", behaviortreeentity);
                     }
                 #/
             }
@@ -437,14 +436,14 @@ function private function_7589776c(behaviortreeentity) {
             behaviortreeentity setblackboardattribute("_staircase_direction", self.ai.var_4183a6fc.direction);
             /#
                 if (behaviortreeentity function_3b027260()) {
-                    record3dtext("<unknown string>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0, 0), "<unknown string>", behaviortreeentity);
+                    record3dtext("<dev string:x130>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0, 0), "<dev string:x101>", behaviortreeentity);
                 }
             #/
             return true;
         } else {
             /#
                 if (behaviortreeentity function_3b027260()) {
-                    record3dtext("<unknown string>" + var_4226005f + "<unknown string>" + length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                    record3dtext("<dev string:x13d>" + var_4226005f + "<dev string:x129>" + length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<dev string:x101>", behaviortreeentity);
                 }
             #/
         }
@@ -453,7 +452,7 @@ function private function_7589776c(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe3f19d85, Offset: 0x3320
 // Size: 0xf0
 function private function_118d27ad(behaviortreeentity) {
@@ -462,14 +461,14 @@ function private function_118d27ad(behaviortreeentity) {
     behaviortreeentity.enableterrainik = 1;
     /#
         if (behaviortreeentity function_3b027260()) {
-            println("<unknown string>", self.ai.var_4183a6fc.direction, "<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+            println("<dev string:x155>", self.ai.var_4183a6fc.direction, "<dev string:x169>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
         }
     #/
     return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf9ac0042, Offset: 0x3418
 // Size: 0xbe
 function private function_9948d7a(behaviortreeentity) {
@@ -483,7 +482,7 @@ function private function_9948d7a(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9fa463eb, Offset: 0x34e0
 // Size: 0x310
 function private function_39c609a4(behaviortreeentity) {
@@ -492,9 +491,9 @@ function private function_39c609a4(behaviortreeentity) {
         if (var_ef0e5eed <= 60 || var_ef0e5eed > behaviortreeentity.ai.var_4183a6fc.var_ef0e5eed) {
             /#
                 if (behaviortreeentity function_3b027260()) {
-                    record3dtext("<unknown string>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                    record3dtext("<dev string:x171>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<dev string:x101>", behaviortreeentity);
                     end = behaviortreeentity.ai.var_4183a6fc.endpos;
-                    println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2] + "<unknown string>" + end[0] + "<unknown string>" + end[1] + "<unknown string>" + end[2]);
+                    println("<dev string:x17c>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2] + "<dev string:x198>" + end[0] + "<dev string:x61>" + end[1] + "<dev string:x61>" + end[2]);
                 }
             #/
             return true;
@@ -502,9 +501,9 @@ function private function_39c609a4(behaviortreeentity) {
     } else if (var_ef0e5eed <= 30 || var_ef0e5eed > behaviortreeentity.ai.var_4183a6fc.var_ef0e5eed) {
         /#
             if (behaviortreeentity function_3b027260()) {
-                record3dtext("<unknown string>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                record3dtext("<dev string:x1ab>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<dev string:x101>", behaviortreeentity);
                 end = behaviortreeentity.ai.var_4183a6fc.endpos;
-                println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2] + "<unknown string>" + end[0] + "<unknown string>" + end[1] + "<unknown string>" + end[2]);
+                println("<dev string:x1b8>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2] + "<dev string:x198>" + end[0] + "<dev string:x61>" + end[1] + "<dev string:x61>" + end[2]);
             }
         #/
         return true;
@@ -514,7 +513,7 @@ function private function_39c609a4(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x60474219, Offset: 0x37f8
 // Size: 0x148
 function private function_95b175c0(behaviortreeentity) {
@@ -523,7 +522,7 @@ function private function_95b175c0(behaviortreeentity) {
     behaviortreeentity.var_73e3e2aa = undefined;
     /#
         if (behaviortreeentity function_3b027260()) {
-            println("<unknown string>", behaviortreeentity getblackboardattribute("<unknown string>"), "<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
+            println("<dev string:x1d6>", behaviortreeentity getblackboardattribute("<dev string:x1f8>"), "<dev string:x169>", behaviortreeentity.origin[0], "<dev string:x61>", behaviortreeentity.origin[1], "<dev string:x61>", behaviortreeentity.origin[2]);
         }
     #/
     behaviortreeentity setblackboardattribute("_staircase_state", undefined);
@@ -532,7 +531,7 @@ function private function_95b175c0(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xedd27b78, Offset: 0x3948
 // Size: 0x44
 function private locomotionpainbehaviorcondition(entity) {
@@ -540,7 +539,7 @@ function private locomotionpainbehaviorcondition(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xae806e97, Offset: 0x3998
 // Size: 0x24
 function clearpathfromscript(behaviortreeentity) {
@@ -548,7 +547,7 @@ function clearpathfromscript(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5c872c93, Offset: 0x39c8
 // Size: 0x5c
 function private setdesiredstanceformovement(behaviortreeentity) {
@@ -558,7 +557,7 @@ function private setdesiredstanceformovement(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xad87bc, Offset: 0x3a30
 // Size: 0x54
 function private function_2f14d74f(entity) {
@@ -570,7 +569,7 @@ function private function_2f14d74f(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd1746eba, Offset: 0x3a90
 // Size: 0xfc
 function private locomotionshouldtraverse(behaviortreeentity) {
@@ -579,9 +578,9 @@ function private locomotionshouldtraverse(behaviortreeentity) {
         behaviortreeentity setblackboardattribute("_staircase_type", startnode.animscript);
         /#
             if (behaviortreeentity function_3b027260()) {
-                print("<unknown string>" + self.origin + "<unknown string>");
+                print("<dev string:x210>" + self.origin + "<dev string:x224>");
             }
-            record3dtext("<unknown string>" + startnode.animscript, self.origin, (1, 0, 0), "<unknown string>");
+            record3dtext("<dev string:x229>" + startnode.animscript, self.origin, (1, 0, 0), "<dev string:x242>");
         #/
         return true;
     }
@@ -589,7 +588,7 @@ function private locomotionshouldtraverse(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x49bc4f51, Offset: 0x3b98
 // Size: 0xfc
 function private locomotionshouldparametrictraverse(entity) {
@@ -598,9 +597,9 @@ function private locomotionshouldparametrictraverse(entity) {
             traversaltype = entity getblackboardattribute("_parametric_traversal_type");
             /#
                 if (entity function_3b027260()) {
-                    print("<unknown string>" + self.origin + "<unknown string>");
+                    print("<dev string:x24c>" + self.origin + "<dev string:x224>");
                 }
-                record3dtext("<unknown string>", self.origin, (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x262>", self.origin, (1, 0, 0), "<dev string:x242>");
             #/
             return (traversaltype != "unknown_traversal");
         }
@@ -609,7 +608,7 @@ function private locomotionshouldparametrictraverse(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x75ca72d1, Offset: 0x3ca0
 // Size: 0xc4
 function private function_5ef5b35a(behaviortreeentity) {
@@ -617,9 +616,9 @@ function private function_5ef5b35a(behaviortreeentity) {
     if (isdefined(startnode) && behaviortreeentity function_420d1e6b()) {
         /#
             if (behaviortreeentity function_3b027260()) {
-                print("<unknown string>" + self.origin + "<unknown string>");
+                print("<dev string:x278>" + self.origin + "<dev string:x224>");
             }
-            record3dtext("<unknown string>", self.origin, (1, 0, 0), "<unknown string>");
+            record3dtext("<dev string:x291>", self.origin, (1, 0, 0), "<dev string:x242>");
         #/
         return true;
     }
@@ -627,7 +626,7 @@ function private function_5ef5b35a(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xacc8d215, Offset: 0x3d70
 // Size: 0xfc
 function private function_8a8c5d44(entity) {
@@ -636,9 +635,9 @@ function private function_8a8c5d44(entity) {
             traversaltype = entity getblackboardattribute("_parametric_traversal_type");
             /#
                 if (entity function_3b027260()) {
-                    print("<unknown string>" + self.origin + "<unknown string>");
+                    print("<dev string:x291>" + self.origin + "<dev string:x224>");
                 }
-                record3dtext("<unknown string>", self.origin, (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x291>", self.origin, (1, 0, 0), "<dev string:x242>");
             #/
             return (traversaltype != "unknown_traversal");
         }
@@ -647,14 +646,14 @@ function private function_8a8c5d44(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb2c22a2f, Offset: 0x3e78
 // Size: 0x4e8
 function traversesetup(behaviortreeentity, asmstatename) {
     behaviortreeentity setblackboardattribute("_stance", "stand");
     /#
         if (behaviortreeentity function_3b027260()) {
-            print("<unknown string>" + behaviortreeentity.origin + "<unknown string>");
+            print("<dev string:x2aa>" + behaviortreeentity.origin + "<dev string:x224>");
         }
     #/
     if (behaviortreeentity function_3c566724()) {
@@ -685,7 +684,7 @@ function traversesetup(behaviortreeentity, asmstatename) {
         }
         if (!isdefined(result[#"animation"])) {
             /#
-                record3dtext("<unknown string>", self.origin + (0, 0, 16), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x2bc>", self.origin + (0, 0, 16), (1, 0, 0), "<dev string:x242>");
             #/
             self finishtraversal();
             self clearpath();
@@ -703,12 +702,12 @@ function traversesetup(behaviortreeentity, asmstatename) {
                 if (isdefined(var_8d9b91de)) {
                     var_8d9b91de = var_8d9b91de[#"point"];
                     /#
-                        recordstar(var_8d9b91de, (1, 0.5, 0), "<unknown string>", self);
+                        recordstar(var_8d9b91de, (1, 0.5, 0), "<dev string:x242>", self);
                     #/
                 }
                 var_8d9b91de = isdefined(var_8d9b91de) ? var_8d9b91de : self.traversalendpos;
                 /#
-                    recordstar(var_8d9b91de, (0, 0, 1), "<unknown string>", self);
+                    recordstar(var_8d9b91de, (0, 0, 1), "<dev string:x242>", self);
                 #/
                 self forceteleport(var_8d9b91de, self.angles);
                 self.var_eae10402 = 0;
@@ -716,7 +715,7 @@ function traversesetup(behaviortreeentity, asmstatename) {
             self.var_2136d4d3 = gettime();
         } else {
             /#
-                record3dtext("<unknown string>" + (ishash(result[#"animation"]) ? function_9e72a96(result[#"animation"]) : result[#"animation"]), self.origin + (0, 0, 16), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x2f5>" + (ishash(result[#"animation"]) ? function_9e72a96(result[#"animation"]) : result[#"animation"]), self.origin + (0, 0, 16), (1, 0, 0), "<dev string:x242>");
             #/
         }
     }
@@ -724,14 +723,14 @@ function traversesetup(behaviortreeentity, asmstatename) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8f02771a, Offset: 0x4368
 // Size: 0x250
 function traverseactionstart(behaviortreeentity, asmstatename) {
     traversesetup(behaviortreeentity, asmstatename);
     /#
         if (behaviortreeentity function_3b027260()) {
-            print("<unknown string>" + behaviortreeentity.origin + "<unknown string>");
+            print("<dev string:x314>" + behaviortreeentity.origin + "<dev string:x224>");
         }
     #/
     if (!isdefined(asmstatename) && isdefined(self.ai.var_2b570fa6)) {
@@ -745,9 +744,9 @@ function traverseactionstart(behaviortreeentity, asmstatename) {
         if (!sessionmodeiszombiesgame()) {
             result = behaviortreeentity astsearch(asmstatename);
             if (!isdefined(result[#"animation"])) {
-                record3dtext("<unknown string>", self.origin + (0, 0, 16), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x2bc>", self.origin + (0, 0, 16), (1, 0, 0), "<dev string:x242>");
             } else {
-                record3dtext("<unknown string>" + (ishash(result[#"animation"]) ? function_9e72a96(result[#"animation"]) : result[#"animation"]), self.origin + (0, 0, 16), (1, 0, 0), "<unknown string>");
+                record3dtext("<dev string:x2f5>" + (ishash(result[#"animation"]) ? function_9e72a96(result[#"animation"]) : result[#"animation"]), self.origin + (0, 0, 16), (1, 0, 0), "<dev string:x242>");
             }
         }
     #/
@@ -756,13 +755,13 @@ function traverseactionstart(behaviortreeentity, asmstatename) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1f9d0004, Offset: 0x45c0
 // Size: 0xd6
 function wpn_debug_bot_joinleave(behaviortreeentity, *asmstatename) {
     /#
         if (asmstatename function_3b027260()) {
-            print("<unknown string>" + asmstatename.origin + "<unknown string>");
+            print("<dev string:x32c>" + asmstatename.origin + "<dev string:x224>");
         }
     #/
     asmstatename allowpitchangle(is_true(asmstatename.var_efe0efe7));
@@ -775,7 +774,7 @@ function wpn_debug_bot_joinleave(behaviortreeentity, *asmstatename) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf9d70ad7, Offset: 0x46a0
 // Size: 0x1a
 function private disablerepath(entity) {
@@ -783,7 +782,7 @@ function private disablerepath(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc8739a83, Offset: 0x46c8
 // Size: 0x16
 function private enablerepath(entity) {
@@ -791,7 +790,7 @@ function private enablerepath(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x729814d2, Offset: 0x46e8
 // Size: 0xb8
 function shouldstartarrivalcondition(behaviortreeentity) {
@@ -800,7 +799,7 @@ function shouldstartarrivalcondition(behaviortreeentity) {
         shouldstart = behaviortreeentity shouldstartarrival();
         /#
             if (shouldstart && getdvarint(#"ai_debugarrivals", 0)) {
-                record3dtext("<unknown string>", behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                record3dtext("<dev string:x348>", behaviortreeentity.origin, (1, 0.5, 0), "<dev string:x101>", behaviortreeentity);
             }
         #/
     }
@@ -808,7 +807,7 @@ function shouldstartarrivalcondition(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xadd0627, Offset: 0x47a8
 // Size: 0x28
 function private function_907ba31a(entity) {
@@ -817,7 +816,7 @@ function private function_907ba31a(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe1115f57, Offset: 0x47d8
 // Size: 0x28
 function private function_37e22c7(entity) {
@@ -826,7 +825,7 @@ function private function_37e22c7(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa63d66c6, Offset: 0x4808
 // Size: 0x54
 function function_c94f0d1(entity) {
@@ -838,7 +837,7 @@ function function_c94f0d1(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3e336020, Offset: 0x4868
 // Size: 0x58
 function cleararrivalpos(behaviortreeentity) {
@@ -849,7 +848,7 @@ function cleararrivalpos(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xabfc75ca, Offset: 0x48c8
 // Size: 0x70
 function private function_63edf1f4(behaviortreeentity) {
@@ -861,7 +860,7 @@ function private function_63edf1f4(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf1ed2576, Offset: 0x4940
 // Size: 0x58
 function private function_41b88b98(behaviortreeentity) {
@@ -872,7 +871,7 @@ function private function_41b88b98(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf6bef4d0, Offset: 0x49a0
 // Size: 0x48
 function delaymovement(entity) {
@@ -881,7 +880,7 @@ function delaymovement(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x711a2b8a, Offset: 0x49f0
 // Size: 0x50
 function private shouldadjuststanceattacticalwalk(behaviortreeentity) {
@@ -893,7 +892,7 @@ function private shouldadjuststanceattacticalwalk(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7624a2cc, Offset: 0x4a48
 // Size: 0x60
 function private adjuststancetofaceenemyinitialize(behaviortreeentity) {
@@ -904,7 +903,7 @@ function private adjuststancetofaceenemyinitialize(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf97e1282, Offset: 0x4ab0
 // Size: 0x34
 function private adjuststancetofaceenemyterminate(behaviortreeentity) {
@@ -912,7 +911,7 @@ function private adjuststancetofaceenemyterminate(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd08a62b6, Offset: 0x4af0
 // Size: 0xa0
 function private tacticalwalkactionstart(behaviortreeentity) {
@@ -925,7 +924,7 @@ function private tacticalwalkactionstart(behaviortreeentity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xb0b1561b, Offset: 0x4b98
 // Size: 0x12c
 function private validjukedirection(entity, *entitynavmeshposition, forwardoffset, lateraloffset) {
@@ -943,7 +942,7 @@ function private validjukedirection(entity, *entitynavmeshposition, forwardoffse
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x11f3c9af, Offset: 0x4cd0
 // Size: 0x2c4
 function calculatejukedirection(entity, entityradius, jukedistance) {
@@ -985,7 +984,7 @@ function calculatejukedirection(entity, entityradius, jukedistance) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa7e39215, Offset: 0x4fa0
 // Size: 0x7a
 function private calculatedefaultjukedirection(entity) {
@@ -1001,7 +1000,7 @@ function private calculatedefaultjukedirection(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7cb6830a, Offset: 0x5028
 // Size: 0xac
 function canjuke(entity) {
@@ -1016,7 +1015,7 @@ function canjuke(entity) {
 }
 
 // Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x800ddcfd, Offset: 0x50e0
 // Size: 0x4c
 function choosejukedirection(entity) {

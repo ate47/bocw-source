@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_382ba4154c04904e;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace zm_tungsten_pap_quest;
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf89bcd90, Offset: 0x190
 // Size: 0x28c
 function init() {
@@ -20,7 +19,7 @@ function init() {
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x269c2aa9, Offset: 0x428
 // Size: 0xf4
 function function_68bbfe(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -38,7 +37,7 @@ function function_68bbfe(localclientnum, *oldval, newval, *bnewent, *binitialsna
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb6ab8c82, Offset: 0x528
 // Size: 0x8c
 function function_1446ef30(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -50,7 +49,7 @@ function function_1446ef30(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc3c1f6c7, Offset: 0x5c0
 // Size: 0x19c
 function function_34eb3249(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -62,7 +61,7 @@ function function_34eb3249(localclientnum, *oldval, newval, *bnewent, *binitials
             var_1da0aee8 setmodel(#"p9_zm_gold_teleporter_b");
         }
         function_d93b0fff(fieldname, e_portal);
-        wait(1.5);
+        wait 1.5;
         if (isdefined(e_portal.var_bd434ca)) {
             stopfx(fieldname, e_portal.var_bd434ca);
             e_portal.var_bd434ca = undefined;
@@ -75,7 +74,7 @@ function function_34eb3249(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe05fad9f, Offset: 0x768
 // Size: 0x126
 function function_8c88a649(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -93,7 +92,7 @@ function function_8c88a649(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3fed551b, Offset: 0x898
 // Size: 0x1c4
 function function_2d49baf(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -115,7 +114,7 @@ function function_2d49baf(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x482728b2, Offset: 0xa68
 // Size: 0x134
 function function_794730f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -123,7 +122,7 @@ function function_794730f(localclientnum, *oldval, newval, *bnewent, *binitialsn
     e_portal = getent(fieldname, "portal_fx_observation_to_helipads", "targetname");
     if (bwasdemojump == 1) {
         function_d93b0fff(fieldname, e_portal);
-        wait(1.5);
+        wait 1.5;
         if (isdefined(e_portal.var_bd434ca)) {
             stopfx(fieldname, e_portal.var_bd434ca);
             e_portal.var_bd434ca = undefined;
@@ -136,7 +135,7 @@ function function_794730f(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x476c576f, Offset: 0xba8
 // Size: 0x152
 function private function_d93b0fff(localclientnum, e_portal) {
@@ -153,20 +152,20 @@ function private function_d93b0fff(localclientnum, e_portal) {
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xbd6d087, Offset: 0xd08
 // Size: 0xec
 function private function_7e3966f(localclientnum, e_portal, str_fx) {
     level endon(#"end_game");
     playfx(localclientnum, #"hash_139f53aac7315984", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
     e_portal playsound(localclientnum, #"hash_29c5f5ba6e81488c");
-    wait(0.45);
+    wait 0.45;
     e_portal playsound(localclientnum, #"hash_1d48a1b077c9670b");
     namespace_ff7e490::function_833e4b72(localclientnum, e_portal, str_fx);
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe3abc23c, Offset: 0xe00
 // Size: 0x64
 function private function_1f88d6(localclientnum, e_portal) {
@@ -178,7 +177,7 @@ function private function_1f88d6(localclientnum, e_portal) {
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xee26d4ee, Offset: 0xe70
 // Size: 0x9c
 function function_95190421(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

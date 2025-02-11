@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\zm_common\gametypes\globallogic_utils.gsc;
-#using scripts\zm_common\gametypes\globallogic_audio.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_audio;
+#using scripts\zm_common\gametypes\globallogic_utils;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_stats;
 
 #namespace globallogic_score;
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x40eac549, Offset: 0x268
 // Size: 0x106
 function gethighestscoringplayer() {
@@ -48,7 +47,7 @@ function gethighestscoringplayer() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5ac37e5c, Offset: 0x378
 // Size: 0x2e
 function resetscorechain() {
@@ -58,18 +57,18 @@ function resetscorechain() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f567851, Offset: 0x3b0
 // Size: 0x74
 function scorechaintimer() {
     self notify(#"score_chain_timer");
     self endon(#"reset_score_chain", #"score_chain_timer", #"death", #"disconnect");
-    wait(20);
+    wait 20;
     self thread resetscorechain();
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5b2a7ed9, Offset: 0x430
 // Size: 0x4e
 function roundtonearestfive(score) {
@@ -121,7 +120,7 @@ function resetplayermomentumondeath() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa9d11512, Offset: 0x6e0
 // Size: 0x55a
 function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
@@ -131,10 +130,10 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
     assert(isdefined(xp));
     label = rank::getscoreinfolabel(player);
     var_b393387d = victim.pers[#"score"];
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     [[ level.onplayerscore ]](player, victim, descvalue);
     newscore = victim.pers[#"score"];
-    profileNamedStop();
+    pixendevent();
     var_89b2d9e4 = newscore - var_b393387d;
     var_10d67c1a = {#type:ishash(player) ? player : hash(player), #player:victim.name, #delta:var_89b2d9e4};
     victim stats::function_dad108fa(#"hash_6a861f1323ce4ae9", var_89b2d9e4);
@@ -184,7 +183,7 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3b8caa77, Offset: 0xc48
 // Size: 0x82
 function giveplayerscore(event, player, victim, descvalue, weapon, *var_36f23f1f, var_dbaa74e2) {
@@ -195,7 +194,7 @@ function giveplayerscore(event, player, victim, descvalue, weapon, *var_36f23f1f
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xba21f522, Offset: 0xcd8
 // Size: 0x17c
 function default_onplayerscore(event, player, *victim) {
@@ -214,12 +213,12 @@ function default_onplayerscore(event, player, *victim) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x186ee19b, Offset: 0xe60
 // Size: 0x1f8
 function function_3172cf59(player, newscore, *weapon, var_10d67c1a) {
     newscore endon(#"disconnect");
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     event = var_10d67c1a.type;
     scorediff = var_10d67c1a.delta;
     newscore bb::add_to_stat("score", var_10d67c1a.delta);
@@ -234,18 +233,18 @@ function function_3172cf59(player, newscore, *weapon, var_10d67c1a) {
         }
     }
     if (scorediff <= 0) {
-        profileNamedStop();
+        pixendevent();
         return;
     }
     recordplayerstats(newscore, "score", weapon);
     newscore stats::function_bb7eedf0(#"score", scorediff);
     newscore stats::function_bb7eedf0(#"score_core", scorediff);
     newscore.score_total += scorediff;
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe9951f47, Offset: 0x1060
 // Size: 0xdc
 function _setplayerscore(player, score) {
@@ -261,7 +260,7 @@ function _setplayerscore(player, score) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3fcfe6ac, Offset: 0x1148
 // Size: 0x24
 function _getplayerscore(player) {
@@ -269,7 +268,7 @@ function _getplayerscore(player) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf7b37b8c, Offset: 0x1178
 // Size: 0xee
 function _setplayermomentum(player, momentum) {
@@ -294,7 +293,7 @@ function _setplayermomentum(player, momentum) {
     function setplayermomentumdebug() {
         setdvar(#"sv_momentumpercent", 0);
         while (true) {
-            wait(1);
+            wait 1;
             var_2227c36c = getdvarfloat(#"sv_momentumpercent", 0);
             if (var_2227c36c != 0) {
                 player = util::gethostplayer();
@@ -311,17 +310,17 @@ function _setplayermomentum(player, momentum) {
 #/
 
 // Namespace globallogic_score/globallogic_score
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x96591681, Offset: 0x1390
 // Size: 0x174
 function giveteamscore(event, team, *player, *victim) {
     if (level.overrideteamscore) {
         return;
     }
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     teamscore = game.stat[#"teamscores"][victim];
     [[ level.onteamscore ]](player, victim);
-    profileNamedStop();
+    pixendevent();
     newscore = game.stat[#"teamscores"][victim];
     zmteamscores = {#gametime:function_f8d53445(), #event:player, #team:victim, #diff:newscore - teamscore, #score:newscore};
     function_92d1707f(#"hash_6823717ff11a304a", zmteamscores);
@@ -348,7 +347,7 @@ function giveteamscoreforobjective(team, score) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7e818df3, Offset: 0x15c8
 // Size: 0x7c
 function _setteamscore(team, teamscore) {
@@ -361,7 +360,7 @@ function _setteamscore(team, teamscore) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6e6bd7fc, Offset: 0x1650
 // Size: 0xcc
 function resetteamscores() {
@@ -383,7 +382,7 @@ function resetallscores() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb8a4efd7, Offset: 0x1758
 // Size: 0x94
 function resetplayerscores() {
@@ -398,7 +397,7 @@ function resetplayerscores() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x89af1792, Offset: 0x17f8
 // Size: 0x54
 function updateteamscores(team) {
@@ -407,7 +406,7 @@ function updateteamscores(team) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7257c9f6, Offset: 0x1858
 // Size: 0x88
 function updateallteamscores() {
@@ -417,7 +416,7 @@ function updateallteamscores() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x61460a6a, Offset: 0x18e8
 // Size: 0x26
 function _getteamscore(team) {
@@ -425,7 +424,7 @@ function _getteamscore(team) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x45a9de9b, Offset: 0x1918
 // Size: 0xec
 function gethighestteamscoreteam() {
@@ -445,7 +444,7 @@ function gethighestteamscoreteam() {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe0c78b93, Offset: 0x1a10
 // Size: 0xaa
 function areteamarraysequal(teamsa, teamsb) {
@@ -461,7 +460,7 @@ function areteamarraysequal(teamsa, teamsb) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5a5d8aa5, Offset: 0x1ac8
 // Size: 0x2a8
 function onteamscore(score, team) {
@@ -509,7 +508,7 @@ function onteamscore(score, team) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe163f829, Offset: 0x1d78
 // Size: 0xe8
 function initpersstat(dataname, record_stats, init_to_stat_value) {
@@ -525,7 +524,7 @@ function initpersstat(dataname, record_stats, init_to_stat_value) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbafe1a7e, Offset: 0x1e68
 // Size: 0x18
 function getpersstat(dataname) {
@@ -533,22 +532,22 @@ function getpersstat(dataname) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xdd4106bb, Offset: 0x1e88
 // Size: 0xe6
 function incpersstat(dataname, increment, record_stats, *includegametype) {
-    profileNamedStart(#"");
-    assert(isdefined(self.pers[increment]), function_9e72a96(increment) + "<unknown string>");
+    pixbeginevent(#"");
+    assert(isdefined(self.pers[increment]), function_9e72a96(increment) + "<dev string:x38>");
     self.pers[increment] = self.pers[increment] + record_stats;
     self stats::function_dad108fa(increment, record_stats);
     if (!isdefined(includegametype) || includegametype == 1) {
         self thread threadedrecordplayerstats(increment);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51fea7d9, Offset: 0x1f78
 // Size: 0x4c
 function threadedrecordplayerstats(dataname) {
@@ -582,7 +581,7 @@ function trackattackerkill(name, rank, xp, prestige, xuid) {
     self endon(#"disconnect");
     attacker = self;
     waittillframeend();
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     if (!isdefined(attacker.pers[#"killed_players"][name])) {
         attacker.pers[#"killed_players"][name] = 0;
     }
@@ -608,7 +607,7 @@ function trackattackerkill(name, rank, xp, prestige, xuid) {
         attacker.pers[#"nemesis_rank"] = rank;
         attacker.pers[#"nemesis_xp"] = xp;
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -618,7 +617,7 @@ function trackattackerkill(name, rank, xp, prestige, xuid) {
 function trackattackeedeath(attackername, rank, xp, prestige, xuid) {
     self endon(#"disconnect");
     waittillframeend();
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     if (!isdefined(self.pers[#"killed_by"][attackername])) {
         self.pers[#"killed_by"][attackername] = 0;
     }
@@ -642,11 +641,11 @@ function trackattackeedeath(attackername, rank, xp, prestige, xuid) {
     } else {
         self setclientuivisibilityflag("killcam_nemesis", 0);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xffb0534, Offset: 0x26e0
 // Size: 0x6
 function default_iskillboosting() {
@@ -662,11 +661,11 @@ function givekillstats(smeansofdeath, *weapon, *evictim) {
     waittillframeend();
     if (level.rankedmatch && self [[ level.iskillboosting ]]()) {
         /#
-            self iprintlnbold("<unknown string>");
+            self iprintlnbold("<dev string:x85>");
         #/
         return;
     }
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self incpersstat(#"kills", 1, 1, 1);
     self.kills = self getpersstat(#"kills");
     self.kills_critical = self getpersstat(#"kills_critical");
@@ -676,7 +675,7 @@ function givekillstats(smeansofdeath, *weapon, *evictim) {
         attacker thread incpersstat(#"headshots", 1, 1, 0);
         attacker.headshots = attacker.pers[#"headshots"];
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace globallogic_score/globallogic_score

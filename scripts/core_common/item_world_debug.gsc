@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_340a2e805e35f7a2;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace item_world_debug;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace item_world_debug/item_world_debug
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x264680ab, Offset: 0x128
 // Size: 0xb4
 function private preinit() {
@@ -46,7 +45,7 @@ function private preinit() {
 }
 
 // Namespace item_world_debug/item_world_debug
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd6f20ab, Offset: 0x1e8
 // Size: 0x54
 function private postinit() {
@@ -67,13 +66,13 @@ function private postinit() {
     // Size: 0xa4
     function private function_13d7bba(xoffset, yoffset) {
         elem = newdebughudelem();
-        elem.alignx = "<unknown string>";
-        elem.horzalign = "<unknown string>";
+        elem.alignx = "<dev string:x38>";
+        elem.horzalign = "<dev string:x38>";
         elem.x = xoffset + 0;
         elem.y = yoffset;
         elem.fontscale = 1;
         elem.color = (1, 1, 1);
-        elem.fontstyle3d = "<unknown string>";
+        elem.fontstyle3d = "<dev string:x40>";
         return elem;
     }
 
@@ -82,8 +81,8 @@ function private postinit() {
     // Checksum 0x1fe2e4e2, Offset: 0x2f8
     // Size: 0x326
     function private function_11421106(typestring, type) {
-        tab = "<unknown string>";
-        return typestring + "<unknown string>" + (isdefined(level.var_efeab371[type]) ? level.var_efeab371[type] : 0) + "<unknown string>" + int((isdefined(level.var_efeab371[type]) ? level.var_efeab371[type] : 0) / int(max(level.var_66e56764, 1)) * 100) + "<unknown string>" + tab + "<unknown string>" + (isdefined(level.var_d80c35aa[type]) ? level.var_d80c35aa[type] : 0) + "<unknown string>" + int((isdefined(level.var_d80c35aa[type]) ? level.var_d80c35aa[type] : 0) / int(max(level.var_136445c0, 1)) * 100) + "<unknown string>" + tab + "<unknown string>" + (isdefined(level.var_8d9ad8e8[type]) ? level.var_8d9ad8e8[type] : 0) + "<unknown string>" + int((isdefined(level.var_8d9ad8e8[type]) ? level.var_8d9ad8e8[type] : 0) / int(max(level.var_5720c09a, 1)) * 100) + "<unknown string>" + tab + "<unknown string>" + (isdefined(level.var_ecf16fd3[type]) ? level.var_ecf16fd3[type] : 0) + "<unknown string>" + int((isdefined(level.var_ecf16fd3[type]) ? level.var_ecf16fd3[type] : 0) / int(max(level.var_2850ef5, 1)) * 100) + "<unknown string>";
+        tab = "<dev string:x50>";
+        return typestring + "<dev string:x64>" + (isdefined(level.var_efeab371[type]) ? level.var_efeab371[type] : 0) + "<dev string:x71>" + int((isdefined(level.var_efeab371[type]) ? level.var_efeab371[type] : 0) / int(max(level.var_66e56764, 1)) * 100) + "<dev string:x77>" + tab + "<dev string:x81>" + (isdefined(level.var_d80c35aa[type]) ? level.var_d80c35aa[type] : 0) + "<dev string:x71>" + int((isdefined(level.var_d80c35aa[type]) ? level.var_d80c35aa[type] : 0) / int(max(level.var_136445c0, 1)) * 100) + "<dev string:x77>" + tab + "<dev string:x93>" + (isdefined(level.var_8d9ad8e8[type]) ? level.var_8d9ad8e8[type] : 0) + "<dev string:x71>" + int((isdefined(level.var_8d9ad8e8[type]) ? level.var_8d9ad8e8[type] : 0) / int(max(level.var_5720c09a, 1)) * 100) + "<dev string:x77>" + tab + "<dev string:xa6>" + (isdefined(level.var_ecf16fd3[type]) ? level.var_ecf16fd3[type] : 0) + "<dev string:x71>" + int((isdefined(level.var_ecf16fd3[type]) ? level.var_ecf16fd3[type] : 0) / int(max(level.var_2850ef5, 1)) * 100) + "<dev string:x77>";
     }
 
     // Namespace item_world_debug/item_world_debug
@@ -95,11 +94,11 @@ function private postinit() {
         var_9243cc66 = 0;
         foreach (i, list in level.var_2e96a450) {
             str_set = function_9e72a96(i);
-            println(str_set + "<unknown string>" + list);
+            println(str_set + "<dev string:xba>" + list);
             n_total += list;
-            a_tokens = strtok(str_set, "<unknown string>");
+            a_tokens = strtok(str_set, "<dev string:xcb>");
             foreach (token in a_tokens) {
-                if (token === "<unknown string>" || token === "<unknown string>") {
+                if (token === "<dev string:xd0>" || token === "<dev string:xd9>") {
                     var_9243cc66 += list;
                     break;
                 }
@@ -108,8 +107,8 @@ function private postinit() {
         if (isdefined(level.var_2e96a450[#"paint_can_items"])) {
             var_9243cc66 -= level.var_2e96a450[#"paint_can_items"];
         }
-        println("<unknown string>" + n_total);
-        println("<unknown string>" + var_9243cc66);
+        println("<dev string:xe4>" + n_total);
+        println("<dev string:xf6>" + var_9243cc66);
     }
 
     // Namespace item_world_debug/item_world_debug
@@ -130,8 +129,8 @@ function private postinit() {
     // Checksum 0xc561ffd, Offset: 0x918
     // Size: 0xd0
     function private function_99216e10(mapname) {
-        if (mapname === "<unknown string>") {
-            world_items = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
+        if (mapname === "<dev string:x117>") {
+            world_items = ["<dev string:x124>", "<dev string:x135>", "<dev string:x147>", "<dev string:x155>", "<dev string:x166>", "<dev string:x176>", "<dev string:x18a>", "<dev string:x198>", "<dev string:x1ac>", "<dev string:x1bd>", "<dev string:x1ce>", "<dev string:x1df>", "<dev string:x1f0>"];
             return world_items;
         }
     }
@@ -141,14 +140,14 @@ function private postinit() {
     // Checksum 0x8c68fcb8, Offset: 0x9f0
     // Size: 0x4ec
     function private function_10b50848() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
-        file = openfile("<unknown string>", "<unknown string>");
+        self notify("<dev string:x207>");
+        self endon("<dev string:x207>");
+        file = openfile("<dev string:x21b>", "<dev string:x237>");
         if (file == -1) {
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x240>");
             return;
         }
-        println("<unknown string>");
+        println("<dev string:x298>");
         mapname = util::get_map_name();
         world_items = function_99216e10(mapname);
         count = 0;
@@ -158,52 +157,52 @@ function private postinit() {
             foreach (item in itemlist) {
                 the_item = item_world::function_2e3efdda(item.origin, undefined, 1, 1, -1, 1);
                 if (the_item.size > 0) {
-                    type = "<unknown string>";
+                    type = "<dev string:x2cd>";
                     if (isdefined(the_item[0].itementry) && isdefined(the_item[0].itementry.itemtype)) {
                         switch (the_item[0].itementry.itemtype) {
                         case #"survival_essence":
-                            type = "<unknown string>";
+                            type = "<dev string:x2d5>";
                             break;
                         case #"survival_scrap":
-                            type = "<unknown string>";
+                            type = "<dev string:x2e0>";
                             break;
                         case #"survival_armor_shard":
-                            type = "<unknown string>";
+                            type = "<dev string:x2e9>";
                             break;
-                        case #"hash_fc797c2a8f4d208":
-                            type = "<unknown string>";
+                        case #"survival_scorestreak":
+                            type = "<dev string:x2f8>";
                             break;
                         case #"survival_perk":
-                            type = "<unknown string>";
+                            type = "<dev string:x307>";
                             break;
                         case #"survival_ammo":
-                            type = "<unknown string>";
+                            type = "<dev string:x30f>";
                             break;
                         case #"armor":
-                            type = "<unknown string>";
+                            type = "<dev string:x317>";
                             break;
                         case #"equipment":
-                            type = "<unknown string>";
+                            type = "<dev string:x320>";
                             break;
                         case #"field_upgrade":
-                            type = "<unknown string>";
+                            type = "<dev string:x32d>";
                             break;
                         case #"tactical":
-                            type = "<unknown string>";
+                            type = "<dev string:x33e>";
                             break;
                         case #"attachment":
-                            type = "<unknown string>";
+                            type = "<dev string:x34a>";
                             break;
                         case #"resource":
-                            type = "<unknown string>";
+                            type = "<dev string:x358>";
                             break;
                         default:
-                            type = "<unknown string>";
+                            type = "<dev string:x2cd>";
                             break;
                         }
                     }
                     if (isdefined(the_item[0].itementry)) {
-                        debug_string = the_item[0].itementry.name + "<unknown string>" + function_9e72a96(the_item[0].targetname) + "<unknown string>" + the_item[0].origin + "<unknown string>" + type + "<unknown string>" + the_item[0].itementry.rarity;
+                        debug_string = the_item[0].itementry.name + "<dev string:x364>" + function_9e72a96(the_item[0].targetname) + "<dev string:x364>" + the_item[0].origin + "<dev string:x364>" + type + "<dev string:x364>" + the_item[0].itementry.rarity;
                         fprintln(file, debug_string);
                         item_count++;
                     }
@@ -211,8 +210,8 @@ function private postinit() {
             }
             count++;
         }
-        println("<unknown string>" + item_count + "<unknown string>");
-        println("<unknown string>");
+        println("<dev string:x369>" + item_count + "<dev string:x383>");
+        println("<dev string:x393>");
         closefile(file);
     }
 
@@ -221,14 +220,14 @@ function private postinit() {
     // Checksum 0xb64db741, Offset: 0xee8
     // Size: 0x4e4
     function private function_b6ea080() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
-        file = openfile("<unknown string>", "<unknown string>");
+        self notify("<dev string:x3c4>");
+        self endon("<dev string:x3c4>");
+        file = openfile("<dev string:x3d8>", "<dev string:x237>");
         if (file == -1) {
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x3ee>");
             return;
         }
-        println("<unknown string>");
+        println("<dev string:x298>");
         mapname = util::get_map_name();
         world_items = function_99216e10(mapname);
         count = 0;
@@ -238,55 +237,55 @@ function private postinit() {
             foreach (item in itemlist) {
                 the_item = item_world::function_2e3efdda(item.origin, undefined, 1, 1, -1, 1);
                 if (the_item.size > 0) {
-                    type = "<unknown string>";
+                    type = "<dev string:x2cd>";
                     if (isdefined(the_item[0].itementry) && isdefined(the_item[0].itementry.itemtype)) {
                         switch (the_item[0].itementry.itemtype) {
                         case #"ammo":
-                            type = "<unknown string>";
+                            type = "<dev string:x30f>";
                             break;
                         case #"weapon":
-                            type = "<unknown string>";
+                            type = "<dev string:x440>";
                             break;
                         case #"health":
-                            type = "<unknown string>";
+                            type = "<dev string:x44a>";
                             break;
                         case #"armor":
-                            type = "<unknown string>";
+                            type = "<dev string:x317>";
                             break;
                         case #"equipment":
-                            type = "<unknown string>";
+                            type = "<dev string:x320>";
                             break;
                         case #"field_upgrade":
-                            type = "<unknown string>";
+                            type = "<dev string:x32d>";
                             break;
                         case #"tactical":
-                            type = "<unknown string>";
+                            type = "<dev string:x33e>";
                             break;
                         case #"backpack":
-                            type = "<unknown string>";
+                            type = "<dev string:x454>";
                             break;
                         case #"generic":
-                            type = "<unknown string>";
+                            type = "<dev string:x460>";
                             break;
                         case #"cash":
-                            type = "<unknown string>";
+                            type = "<dev string:x46b>";
                             break;
                         case #"killstreak":
-                            type = "<unknown string>";
+                            type = "<dev string:x473>";
                             break;
                         case #"attachment":
-                            type = "<unknown string>";
+                            type = "<dev string:x34a>";
                             break;
                         case #"resource":
-                            type = "<unknown string>";
+                            type = "<dev string:x358>";
                             break;
                         default:
-                            type = "<unknown string>";
+                            type = "<dev string:x2cd>";
                             break;
                         }
                     }
                     if (isdefined(the_item[0].itementry)) {
-                        debug_string = the_item[0].itementry.name + "<unknown string>" + function_9e72a96(the_item[0].targetname) + "<unknown string>" + the_item[0].origin + "<unknown string>" + type;
+                        debug_string = the_item[0].itementry.name + "<dev string:x364>" + function_9e72a96(the_item[0].targetname) + "<dev string:x364>" + the_item[0].origin + "<dev string:x364>" + type;
                         fprintln(file, debug_string);
                         item_count++;
                     }
@@ -294,8 +293,8 @@ function private postinit() {
             }
             count++;
         }
-        println("<unknown string>" + item_count + "<unknown string>");
-        println("<unknown string>");
+        println("<dev string:x369>" + item_count + "<dev string:x383>");
+        println("<dev string:x393>");
         closefile(file);
     }
 
@@ -304,10 +303,10 @@ function private postinit() {
     // Checksum 0x99cf2427, Offset: 0x13d8
     // Size: 0x54c
     function private function_938d798a() {
-        str_filename = util::get_map_name() + "<unknown string>";
-        file = openfile(str_filename, "<unknown string>");
+        str_filename = util::get_map_name() + "<dev string:x481>";
+        file = openfile(str_filename, "<dev string:x492>");
         if (file == -1) {
-            iprintlnbold("<unknown string>" + str_filename);
+            iprintlnbold("<dev string:x49a>" + str_filename);
             return;
         }
         freadln(file);
@@ -319,10 +318,10 @@ function private postinit() {
             var_6f08946b = fgetarg(file, 0);
             var_dd52f0fe = fgetarg(file, 1);
             var_5e4d7301 = fgetarg(file, 2);
-            var_6f08946b = strreplace(var_6f08946b, "<unknown string>", "<unknown string>");
-            var_5e4d7301 = strreplace(var_5e4d7301, "<unknown string>", "<unknown string>");
-            var_5e4d7301 = strreplace(var_5e4d7301, "<unknown string>", "<unknown string>");
-            var_5e4d7301 = strreplace(var_5e4d7301, "<unknown string>", "<unknown string>");
+            var_6f08946b = strreplace(var_6f08946b, "<dev string:x4b1>", "<dev string:x4ca>");
+            var_5e4d7301 = strreplace(var_5e4d7301, "<dev string:x4ce>", "<dev string:x4ca>");
+            var_5e4d7301 = strreplace(var_5e4d7301, "<dev string:x4e0>", "<dev string:x4ca>");
+            var_5e4d7301 = strreplace(var_5e4d7301, "<dev string:x506>", "<dev string:x4ca>");
             a_vec = [];
             a_vec[0] = float(var_6f08946b);
             a_vec[1] = float(var_dd52f0fe);
@@ -355,7 +354,7 @@ function private postinit() {
             }
             waitframe(1);
         }
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x51e>");
     }
 
     // Namespace item_world_debug/item_world_debug
@@ -365,24 +364,24 @@ function private postinit() {
     function private function_f9efe895() {
         var_7f0b4b6b = [];
         buoy_stash = [];
-        var_7f0b4b6b = arraycombine(function_91b29d2a("<unknown string>"), function_91b29d2a("<unknown string>"), 1, 0);
-        var_7f0b4b6b = arraycombine(var_7f0b4b6b, function_91b29d2a("<unknown string>"), 1, 0);
-        var_7f0b4b6b = arraycombine(var_7f0b4b6b, function_91b29d2a("<unknown string>"), 1, 0);
-        buoy_stash = function_91b29d2a("<unknown string>");
+        var_7f0b4b6b = arraycombine(function_91b29d2a("<dev string:x53e>"), function_91b29d2a("<dev string:x54d>"), 1, 0);
+        var_7f0b4b6b = arraycombine(var_7f0b4b6b, function_91b29d2a("<dev string:x560>"), 1, 0);
+        var_7f0b4b6b = arraycombine(var_7f0b4b6b, function_91b29d2a("<dev string:x576>"), 1, 0);
+        buoy_stash = function_91b29d2a("<dev string:x58a>");
         var_7f0b4b6b = arraycombine(var_7f0b4b6b, buoy_stash, 1, 0);
         player = util::gethostplayer();
         n_index = 0;
         var_d4714efb = 0;
-        wait(1);
-        iprintlnbold("<unknown string>");
+        wait 1;
+        iprintlnbold("<dev string:x59f>");
         while (level.var_f9efe895) {
-            if (player adsbuttonpressed() && player function_78931318("<unknown string>")) {
+            if (player adsbuttonpressed() && player function_78931318("<dev string:x5f4>")) {
                 if (n_index < var_7f0b4b6b.size - 1) {
                     n_index++;
                 } else {
                     n_index = 0;
                 }
-            } else if (player adsbuttonpressed() && player function_78931318("<unknown string>")) {
+            } else if (player adsbuttonpressed() && player function_78931318("<dev string:x5fa>")) {
                 if (n_index == 0) {
                     n_index = var_7f0b4b6b.size - 1;
                 } else {
@@ -395,12 +394,12 @@ function private postinit() {
                 player setorigin(v_player_pos);
                 player setplayerangles(var_543a44a5);
                 var_d4714efb = n_index;
-                iprintlnbold("<unknown string>" + n_index);
-                wait(0.1);
+                iprintlnbold("<dev string:x602>" + n_index);
+                wait 0.1;
             }
             waitframe(1);
         }
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x612>");
     }
 
     // Namespace item_world_debug/item_world_debug
@@ -409,24 +408,24 @@ function private postinit() {
     // Size: 0x32c
     function private function_f0d72128() {
         var_df1e5fef = [];
-        var_df1e5fef = function_91b29d2a("<unknown string>");
+        var_df1e5fef = function_91b29d2a("<dev string:x630>");
         player = util::gethostplayer();
         if (!isdefined(level.var_99026891)) {
             level.var_99026891 = var_df1e5fef.size - 1;
         }
         var_d4714efb = 0;
         v_offset = (0, 0, 50);
-        wait(1);
-        iprintlnbold("<unknown string>");
-        adddebugcommand("<unknown string>");
+        wait 1;
+        iprintlnbold("<dev string:x645>");
+        adddebugcommand("<dev string:x69d>");
         while (level.var_f0d72128) {
-            if (player jumpbuttonpressed() && player function_78931318("<unknown string>")) {
+            if (player jumpbuttonpressed() && player function_78931318("<dev string:x6a7>")) {
                 if (level.var_99026891 < var_df1e5fef.size - 1) {
                     level.var_99026891++;
                 } else {
                     level.var_99026891 = 0;
                 }
-            } else if (player jumpbuttonpressed() && player function_78931318("<unknown string>")) {
+            } else if (player jumpbuttonpressed() && player function_78931318("<dev string:x38>")) {
                 if (level.var_99026891 == 0) {
                     level.var_99026891 = var_df1e5fef.size - 1;
                 } else {
@@ -441,12 +440,12 @@ function private postinit() {
                 player setorigin(v_player_pos);
                 player setplayerangles(var_543a44a5);
                 var_d4714efb = level.var_99026891;
-                iprintlnbold("<unknown string>" + level.var_99026891);
-                wait(0.1);
+                iprintlnbold("<dev string:x6b0>" + level.var_99026891);
+                wait 0.1;
             }
             waitframe(1);
         }
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x6c2>");
     }
 
     // Namespace item_world_debug/item_world_debug
@@ -456,20 +455,20 @@ function private postinit() {
     function function_78931318(str_button) {
         switch (str_button) {
         case #"down":
-            str_btn = "<unknown string>";
-            var_7a00db94 = "<unknown string>";
+            str_btn = "<dev string:x6e3>";
+            var_7a00db94 = "<dev string:x6f0>";
             break;
         case #"left":
-            str_btn = "<unknown string>";
-            var_7a00db94 = "<unknown string>";
+            str_btn = "<dev string:x6fd>";
+            var_7a00db94 = "<dev string:x70a>";
             break;
         case #"right":
-            str_btn = "<unknown string>";
-            var_7a00db94 = "<unknown string>";
+            str_btn = "<dev string:x717>";
+            var_7a00db94 = "<dev string:x725>";
             break;
         case #"up":
-            str_btn = "<unknown string>";
-            var_7a00db94 = "<unknown string>";
+            str_btn = "<dev string:x733>";
+            var_7a00db94 = "<dev string:x73e>";
             break;
         }
         if (isdefined(str_btn)) {
@@ -666,7 +665,7 @@ function private postinit() {
     function private function_cdd9b388() {
         while (true) {
             if (getdvarint(#"hash_594f4fa67a3b1977", 0)) {
-                wait(1);
+                wait 1;
             } else {
                 waitframe(1);
             }
@@ -746,24 +745,24 @@ function private postinit() {
                     level.var_68135970 = function_13d7bba(xoffset, yoffset);
                     yoffset += var_27afd540;
                 }
-                tab = "<unknown string>";
-                level.var_f0d0335b settext("<unknown string>" + (isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0) + "<unknown string>" + int((isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0) / int(max(level.var_136445c0, 1) + (isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0)) * 100) + "<unknown string>");
-                level.var_7f7d26cc settext("<unknown string>" + level.var_136445c0 + (isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0));
-                level.var_6deb23ed settext("<unknown string>" + level.var_66e56764 + tab + tab + "<unknown string>" + level.var_136445c0 + tab + tab + "<unknown string>" + level.var_5720c09a + tab + tab + "<unknown string>" + level.var_2850ef5);
-                level.var_5c6c77b3 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_5471e557 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_544a823a settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_eaa15f28 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_6fc93583 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_f2a04fda settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_721a3621 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_67220c03 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_c36fe7fe settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_d302f942 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_1e11d9ad settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_598c0b05 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_68135970 settext(function_11421106("<unknown string>", "<unknown string>"));
-                level.var_58faba13 settext("<unknown string>" + (isdefined(level.var_f2db6a7f) ? level.var_f2db6a7f : 0));
+                tab = "<dev string:x50>";
+                level.var_f0d0335b settext("<dev string:x749>" + (isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0) + "<dev string:x71>" + int((isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0) / int(max(level.var_136445c0, 1) + (isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0)) * 100) + "<dev string:x77>");
+                level.var_7f7d26cc settext("<dev string:x75b>" + level.var_136445c0 + (isdefined(level.var_d80c35aa[#"blank"]) ? level.var_d80c35aa[#"blank"] : 0));
+                level.var_6deb23ed settext("<dev string:x770>" + level.var_66e56764 + tab + tab + "<dev string:x81>" + level.var_136445c0 + tab + tab + "<dev string:x93>" + level.var_5720c09a + tab + tab + "<dev string:x782>" + level.var_2850ef5);
+                level.var_5c6c77b3 settext(function_11421106("<dev string:x79b>", "<dev string:x440>"));
+                level.var_5471e557 settext(function_11421106("<dev string:x7a5>", "<dev string:x317>"));
+                level.var_544a823a settext(function_11421106("<dev string:x7ae>", "<dev string:x454>"));
+                level.var_eaa15f28 settext(function_11421106("<dev string:x7ba>", "<dev string:x320>"));
+                level.var_6fc93583 settext(function_11421106("<dev string:x7c7>", "<dev string:x44a>"));
+                level.var_f2a04fda settext(function_11421106("<dev string:x7d1>", "<dev string:x473>"));
+                level.var_721a3621 settext(function_11421106("<dev string:x7df>", "<dev string:x34a>"));
+                level.var_67220c03 settext(function_11421106("<dev string:x7ed>", "<dev string:x30f>"));
+                level.var_c36fe7fe settext(function_11421106("<dev string:x7f5>", "<dev string:x806>"));
+                level.var_d302f942 settext(function_11421106("<dev string:x81a>", "<dev string:x82a>"));
+                level.var_1e11d9ad settext(function_11421106("<dev string:x83b>", "<dev string:x84c>"));
+                level.var_598c0b05 settext(function_11421106("<dev string:x85d>", "<dev string:x874>"));
+                level.var_68135970 settext(function_11421106("<dev string:x88c>", "<dev string:x8a4>"));
+                level.var_58faba13 settext("<dev string:x8bc>" + (isdefined(level.var_f2db6a7f) ? level.var_f2db6a7f : 0));
             } else {
                 if (isdefined(level.var_f0d0335b)) {
                     level.var_f0d0335b destroy();
@@ -818,7 +817,7 @@ function private postinit() {
                 }
             }
             if (getdvarint(#"hash_66ec171c69a26bfe", 0) > 0) {
-                level clientfield::set("<unknown string>", 0);
+                level clientfield::set("<dev string:x8d0>", 0);
             }
             if (getdvarint(#"hash_cc335a24301e7a1", 0) > 0) {
                 if (!level.var_1d8e6dd8) {
@@ -834,7 +833,7 @@ function private postinit() {
             }
             if (getdvarint(#"hash_7701b1eb7e173692", 0)) {
                 if (!level.var_938d798a) {
-                    wait(0.5);
+                    wait 0.5;
                     level.var_938d798a = 1;
                     level thread function_938d798a();
                 }
@@ -844,7 +843,7 @@ function private postinit() {
             }
             if (getdvarint(#"hash_cb3296a761d4f6c", 0)) {
                 if (!level.var_f9efe895) {
-                    wait(0.5);
+                    wait 0.5;
                     level.var_f9efe895 = 1;
                     level thread function_f9efe895();
                 }
@@ -854,7 +853,7 @@ function private postinit() {
             }
             if (getdvarint(#"hash_4f4c47d52d6ad262", 0)) {
                 if (!level.var_f0d72128) {
-                    wait(0.5);
+                    wait 0.5;
                     level.var_f0d72128 = 1;
                     level thread function_f0d72128();
                 }
@@ -888,8 +887,8 @@ function private postinit() {
                 origin = players[0].origin;
                 var_f4b807cb = item_world::function_2e3efdda(origin, undefined, 128, 2000);
                 foreach (item in var_f4b807cb) {
-                    hidden = item.hidetime < 0 ? "<unknown string>" : "<unknown string>";
-                    print3d(item.origin + (0, 0, 10), "<unknown string>" + item.networkid + hidden + "<unknown string>" + item.itementry.name, (1, 0.5, 0), 1, 0.4);
+                    hidden = item.hidetime < 0 ? "<dev string:x4ca>" : "<dev string:x8e6>";
+                    print3d(item.origin + (0, 0, 10), "<dev string:x8ed>" + item.networkid + hidden + "<dev string:x8f3>" + item.itementry.name, (1, 0.5, 0), 1, 0.4);
                 }
             }
             if (getdvarint(#"hash_52c63fdd1c1d96ac", 0)) {
@@ -962,11 +961,11 @@ function private postinit() {
                             break;
                         case 5:
                             if (isdefined(item.itementry) && item.itementry.itemtype === #"armor") {
-                                if (item.itementry.name == "<unknown string>") {
+                                if (item.itementry.name == "<dev string:x8f8>") {
                                     sphere(item.origin, radius, (0, 1, 0), 1, 0, 10, 20);
-                                } else if (item.itementry.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<dev string:x90c>") {
                                     sphere(item.origin, radius, (0, 0, 1), 1, 0, 10, 20);
-                                } else if (item.itementry.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<dev string:x921>") {
                                     sphere(item.origin, radius, (1, 1, 0), 1, 0, 10, 20);
                                 } else {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
@@ -1017,7 +1016,7 @@ function private postinit() {
                             }
                             break;
                         case 12:
-                            if (isdefined(item.itementry) && item.itementry.itemtype === #"hash_fc797c2a8f4d208") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"survival_scorestreak") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
@@ -1142,11 +1141,11 @@ function private postinit() {
                             break;
                         case 5:
                             if (isdefined(item.itementry) && item.itementry.itemtype === #"health") {
-                                if (item.itementry.name == "<unknown string>") {
+                                if (item.itementry.name == "<dev string:x935>") {
                                     sphere(item.origin, radius, (0, 1, 0), 1, 0, 10, 20);
-                                } else if (item.itementry.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<dev string:x94a>") {
                                     sphere(item.origin, radius, (0, 0, 1), 1, 0, 10, 20);
-                                } else if (item.itementry.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<dev string:x960>") {
                                     sphere(item.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
                                 } else {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
@@ -1155,11 +1154,11 @@ function private postinit() {
                             break;
                         case 6:
                             if (isdefined(item.itementry) && item.itementry.itemtype === #"armor") {
-                                if (item.itementry.name == "<unknown string>") {
+                                if (item.itementry.name == "<dev string:x8f8>") {
                                     sphere(item.origin, radius, (0, 1, 0), 1, 0, 10, 20);
-                                } else if (item.itementry.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<dev string:x90c>") {
                                     sphere(item.origin, radius, (0, 0, 1), 1, 0, 10, 20);
-                                } else if (item.itementry.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<dev string:x921>") {
                                     sphere(item.origin, radius, (1, 1, 0), 1, 0, 10, 20);
                                 } else {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
@@ -1252,8 +1251,8 @@ function private postinit() {
     // Size: 0x70
     function private function_13c803de() {
         level endon(#"end_game");
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x975>");
+        self endon("<dev string:x975>");
         while (true) {
             level waittill(#"host_migration_begin");
             level thread _setup_devgui();
@@ -1269,24 +1268,24 @@ function private postinit() {
             waitframe(1);
         }
         mapname = util::get_map_name();
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x989>");
+        adddebugcommand("<dev string:xa87>");
+        adddebugcommand("<dev string:xb7f>" + mapname + "<dev string:xb91>");
+        adddebugcommand("<dev string:xb7f>" + mapname + "<dev string:xbc3>");
+        adddebugcommand("<dev string:xc01>");
+        adddebugcommand("<dev string:xb7f>" + mapname + "<dev string:xc46>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xc9a>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xcec>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xd38>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xd85>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xddb>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xe40>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xe9f>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xef8>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xf4d>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xf9c>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:xff1>");
+        adddebugcommand("<dev string:xc89>" + mapname + "<dev string:x102a>");
     }
 
     // Namespace item_world_debug/item_world_debug
@@ -1314,7 +1313,7 @@ function private postinit() {
         itemcount = function_8322cf16();
         for (i = 0; i < itemcount; i++) {
             item = function_b1702735(i);
-            if (isdefined(item.itementry) && item.itementry.itemtype == "<unknown string>" && item.itementry.weapon.isprimary) {
+            if (isdefined(item.itementry) && item.itementry.itemtype == "<dev string:x440>" && item.itementry.weapon.isprimary) {
                 array::add(var_6e5bbee1, item_world_util::function_35e06774(item.itementry), 0);
             }
         }
@@ -1347,15 +1346,15 @@ function private postinit() {
         var_55a05f87 = 0;
         var_cbc7aaf6 = 0;
         var_ebd66b56 = [];
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x1080>");
         while (!isdefined(level.players) || !isplayer(level.players[0])) {
-            wait(1);
+            wait 1;
         }
         level.players[0] endon(#"disconnect");
         gametype = util::get_game_type();
         var_796ab805 = [];
         while (true) {
-            wait(1);
+            wait 1;
             if (!getdvarint(#"hash_68dcd0d52e11b957", 0)) {
                 continue;
             }
@@ -1372,7 +1371,7 @@ function private postinit() {
                                     var_796ab805[drop.itementry.name] = array(var_796ab805[drop.itementry.name]);
                                 }
                                 var_796ab805[drop.itementry.name][var_796ab805[drop.itementry.name].size] = drop.itementry.killstreak;
-                            } else if (isdefined(drop.itementry.name) && drop.itementry.name != "<unknown string>") {
+                            } else if (isdefined(drop.itementry.name) && drop.itementry.name != "<dev string:x1098>") {
                                 if (!isdefined(var_796ab805[drop.itementry.name])) {
                                     var_796ab805[drop.itementry.name] = [];
                                 } else if (!isarray(var_796ab805[drop.itementry.name])) {
@@ -1386,30 +1385,30 @@ function private postinit() {
                     var_bd9acc19 = 150;
                     foreach (i, item_drop in var_796ab805) {
                         var_bd9acc19 += 24;
-                        var_6abd8aff = function_9e72a96(i) + "<unknown string>" + item_drop.size;
+                        var_6abd8aff = function_9e72a96(i) + "<dev string:x8f3>" + item_drop.size;
                         debug2dtext((810, var_bd9acc19, 0), var_6abd8aff, (1, 1, 1), undefined, undefined, undefined, undefined, 8);
                         if (getdvarint(#"hash_156f2cf900b33f9f", 0)) {
-                            print(var_6abd8aff + "<unknown string>");
+                            print(var_6abd8aff + "<dev string:x10ac>");
                         }
                     }
                     if (getdvarint(#"hash_156f2cf900b33f9f", 0)) {
                         setdvar(#"hash_156f2cf900b33f9f", 0);
                     }
                 }
-                var_1d9375fc = struct::get_array("<unknown string>", "<unknown string>");
-                foreach (group in var_1d9375fc) {
+                item_spawn_groups = struct::get_array("<dev string:x10b1>", "<dev string:x10cf>");
+                foreach (group in item_spawn_groups) {
                     group.debug_spawnpoints = [];
-                    var_f0179f4a = getdvarstring(#"hash_230734aeaaf8671", "<unknown string>");
-                    if (isstring(group.target) && (var_f0179f4a == "<unknown string>" || function_d72aa67e(var_f0179f4a, group.target))) {
+                    var_f0179f4a = getdvarstring(#"hash_230734aeaaf8671", "<dev string:x10dc>");
+                    if (isstring(group.target) && (var_f0179f4a == "<dev string:x10dc>" || function_d72aa67e(var_f0179f4a, group.target))) {
                         group.debug_spawnpoints = function_91b29d2a(group.target);
                     }
                 }
                 var_7cb887a8 = [];
-                foreach (group in var_1d9375fc) {
+                foreach (group in item_spawn_groups) {
                     itemlistbundle = getscriptbundle(group.scriptbundlename);
-                    if (!isdefined(itemlistbundle) || is_true(itemlistbundle.vehiclespawner) || group.debug_spawnpoints.size == 0 || !isdefined(group.targetname) || itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>" || !is_true(itemlistbundle.var_4f220d03) && gametype === "<unknown string>") {
+                    if (!isdefined(itemlistbundle) || is_true(itemlistbundle.vehiclespawner) || group.debug_spawnpoints.size == 0 || !isdefined(group.targetname) || itemlistbundle.name === "<dev string:x10e3>" || itemlistbundle.name === "<dev string:x1101>" || itemlistbundle.name === "<dev string:x1125>" || !is_true(itemlistbundle.var_4f220d03) && gametype === "<dev string:x1146>") {
                         continue;
-                    } else if (itemlistbundle.name === "<unknown string>") {
+                    } else if (itemlistbundle.name === "<dev string:x115d>") {
                         var_df1e5fef = arraysortclosest(group.debug_spawnpoints, level.players[0].origin, 85, 1, getdvarint(#"hash_6ac8a75bc45c3633", 10000));
                         foreach (point in var_df1e5fef) {
                             sphere(point.origin, 16, (1, 1, 1), 1, 0, 16, 8);
@@ -1444,7 +1443,7 @@ function private postinit() {
                             var_c5330f11 = 32;
                             v_color = (1, 0, 1);
                             if (isdefined(itemlistbundle.itemlist[0])) {
-                                if (itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>") {
+                                if (itemlistbundle.itemlist[0].itementry === "<dev string:x117c>" || itemlistbundle.itemlist[0].itementry === "<dev string:x1193>" || itemlistbundle.itemlist[0].itementry === "<dev string:x11a0>" || itemlistbundle.itemlist[0].itementry === "<dev string:x11ad>" || itemlistbundle.itemlist[0].itementry === "<dev string:x11ba>" || itemlistbundle.itemlist[0].itementry === "<dev string:x11c7>") {
                                     v_color = (1, 1, 0);
                                     var_47748885 = 4;
                                     var_c5330f11 = 4;
@@ -1496,7 +1495,7 @@ function private postinit() {
                                     foreach (item_type in itemlistbundle.itemlist) {
                                         foreach (var_d76a7255 in var_abc7e003) {
                                             if (item_type.itementry === var_d76a7255.itementry.name && var_d76a7255.itementry.name === items[0].itementry.name) {
-                                                print3d(point.origin + (0, 0, 18), item_type.itementry + "<unknown string>" + var_24b0b1ea, (1, 0.5, 0), 1, 0.3, 8);
+                                                print3d(point.origin + (0, 0, 18), item_type.itementry + "<dev string:x11d4>" + var_24b0b1ea, (1, 0.5, 0), 1, 0.3, 8);
                                                 line(var_d76a7255.origin, point.origin, (1, 0.5, 0), 1, 0, 8);
                                             }
                                         }
@@ -1507,7 +1506,7 @@ function private postinit() {
                             if (is_true(itemlistbundle.supplystash)) {
                                 n_depth = 9;
                                 n_width = 14;
-                                if (itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>") {
+                                if (itemlistbundle.name === "<dev string:x10e3>" || itemlistbundle.name === "<dev string:x1101>" || itemlistbundle.name === "<dev string:x1125>") {
                                     n_depth = 12;
                                     n_width = 48;
                                 }
@@ -1581,10 +1580,10 @@ function private postinit() {
                                         print3d(point.origin + (0, 0, 30), point.origin, v_color, 1, 0.3, 8);
                                         if (dynents.size > 0) {
                                             var_a1bd87ef = getdynentarray(point.targetname);
-                                            print3d(point.origin + (0, 0, 24), "<unknown string>" + var_a1bd87ef.size, (1, 1, 0), 1, 0.3, 8);
-                                            print3d(point.origin + (0, 0, 24), "<unknown string>" + var_a1bd87ef.size, (0, 1, 0), 1, 0.3, 8);
-                                            print3d(point.origin + (0, 0, 24), "<unknown string>" + dynents.size, (1, 1, 0), 1, 0.3, 8);
-                                            print3d(point.origin + (0, 0, 18), "<unknown string>" + group.debug_spawnpoints.size, (1, 1, 0), 1, 0.3, 8);
+                                            print3d(point.origin + (0, 0, 24), "<dev string:x11f6>" + var_a1bd87ef.size, (1, 1, 0), 1, 0.3, 8);
+                                            print3d(point.origin + (0, 0, 24), "<dev string:x1206>" + var_a1bd87ef.size, (0, 1, 0), 1, 0.3, 8);
+                                            print3d(point.origin + (0, 0, 24), "<dev string:x1216>" + dynents.size, (1, 1, 0), 1, 0.3, 8);
+                                            print3d(point.origin + (0, 0, 18), "<dev string:x1229>" + group.debug_spawnpoints.size, (1, 1, 0), 1, 0.3, 8);
                                         }
                                     }
                                 }
@@ -1603,7 +1602,7 @@ function private postinit() {
     // Checksum 0x534a7fde, Offset: 0x8c58
     // Size: 0xbe
     function function_d72aa67e(str_list, str_name) {
-        a_str_tok = strtok(str_list, "<unknown string>");
+        a_str_tok = strtok(str_list, "<dev string:x8f3>");
         foreach (tok in a_str_tok) {
             if (tok == str_name) {
                 return 1;

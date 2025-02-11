@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
 #using script_408211ac7ff6ef56;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\throttle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\oob;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\throttle_shared;
+#using scripts\core_common\util_shared;
 
 #namespace item_drop;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace item_drop/item_drop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfa601ff0, Offset: 0x378
 // Size: 0x12c
 function private preinit() {
@@ -52,7 +51,7 @@ function private preinit() {
 }
 
 // Namespace item_drop/item_drop
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdc17ff93, Offset: 0x4b0
 // Size: 0x1e4
 function private function_2777823f() {
@@ -75,7 +74,7 @@ function private function_2777823f() {
     // Checksum 0x4cfd8eef, Offset: 0x6a0
     // Size: 0x54
     function private function_344f8c02() {
-        adddebugcommand("<unknown string>" + util::get_map_name() + "<unknown string>");
+        adddebugcommand("<dev string:x38>" + util::get_map_name() + "<dev string:x49>");
         level thread function_60c9a9e1();
     }
 
@@ -96,7 +95,7 @@ function private function_2777823f() {
 #/
 
 // Namespace item_drop/item_drop
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xe0b4cb3e, Offset: 0x780
 // Size: 0x1ba
 function private function_3b2b6383(origin, angles, normal, itementry, var_ba40b4c1) {
@@ -113,7 +112,7 @@ function private function_3b2b6383(origin, angles, normal, itementry, var_ba40b4
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6db21400, Offset: 0x948
 // Size: 0x122
 function private function_feb1473(itementry, var_ba40b4c1) {
@@ -146,7 +145,7 @@ function private function_32b2794(degree) {
 }
 
 // Namespace item_drop/item_drop
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0xee949f6f, Offset: 0xb58
 // Size: 0x494
 function private function_44a6883c(&drop_item_id, &drop_items, &drop_count, &drop_amount, var_4a5c0085 = 1, var_fee0423a = 0) {
@@ -161,7 +160,7 @@ function private function_44a6883c(&drop_item_id, &drop_items, &drop_count, &dro
         if (itementry.itemtype == #"weapon") {
             continue;
         }
-        maxstacksize = namespace_a0d533d1::function_cfa794ca(0, itementry);
+        maxstacksize = item_inventory_util::function_cfa794ca(0, itementry);
         if (var_fee0423a && !is_true(itementry.stackable)) {
             for (var_604c3ae6 = 0; var_604c3ae6 < index; var_604c3ae6++) {
                 if (drop_item_id[var_604c3ae6] == -1) {
@@ -239,7 +238,7 @@ function private function_44a6883c(&drop_item_id, &drop_items, &drop_count, &dro
 }
 
 // Namespace item_drop/item_drop
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x19040bac, Offset: 0xff8
 // Size: 0x28a
 function private function_21cfd4a(index, position, angles, var_71a7bf18) {
@@ -277,12 +276,12 @@ function private function_21cfd4a(index, position, angles, var_71a7bf18) {
         dropindex = randomindex;
         var_135ae3f7 = var_5625a073;
     }
-    var_135ae3f7.var_9c2afd24 = dropindex;
+    var_135ae3f7.drop_index = dropindex;
     return var_135ae3f7;
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc2a838f8, Offset: 0x1290
 // Size: 0x916
 function private function_23b6897(player, position) {
@@ -397,7 +396,7 @@ function private function_23b6897(player, position) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8fef11e9, Offset: 0x1bb0
 // Size: 0x19e
 function private function_2734eea3(player) {
@@ -415,7 +414,7 @@ function private function_2734eea3(player) {
 }
 
 // Namespace item_drop/item_drop
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0xc8226be9, Offset: 0x1d58
 // Size: 0x9de
 function private function_a938fba7(player, position, angles, itementry, var_74e79ee3 = 0, var_ba40b4c1 = 1) {
@@ -546,7 +545,7 @@ function private function_a938fba7(player, position, angles, itementry, var_74e7
 }
 
 // Namespace item_drop/item_drop
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x61f48398, Offset: 0x2740
 // Size: 0x5c6
 function function_10ececeb(var_e280bfe2 = 1, tracedistance = 24, originheightoffset = 0, min = (0, 0, 0), max = (0, 0, 0)) {
@@ -699,7 +698,7 @@ function function_767443cc(player) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c318471, Offset: 0x3128
 // Size: 0x33c
 function function_8a47b954(player) {
@@ -725,7 +724,7 @@ function function_8a47b954(player) {
         return;
     }
     item_weapon = item_world_util::function_f4a8d375(inventoryitem.id);
-    var_4f21d62e = namespace_a0d533d1::function_2b83d3ff(inventoryitem);
+    var_4f21d62e = item_inventory_util::function_2b83d3ff(inventoryitem);
     var_ca577a9c = player getweaponammoclip(var_4f21d62e);
     amount = min(item_weapon.clipsize, var_ca577a9c);
     if (is_true(var_4f21d62e.isdualwield) && isdefined(var_4f21d62e.dualwieldweapon) && var_4f21d62e.dualwieldweapon != level.weaponnone) {
@@ -735,7 +734,7 @@ function function_8a47b954(player) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x97c85f4b, Offset: 0x3470
 // Size: 0x1190
 function drop_inventory(player) {
@@ -836,7 +835,7 @@ function drop_inventory(player) {
         count = isdefined(inventoryitem.count) ? inventoryitem.count : 1;
         amount = inventoryitem.amount;
         if (isdefined(item_weapon) && inventoryitem.itementry.itemtype == #"weapon") {
-            var_4f21d62e = namespace_a0d533d1::function_2b83d3ff(inventoryitem);
+            var_4f21d62e = item_inventory_util::function_2b83d3ff(inventoryitem);
             inventoryitem.weaponoptions = player item_inventory::function_fc04b237(var_4f21d62e, inventoryitem.weaponoptions);
             var_ca577a9c = player getweaponammoclip(var_4f21d62e);
             amount = min(item_weapon.clipsize, var_ca577a9c);
@@ -896,7 +895,7 @@ function drop_inventory(player) {
     }
     var_ab883d36 = undefined;
     if (player function_ba84d97e()) {
-        dogtag = function_4ba8fde(#"hash_4aed1697bd23e59f");
+        dogtag = function_4ba8fde(#"dogtag_item");
         if (isdefined(dogtag)) {
             var_ab883d36 = drop_item_id.size;
             drop_count[var_ab883d36] = 1;
@@ -967,7 +966,7 @@ function drop_inventory(player) {
 }
 
 // Namespace item_drop/item_drop
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0xf2fe4ee4, Offset: 0x4608
 // Size: 0xb50
 function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2, var_ba40b4c1 = 1, attachments = undefined, var_bce3d77a = undefined) {
@@ -1009,16 +1008,16 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
     if (is_true(item.itementry.var_340eac1f)) {
         originalattachments = item.attachments;
         item.attachments = attachments;
-        if (!namespace_a0d533d1::function_ee669356(item)) {
+        if (!item_inventory_util::function_ee669356(item)) {
             if (isdefined(item.itementry.baseweapon)) {
                 baseweapon = item.itementry.baseweapon;
                 item = function_4ba8fde(baseweapon);
                 if (!isdefined(item) || !isdefined(item.itementry)) {
-                    assert(0, "<unknown string>" + baseweapon);
+                    assert(0, "<dev string:x7e>" + baseweapon);
                     return undefined;
                 }
             } else {
-                assert(0, "<unknown string>");
+                assert(0, "<dev string:xaf>");
             }
         }
         item.attachments = originalattachments;
@@ -1071,7 +1070,7 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
         dropitem delete();
         return undefined;
     }
-    if (!namespace_a0d533d1::function_70b12595(dropitem)) {
+    if (!item_inventory_util::function_70b12595(dropitem)) {
         dropitem clientfield::set("item_world_attachments", 1);
     } else {
         dropitem clientfield::set("item_world_attachments", 0);
@@ -1095,7 +1094,7 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
         var_135ae3f7 = dropitem function_21cfd4a(index, position, angles, falling);
         originoffset = function_feb1473(item.itementry, var_ba40b4c1);
         anglesoffset = function_3b2b6383(var_135ae3f7.end_origin, angles, (0, 0, 1), item.itementry, var_ba40b4c1);
-        droptime = dropitem namespace_b637a3ed::drop_item(var_135ae3f7.var_9c2afd24, position, angles, falling, 1, originoffset, anglesoffset);
+        droptime = dropitem namespace_b637a3ed::drop_item(var_135ae3f7.drop_index, position, angles, falling, 1, originoffset, anglesoffset);
     } else if (falling == 1) {
         dropitem function_a938fba7(isentity(self) ? self : dropitem, position, angles, item.itementry, undefined, var_ba40b4c1);
     }
@@ -1105,7 +1104,7 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6b610958, Offset: 0x5160
 // Size: 0x9c
 function private function_6abcd75d(item, droptime) {
@@ -1114,13 +1113,13 @@ function private function_6abcd75d(item, droptime) {
         return;
     }
     if (isdefined(droptime)) {
-        wait(droptime);
+        wait droptime;
     }
     playsoundatposition(item.itementry.var_6cc98559, item.origin);
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf409cc0b, Offset: 0x5208
 // Size: 0x2ac
 function private function_567cbe1c(item, droptime) {
@@ -1131,7 +1130,7 @@ function private function_567cbe1c(item, droptime) {
         return;
     }
     if (isdefined(droptime)) {
-        wait(droptime + 0.1);
+        wait droptime + 0.1;
     }
     var_696605c2 = isdefined(item.itementry.var_9e569978) ? item.itementry.var_9e569978 : 1;
     var_488074a5 = isdefined(item.itementry.var_3af59a99) ? item.itementry.var_3af59a99 : 1;
@@ -1140,7 +1139,7 @@ function private function_567cbe1c(item, droptime) {
 }
 
 // Namespace item_drop/item_drop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x98411681, Offset: 0x54c0
 // Size: 0x128
 function drop_item(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2) {
@@ -1155,7 +1154,7 @@ function drop_item(index = 0, weapon = undefined, count = 0, amount = 0, itemid,
 }
 
 // Namespace item_drop/item_drop
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xe88699ac, Offset: 0x55f0
 // Size: 0xc4
 function function_7910964d(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2) {
@@ -1163,7 +1162,7 @@ function function_7910964d(index = 0, weapon = undefined, count = 0, amount = 0,
 }
 
 // Namespace item_drop/item_drop
-// Params 22, eflags: 0x2 linked
+// Params 22, eflags: 0x0
 // Checksum 0x4fbfe43a, Offset: 0x56c0
 // Size: 0x490
 function function_fd9026e4(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2, stashitem = 0, deathstash = 0, targetname = undefined, parentent = undefined, attachments = undefined, var_ba40b4c1 = 1, weaponoptions = undefined, var_e91aba42 = undefined, var_908f65ca = undefined, var_1181c08b = undefined, stockammo = undefined, aat = undefined, paplv = undefined, var_bce3d77a = undefined) {
@@ -1209,7 +1208,7 @@ function function_fd9026e4(index = 0, weapon = undefined, count = 0, amount = 0,
 }
 
 // Namespace item_drop/item_drop
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc63daac0, Offset: 0x5b58
 // Size: 0x112
 function function_ba84d97e() {
@@ -1228,7 +1227,7 @@ function function_ba84d97e() {
 }
 
 // Namespace item_drop/item_drop
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbf13f180, Offset: 0x5c78
 // Size: 0x26a
 function function_4da960f6(origin, radius, time) {
@@ -1257,7 +1256,7 @@ function function_4da960f6(origin, radius, time) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x67fe325f, Offset: 0x5ef0
 // Size: 0x62
 function function_d8342646(deathstash) {
@@ -1269,7 +1268,7 @@ function function_d8342646(deathstash) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef092470, Offset: 0x5f60
 // Size: 0x54
 function function_ccba50c6(dogtag) {
@@ -1279,7 +1278,7 @@ function function_ccba50c6(dogtag) {
 }
 
 // Namespace item_drop/item_drop
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x432ca4d5, Offset: 0x5fc0
 // Size: 0xa0
 function function_5c22c173(ent, team) {
@@ -1292,7 +1291,7 @@ function function_5c22c173(ent, team) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5a2cc3a9, Offset: 0x6068
 // Size: 0x44
 function function_f04e5fc2(objid) {
@@ -1311,7 +1310,7 @@ function function_3e7494e3() {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x16f2f899, Offset: 0x60d8
 // Size: 0x6e
 function function_801fcc9e(var_84802706) {
@@ -1321,7 +1320,7 @@ function function_801fcc9e(var_84802706) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb35f42cd, Offset: 0x6150
 // Size: 0x84
 function function_ba4c90d9(item) {
@@ -1344,7 +1343,7 @@ function function_ba4c90d9(item) {
         sec = getdvarint(#"hash_6c3e4a7cf7546b8f", 10);
         framespersec = int(1 / float(function_60d95f53()) / 1000);
         sphere(origin, radius, color, 1, 0, 10, framespersec * sec);
-        recordsphere(origin, radius, color, "<unknown string>");
+        recordsphere(origin, radius, color, "<dev string:xd7>");
     }
 
     // Namespace item_drop/item_drop
@@ -1358,7 +1357,7 @@ function function_ba4c90d9(item) {
         sec = getdvarint(#"hash_6c3e4a7cf7546b8f", 10);
         framespersec = int(1 / float(function_60d95f53()) / 1000);
         line(start, end, color, 1, 0, framespersec * sec);
-        recordline(start, end, color, "<unknown string>");
+        recordline(start, end, color, "<dev string:xd7>");
     }
 
 #/

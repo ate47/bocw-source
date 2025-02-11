@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace namespace_287e05a2;
 
@@ -23,7 +22,7 @@ function preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
-    zm_trial::register_challenge(#"hash_69bf786a279d4ca6", &on_begin, &on_end);
+    zm_trial::register_challenge(#"round_ending_zone", &on_begin, &on_end);
 }
 
 // Namespace namespace_287e05a2/namespace_287e05a2

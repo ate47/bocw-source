@@ -1,54 +1,53 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_22caeaa9257194b8;
-#using script_3919f386abede84;
 #using script_2529b6df09e4d9d1;
+#using script_3919f386abede84;
 #using script_45a1c6f3704b3b15;
-#using script_68364cfa1098cdd4;
-#using scripts\weapons\cp\weaponobjects.gsc;
-#using script_691641bee32b9cd5;
-#using scripts\cp_common\spawn_manager.gsc;
-#using scripts\cp_common\skipto.gsc;
-#using scripts\cp_common\oed.gsc;
-#using scripts\cp_common\gamedifficulty.gsc;
-#using scripts\cp_common\devgui.gsc;
-#using scripts\cp_common\debug.gsc;
-#using scripts\cp_common\challenges.gsc;
-#using scripts\cp_common\art.gsc;
-#using scripts\cp_common\util.gsc;
 #using script_5a9516c83d1ec8fc;
-#using scripts\cp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\scriptmodels_shared.gsc;
-#using scripts\core_common\status_effects\status_effects.gsc;
-#using scripts\weapons\antipersonnelguidance.gsc;
-#using scripts\core_common\vehicle_drivable_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using scripts\core_common\turret_shared.gsc;
-#using scripts\core_common\traps_deployable.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\string_shared.gsc;
-#using scripts\core_common\serverfaceanim_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\oob.gsc;
+#using script_68364cfa1098cdd4;
 #using script_7cc5fb39b97494c4;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\containers_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\clientids_shared.gsc;
-#using scripts\core_common\audio_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\clientids_shared;
+#using scripts\core_common\containers_shared;
+#using scripts\core_common\encounters\wave_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scriptmodels_shared;
+#using scripts\core_common\serverfaceanim_shared;
+#using scripts\core_common\status_effects\status_effects;
+#using scripts\core_common\string_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\traps_deployable;
+#using scripts\core_common\turret_shared;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_drivable_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\cp_common\art;
+#using scripts\cp_common\challenges;
+#using scripts\cp_common\debug;
+#using scripts\cp_common\devgui;
+#using scripts\cp_common\gamedifficulty;
+#using scripts\cp_common\gametypes\globallogic;
+#using scripts\cp_common\oed;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\spawn_manager;
+#using scripts\cp_common\util;
+#using scripts\weapons\antipersonnelguidance;
+#using scripts\weapons\cp\weaponobjects;
 
 #namespace load;
 
 // Namespace load/createstruct
-// Params 1, eflags: 0x26 linked
+// Params 1, eflags: 0x24
 // Checksum 0x685680c, Offset: 0x398
 // Size: 0x23c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
@@ -83,11 +82,11 @@ function autoexec function_aeb1baea() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3702db1c, Offset: 0x628
 // Size: 0x36c
 function function_5e443ed1() {
-    assert(isdefined(level.first_frame), "<unknown string>");
+    assert(isdefined(level.first_frame), "<dev string:x38>");
     if (is_true(level._loadstarted)) {
         return;
     }
@@ -126,7 +125,7 @@ function function_5e443ed1() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4ee01180, Offset: 0x9a0
 // Size: 0xe4
 function private function_fbb2b180() {
@@ -142,7 +141,7 @@ function private function_fbb2b180() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x762d38a2, Offset: 0xa90
 // Size: 0xc4
 function function_2dd7fc9e() {
@@ -153,7 +152,7 @@ function function_2dd7fc9e() {
             waitframe(1);
         } while (isloadingcinematicplaying());
     } else {
-        wait(1);
+        wait 1;
     }
     level util::streamer_wait(undefined, 2, 45);
     level flag::set(#"loaded");
@@ -168,7 +167,7 @@ function function_bc5d59fb() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x186e2777, Offset: 0xb90
 // Size: 0x1c
 function function_ba5622e() {
@@ -176,17 +175,17 @@ function function_ba5622e() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0cd81e9, Offset: 0xbb8
 // Size: 0x64
 function function_eb7b7382() {
     level flag::wait_till(#"loaded");
-    level flag::wait_till(#"hash_321357f5b78401ef");
+    level flag::wait_till(#"hud_initialized");
     level flag::set("level_is_go");
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5197e931, Offset: 0xc28
 // Size: 0x10c
 function function_c9740807() {
@@ -197,7 +196,7 @@ function function_c9740807() {
     checkpointcreate();
     checkpointcommit();
     flag::wait_till("all_players_spawned");
-    wait(0.5);
+    wait 0.5;
     player = getplayers()[0];
     if (isplayer(player) && player util::function_a1d6293()) {
         return;
@@ -207,7 +206,7 @@ function function_c9740807() {
 }
 
 // Namespace load/load
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd302454c, Offset: 0xd40
 // Size: 0x34
 function function_e029c994(player, *target, *weapon) {
@@ -227,12 +226,12 @@ function player_fake_death() {
     self allowprone(1);
     self val::set(#"fakedeath", "ignoreme", 1);
     self val::set(#"fakedeath", "takedamage", 0);
-    wait(1);
+    wait 1;
     self val::set(#"fakedeath", "freezecontrols", 1);
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbddc31f3, Offset: 0xea0
 // Size: 0xae
 function init_traverse() {
@@ -249,7 +248,7 @@ function init_traverse() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xba5aa797, Offset: 0xf58
 // Size: 0x84
 function setup_traversals() {
@@ -263,7 +262,7 @@ function setup_traversals() {
 }
 
 // Namespace load/load
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5f99a18c, Offset: 0xfe8
 // Size: 0x2a
 function function_f97a8023(mission_name) {
@@ -274,7 +273,7 @@ function function_f97a8023(mission_name) {
 }
 
 // Namespace load/load
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d5d24b, Offset: 0x1020
 // Size: 0x6c
 function function_c9154eb7(var_83104433, var_585e39fb) {
@@ -307,7 +306,7 @@ function function_d44ed07e(var_83104433 = skipto::function_60ca00f5(), var_585e3
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x30447f27, Offset: 0x11d0
 // Size: 0x54
 function function_ff52baa2() {
@@ -318,12 +317,12 @@ function function_ff52baa2() {
 }
 
 // Namespace load/load
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xacf63574, Offset: 0x1230
 // Size: 0x18c
 function function_cc51116c(var_83104433, var_585e39fb = "") {
     skipto::function_8722a51a(var_585e39fb, 1);
-    var_31924550 = getuimodel(function_5f72e972(#"hash_31e97ba41cad1834"), "transitionMapIdOverride");
+    var_31924550 = getuimodel(function_5f72e972(#"lobby_root"), "transitionMapIdOverride");
     setuimodelvalue(var_31924550, hash(var_83104433));
     if (is_true(level.var_d89799d7)) {
         util::wait_network_frame(1);
@@ -359,7 +358,7 @@ function player_intermission(var_1ed3b46b = 1) {
     if (!isdefined(points) || points.size == 0) {
         points = getentarray("info_intermission", "classname");
         if (points.size < 1) {
-            println("<unknown string>");
+            println("<dev string:x67>");
             return;
         }
     }
@@ -397,22 +396,22 @@ function player_intermission(var_1ed3b46b = 1) {
                 }
                 org moveto(target_point.origin, time, var_91c3f3c4, var_91c3f3c4);
                 org rotateto(target_point.angles, time, var_91c3f3c4, var_91c3f3c4);
-                wait(time);
+                wait time;
                 continue;
             }
-            wait(5);
+            wait 5;
         }
     }
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2235ceb6, Offset: 0x1890
 // Size: 0x234
 function onallplayersready() {
     level flag::init("start_coop_logic");
     /#
-        println("<unknown string>" + getnumexpectedplayers());
+        println("<dev string:x8d>" + getnumexpectedplayers());
         var_f884532 = 0;
     #/
     do {
@@ -427,22 +426,22 @@ function onallplayersready() {
         }
         /#
             if (var_f884532 % 10 == 0) {
-                println("<unknown string>" + var_72e2b734 + "<unknown string>" + var_73f084c);
-                println("<unknown string>" + player_count_actual + "<unknown string>" + level.players.size);
+                println("<dev string:xad>" + var_72e2b734 + "<dev string:xc6>" + var_73f084c);
+                println("<dev string:xd6>" + player_count_actual + "<dev string:xf3>" + level.players.size);
             }
             var_f884532++;
         #/
     } while (var_72e2b734 < var_73f084c || player_count_actual < var_73f084c);
     setinitialplayersconnected();
     /#
-        printtoprightln("<unknown string>", (1, 1, 1));
+        printtoprightln("<dev string:x10d>", (1, 1, 1));
     #/
     level flag::set("all_players_connected");
     level flag::set("start_coop_logic");
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1ad0
 // Size: 0x4
 function register_clientfields() {

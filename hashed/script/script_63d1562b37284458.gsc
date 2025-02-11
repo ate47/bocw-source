@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_util;
 
-#namespace namespace_9cf4c697;
+#namespace zipline_player;
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
+// Namespace zipline_player/zipline_player
 // Params 0, eflags: 0x5
 // Checksum 0x6b8bbfc3, Offset: 0x180
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_182e6e1e0572174a", &preinit, undefined, undefined, undefined);
+    system::register(#"zipline_player", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x4
 // Checksum 0x1c5b0332, Offset: 0x1c8
 // Size: 0x1cc
 function private preinit() {
@@ -44,8 +43,8 @@ function private preinit() {
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x4
 // Checksum 0xf0be67a5, Offset: 0x3a0
 // Size: 0x2fa
 function private function_733c3cbb(b_hide = 1) {
@@ -89,8 +88,8 @@ function private function_733c3cbb(b_hide = 1) {
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x0
 // Checksum 0x384a972c, Offset: 0x6a8
 // Size: 0x19c
 function function_7205ee5e() {
@@ -103,8 +102,8 @@ function function_7205ee5e() {
         self.var_30b41973 setinvisibletoplayer(self);
     }
     self function_733c3cbb(1);
-    self val::set(#"hash_273031a45a7c3032", "takedamage", 0);
-    self val::set(#"hash_273031a45a7c3032", "ignoreme", 1);
+    self val::set(#"zipline_protect", "takedamage", 0);
+    self val::set(#"zipline_protect", "ignoreme", 1);
     self flag::set(#"hash_686d5709e1566aa6");
     if (isdefined(self.var_5da09c55)) {
         self thread function_c54ca80d(self.var_5da09c55);
@@ -113,8 +112,8 @@ function function_7205ee5e() {
     self thread function_39e551d4();
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x4
 // Checksum 0xf7790471, Offset: 0x850
 // Size: 0xb4
 function private function_9194becb(n_delay = undefined) {
@@ -124,7 +123,7 @@ function private function_9194becb(n_delay = undefined) {
     self.var_c09c6e0a = undefined;
     self.var_30b41973 = undefined;
     if (isdefined(n_delay)) {
-        wait(n_delay);
+        wait n_delay;
     }
     if (isdefined(var_e4110fee)) {
         var_e4110fee setvisibletoplayer(self);
@@ -134,8 +133,8 @@ function private function_9194becb(n_delay = undefined) {
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x0
 // Checksum 0x20aa3779, Offset: 0x910
 // Size: 0x34
 function function_96a812e6() {
@@ -143,17 +142,17 @@ function function_96a812e6() {
     self function_9194becb(1);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x0
 // Checksum 0x600c685, Offset: 0x950
 // Size: 0x5c
 function function_8307577f(*params) {
-    self val::reset(#"hash_273031a45a7c3032", "takedamage");
-    self val::reset(#"hash_273031a45a7c3032", "ignoreme");
+    self val::reset(#"zipline_protect", "takedamage");
+    self val::reset(#"zipline_protect", "ignoreme");
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x4
 // Checksum 0x82e43486, Offset: 0x9b8
 // Size: 0x36
 function private function_25fbe208() {
@@ -163,8 +162,8 @@ function private function_25fbe208() {
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x4
 // Checksum 0x362507d5, Offset: 0x9f8
 // Size: 0x36
 function private function_802dd110() {
@@ -174,8 +173,8 @@ function private function_802dd110() {
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x0
 // Checksum 0x95d6cf16, Offset: 0xa38
 // Size: 0x34
 function function_9066dc16() {
@@ -183,23 +182,23 @@ function function_9066dc16() {
     self function_9194becb();
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x4
 // Checksum 0xdcbbafa9, Offset: 0xa78
 // Size: 0xbc
 function private function_d8f0d6ea() {
-    self notify(#"hash_3a0011aea678de3d");
+    self notify(#"zipline_cleanup");
     self function_25fbe208();
     self function_802dd110();
     if (self flag::get(#"hash_686d5709e1566aa6")) {
         self flag::clear(#"hash_686d5709e1566aa6");
-        self val::reset_all(#"hash_273031a45a7c3032");
+        self val::reset_all(#"zipline_protect");
         self function_733c3cbb(0);
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x0
 // Checksum 0x54caccdf, Offset: 0xb40
 // Size: 0x224
 function function_e415c864(var_5da09c55) {
@@ -232,7 +231,7 @@ function function_e415c864(var_5da09c55) {
     return var_912fa366;
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
+// Namespace zipline_player/zipline_player
 // Params 1, eflags: 0x0
 // Checksum 0x823d7813, Offset: 0xd70
 // Size: 0x17c
@@ -256,8 +255,8 @@ function function_77fde59c(var_5da09c55) {
     return var_912fa366;
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x0
 // Checksum 0x605d81e9, Offset: 0xef8
 // Size: 0x1e4
 function function_5abc3f1f(trigger_info) {
@@ -286,8 +285,8 @@ function function_5abc3f1f(trigger_info) {
     player function_827228db(self.var_5da09c55.endstruct.origin, self.var_5da09c55.origin, 1, self.var_5da09c55);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x0
 // Checksum 0x60f19cc3, Offset: 0x10e8
 // Size: 0xda
 function function_2a1bd467(struct) {
@@ -307,8 +306,8 @@ function function_2a1bd467(struct) {
     struct.trigger = function_e415c864(struct);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 2, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 2, eflags: 0x0
 // Checksum 0x7e4a5b01, Offset: 0x11d0
 // Size: 0x196
 function function_f8e9f7d7(player, var_5da09c55) {
@@ -337,8 +336,8 @@ function function_f8e9f7d7(player, var_5da09c55) {
     return true;
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x0
 // Checksum 0x835110f8, Offset: 0x1370
 // Size: 0x184
 function zipline_use(trigger_info) {
@@ -367,8 +366,8 @@ function zipline_use(trigger_info) {
     player function_827228db(var_5da09c55.endstruct.origin, var_5da09c55.origin, 0, var_5da09c55);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 4, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 4, eflags: 0x0
 // Checksum 0xa5d38795, Offset: 0x1500
 // Size: 0xd2
 function function_827228db(target, start, inair, *var_5da09c55) {
@@ -380,8 +379,8 @@ function function_827228db(target, start, inair, *var_5da09c55) {
     self.var_b527f10 = var_b527f10;
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x4
 // Checksum 0xed3ff1de, Offset: 0x15e0
 // Size: 0xbc
 function private function_c4035adb(zipline) {
@@ -396,8 +395,8 @@ function private function_c4035adb(zipline) {
     zipline.trigger sethintstringforplayer(self, hint);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x4
 // Checksum 0xc036ea1c, Offset: 0x16a8
 // Size: 0x9c
 function private function_33111d8d(inuse) {
@@ -406,28 +405,28 @@ function private function_33111d8d(inuse) {
     array::thread_all(getplayers(), &function_c4035adb, self);
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x4
 // Checksum 0x4e3f8a38, Offset: 0x1750
 // Size: 0x54
 function private function_f7f636b8() {
-    self endon(#"death", #"disconnect", #"hash_3a0011aea678de3d");
-    wait(0.8);
+    self endon(#"death", #"disconnect", #"zipline_cleanup");
+    wait 0.8;
     self function_25fbe208();
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x6 linked
+// Namespace zipline_player/zipline_player
+// Params 0, eflags: 0x4
 // Checksum 0x1fff8cd, Offset: 0x17b0
 // Size: 0x54
 function private function_39e551d4() {
-    self endon(#"death", #"disconnect", #"hash_3a0011aea678de3d");
-    wait(5);
+    self endon(#"death", #"disconnect", #"zipline_cleanup");
+    wait 5;
     self function_802dd110();
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 1, eflags: 0x2 linked
+// Namespace zipline_player/zipline_player
+// Params 1, eflags: 0x0
 // Checksum 0x9b92c26d, Offset: 0x1810
 // Size: 0x154
 function function_c54ca80d(var_5da09c55) {
@@ -443,7 +442,7 @@ function function_c54ca80d(var_5da09c55) {
         if (isdefined(level.var_aff839f3)) {
             level waittilltimeout(10, level.var_aff839f3);
         } else {
-            wait(10);
+            wait 10;
         }
         var_5da09c55.cooldown[entnum] = undefined;
         if (isdefined(self)) {
@@ -460,7 +459,7 @@ function function_c54ca80d(var_5da09c55) {
 
 /#
 
-    // Namespace namespace_9cf4c697/namespace_9cf4c697
+    // Namespace zipline_player/zipline_player
     // Params 0, eflags: 0x0
     // Checksum 0x323d2ad4, Offset: 0x1970
     // Size: 0x39c
@@ -470,7 +469,7 @@ function function_c54ca80d(var_5da09c55) {
         }
         ziplines = level.var_e02fab68;
         mapname = util::get_map_name();
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x38>" + mapname + "<dev string:x49>");
         while (getdvarint(#"hash_13a9fb4be8e86e13", 0)) {
             waitframe(1);
             foreach (zipline in ziplines) {

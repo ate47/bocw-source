@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm\perk\zm_perk_death_perception.csc;
-#using scripts\zm_common\zm.csc;
-#using scripts\zm_common\zm_trial.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\zm\perk\zm_perk_death_perception;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_trial;
 
 #namespace zm_trial_disable_hud;
 
@@ -39,7 +38,7 @@ function private on_begin(*local_client_num, *params) {
 // Size: 0x1b0
 function function_40349f7c(localclientnum) {
     level endon(#"hash_38932f8deb28b470", #"end_game");
-    wait(12);
+    wait 12;
     level.var_dc60105c = 1;
     maxclients = getmaxlocalclients();
     for (localclientnum = 0; localclientnum < maxclients; localclientnum++) {

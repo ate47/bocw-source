@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_309ce7f5a9a023de;
 #using script_644007a8c3885fc;
 
@@ -13,7 +12,7 @@ function autoexec __init__() {
 }
 
 // Namespace namespace_ed93e89a/namespace_ed93e89a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd4b31624, Offset: 0xc0
 // Size: 0x1b4
 function function_5355973a() {

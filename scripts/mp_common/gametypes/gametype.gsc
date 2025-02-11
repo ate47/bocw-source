@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\userspawnselection.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using script_335d0650ed05d36d;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using script_335d0650ed05d36d;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\userspawnselection;
+#using scripts\mp_common\util;
 
 #namespace gametype;
 
 // Namespace gametype/gametype
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43b808ac, Offset: 0xb8
 // Size: 0xfc
 function init_mp() {
@@ -29,7 +28,7 @@ function init_mp() {
 }
 
 // Namespace gametype/gametype
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7b2d5a1f, Offset: 0x1c0
 // Size: 0x9c
 function on_start_game_type() {
@@ -48,7 +47,7 @@ function on_start_game_type() {
 }
 
 // Namespace gametype/gametype
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1f609d3, Offset: 0x268
 // Size: 0x6c
 function on_round_switch() {
@@ -63,7 +62,7 @@ function on_round_switch() {
 }
 
 // Namespace gametype/gametype
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8e76e4a, Offset: 0x2e0
 // Size: 0x9c
 function function_f2f4dfa7() {

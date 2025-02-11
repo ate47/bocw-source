@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai_puppeteer_shared.gsc;
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\debug_menu.gsc;
-#using scripts\core_common\ai\systems\weaponlist.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\systems\init.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\colors_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\init;
+#using scripts\core_common\ai\systems\weaponlist;
+#using scripts\core_common\ai_puppeteer_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\colors_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\debug_menu;
+#using scripts\cp_common\util;
 
 #namespace debug;
 
@@ -23,7 +22,7 @@
     // Checksum 0xf638f740, Offset: 0xf0
     // Size: 0x3c
     function private autoexec __init__system__() {
-        system::register(#"hash_157baa9bc984206a", &preinit, undefined, undefined, undefined);
+        system::register(#"debug_script", &preinit, undefined, undefined, undefined);
     }
 
     // Namespace debug/debug
@@ -51,10 +50,10 @@
             if (ai[i] getentnum() != num) {
                 continue;
             }
-            ai[i] thread dragtaguntildeath(getdvarstring(#"hash_511119641864ba93"));
+            ai[i] thread dragtaguntildeath(getdvarstring(#"debug_tag"));
         }
         /#
-            setdvar(#"hash_4f53ce2aad8845e2", "<unknown string>");
+            setdvar(#"hash_4f53ce2aad8845e2", "<dev string:x38>");
         #/
     }
 
@@ -185,14 +184,14 @@
     // Checksum 0xec0281fa, Offset: 0x800
     // Size: 0xec
     function viewtag(type, tag) {
-        if (type == "<unknown string>") {
+        if (type == "<dev string:x3c>") {
             ai = getaiarray();
             for (i = 0; i < ai.size; i++) {
                 ai[i] drawtag(tag);
             }
             return;
         }
-        vehicle = getentarray("<unknown string>", "<unknown string>");
+        vehicle = getentarray("<dev string:x42>", "<dev string:x54>");
         for (i = 0; i < vehicle.size; i++) {
             vehicle[i] drawtag(tag);
         }
@@ -249,9 +248,9 @@
         self endon(#"hash_5ec34db59fed84d9", #"death");
         for (;;) {
             if (self.a.misstime <= 0) {
-                print3d(self gettagorigin("<unknown string>") + (0, 0, 15), "<unknown string>", (0.3, 1, 1), 1);
+                print3d(self gettagorigin("<dev string:x61>") + (0, 0, 15), "<dev string:x6c>", (0.3, 1, 1), 1);
             } else {
-                print3d(self gettagorigin("<unknown string>") + (0, 0, 15), self.a.misstime / 20, (0.3, 1, 1), 1);
+                print3d(self gettagorigin("<dev string:x61>") + (0, 0, 15), self.a.misstime / 20, (0.3, 1, 1), 1);
             }
             waitframe(1);
         }
@@ -271,7 +270,7 @@
     // Size: 0x5c
     function function_24a0ab5e(dvar, setting) {
         /#
-            if (getdvarstring(dvar) == "<unknown string>") {
+            if (getdvarstring(dvar) == "<dev string:x38>") {
                 setdvar(dvar, setting);
             }
         #/
@@ -298,189 +297,189 @@
     // Checksum 0x1e341fe5, Offset: 0xd40
     // Size: 0x153e
     function debugdvars() {
-        if (getdvarstring(#"hash_5f6154a37f067e0e") == "<unknown string>") {
-            setdvar(#"hash_5f6154a37f067e0e", "<unknown string>");
+        if (getdvarstring(#"hash_5f6154a37f067e0e") == "<dev string:x38>") {
+            setdvar(#"hash_5f6154a37f067e0e", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_392e0e2c79fbffac") == "<unknown string>") {
-            setdvar(#"hash_392e0e2c79fbffac", "<unknown string>");
+        if (getdvarstring(#"hash_392e0e2c79fbffac") == "<dev string:x38>") {
+            setdvar(#"hash_392e0e2c79fbffac", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_21b7a22ce9c6275b") == "<unknown string>") {
-            setdvar(#"hash_21b7a22ce9c6275b", "<unknown string>");
+        if (getdvarstring(#"hash_21b7a22ce9c6275b") == "<dev string:x38>") {
+            setdvar(#"hash_21b7a22ce9c6275b", "<dev string:x73>");
         }
-        function_24a0ab5e("<unknown string>", "<unknown string>");
-        if (getdvarstring(#"hash_481d2a6e8d396b6d") == "<unknown string>") {
-            setdvar(#"hash_481d2a6e8d396b6d", "<unknown string>");
+        function_24a0ab5e("<dev string:x7a>", "<dev string:x73>");
+        if (getdvarstring(#"hash_481d2a6e8d396b6d") == "<dev string:x38>") {
+            setdvar(#"hash_481d2a6e8d396b6d", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_4914e697f9fc2671") == "<unknown string>") {
-            setdvar(#"hash_4914e697f9fc2671", "<unknown string>");
+        if (getdvarstring(#"hash_4914e697f9fc2671") == "<dev string:x38>") {
+            setdvar(#"hash_4914e697f9fc2671", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_7cb3964103d64b39") == "<unknown string>") {
-            setdvar(#"hash_7cb3964103d64b39", "<unknown string>");
+        if (getdvarstring(#"hash_7cb3964103d64b39") == "<dev string:x38>") {
+            setdvar(#"hash_7cb3964103d64b39", "<dev string:x93>");
         }
-        if (getdvarstring(#"hash_3ff91657730a45a4") == "<unknown string>") {
-            setdvar(#"hash_3ff91657730a45a4", "<unknown string>");
+        if (getdvarstring(#"hash_3ff91657730a45a4") == "<dev string:x38>") {
+            setdvar(#"hash_3ff91657730a45a4", "<dev string:x93>");
         }
-        if (getdvarstring(#"hash_511119641864ba93") == "<unknown string>") {
-            setdvar(#"hash_511119641864ba93", "<unknown string>");
+        if (getdvarstring(#"debug_tag") == "<dev string:x38>") {
+            setdvar(#"debug_tag", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_4656023913ce3f58") == "<unknown string>") {
-            setdvar(#"hash_4656023913ce3f58", "<unknown string>");
+        if (getdvarstring(#"hash_4656023913ce3f58") == "<dev string:x38>") {
+            setdvar(#"hash_4656023913ce3f58", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_46799eb73d1021e5") == "<unknown string>") {
-            setdvar(#"hash_46799eb73d1021e5", "<unknown string>");
+        if (getdvarstring(#"hash_46799eb73d1021e5") == "<dev string:x38>") {
+            setdvar(#"hash_46799eb73d1021e5", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_3dbf8bc2b56584b4") == "<unknown string>") {
-            setdvar(#"hash_3dbf8bc2b56584b4", "<unknown string>");
+        if (getdvarstring(#"debug_goalradius") == "<dev string:x38>") {
+            setdvar(#"debug_goalradius", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_400262ff40d7af83") == "<unknown string>") {
-            setdvar(#"hash_400262ff40d7af83", "<unknown string>");
+        if (getdvarstring(#"hash_400262ff40d7af83") == "<dev string:x38>") {
+            setdvar(#"hash_400262ff40d7af83", "<dev string:x73>");
         }
-        if (getdvarstring(#"debug_health") == "<unknown string>") {
-            setdvar(#"debug_health", "<unknown string>");
+        if (getdvarstring(#"debug_health") == "<dev string:x38>") {
+            setdvar(#"debug_health", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_74ae4b4ffc749a52") == "<unknown string>") {
-            setdvar(#"hash_74ae4b4ffc749a52", "<unknown string>");
+        if (getdvarstring(#"debug_engagedist") == "<dev string:x38>") {
+            setdvar(#"debug_engagedist", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_294a430f19483cbb") == "<unknown string>") {
-            setdvar(#"hash_294a430f19483cbb", "<unknown string>");
+        if (getdvarstring(#"hash_294a430f19483cbb") == "<dev string:x38>") {
+            setdvar(#"hash_294a430f19483cbb", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_612c3c60b889819f") == "<unknown string>") {
-            setdvar(#"hash_612c3c60b889819f", "<unknown string>");
+        if (getdvarstring(#"debug_hatmodel") == "<dev string:x38>") {
+            setdvar(#"debug_hatmodel", "<dev string:x99>");
         }
-        if (getdvarstring(#"hash_15af95544805e487") == "<unknown string>") {
-            setdvar(#"hash_15af95544805e487", "<unknown string>");
+        if (getdvarstring(#"hash_15af95544805e487") == "<dev string:x38>") {
+            setdvar(#"hash_15af95544805e487", "<dev string:x73>");
         }
         level.var_979b0066 = 0;
-        if (getdvarstring(#"hash_1828e38c6e01052f") == "<unknown string>") {
-            setdvar(#"hash_1828e38c6e01052f", "<unknown string>");
+        if (getdvarstring(#"hash_1828e38c6e01052f") == "<dev string:x38>") {
+            setdvar(#"hash_1828e38c6e01052f", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_4bc852aa6aeb7bd8") == "<unknown string>") {
-            setdvar(#"hash_37bed2af009035a0", "<unknown string>");
+        if (getdvarstring(#"hash_4bc852aa6aeb7bd8") == "<dev string:x38>") {
+            setdvar(#"hash_37bed2af009035a0", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_543b88a4a8d9f9a9") == "<unknown string>") {
-            setdvar(#"hash_543b88a4a8d9f9a9", "<unknown string>");
+        if (getdvarstring(#"hash_543b88a4a8d9f9a9") == "<dev string:x38>") {
+            setdvar(#"hash_543b88a4a8d9f9a9", "<dev string:x38>");
         }
-        if (getdvarstring(#"debug_nuke") == "<unknown string>") {
-            setdvar(#"debug_nuke", "<unknown string>");
+        if (getdvarstring(#"debug_nuke") == "<dev string:x38>") {
+            setdvar(#"debug_nuke", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_14cb1b9851034a23") == "<unknown string>") {
-            setdvar(#"hash_14cb1b9851034a23", "<unknown string>");
+        if (getdvarstring(#"hash_14cb1b9851034a23") == "<dev string:x99>") {
+            setdvar(#"hash_14cb1b9851034a23", "<dev string:x73>");
         }
-        if (getdvarstring(#"hash_36c3400463eaf6ed") == "<unknown string>") {
-            setdvar(#"hash_36c3400463eaf6ed", "<unknown string>");
+        if (getdvarstring(#"debug_jump") == "<dev string:x38>") {
+            setdvar(#"debug_jump", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_4ca849f27dafd218") == "<unknown string>") {
-            setdvar(#"hash_4ca849f27dafd218", "<unknown string>");
+        if (getdvarstring(#"debug_hurt") == "<dev string:x38>") {
+            setdvar(#"debug_hurt", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_7ac06724b86d8e1f") == "<unknown string>") {
-            setdvar(#"hash_7ac06724b86d8e1f", "<unknown string>");
+        if (getdvarstring(#"hash_7ac06724b86d8e1f") == "<dev string:x38>") {
+            setdvar(#"hash_7ac06724b86d8e1f", "<dev string:x73>");
         }
-        if (getdvarstring(#"tag") == "<unknown string>") {
-            setdvar(#"tag", "<unknown string>");
+        if (getdvarstring(#"tag") == "<dev string:x38>") {
+            setdvar(#"tag", "<dev string:x38>");
         }
         for (i = 1; i <= level.animsound_hudlimit; i++) {
-            if (getdvarstring("<unknown string>" + i) == "<unknown string>") {
-                setdvar("<unknown string>" + i, "<unknown string>");
+            if (getdvarstring("<dev string:x9f>" + i) == "<dev string:x38>") {
+                setdvar("<dev string:x9f>" + i, "<dev string:x38>");
             }
         }
-        if (getdvarstring(#"hash_685827e90be8c03d") == "<unknown string>") {
-            setdvar(#"hash_685827e90be8c03d", "<unknown string>");
+        if (getdvarstring(#"hash_685827e90be8c03d") == "<dev string:x38>") {
+            setdvar(#"hash_685827e90be8c03d", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_67389e1a28a0f28a") == "<unknown string>") {
-            setdvar(#"hash_67389e1a28a0f28a", "<unknown string>");
+        if (getdvarstring(#"debug_depth") == "<dev string:x38>") {
+            setdvar(#"debug_depth", "<dev string:x38>");
         }
-        if (getdvarstring(#"hash_1a7527951f30d85d") == "<unknown string>") {
+        if (getdvarstring(#"hash_1a7527951f30d85d") == "<dev string:x38>") {
             setdvar(#"hash_1a7527951f30d85d", 0);
             setdvar(#"hash_457f0b340b899504", 0);
             setdvar(#"hash_5fb2bcff79d1e458", 0);
         }
-        if (getdvarstring(#"debug_dynamic_ai_spawning") == "<unknown string>") {
+        if (getdvarstring(#"debug_dynamic_ai_spawning") == "<dev string:x38>") {
             setdvar(#"debug_dynamic_ai_spawning", 0);
         }
         level.last_threat_debug = -23430;
-        if (getdvarstring(#"hash_3e6f543e092fe601") == "<unknown string>") {
-            setdvar(#"hash_3e6f543e092fe601", "<unknown string>");
+        if (getdvarstring(#"debug_threat") == "<dev string:x38>") {
+            setdvar(#"debug_threat", "<dev string:x93>");
         }
         waittillframeend();
-        if (getdvarstring(#"debug_character_count") == "<unknown string>") {
-            setdvar(#"debug_character_count", "<unknown string>");
+        if (getdvarstring(#"debug_character_count") == "<dev string:x38>") {
+            setdvar(#"debug_character_count", "<dev string:x73>");
         }
-        var_375b9d88 = getdvarstring(#"hash_3e63b96becc87615") == "<unknown string>";
+        var_375b9d88 = getdvarstring(#"hash_3e63b96becc87615") == "<dev string:x99>";
         for (;;) {
             if (getdvarint(#"hash_328d096ed229649d", 0) == 1) {
                 level thread function_f48a99b9();
             }
-            if (getdvarstring(#"hash_511119641864ba93") != "<unknown string>") {
-                thread viewtag("<unknown string>", getdvarstring(#"hash_511119641864ba93"));
+            if (getdvarstring(#"debug_tag") != "<dev string:x38>") {
+                thread viewtag("<dev string:x3c>", getdvarstring(#"debug_tag"));
                 if (getdvarint(#"hash_4f53ce2aad8845e2", 0) > 0) {
                     thread drawenttag(getdvarint(#"hash_4f53ce2aad8845e2", 0));
                 }
             }
-            if (getdvarstring(#"hash_3dbf8bc2b56584b4") == "<unknown string>") {
-                level thread function_d2ddc8bc();
+            if (getdvarstring(#"debug_goalradius") == "<dev string:x99>") {
+                level thread debug_goalradius();
             }
-            if (getdvarstring(#"hash_400262ff40d7af83") == "<unknown string>") {
+            if (getdvarstring(#"hash_400262ff40d7af83") == "<dev string:x99>") {
                 level thread function_3a215729();
             }
-            if (getdvarstring(#"debug_health") == "<unknown string>") {
+            if (getdvarstring(#"debug_health") == "<dev string:x99>") {
                 level thread debug_health();
             }
-            if (getdvarstring(#"hash_74ae4b4ffc749a52") == "<unknown string>") {
-                level thread function_feb182a2();
+            if (getdvarstring(#"debug_engagedist") == "<dev string:x99>") {
+                level thread debug_engagedist();
             }
-            if (getdvarstring(#"hash_46799eb73d1021e5") != "<unknown string>") {
-                thread viewtag("<unknown string>", getdvarstring(#"hash_46799eb73d1021e5"));
+            if (getdvarstring(#"hash_46799eb73d1021e5") != "<dev string:x38>") {
+                thread viewtag("<dev string:xa6>", getdvarstring(#"hash_46799eb73d1021e5"));
             }
             thread function_b03ecdf3();
-            if (getdvarstring(#"tag") != "<unknown string>") {
+            if (getdvarstring(#"tag") != "<dev string:x38>") {
                 thread debug_animsoundtagselected();
             }
             for (i = 1; i <= level.animsound_hudlimit; i++) {
-                if (getdvarstring("<unknown string>" + i) != "<unknown string>") {
+                if (getdvarstring("<dev string:x9f>" + i) != "<dev string:x38>") {
                     thread debug_animsoundtag(i);
                 }
             }
-            if (getdvarstring(#"hash_685827e90be8c03d") != "<unknown string>") {
+            if (getdvarstring(#"hash_685827e90be8c03d") != "<dev string:x38>") {
                 thread function_119a2b9f();
             }
-            if (getdvarstring(#"debug_nuke") != "<unknown string>") {
+            if (getdvarstring(#"debug_nuke") != "<dev string:x73>") {
                 thread debug_nuke();
             }
-            if (getdvarstring(#"hash_69129788c0aed850") == "<unknown string>") {
-                setdvar(#"hash_69129788c0aed850", "<unknown string>");
+            if (getdvarstring(#"debug_misstime") == "<dev string:x99>") {
+                setdvar(#"debug_misstime", "<dev string:xb1>");
                 array::thread_all(getaiarray(), &debugmisstime);
-            } else if (getdvarstring(#"hash_69129788c0aed850") == "<unknown string>") {
-                setdvar(#"hash_69129788c0aed850", "<unknown string>");
+            } else if (getdvarstring(#"debug_misstime") == "<dev string:x73>") {
+                setdvar(#"debug_misstime", "<dev string:xb1>");
                 array::thread_all(getaiarray(), &debugmisstimeoff);
             }
-            if (getdvarstring(#"hash_14cb1b9851034a23") == "<unknown string>") {
+            if (getdvarstring(#"hash_14cb1b9851034a23") == "<dev string:x99>") {
                 thread deathspawnerpreview();
             }
-            if (getdvarstring(#"hash_4ca849f27dafd218") == "<unknown string>") {
-                setdvar(#"hash_4ca849f27dafd218", "<unknown string>");
+            if (getdvarstring(#"debug_hurt") == "<dev string:x99>") {
+                setdvar(#"debug_hurt", "<dev string:x73>");
                 players = getplayers();
                 for (i = 0; i < players.size; i++) {
                     players[i] dodamage(50, (324234, 3423423, 2323));
                 }
             }
-            if (getdvarstring(#"hash_4ca849f27dafd218") == "<unknown string>") {
-                setdvar(#"hash_4ca849f27dafd218", "<unknown string>");
+            if (getdvarstring(#"debug_hurt") == "<dev string:x99>") {
+                setdvar(#"debug_hurt", "<dev string:x73>");
                 players = getplayers();
                 for (i = 0; i < players.size; i++) {
                     players[i] dodamage(50, (324234, 3423423, 2323));
                 }
             }
-            if (getdvarstring(#"hash_67389e1a28a0f28a") == "<unknown string>") {
+            if (getdvarstring(#"debug_depth") == "<dev string:x99>") {
                 thread function_fdfcc52();
             }
-            if (getdvarstring(#"hash_3e6f543e092fe601") != "<unknown string>" && getdvarstring(#"hash_3e6f543e092fe601") != "<unknown string>") {
+            if (getdvarstring(#"debug_threat") != "<dev string:x93>" && getdvarstring(#"debug_threat") != "<dev string:x38>") {
                 debugthreat();
             }
-            level.var_979b0066 = getdvarstring(#"hash_1828e38c6e01052f") == "<unknown string>";
-            if (!var_375b9d88 && getdvarstring(#"hash_3e63b96becc87615") == "<unknown string>") {
+            level.var_979b0066 = getdvarstring(#"hash_1828e38c6e01052f") == "<dev string:x99>";
+            if (!var_375b9d88 && getdvarstring(#"hash_3e63b96becc87615") == "<dev string:x99>") {
                 var_375b9d88 = 1;
             }
-            if (var_375b9d88 && getdvarstring(#"hash_3e63b96becc87615") == "<unknown string>") {
+            if (var_375b9d88 && getdvarstring(#"hash_3e63b96becc87615") == "<dev string:x73>") {
                 level.animation.defaultexception = &util::void;
                 level.animation notify(#"hash_1c96242baab724dd");
                 var_375b9d88 = 0;
@@ -555,7 +554,7 @@
     // Size: 0x1ae
     function hatmodel() {
         for (;;) {
-            if (getdvarstring(#"hash_612c3c60b889819f") == "<unknown string>") {
+            if (getdvarstring(#"debug_hatmodel") == "<dev string:x73>") {
                 return;
             }
             var_3eea2550 = [];
@@ -577,14 +576,14 @@
                 }
             }
             if (var_3eea2550.size) {
-                println("<unknown string>");
-                println("<unknown string>");
+                println("<dev string:xba>");
+                println("<dev string:xbf>");
                 for (i = 0; i < var_3eea2550.size; i++) {
-                    println("<unknown string>", var_3eea2550[i]);
+                    println("<dev string:x114>", var_3eea2550[i]);
                 }
-                println("<unknown string>");
+                println("<dev string:x123>");
             }
-            wait(15);
+            wait 15;
         }
     }
 
@@ -595,37 +594,37 @@
     function debug_nuke() {
         player = util::gethostplayer();
         dvar = getdvarstring(#"debug_nuke");
-        if (dvar == "<unknown string>") {
+        if (dvar == "<dev string:x99>") {
             ai = getaiteamarray(util::get_enemy_team(player.team), #"team3");
             for (i = 0; i < ai.size; i++) {
                 ignore = 0;
                 classname = ai[i].classname;
-                if (isdefined(classname) && (issubstr(classname, "<unknown string>") || issubstr(classname, "<unknown string>") || issubstr(classname, "<unknown string>"))) {
+                if (isdefined(classname) && (issubstr(classname, "<dev string:x158>") || issubstr(classname, "<dev string:x160>") || issubstr(classname, "<dev string:x168>"))) {
                     ignore = 1;
                 }
                 if (!ignore) {
                     ai[i] dodamage(ai[i].health, (0, 0, 0), player);
                 }
             }
-        } else if (dvar == "<unknown string>") {
+        } else if (dvar == "<dev string:x3c>") {
             ai = getaiteamarray(util::get_enemy_team(player.team));
             for (i = 0; i < ai.size; i++) {
                 ai[i] dodamage(ai[i].health, (0, 0, 0), player);
             }
-        } else if (dvar == "<unknown string>") {
-            ai = getaispeciesarray(util::get_enemy_team(player.team), "<unknown string>");
+        } else if (dvar == "<dev string:x175>") {
+            ai = getaispeciesarray(util::get_enemy_team(player.team), "<dev string:x17d>");
             for (i = 0; i < ai.size; i++) {
                 ai[i] dodamage(ai[i].health, (0, 0, 0), player);
             }
         }
-        setdvar(#"debug_nuke", "<unknown string>");
+        setdvar(#"debug_nuke", "<dev string:x73>");
     }
 
     // Namespace debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x820ccf8f, Offset: 0x2a28
     // Size: 0x8
-    function function_36733cf6() {
+    function debug_misstime() {
         
     }
 
@@ -651,10 +650,10 @@
             for (p = 0; p < array.size; p++) {
                 ent = array[p];
                 if (isdefined(ent.truecount)) {
-                    print3d(ent.origin, i + "<unknown string>" + ent.truecount, (0, 0.8, 0.6), 5);
+                    print3d(ent.origin, i + "<dev string:x184>" + ent.truecount, (0, 0.8, 0.6), 5);
                     continue;
                 }
-                print3d(ent.origin, i + "<unknown string>" + "<unknown string>", (0, 0.8, 0.6), 5);
+                print3d(ent.origin, i + "<dev string:x184>" + "<dev string:x18a>", (0, 0.8, 0.6), 5);
             }
         }
     }
@@ -665,7 +664,7 @@
     // Size: 0x8a
     function getchains() {
         var_a3d6bdf3 = [];
-        var_a3d6bdf3 = getentarray("<unknown string>", "<unknown string>");
+        var_a3d6bdf3 = getentarray("<dev string:x18f>", "<dev string:x19f>");
         array = [];
         for (i = 0; i < var_a3d6bdf3.size; i++) {
             array[i] = var_a3d6bdf3[i] getchain();
@@ -685,7 +684,7 @@
             if (!isdefined(ent) || !isdefined(ent.target)) {
                 break;
             }
-            ent = getent(ent.target, "<unknown string>");
+            ent = getent(ent.target, "<dev string:x1b4>");
             if (isdefined(ent) && ent == array[0]) {
                 array[array.size] = ent;
                 break;
@@ -727,8 +726,8 @@
     // Checksum 0x32ae73bf, Offset: 0x2eb8
     // Size: 0x8c
     function function_fdfcc52() {
-        close = getdvarint(#"hash_6dc1aa818420a8b5", 0);
-        far = getdvarint(#"hash_29dc7f9d45c3fc64", 1500);
+        close = getdvarint(#"depth_close", 0);
+        far = getdvarint(#"depth_far", 1500);
         setexpfog(close, far, 1, 1, 1, 0);
     }
 
@@ -747,7 +746,7 @@
     // Size: 0x15c
     function debugthreatcalc() {
         ai = getaiarray();
-        entnum = getdvarstring(#"hash_3e6f543e092fe601");
+        entnum = getdvarstring(#"debug_threat");
         entity = undefined;
         players = getplayers();
         if (entnum == 0) {
@@ -791,28 +790,28 @@
             }
         }
         if (entity.ignoreme || threat < -900000) {
-            threat = "<unknown string>";
+            threat = "<dev string:x1c2>";
         }
         if (self.ignoreme || var_fa7d5fc3 < -900000) {
-            var_fa7d5fc3 = "<unknown string>";
+            var_fa7d5fc3 = "<dev string:x1c2>";
         }
         players = getplayers();
         col = (1, 0.5, 0.2);
         col2 = (0.2, 0.5, 1);
         pacifist = self != players[0] && self.pacifist;
         for (i = 0; i <= 20; i++) {
-            print3d(self.origin + (0, 0, 65), "<unknown string>", col, 3);
+            print3d(self.origin + (0, 0, 65), "<dev string:x1cc>", col, 3);
             print3d(self.origin + (0, 0, 50), threat, col, 5);
             if (isdefined(var_d77f9c98)) {
                 print3d(self.origin + (0, 0, 35), var_d77f9c98, col, 2);
             }
-            print3d(self.origin + (0, 0, 15), "<unknown string>", col2, 3);
+            print3d(self.origin + (0, 0, 15), "<dev string:x1da>", col2, 3);
             print3d(self.origin + (0, 0, 0), var_fa7d5fc3, col2, 5);
             if (isdefined(mygroup)) {
                 print3d(self.origin + (0, 0, -15), mygroup, col2, 2);
             }
             if (pacifist) {
-                print3d(self.origin + (0, 0, 25), "<unknown string>", col2, 5);
+                print3d(self.origin + (0, 0, 25), "<dev string:x1e8>", col2, 5);
             }
             waitframe(1);
         }
@@ -865,8 +864,8 @@
         for (i = 0; i < animes.size; i++) {
             anime = animes[i];
             soundalias = level.scr_animsound[animname][anime];
-            level.animsound_aliases[animname][anime]["<unknown string>" + anime][#"soundalias"] = soundalias;
-            level.animsound_aliases[animname][anime]["<unknown string>" + anime][#"hash_3bcdf8e8541b5d4a"] = 1;
+            level.animsound_aliases[animname][anime]["<dev string:x1f8>" + anime][#"soundalias"] = soundalias;
+            level.animsound_aliases[animname][anime]["<dev string:x1f8>" + anime][#"hash_3bcdf8e8541b5d4a"] = 1;
         }
     }
 
@@ -876,8 +875,8 @@
     // Size: 0xba
     function function_90b2a0b0(x, y, msg) {
         var_5e39fc46 = newdebughudelem();
-        var_5e39fc46.alignx = "<unknown string>";
-        var_5e39fc46.aligny = "<unknown string>";
+        var_5e39fc46.alignx = "<dev string:x1fd>";
+        var_5e39fc46.aligny = "<dev string:x205>";
         var_5e39fc46.x = x;
         var_5e39fc46.y = y;
         var_5e39fc46.alpha = 1;
@@ -892,55 +891,55 @@
     // Checksum 0xd3e20562, Offset: 0x3870
     // Size: 0x8b4
     function function_b03ecdf3() {
-        enabled = getdvarstring(#"hash_7ac06724b86d8e1f") == "<unknown string>";
+        enabled = getdvarstring(#"hash_7ac06724b86d8e1f") == "<dev string:x99>";
         if (!isdefined(level.var_100db28b)) {
             if (!enabled) {
                 return;
             }
             level.var_d7c96297 = 0;
-            level.var_7e2e9d77 = "<unknown string>";
+            level.var_7e2e9d77 = "<dev string:x20f>";
             level.var_100db28b = [];
             level.var_eef171c = [];
             level.var_c22fdb8f = [];
             level.var_e8a7658 = [];
             level.var_969ba98a = 0;
             level.var_9c80d401 = 0;
-            level.var_fe79cec = function_90b2a0b0(-30, 180, "<unknown string>");
-            level.var_77ea7dca = function_90b2a0b0(100, 180, "<unknown string>");
-            function_90b2a0b0(10, 190, "<unknown string>");
-            function_90b2a0b0(-30, 190, "<unknown string>");
-            function_90b2a0b0(-30, 160, "<unknown string>");
-            function_90b2a0b0(-30, 150, "<unknown string>");
-            function_90b2a0b0(-30, 140, "<unknown string>");
-            level.var_bf8f879e = function_90b2a0b0(-30, 170, "<unknown string>");
+            level.var_fe79cec = function_90b2a0b0(-30, 180, "<dev string:x217>");
+            level.var_77ea7dca = function_90b2a0b0(100, 180, "<dev string:x222>");
+            function_90b2a0b0(10, 190, "<dev string:x22c>");
+            function_90b2a0b0(-30, 190, "<dev string:x242>");
+            function_90b2a0b0(-30, 160, "<dev string:x24d>");
+            function_90b2a0b0(-30, 150, "<dev string:x270>");
+            function_90b2a0b0(-30, 140, "<dev string:x287>");
+            level.var_bf8f879e = function_90b2a0b0(-30, 170, "<dev string:x2ba>");
             level.var_bf8f879e.alpha = 0;
             for (i = 0; i < level.animsound_hudlimit; i++) {
                 var_5e39fc46 = newdebughudelem();
-                var_5e39fc46.alignx = "<unknown string>";
-                var_5e39fc46.aligny = "<unknown string>";
+                var_5e39fc46.alignx = "<dev string:x1fd>";
+                var_5e39fc46.aligny = "<dev string:x205>";
                 var_5e39fc46.x = 10;
                 var_5e39fc46.y = 200 + i * 10;
                 var_5e39fc46.alpha = 1;
                 var_5e39fc46.fontscale = 1;
-                var_5e39fc46.label = "<unknown string>";
+                var_5e39fc46.label = "<dev string:x38>";
                 level.var_100db28b[level.var_100db28b.size] = var_5e39fc46;
                 var_5e39fc46 = newdebughudelem();
-                var_5e39fc46.alignx = "<unknown string>";
-                var_5e39fc46.aligny = "<unknown string>";
+                var_5e39fc46.alignx = "<dev string:x2c6>";
+                var_5e39fc46.aligny = "<dev string:x205>";
                 var_5e39fc46.x = -10;
                 var_5e39fc46.y = 200 + i * 10;
                 var_5e39fc46.alpha = 1;
                 var_5e39fc46.fontscale = 1;
-                var_5e39fc46.label = "<unknown string>";
+                var_5e39fc46.label = "<dev string:x38>";
                 level.var_eef171c[level.var_eef171c.size] = var_5e39fc46;
                 var_5e39fc46 = newdebughudelem();
-                var_5e39fc46.alignx = "<unknown string>";
-                var_5e39fc46.aligny = "<unknown string>";
+                var_5e39fc46.alignx = "<dev string:x2c6>";
+                var_5e39fc46.aligny = "<dev string:x205>";
                 var_5e39fc46.x = 210;
                 var_5e39fc46.y = 200 + i * 10;
                 var_5e39fc46.alpha = 1;
                 var_5e39fc46.fontscale = 1;
-                var_5e39fc46.label = "<unknown string>";
+                var_5e39fc46.label = "<dev string:x38>";
                 level.var_c22fdb8f[level.var_c22fdb8f.size] = var_5e39fc46;
             }
             level.var_100db28b[0].color = (1, 1, 0);
@@ -1002,9 +1001,9 @@
         var_86c85a76 = isdefined(level.animsound_tagged);
         for (i = 0; i < level.var_b19c1dfd.size; i++) {
             var_d357ff0e = level.var_b19c1dfd[i];
-            msg = "<unknown string>";
+            msg = "<dev string:x2cf>";
             if (level.var_969ba98a) {
-                msg = "<unknown string>";
+                msg = "<dev string:x2d4>";
             }
             print3d(var_d357ff0e.origin + (0, 0, 40), msg + var_d357ff0e.animsounds.size, var_d357ff0e.var_cdbf6838, 1, 1);
         }
@@ -1020,13 +1019,13 @@
     function function_21619947() {
         guy = level.animsound_tagged;
         animsounds = guy.animsounds;
-        animname = "<unknown string>";
+        animname = "<dev string:x2dd>";
         if (isdefined(guy.animname)) {
             animname = guy.animname;
         }
-        level.var_fe79cec.label = "<unknown string>" + animname;
+        level.var_fe79cec.label = "<dev string:x217>" + animname;
         players = getplayers();
-        if (players[0] buttonpressed("<unknown string>")) {
+        if (players[0] buttonpressed("<dev string:x2e8>")) {
             if (!level.var_9c80d401) {
                 level.var_969ba98a = !level.var_969ba98a;
                 level.var_9c80d401 = 1;
@@ -1034,28 +1033,28 @@
         } else {
             level.var_9c80d401 = 0;
         }
-        if (players[0] buttonpressed("<unknown string>")) {
-            if (level.var_7e2e9d77 != "<unknown string>") {
+        if (players[0] buttonpressed("<dev string:x2ef>")) {
+            if (level.var_7e2e9d77 != "<dev string:x2fa>") {
                 level.var_d7c96297--;
             }
-            level.var_7e2e9d77 = "<unknown string>";
-        } else if (players[0] buttonpressed("<unknown string>")) {
-            if (level.var_7e2e9d77 != "<unknown string>") {
+            level.var_7e2e9d77 = "<dev string:x2fa>";
+        } else if (players[0] buttonpressed("<dev string:x300>")) {
+            if (level.var_7e2e9d77 != "<dev string:x30d>") {
                 level.var_d7c96297++;
             }
-            level.var_7e2e9d77 = "<unknown string>";
+            level.var_7e2e9d77 = "<dev string:x30d>";
         } else {
-            level.var_7e2e9d77 = "<unknown string>";
+            level.var_7e2e9d77 = "<dev string:x20f>";
         }
         for (i = 0; i < level.animsound_hudlimit; i++) {
             var_5e39fc46 = level.var_100db28b[i];
-            var_5e39fc46.label = "<unknown string>";
+            var_5e39fc46.label = "<dev string:x38>";
             var_5e39fc46.color = (1, 1, 1);
             var_5e39fc46 = level.var_eef171c[i];
-            var_5e39fc46.label = "<unknown string>";
+            var_5e39fc46.label = "<dev string:x38>";
             var_5e39fc46.color = (1, 1, 1);
             var_5e39fc46 = level.var_c22fdb8f[i];
-            var_5e39fc46.label = "<unknown string>";
+            var_5e39fc46.label = "<dev string:x38>";
             var_5e39fc46.color = (1, 1, 1);
         }
         keys = getarraykeys(animsounds);
@@ -1083,7 +1082,7 @@
                 level.var_d7c96297 = highest;
             }
         }
-        level.var_77ea7dca.label = "<unknown string>" + animsounds[level.var_d7c96297].anime;
+        level.var_77ea7dca.label = "<dev string:x222>" + animsounds[level.var_d7c96297].anime;
         level.var_100db28b[level.var_d7c96297].color = (1, 1, 0);
         level.var_eef171c[level.var_d7c96297].color = (1, 1, 0);
         level.var_c22fdb8f[level.var_d7c96297].color = (1, 1, 0);
@@ -1093,7 +1092,7 @@
             var_d357ff0e = animsounds[key];
             var_5e39fc46 = level.var_100db28b[key];
             soundalias = get_alias_from_stored(var_d357ff0e);
-            var_5e39fc46.label = key + 1 + "<unknown string>" + var_d357ff0e.notetrack;
+            var_5e39fc46.label = key + 1 + "<dev string:x315>" + var_d357ff0e.notetrack;
             var_5e39fc46 = level.var_eef171c[key];
             var_5e39fc46.label = int((time - var_d357ff0e.end_time - 60000) * 0.001);
             if (isdefined(soundalias)) {
@@ -1105,7 +1104,7 @@
             }
         }
         players = getplayers();
-        if (players[0] buttonpressed("<unknown string>")) {
+        if (players[0] buttonpressed("<dev string:x31b>")) {
             var_d357ff0e = animsounds[level.var_d7c96297];
             soundalias = get_alias_from_stored(var_d357ff0e);
             if (!isdefined(soundalias)) {
@@ -1161,13 +1160,13 @@
     // Checksum 0x3a7c762e, Offset: 0x48f0
     // Size: 0xbc
     function debug_animsoundtag(var_ba7744bf) {
-        tag = getdvarstring("<unknown string>" + var_ba7744bf);
-        if (tag == "<unknown string>") {
-            iprintlnbold("<unknown string>");
+        tag = getdvarstring("<dev string:x9f>" + var_ba7744bf);
+        if (tag == "<dev string:x38>") {
+            iprintlnbold("<dev string:x322>");
             return;
         }
         tag_sound(tag, var_ba7744bf - 1);
-        setdvar(#"tag" + var_ba7744bf, "<unknown string>");
+        setdvar(#"tag" + var_ba7744bf, "<dev string:x38>");
     }
 
     // Namespace debug/debug
@@ -1176,12 +1175,12 @@
     // Size: 0xac
     function debug_animsoundtagselected() {
         tag = getdvarstring(#"tag");
-        if (tag == "<unknown string>") {
-            iprintlnbold("<unknown string>");
+        if (tag == "<dev string:x38>") {
+            iprintlnbold("<dev string:x34f>");
             return;
         }
         tag_sound(tag, level.var_d7c96297);
-        setdvar(#"tag", "<unknown string>");
+        setdvar(#"tag", "<dev string:x38>");
     }
 
     // Namespace debug/debug
@@ -1209,16 +1208,16 @@
     // Checksum 0x180c421f, Offset: 0x4bc8
     // Size: 0x10c
     function function_119a2b9f() {
-        filename = "<unknown string>" + level.script + "<unknown string>";
-        file = openfile(filename, "<unknown string>");
+        filename = "<dev string:x37b>" + level.script + "<dev string:x388>";
+        file = openfile(filename, "<dev string:x396>");
         if (file == -1) {
-            iprintlnbold("<unknown string>" + filename + "<unknown string>");
+            iprintlnbold("<dev string:x39f>" + filename + "<dev string:x3b5>");
             return;
         }
-        iprintlnbold("<unknown string>" + filename);
+        iprintlnbold("<dev string:x3d9>" + filename);
         function_eaaa729a(file);
         saved = closefile(file);
-        setdvar(#"hash_685827e90be8c03d", "<unknown string>");
+        setdvar(#"hash_685827e90be8c03d", "<dev string:x38>");
     }
 
     // Namespace debug/debug
@@ -1226,17 +1225,17 @@
     // Checksum 0x4fec750a, Offset: 0x4ce0
     // Size: 0x454
     function function_eaaa729a(file) {
-        tab = "<unknown string>";
-        fprintln(file, "<unknown string>");
-        fprintln(file, "<unknown string>");
-        fprintln(file, "<unknown string>");
-        fprintln(file, tab + "<unknown string>");
-        fprintln(file, tab + "<unknown string>");
-        fprintln(file, "<unknown string>");
-        fprintln(file, "<unknown string>");
-        fprintln(file, "<unknown string>");
-        fprintln(file, "<unknown string>");
-        fprintln(file, tab + "<unknown string>");
+        tab = "<dev string:x3e6>";
+        fprintln(file, "<dev string:x3ee>");
+        fprintln(file, "<dev string:x409>");
+        fprintln(file, "<dev string:x413>");
+        fprintln(file, tab + "<dev string:x418>");
+        fprintln(file, tab + "<dev string:x49a>");
+        fprintln(file, "<dev string:x4b7>");
+        fprintln(file, "<dev string:x38>");
+        fprintln(file, "<dev string:x4bc>");
+        fprintln(file, "<dev string:x413>");
+        fprintln(file, tab + "<dev string:x4d1>");
         animnames = getarraykeys(level.animsound_aliases);
         for (i = 0; i < animnames.size; i++) {
             animes = getarraykeys(level.animsound_aliases[animnames[i]]);
@@ -1249,16 +1248,16 @@
                         continue;
                     }
                     alias = level.animsound_aliases[animnames[i]][anime][notetrack][#"soundalias"];
-                    if (notetrack == "<unknown string>" + anime) {
-                        fprintln(file, tab + "<unknown string>" + tostr(animnames[i]) + "<unknown string>" + tostr(anime) + "<unknown string>" + tostr(alias) + "<unknown string>");
+                    if (notetrack == "<dev string:x1f8>" + anime) {
+                        fprintln(file, tab + "<dev string:x4e8>" + tostr(animnames[i]) + "<dev string:x502>" + tostr(anime) + "<dev string:x502>" + tostr(alias) + "<dev string:x508>");
                     } else {
-                        fprintln(file, tab + "<unknown string>" + tostr(animnames[i]) + "<unknown string>" + tostr(anime) + "<unknown string>" + tostr(notetrack) + "<unknown string>" + tostr(alias) + "<unknown string>");
+                        fprintln(file, tab + "<dev string:x510>" + tostr(animnames[i]) + "<dev string:x502>" + tostr(anime) + "<dev string:x502>" + tostr(notetrack) + "<dev string:x502>" + tostr(alias) + "<dev string:x508>");
                     }
-                    println("<unknown string>" + alias + "<unknown string>" + notetrack);
+                    println("<dev string:x52c>" + alias + "<dev string:x540>" + notetrack);
                 }
             }
         }
-        fprintln(file, "<unknown string>");
+        fprintln(file, "<dev string:x4b7>");
     }
 
     // Namespace debug/debug
@@ -1271,26 +1270,26 @@
             return;
         }
         players = getplayers();
-        filename = "<unknown string>" + level.var_3a8f95b4 + "<unknown string>" + players[0].playername + "<unknown string>";
+        filename = "<dev string:x556>" + level.var_3a8f95b4 + "<dev string:x56f>" + players[0].playername + "<dev string:x574>";
         /#
-            file = openfile(filename, "<unknown string>");
+            file = openfile(filename, "<dev string:x57c>");
             if (file == -1) {
-                iprintlnbold("<unknown string>" + filename + "<unknown string>");
+                iprintlnbold("<dev string:x39f>" + filename + "<dev string:x586>");
                 return;
             }
             if (isdefined(level.var_c2ccaeac)) {
-                fprintln(file, "<unknown string>" + level.var_c2ccaeac + "<unknown string>");
+                fprintln(file, "<dev string:x5c7>" + level.var_c2ccaeac + "<dev string:x5d4>");
             } else {
-                fprintln(file, "<unknown string>");
+                fprintln(file, "<dev string:x5f7>");
             }
             if (level.var_31c87253.size <= 0) {
-                fprintln(file, "<unknown string>");
+                fprintln(file, "<dev string:x62b>");
             }
             foreach (var_1f53424f in level.var_31c87253) {
-                fprintln(file, var_1f53424f.var_8c76324 + "<unknown string>" + var_1f53424f.icount + "<unknown string>" + var_1f53424f.var_d8daf812 + "<unknown string>" + var_1f53424f.var_23ba749);
+                fprintln(file, var_1f53424f.var_8c76324 + "<dev string:x64f>" + var_1f53424f.icount + "<dev string:x64f>" + var_1f53424f.var_d8daf812 + "<dev string:x64f>" + var_1f53424f.var_23ba749);
             }
-            fprintln(file, "<unknown string>");
-            iprintlnbold("<unknown string>" + filename);
+            fprintln(file, "<dev string:x38>");
+            iprintlnbold("<dev string:x654>" + filename);
             saved = closefile(file);
         #/
         level.var_31c87253 = [];
@@ -1301,16 +1300,16 @@
     // Checksum 0xc4bd0071, Offset: 0x5448
     // Size: 0x9e
     function tostr(str) {
-        newstr = "<unknown string>";
+        newstr = "<dev string:x66f>";
         for (i = 0; i < str.size; i++) {
-            if (str[i] == "<unknown string>") {
-                newstr += "<unknown string>";
-                newstr += "<unknown string>";
+            if (str[i] == "<dev string:x66f>") {
+                newstr += "<dev string:x674>";
+                newstr += "<dev string:x66f>";
                 continue;
             }
             newstr += str[i];
         }
-        newstr += "<unknown string>";
+        newstr += "<dev string:x66f>";
         return newstr;
     }
 
@@ -1339,29 +1338,29 @@
         var_1071292.x = 10;
         var_1071292.y = 300;
         var_1071292.alpha = 0;
-        var_1071292.alignx = "<unknown string>";
+        var_1071292.alignx = "<dev string:x1fd>";
         var_1071292.fontscale = 1.2;
         var_1071292 settext(#"hash_59d12e465ccbab9a");
         x_pos = var_1071292.x + 50;
-        var_2a7875e1 = newdebughudelem();
-        var_2a7875e1.x = x_pos;
-        var_2a7875e1.y = 300;
-        var_2a7875e1.alpha = 0;
-        var_2a7875e1.alignx = "<unknown string>";
-        var_2a7875e1.fontscale = 1.2;
-        var_2a7875e1 setvalue(0);
-        var_8ef03ed3 = newdebughudelem();
-        var_8ef03ed3.x = 10;
-        var_8ef03ed3.y = 300;
-        var_8ef03ed3.alpha = 0;
-        var_8ef03ed3.alignx = "<unknown string>";
-        var_8ef03ed3.fontscale = 1.2;
-        var_8ef03ed3 setvalue(0);
+        hud_x = newdebughudelem();
+        hud_x.x = x_pos;
+        hud_x.y = 300;
+        hud_x.alpha = 0;
+        hud_x.alignx = "<dev string:x1fd>";
+        hud_x.fontscale = 1.2;
+        hud_x setvalue(0);
+        hud_y = newdebughudelem();
+        hud_y.x = 10;
+        hud_y.y = 300;
+        hud_y.alpha = 0;
+        hud_y.alignx = "<dev string:x1fd>";
+        hud_y.fontscale = 1.2;
+        hud_y setvalue(0);
         var_7125033d = newdebughudelem();
         var_7125033d.x = 10;
         var_7125033d.y = 300;
         var_7125033d.alpha = 0;
-        var_7125033d.alignx = "<unknown string>";
+        var_7125033d.alignx = "<dev string:x1fd>";
         var_7125033d.fontscale = 1.2;
         var_7125033d setvalue(0);
         setdvar(#"debug_show_viewpos", 0);
@@ -1369,26 +1368,26 @@
         while (true) {
             if (getdvarint(#"debug_show_viewpos", 0) > 0) {
                 var_1071292.alpha = 1;
-                var_2a7875e1.alpha = 1;
-                var_8ef03ed3.alpha = 1;
+                hud_x.alpha = 1;
+                hud_y.alpha = 1;
                 var_7125033d.alpha = 1;
                 x = players[0].origin[0];
                 y = players[0].origin[1];
                 z = players[0].origin[2];
                 var_41568b91 = (2 + function_d2d39ee5(x)) * 8 + 10;
                 var_b2c0ee64 = (2 + function_d2d39ee5(y)) * 8 + 10;
-                var_8ef03ed3.x = x_pos + var_41568b91;
+                hud_y.x = x_pos + var_41568b91;
                 var_7125033d.x = x_pos + var_41568b91 + var_b2c0ee64;
-                var_2a7875e1 setvalue(function_6334846f(x, 100));
-                var_8ef03ed3 setvalue(function_6334846f(y, 100));
+                hud_x setvalue(function_6334846f(x, 100));
+                hud_y setvalue(function_6334846f(y, 100));
                 var_7125033d setvalue(function_6334846f(z, 100));
             } else {
                 var_1071292.alpha = 0;
-                var_2a7875e1.alpha = 0;
-                var_8ef03ed3.alpha = 0;
+                hud_x.alpha = 0;
+                hud_y.alpha = 0;
                 var_7125033d.alpha = 0;
             }
-            wait(0.5);
+            wait 0.5;
         }
     }
 
@@ -1442,7 +1441,7 @@
                 level notify(#"kill_all_engage_dist_debug");
                 laststate = currentstate;
             }
-            wait(0.3);
+            wait 0.3;
         }
     }
 
@@ -1463,15 +1462,15 @@
     // Size: 0x32a
     function engagement_distance_debug_init(player) {
         level.realtimeengagedist = newdebughudelem(player);
-        level.realtimeengagedist.alignx = "<unknown string>";
+        level.realtimeengagedist.alignx = "<dev string:x1fd>";
         level.realtimeengagedist.fontscale = 1.5;
         level.realtimeengagedist.x = -50;
         level.realtimeengagedist.y = 250;
         level.realtimeengagedist.color = (1, 1, 1);
-        level.realtimeengagedist settext("<unknown string>");
+        level.realtimeengagedist settext("<dev string:x679>");
         xpos = 157;
         level.realtimeengagedist_value = newdebughudelem(player);
-        level.realtimeengagedist_value.alignx = "<unknown string>";
+        level.realtimeengagedist_value.alignx = "<dev string:x1fd>";
         level.realtimeengagedist_value.fontscale = 1.5;
         level.realtimeengagedist_value.x = xpos;
         level.realtimeengagedist_value.y = 250;
@@ -1479,15 +1478,15 @@
         level.realtimeengagedist_value setvalue(0);
         xpos += 37;
         level.realtimeengagedist_middle = newdebughudelem(player);
-        level.realtimeengagedist_middle.alignx = "<unknown string>";
+        level.realtimeengagedist_middle.alignx = "<dev string:x1fd>";
         level.realtimeengagedist_middle.fontscale = 1.5;
         level.realtimeengagedist_middle.x = xpos;
         level.realtimeengagedist_middle.y = 250;
         level.realtimeengagedist_middle.color = (1, 1, 1);
-        level.realtimeengagedist_middle settext("<unknown string>");
+        level.realtimeengagedist_middle settext("<dev string:x69a>");
         xpos += 105;
         level.realtimeengagedist_offvalue = newdebughudelem(player);
-        level.realtimeengagedist_offvalue.alignx = "<unknown string>";
+        level.realtimeengagedist_offvalue.alignx = "<dev string:x1fd>";
         level.realtimeengagedist_offvalue.fontscale = 1.5;
         level.realtimeengagedist_offvalue.x = xpos;
         level.realtimeengagedist_offvalue.y = 250;
@@ -1548,11 +1547,11 @@
         genericsniper.engagedistoptimal = 2000;
         genericsniper.engagedistmulligan = 500;
         genericsniper.engagedistmax = 3000;
-        engage_dists_add("<unknown string>", genericpistol);
-        engage_dists_add("<unknown string>", genericsmg);
-        engage_dists_add("<unknown string>", shotty);
-        engage_dists_add("<unknown string>", generichmg);
-        engage_dists_add("<unknown string>", genericriflesa);
+        engage_dists_add("<dev string:x6b4>", genericpistol);
+        engage_dists_add("<dev string:x6be>", genericsmg);
+        engage_dists_add("<dev string:x6c5>", shotty);
+        engage_dists_add("<dev string:x6cf>", generichmg);
+        engage_dists_add("<dev string:x6d5>", genericriflesa);
         level thread engage_dists_watcher();
     }
 
@@ -1609,7 +1608,7 @@
         level endon(#"kill_all_engage_dist_debug", #"kill_realtime_engagement_distance_debug");
         player = function_1261f881();
         hudobjarray = engagement_distance_debug_init(player);
-        level thread engage_dist_debug_hud_destroy(hudobjarray, "<unknown string>");
+        level thread engage_dist_debug_hud_destroy(hudobjarray, "<dev string:x6de>");
         level.debugrtengagedistcolor = (0, 1, 0);
         while (true) {
             lasttracepos = (0, 0, 0);
@@ -1624,7 +1623,7 @@
                 lasttracepos = tracepoint;
                 if (!isdefined(level.weaponengagedistvalues)) {
                     hudobj_changecolor(hudobjarray, (1, 1, 1));
-                    hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                    hudobjarray engagedist_hud_changetext("<dev string:x6fc>", tracedist);
                 } else {
                     engagedistmin = level.weaponengagedistvalues.engagedistmin;
                     engagedistoptimal = level.weaponengagedistvalues.engagedistoptimal;
@@ -1632,18 +1631,18 @@
                     engagedistmax = level.weaponengagedistvalues.engagedistmax;
                     if (tracedist >= engagedistmin && tracedist <= engagedistmax) {
                         if (tracedist >= engagedistoptimal - engagedistmulligan && tracedist <= engagedistoptimal + engagedistmulligan) {
-                            hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                            hudobjarray engagedist_hud_changetext("<dev string:x706>", tracedist);
                             hudobj_changecolor(hudobjarray, (0, 1, 0));
                         } else {
-                            hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                            hudobjarray engagedist_hud_changetext("<dev string:x711>", tracedist);
                             hudobj_changecolor(hudobjarray, (1, 1, 0));
                         }
                     } else if (tracedist < engagedistmin) {
                         hudobj_changecolor(hudobjarray, (1, 0, 0));
-                        hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                        hudobjarray engagedist_hud_changetext("<dev string:x717>", tracedist);
                     } else if (tracedist > engagedistmax) {
                         hudobj_changecolor(hudobjarray, (1, 0, 0));
-                        hudobjarray engagedist_hud_changetext("<unknown string>", tracedist);
+                        hudobjarray engagedist_hud_changetext("<dev string:x720>", tracedist);
                     }
                 }
             }
@@ -1658,7 +1657,7 @@
     // Checksum 0xc68db50f, Offset: 0x6898
     // Size: 0x78
     function hudobj_changecolor(hudobjarray, newcolor) {
-                for (i = 0; i < hudobjarray.size; i++) {
+        for (i = 0; i < hudobjarray.size; i++) {
             hudobj = hudobjarray[i];
             if (hudobj.color != newcolor) {
                 hudobj.color = newcolor;
@@ -1673,35 +1672,35 @@
     // Size: 0x2ec
     function engagedist_hud_changetext(engagedisttype, units) {
         if (!isdefined(level.lastdisttype)) {
-            level.lastdisttype = "<unknown string>";
+            level.lastdisttype = "<dev string:x20f>";
         }
-        if (engagedisttype == "<unknown string>") {
+        if (engagedisttype == "<dev string:x706>") {
             self[1] setvalue(units);
-            self[2] settext("<unknown string>");
+            self[2] settext("<dev string:x728>");
             self[3].alpha = 0;
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x711>") {
             self[1] setvalue(units);
-            self[2] settext("<unknown string>");
+            self[2] settext("<dev string:x73b>");
             self[3].alpha = 0;
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x717>") {
             amountunder = level.weaponengagedistvalues.engagedistmin - units;
             self[1] setvalue(units);
             self[3] setvalue(amountunder);
             self[3].alpha = 1;
             if (level.lastdisttype != engagedisttype) {
-                self[2] settext("<unknown string>");
+                self[2] settext("<dev string:x749>");
             }
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x720>") {
             amountover = units - level.weaponengagedistvalues.engagedistmax;
             self[1] setvalue(units);
             self[3] setvalue(amountover);
             self[3].alpha = 1;
             if (level.lastdisttype != engagedisttype) {
-                self[2] settext("<unknown string>");
+                self[2] settext("<dev string:x75d>");
             }
-        } else if (engagedisttype == "<unknown string>") {
+        } else if (engagedisttype == "<dev string:x6fc>") {
             self[1] setvalue(units);
-            self[2] settext("<unknown string>");
+            self[2] settext("<dev string:x770>");
             self[3].alpha = 0;
         }
         level.lastdisttype = engagedisttype;
@@ -1724,29 +1723,29 @@
                     if (sighttracepassed(playereye, var_a4e8803e, 0, player) && !isvehicle(ai)) {
                         dist = distance(playereye, var_a4e8803e);
                         drawcolor = (1, 1, 1);
-                        drawstring = "<unknown string>";
+                        drawstring = "<dev string:x56f>";
                         engagedistmin = ai.engagemindist;
                         var_686e2a66 = ai.engageminfalloffdist;
                         var_109383f6 = ai.engagemaxfalloffdist;
                         engagedistmax = ai.engagemaxdist;
                         if (dist >= engagedistmin && dist <= engagedistmax) {
                             drawcolor = (0, 1, 0);
-                            drawstring = "<unknown string>";
+                            drawstring = "<dev string:x796>";
                         } else if (dist < engagedistmin && dist >= var_686e2a66) {
                             drawcolor = (1, 1, 0);
-                            drawstring = "<unknown string>";
+                            drawstring = "<dev string:x79e>";
                         } else if (dist > engagedistmax && dist <= var_109383f6) {
                             drawcolor = (1, 1, 0);
-                            drawstring = "<unknown string>";
+                            drawstring = "<dev string:x7af>";
                         } else if (dist > var_109383f6) {
                             drawcolor = (1, 0, 0);
-                            drawstring = "<unknown string>";
+                            drawstring = "<dev string:x7be>";
                         } else if (dist < var_686e2a66) {
                             drawcolor = (1, 0, 0);
-                            drawstring = "<unknown string>";
+                            drawstring = "<dev string:x7c9>";
                         }
                         scale = dist / 1000;
-                        print3d(ai.origin + (0, 0, 67), drawstring + "<unknown string>" + dist, drawcolor, 1, scale);
+                        print3d(ai.origin + (0, 0, 67), drawstring + "<dev string:xba>" + dist, drawcolor, 1, scale);
                     }
                 }
             }
@@ -1788,7 +1787,7 @@
                 struct = spawnstruct();
                 classname = spawner.classname;
                 vehicletype = spawner.vehicletype;
-                if (issubstr(classname, "<unknown string>")) {
+                if (issubstr(classname, "<dev string:x7d6>")) {
                     struct.radius = 64;
                     struct.isvehicle = 0;
                     classname = getsubstr(classname, 6);
@@ -1807,15 +1806,15 @@
     // Size: 0x726
     function function_90edec37() {
         level endon(#"hash_34e65f3c6ffc6a39");
-        assert(isdefined(level.aitypes) && level.aitypes.size > 0, "<unknown string>");
+        assert(isdefined(level.aitypes) && level.aitypes.size > 0, "<dev string:x7e0>");
         level.dynamic_spawn_hud = newdebughudelem(getplayers()[0]);
-        level.dynamic_spawn_hud.alignx = "<unknown string>";
+        level.dynamic_spawn_hud.alignx = "<dev string:x1fd>";
         level.dynamic_spawn_hud.x = 0;
         level.dynamic_spawn_hud.y = 245;
         level.dynamic_spawn_hud.fontscale = 1.5;
-        level.dynamic_spawn_hud settext("<unknown string>");
-        level.dynamic_spawn_dummy_model = spawn("<unknown string>", (0, 0, 0));
-        wait(0.1);
+        level.dynamic_spawn_hud settext("<dev string:x7fd>");
+        level.dynamic_spawn_dummy_model = spawn("<dev string:x82b>", (0, 0, 0));
+        wait 0.1;
         while (true) {
             direction = self getplayerangles();
             direction_vec = anglestoforward(direction);
@@ -1828,40 +1827,40 @@
             angles = self.angles + (0, 180, 0);
             level.dynamic_spawn_dummy_model.origin = position;
             level.dynamic_spawn_dummy_model.angles = angles;
-            level.dynamic_spawn_hud settext("<unknown string>" + level.var_9f54edf5 + 1 + "<unknown string>" + level.aitypes.size + "<unknown string>" + level.aitypes[level.var_9f54edf5].classname);
+            level.dynamic_spawn_hud settext("<dev string:x83b>" + level.var_9f54edf5 + 1 + "<dev string:x88b>" + level.aitypes.size + "<dev string:x890>" + level.aitypes[level.var_9f54edf5].classname);
             level.dynamic_spawn_dummy_model detachall();
             level.dynamic_spawn_dummy_model setmodel(level.aitypes[level.var_9f54edf5].classname);
             level.dynamic_spawn_dummy_model show();
             level.dynamic_spawn_dummy_model notsolid();
-            if (self usebuttonpressed() || self buttonpressed("<unknown string>")) {
+            if (self usebuttonpressed() || self buttonpressed("<dev string:x897>")) {
                 level.dynamic_spawn_dummy_model hide();
                 if (level.aitypes[level.var_9f54edf5].isvehicle) {
-                    spawn = spawnvehicle(level.aitypes[level.var_9f54edf5].classname, origin, angles, "<unknown string>");
+                    spawn = spawnvehicle(level.aitypes[level.var_9f54edf5].classname, origin, angles, "<dev string:x8a1>");
                 } else {
-                    spawn = spawnactor(level.aitypes[level.var_9f54edf5].classname, origin, angles, "<unknown string>", 1);
+                    spawn = spawnactor(level.aitypes[level.var_9f54edf5].classname, origin, angles, "<dev string:x8a1>", 1);
                 }
                 var_ec8949ef = getdvarint(#"debug_dynamic_ai_ignoreme", 0);
                 var_a127c98a = getdvarint(#"debug_dynamic_ai_ignoreall", 0);
                 spawn.pacifist = getdvarint(#"debug_dynamic_ai_pacifist", 0);
-                spawn val::set(#"hash_624cb07df0cbb198", "<unknown string>", var_ec8949ef);
-                spawn val::set(#"hash_624cb07df0cbb198", "<unknown string>", var_a127c98a);
+                spawn val::set(#"hash_624cb07df0cbb198", "<dev string:x8b5>", var_ec8949ef);
+                spawn val::set(#"hash_624cb07df0cbb198", "<dev string:x8c1>", var_a127c98a);
                 spawn.fixednode = 0;
-                wait(0.3);
-            } else if (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
+                wait 0.3;
+            } else if (self buttonpressed("<dev string:x8ce>") || self buttonpressed("<dev string:x8dc>")) {
                 level.dynamic_spawn_dummy_model hide();
                 level.var_9f54edf5++;
                 if (level.var_9f54edf5 >= level.aitypes.size) {
                     level.var_9f54edf5 = 0;
                 }
-                wait(0.3);
-            } else if (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
+                wait 0.3;
+            } else if (self buttonpressed("<dev string:x8ea>") || self buttonpressed("<dev string:x8f7>")) {
                 level.dynamic_spawn_dummy_model hide();
                 level.var_9f54edf5--;
                 if (level.var_9f54edf5 < 0) {
                     level.var_9f54edf5 = level.aitypes.size - 1;
                 }
-                wait(0.3);
-            } else if (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
+                wait 0.3;
+            } else if (self buttonpressed("<dev string:x904>") || self buttonpressed("<dev string:x910>")) {
                 setdvar(#"debug_dynamic_ai_spawning", 0);
             }
             waitframe(1);
@@ -1873,24 +1872,24 @@
     // Checksum 0x793d1a80, Offset: 0x78c8
     // Size: 0x3c
     function function_11228d34() {
-        wait(1);
-        iprintlnbold("<unknown string>" + level.script + "<unknown string>");
+        wait 1;
+        iprintlnbold("<dev string:x91b>" + level.script + "<dev string:x934>");
     }
 
     // Namespace debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x75a9b7b, Offset: 0x7910
     // Size: 0x1e4
-    function function_d2ddc8bc() {
+    function debug_goalradius() {
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
             if (guys[i].team == #"axis") {
-                print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (1, 0, 0), 1, 1, 1);
-                record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (1, 0, 0), "<unknown string>");
+                print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<dev string:x38>" + guys[i].goalradius : "<dev string:x38>", (1, 0, 0), 1, 1, 1);
+                record3dtext("<dev string:x38>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (1, 0, 0), "<dev string:x957>");
                 continue;
             }
-            print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (0, 1, 0), 1, 1, 1);
-            record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (0, 1, 0), "<unknown string>");
+            print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<dev string:x38>" + guys[i].goalradius : "<dev string:x38>", (0, 1, 0), 1, 1, 1);
+            record3dtext("<dev string:x38>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (0, 1, 0), "<dev string:x957>");
         }
     }
 
@@ -1901,11 +1900,11 @@
     function function_3a215729() {
         guys = getaiarray();
         foreach (guy in guys) {
-            recordcircle(guy.origin, sqrt(guy.maxsightdistsqrd), (1, 1, 0), "<unknown string>");
+            recordcircle(guy.origin, sqrt(guy.maxsightdistsqrd), (1, 1, 0), "<dev string:x957>");
         }
         foreach (player in level.players) {
-            record3dtext(isdefined(player.maxvisibledist) ? "<unknown string>" + player.maxvisibledist : "<unknown string>", player.origin, (1, 0, 0), "<unknown string>");
-            recordcircle(player.origin, player.maxvisibledist, (1, 0, 0), "<unknown string>");
+            record3dtext(isdefined(player.maxvisibledist) ? "<dev string:x38>" + player.maxvisibledist : "<dev string:x38>", player.origin, (1, 0, 0), "<dev string:x957>");
+            recordcircle(player.origin, player.maxvisibledist, (1, 0, 0), "<dev string:x957>");
         }
     }
 
@@ -1917,20 +1916,20 @@
         var_d4d10882 = (0, 0, 0);
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
-            if (isdefined(guys[i] gettagorigin("<unknown string>"))) {
-                var_d4d10882 = guys[i] gettagorigin("<unknown string>") + (0, 0, 15);
+            if (isdefined(guys[i] gettagorigin("<dev string:x965>"))) {
+                var_d4d10882 = guys[i] gettagorigin("<dev string:x965>") + (0, 0, 15);
             } else {
                 var_d4d10882 = guys[i] getorigin() + (0, 0, 70);
             }
-            print3d(var_d4d10882, isdefined(guys[i].health) ? "<unknown string>" + guys[i].health : "<unknown string>", level.var_99e12d63[guys[i].team], 1, 0.5);
-            recordenttext(isdefined(guys[i].health) ? "<unknown string>" + guys[i].health : "<unknown string>", guys[i], level.var_99e12d63[guys[i].team], "<unknown string>");
+            print3d(var_d4d10882, isdefined(guys[i].health) ? "<dev string:x38>" + guys[i].health : "<dev string:x38>", level.var_99e12d63[guys[i].team], 1, 0.5);
+            recordenttext(isdefined(guys[i].health) ? "<dev string:x38>" + guys[i].health : "<dev string:x38>", guys[i], level.var_99e12d63[guys[i].team], "<dev string:x957>");
         }
         vehicles = getvehiclearray();
         for (i = 0; i < vehicles.size; i++) {
-            recordenttext(isdefined(vehicles[i].health) ? "<unknown string>" + vehicles[i].health : "<unknown string>", vehicles[i], level.var_99e12d63[vehicles[i].team], "<unknown string>");
+            recordenttext(isdefined(vehicles[i].health) ? "<dev string:x38>" + vehicles[i].health : "<dev string:x38>", vehicles[i], level.var_99e12d63[vehicles[i].team], "<dev string:x957>");
         }
         if (isdefined(level.player)) {
-            recordenttext(isdefined(level.player.health) ? "<unknown string>" + level.player.health : "<unknown string>", level.player, level.var_99e12d63[#"allies"], "<unknown string>");
+            recordenttext(isdefined(level.player.health) ? "<dev string:x38>" + level.player.health : "<dev string:x38>", level.player, level.var_99e12d63[#"allies"], "<dev string:x957>");
         }
     }
 
@@ -1938,11 +1937,11 @@
     // Params 0, eflags: 0x0
     // Checksum 0x7f7d8162, Offset: 0x7f98
     // Size: 0xe4
-    function function_feb182a2() {
+    function debug_engagedist() {
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
-            diststring = guys[i].engageminfalloffdist + "<unknown string>" + guys[i].engagemindist + "<unknown string>" + guys[i].engagemaxdist + "<unknown string>" + guys[i].engagemaxfalloffdist;
-            recordenttext(diststring, guys[i], level.var_99e12d63[guys[i].team], "<unknown string>");
+            diststring = guys[i].engageminfalloffdist + "<dev string:x970>" + guys[i].engagemindist + "<dev string:x970>" + guys[i].engagemaxdist + "<dev string:x970>" + guys[i].engagemaxfalloffdist;
+            recordenttext(diststring, guys[i], level.var_99e12d63[guys[i].team], "<dev string:x957>");
         }
     }
 

@@ -1,43 +1,42 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_characters.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\spectating.gsc;
-#using scripts\zm_common\gametypes\spawnlogic.gsc;
-#using scripts\zm_common\gametypes\spawning.gsc;
-#using scripts\zm_common\gametypes\hostmigration.gsc;
-#using scripts\zm_common\gametypes\globallogic_utils.gsc;
-#using scripts\zm_common\gametypes\globallogic_ui.gsc;
-#using scripts\zm_common\gametypes\globallogic_spawn.gsc;
-#using scripts\zm_common\gametypes\globallogic_score.gsc;
-#using scripts\zm_common\gametypes\globallogic_audio.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\globallogic\globallogic_player.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\persistence_shared.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\globallogic\globallogic_player;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\persistence_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\struct;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\weapons\weapon_utils;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_audio;
+#using scripts\zm_common\gametypes\globallogic_score;
+#using scripts\zm_common\gametypes\globallogic_spawn;
+#using scripts\zm_common\gametypes\globallogic_ui;
+#using scripts\zm_common\gametypes\globallogic_utils;
+#using scripts\zm_common\gametypes\hostmigration;
+#using scripts\zm_common\gametypes\spawning;
+#using scripts\zm_common\gametypes\spawnlogic;
+#using scripts\zm_common\gametypes\spectating;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_characters;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace globallogic_player;
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1507b59, Offset: 0x338
 // Size: 0x84
 function freezeplayerforroundend() {
@@ -48,7 +47,7 @@ function freezeplayerforroundend() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7dd87d5b, Offset: 0x3c8
 // Size: 0x11cc
 function callback_playerconnect() {
@@ -272,7 +271,7 @@ function callback_playerconnect() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14952da2, Offset: 0x15a0
 // Size: 0x284
 function spectate_player_watcher() {
@@ -285,7 +284,7 @@ function spectate_player_watcher() {
             break;
         }
         /#
-            if (!level.splitscreen && !level.hardcoremode && getdvarint(#"scr_showperksonspawn", 0) == 1 && game.state != "<unknown string>" && !isdefined(self.perkhudelem)) {
+            if (!level.splitscreen && !level.hardcoremode && getdvarint(#"scr_showperksonspawn", 0) == 1 && game.state != "<dev string:x38>" && !isdefined(self.perkhudelem)) {
                 if (level.perksenabled == 1) {
                     self hud::showperks();
                 }
@@ -301,7 +300,7 @@ function spectate_player_watcher() {
         if (count > 0) {
             if (!self.watchingactiveclient) {
                 self val::reset(#"spectate", "freezecontrols");
-                println("<unknown string>");
+                println("<dev string:x44>");
             }
             self.watchingactiveclient = 1;
         } else {
@@ -313,37 +312,37 @@ function spectate_player_watcher() {
             }
             self.watchingactiveclient = 0;
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x204041b5, Offset: 0x1830
 // Size: 0xd0
 function callback_playermigrated() {
-    println("<unknown string>" + self.name + "<unknown string>" + gettime());
+    println("<dev string:x5c>" + self.name + "<dev string:x67>" + gettime());
     if (isdefined(self.connected) && self.connected) {
     }
     self thread inform_clientvm_of_migration();
     level.hostmigrationreturnedplayercount++;
     if (level.hostmigrationreturnedplayercount >= level.players.size * 2 / 3) {
-        println("<unknown string>");
+        println("<dev string:x87>");
         level notify(#"hostmigration_enoughplayers");
     }
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfd35452d, Offset: 0x1908
 // Size: 0x20
 function inform_clientvm_of_migration() {
     self endon(#"disconnect");
-    wait(1);
+    wait 1;
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc237a7a9, Offset: 0x1930
 // Size: 0x74
 function arraytostring(inputarray) {
@@ -358,7 +357,7 @@ function arraytostring(inputarray) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x44fccae5, Offset: 0x19b0
 // Size: 0x61c
 function function_7314957c(player, result) {
@@ -424,7 +423,7 @@ function function_7314957c(player, result) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9823956e, Offset: 0x1fd8
 // Size: 0x52c
 function callback_playerdisconnect() {
@@ -443,7 +442,7 @@ function callback_playerdisconnect() {
     }
     if (isdefined(self.score) && isdefined(self.pers) && isdefined(self.pers[#"team"])) {
         /#
-            print("<unknown string>" + self.pers[#"team"] + "<unknown string>" + self.score);
+            print("<dev string:xb1>" + self.pers[#"team"] + "<dev string:xc1>" + self.score);
         #/
         level.dropteam += 1;
     }
@@ -487,7 +486,7 @@ function callback_playerdisconnect() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xdf5cb1dc, Offset: 0x2510
 // Size: 0xb4
 function callback_playermelee(eattacker, *idamage, weapon, vorigin, vdir, boneindex, shieldhit, frombehind) {
@@ -501,7 +500,7 @@ function callback_playermelee(eattacker, *idamage, weapon, vorigin, vdir, bonein
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x737ea1c7, Offset: 0x25d0
 // Size: 0x234
 function choosenextbestnemesis() {
@@ -536,7 +535,7 @@ function choosenextbestnemesis() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2b53031a, Offset: 0x2810
 // Size: 0x5c
 function notifyconnecting() {
@@ -548,7 +547,7 @@ function notifyconnecting() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7f506ac1, Offset: 0x2878
 // Size: 0xa8
 function recordactiveplayersendgamematchrecordstats() {
@@ -559,7 +558,7 @@ function recordactiveplayersendgamematchrecordstats() {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x606a5758, Offset: 0x2928
 // Size: 0x1e
 function figureoutfriendlyfire(*victim, *attacker) {
@@ -567,7 +566,7 @@ function figureoutfriendlyfire(*victim, *attacker) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cf150f, Offset: 0x2950
 // Size: 0x2e
 function function_b2873ebe() {

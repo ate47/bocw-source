@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\core_common\ai\zombie_eye_glow.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\array_shared.csc;
+#using scripts\core_common\ai\zombie_eye_glow;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_holiday_event;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdd4b0446, Offset: 0x140
 // Size: 0xe4
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5efe235f, Offset: 0x230
 // Size: 0x354
 function function_675f0963(*localclientnum) {
@@ -77,7 +76,7 @@ function function_675f0963(*localclientnum) {
         case #"soa":
             self.var_6ffc5953 = #"hash_73aa050fa52a8f98";
             self.var_dee85a7a = "j_head";
-            wait(1.416);
+            wait 1.416;
             break;
         }
         if (isdefined(self.var_6ffc5953) && isdefined(self.var_dee85a7a) && !self isattached(self.var_6ffc5953, self.var_dee85a7a)) {
@@ -87,7 +86,7 @@ function function_675f0963(*localclientnum) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x4f34a8ac, Offset: 0x590
 // Size: 0x296
 function function_3b11146f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -111,7 +110,7 @@ function function_3b11146f(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x159fbd1f, Offset: 0x830
 // Size: 0x194
 function function_ff03ce49() {
@@ -128,17 +127,17 @@ function function_ff03ce49() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x9e618c75, Offset: 0x9d0
 // Size: 0x5c
-function private force_stream_model(var_618821b1, var_9940b166, mip) {
+function private force_stream_model(str_asset, var_9940b166, mip) {
     for (lod = var_9940b166; lod > 1; lod--) {
-        forcestreamxmodel(var_618821b1, lod, mip);
+        forcestreamxmodel(str_asset, lod, mip);
     }
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x18f5b578, Offset: 0xa38
 // Size: 0x2c
 function private on_localclient_connect(localclientnum) {
@@ -154,8 +153,8 @@ function private on_localclient_connect(localclientnum) {
     // Checksum 0x23194efa, Offset: 0xa70
     // Size: 0x74
     function function_4ebcb98d(localclientnum) {
-        util::init_dvar(#"hash_4cf563ada0725f21", "<unknown string>", &function_5f56213c);
-        util::add_devgui(localclientnum, "<unknown string>", "<unknown string>");
+        util::init_dvar(#"hash_4cf563ada0725f21", "<dev string:x38>", &function_5f56213c);
+        util::add_devgui(localclientnum, "<dev string:x3c>", "<dev string:x66>");
     }
 
     // Namespace zm_holiday_event/zm_holiday_event
@@ -163,20 +162,20 @@ function private on_localclient_connect(localclientnum) {
     // Checksum 0xa9e7dcaa, Offset: 0xaf0
     // Size: 0xfc
     function private function_5f56213c(params) {
-        if (params.value === "<unknown string>") {
+        if (params.value === "<dev string:x38>") {
             return;
         }
         switch (params.name) {
         case #"hash_4cf563ada0725f21":
             level flag::toggle(#"hash_63e59d16907d2aab");
             if (level flag::get(#"hash_63e59d16907d2aab")) {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:x8d>");
             } else {
-                iprintlnbold("<unknown string>");
+                iprintlnbold("<dev string:xb4>");
             }
             break;
         }
-        setdvar(#"hash_4cf563ada0725f21", "<unknown string>");
+        setdvar(#"hash_4cf563ada0725f21", "<dev string:x38>");
     }
 
 #/

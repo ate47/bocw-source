@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
 
 #namespace zm_trial_open_all_doors;
 
@@ -129,7 +128,7 @@ function private function_b2fa4678() {
             }
             var_c43a6efa = var_54e16eaa;
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -139,7 +138,7 @@ function private function_b2fa4678() {
 // Size: 0x1cc
 function private monitor_timer(n_timer) {
     level endon(#"hash_7646638df88a3656");
-    wait(12);
+    wait 12;
     foreach (player in getplayers()) {
         player zm_trial_util::function_128378c9(n_timer, 1, #"hash_c2b77be4cf5b142");
     }

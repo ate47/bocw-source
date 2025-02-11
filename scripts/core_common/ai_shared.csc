@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
+#using scripts\core_common\util_shared;
 
 #namespace ai_shared;
 
@@ -15,7 +14,7 @@ function autoexec main() {
 #namespace ai;
 
 // Namespace ai/ai_shared
-// Params 2, eflags: 0x42 linked
+// Params 2, eflags: 0x40 variadic
 // Checksum 0x81aee686, Offset: 0xd0
 // Size: 0x128
 function add_ai_spawn_function(func_spawn, ...) {
@@ -50,7 +49,7 @@ function function_932006d1(func_spawn) {
 }
 
 // Namespace ai/ai_shared
-// Params 2, eflags: 0x42 linked
+// Params 2, eflags: 0x40 variadic
 // Checksum 0x3bfb45c4, Offset: 0x2d0
 // Size: 0x128
 function function_2315ecfa(func_spawn, ...) {
@@ -85,7 +84,7 @@ function function_26fc775a(func_spawn) {
 }
 
 // Namespace ai/ai_shared
-// Params 3, eflags: 0x40
+// Params 3, eflags: 0x40 variadic
 // Checksum 0x7b0705bf, Offset: 0x4d0
 // Size: 0x1c2
 function add_archetype_spawn_function(str_archetype, func_spawn, ...) {
@@ -109,7 +108,7 @@ function add_archetype_spawn_function(str_archetype, func_spawn, ...) {
 }
 
 // Namespace ai/ai_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x73a35b58, Offset: 0x6a0
 // Size: 0x260
 function spawned_callback(localclientnum) {
@@ -137,7 +136,7 @@ function spawned_callback(localclientnum) {
 }
 
 // Namespace ai/ai_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc19818ad, Offset: 0x908
 // Size: 0xe8
 function function_b1897fe1(localclientnum) {
@@ -161,7 +160,7 @@ function shouldregisterclientfieldforarchetype(archetype) {
 }
 
 // Namespace ai/ai_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd7702454, Offset: 0xa50
 // Size: 0xe4
 function function_9139c839() {

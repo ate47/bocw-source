@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace weapons;
 
 // Namespace weapons/weapon_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5027906a, Offset: 0x170
 // Size: 0x5c
 function ispistol(weapon, var_d3511cd9 = 0) {
@@ -21,7 +20,7 @@ function islauncher(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3dd8c412, Offset: 0x200
 // Size: 0x24
 function isflashorstunweapon(weapon) {
@@ -29,7 +28,7 @@ function isflashorstunweapon(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5429ba7f, Offset: 0x230
 // Size: 0x50
 function isflashorstundamage(weapon, meansofdeath) {
@@ -37,7 +36,7 @@ function isflashorstundamage(weapon, meansofdeath) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa94be0d8, Offset: 0x288
 // Size: 0x3e
 function ismeleemod(mod) {
@@ -45,7 +44,7 @@ function ismeleemod(mod) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb544c6c3, Offset: 0x2d0
 // Size: 0x74
 function isexplosivedamage(meansofdeath) {
@@ -61,7 +60,7 @@ function isexplosivedamage(meansofdeath) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x902af87b, Offset: 0x350
 // Size: 0x3e
 function ispunch(weapon) {
@@ -77,7 +76,7 @@ function isknife(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfcf1dd0a, Offset: 0x410
 // Size: 0x46
 function isnonbarehandsmelee(weapon) {
@@ -85,7 +84,7 @@ function isnonbarehandsmelee(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x20f4358c, Offset: 0x460
 // Size: 0x3e
 function isbulletdamage(meansofdeath) {
@@ -93,7 +92,7 @@ function isbulletdamage(meansofdeath) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6723b85e, Offset: 0x4a8
 // Size: 0x78
 function isfiredamage(weapon, meansofdeath) {
@@ -120,7 +119,7 @@ function function_a9a8aed8(primaryoffhand) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x5a666550, Offset: 0x5d0
 // Size: 0x80
 function isheadshot(weapon, shitloc, smeansofdeath) {

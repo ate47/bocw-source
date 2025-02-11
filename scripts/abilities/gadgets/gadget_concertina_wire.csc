@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\deployable.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\deployable;
 
 #namespace concertina_wire;
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69f146a9, Offset: 0x178
 // Size: 0x1a4
 function init_shared(var_4b51853b) {
@@ -15,10 +14,10 @@ function init_shared(var_4b51853b) {
     clientfield::register("scriptmover", "concertinaWireDroopyBits", 1, 3, "int", &function_3a927971, 0, 0);
     level.var_87226c31 = spawnstruct();
     level.var_87226c31.bundle = getscriptbundle(var_4b51853b);
-    level.var_87226c31.var_3e7344ee = getweapon(#"eq_concertina_wire");
+    level.var_87226c31.concertinawireweapon = getweapon(#"eq_concertina_wire");
     level.var_87226c31.var_546a220c = "concertina_wire_objective_default";
     level.var_87226c31.var_925bbb2 = [];
-    deployable::register_deployable(level.var_87226c31.var_3e7344ee, 1);
+    deployable::register_deployable(level.var_87226c31.concertinawireweapon, 1);
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
@@ -35,7 +34,7 @@ function function_34a7968c(localclientnum) {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xff41514e, Offset: 0x3a8
 // Size: 0x3c
 function function_8455c7c0(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -43,7 +42,7 @@ function function_8455c7c0(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xedf74b8e, Offset: 0x3f0
 // Size: 0x1ac
 function function_3a927971(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -69,7 +68,7 @@ function function_3a927971(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x48f52ae6, Offset: 0x5a8
 // Size: 0x20c
 function function_6873a657(localclientnum, *oldval, newval, bnewent, *binitialsnap, *fieldname, bwastimejump) {
@@ -113,7 +112,7 @@ function function_1c2930c7(localclientnum) {
         if (!isdefined(player)) {
             break;
         }
-        var_b43e8dc2 = player function_287dcf4b(level.var_87226c31.bundle.var_63aab046, level.var_87226c31.bundle.maxwidth, 0, 0, level.var_87226c31.var_3e7344ee);
+        var_b43e8dc2 = player function_287dcf4b(level.var_87226c31.bundle.var_63aab046, level.var_87226c31.bundle.maxwidth, 0, 0, level.var_87226c31.concertinawireweapon);
         if (!isdefined(var_b43e8dc2) && !var_ccfe777) {
             var_ccfe777 = 1;
             player function_bf191832(0, (0, 0, 0), (0, 0, 0));
@@ -135,7 +134,7 @@ function function_1c2930c7(localclientnum) {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x59255368, Offset: 0xa68
 // Size: 0x54
 function function_8fb44aff(*localclientnum, origin, angles, *isvalid, *var_eb65925c, *var_4b3e5e0a) {

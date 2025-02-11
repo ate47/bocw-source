@@ -1,38 +1,37 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\throttle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\placeables.gsc;
-#using scripts\core_common\loadout_shared.gsc;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreak_hacking.gsc;
-#using script_4721de209091b1a6;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\damage.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_4721de209091b1a6;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\loadout_shared;
+#using scripts\core_common\placeables;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\throttle_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreak_hacking;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weaponobjects;
 
 #namespace killstreaks;
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa048c03, Offset: 0x538
 // Size: 0x384
 function init_shared() {
@@ -69,7 +68,7 @@ function init_shared() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x48d7a2ab, Offset: 0x8c8
 // Size: 0x9c
 function function_447e6858() {
@@ -84,7 +83,7 @@ function function_447e6858() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x15b179dc, Offset: 0x970
 // Size: 0x3c
 function function_b5b6ef3e(func, obj) {
@@ -92,11 +91,11 @@ function function_b5b6ef3e(func, obj) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x25ef67c6, Offset: 0x9b8
 // Size: 0x17a
 function private register_ui(killstreak_type, killstreak_menu) {
-    assert(isdefined(level.killstreaks[killstreak_type]), "<unknown string>");
+    assert(isdefined(level.killstreaks[killstreak_type]), "<dev string:x38>");
     item_index = getitemindexfromref(killstreak_menu);
     killstreak_info = getunlockableiteminfofromindex(item_index, 0);
     killstreak_cost = 0;
@@ -111,19 +110,19 @@ function private register_ui(killstreak_type, killstreak_menu) {
         if (isdefined(killstreak_info)) {
             level.killstreaks[killstreak_type].uiname = killstreak_info.displayname;
         }
-        if (level.killstreaks[killstreak_type].uiname == "<unknown string>") {
+        if (level.killstreaks[killstreak_type].uiname == "<dev string:x75>") {
             level.killstreaks[killstreak_type].uiname = killstreak_menu;
         }
     #/
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa560bc4d, Offset: 0xb40
 // Size: 0x116
 function private killstreak_init(killstreak_type) {
-    assert(isdefined(killstreak_type), "<unknown string>");
-    assert(!isdefined(level.killstreaks[killstreak_type]), "<unknown string>" + killstreak_type + "<unknown string>");
+    assert(isdefined(killstreak_type), "<dev string:x79>");
+    assert(!isdefined(level.killstreaks[killstreak_type]), "<dev string:xb5>" + killstreak_type + "<dev string:xc4>");
     level.killstreaks[killstreak_type] = spawnstruct();
     level.killstreaks[killstreak_type].killstreaklevel = 0;
     level.killstreaks[killstreak_type].quantity = 0;
@@ -133,16 +132,16 @@ function private killstreak_init(killstreak_type) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xe06f6c4c, Offset: 0xc60
 // Size: 0x10c
 function private register_weapon(killstreak_type, bundle, weapon) {
     if (weapon.name == #"none") {
         return;
     }
-    assert(isdefined(killstreak_type), "<unknown string>");
+    assert(isdefined(killstreak_type), "<dev string:x79>");
     assert(weapon.name != #"none");
-    assert(!isdefined(level.killstreakweapons[weapon]), "<unknown string>");
+    assert(!isdefined(level.killstreakweapons[weapon]), "<dev string:xdb>");
     level.killstreaks[killstreak_type].weapon = weapon;
     level.killstreakweapons[weapon] = killstreak_type;
     if (is_true(bundle.var_7f7b9887)) {
@@ -151,18 +150,18 @@ function private register_weapon(killstreak_type, bundle, weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xac95e662, Offset: 0xd78
 // Size: 0x8c
 function private register_vehicle(killstreak_type, vehicle) {
-    assert(isdefined(killstreak_type), "<unknown string>");
-    assert(!isdefined(level.var_8997324c[vehicle]), "<unknown string>");
+    assert(isdefined(killstreak_type), "<dev string:x79>");
+    assert(!isdefined(level.var_8997324c[vehicle]), "<dev string:xdb>");
     level.killstreaks[killstreak_type].vehicle = vehicle;
     level.var_8997324c[vehicle] = killstreak_type;
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0x753f2ef0, Offset: 0xe10
 // Size: 0x35a
 function private function_e48aca4d(type, bundle, weapon, vehicle, killstreak_use_function, isinventoryweapon) {
@@ -208,7 +207,7 @@ function private function_e48aca4d(type, bundle, weapon, vehicle, killstreak_use
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x17fc74ff, Offset: 0x1178
 // Size: 0x118
 function register_bundle(bundle, killstreak_use_function) {
@@ -225,7 +224,7 @@ function register_bundle(bundle, killstreak_use_function) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7adbc2db, Offset: 0x1298
 // Size: 0x4c
 function register_killstreak(bundlename, use_function) {
@@ -234,11 +233,11 @@ function register_killstreak(bundlename, use_function) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc8d41a13, Offset: 0x12f0
 // Size: 0x5c
 function function_94c74046(killstreaktype) {
-    assert(isdefined(killstreaktype), "<unknown string>");
+    assert(isdefined(killstreaktype), "<dev string:x11a>");
     if (!isdefined(level.var_33c629ad)) {
         level.var_33c629ad = [];
     }
@@ -246,7 +245,7 @@ function function_94c74046(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x65305a00, Offset: 0x1358
 // Size: 0x1e
 function function_6bde02cc(killstreaktype) {
@@ -254,12 +253,12 @@ function function_6bde02cc(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x6b98683b, Offset: 0x1380
 // Size: 0x100
 function private function_181f96a6(killstreaktype, bundle, weapon) {
-    assert(isdefined(killstreaktype), "<unknown string>");
-    assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
+    assert(isdefined(killstreaktype), "<dev string:x79>");
+    assert(isdefined(level.killstreaks[killstreaktype]), "<dev string:x16a>");
     if (weapon == level.weaponnone) {
         return;
     }
@@ -297,7 +296,7 @@ function function_b013c2d3(killstreaktype, weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb30f8ce, Offset: 0x1528
 // Size: 0x40
 function function_d8c32ca4(killstreaktype, var_ae755d2f) {
@@ -308,16 +307,16 @@ function function_d8c32ca4(killstreaktype, var_ae755d2f) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x91c86519, Offset: 0x1570
 // Size: 0x134
 function register_dev_dvars(killstreaktype) {
     /#
-        assert(isdefined(killstreaktype), "<unknown string>");
-        assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
-        level.killstreaks[killstreaktype].devdvar = "<unknown string>" + killstreaktype + "<unknown string>";
-        level.killstreaks[killstreaktype].devenemydvar = "<unknown string>" + killstreaktype + "<unknown string>";
-        level.killstreaks[killstreaktype].devtimeoutdvar = "<unknown string>" + killstreaktype + "<unknown string>";
+        assert(isdefined(killstreaktype), "<dev string:x79>");
+        assert(isdefined(level.killstreaks[killstreaktype]), "<dev string:x1b3>");
+        level.killstreaks[killstreaktype].devdvar = "<dev string:x1fa>" + killstreaktype + "<dev string:x202>";
+        level.killstreaks[killstreaktype].devenemydvar = "<dev string:x1fa>" + killstreaktype + "<dev string:x20b>";
+        level.killstreaks[killstreaktype].devtimeoutdvar = "<dev string:x1fa>" + killstreaktype + "<dev string:x219>";
         setdvar(level.killstreaks[killstreaktype].devtimeoutdvar, 0);
         level thread register_devgui(killstreaktype);
     #/
@@ -330,9 +329,9 @@ function register_dev_dvars(killstreaktype) {
     // Checksum 0xa3de2f95, Offset: 0x16b0
     // Size: 0xbc
     function register_dev_debug_dvar(killstreaktype) {
-        assert(isdefined(killstreaktype), "<unknown string>");
-        assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
-        level.killstreaks[killstreaktype].devdebugdvar = "<unknown string>" + killstreaktype + "<unknown string>";
+        assert(isdefined(killstreaktype), "<dev string:x79>");
+        assert(isdefined(level.killstreaks[killstreaktype]), "<dev string:x1b3>");
+        level.killstreaks[killstreaktype].devdebugdvar = "<dev string:x1fa>" + killstreaktype + "<dev string:x227>";
         devgui_scorestreak_command_debugdvar(killstreaktype, level.killstreaks[killstreaktype].devdebugdvar);
     }
 
@@ -342,9 +341,9 @@ function register_dev_dvars(killstreaktype) {
     // Size: 0x138
     function register_devgui(killstreaktype) {
         level endon(#"game_ended");
-        wait(randomintrange(2, 20) * float(function_60d95f53()) / 1000);
-        give_type_all = "<unknown string>";
-        give_type_enemy = "<unknown string>";
+        wait randomintrange(2, 20) * float(function_60d95f53()) / 1000;
+        give_type_all = "<dev string:x231>";
+        give_type_enemy = "<dev string:x239>";
         if (isdefined(level.killstreaks[killstreaktype].devdvar)) {
             devgui_scorestreak_command_givedvar(killstreaktype, give_type_all, level.killstreaks[killstreaktype].devdvar);
         }
@@ -360,7 +359,7 @@ function register_dev_dvars(killstreaktype) {
     // Checksum 0x3e1f93ca, Offset: 0x18b8
     // Size: 0x4c
     function devgui_scorestreak_command_givedvar(killstreaktype, give_type, dvar) {
-        devgui_scorestreak_command(killstreaktype, give_type, "<unknown string>" + dvar + "<unknown string>");
+        devgui_scorestreak_command(killstreaktype, give_type, "<dev string:x247>" + dvar + "<dev string:x24f>");
     }
 
     // Namespace killstreaks/killstreaks_shared
@@ -368,7 +367,7 @@ function register_dev_dvars(killstreaktype) {
     // Checksum 0xbc05635d, Offset: 0x1910
     // Size: 0x34
     function devgui_scorestreak_command_timeoutdvar(killstreaktype, dvar) {
-        devgui_scorestreak_dvar_toggle(killstreaktype, "<unknown string>", dvar);
+        devgui_scorestreak_dvar_toggle(killstreaktype, "<dev string:x255>", dvar);
     }
 
     // Namespace killstreaks/killstreaks_shared
@@ -376,7 +375,7 @@ function register_dev_dvars(killstreaktype) {
     // Checksum 0x6a8bd6c4, Offset: 0x1950
     // Size: 0x34
     function devgui_scorestreak_command_debugdvar(killstreaktype, dvar) {
-        devgui_scorestreak_dvar_toggle(killstreaktype, "<unknown string>", dvar);
+        devgui_scorestreak_dvar_toggle(killstreaktype, "<dev string:x261>", dvar);
     }
 
 #/
@@ -391,32 +390,32 @@ function devgui_scorestreak_dvar_toggle(killstreaktype, title, dvar) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x389cdf8e, Offset: 0x1a08
 // Size: 0x244
 function devgui_scorestreak_command(killstreaktype, title, command) {
     /#
-        assert(isdefined(killstreaktype), "<unknown string>");
-        assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
-        root = "<unknown string>";
+        assert(isdefined(killstreaktype), "<dev string:x79>");
+        assert(isdefined(level.killstreaks[killstreaktype]), "<dev string:x1b3>");
+        root = "<dev string:x26a>";
         display_name = level.killstreaks[killstreaktype].menuname;
         killstreak_weapon = get_killstreak_weapon(killstreaktype);
         if (isdefined(killstreak_weapon) && killstreak_weapon != level.weaponnone) {
             if (killstreak_weapon.displayname == #"") {
-                display_name += "<unknown string>";
+                display_name += "<dev string:x28a>";
             } else {
                 display_name = makelocalizedstring(killstreak_weapon.displayname);
             }
-            if (strstartswith(display_name, "<unknown string>")) {
+            if (strstartswith(display_name, "<dev string:x29e>")) {
                 display_name = getsubstr(display_name, 10);
             }
-        } else if (strstartswith(display_name, "<unknown string>")) {
+        } else if (strstartswith(display_name, "<dev string:x29e>")) {
             display_name = getsubstr(display_name, 10);
         }
-        if (strstartswith(killstreaktype, "<unknown string>")) {
+        if (strstartswith(killstreaktype, "<dev string:x29e>")) {
             killstreaktype = getsubstr(killstreaktype, 10);
         }
-        util::add_queued_debug_command(root + display_name + "<unknown string>" + killstreaktype + "<unknown string>" + title + "<unknown string>" + command + "<unknown string>");
+        util::add_queued_debug_command(root + display_name + "<dev string:x2ac>" + killstreaktype + "<dev string:x2b2>" + title + "<dev string:x2b8>" + command + "<dev string:x2bf>");
     #/
 }
 
@@ -426,7 +425,7 @@ function devgui_scorestreak_command(killstreaktype, title, command) {
 // Size: 0x9e
 function should_draw_debug(killstreak) {
     /#
-        assert(isdefined(killstreak), "<unknown string>");
+        assert(isdefined(killstreak), "<dev string:x79>");
         function_2459bd2f();
         if (isdefined(level.killstreaks[killstreak]) && isdefined(level.killstreaks[killstreak].devdebugdvar)) {
             return getdvarint(level.killstreaks[killstreak].devdebugdvar, 0);
@@ -442,13 +441,13 @@ function should_draw_debug(killstreak) {
     // Checksum 0xc71d604a, Offset: 0x1d00
     // Size: 0x34
     function function_2459bd2f() {
-        assert(isdefined(level.killstreaks), "<unknown string>");
+        assert(isdefined(level.killstreaks), "<dev string:x2c6>");
     }
 
 #/
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x498bdd2d, Offset: 0x1d40
 // Size: 0x30
 function is_available(killstreak) {
@@ -459,7 +458,7 @@ function is_available(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdc5a3781, Offset: 0x1d78
 // Size: 0x1c
 function get_by_menu_name(killstreak) {
@@ -467,7 +466,7 @@ function get_by_menu_name(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc0a507a4, Offset: 0x1da0
 // Size: 0x4a
 function get_menu_name(killstreaktype) {
@@ -476,7 +475,7 @@ function get_menu_name(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9e2095c2, Offset: 0x1df8
 // Size: 0x11a
 function get_level(index, killstreak) {
@@ -493,20 +492,20 @@ function get_level(index, killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xda79b053, Offset: 0x1f20
 // Size: 0x218
 function give_if_streak_count_matches(index, killstreak, streakcount) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     /#
         if (!isdefined(killstreak)) {
-            println("<unknown string>");
+            println("<dev string:x336>");
         }
         if (isdefined(killstreak)) {
-            println("<unknown string>" + killstreak + "<unknown string>");
+            println("<dev string:x350>" + killstreak + "<dev string:x369>");
         }
         if (!is_available(killstreak)) {
-            println("<unknown string>");
+            println("<dev string:x36e>");
         }
     #/
     if (self.pers[#"killstreaksearnedthiskillstreak"] > index && util::isroundbased()) {
@@ -526,16 +525,16 @@ function give_if_streak_count_matches(index, killstreak, streakcount) {
         if (killstreaklevel == streakcount) {
             self give(get_by_menu_name(killstreak), streakcount);
             self.pers[#"killstreaksearnedthiskillstreak"] = index + 1;
-            profileNamedStop();
+            pixendevent();
             return true;
         }
     }
-    profileNamedStop();
+    pixendevent();
     return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x58ddcd6, Offset: 0x2148
 // Size: 0xc0
 function give_for_streak() {
@@ -552,11 +551,11 @@ function give_for_streak() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xabd5ba46, Offset: 0x2210
 // Size: 0x190
 function give(killstreaktype, streak, *suppressnotification, noxp, tobottom) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self endon(#"disconnect");
     level endon(#"game_ended");
     killstreakgiven = 0;
@@ -573,7 +572,7 @@ function give(killstreaktype, streak, *suppressnotification, noxp, tobottom) {
             self add_to_notification_queue(level.killstreaks[streak].menuname, suppressnotification, streak, noxp, 1);
         }
     }
-    profileNamedStop();
+    pixendevent();
     if (isdefined(level.var_706f827)) {
         self [[ level.var_706f827 ]]({#killstreaktype:streak});
     }
@@ -581,7 +580,7 @@ function give(killstreaktype, streak, *suppressnotification, noxp, tobottom) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x96379301, Offset: 0x23a8
 // Size: 0xf4
 function take(killstreak) {
@@ -601,7 +600,7 @@ function take(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x87adee98, Offset: 0x24a8
 // Size: 0x174
 function remove_oldest() {
@@ -619,7 +618,7 @@ function remove_oldest() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6c4c264, Offset: 0x2628
 // Size: 0x918
 function give_internal(killstreaktype, *do_not_update_death_count, noxp, tobottom) {
@@ -719,7 +718,7 @@ function give_internal(killstreaktype, *do_not_update_death_count, noxp, tobotto
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc1877d3d, Offset: 0x2f48
 // Size: 0x1d4
 function add_to_notification_queue(menuname, *streakcount, hardpointtype, nonotify, var_af825242) {
@@ -760,7 +759,7 @@ function has_equipped() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x81fc4171, Offset: 0x31e0
 // Size: 0x22
 function _get_from_weapon(weapon) {
@@ -768,7 +767,7 @@ function _get_from_weapon(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbcbf7fe, Offset: 0x3210
 // Size: 0x76
 function get_from_weapon(weapon) {
@@ -783,7 +782,7 @@ function get_from_weapon(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb88ff2fb, Offset: 0x3290
 // Size: 0x150
 function private function_ed34685(currentweapon) {
@@ -807,7 +806,7 @@ function private function_ed34685(currentweapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4171e835, Offset: 0x33e8
 // Size: 0x4aa
 function give_weapon(killstreaktype, usestoredammo) {
@@ -866,7 +865,7 @@ function give_weapon(killstreaktype, usestoredammo) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd7c88a9e, Offset: 0x38a0
 // Size: 0x260
 function activate_next(do_not_update_death_count) {
@@ -905,7 +904,7 @@ function activate_next(do_not_update_death_count) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf43f0fd6, Offset: 0x3b08
 // Size: 0x234
 function give_owned() {
@@ -941,7 +940,7 @@ function give_owned() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51c094e, Offset: 0x3d48
 // Size: 0x74
 function get_killstreak_quantity(killstreakweapon) {
@@ -952,7 +951,7 @@ function get_killstreak_quantity(killstreakweapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd7581db6, Offset: 0x3dc8
 // Size: 0x238
 function change_killstreak_quantity(killstreakweapon, delta) {
@@ -987,7 +986,7 @@ function change_killstreak_quantity(killstreakweapon, delta) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x66502e3a, Offset: 0x4008
 // Size: 0x110
 function function_1f96e8f8(killstreakweapon) {
@@ -1007,7 +1006,7 @@ function function_1f96e8f8(killstreakweapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb3d8a10f, Offset: 0x4120
 // Size: 0x8c
 function has_killstreak_in_class(killstreakmenuname) {
@@ -1037,7 +1036,7 @@ function has_killstreak(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x28c1f26e, Offset: 0x4270
 // Size: 0x184
 function recordkillstreakbegindirect(killstreak, recordstreakindex) {
@@ -1064,7 +1063,7 @@ function recordkillstreakbegindirect(killstreak, recordstreakindex) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xa69fa292, Offset: 0x4400
 // Size: 0x354
 function remove_when_done(killstreaktype, *haskillstreakbeenused, isfrominventory) {
@@ -1118,12 +1117,12 @@ function remove_when_done(killstreaktype, *haskillstreakbeenused, isfrominventor
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x17adcf86, Offset: 0x4760
 // Size: 0x42c
 function function_aa56f6a0(killstreaktype, isfrominventory) {
     /#
-        print("<unknown string>" + get_menu_name(killstreaktype));
+        print("<dev string:x38c>" + get_menu_name(killstreaktype));
     #/
     if (!isdefined(self.pers[level.killstreaks[killstreaktype].usagekey])) {
         self.pers[level.killstreaks[killstreaktype].usagekey] = 0;
@@ -1167,7 +1166,7 @@ function function_aa56f6a0(killstreaktype, isfrominventory) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d020952, Offset: 0x4b98
 // Size: 0xb6
 function usekillstreak(killstreak, isfrominventory) {
@@ -1181,7 +1180,7 @@ function usekillstreak(killstreak, isfrominventory) {
         self thread remove_when_done(killstreak, haskillstreakbeenused, isfrominventory);
         self thread trigger_killstreak(killstreak, isfrominventory);
     }
-    self notify(#"hash_381bb741cb320f95");
+    self notify(#"killstreak_equipped");
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1196,7 +1195,7 @@ function function_2ea0382e() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3c3997da, Offset: 0x4cc8
 // Size: 0x3da
 function remove_used_killstreak(killstreak, killstreakid, take_weapon_after_use = 1) {
@@ -1244,7 +1243,7 @@ function remove_used_killstreak(killstreak, killstreakid, take_weapon_after_use 
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d9446e3, Offset: 0x50b0
 // Size: 0xa2
 function take_weapon_after_use(killstreakweapon) {
@@ -1257,7 +1256,7 @@ function take_weapon_after_use(killstreakweapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x83484fe3, Offset: 0x5160
 // Size: 0x66
 function get_top_killstreak() {
@@ -1268,7 +1267,7 @@ function get_top_killstreak() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x50e43a06, Offset: 0x51d0
 // Size: 0x80
 function get_if_top_killstreak_has_been_used() {
@@ -1281,7 +1280,7 @@ function get_if_top_killstreak_has_been_used() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2c39d5d7, Offset: 0x5258
 // Size: 0x66
 function get_top_killstreak_unique_id() {
@@ -1292,7 +1291,7 @@ function get_top_killstreak_unique_id() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x708ed037, Offset: 0x52c8
 // Size: 0x78
 function get_killstreak_index_by_id(killstreakid) {
@@ -1305,7 +1304,7 @@ function get_killstreak_index_by_id(killstreakid) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3f06fef, Offset: 0x5348
 // Size: 0x96
 function wait_till_heavy_weapon_is_fully_on(weapon) {
@@ -1321,7 +1320,7 @@ function wait_till_heavy_weapon_is_fully_on(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x80a7a3d7, Offset: 0x53e8
 // Size: 0x222
 function function_4f415d8e(params) {
@@ -1369,11 +1368,11 @@ function function_4f415d8e(params) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x721f33b4, Offset: 0x5618
 // Size: 0x59c
 function function_4167ea4e(params) {
-    self endon(#"hash_381bb741cb320f95");
+    self endon(#"killstreak_equipped");
     weapon = params.weapon;
     var_783deeed = is_killstreak_weapon(weapon);
     if (self isonladder() || self function_b4813488()) {
@@ -1465,7 +1464,7 @@ function function_4167ea4e(params) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x550dede0, Offset: 0x5bc0
 // Size: 0xf4
 function on_grenade_fired(params) {
@@ -1484,7 +1483,7 @@ function on_grenade_fired(params) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8c5068d4, Offset: 0x5cc0
 // Size: 0xcc
 function on_offhand_fire(params) {
@@ -1500,7 +1499,7 @@ function on_offhand_fire(params) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x284a9287, Offset: 0x5d98
 // Size: 0xe8
 function should_delay_killstreak(killstreaktype) {
@@ -1524,7 +1523,7 @@ function should_delay_killstreak(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x37239031, Offset: 0x5e88
 // Size: 0x50
 function is_delayable_killstreak(killstreaktype) {
@@ -1535,7 +1534,7 @@ function is_delayable_killstreak(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44241891, Offset: 0x5ee0
 // Size: 0x114
 function display_unavailable_time() {
@@ -1552,11 +1551,11 @@ function display_unavailable_time() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3c391f51, Offset: 0x6000
 // Size: 0x246
 function trigger_killstreak(killstreaktype, isfrominventory) {
-    assert(isdefined(level.killstreaks[killstreaktype].usefunction), "<unknown string>" + killstreaktype);
+    assert(isdefined(level.killstreaks[killstreaktype].usefunction), "<dev string:x39c>" + killstreaktype);
     self.usingkillstreakfrominventory = isfrominventory;
     if (is_true(level.infinalkillcam)) {
         return;
@@ -1577,7 +1576,7 @@ function trigger_killstreak(killstreaktype, isfrominventory) {
                 self notify(#"killstreak_used", killstreaktype);
                 self notify(#"killstreak_done", {#is_successful:1, #var_d3413870:killstreaktype});
                 self.usingkillstreakfrominventory = undefined;
-                self contracts::player_contract_event(#"hash_4da59ed3dbeca8c7", killstreaktype);
+                self contracts::player_contract_event(#"killstreak_activated", killstreaktype);
             }
             return;
         }
@@ -1589,7 +1588,7 @@ function trigger_killstreak(killstreaktype, isfrominventory) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9c8d8dab, Offset: 0x6250
 // Size: 0x5e
 function add_to_killstreak_count(*weapon) {
@@ -1600,7 +1599,7 @@ function add_to_killstreak_count(*weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5126b3e1, Offset: 0x62b8
 // Size: 0xa6
 function should_give_killstreak(weapon) {
@@ -1617,7 +1616,7 @@ function should_give_killstreak(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x15558942, Offset: 0x6368
 // Size: 0xa4
 function play_killstreak_ready_sfx(killstreaktype) {
@@ -1632,7 +1631,7 @@ function play_killstreak_ready_sfx(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60b56eac, Offset: 0x6418
 // Size: 0x36e
 function player_killstreak_threat_tracking(killstreaktype, var_bdb26ff0) {
@@ -1675,12 +1674,12 @@ function player_killstreak_threat_tracking(killstreaktype, var_bdb26ff0) {
             }
             var_c3c784a5--;
         }
-        wait(battlechatter::mpdialog_value("killstreakSpotInterval", float(function_60d95f53()) / 1000) + var_9217cadc);
+        wait battlechatter::mpdialog_value("killstreakSpotInterval", float(function_60d95f53()) / 1000) + var_9217cadc;
     }
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1cebf15d, Offset: 0x6790
 // Size: 0x20c
 function function_ece736e7(player, killstreak) {
@@ -1708,7 +1707,7 @@ function function_ece736e7(player, killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc736c886, Offset: 0x69a8
 // Size: 0x54
 function function_c0c60634(weapon) {
@@ -1721,7 +1720,7 @@ function function_c0c60634(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa04d8099, Offset: 0x6a08
 // Size: 0x30
 function get_killstreak_usage(usagekey) {
@@ -1732,11 +1731,11 @@ function get_killstreak_usage(usagekey) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbe4914ec, Offset: 0x6a40
 // Size: 0xde
 function on_player_spawned() {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self thread give_owned();
     self.killcamkilledbyent = undefined;
     self callback::on_weapon_change(&function_4f415d8e);
@@ -1745,11 +1744,11 @@ function on_player_spawned() {
     self callback::on_offhand_fire(&on_offhand_fire);
     self thread initialspawnprotection();
     self function_f964dc1c();
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x652b0d00, Offset: 0x6b28
 // Size: 0x1d4
 function on_joined_team(*params) {
@@ -1778,7 +1777,7 @@ function on_joined_team(*params) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x237eb1, Offset: 0x6d08
 // Size: 0x15c
 function private initialspawnprotection() {
@@ -1792,7 +1791,7 @@ function private initialspawnprotection() {
     self.specialty_nottargetedbyairsupport = 1;
     self clientfield::set("killstreak_spawn_protection", 1);
     self val::set(#"killstreak_spawn_protection", "ignoreme", 1);
-    wait(level.spawnsystem.var_d9984264);
+    wait level.spawnsystem.var_d9984264;
     self clientfield::set("killstreak_spawn_protection", 0);
     self.specialty_nottargetedbyairsupport = undefined;
     self val::reset(#"killstreak_spawn_protection", "ignoreme");
@@ -1805,7 +1804,7 @@ function private initialspawnprotection() {
     // Checksum 0x504fa7ae, Offset: 0x6e70
     // Size: 0xe0
     function killstreak_debug_think() {
-        setdvar(#"debug_killstreak", "<unknown string>");
+        setdvar(#"debug_killstreak", "<dev string:x75>");
         for (;;) {
             cmd = getdvarstring(#"debug_killstreak");
             switch (cmd) {
@@ -1813,10 +1812,10 @@ function private initialspawnprotection() {
                 killstreak_data_dump();
                 break;
             }
-            if (cmd != "<unknown string>") {
-                setdvar(#"debug_killstreak", "<unknown string>");
+            if (cmd != "<dev string:x75>") {
+                setdvar(#"debug_killstreak", "<dev string:x75>");
             }
-            wait(0.5);
+            wait 0.5;
         }
     }
 
@@ -1825,25 +1824,25 @@ function private initialspawnprotection() {
     // Checksum 0x83186a4f, Offset: 0x6f58
     // Size: 0x32c
     function killstreak_data_dump() {
-        iprintln("<unknown string>");
-        println("<unknown string>");
-        println("<unknown string>");
+        iprintln("<dev string:x3c7>");
+        println("<dev string:x3ea>");
+        println("<dev string:x409>");
         keys = getarraykeys(level.killstreaks);
         for (i = 0; i < keys.size; i++) {
             data = level.killstreaks[keys[i]];
             type_data = level.killstreaktype[keys[i]];
-            print(keys[i] + "<unknown string>");
-            print(data.killstreaklevel + "<unknown string>");
-            print(data.weapon.name + "<unknown string>");
+            print(keys[i] + "<dev string:x472>");
+            print(data.killstreaklevel + "<dev string:x472>");
+            print(data.weapon.name + "<dev string:x472>");
             alt = 0;
             if (isdefined(data.script_bundle.altweapons)) {
                 assert(data.script_bundle.altweapons.size <= 4);
                 for (alt = 0; alt < data.script_bundle.altweapons.size; alt++) {
-                    print(data.script_bundle.altweapons[alt].name + "<unknown string>");
+                    print(data.script_bundle.altweapons[alt].name + "<dev string:x472>");
                 }
             }
             while (alt < 4) {
-                print("<unknown string>");
+                print("<dev string:x472>");
                 alt++;
             }
             type = 0;
@@ -1852,24 +1851,24 @@ function private initialspawnprotection() {
                 type_keys = getarraykeys(type_data);
                 while (type < type_keys.size) {
                     if (type_data[type_keys[type]] == 1) {
-                        print(type_keys[type] + "<unknown string>");
+                        print(type_keys[type] + "<dev string:x472>");
                     }
                     type++;
                 }
             }
             while (type < 4) {
-                print("<unknown string>");
+                print("<dev string:x472>");
                 type++;
             }
-            println("<unknown string>");
+            println("<dev string:x75>");
         }
-        println("<unknown string>");
+        println("<dev string:x477>");
     }
 
 #/
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa32f6ef2, Offset: 0x7290
 // Size: 0x94
 function function_2b6aa9e8(killstreak_ref, destroyed_callback, low_health_callback, emp_callback) {
@@ -1878,7 +1877,7 @@ function function_2b6aa9e8(killstreak_ref, destroyed_callback, low_health_callba
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x6bc0065b, Offset: 0x7330
 // Size: 0x992
 function monitordamage(killstreak_ref, max_health, destroyed_callback, low_health, low_health_callback, emp_damage, emp_callback, allow_bullet_damage) {
@@ -2004,8 +2003,8 @@ function monitordamage(killstreak_ref, max_health, destroyed_callback, low_healt
                     var_98f207d4 = randomint(var_43dd078e);
                     var_f7901b1a = bundle.var_7b7cd9b8[var_98f207d4].var_53ba63fe;
                     /#
-                        var_1a2e7367 = getdvarstring(#"hash_68da706138cf16e2", "<unknown string>");
-                        if (var_1a2e7367 != "<unknown string>") {
+                        var_1a2e7367 = getdvarstring(#"hash_68da706138cf16e2", "<dev string:x75>");
+                        if (var_1a2e7367 != "<dev string:x75>") {
                             var_f7901b1a = var_1a2e7367;
                         }
                     #/
@@ -2035,7 +2034,7 @@ function monitordamage(killstreak_ref, max_health, destroyed_callback, low_healt
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x492ed219, Offset: 0x7cd0
 // Size: 0x460
 function function_73566ec7(attacker, weapon, owner) {
@@ -2089,7 +2088,7 @@ function function_73566ec7(attacker, weapon, owner) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x5de1b37f, Offset: 0x8138
 // Size: 0x3c4
 function ondamageperweapon(killstreak_ref, attacker, damage, flags, type, weapon, max_health, destroyed_callback, low_health, *low_health_callback, emp_damage, emp_callback, allow_bullet_damage, chargelevel, var_488beb6d) {
@@ -2157,7 +2156,7 @@ function ondamageperweapon(killstreak_ref, attacker, damage, flags, type, weapon
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xa6d4c889, Offset: 0x8508
 // Size: 0x236
 function get_old_damage(attacker, weapon, type, damage, allow_bullet_damage, bullet_damage_scalar) {
@@ -2197,7 +2196,7 @@ function get_old_damage(attacker, weapon, type, damage, allow_bullet_damage, bul
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4bd85053, Offset: 0x8748
 // Size: 0x24
 function isheldinventorykillstreakweapon(killstreakweapon) {
@@ -2205,7 +2204,7 @@ function isheldinventorykillstreakweapon(killstreakweapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x69df4c33, Offset: 0x8778
 // Size: 0xbc
 function waitfortimecheck(duration, callback, endcondition1, endcondition2, endcondition3) {
@@ -2225,7 +2224,7 @@ function waitfortimecheck(duration, callback, endcondition1, endcondition2, endc
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1d32d525, Offset: 0x8840
 // Size: 0x7c
 function waittillemp(onempdcallback, arg) {
@@ -2237,7 +2236,7 @@ function waittillemp(onempdcallback, arg) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x857d90e0, Offset: 0x88c8
 // Size: 0x6e
 function is_killstreak_weapon_assist_allowed(weapon) {
@@ -2252,7 +2251,7 @@ function is_killstreak_weapon_assist_allowed(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5f796d79, Offset: 0x8940
 // Size: 0xc0
 function should_override_entity_camera_in_demo(player, weapon) {
@@ -2271,7 +2270,7 @@ function should_override_entity_camera_in_demo(player, weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2fea2b1a, Offset: 0x8a08
 // Size: 0x58
 function watch_for_remove_remote_weapon() {
@@ -2284,7 +2283,7 @@ function watch_for_remove_remote_weapon() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x5e67ce36, Offset: 0x8a68
 // Size: 0x13e
 function clear_using_remote(immediate, skipnotify, gameended) {
@@ -2311,7 +2310,7 @@ function clear_using_remote(immediate, skipnotify, gameended) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbdc4eadb, Offset: 0x8bb0
 // Size: 0xe
 function reset_killstreak_delay_killcam() {
@@ -2319,7 +2318,7 @@ function reset_killstreak_delay_killcam() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x66bd2a07, Offset: 0x8bc8
 // Size: 0x78
 function init_ride_killstreak(streak, always_allow = 0) {
@@ -2332,7 +2331,7 @@ function init_ride_killstreak(streak, always_allow = 0) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x16032140, Offset: 0x8c48
 // Size: 0x4ac
 function private init_ride_killstreak_internal(streak, always_allow) {
@@ -2418,24 +2417,24 @@ function private init_ride_killstreak_internal(streak, always_allow) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1ebfdf3b, Offset: 0x9100
 // Size: 0x44
 function private clear_ride_intro(delay) {
     self endon(#"disconnect");
     if (isdefined(delay)) {
-        wait(delay);
+        wait delay;
     }
     self thread hud::screen_fade_in(0);
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1023dd8, Offset: 0x9150
 // Size: 0x5c
 function function_cfa9cec5(startwait) {
     self endon(#"disconnect");
-    wait(startwait);
+    wait startwait;
     if (!isdefined(self)) {
         return;
     }
@@ -2443,7 +2442,7 @@ function function_cfa9cec5(startwait) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd6c64500, Offset: 0x91b8
 // Size: 0x2c
 function function_50b430e0() {
@@ -2451,7 +2450,7 @@ function function_50b430e0() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7b77afe4, Offset: 0x91f0
 // Size: 0x66
 function is_interacting_with_object() {
@@ -2468,7 +2467,7 @@ function is_interacting_with_object() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x294e82e4, Offset: 0x9260
 // Size: 0xee
 function setup_health(killstreak_ref, max_health, low_health) {
@@ -2492,7 +2491,7 @@ function setup_health(killstreak_ref, max_health, low_health) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf0cf8478, Offset: 0x9358
 // Size: 0xb2
 function defaulthackedhealthupdatecallback(*hacker) {
@@ -2507,7 +2506,7 @@ function defaulthackedhealthupdatecallback(*hacker) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 19, eflags: 0x2 linked
+// Params 19, eflags: 0x0
 // Checksum 0xff48be5, Offset: 0x9418
 // Size: 0x180
 function function_8cd96439(killstreakref, killstreakid, onplacecallback, oncancelcallback, onmovecallback, onshutdowncallback, ondeathcallback, onempcallback, model, validmodel, invalidmodel, spawnsvehicle, pickupstring, timeout, health, empdamage, placehintstring, invalidlocationhintstring, placeimmediately = 0) {
@@ -2523,7 +2522,7 @@ function function_8cd96439(killstreakref, killstreakid, onplacecallback, oncance
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3d6feacd, Offset: 0x95a0
 // Size: 0x7c
 function function_84da1341(*damagecallback, destroyedcallback, var_1891d3cd, var_2053fdc6) {
@@ -2535,7 +2534,7 @@ function function_84da1341(*damagecallback, destroyedcallback, var_1891d3cd, var
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x45f5dbac, Offset: 0x9628
 // Size: 0xbc
 function configure_team(killstreaktype, killstreakid, owner, influencertype, configureteamprefunction, configureteampostfunction, ishacked = 0) {
@@ -2548,7 +2547,7 @@ function configure_team(killstreaktype, killstreakid, owner, influencertype, con
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe36f45c8, Offset: 0x96f0
 // Size: 0x1e4
 function configure_team_internal(owner, ishacked) {
@@ -2557,7 +2556,7 @@ function configure_team_internal(owner, ishacked) {
         killstreak.originalowner = owner;
         killstreak.originalteam = owner.team;
     } else {
-        assert(killstreak.killstreakteamconfigured, "<unknown string>");
+        assert(killstreak.killstreakteamconfigured, "<dev string:x49a>");
     }
     if (isdefined(killstreak.killstreakconfigureteamprefunction)) {
         killstreak thread [[ killstreak.killstreakconfigureteamprefunction ]](owner, ishacked);
@@ -2585,7 +2584,7 @@ function configure_team_internal(owner, ishacked) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x3422ecb5, Offset: 0x98e0
 // Size: 0x5a
 function private _setup_configure_team_callbacks(influencertype, configureteamprefunction, configureteampostfunction) {
@@ -2597,7 +2596,7 @@ function private _setup_configure_team_callbacks(influencertype, configureteampr
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbf215620, Offset: 0x9948
 // Size: 0x156
 function trackactivekillstreak(killstreak) {
@@ -2621,7 +2620,7 @@ function trackactivekillstreak(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xcd9fd50e, Offset: 0x9aa8
 // Size: 0x50
 function processscoreevent(event, player, victim, weapon) {
@@ -2631,7 +2630,7 @@ function processscoreevent(event, player, victim, weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf1888fc, Offset: 0x9b00
 // Size: 0x256
 function update_player_threat(player) {
@@ -2674,7 +2673,7 @@ function update_player_threat(player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d1367b, Offset: 0x9d60
 // Size: 0xc2
 function update_non_player_threat(non_player) {
@@ -2689,7 +2688,7 @@ function update_non_player_threat(non_player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x404fe10b, Offset: 0x9e30
 // Size: 0x1be
 function update_actor_threat(actor) {
@@ -2718,7 +2717,7 @@ function update_actor_threat(actor) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5867683, Offset: 0x9ff8
 // Size: 0xa6
 function update_dog_threat(dog) {
@@ -2730,7 +2729,7 @@ function update_dog_threat(dog) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6aaf0aab, Offset: 0xa0a8
 // Size: 0xb8
 function missile_valid_target_check(missiletarget) {
@@ -2745,7 +2744,7 @@ function missile_valid_target_check(missiletarget) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7e8de244, Offset: 0xa168
 // Size: 0x14e
 function update_missile_player_threat(player) {
@@ -2771,7 +2770,7 @@ function update_missile_player_threat(player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x57d9e50e, Offset: 0xa2c0
 // Size: 0x1a
 function update_missile_dog_threat(dog) {
@@ -2779,7 +2778,7 @@ function update_missile_dog_threat(dog) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xee7bff7e, Offset: 0xa2e8
 // Size: 0x1a
 function function_6d23c51c(dog) {
@@ -2787,7 +2786,7 @@ function function_6d23c51c(dog) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5de32f1f, Offset: 0xa310
 // Size: 0xa8
 function function_fff56140(owner, var_4a025683) {
@@ -2803,8 +2802,8 @@ function function_fff56140(owner, var_4a025683) {
 // Size: 0xd6
 function should_not_timeout(killstreak) {
     /#
-        assert(isdefined(killstreak), "<unknown string>");
-        assert(isdefined(level.killstreaks[killstreak]), "<unknown string>");
+        assert(isdefined(killstreak), "<dev string:x79>");
+        assert(isdefined(level.killstreaks[killstreak]), "<dev string:x1b3>");
         if (getdvarint(#"hash_e8bb2ce168acce0", 0)) {
             return 1;
         }
@@ -2816,7 +2815,7 @@ function should_not_timeout(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x3a6a7444, Offset: 0xa4a0
 // Size: 0x54
 function waitfortimeout(killstreak, duration, callback, endcondition1, endcondition2, endcondition3) {
@@ -2824,7 +2823,7 @@ function waitfortimeout(killstreak, duration, callback, endcondition1, endcondit
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x83303142, Offset: 0xa500
 // Size: 0x374
 function function_b86397ae(killstreak, duration, starttimeoverride, callback, endcondition1, endcondition2, endcondition3) {
@@ -2880,7 +2879,7 @@ function function_b86397ae(killstreak, duration, starttimeoverride, callback, en
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5bb93f7a, Offset: 0xa880
 // Size: 0x3c
 function function_b00e94e0(killstreakbundle, duration) {
@@ -2888,7 +2887,7 @@ function function_b00e94e0(killstreakbundle, duration) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3c5f1865, Offset: 0xa8c8
 // Size: 0x184
 function waitfortimeoutbeep(kstimeoutbeepduration, kstimeoutfastbeepduration, duration) {
@@ -2910,7 +2909,7 @@ function waitfortimeoutbeep(kstimeoutbeepduration, kstimeoutfastbeepduration, du
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f7dd753, Offset: 0xaa58
 // Size: 0x44
 function function_67bc25ec() {
@@ -2920,7 +2919,7 @@ function function_67bc25ec() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xabcc6867, Offset: 0xaaa8
 // Size: 0xf4
 function waitfortimeouthacked(*killstreak, callback, endcondition1, endcondition2, endcondition3) {
@@ -2961,7 +2960,7 @@ function function_975d45c3() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5b5878f4, Offset: 0xac28
 // Size: 0x1a
 function set_killstreak_delay_killcam(killstreak_name) {
@@ -2969,7 +2968,7 @@ function set_killstreak_delay_killcam(killstreak_name) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe463a0b, Offset: 0xac50
 // Size: 0x1c
 function getactivekillstreaks() {
@@ -2977,7 +2976,7 @@ function getactivekillstreaks() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x36219a93, Offset: 0xac78
 // Size: 0x42
 function function_55e3fed6(killstreaktype) {
@@ -3005,7 +3004,7 @@ function watchteamchange(teamchangenotify) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x279d6f53, Offset: 0xad80
 // Size: 0x3c
 function killstreak_assist(victim, assister, killstreak) {
@@ -3013,7 +3012,7 @@ function killstreak_assist(victim, assister, killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xab092c1b, Offset: 0xadc8
 // Size: 0x11a
 function add_ricochet_protection(killstreak_id, owner, origin, ricochet_distance) {
@@ -3036,7 +3035,7 @@ function add_ricochet_protection(killstreak_id, owner, origin, ricochet_distance
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3a4ae55d, Offset: 0xaef0
 // Size: 0x76
 function set_ricochet_protection_endtime(killstreak_id, owner, endtime) {
@@ -3050,7 +3049,7 @@ function set_ricochet_protection_endtime(killstreak_id, owner, endtime) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9e1e9f53, Offset: 0xaf70
 // Size: 0x4c
 function remove_ricochet_protection(killstreak_id, owner) {
@@ -3061,7 +3060,7 @@ function remove_ricochet_protection(killstreak_id, owner) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x178e9a31, Offset: 0xafc8
 // Size: 0x24
 function thermal_glow(enable) {
@@ -3077,7 +3076,7 @@ function thermal_glow_enemies_only(enable) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30f51e82, Offset: 0xb028
 // Size: 0x102
 function is_ricochet_protected(player) {
@@ -3099,7 +3098,7 @@ function is_ricochet_protected(player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x75604cc5, Offset: 0xb138
 // Size: 0x3a
 function get_script_bundle(type) {
@@ -3110,7 +3109,7 @@ function get_script_bundle(type) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x11ea0e83, Offset: 0xb180
 // Size: 0x44
 function function_e2c3bda3(killstreaktype, var_dee4d012) {
@@ -3144,7 +3143,7 @@ function function_257a5f13(killstreaktype, var_ba5a6782) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x79cd6c68, Offset: 0xb260
 // Size: 0x184
 function function_b182645e(player, hardpointtype) {
@@ -3168,7 +3167,7 @@ function function_b182645e(player, hardpointtype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xce3ef4fb, Offset: 0xb3f0
 // Size: 0x164
 function function_f964dc1c() {
@@ -3183,7 +3182,7 @@ function function_f964dc1c() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf210784c, Offset: 0xb560
 // Size: 0xfc
 function function_a831f92c(killstreakslot, duration, var_f63114ce) {
@@ -3200,7 +3199,7 @@ function function_a831f92c(killstreakslot, duration, var_f63114ce) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x80060ff6, Offset: 0xb668
 // Size: 0x84
 function function_b3185041(killstreakslot, endtime) {
@@ -3212,7 +3211,7 @@ function function_b3185041(killstreakslot, endtime) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe41c2a4d, Offset: 0xb6f8
 // Size: 0x24
 function function_a781e8d2() {
@@ -3220,7 +3219,7 @@ function function_a781e8d2() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb92df0fe, Offset: 0xb728
 // Size: 0x24
 function function_90e951f2() {
@@ -3228,7 +3227,7 @@ function function_90e951f2() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xea70f38b, Offset: 0xb758
 // Size: 0x24
 function function_8b4513ca() {
@@ -3236,7 +3235,7 @@ function function_8b4513ca() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8ac45b45, Offset: 0xb788
 // Size: 0x24
 function function_7d265bd3() {
@@ -3244,7 +3243,7 @@ function function_7d265bd3() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x54d9b714, Offset: 0xb7b8
 // Size: 0x164
 function function_ea21be29(killstreaktype, killstreak_weapon, player_died) {
@@ -3275,7 +3274,7 @@ function function_ea21be29(killstreaktype, killstreak_weapon, player_died) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x315f9a91, Offset: 0xb928
 // Size: 0x10c
 function private function_119fdfcd(killstreaktype) {
@@ -3296,7 +3295,7 @@ function private function_119fdfcd(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x50b531bd, Offset: 0xba40
 // Size: 0x598
 function function_fc82c544(killstreaktype) {
@@ -3364,7 +3363,7 @@ function function_fc82c544(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xba3ca692, Offset: 0xbfe0
 // Size: 0x15a
 function function_47492133() {
@@ -3389,7 +3388,7 @@ function function_47492133() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0c8c0b1, Offset: 0xc148
 // Size: 0x1cc
 function function_edde22a8() {
@@ -3427,10 +3426,10 @@ function function_edde22a8() {
         debug_frames = int(debug_wait / float(function_60d95f53()) / 1000) + 1;
         while (true) {
             if (getdvarint(#"scr_ricochet_protection_debug", 0) == 0) {
-                wait(2);
+                wait 2;
                 continue;
             }
-            wait(debug_wait);
+            wait debug_wait;
             foreach (player in level.players) {
                 if (!isdefined(player)) {
                     continue;
@@ -3457,7 +3456,7 @@ function function_edde22a8() {
 #/
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdbf884e9, Offset: 0xc5d0
 // Size: 0x6c
 function function_e24443d0(killstreaktype) {

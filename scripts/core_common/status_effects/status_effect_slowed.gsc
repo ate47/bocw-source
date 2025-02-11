@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_slowed;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_slowed/status_effect_slowed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf1e4fc99, Offset: 0xf0
 // Size: 0x6c
 function private preinit() {
@@ -24,11 +23,11 @@ function private preinit() {
 }
 
 // Namespace status_effect_slowed/status_effect_slowed
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x68bc351e, Offset: 0x168
 // Size: 0xf2
 function slowed_apply(var_756fda07, weapon, applicant) {
-    self.owner.var_23ed81d6 = gettime() + int(var_756fda07.var_77449e9);
+    self.owner.var_23ed81d6 = gettime() + int(var_756fda07.seduration);
     self.owner.var_a010bd8f = applicant;
     self.owner.var_9060b065 = weapon;
     if (!isdefined(applicant) || self.owner == applicant) {
@@ -42,7 +41,7 @@ function slowed_apply(var_756fda07, weapon, applicant) {
 }
 
 // Namespace status_effect_slowed/status_effect_slowed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1029aef9, Offset: 0x268
 // Size: 0x5e
 function function_6fe78d40() {

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3d703ef87a841fe4;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\player\player_stats.gsc;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
 
 #namespace player_role;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x234514e1, Offset: 0x100
 // Size: 0x20
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace player_role/player_role
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8cac3c90, Offset: 0x128
 // Size: 0xaa
 function get_category_for_index(characterindex) {
@@ -61,7 +60,7 @@ function function_c1f61ea2() {
 }
 
 // Namespace player_role/player_role
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x45f3e628, Offset: 0x2c0
 // Size: 0x12e
 function function_965ea244(var_6c93328a = 0, var_f99420aa = 0) {
@@ -79,7 +78,7 @@ function function_965ea244(var_6c93328a = 0, var_f99420aa = 0) {
 }
 
 // Namespace player_role/player_role
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaf97a3ff, Offset: 0x3f8
 // Size: 0x16a
 function function_63d13ea3(characterindex) {
@@ -104,7 +103,7 @@ function function_63d13ea3(characterindex) {
 }
 
 // Namespace player_role/player_role
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5bf565bf, Offset: 0x570
 // Size: 0x10e
 function is_valid(index) {
@@ -123,7 +122,7 @@ function is_valid(index) {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x718625be, Offset: 0x688
 // Size: 0x4a
 function get() {
@@ -132,7 +131,7 @@ function get() {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ed79fd, Offset: 0x6e0
 // Size: 0x22
 function update_fields() {
@@ -140,7 +139,7 @@ function update_fields() {
 }
 
 // Namespace player_role/player_role
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1e743334, Offset: 0x710
 // Size: 0x238
 function set(index, force) {
@@ -169,7 +168,7 @@ function set(index, force) {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cb4afda, Offset: 0x950
 // Size: 0x76
 function clear() {
@@ -205,7 +204,7 @@ function function_97d19493(name) {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9e4a2500, Offset: 0xaa0
 // Size: 0x92
 function function_2a911680() {

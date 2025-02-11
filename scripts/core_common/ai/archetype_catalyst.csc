@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\ai_shared.csc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\system_shared;
 
 #namespace archetype_catalyst;
 
@@ -21,7 +20,7 @@ function autoexec precache() {
 }
 
 // Namespace archetype_catalyst/archetype_catalyst
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3c8c2d06, Offset: 0x100
 // Size: 0x34
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace archetype_catalyst/archetype_catalyst
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7e568149, Offset: 0x140
 // Size: 0x3c
 function private function_5608540a(localclientnum) {

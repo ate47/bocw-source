@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
 #using script_37f9ff47f340fbe8;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
 
 #namespace easing;
 
@@ -60,10 +59,10 @@ function ease_angles(target, time, ease_type, axis, additive, ease_in, ease_out,
 }
 
 // Namespace easing/easing
-// Params 11, eflags: 0x40
+// Params 11, eflags: 0x40 variadic
 // Checksum 0x9adf1b30, Offset: 0x500
 // Size: 0x4fe
-function function_d4a4a726(start_value, target_value, time, var_f71e2d8f, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
+function function_d4a4a726(start_value, target_value, time, callback_func, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
     assert(isdefined(level.ease_funcs));
     assert(isdefined(level.ease_funcs[ease_type]));
     if (!isdefined(notifies)) {
@@ -106,15 +105,15 @@ function function_d4a4a726(start_value, target_value, time, var_f71e2d8f, ease_t
             break;
         }
         var_b3160f0.delta = var_b3160f0.cur_value - var_88a4b08c;
-        util::function_50f54b6f(self, var_f71e2d8f, var_b3160f0, vararg);
+        util::function_50f54b6f(self, callback_func, var_b3160f0, vararg);
         waitframe(1);
     }
     var_b3160f0.cur_value = target_value;
     var_b3160f0.delta = var_b3160f0.target_value - var_88a4b08c;
     var_b3160f0.var_37e98bce = 1;
-    util::function_50f54b6f(self, var_f71e2d8f, var_b3160f0, vararg);
+    util::function_50f54b6f(self, callback_func, var_b3160f0, vararg);
     if (isdefined(self)) {
-        self notify(#"hash_133229f708f5d10", {#start_value:start_value, #target_value:target_value, #time:time, #var_f71e2d8f:var_f71e2d8f, #ease_type:ease_type});
+        self notify(#"ease_done", {#start_value:start_value, #target_value:target_value, #time:time, #callback_func:callback_func, #ease_type:ease_type});
     }
 }
 

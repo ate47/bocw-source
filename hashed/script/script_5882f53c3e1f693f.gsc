@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_812a8849;
 
 // Namespace namespace_812a8849/namespace_812a8849
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3f1bd896, Offset: 0x198
 // Size: 0x2bc
 function init() {
@@ -29,7 +28,7 @@ function init() {
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xebc55928, Offset: 0x460
 // Size: 0xc8
 function function_d88ded8(flag, clientfield) {
@@ -45,7 +44,7 @@ function function_d88ded8(flag, clientfield) {
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1bc8108, Offset: 0x530
 // Size: 0x8c
 function function_b5bdf435() {
@@ -57,7 +56,7 @@ function function_b5bdf435() {
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6fc2019, Offset: 0x5c8
 // Size: 0x1c2
 function function_bd7cde02(state) {
@@ -90,7 +89,7 @@ function function_bd7cde02(state) {
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x758de2a8, Offset: 0x798
 // Size: 0x8c
 function function_387ae4cb() {
@@ -102,7 +101,7 @@ function function_387ae4cb() {
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60a420fc, Offset: 0x830
 // Size: 0x1c2
 function function_32ba2029(state) {

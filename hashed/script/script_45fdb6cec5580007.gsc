@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\system_shared;
 
 #namespace squads;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa32a4cb2, Offset: 0xf0
 // Size: 0x15c
 function __init__() {
@@ -26,13 +25,13 @@ function __init__() {
     level.squad = {#count:function_bb1ab64b()};
     level.squads = [];
     for (squad_index = 1; squad_index <= level.squad.count; squad_index++) {
-        var_bdb3f6a6 = "squad_" + squad_index;
-        level.squads[hash("squad_" + squad_index)] = {#name:var_bdb3f6a6};
+        squad_name = "squad_" + squad_index;
+        level.squads[hash("squad_" + squad_index)] = {#name:squad_name};
     }
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa41184de, Offset: 0x258
 // Size: 0x2e
 function function_a9758423() {
@@ -40,7 +39,7 @@ function function_a9758423() {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x39007603, Offset: 0x290
 // Size: 0x22
 function private function_bb1ab64b() {
@@ -48,7 +47,7 @@ function private function_bb1ab64b() {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x70ae8fc8, Offset: 0x2c0
 // Size: 0xa2
 function function_43a7bead() {
@@ -61,7 +60,7 @@ function function_43a7bead() {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5fb9c6b4, Offset: 0x370
 // Size: 0x42
 function function_59396fe8(squad) {
@@ -73,7 +72,7 @@ function function_59396fe8(squad) {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x142954bf, Offset: 0x3c0
 // Size: 0xe2
 function function_fc04a299(party) {
@@ -89,7 +88,7 @@ function function_fc04a299(party) {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x82d949d7, Offset: 0x4b0
 // Size: 0xfa
 function function_c98289a5(team) {
@@ -106,7 +105,7 @@ function function_c98289a5(team) {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6da60419, Offset: 0x5b8
 // Size: 0xaa
 function function_faeb0876() {
@@ -122,7 +121,7 @@ function function_faeb0876() {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd8e749e7, Offset: 0x670
 // Size: 0x2c
 function function_46edfa55(var_74578e76) {
@@ -130,7 +129,7 @@ function function_46edfa55(var_74578e76) {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaaa0958d, Offset: 0x6a8
 // Size: 0xce
 function function_a65e2082(squad) {
@@ -152,7 +151,7 @@ function function_a65e2082(squad) {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x522dfeaa, Offset: 0x780
 // Size: 0xa2
 function function_4f237b02() {
@@ -165,11 +164,11 @@ function function_4f237b02() {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x220339f5, Offset: 0x830
 // Size: 0x12a
 function function_33843308(status) {
-    foreach (var_bdb3f6a6, squad in level.squads) {
+    foreach (squad_name, squad in level.squads) {
         if (status == #"game") {
             if (isdefined(squad.voip) && squad.voip != #"game") {
                 continue;
@@ -177,15 +176,15 @@ function function_33843308(status) {
         } else if (isdefined(squad.voip) && squad.voip == #"game") {
             continue;
         }
-        if (self function_a65e2082(var_bdb3f6a6)) {
-            return var_bdb3f6a6;
+        if (self function_a65e2082(squad_name)) {
+            return squad_name;
         }
     }
     return #"none";
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30d36db1, Offset: 0x968
 // Size: 0x50
 function function_b0c92599(party) {
@@ -196,7 +195,7 @@ function function_b0c92599(party) {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5ef91019, Offset: 0x9c0
 // Size: 0x62
 function private function_f65acad1() {
@@ -209,7 +208,7 @@ function private function_f65acad1() {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf9593153, Offset: 0xa30
 // Size: 0x6a
 function private function_49c2a7d1(party) {
@@ -222,14 +221,14 @@ function private function_49c2a7d1(party) {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xabdb0b2, Offset: 0xaa8
 // Size: 0xea
 function function_4c9d66b1() {
     var_432c77c2 = function_785ee514(self);
     /#
-        var_d1f1fdbf = getdvarstring(#"hash_1c90c9250b52435a", "<unknown string>");
-        var_8ec96d19 = strtok(var_d1f1fdbf, "<unknown string>");
+        var_d1f1fdbf = getdvarstring(#"hash_1c90c9250b52435a", "<dev string:x38>");
+        var_8ec96d19 = strtok(var_d1f1fdbf, "<dev string:x3c>");
         if (var_8ec96d19.size > 0) {
             playersquad = var_8ec96d19[self getentitynumber()];
             if (isdefined(playersquad) && isdefined(level.squads[playersquad])) {
@@ -241,12 +240,12 @@ function function_4c9d66b1() {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf6d9bad4, Offset: 0xba0
 // Size: 0x274
 function function_c70b26ea(squad = self function_4c9d66b1()) {
     if (squad == #"none") {
-        println("<unknown string>");
+        println("<dev string:x41>");
         if (level.var_c58668ea) {
             squad = function_c98289a5(self.team);
             if (squad == #"none") {
@@ -269,8 +268,8 @@ function function_c70b26ea(squad = self function_4c9d66b1()) {
         }
     }
     /#
-        var_d1f1fdbf = getdvarstring(#"hash_1c90c9250b52435a", "<unknown string>");
-        var_8ec96d19 = strtok(var_d1f1fdbf, "<unknown string>");
+        var_d1f1fdbf = getdvarstring(#"hash_1c90c9250b52435a", "<dev string:x38>");
+        var_8ec96d19 = strtok(var_d1f1fdbf, "<dev string:x3c>");
         if (var_8ec96d19.size > 0) {
             playersquad = var_8ec96d19[self getentitynumber()];
             if (isdefined(playersquad) && isdefined(level.squads[playersquad])) {
@@ -282,21 +281,21 @@ function function_c70b26ea(squad = self function_4c9d66b1()) {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa043718c, Offset: 0xe20
 // Size: 0x19a
-function function_ff3321ee(var_bdb3f6a6) {
-    self.pers[#"squad"] = var_bdb3f6a6;
-    self.squad = var_bdb3f6a6;
+function function_ff3321ee(squad_name) {
+    self.pers[#"squad"] = squad_name;
+    self.squad = squad_name;
     self.pers[#"teammateindex"] = 0;
     self.teammateindex = 0;
     self function_a4c9eb05();
     /#
         xuid = self getxuid();
-        println("<unknown string>" + xuid + "<unknown string>" + int(var_bdb3f6a6));
+        println("<dev string:x80>" + xuid + "<dev string:xa7>" + int(squad_name));
     #/
-    if (isdefined(level.squads[var_bdb3f6a6])) {
-        squad = level.squads[var_bdb3f6a6];
+    if (isdefined(level.squads[squad_name])) {
+        squad = level.squads[squad_name];
         status = self player::function_3d288f14();
         if (!isdefined(squad.voip) || status != squad.voip && status == #"game") {
             if (status == #"game") {
@@ -309,7 +308,7 @@ function function_ff3321ee(var_bdb3f6a6) {
 }
 
 // Namespace squads/squads
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe2298718, Offset: 0xfc8
 // Size: 0x9c
 function private function_e249c6ae(squadmates, index) {
@@ -322,7 +321,7 @@ function private function_e249c6ae(squadmates, index) {
 }
 
 // Namespace squads/squads
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x43905dbf, Offset: 0x1070
 // Size: 0x4a
 function private function_114b9455(squadmates, start_index) {
@@ -332,7 +331,7 @@ function private function_114b9455(squadmates, start_index) {
 }
 
 // Namespace squads/squads
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xfe8a5cf3, Offset: 0x10c8
 // Size: 0xfa
 function private function_80d5f55(squadmates, party) {
@@ -351,7 +350,7 @@ function private function_80d5f55(squadmates, party) {
 }
 
 // Namespace squads/squads
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeec4c22e, Offset: 0x11d0
 // Size: 0xbc
 function function_a4c9eb05() {

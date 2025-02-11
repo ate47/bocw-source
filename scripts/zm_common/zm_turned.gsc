@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\gametypes\spawnlogic.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\gametypes\spawnlogic;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_turned;
 
@@ -38,7 +37,7 @@ function init() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x52fb756c, Offset: 0x400
 // Size: 0x82
 function setup_zombie_exerts() {
@@ -49,13 +48,13 @@ function setup_zombie_exerts() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x661f4ee0, Offset: 0x490
 // Size: 0x64
 function delay_turning_on_eyes() {
     self endon(#"death", #"disconnect");
     util::wait_network_frame();
-    wait(0.1);
+    wait 0.1;
     self clientfield::set("player_has_eyes", 1);
 }
 
@@ -71,7 +70,7 @@ function turn_to_zombie() {
         return;
     }
     while (is_true(self.is_in_process_of_humanify)) {
-        wait(0.1);
+        wait 0.1;
     }
     if (!level flag::get("pregame")) {
         self playsoundtoplayer(#"evt_spawn", self);
@@ -161,7 +160,7 @@ function turn_to_human() {
         return;
     }
     while (is_true(self.is_in_process_of_zombify)) {
-        wait(0.1);
+        wait 0.1;
     }
     self playsoundtoplayer(#"evt_spawn", self);
     playsoundatposition(#"evt_disappear_3d", self.origin);
@@ -239,7 +238,7 @@ function deletezombiesinradius(origin) {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e477df9, Offset: 0x12d8
 // Size: 0x16c
 function turned_give_melee_weapon() {
@@ -258,7 +257,7 @@ function turned_give_melee_weapon() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a48e8d6, Offset: 0x1450
 // Size: 0x25a
 function turned_player_buttons() {
@@ -293,7 +292,7 @@ function turned_player_buttons() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdf989365, Offset: 0x16b8
 // Size: 0xdc
 function turned_disable_player_weapons() {
@@ -315,7 +314,7 @@ function turned_disable_player_weapons() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2cfc1a7f, Offset: 0x17a0
 // Size: 0x2b4
 function turned_enable_player_weapons() {
@@ -384,7 +383,7 @@ function get_available_human() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4afe416a, Offset: 0x1c80
 // Size: 0x74
 function silentlyremovezombie() {

@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace remote_weapons;
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe29b173a, Offset: 0x168
 // Size: 0x64
 function init_shared() {
@@ -23,7 +22,7 @@ function init_shared() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd2d1fd7f, Offset: 0x1d8
 // Size: 0x2c
 function on_player_spawned() {
@@ -32,7 +31,7 @@ function on_player_spawned() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb630e06d, Offset: 0x210
 // Size: 0x3c
 function removeandassignnewremotecontroltrigger(remotecontroltrigger) {
@@ -41,7 +40,7 @@ function removeandassignnewremotecontroltrigger(remotecontroltrigger) {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb0fb352, Offset: 0x258
 // Size: 0xdc
 function assignremotecontroltrigger(force_new_assignment = 0) {
@@ -59,7 +58,7 @@ function assignremotecontroltrigger(force_new_assignment = 0) {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xe2953414, Offset: 0x340
 // Size: 0xda
 function registerremoteweapon(weaponname, hintstring, usecallback, endusecallback, hidecompassonuse = 1) {
@@ -72,7 +71,7 @@ function registerremoteweapon(weaponname, hintstring, usecallback, endusecallbac
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2fad1e1, Offset: 0x428
 // Size: 0x11c
 function useremoteweapon(weapon, weaponname, immediate, allowmanualdeactivation = 1, always_allow_ride = 0) {
@@ -106,7 +105,7 @@ function watchforhack() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c6dd95f, Offset: 0x5f0
 // Size: 0x2c
 function on_game_ended() {
@@ -115,7 +114,7 @@ function on_game_ended() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97a2e0b5, Offset: 0x628
 // Size: 0xde
 function watchremoveremotecontrolledweapon() {
@@ -132,7 +131,7 @@ function watchremoveremotecontrolledweapon() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa69adac4, Offset: 0x710
 // Size: 0x244
 function createremoteweapontrigger() {
@@ -162,7 +161,7 @@ function createremoteweapontrigger() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5c00a190, Offset: 0x960
 // Size: 0x9c
 function watchweapondeath() {
@@ -176,7 +175,7 @@ function watchweapondeath() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe3d4ef50, Offset: 0xa08
 // Size: 0xe4
 function watchownerdisconnect() {
@@ -193,7 +192,7 @@ function watchownerdisconnect() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x265b944b, Offset: 0xaf8
 // Size: 0xb8
 function watchremotetriggerdisable() {
@@ -203,12 +202,12 @@ function watchremotetriggerdisable() {
     weapon.remoteowner endon(#"disconnect");
     while (true) {
         weapon.usetrigger triggerenable(!weapon.remoteowner iswallrunning());
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x85ee101a, Offset: 0xbb8
 // Size: 0xee
 function allowremotestart(var_59d2c24b) {
@@ -220,7 +219,7 @@ function allowremotestart(var_59d2c24b) {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1de339a, Offset: 0xcb0
 // Size: 0x210
 function watchremotetriggeruse() {
@@ -253,7 +252,7 @@ function watchremotetriggeruse() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2e476269, Offset: 0xec8
 // Size: 0x450
 function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride = 0) {
@@ -308,7 +307,7 @@ function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride =
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14d9374c, Offset: 0x1320
 // Size: 0x64
 function resetcontrols(weapon) {
@@ -319,7 +318,7 @@ function resetcontrols(weapon) {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x10fbde95, Offset: 0x1390
 // Size: 0x3a
 function resetcontrolinitiateduponownerrespawn() {
@@ -329,7 +328,7 @@ function resetcontrolinitiateduponownerrespawn() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x16270336, Offset: 0x13d8
 // Size: 0x1ec
 function watchremotecontroldeactivate() {
@@ -361,7 +360,7 @@ function watchremotecontroldeactivate() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf1558a53, Offset: 0x15d0
 // Size: 0x4f0
 function endremotecontrolweaponuse(exitrequestedbyowner, gameended) {
@@ -380,19 +379,19 @@ function endremotecontrolweaponuse(exitrequestedbyowner, gameended) {
     }
     if (isdefined(weapon.remoteowner) && remote_controlled) {
         if (isdefined(weapon.remoteweaponshutdowndelay)) {
-            wait(weapon.remoteweaponshutdowndelay);
+            wait weapon.remoteweaponshutdowndelay;
         }
         player = weapon.remoteowner;
         if (player.dofutz === 1) {
             player clientfield::set_to_player("static_postfx", 1);
-            wait(1);
+            wait 1;
             if (isdefined(player)) {
                 player clientfield::set_to_player("static_postfx", 0);
                 player.dofutz = 0;
             }
         } else if (!exitrequestedbyowner && weapon.watch_remote_weapon_death === 1 && !isalive(weapon)) {
             weapon.dontfreeme = 1;
-            wait(isdefined(weapon.watch_remote_weapon_death_duration) ? weapon.watch_remote_weapon_death_duration : 1);
+            wait isdefined(weapon.watch_remote_weapon_death_duration) ? weapon.watch_remote_weapon_death_duration : 1;
             if (isdefined(weapon)) {
                 weapon.dontfreeme = undefined;
             }
@@ -440,7 +439,7 @@ function endremotecontrolweaponuse(exitrequestedbyowner, gameended) {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc196ecc4, Offset: 0x1ac8
 // Size: 0x9c
 function fadetoblackandbackin() {
@@ -467,14 +466,14 @@ function fadetoblackandbackin() {
 // Size: 0x6c
 function stunstaticfx(duration) {
     self endon(#"remove_remote_weapon");
-    wait(duration - 0.5);
+    wait duration - 0.5;
     for (time = duration - 0.5; time < duration; time += 0.05) {
         waitframe(1);
     }
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfec6e7d7, Offset: 0x1be8
 // Size: 0x84
 function destroyhud() {
@@ -488,7 +487,7 @@ function destroyhud() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d3d0ef, Offset: 0x1c78
 // Size: 0x34
 function destroyremotehud() {
@@ -497,7 +496,7 @@ function destroyremotehud() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb51ef46e, Offset: 0x1cb8
 // Size: 0xa4
 function set_static(val) {
@@ -514,7 +513,7 @@ function set_static(val) {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x67730bda, Offset: 0x1d68
 // Size: 0x24
 function function_3c9e877a() {
@@ -522,13 +521,13 @@ function function_3c9e877a() {
 }
 
 // Namespace remote_weapons/remote_weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x57299695, Offset: 0x1d98
 // Size: 0x6e
 function do_static_fx() {
     self set_static(1);
     owner = self.owner;
-    wait(2);
+    wait 2;
     if (isdefined(owner)) {
         owner function_3c9e877a();
     }

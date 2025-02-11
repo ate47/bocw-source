@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_2ce5448dd4c3e201;
 
 #namespace koth;

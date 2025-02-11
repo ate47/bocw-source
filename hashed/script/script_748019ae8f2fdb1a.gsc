@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3411bb48d41bd3b;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_3983f538;
 
@@ -41,7 +40,7 @@ function autoexec main() {
     level thread function_9c0ef20d();
     mapname = "mp_black_sea";
     /#
-        adddebugcommand("zombie_teleport" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x38>" + mapname + "<dev string:x49>");
         level thread function_b218294b();
         level thread function_9fb424f8();
     #/
@@ -76,7 +75,7 @@ function function_e8fa58f2() {
 // Size: 0x150
 function function_2b0c8f12() {
     level flag::wait_till(#"item_world_reset");
-    wait(0.1);
+    wait 0.1;
     var_94c44cac = getdynentarray("spy_special_weapon_stash");
     var_de285f77 = getdynentarray("spy_ammo_stash");
     var_ffd6a2d3 = getdynentarray("spy_equipment_stash");
@@ -155,7 +154,7 @@ function function_77056849() {
                             var_53b2da60 = zombie_utility::function_d446de65(zombie, zombie.origin + anglestoforward(zombie.angles) * 100, 100);
                             if (!isdefined(var_53b2da60)) {
                                 function_59dbd2b(zombie, var_7798f40b);
-                                wait(randomfloatrange(0.4, getdvarfloat(#"hash_477d3fea18818caa", 1.5)));
+                                wait randomfloatrange(0.4, getdvarfloat(#"hash_477d3fea18818caa", 1.5));
                             }
                         }
                     }
@@ -219,13 +218,13 @@ function function_59dbd2b(entity, target_pos) {
     var_dd6010e8 += anglestoforward(entity.angles) * 20;
     entity.var_cc6f2563 = var_dd6010e8;
     anim = #"hash_15c778c08ce4f907";
-    var_e3ffd111 = entity.angles;
+    anim_angles = entity.angles;
     if (isdefined(target_pos)) {
         yaw = vectortoyaw(target_pos - entity.origin);
-        var_e3ffd111 = (var_e3ffd111[0], yaw, var_e3ffd111[2]);
+        anim_angles = (anim_angles[0], yaw, anim_angles[2]);
     }
     entity.var_afbb6d07 = 1;
-    entity animscripted(anim, entity.origin, var_e3ffd111, anim, "normal");
+    entity animscripted(anim, entity.origin, anim_angles, anim, "normal");
 }
 
 // Namespace namespace_3983f538/namespace_3983f538
@@ -246,7 +245,7 @@ function function_ab9b7039() {
             }
             array::add(level.var_6f400b17[var_a404d227], spot.origin);
         } else {
-            println("<unknown string>" + spot.origin);
+            println("<dev string:x83>" + spot.origin);
         }
         waitframe(1);
     }
@@ -350,7 +349,7 @@ function private on_ai_spawned(*params) {
 function function_725ddc56() {
     self endon(#"death");
     while (true) {
-        wait(0.1);
+        wait 0.1;
         ground_ent = self getgroundent();
         if (isvehicle(ground_ent) && function_7243fef2(ground_ent) && !is_true(self.var_df972d6)) {
             var_d193654b = struct::get_array("kill_hvt", "content_script_name");
@@ -405,9 +404,9 @@ function private on_ai_damage(params) {
 // Params 2, eflags: 0x0
 // Checksum 0x80979c90, Offset: 0x24a0
 // Size: 0x60
-function function_5095f2ff(var_8d9b91de, var_95b5f8e1) {
+function function_5095f2ff(var_8d9b91de, teleport_angles) {
     self dontinterpolate();
-    self forceteleport(var_8d9b91de, var_95b5f8e1);
+    self forceteleport(var_8d9b91de, teleport_angles);
     if (isdefined(self.var_b0f20cfe)) {
         self thread [[ self.var_b0f20cfe ]]();
     }
@@ -429,7 +428,7 @@ function function_5095f2ff(var_8d9b91de, var_95b5f8e1) {
                         function_59dbd2b(ai);
                     }
                 }
-                wait(0.5);
+                wait 0.5;
             }
             waitframe(1);
         }
@@ -444,7 +443,7 @@ function function_5095f2ff(var_8d9b91de, var_95b5f8e1) {
             if (isdefined(level.var_6f400b17) && getdvarint(#"hash_3f43f125b004428f", 1) > 0) {
                 foreach (region, spots in level.var_6f400b17) {
                     foreach (spot in spots) {
-                        record3dtext("<unknown string>" + region, spot + (0, 0, 10), (1, 0, 0));
+                        record3dtext("<dev string:xa9>" + region, spot + (0, 0, 10), (1, 0, 0));
                         recordsphere(spot, 10, (1, 0, 0));
                     }
                 }
@@ -532,7 +531,7 @@ function function_42fbf5d9(var_956ca580, s_dest) {
     if (teleport_ent clientfield::is_registered("" + #"hash_6d05bbcab1912e5a")) {
         teleport_ent clientfield::set("" + #"hash_6d05bbcab1912e5a", 1);
     }
-    wait(1);
+    wait 1;
     v_target_pos = s_dest.origin;
     if (!isdefined(v_target_pos)) {
         v_target_pos = array::random(function_a1ef346b()).origin;
@@ -577,7 +576,7 @@ function function_42fbf5d9(var_956ca580, s_dest) {
         var_956ca580 clientfield::set("" + #"hash_3049a409503be8a0", 1);
     }
     var_956ca580 unlink();
-    wait(0.1);
+    wait 0.1;
     var_956ca580 forceteleport(v_target_pos);
     util::wait_network_frame();
     if (isdefined(teleport_ent)) {
@@ -596,7 +595,7 @@ function function_42fbf5d9(var_956ca580, s_dest) {
 // Checksum 0xbc53069a, Offset: 0x3098
 // Size: 0x84
 function function_313a13db() {
-    wait(1);
+    wait 1;
     if (isdefined(self)) {
         if (self clientfield::is_registered("" + #"hash_6d05bbcab1912e5a")) {
             self clientfield::set("" + #"hash_6d05bbcab1912e5a", 0);

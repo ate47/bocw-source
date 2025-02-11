@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\struct;
 
 #namespace sas;
 

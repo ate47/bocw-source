@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
 
 #namespace bot_difficulty;
 
 // Namespace bot_difficulty/bot_difficulty
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8851bcf3, Offset: 0x88
 // Size: 0x24
 function preinit() {
@@ -12,7 +11,7 @@ function preinit() {
 }
 
 // Namespace bot_difficulty/bot_difficulty
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1eaeaaa, Offset: 0xb8
 // Size: 0x3c
 function private function_e161bc77(*params) {
@@ -23,7 +22,7 @@ function private function_e161bc77(*params) {
 }
 
 // Namespace bot_difficulty/bot_difficulty
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24657f51, Offset: 0x100
 // Size: 0x74
 function assign() {
@@ -37,7 +36,7 @@ function assign() {
 }
 
 // Namespace bot_difficulty/bot_difficulty
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf13aa2dd, Offset: 0x180
 // Size: 0x9a
 function private function_d46cc4f5() {
@@ -47,7 +46,7 @@ function private function_d46cc4f5() {
 }
 
 // Namespace bot_difficulty/bot_difficulty
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x19759196, Offset: 0x228
 // Size: 0xda
 function private function_c0e2f147(team) {
@@ -65,7 +64,7 @@ function private function_c0e2f147(team) {
 }
 
 // Namespace bot_difficulty/bot_difficulty
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x45941a8f, Offset: 0x310
 // Size: 0xfa
 function private function_abad20c4(difficulty = 0) {

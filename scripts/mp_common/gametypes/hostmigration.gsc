@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\hostmigration_shared.gsc;
+#using scripts\core_common\hostmigration_shared;
 
 #namespace hostmigration;
 
 // Namespace hostmigration/hostmigration
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x88
 // Size: 0x4
 function callback_hostmigrationsave() {
@@ -12,7 +11,7 @@ function callback_hostmigrationsave() {
 }
 
 // Namespace hostmigration/hostmigration
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x98
 // Size: 0x4
 function callback_prehostmigrationsave() {
@@ -20,7 +19,7 @@ function callback_prehostmigrationsave() {
 }
 
 // Namespace hostmigration/hostmigration
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9ca184a8, Offset: 0xa8
 // Size: 0x1d8
 function callback_hostmigration() {
@@ -30,10 +29,10 @@ function callback_hostmigration() {
         level waittill(#"prematch_over");
     }
     if (level.gameended) {
-        println("<unknown string>" + gettime() + "<unknown string>");
+        println("<dev string:x38>" + gettime() + "<dev string:x57>");
         return;
     }
-    println("<unknown string>" + gettime());
+    println("<dev string:x38>" + gettime());
     level.hostmigrationtimer = 1;
     sethostmigrationstatus(1);
     level notify(#"host_migration_begin");
@@ -47,7 +46,7 @@ function callback_hostmigration() {
     hostmigrationwait();
     level.hostmigrationtimer = undefined;
     sethostmigrationstatus(0);
-    println("<unknown string>" + gettime());
+    println("<dev string:x81>" + gettime());
     level notify(#"host_migration_end");
 }
 

@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\outcome.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\outcome;
+#using scripts\mp_common\gametypes\overtime;
+#using scripts\mp_common\teams\teams;
 
 #namespace hud_message;
 
 // Namespace hud_message/hud_message
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a21499f, Offset: 0xd8
 // Size: 0x6dc
 function init() {
@@ -69,7 +68,7 @@ function private function_4e36b458(winner) {
 }
 
 // Namespace hud_message/hud_message
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3fd262a8, Offset: 0x870
 // Size: 0x7c
 function function_82f36142(var_c1e98979) {
@@ -86,7 +85,7 @@ function function_82f36142(var_c1e98979) {
 }
 
 // Namespace hud_message/hud_message
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x38dace9e, Offset: 0x8f8
 // Size: 0x4e
 function private function_460b0309(game_end) {
@@ -97,7 +96,7 @@ function private function_460b0309(game_end) {
 }
 
 // Namespace hud_message/hud_message
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x402ea704, Offset: 0x950
 // Size: 0x2ae
 function function_a2f30ab4(var_68c25772, var_c1e98979, game_end, outcome) {
@@ -139,7 +138,7 @@ function function_a2f30ab4(var_68c25772, var_c1e98979, game_end, outcome) {
 }
 
 // Namespace hud_message/hud_message
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x285969fc, Offset: 0xc08
 // Size: 0x78
 function private function_555e3f9f() {
@@ -153,7 +152,7 @@ function private function_555e3f9f() {
 }
 
 // Namespace hud_message/hud_message
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc73b3fcf, Offset: 0xc88
 // Size: 0x804
 function teamoutcomenotify(outcome) {
@@ -255,12 +254,12 @@ function teamoutcomenotify(outcome) {
     self luinotifyevent(#"show_outcome", 5, var_14f94126, outcometext, int(matchbonus), winnerenum, var_277c7d47);
     if (var_277c7d47 && game.roundsplayed < level.roundlimit) {
         self luinotifyevent(#"hash_84895967cf4425c");
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace hud_message/hud_message
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x556ef10, Offset: 0x1498
 // Size: 0x1a4
 function outcomenotify(outcome) {
@@ -281,7 +280,7 @@ function outcomenotify(outcome) {
 }
 
 // Namespace hud_message/hud_message
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x12f828a2, Offset: 0x1648
 // Size: 0x2c
 function hide_outcome() {
@@ -289,7 +288,7 @@ function hide_outcome() {
 }
 
 // Namespace hud_message/hud_message
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x4062b02d, Offset: 0x1680
 // Size: 0x94
 function private function_d756b48a(var_c1e98979, winner_text, loser_text, var_94d579fc, var_1e8a2bef) {
@@ -297,7 +296,7 @@ function private function_d756b48a(var_c1e98979, winner_text, loser_text, var_94
 }
 
 // Namespace hud_message/hud_message
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x737e28c3, Offset: 0x1720
 // Size: 0x3c
 function function_2b2308c6(var_c1e98979, var_76f0c6e5, var_767536e4) {
@@ -305,7 +304,7 @@ function function_2b2308c6(var_c1e98979, var_76f0c6e5, var_767536e4) {
 }
 
 // Namespace hud_message/hud_message
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1dd277af, Offset: 0x1768
 // Size: 0x4c
 function function_5d9d54a9(var_c1e98979, var_76f0c6e5) {
@@ -313,7 +312,7 @@ function function_5d9d54a9(var_c1e98979, var_76f0c6e5) {
 }
 
 // Namespace hud_message/hud_message
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x8c430184, Offset: 0x17c0
 // Size: 0x54
 function function_36419c2(var_c1e98979, winner_text, loser_text) {
@@ -321,7 +320,7 @@ function function_36419c2(var_c1e98979, winner_text, loser_text) {
 }
 
 // Namespace hud_message/hud_message
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd801354e, Offset: 0x1820
 // Size: 0xea
 function function_5b0c08ec(player, outcome) {
@@ -336,7 +335,7 @@ function function_5b0c08ec(player, outcome) {
 }
 
 // Namespace hud_message/hud_message
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x10298586, Offset: 0x1918
 // Size: 0x84
 function can_bg_draw(outcome) {

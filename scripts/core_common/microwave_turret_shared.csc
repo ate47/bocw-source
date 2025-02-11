@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace microwave_turret;
 
@@ -25,7 +24,7 @@ function turret_microwave_sound_start(localclientnum) {
         return;
     }
     self playsound(0, #"wpn_micro_turret_start");
-    wait(0.7);
+    wait 0.7;
     origin = self gettagorigin("tag_flash");
     angles = self gettagangles("tag_flash");
     forward = anglestoforward(angles);
@@ -78,7 +77,7 @@ function turret_microwave_sound_updater() {
             self.microwave_audio_end = trace[#"position"];
             soundupdatelineemitter(#"wpn_micro_turret_loop", previousstart, previousend, self.microwave_audio_start, self.microwave_audio_end);
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -154,7 +153,7 @@ function startmicrowavefx(localclientnum) {
     microwavefxent.fxhashs = [];
     self thread updatemicrowaveaim(microwavefxent);
     self thread cleanupfx(localclientnum, microwavefxent);
-    wait(0.3);
+    wait 0.3;
     while (true) {
         /#
             if (getdvarint(#"scr_microwave_turret_fx_debug", 0)) {
@@ -163,7 +162,7 @@ function startmicrowavefx(localclientnum) {
             }
         #/
         if (turret.should_update_fx == 0) {
-            wait(1);
+            wait 1;
             continue;
         }
         if (isdefined(level.last_microwave_turret_fx_trace) && level.last_microwave_turret_fx_trace == gettime()) {
@@ -191,13 +190,13 @@ function startmicrowavefx(localclientnum) {
         need_to_rebuild |= microwavefxent microwavefxhash(traceleft, origin, "left");
         level.last_microwave_turret_fx_trace = gettime();
         if (!need_to_rebuild) {
-            wait(1);
+            wait 1;
             continue;
         }
-        wait(0.1);
+        wait 0.1;
         microwavefxent playmicrowavefx(localclientnum, trace, traceright, traceleft, origin);
         turret.should_update_fx = 0;
-        wait(1);
+        wait 1;
     }
 }
 
@@ -216,7 +215,7 @@ function updatemicrowaveaim(*microwavefxent) {
             turret.should_update_fx = 1;
             last_angles = angles;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -309,7 +308,7 @@ function stop_or_start_fx(localclientnum, fxname, tag, start) {
     if (start) {
         self play_fx_on_tag(localclientnum, fxname, tag);
         /#
-            if (fxname == "<unknown string>") {
+            if (fxname == "<dev string:x38>") {
                 render_debug_sphere(tag, (0.5, 0.5, 0), fxname);
             } else {
                 render_debug_sphere(tag, (0, 1, 0), fxname);

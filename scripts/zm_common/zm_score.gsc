@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\trials\zm_trial_damage_drains_points.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\trials\zm_trial_damage_drains_points;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_score;
 
@@ -30,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb9e25f17, Offset: 0x378
 // Size: 0x200
 function private preinit() {
@@ -52,7 +51,7 @@ function private preinit() {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x580
 // Size: 0x4
 function private postinit() {
@@ -81,7 +80,7 @@ function register_score_event(str_event, func_callback) {
 }
 
 // Namespace zm_score/zm_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1fe4d142, Offset: 0x6a8
 // Size: 0x24
 function function_e5d6e6dd(str_archetype, n_score) {
@@ -89,7 +88,7 @@ function function_e5d6e6dd(str_archetype, n_score) {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x33062cdc, Offset: 0x6d8
 // Size: 0x110
 function function_e5ca5733() {
@@ -102,7 +101,7 @@ function function_e5ca5733() {
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb24f9a31, Offset: 0x7f0
 // Size: 0x64
 function function_a3d16ee5(s_params) {
@@ -112,7 +111,7 @@ function function_a3d16ee5(s_params) {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd41d4b4e, Offset: 0x860
 // Size: 0x32
 function player_on_spawned() {
@@ -124,7 +123,7 @@ function player_on_spawned() {
 }
 
 // Namespace zm_score/zm_score
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd52b8931, Offset: 0x8a0
 // Size: 0x8c
 function score_cf_register_info(name, version, max_count) {
@@ -134,7 +133,7 @@ function score_cf_register_info(name, version, max_count) {
 }
 
 // Namespace zm_score/zm_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb099fba3, Offset: 0x938
 // Size: 0x7c
 function score_cf_increment_info(name, var_ce49f2dd = 0) {
@@ -144,7 +143,7 @@ function score_cf_increment_info(name, var_ce49f2dd = 0) {
 }
 
 // Namespace zm_score/zm_score
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x1f1b1f52, Offset: 0x9c0
 // Size: 0x7a0
 function player_add_points(event, mod, hit_location, e_target, zombie_team, damage_weapon, var_96054e3, var_e6e61503 = 0) {
@@ -246,7 +245,7 @@ function player_add_points(event, mod, hit_location, e_target, zombie_team, dama
             player_points = zombie_utility::get_zombie_var(#"hash_68aa9b4c8de33261");
             break;
         default:
-            assert(0, "<unknown string>");
+            assert(0, "<dev string:x38>");
             break;
         }
     }
@@ -273,7 +272,7 @@ function player_add_points(event, mod, hit_location, e_target, zombie_team, dama
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x41efb40d, Offset: 0x1168
 // Size: 0x54
 function private function_e31cf9d5(str_score_event) {
@@ -284,7 +283,7 @@ function private function_e31cf9d5(str_score_event) {
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14b9fe20, Offset: 0x11c8
 // Size: 0xee
 function get_points_multiplier(player) {
@@ -300,7 +299,7 @@ function get_points_multiplier(player) {
 }
 
 // Namespace zm_score/zm_score
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc823bf23, Offset: 0x12c0
 // Size: 0x2d6
 function player_add_points_kill_bonus(mod, hit_location, weapon, player_points = undefined, var_e6e61503 = 0) {
@@ -345,7 +344,7 @@ function player_add_points_kill_bonus(mod, hit_location, weapon, player_points =
 }
 
 // Namespace zm_score/zm_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x38b55dd3, Offset: 0x15a0
 // Size: 0x4e6
 function player_reduce_points(event, n_amount) {
@@ -407,7 +406,7 @@ function player_reduce_points(event, n_amount) {
         points = n_amount;
         break;
     default:
-        assert(0, "<unknown string>");
+        assert(0, "<dev string:x38>");
         break;
     }
     points = self.score - zm_utility::round_up_to_ten(int(points));
@@ -422,14 +421,14 @@ function player_reduce_points(event, n_amount) {
 }
 
 // Namespace zm_score/zm_score
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5d474de8, Offset: 0x1a90
 // Size: 0x4be
 function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", var_e6e61503 = 0) {
     if (!isdefined(points) || level.intermission || !is_true(level.var_d6031813)) {
         return;
     }
-    assert(isplayer(self), "<unknown string>");
+    assert(isplayer(self), "<dev string:x4f>");
     points = zm_utility::round_up_score(points);
     if (is_true(level.var_894a83d8) || var_e6e61503 || function_e31cf9d5(str_awarded_by)) {
         return;
@@ -480,7 +479,7 @@ function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", va
 }
 
 // Namespace zm_score/zm_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcce4f352, Offset: 0x1f58
 // Size: 0x21e
 function minus_to_player_score(points, b_forced = 0) {
@@ -526,7 +525,7 @@ function minus_to_team_score(*points) {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae9b3fc3, Offset: 0x21b0
 // Size: 0xe8
 function player_died_penalty() {
@@ -546,16 +545,16 @@ function player_died_penalty() {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b861228, Offset: 0x22a0
 // Size: 0x44
 function player_downed_penalty() {
-    println("<unknown string>");
+    println("<dev string:xa8>");
     self player_reduce_points("downed");
 }
 
 // Namespace zm_score/zm_score
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x22ebb0e7, Offset: 0x22f0
 // Size: 0x8a
 function can_player_purchase(n_cost, var_1c65f833 = 0) {
@@ -572,7 +571,7 @@ function can_player_purchase(n_cost, var_1c65f833 = 0) {
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6ce37c85, Offset: 0x2388
 // Size: 0x1b2
 function on_item_pickup(s_params) {
@@ -599,7 +598,7 @@ function on_item_pickup(s_params) {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa2f3d65c, Offset: 0x2548
 // Size: 0x98
 function function_5f41330c() {
@@ -607,7 +606,7 @@ function function_5f41330c() {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x659ed5a9, Offset: 0x25e8
 // Size: 0x116
 function function_82732ced() {
@@ -616,7 +615,7 @@ function function_82732ced() {
     } else {
         var_7afe66bc = self function_e5ca5733();
         if (!var_7afe66bc && !self function_5f41330c()) {
-            assert(var_7afe66bc, "<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>");
+            assert(var_7afe66bc, "<dev string:xd5>" + function_9e72a96(self.archetype) + "<dev string:xf2>");
         }
     }
     self.var_f256a4d9 = var_7afe66bc;
@@ -663,7 +662,7 @@ function function_89db94b3(e_attacker, n_damage, e_inflictor) {
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x23ae9f45, Offset: 0x29b8
 // Size: 0x32
 function function_acaab828(b_disabled = 1) {
@@ -673,7 +672,7 @@ function function_acaab828(b_disabled = 1) {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf8464bd1, Offset: 0x29f8
 // Size: 0x1c
 function function_ffc2d0bc() {
@@ -681,7 +680,7 @@ function function_ffc2d0bc() {
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1a20c49a, Offset: 0x2a20
 // Size: 0x32
 function function_c1f146ff(score) {
@@ -690,7 +689,7 @@ function function_c1f146ff(score) {
 }
 
 // Namespace zm_score/zm_score
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xda810827, Offset: 0x2a60
 // Size: 0x2ca
 function function_bc9de425(b_lowest_first = 0) {

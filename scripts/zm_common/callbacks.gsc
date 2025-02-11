@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\gametypes\hostmigration.gsc;
-#using scripts\zm_common\gametypes\globallogic_scriptmover.gsc;
-#using scripts\zm_common\gametypes\globallogic_player.gsc;
-#using scripts\zm_common\gametypes\globallogic_actor.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\core_common\globallogic\globallogic_vehicle.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\globallogic\globallogic_vehicle;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\deployable;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_actor;
+#using scripts\zm_common\gametypes\globallogic_player;
+#using scripts\zm_common\gametypes\globallogic_scriptmover;
+#using scripts\zm_common\gametypes\hostmigration;
+#using scripts\zm_common\zm_player;
 
 #namespace callback;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa82a32e6, Offset: 0x138
 // Size: 0x1c
 function private preinit() {
@@ -31,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcedea19f, Offset: 0x160
 // Size: 0xf0
 function setup_callbacks() {
@@ -53,7 +52,7 @@ function setup_callbacks() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1f5ec44d, Offset: 0x258
 // Size: 0x17c
 function setdefaultcallbacks() {
@@ -76,7 +75,7 @@ function setdefaultcallbacks() {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x751650f7, Offset: 0x3e0
 // Size: 0x44
 function function_2750bb69(weapon) {
@@ -116,7 +115,7 @@ function function_66d5d485(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9cc3a6ff, Offset: 0x550
 // Size: 0x3c
 function function_dfd4b1a0(func, obj) {
@@ -132,7 +131,7 @@ function function_34700b93(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd7808127, Offset: 0x5e0
 // Size: 0x3c
 function function_74872db6(func, obj) {
@@ -140,7 +139,7 @@ function function_74872db6(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe7af0daf, Offset: 0x628
 // Size: 0x3c
 function function_50fdac80(func, obj) {
@@ -148,7 +147,7 @@ function function_50fdac80(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfaf36842, Offset: 0x670
 // Size: 0x3c
 function on_round_end(func, obj) {
@@ -156,7 +155,7 @@ function on_round_end(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7dc8176, Offset: 0x6b8
 // Size: 0x3c
 function remove_on_round_end(func, obj) {

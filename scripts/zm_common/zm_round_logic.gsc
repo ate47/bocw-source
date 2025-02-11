@@ -1,65 +1,64 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\zm_common\trials\zm_trial_special_enemy.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_wallbuy.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_round_spawning.gsc;
-#using scripts\zm_common\zm_quick_spawning.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_placeable_mine.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_melee_weapon.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_hud.gsc;
-#using scripts\zm_common\zm_game_module.gsc;
-#using scripts\zm_common\zm_ffotd.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_crafting.gsc;
-#using scripts\zm_common\zm_cleanup_mgr.gsc;
-#using scripts\zm_common\zm_blockers.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\zm_common\callbacks.gsc;
-#using scripts\zm_common\gametypes\globallogic_scriptmover.gsc;
-#using scripts\zm_common\gametypes\globallogic_player.gsc;
-#using scripts\zm_common\gametypes\globallogic_spawn.gsc;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_vehicle.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\status_effects\status_effects.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_puppeteer_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_puppeteer_shared;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\globallogic\globallogic_vehicle;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\status_effects\status_effects;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\callbacks;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\gametypes\globallogic_player;
+#using scripts\zm_common\gametypes\globallogic_scriptmover;
+#using scripts\zm_common\gametypes\globallogic_spawn;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\trials\zm_trial_special_enemy;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_blockers;
+#using scripts\zm_common\zm_cleanup_mgr;
+#using scripts\zm_common\zm_crafting;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_ffotd;
+#using scripts\zm_common\zm_game_module;
+#using scripts\zm_common\zm_hud;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_melee_weapon;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_placeable_mine;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_quick_spawning;
+#using scripts\zm_common\zm_round_spawning;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_wallbuy;
+#using scripts\zm_common\zm_weapons;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_round_logic;
 
@@ -72,7 +71,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x38dbc989, Offset: 0x4e0
 // Size: 0x114
 function private preinit() {
@@ -89,7 +88,7 @@ function private preinit() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5263546, Offset: 0x600
 // Size: 0x18a
 function function_d20309f1() {
@@ -125,7 +124,7 @@ function function_d20309f1() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbda0182a, Offset: 0x798
 // Size: 0x34
 function set_round_number(new_round) {
@@ -136,7 +135,7 @@ function set_round_number(new_round) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbae7e0e2, Offset: 0x7d8
 // Size: 0x14
 function get_round_number() {
@@ -144,7 +143,7 @@ function get_round_number() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x42cdfef4, Offset: 0x7f8
 // Size: 0x19a
 function function_e6937bfa() {
@@ -159,7 +158,7 @@ function function_e6937bfa() {
         level endon(#"kill_round");
     #/
     while (level.zombie_total > 3) {
-        wait(3);
+        wait 3;
     }
     for (a_ai_zombies = zombie_utility::get_round_enemy_array(); a_ai_zombies.size > 0 || level.zombie_total > 0; a_ai_zombies = zombie_utility::get_round_enemy_array()) {
         if (a_ai_zombies.size <= 3) {
@@ -167,12 +166,12 @@ function function_e6937bfa() {
                 ai_zombie thread registercentrifuge_zip_doormember();
             }
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xac31c224, Offset: 0x9a0
 // Size: 0x17c
 function private registercentrifuge_zip_doormember() {
@@ -185,7 +184,7 @@ function private registercentrifuge_zip_doormember() {
             self.var_eceaa835 = 1;
             if (self.zombie_move_speed !== "sprint" && self.zombie_move_speed !== "super_sprint") {
                 while (!isdefined(self.favoriteenemy) || distancesquared(self.favoriteenemy.origin, self.origin) < 65536) {
-                    wait(1);
+                    wait 1;
                 }
                 self zombie_utility::set_zombie_run_cycle("sprint");
             }
@@ -199,7 +198,7 @@ function private registercentrifuge_zip_doormember() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x16f82dc3, Offset: 0xb28
 // Size: 0xbc
 function private function_f5c01f5() {
@@ -218,12 +217,12 @@ function private function_f5c01f5() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38251a1f, Offset: 0xbf0
 // Size: 0x628
 function round_spawning() {
     if (level.zm_loc_types[#"zombie_location"].size < 1) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x38>");
         return;
     }
     level.zombie_health = isdefined(level.var_41dd92fd[#"zombie"].health) ? level.var_41dd92fd[#"zombie"].health : 100;
@@ -270,21 +269,21 @@ function round_spawning() {
         var_404e4288 = zombie_utility::get_current_zombie_count();
         var_3cafeff5 = 0;
         while (var_404e4288 >= level.zombie_ai_limit || level.zombie_total <= 0 && !level flag::get(#"infinite_round_spawning")) {
-            wait(0.1);
+            wait 0.1;
             zm_quick_spawning::function_367e3573();
             var_404e4288 = zombie_utility::get_current_zombie_count();
             continue;
         }
         while (zombie_utility::get_current_actor_count() >= level.zombie_ai_limit) {
             zombie_utility::clear_all_corpses();
-            wait(0.1);
+            wait 0.1;
         }
         if (flag::exists("world_is_paused")) {
             level flag::wait_till_clear("world_is_paused");
         }
         level flag::wait_till("spawn_zombies");
         while (level.zm_loc_types[#"zombie_location"].size <= 0) {
-            wait(0.1);
+            wait 0.1;
         }
         run_custom_ai_spawn_checks();
         if (is_true(level.hostmigrationtimer)) {
@@ -305,7 +304,7 @@ function round_spawning() {
             var_3cafeff5 = var_6095c0b6.var_3cafeff5;
         }
         if (var_3cafeff5) {
-            wait(isdefined(zombie_utility::get_zombie_var(#"zombie_spawn_delay")) ? zombie_utility::get_zombie_var(#"zombie_spawn_delay") : zombie_utility::get_zombie_var(#"hash_7d5a25e2463f7fc5"));
+            wait isdefined(zombie_utility::get_zombie_var(#"zombie_spawn_delay")) ? zombie_utility::get_zombie_var(#"zombie_spawn_delay") : zombie_utility::get_zombie_var(#"hash_7d5a25e2463f7fc5");
             continue;
         }
         util::wait_network_frame();
@@ -313,7 +312,7 @@ function round_spawning() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4790ee4c, Offset: 0x1220
 // Size: 0x224
 function function_4e8157cd(var_404e4288, var_8dd554ee) {
@@ -342,9 +341,9 @@ function function_4e8157cd(var_404e4288, var_8dd554ee) {
             ai ai::set_behavior_attribute("can_juke", 0);
         }
         if (level.zombie_respawns > 0) {
-            wait(0.1);
+            wait 0.1;
         } else if (var_404e4288 < var_8dd554ee) {
-            wait(0.1);
+            wait 0.1;
         } else {
             var_3cafeff5 = 1;
         }
@@ -353,7 +352,7 @@ function function_4e8157cd(var_404e4288, var_8dd554ee) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7182fbdc, Offset: 0x1450
 // Size: 0x29a
 function get_zombie_count_for_round(n_round, n_player_count) {
@@ -393,7 +392,7 @@ function get_zombie_count_for_round(n_round, n_player_count) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa55fb2a0, Offset: 0x16f8
 // Size: 0x1aa
 function function_c112af8e(n_zombie_count) {
@@ -414,7 +413,7 @@ function function_c112af8e(n_zombie_count) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfb0a4e09, Offset: 0x18b0
 // Size: 0x94
 function function_1687c93(n_round, n_player_count) {
@@ -429,7 +428,7 @@ function function_1687c93(n_round, n_player_count) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa8e547e0, Offset: 0x1950
 // Size: 0x50c
 function run_custom_ai_spawn_checks() {
@@ -503,7 +502,7 @@ function round_spawning_test() {
         spawner = array::random(level.zombie_spawners);
         ai = zombie_utility::spawn_zombie(spawner, spawner.targetname, spawn_point);
         ai waittill(#"death");
-        wait(5);
+        wait 5;
     }
 }
 
@@ -513,11 +512,11 @@ function round_spawning_test() {
 // Size: 0x2a0
 function round_start() {
     if (!isdefined(level.zombie_spawners) || level.zombie_spawners.size == 0) {
-        println("<unknown string>");
+        println("<dev string:xa0>");
         level flag::set("begin_spawning");
         return;
     }
-    println("<unknown string>");
+    println("<dev string:xd4>");
     if (isdefined(level.var_b2f996e6)) {
         [[ level.var_b2f996e6 ]]();
     } else {
@@ -525,10 +524,10 @@ function round_start() {
         if (isdefined(level.zombie_round_start_delay)) {
             n_delay = level.zombie_round_start_delay;
         }
-        wait(n_delay);
+        wait n_delay;
     }
     if (getdvarint(#"scr_writeconfigstrings", 0) == 1) {
-        wait(5);
+        wait 5;
         exitlevel();
         return;
     }
@@ -573,7 +572,7 @@ function wait_until_first_player() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x693e4b4c, Offset: 0x22c8
 // Size: 0x20c
 function round_one_up() {
@@ -603,17 +602,17 @@ function round_one_up() {
         if (is_true(level.host_ended_game)) {
             return;
         }
-        wait(6.25);
+        wait 6.25;
         level notify(#"intro_hud_done");
-        wait(2);
+        wait 2;
     } else {
-        wait(2.5);
+        wait 2.5;
     }
     reportmtu(level.round_number);
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf5ea587b, Offset: 0x24e0
 // Size: 0x2d8
 function round_over() {
@@ -642,14 +641,14 @@ function round_over() {
     level flag::wait_till_any_timeout(time, array("round_reset", #"trial_failed", "end_round_start_delay"));
     foreach (player in getplayers()) {
         if (is_true(player.var_6696e200)) {
-            wait(level.var_54d9d726);
+            wait level.var_54d9d726;
             break;
         }
     }
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed235524, Offset: 0x27c0
 // Size: 0x22
 function get_delay_between_rounds() {
@@ -657,7 +656,7 @@ function get_delay_between_rounds() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe76f03d0, Offset: 0x27f0
 // Size: 0x64
 function recordplayerroundweapon(weapon, statname) {
@@ -670,7 +669,7 @@ function recordplayerroundweapon(weapon, statname) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf38f3dd5, Offset: 0x2860
 // Size: 0x84
 function recordprimaryweaponsstats(base_stat_name, max_weapons) {
@@ -681,7 +680,7 @@ function recordprimaryweaponsstats(base_stat_name, max_weapons) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfcae50b4, Offset: 0x28f0
 // Size: 0xec
 function recordroundstartstats() {
@@ -699,7 +698,7 @@ function recordroundstartstats() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb2a707c1, Offset: 0x29e8
 // Size: 0x94
 function recordroundendstats() {
@@ -712,7 +711,7 @@ function recordroundendstats() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6406f973, Offset: 0x2a88
 // Size: 0x110
 function private function_89888d49() {
@@ -726,11 +725,11 @@ function private function_89888d49() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeec886b8, Offset: 0x2ba0
 // Size: 0x10be
 function round_think(restart = 0) {
-    println("<unknown string>");
+    println("<dev string:xef>");
     level endon(#"end_round_think", #"end_game");
     if (!is_true(restart)) {
         if (isdefined(level.var_12e11406)) {
@@ -767,10 +766,10 @@ function round_think(restart = 0) {
         if (!is_true(level.headshots_only) && !restart) {
             level thread award_grenades_for_survivors();
         }
-        println("<unknown string>" + level.round_number + "<unknown string>" + level.players.size);
+        println("<dev string:x10a>" + level.round_number + "<dev string:x127>" + level.players.size);
         level.round_start_time = gettime();
         while (level.zm_loc_types[#"zombie_location"].size <= 0) {
-            wait(0.1);
+            wait 0.1;
         }
         /#
             zkeys = getarraykeys(level.zones);
@@ -807,7 +806,7 @@ function round_think(restart = 0) {
         }
         if (!level flag::get("round_reset") && zm_custom::function_901b751c(#"zmroundcap") === level.round_number && level.round_number != 0) {
             level.var_458eec65 = 1;
-            wait(3);
+            wait 3;
             zm_custom::function_9be9c072("zmRoundCap");
             return;
         }
@@ -816,7 +815,7 @@ function round_think(restart = 0) {
                 var_f2f19afd = [];
                 foreach (player in level.players) {
                     if (!isplayer(player)) {
-                        var_f2f19afd[var_f2f19afd.size] = "<unknown string>";
+                        var_f2f19afd[var_f2f19afd.size] = "<dev string:x13a>";
                         continue;
                     }
                     var_f2f19afd[var_f2f19afd.size] = player.sessionstate;
@@ -824,18 +823,18 @@ function round_think(restart = 0) {
                 var_9114f285 = [];
                 foreach (player in getplayers()) {
                     if (!isplayer(player)) {
-                        var_9114f285[var_9114f285.size] = "<unknown string>";
+                        var_9114f285[var_9114f285.size] = "<dev string:x13a>";
                         continue;
                     }
                     var_9114f285[var_9114f285.size] = player.sessionstate;
                 }
-                message = "<unknown string>" + level.players.size + "<unknown string>" + getplayers().size + "<unknown string>";
+                message = "<dev string:x148>" + level.players.size + "<dev string:x160>" + getplayers().size + "<dev string:x17c>";
                 foreach (state in var_f2f19afd) {
-                    message = message + state + "<unknown string>";
+                    message = message + state + "<dev string:x19d>";
                 }
-                message += "<unknown string>";
+                message += "<dev string:x1a2>";
                 foreach (state in var_9114f285) {
-                    message = message + state + "<unknown string>";
+                    message = message + state + "<dev string:x19d>";
                 }
                 assertmsg(message);
             }
@@ -897,7 +896,7 @@ function round_think(restart = 0) {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1bd7bec, Offset: 0x3c68
 // Size: 0x25c
 function round_timeout() {
@@ -908,7 +907,7 @@ function round_timeout() {
         level flag::wait_till_any(array("power_on", "enable_round_timeout"));
     }
     while (level.zombie_total > 0) {
-        wait(1);
+        wait 1;
     }
     n_timeout = isdefined(level.var_2e3a6cbe) ? level.var_2e3a6cbe : 600;
     var_18836dd9 = zombie_utility::get_current_zombie_count();
@@ -925,7 +924,7 @@ function round_timeout() {
                 }
             }
         }
-        wait(1);
+        wait 1;
         var_18836dd9 = var_a456111d;
         var_a456111d = zombie_utility::get_current_zombie_count();
     }
@@ -936,7 +935,7 @@ function round_timeout() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9b5f0017, Offset: 0x3ed0
 // Size: 0x44
 function function_fb6aa5a3() {
@@ -945,7 +944,7 @@ function function_fb6aa5a3() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x3f20
 // Size: 0x4
 function award_grenades_for_survivors() {
@@ -953,7 +952,7 @@ function award_grenades_for_survivors() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5f0b5d49, Offset: 0x3f30
 // Size: 0x1f6
 function get_zombie_spawn_delay(n_round) {
@@ -1017,26 +1016,26 @@ function get_zombie_spawn_delay(n_round) {
             if (getdvarint(#"zombiemode_debug_zombie_count", 0)) {
                 if (!isdefined(level.debug_zombie_count_hud)) {
                     level.debug_zombie_count_hud = newdebughudelem();
-                    level.debug_zombie_count_hud.alignx = "<unknown string>";
+                    level.debug_zombie_count_hud.alignx = "<dev string:x1bd>";
                     level.debug_zombie_count_hud.x = 100;
                     level.debug_zombie_count_hud.y = 10;
-                    level.debug_zombie_count_hud settext("<unknown string>");
+                    level.debug_zombie_count_hud settext("<dev string:x1c6>");
                 }
                 currentcount = zombie_utility::get_current_zombie_count();
                 number_to_kill = level.zombie_total;
-                level.debug_zombie_count_hud settext("<unknown string>" + currentcount + "<unknown string>" + number_to_kill);
+                level.debug_zombie_count_hud settext("<dev string:x1d0>" + currentcount + "<dev string:x1da>" + number_to_kill);
             } else if (isdefined(level.debug_zombie_count_hud)) {
                 level.debug_zombie_count_hud destroy();
                 level.debug_zombie_count_hud = undefined;
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 
 #/
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x298e7686, Offset: 0x4348
 // Size: 0x20a
 function round_wait() {
@@ -1055,7 +1054,7 @@ function round_wait() {
             level waittill(#"forever");
         }
     #/
-    wait(1);
+    wait 1;
     /#
         level thread print_zombie_counts();
         level thread sndmusiconkillround();
@@ -1070,7 +1069,7 @@ function round_wait() {
         if (level flag::get("round_reset")) {
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -1084,11 +1083,11 @@ function sndmusiconkillround() {
 }
 
 // Namespace zm_round_logic/zm_round_logic
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc9f2f8fc, Offset: 0x45a0
 // Size: 0x8c
 function play_level_start_vox_delayed() {
-    wait(3);
+    wait 3;
     players = getplayers();
     if (players.size <= 0) {
         return;

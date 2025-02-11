@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
 
 #namespace mp_hijacked_rm;
 
@@ -23,7 +22,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_hijacked_rm/mp_hijacked_rm
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x83edee76, Offset: 0x218
 // Size: 0x54
 function on_gameplay_started(*localclientnum) {

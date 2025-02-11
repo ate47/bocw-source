@@ -1,38 +1,37 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp\cp_nam_armada.gsc;
-#using script_3711e526ec2a3863;
 #using script_25b0725f0d26dbf5;
 #using script_32399001bdb550da;
+#using script_3711e526ec2a3863;
 #using script_48a4cce0f86a3f65;
 #using script_4ae261b2785dda9f;
 #using script_7d0013bbc05623b9;
-#using scripts\cp_common\dialogue.gsc;
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\objectives.gsc;
-#using scripts\cp_common\snd.gsc;
-#using scripts\cp_common\skipto.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\vehicleriders_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\turret_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\colors_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\colors_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\turret_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicleriders_shared;
+#using scripts\cp\cp_nam_armada;
+#using scripts\cp_common\dialogue;
+#using scripts\cp_common\objectives;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\snd;
+#using scripts\cp_common\util;
 
 #namespace armada_mortar;
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60b8e3f1, Offset: 0x2a30
 // Size: 0xaf4
 function function_6ad1ac64(var_d3440450, var_50cc0d4f) {
@@ -45,7 +44,7 @@ function function_6ad1ac64(var_d3440450, var_50cc0d4f) {
     level.player util::create_streamer_hint((-22405, 41199, 880), (14, -21, 0), 1);
     level thread namespace_b7cfe907::function_2647f901("mortar_village_completed");
     if (var_50cc0d4f) {
-        level util::delay(0.25, "disconnect", &namespace_b7cfe907::function_abeb9b2d, 1, 0);
+        level util::delay(0.25, "disconnect", &namespace_b7cfe907::pstfx_teleport, 1, 0);
         level namespace_b7cfe907::function_6a03d24d(var_d3440450);
     } else {
         level vehicle::get_in(level.buddy, level.var_7466d419, "crew", 1);
@@ -71,7 +70,7 @@ function function_6ad1ac64(var_d3440450, var_50cc0d4f) {
     level clientfield::set("toggle_dynsignage_mortartown", 1);
     level thread function_ac42a1bb();
     level flag::set("flag_mortar_orbit_start");
-    snd::function_7db65a93(#"hash_2b94ea847ae2b667");
+    snd::client_msg(#"hash_2b94ea847ae2b667");
     level thread namespace_b7cfe907::function_d3acba36(#"allies");
     level.var_52874eb2 = undefined;
     level function_6b5096fe();
@@ -82,18 +81,18 @@ function function_6ad1ac64(var_d3440450, var_50cc0d4f) {
     level flag::clear("flag_player_flying_ambience_start");
     level flag::set("flag_player_flying_ambience_kill");
     level flag::set("flag_vo_mortar_orbit_arrival_start");
-    var_74dc28cf = getvehiclenode("mortar_orbit_player_start_node", "targetname");
-    var_c7e452f5 = getvehiclenode("mortar_orbit_adler_start_node", "targetname");
-    level.var_52874eb2.origin = var_c7e452f5.origin;
-    level.var_52874eb2.angles = var_c7e452f5.angles;
+    mortar_orbit_player_start_node = getvehiclenode("mortar_orbit_player_start_node", "targetname");
+    mortar_orbit_adler_start_node = getvehiclenode("mortar_orbit_adler_start_node", "targetname");
+    level.var_52874eb2.origin = mortar_orbit_adler_start_node.origin;
+    level.var_52874eb2.angles = mortar_orbit_adler_start_node.angles;
     level.var_52874eb2 setspeedimmediate(0);
     level.var_52874eb2.drivepath = 1;
-    level.var_7466d419.origin = var_74dc28cf.origin;
-    level.var_7466d419.angles = var_74dc28cf.angles;
+    level.var_7466d419.origin = mortar_orbit_player_start_node.origin;
+    level.var_7466d419.angles = mortar_orbit_player_start_node.angles;
     level.var_7466d419 setspeedimmediate(0);
     level.var_7466d419.drivepath = 1;
-    level.var_52874eb2 thread vehicle::get_on_path(var_c7e452f5);
-    level.var_7466d419 thread vehicle::get_on_path(var_74dc28cf);
+    level.var_52874eb2 thread vehicle::get_on_path(mortar_orbit_adler_start_node);
+    level.var_7466d419 thread vehicle::get_on_path(mortar_orbit_player_start_node);
     level.var_1a2a8b6f = spawnstruct();
     level.var_1a2a8b6f.var_57a6f59c = util::spawn_model(#"tag_origin");
     level.var_1a2a8b6f.var_cfa81957 = function_d8afd6c7();
@@ -134,7 +133,7 @@ function function_6ad1ac64(var_d3440450, var_50cc0d4f) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53bd913a, Offset: 0x3530
 // Size: 0x2e
 function function_e59c6d2a() {
@@ -144,11 +143,11 @@ function function_e59c6d2a() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb22ad33e, Offset: 0x3568
 // Size: 0x84
 function function_5985d444() {
-    wait(1);
+    wait 1;
     for (i = 0; i < 2; i++) {
         while (true) {
             ai = spawner::simple_spawn_single("sp_mortar_landing_vc", &function_d96fcf75, i);
@@ -161,7 +160,7 @@ function function_5985d444() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2990d859, Offset: 0x35f8
 // Size: 0x5c
 function function_d96fcf75(n_index) {
@@ -175,7 +174,7 @@ function function_d96fcf75(n_index) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6fa52b95, Offset: 0x3660
 // Size: 0x1bc
 function function_b0db9d0f() {
@@ -194,7 +193,7 @@ function function_b0db9d0f() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0xd9d4ec3c, Offset: 0x3828
 // Size: 0x2b0
 function function_c343823c(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *vpoint, *vdir, shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
@@ -232,7 +231,7 @@ function function_c343823c(einflictor, eattacker, idamage, idflags, smeansofdeat
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7795a30f, Offset: 0x3ae0
 // Size: 0x96
 function function_d8afd6c7() {
@@ -254,18 +253,18 @@ function function_d8afd6c7() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd6f5f9ee, Offset: 0x3b80
 // Size: 0x3a
 function function_902ac76() {
     self notify("10e36f8fbae598fa");
     self endon("10e36f8fbae598fa");
-    wait(1.5);
+    wait 1.5;
     level.var_1a2a8b6f.var_b0bffa0a = 0;
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x14bf0833, Offset: 0x3bc8
 // Size: 0x180
 function function_8feeb0be() {
@@ -274,7 +273,7 @@ function function_8feeb0be() {
     self endon(#"death", #"hash_455ac689d741c96b");
     self function_e7152de8();
     var_be81a997 = function_d8afd6c7();
-    wait(5);
+    wait 5;
     var_53bb8ef2 = level.var_1a2a8b6f;
     var_c62824cc = var_53bb8ef2.var_cfa81957;
     if (var_c62824cc >= var_be81a997) {
@@ -295,7 +294,7 @@ function function_8feeb0be() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7cfaae38, Offset: 0x3d50
 // Size: 0xfa
 function function_e7152de8() {
@@ -318,7 +317,7 @@ function function_e7152de8() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 12, eflags: 0x2 linked
+// Params 12, eflags: 0x0
 // Checksum 0x7b82797b, Offset: 0x3e58
 // Size: 0x9c
 function function_6760b772(*einflictor, eattacker, idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex) {
@@ -330,7 +329,7 @@ function function_6760b772(*einflictor, eattacker, idamage, *idflags, *smeansofd
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf5e0c028, Offset: 0x3f00
 // Size: 0x9c
 function function_e160f453(*name, *starting, *direct, *player) {
@@ -352,7 +351,7 @@ function function_234b1ce() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdcb6c81b, Offset: 0x4030
 // Size: 0x18c
 function function_e1c02ad2() {
@@ -371,11 +370,11 @@ function function_e1c02ad2() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x350f763, Offset: 0x41c8
 // Size: 0x138
 function function_9ca7e163() {
-    level endon(#"hash_7ebf01549650f780", #"hash_1f70cff16347cb6b");
+    level endon(#"flag_mortar_orbit_complete", #"flag_bell_tower_destroyed");
     trigger = getent("trigger_bell_tower_damage", "targetname");
     hidemiscmodels("bell_tower_final");
     var_4e227252 = 0;
@@ -392,7 +391,7 @@ function function_9ca7e163() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x46f4dd48, Offset: 0x4308
 // Size: 0x94
 function function_7ed7f625() {
@@ -401,13 +400,13 @@ function function_7ed7f625() {
         if (isdefined(level.var_52874eb2)) {
             level.var_52874eb2 thread function_8060162f(s_target.origin);
         }
-        wait(2);
+        wait 2;
         level thread function_2c4d7184();
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38988762, Offset: 0x43a8
 // Size: 0x15c
 function function_2c4d7184() {
@@ -424,38 +423,38 @@ function function_2c4d7184() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfade653e, Offset: 0x4510
 // Size: 0x314
 function function_19288a46() {
-    wait(2.5);
+    wait 2.5;
     level namespace_b7cfe907::function_d777fe61(2);
     level.player setplayerangles(anglestoforward(level.var_7466d419 function_90d45d34(2)));
     level.player hide();
     a_ents = [];
     a_ents[#"fakearms"] = util::spawn_player_clone(level.player);
-    wait(1);
-    level util::delay(0.65, undefined, &namespace_b7cfe907::function_abeb9b2d, 0, 2.5);
-    level util::delay(0.65, undefined, &snd::function_7db65a93, #"hash_4a41082a1d97f925");
+    wait 1;
+    level util::delay(0.65, undefined, &namespace_b7cfe907::pstfx_teleport, 0, 2.5);
+    level util::delay(0.65, undefined, &snd::client_msg, #"hash_4a41082a1d97f925");
     namespace_72b0499b::music("4.0_chopper_combat", 0.65);
-    snd::function_7db65a93(#"hash_3d8cbffebe7b249f");
+    snd::client_msg(#"hash_3d8cbffebe7b249f");
     self clientfield::set("" + #"hash_4ddf67f7aa0f6884", 1);
     self thread scene::play(#"hash_40dd76ac89c3fdb5", a_ents);
     self setanim(#"hash_30cafb59b2924e48");
-    wait(getanimlength(#"hash_30cafb59b2924e48"));
+    wait getanimlength(#"hash_30cafb59b2924e48");
     self clearanim(#"hash_30cafb59b2924e48", 0.2);
     level.player show();
     level.player val::reset(#"hash_680eb654d9e9d2ad", "show_hud");
     level.player val::reset(#"hash_ed07d10944e0fd5", "freezecontrols");
     level thread function_5f51bebf();
-    wait(2);
+    wait 2;
     level.var_7466d419 setvehicletype(#"hash_56f2823854475ea7");
     level thread function_e4c44785();
     level savegame::function_7790f03();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xac6fc0cc, Offset: 0x4830
 // Size: 0x198
 function function_e4c44785() {
@@ -468,7 +467,7 @@ function function_e4c44785() {
         level lui::screen_fade_out(0, "white");
         level.player val::set(#"hash_ed07d10944e0fd5", "freezecontrols", 1);
         level.player val::set(#"hash_680eb654d9e9d2ad", "show_hud", 0);
-        wait(3);
+        wait 3;
         level function_713a956d();
         level.player val::reset(#"hash_680eb654d9e9d2ad", "show_hud");
         level.player val::reset(#"hash_ed07d10944e0fd5", "freezecontrols");
@@ -477,7 +476,7 @@ function function_e4c44785() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xab6fda63, Offset: 0x49d0
 // Size: 0x6c
 function function_713a956d(var_1728e1fe = vectortoangles(level.vip.origin - level.player.origin)) {
@@ -485,11 +484,11 @@ function function_713a956d(var_1728e1fe = vectortoangles(level.vip.origin - leve
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7293abf9, Offset: 0x4a48
 // Size: 0x11c
 function function_6cce8b8e() {
-    level endon(#"hash_7ebf01549650f780");
+    level endon(#"flag_mortar_orbit_complete");
     self endon(#"death");
     self setyawspeed(15, 15, 15);
     self setmaxpitchroll(60, 60);
@@ -502,7 +501,7 @@ function function_6cce8b8e() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a5dd244, Offset: 0x4b70
 // Size: 0xd4
 function function_97a20289() {
@@ -516,7 +515,7 @@ function function_97a20289() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7bc36c51, Offset: 0x4c50
 // Size: 0x674
 function function_6acbfbb1(var_50cc0d4f = 0) {
@@ -556,7 +555,7 @@ function function_6acbfbb1(var_50cc0d4f = 0) {
     level.var_7466d419 clientfield::set("" + #"hash_4ddf67f7aa0f6884", 0);
     level.var_7466d419 thread function_15739fec();
     self thread function_2ee152cc();
-    self val::set(#"hash_60e4a6089561f03e", "takedamage", 0);
+    self val::set(#"mortar_transition", "takedamage", 0);
     level scene::add_scene_func(#"hash_32b809763b13c282", &function_4ca07f70, "play");
     a_ents = [];
     a_ents[#"player"] = self;
@@ -578,17 +577,17 @@ function function_6acbfbb1(var_50cc0d4f = 0) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb8d422e6, Offset: 0x52d0
 // Size: 0x7c
 function function_27b92aed(n_delay) {
     self endon(#"death");
-    wait(n_delay - float(function_60d95f53()) / 1000);
+    wait n_delay - float(function_60d95f53()) / 1000;
     self startcameratween(0.5, 0, 0);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf33fa144, Offset: 0x5358
 // Size: 0x94
 function function_2ee152cc() {
@@ -600,16 +599,16 @@ function function_2ee152cc() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x422076a4, Offset: 0x53f8
 // Size: 0x74
 function function_4ca07f70(*a_ents) {
     level.player clientfield::set_to_player("" + #"hash_1d5f8429329030", 2);
-    level.player val::reset(#"hash_60e4a6089561f03e", "takedamage");
+    level.player val::reset(#"mortar_transition", "takedamage");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8456e00c, Offset: 0x5478
 // Size: 0x9c
 function function_15739fec() {
@@ -622,7 +621,7 @@ function function_15739fec() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x74cc307f, Offset: 0x5520
 // Size: 0x6c
 function function_5f51bebf() {
@@ -632,7 +631,7 @@ function function_5f51bebf() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x27a56d7c, Offset: 0x5598
 // Size: 0x64
 function function_7b3aab80() {
@@ -643,7 +642,7 @@ function function_7b3aab80() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0a79966, Offset: 0x5608
 // Size: 0xa4
 function function_d380c058() {
@@ -657,7 +656,7 @@ function function_d380c058() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39d4613e, Offset: 0x56b8
 // Size: 0x9c
 function function_5901663e() {
@@ -669,7 +668,7 @@ function function_5901663e() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c90bfc7, Offset: 0x5760
 // Size: 0xc4
 function function_40972ba8() {
@@ -680,14 +679,14 @@ function function_40972ba8() {
     }
     if (isdefined(self.var_99b46f13) && isdefined(level.var_7466d419)) {
         trigger::wait_till("mortar_orbit_courtyard");
-        wait(5);
+        wait 5;
         self.script_accuracy = 1000;
         self setpersonalthreatbias(level.var_7466d419, 100000);
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc6891246, Offset: 0x5830
 // Size: 0xf0
 function function_4d73a251() {
@@ -701,66 +700,66 @@ function function_4d73a251() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcce1af6a, Offset: 0x5928
 // Size: 0x94
 function function_1eb807e1() {
-    level endon(#"hash_7ebf01549650f780");
+    level endon(#"flag_mortar_orbit_complete");
     level flag::wait_till(#"hash_5c48d464408d21ee");
     level.player clientfield::set_to_player("" + #"hash_1d5f8429329030", 1);
     level.player thread dialogue::queue("vox_cp_armd_00004_plt2_visualonlztakin_f1");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8500ff77, Offset: 0x59c8
 // Size: 0x364
 function function_428180d() {
-    level endon(#"hash_7ebf01549650f780");
-    wait(3);
+    level endon(#"flag_mortar_orbit_complete");
+    wait 3;
     level.player dialogue::queue("vox_cp_armd_00004_plt1_approachingthev_53");
-    wait(2);
+    wait 2;
     level.player dialogue::queue("vox_cp_armd_00004_plt2_rogerthatmoving_53");
     level trigger::wait_till("trigger_mortar_orbit_rpg_attack");
     level.player dialogue::queue("vox_cp_armd_00004_adlr_rpg_0a");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_armd_00004_adlr_chalktwolightem_b3");
-    wait(0.5);
+    wait 0.5;
     if (!level flag::get("flag_bell_tower_destroyed")) {
         level.player dialogue::queue("vox_cp_armd_00004_sims_thereinthebellt_ae");
         level flag::wait_till_timeout(4, "flag_bell_tower_destroyed");
     }
     if (level flag::get("flag_bell_tower_destroyed")) {
-        wait(1);
+        wait 1;
         level.player dialogue::queue("vox_cp_armd_00004_sims_fuckyeah_7e");
     }
-    wait(2);
+    wait 2;
     level.player dialogue::queue("vox_cp_armd_00004_adlr_focusfireonthec_42");
-    s_waitresult = level waittilltimeout(4, #"hash_20b54b22a8747044");
+    s_waitresult = level waittilltimeout(4, #"mortar_orbit_red_barrel_destroyed");
     if (s_waitresult._notify === "mortar_orbit_red_barrel_destroyed") {
-        wait(1);
+        wait 1;
         level.player dialogue::queue("vox_cp_armd_00004_sims_niceshootingbel_f6");
     }
     level flag::wait_till("flag_mortar_orbit_rooftop_vo");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_armd_00004_adlr_goddammitmorerp_01");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_cp_armd_00004_plt2_holdonswinginga_21");
-    wait(2);
+    wait 2;
     if (!level.player attackbuttonpressed()) {
         level.player dialogue::queue("vox_cp_armd_00004_adlr_dontletupbell_e6");
-        wait(1);
+        wait 1;
     }
-    s_waitresult = level waittilltimeout(4, #"hash_20b54b22a8747044");
+    s_waitresult = level waittilltimeout(4, #"mortar_orbit_red_barrel_destroyed");
     if (s_waitresult._notify === "mortar_orbit_red_barrel_destroyed") {
-        wait(1);
+        wait 1;
         var_e56066b6 = array("vox_cp_armd_00004_sims_thatishowyoufuc_90", "vox_cp_armd_00004_sims_goodhitbell_da", "vox_cp_armd_00004_sims_yeahblowthefuck_ed");
         level.player dialogue::queue(array::random(var_e56066b6));
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x71b8f88f, Offset: 0x5d38
 // Size: 0x248
 function function_6610ecb5() {
@@ -774,7 +773,7 @@ function function_6610ecb5() {
     for (i = 0; i < 3; i++) {
         missle = ai_enemy magicmissile(var_98997b7, var_33d2e98f.origin, v_velocity);
         missle thread function_48ac87db();
-        wait(0.1);
+        wait 0.1;
     }
     if (level.gameskill === 0) {
         return;
@@ -788,7 +787,7 @@ function function_6610ecb5() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9a50e8fb, Offset: 0x5f88
 // Size: 0x2c
 function function_48ac87db() {
@@ -798,7 +797,7 @@ function function_48ac87db() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x18deec01, Offset: 0x5fc0
 // Size: 0x61c
 function function_94a21d8b(var_d3440450, var_50cc0d4f) {
@@ -814,7 +813,7 @@ function function_94a21d8b(var_d3440450, var_50cc0d4f) {
         level thread function_7ed7f625();
         level util::delay(1, "disconnect", &util::screen_fade_in, 2, "black", "mortar_main_start");
     }
-    snd::function_7db65a93(#"hash_664776555d3b2bdc");
+    snd::client_msg(#"hash_664776555d3b2bdc");
     callback::on_ai_spawned(&function_5cce18fe);
     level.var_52874eb2 thread function_17cadeb1();
     foreach (e_corpse in getcorpsearray()) {
@@ -835,7 +834,7 @@ function function_94a21d8b(var_d3440450, var_50cc0d4f) {
     level thread function_a65af49d();
     level.player function_6acbfbb1(var_50cc0d4f);
     level flag::set("flag_play_landed_vo");
-    level snd::function_7db65a93(#"hash_2086d5e690a6ff1b");
+    level snd::client_msg(#"hash_2086d5e690a6ff1b");
     level thread function_80089cc9();
     level thread function_b2d38e15();
     level util::function_f6847a11();
@@ -851,22 +850,22 @@ function function_94a21d8b(var_d3440450, var_50cc0d4f) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x487ad495, Offset: 0x65e8
 // Size: 0x34c
 function function_a65af49d() {
     level endon(#"hash_85243554b3f96e1");
     level flag::wait_till("flag_play_landed_vo");
-    wait(3);
+    wait 3;
     level.buddy dialogue::queue("vox_cp_armd_00004_sims_yousureaboutthi_d1");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_armd_00004_adlr_yourpriorityiss_9f");
     level thread function_1f0a8cc0();
     level flag::wait_till_any_timeout(30, array("mortar_ai_landing_ground_cleared", "flag_getting_close_vo"));
     level.player dialogue::queue("vox_cp_armd_00004_adlr_oursourceeyebal_6f");
-    wait(3);
+    wait 3;
     level.buddy dialogue::queue("vox_cp_armd_00004_sims_letsgobellyoure_38");
-    wait(0.5);
+    wait 0.5;
     level flag::wait_till("flag_getting_close_vo");
     level.player dialogue::queue("vox_cp_armd_00004_adlr_keeppushingforw_aa");
     level flag::wait_till_any(array("flag_mortar_courtyard_mg_gunner_attack", "flag_mortar_courtyard_chopper_attack_right", "flag_mortar_courtyard_chopper_attack_left"));
@@ -880,9 +879,9 @@ function function_a65af49d() {
     level.player dialogue::queue(var_8e98393);
     level flag::wait_till_any(array("flag_mortar_courtyard_ai_cleared", "flag_player_reached_tea_house_vo"));
     if (level flag::get("flag_mortar_courtyard_ai_cleared")) {
-        wait(3);
+        wait 3;
         level.player dialogue::queue("vox_cp_armd_00004_plt1_areaclear_ce");
-        wait(0.5);
+        wait 0.5;
         level.player dialogue::queue("vox_cp_armd_00004_adlr_okaygetinsidese_90");
     }
     level flag::wait_till_all(array("flag_player_reached_tea_house_vo", "flag_sims_reached_tea_house_vo"));
@@ -890,7 +889,7 @@ function function_a65af49d() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c22a27c, Offset: 0x6940
 // Size: 0xf6
 function function_1f0a8cc0() {
@@ -902,12 +901,12 @@ function function_1f0a8cc0() {
         var_3edd7009 = array::random(var_27188c5);
         level.buddy dialogue::queue(var_3edd7009, 3);
         arrayremovevalue(var_27188c5, var_3edd7009, 0);
-        wait(15);
+        wait 15;
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7ec81d21, Offset: 0x6a40
 // Size: 0x48
 function function_a02983f8(s_params) {
@@ -918,7 +917,7 @@ function function_a02983f8(s_params) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab5e32f6, Offset: 0x6a90
 // Size: 0xa4
 function function_b2d38e15() {
@@ -931,7 +930,7 @@ function function_b2d38e15() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x23d723ef, Offset: 0x6b40
 // Size: 0x84
 function function_5cce18fe() {
@@ -957,18 +956,18 @@ function function_11e2bd76() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x67b26ebd, Offset: 0x6c70
 // Size: 0x54
 function function_17cadeb1() {
     s_start = struct::get("adler_chopper_starting_path_01");
     self function_97519340(s_start);
-    wait(5);
+    wait 5;
     self thread function_ab1c35d7();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x50dfc47f, Offset: 0x6cd0
 // Size: 0x134
 function function_97519340(nd_start) {
@@ -986,7 +985,7 @@ function function_97519340(nd_start) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4b515dfe, Offset: 0x6e10
 // Size: 0x3a2
 function function_ab1c35d7() {
@@ -1046,7 +1045,7 @@ function function_ab1c35d7() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x96032b78, Offset: 0x71c0
 // Size: 0x15a
 function function_ba67d417(s_anchor) {
@@ -1076,7 +1075,7 @@ function function_ba67d417(s_anchor) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8a528daa, Offset: 0x7328
 // Size: 0x238
 function function_f1b25856(s_anchor, var_d94e669c = 1) {
@@ -1096,12 +1095,12 @@ function function_f1b25856(s_anchor, var_d94e669c = 1) {
             self thread function_7c644fb3(enemy, 3);
             self function_7c644fb3(enemy, 4);
         }
-        wait(randomfloatrange(0.5, 0.7));
+        wait randomfloatrange(0.5, 0.7);
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9ea131a2, Offset: 0x7568
 // Size: 0x110
 function function_5ebe746e() {
@@ -1109,16 +1108,16 @@ function function_5ebe746e() {
     level flag::wait_till_any(array("flag_fire_at_courtyard_sign", "flag_destory_courtyard_sign"));
     if (!level flag::get("flag_destory_courtyard_sign")) {
         while (!level.player util::is_looking_at(var_b23598c7, 0.96, 1) && !level flag::get("flag_destory_courtyard_sign")) {
-            wait(0.5);
+            wait 0.5;
         }
     }
     level.var_52874eb2 thread function_382a326a();
-    wait(0.3);
+    wait 0.3;
     level notify(#"hash_6d5dee70f2cbd555");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x859d4ec, Offset: 0x7680
 // Size: 0xf4
 function function_382a326a() {
@@ -1128,12 +1127,12 @@ function function_382a326a() {
     v_velocity = vectornormalize(s_target.origin - rocketorigin) * 2000;
     for (i = 0; i < 3; i++) {
         self magicmissile(var_98997b7, rocketorigin, v_velocity);
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7e5d6560, Offset: 0x7780
 // Size: 0xb8
 function function_478310c9(var_777b7e33, var_a9ad8d56) {
@@ -1152,7 +1151,7 @@ function function_478310c9(var_777b7e33, var_a9ad8d56) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x67e84aed, Offset: 0x7840
 // Size: 0x25a
 function function_506eaf20(var_777b7e33, var_a9ad8d56) {
@@ -1190,7 +1189,7 @@ function function_506eaf20(var_777b7e33, var_a9ad8d56) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x806c1436, Offset: 0x7aa8
 // Size: 0x1c
 function function_e7ff3aa4(e_ent) {
@@ -1198,7 +1197,7 @@ function function_e7ff3aa4(e_ent) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xca4f2051, Offset: 0x7ad0
 // Size: 0x126
 function function_f7dc2ff0(var_90df9642, s_anchor, var_777b7e33, var_a9ad8d56) {
@@ -1213,16 +1212,16 @@ function function_f7dc2ff0(var_90df9642, s_anchor, var_777b7e33, var_a9ad8d56) {
     self function_24c9e377();
     self vehicle::get_on_path(var_90df9642);
     self vehicle::go_path();
-    self notify(#"hash_3a86066a301e90fc");
+    self notify(#"loop_done");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3e3a1f01, Offset: 0x7c00
 // Size: 0xf8
 function function_7882569f(s_anchor, var_777b7e33, var_a9ad8d56) {
     level endon(#"hash_14c598f73c025763");
-    self endon(#"death", #"hash_3a86066a301e90fc", #"stop path");
+    self endon(#"death", #"loop_done", #"stop path");
     self notify("16a7ca31dd85221b");
     self endon("16a7ca31dd85221b");
     while (true) {
@@ -1230,7 +1229,7 @@ function function_7882569f(s_anchor, var_777b7e33, var_a9ad8d56) {
         if (s_anchor.targetname !== var_ab252334.targetname || s_anchor.script_int !== var_ab252334.script_int) {
             self notify(#"stop path");
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -1263,7 +1262,7 @@ function function_82ba400e(s_target) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x86cd7e46, Offset: 0x7ed0
 // Size: 0x174
 function function_8060162f(v_target, n_index = 1) {
@@ -1279,14 +1278,14 @@ function function_8060162f(v_target, n_index = 1) {
         v_start = self gettagorigin("tag_gunner_flash" + n_index);
         playfxontag(var_1620c159, self, "tag_gunner_flash" + n_index);
         magicbullet(var_9012c9b0, v_start, v_target);
-        wait(0.05);
+        wait 0.05;
         magicbullet(var_9012c9b0, v_start, v_target);
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bc7dd89, Offset: 0x8050
 // Size: 0x94
 function function_1e3fd6e0() {
@@ -1296,7 +1295,7 @@ function function_1e3fd6e0() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc496db73, Offset: 0x80f0
 // Size: 0x1d2
 function function_67565f43(n_index, var_2e91c04f) {
@@ -1318,7 +1317,7 @@ function function_67565f43(n_index, var_2e91c04f) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa466f5e2, Offset: 0x82d0
 // Size: 0x1a2
 function function_536cff7e(start_node, n_speed = 40) {
@@ -1335,7 +1334,7 @@ function function_536cff7e(start_node, n_speed = 40) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5d3549ae, Offset: 0x8480
 // Size: 0xec
 function function_24c9e377() {
@@ -1350,7 +1349,7 @@ function function_24c9e377() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfde5609e, Offset: 0x8578
 // Size: 0x32c
 function function_5a365113(var_7e2d8151, var_1eea8080 = 0) {
@@ -1383,7 +1382,7 @@ function function_5a365113(var_7e2d8151, var_1eea8080 = 0) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaacaa640, Offset: 0x88b0
 // Size: 0x104
 function function_8199c444() {
@@ -1398,7 +1397,7 @@ function function_8199c444() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9758a7d3, Offset: 0x89c0
 // Size: 0xa4
 function function_114d3739() {
@@ -1409,7 +1408,7 @@ function function_114d3739() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbfec574, Offset: 0x8a70
 // Size: 0xec
 function function_fb965703() {
@@ -1423,7 +1422,7 @@ function function_fb965703() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfe4b2bd8, Offset: 0x8b68
 // Size: 0x74
 function function_a807976b() {
@@ -1435,7 +1434,7 @@ function function_a807976b() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0d3be0a, Offset: 0x8be8
 // Size: 0x19c
 function function_ded27710() {
@@ -1467,12 +1466,12 @@ function function_ded27710() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7993bc49, Offset: 0x8d90
 // Size: 0x11c
 function function_c6c2c276() {
     level flag::wait_till("flag_mortar_landing_player_pushed_forward");
-    wait(4);
+    wait 4;
     level scene::add_scene_func(#"hash_47c1f9bed49aef1b", &function_469dbbc4, "init");
     level scene::add_scene_func(#"hash_4e497ef04688df0e", &function_ecf10386, "init");
     level scene::add_scene_func(#"hash_4e497ef04688df0e", &function_b6a33802, "play");
@@ -1482,11 +1481,11 @@ function function_c6c2c276() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x21f94e09, Offset: 0x8eb8
 // Size: 0x264
 function function_469dbbc4(a_ents) {
-    level endon(#"hash_bf9e9b05d9f258d", #"hash_5bab0ce6d92081c5");
+    level endon(#"hash_bf9e9b05d9f258d", #"flag_stop_ammo_cache_scene");
     enemy = a_ents[#"actor 1"];
     enemy endon(#"death");
     enemy.a.nodeath = 1;
@@ -1512,7 +1511,7 @@ function function_469dbbc4(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc177e725, Offset: 0x9128
 // Size: 0x80
 function function_119bac80(attacker) {
@@ -1525,7 +1524,7 @@ function function_119bac80(attacker) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa56f8c19, Offset: 0x91b0
 // Size: 0x54
 function function_c1a275eb(attacker) {
@@ -1535,7 +1534,7 @@ function function_c1a275eb(attacker) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2f0e77d6, Offset: 0x9210
 // Size: 0x18e
 function function_aad3f658() {
@@ -1546,7 +1545,7 @@ function function_aad3f658() {
     level scene::play(#"hash_47c1f9bed49aef1b", "if_not_shot_go_to_crc_shoot");
     level thread scene::play(#"hash_47c1f9bed49aef1b", "shoot_loop");
     level flag::wait_till_timeout(0.5, "flag_stop_ammo_cache_scene");
-    level notify(#"hash_5bab0ce6d92081c5");
+    level notify(#"flag_stop_ammo_cache_scene");
     level thread scene::stop(#"hash_47c1f9bed49aef1b");
     if (isalive(self)) {
         util::stop_magic_bullet_shield(self);
@@ -1557,11 +1556,11 @@ function function_aad3f658() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x69ee8376, Offset: 0x93a8
 // Size: 0xbc
 function function_77ff9ff2() {
-    level endon(#"hash_6c9ae8bf940ed483", #"hash_5bab0ce6d92081c5");
+    level endon(#"hash_6c9ae8bf940ed483", #"flag_stop_ammo_cache_scene");
     self endon(#"death");
     level flag::wait_till("flag_mortar_disable_ammo_cache_scene");
     level notify(#"hash_bf9e9b05d9f258d");
@@ -1570,7 +1569,7 @@ function function_77ff9ff2() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4de11a33, Offset: 0x9470
 // Size: 0xc4
 function function_ecf10386(a_ents) {
@@ -1578,12 +1577,12 @@ function function_ecf10386(a_ents) {
     enemy = a_ents[#"actor 1"];
     enemy endon(#"death");
     level flag::wait_till("flag_aib_t9_vign_cust_arm_ammo_cache_play");
-    wait(0.5);
+    wait 0.5;
     level scene::play(#"hash_4e497ef04688df0e", "react", enemy);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb555fcbb, Offset: 0x9540
 // Size: 0xbc
 function function_b6a33802(a_ents) {
@@ -1596,18 +1595,18 @@ function function_b6a33802(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x56d3a183, Offset: 0x9608
 // Size: 0xa4
 function function_9a05c498() {
-    level endon(#"hash_6f51e6fd732d2e8b", #"hash_353db9a2edb70b2e");
+    level endon(#"flag_aib_t9_vign_cust_arm_ammo_cache_play", #"flag_mortar_alley_reached");
     level scene::add_scene_func(#"hash_4e497df04688dd5b", &function_a2024273, "done");
     level flag::wait_till("flag_aib_t9_vign_cust_arm_jump_out_window_02");
     level scene::play(#"hash_4e497df04688dd5b");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9821112, Offset: 0x96b8
 // Size: 0xac
 function function_a2024273(a_ents) {
@@ -1620,18 +1619,18 @@ function function_a2024273(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b54f751, Offset: 0x9770
 // Size: 0x94
 function function_6b05b315() {
-    level endon(#"hash_353db9a2edb70b2e");
+    level endon(#"flag_mortar_alley_reached");
     level scene::add_scene_func(#"hash_d6565e31fc629f2", &function_32447d79, "done");
     level trigger::wait_till("flag_aib_t9_cust_down_stairs_shootin_vc");
     level scene::play(#"hash_d6565e31fc629f2");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x85199ab0, Offset: 0x9810
 // Size: 0xbc
 function function_32447d79(a_ents) {
@@ -1644,28 +1643,28 @@ function function_32447d79(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x789086f2, Offset: 0x98d8
 // Size: 0x54
 function function_e79a5a5d() {
     level flag::wait_till("flag_mortar_landing_player_pushed_forward");
-    wait(2);
+    wait 2;
     spawner::simple_spawn_single("vign_peaking_window_spawner", &function_ce14c867);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa81ceed1, Offset: 0x9938
 // Size: 0x16c
 function function_ce14c867() {
-    level endon(#"hash_353db9a2edb70b2e", #"hash_5978cad75e234c6");
+    level endon(#"flag_mortar_alley_reached", #"flag_mortar_upper_mortar_building_reached");
     self endon(#"death");
     self scene::init(#"hash_667342d5ad8c3596", self);
     self thread function_fd33933d();
     level flag::wait_till("flag_aib_t9_vign_cust_arm_peaking_window_intro");
     self thread function_ded00ef3();
     level util::waittill_any_ents(level, "flag_aib_t9_vign_cust_arm_peaking_window_react", self, "damage");
-    level notify(#"hash_2e8b756548c58545");
+    level notify(#"flag_aib_t9_vign_cust_arm_peaking_window_react");
     self scene::play(#"hash_667342d5ad8c3596", "react", self);
     if (isalive(self)) {
         self thread ai::set_goal_ent(getent("mortar_alley_defend_vol", "targetname"));
@@ -1673,26 +1672,26 @@ function function_ce14c867() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x13bdc8f8, Offset: 0x9ab0
 // Size: 0xcc
 function function_ded00ef3() {
-    level endon(#"hash_2e8b756548c58545", #"hash_353db9a2edb70b2e", #"hash_5978cad75e234c6");
+    level endon(#"flag_aib_t9_vign_cust_arm_peaking_window_react", #"flag_mortar_alley_reached", #"flag_mortar_upper_mortar_building_reached");
     self endon(#"death");
     self scene::play(#"hash_667342d5ad8c3596", "intro", self);
     self thread scene::play(#"hash_667342d5ad8c3596", "loop", self);
-    wait(1.5);
+    wait 1.5;
     level flag::set("flag_aib_t9_vign_cust_arm_peaking_window_react");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc0235b5f, Offset: 0x9b88
 // Size: 0x8c
 function function_fd33933d() {
-    level endon(#"hash_1a3514639ca156a", #"hash_2e8b756548c58545");
+    level endon(#"hash_1a3514639ca156a", #"flag_aib_t9_vign_cust_arm_peaking_window_react");
     self endon(#"death");
-    level waittill(#"hash_353db9a2edb70b2e", #"hash_5978cad75e234c6");
+    level waittill(#"flag_mortar_alley_reached", #"flag_mortar_upper_mortar_building_reached");
     level scene::stop(#"hash_667342d5ad8c3596", 1);
 }
 
@@ -1703,11 +1702,11 @@ function function_fd33933d() {
 function function_6dfe5db1() {
     level scene::add_scene_func("aib_t9_vign_tplt_ent_around_corner_l_2_stnd_spray_shoot_01", &function_41c74d6e, "play");
     level flag::wait_till("start_vign_corner_spry_shoot_01");
-    level scene::play(#"hash_6be70ccea1f54709");
+    level scene::play(#"aib_t9_vign_tplt_ent_around_corner_l_2_stnd_spray_shoot_01");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x26651c18, Offset: 0x9ca0
 // Size: 0x11c
 function function_41c74d6e(ents) {
@@ -1723,18 +1722,18 @@ function function_41c74d6e(ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1cd25368, Offset: 0x9dc8
 // Size: 0x7c
 function function_4a54e325() {
     level scene::add_scene_func("aib_t9_vign_cust_arm_mortar_first_battle_1st_wave", &function_67118793, "play");
     level flag::wait_till("flag_start_vign_mortar_first_battle_1st_wave");
-    wait(1.5);
-    level scene::play(#"hash_775ef8a4a603e0c0");
+    wait 1.5;
+    level scene::play(#"aib_t9_vign_cust_arm_mortar_first_battle_1st_wave");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x15cbeb83, Offset: 0x9e50
 // Size: 0x16c
 function function_67118793(ents) {
@@ -1754,7 +1753,7 @@ function function_67118793(ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9b47e02, Offset: 0x9fc8
 // Size: 0x4c
 function function_6ca545eb() {
@@ -1764,7 +1763,7 @@ function function_6ca545eb() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7bb2fdd2, Offset: 0xa020
 // Size: 0x2c
 function function_f2cbcaaa() {
@@ -1772,7 +1771,7 @@ function function_f2cbcaaa() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5646954e, Offset: 0xa058
 // Size: 0xbc
 function function_291146ea() {
@@ -1787,17 +1786,17 @@ function function_291146ea() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x507f6c5e, Offset: 0xa120
 // Size: 0x5c
 function function_aaf84792() {
-    level endon(#"hash_5978cad75e234c6");
+    level endon(#"flag_mortar_upper_mortar_building_reached");
     level flag::wait_till("vignette_mortar_brks_wndw_1_base_1_flag");
     spawner::simple_spawn_single("mortar_brks_wndw_1_base_1_guy", &function_c25d3a03);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab8fd1b, Offset: 0xa188
 // Size: 0x1cc
 function function_c25d3a03() {
@@ -1813,31 +1812,31 @@ function function_c25d3a03() {
     if (isdefined(level.var_52874eb2)) {
         self setpersonalthreatbias(level.var_52874eb2, -10000);
     }
-    level waittill(#"hash_e1ae1f1d66672eb", #"hash_5978cad75e234c6");
+    level waittill(#"flag_mortar_upper_courtyard_reached", #"flag_mortar_upper_mortar_building_reached");
     self util::stop_magic_bullet_shield();
     self kill();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8ece48f8, Offset: 0xa360
 // Size: 0x6c
 function function_c728f547() {
-    level endon(#"hash_5978cad75e234c6", #"hash_353db9a2edb70b2e");
+    level endon(#"flag_mortar_upper_mortar_building_reached", #"flag_mortar_alley_reached");
     level trigger::wait_till("trigger_mortar_left_path");
     spawner::simple_spawn_single("vign_scan_for_heli_balcony_guy", &function_d64dcfe2);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfd03212e, Offset: 0xa3d8
 // Size: 0x12c
 function function_d64dcfe2() {
-    self endon(#"death", #"hash_b6f8e557673187c");
+    self endon(#"death", #"cleanup_scene");
     self thread function_2136dc79();
     level thread scene::play(#"hash_72d2ff97930299b1", "loop", self);
     level util::waittill_any_ents(level, "flag_start_vign_scan_for_heli_balcony", self, "damage");
-    self notify(#"hash_28b58f626b1379ac");
+    self notify(#"play_scene");
     level thread scene::play(#"hash_72d2ff97930299b1", "react", self);
     self setpersonalthreatbias(level.player, 2000);
     var_6fd474cd = getnode(self.target, "targetname");
@@ -1845,13 +1844,13 @@ function function_d64dcfe2() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaab100d6, Offset: 0xa510
 // Size: 0xd4
 function function_2136dc79() {
-    self endon(#"death", #"hash_28b58f626b1379ac");
+    self endon(#"death", #"play_scene");
     level flag::wait_till_any(array("flag_mortar_right_path", "flag_mortar_upper_mortar_building_reached", "flag_mortar_cleanup_mortar_alley", "flag_spawn_mortar_upper_spawner_wave_3"));
-    self notify(#"hash_b6f8e557673187c");
+    self notify(#"cleanup_scene");
     self scene::stop(#"hash_72d2ff97930299b1", 1);
     if (isalive(self)) {
         self kill();
@@ -1859,17 +1858,17 @@ function function_2136dc79() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x45f0e781, Offset: 0xa5f0
 // Size: 0x6c
 function function_529acf84() {
-    level endon(#"hash_5978cad75e234c6", #"hash_353db9a2edb70b2e");
+    level endon(#"flag_mortar_upper_mortar_building_reached", #"flag_mortar_alley_reached");
     level trigger::wait_till("start_vign_startled_ent_balcony_death");
     spawner::simple_spawn_single("vign_startled_ent_balcony_death_guy", &function_7f4a10e5);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d49e5f5, Offset: 0xa668
 // Size: 0x17e
 function function_7f4a10e5() {
@@ -1892,7 +1891,7 @@ function function_7f4a10e5() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9490a8ca, Offset: 0xa7f0
 // Size: 0x4c
 function function_81654d37() {
@@ -1901,7 +1900,7 @@ function function_81654d37() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfa6c6d7, Offset: 0xa848
 // Size: 0x7c
 function function_c98cbd4e() {
@@ -1912,7 +1911,7 @@ function function_c98cbd4e() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x849e713e, Offset: 0xa8d0
 // Size: 0x17c
 function function_558f59db(var_cc827aa1) {
@@ -1934,11 +1933,11 @@ function function_558f59db(var_cc827aa1) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8265998f, Offset: 0xaa58
 // Size: 0x11c
 function function_d250e19f() {
-    level endon(#"hash_5165eae58971e849");
+    level endon(#"flag_mortar_reached_red_door");
     level scene::add_scene_func(#"hash_3da87aac371213c7", &function_28a8f735, "init");
     level scene::add_scene_func(#"hash_3da87aac371213c7", &function_e9a58f7a, "done");
     level flag::wait_till("flag_reached_tea_house_upper_floor");
@@ -1948,21 +1947,21 @@ function function_d250e19f() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaa146278, Offset: 0xab80
 // Size: 0xc4
 function function_28a8f735(ents) {
-    level endon(#"hash_5165eae58971e849", #"hash_40479a1aa0d08514");
+    level endon(#"flag_mortar_reached_red_door", #"start_vignette_react_surprise_doorway");
     util::waittill_any_ents(ents[#"hash_7dff84d726898ca9"], "damage", ents[#"hash_7dff83d726898af6"], "damage", ents[#"hash_7dff84d726898ca9"], "start_context_melee", ents[#"hash_7dff83d726898af6"], "start_context_melee");
     level flag::set("start_vignette_react_surprise_doorway");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x44d02a39, Offset: 0xac50
 // Size: 0x1bc
 function function_e9a58f7a(ents) {
-    level endon(#"hash_5165eae58971e849");
+    level endon(#"flag_mortar_reached_red_door");
     var_adfb6bb7 = getent("red_door_defend_vol", "targetname");
     foreach (ent in ents) {
         if (isalive(ent)) {
@@ -1975,12 +1974,12 @@ function function_e9a58f7a(ents) {
     spawner::simple_spawn_single("mortar_red_door_defender", &function_1aeb0a0a);
     for (i = a_enemies.size; i < 1; i++) {
         spawner::simple_spawn_single("mortar_red_door_defender", &function_1aeb0a0a);
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xad99c54f, Offset: 0xae18
 // Size: 0x24
 function function_1aeb0a0a() {
@@ -1988,11 +1987,11 @@ function function_1aeb0a0a() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e54e8, Offset: 0xae48
 // Size: 0xd4
 function function_eb90b3e8() {
-    level endon(#"hash_5165eae58971e849");
+    level endon(#"flag_mortar_reached_red_door");
     level scene::add_scene_func(#"hash_28a87063776ee7d0", &function_6c337113, "init");
     level flag::wait_till("flag_mortar_upper_mortar_building_reached");
     level scene::play(#"hash_28a87063776ee7d0", "init");
@@ -2000,7 +1999,7 @@ function function_eb90b3e8() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd3089771, Offset: 0xaf28
 // Size: 0x11c
 function function_6c337113(a_ents) {
@@ -2018,7 +2017,7 @@ function function_6c337113(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x741be43c, Offset: 0xb050
 // Size: 0xe4
 function function_be0c7630() {
@@ -2036,16 +2035,16 @@ function function_be0c7630() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8115fbe1, Offset: 0xb140
 // Size: 0x114
 function function_566d3929() {
-    level endon(#"hash_c03b08566d9b84");
+    level endon(#"vign_cust_arm_engage_2_wall_death_01_flag");
     self endon(#"death");
     self waittill(#"damage");
     level notify(#"hash_7f77ed6cb213acc2");
     self thread scene::play(#"hash_28a87063776ee7d0", "start", self);
-    wait(0.5);
+    wait 0.5;
     level scene::stop(#"hash_28a87063776ee7d0");
     if (isalive(self)) {
         self util::stop_magic_bullet_shield();
@@ -2054,7 +2053,7 @@ function function_566d3929() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xca246661, Offset: 0xb260
 // Size: 0x1ec
 function function_e12e064f() {
@@ -2079,11 +2078,11 @@ function function_e12e064f() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0ead255, Offset: 0xb458
 // Size: 0x84
 function function_c1a89a46() {
-    level endon(#"hash_5165eae58971e849");
+    level endon(#"flag_mortar_reached_red_door");
     level flag::wait_till("flag_mortar_upper_mortar_building_reached");
     while (true) {
         ai_enemy = spawner::simple_spawn_single("vign_cust_arm_door_roll_entr_01_guy", &function_5e509636);
@@ -2095,7 +2094,7 @@ function function_c1a89a46() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xde7a2d5f, Offset: 0xb4e8
 // Size: 0x1b4
 function function_5e509636() {
@@ -2117,7 +2116,7 @@ function function_5e509636() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x194b0eb2, Offset: 0xb6a8
 // Size: 0xc4
 function function_a3bea266(a_ents) {
@@ -2130,7 +2129,7 @@ function function_a3bea266(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1bc568e, Offset: 0xb778
 // Size: 0x12c
 function function_dcf0253() {
@@ -2147,11 +2146,11 @@ function function_dcf0253() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc7ea58de, Offset: 0xb8b0
 // Size: 0x148
 function function_2f56897b() {
-    level endon(#"hash_5978cad75e234c6");
+    level endon(#"flag_mortar_upper_mortar_building_reached");
     level flag::wait_till_any(array("flag_mortar_cleanup_mortar_alley", "flag_spawn_mortar_upper_spawner_wave_3"));
     e_volume = getent("vol_cleanup_mortar_alley", "targetname");
     var_e8643004 = array::get_touching(level.player getenemies(), e_volume);
@@ -2162,11 +2161,11 @@ function function_2f56897b() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbed639db, Offset: 0xba00
 // Size: 0xe4
 function function_696dc659() {
-    level endon(#"hash_5978cad75e234c6");
+    level endon(#"flag_mortar_upper_mortar_building_reached");
     level flag::wait_till("flag_mortar_left_path");
     if (isdefined(getent("mortar_center_alley_spawn_trig", "targetname"))) {
         getent("mortar_center_alley_spawn_trig", "targetname") delete();
@@ -2177,11 +2176,11 @@ function function_696dc659() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9e6ef25f, Offset: 0xbaf0
 // Size: 0x11c
 function function_ebdd60f9() {
-    level endon(#"hash_3f5c464766ee575b");
+    level endon(#"flag_mortar_left_path");
     level scene::add_scene_func(#"hash_42257f84442daa06", &function_cbca12b3, "play");
     waitresult = level flag::wait_till_any(array("flag_mortar_center_alley_guys_spawned", "flag_mortar_center_alley_scene"));
     if (waitresult._notify === "flag_mortar_center_alley_guys_spawned") {
@@ -2193,7 +2192,7 @@ function function_ebdd60f9() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd6acb8cd, Offset: 0xbc18
 // Size: 0x1a0
 function function_cbca12b3(a_ents) {
@@ -2203,24 +2202,24 @@ function function_cbca12b3(a_ents) {
         if (isalive(ent)) {
             switch (ent.anim_debug_name) {
             case #"actor 1":
-                var_fd0cc5ae = a_nodes[0];
+                nd_cover = a_nodes[0];
                 break;
             case #"actor 2":
-                var_fd0cc5ae = a_nodes[1];
+                nd_cover = a_nodes[1];
                 break;
             case #"actor 3":
-                var_fd0cc5ae = a_nodes[2];
+                nd_cover = a_nodes[2];
                 break;
             }
             ent.script_objective = "armada_mortar_start";
             ent ai::set_behavior_attribute("disablepeek", 1);
-            ent thread ai::set_goal_node(var_fd0cc5ae);
+            ent thread ai::set_goal_node(nd_cover);
         }
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4dd68c89, Offset: 0xbdc0
 // Size: 0xdc
 function function_9f638ce0(str_trigger, var_d1f6ccc2, str_flag) {
@@ -2236,22 +2235,22 @@ function function_9f638ce0(str_trigger, var_d1f6ccc2, str_flag) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeb64862, Offset: 0xbea8
 // Size: 0xfc
 function function_320d2594() {
-    level endon(#"hash_4bed89f9695b49f4", #"hash_5978cad75e234c6");
+    level endon(#"hash_4bed89f9695b49f4", #"flag_mortar_upper_mortar_building_reached");
     trigger::wait_till("mg_spawn_go");
-    wait(8);
+    wait 8;
     enemies = spawner::simple_spawn("mortar_enemy_spawner_main_building", &function_6f2bf98c);
-    wait(randomfloatrange(8, 12));
+    wait randomfloatrange(8, 12);
     spawner::waittill_ai_group_ai_count("mortar_ai_final_building", 4);
     enemies = spawner::simple_spawn("mortar_upper_spawner_wave_2", &function_6f2bf98c);
     level thread function_6d64338f();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9044f7de, Offset: 0xbfb0
 // Size: 0x54
 function function_6f2bf98c() {
@@ -2261,7 +2260,7 @@ function function_6f2bf98c() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4efe4b9, Offset: 0xc010
 // Size: 0x23c
 function function_d0039deb() {
@@ -2284,13 +2283,13 @@ function function_d0039deb() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7d1bd55e, Offset: 0xc258
 // Size: 0x144
 function function_cee5e544() {
-    level endon(#"hash_5978cad75e234c6");
+    level endon(#"flag_mortar_upper_mortar_building_reached");
     while (!isdefined(level.buddy)) {
-        wait(0.5);
+        wait 0.5;
     }
     level.buddy endon(#"death");
     level flag::wait_till_all(array("mortar_ai_final_building_cleared", "mortar_ai_wave_2_cleared"));
@@ -2302,7 +2301,7 @@ function function_cee5e544() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8387fd62, Offset: 0xc3a8
 // Size: 0x13c
 function function_6d64338f() {
@@ -2320,7 +2319,7 @@ function function_6d64338f() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x63b95671, Offset: 0xc4f0
 // Size: 0x94
 function function_287230c8() {
@@ -2328,12 +2327,12 @@ function function_287230c8() {
     level flag::wait_till_all(array("mortar_ai_final_building_cleared", "mortar_ai_wave_2_cleared"));
     self.grenadeammo = 0;
     self.health = 25;
-    wait(randomfloatrange(0.5, 1));
+    wait randomfloatrange(0.5, 1);
     self kill();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8fb14daa, Offset: 0xc590
 // Size: 0xdc
 function function_de2d35ad() {
@@ -2350,7 +2349,7 @@ function function_de2d35ad() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x34caef50, Offset: 0xc678
 // Size: 0xa0
 function function_ac42a1bb() {
@@ -2363,29 +2362,29 @@ function function_ac42a1bb() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x71144c08, Offset: 0xc720
 // Size: 0x4c
 function function_8ed36c06() {
     self endon(#"death");
     level waittill(#"hash_6d5dee70f2cbd555");
-    wait(0.25);
+    wait 0.25;
     self kill();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6bc2fbd0, Offset: 0xc778
 // Size: 0x60
 function function_250de527() {
     self waittill(#"death");
     level notify(#"hash_443f87164a353a53");
-    wait(randomfloatrange(3, 5));
+    wait randomfloatrange(3, 5);
     level notify(#"hash_2ddc22588860a7a5");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x89caff8f, Offset: 0xc7e0
 // Size: 0x28c
 function function_ce707a4(var_d93ed883) {
@@ -2403,7 +2402,7 @@ function function_ce707a4(var_d93ed883) {
     self turret::function_f5e3e1de(1);
     self turret::set_target(level.player);
     self turret::function_49c3b892(level.player);
-    self val::set(#"hash_6825518d9d655f50", "ignoreme", 1);
+    self val::set(#"mg_turret", "ignoreme", 1);
     self thread function_7b37dd50(var_d93ed883);
     level waittill(#"hash_443f87164a353a53");
     setenablenode(var_d93ed883, 0);
@@ -2417,7 +2416,7 @@ function function_ce707a4(var_d93ed883) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2d493f82, Offset: 0xca78
 // Size: 0x120
 function function_7b37dd50(var_d93ed883) {
@@ -2430,7 +2429,7 @@ function function_7b37dd50(var_d93ed883) {
         if (issentient(self)) {
             self function_60d50ea4();
         }
-        wait(randomintrange(15, 20));
+        wait randomintrange(15, 20);
         setenablenode(var_d93ed883, 1);
         if (!issentient(self)) {
             self makesentient();
@@ -2439,7 +2438,7 @@ function function_7b37dd50(var_d93ed883) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd21af146, Offset: 0xcba0
 // Size: 0xa4
 function function_ad03d12c(b_used) {
@@ -2454,7 +2453,7 @@ function function_ad03d12c(b_used) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xcc50
 // Size: 0x4
 function function_af189a4c() {
@@ -2462,7 +2461,7 @@ function function_af189a4c() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9532363d, Offset: 0xcc60
 // Size: 0x5c
 function function_80089cc9() {
@@ -2472,25 +2471,25 @@ function function_80089cc9() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5147478, Offset: 0xccc8
 // Size: 0x75c
 function function_3d691322() {
     var_e361d345 = struct::get("obj_mortar_bunker_door", "targetname");
-    var_dadfdd0e = struct::get("obj_mortar_bunker", "targetname");
+    obj_mortar_bunker = struct::get("obj_mortar_bunker", "targetname");
     var_83809bc3 = struct::get("obj_upper_mortar_dossier", "targetname");
     level thread namespace_72b0499b::function_132ea7de();
     namespace_72b0499b::music("6.0_red_door_stinger", undefined, "flag_reached_tea_house_upper_floor_hallway");
     level objectives::goto("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_alley").origin, #"hash_56b4845f8e5f7fe6");
     level objectives::function_67f87f80("armada_obj_mortar_goto_red_door", undefined, #"hash_51461abc9db00516");
     level flag::wait_till_any(array("flag_mortar_alley_reached", "flag_mortar_upper_mortar_building_reached", "flag_reached_tea_house_upper_floor", "flag_mortar_reached_red_door"));
-    level objectives::function_60645c02("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_exterior").origin);
+    level objectives::update_position("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_exterior").origin);
     level flag::wait_till_any(array("flag_mortar_upper_mortar_building_reached", "flag_reached_tea_house_upper_floor", "flag_mortar_reached_red_door"));
-    level objectives::function_60645c02("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_upper_floor").origin);
+    level objectives::update_position("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_upper_floor").origin);
     level flag::wait_till_any(array("flag_reached_tea_house_upper_floor", "flag_mortar_reached_red_door"));
-    level objectives::function_60645c02("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_upper_floor_door").origin);
+    level objectives::update_position("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_upper_floor_door").origin);
     level flag::wait_till_any(array("flag_reached_tea_house_upper_floor_door", "flag_mortar_reached_red_door"));
-    level objectives::function_60645c02("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_upper_floor_hallway").origin);
+    level objectives::update_position("armada_obj_mortar_goto_red_door", struct::get("obj_mortar_tea_house_upper_floor_hallway").origin);
     level flag::wait_till_any(array("flag_reached_tea_house_upper_floor_hallway", "flag_mortar_reached_red_door"));
     level objectives::complete("armada_obj_mortar_goto_red_door");
     level.buddy.allowbattlechatter[#"bc"] = 0;
@@ -2531,7 +2530,7 @@ function function_3d691322() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfecbb3ea, Offset: 0xd430
 // Size: 0x8c
 function function_a6fea06f(*params) {
@@ -2543,61 +2542,61 @@ function function_a6fea06f(*params) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x78759f7f, Offset: 0xd4c8
 // Size: 0x164
 function function_e49e80d4() {
     level objectives::goto("armada_obj_meet_adler", struct::get("obj_courtyard_mortar", "targetname").origin, #"hash_7287f315f3148647");
     level objectives::function_67f87f80("armada_obj_meet_adler", undefined, #"hash_328f8e17f92baffd");
     level flag::wait_till("flag_obj_mortar_exfil_coutryard");
-    level objectives::function_60645c02("armada_obj_meet_adler", struct::get("mortar_exfil_chopper_land_loc", "targetname").origin);
+    level objectives::update_position("armada_obj_meet_adler", struct::get("mortar_exfil_chopper_land_loc", "targetname").origin);
     level flag::wait_till("obj_flag_mortar_exfil_location");
-    level objectives::function_60645c02("armada_obj_meet_adler", level.var_7466d419);
+    level objectives::update_position("armada_obj_meet_adler", level.var_7466d419);
     level flag::wait_till("obj_flag_mortar_exfil");
     level objectives::complete("armada_obj_meet_adler");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8fd1d86, Offset: 0xd638
 // Size: 0xac
 function function_ca649730() {
     level flag::wait_till("flag_sims_moveto_stairs_cover");
     level.player dialogue::queue("vox_cp_armd_00007_adlr_alrightletsgore_10");
     level flag::wait_till("exfil_flyby_go");
-    wait(2);
+    wait 2;
     level.buddy dialogue::queue("vox_cp_armd_00006_sims_gobacktothebird_ae");
-    wait(1);
+    wait 1;
     level thread function_4c8e7a76(0);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x49f5b690, Offset: 0xd6f0
 // Size: 0x174
 function function_4c8e7a76(var_7e2c51d8) {
     if (!is_true(var_7e2c51d8)) {
         namespace_b7cfe907::function_51923449();
         level.player dialogue::queue("vox_cp_armd_00007_rpcd_badgernineronet_ae");
-        wait(0.5);
+        wait 0.5;
         level.vip dialogue::queue("vox_cp_armd_00007_adlr_wereinboundnowr_fe");
-        wait(0.5);
+        wait 0.5;
         level.player dialogue::queue("vox_cp_armd_00007_rpcd_rogerthatninero_42");
         namespace_b7cfe907::function_f1a80dd();
     }
     level flag::wait_till("flag_player_controlled_huey");
     namespace_b7cfe907::function_51923449();
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_armd_00007_plt1_badgernineronei_92");
-    wait(1);
+    wait 1;
     level.player dialogue::queue("vox_cp_armd_00007_adlr_vcarealloverthe_69");
-    wait(0.5);
+    wait 0.5;
     level.player dialogue::queue("vox_cp_armd_00007_adlr_alltargetsareva_e9");
     namespace_b7cfe907::function_f1a80dd();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9dc178f3, Offset: 0xd870
 // Size: 0x14c
 function function_110866d(b_init = 0) {
@@ -2616,7 +2615,7 @@ function function_110866d(b_init = 0) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x371974c8, Offset: 0xd9c8
 // Size: 0xc4
 function function_766af271() {
@@ -2628,22 +2627,22 @@ function function_766af271() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1167a6af, Offset: 0xda98
 // Size: 0xf4
 function function_4bf5cfff() {
     self endon(#"disconnect");
     self thread lui::screen_fade(1.5, 0.5, 0, "white", 0, "red_door_postfx_fade", 0);
-    wait(0.15);
-    self clientfield::set_to_player("" + #"hash_7474973a37272b2c", 2);
-    wait(2);
+    wait 0.15;
+    self clientfield::set_to_player("" + #"pstfx_teleport", 2);
+    wait 2;
     self thread lui::screen_fade(1.5, 0, 0.5, "white", 0, "red_door_postfx_fade", 0);
-    wait(0.15);
-    self clientfield::set_to_player("" + #"hash_7474973a37272b2c", 0);
+    wait 0.15;
+    self clientfield::set_to_player("" + #"pstfx_teleport", 0);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x16c41cb8, Offset: 0xdb98
 // Size: 0x1fc
 function function_a1de7ea2(b_init = 0) {
@@ -2666,7 +2665,7 @@ function function_a1de7ea2(b_init = 0) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x80dec50d, Offset: 0xdda0
 // Size: 0x5c
 function function_e8f2d444(a_ents) {
@@ -2675,7 +2674,7 @@ function function_e8f2d444(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc105294, Offset: 0xde08
 // Size: 0x7c
 function function_ce1faca(a_ents) {
@@ -2686,7 +2685,7 @@ function function_ce1faca(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc8b403e4, Offset: 0xde90
 // Size: 0xec
 function function_262e8906(var_50cc0d4f) {
@@ -2701,7 +2700,7 @@ function function_262e8906(var_50cc0d4f) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xebf03fa2, Offset: 0xdf88
 // Size: 0x10c
 function function_cd1dcfed(ents) {
@@ -2726,7 +2725,7 @@ function function_6896ea8a(var_43baa908) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4e7bf1cb, Offset: 0xe0e0
 // Size: 0xd4
 function function_cb65a5e8(var_43baa908) {
@@ -2740,7 +2739,7 @@ function function_cb65a5e8(var_43baa908) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x724efd7e, Offset: 0xe1c0
 // Size: 0xb8
 function function_315508be() {
@@ -2751,7 +2750,7 @@ function function_315508be() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcb94c6e5, Offset: 0xe280
 // Size: 0x3f4
 function function_997dda5e(var_d3440450, var_50cc0d4f) {
@@ -2776,7 +2775,7 @@ function function_997dda5e(var_d3440450, var_50cc0d4f) {
     level thread function_ca649730();
     level flag::wait_till("flag_mortar_exfil_fly_finished");
     level.player endon(#"disconnect", #"death");
-    snd::function_7db65a93(#"hash_2b94ea847ae2b667");
+    snd::client_msg(#"hash_2b94ea847ae2b667");
     level function_9290ebb3();
     level.var_7466d419 vehicle_ai::clearallmovement(1);
     level.var_7466d419 function_24c9e377();
@@ -2791,7 +2790,7 @@ function function_997dda5e(var_d3440450, var_50cc0d4f) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9324bd3c, Offset: 0xe680
 // Size: 0x1bc
 function function_a4b20ce7() {
@@ -2834,7 +2833,7 @@ function function_b74e1deb() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3b1c5a8f, Offset: 0xe9d8
 // Size: 0x124
 function function_a11d0dcc(*name, *starting, *direct, *player) {
@@ -2853,7 +2852,7 @@ function function_a11d0dcc(*name, *starting, *direct, *player) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb0c7b3a6, Offset: 0xeb08
 // Size: 0xc4
 function function_b2b6c923() {
@@ -2868,7 +2867,7 @@ function function_b2b6c923() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x347675c9, Offset: 0xebd8
 // Size: 0xdc
 function function_e6ca6b4d() {
@@ -2882,7 +2881,7 @@ function function_e6ca6b4d() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9d7efed0, Offset: 0xecc0
 // Size: 0x14c
 function function_9c91c0b5(a_ents) {
@@ -2890,9 +2889,9 @@ function function_9c91c0b5(a_ents) {
     foreach (ent in a_ents) {
         if (isalive(ent)) {
             ent.script_objective = "armada_mortar_exfil";
-            var_fd0cc5ae = arraygetclosest(ent.origin, var_1f3a4780);
-            if (isdefined(var_fd0cc5ae)) {
-                ent thread ai::force_goal(var_fd0cc5ae);
+            nd_cover = arraygetclosest(ent.origin, var_1f3a4780);
+            if (isdefined(nd_cover)) {
+                ent thread ai::force_goal(nd_cover);
             }
         }
     }
@@ -2900,11 +2899,11 @@ function function_9c91c0b5(a_ents) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xccd47e6a, Offset: 0xee18
 // Size: 0x9c
 function function_79299255() {
-    level endon(#"hash_4f204ce88e3333b7", #"hash_aeed06d84cf1327");
+    level endon(#"flag_mortar_exfil_fly_finished", #"flag_start_mortar_exfil");
     self endon(#"death");
     level flag::wait_till("flag_entered_exfil_courtyard");
     level flag::clear("flag_enable_mortar_exfil_color_chain");
@@ -2912,12 +2911,12 @@ function function_79299255() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1f895f61, Offset: 0xeec0
 // Size: 0x96
 function function_7cbced04() {
     self playsound("evt_chopper_strafe_flyby");
-    wait(0.3);
+    wait 0.3;
     self thread function_be014f32();
     self turret::fire_for_time(1, 3);
     self turret::fire_for_time(1, 4);
@@ -2925,7 +2924,7 @@ function function_7cbced04() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9cd84e89, Offset: 0xef60
 // Size: 0xfc
 function function_7c644fb3(ai, var_9114191, var_8b118adb) {
@@ -2935,27 +2934,27 @@ function function_7c644fb3(ai, var_9114191, var_8b118adb) {
     ai endon(#"death");
     self endon(#"death");
     self thread turret::function_1bc8c31c(ai, undefined, var_9114191, var_8b118adb);
-    wait(randomfloatrange(0.3, 0.7));
+    wait randomfloatrange(0.3, 0.7);
     if (isalive(ai) && is_true(ai.allowdeath)) {
         ai dodamage(self.health + 666, self.origin);
     }
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x48061cd, Offset: 0xf068
 // Size: 0x9c
 function function_be014f32() {
     self playsound("wpn_strafe_fire_start_npc");
     self playloopsound("wpn_strafe_fire_loop_npc");
     self waittill(#"hash_254e7fb941cc8d9d");
-    wait(0.5);
+    wait 0.5;
     self playsound("wpn_strafe_fire_stop_npc");
     self stoploopsound(1);
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x121c0631, Offset: 0xf110
 // Size: 0x694
 function function_58771ad7() {
@@ -2976,7 +2975,7 @@ function function_58771ad7() {
     level namespace_b7cfe907::function_3af72756(level.var_7466d419, level.vip, "crew");
     level namespace_b7cfe907::function_3af72756(level.var_7466d419, level.gunner, "gunner1");
     level scene::init(#"hash_3ed153e5b694beab", a_ents);
-    level flag::wait_till(#"hash_126584dbc61499eb");
+    level flag::wait_till(#"exfil_flyby_go");
     level.gunner sethighdetail(1);
     level.vip sethighdetail(1);
     level.buddy sethighdetail(1);
@@ -3011,7 +3010,7 @@ function function_58771ad7() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x310079c6, Offset: 0xf7b0
 // Size: 0xdc
 function function_e9339cdf() {
@@ -3026,7 +3025,7 @@ function function_e9339cdf() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x101c746, Offset: 0xf898
 // Size: 0xec
 function function_cdf5e193() {
@@ -3039,7 +3038,7 @@ function function_cdf5e193() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbe7404f4, Offset: 0xf990
 // Size: 0xa6
 function function_c09e7d39() {
@@ -3051,7 +3050,7 @@ function function_c09e7d39() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab081cbb, Offset: 0xfa40
 // Size: 0xac
 function function_9290ebb3() {
@@ -3064,7 +3063,7 @@ function function_9290ebb3() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd3de7826, Offset: 0xfaf8
 // Size: 0x124
 function function_f89fbd1e() {
@@ -3079,7 +3078,7 @@ function function_f89fbd1e() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0af3940, Offset: 0xfc28
 // Size: 0x44
 function function_bd16430c() {
@@ -3088,19 +3087,19 @@ function function_bd16430c() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xee2ef5ee, Offset: 0xfc78
 // Size: 0x8c
 function function_d4168442() {
     self endon(#"death");
     self val::set("exfil_ambush", "ignoreme", 1);
     self setpersonalthreatbias(level.player, 2000);
-    wait(3);
+    wait 3;
     self val::reset("exfil_ambush", "ignoreme");
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38522d30, Offset: 0xfd10
 // Size: 0x71c
 function function_6b5096fe() {
@@ -3162,7 +3161,7 @@ function function_6b5096fe() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7d3480da, Offset: 0x10438
 // Size: 0xe4
 function function_73b45723() {
@@ -3178,7 +3177,7 @@ function function_73b45723() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdfe252b0, Offset: 0x10528
 // Size: 0x1ac
 function function_2d9dc4d1() {
@@ -3202,7 +3201,7 @@ function function_2d9dc4d1() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e32b3ce, Offset: 0x106e0
 // Size: 0xd4
 function function_ba10e034() {
@@ -3225,7 +3224,7 @@ function function_285ff4e4() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x15dc7f7f, Offset: 0x10828
 // Size: 0x14c
 function function_13d13395(n_index) {
@@ -3237,13 +3236,13 @@ function function_13d13395(n_index) {
     nd_path = getvehiclenode(var_8be533d2, "targetname");
     self thread vehicle::get_on_and_go_path(nd_path);
     level flag::wait_till("flag_mortar_orbit_site_b_enemies_spawn");
-    wait(5);
+    wait 5;
     self vehicle::detach_path();
     self deletedelay();
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x330b816d, Offset: 0x10980
 // Size: 0xdc
 function function_92d60a9d() {
@@ -3259,12 +3258,12 @@ function function_92d60a9d() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf3c14e3, Offset: 0x10a68
 // Size: 0x4ca
 function function_1df2273d(*destructible_event, attacker, *weapon, *piece_index, *point, *dir, *mod) {
     if (mod === level.player) {
-        level notify(#"hash_20b54b22a8747044");
+        level notify(#"mortar_orbit_red_barrel_destroyed");
     }
     if (!isdefined(self.script_noteworthy)) {
         return;
@@ -3321,7 +3320,7 @@ function function_1df2273d(*destructible_event, attacker, *weapon, *piece_index,
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x214daf4b, Offset: 0x10f40
 // Size: 0x2c
 function function_97bcc0e9(var_22702838) {
@@ -3329,7 +3328,7 @@ function function_97bcc0e9(var_22702838) {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1053f5af, Offset: 0x10f78
 // Size: 0x44
 function function_2e52b6f9() {
@@ -3337,7 +3336,7 @@ function function_2e52b6f9() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x13e71db, Offset: 0x10fc8
 // Size: 0x64
 function function_91c4756f() {
@@ -3347,7 +3346,7 @@ function function_91c4756f() {
 }
 
 // Namespace armada_mortar/namespace_e6855491
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x74f3ca8e, Offset: 0x11038
 // Size: 0x194
 function function_11696ae(n_index) {

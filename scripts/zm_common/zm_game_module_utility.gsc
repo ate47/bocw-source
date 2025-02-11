@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\struct;
 
 #namespace zm_game_module_utility;
 
@@ -32,7 +31,7 @@ function rotate_ring(forward) {
     }
     while (true) {
         self rotateyaw(dir, 9);
-        wait(9);
+        wait 9;
     }
 }
 

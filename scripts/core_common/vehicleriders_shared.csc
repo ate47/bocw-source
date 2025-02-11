@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
 
 #namespace vehicle;
 
@@ -14,7 +13,7 @@ function autoexec init() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x381a958, Offset: 0x1c0
 // Size: 0x388
 function private function_d64f1d30() {
@@ -49,7 +48,7 @@ function private function_d64f1d30() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x860145c9, Offset: 0x550
 // Size: 0x58c
 function play_vehicle_anim(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
@@ -126,7 +125,7 @@ function play_vehicle_anim(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2ce1f048, Offset: 0xae8
 // Size: 0x2a
 function set_vehicleriders_bundle(str_bundlename) {

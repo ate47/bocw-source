@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\compass.gsc;
+#using scripts\core_common\compass;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace mp_mall;
 

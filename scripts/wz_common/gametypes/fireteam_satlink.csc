@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_72587ba89a212e22;
 #using script_6741a9edbcf6c25e;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
 #using script_680dddbda86931fa;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using script_72587ba89a212e22;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace fireteam_satlink;
 
@@ -15,10 +14,10 @@
 // Size: 0x780
 function event_handler[gametype_init] main(*eventstruct) {
     namespace_2938acdc::init();
-    clientfield::register_clientuimodel("hudItems.uraniumCarryCount", #"hash_6f4b11a0bee9b73d", #"hash_556b3df8ae964e7c", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.uraniumMaxCarry", #"hash_6f4b11a0bee9b73d", #"hash_1879fbcae78c5417", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.uraniumFullCarry", #"hash_6f4b11a0bee9b73d", #"hash_451ab3abde68434a", 1, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.carryingLargeBattery", #"hash_6f4b11a0bee9b73d", #"hash_44d3734a881956dc", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.uraniumCarryCount", #"hud_items", #"hash_556b3df8ae964e7c", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.uraniumMaxCarry", #"hud_items", #"hash_1879fbcae78c5417", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.uraniumFullCarry", #"hud_items", #"hash_451ab3abde68434a", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.carryingLargeBattery", #"hud_items", #"hash_44d3734a881956dc", 1, 1, "int", undefined, 0, 0);
     clientfield::register("scriptmover", "scriptid", 1, 5, "int", &function_e116df6c, 0, 0);
     clientfield::register("scriptmover", "objectiveCameraID", 1, 3, "int", &function_407a8464, 0, 0);
     satlinks = struct::get_array("fireteam_satlink", "variantname");
@@ -81,7 +80,7 @@ function private function_bb2f717e(localclientnum) {
     }
     while (true) {
         if (!isdefined(level.item_spawn_stashes)) {
-            wait(1);
+            wait 1;
             continue;
         }
         draworigin = getcamposbylocalclientnum(localclientnum);
@@ -112,7 +111,7 @@ function private function_bb2f717e(localclientnum) {
             var_61efd7d9[index].var_95f008e = undefined;
             var_61efd7d9[index] hide();
         }
-        wait(1);
+        wait 1;
     }
 }
 

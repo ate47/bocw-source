@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace deployable;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace deployable/deployable
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x754d13f, Offset: 0x158
 // Size: 0x6c
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace deployable/deployable
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x57902873, Offset: 0x1d0
 // Size: 0xa2
 function register_deployable(weapon, var_7ec218c6) {
@@ -55,7 +54,7 @@ function function_3e8d9b27(previs_weapon) {
 }
 
 // Namespace deployable/deployable
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf0ec3870, Offset: 0x310
 // Size: 0x6c
 function function_c1ee2dce(player, localclientnum, weapon) {
@@ -64,7 +63,7 @@ function function_c1ee2dce(player, localclientnum, weapon) {
 }
 
 // Namespace deployable/deployable
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xee17cc15, Offset: 0x388
 // Size: 0x1aa
 function function_35d1c69f(localclientnum, player, weapon) {
@@ -82,13 +81,13 @@ function function_35d1c69f(localclientnum, player, weapon) {
 }
 
 // Namespace deployable/deployable
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0d667e5, Offset: 0x540
 // Size: 0x2d0
 function group_mega_round_end_abcd_talking(localclientnum = 0) {
     level notify("previs_deployable_" + localclientnum);
     level endon("previs_deployable_" + localclientnum);
-    wait(10);
+    wait 10;
     previs_model = spawn(localclientnum, (0, 0, 0), "script_model");
     previs_weapon = getweapon(#"eq_alarm");
     var_5929417d = 0;
@@ -108,7 +107,7 @@ function group_mega_round_end_abcd_talking(localclientnum = 0) {
             if (isdefined(previs_model)) {
                 previs_model hide();
             }
-            wait(0.2);
+            wait 0.2;
         } else {
             waitframe(1);
         }

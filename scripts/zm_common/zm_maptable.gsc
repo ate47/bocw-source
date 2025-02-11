@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
 
 #namespace zm_maptable;
 
 // Namespace zm_maptable/zm_maptable
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xffd8948a, Offset: 0x88
 // Size: 0x66
 function function_10672567() {
@@ -17,7 +16,7 @@ function function_10672567() {
 }
 
 // Namespace zm_maptable/zm_maptable
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf05a6f18, Offset: 0xf8
 // Size: 0x56
 function get_cast() {
@@ -30,7 +29,7 @@ function get_cast() {
 }
 
 // Namespace zm_maptable/zm_maptable
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3360542, Offset: 0x158
 // Size: 0x42
 function get_story() {

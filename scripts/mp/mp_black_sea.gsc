@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_72d96920f15049b8;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_67ce8e728d8f37ba;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_72d96920f15049b8;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace mp_black_sea;
 
@@ -55,7 +54,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9cd1f063, Offset: 0x7c8
 // Size: 0x2c
 function private function_54d03b3c(*eventstruct) {
@@ -63,7 +62,7 @@ function private function_54d03b3c(*eventstruct) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1624a30, Offset: 0x800
 // Size: 0x4c
 function on_vehicle_spawned() {
@@ -73,7 +72,7 @@ function on_vehicle_spawned() {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x61e17e0f, Offset: 0x858
 // Size: 0x14
 function on_game_playing() {
@@ -81,7 +80,7 @@ function on_game_playing() {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43b2894f, Offset: 0x878
 // Size: 0x54
 function function_c0e7257() {
@@ -92,7 +91,7 @@ function function_c0e7257() {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb9c10e3c, Offset: 0x8d8
 // Size: 0x74
 function function_6691af0e(var_252cfb75) {
@@ -103,7 +102,7 @@ function function_6691af0e(var_252cfb75) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x34fc6123, Offset: 0x958
 // Size: 0x21c
 function function_7f639bc1() {
@@ -129,13 +128,13 @@ function function_7f639bc1() {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0acf95d, Offset: 0xb80
 // Size: 0xf4
 function function_c628239e(a_ents) {
     self notify("17f7b6813feb7577");
     self endon("17f7b6813feb7577");
-    var_a6eece5c = a_ents[#"hash_6dcf151fd203a04e"];
+    var_a6eece5c = a_ents[#"raft"];
     var_a6eece5c endon(#"death");
     var_a6eece5c waittill(#"hash_c29a94baff41fde");
     var_a6eece5c clientfield::set("" + #"hash_51d1d2a4c63ed960", 1);
@@ -144,7 +143,7 @@ function function_c628239e(a_ents) {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x114e7e57, Offset: 0xc80
 // Size: 0x170
 function function_29584e41() {
@@ -162,7 +161,7 @@ function function_29584e41() {
 }
 
 // Namespace mp_black_sea/mp_black_sea
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc9327348, Offset: 0xdf8
 // Size: 0x184
 function function_e8fa58f2() {

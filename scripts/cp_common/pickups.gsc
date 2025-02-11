@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\pickups.gsc;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\statemachine_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\statemachine_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\cp_common\pickups;
+#using scripts\cp_common\util;
 
 #namespace pickups;
 
@@ -106,12 +105,12 @@ class class_23a25920 : class_853435cd {
     // Checksum 0x2558f9a6, Offset: 0x790
     // Size: 0x74
     function function_7596eaba() {
-        self endon(#"hash_64239485ac219282");
+        self endon(#"cancel_despawn");
         if (var_3698bb1c <= 0) {
             return;
         }
         self thread function_fbd26ca4();
-        wait(var_3698bb1c);
+        wait var_3698bb1c;
         if (isdefined(var_f4317779)) {
             [[ var_f4317779 ]]();
             return;
@@ -192,7 +191,7 @@ class class_23a25920 : class_853435cd {
             return;
         }
         if (var_7fd12b33 > 0) {
-            wait(var_7fd12b33);
+            wait var_7fd12b33;
         }
     }
 
@@ -218,12 +217,12 @@ class class_23a25920 : class_853435cd {
     // Checksum 0x60fd3b15, Offset: 0x810
     // Size: 0xa4
     function function_fbd26ca4() {
-        self endon(#"hash_64239485ac219282");
+        self endon(#"cancel_despawn");
         for (n_time_remaining = var_3698bb1c; n_time_remaining >= 0 && isdefined(var_f3eb8d5c); n_time_remaining -= 1) {
             /#
                 print3d(var_f3eb8d5c.origin + (0, 0, 15), n_time_remaining, (1, 0, 0), 1, 1, 20);
             #/
-            wait(1);
+            wait 1;
         }
     }
 
@@ -269,7 +268,7 @@ class class_853435cd {
         var_36fa6722 = 128;
         var_2ee2d618 = 72;
         var_f9a3177e = 128;
-        var_3eab25d1 = &function_719839c9;
+        var_3eab25d1 = &repair_completed;
         var_321c3bc5 = "Item";
     }
 
@@ -336,9 +335,9 @@ class class_853435cd {
         e_triggerer.var_bba78ecd = self;
         var_1a240798 = e_triggerer;
         var_41c57d21 notify(#"hash_57abab410be3519a", {#is_enabled:0});
-        self notify(#"hash_64239485ac219282");
+        self notify(#"cancel_despawn");
         e_triggerer val::set(#"pickups", "disable_weapons");
-        wait(0.5);
+        wait 0.5;
         if (isdefined(var_c83e8d33)) {
             foreach (var_5ec881b0 in var_c83e8d33) {
                 self thread [[ var_5ec881b0 ]](e_triggerer);
@@ -433,9 +432,9 @@ class class_853435cd {
     // Checksum 0xda01c4e2, Offset: 0x20b0
     // Size: 0x148
     function spawn_interact_trigger(v_origin, n_radius, n_height, str_hint) {
-        assert(isdefined(v_origin), "<unknown string>");
-        assert(isdefined(n_radius), "<unknown string>");
-        assert(isdefined(n_height), "<unknown string>");
+        assert(isdefined(v_origin), "<dev string:x38>");
+        assert(isdefined(n_radius), "<dev string:x69>");
+        assert(isdefined(n_height), "<dev string:x9a>");
         e_trigger = spawn("trigger_radius", v_origin, 0, n_radius, n_height);
         e_trigger triggerignoreteam();
         e_trigger setvisibletoall();
@@ -473,8 +472,8 @@ class class_853435cd {
     // Params 1, eflags: 0x0
     // Checksum 0x7c09a4ea, Offset: 0x1278
     // Size: 0x40
-    function function_719839c9(player) {
-        self notify(#"hash_1ea37b5a988f7dbe");
+    function repair_completed(player) {
+        self notify(#"repair_completed");
         if (isdefined(var_ab527f4a)) {
             self thread [[ var_ab527f4a ]](player);
         }
@@ -491,7 +490,7 @@ class class_853435cd {
             /#
                 player util::function_b5d0a39e(function_38a7d42b(), undefined, undefined, 0, 0.35);
             #/
-            wait(0.35);
+            wait 0.35;
         }
     }
 

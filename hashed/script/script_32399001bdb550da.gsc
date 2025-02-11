@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\skipto.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\util;
 
 #namespace savegame;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa91d8e39, Offset: 0x258
 // Size: 0x334
 function private preinit() {
@@ -55,7 +54,7 @@ function private preinit() {
         function_81534803(#"transient");
     }
     foreach (trig in trigger::get_all()) {
-        if (is_true(trig.var_544e29)) {
+        if (is_true(trig.script_checkpoint)) {
             trig thread checkpoint_trigger();
         }
     }
@@ -63,7 +62,7 @@ function private preinit() {
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3295f763, Offset: 0x598
 // Size: 0x27c
 function save(var_116ab377, var_296c7056) {
@@ -100,7 +99,7 @@ function save(var_116ab377, var_296c7056) {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd75d31d6, Offset: 0x820
 // Size: 0x52
 function function_ac15668a(missionname) {
@@ -109,7 +108,7 @@ function function_ac15668a(missionname) {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6dcfc77c, Offset: 0x880
 // Size: 0x52
 function function_1b212e67(missionname) {
@@ -118,7 +117,7 @@ function function_1b212e67(missionname) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x91b2103f, Offset: 0x8e0
 // Size: 0x34
 function function_fa31c391() {
@@ -128,18 +127,18 @@ function function_fa31c391() {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7edcc5de, Offset: 0x920
 // Size: 0x9c
 function function_87dafd45(name) {
     if (isdefined(level.var_3a8f95b4) && level.var_3a8f95b4 != name && level.script != "cp_ger_hub") {
-        errormsg("<unknown string>" + level.var_3a8f95b4 + "<unknown string>" + name + "<unknown string>");
+        errormsg("<dev string:x38>" + level.var_3a8f95b4 + "<dev string:x61>" + name + "<dev string:x69>");
     }
     level.var_3a8f95b4 = name;
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x42db15c3, Offset: 0x9c8
 // Size: 0x36
 function function_8136eb5a() {
@@ -150,7 +149,7 @@ function function_8136eb5a() {
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8196f2ac, Offset: 0xa08
 // Size: 0xda
 function function_6440b06b(dataname = #"transient", missionname = function_8136eb5a()) {
@@ -167,7 +166,7 @@ function function_6440b06b(dataname = #"transient", missionname = function_8136e
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb4f05cdc, Offset: 0xaf0
 // Size: 0x126
 function function_81534803(dataname, missionname = function_8136eb5a()) {
@@ -185,7 +184,7 @@ function function_81534803(dataname, missionname = function_8136eb5a()) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xafe57e47, Offset: 0xc20
 // Size: 0x20
 function function_a620739b() {
@@ -195,7 +194,7 @@ function function_a620739b() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a1bed97, Offset: 0xc48
 // Size: 0xec
 function function_7e0e735b() {
@@ -209,7 +208,7 @@ function function_7e0e735b() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa56421e6, Offset: 0xd40
 // Size: 0xd6
 function function_9797184c() {
@@ -222,7 +221,7 @@ function function_9797184c() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdf6e64c4, Offset: 0xe20
 // Size: 0x4de
 function function_379f84b3() {
@@ -256,7 +255,7 @@ function function_379f84b3() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8f5515d1, Offset: 0x1308
 // Size: 0x29c
 function function_7396472d() {
@@ -289,7 +288,7 @@ function function_7396472d() {
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9da997bc, Offset: 0x15b0
 // Size: 0x7e
 function set_player_data(name, value) {
@@ -304,7 +303,7 @@ function set_player_data(name, value) {
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe7e785d, Offset: 0x1638
 // Size: 0x54
 function function_2ee66e93(name, defval) {
@@ -316,7 +315,7 @@ function function_2ee66e93(name, defval) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x790d75c0, Offset: 0x1698
 // Size: 0x4c
 function function_8d95e71c() {
@@ -327,7 +326,7 @@ function function_8d95e71c() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x941282d9, Offset: 0x16f0
 // Size: 0x6e
 function function_7642d0c9() {
@@ -335,7 +334,7 @@ function function_7642d0c9() {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x79518d61, Offset: 0x1768
 // Size: 0x7c
 function function_7790f03(var_62a2ec8e = 0) {
@@ -346,13 +345,13 @@ function function_7790f03(var_62a2ec8e = 0) {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcdeecbc1, Offset: 0x17f0
 // Size: 0x124
 function private function_396464b(var_62a2ec8e = 0) {
     level notify(#"checkpoint_save");
     level endon(#"checkpoint_save", #"save_restore");
-    level notify(#"hash_75b4a2cae07690ff");
+    level notify(#"kill_save");
     player = getplayers()[0];
     if (isplayer(player) && player util::function_a1d6293()) {
         return;
@@ -368,7 +367,7 @@ function private function_396464b(var_62a2ec8e = 0) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8806f3f3, Offset: 0x1920
 // Size: 0x3c
 function checkpoint_trigger() {
@@ -378,7 +377,7 @@ function checkpoint_trigger() {
 }
 
 // Namespace savegame/save
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6092ca96, Offset: 0x1968
 // Size: 0x44
 function checkpoint_save(var_62a2ec8e = 0, var_a8976c31, stealth_check) {
@@ -386,7 +385,7 @@ function checkpoint_save(var_62a2ec8e = 0, var_a8976c31, stealth_check) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x96f1fe29, Offset: 0x19b8
 // Size: 0xb4
 function private function_304c08c5() {
@@ -399,7 +398,7 @@ function private function_304c08c5() {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x467ac349, Offset: 0x1a78
 // Size: 0x74
 function private function_40f4c631(var_62a2ec8e) {
@@ -411,12 +410,12 @@ function private function_40f4c631(var_62a2ec8e) {
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xfa5127bd, Offset: 0x1af8
 // Size: 0x34c
 function private function_680b78aa(var_62a2ec8e = 1, delay = 1.5) {
     if (function_7642d0c9()) {
-        wait(0.2);
+        wait 0.2;
         foreach (player in level.players) {
             player player::generate_weapon_data();
             player set_player_data("saved_weapon", player._generated_current_weapon.rootweapon.name);
@@ -435,7 +434,7 @@ function private function_680b78aa(var_62a2ec8e = 1, delay = 1.5) {
             player set_player_data("savegame_revives", player.pers[#"revives"]);
         }
         save();
-        wait(delay);
+        wait delay;
         var_56528c9b = skipto::function_5a61e21a()[0];
         set_player_data("last_saved_skipto", var_56528c9b);
         if (isdefined(player) && is_true(var_62a2ec8e)) {
@@ -445,7 +444,7 @@ function private function_680b78aa(var_62a2ec8e = 1, delay = 1.5) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x40e7c380, Offset: 0x1e50
 // Size: 0x16a
 function function_68cfab84() {
@@ -477,23 +476,23 @@ function function_68cfab84() {
 }
 
 // Namespace savegame/save
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb279e4d3, Offset: 0x1fc8
 // Size: 0x15c
 function private function_655f1326(var_62a2ec8e, var_a8976c31, stealth_check) {
     level notify(#"hash_7608fe484d0bea80");
-    level endon(#"hash_7608fe484d0bea80", #"hash_75b4a2cae07690ff", #"save_restore");
-    wait(0.1);
+    level endon(#"hash_7608fe484d0bea80", #"kill_save", #"save_restore");
+    wait 0.1;
     while (true) {
         if (function_51c242e9(var_a8976c31, stealth_check)) {
-            wait(0.1);
+            wait 0.1;
             checkpointcreate();
-            wait(6);
+            wait 6;
             for (check_count = 0; check_count < 5; check_count++) {
                 if (function_68cfab84()) {
                     break;
                 }
-                wait(1);
+                wait 1;
             }
             if (check_count == 5) {
                 continue;
@@ -505,12 +504,12 @@ function private function_655f1326(var_62a2ec8e, var_a8976c31, stealth_check) {
             function_40f4c631(var_62a2ec8e);
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace savegame/save
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x84591d86, Offset: 0x2130
 // Size: 0x272
 function function_51c242e9(var_a8976c31 = 0, stealth_check = 1) {
@@ -557,7 +556,7 @@ function function_51c242e9(var_a8976c31 = 0, stealth_check = 1) {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x47dfa9b5, Offset: 0x23b0
 // Size: 0x2ba
 function private function_172f4daa(var_a8976c31 = 0) {
@@ -615,7 +614,7 @@ function private function_172f4daa(var_a8976c31 = 0) {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x85789f06, Offset: 0x2678
 // Size: 0x170
 function private function_6dadecb9() {
@@ -670,7 +669,7 @@ function private function_6f9ec10b() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8d88c35, Offset: 0x2928
 // Size: 0xd6
 function function_838fa3a9() {
@@ -685,7 +684,7 @@ function function_838fa3a9() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x86f59175, Offset: 0x2a08
 // Size: 0x18c
 function private function_2ceb3570() {

@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\core_common\perks.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weapon_utils;
 
 #namespace armor;
 
@@ -18,7 +17,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43c3e137, Offset: 0x1c8
 // Size: 0xbc
 function function_9c8b5737() {
@@ -28,7 +27,7 @@ function function_9c8b5737() {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd6592579, Offset: 0x290
 // Size: 0x1c
 function on_player_connect() {
@@ -36,7 +35,7 @@ function on_player_connect() {
 }
 
 // Namespace armor/armor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3840d983, Offset: 0x2b8
 // Size: 0xc2
 function setlightarmorhp(newvalue) {
@@ -52,7 +51,7 @@ function setlightarmorhp(newvalue) {
 }
 
 // Namespace armor/armor
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4d41e8c5, Offset: 0x388
 // Size: 0x11c
 function setlightarmor(optionalarmorvalue, var_2274e560, var_cdeeec29) {
@@ -78,7 +77,7 @@ function setlightarmor(optionalarmorvalue, var_2274e560, var_cdeeec29) {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfa40f9b2, Offset: 0x4b0
 // Size: 0x5c
 function removelightarmorondeath() {
@@ -88,7 +87,7 @@ function removelightarmorondeath() {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x79f67c16, Offset: 0x518
 // Size: 0x2e
 function unsetlightarmor() {
@@ -97,7 +96,7 @@ function unsetlightarmor() {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb063dbb5, Offset: 0x550
 // Size: 0x54
 function removelightarmoronmatchend() {
@@ -115,7 +114,7 @@ function haslightarmor() {
 }
 
 // Namespace armor/armor
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x2f364979, Offset: 0x5d0
 // Size: 0x178
 function function_a77114f2(*einflictor, *eattacker, idamage, smeansofdeath, weapon, shitloc) {
@@ -138,7 +137,7 @@ function function_a77114f2(*einflictor, *eattacker, idamage, smeansofdeath, weap
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5b4e7d25, Offset: 0x750
 // Size: 0x6c
 function get_armor() {
@@ -153,7 +152,7 @@ function get_armor() {
 }
 
 // Namespace armor/armor
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x17bcfe74, Offset: 0x7c8
 // Size: 0x26e
 function set_armor(amount, max_armor, armortier, var_2274e560 = 1, var_cdeeec29 = 1, var_5164d2e2 = 1, var_e6683a43 = 1, var_22c3ab38 = 1, var_9f307988 = 1, var_7a80f06e = 1, explosive_damage_scale = 1, var_35e3563e = 1, var_4aad1e44 = undefined) {
@@ -179,7 +178,7 @@ function set_armor(amount, max_armor, armortier, var_2274e560 = 1, var_cdeeec29 
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb539e773, Offset: 0xa40
 // Size: 0x1e
 function has_armor() {
@@ -224,7 +223,7 @@ function boost_armor(bars_to_give, damage_time_threshold_ms) {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x11739c6, Offset: 0xbe8
 // Size: 0x34
 function get_empty_bars() {
@@ -235,7 +234,7 @@ function get_empty_bars() {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf84e088f, Offset: 0xc28
 // Size: 0x3e
 function at_peak_armor_bars() {
@@ -246,7 +245,7 @@ function at_peak_armor_bars() {
 }
 
 // Namespace armor/armor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55736030, Offset: 0xc70
 // Size: 0x8a
 function update_max_armor(bonus_bars = 0) {
@@ -259,7 +258,7 @@ function update_max_armor(bonus_bars = 0) {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xab8f338d, Offset: 0xd08
 // Size: 0x22
 function has_armor_bar_capability() {
@@ -267,7 +266,7 @@ function has_armor_bar_capability() {
 }
 
 // Namespace armor/armor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x575665bc, Offset: 0xd38
 // Size: 0x7a
 function get_max_armor_bars(bonus_bars) {
@@ -286,7 +285,7 @@ function get_armor_bars() {
 }
 
 // Namespace armor/armor
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xdb848ad0, Offset: 0xdf0
 // Size: 0x25e
 function private function_37f4e0e0(smeansofdeath, shitloc) {
@@ -333,7 +332,7 @@ function private function_37f4e0e0(smeansofdeath, shitloc) {
 }
 
 // Namespace armor/armor
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcc9f30ee, Offset: 0x1058
 // Size: 0x30
 function private function_7538fede(weapon) {
@@ -344,7 +343,7 @@ function private function_7538fede(weapon) {
 }
 
 // Namespace armor/armor
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x860198c1, Offset: 0x1090
 // Size: 0xa3a
 function apply_damage(weapon, damage, smeansofdeath, eattacker, shitloc) {
@@ -449,7 +448,7 @@ function apply_damage(weapon, damage, smeansofdeath, eattacker, shitloc) {
     if (self.armor <= 0) {
         self.var_d6f11c60 = eattacker;
         self.var_e6c1bab8 = gettime();
-        self playsoundtoplayer(#"hash_22f2a16e63651515", self);
+        self playsoundtoplayer(#"prj_bullet_impact_armor_broken", self);
         self thread function_386de852();
         self function_51df9c0c(#"hash_6be738527a4213aa");
         if (perks::perk_hasperk(#"specialty_armor")) {
@@ -486,7 +485,7 @@ function apply_damage(weapon, damage, smeansofdeath, eattacker, shitloc) {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa3f87302, Offset: 0x1ad8
 // Size: 0x14c
 function function_386de852() {
@@ -507,13 +506,13 @@ function function_386de852() {
         if (!isalive(self) && self function_725b4d91() == 0) {
             self.var_a06951b7 += 250;
         }
-        wait(0.25);
+        wait 0.25;
     }
     self clientfield::set_player_uimodel("hudItems.armorIsOnCooldown", 0);
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5e1ce1a3, Offset: 0x1c30
 // Size: 0xa2
 function has_helmet() {

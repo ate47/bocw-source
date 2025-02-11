@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai\archetype_human_cover.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\ai\archetype_human_locomotion.gsc;
-#using scripts\core_common\ai\archetype_civilian_interface.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_civilian_interface;
+#using scripts\core_common\ai\archetype_human_cover;
+#using scripts\core_common\ai\archetype_human_locomotion;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
 
 #namespace archetype_civilian;
 
@@ -29,7 +28,7 @@ function autoexec main() {
 #namespace archetypecivilian;
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf0ee4f91, Offset: 0x468
 // Size: 0x7ac
 function registerbehaviorscriptfunctions() {
@@ -74,7 +73,7 @@ function registerbehaviorscriptfunctions() {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x528eb0d5, Offset: 0xc20
 // Size: 0x4a
 function private civilianblackboardinit() {
@@ -84,7 +83,7 @@ function private civilianblackboardinit() {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x9a8ebf95, Offset: 0xc78
 // Size: 0x6c
 function function_49d80e54(civilian, *attribute, *oldvalue, value) {
@@ -93,7 +92,7 @@ function function_49d80e54(civilian, *attribute, *oldvalue, value) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa7fab5fc, Offset: 0xcf0
 // Size: 0x10c
 function private civilianinit() {
@@ -109,7 +108,7 @@ function private civilianinit() {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x424159c8, Offset: 0xe08
 // Size: 0x2c
 function private civilianonanimscriptedcallback(entity) {
@@ -118,7 +117,7 @@ function private civilianonanimscriptedcallback(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8e79cabb, Offset: 0xe40
 // Size: 0xa6
 function private function_ebea502e(entity) {
@@ -132,11 +131,11 @@ function private function_ebea502e(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf4b0ea44, Offset: 0xef0
 // Size: 0x414
 function private rioterchoosepositionservice(entity) {
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") != "riot") {
+    if (entity getblackboardattribute(#"_civ_mode") != "riot") {
         return false;
     }
     if (!isdefined(entity.enemy)) {
@@ -152,8 +151,8 @@ function private rioterchoosepositionservice(entity) {
     isinbadplace = entity isinanybadplace();
     lastknownpos = entity lastknownpos(entity.enemy);
     dist = distance2d(entity.origin, lastknownpos);
-    var_1ebff8de = itsbeenawhile || !isatscriptgoal || isinbadplace;
-    if (!var_1ebff8de) {
+    shouldfindbetterposition = itsbeenawhile || !isatscriptgoal || isinbadplace;
+    if (!shouldfindbetterposition) {
         return false;
     }
     if (forcedgoal) {
@@ -167,11 +166,11 @@ function private rioterchoosepositionservice(entity) {
         center = entity.goalpos;
     }
     cylinder = ai::t_cylinder(center, entity.goalradius, entity.goalheight);
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     aiprofile_beginentry("rioter_tacquery_combat");
     tacpoints = tacticalquery("rioter_tacquery_combat", center, entity, cylinder);
     aiprofile_endentry();
-    profileNamedStop();
+    pixendevent();
     pickedpoint = undefined;
     if (isdefined(tacpoints)) {
         tacpoints = array::randomize(tacpoints);
@@ -194,11 +193,11 @@ function private rioterchoosepositionservice(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x56f44319, Offset: 0x1310
 // Size: 0x11a
 function civilianpanicescapechooseposition(entity) {
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") != "panic") {
+    if (entity getblackboardattribute(#"_civ_mode") != "panic") {
         return false;
     }
     if (is_true(entity.ai.escaping)) {
@@ -218,17 +217,17 @@ function civilianpanicescapechooseposition(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x288b5312, Offset: 0x1438
 // Size: 0x42c
 function private civilianwanderservice(entity) {
     if (isentity(entity getblackboardattribute("follow"))) {
         return false;
     }
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "riot") {
+    if (entity getblackboardattribute(#"_civ_mode") == "riot") {
         return false;
     }
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "panic" && ai::getaiattribute(entity, "auto_escape")) {
+    if (entity getblackboardattribute(#"_civ_mode") == "panic" && ai::getaiattribute(entity, "auto_escape")) {
         return false;
     }
     if (!ai::getaiattribute(entity, "auto_wander")) {
@@ -241,8 +240,8 @@ function private civilianwanderservice(entity) {
     forcedgoal = is_true(goalinfo.goalforced);
     isatscriptgoal = entity isatgoal() || entity isapproachinggoal();
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
-    var_1ebff8de = itsbeenawhile || !isatscriptgoal;
-    if (!var_1ebff8de) {
+    shouldfindbetterposition = itsbeenawhile || !isatscriptgoal;
+    if (!shouldfindbetterposition) {
         return false;
     }
     if (forcedgoal) {
@@ -252,11 +251,11 @@ function private civilianwanderservice(entity) {
         return true;
     }
     cylinder = ai::t_cylinder(entity.goalpos, entity.goalradius, entity.goalheight);
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     aiprofile_beginentry("civilian_wander_tacquery");
     tacpoints = tacticalquery("civilian_wander_tacquery", entity.goalpos, entity, cylinder);
     aiprofile_endentry();
-    profileNamedStop();
+    pixendevent();
     pickedpoint = undefined;
     if (isdefined(tacpoints)) {
         tacpoints = array::randomize(tacpoints);
@@ -279,7 +278,7 @@ function private civilianwanderservice(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf5c503cc, Offset: 0x1870
 // Size: 0x3d4
 function private civilianfollowservice(entity) {
@@ -288,7 +287,7 @@ function private civilianfollowservice(entity) {
     if (!isentity(followent)) {
         return false;
     }
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "panic" && ai::getaiattribute(entity, "auto_escape")) {
+    if (entity getblackboardattribute(#"_civ_mode") == "panic" && ai::getaiattribute(entity, "auto_escape")) {
         return false;
     }
     if (function_ebea502e(entity)) {
@@ -299,15 +298,15 @@ function private civilianfollowservice(entity) {
     forcedgoal = is_true(goalinfo.goalforced);
     isatscriptgoal = entity isatgoal() || entity isapproachinggoal();
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
-    var_1ebff8de = itsbeenawhile || !isatscriptgoal || distsq < 0 || distsq > followradiussq;
-    if (!var_1ebff8de) {
+    shouldfindbetterposition = itsbeenawhile || !isatscriptgoal || distsq < 0 || distsq > followradiussq;
+    if (!shouldfindbetterposition) {
         return false;
     }
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     aiprofile_beginentry("civilian_follow_tacquery");
     tacpoints = tacticalquery("civilian_follow_tacquery", followent, entity, followent);
     aiprofile_endentry();
-    profileNamedStop();
+    pixendevent();
     pickedpoint = undefined;
     if (isdefined(tacpoints)) {
         tacpoints = array::randomize(tacpoints);
@@ -334,7 +333,7 @@ function private civilianfollowservice(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x76295e12, Offset: 0x1c50
 // Size: 0x58
 function private civilianmoveactioninitialize(entity, asmstatename) {
@@ -344,7 +343,7 @@ function private civilianmoveactioninitialize(entity, asmstatename) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9f5fad8, Offset: 0x1cb0
 // Size: 0x68
 function private civilianmoveactionfinalize(entity, *asmstatename) {
@@ -355,23 +354,23 @@ function private civilianmoveactionfinalize(entity, *asmstatename) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf2c509c1, Offset: 0x1d20
 // Size: 0x34
 function private civilianispanicked(entity) {
-    return entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "panic";
+    return entity getblackboardattribute(#"_civ_mode") == "panic";
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf92681ed, Offset: 0x1d60
 // Size: 0x22
 function private function_e27d2a1b() {
-    return ai::getaiattribute(self, #"hash_78e762abc4fbf1de");
+    return ai::getaiattribute(self, #"_civ_mode");
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xca8e85bd, Offset: 0x1d90
 // Size: 0x36
 function private civilianarrivalallowed(entity) {
@@ -382,29 +381,29 @@ function private civilianarrivalallowed(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd0ba2311, Offset: 0x1dd0
 // Size: 0x40
 function private civilianareturnsallowed(entity) {
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "calm") {
+    if (entity getblackboardattribute(#"_civ_mode") == "calm") {
         return false;
     }
     return true;
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a60135e, Offset: 0x1e18
 // Size: 0x40
 function civilianisrioter(entity) {
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "riot") {
+    if (entity getblackboardattribute(#"_civ_mode") == "riot") {
         return true;
     }
     return false;
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3bccbb1b, Offset: 0x1e60
 // Size: 0x58e
 function civiliancanthrowmolotovgrenade(behaviortreeentity, throwifpossible = 0) {
@@ -468,7 +467,7 @@ function civiliancanthrowmolotovgrenade(behaviortreeentity, throwifpossible = 0)
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb61c34b6, Offset: 0x23f8
 // Size: 0x13e
 function private civilianpreparetothrowgrenade(behaviortreeentity) {
@@ -488,7 +487,7 @@ function private civilianpreparetothrowgrenade(behaviortreeentity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6222be8c, Offset: 0x2540
 // Size: 0x1e4
 function private civiliancleanuptothrowgrenade(behaviortreeentity) {
@@ -511,11 +510,11 @@ function private civiliancleanuptothrowgrenade(behaviortreeentity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x83832a9d, Offset: 0x2730
 // Size: 0x2c2
 function private rioterreaquireservice(entity) {
-    if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") != "riot") {
+    if (entity getblackboardattribute(#"_civ_mode") != "riot") {
         return false;
     }
     if (!isdefined(entity.reacquire_state)) {
@@ -567,7 +566,7 @@ function private rioterreaquireservice(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x77bb7025, Offset: 0x2a00
 // Size: 0x30
 function private function_91a0507(entity) {
@@ -576,7 +575,7 @@ function private function_91a0507(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4c17a255, Offset: 0x2a38
 // Size: 0x30
 function private function_c93e1821(entity) {
@@ -585,7 +584,7 @@ function private function_c93e1821(entity) {
 }
 
 // Namespace archetypecivilian/archetype_civilian
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc6308504, Offset: 0x2a70
 // Size: 0x30
 function private function_4f13d157(entity) {

@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using script_19367cd29a4485db;
-#using scripts\zm_common\zm_intel.gsc;
-#using script_34ab99a4ca1a43d;
 #using script_16b1b77a76492c6a;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_19367cd29a4485db;
+#using script_34ab99a4ca1a43d;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_intel;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_12a6a726;
 
@@ -27,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd423f6, Offset: 0x210
 // Size: 0x11c
 function preinit() {
@@ -40,23 +39,23 @@ function preinit() {
     if (!is_true(getgametypesetting(#"hash_49c3a9d150ecbb16")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    content_manager::register_script(#"hash_6bbb00324d163e11", &function_8ba92985, 1);
+    content_manager::register_script(#"supply_portal", &function_8ba92985, 1);
     clientfield::register("scriptmover", "sr_supply_drop_chest_fx", 1, 2, "int");
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x84e79a6c, Offset: 0x338
 // Size: 0x2f4
 function private function_8ba92985(s_instance) {
     s_instance endon(#"cleanup");
     level flag::wait_till(#"gameplay_started");
     s_instance flag::clear("cleanup");
-    s_instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_db97f0ee);
-    s_chest = s_instance.contentgroups[#"hash_6b1e5d8f9e70a70e"][0];
+    s_instance callback::function_d8abfc3d(#"portal_activated", &function_db97f0ee);
+    s_chest = s_instance.contentgroups[#"chest_spawn"][0];
     var_3ba64fe9 = s_instance.contentgroups[#"trigger_spawn"][0];
     s_instance.var_e234ef47 = zm_utility::function_f5a222a8(#"hash_3475619554ec3ac2", s_chest.origin, &function_a1ca0279);
-    wait(10);
+    wait 10;
     if (!isdefined(var_3ba64fe9.height)) {
         var_3ba64fe9.height = 5000;
     }
@@ -82,7 +81,7 @@ function private function_8ba92985(s_instance) {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd194fef3, Offset: 0x638
 // Size: 0x62
 function function_a1ca0279(*v_origin_or_ent, *params) {
@@ -93,7 +92,7 @@ function function_a1ca0279(*v_origin_or_ent, *params) {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9545e9a7, Offset: 0x6a8
 // Size: 0x62
 function private function_4dccab86(var_8e27c3fd) {
@@ -103,12 +102,12 @@ function private function_4dccab86(var_8e27c3fd) {
         if (isdefined(var_8e27c3fd)) {
             var_8e27c3fd notify(#"proximity");
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa5db7adf, Offset: 0x718
 // Size: 0x8c
 function function_db97f0ee() {
@@ -123,19 +122,19 @@ function function_db97f0ee() {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7b30caf7, Offset: 0x7b0
 // Size: 0xc4
 function function_b05e27da(magnitude = 0.3, duration = 2.5, rumble = "damage_heavy") {
     self endon(#"disconnect");
     earthquake(magnitude, duration, self.origin, 64);
     self function_66337ef1(rumble);
-    wait(duration);
+    wait duration;
     self stoprumble(rumble);
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xde77fba1, Offset: 0x880
 // Size: 0x4f0
 function function_9212e29c(s_instance, s_chest) {
@@ -154,7 +153,7 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx fx::play(#"hash_714bb51c21bb3c4", mdl_fx.origin + (0, 0, 5000), mdl_fx.angles, 9.5 + 1);
     mdl_fx playsound(#"hash_149945a98c1798a6");
     mdl_fx playloopsound(#"hash_3b2e8e212c9bfb8a");
-    wait(1);
+    wait 1;
     s_chest.scriptmodel = content_manager::spawn_script_model(struct, #"hash_401a47741ffd646f", 1);
     s_chest.var_422ae63e = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
     mdl_chest = s_chest.scriptmodel;
@@ -162,7 +161,7 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_chest function_619a5c20();
     mdl_chest moveto(s_chest.origin, 9.5);
     mdl_chest rotatevelocity((0, 1080 / 9.5, 0), 9.5);
-    wait(9.5);
+    wait 9.5;
     level thread function_8fa44fea(mdl_chest);
     mdl_chest clientfield::set("sr_supply_drop_chest_fx", 1);
     glassradiusdamage(mdl_chest.origin, 600, 800, 400);
@@ -184,7 +183,7 @@ function function_9212e29c(s_instance, s_chest) {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6a678068, Offset: 0xd78
 // Size: 0x124
 function private function_8fa44fea(mdl_chest) {
@@ -201,7 +200,7 @@ function private function_8fa44fea(mdl_chest) {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1c7c5e6b, Offset: 0xea8
 // Size: 0x3d8
 function function_19490940(*eventstruct) {
@@ -218,7 +217,7 @@ function function_19490940(*eventstruct) {
     self.b_started = 1;
     self setinvisibletoall();
     mdl_chest clientfield::set("sr_supply_drop_chest_fx", 2);
-    wait(2);
+    wait 2;
     namespace_2c949ef8::function_8b6ae460(var_571f5454, function_873ab308(), 500, 1500, undefined, undefined, undefined, undefined, undefined, 1);
     self sethintstring(#"survival/supply_drop_open");
     self setvisibletoall();
@@ -238,7 +237,7 @@ function function_19490940(*eventstruct) {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7b4783d4, Offset: 0x1288
 // Size: 0xa6
 function private function_873ab308() {

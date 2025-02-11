@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
 
 #namespace util;
 
 // Namespace util/util
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xfd7c9ddf, Offset: 0x1b0
 // Size: 0x8c
 function within_fov(start_origin, start_angles, end_origin, fov) {
@@ -226,7 +225,7 @@ function _playlocalsound(soundalias) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe899dc39, Offset: 0xcf8
 // Size: 0x8c
 function getotherteam(team) {
@@ -237,7 +236,7 @@ function getotherteam(team) {
     } else {
         return #"allies";
     }
-    assertmsg("<unknown string>" + team);
+    assertmsg("<dev string:x38>" + team);
 }
 
 // Namespace util/util
@@ -250,11 +249,11 @@ function getteamenum(team) {
     } else if (team == #"axis") {
         return 2;
     }
-    assertmsg("<unknown string>" + team);
+    assertmsg("<dev string:x57>" + team);
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5b651927, Offset: 0xe08
 // Size: 0x74
 function getteammask(team) {
@@ -294,7 +293,7 @@ function wait_endon(waittime, endonstring, endonstring2, endonstring3, endonstri
     if (isdefined(endonstring4)) {
         self endon(endonstring4);
     }
-    wait(waittime);
+    wait waittime;
     return true;
 }
 
@@ -303,12 +302,12 @@ function wait_endon(waittime, endonstring, endonstring2, endonstring3, endonstri
 // Checksum 0xeb4c79e, Offset: 0xfc8
 // Size: 0x5c
 function getfx(fx) {
-    assert(isdefined(level._effect[fx]), "<unknown string>" + fx + "<unknown string>");
+    assert(isdefined(level._effect[fx]), "<dev string:x75>" + fx + "<dev string:x7c>");
     return level._effect[fx];
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaa6f8c03, Offset: 0x1030
 // Size: 0x44
 function add_trigger_to_ent(ent) {
@@ -319,7 +318,7 @@ function add_trigger_to_ent(ent) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d70b521, Offset: 0x1080
 // Size: 0x6c
 function remove_trigger_from_ent(ent) {
@@ -336,7 +335,7 @@ function remove_trigger_from_ent(ent) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4df6ab4a, Offset: 0x10f8
 // Size: 0x70
 function ent_already_in_trigger(trig) {
@@ -353,7 +352,7 @@ function ent_already_in_trigger(trig) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc39485b9, Offset: 0x1170
 // Size: 0x4c
 function trigger_thread_death_monitor(ent, ender) {
@@ -379,7 +378,7 @@ function trigger_thread(ent, on_enter_payload, on_exit_payload) {
         self thread [[ on_enter_payload ]](ent, endon_condition);
     }
     while (isdefined(ent) && ent istouching(self)) {
-        wait(0.01);
+        wait 0.01;
     }
     ent notify(endon_condition);
     if (isdefined(ent) && isdefined(on_exit_payload)) {
@@ -408,7 +407,7 @@ function iskillstreaksenabled() {
 }
 
 // Namespace util/util
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xbc7db59c, Offset: 0x13c0
 // Size: 0xa4
 function private function_78e3e07b(team, index, objective_strings) {
@@ -422,7 +421,7 @@ function private function_78e3e07b(team, index, objective_strings) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdddc116f, Offset: 0x1470
 // Size: 0x24a
 function function_e17a230f(team) {
@@ -461,7 +460,7 @@ function function_e17a230f(team) {
 }
 
 // Namespace util/util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe275eaa6, Offset: 0x16c8
 // Size: 0x98
 function function_9540d9b6() {
@@ -474,7 +473,7 @@ function function_9540d9b6() {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc32097ee, Offset: 0x1768
 // Size: 0x50
 function setobjectivetext(team, text) {
@@ -485,7 +484,7 @@ function setobjectivetext(team, text) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8b8ee169, Offset: 0x17c0
 // Size: 0x50
 function setobjectivescoretext(team, text) {
@@ -496,7 +495,7 @@ function setobjectivescoretext(team, text) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8e4814ef, Offset: 0x1818
 // Size: 0x50
 function function_db4846b(team, text) {
@@ -507,7 +506,7 @@ function function_db4846b(team, text) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xad1efeca, Offset: 0x1870
 // Size: 0x44
 function getobjectivetext(team) {
@@ -518,12 +517,12 @@ function getobjectivetext(team) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x513b837f, Offset: 0x18c0
 // Size: 0xa4
 function getobjectivescoretext(team) {
     assert(isdefined(level.teams[team]));
-    assert(isdefined(game.strings["<unknown string>" + level.teams[team]]));
+    assert(isdefined(game.strings["<dev string:xa1>" + level.teams[team]]));
     if (!isdefined(level.teams[team])) {
         return;
     }
@@ -531,7 +530,7 @@ function getobjectivescoretext(team) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c6a5330, Offset: 0x1970
 // Size: 0x44
 function function_4a118b30(team) {
@@ -542,7 +541,7 @@ function function_4a118b30(team) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc83faea, Offset: 0x19c0
 // Size: 0x74
 function registerroundswitch(minvalue, maxvalue) {
@@ -552,7 +551,7 @@ function registerroundswitch(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7655f64d, Offset: 0x1a40
 // Size: 0x74
 function registerroundlimit(minvalue, maxvalue) {
@@ -562,7 +561,7 @@ function registerroundlimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x116ebd5e, Offset: 0x1ac0
 // Size: 0x74
 function registerroundwinlimit(minvalue, maxvalue) {
@@ -572,7 +571,7 @@ function registerroundwinlimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x15e8648b, Offset: 0x1b40
 // Size: 0x74
 function registerscorelimit(minvalue, maxvalue) {
@@ -582,7 +581,7 @@ function registerscorelimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5848605f, Offset: 0x1bc0
 // Size: 0x74
 function registerroundscorelimit(minvalue, maxvalue) {
@@ -592,7 +591,7 @@ function registerroundscorelimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf2548dee, Offset: 0x1c40
 // Size: 0x8c
 function registertimelimit(minvalue, maxvalue) {
@@ -605,7 +604,7 @@ function registertimelimit(minvalue, maxvalue) {
 }
 
 // Namespace util/util
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x76722a92, Offset: 0x1cd8
 // Size: 0x12c
 function registernumlives(minvalue, maxvalue, teamlivesminvalue = minvalue, teamlivesmaxvalue = maxvalue) {
@@ -618,7 +617,7 @@ function registernumlives(minvalue, maxvalue, teamlivesminvalue = minvalue, team
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x345fc904, Offset: 0x1e10
 // Size: 0x80
 function getplayerfromclientnum(clientnum) {
@@ -646,7 +645,7 @@ function ispressbuild() {
 }
 
 // Namespace util/util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf4c3ce5e, Offset: 0x1ef8
 // Size: 0x1e
 function isflashbanged() {
@@ -681,11 +680,11 @@ function self_delete() {
 }
 
 // Namespace util/util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4d4535d7, Offset: 0x2010
 // Size: 0x4a
 function use_button_pressed() {
-    assert(isplayer(self), "<unknown string>");
+    assert(isplayer(self), "<dev string:xb5>");
     return self usebuttonpressed();
 }
 
@@ -722,7 +721,7 @@ function show_hint_text(str_text_to_show, b_should_blink = 0, str_turn_off_notif
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf6e29e3, Offset: 0x2228
 // Size: 0xd6
 function hide_hint_text(b_fade_before_hiding = 1) {
@@ -739,7 +738,7 @@ function hide_hint_text(b_fade_before_hiding = 1) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd94dc797, Offset: 0x2308
 // Size: 0x8c
 function fade_hint_text_after_time(n_display_time, str_turn_off_notify) {
@@ -749,7 +748,7 @@ function fade_hint_text_after_time(n_display_time, str_turn_off_notify) {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0909f24, Offset: 0x23a0
 // Size: 0x8c
 function hide_hint_text_listener(n_time) {
@@ -759,7 +758,7 @@ function hide_hint_text_listener(n_time) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x61362a9, Offset: 0x2438
 // Size: 0x7c
 function set_team_radar(team, value) {
@@ -806,7 +805,7 @@ function isprop() {
 }
 
 // Namespace util/util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc8553771, Offset: 0x25d8
 // Size: 0x30
 function function_6f4ff113(team) {
@@ -845,7 +844,7 @@ function function_ff74bf7(team) {
 }
 
 // Namespace util/util
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x4036e7ac, Offset: 0x2740
 // Size: 0x170
 function function_a3f7de13(var_e0dd85aa, s_team, n_clientnum, extradata = 0) {
@@ -897,7 +896,7 @@ function function_94a3be2() {
     // Size: 0x4c
     function check_art_mode() {
         if (getdvarint(#"art_mode", 0) > 0) {
-            adddebugcommand("<unknown string>");
+            adddebugcommand("<dev string:xe4>");
         }
     }
 
@@ -918,7 +917,7 @@ function function_94a3be2() {
         if (timelimitoverride >= 0) {
             if (level.timelimit != timelimitoverride) {
                 level.timelimit = timelimitoverride;
-                setgametypesetting("<unknown string>", timelimitoverride);
+                setgametypesetting("<dev string:xf9>", timelimitoverride);
             }
         }
     }

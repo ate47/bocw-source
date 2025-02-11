@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
+#using scripts\core_common\lui_shared;
 
-#namespace namespace_20a120d7;
+#namespace TerminalKeyboardFrame;
 
-// Namespace namespace_20a120d7
+// Namespace TerminalKeyboardFrame
 // Method(s) 5 Total 12
 class class_d0a96b4 : cluielem {
 
-    // Namespace namespace_d0a96b4/namespace_20a120d7
+    // Namespace namespace_d0a96b4/TerminalKeyboardFrame
     // Params 2, eflags: 0x0
     // Checksum 0x8efc0dc, Offset: 0x1e8
     // Size: 0x3c
@@ -15,7 +14,7 @@ class class_d0a96b4 : cluielem {
         cluielem::open_luielem(player, flags);
     }
 
-    // Namespace namespace_d0a96b4/namespace_20a120d7
+    // Namespace namespace_d0a96b4/TerminalKeyboardFrame
     // Params 1, eflags: 0x0
     // Checksum 0x335296bf, Offset: 0x230
     // Size: 0x24
@@ -23,7 +22,7 @@ class class_d0a96b4 : cluielem {
         cluielem::close_luielem(player);
     }
 
-    // Namespace namespace_d0a96b4/namespace_20a120d7
+    // Namespace namespace_d0a96b4/TerminalKeyboardFrame
     // Params 0, eflags: 0x0
     // Checksum 0xc3c53a14, Offset: 0x1c0
     // Size: 0x1c
@@ -33,7 +32,7 @@ class class_d0a96b4 : cluielem {
 
 }
 
-// Namespace namespace_20a120d7/namespace_20a120d7
+// Namespace TerminalKeyboardFrame/TerminalKeyboardFrame
 // Params 0, eflags: 0x0
 // Checksum 0x1245b31f, Offset: 0xd0
 // Size: 0x34
@@ -43,7 +42,7 @@ function register() {
     return elem;
 }
 
-// Namespace namespace_20a120d7/namespace_20a120d7
+// Namespace TerminalKeyboardFrame/TerminalKeyboardFrame
 // Params 2, eflags: 0x0
 // Checksum 0x83b95f3f, Offset: 0x110
 // Size: 0x38
@@ -51,7 +50,7 @@ function open(player, flags = 0) {
     [[ self ]]->open(player, flags);
 }
 
-// Namespace namespace_20a120d7/namespace_20a120d7
+// Namespace TerminalKeyboardFrame/TerminalKeyboardFrame
 // Params 1, eflags: 0x0
 // Checksum 0xde74b2a0, Offset: 0x150
 // Size: 0x1c
@@ -59,7 +58,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_20a120d7/namespace_20a120d7
+// Namespace TerminalKeyboardFrame/TerminalKeyboardFrame
 // Params 1, eflags: 0x0
 // Checksum 0x686d9d85, Offset: 0x178
 // Size: 0x1a

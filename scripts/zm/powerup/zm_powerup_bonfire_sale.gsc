@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_bonfire_sale;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x868cbb46, Offset: 0x220
 // Size: 0x9c
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x2c8
 // Size: 0x4
 function private postinit() {
@@ -43,7 +42,7 @@ function private postinit() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x51ee1dcb, Offset: 0x2d8
 // Size: 0x124
 function grab_bonfire_sale(player) {
@@ -58,7 +57,7 @@ function grab_bonfire_sale(player) {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0ee7f97, Offset: 0x408
 // Size: 0x26c
 function start_bonfire_sale(*item) {
@@ -86,7 +85,7 @@ function start_bonfire_sale(*item) {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2dcb01f8, Offset: 0x680
 // Size: 0x9c
 function toggle_bonfire_sale_on() {
@@ -107,24 +106,24 @@ function toggle_bonfire_sale_on() {
 // Checksum 0xba56e2, Offset: 0x728
 // Size: 0xfc
 function setup_bonfiresale_audio() {
-    wait(2);
+    wait 2;
     intercom = getentarray("intercom", "targetname");
     while (true) {
         while (zombie_utility::get_zombie_var(#"zombie_powerup_fire_sale_on") == 0) {
-            wait(0.2);
+            wait 0.2;
         }
         for (i = 0; i < intercom.size; i++) {
             intercom[i] thread play_bonfiresale_audio();
         }
         while (zombie_utility::get_zombie_var(#"zombie_powerup_fire_sale_on") == 1) {
-            wait(0.1);
+            wait 0.1;
         }
         level notify(#"firesale_over");
     }
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bcd3f59, Offset: 0x830
 // Size: 0xb4
 function play_bonfiresale_audio() {

@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace battletracks;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace battletracks/battletracks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x632f519, Offset: 0x118
 // Size: 0x34
 function private preinit() {
@@ -100,14 +99,14 @@ function private event_handler[event_29e6e4b2] function_29e6e4b2(eventstruct) {
 }
 
 // Namespace battletracks/battletracks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb5b06c88, Offset: 0x560
 // Size: 0xae
 function private function_982d5b1() {
     if (!sessionmodeiscampaigngame()) {
         self endon(#"death");
         self endon(#"hash_10f5e7a492971517");
-        wait(getdvarint(#"hash_69d64509de665052", 5));
+        wait getdvarint(#"hash_69d64509de665052", 5);
         if (isdefined(self.battletrack_active)) {
             self clientfield::set("battletrack_active", 0);
             self stopsound(self.battletrack_active);
@@ -117,7 +116,7 @@ function private function_982d5b1() {
 }
 
 // Namespace battletracks/battletracks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x820a0774, Offset: 0x618
 // Size: 0x7e
 function function_fe45d0ae() {
@@ -132,7 +131,7 @@ function function_fe45d0ae() {
 }
 
 // Namespace battletracks/battletracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4d2f6162, Offset: 0x6a0
 // Size: 0x1ac
 function private function_afb0648d(vehicle) {

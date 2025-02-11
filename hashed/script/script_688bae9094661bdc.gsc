@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\gametypes\battlechatter.gsc;
 #using script_268625b0934ee2ce;
-#using scripts\core_common\stealth\utility.gsc;
-#using scripts\core_common\stealth\debug.gsc;
-#using script_6c5ee33879e077f8;
 #using script_3ad66e3076c279ab;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_42e8ee8721f5e6ef;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using script_6c5ee33879e077f8;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\stealth\debug;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\gametypes\battlechatter;
 
 #namespace manager;
 
@@ -21,9 +20,9 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_393f6012;
+#namespace stealth_manager;
 
-// Namespace namespace_393f6012/manager
+// Namespace stealth_manager/manager
 // Params 0, eflags: 0x5
 // Checksum 0xd2a7c697, Offset: 0x1a8
 // Size: 0x3c
@@ -31,8 +30,8 @@ function private autoexec __init__system__() {
     system::register(#"stealth", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_393f6012/manager
-// Params 0, eflags: 0x6 linked
+// Namespace stealth_manager/manager
+// Params 0, eflags: 0x4
 // Checksum 0x9c9c035b, Offset: 0x1f0
 // Size: 0x34
 function private preinit() {
@@ -40,13 +39,13 @@ function private preinit() {
     main();
 }
 
-// Namespace namespace_393f6012/manager
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_manager/manager
+// Params 0, eflags: 0x0
 // Checksum 0x9275f69b, Offset: 0x230
 // Size: 0x154
 function main() {
     function_f9682fd();
-    assert(isdefined(level.stealth), "<unknown string>");
+    assert(isdefined(level.stealth), "<dev string:x38>");
     level.stealth.fnplayerlootenabled = undefined;
     level.stealth.fngetcorpseorigin = &get_corpse_origin;
     level.stealth.fnsetbattlechatter = undefined;
@@ -60,16 +59,16 @@ function main() {
     battlechatter_table::function_c5dda35e("stealth", var_cb867b36);
 }
 
-// Namespace namespace_393f6012/manager
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_manager/manager
+// Params 0, eflags: 0x0
 // Checksum 0x8b6bda52, Offset: 0x390
 // Size: 0x1a
 function get_corpse_origin() {
     return self getcorpsephysicsorigin();
 }
 
-// Namespace namespace_393f6012/manager
-// Params 0, eflags: 0x6 linked
+// Namespace stealth_manager/manager
+// Params 0, eflags: 0x4
 // Checksum 0xf072d241, Offset: 0x3b8
 // Size: 0x6c
 function private on_ai_spawned() {
@@ -81,8 +80,8 @@ function private on_ai_spawned() {
     }
 }
 
-// Namespace namespace_393f6012/manager
-// Params 3, eflags: 0x2 linked
+// Namespace stealth_manager/manager
+// Params 3, eflags: 0x0
 // Checksum 0x940c5c9c, Offset: 0x430
 // Size: 0x138
 function set_stealth_mode_sp(enabled, *musichidden, *musicspotted) {
@@ -97,8 +96,8 @@ function set_stealth_mode_sp(enabled, *musichidden, *musicspotted) {
     }
 }
 
-// Namespace namespace_393f6012/manager
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_manager/manager
+// Params 1, eflags: 0x0
 // Checksum 0x1ef593e2, Offset: 0x570
 // Size: 0x2e2
 function threat_sight_set_state_parameters(statename) {
@@ -144,8 +143,8 @@ function threat_sight_set_state_parameters(statename) {
     self.threatsightdistmax = max(self.threatsightdistmin, var_218126c3 * distscale);
 }
 
-// Namespace namespace_393f6012/manager
-// Params 3, eflags: 0x2 linked
+// Namespace stealth_manager/manager
+// Params 3, eflags: 0x0
 // Checksum 0xebaa2e63, Offset: 0x860
 // Size: 0x97c
 function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
@@ -182,7 +181,7 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
     }
     /#
         if (var_2107b994) {
-            debug2dtext((32, 492, 0), "<unknown string>" + maxthreat + "<unknown string>" + anycansee + "<unknown string>", (1, 1, 1), 1.5);
+            debug2dtext((32, 492, 0), "<dev string:x83>" + maxthreat + "<dev string:x94>" + anycansee + "<dev string:x9a>", (1, 1, 1), 1.5);
         }
     #/
     if (isdefined(self.stealth.threat_sight_snd_ent)) {
@@ -213,8 +212,8 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
         self.stealth.threat_sight_snd_vol = math::clamp(self.stealth.threat_sight_snd_vol, 0, 1);
         /#
             if (var_2107b994) {
-                debug2dtext((32, 508, 0), "<unknown string>" + self.stealth.threat_sight_snd_threat, (1, 1, 1), 1.5);
-                debug2dtext((32, 524, 0), "<unknown string>" + self.stealth.threat_sight_snd_vol, (1, 1, 1), 1.5);
+                debug2dtext((32, 508, 0), "<dev string:x9f>" + self.stealth.threat_sight_snd_threat, (1, 1, 1), 1.5);
+                debug2dtext((32, 524, 0), "<dev string:xb0>" + self.stealth.threat_sight_snd_vol, (1, 1, 1), 1.5);
             }
         #/
         foreach (alias, snd_ent in self.stealth.threat_sight_snd_ent) {
@@ -255,8 +254,8 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
             }
             /#
                 if (var_2107b994) {
-                    debug2dtext((32, 540 + index * 16, 0), "<unknown string>" + index + "<unknown string>" + vol, (1, 1, 1), 1.5);
-                    debug2dtext((384, 540 + index * 16, 0), "<unknown string>" + coef, (1, 1, 1), 1.5);
+                    debug2dtext((32, 540 + index * 16, 0), "<dev string:xc1>" + index + "<dev string:xcb>" + vol, (1, 1, 1), 1.5);
+                    debug2dtext((384, 540 + index * 16, 0), "<dev string:xd5>" + coef, (1, 1, 1), 1.5);
                 }
             #/
             index++;
@@ -270,12 +269,12 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
             self.stealth.threat_sight_snd_vol = undefined;
             self.stealth.threat_sight_snd_threat = undefined;
         }
-        wait(0.05);
+        wait 0.05;
     }
 }
 
-// Namespace namespace_393f6012/manager
-// Params 7, eflags: 0x2 linked
+// Namespace stealth_manager/manager
+// Params 7, eflags: 0x0
 // Checksum 0xf1712749, Offset: 0x11e8
 // Size: 0x206
 function addeventplaybcs(*eventaction, eventtype, modifier, *delay, *eventstruct, *force, *var_9c201ccd) {

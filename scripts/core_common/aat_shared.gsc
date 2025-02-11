@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace aat;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace aat/aat_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x69a37ce3, Offset: 0x240
 // Size: 0x22c
 function private preinit() {
@@ -74,14 +73,14 @@ function function_571fceb(aat_name, main) {
     }
     /#
         if (isdefined(level.var_e44e90d6[aat_name])) {
-            println("<unknown string>" + aat_name + "<unknown string>");
+            println("<dev string:x38>" + aat_name + "<dev string:x64>");
         }
     #/
     level.var_e44e90d6[aat_name] = main;
 }
 
 // Namespace aat/aat_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x54985518, Offset: 0x5a0
 // Size: 0xb8
 function private on_player_connect() {
@@ -96,7 +95,7 @@ function private on_player_connect() {
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9b9ffc25, Offset: 0x660
 // Size: 0xb4
 function private function_33f0ddd3(s_event) {
@@ -118,18 +117,18 @@ function private function_33f0ddd3(s_event) {
     // Size: 0x19c
     function setup_devgui(var_e73fddff) {
         if (!isdefined(var_e73fddff)) {
-            var_e73fddff = "<unknown string>";
+            var_e73fddff = "<dev string:x91>";
         }
         waittillframeend();
-        setdvar(#"aat_acquire_devgui", "<unknown string>");
+        setdvar(#"aat_acquire_devgui", "<dev string:xac>");
         aat_devgui_base = var_e73fddff;
         foreach (key, v in level.aat) {
-            if (key != "<unknown string>") {
+            if (key != "<dev string:xb0>") {
                 name = function_9e72a96(key);
-                util::add_debug_command(aat_devgui_base + name + "<unknown string>" + "<unknown string>" + "<unknown string>" + name + "<unknown string>");
+                util::add_debug_command(aat_devgui_base + name + "<dev string:xb8>" + "<dev string:xc3>" + "<dev string:xd9>" + name + "<dev string:xde>");
             }
         }
-        util::add_debug_command(aat_devgui_base + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command(aat_devgui_base + "<dev string:xe5>" + "<dev string:xc3>" + "<dev string:xd9>" + "<dev string:xb0>" + "<dev string:xde>");
         level thread aat_devgui_think();
     }
 
@@ -138,13 +137,13 @@ function private function_33f0ddd3(s_event) {
     // Checksum 0x725bf45f, Offset: 0x8c8
     // Size: 0x278
     function private aat_devgui_think() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:xfd>");
+        self endon("<dev string:xfd>");
         for (;;) {
             aat_name = getdvarstring(#"aat_acquire_devgui");
-            if (aat_name != "<unknown string>") {
+            if (aat_name != "<dev string:xac>") {
                 for (i = 0; i < level.players.size; i++) {
-                    if (aat_name == "<unknown string>") {
+                    if (aat_name == "<dev string:xb0>") {
                         if (sessionmodeiszombiesgame()) {
                             weapon = level.players[i] getcurrentweapon();
                             item = level.players[i] item_inventory::function_230ceec4(weapon);
@@ -166,8 +165,8 @@ function private function_33f0ddd3(s_event) {
                     level.players[i] thread aat_set_debug_text(aat_name, 0, 0, 0);
                 }
             }
-            setdvar(#"aat_acquire_devgui", "<unknown string>");
-            wait(0.5);
+            setdvar(#"aat_acquire_devgui", "<dev string:xac>");
+            wait 0.5;
         }
     }
 
@@ -181,13 +180,13 @@ function private function_33f0ddd3(s_event) {
         if (!isdefined(self.aat_debug_text)) {
             return;
         }
-        percentage = "<unknown string>";
-        if (isdefined(level.aat[name]) && name != "<unknown string>") {
+        percentage = "<dev string:x111>";
+        if (isdefined(level.aat[name]) && name != "<dev string:xb0>") {
             percentage = level.aat[name].percentage;
         }
         self.aat_debug_text fadeovertime(0.05);
         self.aat_debug_text.alpha = 1;
-        self.aat_debug_text settext("<unknown string>" + name + "<unknown string>" + percentage);
+        self.aat_debug_text settext("<dev string:x118>" + name + "<dev string:x121>" + percentage);
         if (success) {
             self.aat_debug_text.color = (0, 1, 0);
         } else if (success_reroll) {
@@ -197,10 +196,10 @@ function private function_33f0ddd3(s_event) {
         } else {
             self.aat_debug_text.color = (1, 1, 1);
         }
-        wait(1);
+        wait 1;
         self.aat_debug_text fadeovertime(1);
         self.aat_debug_text.color = (1, 1, 1);
-        if ("<unknown string>" == name) {
+        if ("<dev string:xb0>" == name) {
             self.aat_debug_text.alpha = 0;
         }
     }
@@ -208,7 +207,7 @@ function private function_33f0ddd3(s_event) {
 #/
 
 // Namespace aat/aat_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf7353584, Offset: 0xd58
 // Size: 0x90
 function private aat_cooldown_init() {
@@ -231,7 +230,7 @@ function aat_vehicle_damage_monitor(einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8432c62d, Offset: 0xef0
 // Size: 0x62
 function function_3895d220(weapon) {
@@ -248,7 +247,7 @@ function function_3895d220(weapon) {
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x33d6451b, Offset: 0xf60
 // Size: 0x5a
 function function_42918474(entity) {
@@ -259,7 +258,7 @@ function function_42918474(entity) {
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30510cea, Offset: 0xfc8
 // Size: 0x150
 function on_ai_damage(params) {
@@ -274,7 +273,7 @@ function on_ai_damage(params) {
 }
 
 // Namespace aat/aat_shared
-// Params 14, eflags: 0x2 linked
+// Params 14, eflags: 0x0
 // Checksum 0x5fdf4f7b, Offset: 0x1120
 // Size: 0x7c4
 function aat_response(death, *inflictor, attacker, *damage, *flags, mod, weapon, var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, boneindex, *surfacetype) {
@@ -393,7 +392,7 @@ function aat_response(death, *inflictor, attacker, *damage, *flags, mod, weapon,
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2ccfc2a2, Offset: 0x18f0
 // Size: 0xc4
 function function_45db1b8a(name) {
@@ -406,7 +405,7 @@ function function_45db1b8a(name) {
             self clientfield::set_to_player("rob_ammo_mod_ready", 1);
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 
@@ -421,24 +420,24 @@ function register(name, percentage, cooldown_time_entity, cooldown_time_attacker
     if (!isdefined(level.aat)) {
         level.aat = [];
     }
-    assert(!is_false(level.aat_initializing), "<unknown string>");
-    assert(isdefined(name), "<unknown string>");
-    assert("<unknown string>" != name, "<unknown string>" + "<unknown string>" + "<unknown string>");
-    assert(!isdefined(level.aat[name]), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(percentage), "<unknown string>" + name + "<unknown string>");
-    assert(0 <= percentage && 1 > percentage, "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(cooldown_time_entity), "<unknown string>" + name + "<unknown string>");
-    assert(0 <= cooldown_time_entity, "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(cooldown_time_entity), "<unknown string>" + name + "<unknown string>");
-    assert(0 <= cooldown_time_entity, "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(cooldown_time_global), "<unknown string>" + name + "<unknown string>");
-    assert(0 <= cooldown_time_global, "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(occurs_on_death), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(result_func), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(damage_feedback_icon), "<unknown string>" + name + "<unknown string>");
-    assert(isstring(damage_feedback_icon), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(damage_feedback_sound), "<unknown string>" + name + "<unknown string>");
-    assert(isstring(damage_feedback_sound), "<unknown string>" + name + "<unknown string>");
+    assert(!is_false(level.aat_initializing), "<dev string:x12b>");
+    assert(isdefined(name), "<dev string:x199>");
+    assert("<dev string:xb0>" != name, "<dev string:x1c2>" + "<dev string:xb0>" + "<dev string:x1e7>");
+    assert(!isdefined(level.aat[name]), "<dev string:x221>" + name + "<dev string:x23b>");
+    assert(isdefined(percentage), "<dev string:x221>" + name + "<dev string:x25c>");
+    assert(0 <= percentage && 1 > percentage, "<dev string:x221>" + name + "<dev string:x27d>");
+    assert(isdefined(cooldown_time_entity), "<dev string:x221>" + name + "<dev string:x2c9>");
+    assert(0 <= cooldown_time_entity, "<dev string:x221>" + name + "<dev string:x2f4>");
+    assert(isdefined(cooldown_time_entity), "<dev string:x221>" + name + "<dev string:x33a>");
+    assert(0 <= cooldown_time_entity, "<dev string:x221>" + name + "<dev string:x367>");
+    assert(isdefined(cooldown_time_global), "<dev string:x221>" + name + "<dev string:x3af>");
+    assert(0 <= cooldown_time_global, "<dev string:x221>" + name + "<dev string:x3da>");
+    assert(isdefined(occurs_on_death), "<dev string:x221>" + name + "<dev string:x420>");
+    assert(isdefined(result_func), "<dev string:x221>" + name + "<dev string:x446>");
+    assert(isdefined(damage_feedback_icon), "<dev string:x221>" + name + "<dev string:x468>");
+    assert(isstring(damage_feedback_icon), "<dev string:x221>" + name + "<dev string:x493>");
+    assert(isdefined(damage_feedback_sound), "<dev string:x221>" + name + "<dev string:x4bf>");
+    assert(isstring(damage_feedback_sound), "<dev string:x221>" + name + "<dev string:x4eb>");
     level.aat[name] = spawnstruct();
     level.aat[name].name = name;
     level.aat[name].hash_id = stathash(name);
@@ -477,11 +476,11 @@ function register_immunity(name, archetype, immune_trigger, immune_result_direct
     while (level.aat_initializing !== 0) {
         waitframe(1);
     }
-    assert(isdefined(name), "<unknown string>");
-    assert(isdefined(archetype), "<unknown string>");
-    assert(isdefined(immune_trigger), "<unknown string>");
-    assert(isdefined(immune_result_direct), "<unknown string>");
-    assert(isdefined(immune_result_indirect), "<unknown string>");
+    assert(isdefined(name), "<dev string:x199>");
+    assert(isdefined(archetype), "<dev string:x518>");
+    assert(isdefined(immune_trigger), "<dev string:x546>");
+    assert(isdefined(immune_result_direct), "<dev string:x579>");
+    assert(isdefined(immune_result_indirect), "<dev string:x5b2>");
     if (!isdefined(level.aat[name].immune_trigger)) {
         level.aat[name].immune_trigger = [];
     }
@@ -497,11 +496,11 @@ function register_immunity(name, archetype, immune_trigger, immune_result_direct
 }
 
 // Namespace aat/aat_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x26b33e0, Offset: 0x2270
 // Size: 0x1a0
 function finalize_clientfields() {
-    println("<unknown string>");
+    println("<dev string:x5ed>");
     if (!is_true(level.aat_in_use)) {
         return;
     }
@@ -511,7 +510,7 @@ function finalize_clientfields() {
         foreach (aat in level.aat) {
             aat.clientfield_index = i;
             i++;
-            println("<unknown string>" + aat.name);
+            println("<dev string:x60a>" + aat.name);
         }
         n_bits = getminbitcountfornum(level.aat.size - 1);
         clientfield::register("toplayer", "aat_current", 1, n_bits, "int");
@@ -532,7 +531,7 @@ function register_aat_exemption(weapon) {
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0cdc1de, Offset: 0x2470
 // Size: 0x4e
 function is_exempt_weapon(weapon) {
@@ -551,14 +550,14 @@ function register_reroll(name, count, active_func, damage_feedback_icon) {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    assert(isdefined(name), "<unknown string>");
-    assert("<unknown string>" != name, "<unknown string>" + "<unknown string>" + "<unknown string>");
-    assert(!isdefined(level.aat[name]), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(count), "<unknown string>" + name + "<unknown string>");
-    assert(0 < count, "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(active_func), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(damage_feedback_icon), "<unknown string>" + name + "<unknown string>");
-    assert(isstring(damage_feedback_icon), "<unknown string>" + name + "<unknown string>");
+    assert(isdefined(name), "<dev string:x612>");
+    assert("<dev string:xb0>" != name, "<dev string:x643>" + "<dev string:xb0>" + "<dev string:x1e7>");
+    assert(!isdefined(level.aat[name]), "<dev string:x66f>" + name + "<dev string:x23b>");
+    assert(isdefined(count), "<dev string:x696>" + name + "<dev string:x6be>");
+    assert(0 < count, "<dev string:x696>" + name + "<dev string:x6da>");
+    assert(isdefined(active_func), "<dev string:x696>" + name + "<dev string:x6fd>");
+    assert(isdefined(damage_feedback_icon), "<dev string:x696>" + name + "<dev string:x468>");
+    assert(isstring(damage_feedback_icon), "<dev string:x696>" + name + "<dev string:x493>");
     level.aat_reroll[name] = spawnstruct();
     level.aat_reroll[name].name = name;
     level.aat_reroll[name].count = count;
@@ -567,7 +566,7 @@ function register_reroll(name, count, active_func, damage_feedback_icon) {
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a8e0eb7, Offset: 0x2740
 // Size: 0x72
 function function_702fb333(weapon) {
@@ -598,23 +597,23 @@ function getaatonweapon(weapon, var_a217d0c1 = 0) {
 }
 
 // Namespace aat/aat_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x4c434229, Offset: 0x28d8
 // Size: 0x306
 function acquire(weapon, name, var_77cf85b7) {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    assert(isdefined(weapon), "<unknown string>");
-    assert(weapon != level.weaponnone, "<unknown string>");
+    assert(isdefined(weapon), "<dev string:x71f>");
+    assert(weapon != level.weaponnone, "<dev string:x749>");
     weapon_instance = weapon;
     weapon = function_702fb333(weapon);
     if (is_exempt_weapon(weapon)) {
         return;
     }
     if (isdefined(name)) {
-        assert("<unknown string>" != name, "<unknown string>" + "<unknown string>" + "<unknown string>");
-        assert(isdefined(level.aat[name]), "<unknown string>" + name + "<unknown string>");
+        assert("<dev string:xb0>" != name, "<dev string:x780>" + "<dev string:xb0>" + "<dev string:x1e7>");
+        assert(isdefined(level.aat[name]), "<dev string:x7a4>" + name + "<dev string:x7bd>");
         self.aat[weapon] = name;
     } else {
         keys = getarraykeys(level.aat);
@@ -635,19 +634,19 @@ function acquire(weapon, name, var_77cf85b7) {
         self clientfield::set_to_player("aat_current", level.aat[self.aat[weapon]].clientfield_index);
     }
     self clientfield::set_to_player("rob_ammo_mod_ready", 1);
-    self notify(#"hash_4de2d5115dc310e2");
+    self notify(#"aat_acquired");
 }
 
 // Namespace aat/aat_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1bff4049, Offset: 0x2be8
 // Size: 0xcc
 function remove(weapon) {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    assert(isdefined(weapon), "<unknown string>");
-    assert(weapon != level.weaponnone, "<unknown string>");
+    assert(isdefined(weapon), "<dev string:x7d7>");
+    assert(weapon != level.weaponnone, "<dev string:x800>");
     weapon_instance = weapon;
     weapon = function_702fb333(weapon);
     self.aat[weapon] = undefined;
@@ -655,7 +654,7 @@ function remove(weapon) {
 }
 
 // Namespace aat/aat_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa18bf456, Offset: 0x2cc0
 // Size: 0x180
 function watch_weapon_changes() {
@@ -705,7 +704,7 @@ function function_7a12b737(stat_name, amount = 1) {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    assert(ishash(stat_name), "<unknown string>");
+    assert(ishash(stat_name), "<dev string:x836>");
     if (!level.onlinegame || is_true(level.zm_disable_recording_stats)) {
         return;
     }
@@ -717,13 +716,13 @@ function function_7a12b737(stat_name, amount = 1) {
         var_ba1fb8c1 = self stats::get_stat_global(stat_name);
         if (isdefined(var_ba1fb8c1)) {
             if (isdefined(self.entity_num)) {
-                println("<unknown string>" + self.entity_num + "<unknown string>" + function_9e72a96(stat_name) + "<unknown string>" + var_ba1fb8c1);
+                println("<dev string:x853>" + self.entity_num + "<dev string:xd9>" + function_9e72a96(stat_name) + "<dev string:x85e>" + var_ba1fb8c1);
             } else {
-                println("<unknown string>" + function_9e72a96(stat_name) + "<unknown string>" + var_ba1fb8c1);
+                println("<dev string:x853>" + function_9e72a96(stat_name) + "<dev string:x85e>" + var_ba1fb8c1);
             }
         }
         if (!isdefined(var_ba1fb8c1)) {
-            println("<unknown string>" + self.entity_num + "<unknown string>" + function_9e72a96(stat_name) + "<unknown string>");
+            println("<dev string:x853>" + self.entity_num + "<dev string:xd9>" + function_9e72a96(stat_name) + "<dev string:x870>");
         }
     #/
 }

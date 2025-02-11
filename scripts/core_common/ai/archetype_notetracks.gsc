@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_68d08b784c92da95;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
-#using scripts\core_common\ai\systems\shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\archetype_human_cover.gsc;
+#using scripts\core_common\ai\archetype_human_cover;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\systems\shared;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\util_shared;
 
 #namespace animationstatenetwork;
 
@@ -60,7 +59,7 @@ function autoexec registerdefaultnotetrackhandlerfunctions() {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x70a996f7, Offset: 0xaf8
 // Size: 0x7a
 function private notetrackguntoback(entity) {
@@ -72,7 +71,7 @@ function private notetrackguntoback(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x62cb38e2, Offset: 0xb80
 // Size: 0x86
 function private function_776caa25(entity) {
@@ -85,7 +84,7 @@ function private function_776caa25(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x35373c4e, Offset: 0xc10
 // Size: 0x46
 function private function_f7e95a07(entity) {
@@ -94,7 +93,7 @@ function private function_f7e95a07(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbba2f492, Offset: 0xc60
 // Size: 0x2c
 function private function_c49db6d(entity) {
@@ -102,7 +101,7 @@ function private function_c49db6d(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1ca6cd11, Offset: 0xc98
 // Size: 0x64
 function private notetrackanimmovementstop(entity) {
@@ -112,7 +111,7 @@ function private notetrackanimmovementstop(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdb238c4f, Offset: 0xd08
 // Size: 0x5c
 function private notetrackstaircasestep1(entity) {
@@ -122,7 +121,7 @@ function private notetrackstaircasestep1(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x96b1e87d, Offset: 0xd70
 // Size: 0x64
 function private notetrackstaircasestep2(entity) {
@@ -132,7 +131,7 @@ function private notetrackstaircasestep2(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3d17ac34, Offset: 0xde0
 // Size: 0xd4
 function private notetrackdropguninternal(entity) {
@@ -151,7 +150,7 @@ function private notetrackdropguninternal(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd45ed760, Offset: 0xec0
 // Size: 0x5a
 function private notetrackattachknife(entity) {
@@ -162,7 +161,7 @@ function private notetrackattachknife(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb4614c38, Offset: 0xf28
 // Size: 0x56
 function private notetrackdetachknife(entity) {
@@ -173,7 +172,7 @@ function private notetrackdetachknife(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9c1fb1a4, Offset: 0xf88
 // Size: 0x24
 function private notetrackhideweapon(entity) {
@@ -181,7 +180,7 @@ function private notetrackhideweapon(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8b7c495, Offset: 0xfb8
 // Size: 0x24
 function private notetrackshowweapon(entity) {
@@ -189,7 +188,7 @@ function private notetrackshowweapon(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x66cea9c1, Offset: 0xfe8
 // Size: 0x24
 function private notetrackhideai(entity) {
@@ -197,7 +196,7 @@ function private notetrackhideai(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa06dbb1d, Offset: 0x1018
 // Size: 0x24
 function private notetrackshowai(entity) {
@@ -205,7 +204,7 @@ function private notetrackshowai(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xef8503d5, Offset: 0x1048
 // Size: 0x244
 function private notetrackstartragdoll(entity) {
@@ -222,37 +221,37 @@ function private notetrackstartragdoll(entity) {
     }
     /#
         var_89953da0 = entity asmgetcurrentdeltaanimation();
-        text = "tag_accessory_left";
-        if (isdefined(var_89953da0) && var_89953da0 != "<unknown string>") {
-            text += "<unknown string>" + function_9e72a96(var_89953da0);
-            notetracks = getnotetracktimes(var_89953da0, "<unknown string>");
+        text = "<dev string:x38>";
+        if (isdefined(var_89953da0) && var_89953da0 != "<dev string:x51>") {
+            text += "<dev string:x55>" + function_9e72a96(var_89953da0);
+            notetracks = getnotetracktimes(var_89953da0, "<dev string:x5c>");
             if (notetracks.size == 1) {
                 time = entity getanimtime(var_89953da0);
-                text += "<unknown string>" + notetracks[0] + "<unknown string>" + time;
+                text += "<dev string:x6d>" + notetracks[0] + "<dev string:x84>" + time;
             } else {
-                text += "<unknown string>" + notetracks.size;
+                text += "<dev string:x99>" + notetracks.size;
             }
         }
-        record3dtext(text, entity.origin + (0, 0, 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
+        record3dtext(text, entity.origin + (0, 0, 4), (1, 0, 0), "<dev string:xac>", undefined, 0.4);
     #/
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd3c196dc, Offset: 0x1298
 // Size: 0x94
 function _delayedragdoll(entity) {
-    wait(0.25);
+    wait 0.25;
     if (isdefined(entity) && !entity isragdoll()) {
         entity startragdoll();
         /#
-            record3dtext("<unknown string>", entity.origin + (0, 0, 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
+            record3dtext("<dev string:xb9>", entity.origin + (0, 0, 4), (1, 0, 0), "<dev string:xac>", undefined, 0.4);
         #/
     }
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x55e4049c, Offset: 0x1338
 // Size: 0x4c
 function notetrackstartragdollnodeath(entity) {
@@ -263,7 +262,7 @@ function notetrackstartragdollnodeath(entity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x75f57fdc, Offset: 0x1390
 // Size: 0x13c
 function private notetrackfirebullet(animationentity) {
@@ -282,7 +281,7 @@ function private notetrackfirebullet(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9913bb2c, Offset: 0x14d8
 // Size: 0x2c
 function private notetrackhelmetpop(animationentity) {
@@ -290,7 +289,7 @@ function private notetrackhelmetpop(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x66637481, Offset: 0x1510
 // Size: 0xac
 function private notetrackdropgun(animationentity) {
@@ -305,7 +304,7 @@ function private notetrackdropgun(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3dc52fa5, Offset: 0x15c8
 // Size: 0x24
 function private notetrackdropshield(animationentity) {
@@ -313,7 +312,7 @@ function private notetrackdropshield(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4a66cbd4, Offset: 0x15f8
 // Size: 0x12c
 function private notetrackgrenadethrow(animationentity) {
@@ -340,7 +339,7 @@ function private notetrackgrenadethrow(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd4a9bd69, Offset: 0x1730
 // Size: 0x64
 function private notetrackmeleeunsync(animationentity) {
@@ -352,7 +351,7 @@ function private notetrackmeleeunsync(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf6da0115, Offset: 0x17a0
 // Size: 0x4c
 function private notetrackgibdisable(animationentity) {
@@ -362,13 +361,13 @@ function private notetrackgibdisable(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7edb7c3, Offset: 0x17f8
 // Size: 0x76
 function private function_ed287fd1(animationentity) {
     result = {};
     result.model = animationentity.weapon.clipmodel;
-    result.var_98bd9c20 = "tag_clip";
+    result.weapon_tag = "tag_clip";
     result.var_c63463cb = "tag_clip_empty";
     result.var_696fb09f = "tag_accessory_left";
     result.var_86c2ede3 = "tag_accessory_right";
@@ -376,7 +375,7 @@ function private function_ed287fd1(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb7878003, Offset: 0x1878
 // Size: 0x16e
 function private function_dab83a5a(animationentity, clip, visible) {
@@ -389,19 +388,19 @@ function private function_dab83a5a(animationentity, clip, visible) {
             animationentity.var_91d2328b = undefined;
         }
     }
-    if (isdefined(clip.var_98bd9c20) && animationentity haspart(clip.var_98bd9c20)) {
+    if (isdefined(clip.weapon_tag) && animationentity haspart(clip.weapon_tag)) {
         if (!is_true(visible)) {
-            animationentity hidepart(clip.var_98bd9c20);
-            animationentity.var_af41987d = clip.var_98bd9c20;
+            animationentity hidepart(clip.weapon_tag);
+            animationentity.var_af41987d = clip.weapon_tag;
             return;
         }
-        animationentity showpart(clip.var_98bd9c20);
+        animationentity showpart(clip.weapon_tag);
         animationentity.var_af41987d = undefined;
     }
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x5d49d80b, Offset: 0x19f0
 // Size: 0xa2
 function private function_73e97c7d(animationentity, clip, attachtag) {
@@ -413,7 +412,7 @@ function private function_73e97c7d(animationentity, clip, attachtag) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x799541b9, Offset: 0x1aa0
 // Size: 0x6a
 function private function_c83ca932(animationentity) {
@@ -425,7 +424,7 @@ function private function_c83ca932(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x70a5098a, Offset: 0x1b18
 // Size: 0x1dc
 function private function_a5af97c9(animationentity, clip, tag) {
@@ -433,11 +432,11 @@ function private function_a5af97c9(animationentity, clip, tag) {
     angles = animationentity gettagangles(tag);
     /#
         if (!isdefined(clip.model)) {
-            weaponname = "<unknown string>";
+            weaponname = "<dev string:xcc>";
             if (isdefined(animationentity.weapon.name)) {
                 weaponname = function_9e72a96(animationentity.weapon.name);
             }
-            assertmsg("<unknown string>" + weaponname + "<unknown string>" + animationentity.aitype);
+            assertmsg("<dev string:xd9>" + weaponname + "<dev string:x122>" + animationentity.aitype);
         }
     #/
     var_fffb32e9 = util::spawn_model(clip.model, origin, angles);
@@ -449,7 +448,7 @@ function private function_a5af97c9(animationentity, clip, tag) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf4f9ea87, Offset: 0x1d00
 // Size: 0x124
 function private function_727744ff(animationentity) {
@@ -460,14 +459,14 @@ function private function_727744ff(animationentity) {
         function_dab83a5a(animationentity, clip, 0);
         return;
     }
-    if (isdefined(clip.model) && isdefined(clip.var_98bd9c20) && animationentity haspart(clip.var_98bd9c20)) {
-        function_a5af97c9(animationentity, clip, clip.var_98bd9c20);
+    if (isdefined(clip.model) && isdefined(clip.weapon_tag) && animationentity haspart(clip.weapon_tag)) {
+        function_a5af97c9(animationentity, clip, clip.weapon_tag);
         function_dab83a5a(animationentity, clip, 0);
     }
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5b43bd64, Offset: 0x1e30
 // Size: 0x64
 function private function_cd88e2dc(animationentity) {
@@ -477,7 +476,7 @@ function private function_cd88e2dc(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7a7c2e2, Offset: 0x1ea0
 // Size: 0x64
 function private function_8982cca0(animationentity) {
@@ -487,7 +486,7 @@ function private function_8982cca0(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9ce00e91, Offset: 0x1f10
 // Size: 0x64
 function private function_3f4b4219(animationentity) {
@@ -497,7 +496,7 @@ function private function_3f4b4219(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbef5416b, Offset: 0x1f80
 // Size: 0x64
 function private function_15b71a09(animationentity) {
@@ -507,7 +506,7 @@ function private function_15b71a09(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4dc73f8a, Offset: 0x1ff0
 // Size: 0x5c
 function function_9d41000(animationentity) {
@@ -517,7 +516,7 @@ function function_9d41000(animationentity) {
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4785dc1e, Offset: 0x2058
 // Size: 0x4c
 function private function_6bde1bde() {

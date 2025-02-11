@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\exploder_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_fasttravel;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6ac2c0e, Offset: 0x3b0
 // Size: 0x24
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x550523a4, Offset: 0x3e0
 // Size: 0x304
 function init_clientfields() {
@@ -45,7 +44,7 @@ function init_clientfields() {
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa37e2762, Offset: 0x6f0
 // Size: 0x11c
 function init_fx() {
@@ -59,7 +58,7 @@ function init_fx() {
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa03a4928, Offset: 0x818
 // Size: 0x84
 function fasttravel_exploder(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -71,7 +70,7 @@ function fasttravel_exploder(*localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x90b72a4, Offset: 0x8a8
 // Size: 0x224
 function player_chaos_light_rail_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -108,7 +107,7 @@ function player_chaos_light_rail_fx(localclientnum, *oldval, newval, *bnewent, *
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xfdbcf146, Offset: 0xad8
 // Size: 0xe4
 function wormhole_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -126,7 +125,7 @@ function wormhole_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xc3406ea3, Offset: 0xbc8
 // Size: 0xb4
 function player_stargate_fx(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -141,7 +140,7 @@ function player_stargate_fx(*localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x10bfc194, Offset: 0xc88
 // Size: 0x14c
 function function_f998fa4c(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -162,7 +161,7 @@ function function_f998fa4c(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf097a779, Offset: 0xde0
 // Size: 0x13e
 function fasttravel_teleport_sfx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -188,7 +187,7 @@ function fasttravel_teleport_sfx(localclientnum, *oldval, newval, *bnewent, *bin
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xccd889c5, Offset: 0xf28
 // Size: 0x1dc
 function fasttravel_start_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -208,14 +207,14 @@ function fasttravel_start_fx(localclientnum, *oldval, newval, *bnewent, *binitia
             if (!isdefined(level.var_b41e82d4)) {
                 level.var_b41e82d4 = 1.5;
             }
-            wait(level.var_b41e82d4);
+            wait level.var_b41e82d4;
             mdl_fx delete();
         }
     }
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6c26c038, Offset: 0x1110
 // Size: 0x5c
 function fasttravel_end_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -225,7 +224,7 @@ function fasttravel_end_fx(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9362f421, Offset: 0x1178
 // Size: 0x12c
 function play_fasttravel_end_fx(localclientnum, var_b8763ebc = "fasttravel_end") {
@@ -236,13 +235,13 @@ function play_fasttravel_end_fx(localclientnum, var_b8763ebc = "fasttravel_end")
         mdl_fx = util::spawn_model(localclientnum, "tag_origin", self.origin, v_angles);
         waitframe(1);
         util::playfxontag(localclientnum, level._effect[var_b8763ebc], mdl_fx, "tag_origin");
-        wait(1.15);
+        wait 1.15;
         mdl_fx delete();
     }
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6dd13da8, Offset: 0x12b0
 // Size: 0x43e
 function fasttravel_rail_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -299,7 +298,7 @@ function fasttravel_rail_fx(localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x568c8398, Offset: 0x16f8
 // Size: 0xae
 function private function_dddf661d(localclientnum, str_fx, str_tag, v_origin, v_angles) {
@@ -310,7 +309,7 @@ function private function_dddf661d(localclientnum, str_fx, str_tag, v_origin, v_
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x4a4e6d83, Offset: 0x17b0
 // Size: 0x6c
 function private function_eaba4969(localclientnum, var_92d4e054, mdl_fx) {
@@ -321,7 +320,7 @@ function private function_eaba4969(localclientnum, var_92d4e054, mdl_fx) {
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x1bf1b67e, Offset: 0x1828
 // Size: 0x64
 function private function_4468d7ac(localclientnum, mdl_fx) {
@@ -334,7 +333,7 @@ function private function_4468d7ac(localclientnum, mdl_fx) {
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6ac0da98, Offset: 0x1898
 // Size: 0x3c6
 function function_7287c2e4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace killstreakrules;
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x93fd3d04, Offset: 0xd8
 // Size: 0xb8
 function init_shared() {
@@ -28,7 +27,7 @@ function init_shared() {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf510b83, Offset: 0x198
 // Size: 0x24
 function function_4a433a3f(value) {
@@ -36,7 +35,7 @@ function function_4a433a3f(value) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x28fd198c, Offset: 0x1c8
 // Size: 0x132
 function createrule(rule, maxallowable, maxallowableperteam, var_11c5ecfd, var_5b7d134, var_cc6f8ade) {
@@ -54,7 +53,7 @@ function createrule(rule, maxallowable, maxallowableperteam, var_11c5ecfd, var_5
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xd388dc0f, Offset: 0x308
 // Size: 0x12c
 function addkillstreaktorule(killstreak, rule, counttowards, checkagainst, inventoryvariant) {
@@ -73,11 +72,11 @@ function addkillstreaktorule(killstreak, rule, counttowards, checkagainst, inven
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa7175d26, Offset: 0x440
 // Size: 0x468
 function killstreakstart(hardpointtype, team, hacked, displayteammessage) {
-    assert(isdefined(team), "<unknown string>");
+    assert(isdefined(team), "<dev string:x38>");
     if (self iskillstreakallowed(hardpointtype, team) == 0) {
         return -1;
     }
@@ -129,13 +128,13 @@ function killstreakstart(hardpointtype, team, hacked, displayteammessage) {
         killstreaks::function_eb52ba7(hardpointtype, team, killstreak_id);
     }
     /#
-        killstreak_debug_text("<unknown string>" + hardpointtype + "<unknown string>" + team + "<unknown string>" + killstreak_id);
+        killstreak_debug_text("<dev string:x54>" + hardpointtype + "<dev string:x6c>" + team + "<dev string:x7b>" + killstreak_id);
     #/
     return killstreak_id;
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xdbe2e11b, Offset: 0x8b0
 // Size: 0x158
 function function_2e6ff61a(hardpointtype, killstreak_id, var_8c2bb724) {
@@ -156,7 +155,7 @@ function function_2e6ff61a(hardpointtype, killstreak_id, var_8c2bb724) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2cd83171, Offset: 0xa10
 // Size: 0x142
 function function_7f69aa48(hardpointtype) {
@@ -175,7 +174,7 @@ function function_7f69aa48(hardpointtype) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xce7f4c0b, Offset: 0xb60
 // Size: 0x40
 function function_feb4595f(hardpointtype, var_5f910be6) {
@@ -184,7 +183,7 @@ function function_feb4595f(hardpointtype, var_5f910be6) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xad5f43eb, Offset: 0xba8
 // Size: 0x54
 function recordkillstreakenddirect(eventindex, recordstreakindex, totalkills) {
@@ -194,7 +193,7 @@ function recordkillstreakenddirect(eventindex, recordstreakindex, totalkills) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x23a06f2, Offset: 0xc08
 // Size: 0xc0
 function recordkillstreakend(recordstreakindex, totalkills) {
@@ -217,18 +216,18 @@ function recordkillstreakend(recordstreakindex, totalkills) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6950973e, Offset: 0xcd0
 // Size: 0x6f4
 function killstreakstop(hardpointtype, team, id, var_2921b547 = 1) {
-    assert(isdefined(team), "<unknown string>");
+    assert(isdefined(team), "<dev string:x38>");
     assert(isdefined(hardpointtype));
     /#
-        idstr = "<unknown string>";
+        idstr = "<dev string:x84>";
         if (isdefined(id)) {
             idstr = id;
         }
-        killstreak_debug_text("<unknown string>" + hardpointtype + "<unknown string>" + team + "<unknown string>" + idstr);
+        killstreak_debug_text("<dev string:x91>" + hardpointtype + "<dev string:x6c>" + team + "<dev string:x7b>" + idstr);
     #/
     keys = getarraykeys(level.killstreaktype[hardpointtype]);
     foreach (key in keys) {
@@ -254,7 +253,7 @@ function killstreakstop(hardpointtype, team, id, var_2921b547 = 1) {
     }
     if (!isdefined(id) || id == -1) {
         /#
-            killstreak_debug_text("<unknown string>" + hardpointtype);
+            killstreak_debug_text("<dev string:xa9>" + hardpointtype);
         #/
         if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame() || sessionmodeiszombiesgame()) {
             var_8756d70f = killstreaks::function_cb0594d5();
@@ -293,7 +292,7 @@ function killstreakstop(hardpointtype, team, id, var_2921b547 = 1) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfebc5f1, Offset: 0x13d0
 // Size: 0x13c
 function function_d9f8f32b(killstreaktype) {
@@ -322,7 +321,7 @@ function function_d9f8f32b(killstreaktype) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1077181, Offset: 0x1518
 // Size: 0x37c
 function function_9f635a5(cooldowntime = 0, killstreaktype) {
@@ -352,7 +351,7 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
             waitframe(1);
         }
     } else {
-        wait(cooldowntime);
+        wait cooldowntime;
     }
     if (!isdefined(self)) {
         return;
@@ -375,7 +374,7 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2882ed83, Offset: 0x18a0
 // Size: 0x94
 function function_40451ab0(killstreaktype) {
@@ -390,7 +389,7 @@ function function_40451ab0(killstreaktype) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1a5c8575, Offset: 0x1940
 // Size: 0x1a0
 function private function_3859ee41(killstreaktype) {
@@ -431,7 +430,7 @@ function private function_3859ee41(killstreaktype) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf9064294, Offset: 0x1ae8
 // Size: 0x5c4
 function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
@@ -444,7 +443,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
     if (game.state == #"postgame") {
         return 0;
     }
-    assert(isdefined(team), "<unknown string>");
+    assert(isdefined(team), "<dev string:x38>");
     assert(isdefined(hardpointtype));
     if (!is_true(var_91419d5)) {
         if (isdefined(level.var_dcc3befb[hardpointtype])) {
@@ -476,7 +475,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
         if (rule.max != 0) {
             if (rule.cur >= rule.max) {
                 /#
-                    killstreak_debug_text("<unknown string>" + key + "<unknown string>");
+                    killstreak_debug_text("<dev string:xd9>" + key + "<dev string:xe6>");
                 #/
                 isallowed = 0;
                 break;
@@ -494,7 +493,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
                 var_9a9cdff6++;
                 if (var_9a9cdff6 >= rule.var_62a7c0b4) {
                     /#
-                        killstreak_debug_text("<unknown string>" + key + "<unknown string>");
+                        killstreak_debug_text("<dev string:xf2>" + key + "<dev string:x101>");
                     #/
                     isallowed = 0;
                     break;
@@ -505,7 +504,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
                         if (var_6eeac690 >= rule.var_ee52fece) {
                             isallowed = 0;
                             /#
-                                killstreak_debug_text("<unknown string>" + key + "<unknown string>");
+                                killstreak_debug_text("<dev string:xd9>" + key + "<dev string:x111>");
                             #/
                             break;
                         }
@@ -520,7 +519,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
             if (rule.curteam[team] >= rule.maxperteam) {
                 isallowed = 0;
                 /#
-                    killstreak_debug_text("<unknown string>" + key + "<unknown string>");
+                    killstreak_debug_text("<dev string:xd9>" + key + "<dev string:x11e>");
                 #/
                 break;
             }
@@ -528,7 +527,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
     }
     if (isdefined(self.laststand) && self.laststand) {
         /#
-            killstreak_debug_text("<unknown string>");
+            killstreak_debug_text("<dev string:x127>");
         #/
         isallowed = 0;
     }
@@ -552,11 +551,11 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
         level.killstreak_rule_debug = getdvarint(#"scr_killstreak_rule_debug", 0);
         if (isdefined(level.killstreak_rule_debug)) {
             if (level.killstreak_rule_debug == 1) {
-                iprintln("<unknown string>" + text + "<unknown string>");
+                iprintln("<dev string:x137>" + text + "<dev string:x140>");
                 return;
             }
             if (level.killstreak_rule_debug == 2) {
-                iprintlnbold("<unknown string>" + text);
+                iprintlnbold("<dev string:x137>" + text);
             }
         }
     }

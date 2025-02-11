@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
-#namespace namespace_6e44b0fa;
+#namespace player_hemtt;
 
-// Namespace namespace_6e44b0fa/namespace_6e44b0fa
+// Namespace player_hemtt/player_hemtt
 // Params 0, eflags: 0x5
 // Checksum 0x96e1ef0e, Offset: 0x108
 // Size: 0x44
@@ -13,16 +12,16 @@ function private autoexec __init__system__() {
     system::register(#"hash_5b215c4eff8f5759", &preinit, undefined, undefined, #"player_vehicle");
 }
 
-// Namespace namespace_6e44b0fa/namespace_6e44b0fa
-// Params 0, eflags: 0x6 linked
+// Namespace player_hemtt/player_hemtt
+// Params 0, eflags: 0x4
 // Checksum 0xdf1feafe, Offset: 0x158
 // Size: 0x2c
 function private preinit() {
     vehicle::add_main_callback("hemtt_wz", &function_7cb966e4);
 }
 
-// Namespace namespace_6e44b0fa/namespace_6e44b0fa
-// Params 0, eflags: 0x6 linked
+// Namespace player_hemtt/player_hemtt
+// Params 0, eflags: 0x4
 // Checksum 0xb1ba4c97, Offset: 0x190
 // Size: 0xc2
 function private function_7cb966e4() {
@@ -36,8 +35,8 @@ function private function_7cb966e4() {
     self.var_5d662124 = 2;
 }
 
-// Namespace namespace_6e44b0fa/namespace_6e44b0fa
-// Params 1, eflags: 0x6 linked
+// Namespace player_hemtt/player_hemtt
+// Params 1, eflags: 0x4
 // Checksum 0x7bbf547a, Offset: 0x260
 // Size: 0x94
 function private function_3fbda54b(params) {
@@ -51,8 +50,8 @@ function private function_3fbda54b(params) {
     }
 }
 
-// Namespace namespace_6e44b0fa/namespace_6e44b0fa
-// Params 1, eflags: 0x6 linked
+// Namespace player_hemtt/player_hemtt
+// Params 1, eflags: 0x4
 // Checksum 0x4eac7e21, Offset: 0x300
 // Size: 0x94
 function private function_4a8e844a(params) {

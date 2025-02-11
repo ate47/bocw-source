@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_trial_give_reward;
 
@@ -51,7 +50,7 @@ function private on_end(round_reset) {
         if (is_true(self.trial_completed)) {
             luinotifyevent(#"zm_trial_completed");
             foreach (player in getplayers()) {
-                player zm_utility::function_659819fa(#"zm_trials_round_30");
+                player zm_utility::give_achievement(#"zm_trials_round_30");
             }
         }
     }

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
 
 #namespace zm_trial_shoot_from_location;
 
@@ -44,7 +43,7 @@ function private on_begin() {
     }
     str_targetname = "trials_shoot_from_location";
     level.var_7f31a12d = getentarray(str_targetname, "targetname");
-    assert(level.var_7f31a12d.size, "<unknown string>");
+    assert(level.var_7f31a12d.size, "<dev string:x38>");
     callback::function_33f0ddd3(&function_33f0ddd3);
     foreach (player in getplayers()) {
         player thread function_3658663();

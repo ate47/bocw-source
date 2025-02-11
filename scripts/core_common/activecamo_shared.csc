@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\player\player_stats.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\struct.csc;
-#using script_474309807eb94f34;
+#using scripts\core_common\activecamo_shared_util;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace activecamo;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1b6bf8bd, Offset: 0x1d8
 // Size: 0xd4
 function private preinit() {
@@ -34,7 +33,7 @@ function private preinit() {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xede9ca66, Offset: 0x2b8
 // Size: 0x44
 function private on_local_player_spawned(localclientnum) {
@@ -45,7 +44,7 @@ function private on_local_player_spawned(localclientnum) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa37bc04b, Offset: 0x308
 // Size: 0x198
 function private function_e3e0feb5(localclientnum, localplayer) {
@@ -68,7 +67,7 @@ function private function_e3e0feb5(localclientnum, localplayer) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9459cdd7, Offset: 0x4a8
 // Size: 0xd4
 function private on_weapon_change(params) {
@@ -83,7 +82,7 @@ function private on_weapon_change(params) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x27fa7360, Offset: 0x588
 // Size: 0x9c
 function private on_player_spawned(localclientnum) {
@@ -94,7 +93,7 @@ function private on_player_spawned(localclientnum) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x6f2cdb4d, Offset: 0x630
 // Size: 0x13e
 function private function_451a49f4(localclientnum, var_f4eb4a50, weapon, stagenum) {
@@ -119,7 +118,7 @@ function private function_451a49f4(localclientnum, var_f4eb4a50, weapon, stagenu
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xc0ef1f69, Offset: 0x778
 // Size: 0x1b4
 function private function_130e0542(localclientnum, weapon, camoindex) {
@@ -148,7 +147,7 @@ function private function_130e0542(localclientnum, weapon, camoindex) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8a5cdc5, Offset: 0x938
 // Size: 0x74
 function private updateactivecamo(localclientnum, eventstruct) {
@@ -157,7 +156,7 @@ function private updateactivecamo(localclientnum, eventstruct) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0xdebf4464, Offset: 0x9b8
 // Size: 0x50c
 function private function_350f0d(localclientnum, weapon, tagname, stagenum, var_d71e8c6e, camooptions) {
@@ -226,7 +225,7 @@ function private function_350f0d(localclientnum, weapon, tagname, stagenum, var_
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xdd98f963, Offset: 0xed0
 // Size: 0x154
 function private function_e1b6707f(localclientnum, weapon, exitstage, enterstage) {
@@ -257,7 +256,7 @@ function private function_e1b6707f(localclientnum, weapon, exitstage, enterstage
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x92ca1cb4, Offset: 0x1030
 // Size: 0x64
 function private player_on_death(params) {
@@ -266,7 +265,7 @@ function private player_on_death(params) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x44229b3d, Offset: 0x10a0
 // Size: 0x6e
 function private function_3e27a7cb(localclientnum, tagname) {
@@ -278,7 +277,7 @@ function private function_3e27a7cb(localclientnum, tagname) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x235d93a0, Offset: 0x1118
 // Size: 0x140
 function private function_a946fb86(activecamo, stagenum, var_d1460f46) {
@@ -295,7 +294,7 @@ function private function_a946fb86(activecamo, stagenum, var_d1460f46) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x99bace97, Offset: 0x1260
 // Size: 0xb6
 function private function_16d7447b(localclientnum, tagname, create) {
@@ -315,7 +314,7 @@ function private function_16d7447b(localclientnum, tagname, create) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0x80ae4eb6, Offset: 0x1320
 // Size: 0x18c
 function private function_bc6005b5(stage, tagname, var_eb6a239c, lerptime, var_f023ca7d, var_5e38d32e) {
@@ -341,7 +340,7 @@ function private function_bc6005b5(stage, tagname, var_eb6a239c, lerptime, var_f
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x57f3f117, Offset: 0x14b8
 // Size: 0x414
 function private function_b5b4013c(stage, tagname, layer, var_5e38d32e) {
@@ -386,7 +385,7 @@ function private function_b5b4013c(stage, tagname, layer, var_5e38d32e) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc0f6f6b6, Offset: 0x18d8
 // Size: 0x4b6
 function private function_8a6ced15(var_f4eb4a50, forceupdate) {
@@ -457,7 +456,7 @@ function private function_8a6ced15(var_f4eb4a50, forceupdate) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xfcfd3dcf, Offset: 0x1d98
 // Size: 0x104
 function private init_activecamo(var_f4eb4a50, forceupdate) {
@@ -480,7 +479,7 @@ function private init_activecamo(var_f4eb4a50, forceupdate) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x148a0121, Offset: 0x1ea8
 // Size: 0x440
 function function_6c9e0e1a(localclientnum, weaponmodel, var_3594168e, &var_49daa2f6) {
@@ -521,7 +520,7 @@ function function_6c9e0e1a(localclientnum, weaponmodel, var_3594168e, &var_49daa
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5527d096, Offset: 0x22f0
 // Size: 0xa4
 function function_cbfd8fd6(localclientnum) {
@@ -560,7 +559,7 @@ function function_e40c785a(localclientnum) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x679439db, Offset: 0x24d8
 // Size: 0x284
 function function_6efb762c(localclientnum, camoweapon, weaponoptions) {
@@ -594,7 +593,7 @@ function function_6efb762c(localclientnum, camoweapon, weaponoptions) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x5684d0f2, Offset: 0x2768
 // Size: 0x94
 function function_7721b2d5(localclientnum, var_f4eb4a50, init_stage) {
@@ -610,7 +609,7 @@ function function_7721b2d5(localclientnum, var_f4eb4a50, init_stage) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa9a8cbe8, Offset: 0x2808
 // Size: 0x52
 function function_ada2946d(weapon) {
@@ -620,7 +619,7 @@ function function_ada2946d(weapon) {
 }
 
 // Namespace activecamo/activecamo_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb03857f7, Offset: 0x2868
 // Size: 0xae
 function function_51bb743b(weapon, camooptions) {
@@ -645,8 +644,8 @@ function function_51bb743b(weapon, camooptions) {
     // Checksum 0x45b5be3a, Offset: 0x2920
     // Size: 0x1a0
     function function_12e53b2d() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x38>");
+        self endon("<dev string:x38>");
         while (true) {
             var_f4eb4a50 = undefined;
             waitresult = level waittill(#"liveupdate");

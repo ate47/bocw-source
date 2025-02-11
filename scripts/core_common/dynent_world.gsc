@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace dynent_world;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace dynent_world/dynent_world
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1e72bfa1, Offset: 0xd0
 // Size: 0x1c
 function private preinit() {
@@ -131,15 +130,15 @@ function event_handler[event_cf200f34] function_209450ae(eventstruct) {
         while (!canadddebugcommand()) {
             waitframe(1);
         }
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x38>");
         while (true) {
-            wait(0.25);
-            dvarstr = getdvarstring(#"hash_40f9f26f308dd924", "<unknown string>");
-            if (dvarstr == "<unknown string>") {
+            wait 0.25;
+            dvarstr = getdvarstring(#"hash_40f9f26f308dd924", "<dev string:x81>");
+            if (dvarstr == "<dev string:x81>") {
                 continue;
             }
-            setdvar(#"hash_40f9f26f308dd924", "<unknown string>");
-            args = strtok(dvarstr, "<unknown string>");
+            setdvar(#"hash_40f9f26f308dd924", "<dev string:x81>");
+            args = strtok(dvarstr, "<dev string:x85>");
             switch (args[0]) {
             case #"reset":
                 function_3ca3c6e4();

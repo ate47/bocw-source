@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace smart_bomb;
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7529486b, Offset: 0x180
 // Size: 0x1b4
 function function_c6f75619() {
@@ -40,7 +39,7 @@ function function_c6f75619() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x184a2b01, Offset: 0x340
 // Size: 0xac
 function state_scripted_update(*params) {
@@ -54,7 +53,7 @@ function state_scripted_update(*params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x184d187d, Offset: 0x3f8
 // Size: 0x12c
 function state_death_update(params) {
@@ -76,7 +75,7 @@ function state_death_update(params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6b9c819c, Offset: 0x530
 // Size: 0x1c4
 function state_emped_update(params) {
@@ -85,7 +84,7 @@ function state_emped_update(params) {
         forward = vectornormalize((self getvelocity()[0], self getvelocity()[1], 0));
         side = vectorcross(forward, (0, 0, 1)) * math::randomsign();
         self function_a57c34b7(self.origin + side * 500 + forward * randomfloat(400), 0, 0);
-        wait(0.6);
+        wait 0.6;
         self function_d4c687c9();
         self waittilltimeout(1.5, #"veh_collision");
         self kill(self.origin, self.abnormal_status.attacker, self.abnormal_status.inflictor, getweapon(#"emp"));
@@ -95,7 +94,7 @@ function state_emped_update(params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6396040d, Offset: 0x700
 // Size: 0x9d4
 function state_combat_update(*params) {
@@ -106,7 +105,7 @@ function state_combat_update(*params) {
     self thread detonation_monitor();
     for (;;) {
         if (is_true(self.inpain)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (!isdefined(self.enemy)) {
@@ -114,9 +113,9 @@ function state_combat_update(*params) {
                 self force_get_enemies();
             }
             self setspeed(self.settings.defaultmovespeed * 0.35);
-            profileNamedStart(#"");
+            pixbeginevent(#"");
             queryresult = positionquery_source_navigation(self.origin, 0, self.settings.max_move_dist * 3, self.settings.max_move_dist * 3, self.radius * 2, self, self.radius * 4);
-            profileNamedStop();
+            pixendevent();
             positionquery_filter_inclaimedlocation(queryresult, self);
             positionquery_filter_distancetogoal(queryresult, self);
             vehicle_ai::positionquery_filter_outofgoalanchor(queryresult);
@@ -131,7 +130,7 @@ function state_combat_update(*params) {
                         point._scoredebug[#"disttoorigin"] = spawnstruct();
                     }
                     point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, 100, point.disttoorigin2d);
-                    point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
+                    point._scoredebug[#"disttoorigin"].scorename = "<dev string:x38>";
                 #/
                 point.score += mapfloat(0, 200, 0, 100, point.disttoorigin2d);
                 if (point.inclaimedlocation) {
@@ -143,7 +142,7 @@ function state_combat_update(*params) {
                             point._scoredebug[#"inclaimedlocation"] = spawnstruct();
                         }
                         point._scoredebug[#"inclaimedlocation"].score = -500;
-                        point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
+                        point._scoredebug[#"inclaimedlocation"].scorename = "<dev string:x48>";
                     #/
                     point.score += -500;
                 }
@@ -155,7 +154,7 @@ function state_combat_update(*params) {
                         point._scoredebug[#"random"] = spawnstruct();
                     }
                     point._scoredebug[#"random"].score = randomfloatrange(0, 50);
-                    point._scoredebug[#"random"].scorename = "<unknown string>";
+                    point._scoredebug[#"random"].scorename = "<dev string:x5d>";
                 #/
                 point.score += randomfloatrange(0, 50);
                 if (isdefined(self.prevmovedir)) {
@@ -169,7 +168,7 @@ function state_combat_update(*params) {
                                 point._scoredebug[#"currentmovedir"] = spawnstruct();
                             }
                             point._scoredebug[#"currentmovedir"].score = randomfloatrange(50, 150);
-                            point._scoredebug[#"currentmovedir"].scorename = "<unknown string>";
+                            point._scoredebug[#"currentmovedir"].scorename = "<dev string:x67>";
                         #/
                         point.score += randomfloatrange(50, 150);
                     }
@@ -184,7 +183,7 @@ function state_combat_update(*params) {
             if (isdefined(best_point)) {
                 foundpath = self function_a57c34b7(best_point.origin, 0, 1);
             } else {
-                wait(1);
+                wait 1;
             }
             if (foundpath) {
                 self.prevmovedir = vectornormalize(best_point.origin - self.origin);
@@ -193,7 +192,7 @@ function state_combat_update(*params) {
                 pathfailcount = 0;
                 self vehicle_ai::waittill_pathing_done();
             } else {
-                wait(1);
+                wait 1;
             }
             continue;
         }
@@ -215,25 +214,25 @@ function state_combat_update(*params) {
                     detonate();
                 }
             }
-            wait(0.2);
-            profileNamedStart(#"");
+            wait 0.2;
+            pixbeginevent(#"");
             queryresult = positionquery_source_navigation(self.origin, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
-            profileNamedStop();
+            pixendevent();
             if (queryresult.data.size) {
                 point = queryresult.data[randomint(queryresult.data.size)];
                 self function_a57c34b7(point.origin, 0, 0);
                 self.current_pathto_pos = undefined;
                 self thread path_update_interrupt();
-                wait(2);
+                wait 2;
                 self notify(#"near_goal");
             }
         }
-        wait(0.2);
+        wait 0.2;
     }
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x78628059, Offset: 0x10e0
 // Size: 0x60a
 function hunt_enemy() {
@@ -241,9 +240,9 @@ function hunt_enemy() {
     targetpos = function_dcecac3c();
     if (isdefined(targetpos)) {
         if (distancesquared(self.origin, targetpos) > sqr(400) && self isposinclaimedlocation(targetpos)) {
-            profileNamedStart(#"");
+            pixbeginevent(#"");
             queryresult = positionquery_source_navigation(targetpos, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
-            profileNamedStop();
+            pixendevent();
             positionquery_filter_inclaimedlocation(queryresult, self.enemy);
             best_point = undefined;
             best_score = -999999;
@@ -256,7 +255,7 @@ function hunt_enemy() {
                         point._scoredebug[#"disttoorigin"] = spawnstruct();
                     }
                     point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
-                    point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
+                    point._scoredebug[#"disttoorigin"].scorename = "<dev string:x38>";
                 #/
                 point.score += mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                 /#
@@ -267,7 +266,7 @@ function hunt_enemy() {
                         point._scoredebug[#"heighttoorigin"] = spawnstruct();
                     }
                     point._scoredebug[#"heighttoorigin"].score = mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
-                    point._scoredebug[#"heighttoorigin"].scorename = "<unknown string>";
+                    point._scoredebug[#"heighttoorigin"].scorename = "<dev string:x79>";
                 #/
                 point.score += mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                 if (point.inclaimedlocation === 1) {
@@ -279,7 +278,7 @@ function hunt_enemy() {
                             point._scoredebug[#"inclaimedlocation"] = spawnstruct();
                         }
                         point._scoredebug[#"inclaimedlocation"].score = -500;
-                        point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
+                        point._scoredebug[#"inclaimedlocation"].scorename = "<dev string:x48>";
                     #/
                     point.score += -500;
                 }
@@ -310,14 +309,14 @@ function hunt_enemy() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x57d90e5a, Offset: 0x16f8
 // Size: 0x11e
 function prevent_stuck() {
     self endon(#"change_state", #"death");
     self notify(#"end_prevent_stuck");
     self endon(#"end_prevent_stuck");
-    wait(2);
+    wait 2;
     count = 0;
     previous_origin = undefined;
     while (true) {
@@ -330,12 +329,12 @@ function prevent_stuck() {
         if (count > 10) {
             detonate();
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2b717b37, Offset: 0x1820
 // Size: 0x14c
 function check_detonation_dist(origin, enemy) {
@@ -350,7 +349,7 @@ function check_detonation_dist(origin, enemy) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xee1d216b, Offset: 0x1978
 // Size: 0x23c
 function jump_detonate() {
@@ -359,7 +358,7 @@ function jump_detonate() {
     }
     self launchvehicle((0, 0, 1) * self.jumpforce, (0, 0, 0), 1);
     self.is_jumping = 1;
-    wait(0.4);
+    wait 0.4;
     for (time_to_land = 0.6; time_to_land > 0; time_to_land -= 0.05) {
         if (check_detonation_dist(self.origin, self.enemy)) {
             self detonate();
@@ -384,7 +383,7 @@ function jump_detonate() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9195b80, Offset: 0x1bc0
 // Size: 0xdc
 function detonate(attacker = self) {
@@ -397,14 +396,14 @@ function detonate(attacker = self) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x76b83e23, Offset: 0x1ca8
 // Size: 0x98
 function detonation_monitor() {
     self endon(#"death", #"change_state");
     lastenemy = undefined;
     while (true) {
-        wait(0.2);
+        wait 0.2;
         try_detonate();
         if (isdefined(self.var_345c5167)) {
             [[ self.var_345c5167 ]]();
@@ -415,7 +414,7 @@ function detonation_monitor() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6f777f03, Offset: 0x1d48
 // Size: 0x450
 function function_ded83def(lastenemy) {
@@ -462,7 +461,7 @@ function function_ded83def(lastenemy) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef4c8fe, Offset: 0x21a0
 // Size: 0x7c
 function function_47dbd72(bomb) {
@@ -477,7 +476,7 @@ function function_47dbd72(bomb) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x64537d8f, Offset: 0x2228
 // Size: 0x470
 function try_detonate() {
@@ -539,7 +538,7 @@ function try_detonate() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95f11788, Offset: 0x26a0
 // Size: 0x37c
 function function_dcecac3c() {
@@ -593,25 +592,25 @@ function function_dcecac3c() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4886deec, Offset: 0x2a28
 // Size: 0x364
 function path_update_interrupt() {
     self endon(#"death", #"change_state", #"near_goal", #"reached_end_node");
     self notify(#"path_update_interrupt");
     self endon(#"path_update_interrupt");
-    wait(0.1);
+    wait 0.1;
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
             if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
-                wait(0.5);
+                wait 0.5;
                 self notify(#"near_goal");
             }
             targetpos = function_dcecac3c();
             if (isdefined(targetpos)) {
                 if (distancesquared(self.origin, targetpos) > sqr(400)) {
                     repath_range = self.settings.repath_range * 2;
-                    wait(0.1);
+                    wait 0.1;
                 } else {
                     repath_range = self.settings.repath_range;
                 }
@@ -635,15 +634,15 @@ function path_update_interrupt() {
                 speedtouse = self.settings.defaultmovespeed;
                 self setspeed(speedtouse);
             }
-            wait(0.2);
+            wait 0.2;
             continue;
         }
-        wait(0.4);
+        wait 0.4;
     }
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x505b9ee4, Offset: 0x2d98
 // Size: 0xfa
 function function_bf16c9ed(*einflictor, eattacker, smeansofdeath, weapon) {
@@ -657,7 +656,7 @@ function function_bf16c9ed(*einflictor, eattacker, smeansofdeath, weapon) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1d1532d5, Offset: 0x2ea0
 // Size: 0x15c
 function detonate_sides(einflictor) {
@@ -697,7 +696,7 @@ function function_ec8d8bbc(einflictor, eattacker, idamage, *idflags, smeansofdea
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x30df6f9, Offset: 0x32f8
 // Size: 0xba
 function force_get_enemies() {
@@ -710,7 +709,7 @@ function force_get_enemies() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x59f9af2e, Offset: 0x33c0
 // Size: 0x8c
 function sndfunctions() {
@@ -725,7 +724,7 @@ function sndfunctions() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeedb5340, Offset: 0x3458
 // Size: 0x80
 function function_dd7a181d() {
@@ -739,7 +738,7 @@ function function_dd7a181d() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x58180d12, Offset: 0x34e0
 // Size: 0x130
 function function_2a91d5ee() {
@@ -760,12 +759,12 @@ function function_2a91d5ee() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8512a38, Offset: 0x3618
 // Size: 0x164
 function function_12857be3() {
     self endon(#"death");
-    wait(randomfloatrange(0.25, 1.5));
+    wait randomfloatrange(0.25, 1.5);
     if (isdefined(self.sndalias[#"spawn"])) {
         if (isdefined(self.enemy) && isdefined(self.enemy.team)) {
             foreach (player in level.players) {
@@ -780,7 +779,7 @@ function function_12857be3() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x38ebda85, Offset: 0x3788
 // Size: 0x34
 function isdrivableplayervehicle() {
@@ -792,7 +791,7 @@ function isdrivableplayervehicle() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ae150fe, Offset: 0x37c8
 // Size: 0x3c
 function do_death_fx() {

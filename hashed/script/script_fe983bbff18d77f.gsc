@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_7b68dad851540de;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai_shared;
 
 #namespace namespace_206491b4;
 
 // Namespace namespace_206491b4/tac
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1440ba78, Offset: 0xf0
 // Size: 0xcc
 function function_24b5e32(pos) {
@@ -23,7 +22,7 @@ function function_24b5e32(pos) {
 }
 
 // Namespace namespace_206491b4/tac
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9cc51dda, Offset: 0x1c8
 // Size: 0x1c0
 function findopenlookdir(from, radius = 256, mindist = 96) {
@@ -40,7 +39,7 @@ function findopenlookdir(from, radius = 256, mindist = 96) {
 }
 
 // Namespace namespace_206491b4/tac
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x218c7839, Offset: 0x390
 // Size: 0x7a
 function findclosestnonlospointwithinradius(center, radius, var_72cc3c18, var_465a4fd5, var_56d24f04, var_78b09589) {
@@ -49,7 +48,7 @@ function findclosestnonlospointwithinradius(center, radius, var_72cc3c18, var_46
 }
 
 // Namespace namespace_206491b4/tac
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x7e51de1, Offset: 0x418
 // Size: 0x4a
 function findclosestnonlospointwithinvolume(vol, var_72cc3c18, var_465a4fd5, var_56d24f04, var_78b09589) {
@@ -57,7 +56,7 @@ function findclosestnonlospointwithinvolume(vol, var_72cc3c18, var_465a4fd5, var
 }
 
 // Namespace namespace_206491b4/tac
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xc831e1da, Offset: 0x470
 // Size: 0x7a
 function findclosestlospointwithinradius(center, radius, var_72cc3c18, var_465a4fd5, var_56d24f04, var_78b09589) {
@@ -66,7 +65,7 @@ function findclosestlospointwithinradius(center, radius, var_72cc3c18, var_465a4
 }
 
 // Namespace namespace_206491b4/tac
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xae26b20e, Offset: 0x4f8
 // Size: 0x4a
 function findclosestlospointwithinvolume(vol, var_72cc3c18, var_465a4fd5, var_56d24f04, var_78b09589) {
@@ -74,7 +73,7 @@ function findclosestlospointwithinvolume(vol, var_72cc3c18, var_465a4fd5, var_56
 }
 
 // Namespace namespace_206491b4/tac
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0x16a25fbe, Offset: 0x550
 // Size: 0x238
 function private function_a4b83b6a(tacquery, space, var_72cc3c18, var_465a4fd5, var_56d24f04, var_78b09589) {
@@ -104,7 +103,7 @@ function private function_a4b83b6a(tacquery, space, var_72cc3c18, var_465a4fd5, 
 }
 
 // Namespace namespace_206491b4/tac
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7a307aac, Offset: 0x790
 // Size: 0x36
 function private goal_origin(goal) {

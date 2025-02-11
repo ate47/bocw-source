@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\visionset_mgr_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace oed;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd168f300, Offset: 0x208
 // Size: 0x2cc
 function private preinit() {
@@ -36,7 +35,7 @@ function private preinit() {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e3d9524, Offset: 0x4e0
 // Size: 0x7c
 function on_player_spawned(localclientnum) {
@@ -52,7 +51,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeb07c57, Offset: 0x568
 // Size: 0xc
 function on_localplayer_shutdown(*localclientnum) {
@@ -60,7 +59,7 @@ function on_localplayer_shutdown(*localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb8ce98fe, Offset: 0x580
 // Size: 0x5c
 function function_81c8f4da(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -68,7 +67,7 @@ function function_81c8f4da(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace oed/oed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x5b858e8a, Offset: 0x5e8
 // Size: 0x7c
 function hack_dni_fx(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -77,7 +76,7 @@ function hack_dni_fx(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap,
 }
 
 // Namespace oed/oed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1d81043f, Offset: 0x670
 // Size: 0x94
 function function_8305981d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -94,7 +93,7 @@ function function_8305981d(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace oed/oed
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3c34074f, Offset: 0x710
 // Size: 0x38
 function function_182c5d6b(*lcn, newval) {
@@ -103,25 +102,25 @@ function function_182c5d6b(*lcn, newval) {
 }
 
 // Namespace oed/oed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6db07d8b, Offset: 0x750
 // Size: 0xb4
 function function_fb942d18(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    assert(isdefined(self), "<unknown string>");
+    assert(isdefined(self), "<dev string:x38>");
     if (bwastimejump == 1) {
         self thread function_88883a8f(fieldname);
         return;
     }
-    self notify(#"hash_16a083f97a5204f3");
+    self notify(#"keyline_disabled");
     self function_e4f63ce7(fieldname);
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x316d10bc, Offset: 0x810
 // Size: 0x10c
 function private function_88883a8f(localclientnum) {
-    self endon(#"hash_16a083f97a5204f3");
+    self endon(#"keyline_disabled");
     if (function_73f4b33(localclientnum) === self.team || self.team === #"none" || self.script_team === #"any") {
         self function_67243557(localclientnum);
         if (isdefined(self)) {
@@ -135,11 +134,11 @@ function private function_88883a8f(localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x452908c6, Offset: 0x928
 // Size: 0x84
 function private function_67243557(localclientnum) {
-    self endon(#"death", #"hash_16a083f97a5204f3");
+    self endon(#"death", #"keyline_disabled");
     while (is_true(isigcactive(localclientnum))) {
         waitframe(1);
     }
@@ -147,7 +146,7 @@ function private function_67243557(localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x277cc3ae, Offset: 0x9b8
 // Size: 0x34
 function private function_e4f63ce7(*localclientnum) {
@@ -157,14 +156,14 @@ function private function_e4f63ce7(*localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x67b7f431, Offset: 0x9f8
 // Size: 0x222
 function function_f8588df3(localclientnum, var_80583f56, var_1ca727c) {
     if (!isdefined(self)) {
         return;
     }
-    self endon(#"death", #"disconnect", #"hash_16a083f97a5204f3");
+    self endon(#"death", #"disconnect", #"keyline_disabled");
     e_player = function_5c10bd79(localclientnum);
     self.var_cc9b9440 = 1;
     while (true) {
@@ -202,7 +201,7 @@ function function_f8588df3(localclientnum, var_80583f56, var_1ca727c) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf4f2acc1, Offset: 0xc28
 // Size: 0xe4
 function function_66d9f518(localclientnum) {
@@ -213,7 +212,7 @@ function function_66d9f518(localclientnum) {
     self function_a47e049d(localclientnum);
     if (isdefined(self)) {
         self thread function_f8588df3(localclientnum, &function_a47e049d, &function_ac5dfb21);
-        self waittill(#"death", #"hash_16a083f97a5204f3");
+        self waittill(#"death", #"keyline_disabled");
         if (isdefined(self)) {
             self function_ac5dfb21(localclientnum);
         }
@@ -221,7 +220,7 @@ function function_66d9f518(localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf4b87658, Offset: 0xd18
 // Size: 0xf4
 function private function_a47e049d(localclientnum) {
@@ -236,7 +235,7 @@ function private function_a47e049d(localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x764f23c8, Offset: 0xe18
 // Size: 0x64
 function private function_ac5dfb21(localclientnum) {
@@ -247,7 +246,7 @@ function private function_ac5dfb21(localclientnum) {
 }
 
 // Namespace oed/oed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3f01ff41, Offset: 0xe88
 // Size: 0x96
 function function_c2b3ec13(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -255,11 +254,11 @@ function function_c2b3ec13(localclientnum, *oldval, newval, *bnewent, *binitials
         self thread function_66d9f518(fieldname);
         return;
     }
-    self notify(#"hash_16a083f97a5204f3");
+    self notify(#"keyline_disabled");
 }
 
 // Namespace oed/oed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3e4bf0bd, Offset: 0xf28
 // Size: 0x2ee
 function vehicle_keyline_toggle(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -284,19 +283,19 @@ function vehicle_keyline_toggle(localclientnum, *oldval, newval, *bnewent, *bini
             var_ac85c33a thread function_39273849(0);
         }
     }
-    self notify(#"hash_16a083f97a5204f3");
+    self notify(#"keyline_disabled");
     self.var_4e2bc5fc = undefined;
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaeaa14cd, Offset: 0x1220
 // Size: 0xd6
 function function_39273849(b_disabled) {
-    self notify(#"hash_7faffd382697c916");
-    self endon(#"death", #"hash_7faffd382697c916");
+    self notify(#"render_override");
+    self endon(#"death", #"render_override");
     while (is_true(self.owner.var_4e2bc5fc)) {
-        wait(0.2);
+        wait 0.2;
     }
     if (b_disabled) {
         self stoprenderoverridebundle(#"hash_1cbf6d26721c59a7");

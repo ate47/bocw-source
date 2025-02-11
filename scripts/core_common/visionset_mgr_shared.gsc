@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
 
 #namespace visionset_mgr;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xff86a0ec, Offset: 0x160
 // Size: 0xb4
 function private preinit() {
@@ -30,11 +29,11 @@ function private preinit() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xd0985360, Offset: 0x220
 // Size: 0x172
 function register_info(type, name, version, priority, lerp_step_count, should_activate_per_player, lerp_thread, ref_count_lerp_thread) {
-    assert(level.vsmgr_initializing, "<unknown string>");
+    assert(level.vsmgr_initializing, "<dev string:x38>");
     lower_name = tolower(name);
     validate_info(type, lower_name, priority);
     add_sorted_name_key(type, lower_name);
@@ -47,7 +46,7 @@ function register_info(type, name, version, priority, lerp_step_count, should_ac
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xfec5cc56, Offset: 0x3a0
 // Size: 0x164
 function activate(type, name, player, opt_param_1, opt_param_2, opt_param_3) {
@@ -73,7 +72,7 @@ function activate(type, name, player, opt_param_1, opt_param_2, opt_param_3) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x68b1e594, Offset: 0x510
 // Size: 0x128
 function deactivate(type, name, player) {
@@ -96,7 +95,7 @@ function deactivate(type, name, player) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x934c57de, Offset: 0x640
 // Size: 0x94
 function set_state_active(player, lerp) {
@@ -113,7 +112,7 @@ function set_state_active(player, lerp) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcbfe73f6, Offset: 0x6e0
 // Size: 0x8c
 function set_state_inactive(player) {
@@ -138,7 +137,7 @@ function timeout_lerp_thread(timeout, *opt_param_2, *opt_param_3) {
     for (player_index = 0; player_index < players.size; player_index++) {
         self set_state_active(players[player_index], 1);
     }
-    wait(opt_param_3);
+    wait opt_param_3;
     deactivate(self.type, self.name);
 }
 
@@ -148,7 +147,7 @@ function timeout_lerp_thread(timeout, *opt_param_2, *opt_param_3) {
 // Size: 0x6c
 function timeout_lerp_thread_per_player(player, timeout, *opt_param_2, *opt_param_3) {
     self set_state_active(opt_param_2, 1);
-    wait(opt_param_3);
+    wait opt_param_3;
     deactivate_per_player(self.type, self.name, opt_param_2);
 }
 
@@ -215,7 +214,7 @@ function ramp_in_thread_per_player(player, duration) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc84cbf, Offset: 0xbc8
 // Size: 0x7e
 function ramp_in_out_thread_hold_func() {
@@ -229,7 +228,7 @@ function ramp_in_out_thread_hold_func() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf4f597ba, Offset: 0xc50
 // Size: 0x234
 function ramp_in_out_thread(ramp_in, full_period, ramp_out) {
@@ -250,7 +249,7 @@ function ramp_in_out_thread(ramp_in, full_period, ramp_out) {
     if (isfunctionptr(full_period)) {
         self [[ full_period ]]();
     } else {
-        wait(full_period);
+        wait full_period;
     }
     level notify(#"kill_ramp_in_out_thread_hold_func");
     start_time = gettime();
@@ -270,7 +269,7 @@ function ramp_in_out_thread(ramp_in, full_period, ramp_out) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x657637f1, Offset: 0xe90
 // Size: 0x1c4
 function ramp_in_out_thread_per_player_internal(player, ramp_in, full_period, ramp_out) {
@@ -288,7 +287,7 @@ function ramp_in_out_thread_per_player_internal(player, ramp_in, full_period, ra
     if (isfunctionptr(full_period)) {
         player [[ full_period ]]();
     } else {
-        wait(full_period);
+        wait full_period;
     }
     start_time = gettime();
     end_time = start_time + int(ramp_out * 1000);
@@ -304,7 +303,7 @@ function ramp_in_out_thread_per_player_internal(player, ramp_in, full_period, ra
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xee3e6678, Offset: 0x1060
 // Size: 0x9c
 function ramp_in_out_thread_watch_player_shutdown(player) {
@@ -327,7 +326,7 @@ function ramp_in_out_thread_per_player_death_shutdown(player, ramp_in, full_peri
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7a45366f, Offset: 0x1180
 // Size: 0x44
 function ramp_in_out_thread_per_player(player, ramp_in, full_period, ramp_out) {
@@ -335,7 +334,7 @@ function ramp_in_out_thread_per_player(player, ramp_in, full_period, ramp_out) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd085351b, Offset: 0x11d0
 // Size: 0x14c
 function register_type(type) {
@@ -352,7 +351,7 @@ function register_type(type) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5f7c5139, Offset: 0x1328
 // Size: 0x94
 function finalize_clientfields() {
@@ -363,11 +362,11 @@ function finalize_clientfields() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x624aa6e5, Offset: 0x13c8
 // Size: 0x234
 function finalize_type_clientfields() {
-    println("<unknown string>" + self.type + "<unknown string>");
+    println("<dev string:xb0>" + self.type + "<dev string:xc3>");
     if (1 >= self.info.size) {
         return;
     }
@@ -379,7 +378,7 @@ function finalize_type_clientfields() {
         if (self.info[self.sorted_name_keys[i]].lerp_bit_count > self.cf_lerp_bit_count) {
             self.cf_lerp_bit_count = self.info[self.sorted_name_keys[i]].lerp_bit_count;
         }
-        println("<unknown string>" + self.info[self.sorted_name_keys[i]].name + "<unknown string>" + self.info[self.sorted_name_keys[i]].version + "<unknown string>" + self.info[self.sorted_name_keys[i]].lerp_step_count + "<unknown string>");
+        println("<dev string:xde>" + self.info[self.sorted_name_keys[i]].name + "<dev string:xec>" + self.info[self.sorted_name_keys[i]].version + "<dev string:xfb>" + self.info[self.sorted_name_keys[i]].lerp_step_count + "<dev string:x112>");
     }
     clientfield::register("toplayer", self.cf_slot_name, self.highest_version, self.cf_slot_bit_count, "int");
     if (1 < self.cf_lerp_bit_count) {
@@ -388,7 +387,7 @@ function finalize_type_clientfields() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xede389e8, Offset: 0x1608
 // Size: 0x1e0
 function validate_info(type, name, priority) {
@@ -398,15 +397,15 @@ function validate_info(type, name, priority) {
             break;
         }
     }
-    assert(i < keys.size, "<unknown string>" + type + "<unknown string>");
+    assert(i < keys.size, "<dev string:x116>" + type + "<dev string:x132>");
     foreach (v in level.vsmgr[type].info) {
-        assert(v.name != name, "<unknown string>" + type + "<unknown string>" + name + "<unknown string>");
-        assert(v.priority != priority, "<unknown string>" + type + "<unknown string>" + priority + "<unknown string>" + name + "<unknown string>" + v.name + "<unknown string>");
+        assert(v.name != name, "<dev string:x141>" + type + "<dev string:x15f>" + name + "<dev string:x16c>");
+        assert(v.priority != priority, "<dev string:x141>" + type + "<dev string:x190>" + priority + "<dev string:x1a1>" + name + "<dev string:x1bb>" + v.name + "<dev string:x1ec>");
     }
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3bea4284, Offset: 0x17f0
 // Size: 0x94
 function add_sorted_name_key(type, name) {
@@ -419,7 +418,7 @@ function add_sorted_name_key(type, name) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x92cb3b7b, Offset: 0x1890
 // Size: 0xb4
 function add_sorted_priority_key(type, name, priority) {
@@ -432,7 +431,7 @@ function add_sorted_priority_key(type, name, priority) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x99c50953, Offset: 0x1950
 // Size: 0x15a
 function add_info(type, name, version, priority, lerp_step_count, should_activate_per_player, lerp_thread, ref_count_lerp_thread) {
@@ -458,7 +457,7 @@ function add_info(type, name, version, priority, lerp_step_count, should_activat
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x414302dd, Offset: 0x1ab8
 // Size: 0x1c
 function on_player_connect() {
@@ -466,7 +465,7 @@ function on_player_connect() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x28919351, Offset: 0x1ae0
 // Size: 0x218
 function player_setup() {
@@ -489,7 +488,7 @@ function player_setup() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd42b918f, Offset: 0x1d00
 // Size: 0x144
 function player_shutdown() {
@@ -508,7 +507,7 @@ function player_shutdown() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe7a04f81, Offset: 0x1e50
 // Size: 0x19e
 function monitor() {
@@ -537,7 +536,7 @@ function monitor() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0a2f999, Offset: 0x1ff8
 // Size: 0xb2
 function get_first_active_name(type_struct) {
@@ -555,7 +554,7 @@ function get_first_active_name(type_struct) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xee08605f, Offset: 0x20b8
 // Size: 0xf4
 function update_clientfields(player, type_struct) {
@@ -573,7 +572,7 @@ function update_clientfields(player, type_struct) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7dbe47d1, Offset: 0x21b8
 // Size: 0x5c
 function lerp_thread_wrapper(func, opt_param_1, opt_param_2, opt_param_3) {
@@ -583,7 +582,7 @@ function lerp_thread_wrapper(func, opt_param_1, opt_param_2, opt_param_3) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x731bf441, Offset: 0x2220
 // Size: 0xc2
 function lerp_thread_per_player_wrapper(func, player, opt_param_1, opt_param_2, opt_param_3) {
@@ -598,7 +597,7 @@ function lerp_thread_per_player_wrapper(func, player, opt_param_1, opt_param_2, 
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xb741ba0a, Offset: 0x22f0
 // Size: 0x11c
 function activate_per_player(type, name, player, opt_param_1, opt_param_2, opt_param_3) {
@@ -621,7 +620,7 @@ function activate_per_player(type, name, player, opt_param_1, opt_param_2, opt_p
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6ccb9fc2, Offset: 0x2418
 // Size: 0x132
 function deactivate_per_player(type, name, player) {
@@ -648,7 +647,7 @@ function deactivate_per_player(type, name, player) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x35cfc64a, Offset: 0x2558
 // Size: 0x92
 function calc_ramp_in_lerp(start_time, end_time) {
@@ -661,7 +660,7 @@ function calc_ramp_in_lerp(start_time, end_time) {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3d385421, Offset: 0x25f8
 // Size: 0x8a
 function calc_remaining_duration_lerp(start_time, end_time) {

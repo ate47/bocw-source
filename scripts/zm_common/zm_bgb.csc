@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_bgb_pack.csc;
-#using scripts\zm_common\load.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\load;
+#using scripts\zm_common\zm_bgb_pack;
 
 #namespace bgb;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x603c0162, Offset: 0x248
 // Size: 0x2dc
 function private preinit() {
@@ -40,7 +39,7 @@ function private preinit() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc344172, Offset: 0x530
 // Size: 0x44
 function private postinit() {
@@ -52,7 +51,7 @@ function private postinit() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8d0b7c23, Offset: 0x580
 // Size: 0x1a0
 function force_stream() {
@@ -64,7 +63,7 @@ function force_stream() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf1aa9189, Offset: 0x728
 // Size: 0x3c
 function private on_player_connect(localclientnum) {
@@ -75,7 +74,7 @@ function private on_player_connect(localclientnum) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x825baaa7, Offset: 0x770
 // Size: 0x48
 function private bgb_player_init(localclientnum) {
@@ -86,7 +85,7 @@ function private bgb_player_init(localclientnum) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x15436ac0, Offset: 0x7c0
 // Size: 0x2c8
 function private bgb_finalize() {
@@ -104,7 +103,7 @@ function private bgb_finalize() {
         var_ddcb67f4 = getunlockableiteminfofromindex(v.item_index, 2);
         var_5415dfb9 = function_b143666d(v.item_index, 2);
         if (!isdefined(var_ddcb67f4) || !isdefined(var_5415dfb9)) {
-            println("<unknown string>" + v.name + "<unknown string>");
+            println("<dev string:x38>" + v.name + "<dev string:x4a>");
             continue;
         }
         if (!isdefined(var_5415dfb9.bgbrarity)) {
@@ -128,17 +127,17 @@ function private bgb_finalize() {
 // Checksum 0xffae19c2, Offset: 0xa90
 // Size: 0x142
 function register(name, limit_type) {
-    assert(isdefined(name), "<unknown string>");
-    assert(#"none" != name, "<unknown string>" + #"none" + "<unknown string>");
-    assert(!isdefined(level.bgb[name]), "<unknown string>" + name + "<unknown string>");
-    assert(isdefined(limit_type), "<unknown string>" + name + "<unknown string>");
+    assert(isdefined(name), "<dev string:x7b>");
+    assert(#"none" != name, "<dev string:xa4>" + #"none" + "<dev string:xc9>");
+    assert(!isdefined(level.bgb[name]), "<dev string:x103>" + name + "<dev string:x11d>");
+    assert(isdefined(limit_type), "<dev string:x103>" + name + "<dev string:x13e>");
     level.bgb[name] = spawnstruct();
     level.bgb[name].name = name;
     level.bgb[name].limit_type = limit_type;
 }
 
 // Namespace bgb/zm_bgb
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x47f6903c, Offset: 0xbe0
 // Size: 0x19c
 function private function_5e7b3f16(localclientnum, time) {
@@ -166,14 +165,14 @@ function private function_5e7b3f16(localclientnum, time) {
         return;
     }
     self setcontrollerlightbarcolor(localclientnum, color);
-    wait(time);
+    wait time;
     if (isdefined(self)) {
         self setcontrollerlightbarcolor(localclientnum);
     }
 }
 
 // Namespace bgb/zm_bgb
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x9d03c8b8, Offset: 0xd88
 // Size: 0x74
 function private function_d9afd5ee(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -182,7 +181,7 @@ function private function_d9afd5ee(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace bgb/zm_bgb
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6e62a5c, Offset: 0xe08
 // Size: 0x6a
 function private function_f4763ffe(localclientnum, fx) {
@@ -195,7 +194,7 @@ function private function_f4763ffe(localclientnum, fx) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x7f855f6c, Offset: 0xe80
 // Size: 0x8c
 function private bgb_blow_bubble(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

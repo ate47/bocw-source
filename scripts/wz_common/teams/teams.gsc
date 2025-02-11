@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\hud.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\mp_common\teams\teams;
+#using scripts\wz_common\hud;
 
 #namespace teams;
 
 // Namespace teams/teams
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf71ee4bd, Offset: 0xc0
 // Size: 0x62
 function private function_74a8f2ed(var_d3ba512b, var_c0856555) {
@@ -22,7 +21,7 @@ function private function_74a8f2ed(var_d3ba512b, var_c0856555) {
 }
 
 // Namespace teams/teams
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfae5b876, Offset: 0x130
 // Size: 0x2bc
 function function_f1394038() {
@@ -50,7 +49,7 @@ function function_f1394038() {
 }
 
 // Namespace teams/teams
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd400315d, Offset: 0x3f8
 // Size: 0xe6
 function function_94203702(*team, players) {
@@ -69,7 +68,7 @@ function function_94203702(*team, players) {
 }
 
 // Namespace teams/teams
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x472350ec, Offset: 0x4e8
 // Size: 0xa4
 function function_7e309c84(*team, players) {
@@ -81,7 +80,7 @@ function function_7e309c84(*team, players) {
 }
 
 // Namespace teams/teams
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x316067c1, Offset: 0x598
 // Size: 0xa4
 function function_3915e148(*team, players) {
@@ -93,7 +92,7 @@ function function_3915e148(*team, players) {
 }
 
 // Namespace teams/teams
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xac3c9382, Offset: 0x648
 // Size: 0x14e
 function function_39971b81(var_d3ba512b, var_c0856555) {
@@ -125,7 +124,7 @@ function function_39971b81(var_d3ba512b, var_c0856555) {
 }
 
 // Namespace teams/teams
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x68f8810c, Offset: 0x7a0
 // Size: 0x1e2
 function function_c7eae573() {
@@ -144,7 +143,7 @@ function function_c7eae573() {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc9d63cc5, Offset: 0x990
 // Size: 0x4a
 function function_c2f2fb84(var_d72df62) {
@@ -158,7 +157,7 @@ function function_c2f2fb84(var_d72df62) {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc1e7211, Offset: 0x9e8
 // Size: 0x100
 function function_5fed3908(team) {
@@ -175,7 +174,7 @@ function function_5fed3908(team) {
 }
 
 // Namespace teams/teams
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa6cef08b, Offset: 0xaf0
 // Size: 0x170
 function team_eliminated(team, var_293493b) {
@@ -192,11 +191,11 @@ function team_eliminated(team, var_293493b) {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d0bedaf, Offset: 0xc68
 // Size: 0x38
 function function_9498e451(*team) {
-    wait(1);
+    wait 1;
     while (is_true(level.var_fec861a7)) {
         waitframe(1);
     }

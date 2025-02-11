@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
+#using scripts\core_common\util_shared;
 
 #namespace zombie_death;
 
@@ -17,12 +16,12 @@ function autoexec init_fire_fx() {
 }
 
 // Namespace zombie_death/zombie_death
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3c3adc8c, Offset: 0x1c0
 // Size: 0xf8
 function on_fire_timeout(localclientnum) {
     self endon(#"death");
-    wait(12);
+    wait 12;
     if (isdefined(self) && isalive(self)) {
         self.is_on_fire = 0;
         self notify(#"stop_flame_damage");
@@ -63,11 +62,11 @@ function flame_death_fx(localclientnum) {
             self.firefx[self.firefx.size] = util::playfxontag(localclientnum, level._effect[#"character_fire_death_torso"], self, fire_tag);
         }
     } else {
-        println("<unknown string>");
+        println("<dev string:x38>");
     }
     if (isdefined(level._effect) && isdefined(level._effect[#"character_fire_death_sm"])) {
         if (self.archetype !== "parasite" && self.archetype !== "raps") {
-            wait(1);
+            wait 1;
             tagarray = [];
             tagarray[0] = "J_Elbow_LE";
             tagarray[1] = "J_Elbow_RI";
@@ -75,7 +74,7 @@ function flame_death_fx(localclientnum) {
             tagarray[3] = "J_Knee_LE";
             tagarray = randomize_array(tagarray);
             self.firefx[self.firefx.size] = util::playfxontag(localclientnum, level._effect[#"character_fire_death_sm"], self, tagarray[0]);
-            wait(1);
+            wait 1;
             tagarray[0] = "J_Wrist_RI";
             tagarray[1] = "J_Wrist_LE";
             if (!is_true(self.missinglegs)) {
@@ -88,11 +87,11 @@ function flame_death_fx(localclientnum) {
         }
         return;
     }
-    println("<unknown string>");
+    println("<dev string:xda>");
 }
 
 // Namespace zombie_death/zombie_death
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x746ec1c1, Offset: 0x6c8
 // Size: 0x7e
 function randomize_array(array) {

@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
 #using script_7a8059ca02b7b09e;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\loadout_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\debug_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bb_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\bb_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\debug_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\loadout_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weaponobjects;
 
 #namespace weapons;
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a8ddca4, Offset: 0x2c0
 // Size: 0x394
 function init_shared() {
@@ -58,7 +57,7 @@ function init_shared() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d52143b, Offset: 0x660
 // Size: 0x14
 function function_6916626d() {
@@ -66,7 +65,7 @@ function function_6916626d() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe176f874, Offset: 0x680
 // Size: 0x184
 function init() {
@@ -90,7 +89,7 @@ function init() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9bf08f, Offset: 0x810
 // Size: 0x192
 function function_4fddf732() {
@@ -121,7 +120,7 @@ function function_4fddf732() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x426a6a28, Offset: 0x9b0
 // Size: 0x74
 function on_player_connect() {
@@ -136,7 +135,7 @@ function on_player_connect() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdb7237b6, Offset: 0xa30
 // Size: 0x74
 function on_player_spawned() {
@@ -149,7 +148,7 @@ function on_player_spawned() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdd13338, Offset: 0xab0
 // Size: 0x4c
 function function_878d649f(player) {
@@ -184,7 +183,7 @@ function event_handler[weapon_change] function_edc4ebe8(eventstruct) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b023762, Offset: 0xc28
 // Size: 0x15e
 function may_drop(weapon) {
@@ -226,7 +225,7 @@ function may_drop(weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e389b02, Offset: 0xd90
 // Size: 0x8e
 function function_fe1f5cc() {
@@ -240,7 +239,7 @@ function function_fe1f5cc() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc27adfbf, Offset: 0xe28
 // Size: 0x4e
 function function_2be39078(last_weapon) {
@@ -257,7 +256,7 @@ function function_2be39078(last_weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6c83e361, Offset: 0xe80
 // Size: 0x3c4
 function function_d571ac59(last_weapon = undefined, immediate = 0, awayfromball = 0, var_81af68a5 = 0) {
@@ -320,7 +319,7 @@ function function_d571ac59(last_weapon = undefined, immediate = 0, awayfromball 
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe6c443d, Offset: 0x1250
 // Size: 0x192
 function update_last_held_weapon_timings(newtime, var_d75fdbe3 = self.currentweapon) {
@@ -339,7 +338,7 @@ function update_last_held_weapon_timings(newtime, var_d75fdbe3 = self.currentwea
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfd3bc53f, Offset: 0x13f0
 // Size: 0x3e8
 function update_timings(newtime) {
@@ -400,7 +399,7 @@ function update_timings(newtime) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd328ac7b, Offset: 0x17e0
 // Size: 0xa4
 function on_death(*params) {
@@ -414,7 +413,7 @@ function on_death(*params) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd4300752, Offset: 0x1890
 // Size: 0x18a
 function private function_220ea8ba() {
@@ -437,18 +436,18 @@ function private function_220ea8ba() {
             continue;
         }
         waittillframeend();
-        profileNamedStart(#"");
+        pixbeginevent(#"");
         info = level.var_c5a37526[0];
         if (function_c44bf23e(info)) {
             info.victim function_6cf6f3fb(info.attacker, info.sweapon, info.smeansofdeath, info.damage, info.var_1940b58e, info);
         }
         arrayremoveindex(level.var_c5a37526, 0, 0);
-        profileNamedStop();
+        pixendevent();
     }
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1fd00fb3, Offset: 0x1a28
 // Size: 0x5e
 function private function_c44bf23e(info) {
@@ -465,7 +464,7 @@ function private function_c44bf23e(info) {
 }
 
 // Namespace weapons/weapons
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x1163b363, Offset: 0x1a90
 // Size: 0x22c
 function drop_for_death(attacker, sweapon, smeansofdeath, damage, var_1940b58e = 1) {
@@ -504,7 +503,7 @@ function drop_for_death(attacker, sweapon, smeansofdeath, damage, var_1940b58e =
 }
 
 // Namespace weapons/weapons
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0xad64f558, Offset: 0x1cc8
 // Size: 0x644
 function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, var_1940b58e = 1, var_8211a4fa) {
@@ -521,7 +520,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     if (!isdefined(weapon)) {
         /#
             if (getdvarint(#"scr_dropdebug", 0) == 1) {
-                println("<unknown string>");
+                println("<dev string:x38>");
             }
         #/
         return;
@@ -529,7 +528,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     if (weapon == level.weaponnone) {
         /#
             if (getdvarint(#"scr_dropdebug", 0) == 1) {
-                println("<unknown string>");
+                println("<dev string:x5b>");
             }
         #/
         return;
@@ -537,7 +536,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     if (!self hasweapon(weapon)) {
         /#
             if (getdvarint(#"scr_dropdebug", 0) == 1) {
-                println("<unknown string>" + weapon.name + "<unknown string>");
+                println("<dev string:x81>" + weapon.name + "<dev string:xb0>");
             }
         #/
         return;
@@ -545,7 +544,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     if (!(isdefined(var_8211a4fa.anyammoforweaponmodes) ? var_8211a4fa.anyammoforweaponmodes : self anyammoforweaponmodes(weapon))) {
         /#
             if (getdvarint(#"scr_dropdebug", 0) == 1) {
-                println("<unknown string>");
+                println("<dev string:xb5>");
             }
         #/
         return;
@@ -562,7 +561,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     if (!clip_and_stock_ammo && !is_true(weapon.unlimitedammo)) {
         /#
             if (getdvarint(#"scr_dropdebug", 0) == 1) {
-                println("<unknown string>");
+                println("<dev string:xe5>");
             }
         #/
         return;
@@ -577,19 +576,19 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     item = self dropitem(weapon);
     if (!isdefined(item)) {
         /#
-            iprintlnbold("<unknown string>" + weapon.name);
+            iprintlnbold("<dev string:x104>" + weapon.name);
         #/
         return;
     }
     /#
         if (getdvarint(#"scr_dropdebug", 0) == 1) {
-            println("<unknown string>" + weapon.name);
+            println("<dev string:x12e>" + weapon.name);
         }
         if (!isdefined(item.model) || item.model == #"") {
-            iprintlnbold("<unknown string>" + weapon.name);
+            iprintlnbold("<dev string:x142>" + weapon.name);
         }
         if (!item hasdobj()) {
-            iprintlnbold("<unknown string>" + weapon.name);
+            iprintlnbold("<dev string:x165>" + weapon.name);
         }
     #/
     self dropweaponfordeathlaunch(item, damage, self.angles, weapon, 1, 1, smeansofdeath);
@@ -614,7 +613,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf3e9436a, Offset: 0x2318
 // Size: 0x8e
 function function_388f7cf7() {
@@ -630,7 +629,7 @@ function function_388f7cf7() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x57afaa36, Offset: 0x23b0
 // Size: 0x1ac
 function function_d2c66128(origin) {
@@ -657,12 +656,12 @@ function function_d2c66128(origin) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc65283b1, Offset: 0x2568
 // Size: 0x5c
 function delete_pickup_after_awhile() {
     self endon(#"death");
-    wait(60);
+    wait 60;
     if (!isdefined(self)) {
         return;
     }
@@ -671,7 +670,7 @@ function delete_pickup_after_awhile() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcdffc560, Offset: 0x25d0
 // Size: 0x414
 function watch_pickup() {
@@ -701,7 +700,7 @@ function watch_pickup() {
     }
     /#
         if (getdvarint(#"scr_dropdebug", 0) == 1) {
-            println("<unknown string>" + weapon.name + "<unknown string>" + isdefined(self.ownersattacker));
+            println("<dev string:x187>" + weapon.name + "<dev string:x19d>" + isdefined(self.ownersattacker));
         }
     #/
     assert(isdefined(player.tookweaponfrom));
@@ -769,7 +768,7 @@ function event_handler[weapon_melee_charge] function_9847a517(eventstruct) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x548866d6, Offset: 0x2ad8
 // Size: 0x310
 function function_f2c53bb2(curweapon) {
@@ -829,11 +828,11 @@ function function_f2c53bb2(curweapon) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3b88095, Offset: 0x2df0
 // Size: 0x4cc
 function track_fire(curweapon) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     shotsfired = 1;
     if (1 < curweapon.shotcount) {
         shotsfired *= curweapon.shotcount;
@@ -880,11 +879,11 @@ function track_fire(curweapon) {
         }
         self.var_88f25284 = 1;
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3af3fc55, Offset: 0x32c8
 // Size: 0x4c
 function function_b1d41bd5(weapon, damagedone) {
@@ -892,7 +891,7 @@ function function_b1d41bd5(weapon, damagedone) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf231471e, Offset: 0x3320
 // Size: 0x4c
 function on_end_game() {
@@ -946,7 +945,7 @@ function event_handler[missile_fire] function_f075cefa(eventstruct) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x30179e91, Offset: 0x3548
 // Size: 0x34
 function watch_missile_death() {
@@ -955,7 +954,7 @@ function watch_missile_death() {
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x618fa5b0, Offset: 0x3588
 // Size: 0xe6
 function drop_all_to_ground(origin, radius) {
@@ -982,7 +981,7 @@ function drop_grenades_to_ground(origin, radius) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x36875c04, Offset: 0x3738
 // Size: 0xf6
 function watch_grenade_cancel() {
@@ -1008,7 +1007,7 @@ function watch_grenade_cancel() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xce93f32c, Offset: 0x3838
 // Size: 0x1c4
 function watch_offhand_end(weapon) {
@@ -1035,7 +1034,7 @@ function watch_offhand_end(weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x29c5b57e, Offset: 0x3a08
 // Size: 0x66
 function function_2d96f300(weapon) {
@@ -1050,7 +1049,7 @@ function function_2d96f300(weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xec28628, Offset: 0x3a78
 // Size: 0x90
 function function_6dafe6d6(grenade, weapon) {
@@ -1066,7 +1065,7 @@ function function_6dafe6d6(grenade, weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x564ac026, Offset: 0x3b10
 // Size: 0x564
 function begin_grenade_tracking() {
@@ -1210,7 +1209,7 @@ function event_handler[grenade_launcher_fire] function_aa7da3a(eventstruct) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3982101e, Offset: 0x4370
 // Size: 0x44
 function function_43ec7f33(*str_notify) {
@@ -1222,7 +1221,7 @@ function function_43ec7f33(*str_notify) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7417079, Offset: 0x43c0
 // Size: 0x116
 function function_5ed178fd(parentent) {
@@ -1242,7 +1241,7 @@ function function_5ed178fd(parentent) {
 }
 
 // Namespace weapons/weapons
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xac6b8e24, Offset: 0x44e0
 // Size: 0x37a
 function check_stuck_to_player(deleteonteamchange, awardscoreevent, weapon, var_c49b0e24 = 200) {
@@ -1279,7 +1278,7 @@ function check_stuck_to_player(deleteonteamchange, awardscoreevent, weapon, var_
                 scoreevents::processscoreevent(#"cluster_semtex_stick", self.originalowner, player, weapon);
                 self.originalowner contracts::increment_contract(#"hash_2a588f6e2e49309");
                 if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
-                    self.originalowner stats::function_622feb0d(weapon.name, #"hash_565fa79e6e0f4513", 1);
+                    self.originalowner stats::function_622feb0d(weapon.name, #"semtex_sticks", 1);
                     self.originalowner stats::function_622feb0d(weapon.name, #"hash_14d32aad854916ec", 1);
                 }
             }
@@ -1289,7 +1288,7 @@ function check_stuck_to_player(deleteonteamchange, awardscoreevent, weapon, var_
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3e917b70, Offset: 0x4868
 // Size: 0x46
 function check_hatchet_bounce() {
@@ -1299,7 +1298,7 @@ function check_hatchet_bounce() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x19867188, Offset: 0x48b8
 // Size: 0xb2
 function stuck_to_player_team_change(player) {
@@ -1321,14 +1320,14 @@ function stuck_to_player_team_change(player) {
 // Size: 0x44
 function wait_and_delete_dud(waittime) {
     self endon(#"death");
-    wait(waittime);
+    wait waittime;
     if (isdefined(self)) {
         self delete();
     }
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x476ef983, Offset: 0x49c8
 // Size: 0x24
 function gettimefromlevelstart() {
@@ -1339,7 +1338,7 @@ function gettimefromlevelstart() {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xe3aa0ee9, Offset: 0x49f8
 // Size: 0x174
 function turn_grenade_into_a_dud(weapon, isthrowngrenade, player) {
@@ -1364,7 +1363,7 @@ function turn_grenade_into_a_dud(weapon, isthrowngrenade, player) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x11aceeb6, Offset: 0x4b78
 // Size: 0x54
 function function_c135199b(params) {
@@ -1374,7 +1373,7 @@ function function_c135199b(params) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc5beb260, Offset: 0x4bd8
 // Size: 0x84
 function on_grenade_fired(params) {
@@ -1385,7 +1384,7 @@ function on_grenade_fired(params) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x97a5b827, Offset: 0x4c68
 // Size: 0xcc
 function function_4b7977fe(params) {
@@ -1480,7 +1479,7 @@ function get_damageable_ents(pos, radius, dolos, startradius) {
 }
 
 // Namespace weapons/weapons
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x301dcf26, Offset: 0x5260
 // Size: 0x64
 function damage_trace_passed(from, to, startradius, ignore) {
@@ -1489,7 +1488,7 @@ function damage_trace_passed(from, to, startradius, ignore) {
 }
 
 // Namespace weapons/weapons
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x46677008, Offset: 0x52d0
 // Size: 0x1d8
 function damage_trace(from, to, startradius, ignore) {
@@ -1538,7 +1537,7 @@ function damage_ent(einflictor, eattacker, idamage, smeansofdeath, weapon, damag
 }
 
 // Namespace weapons/weapons
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9211ec2d, Offset: 0x5628
 // Size: 0x132
 function on_damage(eattacker, einflictor, weapon, meansofdeath, damage) {
@@ -1575,17 +1574,17 @@ function play_concussion_sound(duration) {
     concussionsound playsound(#"");
     concussionsound playloopsound(#"");
     if (duration > 0.5) {
-        wait(duration - 0.5);
+        wait duration - 0.5;
     }
     concussionsound playsound(#"");
     concussionsound stoploopsound(0.5);
-    wait(0.5);
+    wait 0.5;
     concussionsound notify(#"delete");
     concussionsound delete();
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4fd48105, Offset: 0x58d8
 // Size: 0x4c
 function delete_ent_on_owner_death(owner) {
@@ -1630,7 +1629,7 @@ function function_8f148257(weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x723b84ec, Offset: 0x5a60
 // Size: 0x3cc
 function on_weapon_change(params) {
@@ -1715,7 +1714,7 @@ function loadout_get_offhand_count(stat) {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe447b636, Offset: 0x5ec0
 // Size: 0x66c
 function scavenger_think() {
@@ -1804,7 +1803,7 @@ function scavenger_think() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x198a4ad3, Offset: 0x6538
 // Size: 0x14c
 function drop_scavenger_for_death(attacker) {
@@ -1834,7 +1833,7 @@ function drop_scavenger_for_death(attacker) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2049eb16, Offset: 0x6690
 // Size: 0x5a
 function add_limited_weapon(weapon, owner, num_drops) {
@@ -1845,7 +1844,7 @@ function add_limited_weapon(weapon, owner, num_drops) {
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6a0e5e84, Offset: 0x66f8
 // Size: 0x6a
 function should_drop_limited_weapon(weapon, owner) {
@@ -1863,7 +1862,7 @@ function should_drop_limited_weapon(weapon, owner) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd76a0c35, Offset: 0x6770
 // Size: 0x8c
 function drop_limited_weapon(weapon, owner, item) {
@@ -1880,7 +1879,7 @@ function drop_limited_weapon(weapon, owner, item) {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94c028e2, Offset: 0x6808
 // Size: 0x6a
 function limited_pickup(limited_info) {
@@ -1893,12 +1892,12 @@ function limited_pickup(limited_info) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7e0ea894, Offset: 0x6880
 // Size: 0x7c
 function track_cooked_detonation(attacker, weapon, cooktime) {
     self endon(#"trophy_destroyed");
-    wait(float(weapon.fusetime) / 1000);
+    wait float(weapon.fusetime) / 1000;
     if (!isdefined(self)) {
         return;
     }
@@ -1906,7 +1905,7 @@ function track_cooked_detonation(attacker, weapon, cooktime) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x64752fd, Offset: 0x6908
 // Size: 0x1d4
 function ninebang_doninebang(attacker, weapon, cooktime) {
@@ -1919,7 +1918,7 @@ function ninebang_doninebang(attacker, weapon, cooktime) {
     if (!cookstages) {
         cookstages = 3;
     }
-    wait(float(weapon.fusetime) / 1000);
+    wait float(weapon.fusetime) / 1000;
     for (i = 0; i < cookstages; i++) {
         if (!isdefined(self)) {
             return;
@@ -1929,10 +1928,10 @@ function ninebang_doninebang(attacker, weapon, cooktime) {
         }
         attacker magicgrenadeplayer(weapon.grenadeweapon, self.origin, (0, 0, 0));
         if ((i + 1) % 3 == 0) {
-            wait(var_9729fdb9);
+            wait var_9729fdb9;
             continue;
         }
-        wait(intervaltime);
+        wait intervaltime;
     }
     if (isdefined(self)) {
         self delete();
@@ -1940,7 +1939,7 @@ function ninebang_doninebang(attacker, weapon, cooktime) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf4d1037f, Offset: 0x6ae8
 // Size: 0x254
 function track_multi_detonation(ownerent, weapon, *cooktime) {
@@ -1971,7 +1970,7 @@ function track_multi_detonation(ownerent, weapon, *cooktime) {
 }
 
 // Namespace weapons/weapons
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x62efd576, Offset: 0x6d48
 // Size: 0x18a
 function multi_detonation_get_cluster_launch_dir(weapon, index, multival, normal) {
@@ -2005,7 +2004,7 @@ function event_handler[grenade_stuck] function_5c5941ef(eventstruct) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x82efdbbd, Offset: 0x6f60
 // Size: 0x47e
 function function_356292be(owner, origin, radius) {
@@ -2100,20 +2099,20 @@ function function_830e007d() {
 }
 
 // Namespace weapons/weapons
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa6479867, Offset: 0x74b8
 // Size: 0x38c
 function dropweaponfordeathlaunch(item, damage, angles, weapon, var_a5baf64e, var_6f02cffb, smeansofdeath) {
     if (!isdefined(item)) {
-        println("<unknown string>");
+        println("<dev string:x1a3>");
         return;
     }
     if (!isdefined(item.model) || item.model == #"") {
-        println("<unknown string>" + weapon.name);
+        println("<dev string:x1dc>" + weapon.name);
         return;
     }
     if (!item hasdobj()) {
-        println("<unknown string>" + weapon.name);
+        println("<dev string:x212>" + weapon.name);
         return;
     }
     if (smeansofdeath === "MOD_EXECUTION") {

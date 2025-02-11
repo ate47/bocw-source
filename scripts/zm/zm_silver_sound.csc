@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\struct;
 
 #namespace zm_silver_sound;
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf8b85815, Offset: 0x170
 // Size: 0x4c
 function init() {
@@ -15,14 +14,14 @@ function init() {
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x41294a64, Offset: 0x1c8
 // Size: 0xfc
 function function_12b1d8eb() {
-    wait(1);
+    wait 1;
     audio::playloopat("mus_underscore_aboveground_loop_0", (0, 0, 0));
     audio::playloopat("mus_underscore_belowground_loop_0", (0, 0, 0));
-    audio::playloopat(#"hash_777121e5cd64435d", (156, 2017, -211));
+    audio::playloopat(#"amb_computer", (156, 2017, -211));
     function_5ea2c6e3("mute_underscore_aboveground", 0);
     function_5ea2c6e3("mute_underscore_belowground", 0);
     level waittill(#"end_game");
@@ -40,7 +39,7 @@ function startzmbspawnersoundloops() {
         delay = 0;
         /#
             if (getdvarint(#"debug_audio", 0) > 0) {
-                println("<unknown string>" + loopers.size + "<unknown string>");
+                println("<dev string:x38>" + loopers.size + "<dev string:x73>");
             }
         #/
         for (i = 0; i < loopers.size; i++) {
@@ -57,13 +56,13 @@ function startzmbspawnersoundloops() {
     }
     /#
         if (getdvarint(#"debug_audio", 0) > 0) {
-            println("<unknown string>");
+            println("<dev string:x81>");
         }
     #/
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf5109c88, Offset: 0x448
 // Size: 0x18a
 function soundloopthink() {
@@ -100,27 +99,27 @@ function soundloopthink() {
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x81f24aba, Offset: 0x5e0
 // Size: 0x194
 function function_91c6e82a() {
     level waittill(#"power_on");
     playsound(0, #"hash_507a8d3d4874b9ca", (984, -658, -207));
-    wait(0.25);
+    wait 0.25;
     playsound(0, #"hash_61832f7330aa03c", (524, -84, -268));
     playsound(0, #"hash_129c564608f837b6", (524, -84, -268));
-    wait(0.1);
+    wait 0.1;
     playsound(0, #"hash_487cbd8d6e939533", (524, -84, -268));
-    wait(0.4);
+    wait 0.4;
     playsound(0, #"hash_43dad678bc35ddb7", (524, -84, -268));
-    wait(0.5);
+    wait 0.5;
     playsound(0, #"hash_43dad678bc35ddb7", (-744, -1392, -322));
-    wait(0.5);
+    wait 0.5;
     playsound(0, #"hash_43dad678bc35ddb7", (1641, 970, -360));
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x60fb945e, Offset: 0x780
 // Size: 0x74
 function function_2f3017ad(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -132,7 +131,7 @@ function function_2f3017ad(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf08c1a0e, Offset: 0x800
 // Size: 0x1bc
 function function_21fee83f(var_c4f44e2) {
@@ -159,7 +158,7 @@ function function_21fee83f(var_c4f44e2) {
     level.var_4157094 = var_c4f44e2;
     if (!level.var_c5cba082) {
         if (n_start_delay > 0) {
-            wait(n_start_delay);
+            wait n_start_delay;
         }
         if (var_c4f44e2 === 0) {
             function_672403ca("mute_underscore_aboveground", 5, 0);
@@ -172,7 +171,7 @@ function function_21fee83f(var_c4f44e2) {
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6de6ddd1, Offset: 0x9c8
 // Size: 0x3c
 function function_1493eabf() {

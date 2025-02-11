@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\status_effects\status_effect_explosive_damage.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\abilities\gadgets\gadget_health_regen.gsc;
+#using scripts\abilities\gadgets\gadget_health_regen;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\status_effects\status_effect_explosive_damage;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace healthoverlay;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb48e2840, Offset: 0x138
 // Size: 0x1d4
 function private preinit() {
@@ -44,7 +43,7 @@ function private preinit() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5887c69d, Offset: 0x318
 // Size: 0x14
 function init() {
@@ -52,7 +51,7 @@ function init() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x45857aa9, Offset: 0x338
 // Size: 0x30
 function restart_player_health_regen() {
@@ -61,7 +60,7 @@ function restart_player_health_regen() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb528f60, Offset: 0x370
 // Size: 0x26
 function function_5c4a1c21(*params) {
@@ -70,7 +69,7 @@ function function_5c4a1c21(*params) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xff4a38e1, Offset: 0x3a0
 // Size: 0x1e
 function end_health_regen() {
@@ -79,7 +78,7 @@ function end_health_regen() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf8ea28d3, Offset: 0x3c8
 // Size: 0x4ae
 function player_health_regen_t7() {
@@ -183,7 +182,7 @@ function player_health_regen_t7() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b0f9446, Offset: 0x880
 // Size: 0x4e
 function function_f7a21c4() {
@@ -198,7 +197,7 @@ function function_f7a21c4() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xefd0c4da, Offset: 0x8d8
 // Size: 0x74
 function function_8335b12() {
@@ -208,7 +207,7 @@ function function_8335b12() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcfb7d2c9, Offset: 0x958
 // Size: 0x6c
 function function_306c4d60() {
@@ -219,7 +218,7 @@ function function_306c4d60() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xecd61dd8, Offset: 0x9d0
 // Size: 0x2a
 function function_c48cb1fc() {
@@ -228,7 +227,7 @@ function function_c48cb1fc() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf19aca6, Offset: 0xa08
 // Size: 0x26
 function j_sticks_front1_end_le1() {
@@ -237,7 +236,7 @@ function j_sticks_front1_end_le1() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5b766ac7, Offset: 0xa38
 // Size: 0x24
 function private function_2eee85c1() {
@@ -247,7 +246,7 @@ function private function_2eee85c1() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x26641ae2, Offset: 0xa68
 // Size: 0x72
 function private function_df99db2() {
@@ -265,7 +264,7 @@ function private function_df99db2() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe924fb9b, Offset: 0xae8
 // Size: 0xa8
 function private should_heal(var_dc77251f, regen_delay) {
@@ -285,7 +284,7 @@ function private should_heal(var_dc77251f, regen_delay) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x634d4016, Offset: 0xb98
 // Size: 0x25a
 function private function_53964fa3(var_bc840360, var_dc77251f) {
@@ -320,7 +319,7 @@ function private function_53964fa3(var_bc840360, var_dc77251f) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x154cf849, Offset: 0xe00
 // Size: 0xe4
 function private function_8ca62ae3() {
@@ -342,7 +341,7 @@ function private function_8ca62ae3() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8ee1b195, Offset: 0xef0
 // Size: 0x10a
 function private function_f8139729() {
@@ -358,7 +357,7 @@ function private function_f8139729() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe29be8e8, Offset: 0x1008
 // Size: 0x524
 function private heal(var_dc77251f) {
@@ -424,7 +423,7 @@ function private heal(var_dc77251f) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfea9530f, Offset: 0x1538
 // Size: 0x9e
 function private check_max_health(var_dc77251f) {
@@ -442,7 +441,7 @@ function private check_max_health(var_dc77251f) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x34e07083, Offset: 0x15e0
 // Size: 0x4a
 function private function_69e7b01c(ratio) {
@@ -455,7 +454,7 @@ function private function_69e7b01c(ratio) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c4da335, Offset: 0x1638
 // Size: 0x14c
 function player_health_regen() {
@@ -472,7 +471,7 @@ function player_health_regen() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x5639b4f8, Offset: 0x1790
 // Size: 0x38e
 function private function_8f2722f6(now, var_677a3e37) {
@@ -535,7 +534,7 @@ function private function_8f2722f6(now, var_677a3e37) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1f15dcb1, Offset: 0x1b28
 // Size: 0x178
 function private function_b506b922() {
@@ -562,7 +561,7 @@ function private function_b506b922() {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7945a6ab, Offset: 0x1ca8
 // Size: 0x112
 function decay_player_damages(decay) {
@@ -588,15 +587,15 @@ function decay_player_damages(decay) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa95feb0e, Offset: 0x1dc8
 // Size: 0xea
 function player_breathing_sound(healthcap) {
     self endon(#"end_healthregen");
-    wait(2);
+    wait 2;
     player = self;
     for (;;) {
-        wait(0.2);
+        wait 0.2;
         if (player.health <= 0) {
             return;
         }
@@ -610,22 +609,22 @@ function player_breathing_sound(healthcap) {
             continue;
         }
         player notify(#"snd_breathing_hurt");
-        wait(0.784);
-        wait(0.1 + randomfloat(0.8));
+        wait 0.784;
+        wait 0.1 + randomfloat(0.8);
     }
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5998e209, Offset: 0x1ec0
 // Size: 0x12e
 function player_heartbeat_sound(healthcap) {
     self endon(#"end_healthregen");
     self.hearbeatwait = 0.2;
-    wait(2);
+    wait 2;
     player = self;
     for (;;) {
-        wait(0.2);
+        wait 0.2;
         if (player.health <= 0) {
             return;
         }
@@ -641,7 +640,7 @@ function player_heartbeat_sound(healthcap) {
             continue;
         }
         player playlocalsound(#"mpl_player_heartbeat");
-        wait(self.hearbeatwait);
+        wait self.hearbeatwait;
         if (self.hearbeatwait <= 0.6) {
             self.hearbeatwait += 0.1;
         }

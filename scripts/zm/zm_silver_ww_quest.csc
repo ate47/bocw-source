@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\audio_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_silver_ww_quest;
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x37ac1d15, Offset: 0x1f8
 // Size: 0x62c
 function init() {
@@ -24,7 +23,7 @@ function init() {
     clientfield::register("scriptmover", "" + #"hash_5e31ed9954a7a58a", 1, 2, "int", &function_29b9f19b, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_5020565243fa510a", 1, 1, "int", &function_c4793fe5, 0, 0);
     clientfield::register("toplayer", "" + #"hash_4119827af45a4ba7", 1, 1, "int", &function_48124b82, 0, 0);
-    clientfield::register("toplayer", "" + #"hash_115529ffa902a895", 1, 1, "int", &function_ea0ca81f, 0, 0);
+    clientfield::register("toplayer", "" + #"interact_rumble", 1, 1, "int", &interact_rumble, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_6a198759db0810a6", 1, 1, "int", &function_1534626e, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_7862b1e62306df36", 1, 1, "int", &function_408232a7, 0, 0);
     clientfield::register("allplayers", "" + #"hash_196eef041ba86f9a", 1, 1, "counter", &function_1385b26c, 0, 0);
@@ -35,7 +34,7 @@ function init() {
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x25901a56, Offset: 0x830
 // Size: 0x19a
 function function_cadc50d8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -61,7 +60,7 @@ function function_cadc50d8(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa23734d, Offset: 0x9d8
 // Size: 0xd4
 function function_4c8d91b3(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -76,7 +75,7 @@ function function_4c8d91b3(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3c908509, Offset: 0xab8
 // Size: 0xa4
 function function_167bea22(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -86,7 +85,7 @@ function function_167bea22(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6a231649, Offset: 0xb68
 // Size: 0x9c
 function function_c4793fe5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -97,7 +96,7 @@ function function_c4793fe5(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x5473b151, Offset: 0xc10
 // Size: 0x16c
 function function_408232a7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -105,7 +104,7 @@ function function_408232a7(localclientnum, *oldval, newval, *bnewent, *binitials
         self.smoke_fx = playfx(fieldname, #"zm_ai/fx9_hound_plague_dth_aoe", self.origin + (0, 0, 20));
         playsound(fieldname, #"hash_11a2fa9d6a695f96", self.origin + (0, 0, 20));
         audio::playloopat(#"hash_155791cb3cba6094", self.origin + (0, 0, 20));
-        wait(2);
+        wait 2;
         if (isdefined(self.smoke_fx)) {
             stopfx(fieldname, self.smoke_fx);
         }
@@ -116,7 +115,7 @@ function function_408232a7(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x20626d3d, Offset: 0xd88
 // Size: 0x8c
 function function_1534626e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -127,7 +126,7 @@ function function_1534626e(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xab4a8cc6, Offset: 0xe20
 // Size: 0x94
 function function_48124b82(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -138,17 +137,17 @@ function function_48124b82(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x263fbcf9, Offset: 0xec0
 // Size: 0x6c
-function function_ea0ca81f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function interact_rumble(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self playrumbleonentity(fieldname, "damage_light");
     }
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x149b575a, Offset: 0xf38
 // Size: 0x104
 function function_f0bc5344(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -163,7 +162,7 @@ function function_f0bc5344(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x360b8fbe, Offset: 0x1048
 // Size: 0x20a
 function function_29b9f19b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -193,7 +192,7 @@ function function_29b9f19b(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x88b121f4, Offset: 0x1260
 // Size: 0x74
 function function_7bceb311(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -203,7 +202,7 @@ function function_7bceb311(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7def60b8, Offset: 0x12e0
 // Size: 0x18c
 function function_c35975ed(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -219,7 +218,7 @@ function function_c35975ed(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6986ec25, Offset: 0x1478
 // Size: 0x8e
 function function_37ba0961(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -232,7 +231,7 @@ function function_37ba0961(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc29c779, Offset: 0x1510
 // Size: 0xae
 function function_5bd0643d(localclientnum) {
@@ -248,14 +247,14 @@ function function_5bd0643d(localclientnum) {
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x98f8174b, Offset: 0x15c8
 // Size: 0x144
 function function_f875612b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         mdl_fx = util::spawn_model(fieldname, "tag_origin", self.origin);
         playsound(fieldname, #"hash_58583b7b5bcacbbc", (-85, -408, 79));
-        wait(1);
+        wait 1;
         mdl_fx moveto(mdl_fx.origin + (270, 0, 0), 0.5);
         util::playfxontag(fieldname, #"hash_47d98c0644ec2ecd", mdl_fx, "tag_origin");
         mdl_fx waittill(#"movedone");
@@ -266,7 +265,7 @@ function function_f875612b(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x21abf19a, Offset: 0x1718
 // Size: 0x11e
 function crystal_energy_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -288,7 +287,7 @@ function crystal_energy_fx(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x249dbc43, Offset: 0x1840
 // Size: 0x278
 function ww_vacuum_crystal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -325,7 +324,7 @@ function ww_vacuum_crystal_fx(localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb2c88a83, Offset: 0x1ac0
 // Size: 0x10e
 function hold_crystal_energy(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -345,7 +344,7 @@ function hold_crystal_energy(localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdba0fd13, Offset: 0x1bd8
 // Size: 0x6c
 function function_2a66952f(localclientnum, var_9b6b8f9a) {
@@ -357,7 +356,7 @@ function function_2a66952f(localclientnum, var_9b6b8f9a) {
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbf1105d4, Offset: 0x1c50
 // Size: 0x17e
 function function_a6b2453b(localclientnum, var_9b6b8f9a, var_a4f83274) {
@@ -381,7 +380,7 @@ function function_a6b2453b(localclientnum, var_9b6b8f9a, var_a4f83274) {
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xce7e8962, Offset: 0x1dd8
 // Size: 0xaa
 function private function_9dd39fc8(localclientnum, var_9b6b8f9a, var_a4f83274) {
@@ -396,7 +395,7 @@ function private function_9dd39fc8(localclientnum, var_9b6b8f9a, var_a4f83274) {
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xf3209b3d, Offset: 0x1e90
 // Size: 0xa6
 function private function_564a4c6(localclientnum, var_9b6b8f9a, var_d4ece4fd) {
@@ -411,7 +410,7 @@ function private function_564a4c6(localclientnum, var_9b6b8f9a, var_d4ece4fd) {
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x21a66d7, Offset: 0x1f40
 // Size: 0x64
 function function_1385b26c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -419,7 +418,7 @@ function function_1385b26c(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xad32848b, Offset: 0x1fb0
 // Size: 0xe4
 function private function_7532a0ff(weapon_name) {

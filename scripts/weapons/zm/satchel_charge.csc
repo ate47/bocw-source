@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_71b355b2496e3c6d;
-#using scripts\weapons\satchel_charge.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\satchel_charge;
 
 #namespace satchel_charge;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x214908de, Offset: 0xe0
 // Size: 0x24
 function private preinit() {

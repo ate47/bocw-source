@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\map.gsc;
-#using scripts\core_common\player\player_shared.gsc;
+#using scripts\core_common\map;
+#using scripts\core_common\player\player_shared;
 
 #namespace teams;
 
@@ -13,7 +12,7 @@ function function_7f8faff9(team) {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x76b815c, Offset: 0xc0
 // Size: 0x134
 function function_dc7eaabd(assignment) {
@@ -37,7 +36,7 @@ function function_dc7eaabd(assignment) {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3530437b, Offset: 0x200
 // Size: 0x42
 function is_team_empty(team) {
@@ -49,13 +48,13 @@ function is_team_empty(team) {
 }
 
 // Namespace teams/teams
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x71006129, Offset: 0x250
 // Size: 0xfa
 function function_959bac94() {
     foreach (team in level.teams) {
         if (self is_team_empty(team)) {
-            println("<unknown string>" + "<unknown string>" + self.name + "<unknown string>" + team);
+            println("<dev string:x38>" + "<dev string:x4d>" + self.name + "<dev string:x63>" + team);
             /#
                 function_d28f6fa0(team);
             #/
@@ -66,7 +65,7 @@ function function_959bac94() {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x61ab7c92, Offset: 0x358
 // Size: 0xac
 function function_712e3ba6(score) {
@@ -79,7 +78,7 @@ function function_712e3ba6(score) {
 }
 
 // Namespace teams/teams
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x702fab0f, Offset: 0x410
 // Size: 0x1a
 function any_team_hit_score_limit() {
@@ -87,12 +86,12 @@ function any_team_hit_score_limit() {
 }
 
 // Namespace teams/teams
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x939695f0, Offset: 0x438
 // Size: 0xaa
 function private function_67aac3d9(gamestat, teama, teamb, previous_winner_score) {
     winner = undefined;
-    assert(teama !== "<unknown string>");
+    assert(teama !== "<dev string:x76>");
     if (previous_winner_score == game.stat[gamestat][teamb]) {
         winner = undefined;
     } else if (game.stat[gamestat][teamb] > previous_winner_score) {
@@ -104,7 +103,7 @@ function private function_67aac3d9(gamestat, teama, teamb, previous_winner_score
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6721d526, Offset: 0x4f0
 // Size: 0xbe
 function function_d85770f0(gamestat) {
@@ -121,22 +120,22 @@ function function_d85770f0(gamestat) {
 }
 
 // Namespace teams/teams
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x5d069e68, Offset: 0x5b8
 // Size: 0x7e
-function private function_e390f598(var_1ada49b5, teamb, var_2a5c5ccb) {
-    assert(var_1ada49b5 !== "<unknown string>");
+function private function_e390f598(currentwinner, teamb, var_2a5c5ccb) {
+    assert(currentwinner !== "<dev string:x76>");
     teambscore = [[ level._getteamscore ]](teamb);
     if (teambscore == var_2a5c5ccb) {
         return undefined;
     } else if (teambscore > var_2a5c5ccb) {
         return teamb;
     }
-    return var_1ada49b5;
+    return currentwinner;
 }
 
 // Namespace teams/teams
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x61a69525, Offset: 0x640
 // Size: 0xb6
 function function_ef80de99() {
@@ -153,7 +152,7 @@ function function_ef80de99() {
 }
 
 // Namespace teams/teams
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c02e5c8, Offset: 0x700
 // Size: 0x96
 function function_20cfd8b5(team) {
@@ -182,13 +181,13 @@ function function_20cfd8b5(team) {
             if (isdefined(level.teams[team])) {
                 team_str = level.teams[team];
             }
-            voip = "<unknown string>";
+            voip = "<dev string:x7d>";
             if (isdefined(level.var_75dffa9f[team])) {
-                voip += level.var_75dffa9f[team] == #"game" ? "<unknown string>" : "<unknown string>";
+                voip += level.var_75dffa9f[team] == #"game" ? "<dev string:x86>" : "<dev string:x8e>";
             } else {
-                voip += "<unknown string>";
+                voip += "<dev string:x98>";
             }
-            println("<unknown string>" + "<unknown string>" + self.name + "<unknown string>" + team_str + "<unknown string>" + voip);
+            println("<dev string:x38>" + "<dev string:xa5>" + self.name + "<dev string:xab>" + team_str + "<dev string:xb1>" + voip);
         }
     }
 
@@ -200,7 +199,7 @@ function function_20cfd8b5(team) {
         foreach (party_member in party.party_members) {
             var_2798314b = party_member getparty();
             if (var_2798314b.var_a15e4438 != party.var_a15e4438) {
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:xb6>");
             }
         }
     }

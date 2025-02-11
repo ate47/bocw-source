@@ -1,53 +1,52 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_6991584fc21f5ae8;
-#using script_2c9915120c137848;
-#using script_2474a362752098d2;
-#using script_36fc02e86719d0f5;
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_3bbf85ab4cb9f3c2;
-#using script_40f967ad5d18ea74;
-#using script_3faf478d5b0850fe;
-#using script_47851dbeea22fe66;
-#using script_1ce46999727f2f2b;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_f25df01962c79c6;
-#using script_6b6510e124bad778;
-#using script_634ae70c663d1cc9;
-#using script_4d8045dbc17aa3ee;
-#using script_1b0b07ff57d1dde3;
-#using script_350cffecd05ef6cf;
-#using script_1ee011cd0961afd7;
-#using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_50fca1a24ae351;
 #using script_17dcb1172e441bf6;
-#using script_74a56359b7d02ab6;
-#using script_5549681e1669c11a;
-#using script_f38dc50f0e82277;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ce46999727f2f2b;
+#using script_1ee011cd0961afd7;
+#using script_2474a362752098d2;
+#using script_2a5bf5b4a00cee0d;
+#using script_2c9915120c137848;
+#using script_350cffecd05ef6cf;
+#using script_36fc02e86719d0f5;
+#using script_3bbf85ab4cb9f3c2;
+#using script_3faf478d5b0850fe;
+#using script_40f967ad5d18ea74;
 #using script_413ab8fe25a61c50;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
+#using script_4d8045dbc17aa3ee;
+#using script_50fca1a24ae351;
+#using script_5549681e1669c11a;
+#using script_5701633066d199f2;
+#using script_5f20d3b434d24884;
+#using script_634ae70c663d1cc9;
 #using script_68cdf0ca5df5e;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_6991584fc21f5ae8;
+#using script_6b6510e124bad778;
+#using script_74a56359b7d02ab6;
 #using script_75d4e6ecb8f05163;
+#using script_f25df01962c79c6;
+#using script_f38dc50f0e82277;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\gametypes\globallogic;
 
 #namespace namespace_4dae815d;
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6d67fa8f, Offset: 0x550
 // Size: 0x3dc
 function init() {
@@ -88,7 +87,7 @@ function init() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1157684a, Offset: 0x938
 // Size: 0x21a
 function function_76322483(player) {
@@ -114,11 +113,11 @@ function function_76322483(player) {
     level namespace_d2efac9a::upload_leaderboards();
     namespace_1e25ad94::debugmsg("=========================================== EXIT LEVEL CALLED =============================================");
     exitlevel(0);
-    wait(666);
+    wait 666;
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd77f179a, Offset: 0xb60
 // Size: 0x8c
 function private on_menu_response(eventstruct) {
@@ -132,7 +131,7 @@ function private on_menu_response(eventstruct) {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeefe0f80, Offset: 0xbf8
 // Size: 0x16c
 function function_9ad4988() {
@@ -149,7 +148,7 @@ function function_9ad4988() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb921004c, Offset: 0xd70
 // Size: 0x4ec
 function function_32d5e898() {
@@ -211,7 +210,7 @@ function function_32d5e898() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x818d57f6, Offset: 0x1268
 // Size: 0x43c
 function function_170b90e5() {
@@ -230,7 +229,7 @@ function function_170b90e5() {
     level flag::init("doa_podium_showPlaces", 0);
     namespace_8c04284b::init();
     namespace_77eccc4f::init();
-    namespace_a6ddb172::init();
+    doa_banner::init();
     namespace_5a917022::init();
     namespace_1e25ad94::init();
     namespace_41cb996::init();
@@ -256,7 +255,7 @@ function function_170b90e5() {
     level flag::set("doa_game_initialized");
     level.doa.var_be74bf2c = -1;
     waitframe(1);
-    function_d05d0fa();
+    game_reset();
     if (!is_true(getdvar(#"hash_613a0a3fd49510cd"))) {
         function_eb9e8b26(0);
         level.callbackplayermigrated = &donothing;
@@ -267,7 +266,7 @@ function function_170b90e5() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x16b0
 // Size: 0x4
 function donothing() {
@@ -275,7 +274,7 @@ function donothing() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x592783ad, Offset: 0x16c0
 // Size: 0x1ac
 function function_e22d3978(number = level.doa.roundnumber) {
@@ -294,7 +293,7 @@ function function_e22d3978(number = level.doa.roundnumber) {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeaadcdb6, Offset: 0x1878
 // Size: 0x16
 function function_59a9cf1d() {
@@ -302,7 +301,7 @@ function function_59a9cf1d() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6201de3d, Offset: 0x1898
 // Size: 0xdc
 function function_21cd3890(state) {
@@ -316,14 +315,14 @@ function function_21cd3890(state) {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c280e25, Offset: 0x1980
 // Size: 0x2a4
-function function_d05d0fa() {
+function game_reset() {
     if (level.doa.var_be74bf2c > 0) {
         namespace_1e25ad94::debugmsg("DOA Game Reset:" + level.doa.var_be74bf2c);
     }
-    level notify(#"hash_6cb87c02c41363b7");
+    level notify(#"game_reset");
     level.doa.var_c420eee9 = 1;
     level.doa.var_be74bf2c++;
     function_32d5e898();
@@ -337,7 +336,7 @@ function function_d05d0fa() {
     namespace_ec06fe4a::clearallcorpses();
     function_21cd3890(0);
     function_e22d3978();
-    namespace_a6ddb172::function_7a0e5387();
+    doa_banner::function_7a0e5387();
     level namespace_77eccc4f::main();
     level thread namespace_981c1f3c::main();
     level thread namespace_6e90e490::function_db945ce9();
@@ -354,7 +353,7 @@ function function_d05d0fa() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x93ef82cc, Offset: 0x1c30
 // Size: 0x424
 function main() {
@@ -364,7 +363,7 @@ function main() {
     while (level flag::get("gameplay_started") == 0) {
         waitframe(1);
     }
-    wait(0.1);
+    wait 0.1;
     level notify(#"hash_671684f03a58b3a3");
     level.var_9dab87f7 = gettime();
     var_8d747a1 = 1;
@@ -402,7 +401,7 @@ function main() {
         level thread [[ level.doa.var_99ee4341 ]]();
         level waittill(#"hash_659967997e5f426e");
     } else {
-        wait(15);
+        wait 15;
     }
     if (isdefined(level.doa.var_a77e6349)) {
         [[ level.doa.var_a77e6349 ]]->deactivate();
@@ -415,11 +414,11 @@ function main() {
         return;
     }
     level namespace_d2efac9a::function_47498d07();
-    level thread function_d05d0fa();
+    level thread game_reset();
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8079b3a, Offset: 0x2060
 // Size: 0x24
 function function_d41688e3() {
@@ -427,7 +426,7 @@ function function_d41688e3() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc7bd688, Offset: 0x2090
 // Size: 0x198
 function function_ce7e12de(var_c042523 = 0) {
@@ -441,18 +440,18 @@ function function_ce7e12de(var_c042523 = 0) {
         level [[ level.doa.var_cb342cbc ]]();
     }
     function_21cd3890(1);
-    level namespace_a6ddb172::function_7a0e5387(59);
+    level doa_banner::function_7a0e5387(59);
     level thread namespace_9fc66ac::announce(72);
     luinotifyevent(#"force_scoreboard", 1, 0);
-    wait(7);
+    wait 7;
     util::preload_frontend();
-    wait(3);
+    wait 3;
     level namespace_7f5aeb59::function_67f054d7();
     level notify(#"hash_659967997e5f426e");
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x29a952, Offset: 0x2230
 // Size: 0x410
 function function_a511c7c4() {
@@ -491,7 +490,7 @@ function function_a511c7c4() {
     player thread function_295c3381(var_4b98f072);
     while (var_4b98f072.timeleft > 0) {
         level clientfield::set_world_uimodel("DOA_GLOBALUIMODEL_COUNTDOWN", var_4b98f072.timeleft);
-        wait(1);
+        wait 1;
         var_4b98f072.timeleft -= 1;
     }
     if (!isdefined(level.doa.var_6f3d327)) {
@@ -512,7 +511,7 @@ function function_a511c7c4() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb3d61fef, Offset: 0x2648
 // Size: 0x126
 function function_49592bf9(var_4b98f072) {
@@ -534,7 +533,7 @@ function function_49592bf9(var_4b98f072) {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa70b184d, Offset: 0x2778
 // Size: 0x428
 function function_295c3381(var_4b98f072) {
@@ -593,7 +592,7 @@ function function_295c3381(var_4b98f072) {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe6cd0c29, Offset: 0x2ba8
 // Size: 0xec
 function function_8682e93e() {
@@ -612,7 +611,7 @@ function function_8682e93e() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a212b0f, Offset: 0x2ca0
 // Size: 0x156
 function function_e591be12() {
@@ -637,7 +636,7 @@ function function_e591be12() {
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x33452d8e, Offset: 0x2e00
 // Size: 0x6a
 function function_e60cadb8() {

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace dropkick;
 
@@ -41,7 +40,7 @@ function function_311e397d(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0x6c2bc779, Offset: 0x278
 // Size: 0x4c
 function private function_df0960d3(localclientnum) {
-    wait(2);
+    wait 2;
     if (level.var_67c8b45f === 0) {
         return;
     }
@@ -53,13 +52,13 @@ function private function_df0960d3(localclientnum) {
 // Checksum 0xc4da0b0d, Offset: 0x2d0
 // Size: 0xa4
 function private function_ef284b9c(localclientnum) {
-    wait(3.4);
+    wait 3.4;
     if (level.var_67c8b45f === 0) {
         return;
     }
     function_a837926b(localclientnum, #"hash_69a53e8913317ecf");
     duration = 6;
-    wait(duration);
+    wait duration;
     if (function_148ccc79(localclientnum, #"hash_69a53e8913317ecf")) {
         function_24cd4cfb(localclientnum, #"hash_69a53e8913317ecf");
     }
@@ -70,7 +69,7 @@ function private function_ef284b9c(localclientnum) {
 // Checksum 0x8779df79, Offset: 0x380
 // Size: 0x134
 function private function_efd48790(localclientnum) {
-    wait(3.4);
+    wait 3.4;
     if (level.var_67c8b45f === 0) {
         return;
     }
@@ -81,7 +80,7 @@ function private function_efd48790(localclientnum) {
     }
     level.var_abfcab7a = playtagfxset(localclientnum, #"tagfx9_nuke_dropkick_camera_start", player);
     var_68a17fa6 = 6.6;
-    wait(var_68a17fa6);
+    wait var_68a17fa6;
     player = function_27673a7(localclientnum);
     player util::waittill_dobj(localclientnum);
     if (!isdefined(player) || level.var_67c8b45f === 0) {
@@ -104,7 +103,7 @@ function function_81e1cce7(localclientnum) {
 // Size: 0x1e0
 function private function_e8a68a06(localclientnum, waittime) {
     if (isdefined(waittime) && waittime > 0) {
-        wait(waittime);
+        wait waittime;
     }
     if (function_148ccc79(localclientnum, #"hash_72d5d84c9d0b25c")) {
         codestoppostfxbundlelocal(localclientnum, #"hash_72d5d84c9d0b25c");

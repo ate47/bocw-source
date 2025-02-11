@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flag_shared.gsc;
 #using script_58860a35d0555f74;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
 
 #namespace zm_silver_ffotd;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_silver_ffotd/zm_silver_ffotd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x1c8
 // Size: 0x4
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace zm_silver_ffotd/zm_silver_ffotd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x965ea052, Offset: 0x1d8
 // Size: 0x62c
 function private postinit() {
@@ -53,7 +52,7 @@ function private postinit() {
 }
 
 // Namespace zm_silver_ffotd/zm_silver_ffotd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfb53c705, Offset: 0x810
 // Size: 0x94
 function function_69e91dea() {

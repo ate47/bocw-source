@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_297ae820;
 
 // Namespace namespace_297ae820/namespace_297ae820
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a179f42, Offset: 0xb0
 // Size: 0xc4
 function init() {
@@ -16,7 +15,7 @@ function init() {
 }
 
 // Namespace namespace_297ae820/namespace_297ae820
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaebe289d, Offset: 0x180
 // Size: 0x54
 function function_3528419f(state) {

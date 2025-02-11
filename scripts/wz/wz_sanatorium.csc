@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\load_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
 
 #namespace wz_sanatorium;
 
@@ -26,7 +25,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace wz_sanatorium/wz_sanatorium
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6662250f, Offset: 0x340
 // Size: 0x368
 function private function_103cfebf() {
@@ -51,7 +50,7 @@ function private function_103cfebf() {
 }
 
 // Namespace wz_sanatorium/wz_sanatorium
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x226aa641, Offset: 0x6b0
 // Size: 0x6c
 function on_player_connected(localclientnum) {
@@ -62,7 +61,7 @@ function on_player_connected(localclientnum) {
 }
 
 // Namespace wz_sanatorium/wz_sanatorium
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf37c0495, Offset: 0x728
 // Size: 0x6c
 function on_gameplay_started(*localclientnum) {

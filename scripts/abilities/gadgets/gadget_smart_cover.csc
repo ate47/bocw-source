@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\deployable.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\deployable;
 
 #namespace smart_cover;
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb3c871e, Offset: 0x268
 // Size: 0x27c
 function init_shared() {
     callback::on_localplayer_spawned(&on_local_player_spawned);
     clientfield::register("scriptmover", "smartcover_placed", 1, 5, "float", &smartcover_placed, 0, 0);
-    clientfield::register_clientuimodel("hudItems.smartCoverState", #"hash_6f4b11a0bee9b73d", #"smartcoverstate", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.smartCoverState", #"hud_items", #"smartcoverstate", 1, 1, "int", undefined, 0, 0);
     clientfield::register("scriptmover", "start_smartcover_microwave", 1, 1, "int", &smartcover_start_microwave, 0, 0);
     level.smartcoversettings = spawnstruct();
     level.smartcoversettings.previewmodels = [];
@@ -31,7 +30,7 @@ function init_shared() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15d9de8a, Offset: 0x4f0
 // Size: 0x284
 function setupdvars() {
@@ -50,7 +49,7 @@ function setupdvars() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe848adf3, Offset: 0x780
 // Size: 0xae
 function smartcover_start_microwave(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -64,7 +63,7 @@ function smartcover_start_microwave(localclientnum, *oldval, newval, *bnewent, *
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x98c08653, Offset: 0x838
 // Size: 0x194
 function smartcover_placed(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, bwastimejump) {
@@ -91,7 +90,7 @@ function smartcover_placed(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x905de0f2, Offset: 0x9d8
 // Size: 0xc0
 function function_112e3e89(localclientnum) {
@@ -104,7 +103,7 @@ function function_112e3e89(localclientnum) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x86a1bba2, Offset: 0xaa0
 // Size: 0x4c
 function function_fd04d5d5(localclientnum) {
@@ -156,7 +155,7 @@ function function_1c2930c7(localclientnum) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x547a52cc, Offset: 0xe08
 // Size: 0x4c
 function function_59605cb(localclientnum) {
@@ -191,7 +190,7 @@ function function_5d802b86(localclientnum) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb7a60922, Offset: 0xf68
 // Size: 0xc
 function on_local_player_spawned(*localclientnum) {
@@ -199,7 +198,7 @@ function on_local_player_spawned(*localclientnum) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc9d7752b, Offset: 0xf80
 // Size: 0x88
 function function_641491ac(localclientnum, modelname) {
@@ -211,7 +210,7 @@ function function_641491ac(localclientnum, modelname) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x642df32f, Offset: 0x1010
 // Size: 0x16e
 function function_722fc669(localclientnum) {
@@ -227,7 +226,7 @@ function function_722fc669(localclientnum) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xcdc04aa8, Offset: 0x1188
 // Size: 0x19e
 function function_8fb44aff(localclientnum, origin, angles, isvalid, var_eb65925c, var_4b3e5e0a) {
@@ -249,7 +248,7 @@ function function_8fb44aff(localclientnum, origin, angles, isvalid, var_eb65925c
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa2982289, Offset: 0x1330
 // Size: 0x70
 function function_d66a0190(row, column) {
@@ -261,7 +260,7 @@ function function_d66a0190(row, column) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4bcbad16, Offset: 0x13a8
 // Size: 0xc4
 function function_dbaf4647(localclientnum) {
@@ -275,7 +274,7 @@ function function_dbaf4647(localclientnum) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xfe1b24f, Offset: 0x1478
 // Size: 0x444
 function function_5a8becdc(localclientnum, *player, buildinfo, *var_4b1c8937) {
@@ -333,7 +332,7 @@ function function_5a8becdc(localclientnum, *player, buildinfo, *var_4b1c8937) {
 #/
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6c479035, Offset: 0x19b8
 // Size: 0x4ac
 function startmicrowavefx(localclientnum) {
@@ -350,7 +349,7 @@ function startmicrowavefx(localclientnum) {
     microwavefxent.fxnames = [];
     microwavefxent.fxhashs = [];
     self thread cleanupfx(localclientnum, microwavefxent);
-    wait(0.3);
+    wait 0.3;
     while (true) {
         /#
             if (getdvarint(#"scr_microwave_turret_fx_debug", 0)) {
@@ -359,7 +358,7 @@ function startmicrowavefx(localclientnum) {
             }
         #/
         if (turret.should_update_fx == 0) {
-            wait(1);
+            wait 1;
             continue;
         }
         if (isdefined(level.last_microwave_turret_fx_trace) && level.last_microwave_turret_fx_trace == gettime()) {
@@ -387,18 +386,18 @@ function startmicrowavefx(localclientnum) {
         need_to_rebuild |= microwavefxent microwavefxhash(traceleft, origin, "left");
         level.last_microwave_turret_fx_trace = gettime();
         if (!need_to_rebuild) {
-            wait(1);
+            wait 1;
             continue;
         }
-        wait(0.1);
+        wait 0.1;
         microwavefxent playmicrowavefx(localclientnum, trace, traceright, traceleft, origin, turret.team);
         turret.should_update_fx = 0;
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x790a1f84, Offset: 0x1e70
 // Size: 0x17a
 function microwavefxhash(trace, origin, name) {
@@ -426,7 +425,7 @@ function microwavefxhash(trace, origin, name) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd3b08281, Offset: 0x1ff8
 // Size: 0xdc
 function cleanupfx(localclientnum, microwavefxent) {
@@ -440,7 +439,7 @@ function cleanupfx(localclientnum, microwavefxent) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xed10dc7c, Offset: 0x20e0
 // Size: 0xbc
 function play_fx_on_tag(localclientnum, fxname, tag, team) {
@@ -453,7 +452,7 @@ function play_fx_on_tag(localclientnum, fxname, tag, team) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x49ca91ad, Offset: 0x21a8
 // Size: 0x74
 function stop_fx_on_tag(localclientnum, *fxname, tag) {
@@ -480,14 +479,14 @@ function stop_fx_on_tag(localclientnum, *fxname, tag) {
 #/
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x35777699, Offset: 0x22c8
 // Size: 0xec
 function stop_or_start_fx(localclientnum, fxname, tag, start, team) {
     if (start) {
         self play_fx_on_tag(localclientnum, fxname, tag, team);
         /#
-            if (fxname == "<unknown string>") {
+            if (fxname == "<dev string:x38>") {
                 render_debug_sphere(tag, (0.5, 0.5, 0), fxname);
             } else {
                 render_debug_sphere(tag, (0, 1, 0), fxname);
@@ -502,7 +501,7 @@ function stop_or_start_fx(localclientnum, fxname, tag, start, team) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x2cd8e481, Offset: 0x23c0
 // Size: 0x56a
 function playmicrowavefx(localclientnum, trace, traceright, traceleft, origin, team) {

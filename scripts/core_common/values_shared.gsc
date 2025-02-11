@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\string_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\string_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace val;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace val/values_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd723e8a3, Offset: 0x4e0
 // Size: 0x115c
 function private preinit() {
@@ -123,16 +122,16 @@ function private preinit() {
     default_value("skip_scene_death", 0);
     /#
         level thread debug_values();
-        validate("<unknown string>", "<unknown string>", &validate_takedamage);
-        validate("<unknown string>", "<unknown string>", &arecontrolsfrozen);
-        validate("<unknown string>", "<unknown string>", &function_5972c3cf);
-        validate("<unknown string>", "<unknown string>", &gadgetsdisabled);
-        validate("<unknown string>", "<unknown string>", &ishidden);
+        validate("<dev string:x38>", "<dev string:x46>", &validate_takedamage);
+        validate("<dev string:x4f>", "<dev string:x46>", &arecontrolsfrozen);
+        validate("<dev string:x61>", "<dev string:x46>", &function_5972c3cf);
+        validate("<dev string:x7d>", "<dev string:x46>", &gadgetsdisabled);
+        validate("<dev string:x8f>", "<dev string:x46>", &ishidden);
     #/
 }
 
 // Namespace val/values_shared
-// Params 5, eflags: 0x42 linked
+// Params 5, eflags: 0x40 variadic
 // Checksum 0x784375d6, Offset: 0x1648
 // Size: 0x140
 function register(str_name, var_3509ed3e, call_on = "$self", func, ...) {
@@ -141,7 +140,7 @@ function register(str_name, var_3509ed3e, call_on = "$self", func, ...) {
     }
     a_registered = getarraykeys(level.values);
     if (isinarray(a_registered, hash(str_name))) {
-        assertmsg("<unknown string>" + str_name + "<unknown string>");
+        assertmsg("<dev string:x97>" + str_name + "<dev string:xa2>");
         return;
     }
     s_value = spawnstruct();
@@ -154,14 +153,14 @@ function register(str_name, var_3509ed3e, call_on = "$self", func, ...) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9088efd, Offset: 0x1790
 // Size: 0x94
 function private assert_registered(str_name) {
     /#
         a_registered = getarraykeys(level.values);
         if (!isinarray(a_registered, hash(str_name))) {
-            assertmsg("<unknown string>" + str_name + "<unknown string>");
+            assertmsg("<dev string:x97>" + str_name + "<dev string:xbb>");
             return false;
         }
     #/
@@ -169,7 +168,7 @@ function private assert_registered(str_name) {
 }
 
 // Namespace val/values_shared
-// Params 4, eflags: 0x42 linked
+// Params 4, eflags: 0x40 variadic
 // Checksum 0xf4a34138, Offset: 0x1830
 // Size: 0x7e
 function default_func(str_name, call_on, value, ...) {
@@ -182,7 +181,7 @@ function default_func(str_name, call_on, value, ...) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb5f218f9, Offset: 0x18b8
 // Size: 0x56
 function default_value(str_name, value) {
@@ -193,7 +192,7 @@ function default_value(str_name, value) {
 }
 
 // Namespace val/values_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x63888425, Offset: 0x1918
 // Size: 0x84
 function link(str_name, var_8e7e7e96, func) {
@@ -204,7 +203,7 @@ function link(str_name, var_8e7e7e96, func) {
 }
 
 // Namespace val/values_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x872ca5ea, Offset: 0x19a8
 // Size: 0x158
 function set(str_id, str_name, value) {
@@ -223,7 +222,7 @@ function set(str_id, str_name, value) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6e5c1ca4, Offset: 0x1b08
 // Size: 0x3c
 function set_radiant(str_name, value) {
@@ -237,12 +236,12 @@ function set_radiant(str_name, value) {
 function set_for_time(n_time, str_id, str_name, value) {
     self endon(#"death");
     set(str_id, str_name, value);
-    wait(n_time);
+    wait n_time;
     reset(str_id, str_name);
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x45ec80e0, Offset: 0x1bd0
 // Size: 0x178
 function reset(str_id, str_name) {
@@ -262,7 +261,7 @@ function reset(str_id, str_name) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xabca1aff, Offset: 0x1d50
 // Size: 0x144
 function reset_all(str_id) {
@@ -288,7 +287,7 @@ function reset_radiant(str_name) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x18ce8595, Offset: 0x1ed8
 // Size: 0x34
 function nuke(str_name) {
@@ -297,7 +296,7 @@ function nuke(str_name) {
 }
 
 // Namespace val/values_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x7e391b11, Offset: 0x1f18
 // Size: 0xbc
 function private _push_value(str_id, str_name, value) {
@@ -312,7 +311,7 @@ function private _push_value(str_id, str_name, value) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa66b174b, Offset: 0x1fe0
 // Size: 0x10a
 function private _remove_value(str_id, str_name) {
@@ -337,7 +336,7 @@ function private _remove_value(str_id, str_name) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9db1d0fb, Offset: 0x20f8
 // Size: 0xc8
 function private _set_value(str_name, value) {
@@ -351,7 +350,7 @@ function private _set_value(str_name, value) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2464039a, Offset: 0x21c8
 // Size: 0xec
 function private _set_default(str_name) {
@@ -368,7 +367,7 @@ function private _set_default(str_name) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x93e289a2, Offset: 0x22c0
 // Size: 0x5a
 function private _replace_values(a_args, value) {
@@ -378,7 +377,7 @@ function private _replace_values(a_args, value) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbe76600, Offset: 0x2328
 // Size: 0x7e
 function private set_takedamage(b_value = 1) {
@@ -394,7 +393,7 @@ function private set_takedamage(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xad93121d, Offset: 0x23b0
 // Size: 0x34
 function private default_takedamage() {
@@ -402,7 +401,7 @@ function private default_takedamage() {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8227074c, Offset: 0x23f0
 // Size: 0x2a
 function private set_allowdeath(b_value = 1) {
@@ -410,7 +409,7 @@ function private set_allowdeath(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdf6083d2, Offset: 0x2428
 // Size: 0x34
 function private default_allowdeath() {
@@ -418,7 +417,7 @@ function private default_allowdeath() {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe4217910, Offset: 0x2468
 // Size: 0x5c
 function private function_87a1ac43(b_value = 1) {
@@ -429,7 +428,7 @@ function private function_87a1ac43(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x83204cc8, Offset: 0x24d0
 // Size: 0x44
 function private function_aac507e5() {
@@ -440,7 +439,7 @@ function private function_aac507e5() {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1fe7d315, Offset: 0x2520
 // Size: 0x12
 function private function_49321c2b(var_110b9b81) {
@@ -448,7 +447,7 @@ function private function_49321c2b(var_110b9b81) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x473c15d8, Offset: 0x2540
 // Size: 0x22
 function private function_25ef3fee(var_110b9b81) {
@@ -467,7 +466,7 @@ function private validate_takedamage() {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x563e4f59, Offset: 0x25c0
 // Size: 0xcc
 function private set_takeweapons(b_value = 1) {
@@ -489,7 +488,7 @@ function private set_takeweapons(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x26ca1781, Offset: 0x2698
 // Size: 0x6c
 function private set_disableweapons(value = 1) {
@@ -501,7 +500,7 @@ function private set_disableweapons(value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x968adfa8, Offset: 0x2710
 // Size: 0x54
 function private function_f609f22c(b_value = 1) {
@@ -513,7 +512,7 @@ function private function_f609f22c(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2dd39732, Offset: 0x2770
 // Size: 0x54
 function private function_16f5ac8e(b_value = 1) {
@@ -525,7 +524,7 @@ function private function_16f5ac8e(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1a4e1805, Offset: 0x27d0
 // Size: 0x54
 function private function_debe5863(b_value = 1) {
@@ -537,7 +536,7 @@ function private function_debe5863(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6240d50d, Offset: 0x2830
 // Size: 0x54
 function private function_15d061e0(b_value = 1) {
@@ -549,7 +548,7 @@ function private function_15d061e0(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x22c7a57f, Offset: 0x2890
 // Size: 0x54
 function private set_disableoffhandweapons(b_value = 1) {
@@ -561,7 +560,7 @@ function private set_disableoffhandweapons(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xdf912a69, Offset: 0x28f0
 // Size: 0x54
 function private function_37c7ffcd(b_value = 1) {
@@ -573,7 +572,7 @@ function private function_37c7ffcd(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbfdcc517, Offset: 0x2950
 // Size: 0x64
 function private function_ba94b5cd(b_value = 1) {
@@ -582,7 +581,7 @@ function private function_ba94b5cd(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xab8ec6be, Offset: 0x29c0
 // Size: 0x54
 function private function_737c794(b_value = 1) {
@@ -594,7 +593,7 @@ function private function_737c794(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x90ac85b8, Offset: 0x2a20
 // Size: 0x52
 function private set_ignoreme(b_value = 1) {
@@ -606,7 +605,7 @@ function private set_ignoreme(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaeec67a2, Offset: 0x2a80
 // Size: 0x2a
 function private set_ignoreall(b_value = 1) {
@@ -614,7 +613,7 @@ function private set_ignoreall(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7d133d8b, Offset: 0x2ab8
 // Size: 0x66
 function private function_62318390(b_value = 1) {
@@ -627,7 +626,7 @@ function private function_62318390(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8b6e1205, Offset: 0x2b28
 // Size: 0x42
 function private set_disablegestures(b_value = 1) {
@@ -637,7 +636,7 @@ function private set_disablegestures(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x95cff752, Offset: 0x2b78
 // Size: 0x74
 function private set_hide(b_value = 1) {
@@ -653,7 +652,7 @@ function private set_hide(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xefb8afe7, Offset: 0x2bf8
 // Size: 0x4a
 function private set_health_regen(b_value = 1) {
@@ -665,7 +664,7 @@ function private set_health_regen(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x303f1051, Offset: 0x2c50
 // Size: 0x42
 function private set_disable_health_regen_delay(b_value = 1) {
@@ -677,7 +676,7 @@ function private set_disable_health_regen_delay(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x141d94a7, Offset: 0x2ca0
 // Size: 0x42
 function private set_ignore_health_regen_delay(b_value = 1) {
@@ -689,7 +688,7 @@ function private set_ignore_health_regen_delay(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1759f0ce, Offset: 0x2cf0
 // Size: 0xa2
 function private set_goal_radius(val) {
@@ -709,7 +708,7 @@ function private set_goal_radius(val) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc67788d0, Offset: 0x2da0
 // Size: 0x36
 function private function_2d53d03d(b_value = 1) {
@@ -717,7 +716,7 @@ function private function_2d53d03d(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7534b105, Offset: 0x2de0
 // Size: 0x36
 function private function_2014cd50(b_value = 1) {
@@ -725,7 +724,7 @@ function private function_2014cd50(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x93c11979, Offset: 0x2e20
 // Size: 0x36
 function private allow_melee_victim(b_value = 1) {
@@ -733,7 +732,7 @@ function private allow_melee_victim(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbd3a0602, Offset: 0x2e60
 // Size: 0x21c
 function function_4671dfff(str_id, value) {
@@ -759,7 +758,7 @@ function function_4671dfff(str_id, value) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb86321e4, Offset: 0x3088
 // Size: 0x19c
 function function_5276aede(str_id, value) {
@@ -783,13 +782,13 @@ function function_5276aede(str_id, value) {
 /#
 
     // Namespace val/values_shared
-    // Params 4, eflags: 0x44
+    // Params 4, eflags: 0x44 variadic
     // Checksum 0x409a0c50, Offset: 0x3230
     // Size: 0xf2
     function private validate(str_name, call_on, func, ...) {
         a_registered = getarraykeys(level.values);
         if (!isinarray(a_registered, hash(str_name))) {
-            assertmsg("<unknown string>" + str_name + "<unknown string>");
+            assertmsg("<dev string:x97>" + str_name + "<dev string:xbb>");
             return;
         }
         s_value = level.values[str_name];
@@ -809,14 +808,14 @@ function function_5276aede(str_id, value) {
         }
         s_value = level.values[str_name];
         if (isdefined(s_value.func_validate)) {
-            call_on = s_value.validate_call_on === "<unknown string>" ? self : s_value.validate_call_on;
+            call_on = s_value.validate_call_on === "<dev string:x46>" ? self : s_value.validate_call_on;
             current_value = util::single_func_argarray(call_on, s_value.func_validate, _replace_values(s_value.validate_args));
         } else {
             current_value = self.(str_name);
         }
         b_match = current_value === value;
         if (b_assert) {
-            assert(b_match, "<unknown string>" + function_9e72a96(str_name) + "<unknown string>" + current_value + "<unknown string>" + value + "<unknown string>");
+            assert(b_match, "<dev string:xd0>" + function_9e72a96(str_name) + "<dev string:xe6>" + current_value + "<dev string:xf0>" + value + "<dev string:x105>");
         }
         return b_match;
     }
@@ -826,27 +825,27 @@ function function_5276aede(str_id, value) {
     // Checksum 0x8ba4e017, Offset: 0x3498
     // Size: 0x44a
     function private debug_values() {
-        level flag::init_dvar("<unknown string>");
-        level flag::wait_till("<unknown string>");
+        level flag::init_dvar("<dev string:x10b>");
+        level flag::wait_till("<dev string:x11f>");
         while (true) {
-            level flag::wait_till("<unknown string>");
-            str_debug_values_entity = getdvarstring(#"scr_debug_values_entity", "<unknown string>");
-            if (str_debug_values_entity == "<unknown string>" || str_debug_values_entity == "<unknown string>" || str_debug_values_entity == "<unknown string>") {
+            level flag::wait_till("<dev string:x10b>");
+            str_debug_values_entity = getdvarstring(#"scr_debug_values_entity", "<dev string:x136>");
+            if (str_debug_values_entity == "<dev string:x136>" || str_debug_values_entity == "<dev string:x13a>" || str_debug_values_entity == "<dev string:x140>") {
                 hud_ent = level.host;
-                str_label = "<unknown string>";
+                str_label = "<dev string:x148>";
             } else if (strisnumber(str_debug_values_entity)) {
                 hud_ent = getentbynum(int(str_debug_values_entity));
-                str_label = "<unknown string>" + str_debug_values_entity;
+                str_label = "<dev string:x157>" + str_debug_values_entity;
             } else {
                 str_value = str_debug_values_entity;
-                str_key = "<unknown string>";
-                if (issubstr(str_value, "<unknown string>")) {
-                    a_toks = strtok(str_value, "<unknown string>");
+                str_key = "<dev string:x162>";
+                if (issubstr(str_value, "<dev string:x170>")) {
+                    a_toks = strtok(str_value, "<dev string:x170>");
                     str_value = a_toks[0];
                     str_key = a_toks[1];
                 }
                 hud_ent = getent(str_value, str_key, 1);
-                str_label = str_value + "<unknown string>" + str_key;
+                str_label = str_value + "<dev string:x170>" + str_key;
             }
             debug2dtext((200, 100, 0), str_label, (1, 1, 1), 1, (0, 0, 0), 0.5, 0.8, 1);
             a_all_ents = getentarray();
@@ -885,13 +884,13 @@ function function_5276aede(str_id, value) {
         if (ishash(str_id)) {
             str_id = function_9e72a96(str_id);
         }
-        str_value = "<unknown string>";
-        if ((isdefined(str_name) ? "<unknown string>" + str_name : "<unknown string>") != "<unknown string>") {
+        str_value = "<dev string:x136>";
+        if ((isdefined(str_name) ? "<dev string:x136>" + str_name : "<dev string:x136>") != "<dev string:x136>") {
             str_value = string::rjust(str_name, 20);
             if (isdefined(value)) {
-                str_value += "<unknown string>" + value;
+                str_value += "<dev string:x175>" + value;
             }
-            str_value += "<unknown string>" + string::ljust(isdefined(str_id) ? "<unknown string>" + str_id : "<unknown string>", 30);
+            str_value += "<dev string:x17c>" + string::ljust(isdefined(str_id) ? "<dev string:x136>" + str_id : "<dev string:x136>", 30);
         }
         color = b_valid ? (1, 1, 1) : (1, 0, 0);
         if (on_hud) {

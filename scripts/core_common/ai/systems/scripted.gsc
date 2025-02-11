@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace scripted;
 
 // Namespace scripted/scripted
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5dd0fc07, Offset: 0x98
 // Size: 0x5a
 function main() {
@@ -21,7 +20,7 @@ function init(*notifyname, *origin, *angles, *theanim, *animmode, *root, *rate, 
 }
 
 // Namespace scripted/scripted
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf96e2c7d, Offset: 0x158
 // Size: 0x20
 function end_script() {

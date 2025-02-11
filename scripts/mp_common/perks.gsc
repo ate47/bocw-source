@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace perks;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x101bb13a, Offset: 0x158
 // Size: 0x84
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8976dabf, Offset: 0x1e8
 // Size: 0x1c
 function on_player_spawned() {
@@ -34,7 +33,7 @@ function on_player_spawned() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe718e425, Offset: 0x210
 // Size: 0x34
 function on_loadout() {
@@ -43,7 +42,7 @@ function on_loadout() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9c24ddfc, Offset: 0x250
 // Size: 0xcc
 function monitorflight() {
@@ -61,7 +60,7 @@ function monitorflight() {
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4ee3e37, Offset: 0x328
 // Size: 0x5dc
 function monitorgpsjammer() {
@@ -104,7 +103,7 @@ function monitorgpsjammer() {
             graceperiods = self function_ee4a9054(#"grace_periods");
             minspeed = self function_ee4a9054(#"min_speed");
             mindistance = self function_ee4a9054(#"min_distance");
-            timeperiod = self function_ee4a9054("<unknown string>");
+            timeperiod = self function_ee4a9054("<dev string:x38>");
             timeperiodsec = float(timeperiod) / 1000;
             minspeedsq = minspeed * minspeed;
             mindistancesq = mindistance * mindistance;
@@ -152,12 +151,12 @@ function monitorgpsjammer() {
             level notify(#"radar_status_change");
         }
         timesincedistancecheck += timeperiodsec;
-        wait(timeperiodsec);
+        wait timeperiodsec;
     }
 }
 
 // Namespace perks/perks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5cc25658, Offset: 0x910
 // Size: 0x5fc
 function monitorsengrenjammer() {
@@ -246,7 +245,7 @@ function monitorsengrenjammer() {
             level notify(#"radar_status_change");
         }
         timesincedistancecheck += timeperiodsec;
-        wait(timeperiodsec);
+        wait timeperiodsec;
     }
 }
 

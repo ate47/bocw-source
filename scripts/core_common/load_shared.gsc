@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\telemetry.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\activecamo_shared.gsc;
 #using script_25c09ccacf057919;
-#using scripts\core_common\delete.gsc;
+#using scripts\core_common\activecamo_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\delete;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\telemetry;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace load;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x690d799b, Offset: 0x2c8
 // Size: 0x34
 function main() {
@@ -33,7 +32,7 @@ function main() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf3765ad3, Offset: 0x308
 // Size: 0x64
 function init_flags() {
@@ -43,7 +42,7 @@ function init_flags() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf81e1164, Offset: 0x378
 // Size: 0x34
 function first_frame() {
@@ -54,7 +53,7 @@ function first_frame() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe694fd04, Offset: 0x3b8
 // Size: 0x3a4
 function private preinit() {
@@ -104,7 +103,7 @@ function private preinit() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xca5648bf, Offset: 0x768
 // Size: 0x48
 function count_network_frames() {
@@ -117,7 +116,7 @@ function count_network_frames() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x85167153, Offset: 0x7b8
 // Size: 0x22
 function keep_time() {
@@ -136,8 +135,8 @@ function keep_time() {
     function level_notify_listener() {
         while (true) {
             val = getdvarstring(#"level_notify");
-            if (val != "<unknown string>") {
-                toks = strtok(val, "<unknown string>");
+            if (val != "<dev string:x38>") {
+                toks = strtok(val, "<dev string:x3c>");
                 if (toks.size == 3) {
                     level notify(toks[0], {#param1:toks[1], #param2:toks[2]});
                 } else if (toks.size == 2) {
@@ -145,9 +144,9 @@ function keep_time() {
                 } else {
                     level notify(toks[0]);
                 }
-                setdvar(#"level_notify", "<unknown string>");
+                setdvar(#"level_notify", "<dev string:x38>");
             }
-            wait(0.2);
+            wait 0.2;
         }
     }
 
@@ -158,11 +157,11 @@ function keep_time() {
     function client_notify_listener() {
         while (true) {
             val = getdvarstring(#"client_notify");
-            if (val != "<unknown string>") {
+            if (val != "<dev string:x38>") {
                 util::clientnotify(val);
-                setdvar(#"client_notify", "<unknown string>");
+                setdvar(#"client_notify", "<dev string:x38>");
             }
-            wait(0.2);
+            wait 0.2;
         }
     }
 
@@ -196,7 +195,7 @@ function keep_time() {
 #/
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4f52ecfd, Offset: 0xa98
 // Size: 0x254
 function weapon_ammo() {
@@ -225,10 +224,10 @@ function weapon_ammo() {
             }
             if (change_ammo) {
                 if (!isdefined(clip)) {
-                    assertmsg("<unknown string>" + weap.classname + "<unknown string>" + weap.origin + "<unknown string>");
+                    assertmsg("<dev string:x41>" + weap.classname + "<dev string:x4d>" + weap.origin + "<dev string:x52>");
                 }
                 if (!isdefined(extra)) {
-                    assertmsg("<unknown string>" + weap.classname + "<unknown string>" + weap.origin + "<unknown string>");
+                    assertmsg("<dev string:x41>" + weap.classname + "<dev string:x4d>" + weap.origin + "<dev string:x86>");
                 }
                 weap itemweaponsetammo(clip, extra);
                 weap itemweaponsetammo(clip, extra, 1);
@@ -238,7 +237,7 @@ function weapon_ammo() {
 }
 
 // Namespace load/load_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x87c71f63, Offset: 0xcf8
 // Size: 0x15c
 function badplace_think(badplace) {
@@ -258,7 +257,7 @@ function badplace_think(badplace) {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6b8fba31, Offset: 0xe60
 // Size: 0x58
 function playerdamagerumble() {
@@ -298,17 +297,17 @@ function player_throwgrenade_timer() {
     self.lastgrenadetime = 0;
     while (true) {
         while (!self isthrowinggrenade()) {
-            wait(0.05);
+            wait 0.05;
         }
         self.lastgrenadetime = gettime();
         while (self isthrowinggrenade()) {
-            wait(0.05);
+            wait 0.05;
         }
     }
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd2acab9c, Offset: 0xfd8
 // Size: 0x40a
 function water_think() {
@@ -371,14 +370,14 @@ function water_think() {
             if (players_in_water_count == 0) {
                 break;
             }
-            wait(0.5);
+            wait 0.5;
         }
         waitframe(1);
     }
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x72a78344, Offset: 0x13f0
 // Size: 0x9c
 function set_objective_text_colors() {
@@ -431,13 +430,13 @@ function set_fog_progress(progress) {
     // Checksum 0x18a642e1, Offset: 0x1680
     // Size: 0x24
     function ascii_logo() {
-        println("<unknown string>");
+        println("<dev string:xba>");
     }
 
 #/
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65b45114, Offset: 0x16b0
 // Size: 0x174
 function all_players_spawned() {
@@ -468,7 +467,7 @@ function all_players_spawned() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb0384f0c, Offset: 0x1830
 // Size: 0x238
 function shock_onpain() {
@@ -504,7 +503,7 @@ function shock_onpain() {
 }
 
 // Namespace load/load_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1a6e8b22, Offset: 0x1a70
 // Size: 0xb0
 function shock_onexplosion(damage) {
@@ -525,7 +524,7 @@ function shock_onexplosion(damage) {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcafd8b62, Offset: 0x1b28
 // Size: 0x96
 function shock_ondeath() {
@@ -545,7 +544,7 @@ function shock_ondeath() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa026a69, Offset: 0x1bc8
 // Size: 0x9e
 function on_spawned() {
@@ -563,7 +562,7 @@ function on_spawned() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd6c991fc, Offset: 0x1c70
 // Size: 0xe8
 function link_ents() {
@@ -579,7 +578,7 @@ function link_ents() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb8356a1c, Offset: 0x1d60
 // Size: 0xc8
 function hide_ents() {
@@ -600,11 +599,11 @@ function art_review() {
     case 1:
     case 2:
         /#
-            hud = hud::function_f5a689d("<unknown string>", 1.2);
-            hud hud::setpoint("<unknown string>", "<unknown string>", 0, -200);
+            hud = hud::function_f5a689d("<dev string:xcc>", 1.2);
+            hud hud::setpoint("<dev string:xd9>", "<dev string:xd9>", 0, -200);
             hud.sort = 1001;
             hud.color = (1, 0, 0);
-            hud settext("<unknown string>");
+            hud settext("<dev string:xe3>");
             hud.foreground = 0;
             hud.hidewheninmenu = 0;
         #/
@@ -612,7 +611,7 @@ function art_review() {
             /#
                 setdvar(#"zombie_cheat", 2);
                 if (dvarvalue == 1) {
-                    setdvar(#"zombie_devgui", "<unknown string>");
+                    setdvar(#"zombie_devgui", "<dev string:xf1>");
                 }
             #/
         } else {

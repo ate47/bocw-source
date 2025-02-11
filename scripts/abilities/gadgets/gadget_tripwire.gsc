@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\influencers_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\damage.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\influencers_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace gadget_tripwire;
 
@@ -32,11 +31,11 @@ function private preinit() {
     clientfield::register("scriptmover", "tripwire_solo_beam_fx", 1, 1, "int");
     callback::on_connect(&function_d863663f);
     weaponobjects::function_e6400478(#"eq_tripwire", &function_9f97e1a3, 1);
-    level.var_c27600b0 = getweapon("eq_tripwire");
+    level.tripwireweapon = getweapon("eq_tripwire");
     if (getgametypesetting(#"competitivesettings") === 1) {
         level.var_c72e8c51 = getscriptbundle("tripwire_custom_settings_comp");
-    } else if (isdefined(level.var_c27600b0.customsettings)) {
-        level.var_c72e8c51 = getscriptbundle(level.var_c27600b0.customsettings);
+    } else if (isdefined(level.tripwireweapon.customsettings)) {
+        level.var_c72e8c51 = getscriptbundle(level.tripwireweapon.customsettings);
     } else {
         level.var_c72e8c51 = getscriptbundle("tripwire_custom_settings");
     }
@@ -157,8 +156,8 @@ function on_tripwire_spawn(watcher, player) {
     self endon(#"death");
     weaponobjects::onspawnuseweaponobject(watcher, player);
     self.var_2d045452 = watcher;
-    self.weapon = level.var_c27600b0;
-    self setweapon(level.var_c27600b0);
+    self.weapon = level.tripwireweapon;
+    self setweapon(level.tripwireweapon);
     waitresult = self waittill(#"stationary");
     self util::make_sentient();
     self.hitnormal = waitresult.normal;
@@ -177,7 +176,7 @@ function on_tripwire_spawn(watcher, player) {
     self.entityenemyinfluencer = self influencers::create_entity_enemy_influencer("claymore", player.team);
     self.destroyablebytrophysystem = 0;
     self.detonating = 0;
-    wait(level.var_c72e8c51.var_e14f5fca);
+    wait level.var_c72e8c51.var_e14f5fca;
     player notify(#"tripwire_spawn", {#tripwire:self});
     self clientfield::set("tripwire_state", 1);
     arrayinsert(level.tripwires, self, level.tripwires.size);
@@ -202,7 +201,7 @@ function function_15566346(ent) {
             self thread function_9e546fb3(undefined, self.weapon, undefined, undefined);
         }
         oldpos = curpos;
-        wait(float(function_60d95f53()) / 1000);
+        wait float(function_60d95f53()) / 1000;
     }
 }
 
@@ -545,7 +544,7 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
         if (isdefined(var_2f6adbe3)) {
             var_2f6adbe3.detonating = 1;
         }
-        wait(level.var_c72e8c51.var_7f1fc1ee);
+        wait level.var_c72e8c51.var_7f1fc1ee;
         if (!isdefined(self)) {
             return;
         }
@@ -607,7 +606,7 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
         }
     }
     self ghost();
-    wait(0.1);
+    wait 0.1;
     if (!isdefined(self)) {
         return;
     }

@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace delete;
 
 // Namespace delete/delete
@@ -10,10 +9,10 @@ function private event_handler[delete] function_55217f7b(*eventstruct) {
     if (isdefined(self)) {
         /#
             if (isdefined(self.classname)) {
-                if (self.classname == "<unknown string>" || self.classname == "<unknown string>" || self.classname == "<unknown string>") {
-                    println("<unknown string>");
-                    println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
-                    println("<unknown string>");
+                if (self.classname == "<dev string:x38>" || self.classname == "<dev string:x48>" || self.classname == "<dev string:x5a>") {
+                    println("<dev string:x6e>");
+                    println("<dev string:x72>" + self getentitynumber() + "<dev string:xb3>" + self.origin);
+                    println("<dev string:x6e>");
                 }
             }
         #/
@@ -31,10 +30,10 @@ function private event_handler[event_9aed3d2d] function_f447a48e(*eventstruct) {
     if (isdefined(self)) {
         /#
             if (isdefined(self.classname)) {
-                if (self.classname == "<unknown string>" || self.classname == "<unknown string>" || self.classname == "<unknown string>") {
-                    println("<unknown string>");
-                    println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
-                    println("<unknown string>");
+                if (self.classname == "<dev string:x38>" || self.classname == "<dev string:x48>" || self.classname == "<dev string:x5a>") {
+                    println("<dev string:x6e>");
+                    println("<dev string:x72>" + self getentitynumber() + "<dev string:xb3>" + self.origin);
+                    println("<dev string:x6e>");
                 }
             }
         #/

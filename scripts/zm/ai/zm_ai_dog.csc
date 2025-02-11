@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
 #using script_44c87b4589ee1f93;
 #using script_581877678e31274c;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\ai_shared.csc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace zm_ai_dog;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x63163aba, Offset: 0x120
 // Size: 0x7c
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x46b8707d, Offset: 0x1a8
 // Size: 0x24
 function function_3b0e8b8b(localclientnum) {
@@ -34,7 +33,7 @@ function function_3b0e8b8b(localclientnum) {
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbb6a0d7a, Offset: 0x1d8
 // Size: 0x172
 function zombiedogvocals(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {

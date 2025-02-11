@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace content_manager;
 
@@ -89,7 +88,7 @@ function function_4485ab6d(key, value) {
 function function_31e8da78(destination, content_category) {
     locations = array::randomize(get_children(destination));
     for (i = 0; i < locations.size; i++) {
-        if (locations[i].variantname !== #"hash_4807866fcc400c90") {
+        if (locations[i].variantname !== #"content_location") {
             arrayremoveindex(locations, i, 1);
         }
     }
@@ -109,7 +108,7 @@ function function_31e8da78(destination, content_category) {
 // Checksum 0x8515475b, Offset: 0x6e0
 // Size: 0x40a
 function private setup_destinations() {
-    mapdestinations = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
+    mapdestinations = struct::get_array(#"content_destination", "variantname");
     destinations = [];
     level.contentmanager.destinations = destinations;
     foreach (destination in mapdestinations) {
@@ -121,7 +120,7 @@ function private setup_destinations() {
         destination.locations = locations;
         children = get_children(destination);
         foreach (child in children) {
-            if (child.variantname != #"hash_4807866fcc400c90") {
+            if (child.variantname != #"content_location") {
                 continue;
             }
             assert(isdefined(child.targetname));
@@ -137,7 +136,7 @@ function private setup_destinations() {
                 continue;
             }
             enabled = getgametypesetting(destination.var_7774bfaf);
-            assert(isdefined(enabled), "<unknown string>" + destination.var_7774bfaf + "<unknown string>");
+            assert(isdefined(enabled), "<dev string:x38>" + destination.var_7774bfaf + "<dev string:x4c>");
             if (is_false(enabled)) {
                 arrayremovevalue(destinations, struct::get(destination.targetname));
             }
@@ -150,12 +149,12 @@ function private setup_destinations() {
 // Params 2, eflags: 0x0
 // Checksum 0x55b9f96c, Offset: 0xaf8
 // Size: 0x144
-function function_316bd0e6(str_destination, var_2d26f85c) {
-    assert(isdefined(level.contentmanager.destinations[str_destination]) && isdefined("<unknown string>" + str_destination));
+function setup_adjacencies(str_destination, var_2d26f85c) {
+    assert(isdefined(level.contentmanager.destinations[str_destination]) && isdefined("<dev string:x5e>" + str_destination));
     i = 0;
     foreach (var_fc091632 in var_2d26f85c) {
         adjacency = struct::get(var_fc091632);
-        assert(isdefined(adjacency) && isdefined("<unknown string>" + var_fc091632));
+        assert(isdefined(adjacency) && isdefined("<dev string:x8d>" + var_fc091632));
         level.contentmanager.destinations[str_destination].adjacencies[i] = adjacency;
         i++;
     }
@@ -167,7 +166,7 @@ function function_316bd0e6(str_destination, var_2d26f85c) {
 // Size: 0x9e
 function function_fe9fb6fd(location) {
     assert(isstruct(location));
-    assert(location.variantname == #"hash_4807866fcc400c90");
+    assert(location.variantname == #"content_location");
     spawned_instances = isarray(location.spawnedinstances) && location.spawnedinstances.size > 0;
     return spawned_instances;
 }
@@ -177,7 +176,7 @@ function function_fe9fb6fd(location) {
 // Checksum 0x95b05726, Offset: 0xcf0
 // Size: 0x2ba
 function private setup_locations() {
-    maplocations = struct::get_array(#"hash_4807866fcc400c90", "variantname");
+    maplocations = struct::get_array(#"content_location", "variantname");
     locations = [];
     level.contentmanager.locations = locations;
     foreach (location in maplocations) {
@@ -186,7 +185,7 @@ function private setup_locations() {
         locations[location.targetname] = location;
         if (isdefined(location.target)) {
             parent = struct::get(location.target);
-            if (parent.variantname == #"hash_313be7fccc870cdd") {
+            if (parent.variantname == #"content_destination") {
                 location.destination = parent;
             }
         }
@@ -195,7 +194,7 @@ function private setup_locations() {
         location.instances = instances;
         children = get_children(location);
         foreach (child in children) {
-            if (child.variantname != #"hash_60feba77d317eb4") {
+            if (child.variantname != #"content_instance") {
                 continue;
             }
             assert(isdefined(child.content_script_name));
@@ -212,7 +211,7 @@ function private setup_locations() {
 // Size: 0x164
 function spawn_instance(instance) {
     assert(isstruct(instance));
-    assert(instance.variantname == #"hash_60feba77d317eb4");
+    assert(instance.variantname == #"content_instance");
     assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
     assert(isstruct(instance.location));
     function_656a32f0(instance);
@@ -229,7 +228,7 @@ function spawn_instance(instance) {
 // Size: 0xfc
 function function_1c78a45d(instance) {
     assert(isstruct(instance));
-    assert(instance.variantname == #"hash_60feba77d317eb4");
+    assert(instance.variantname == #"content_instance");
     assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
     assert(isstruct(instance.location));
     return !function_fe9fb6fd(instance.location);
@@ -353,7 +352,7 @@ function spawn_script_model(struct, modelname, var_bfbc537c = 0, var_619a5c20 = 
     }
     parent = struct;
     while (true) {
-        if (parent.variantname === #"hash_60feba77d317eb4") {
+        if (parent.variantname === #"content_instance") {
             if (!isdefined(parent.a_models)) {
                 parent.a_models = [];
             } else if (!isarray(parent.a_models)) {
@@ -384,7 +383,7 @@ function spawn_zbarrier(struct, zbarrier_classname, var_e546275c = 0) {
     }
     parent = struct;
     while (true) {
-        if (parent.variantname === #"hash_60feba77d317eb4") {
+        if (parent.variantname === #"content_instance") {
             if (!isdefined(parent.a_models)) {
                 parent.a_models = [];
             } else if (!isarray(parent.a_models)) {
@@ -508,22 +507,22 @@ function get_children(parent) {
     // Size: 0x3dc
     function private init_devgui() {
         util::waittill_can_add_debug_command();
-        adddebugcommand("<unknown string>");
-        util::add_devgui(devgui_path("<unknown string>", 0), "<unknown string>");
+        adddebugcommand("<dev string:xc6>");
+        util::add_devgui(devgui_path("<dev string:xf3>", 0), "<dev string:x108>");
         foreach (destination in level.contentmanager.destinations) {
             foreach (location in destination.locations) {
                 foreach (instance in location.instances) {
-                    instancekey = location.targetname + "<unknown string>" + instance.content_script_name;
-                    path = devgui_path("<unknown string>", 1, destination.targetname, location.targetname, instance.content_script_name);
-                    util::add_devgui(path, "<unknown string>" + instancekey);
+                    instancekey = location.targetname + "<dev string:x131>" + instance.content_script_name;
+                    path = devgui_path("<dev string:x136>", 1, destination.targetname, location.targetname, instance.content_script_name);
+                    util::add_devgui(path, "<dev string:x146>" + instancekey);
                 }
             }
         }
         foreach (location in level.contentmanager.locations) {
             foreach (instance in location.instances) {
-                instancekey = location.targetname + "<unknown string>" + instance.content_script_name;
-                path = devgui_path("<unknown string>", 2, location.targetname, instance.content_script_name);
-                util::add_devgui(path, "<unknown string>" + instancekey);
+                instancekey = location.targetname + "<dev string:x131>" + instance.content_script_name;
+                path = devgui_path("<dev string:x16b>", 2, location.targetname, instance.content_script_name);
+                util::add_devgui(path, "<dev string:x146>" + instancekey);
             }
         }
         level thread debug_draw();
@@ -531,16 +530,16 @@ function get_children(parent) {
     }
 
     // Namespace content_manager/content_manager
-    // Params 1, eflags: 0x40
+    // Params 1, eflags: 0x40 variadic
     // Checksum 0x55b75972, Offset: 0x27f8
     // Size: 0xd8
     function devgui_path(...) {
-        path = "<unknown string>";
+        path = "<dev string:x178>";
         foreach (arg in vararg) {
             if (isint(arg)) {
-                path += "<unknown string>";
+                path += "<dev string:x131>";
             } else {
-                path += "<unknown string>";
+                path += "<dev string:x192>";
             }
             path += arg;
         }
@@ -553,13 +552,13 @@ function get_children(parent) {
     // Size: 0x1c0
     function private function_b3843ca7() {
         while (true) {
-            setdvar(#"hash_6d5a45dcdc3af9b5", "<unknown string>");
+            setdvar(#"hash_6d5a45dcdc3af9b5", "<dev string:x197>");
             waitframe(1);
-            instancekey = getdvarstring(#"hash_6d5a45dcdc3af9b5", "<unknown string>");
-            if (instancekey == "<unknown string>") {
+            instancekey = getdvarstring(#"hash_6d5a45dcdc3af9b5", "<dev string:x197>");
+            if (instancekey == "<dev string:x197>") {
                 continue;
             }
-            keys = strtok(instancekey, "<unknown string>");
+            keys = strtok(instancekey, "<dev string:x131>");
             if (keys.size != 2) {
                 continue;
             }
@@ -684,7 +683,7 @@ function get_children(parent) {
         if (!isdefined(str)) {
             return append;
         } else if (isdefined(append)) {
-            return (str + "<unknown string>" + append);
+            return (str + "<dev string:x19b>" + append);
         }
         return str;
     }

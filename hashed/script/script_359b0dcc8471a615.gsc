@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_7fe06af4;
 
@@ -34,7 +33,7 @@ function event_handler[gametype_start] main(*eventstruct) {
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaa2076cd, Offset: 0x230
 // Size: 0x2b0
 function function_5089875d() {
@@ -78,7 +77,7 @@ function function_5089875d() {
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1f6ad138, Offset: 0x4e8
 // Size: 0x44
 function on_game_playing() {
@@ -92,7 +91,7 @@ function on_game_playing() {
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x23e3210d, Offset: 0x538
 // Size: 0x14c
 function function_e0136874(*destructible_event, *attacker, *weapon, *piece_index, *point, *dir, *mod) {
@@ -111,7 +110,7 @@ function function_e0136874(*destructible_event, *attacker, *weapon, *piece_index
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa8dfc2c3, Offset: 0x690
 // Size: 0x1c
 function function_d38af2b() {
@@ -119,7 +118,7 @@ function function_d38af2b() {
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x42d4b4f5, Offset: 0x6b8
 // Size: 0x154
 function function_a150d07b(randomize = 0) {
@@ -145,7 +144,7 @@ function function_a150d07b(randomize = 0) {
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd10e5eaf, Offset: 0x818
 // Size: 0x62
 function function_a23c96ea() {
@@ -167,9 +166,9 @@ function function_a23c96ea() {
     function devgui_init() {
         waitframe(1);
         mapname = util::get_map_name();
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x38>");
+        adddebugcommand("<dev string:x83>" + mapname + "<dev string:x95>");
+        adddebugcommand("<dev string:xc5>" + mapname + "<dev string:xd6>");
     }
 
     // Namespace namespace_7fe06af4/namespace_7fe06af4
@@ -179,7 +178,7 @@ function function_a23c96ea() {
     function function_9c9ba5() {
         level endon(#"game_ended");
         while (true) {
-            wait(0.5);
+            wait 0.5;
             function_a150d07b();
         }
     }
@@ -191,7 +190,7 @@ function function_a23c96ea() {
     function function_ee18bf8f() {
         level endon(#"game_ended");
         while (true) {
-            wait(0.5);
+            wait 0.5;
             state = getdvarint(#"hash_4c0f0935eafdfaa", 0);
             if (state || state === 2) {
                 function_d38af2b();

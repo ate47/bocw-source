@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weapon_utils;
 
 #namespace damagefeedback;
 
@@ -37,7 +36,7 @@
 #/
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x57a7260a, Offset: 0x278
 // Size: 0x96
 function should_play_sound(mod) {
@@ -57,7 +56,7 @@ function should_play_sound(mod) {
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x3bdf17d2, Offset: 0x318
 // Size: 0x12a
 function play_hit_alert_sfx(mod, inflictor, perkfeedback, weapon, victim, psoffsettime, shitloc, fatal, idflags) {
@@ -74,7 +73,7 @@ function play_hit_alert_sfx(mod, inflictor, perkfeedback, weapon, victim, psoffs
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xc16498a4, Offset: 0x450
 // Size: 0x18a
 function hit_alert_sfx_cp(mod, *inflictor, *perkfeedback, weapon, victim, *psoffsettime, shitloc, fatal) {
@@ -107,7 +106,7 @@ function hit_alert_sfx_cp(mod, *inflictor, *perkfeedback, weapon, victim, *psoff
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x96adbf7d, Offset: 0x5e8
 // Size: 0x90a
 function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffsettime, shitloc, fatal, idflags) {
@@ -139,7 +138,7 @@ function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffse
         } else if (victim.grappleweapon) {
             hitalias = #"hash_671bc9a2de453f2e";
         } else if (victim.name == #"snowball") {
-            hitalias = #"hash_65089a4793316b63";
+            hitalias = #"mpl_hit_alert_snow";
         } else if (victim.name == #"waterballoon") {
             hitalias = #"hash_1fd605562fb1fd3a";
         } else if (isvehicle(psoffsettime)) {
@@ -164,17 +163,17 @@ function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffse
                         if (weapons::isheadshot(victim, shitloc, inflictor)) {
                             hitalias = #"hash_6b219a0cac330e0b";
                         } else {
-                            hitalias = #"hash_74a7b6ba3604ede9";
+                            hitalias = #"mpl_hit_alert_armor_broke";
                         }
                     } else {
-                        hitalias = #"hash_2248618b48085ce5";
+                        hitalias = #"mpl_hit_alert_armor_hit";
                     }
                 } else if (isdefined(psoffsettime) && is_true(psoffsettime.isaiclone)) {
                     hitalias = #"mpl_hit_alert_clone";
                 } else if (isdefined(psoffsettime) && is_true(psoffsettime.isaiclone)) {
                     hitalias = #"mpl_hit_alert_clone";
                 } else if (isdefined(psoffsettime) && is_true(psoffsettime.var_342564dd)) {
-                    hitalias = #"hash_3e284f9a53e3010b";
+                    hitalias = #"mpl_hit_alert_rad";
                 } else if (isdefined(psoffsettime) && isplayer(psoffsettime) && isdefined(psoffsettime.carryobject) && isdefined(psoffsettime.carryobject.hitsound) && isdefined(weapon) && weapon == "armor") {
                     hitalias = psoffsettime.carryobject.hitsound;
                 } else if (inflictor == "MOD_BURNED") {
@@ -243,7 +242,7 @@ function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffse
     } else if (isdefined(perkfeedback) && isdefined(perkfeedback.owner) && isdefined(perkfeedback.owner.soundmod)) {
         if (perkfeedback.owner.soundmod == #"player" && isdefined(idflags) && idflags & 2048 && isdefined(psoffsettime)) {
             if (isdefined(psoffsettime.var_426947c4)) {
-                hitalias = #"hash_74a7b6ba3604ede9";
+                hitalias = #"mpl_hit_alert_armor_broke";
             }
         }
     }
@@ -251,7 +250,7 @@ function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffse
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x12c18e7d, Offset: 0xf00
 // Size: 0x4c2
 function hit_alert_sfx_zm(mod, inflictor, *perkfeedback, weapon, victim, *psoffsettime, shitloc, fatal, idflags) {
@@ -279,10 +278,10 @@ function hit_alert_sfx_zm(mod, inflictor, *perkfeedback, weapon, victim, *psoffs
                         if (weapons::isheadshot(victim, shitloc, perkfeedback)) {
                             hitalias = #"hash_6b219a0cac330e0b";
                         } else {
-                            hitalias = #"hash_74a7b6ba3604ede9";
+                            hitalias = #"mpl_hit_alert_armor_broke";
                         }
                     } else {
-                        hitalias = #"hash_2248618b48085ce5";
+                        hitalias = #"mpl_hit_alert_armor_hit";
                     }
                 } else if (psoffsettime.aitype === "spawner_bo5_abom") {
                     if (shitloc != "head") {
@@ -324,7 +323,7 @@ function hit_alert_sfx_zm(mod, inflictor, *perkfeedback, weapon, victim, *psoffs
     } else if (isdefined(weapon) && isdefined(weapon.owner) && isdefined(weapon.owner.soundmod)) {
         if (weapon.owner.soundmod == #"player" && isdefined(idflags) && idflags & 2048 && isdefined(psoffsettime)) {
             if (isdefined(psoffsettime.var_426947c4)) {
-                hitalias = #"hash_74a7b6ba3604ede9";
+                hitalias = #"mpl_hit_alert_armor_broke";
             }
         }
     }
@@ -332,7 +331,7 @@ function hit_alert_sfx_zm(mod, inflictor, *perkfeedback, weapon, victim, *psoffs
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x51f674a2, Offset: 0x13d0
 // Size: 0x7a
 function function_34fbafdc(weapon, mod) {
@@ -346,7 +345,7 @@ function function_34fbafdc(weapon, mod) {
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0xd319b272, Offset: 0x1458
 // Size: 0x8ce
 function update(mod, inflictor, perkfeedback, weapon, victim, psoffsettime, shitloc, fatal, idflags, var_594a2d34) {
@@ -428,7 +427,7 @@ function update(mod, inflictor, perkfeedback, weapon, victim, psoffsettime, shit
     is_vehicle = isdefined(victim.var_48d842c3) ? victim.var_48d842c3 : is_vehicle;
     if (isdefined(victim) && self != victim) {
         is_friendly = !victim util::isenemyteam(self.team);
-        if (isdefined(victim.var_d7e8ad6f) && victim.var_d7e8ad6f == 2) {
+        if (isdefined(victim.spyRole) && victim.spyRole == 2) {
             is_friendly = 0;
         }
     }
@@ -544,7 +543,7 @@ function damage_feedback_get_dead(*victim, mod, weapon, stage) {
         self notify(#"kill_hitmarker_fade");
         self endon(#"kill_hitmarker_fade", #"disconnect");
         self.hud_damagefeedback.alpha = 1;
-        wait(0.25);
+        wait 0.25;
         self.hud_damagefeedback fadeovertime(0.3);
         self.hud_damagefeedback.alpha = 0;
     }
@@ -581,7 +580,7 @@ function update_override(icon, sound, additional_icon) {
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xe02fdc48, Offset: 0x2318
 // Size: 0xce
 function dodamagefeedback(weapon, *einflictor, idamage, smeansofdeath) {
@@ -608,7 +607,7 @@ function dodamagefeedback(weapon, *einflictor, idamage, smeansofdeath) {
 }
 
 // Namespace damagefeedback/damagefeedback_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9469d881, Offset: 0x23f0
 // Size: 0x7c
 function istacticalhitmarker(weapon, smeansofdeath, idamage) {

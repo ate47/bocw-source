@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\flowgraph\flowgraph_core.csc;
+#using scripts\core_common\flowgraph\flowgraph_core;
 
 #namespace flowgraph_logic;
 
@@ -397,7 +396,7 @@ function onflowgraphrun() {
 // Checksum 0x60eb9d67, Offset: 0x1978
 // Size: 0x1e
 function waitfunc(*x, f_seconds) {
-    wait(f_seconds);
+    wait f_seconds;
     return true;
 }
 

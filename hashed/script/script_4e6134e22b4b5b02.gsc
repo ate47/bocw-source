@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_a208feb2;
 
@@ -31,7 +30,7 @@ function event_handler[gametype_start] main(*eventstruct) {
 }
 
 // Namespace namespace_a208feb2/namespace_a208feb2
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcaa26ddf, Offset: 0x260
 // Size: 0xd8
 function on_spawned() {
@@ -39,8 +38,8 @@ function on_spawned() {
     if (!isdefined(player.var_c41d6d5b)) {
         player.var_c41d6d5b = getentarray("vehicle_oob", "targetname");
     }
-    foreach (var_3e5f1d0f in player.var_c41d6d5b) {
-        var_3e5f1d0f setinvisibletoplayer(player, 1);
+    foreach (vehicle_oob in player.var_c41d6d5b) {
+        vehicle_oob setinvisibletoplayer(player, 1);
     }
 }
 
@@ -61,8 +60,8 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
     if (!isdefined(player.var_c41d6d5b)) {
         player.var_c41d6d5b = getentarray("vehicle_oob", "targetname");
     }
-    foreach (var_3e5f1d0f in player.var_c41d6d5b) {
-        var_3e5f1d0f setinvisibletoplayer(player, 0);
+    foreach (vehicle_oob in player.var_c41d6d5b) {
+        vehicle_oob setinvisibletoplayer(player, 0);
     }
 }
 
@@ -83,8 +82,8 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
     if (!isdefined(player.var_c41d6d5b)) {
         player.var_c41d6d5b = getentarray("vehicle_oob", "targetname");
     }
-    foreach (var_3e5f1d0f in player.var_c41d6d5b) {
-        var_3e5f1d0f setinvisibletoplayer(player, 1);
+    foreach (vehicle_oob in player.var_c41d6d5b) {
+        vehicle_oob setinvisibletoplayer(player, 1);
     }
 }
 

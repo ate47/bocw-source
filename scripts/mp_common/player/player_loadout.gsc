@@ -1,30 +1,29 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\armor.gsc;
-#using scripts\mp_common\teams\teams.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\dev.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\abilities\gadgets\gadget_health_regen.gsc;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\tweakables_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\perks.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\loadout_shared.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\healthoverlay.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\dev_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\abilities\ability_util;
+#using scripts\abilities\gadgets\gadget_health_regen;
+#using scripts\core_common\armor;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\dev_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\healthoverlay;
+#using scripts\core_common\loadout_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\tweakables_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\gametypes\dev;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\teams\teams;
+#using scripts\weapons\weapon_utils;
 
 #namespace loadout;
 
@@ -54,7 +53,7 @@ function autoexec function_313e9d31() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x718a3ddf, Offset: 0x928
 // Size: 0x1e
 function function_dd840c5f() {
@@ -64,7 +63,7 @@ function function_dd840c5f() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6d79ee3c, Offset: 0x950
 // Size: 0x594
 function function_9f888e75(*weapons_table) {
@@ -126,7 +125,7 @@ function function_9f888e75(*weapons_table) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x23e35f4a, Offset: 0xef0
 // Size: 0x454
 function function_5be71695() {
@@ -165,7 +164,7 @@ function function_5be71695() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7b771f3c, Offset: 0x1350
 // Size: 0x26c
 function function_5f206535() {
@@ -195,7 +194,7 @@ function function_5f206535() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73ba262c, Offset: 0x15c8
 // Size: 0x13c
 function mp_init() {
@@ -216,7 +215,7 @@ function mp_init() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1e4fa435, Offset: 0x1710
 // Size: 0xf8
 function private create_class_exclusion_list() {
@@ -247,7 +246,7 @@ function private is_attachment_excluded(attachment) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6710b7e4, Offset: 0x1878
 // Size: 0x24
 function private function_445ac5cc(weaponclass, classnum) {
@@ -255,7 +254,7 @@ function private function_445ac5cc(weaponclass, classnum) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xdc6bb7b0, Offset: 0x18a8
 // Size: 0x34
 function private load_default_loadout(weaponclass, classnum) {
@@ -264,7 +263,7 @@ function private load_default_loadout(weaponclass, classnum) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7504b9f7, Offset: 0x18e8
 // Size: 0x174
 function private weapon_class_register(weaponname, weapon_type) {
@@ -288,7 +287,7 @@ function private weapon_class_register(weaponname, weapon_type) {
         level.inventory_array[getweapon(weaponname)] = 1;
         return;
     }
-    assert(0, "ping_callouts" + weapon_type + "<unknown string>" + weaponname);
+    assert(0, "<dev string:x38>" + weapon_type + "<dev string:x7c>" + weaponname);
 }
 
 // Namespace loadout/player_loadout
@@ -301,7 +300,7 @@ function private heavy_weapon_register_dialog(weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x630643d, Offset: 0x1ab0
 // Size: 0x304
 function private function_6bc4927f() {
@@ -355,33 +354,33 @@ function private function_6bc4927f() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7cee9cae, Offset: 0x1dc0
 // Size: 0x184
 function private function_8624b793() {
     /#
-        wait(0.5);
+        wait 0.5;
         for (i = 0; i < 1024; i++) {
             iteminfo = getunlockableiteminfofromindex(i, 0);
             if (!isdefined(iteminfo)) {
                 continue;
             }
             reference_s = iteminfo.name;
-            if (reference_s == "<unknown string>") {
+            if (reference_s == "<dev string:x8d>") {
                 continue;
             }
             group_s = iteminfo.itemgroupname;
             display_name_s = iteminfo.displayname;
-            if (group_s == "<unknown string>") {
+            if (group_s == "<dev string:x91>") {
                 dev::add_perk_devgui(display_name_s, reference_s);
                 continue;
             }
-            if (group_s == "<unknown string>") {
-                if (strstartswith(iteminfo.name, "<unknown string>")) {
-                    dev::function_8263c0d5(reference_s, "<unknown string>");
+            if (group_s == "<dev string:x9e>") {
+                if (strstartswith(iteminfo.name, "<dev string:xa8>")) {
+                    dev::function_8263c0d5(reference_s, "<dev string:xb3>");
                     continue;
                 }
-                postfix = "<unknown string>" + sessionmodeabbreviation();
+                postfix = "<dev string:xba>" + sessionmodeabbreviation();
                 dev::function_373068ca(reference_s, postfix);
             }
         }
@@ -389,7 +388,7 @@ function private function_8624b793() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x915627b3, Offset: 0x1f50
 // Size: 0x54
 function function_97d216fa(response) {
@@ -399,15 +398,15 @@ function function_97d216fa(response) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3db8080b, Offset: 0x1fb0
 // Size: 0x12c
 function private get_killstreak_index(weaponclass, killstreaknum) {
     killstreaknum++;
     killstreakstring = "killstreak" + killstreaknum;
     /#
-        if (getdvarint("<unknown string>" + killstreakstring, 0) > 0) {
-            return getdvarint("<unknown string>" + killstreakstring, 0);
+        if (getdvarint("<dev string:xbf>" + killstreakstring, 0) > 0) {
+            return getdvarint("<dev string:xbf>" + killstreakstring, 0);
         }
     #/
     if (getdvarint(#"custom_killstreak_mode", 0) == 2) {
@@ -420,7 +419,7 @@ function private get_killstreak_index(weaponclass, killstreaknum) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x26f13e8a, Offset: 0x20e8
 // Size: 0x136
 function clear_killstreaks() {
@@ -441,7 +440,7 @@ function clear_killstreaks() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc56e11fc, Offset: 0x2228
 // Size: 0x194
 function give_killstreaks() {
@@ -471,7 +470,7 @@ function give_killstreaks() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x96320ef8, Offset: 0x23c8
 // Size: 0x1bc
 function function_6573eeeb() {
@@ -492,7 +491,7 @@ function function_6573eeeb() {
         return;
     }
     /#
-        if (getdvarstring(#"hash_13d12c0b5b9b9738") != "<unknown string>") {
+        if (getdvarstring(#"hash_13d12c0b5b9b9738") != "<dev string:x8d>") {
             self giveexecution(hash(getdvarstring(#"hash_13d12c0b5b9b9738")));
             return;
         }
@@ -501,11 +500,11 @@ function function_6573eeeb() {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x531b0f3c, Offset: 0x2590
 // Size: 0x38e
 function give_killstreak(var_523d9b33, &var_58335e4f) {
-    assert(isdefined(level.tbl_killstreakdata[var_523d9b33]), "<unknown string>" + var_523d9b33 + "<unknown string>");
+    assert(isdefined(level.tbl_killstreakdata[var_523d9b33]), "<dev string:xc7>" + var_523d9b33 + "<dev string:xd8>");
     if (isdefined(level.tbl_killstreakdata[var_523d9b33])) {
         if (isitemrestricted(level.tbl_killstreakdata[var_523d9b33])) {
             return;
@@ -555,7 +554,7 @@ function give_killstreak(var_523d9b33, &var_58335e4f) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x32aa0dcd, Offset: 0x2928
 // Size: 0x16
 function private reset_specialty_slots(*class_num) {
@@ -563,7 +562,7 @@ function private reset_specialty_slots(*class_num) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa97071b0, Offset: 0x2948
 // Size: 0xe
 function function_da96d067() {
@@ -571,7 +570,7 @@ function function_da96d067() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1295ee1b, Offset: 0x2960
 // Size: 0x3e
 function private function_50797a7f(equipment_name) {
@@ -582,7 +581,7 @@ function private function_50797a7f(equipment_name) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3fd9ebca, Offset: 0x29a8
 // Size: 0x5e
 function init_player(takeallweapons) {
@@ -595,7 +594,7 @@ function init_player(takeallweapons) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3aea7414, Offset: 0x2a10
 // Size: 0x1c
 function private give_gesture() {
@@ -603,7 +602,7 @@ function private give_gesture() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2172b57e, Offset: 0x2a38
 // Size: 0xd6
 function private function_c84c77d8(loadoutslot) {
@@ -631,11 +630,11 @@ function private function_c84c77d8(loadoutslot) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8233fad3, Offset: 0x2b18
 // Size: 0x38e
 function give_talents(var_b280cc48 = 1) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self.var_c8836f02 = self function_fd62a2aa(self.class_num);
     foreach (var_ebdddedf in self.var_c8836f02) {
         if (var_ebdddedf.namehash == #"hash_6be738527a4213aa" && level.hardcoremode) {
@@ -676,15 +675,15 @@ function give_talents(var_b280cc48 = 1) {
             }
         }
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x10b2d2b6, Offset: 0x2eb0
 // Size: 0x136
 function give_perks() {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self.specialty = self getloadoutperks(self.class_num);
     self setplayerstateloadoutweapons(self.class_num);
     self setplayerstateloadoutbonuscards(self.class_num);
@@ -700,31 +699,31 @@ function give_perks() {
     if (self hasperk(#"specialty_immunenvthermal")) {
         self clientfield::set("cold_blooded", 1);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe480db8a, Offset: 0x2ff0
 // Size: 0xec
 function function_f436358b(weaponclass) {
     self.class_num = get_class_num(weaponclass);
     if (issubstr(weaponclass, "CLASS_CUSTOM")) {
-        profileNamedStart(#"");
+        pixbeginevent(#"");
         self.class_num_for_global_weapons = self.class_num;
         self reset_specialty_slots(self.class_num);
-        profileNamedStop();
+        pixendevent();
     } else {
-        profileNamedStart(#"");
-        assert(isdefined(self.pers[#"class"]), "<unknown string>");
+        pixbeginevent(#"");
+        assert(isdefined(self.pers[#"class"]), "<dev string:xf0>");
         self.class_num_for_global_weapons = 0;
-        profileNamedStop();
+        pixendevent();
     }
     self recordloadoutindex(self.class_num);
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1ff5d429, Offset: 0x30e8
 // Size: 0x228
 function get_class_num(weaponclass) {
@@ -772,7 +771,7 @@ function private function_d81e599e() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x32d93050, Offset: 0x33b8
 // Size: 0x2a
 function private get_weapon_options(type_index) {
@@ -780,7 +779,7 @@ function private get_weapon_options(type_index) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe9eb3157, Offset: 0x33f0
 // Size: 0xaa
 function private function_2ada6938(slot) {
@@ -796,11 +795,11 @@ function private function_2ada6938(slot) {
 }
 
 // Namespace loadout/player_loadout
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x1bf3f3f6, Offset: 0x34a8
 // Size: 0x1f2
 function private give_weapon(weapon, slot, var_a6a8156, var_bc218695) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     if (weapon != level.weaponnull) {
         if (isdefined(var_a6a8156)) {
             weapon_options = self [[ var_a6a8156 ]](var_bc218695);
@@ -821,12 +820,12 @@ function private give_weapon(weapon, slot, var_a6a8156, var_bc218695) {
             self ability_util::gadget_reset(weapon, self.pers[#"changed_class"], !util::isoneround(), util::isfirstround(), changedspecialist);
         }
     }
-    profileNamedStop();
+    pixendevent();
     return weapon;
 }
 
 // Namespace loadout/player_loadout
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x35774941, Offset: 0x36a8
 // Size: 0x68
 function private function_d35292b6(var_c41b864, new_weapon, *var_9691c281, *var_8feec653) {
@@ -840,7 +839,7 @@ function private function_d35292b6(var_c41b864, new_weapon, *var_9691c281, *var_
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc4a6d2ac, Offset: 0x3718
 // Size: 0x98
 function private function_286ee0b6(previous_weapon, spawn_weapon) {
@@ -854,7 +853,7 @@ function private function_286ee0b6(previous_weapon, spawn_weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x527113ce, Offset: 0x37b8
 // Size: 0x6c
 function private function_ee9b8d55() {
@@ -864,7 +863,7 @@ function private function_ee9b8d55() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa0a255ec, Offset: 0x3830
 // Size: 0xdc
 function private function_d9035e42(weapon) {
@@ -885,7 +884,7 @@ function private function_d9035e42(weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1241d403, Offset: 0x3918
 // Size: 0x98
 function private function_ad874c55(weapon) {
@@ -898,7 +897,7 @@ function private function_ad874c55(weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x18730adc, Offset: 0x39b8
 // Size: 0x15c
 function private function_3aa744b9(slot, weapon) {
@@ -933,7 +932,7 @@ function private function_3aa744b9(slot, weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x651b8af6, Offset: 0x3b20
 // Size: 0x15a
 function private function_d126318c(slot, weapon) {
@@ -958,7 +957,7 @@ function private function_d126318c(slot, weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xce82b349, Offset: 0x3c88
 // Size: 0x13a
 function private function_68c2f1dc(slot, previous_weapon, var_c41b864, var_fe5710f, var_60b97679) {
@@ -977,7 +976,7 @@ function private function_68c2f1dc(slot, previous_weapon, var_c41b864, var_fe571
 }
 
 // Namespace loadout/player_loadout
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa19eb7a6, Offset: 0x3dd0
 // Size: 0x9a
 function private function_cba7f33e(slot, previous_weapon, var_c41b864, var_4571c11d) {
@@ -988,7 +987,7 @@ function private function_cba7f33e(slot, previous_weapon, var_c41b864, var_4571c
 }
 
 // Namespace loadout/player_loadout
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x82c2499f, Offset: 0x3e78
 // Size: 0xb2
 function private function_f20f595a(previous_weapon, var_c41b864, var_4571c11d) {
@@ -1001,7 +1000,7 @@ function private function_f20f595a(previous_weapon, var_c41b864, var_4571c11d) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x65356c4c, Offset: 0x3f38
 // Size: 0x15a
 function function_d98a8122(spawn_weapon) {
@@ -1023,7 +1022,7 @@ function function_d98a8122(spawn_weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x50eec5c7, Offset: 0x40a0
 // Size: 0x256
 function private give_weapons(previous_weapon) {
@@ -1034,7 +1033,7 @@ function private give_weapons(previous_weapon) {
             return;
         }
     #/
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self.primaryloadoutgunsmithvariantindex = self getloadoutgunsmithvariantindex(self.class_num, 0);
     self.secondaryloadoutgunsmithvariantindex = self getloadoutgunsmithvariantindex(self.class_num, 1);
     spawn_weapon = self function_68c2f1dc("primary", previous_weapon, level.weaponnull, 0, &get_weapon_options);
@@ -1047,7 +1046,7 @@ function private give_weapons(previous_weapon) {
     self function_d98a8122(spawn_weapon);
     self function_da96d067();
     self function_ee9b8d55();
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
@@ -1059,7 +1058,7 @@ function function_cdb86a18() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf6882b06, Offset: 0x4320
 // Size: 0x294
 function function_5536bd9e() {
@@ -1088,11 +1087,11 @@ function function_5536bd9e() {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x48871b1f, Offset: 0x45c0
 // Size: 0x516
 function private function_8e961216(slot, *previous_weapon) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     changedclass = self.pers[#"changed_class"];
     roundbased = !util::isoneround();
     firstround = util::isfirstround();
@@ -1141,15 +1140,15 @@ function private function_8e961216(slot, *previous_weapon) {
         self giveweapon(level.var_34d27b26);
         self setweaponammoclip(level.var_34d27b26, 0);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xac9fa853, Offset: 0x4ae0
 // Size: 0x5b6
 function function_c3448ab0(slot, *previous_weapon, force_give_gadget_health_regen = 1) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     changedclass = self.pers[#"changed_class"];
     roundbased = !util::isoneround();
     firstround = util::isfirstround();
@@ -1209,21 +1208,21 @@ function function_c3448ab0(slot, *previous_weapon, force_give_gadget_health_rege
         loadout.count = secondaryoffhandcount;
         if (secondaryoffhand.gadget_type != 0) {
             if (force_give_gadget_health_regen === 1 && secondaryoffhand.gadget_type == 23) {
-                self ability_util::function_36a15b60(secondaryoffhand);
+                self ability_util::gadget_power_full(secondaryoffhand);
             } else {
                 self ability_util::gadget_reset(secondaryoffhand, changedclass, roundbased, firstround, changedspecialist);
             }
         }
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x35315ced, Offset: 0x50a0
 // Size: 0x4ce
 function private give_special_offhand(slot, *previous_weapon) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     changedclass = self.pers[#"changed_class"];
     roundbased = !util::isoneround();
     firstround = util::isfirstround();
@@ -1269,15 +1268,15 @@ function private give_special_offhand(slot, *previous_weapon) {
         self giveweapon(level.var_43a51921);
         self setweaponammoclip(level.var_43a51921, 0);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x4499c098, Offset: 0x5578
 // Size: 0x2f6
 function private give_ultimate(slot, *previous_weapon) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     changedclass = self.pers[#"changed_class"];
     roundbased = !util::isoneround();
     firstround = util::isfirstround();
@@ -1290,10 +1289,10 @@ function private give_ultimate(slot, *previous_weapon) {
         var_36aac800 = ultimate.startammo;
     }
     /#
-        if (getdvarstring(#"hash_488ee9aa10c06400") != "<unknown string>") {
+        if (getdvarstring(#"hash_488ee9aa10c06400") != "<dev string:x8d>") {
             var_92d4ff6c = getdvarstring(#"hash_488ee9aa10c06400");
             ultimate = level.weaponnone;
-            if (var_92d4ff6c != "<unknown string>") {
+            if (var_92d4ff6c != "<dev string:x121>") {
                 ultimate = getweapon(var_92d4ff6c);
             }
         }
@@ -1315,7 +1314,7 @@ function private give_ultimate(slot, *previous_weapon) {
         self ability_util::gadget_reset(ultimate, changedclass, roundbased, firstround, changedspecialist);
         self function_442539(previous_weapon, ultimate);
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 /#
@@ -1333,12 +1332,12 @@ function private give_ultimate(slot, *previous_weapon) {
 #/
 
 // Namespace loadout/player_loadout
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x26efbdde, Offset: 0x58d0
 // Size: 0x5be
 function give_loadout(*team, weaponclass, var_e0f216b9) {
     self endon(#"death");
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     self clientfield::set("cold_blooded", 0);
     if (function_87bcb1b()) {
         assert(isdefined(self.curclass));
@@ -1351,7 +1350,7 @@ function give_loadout(*team, weaponclass, var_e0f216b9) {
         #/
         current_weapon = self getcurrentweapon();
         if (isdefined(self.var_560765bb) && self.var_560765bb >= gettime() && current_weapon != level.weaponnone) {
-            profileNamedStop();
+            pixendevent();
             return;
         }
         if (current_weapon == level.weaponnone && isdefined(self.class_num)) {
@@ -1410,11 +1409,11 @@ function give_loadout(*team, weaponclass, var_e0f216b9) {
     self function_bfb53a23(var_19546df5);
     callback::callback(#"on_loadout");
     self thread function_b61852e1();
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf2ef86f5, Offset: 0x5e98
 // Size: 0xac
 function private function_b61852e1() {
@@ -1423,14 +1422,14 @@ function private function_b61852e1() {
     self endon("e7c949c6a8f9179");
     waitframe(1);
     self luinotifyevent(#"hash_21e30e91084f7e66", 0);
-    wait(0.1);
+    wait 0.1;
     self luinotifyevent(#"hash_21e30e91084f7e66", 0);
-    wait(0.5);
+    wait 0.5;
     self luinotifyevent(#"hash_21e30e91084f7e66", 0);
 }
 
 // Namespace loadout/player_loadout
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x1611f347, Offset: 0x5f50
 // Size: 0x1fc
 function private function_43048d33(spawn_weapon, primaryweapon, var_e0f216b9 = 0) {
@@ -1471,7 +1470,7 @@ function private function_43048d33(spawn_weapon, primaryweapon, var_e0f216b9 = 0
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa1d76483, Offset: 0x6158
 // Size: 0xdc
 function private on_player_connecting() {
@@ -1491,7 +1490,7 @@ function private on_player_connecting() {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf64dcdbd, Offset: 0x6240
 // Size: 0x1a
 function function_53b62db1(newclass) {
@@ -1499,7 +1498,7 @@ function function_53b62db1(newclass) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5b066a20, Offset: 0x6268
 // Size: 0x1bc
 function function_d7c205b9(newclass, calledfrom = #"unspecified") {
@@ -1526,7 +1525,7 @@ function function_d7c205b9(newclass, calledfrom = #"unspecified") {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24b31dd6, Offset: 0x6430
 // Size: 0x12c
 function init_dvars() {
@@ -1539,7 +1538,7 @@ function init_dvars() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6cd38e50, Offset: 0x6568
 // Size: 0x7e
 function private cac_selector() {
@@ -1556,11 +1555,11 @@ function private cac_selector() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa3596481, Offset: 0x65f0
 // Size: 0xf6
 function register_perks() {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     perks = self.specialty;
     perks::perk_reset_all();
     if (isdefined(perks) && is_true(level.perksenabled)) {
@@ -1575,11 +1574,11 @@ function register_perks() {
     /#
         dev::giveextraperks();
     #/
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/player_loadout
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe5c14f2d, Offset: 0x66f0
 // Size: 0x616
 function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, hitloc) {
@@ -1595,7 +1594,7 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
         if (getdvarint(#"scr_perkdebug", 0)) {
             debug = 1;
             if (!isdefined(attacker.name)) {
-                attacker.name = "<unknown string>";
+                attacker.name = "<dev string:x130>";
             }
         }
     #/
@@ -1606,14 +1605,14 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
             if (victim hasperk(#"specialty_armorvest") && !function_4c80bca1(hitloc)) {
                 /#
                     if (debug) {
-                        println("<unknown string>" + victim.name + "<unknown string>" + attacker.name + "<unknown string>");
+                        println("<dev string:x13b>" + victim.name + "<dev string:x146>" + attacker.name + "<dev string:x15d>");
                     }
                 #/
             } else {
                 final_damage = damage * (100 + level.cac_bulletdamage_data) / 100;
                 /#
                     if (debug) {
-                        println("<unknown string>" + attacker.name + "<unknown string>" + victim.name);
+                        println("<dev string:x13b>" + attacker.name + "<dev string:x17b>" + victim.name);
                     }
                 #/
             }
@@ -1621,14 +1620,14 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
             final_damage = damage * level.cac_armorvest_data * 0.01;
             /#
                 if (debug) {
-                    println("<unknown string>" + attacker.name + "<unknown string>" + victim.name);
+                    println("<dev string:x13b>" + attacker.name + "<dev string:x1a4>" + victim.name);
                 }
             #/
         } else if (victim hasperk(#"specialty_fireproof") && weapons::isfiredamage(weapon, mod)) {
             final_damage = damage * level.cac_fireproof_data * 0.01;
             /#
                 if (debug) {
-                    println("<unknown string>" + attacker.name + "<unknown string>" + victim.name);
+                    println("<dev string:x13b>" + attacker.name + "<dev string:x1cc>" + victim.name);
                 }
             #/
         } else if (!var_81ca51d && victim hasperk(#"specialty_flakjacket") && weapons::isexplosivedamage(mod) && !weapon.ignoresflakjacket && !victim grenade_stuck(inflictor)) {
@@ -1636,7 +1635,7 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
             final_damage = int(damage * cac_data / 100);
             /#
                 if (debug) {
-                    println("<unknown string>" + victim.name + "<unknown string>" + attacker.name + "<unknown string>");
+                    println("<dev string:x13b>" + victim.name + "<dev string:x1ed>" + attacker.name + "<dev string:x20a>");
                 }
             #/
         }
@@ -1649,7 +1648,7 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
         victim.cac_debug_weapon = weapon.displayname;
         victim.cac_debug_range = int(distance(attacker.origin, victim.origin));
         if (debug) {
-            println("<unknown string>" + final_damage / damage + "<unknown string>" + damage + "<unknown string>" + final_damage);
+            println("<dev string:x21f>" + final_damage / damage + "<dev string:x239>" + damage + "<dev string:x24c>" + final_damage);
         }
     #/
     final_damage = int(final_damage);
@@ -1660,7 +1659,7 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6df55165, Offset: 0x6d10
 // Size: 0x3e
 function private function_4c80bca1(hitloc) {
@@ -1668,7 +1667,7 @@ function private function_4c80bca1(hitloc) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x68fc1fff, Offset: 0x6d58
 // Size: 0x34
 function private grenade_stuck(inflictor) {
@@ -1676,7 +1675,7 @@ function private grenade_stuck(inflictor) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x86fe1f3f, Offset: 0x6d98
 // Size: 0x4c
 function private offhealthregen(*slot, *weapon) {
@@ -1685,12 +1684,12 @@ function private offhealthregen(*slot, *weapon) {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x12431c06, Offset: 0x6df0
 // Size: 0x64
 function private function_c57586b8() {
     self endon(#"disconnect");
-    wait(0.5);
+    wait 0.5;
     self gadget_health_regen::power_off();
     if (isdefined(self.gadget_health_regen_slot)) {
         self function_19ed70ca(self.gadget_health_regen_slot, 1);
@@ -1698,7 +1697,7 @@ function private function_c57586b8() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3a80b109, Offset: 0x6e60
 // Size: 0x56e
 function private function_8aa3ff4e() {

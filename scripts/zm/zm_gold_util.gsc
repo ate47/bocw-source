@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
 #using script_531a6d61ee606513;
 #using script_58087978e7d5a0fd;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_unitrigger;
 
 #namespace zm_gold_util;
 
 // Namespace zm_gold_util/zm_gold_util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd534f328, Offset: 0xd8
 // Size: 0x4c
 function init() {
@@ -44,7 +43,7 @@ function close_hud() {
 }
 
 // Namespace zm_gold_util/zm_gold_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c8c83ea, Offset: 0x1d0
 // Size: 0xa4
 function function_b488623(b_show) {
@@ -60,7 +59,7 @@ function function_b488623(b_show) {
 }
 
 // Namespace zm_gold_util/zm_gold_util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xefdf37e3, Offset: 0x280
 // Size: 0x68
 function function_13ebb331(*v_origin_or_ent, str_targetname) {
@@ -78,9 +77,9 @@ function function_13ebb331(*v_origin_or_ent, str_targetname) {
     // Checksum 0x2996e357, Offset: 0x2f0
     // Size: 0x7c
     function function_37597f29() {
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        level flag::wait_till("<unknown string>");
+        adddebugcommand("<dev string:x38>");
+        adddebugcommand("<dev string:x97>");
+        level flag::wait_till("<dev string:xf6>");
         zm_devgui::add_custom_devgui_callback(&function_72c803d3);
     }
 

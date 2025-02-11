@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_jump_pad;
 
@@ -92,7 +91,7 @@ function jump_pad_think() {
 // Checksum 0x9c87a805, Offset: 0x4b0
 // Size: 0x64
 function delayed_jump_pad_start(who) {
-    wait(0.5);
+    wait 0.5;
     if (who istouching(self)) {
         self thread trigger::function_thread(who, &jump_pad_start, &jump_pad_cancel);
     }
@@ -130,10 +129,10 @@ function jump_pad_start(ent_player, endon_condition) {
         } else {
             self playsound(#"evt_jump_pad_charge");
         }
-        wait(self.script_wait);
+        wait self.script_wait;
     } else {
         self playsound(#"evt_jump_pad_charge");
-        wait(1);
+        wait 1;
     }
     if (isdefined(self.script_parameters) && isdefined(level._jump_pad_override[self.script_parameters])) {
         end_point = self [[ level._jump_pad_override[self.script_parameters] ]](ent_player);
@@ -168,10 +167,10 @@ function jump_pad_start(ent_player, endon_condition) {
             forward_scaling = 1.1;
             /#
                 if (getdvarint(#"jump_pad_tweaks", 0)) {
-                    if (getdvarstring(#"jump_pad_z_dist") != "<unknown string>") {
+                    if (getdvarstring(#"jump_pad_z_dist") != "<dev string:x38>") {
                         z_dist *= getdvarfloat(#"jump_pad_z_dist", 0);
                     }
-                    if (getdvarstring(#"jump_pad_forward") != "<unknown string>") {
+                    if (getdvarstring(#"jump_pad_forward") != "<dev string:x38>") {
                         forward_scaling = getdvarfloat(#"jump_pad_forward", 0);
                     }
                 }
@@ -181,10 +180,10 @@ function jump_pad_start(ent_player, endon_condition) {
             forward_scaling = 1.3;
             /#
                 if (getdvarint(#"jump_pad_tweaks", 0)) {
-                    if (getdvarstring(#"jump_pad_z_dist") != "<unknown string>") {
+                    if (getdvarstring(#"jump_pad_z_dist") != "<dev string:x38>") {
                         z_dist *= getdvarfloat(#"jump_pad_z_dist", 0);
                     }
-                    if (getdvarstring(#"jump_pad_forward") != "<unknown string>") {
+                    if (getdvarstring(#"jump_pad_forward") != "<dev string:x38>") {
                         forward_scaling = getdvarfloat(#"jump_pad_forward", 0);
                     }
                 }
@@ -194,10 +193,10 @@ function jump_pad_start(ent_player, endon_condition) {
             forward_scaling = 1;
             /#
                 if (getdvarint(#"jump_pad_tweaks", 0)) {
-                    if (getdvarstring(#"jump_pad_z_dist") != "<unknown string>") {
+                    if (getdvarstring(#"jump_pad_z_dist") != "<dev string:x38>") {
                         z_dist *= getdvarfloat(#"jump_pad_z_dist", 0);
                     }
-                    if (getdvarstring(#"jump_pad_forward") != "<unknown string>") {
+                    if (getdvarstring(#"jump_pad_forward") != "<dev string:x38>") {
                         forward_scaling = getdvarfloat(#"jump_pad_forward", 0);
                     }
                 }
@@ -265,7 +264,7 @@ function jump_pad_start(ent_player, endon_condition) {
         return;
     }
     if (ent_player istouching(self)) {
-        wait(0.5);
+        wait 0.5;
         if (ent_player istouching(self)) {
             self jump_pad_start(ent_player, endon_condition);
         }
@@ -309,7 +308,7 @@ function jump_pad_move(vec_direction, flt_time, struct_poi, trigger) {
     self._padded = 1;
     self.lander = 1;
     self setstance("stand");
-    wait(0.1);
+    wait 0.1;
     if (isdefined(trigger.script_label)) {
         if (issubstr(trigger.script_label, "low")) {
             self.jump_pad_current = undefined;
@@ -386,9 +385,9 @@ function disconnect_failsafe_pad_poi_clean() {
 // Size: 0x8c
 function failsafe_pad_poi_clean(ent_trig, ent_poi) {
     if (isdefined(ent_trig.script_wait)) {
-        wait(ent_trig.script_wait);
+        wait ent_trig.script_wait;
     } else {
-        wait(0.5);
+        wait 0.5;
     }
     if (isdefined(ent_poi)) {
         level jump_pad_ignore_poi_cleanup(ent_poi);
@@ -472,7 +471,7 @@ function stop_chasing_the_sky(ent_poi) {
                 }
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
     self._pad_follow = 0;
     self.ignore_cleanup_mgr = 0;

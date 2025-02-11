@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_devgui;
 
 #namespace zm_platinum_ww_quest;
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x82420a24, Offset: 0x178
 // Size: 0x11c
 function function_f8a8ff3f() {
     clientfield::register("scriptmover", "" + #"hash_1fc683b0af884f6b", 24000, 1, "int");
     clientfield::register("toplayer", "" + #"hash_6d58634b9c00e983", 24000, 1, "int");
-    clientfield::register("scriptmover", "" + #"hash_35b587dfb54ded2a", 24000, 4, "int");
+    clientfield::register("scriptmover", "" + #"highlight_dial", 24000, 4, "int");
     level.var_ea51eeb9 = {};
     level.var_ea51eeb9 thread function_756f46cf();
     level.var_ea51eeb9 thread function_faf723a();
@@ -25,7 +24,7 @@ function function_f8a8ff3f() {
 }
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb269aa19, Offset: 0x2a0
 // Size: 0x2c4
 function function_756f46cf() {
@@ -65,7 +64,7 @@ function function_756f46cf() {
 }
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf802a4e2, Offset: 0x570
 // Size: 0x9c
 function function_19a410e2(var_a370eede) {
@@ -73,12 +72,12 @@ function function_19a410e2(var_a370eede) {
     if (var_a370eede) {
         var_4d05aafa |= 4;
     }
-    self clientfield::set("" + #"hash_35b587dfb54ded2a", var_4d05aafa);
-    self.var_2cc651d5 clientfield::set("" + #"hash_35b587dfb54ded2a", var_4d05aafa | 8);
+    self clientfield::set("" + #"highlight_dial", var_4d05aafa);
+    self.var_2cc651d5 clientfield::set("" + #"highlight_dial", var_4d05aafa | 8);
 }
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3d213b6f, Offset: 0x618
 // Size: 0x204
 function function_faf723a() {
@@ -106,7 +105,7 @@ function function_faf723a() {
 }
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47ad03c4, Offset: 0x828
 // Size: 0x176
 function function_4395371c() {
@@ -129,7 +128,7 @@ function function_4395371c() {
 }
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf63f41dc, Offset: 0x9a8
 // Size: 0x596
 function function_8b40c670(e_trigger) {
@@ -139,11 +138,11 @@ function function_8b40c670(e_trigger) {
     var_ba127c46 = self.var_19f4406e;
     self.var_19f4406e = 0;
     self flag::set(#"hash_2d6980738132f263");
-    self val::set(#"hash_c13c4143edde35b", "disable_weapons", 1);
-    self val::set(#"hash_c13c4143edde35b", "allow_jump", 0);
-    self val::set(#"hash_c13c4143edde35b", "allow_stand", 0);
-    self val::set(#"hash_c13c4143edde35b", "allow_prone", 0);
-    self val::set(#"hash_c13c4143edde35b", "ignoreme", 1);
+    self val::set(#"dial_lock", "disable_weapons", 1);
+    self val::set(#"dial_lock", "allow_jump", 0);
+    self val::set(#"dial_lock", "allow_stand", 0);
+    self val::set(#"dial_lock", "allow_prone", 0);
+    self val::set(#"dial_lock", "ignoreme", 1);
     while (self getstance() != "crouch") {
         waitframe(1);
     }
@@ -185,10 +184,10 @@ function function_8b40c670(e_trigger) {
                 level.var_ea51eeb9.input[n_index] = (level.var_ea51eeb9.input[n_index] + input + 40) % 40;
                 playsoundatposition(#"hash_16474e80e8a1f9d", self.var_9e8e7b78.origin);
                 /#
-                    iprintlnbold("<unknown string>" + n_index + "<unknown string>" + level.var_ea51eeb9.input[n_index] + "<unknown string>" + level.var_ea51eeb9.numbers[n_index]);
+                    iprintlnbold("<dev string:x38>" + n_index + "<dev string:x40>" + level.var_ea51eeb9.input[n_index] + "<dev string:x4f>" + level.var_ea51eeb9.numbers[n_index]);
                 #/
                 self.var_9e8e7b78 linktoupdateoffset((0, 0, 0), (level.var_ea51eeb9.input[n_index] * 9, 0, 0));
-                wait(0.2);
+                wait 0.2;
                 continue;
             }
         }
@@ -196,7 +195,7 @@ function function_8b40c670(e_trigger) {
     }
     self unlink();
     waitframe(1);
-    self val::reset_all(#"hash_c13c4143edde35b");
+    self val::reset_all(#"dial_lock");
     if (var_ba127c46 != 0) {
         self.var_19f4406e = var_ba127c46;
         self flag::set(#"hash_2d6980738132f263");
@@ -205,7 +204,7 @@ function function_8b40c670(e_trigger) {
 }
 
 // Namespace zm_platinum_ww_quest/namespace_719bbd07
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7a7b88df, Offset: 0xf48
 // Size: 0x11c
 function function_7d0eaace() {
@@ -219,13 +218,13 @@ function function_7d0eaace() {
     if (var_8b27029a) {
         level flag::set(#"hash_358a79602429d556");
         /#
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x5e>");
         #/
         return;
     }
     level.var_ea51eeb9.locks[1] playsound(#"hash_437516da741e5140");
     /#
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x70>");
     #/
 }
 
@@ -236,8 +235,8 @@ function function_7d0eaace() {
     // Checksum 0xce0898c0, Offset: 0x1070
     // Size: 0x5c
     function function_63a18814() {
-        util::add_debug_command("<unknown string>");
-        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<dev string:x81>");
+        util::add_debug_command("<dev string:xf0>");
         zm_devgui::add_custom_devgui_callback(&cmd);
     }
 

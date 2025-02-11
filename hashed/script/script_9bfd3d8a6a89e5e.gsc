@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_3dc93ca9902a9cda;
-#using scripts\cp_common\bb.gsc;
-#using scripts\cp_common\achievements.gsc;
-#using script_7d0013bbc05623b9;
+#using script_3626f1b2cf51a99c;
 #using script_3d18e87594285298;
+#using script_3dc93ca9902a9cda;
 #using script_52da18c20f45c56a;
 #using script_5431e074c1428743;
-#using script_3626f1b2cf51a99c;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using script_7d0013bbc05623b9;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\achievements;
+#using scripts\cp_common\bb;
 
 #namespace namespace_6cecf2d8;
 
@@ -25,20 +24,20 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x400add41, Offset: 0x428
 // Size: 0xac
 function private preinit() {
     if (!isdefined(level.body_shield)) {
         level.body_shield = spawnstruct();
-        actions::function_9ddfe2d("body_shield", &function_53e50b40, "takedown", "grab");
+        actions::action_register("body_shield", &function_53e50b40, "takedown", "grab");
         actions::function_b1543a9d("body_shield", "td_anims_body_shield");
         animation::add_global_notetrack_handler("start_bodyshield_gesture", &function_89295627, 0);
     }
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf3fd020d, Offset: 0x4e0
 // Size: 0xc2
 function function_53e50b40(action) {
@@ -55,7 +54,7 @@ function function_53e50b40(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x479eb473, Offset: 0x5b0
 // Size: 0x694
 function function_e3e4c03c(action, body) {
@@ -110,16 +109,16 @@ function function_e3e4c03c(action, body) {
     self notify(#"stop_disable_weapons_offscreen");
     self action_utility::allow_weapon(0);
     self.takedown.body = body;
-    var_17813638 = isdefined(var_2dcf841c.var_17813638) ? var_2dcf841c.var_17813638 : self namespace_9c83b58d::function_5169db86();
+    scene_root = isdefined(var_2dcf841c.scene_root) ? var_2dcf841c.scene_root : self namespace_9c83b58d::function_5169db86();
     if (!isdefined(self.takedown.body.animname)) {
         self.takedown.body.animname = "generic";
     }
     self.takedown.body.var_69defa17 = 1;
     self.takedown.body show();
-    self.takedown.body util::delay(0.2, undefined, &prompts::function_ee7adae5, #"actions");
+    self.takedown.body util::delay(0.2, undefined, &prompts::remove_group, #"actions");
     self util::delay(0.5, undefined, &function_40622d99);
     self util::delay(0.2, undefined, &val::set, #"action", "takedamage", 0);
-    var_17813638 action_utility::scene_play(var_2dcf841c.scene, self, body);
+    scene_root action_utility::scene_play(var_2dcf841c.scene, self, body);
     self thread action_utility::function_d76eed10(action);
     self action_utility::function_464d0412();
     if (body !== self.takedown.body) {
@@ -130,7 +129,7 @@ function function_e3e4c03c(action, body) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6a0807cc, Offset: 0xc50
 // Size: 0x12c
 function private function_40622d99() {
@@ -149,7 +148,7 @@ function private function_40622d99() {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2d4b5e24, Offset: 0xd88
 // Size: 0x3a
 function function_ead8fde7(active) {
@@ -157,7 +156,7 @@ function function_ead8fde7(active) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa6073951, Offset: 0xdd0
 // Size: 0x84
 function function_fc288808(*quick) {
@@ -169,7 +168,7 @@ function function_fc288808(*quick) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb0d961d2, Offset: 0xe60
 // Size: 0x34c
 function function_a8501d78(action) {
@@ -192,7 +191,7 @@ function function_a8501d78(action) {
     self.takedown.body linkto(self, "tag_origin", (-1000, 0, 0), (0, 0, 0));
     self.takedown.body action_utility::function_b82cae8f(1);
     self thread function_756e29bb(action, isdefined(override.anim_name) ? override.anim_name : action.anim_name);
-    self.takedown.var_17813638 = undefined;
+    self.takedown.scene_root = undefined;
     self childthread function_c6059aa(action);
     self childthread function_c13ab5c7(action);
     self childthread function_7acc6ae7(action);
@@ -203,7 +202,7 @@ function function_a8501d78(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65e77c63, Offset: 0x11b8
 // Size: 0x28
 function function_89295627() {
@@ -211,7 +210,7 @@ function function_89295627() {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xe8b36b5f, Offset: 0x11e8
 // Size: 0x4c0
 function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e7da7fb, var_7369af2b) {
@@ -295,7 +294,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc39fbe77, Offset: 0x16b0
 // Size: 0x46
 function function_2513e926(*action) {
@@ -306,7 +305,7 @@ function function_2513e926(*action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x703a9eb1, Offset: 0x1700
 // Size: 0xfc
 function function_80f856a8(*action, anim_name, *var_7369af2b) {
@@ -328,7 +327,7 @@ function function_80f856a8(*action, anim_name, *var_7369af2b) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6031c5ae, Offset: 0x1808
 // Size: 0x24
 function function_d6fbc26(*params) {
@@ -336,7 +335,7 @@ function function_d6fbc26(*params) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x500b3b89, Offset: 0x1838
 // Size: 0x13e
 function function_8ebed231(*action) {
@@ -369,38 +368,38 @@ function function_8ebed231(*action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd63e11a4, Offset: 0x1980
 // Size: 0x2b4
 function function_501ef65d(weapon) {
     self action_utility::allow_weapon(0, undefined, "ges_body_shield_reload");
     var_5a130b17 = self getweaponammostock(weapon);
     ammo_in_clip = self getweaponammoclip(weapon);
-    wait(0.5);
+    wait 0.5;
     switch (weapon.weapclass) {
     case #"pistol":
         snd::play("fly_bodyshield_reload_pistol");
-        wait(0.5);
+        wait 0.5;
         break;
     case #"smg":
         snd::play("fly_bodyshield_reload_smg");
-        wait(0.7);
+        wait 0.7;
         break;
     case #"rifle":
         snd::play("fly_bodyshield_reload_rifle");
-        wait(0.7);
+        wait 0.7;
         break;
     case #"sniper":
         snd::play("fly_bodyshield_reload_smg");
-        wait(1);
+        wait 1;
         break;
     case #"shotgun":
         snd::play("fly_bodyshield_reload_shotgun");
-        wait(1);
+        wait 1;
         break;
     default:
         snd::play("fly_bodyshield_reload_lmg");
-        wait(2);
+        wait 2;
         break;
     }
     delta = min(var_5a130b17, weapon.clipsize - ammo_in_clip);
@@ -412,7 +411,7 @@ function function_501ef65d(weapon) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdfde3513, Offset: 0x1c40
 // Size: 0x1a6
 function function_1dcff2c3(weapon) {
@@ -445,7 +444,7 @@ function function_f6dd3d45(*var_248cbbcf) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x461b0ab1, Offset: 0x1e40
 // Size: 0x8c
 function function_9c53ef0a() {
@@ -457,7 +456,7 @@ function function_9c53ef0a() {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb594c7d7, Offset: 0x1ed8
 // Size: 0x156
 function function_257c21b5(action, immediate) {
@@ -481,7 +480,7 @@ function function_257c21b5(action, immediate) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x472fb0ef, Offset: 0x2038
 // Size: 0x74
 function function_f077863a(gesture) {
@@ -493,7 +492,7 @@ function function_f077863a(gesture) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeb3ff57a, Offset: 0x20b8
 // Size: 0x9c
 function function_7acc6ae7(action) {
@@ -506,7 +505,7 @@ function function_7acc6ae7(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1cda7643, Offset: 0x2160
 // Size: 0x300
 function function_c13ab5c7(action) {
@@ -539,12 +538,12 @@ function function_c13ab5c7(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb1e64fdd, Offset: 0x2468
 // Size: 0x13c
 function function_e98922fb(action) {
     self endon(action.ender, #"hash_2d036a7855e382b1");
-    wait(5);
+    wait 5;
     while (true) {
         result = self waittilltimeout(1, #"body_shield_damage");
         if (result._notify != "body_shield_damage") {
@@ -561,7 +560,7 @@ function function_e98922fb(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdd69c08, Offset: 0x25b0
 // Size: 0x9a
 function function_bec58af5() {
@@ -573,7 +572,7 @@ function function_bec58af5() {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2178f060, Offset: 0x2658
 // Size: 0xaa
 function function_9fa1a484() {
@@ -609,7 +608,7 @@ function function_b25119b6(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6dcf70fe, Offset: 0x2818
 // Size: 0x10e
 function function_c6059aa(action) {
@@ -631,12 +630,12 @@ function function_c6059aa(action) {
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x85819aa2, Offset: 0x2930
 // Size: 0x54
 function function_a74e8dd3() {
     waittime = randomfloatrange(0.2, 0.6);
-    wait(waittime);
+    wait waittime;
     snd::play("evt_sys_cp_bodyshield_impact_gore", level.player);
 }
 

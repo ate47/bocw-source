@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\armor.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\item_drop.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\armor;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_efff98ec;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x97f38e17, Offset: 0x138
 // Size: 0x2c
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x81afddb6, Offset: 0x170
 // Size: 0x3f4
 function private function_116fd9a7() {
@@ -61,12 +60,12 @@ function private function_116fd9a7() {
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x75ab8c7f, Offset: 0x570
 // Size: 0x122
 function private function_d045e83b(item, player, *networkid, itemid, *itemcount, var_aec6fa7f, *slot) {
     if (itemid.itementry.itemtype !== #"ammo") {
-        assertmsg("<unknown string>" + itemid.name + "<unknown string>");
+        assertmsg("<dev string:x38>" + itemid.name + "<dev string:x42>");
         return 0;
     }
     if (!self item_inventory::can_pickup_ammo(itemid)) {
@@ -77,7 +76,7 @@ function private function_d045e83b(item, player, *networkid, itemid, *itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x57acbac5, Offset: 0x6a0
 // Size: 0x3d8
 function private function_2e5b5858(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
@@ -139,7 +138,7 @@ function private function_2e5b5858(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa9aff0f9, Offset: 0xa80
 // Size: 0x44
 function function_bcaf2ad1(var_6ead57c0) {
@@ -148,7 +147,7 @@ function function_bcaf2ad1(var_6ead57c0) {
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x2368a4e1, Offset: 0xad0
 // Size: 0x80
 function private function_cb9b4dd7(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -158,7 +157,7 @@ function private function_cb9b4dd7(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xfdf6b3b5, Offset: 0xb58
 // Size: 0x168
 function private function_14b2eddf(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -168,7 +167,7 @@ function private function_14b2eddf(item, player, *networkid, *itemid, itemcount,
         weaponslotid = itemcount item_inventory::function_b246c573(var_f0dc4e93);
     }
     remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    if (isdefined(weaponslotid) && isdefined(slotid) && namespace_a0d533d1::function_398b9770(weaponslotid, slotid)) {
+    if (isdefined(weaponslotid) && isdefined(slotid) && item_inventory_util::function_398b9770(weaponslotid, slotid)) {
         if (isdefined(itemid.networkid) && item_world_util::function_db35e94f(itemid.networkid)) {
             itemid = item_inventory::get_inventory_item(itemid.networkid);
         }
@@ -178,7 +177,7 @@ function private function_14b2eddf(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xd02e78d2, Offset: 0xcc8
 // Size: 0x108
 function private function_42ffe9b2(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -196,7 +195,7 @@ function private function_42ffe9b2(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x14976da6, Offset: 0xdd8
 // Size: 0xe8
 function private function_2eebeff5(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
@@ -213,7 +212,7 @@ function private function_2eebeff5(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x1e76710d, Offset: 0xec8
 // Size: 0xe8
 function private function_349d4c26(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -230,7 +229,7 @@ function private function_349d4c26(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xe85b93bc, Offset: 0xfb8
 // Size: 0x6a
 function private function_670cce3f(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -239,7 +238,7 @@ function private function_670cce3f(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x34390122, Offset: 0x1030
 // Size: 0x6a
 function private function_41a52251(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -248,7 +247,7 @@ function private function_41a52251(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xf6c50fcc, Offset: 0x10a8
 // Size: 0x90
 function private function_2b2e9302(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -258,7 +257,7 @@ function private function_2b2e9302(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xbb4ae33c, Offset: 0x1140
 // Size: 0xe8
 function private function_7de52ecc(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
@@ -275,7 +274,7 @@ function private function_7de52ecc(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xfd1c9a2c, Offset: 0x1230
 // Size: 0x100
 function private function_898628ef(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
@@ -293,7 +292,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xa558853a, Offset: 0x1338
 // Size: 0x6a
 function private function_a240798a(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
@@ -302,7 +301,7 @@ function private function_a240798a(item, player, *networkid, *itemid, itemcount,
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x8bcdf259, Offset: 0x13b0
 // Size: 0x3e
 function private function_24dc1d12(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -310,7 +309,7 @@ function private function_24dc1d12(*item, *player, *networkid, *itemid, *itemcou
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x9c09b9f4, Offset: 0x13f8
 // Size: 0x2ea
 function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -319,12 +318,12 @@ function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcoun
     var_f945fa92 = getweapon(#"bare_hands");
     var_f934814c = getweapon(#"ww_ieu_electric_t9");
     var_92587dd3 = getweapon(#"ww_ieu_electric_t9_upgraded");
-    foreach (weaponslot in namespace_a0d533d1::function_4905dddf()) {
-        inventoryweapon = self namespace_a0d533d1::function_2b83d3ff(self item_inventory::function_2e711614(weaponslot));
+    foreach (weaponslot in item_inventory_util::function_4905dddf()) {
+        inventoryweapon = self item_inventory_util::function_2b83d3ff(self item_inventory::function_2e711614(weaponslot));
         if (isdefined(inventoryweapon) && inventoryweapon != nullweapon && inventoryweapon != var_f945fa92 && inventoryweapon.weapclass != "melee" && inventoryweapon.rootweapon != var_f934814c && inventoryweapon.rootweapon != var_92587dd3) {
-            var_1326fcc7 = isdefined(slotid.itementry.amount) ? slotid.itementry.amount : 20;
+            ammoamount = isdefined(slotid.itementry.amount) ? slotid.itementry.amount : 20;
             maxammo = inventoryweapon.maxammo;
-            var_e6527384 = maxammo * var_1326fcc7 / 100;
+            var_e6527384 = maxammo * ammoamount / 100;
             currentammostock = self getweaponammostock(inventoryweapon);
             var_e6527384 = currentammostock + var_e6527384;
             if (var_e6527384 < 0) {
@@ -339,7 +338,7 @@ function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcoun
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x85ef1bd8, Offset: 0x16f0
 // Size: 0x3e
 function private function_80ef3ea5(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -347,7 +346,7 @@ function private function_80ef3ea5(*item, *player, *networkid, *itemid, *itemcou
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x1482fc6d, Offset: 0x1738
 // Size: 0x3e
 function private function_753fb11f(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -355,7 +354,7 @@ function private function_753fb11f(*item, *player, *networkid, *itemid, *itemcou
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xdc2276b, Offset: 0x1780
 // Size: 0x3e
 function private function_88803841(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -363,7 +362,7 @@ function private function_88803841(*item, *player, *networkid, *itemid, *itemcou
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x6ff370fd, Offset: 0x17c8
 // Size: 0x56
 function private function_d46c2559(item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -372,7 +371,7 @@ function private function_d46c2559(item, *player, *networkid, *itemid, *itemcoun
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x3b00c9fd, Offset: 0x1828
 // Size: 0x148
 function private function_2650d5c6(*item, player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
@@ -394,7 +393,7 @@ function private function_2650d5c6(*item, player, *networkid, *itemid, *itemcoun
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x69877ca7, Offset: 0x1978
 // Size: 0x3b0
 function private function_a712496a(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
@@ -410,10 +409,10 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
             if (!isdefined(attachmentitem)) {
                 continue;
             }
-            namespace_a0d533d1::function_9e9c82a6(networkid, attachmentitem);
+            item_inventory_util::function_9e9c82a6(networkid, attachmentitem);
         }
     }
-    if (item_inventory::get_weapon_count() == namespace_a0d533d1::function_80fb4b76()) {
+    if (item_inventory::get_weapon_count() == item_inventory_util::function_80fb4b76()) {
         stashitem = item_world_util::function_83c20f83(networkid);
         stashitem &= ~(isdefined(networkid.deathstash) ? networkid.deathstash : 0);
         weaponitem = item_inventory::function_230ceec4(itemid.currentweapon);
@@ -430,7 +429,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
         }
         if (isdefined(networkid.itementry.ammomodname)) {
             itemid item_inventory::function_b579540e(networkid, networkid.itementry.ammomodname);
-            weapon = namespace_a0d533d1::function_2b83d3ff(networkid);
+            weapon = item_inventory_util::function_2b83d3ff(networkid);
             itemid aat::acquire(weapon, networkid.itementry.ammomodname);
         }
         itemid item_inventory::equip_weapon(networkid, 1, 1, 0, 1, stockammo);

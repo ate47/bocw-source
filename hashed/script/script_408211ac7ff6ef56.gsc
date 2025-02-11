@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
 
 #namespace namespace_b637a3ed;
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x16fd67a5, Offset: 0x88
 // Size: 0x210
-function drop_item(index, origin, angles, var_98c867cd, random_yaw = 1, origin_offset = undefined, var_b3f3cd0d = undefined) {
+function drop_item(index, origin, angles, var_98c867cd, random_yaw = 1, origin_offset = undefined, angle_override = undefined) {
     min_angle = 0;
     max_angle = 360;
     height = 0;
@@ -18,8 +17,8 @@ function drop_item(index, origin, angles, var_98c867cd, random_yaw = 1, origin_o
         yaw = randomint(360);
         self.angles = (var_66694b96.start_angles[0], angleclamp180(var_66694b96.start_angles[1] + yaw), var_66694b96.start_angles[2]);
     }
-    if (isdefined(var_b3f3cd0d)) {
-        self.angles = var_b3f3cd0d;
+    if (isdefined(angle_override)) {
+        self.angles = angle_override;
     }
     if (!isdefined(origin_offset)) {
         origin_offset = (0, 0, 0);
@@ -35,7 +34,7 @@ function drop_item(index, origin, angles, var_98c867cd, random_yaw = 1, origin_o
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x9cad3109, Offset: 0x2a0
 // Size: 0x1c4
 function function_350c0e2b(index, origin, angles, var_98c867cd) {
@@ -60,19 +59,19 @@ function function_350c0e2b(index, origin, angles, var_98c867cd) {
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x65b7970d, Offset: 0x470
 // Size: 0x9e4
 function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreent, var_8c967549, var_a17c7804, traces = 1) {
     assert(!isdefined(ignoreent) || isentity(ignoreent));
-    var_13406a7f = traces;
+    trace_active = traces;
     var_ad49c795 = getdvarint(#"hash_730e73fdf6a44e00", 0);
     var_5b5e9cdb = 13;
     var_a9c62ebc = 50;
     var_7e266d2a = 40;
     var_b5b1872d = -5;
     var_c2fd0740 = 5;
-    var_f4c981a5 = 10;
+    ring_yaw = 10;
     slot_yaw = 360 / var_5b5e9cdb;
     var_45875de2 = -5;
     var_af26a7db = 5;
@@ -89,7 +88,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
     noground = 0;
     ring = int(index / var_5b5e9cdb);
     slot = index - ring * var_5b5e9cdb;
-    yaw = baseangles[1] + slot * slot_yaw + ring * var_f4c981a5 + randomfloatrange(var_45875de2, var_af26a7db);
+    yaw = baseangles[1] + slot * slot_yaw + ring * ring_yaw + randomfloatrange(var_45875de2, var_af26a7db);
     dist = var_a9c62ebc + ring * var_7e266d2a + randomfloatrange(var_b5b1872d, var_c2fd0740);
     if (isdefined(var_8c967549)) {
         yaw = baseangles[1] + var_8c967549;
@@ -103,7 +102,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
     origin = var_118985a1 + dir * dist;
     var_ef1cacd6 = dir * -1 * var_3512e170;
     ignoreents = getentitiesinradius(self.origin, 500, 12);
-    if (var_13406a7f) {
+    if (trace_active) {
         if (isdefined(ignoreent)) {
             if (!isdefined(ignoreents)) {
                 ignoreents = [];
@@ -117,7 +116,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
-                function_7289b47(index, "<unknown string>", tracestart, traceend, traceresults);
+                function_7289b47(index, "<dev string:x38>", tracestart, traceend, traceresults);
             }
         #/
         if (traceresults[#"fraction"] < 1) {
@@ -131,7 +130,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
-                function_7289b47(index, "<unknown string>", tracestart + (0, 1, 0), traceend + (0, 1, 0), traceresults);
+                function_7289b47(index, "<dev string:x3e>", tracestart + (0, 1, 0), traceend + (0, 1, 0), traceresults);
             }
         #/
         if (traceresults[#"fraction"] < 1) {
@@ -145,7 +144,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
-                function_7289b47(index, "<unknown string>", tracestart, traceend, traceresults);
+                function_7289b47(index, "<dev string:x44>", tracestart, traceend, traceresults);
             }
         #/
         if (traceresults[#"fraction"] < 1) {
@@ -168,7 +167,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
     }
     if (isdefined(getgametypesetting(#"hash_69df7093cd32f107")) ? getgametypesetting(#"hash_69df7093cd32f107") : 0) {
         var_d69d1a6d = getclosestpointonnavmesh(origin, 48, 6);
-        if (isdefined(var_d69d1a6d) && var_13406a7f) {
+        if (isdefined(var_d69d1a6d) && trace_active) {
             traceoffset = (0, 0, 60);
             traceresults = physicstraceex(var_d69d1a6d + traceoffset, var_d69d1a6d - traceoffset, (0, 0, 0), (0, 0, 0), ignoreents, 1);
             if (traceresults[#"fraction"] < 1) {
@@ -192,7 +191,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xcfe9222d, Offset: 0xe60
 // Size: 0x2fc
 function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreent, traces = 1) {
@@ -219,7 +218,7 @@ function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreen
         traceresults = physicstraceex(baseorigin, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
-                function_7289b47(index, "<unknown string>", baseorigin, traceend, traceresults);
+                function_7289b47(index, "<dev string:x44>", baseorigin, traceend, traceresults);
             }
         #/
         if (traceresults[#"fraction"] < 1) {
@@ -244,12 +243,12 @@ function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreen
         if (traceresults[#"fraction"] < 1) {
             line(start, traceresults[#"position"], (1, 0, 0), 1, 0, var_e011538a);
             debugaxis(traceresults[#"position"], (0, 0, 0), 10, 1, 1, var_e011538a);
-            println("<unknown string>" + start + "<unknown string>" + traceresults[#"position"]);
+            println("<dev string:x4a>" + start + "<dev string:x66>" + traceresults[#"position"]);
             if (isdefined(traceresults[#"entity"])) {
                 selectedentity = traceresults[#"entity"];
-                println("<unknown string>" + index + "<unknown string>" + name + "<unknown string>" + traceresults[#"fraction"] + "<unknown string>" + selectedentity.name);
+                println("<dev string:x73>" + index + "<dev string:x85>" + name + "<dev string:x8b>" + traceresults[#"fraction"] + "<dev string:x94>" + selectedentity.name);
             } else {
-                println("<unknown string>" + index + "<unknown string>" + name + "<unknown string>" + traceresults[#"fraction"]);
+                println("<dev string:x73>" + index + "<dev string:x85>" + name + "<dev string:x8b>" + traceresults[#"fraction"]);
             }
             return;
         }

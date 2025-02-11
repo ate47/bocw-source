@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\visionset_mgr_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace zombie_vortex;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x59e5afb4, Offset: 0x1c0
 // Size: 0x114
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x136e778b, Offset: 0x2e0
 // Size: 0x28c
 function start_vortex(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -66,19 +65,19 @@ function start_vortex(localclientnum, oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x48d53e31, Offset: 0x578
 // Size: 0x60
 function vortex_shake_and_rumble(localclientnum, *v_vortex_origin) {
     self endon(#"vortex_stop");
     while (true) {
         self playrumbleonentity(v_vortex_origin, "zod_idgun_vortex_interior");
-        wait(0.075);
+        wait 0.075;
     }
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3bcac1d2, Offset: 0x5e0
 // Size: 0x8c
 function vision_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -90,7 +89,7 @@ function vision_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xe4613d84, Offset: 0x678
 // Size: 0x24c
 function function_2dd3c5bc(localclientnum, vortex_fx_handle, vposition, fx_vortex_explosion, n_vortex_time, var_c385f09c) {
@@ -102,7 +101,7 @@ function function_2dd3c5bc(localclientnum, vortex_fx_handle, vposition, fx_vorte
         n_currtime = gettime() - n_starttime;
     }
     stopfx(localclientnum, vortex_fx_handle);
-    wait(0.15);
+    wait 0.15;
     self notify(#"vortex_stop");
     if (var_c385f09c == 2) {
         var_ad8208a9 = playfx(localclientnum, fx_vortex_explosion, vposition);
@@ -119,7 +118,7 @@ function function_2dd3c5bc(localclientnum, vortex_fx_handle, vposition, fx_vorte
         self playrumbleonentity(localclientnum, "zod_idgun_vortex_shockwave");
     }
     vision_blur(localclientnum, undefined, 1);
-    wait(0.1);
+    wait 0.1;
     vision_blur(localclientnum, undefined, 0);
 }
 

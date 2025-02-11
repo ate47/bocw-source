@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_13fefac0;
 
@@ -21,7 +20,7 @@ function function_26ecdeeb() {
     self notify("19ba4246a0d44eb1");
     self endon("19ba4246a0d44eb1");
     for (count = 0; true; count = 0) {
-        wait(randomfloatrange(5, 35));
+        wait randomfloatrange(5, 35);
         if (gettimescale() > 1.1) {
             count++;
             if (count >= 5) {
@@ -42,7 +41,7 @@ function function_8e536d77() {
     self endon("3c12f3aea776c15e");
     var_7db82908 = [{#key:#"hash_3cccb7d9e336696a", #threshold:400, #trace:3, #keytype:2, #mode:1}, {#key:#"hash_3f0689f4ecc2fbab", #threshold:600, #trace:4, #keytype:2, #mode:0}, {#key:#"hash_4a9ebeef00abd6cb", #threshold:2.1, #trace:5, #keytype:1, #mode:1}, {#key:#"hash_4ad8c9ef00dd61c3", #threshold:2.1, #trace:6, #keytype:1, #mode:0}, {#key:#"hash_25b1fd96e365b875", #threshold:2.1, #trace:7, #keytype:3}, {#key:#"hash_6767c669a9321f55", #threshold:2.1, #trace:8, #keytype:3}, {#key:#"hash_29745170b0d7f97", #threshold:2.1, #trace:9, #keytype:3}, {#key:#"hash_16a3b3072a1b1e64", #threshold:5.5, #trace:10, #keytype:4}, {#key:#"hash_15dc4c705c20e0db", #threshold:5.5, #trace:11, #keytype:4}, {#key:#"hash_6be8efea7e9a9b0f", #threshold:5.5, #trace:12, #keytype:4}, {#key:#"hash_31b5b9e273560fa9", #threshold:5.5, #trace:13, #keytype:4}, {#key:#"hash_4cbba40de74aa531", #threshold:5.5, #trace:14, #keytype:4}, {#key:#"hash_59e3029d696683fa", #threshold:5.5, #trace:15, #keytype:4}, {#key:#"hash_2aab2762450675b4", #threshold:5.5, #trace:16, #keytype:4}, {#key:#"hash_1f866ae0a3a62832", #threshold:5.5, #trace:17, #keytype:4}, {#key:#"hash_71fab2192fa2537d", #threshold:5.5, #trace:18, #keytype:4}, {#key:#"hash_2873049796893c2", #threshold:5.5, #trace:19, #keytype:4}, {#key:#"hash_5873106a43bbf0a9", #threshold:5.5, #trace:20, #keytype:4}, {#key:#"hash_164e590374876a39", #threshold:5.5, #trace:21, #keytype:4}];
     while (true) {
-        wait(randomfloatrange(5, 35));
+        wait randomfloatrange(5, 35);
         var_760d7bc4 = 0;
         var_b4320b5b = function_7a2da789();
         foreach (item in var_7db82908) {
@@ -110,7 +109,7 @@ function function_35cb919f(params) {
 // Size: 0x96
 function function_b36f8acc() {
     level endon(#"end_game", #"hash_61e567fec60cf9b9");
-    wait(5);
+    wait 5;
     if (level.var_11f03ada >= 10) {
         function_17cf7de1(22);
         level flag::set(#"hash_61e567fec60cf9b9");

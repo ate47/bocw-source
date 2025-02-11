@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_df7b10e3;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x25cc66b9, Offset: 0x110
 // Size: 0x44
 function private preinit() {
@@ -48,7 +47,7 @@ function burn(str_type, e_attacker, weapon, var_477abb8f) {
         return;
     }
     if (!isdefined(level.var_981dd9cf) || !isdefined(level.var_981dd9cf[#"burn"]) || !isdefined(level.var_981dd9cf[#"burn"][str_type])) {
-        assertmsg("<unknown string>" + str_type + "<unknown string>");
+        assertmsg("<dev string:x38>" + str_type + "<dev string:x42>");
         return;
     }
     if (!isdefined(self.var_88421cc2)) {
@@ -81,7 +80,7 @@ function burn(str_type, e_attacker, weapon, var_477abb8f) {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcb775f64, Offset: 0x5d8
 // Size: 0x36a
 function private function_8aefaae3(s_burn) {
@@ -100,7 +99,7 @@ function private function_8aefaae3(s_burn) {
         }
     }
     while (true) {
-        wait(1);
+        wait 1;
         n_total_damage = 0;
         var_25c61d06 = 0;
         var_2af3b934 = undefined;
@@ -156,7 +155,7 @@ function function_5e9ef773() {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xad39180a, Offset: 0x970
 // Size: 0x72
 function private function_fc2a294(var_c34665fc) {
@@ -213,7 +212,7 @@ function unfreeze() {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb35280a1, Offset: 0xb98
 // Size: 0x9c
 function private function_bf97ba95() {
@@ -264,7 +263,7 @@ function function_865a83f8(zombie, target, predictedpos, var_95342913) {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2a631ca4, Offset: 0xe50
 // Size: 0x176
 function register_slowdown(str_type, n_rate, n_duration = -1) {
@@ -282,7 +281,7 @@ function register_slowdown(str_type, n_rate, n_duration = -1) {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbff00cc1, Offset: 0xfd0
 // Size: 0x50c
 function slowdown(str_type, var_a47cf2b2, callback) {
@@ -296,7 +295,7 @@ function slowdown(str_type, var_a47cf2b2, callback) {
     level endon(#"end_game");
     self endoncallback(&function_fe7a7d5b, #"starting_slowdown_ai", #"death");
     if (!isdefined(level.var_981dd9cf) || !isdefined(level.var_981dd9cf[#"slow"]) || !isdefined(level.var_981dd9cf[#"slow"][str_type])) {
-        assertmsg("<unknown string>" + str_type + "<unknown string>");
+        assertmsg("<dev string:x76>" + str_type + "<dev string:x84>");
         return;
     }
     if (!isdefined(self.a_n_slowdown_timeouts)) {
@@ -349,7 +348,7 @@ function slowdown(str_type, var_a47cf2b2, callback) {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3f33db88, Offset: 0x14e8
 // Size: 0x1c4
 function private function_e01e1ea1() {
@@ -377,7 +376,7 @@ function function_5d2b8af2() {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4b7524d4, Offset: 0x16d8
 // Size: 0x66
 function function_520f4da5(str_type) {
@@ -388,7 +387,7 @@ function function_520f4da5(str_type) {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9477dcc8, Offset: 0x1748
 // Size: 0x5c
 function private function_fe7a7d5b(*str_notify) {

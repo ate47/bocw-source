@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_b9a55edd207e4ca;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\death_circle.gsc;
+#using script_b9a55edd207e4ca;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace fireteam_tdm;
 

@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\weapons_shared.gsc;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
 
 #namespace globallogic_player;
 
 // Namespace globallogic_player/globallogic_player
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x50b76495, Offset: 0xb8
 // Size: 0x800
 function function_c5343206(eattacker, einflictor, idamage, smeansofdeath, weapon, shitloc) {
@@ -100,7 +99,7 @@ function function_c5343206(eattacker, einflictor, idamage, smeansofdeath, weapon
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0ae8dd2, Offset: 0x8c0
 // Size: 0x368
 function function_43084f6c(player) {
@@ -140,7 +139,7 @@ function function_43084f6c(player) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x817e04e6, Offset: 0xc30
 // Size: 0x12a
 function function_9f942458(var_6ba44c6, var_fbbdf63c) {
@@ -162,7 +161,7 @@ function function_9f942458(var_6ba44c6, var_fbbdf63c) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x749f531f, Offset: 0xd68
 // Size: 0x1aa
 function function_eddea888(player) {
@@ -191,7 +190,7 @@ function function_eddea888(player) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1e85b609, Offset: 0xf20
 // Size: 0x11a
 function function_ce33e204(player) {
@@ -210,7 +209,7 @@ function function_ce33e204(player) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa855de60, Offset: 0x1048
 // Size: 0x19a
 function private function_5af0c53c(player) {
@@ -240,7 +239,7 @@ function private function_5af0c53c(player) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x53ec86b0, Offset: 0x11f0
 // Size: 0xb4
 function function_9843a46c(eattacker, einflictor, idamage, smeansofdeath, weapon, shitloc) {
@@ -258,7 +257,7 @@ function function_9843a46c(eattacker, einflictor, idamage, smeansofdeath, weapon
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x8f70e728, Offset: 0x12b0
 // Size: 0x27e
 function trackattackerdamage(eattacker, idamage, smeansofdeath, weapon, shitloc) {
@@ -303,7 +302,7 @@ function trackattackerdamage(eattacker, idamage, smeansofdeath, weapon, shitloc)
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfb963179, Offset: 0x1538
 // Size: 0x32
 function allowedassistweapon(weapon) {
@@ -314,7 +313,7 @@ function allowedassistweapon(weapon) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x7187c5a9, Offset: 0x1578
 // Size: 0x11c
 function giveattackerandinflictorownerassist(eattacker, einflictor, idamage, smeansofdeath, weapon, shitloc) {
@@ -345,7 +344,7 @@ function giveattackerandinflictorownerassist(eattacker, einflictor, idamage, sme
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba6674e6, Offset: 0x16a0
 // Size: 0xea
 function function_efd02c1d(einflictor) {
@@ -370,7 +369,7 @@ function function_efd02c1d(einflictor) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3d3fc953, Offset: 0x1798
 // Size: 0x156
 function figureoutattacker(eattacker) {
@@ -397,7 +396,7 @@ function figureoutattacker(eattacker) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb0b001a6, Offset: 0x18f8
 // Size: 0x96
 function function_38527849() {

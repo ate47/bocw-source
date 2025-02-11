@@ -1,43 +1,42 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\mp_common\bb.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\mp_common\gametypes\globallogic_defaults.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\abilities\mp\gadgets\gadget_concertina_wire.gsc;
-#using scripts\abilities\mp\gadgets\gadget_smart_cover.gsc;
-#using scripts\mp_common\gametypes\hud_message.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\mp_common\contracts.gsc;
-#using scripts\mp_common\userspawnselection.gsc;
-#using scripts\core_common\spawnbeacon_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\sound_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\medals_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\demo_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_7a8059ca02b7b09e;
+#using scripts\abilities\mp\gadgets\gadget_concertina_wire;
+#using scripts\abilities\mp\gadgets\gadget_smart_cover;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\demo_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\medals_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\spawnbeacon_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\contracts;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_defaults;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\hud_message;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\userspawnselection;
+#using scripts\mp_common\util;
 
 #namespace sd;
 
@@ -456,7 +455,7 @@ function givelastattackerwarning(team) {
         } else {
             fullhealthtime += interval;
         }
-        wait(interval);
+        wait interval;
         if (self.health == self.maxhealth && fullhealthtime >= 3) {
             break;
         }
@@ -511,14 +510,14 @@ function bombs() {
     trigger = getent("sd_bomb_pickup_trig", "targetname");
     if (!isdefined(trigger)) {
         /#
-            util::error("<unknown string>");
+            util::error("<dev string:x38>");
         #/
         return;
     }
     visuals[0] = getent("sd_bomb", "targetname");
     if (!isdefined(visuals[0])) {
         /#
-            util::error("<unknown string>");
+            util::error("<dev string:x68>");
         #/
         return;
     }
@@ -526,8 +525,8 @@ function bombs() {
         level.sdbomb = gameobjects::create_carry_object(game.attackers, trigger, visuals, (0, 0, 0), #"sd_bomb");
         function_18fbab10(level.sdbomb.objectiveid, #"hash_407a600707950fea");
         function_9a8950ee(level.sdbomb.objectiveid, 1);
-        level.sdbomb gameobjects::allow_carry(#"hash_150a20fa4efc5c7a");
-        level.sdbomb gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
+        level.sdbomb gameobjects::allow_carry(#"group_friendly");
+        level.sdbomb gameobjects::set_visible(#"group_friendly");
         level.sdbomb gameobjects::set_model_visibility(1);
         level.sdbomb gameobjects::set_use_time(0);
         level.sdbomb gameobjects::function_b03b5362(1);
@@ -555,8 +554,8 @@ function bombs() {
     for (index = 0; index < bombzones.size; index++) {
         trigger = bombzones[index];
         visuals = getentarray(bombzones[index].target, "targetname");
-        smart_cover::function_18f38647(trigger);
-        concertina_wire::function_18f38647(trigger);
+        smart_cover::addprotectedzone(trigger);
+        concertina_wire::addprotectedzone(trigger);
         name = #"sd" + trigger.script_label;
         var_70d8f2ac = name + "_codcaster";
         waypointname = #"sd_waypoint" + trigger.script_label;
@@ -567,7 +566,7 @@ function bombs() {
         bombzone = gameobjects::create_use_object(game.defenders, trigger, visuals, (0, 0, 0), name, 1, 1);
         function_18fbab10(bombzone.objectiveid, var_70d8f2ac);
         bombzone.angles = visuals[0].angles;
-        bombzone gameobjects::allow_use(#"hash_33c49a99551acae7");
+        bombzone gameobjects::allow_use(#"group_enemy");
         bombzone gameobjects::set_use_time(level.planttime);
         trigger setcursorhint("HINT_INTERACTIVE_PROMPT");
         if (!level.multibomb) {
@@ -575,7 +574,7 @@ function bombs() {
         }
         label = bombzone gameobjects::get_label();
         bombzone.label = label;
-        bombzone gameobjects::set_visible(#"hash_33c49a99551acae7");
+        bombzone gameobjects::set_visible(#"group_enemy");
         bombzone.onbeginuse = &function_5416db8d;
         bombzone.onuseclear = &onuseclear;
         bombzone.onuseupdate = &onuseupdate;
@@ -594,7 +593,7 @@ function bombs() {
         var_69bc8821.type = "Waypoint";
         objective_add(var_69bc8821.objectiveid, "invisible", var_69bc8821, waypointname);
         function_18fbab10(var_69bc8821.objectiveid, waypointname + "_codcaster");
-        var_69bc8821 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+        var_69bc8821 gameobjects::set_visible(#"group_all");
         bombzone.waypoint = var_69bc8821;
         if (isdefined(level.bomb_zone_fixup)) {
             [[ level.bomb_zone_fixup ]](bombzone);
@@ -789,7 +788,7 @@ function onuseplantobject(player) {
     self.waypoint gameobjects::hide_waypoint();
     level thread bombplanted(self, player);
     /#
-        print("<unknown string>" + self.label);
+        print("<dev string:x91>" + self.label);
     #/
     for (index = 0; index < level.bombzones.size; index++) {
         if (level.bombzones[index] == self) {
@@ -835,7 +834,7 @@ function onusedefuseobject(player) {
     self.waypoint gameobjects::set_flags(0);
     player notify(#"bomb_defused");
     /#
-        print("<unknown string>" + self.label);
+        print("<dev string:xa3>" + self.label);
     #/
     bb::function_95a5b5c2("sd_bombdefuse", self.label, player.pers[#"team"], player.origin);
     self gameobjects::set_owner_team(player.pers[#"team"]);
@@ -906,7 +905,7 @@ function onpickup(player) {
         otherteam = util::getotherteam(team);
         globallogic_audio::leader_dialog("bombFriendlyTaken", game.attackers);
         /#
-            print("<unknown string>");
+            print("<dev string:xb5>");
         #/
     }
     player playsound(#"fly_bomb_pickup_plr");
@@ -955,8 +954,8 @@ function bombplanted(destroyedobj, player) {
     }
     bb::function_95a5b5c2("sd_bombplant", label, team, player.origin);
     if (!level.multibomb) {
-        level.sdbomb gameobjects::allow_carry(#"hash_161f03feaadc9b8f");
-        level.sdbomb gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+        level.sdbomb gameobjects::allow_carry(#"group_none");
+        level.sdbomb gameobjects::set_visible(#"group_none");
         level.sdbomb.dropoffset = 1;
         level.sdbomb gameobjects::set_dropped();
         level.sdbombmodel = level.sdbomb.visuals[0];
@@ -977,8 +976,8 @@ function bombplanted(destroyedobj, player) {
         level.sdbombmodel.angles = dropangles;
         level.sdbombmodel setmodel(#"hash_2fc0c9b938896273");
     }
-    destroyedobj gameobjects::allow_use(#"hash_161f03feaadc9b8f");
-    destroyedobj gameobjects::set_visible(#"hash_161f03feaadc9b8f");
+    destroyedobj gameobjects::allow_use(#"group_none");
+    destroyedobj gameobjects::set_visible(#"group_none");
     label = destroyedobj gameobjects::get_label();
     trigger = destroyedobj.bombdefusetrig;
     trigger function_682f34cf(-800);
@@ -988,9 +987,9 @@ function bombplanted(destroyedobj, player) {
     trigger setcursorhint("HINT_INTERACTIVE_PROMPT");
     visuals = [];
     defuseobject = gameobjects::create_use_object(game.attackers, trigger, visuals, (0, 0, 0), #"hash_7b74e27a1a2facf8", 1, 1);
-    defuseobject gameobjects::allow_use(#"hash_33c49a99551acae7");
+    defuseobject gameobjects::allow_use(#"group_enemy");
     defuseobject gameobjects::set_use_time(level.defusetime);
-    defuseobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    defuseobject gameobjects::set_visible(#"group_all");
     defuseobject.label = label;
     defuseobject.onbeginuse = &function_a8c87bae;
     defuseobject.onuseclear = &onuseclear;
@@ -1009,7 +1008,7 @@ function bombplanted(destroyedobj, player) {
     waypointname = #"sd_defuse" + label;
     objective_add(var_3df9aa45.objectiveid, "invisible", var_3df9aa45, waypointname);
     function_18fbab10(var_3df9aa45.objectiveid, waypointname + "_codcaster");
-    var_3df9aa45 gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
+    var_3df9aa45 gameobjects::set_visible(#"group_all");
     var_3df9aa45 gameobjects::set_flags(1);
     defuseobject.waypoint = var_3df9aa45;
     level.defuseobject = defuseobject;
@@ -1059,7 +1058,7 @@ function bombplanted(destroyedobj, player) {
         var_d46e7070 = destroyedobj.visuals[0].origin;
         var_e6397375 = anglestoforward(destroyedobj.visuals[0].angles);
         var_213527e2 = anglestoup(destroyedobj.visuals[0].angles);
-        wait(0.1);
+        wait 0.1;
         var_238e7468 = spawnfx(level._effect[#"hash_568509fa2561a75d"], var_d46e7070, var_e6397375, var_213527e2);
         triggerfx(var_238e7468);
     }
@@ -1072,10 +1071,10 @@ function bombplanted(destroyedobj, player) {
         zone.waypoint gameobjects::disable_object();
     }
     setgameendtime(0);
-    if (is_true(level.var_81536c1d)) {
+    if (is_true(level.roundending)) {
         return;
     }
-    wait(3);
+    wait 3;
     globallogic::function_a3e3bd39(game.attackers, 1);
 }
 
@@ -1084,7 +1083,7 @@ function bombplanted(destroyedobj, player) {
 // Checksum 0xc7e1beec, Offset: 0x5320
 // Size: 0x2c
 function function_8c5ec1b() {
-    wait(0.1);
+    wait 0.1;
     luinotifyevent(#"hash_1ddd47914421827e");
 }
 
@@ -1114,10 +1113,10 @@ function bombdefused(defusedobject, player) {
     player function_ef823e71(4, player.pers[#"bombdefused"]);
     level notify(#"bomb_defused");
     thread globallogic_audio::set_music_on_team("silent");
-    if (is_true(level.var_81536c1d)) {
+    if (is_true(level.roundending)) {
         return;
     }
-    wait(1.5);
+    wait 1.5;
     setgameendtime(0);
     globallogic::function_a3e3bd39(game.defenders, 12);
 }
@@ -1127,7 +1126,7 @@ function bombdefused(defusedobject, player) {
 // Checksum 0x9831e0a2, Offset: 0x5568
 // Size: 0x64
 function private set_ui_team() {
-    wait(0.05);
+    wait 0.05;
     if (game.attackers == #"allies") {
         clientfield::set_world_uimodel("hudItems.war.attackingTeam", 1);
         return;

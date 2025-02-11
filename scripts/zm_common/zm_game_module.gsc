@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_game_module;
 
@@ -27,7 +26,7 @@ function register_game_module(index, module_name, pre_init_func, post_init_func,
             continue;
         }
         if (isdefined(level._game_modules[i].index) && level._game_modules[i].index == index) {
-            assert(level._game_modules[i].index != index, "<unknown string>" + index + "<unknown string>");
+            assert(level._game_modules[i].index != index, "<dev string:x38>" + index + "<dev string:x6b>");
         }
     }
     level._game_modules[level._num_registered_game_modules] = spawnstruct();
@@ -53,14 +52,14 @@ function set_current_game_module(game_module_index) {
     }
     game_module = get_game_module(game_module_index);
     if (!isdefined(game_module)) {
-        assert(isdefined(game_module), "<unknown string>" + game_module_index + "<unknown string>");
+        assert(isdefined(game_module), "<dev string:x70>" + game_module_index + "<dev string:x6b>");
         return;
     }
     level.current_game_module = game_module_index;
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8989e945, Offset: 0x430
 // Size: 0x1a
 function get_current_game_module() {
@@ -68,7 +67,7 @@ function get_current_game_module() {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6c379243, Offset: 0x458
 // Size: 0x74
 function get_game_module(game_module_index) {
@@ -138,7 +137,7 @@ function damage_callback_no_pvp_damage(*einflictor, eattacker, idamage, *idflags
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbc911f1f, Offset: 0x730
 // Size: 0x9c
 function respawn_players() {
@@ -149,7 +148,7 @@ function respawn_players() {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf0f960ed, Offset: 0x7d8
 // Size: 0x238
 function zombie_goto_round(target_round) {
@@ -172,7 +171,7 @@ function zombie_goto_round(target_round) {
             enemy kill(undefined, undefined, undefined, undefined, undefined, 1);
         }
     }
-    wait(5);
+    wait 5;
     corpses = getcorpsearray();
     foreach (corpse in corpses) {
         if (isactorcorpse(corpse)) {
@@ -201,14 +200,14 @@ function create_fireworks(launch_spots, min_wait, max_wait, randomize) {
         }
         foreach (spot in launch_spots) {
             level thread fireworks_launch(spot);
-            wait(randomfloatrange(min_wait, max_wait));
+            wait randomfloatrange(min_wait, max_wait);
         }
-        wait(randomfloatrange(min_wait, max_wait));
+        wait randomfloatrange(min_wait, max_wait);
     }
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbe3131d8, Offset: 0xb78
 // Size: 0x2bc
 function fireworks_launch(launch_spot) {

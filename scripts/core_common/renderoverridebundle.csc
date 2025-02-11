@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace renderoverridebundle;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x789efe5a, Offset: 0x168
 // Size: 0x134
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2cc97f40, Offset: 0x2a8
 // Size: 0x6c
 function function_d7ae6bbb(clientnum) {
@@ -63,7 +62,7 @@ function private function_25996839(var_166900a8, bundle, validity_func, var_35a2
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x1a082943, Offset: 0x3d0
 // Size: 0x134
 function function_f72f089c(var_166900a8, bundle, validity_func, var_35a2c593, default_bundle, force_kill) {
@@ -76,7 +75,7 @@ function function_f72f089c(var_166900a8, bundle, validity_func, var_35a2c593, de
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xef287c63, Offset: 0x510
 // Size: 0x2c
 function function_2dbeddb5(*local_client_num, var_166900a8) {
@@ -84,7 +83,7 @@ function function_2dbeddb5(*local_client_num, var_166900a8) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8002f733, Offset: 0x548
 // Size: 0x3be
 function function_e04728e4(local_client_num) {
@@ -131,7 +130,7 @@ function function_e04728e4(local_client_num) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1b9343a8, Offset: 0x910
 // Size: 0x188
 function private on_entity_shutdown(local_client_num) {
@@ -154,7 +153,7 @@ function private on_entity_shutdown(local_client_num) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6ef3b42f, Offset: 0xaa0
 // Size: 0x1a4
 function function_9129cbe3(local_client_num) {
@@ -179,7 +178,7 @@ function function_9129cbe3(local_client_num) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x613d1764, Offset: 0xc50
 // Size: 0x96
 function start_bundle(flag, bundle) {
@@ -192,7 +191,7 @@ function start_bundle(flag, bundle) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x97fd49d1, Offset: 0xcf0
 // Size: 0xa4
 function stop_bundle(flag, bundle, force_kill) {
@@ -216,12 +215,12 @@ function fade_bundle(localclientnum, flag, bundle, fadeduration) {
     if (flag::get(flag)) {
         util::lerp_generic(localclientnum, fadeduration, &function_9e7290f5, 1, 0, bundle);
     }
-    wait(float(fadeduration) / 1000);
+    wait float(fadeduration) / 1000;
     stop_bundle(flag, bundle, 0);
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x732971fe, Offset: 0xe58
 // Size: 0xa4
 function function_9e7290f5(*currenttime, elapsedtime, *localclientnum, fadeduration, from, to, bundle) {
@@ -231,7 +230,7 @@ function function_9e7290f5(*currenttime, elapsedtime, *localclientnum, fadedurat
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6774e01f, Offset: 0xf08
 // Size: 0x9e
 function function_318de8bd(local_client_num, var_80292ef8) {
@@ -248,7 +247,7 @@ function function_318de8bd(local_client_num, var_80292ef8) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbaa53384, Offset: 0xfb0
 // Size: 0x37a
 function function_c8d97b8e(local_client_num, flag, var_166900a8) {
@@ -295,7 +294,7 @@ function function_c8d97b8e(local_client_num, flag, var_166900a8) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd5ccc7f4, Offset: 0x1338
 // Size: 0xce
 function function_6803f977(local_client_num, bundle) {
@@ -336,7 +335,7 @@ function function_ce7fd1b9(local_client_num, bundle) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaf69499c, Offset: 0x14a8
 // Size: 0x6e
 function function_9216f2c3(local_client_num, *bundle) {
@@ -353,7 +352,7 @@ function function_9216f2c3(local_client_num, *bundle) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x91abbbed, Offset: 0x1520
 // Size: 0x94
 function function_ee77bff9(local_client_num, field_name, bundle, var_d9c61b9c) {
@@ -363,7 +362,7 @@ function function_ee77bff9(local_client_num, field_name, bundle, var_d9c61b9c) {
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xfa19becf, Offset: 0x15c0
 // Size: 0xac
 function function_f4eab437(local_client_num, should_play, bundle, var_d9c61b9c) {

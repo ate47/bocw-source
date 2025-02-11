@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicles\smart_bomb.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicles\smart_bomb;
 
 #namespace rcxd;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace rcxd/rcxd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa7714acb, Offset: 0x130
 // Size: 0x2c
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace rcxd/rcxd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x467511fb, Offset: 0x168
 // Size: 0x8c
 function function_91ea9492() {
@@ -38,7 +37,7 @@ function function_91ea9492() {
 }
 
 // Namespace rcxd/rcxd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb9f08ba7, Offset: 0x200
 // Size: 0x10c
 function defaultrole() {
@@ -52,7 +51,7 @@ function defaultrole() {
 }
 
 // Namespace rcxd/rcxd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc2461fe6, Offset: 0x318
 // Size: 0x19c
 function initsounds() {

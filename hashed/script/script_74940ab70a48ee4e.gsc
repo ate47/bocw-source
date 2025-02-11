@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
 #using script_35ae72be7b4fec10;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\gametypes\globallogic_ui;
 
 #namespace namespace_29a279dd;
 
 // Namespace namespace_29a279dd/namespace_29a279dd
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x129a1d57, Offset: 0xb0
 // Size: 0x11c
 function set_display(state, text, desc) {
@@ -25,7 +24,7 @@ function set_display(state, text, desc) {
 }
 
 // Namespace namespace_29a279dd/namespace_29a279dd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb5973629, Offset: 0x1d8
 // Size: 0x6c
 function remove() {

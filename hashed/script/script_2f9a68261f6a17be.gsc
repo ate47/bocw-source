@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_traps.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_traps;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_b28d86fd;
 
@@ -21,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb6da1c97, Offset: 0x148
 // Size: 0x5c
 function private preinit() {
@@ -32,7 +31,7 @@ function private preinit() {
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4b5acd78, Offset: 0x1b0
 // Size: 0x344
 function private on_begin() {
@@ -63,7 +62,7 @@ function private on_begin() {
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x53b72fa9, Offset: 0x500
 // Size: 0x210
 function private on_end(*round_reset) {
@@ -85,7 +84,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8dfb9b96, Offset: 0x718
 // Size: 0x10c
 function private function_33f0ddd3(s_event) {
@@ -101,7 +100,7 @@ function private function_33f0ddd3(s_event) {
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc8feb07, Offset: 0x830
 // Size: 0x32
 function is_active() {
@@ -110,7 +109,7 @@ function is_active() {
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a19db3d, Offset: 0x870
 // Size: 0xac
 function function_70594057() {

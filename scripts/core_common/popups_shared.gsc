@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\persistence_shared.gsc;
-#using scripts\core_common\medals_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\medals_shared;
+#using scripts\core_common\persistence_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace popups;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x11c7c33d, Offset: 0x108
 // Size: 0x24
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47b6f412, Offset: 0x138
 // Size: 0x1d4
 function init() {
@@ -56,7 +55,7 @@ function init() {
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7e9b8894, Offset: 0x318
 // Size: 0x62
 function on_player_connect() {
@@ -106,12 +105,12 @@ function on_player_connect() {
     // Size: 0x9a
     function devgui_notif_getchallengestablename(tableid) {
         if (sessionmodeiscampaigngame()) {
-            return (#"gamedata/stats/cp/statsmilestones" + tableid + "<unknown string>");
+            return (#"gamedata/stats/cp/statsmilestones" + tableid + "<dev string:x38>");
         }
         if (sessionmodeiszombiesgame()) {
-            return (#"gamedata/stats/zm/statsmilestones" + tableid + "<unknown string>");
+            return (#"gamedata/stats/zm/statsmilestones" + tableid + "<dev string:x38>");
         }
-        return #"gamedata/stats/mp/statsmilestones" + tableid + "<unknown string>";
+        return #"gamedata/stats/mp/statsmilestones" + tableid + "<dev string:x38>";
     }
 
     // Namespace popups/popups_shared
@@ -124,9 +123,9 @@ function on_player_connect() {
             iteminfo = getunlockableiteminfofromindex(i, 0);
             if (isdefined(iteminfo)) {
                 group_s = iteminfo.itemgroupname;
-                if (issubstr(group_s, "<unknown string>") || group_s == "<unknown string>") {
+                if (issubstr(group_s, "<dev string:x40>") || group_s == "<dev string:x4b>") {
                     reference_s = iteminfo.namehash;
-                    if (reference_s != "<unknown string>") {
+                    if (reference_s != "<dev string:x53>") {
                         level.tbl_weaponids[i][#"reference"] = reference_s;
                         level.tbl_weaponids[i][#"group"] = group_s;
                         level.tbl_weaponids[i][#"count"] = iteminfo.count;
@@ -150,14 +149,14 @@ function on_player_connect() {
         if (isdedicated()) {
             return;
         }
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
-        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<dev string:x57>", "<dev string:x7f>");
+        util::add_devgui("<dev string:xa5>", "<dev string:xd0>");
+        util::add_devgui("<dev string:xf9>", "<dev string:x136>");
+        util::add_devgui("<dev string:x163>", "<dev string:x1b3>");
+        util::add_devgui("<dev string:x1e0>", "<dev string:x227>");
+        util::add_devgui("<dev string:x254>", "<dev string:x2a0>");
+        util::add_devgui("<dev string:x2cd>", "<dev string:x312>");
+        util::add_devgui("<dev string:x33f>", "<dev string:x38e>");
         level thread function_a65863ce();
     }
 
@@ -169,11 +168,11 @@ function on_player_connect() {
         level endon(#"game_ended");
         while (true) {
             if (getdvarint(#"hash_5b32141cac382fa3", 0) > 0) {
-                util::remove_devgui("<unknown string>");
+                util::remove_devgui("<dev string:x3bb>");
                 level thread notif_devgui_gun_rank();
                 setdvar(#"hash_5b32141cac382fa3", 0);
             } else if (getdvarint(#"hash_4ccabf785218a1e0", 0) > 0) {
-                util::remove_devgui("<unknown string>");
+                util::remove_devgui("<dev string:x3e1>");
                 level thread notif_devgui_rank();
                 setdvar(#"hash_4ccabf785218a1e0", 0);
             } else {
@@ -181,22 +180,22 @@ function on_player_connect() {
                 if (dvarval) {
                     switch (dvarval) {
                     case 1:
-                        menu = "<unknown string>";
+                        menu = "<dev string:x40a>";
                         break;
                     case 2:
-                        menu = "<unknown string>";
+                        menu = "<dev string:x445>";
                         break;
                     case 3:
-                        menu = "<unknown string>";
+                        menu = "<dev string:x493>";
                         break;
                     case 4:
-                        menu = "<unknown string>";
+                        menu = "<dev string:x4d8>";
                         break;
                     case 5:
-                        menu = "<unknown string>";
+                        menu = "<dev string:x522>";
                         break;
                     case 6:
-                        menu = "<unknown string>";
+                        menu = "<dev string:x565>";
                         break;
                     default:
                         menu = undefined;
@@ -209,7 +208,7 @@ function on_player_connect() {
                     }
                 }
             }
-            wait(2);
+            wait 2;
         }
     }
 
@@ -218,23 +217,23 @@ function on_player_connect() {
     // Checksum 0x656dd4fa, Offset: 0xaf8
     // Size: 0x2e4
     function function_43b5625e(tablenum) {
-        notif_challenges_devgui_base = "<unknown string>";
+        notif_challenges_devgui_base = "<dev string:x5b2>";
         tablename = devgui_notif_getchallengestablename(tablenum);
         rows = tablelookuprowcount(tablename);
         for (j = 1; j < rows; j++) {
             challengeid = tablelookupcolumnforrow(tablename, j, 0);
-            if (challengeid != "<unknown string>" && strisint(tablelookupcolumnforrow(tablename, j, 0))) {
+            if (challengeid != "<dev string:x53>" && strisint(tablelookupcolumnforrow(tablename, j, 0))) {
                 challengestring = tablelookupcolumnforrow(tablename, j, 5);
                 type = tablelookupcolumnforrow(tablename, j, 3);
                 challengetier = int(tablelookupcolumnforrow(tablename, j, 1));
-                challengetierstring = "<unknown string>" + challengetier;
+                challengetierstring = "<dev string:x53>" + challengetier;
                 if (challengetier < 10) {
-                    challengetierstring = "<unknown string>" + challengetier;
+                    challengetierstring = "<dev string:x5de>" + challengetier;
                 }
                 name = tablelookupcolumnforrow(tablename, j, 5);
-                devgui_cmd_challenge_path = notif_challenges_devgui_base + function_9e72a96(type) + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + challengetierstring + "<unknown string>" + challengeid;
+                devgui_cmd_challenge_path = notif_challenges_devgui_base + function_9e72a96(type) + "<dev string:x5e3>" + function_9e72a96(name) + "<dev string:x5e3>" + challengetierstring + "<dev string:x5e8>" + challengeid;
                 util::waittill_can_add_debug_command();
-                adddebugcommand(devgui_cmd_challenge_path + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + j + "<unknown string>" + "<unknown string>" + "<unknown string>" + tablenum + "<unknown string>");
+                adddebugcommand(devgui_cmd_challenge_path + "<dev string:x5f1>" + "<dev string:x5f7>" + "<dev string:x5fc>" + "<dev string:x605>" + "<dev string:x627>" + j + "<dev string:x5fc>" + "<dev string:x62c>" + "<dev string:x627>" + tablenum + "<dev string:x650>");
                 if (int(challengeid) % 10) {
                     waitframe(1);
                 }
@@ -251,14 +250,14 @@ function on_player_connect() {
         if (!isdefined(level.ranktable)) {
             return;
         }
-        notif_rank_devgui_base = "<unknown string>";
+        notif_rank_devgui_base = "<dev string:x657>";
         for (i = 1; i < level.ranktable.size; i++) {
             display_level = i + 1;
             if (display_level < 10) {
-                display_level = "<unknown string>" + display_level;
+                display_level = "<dev string:x5de>" + display_level;
             }
             util::waittill_can_add_debug_command();
-            adddebugcommand(notif_rank_devgui_base + display_level + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + i + "<unknown string>");
+            adddebugcommand(notif_rank_devgui_base + display_level + "<dev string:x5f1>" + "<dev string:x5f7>" + "<dev string:x683>" + "<dev string:x627>" + i + "<dev string:x650>");
         }
         waitframe(1);
         level thread notif_devgui_rank_up_think();
@@ -277,7 +276,7 @@ function on_player_connect() {
             }
             level.players[0] rank::codecallback_rankup({#rank:rank_number, #prestige:0, #unlock_tokens_added:1});
             setdvar(#"scr_notif_devgui_rank", 0);
-            wait(1);
+            wait 1;
         }
     }
 
@@ -286,12 +285,12 @@ function on_player_connect() {
     // Checksum 0xfeedade7, Offset: 0xfd8
     // Size: 0x944
     function notif_devgui_gun_rank() {
-        notif_gun_rank_devgui_base = "<unknown string>";
+        notif_gun_rank_devgui_base = "<dev string:x69c>";
         gunlevel_rankid_col = 0;
         gunlevel_gunref_col = 2;
         gunlevel_attachment_unlock_col = 3;
         gunlevel_xpgained_col = 4;
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x6c7>");
         if (!isdefined(level.tbl_weaponids)) {
             devgui_create_weapon_levels_table();
         }
@@ -325,7 +324,7 @@ function on_player_connect() {
             }
             switch (weapon[#"group"]) {
             case #"weapon_pistol":
-                if (weapon[#"reference"] != "<unknown string>") {
+                if (weapon[#"reference"] != "<dev string:x6de>") {
                     arrayinsert(a_weapons[#"pistol"], gun, 0);
                 }
                 break;
@@ -360,9 +359,9 @@ function on_player_connect() {
         foreach (group_name, gun_group in a_weapons) {
             foreach (gun, attachment_group in gun_group) {
                 foreach (attachment, attachment_data in attachment_group[#"attachments"]) {
-                    devgui_cmd_gun_path = notif_gun_rank_devgui_base + function_9e72a96(group_name) + "<unknown string>" + function_9e72a96(gun_group[gun][#"ref"]) + "<unknown string>" + function_9e72a96(attachment);
+                    devgui_cmd_gun_path = notif_gun_rank_devgui_base + function_9e72a96(group_name) + "<dev string:x5e3>" + function_9e72a96(gun_group[gun][#"ref"]) + "<dev string:x5e3>" + function_9e72a96(attachment);
                     util::waittill_can_add_debug_command();
-                    adddebugcommand(devgui_cmd_gun_path + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + attachment_data[#"xp"] + "<unknown string>" + "<unknown string>" + "<unknown string>" + attachment_data[#"itemindex"] + "<unknown string>" + "<unknown string>" + "<unknown string>" + gun_group[gun][#"itemindex"] + "<unknown string>" + "<unknown string>" + "<unknown string>" + attachment_data[#"rankid"] + "<unknown string>");
+                    adddebugcommand(devgui_cmd_gun_path + "<dev string:x5f1>" + "<dev string:x5f7>" + "<dev string:x5fc>" + "<dev string:x6ed>" + "<dev string:x627>" + attachment_data[#"xp"] + "<dev string:x5fc>" + "<dev string:x70c>" + "<dev string:x627>" + attachment_data[#"itemindex"] + "<dev string:x5fc>" + "<dev string:x739>" + "<dev string:x627>" + gun_group[gun][#"itemindex"] + "<dev string:x5fc>" + "<dev string:x760>" + "<dev string:x627>" + attachment_data[#"rankid"] + "<dev string:x650>");
                 }
             }
             waitframe(1);
@@ -389,7 +388,7 @@ function on_player_connect() {
             setdvar(#"scr_notif_devgui_gun_lvl_attachment_index", 0);
             setdvar(#"scr_notif_devgui_gun_lvl_item_index", 0);
             setdvar(#"scr_notif_devgui_gun_lvl_rank_id", 0);
-            wait(1);
+            wait 1;
         }
     }
 
@@ -398,8 +397,8 @@ function on_player_connect() {
     // Checksum 0xb08a4667, Offset: 0x1af8
     // Size: 0x436
     function notif_devgui_challenges_think() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x784>");
+        self endon("<dev string:x784>");
         setdvar(#"scr_notif_devgui_challenge_row", 0);
         setdvar(#"scr_notif_devgui_challenge_table", 0);
         for (;;) {
@@ -417,17 +416,17 @@ function on_player_connect() {
             }
             type = tablelookupcolumnforrow(tablename, row, 3);
             itemindex = 0;
-            if (type == "<unknown string>") {
+            if (type == "<dev string:x798>") {
                 type = 0;
-            } else if (type == "<unknown string>") {
+            } else if (type == "<dev string:x7a2>") {
                 itemindex = 4;
                 type = 3;
-            } else if (type == "<unknown string>") {
+            } else if (type == "<dev string:x7ab>") {
                 itemindex = 1;
                 type = 4;
-            } else if (type == "<unknown string>") {
+            } else if (type == "<dev string:x7b9>") {
                 type = 2;
-            } else if (type == "<unknown string>") {
+            } else if (type == "<dev string:x7c5>") {
                 type = 5;
             } else {
                 itemindex = getdvarint(#"scr_challenge_itemindex", 0);
@@ -446,7 +445,7 @@ function on_player_connect() {
             player persistence::codecallback_challengecomplete({#reward:xpreward, #max:maxvalue, #row:row, #table_number:table - 1, #challenge_type:type, #item_index:itemindex, #challenge_index:challengeid});
             setdvar(#"scr_notif_devgui_challenge_row", 0);
             setdvar(#"scr_notif_devgui_challenge_table", 0);
-            wait(1);
+            wait 1;
         }
     }
 
@@ -460,7 +459,7 @@ function on_player_connect() {
             if (timeout == 0) {
                 timeout = 1;
             }
-            wait(timeout);
+            wait timeout;
             medal = getdvarint(#"scr_popupmedal", 0);
             challenge = getdvarint(#"scr_popupchallenge", 0);
             rank = getdvarint(#"scr_popuprank", 0);
@@ -543,7 +542,7 @@ function on_player_connect() {
 #/
 
 // Namespace popups/popups_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8f9f45a7, Offset: 0x2738
 // Size: 0xa4
 function displaykillstreakteammessagetoall(killstreak, player) {
@@ -560,7 +559,7 @@ function displaykillstreakteammessagetoall(killstreak, player) {
 }
 
 // Namespace popups/popups_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa4f19a38, Offset: 0x27e8
 // Size: 0xa4
 function displaykillstreakhackedteammessagetoall(killstreak, player) {
@@ -577,7 +576,7 @@ function displaykillstreakhackedteammessagetoall(killstreak, player) {
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa43528c7, Offset: 0x2898
 // Size: 0x66
 function shoulddisplayteammessages() {
@@ -588,7 +587,7 @@ function shoulddisplayteammessages() {
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdeb6819, Offset: 0x2908
 // Size: 0x34
 function function_eb9328f3() {
@@ -597,7 +596,7 @@ function function_eb9328f3() {
 }
 
 // Namespace popups/popups_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaf206774, Offset: 0x2948
 // Size: 0x13c
 function displayteammessagetoall(message, player) {
@@ -634,11 +633,11 @@ function displayteammessagetoteam(message, player, team, var_fd214505, var_aba89
 // Checksum 0x3b38497c, Offset: 0x2b10
 // Size: 0x54
 function function_87604884(message, player, team, var_fd214505, var_aba8941) {
-    function_bed391aa(#"hash_3a268553010df6a4", message, player, team, var_fd214505, var_aba8941);
+    function_bed391aa(#"inventory_callout", message, player, team, var_fd214505, var_aba8941);
 }
 
 // Namespace popups/popups_shared
-// Params 9, eflags: 0x6 linked
+// Params 9, eflags: 0x4
 // Checksum 0xbbd0be9c, Offset: 0x2b70
 // Size: 0x22c
 function private function_bed391aa(notifyhash, message, player, team, var_fd214505, var_aba8941, var_1dd0326a, var_265441a6, var_8fa431fa) {
@@ -672,7 +671,7 @@ function private function_bed391aa(notifyhash, message, player, team, var_fd2145
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x558aa222, Offset: 0x2da8
 // Size: 0x2c
 function on_team_message() {
@@ -683,7 +682,7 @@ function on_team_message() {
 }
 
 // Namespace popups/popups_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8267fad2, Offset: 0x2de0
 // Size: 0x1d8
 function function_921657e4() {

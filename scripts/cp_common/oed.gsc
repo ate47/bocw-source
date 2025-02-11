@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_32399001bdb550da;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace oed;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9ea1eee3, Offset: 0x1f0
 // Size: 0x27c
 function private preinit() {
@@ -45,7 +44,7 @@ function private preinit() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x478
 // Size: 0x4
 function private postinit() {
@@ -53,7 +52,7 @@ function private postinit() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8599d26e, Offset: 0x488
 // Size: 0x6c
 function on_player_spawned() {
@@ -78,7 +77,7 @@ function event_handler[button_bit_actionslot_1_pressed] function_84d84898() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc0163027, Offset: 0x598
 // Size: 0x64
 function function_9eccf6c1() {
@@ -92,7 +91,7 @@ function function_9eccf6c1() {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb38d6f8b, Offset: 0x608
 // Size: 0x5c
 function enable_thermal(var_5bf5152f) {
@@ -105,7 +104,7 @@ function enable_thermal(var_5bf5152f) {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x387ccfb4, Offset: 0x670
 // Size: 0x44
 function function_5feac491() {
@@ -117,7 +116,7 @@ function function_5feac491() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x62af39ac, Offset: 0x6c0
 // Size: 0x16
 function disable_thermal() {
@@ -136,7 +135,7 @@ function function_9ce86e2d(b_enabled = 1) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa31077a, Offset: 0x798
 // Size: 0x4c
 function enable_ev(b_enabled = 1) {
@@ -147,7 +146,7 @@ function enable_ev(b_enabled = 1) {
 }
 
 // Namespace oed/oed
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x26a3ef7d, Offset: 0x7f0
 // Size: 0x5e
 function function_4b06932(b_enabled = 1) {
@@ -174,7 +173,7 @@ function function_f2a6c166(*var_af4a3f3e, var_5bf5152f) {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc2712c3, Offset: 0x8f0
 // Size: 0x34
 function function_99b61739() {
@@ -185,7 +184,7 @@ function function_99b61739() {
 }
 
 // Namespace oed/oed
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8ed2db1c, Offset: 0x930
 // Size: 0x24
 function function_b925bd3c() {

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
 
 #namespace flak_drone;
 
 // Namespace flak_drone/flak_drone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24d9fd23, Offset: 0xc0
 // Size: 0x64
 function init_shared() {
@@ -15,7 +14,7 @@ function init_shared() {
 }
 
 // Namespace flak_drone/flak_drone
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x209d2d94, Offset: 0x130
 // Size: 0x6c
 function active_camo_changed(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -24,7 +23,7 @@ function active_camo_changed(localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace flak_drone/flak_drone
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe5206151, Offset: 0x1a8
 // Size: 0xea
 function doreveal(localclientnum, direction) {

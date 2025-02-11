@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\aats\ammomods\ammomod_deadwire.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\zm_common\aats\ammomods\ammomod_deadwire;
 
 #namespace ammomod_electriccherry;
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed25e85e, Offset: 0x130
 // Size: 0xec
 function init_electriccherry() {
@@ -22,7 +21,7 @@ function init_electriccherry() {
 }
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x6cb62f74, Offset: 0x228
 // Size: 0x60
 function result(*death, *attacker, *mod, *weapon, *var_fd90b0bb, *vpoint, *shitloc, *boneindex) {
@@ -47,7 +46,7 @@ function event_handler[reload] function_b4174270(*eventstruct) {
 }
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x58b2531c, Offset: 0x338
 // Size: 0x14c
 function function_aa4171b9() {

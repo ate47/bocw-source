@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreak_vehicle.csc;
-#using scripts\killstreaks\killstreak_detect.csc;
 #using script_18b9d0e77614c97;
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\killstreak_detect;
+#using scripts\killstreaks\killstreak_vehicle;
 
 #namespace recon_car;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6f53ebb6, Offset: 0x110
 // Size: 0x84
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3943719f, Offset: 0x1a0
 // Size: 0x1e
 function spawned(*localclientnum) {

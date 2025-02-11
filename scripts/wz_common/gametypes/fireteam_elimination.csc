@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_78825cbb1ab9f493;
-#using script_6a72d858ff1942eb;
+#using script_4a04e1760d0523d3;
 #using script_67278d99b737542d;
 #using script_680dddbda86931fa;
-#using script_4a04e1760d0523d3;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using script_6a72d858ff1942eb;
+#using script_78825cbb1ab9f493;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
 
 #namespace fireteam_elimination;
 
@@ -27,7 +26,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace fireteam_elimination/fireteam_elimination
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe218e368, Offset: 0x360
 // Size: 0x24
 function on_localclient_connect(localclientnum) {
@@ -35,7 +34,7 @@ function on_localclient_connect(localclientnum) {
 }
 
 // Namespace fireteam_elimination/fireteam_elimination
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbba1419, Offset: 0x390
 // Size: 0x2f6
 function private function_bb2f717e(localclientnum) {
@@ -50,7 +49,7 @@ function private function_bb2f717e(localclientnum) {
     }
     while (true) {
         if (!isdefined(level.item_spawn_stashes)) {
-            wait(1);
+            wait 1;
             continue;
         }
         draworigin = getcamposbylocalclientnum(localclientnum);
@@ -81,12 +80,12 @@ function private function_bb2f717e(localclientnum) {
             var_61efd7d9[index].var_95f008e = undefined;
             var_61efd7d9[index] hide();
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace fireteam_elimination/fireteam_elimination
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xabe1432a, Offset: 0x690
 // Size: 0xf8
 function private function_e99f251a(*localclientnum, itementry) {
@@ -107,7 +106,7 @@ function private function_e99f251a(*localclientnum, itementry) {
 }
 
 // Namespace fireteam_elimination/fireteam_elimination
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9ae9fb96, Offset: 0x790
 // Size: 0xce
 function private function_218c0417(*localclientnum, itementry) {
@@ -126,7 +125,7 @@ function private function_218c0417(*localclientnum, itementry) {
 }
 
 // Namespace fireteam_elimination/fireteam_elimination
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xea97c463, Offset: 0x868
 // Size: 0x12a
 function private function_a2807fc5(localclientnum, itementry) {
@@ -148,7 +147,7 @@ function private function_a2807fc5(localclientnum, itementry) {
 }
 
 // Namespace fireteam_elimination/fireteam_elimination
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0xd46743e, Offset: 0x9a0
 // Size: 0x5c
 function private function_d299e99d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

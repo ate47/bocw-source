@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace wasp;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x15ee723b, Offset: 0x2e8
 // Size: 0x74
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe21527a5, Offset: 0x368
 // Size: 0x27c
 function wasp_initialize() {
@@ -71,7 +70,7 @@ function wasp_initialize() {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4c71a7ae, Offset: 0x5f0
 // Size: 0x2d4
 function defaultrole() {
@@ -97,7 +96,7 @@ function defaultrole() {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe9d7fb9b, Offset: 0x8d0
 // Size: 0x39c
 function state_death_update(params) {
@@ -157,7 +156,7 @@ function state_death_update(params) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xff90616a, Offset: 0xc78
 // Size: 0x65c
 function state_emped_update(params) {
@@ -168,7 +167,7 @@ function state_emped_update(params) {
     empdowntime = params.param0;
     assert(isdefined(empdowntime));
     util::cooldown("emped_timer", empdowntime);
-    wait(randomfloat(0.2));
+    wait randomfloat(0.2);
     ang_vel = self getangularvelocity();
     pitch_vel = math::randomsign() * randomfloatrange(200, 250);
     yaw_vel = math::randomsign() * randomfloatrange(200, 250);
@@ -191,16 +190,16 @@ function state_emped_update(params) {
     self setangularvelocity((0, 0, 0));
     while (!util::iscooldownready("emped_timer")) {
         timeleft = max(util::getcooldownleft("emped_timer"), 0.5);
-        wait(timeleft);
+        wait timeleft;
     }
     self.abnormal_status.emped = 0;
     self vehicle::toggle_emp_fx(0);
     self vehicle_ai::emp_startup_fx();
     for (bootup_timer = 1.6; bootup_timer > 0; bootup_timer -= 0.8) {
         self vehicle::lights_on();
-        wait(0.4);
+        wait 0.4;
         self vehicle::lights_off();
-        wait(0.4);
+        wait 0.4;
     }
     self vehicle::lights_on();
     if (isdefined(self.position_before_fall)) {
@@ -217,14 +216,14 @@ function state_emped_update(params) {
             foundgoal = self function_a57c34b7(self.current_pathto_pos, 1, 1);
             while (!foundgoal && util::timesince(starttime) < 3) {
                 foundgoal = self function_a57c34b7(self.current_pathto_pos, 1, 1);
-                wait(0.3);
+                wait 0.3;
             }
             if (foundgoal) {
                 self waittilltimeout(1, #"near_goal", #"goal");
             } else {
                 self function_a57c34b7(self.origin, 1, 0);
             }
-            wait(1);
+            wait 1;
             self.position_before_fall = undefined;
             self vehicle_ai::evaluate_connections();
         }
@@ -234,19 +233,19 @@ function state_emped_update(params) {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x272a22b4, Offset: 0x12e0
 // Size: 0x4c
 function function_d34735d1() {
     self notify("5070a0b250851eba");
     self endon("5070a0b250851eba");
     self endon(#"death");
-    wait(3);
+    wait 3;
     self kill();
 }
 
 // Namespace wasp/wasp
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbc09337c, Offset: 0x1338
 // Size: 0x5a4
 function fall_and_bounce(killonimpact_speed, killonimpact_time, killonimpact = 0) {
@@ -310,7 +309,7 @@ function fall_and_bounce(killonimpact_speed, killonimpact_time, killonimpact = 0
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0bd93aa, Offset: 0x18e8
 // Size: 0x244
 function init_guard_points() {
@@ -362,7 +361,7 @@ function init_guard_points() {
         while (true) {
             foreach (point in self.debugpointsarray) {
                 color = (1, 0, 0);
-                if (ispointinnavvolume(point, "<unknown string>")) {
+                if (ispointinnavvolume(point, "<dev string:x38>")) {
                     color = (0, 1, 0);
                 }
                 debugstar(point, 5, color);
@@ -374,11 +373,11 @@ function init_guard_points() {
 #/
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b24b1a8, Offset: 0x1c50
 // Size: 0x332
 function get_guard_points(owner) {
-    assert(self._guard_points.size > 0, "<unknown string>");
+    assert(self._guard_points.size > 0, "<dev string:x4b>");
     points_array = [];
     foreach (point in self._guard_points) {
         offset = rotatepoint(point, owner.angles);
@@ -410,7 +409,7 @@ function get_guard_points(owner) {
 }
 
 // Namespace wasp/wasp
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9f4f0f17, Offset: 0x1f90
 // Size: 0x146
 function state_guard_can_enter(*from_state, *to_state, *connection) {
@@ -430,7 +429,7 @@ function state_guard_can_enter(*from_state, *to_state, *connection) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcfe7bcb5, Offset: 0x20e0
 // Size: 0x4c
 function state_guard_enter(*params) {
@@ -441,7 +440,7 @@ function state_guard_enter(*params) {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6c449111, Offset: 0x2138
 // Size: 0x72
 function update_main_guard() {
@@ -451,7 +450,7 @@ function update_main_guard() {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5a0a4a30, Offset: 0x21b8
 // Size: 0x3e
 function state_guard_exit(*params) {
@@ -461,7 +460,7 @@ function state_guard_exit(*params) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5752c18e, Offset: 0x2200
 // Size: 0x64
 function test_get_back_point(point) {
@@ -475,7 +474,7 @@ function test_get_back_point(point) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0f020b2, Offset: 0x2270
 // Size: 0xe4
 function test_get_back_queryresult(queryresult) {
@@ -493,7 +492,7 @@ function test_get_back_queryresult(queryresult) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xce0f02f, Offset: 0x2360
 // Size: 0x850
 function state_guard_update(*params) {
@@ -505,12 +504,12 @@ function state_guard_update(*params) {
     while (true) {
         if (isdefined(self.enemy) && distancesquared(self.owner.origin, self.enemy.origin) < sqr(1000) && self seerecently(self.enemy, 1) && ispointinnavvolume(self.origin, "navvolume_small")) {
             self vehicle_ai::evaluate_connections();
-            wait(1);
+            wait 1;
             continue;
         }
         owner = self.owner;
         if (!isdefined(owner)) {
-            wait(1);
+            wait 1;
             continue;
         }
         usepathfinding = 1;
@@ -545,7 +544,7 @@ function state_guard_update(*params) {
                     stucklocation = self.origin;
                 } else if (stuckcount > 10) {
                     /#
-                        assert(0, "<unknown string>" + self.origin);
+                        assert(0, "<dev string:x67>" + self.origin);
                         v_box_min = (self.radius * -1, self.radius * -1, self.radius * -1);
                         v_box_max = (self.radius, self.radius, self.radius);
                         box(self.origin, v_box_min, v_box_max, self.angles[1], (1, 0, 0), 1, 0, 1000000);
@@ -562,7 +561,7 @@ function state_guard_update(*params) {
             if (owner.main_guard === self) {
                 guardpoints = get_guard_points(owner);
                 if (guardpoints.size < 1) {
-                    wait(1);
+                    wait 1;
                     continue;
                 }
                 stuckcount = 0;
@@ -599,7 +598,7 @@ function state_guard_update(*params) {
                     pointindex = randomint(self._guard_points.size);
                     timenotatgoal = gettime();
                 }
-                wait(0.2);
+                wait 0.2;
                 continue;
             }
             if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
@@ -613,16 +612,16 @@ function state_guard_update(*params) {
                     self vehicle_ai::waittill_pathing_done();
                 }
             } else {
-                wait(0.5);
+                wait 0.5;
             }
             continue;
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa593ee9d, Offset: 0x2bb8
 // Size: 0x84
 function state_combat_enter(*params) {
@@ -636,7 +635,7 @@ function state_combat_enter(*params) {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x52f69e39, Offset: 0x2c48
 // Size: 0x52c
 function turretfireupdate() {
@@ -658,14 +657,14 @@ function turretfireupdate() {
                 }
                 startaim = gettime();
                 while (!self.turretontarget && util::timesince(startaim) < 3) {
-                    wait(0.2);
+                    wait 0.2;
                 }
                 if (isdefined(self.enemy) && self.turretontarget && self.noshoot !== 1) {
                     if (isrockettype) {
                         for (i = 0; i < 2 && isdefined(self.enemy); i++) {
                             self fireweapon(0, self.enemy);
                             fired = 1;
-                            wait(0.25);
+                            wait 0.25;
                         }
                     } else {
                         self vehicle_ai::fire_for_time(randomfloatrange(self.settings.turret_fire_burst_min, self.settings.turret_fire_burst_max), 0, self.enemy);
@@ -674,32 +673,32 @@ function turretfireupdate() {
                         if (!isdefined(self.settings.turret_cooldown_min)) {
                             self.settings.turret_cooldown_min = 0;
                         }
-                        wait(randomfloatrange(self.settings.turret_cooldown_min, self.settings.turret_cooldown_max));
+                        wait randomfloatrange(self.settings.turret_cooldown_min, self.settings.turret_cooldown_max);
                     }
                 } else if (isdefined(self.settings.turret_enemy_detect_freq)) {
-                    wait(self.settings.turret_enemy_detect_freq);
+                    wait self.settings.turret_enemy_detect_freq;
                 }
                 self turretsettargetangles(0, (15, 0, 0));
             }
             if (isrockettype) {
                 if (isdefined(self.enemy) && isai(self.enemy)) {
-                    wait(randomfloatrange(4, 7));
+                    wait randomfloatrange(4, 7);
                 } else {
-                    wait(randomfloatrange(3, 5));
+                    wait randomfloatrange(3, 5);
                 }
             } else if (isdefined(self.enemy) && isai(self.enemy)) {
-                wait(randomfloatrange(2, 2.5));
+                wait randomfloatrange(2, 2.5);
             } else {
-                wait(randomfloatrange(0.5, 1.5));
+                wait randomfloatrange(0.5, 1.5);
             }
             continue;
         }
-        wait(0.4);
+        wait 0.4;
     }
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x85c054a3, Offset: 0x3180
 // Size: 0x254
 function path_update_interrupt() {
@@ -707,11 +706,11 @@ function path_update_interrupt() {
     self notify(#"path_update_interrupt");
     self endon(#"path_update_interrupt");
     old_enemy = self.enemy;
-    wait(1);
+    wait 1;
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
             if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
-                wait(0.2);
+                wait 0.2;
                 self notify(#"near_goal");
             }
         }
@@ -729,17 +728,17 @@ function path_update_interrupt() {
                 self notify(#"near_goal");
             }
         }
-        wait(0.2);
+        wait 0.2;
     }
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4d6237a6, Offset: 0x33e0
 // Size: 0x2d8
 function wait_till_something_happens(timeout) {
     self endon(#"change_state", #"death");
-    wait(0.1);
+    wait 0.1;
     time = timeout;
     cant_see_count = 0;
     while (time > 0) {
@@ -767,7 +766,7 @@ function wait_till_something_happens(timeout) {
             }
             if (isplayer(self.enemy) && self.enemy islookingat(self)) {
                 if (math::cointoss()) {
-                    wait(randomfloatrange(0.1, 0.5));
+                    wait randomfloatrange(0.1, 0.5);
                 }
                 self drop_leader();
                 break;
@@ -778,13 +777,13 @@ function wait_till_something_happens(timeout) {
                 break;
             }
         }
-        wait(0.3);
+        wait 0.3;
         time -= 0.3;
     }
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x758a78a4, Offset: 0x36c0
 // Size: 0x3e
 function drop_leader() {
@@ -795,7 +794,7 @@ function drop_leader() {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3459fc23, Offset: 0x3708
 // Size: 0x1e2
 function update_leader() {
@@ -837,7 +836,7 @@ function update_leader() {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe5657503, Offset: 0x38f8
 // Size: 0x150
 function should_fly_forward(distancetogoalsq) {
@@ -862,7 +861,7 @@ function should_fly_forward(distancetogoalsq) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd95d1d29, Offset: 0x3a50
 // Size: 0x12c
 function function_739ac4a0(*params) {
@@ -879,23 +878,23 @@ function function_739ac4a0(*params) {
             self setgoal(goalpos, 1, 0);
             self.current_pathto_pos = goalpos;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xce684b7a, Offset: 0x3b88
 // Size: 0x87a
 function state_combat_update(*params) {
     self endon(#"change_state", #"death");
-    wait(0.1);
+    wait 0.1;
     stuckcount = 0;
     for (;;) {
         self setspeed(self.settings.defaultmovespeed);
         self update_leader();
         if (is_true(self.inpain) || is_true(self.isstunned)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (self.enable_guard === 1) {
@@ -916,7 +915,7 @@ function state_combat_update(*params) {
             foreach (player in players) {
                 self getperfectinfo(player);
             }
-            wait(1);
+            wait 1;
         }
         usepathfinding = 1;
         onnavvolume = ispointinnavvolume(self.origin, "navvolume_small");
@@ -1007,7 +1006,7 @@ function state_combat_update(*params) {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcdd78103, Offset: 0x4410
 // Size: 0x2b2
 function getnextmoveposition_wander() {
@@ -1030,7 +1029,7 @@ function getnextmoveposition_wander() {
                 point._scoredebug[#"disttoorigin"] = spawnstruct();
             }
             point._scoredebug[#"disttoorigin"].score = disttooriginscore;
-            point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
+            point._scoredebug[#"disttoorigin"].scorename = "<dev string:x8d>";
         #/
         point.score += disttooriginscore;
         if (point.score > best_score) {
@@ -1046,7 +1045,7 @@ function getnextmoveposition_wander() {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8566c270, Offset: 0x46d0
 // Size: 0xf36
 function getnextmoveposition_tactical() {
@@ -1082,7 +1081,7 @@ function getnextmoveposition_tactical() {
                                 point._scoredebug[#"visowner"] = spawnstruct();
                             }
                             point._scoredebug[#"visowner"].score = 300;
-                            point._scoredebug[#"visowner"].scorename = "<unknown string>";
+                            point._scoredebug[#"visowner"].scorename = "<dev string:x9d>";
                         #/
                         point.score += 300;
                     }
@@ -1095,7 +1094,7 @@ function getnextmoveposition_tactical() {
                                 point._scoredebug[#"visenemy"] = spawnstruct();
                             }
                             point._scoredebug[#"visenemy"].score = 300;
-                            point._scoredebug[#"visenemy"].scorename = "<unknown string>";
+                            point._scoredebug[#"visenemy"].scorename = "<dev string:xa9>";
                         #/
                         point.score += 300;
                     }
@@ -1135,7 +1134,7 @@ function getnextmoveposition_tactical() {
                 point._scoredebug[#"random"] = spawnstruct();
             }
             point._scoredebug[#"random"].score = randomfloatrange(0, randomness);
-            point._scoredebug[#"random"].scorename = "<unknown string>";
+            point._scoredebug[#"random"].scorename = "<dev string:xb5>";
         #/
         point.score += randomfloatrange(0, randomness);
         /#
@@ -1146,7 +1145,7 @@ function getnextmoveposition_tactical() {
                 point._scoredebug[#"engagementdist"] = spawnstruct();
             }
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
-            point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
+            point._scoredebug[#"engagementdist"].scorename = "<dev string:xbf>";
         #/
         point.score += point.distawayfromengagementarea * -1;
         /#
@@ -1157,7 +1156,7 @@ function getnextmoveposition_tactical() {
                 point._scoredebug[#"height"] = spawnstruct();
             }
             point._scoredebug[#"height"].score = point.distengagementheight * -1 * 1.4;
-            point._scoredebug[#"height"].scorename = "<unknown string>";
+            point._scoredebug[#"height"].scorename = "<dev string:xd1>";
         #/
         point.score += point.distengagementheight * -1 * 1.4;
         if (point.disttoorigin2d < 120) {
@@ -1169,7 +1168,7 @@ function getnextmoveposition_tactical() {
                     point._scoredebug[#"tooclosetoself"] = spawnstruct();
                 }
                 point._scoredebug[#"tooclosetoself"].score = (120 - point.disttoorigin2d) * -1.5;
-                point._scoredebug[#"tooclosetoself"].scorename = "<unknown string>";
+                point._scoredebug[#"tooclosetoself"].scorename = "<dev string:xdb>";
             #/
             point.score += (120 - point.disttoorigin2d) * -1.5;
         }
@@ -1183,7 +1182,7 @@ function getnextmoveposition_tactical() {
                         point._scoredebug[#"tooclosetoothers"] = spawnstruct();
                     }
                     point._scoredebug[#"tooclosetoothers"].score = avoid_radius * -1;
-                    point._scoredebug[#"tooclosetoothers"].scorename = "<unknown string>";
+                    point._scoredebug[#"tooclosetoothers"].scorename = "<dev string:xed>";
                 #/
                 point.score += avoid_radius * -1;
             }
@@ -1197,7 +1196,7 @@ function getnextmoveposition_tactical() {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
                 }
                 point._scoredebug[#"inclaimedlocation"].score = -500;
-                point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
+                point._scoredebug[#"inclaimedlocation"].scorename = "<dev string:x101>";
             #/
             point.score += -500;
         }
@@ -1220,7 +1219,7 @@ function getnextmoveposition_tactical() {
 }
 
 // Namespace wasp/wasp
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x464c3bdb, Offset: 0x5610
 // Size: 0xb2
 function drone_callback_damage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal) {
@@ -1229,7 +1228,7 @@ function drone_callback_damage(einflictor, eattacker, idamage, idflags, smeansof
 }
 
 // Namespace wasp/wasp
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xbe318f60, Offset: 0x56d0
 // Size: 0x86
 function drone_allowfriendlyfiredamage(*einflictor, eattacker, smeansofdeath, *weapon) {
@@ -1240,7 +1239,7 @@ function drone_allowfriendlyfiredamage(*einflictor, eattacker, smeansofdeath, *w
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1a6f6c12, Offset: 0x5760
 // Size: 0xb4
 function wasp_driving(*params) {
@@ -1255,7 +1254,7 @@ function wasp_driving(*params) {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x21b1e41f, Offset: 0x5820
 // Size: 0x82
 function wasp_manage_camera_swaps() {
@@ -1267,7 +1266,7 @@ function wasp_manage_camera_swaps() {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x971fd080, Offset: 0x58b0
 // Size: 0x148
 function wasp_towers_on_load() {
@@ -1296,7 +1295,7 @@ function wasp_tower_init(str_tower_targetnames, n_spawn_count) {
 }
 
 // Namespace wasp/wasp
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x61e2f680, Offset: 0x5b10
 // Size: 0x14e
 function private _wasp_tower_init(wasp_tower, n_spawn_count) {
@@ -1315,7 +1314,7 @@ function private _wasp_tower_init(wasp_tower, n_spawn_count) {
 }
 
 // Namespace wasp/wasp
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x85f6ecd3, Offset: 0x5c68
 // Size: 0x14e
 function private wasp_tower_spawn(sp_wasp, *n_spawn_count) {
@@ -1351,7 +1350,7 @@ function wasp_tower_launch(str_tower_targetnames, n_spawn_count) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x55de2399, Offset: 0x5ec0
 // Size: 0x1b8
 function private _wasp_tower_launch(wasp_tower) {
@@ -1364,7 +1363,7 @@ function private _wasp_tower_launch(wasp_tower) {
         } else {
             n_delay = randomfloatrange(0, 1);
         }
-        wait(n_delay);
+        wait n_delay;
         a_wasps = wasp_tower_spawn(wasp_tower, wasp_tower.var_ea0f728d);
         if (a_wasps.size) {
             array::thread_all(a_wasps, &wasp_tower_wakeup);
@@ -1374,7 +1373,7 @@ function private _wasp_tower_launch(wasp_tower) {
 }
 
 // Namespace wasp/wasp
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfa016cec, Offset: 0x6080
 // Size: 0xce
 function function_bbe2568c(a_ents) {
@@ -1389,14 +1388,14 @@ function function_bbe2568c(a_ents) {
 }
 
 // Namespace wasp/wasp
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdbc765ac, Offset: 0x6158
 // Size: 0x9c
 function private wasp_tower_wakeup() {
     self endon(#"death");
     self notify(#"wasp_launched_from_tower");
     self vehicle_ai::stop_scripted();
-    wait(3);
+    wait 3;
     self val::reset(#"wasp_tower", "ignoreme");
     self val::reset(#"wasp_tower", "ignoreall");
 }

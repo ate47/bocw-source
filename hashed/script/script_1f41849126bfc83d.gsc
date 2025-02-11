@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using script_c8d806d2487b617;
 #using script_152c3f4ffef9e588;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_c8d806d2487b617;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
-#namespace namespace_6615ea91;
+#namespace radiation_ui;
 
-// Namespace namespace_6615ea91/namespace_6615ea91
+// Namespace radiation_ui/radiation_ui
 // Params 0, eflags: 0x5
 // Checksum 0x985078e, Offset: 0x148
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_53f69893eea352cb", &preinit, undefined, undefined, #"radiation");
+    system::register(#"radiation_ui", &preinit, undefined, undefined, #"radiation");
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 0, eflags: 0x6 linked
+// Namespace radiation_ui/radiation_ui
+// Params 0, eflags: 0x4
 // Checksum 0x33276423, Offset: 0x198
 // Size: 0xe4
 function private preinit() {
@@ -30,8 +29,8 @@ function private preinit() {
     clientfield::register("toplayer", "radiation", 1, 10, "int");
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 0, eflags: 0x6 linked
+// Namespace radiation_ui/radiation_ui
+// Params 0, eflags: 0x4
 // Checksum 0x321ab024, Offset: 0x288
 // Size: 0x34
 function private _on_player_spawned() {
@@ -41,8 +40,8 @@ function private _on_player_spawned() {
     self function_137e7814(self, 0);
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 2, eflags: 0x2 linked
+// Namespace radiation_ui/radiation_ui
+// Params 2, eflags: 0x0
 // Checksum 0xa72398e2, Offset: 0x2c8
 // Size: 0x13c
 function function_59621e3c(player, sickness) {
@@ -67,8 +66,8 @@ function function_59621e3c(player, sickness) {
     player clientfield::set_to_player("radiation", var_d4393988);
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 2, eflags: 0x2 linked
+// Namespace radiation_ui/radiation_ui
+// Params 2, eflags: 0x0
 // Checksum 0x7178261c, Offset: 0x410
 // Size: 0x7c
 function function_cca7424d(player, percentage) {
@@ -79,8 +78,8 @@ function function_cca7424d(player, percentage) {
     player clientfield::set_player_uimodel("hudItems.incursion.radiationProtection", percentage / 5);
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 2, eflags: 0x2 linked
+// Namespace radiation_ui/radiation_ui
+// Params 2, eflags: 0x0
 // Checksum 0x3c49c48, Offset: 0x498
 // Size: 0x13c
 function function_5cf1c0a(player, sickness) {
@@ -105,8 +104,8 @@ function function_5cf1c0a(player, sickness) {
     player clientfield::set_to_player("radiation", var_d4393988);
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 2, eflags: 0x2 linked
+// Namespace radiation_ui/radiation_ui
+// Params 2, eflags: 0x0
 // Checksum 0xe05e38dd, Offset: 0x5e0
 // Size: 0x44
 function function_36a2c924(player, var_c49d0215) {
@@ -116,8 +115,8 @@ function function_36a2c924(player, var_c49d0215) {
     player clientfield::set_player_uimodel("hudItems.incursion.radiationDamage", var_c49d0215);
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 2, eflags: 0x2 linked
+// Namespace radiation_ui/radiation_ui
+// Params 2, eflags: 0x0
 // Checksum 0xbd7c0ec6, Offset: 0x630
 // Size: 0xec
 function function_137e7814(player, radiationlevel) {
@@ -131,8 +130,8 @@ function function_137e7814(player, radiationlevel) {
     player clientfield::set_to_player("radiation", var_842e1a12);
 }
 
-// Namespace namespace_6615ea91/namespace_6615ea91
-// Params 2, eflags: 0x2 linked
+// Namespace radiation_ui/radiation_ui
+// Params 2, eflags: 0x0
 // Checksum 0xe922421f, Offset: 0x728
 // Size: 0x4c
 function function_835a6746(player, var_ac3a86ea) {

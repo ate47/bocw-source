@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_pulse;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa091b61c, Offset: 0x138
 // Size: 0xbc
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x200
 // Size: 0x4
 function on_player_spawned() {
@@ -35,7 +34,7 @@ function on_player_spawned() {
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x595de3ee, Offset: 0x210
 // Size: 0x154
 function pulse_apply(*var_756fda07, *weapon, *applicant) {
@@ -49,7 +48,7 @@ function pulse_apply(*var_756fda07, *weapon, *applicant) {
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb73139d6, Offset: 0x370
 // Size: 0xae
 function private pulse_rumble_loop(duration) {
@@ -64,7 +63,7 @@ function private pulse_rumble_loop(duration) {
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd1be262b, Offset: 0x428
 // Size: 0x8c
 function pulse_end() {
@@ -81,7 +80,7 @@ function pulse_end() {
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf69908b8, Offset: 0x4c0
 // Size: 0x54
 function shutdownpulserebootindicatormenu() {

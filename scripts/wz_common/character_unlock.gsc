@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_69514c4c056c768;
 #using script_54f593f5beb1464a;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_69514c4c056c768;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
 
 #namespace character_unlock;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2afbb696, Offset: 0x100
 // Size: 0xfc
 function private preinit() {
@@ -29,12 +28,12 @@ function private preinit() {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x84475e55, Offset: 0x208
 // Size: 0x84
 function function_b3681acb() {
     /#
-        if (getdvar(#"hash_62fbe70d500712c1", 0) == 1) {
+        if (getdvar(#"scr_debug_character_unlocks", 0) == 1) {
             return true;
         }
     #/
@@ -42,12 +41,12 @@ function function_b3681acb() {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x53ad8fe6, Offset: 0x298
 // Size: 0xde
 function function_d7e6fa92(unlock_name) {
     var_9ba1646c = level.var_7d8da246[unlock_name];
-    assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
+    assert(isdefined(var_9ba1646c), "<dev string:x38>" + function_9e72a96(unlock_name) + "<dev string:x51>");
     if (!isdefined(var_9ba1646c)) {
         return false;
     }
@@ -59,7 +58,7 @@ function function_d7e6fa92(unlock_name) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x17839a28, Offset: 0x380
 // Size: 0xde
 function function_f0406288(unlock_name) {
@@ -82,7 +81,7 @@ function function_f0406288(unlock_name) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4f29540, Offset: 0x468
 // Size: 0x7a
 function function_c70bcc7a(unlock_name) {
@@ -99,7 +98,7 @@ function function_c70bcc7a(unlock_name) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x73aa57e1, Offset: 0x4f0
 // Size: 0x2dc
 function function_6e8037ca(params) {
@@ -148,7 +147,7 @@ function function_6e8037ca(params) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x93cf9ac, Offset: 0x7d8
 // Size: 0x2ac
 function function_c8beca5e(unlock_name, var_1d208aea, state) {
@@ -160,12 +159,12 @@ function function_c8beca5e(unlock_name, var_1d208aea, state) {
     }
     var_9ba1646c = level.var_7d8da246[unlock_name];
     /#
-        assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
-        assert(isinarray(var_9ba1646c.var_3845495, var_1d208aea), "<unknown string>" + function_9e72a96(var_1d208aea) + "<unknown string>" + function_9e72a96(unlock_name));
-        assert(isinarray(array(0, 1, 2), state), "<unknown string>" + function_9e72a96(var_1d208aea) + "<unknown string>" + function_9e72a96(unlock_name));
+        assert(isdefined(var_9ba1646c), "<dev string:x38>" + function_9e72a96(unlock_name) + "<dev string:x51>");
+        assert(isinarray(var_9ba1646c.var_3845495, var_1d208aea), "<dev string:x63>" + function_9e72a96(var_1d208aea) + "<dev string:x76>" + function_9e72a96(unlock_name));
+        assert(isinarray(array(0, 1, 2), state), "<dev string:x94>" + function_9e72a96(var_1d208aea) + "<dev string:xc9>" + function_9e72a96(unlock_name));
     #/
     if (!self function_c70bcc7a(unlock_name)) {
-        assertmsg("<unknown string>" + unlock_name + "<unknown string>");
+        assertmsg("<dev string:xd9>" + unlock_name + "<dev string:x10a>");
         return;
     }
     current_state = self.var_c53589da[unlock_name].var_e7e238a4[var_1d208aea];
@@ -182,12 +181,12 @@ function function_c8beca5e(unlock_name, var_1d208aea, state) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x367aa252, Offset: 0xa90
 // Size: 0x43a
 function function_20b0ca2e(unlock_name) {
     var_9ba1646c = level.var_7d8da246[unlock_name];
-    assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
+    assert(isdefined(var_9ba1646c), "<dev string:x38>" + function_9e72a96(unlock_name) + "<dev string:x51>");
     itembundle = getscriptbundle(var_9ba1646c.required_item);
     if (!isdefined(itembundle.unlockableitemref)) {
         return;
@@ -219,7 +218,7 @@ function function_20b0ca2e(unlock_name) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf8a5ec31, Offset: 0xed8
 // Size: 0xfc
 function function_54fc60f5(player, character) {
@@ -233,7 +232,7 @@ function function_54fc60f5(player, character) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x717fcc94, Offset: 0xfe0
 // Size: 0x288
 function function_fb689837() {
@@ -270,7 +269,7 @@ function function_fb689837() {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x624fca93, Offset: 0x1270
 // Size: 0x134
 function on_drop_inventory(player) {
@@ -293,7 +292,7 @@ function on_drop_inventory(player) {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x22913eae, Offset: 0x13b0
 // Size: 0x34
 function on_player_disconnect() {
@@ -304,7 +303,7 @@ function on_player_disconnect() {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x543cdeef, Offset: 0x13f0
 // Size: 0xa0
 function on_end_game() {

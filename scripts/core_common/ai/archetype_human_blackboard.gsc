@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai_shared;
 
 #namespace blackboard;
 
 // Namespace blackboard/archetype_human_blackboard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfe5225b, Offset: 0x180
 // Size: 0x36
 function private bb_getarrivaltype() {
@@ -16,7 +15,7 @@ function private bb_getarrivaltype() {
 }
 
 // Namespace blackboard/archetype_human_blackboard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc0d489a, Offset: 0x1c0
 // Size: 0x3a
 function private bb_gettacticalarrivalfacingyaw() {
@@ -24,7 +23,7 @@ function private bb_gettacticalarrivalfacingyaw() {
 }
 
 // Namespace blackboard/archetype_human_blackboard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbf972e2e, Offset: 0x208
 // Size: 0x16e
 function private bb_getlocomotionmovementtype() {
@@ -52,7 +51,7 @@ function private bb_getlocomotionmovementtype() {
 }
 
 // Namespace blackboard/archetype_human_blackboard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x16d14c8, Offset: 0x380
 // Size: 0x1fa
 function private bb_getcoverflankability() {

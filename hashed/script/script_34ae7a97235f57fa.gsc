@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace item_drop;
 
@@ -82,7 +81,7 @@ function function_4814ed2e(*params) {
     drop = array::random(level.item_drops);
     /#
         if (isdefined(drop.var_d8b51b9f)) {
-            drop.var_d8b51b9f = getdvarfloat("<unknown string>" + drop.name, 0);
+            drop.var_d8b51b9f = getdvarfloat("<dev string:x38>" + drop.name, 0);
         }
     #/
     if (getdvarint(#"hash_5b7b8e527835e75b", 0)) {
@@ -134,7 +133,7 @@ function function_1a93b6b0() {
     level.var_96d850f9 = [];
     level flag::wait_till("all_players_spawned");
     while (true) {
-        wait(15);
+        wait 15;
         if (level.var_96d850f9.size < 1 && level.item_drops.size > 0) {
             drop = array::random(level.item_drops);
             if (isdefined(drop.spawnpoints)) {

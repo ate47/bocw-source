@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\audio_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
 
 #namespace empgrenade;
 
@@ -111,7 +110,7 @@ function monitordistance(localclientnum) {
     if (localplayer isempjammed() == 0) {
         return;
     }
-    distance_to_closest_enemy_emp_ui_model = getuimodel(function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d"), "distanceToClosestEnemyEmpKillstreak");
+    distance_to_closest_enemy_emp_ui_model = getuimodel(function_1df4c3b0(localclientnum, #"hud_items"), "distanceToClosestEnemyEmpKillstreak");
     new_distance = 0;
     max_static_value = getdvarfloat(#"ks_emp_fullscreen_maxstaticvalue", 0);
     min_static_value = getdvarfloat(#"ks_emp_fullscreen_minstaticvalue", 0);
@@ -133,7 +132,7 @@ function monitordistance(localclientnum) {
             if (emp_grenaded && current_static_value < 1) {
                 current_static_value = 1;
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 }

@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_utility.gsc;
 #using script_62caa307a394c18c;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\weapons\molotov.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\molotov;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_weap_molotov;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf306998c, Offset: 0x158
 // Size: 0xdc
 function private preinit() {
@@ -32,25 +31,25 @@ function private preinit() {
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x4e28e0c2, Offset: 0x240
 // Size: 0x13c
 function function_b107b600(position, var_efa24ea4, damageendtime, updateinterval) {
     level endon(#"game_ended");
     while (gettime() < damageendtime) {
-        var_808239f1 = self.var_8928bbff[!self.var_87dae7f1];
+        actor_array = self.var_8928bbff[!self.var_87dae7f1];
         var_b1de6a06 = getentitiesinradius(position, var_efa24ea4, 15);
         foreach (actor in var_b1de6a06) {
-            if (isalive(actor) && !isinarray(var_808239f1, actor)) {
-                var_808239f1[var_808239f1.size] = actor;
+            if (isalive(actor) && !isinarray(actor_array, actor)) {
+                actor_array[actor_array.size] = actor;
             }
         }
-        wait(updateinterval);
+        wait updateinterval;
     }
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x51e5e035, Offset: 0x388
 // Size: 0x41e
 function function_16a57018(damageendtime, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings) {
@@ -92,13 +91,13 @@ function function_16a57018(damageendtime, owner, position, fireeffectarea, var_2
         }
         wait_time = customsettings.var_4bf1fc1f - float(gettime() - start_time) / 1000;
         if (wait_time > 0) {
-            wait(wait_time);
+            wait wait_time;
         }
     }
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x5af7ada4, Offset: 0x7b0
 // Size: 0x248
 function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings, start_time) {
@@ -133,7 +132,7 @@ function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a7
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x5dbf8de9, Offset: 0xa00
 // Size: 0x15a
 function function_8422dabd(*origin, killcament, *trace, *position, weapon, customsettings, owner, start_time) {
@@ -152,7 +151,7 @@ function function_8422dabd(*origin, killcament, *trace, *position, weapon, custo
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x30029216, Offset: 0xb68
 // Size: 0x1fc
 function function_f0bbc1f4(attacker, var_b1b43d4c, var_fec8031e, var_900ddd04) {
@@ -168,13 +167,13 @@ function function_f0bbc1f4(attacker, var_b1b43d4c, var_fec8031e, var_900ddd04) {
         point = self.origin;
         point = aiutility::function_cb552839(self);
         hud::function_c9800094(attacker, point, damage_amount, var_ebcff177, self namespace_42457a0::function_1b3815a7(#"fire"));
-        wait(var_fec8031e);
+        wait var_fec8031e;
     }
     self clientfield::set("molotov_zm_fire_fx", 0);
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x34152e0a, Offset: 0xd70
 // Size: 0x34
 function function_177886db(*notifyhash) {

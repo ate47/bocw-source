@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_6423505476898f6d;
 #using script_7cc5fb39b97494c4;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace doors;
 
@@ -231,7 +230,7 @@ class cdoor {
                 open(undefined);
                 flag::wait_till_clear("animating");
                 if (is_true(m_s_bundle.var_6270dafc)) {
-                    wait(isdefined(m_s_bundle.var_be86269a) ? m_s_bundle.var_be86269a : 0);
+                    wait isdefined(m_s_bundle.var_be86269a) ? m_s_bundle.var_be86269a : 0;
                     if (isdefined(var_9b9642be)) {
                         var_ceedbc10 = m_e_trigger.maxs[0] * m_e_trigger.maxs[0];
                         while (isdefined(var_9b9642be) && var_9b9642be istouching(m_e_trigger)) {
@@ -443,7 +442,7 @@ class cdoor {
             function_f657b618(0);
         }
         if (isdefined(var_9b9642be)) {
-            var_9b9642be notify(#"hash_7a96e443b93cd211");
+            var_9b9642be notify(#"opened_door");
         }
         m_e_door function_e0954c11();
         self function_d1e7faca(0);
@@ -945,7 +944,7 @@ class cdoor {
             } else if (var_ad9c43d9 > var_bf73cb70) {
                 var_3880cb10 = randomfloatrange(var_bf73cb70, var_ad9c43d9);
             } else {
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x92>");
             }
             if (b_open_door) {
                 var_2b9a525f = var_f83a32a1 + var_3880cb10;
@@ -1205,7 +1204,7 @@ class cdoor {
             } else if (var_ef3feac9 > var_27c5527f) {
                 var_42cf6fbd = randomfloatrange(var_27c5527f, var_ef3feac9);
             } else {
-                assertmsg("allow_melee");
+                assertmsg("<dev string:x38>");
             }
             switch (var_3c6838bc) {
             case #"x":
@@ -1247,7 +1246,7 @@ class cdoor {
         }
         m_e_door unlink();
         if (b_enable) {
-            self notify(#"hash_3becf718b3c58ac9");
+            self notify(#"end_door_update");
         }
         n_delay_min = isdefined(m_s_bundle.var_b7a623f5) ? m_s_bundle.var_b7a623f5 : 0.1;
         n_delay_max = isdefined(m_s_bundle.var_5cac6503) ? m_s_bundle.var_5cac6503 : 1;
@@ -1255,7 +1254,7 @@ class cdoor {
             if (b_enable) {
                 while (true) {
                     open_internal(b_enable, randomfloatrange(n_delay_min, n_delay_max));
-                    wait(randomfloatrange(n_delay_min, n_delay_max));
+                    wait randomfloatrange(n_delay_min, n_delay_max);
                     close_internal(b_enable, randomfloatrange(n_delay_min, n_delay_max));
                 }
             } else {
@@ -1383,7 +1382,7 @@ function private preinit() {
     util::init_dvar("scr_door_player_gestures", 1, &function_bae7ed2e);
     util::init_dvar(#"disabledoors", 0, &function_bae7ed2e);
     /#
-        util::init_dvar("<unknown string>", 0, &function_bae7ed2e);
+        util::init_dvar("<dev string:xed>", 0, &function_bae7ed2e);
     #/
     callback::on_spawned(&bash_monitor);
 }
@@ -1395,7 +1394,7 @@ function private preinit() {
 function private function_bae7ed2e(dvar) {
     level.var_1def7d37[dvar.name] = dvar.value;
     /#
-        if (dvar.name == "<unknown string>") {
+        if (dvar.name == "<dev string:xed>") {
             level notify(#"hash_5171254138328d84");
         }
     #/
@@ -1758,74 +1757,74 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
         start = self.m_e_door.origin + (0, 0, 20);
         line(start, start + var_ed80ebc4 * 5, (0, 1, 0), 1);
         line(start, start + var_5e92800d * 5, (1, 0, 0), 1);
-        print3d(self.m_e_door.origin + (0, 0, -5), "<unknown string>" + self.m_s_bundle.name + "<unknown string>" + ent_num, (1, 1, 1), 1, 0.1);
+        print3d(self.m_e_door.origin + (0, 0, -5), "<dev string:xff>" + self.m_s_bundle.name + "<dev string:x104>" + ent_num, (1, 1, 1), 1, 0.1);
         center = self get_door_center(1);
         center += (0, 0, -5);
         if (is_true(self.var_d587661f)) {
-            print3d(center + (0, 0, -5), "<unknown string>" + self.var_d587661f, (1, 0, 0), 1, 0.1);
+            print3d(center + (0, 0, -5), "<dev string:x10b>" + self.var_d587661f, (1, 0, 0), 1, 0.1);
         }
-        temp = "<unknown string>";
+        temp = "<dev string:x116>";
         if (is_true(self.var_81f24576)) {
-            temp = "<unknown string>" + self.var_81f24576 + "<unknown string>";
+            temp = "<dev string:x11a>" + self.var_81f24576 + "<dev string:x126>";
         }
         if (is_true(self.var_4882ff02)) {
-            temp = temp + "<unknown string>" + self.var_4882ff02 + "<unknown string>";
+            temp = temp + "<dev string:x12b>" + self.var_4882ff02 + "<dev string:x126>";
         }
-        if (temp != "<unknown string>") {
+        if (temp != "<dev string:x116>") {
             print3d(center + (0, 0, -6.5), temp, (1, 0, 0), 1, 0.1);
         }
-        if (self flag::get("<unknown string>")) {
-            print3d(center + (0, 0, -8), "<unknown string>", (1, 0, 0), 1, 0.1);
+        if (self flag::get("<dev string:x13b>")) {
+            print3d(center + (0, 0, -8), "<dev string:x145>", (1, 0, 0), 1, 0.1);
         } else {
-            print3d(center + (0, 0, -8), "<unknown string>", (0, 1, 0), 1, 0.1);
+            print3d(center + (0, 0, -8), "<dev string:x14f>", (0, 1, 0), 1, 0.1);
         }
         var_e9846847 = undefined;
         if (isdefined(self.var_a2f96f78.var_ea225236)) {
-            print3d(center + (0, 0, -9.5), "<unknown string>", (0, 0.5, 0), 1, 0.1);
+            print3d(center + (0, 0, -9.5), "<dev string:x15b>", (0, 0.5, 0), 1, 0.1);
             var_e9846847 = self.var_a2f96f78.var_ea225236;
         } else if (isdefined(self.var_a2f96f78.targetname)) {
-            var_a20f663b = struct::get_script_bundle_instances("<unknown string>", array(self.var_a2f96f78.targetname, "<unknown string>"));
+            var_a20f663b = struct::get_script_bundle_instances("<dev string:x17c>", array(self.var_a2f96f78.targetname, "<dev string:x191>"));
             if (isdefined(var_a20f663b) && var_a20f663b.size > 0) {
                 var_e9846847 = var_a20f663b[0];
-                print3d(center + (0, 0, -9.5), "<unknown string>", (0, 0.5, 0), 1, 0.1);
+                print3d(center + (0, 0, -9.5), "<dev string:x19b>", (0, 0.5, 0), 1, 0.1);
             }
         }
         if (isdefined(var_e9846847) && isdefined(var_e9846847.mdl_gameobject) && isdefined(var_e9846847.mdl_gameobject.trigger)) {
-            var_ed6e11b4 = "<unknown string>";
+            var_ed6e11b4 = "<dev string:x116>";
             var_7520fb92 = (1, 1, 1);
             if (!var_e9846847.mdl_gameobject.trigger isusable()) {
-                var_ed6e11b4 = "<unknown string>";
+                var_ed6e11b4 = "<dev string:x1c2>";
                 var_7520fb92 = (0.5, 0.5, 0.5);
             }
-            debugstar(var_e9846847.mdl_gameobject.trigger.origin, 1, var_7520fb92, "<unknown string>" + var_e9846847.mdl_gameobject getentitynumber() + "<unknown string>" + var_e9846847.mdl_gameobject.trigger getentitynumber() + var_ed6e11b4, 0.05);
+            debugstar(var_e9846847.mdl_gameobject.trigger.origin, 1, var_7520fb92, "<dev string:x1d3>" + var_e9846847.mdl_gameobject getentitynumber() + "<dev string:x1ee>" + var_e9846847.mdl_gameobject.trigger getentitynumber() + var_ed6e11b4, 0.05);
         }
-        print3d(center + (0, 0, -11), "<unknown string>" + self.m_s_bundle.door_open_method, (0, 0.5, 0), 1, 0.1);
-        temp = "<unknown string>" + is_true(self.m_s_bundle.var_7bbc4039) + "<unknown string>";
+        print3d(center + (0, 0, -11), "<dev string:x1f5>" + self.m_s_bundle.door_open_method, (0, 0.5, 0), 1, 0.1);
+        temp = "<dev string:x205>" + is_true(self.m_s_bundle.var_7bbc4039) + "<dev string:x126>";
         if (isdefined(self.var_f97eab64)) {
-            temp = temp + "<unknown string>" + self.var_f97eab64 + "<unknown string>";
+            temp = temp + "<dev string:x212>" + self.var_f97eab64 + "<dev string:x126>";
         }
         print3d(center + (0, 0, -13.5), temp, (0, 0.5, 0), 1, 0.1);
         if (function_4011a3d9()) {
-            print3d(center + (0, 0, -16), "<unknown string>", (0, 0.5, 0), 1, 0.1);
+            print3d(center + (0, 0, -16), "<dev string:x222>", (0, 0.5, 0), 1, 0.1);
         }
         if (function_53f46e97()) {
-            print3d(center + (0, 0, -16), "<unknown string>", (0, 0.5, 0), 1, 0.1);
+            print3d(center + (0, 0, -16), "<dev string:x238>", (0, 0.5, 0), 1, 0.1);
         }
-        var_6143a8d8 = "<unknown string>";
+        var_6143a8d8 = "<dev string:x116>";
         var_a011b978 = (1, 1, 1);
         var_d5587654 = [[ self ]]->function_a5fa0850();
         if (isdefined(self.m_e_trigger)) {
-            var_920bc240 = "<unknown string>";
+            var_920bc240 = "<dev string:x116>";
             if (is_true(self.m_e_trigger.var_2dbb0ac1)) {
-                var_920bc240 = "<unknown string>";
+                var_920bc240 = "<dev string:x24f>";
             }
-            debugstar(self.m_e_trigger.origin, 1, var_a011b978, self.m_e_trigger.classname + "<unknown string>" + self.m_e_trigger getentitynumber() + var_920bc240 + var_6143a8d8, 0.1);
+            debugstar(self.m_e_trigger.origin, 1, var_a011b978, self.m_e_trigger.classname + "<dev string:x260>" + self.m_e_trigger getentitynumber() + var_920bc240 + var_6143a8d8, 0.1);
         } else if (isdefined(self.m_e_door.mdl_gameobject) && isdefined(self.m_e_door.mdl_gameobject.trigger)) {
-            debugstar(self.m_e_door.mdl_gameobject.trigger.origin, 1, var_a011b978, "<unknown string>" + self.m_e_door.mdl_gameobject getentitynumber() + "<unknown string>" + self.m_e_door.mdl_gameobject.trigger getentitynumber() + var_6143a8d8, 0.1);
+            debugstar(self.m_e_door.mdl_gameobject.trigger.origin, 1, var_a011b978, "<dev string:x268>" + self.m_e_door.mdl_gameobject getentitynumber() + "<dev string:x1ee>" + self.m_e_door.mdl_gameobject.trigger getentitynumber() + var_6143a8d8, 0.1);
         } else {
-            print3d(self.m_e_door.origin, "<unknown string>" + ent_num + var_6143a8d8, var_a011b978, 1, 0.1, 1);
+            print3d(self.m_e_door.origin, "<dev string:x282>" + ent_num + var_6143a8d8, var_a011b978, 1, 0.1, 1);
         }
-        if (isdefined(self.m_s_bundle) && (self.m_s_bundle.door_open_method == "<unknown string>" || self.m_s_bundle.door_open_method == "<unknown string>")) {
+        if (isdefined(self.m_s_bundle) && (self.m_s_bundle.door_open_method == "<dev string:x29b>" || self.m_s_bundle.door_open_method == "<dev string:x2b5>")) {
             if (isdefined(self.var_15695d13)) {
                 self thread namespace_64f6ea7a::draw_max_yaw(1);
             }
@@ -1847,45 +1846,45 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
     // Checksum 0x91fccf94, Offset: 0x8428
     // Size: 0x1c6
     function function_2150e56f(flags) {
-        retval = "<unknown string>";
+        retval = "<dev string:x2be>";
         if (flags & 1) {
-            retval += "<unknown string>";
+            retval += "<dev string:x2c8>";
         }
         if (flags & 2) {
-            retval += "<unknown string>";
+            retval += "<dev string:x2d5>";
         }
         if (flags & 4) {
-            retval += "<unknown string>";
+            retval += "<dev string:x2df>";
         }
         if (flags & 8) {
-            retval += "<unknown string>";
+            retval += "<dev string:x2eb>";
         }
         if (flags & 16) {
-            retval += "<unknown string>";
+            retval += "<dev string:x2f9>";
         }
         if (flags & 32) {
-            retval += "<unknown string>";
+            retval += "<dev string:x307>";
         }
         if (flags & 64) {
-            retval += "<unknown string>";
+            retval += "<dev string:x318>";
         }
         if (flags & 128) {
-            retval += "<unknown string>";
+            retval += "<dev string:x325>";
         }
         if (flags & 256) {
-            retval += "<unknown string>";
+            retval += "<dev string:x33a>";
         }
         if (flags & 512) {
-            retval += "<unknown string>";
+            retval += "<dev string:x350>";
         }
         if (flags & 1024) {
-            retval += "<unknown string>";
+            retval += "<dev string:x364>";
         }
         if (flags & 2048) {
-            retval += "<unknown string>";
+            retval += "<dev string:x36e>";
         }
         if (flags & 4096) {
-            retval += "<unknown string>";
+            retval += "<dev string:x37e>";
         }
         return retval;
     }
@@ -1895,105 +1894,105 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
     // Checksum 0xd5edea81, Offset: 0x85f8
     // Size: 0x446
     function function_81fba61a(flags) {
-        retval = "<unknown string>";
+        retval = "<dev string:x390>";
         if (flags & 1) {
-            retval += "<unknown string>";
+            retval += "<dev string:x39d>";
         }
         if (flags & 2) {
-            retval += "<unknown string>";
+            retval += "<dev string:x3a7>";
         }
         if (flags & 4) {
-            retval += "<unknown string>";
+            retval += "<dev string:x3b3>";
         }
         if (flags & 8) {
-            retval += "<unknown string>";
+            retval += "<dev string:x3c4>";
         }
         if (flags & 16) {
-            retval += "<unknown string>";
+            retval += "<dev string:x3d8>";
         }
         if (flags & 32) {
-            retval += "<unknown string>";
+            retval += "<dev string:x2d5>";
         }
         if (flags & 64) {
-            retval += "<unknown string>";
+            retval += "<dev string:x3e2>";
         }
         if (flags & 128) {
-            retval += "<unknown string>";
+            retval += "<dev string:x3f3>";
         }
         if (flags & 256) {
-            retval += "<unknown string>";
+            retval += "<dev string:x403>";
         }
         if (flags & 512) {
-            retval += "<unknown string>";
+            retval += "<dev string:x40c>";
         }
         if (flags & 1024) {
-            retval += "<unknown string>";
+            retval += "<dev string:x41c>";
         }
         if (flags & 2048) {
-            retval += "<unknown string>";
+            retval += "<dev string:x429>";
         }
         if (flags & 4096) {
-            retval += "<unknown string>";
+            retval += "<dev string:x431>";
         }
         if (flags & 524288) {
-            retval += "<unknown string>";
+            retval += "<dev string:x440>";
         }
         if (flags & 8192) {
-            retval += "<unknown string>";
+            retval += "<dev string:x453>";
         }
         if (flags & 16384) {
-            retval += "<unknown string>";
+            retval += "<dev string:x460>";
         }
         if (flags & 32768) {
-            retval += "<unknown string>";
+            retval += "<dev string:x474>";
         }
         if (flags & 32768) {
-            retval += "<unknown string>";
+            retval += "<dev string:x47e>";
         }
         if (flags & 65536) {
-            retval += "<unknown string>";
+            retval += "<dev string:x48d>";
         }
         if (flags & 131072) {
-            retval += "<unknown string>";
+            retval += "<dev string:x49c>";
         }
         if (flags & 262144) {
-            retval += "<unknown string>";
+            retval += "<dev string:x4ac>";
         }
         if (flags & 1073741824) {
-            retval += "<unknown string>";
+            retval += "<dev string:x4c2>";
         }
         if (flags & 536870912) {
-            retval += "<unknown string>";
+            retval += "<dev string:x4d2>";
         }
         if (flags & 1048576) {
-            retval += "<unknown string>";
+            retval += "<dev string:x4da>";
         }
         if (flags & 2097152) {
-            retval += "<unknown string>";
+            retval += "<dev string:x4ea>";
         }
         if (flags & 4194304) {
-            retval += "<unknown string>";
+            retval += "<dev string:x4f6>";
         }
         if (flags & 8388608) {
-            retval += "<unknown string>";
+            retval += "<dev string:x501>";
         }
         if (flags & 16777216) {
-            retval += "<unknown string>";
+            retval += "<dev string:x50c>";
         }
         if (flags & 134217728) {
-            retval += "<unknown string>";
+            retval += "<dev string:x517>";
         }
         if (flags & 268435456) {
-            retval += "<unknown string>";
+            retval += "<dev string:x522>";
         }
         if (flags & 2147483648) {
-            retval += "<unknown string>";
+            retval += "<dev string:x531>";
         }
         if (flags & 33554432) {
-            retval += "<unknown string>";
+            retval += "<dev string:x541>";
         }
         if (flags & 67108864) {
-            retval += "<unknown string>";
+            retval += "<dev string:x54d>";
         }
         return retval;
     }
@@ -2131,8 +2130,8 @@ function function_16136fe9(c_door, waitresult) {
 // Checksum 0xd0a4b1e3, Offset: 0x9148
 // Size: 0xe4
 function door_update(c_door) {
-    c_door notify(#"hash_3becf718b3c58ac9");
-    c_door endon(#"hash_3becf718b3c58ac9");
+    c_door notify(#"end_door_update");
+    c_door endon(#"end_door_update");
     if (is_true(c_door.m_s_bundle.door_locked)) {
         [[ c_door ]]->lock();
         if (isdefined(c_door.var_a2f96f78.targetname) && isdefined(c_door.m_e_trigger)) {
@@ -2156,7 +2155,7 @@ function function_463715ec(c_door) {
         }
         c_door flag::wait_till("open");
         if (!is_true(c_door.var_c4c3fa39) && isplayer(c_door.var_9b9642be)) {
-            wait(0.2);
+            wait 0.2;
         }
         self function_5db0cee5(c_door);
         c_door flag::wait_till_clear("open");
@@ -2176,7 +2175,7 @@ function function_5db0cee5(c_door) {
     }
     if (c_door.m_door_open_delay_time > 0) {
         c_door.m_e_door notify(#"door_waiting_to_open", {#player:c_door.var_9b9642be});
-        wait(c_door.m_door_open_delay_time);
+        wait c_door.m_door_open_delay_time;
     }
     thread [[ c_door ]]->open_internal();
     if (c_door namespace_64f6ea7a::function_9d109db6()) {
@@ -2222,7 +2221,7 @@ function door_update_lock_scripted(c_door) {
 function function_dc98f943(c_door) {
     e_door = c_door.m_e_door;
     e_door endon(#"door_cleared", #"death");
-    assert(isdefined(e_door), "<unknown string>");
+    assert(isdefined(e_door), "<dev string:x558>");
     e_door setcandamage(0);
     waitresult = c_door waittill(#"set_destructible");
     e_door waittill(#"door_closed");
@@ -2353,7 +2352,7 @@ function door_wait_until_user_release(c_door, e_triggerer, str_kill_on_door_noti
     if (isdefined(str_kill_on_door_notify)) {
         c_door endon(str_kill_on_door_notify);
     }
-    wait(0.25);
+    wait 0.25;
     max_dist_sq = c_door.m_s_bundle.door_trigger_radius * c_door.m_s_bundle.door_trigger_radius;
     b_pressed = 1;
     n_dist = 0;
@@ -2401,7 +2400,7 @@ function door_debug_line(v_origin) {
         /#
             line(v_start, v_end, (0, 0, 1));
         #/
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -2820,7 +2819,7 @@ function private function_b391c0a0(gesture, target) {
     if (level.var_1def7d37[#"scr_door_player_gestures"]) {
         self playgestureviewmodel(gesture, target, 1);
     }
-    wait(0.05);
+    wait 0.05;
     self val::set("player_door_gesture", "allow_melee", 1);
     self.var_99ce8ae = undefined;
 }
@@ -3018,7 +3017,7 @@ function get_door_angles(var_225a57cd = 0) {
 function private door_bashable_by_player(player) {
     if (is_true(self.var_d587661f) || is_true(self.var_14382d8d) || !self flag::get("door_pushable") && (is_true(self flag::get("door_fully_open")) || is_true(self.var_c4c3fa39))) {
         /#
-            self.debug_activity = "<unknown string>";
+            self.debug_activity = "<dev string:x579>";
         #/
         return false;
     }
@@ -3117,14 +3116,14 @@ function private should_bash_open(player) {
                 forward = anglestoforward(player getplayerangles());
                 dot = vectordot(forward, normal);
                 color = dot >= var_c03beac5[i] ? (0, 1, 0) : (1, 0, 0);
-                debugstar(var_1a23fa7[i], duration, color, "<unknown string>" + dot, 0.05);
+                debugstar(var_1a23fa7[i], duration, color, "<dev string:x5ac>" + dot, 0.05);
                 line(player.origin, var_1a23fa7[i], color, 1, 0, duration);
             }
             vec = vectornormalize(player getplayercamerapos() - center);
             var_ed80ebc4 = self function_fb354714();
             dot = vectordot(vec, var_ed80ebc4);
             color = abs(dot) >= 0.4 ? (0, 1, 0) : (1, 0, 0);
-            print3d(center + (0, 0, -1.5), "<unknown string>" + dot, color, 1, 0.1, duration);
+            print3d(center + (0, 0, -1.5), "<dev string:x5bc>" + dot, color, 1, 0.1, duration);
         }
     }
 
@@ -3233,7 +3232,7 @@ function door_bash_open(var_84e2c431, var_a6028302 = 0, var_d14527df) {
         var_84e2c431 notify(#"hash_5676dcd12f1089f9", self);
         level thread function_df978de8(450, "door_bash", var_84e2c431, var_d14527df);
     } else {
-        self notify(#"hash_1fb508e70d76c269");
+        self notify(#"ai_opened");
     }
     self.var_c4c3fa39 = 1;
     self.m_e_door thread open(undefined, undefined, var_84e2c431);
@@ -3263,7 +3262,7 @@ function private door_bash_presentation(player) {
         if (function_14c2fe40(player)) {
             player thread function_b391c0a0("ges_door_bash", undefined);
         }
-        wait(0.1);
+        wait 0.1;
     }
     screenshake(player.origin, 16, 0, 0, 0.45);
     player playrumbleonentity("grenade_rumble");
@@ -3329,7 +3328,7 @@ function private player_door_gesture(gesture) {
     if (self should_do_gesture()) {
         self function_b391c0a0(gesture, target);
         time = self getgestureanimlength(gesture);
-        wait(time);
+        wait time;
     }
     if (isdefined(target)) {
         target delete();
@@ -3372,12 +3371,12 @@ function private function_1e18148c() {
     var_3d88b74f = function_98d85e14(var_33468886.var_b25124c7, self.angles);
     var_69ede289 = vectortoangles(var_3d88b74f);
     var_80778410 = (var_33468886.var_e9da41b9 - 5) * function_98d85e14(var_33468886.var_b25124c7, (0, 0, 0)) + (0, 0, 47);
-    var_fdd44597 = rotatepoint(var_80778410, var_69ede289);
+    world_offset = rotatepoint(var_80778410, var_69ede289);
     level minigame::function_63673f23(s_minigame, "lockpick");
     s_minigame.angles = self.angles;
     s_minigame.classname = "scriptbundle_minigame_lockpick";
     s_minigame.modelscale = 1;
-    s_minigame.origin = self.origin + var_fdd44597;
+    s_minigame.origin = self.origin + world_offset;
     s_minigame.require_look_at = 1;
     s_minigame.var_4e0f62f3 = "Exclusive";
     s_minigame.script_delete = 1;

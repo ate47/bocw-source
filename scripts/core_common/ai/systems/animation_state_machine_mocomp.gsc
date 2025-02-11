@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace animationstatenetwork;
 
 // Namespace animationstatenetwork/animation_state_machine_mocomp
@@ -10,12 +9,12 @@ function autoexec initanimationmocomps() {
 }
 
 // Namespace animationstatenetwork/runanimationmocomp
-// Params 1, eflags: 0x22 linked
+// Params 1, eflags: 0x20
 // Checksum 0x2aa9897, Offset: 0xe0
 // Size: 0x162
 function event_handler[runanimationmocomp] runanimationmocomp(eventstruct) {
-    assert(eventstruct.status >= 0 && eventstruct.status <= 2, "<unknown string>" + eventstruct.status + "<unknown string>");
-    assert(isdefined(level._animationmocomps[eventstruct.name]), "<unknown string>" + eventstruct.name + "<unknown string>");
+    assert(eventstruct.status >= 0 && eventstruct.status <= 2, "<dev string:x38>" + eventstruct.status + "<dev string:x5b>");
+    assert(isdefined(level._animationmocomps[eventstruct.name]), "<dev string:x77>" + eventstruct.name + "<dev string:x9e>");
     if (eventstruct.status == 0) {
         eventstruct.status = "asm_mocomp_start";
     } else if (eventstruct.status == 1) {
@@ -28,24 +27,24 @@ function event_handler[runanimationmocomp] runanimationmocomp(eventstruct) {
 }
 
 // Namespace animationstatenetwork/animation_state_machine_mocomp
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x60c00029, Offset: 0x250
 // Size: 0x232
 function registeranimationmocomp(mocompname, startfuncptr, updatefuncptr, terminatefuncptr) {
     mocompname = tolower(mocompname);
-    assert(isstring(mocompname), "<unknown string>");
-    assert(!isdefined(level._animationmocomps[mocompname]), "<unknown string>" + mocompname + "<unknown string>");
+    assert(isstring(mocompname), "<dev string:xb3>");
+    assert(!isdefined(level._animationmocomps[mocompname]), "<dev string:xf5>" + mocompname + "<dev string:x10a>");
     level._animationmocomps[mocompname] = array();
-    assert(isdefined(startfuncptr) && isfunctionptr(startfuncptr), "<unknown string>");
+    assert(isdefined(startfuncptr) && isfunctionptr(startfuncptr), "<dev string:x125>");
     level._animationmocomps[mocompname][#"asm_mocomp_start"] = startfuncptr;
     if (isdefined(updatefuncptr)) {
-        assert(isfunctionptr(updatefuncptr), "<unknown string>");
+        assert(isfunctionptr(updatefuncptr), "<dev string:x185>");
         level._animationmocomps[mocompname][#"asm_mocomp_update"] = updatefuncptr;
     } else {
         level._animationmocomps[mocompname][#"asm_mocomp_update"] = &animationmocompemptyfunc;
     }
     if (isdefined(terminatefuncptr)) {
-        assert(isfunctionptr(terminatefuncptr), "<unknown string>");
+        assert(isfunctionptr(terminatefuncptr), "<dev string:x1e2>");
         level._animationmocomps[mocompname][#"asm_mocomp_terminate"] = terminatefuncptr;
         return;
     }
@@ -53,7 +52,7 @@ function registeranimationmocomp(mocompname, startfuncptr, updatefuncptr, termin
 }
 
 // Namespace animationstatenetwork/animation_state_machine_mocomp
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x8e4c8652, Offset: 0x490
 // Size: 0x2c
 function animationmocompemptyfunc(*entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {

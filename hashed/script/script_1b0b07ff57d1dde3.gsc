@@ -1,33 +1,32 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\gib.gsc;
+#using script_164a456ce05c3483;
+#using script_17dcb1172e441bf6;
 #using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
 #using script_40f967ad5d18ea74;
 #using script_47851dbeea22fe66;
-#using script_164a456ce05c3483;
 #using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_1b0b07ff57d1dde3;
-#using script_1ee011cd0961afd7;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_ed80aead;
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaa785486, Offset: 0x3c0
 // Size: 0x17a
 function init() {
@@ -37,7 +36,7 @@ function init() {
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x31ed20ed, Offset: 0x548
 // Size: 0x84
 function function_1f275794(*launchvector, *attacker) {
@@ -55,7 +54,7 @@ function function_1f275794(*launchvector, *attacker) {
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3bf280ad, Offset: 0x5d8
 // Size: 0x104
 function function_586ef822(attacker) {
@@ -80,7 +79,7 @@ function function_586ef822(attacker) {
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7fc7ba39, Offset: 0x6e8
 // Size: 0xf4
 function function_c25b3c76(launchvector, attacker) {
@@ -103,7 +102,7 @@ function function_c25b3c76(launchvector, attacker) {
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x163e5cfc, Offset: 0x7e8
 // Size: 0x1dc
 function trygibbinghead(entity, damage, weapon, var_fd90b0bb, hitloc = "head", isexplosive = 0, forced = 0) {
@@ -125,7 +124,7 @@ function trygibbinghead(entity, damage, weapon, var_fd90b0bb, hitloc = "head", i
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x31a4db16, Offset: 0x9d0
 // Size: 0x35c
 function trygibbinglimb(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosive = 0) {
@@ -167,7 +166,7 @@ function trygibbinglimb(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosiv
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa7406431, Offset: 0xd38
 // Size: 0x4b4
 function trygibbinglegs(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosive = 0, attacker) {
@@ -212,7 +211,7 @@ function trygibbinglegs(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosiv
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8ca86e4c, Offset: 0x11f8
 // Size: 0x3a
 function function_df5afb5e(missinglegs = 0) {
@@ -223,7 +222,7 @@ function function_df5afb5e(missinglegs = 0) {
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xeda9a279, Offset: 0x1240
 // Size: 0x234
 function function_5e680689(attacker, damage, meansofdeath, weapon, var_fd90b0bb, hitloc, *vdir) {
@@ -260,7 +259,7 @@ function function_5e680689(attacker, damage, meansofdeath, weapon, var_fd90b0bb,
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7a440b1e, Offset: 0x1480
 // Size: 0x11c
 function gib_random_part(damage = 100) {

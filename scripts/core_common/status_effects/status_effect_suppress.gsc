@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\serverfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_suppress;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6d1bf79c, Offset: 0x120
 // Size: 0xc4
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x66f0fc7f, Offset: 0x1f0
 // Size: 0x1c
 function suppress_apply(*var_756fda07, *weapon, *applicant) {
@@ -35,7 +34,7 @@ function suppress_apply(*var_756fda07, *weapon, *applicant) {
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x218
 // Size: 0x4
 function registersamanthas_bundle() {
@@ -43,7 +42,7 @@ function registersamanthas_bundle() {
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7f1e84c7, Offset: 0x228
 // Size: 0x2c6
 function private function_aa232314(oldval, newval) {
@@ -96,7 +95,7 @@ function private function_aa232314(oldval, newval) {
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x848a9dd4, Offset: 0x4f8
 // Size: 0xe
 function private onplayerspawned() {

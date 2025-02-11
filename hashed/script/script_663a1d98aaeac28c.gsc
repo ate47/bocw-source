@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace hatchet;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hatchet/hatchet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x721241c0, Offset: 0x118
 // Size: 0x3c
 function init_shared() {
@@ -22,7 +21,7 @@ function init_shared() {
 }
 
 // Namespace hatchet/hatchet
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc670620a, Offset: 0x160
 // Size: 0xbc
 function function_1679806a(s_watcher) {
@@ -38,7 +37,7 @@ function function_1679806a(s_watcher) {
 }
 
 // Namespace hatchet/hatchet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2eae4e, Offset: 0x228
 // Size: 0x9c
 function function_27ae0902() {
@@ -50,7 +49,7 @@ function function_27ae0902() {
 }
 
 // Namespace hatchet/hatchet
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc5cb4acd, Offset: 0x2d0
 // Size: 0x6c
 function function_16a186f(*s_watcher, player) {
@@ -63,7 +62,7 @@ function function_16a186f(*s_watcher, player) {
 }
 
 // Namespace hatchet/hatchet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x580e7adb, Offset: 0x348
 // Size: 0x55a
 function function_e95b2776() {
@@ -75,7 +74,7 @@ function function_e95b2776() {
             v_right = anglestoright(self.angles);
             var_6731520b = vectorcross(waitresult.normal, v_right);
             if (lengthsquared(var_6731520b) < 0.1) {
-                println("<unknown string>");
+                println("<dev string:x38>");
                 break;
             }
             var_6731520b = vectornormalize(var_6731520b);

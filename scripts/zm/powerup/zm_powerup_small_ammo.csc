@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_powerups.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_powerups;
 
 #namespace zm_powerup_small_ammo;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1006a1be, Offset: 0xf0
 // Size: 0x44
 function __init__() {

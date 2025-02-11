@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\scoreevents.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\util.gsc;
-#using script_5f261a5d57de5f7c;
-#using scripts\zm_common\ai\zm_ai_utility.gsc;
 #using script_2c5daa95f8fec03c;
 #using script_3751b21462a54a7d;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_5f261a5d57de5f7c;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\ai\zm_ai_utility;
+#using scripts\zm_common\scoreevents;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_perk_deadshot;
 
@@ -26,29 +25,29 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5601e3c1, Offset: 0x260
 // Size: 0x44
 function private preinit() {
     enable_deadshot_perk_for_level();
-    zm_perks::register_actor_damage_override(#"hash_210097a75bb6c49a", &function_4d088c19);
+    zm_perks::register_actor_damage_override(#"talent_deadshot", &function_4d088c19);
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x371030f9, Offset: 0x2b0
 // Size: 0x17c
 function enable_deadshot_perk_for_level() {
-    zm_perks::register_perk_basic_info(#"hash_210097a75bb6c49a", #"perk_dead_shot", 2000, #"zombie/perk_deadshot", getweapon("zombie_perk_bottle_deadshot"), undefined, #"zmperksdeadshot");
-    zm_perks::register_perk_precache_func(#"hash_210097a75bb6c49a", &deadshot_precache);
-    zm_perks::register_perk_clientfields(#"hash_210097a75bb6c49a", &deadshot_register_clientfield, &deadshot_set_clientfield);
-    zm_perks::register_perk_machine(#"hash_210097a75bb6c49a", &deadshot_perk_machine_setup);
-    zm_perks::register_perk_threads(#"hash_210097a75bb6c49a", &give_deadshot_perk, &take_deadshot_perk);
-    zm_perks::register_perk_host_migration_params(#"hash_210097a75bb6c49a", "vending_deadshot", "deadshot_light");
+    zm_perks::register_perk_basic_info(#"talent_deadshot", #"perk_dead_shot", 2000, #"zombie/perk_deadshot", getweapon("zombie_perk_bottle_deadshot"), undefined, #"zmperksdeadshot");
+    zm_perks::register_perk_precache_func(#"talent_deadshot", &deadshot_precache);
+    zm_perks::register_perk_clientfields(#"talent_deadshot", &deadshot_register_clientfield, &deadshot_set_clientfield);
+    zm_perks::register_perk_machine(#"talent_deadshot", &deadshot_perk_machine_setup);
+    zm_perks::register_perk_threads(#"talent_deadshot", &give_deadshot_perk, &take_deadshot_perk);
+    zm_perks::register_perk_host_migration_params(#"talent_deadshot", "vending_deadshot", "deadshot_light");
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6cea674e, Offset: 0x438
 // Size: 0xf6
 function deadshot_precache() {
@@ -57,14 +56,14 @@ function deadshot_precache() {
         return;
     }
     level._effect[#"deadshot_light"] = "zombie/fx_perk_deadshot_ndu";
-    level.machine_assets[#"hash_210097a75bb6c49a"] = spawnstruct();
-    level.machine_assets[#"hash_210097a75bb6c49a"].weapon = getweapon("zombie_perk_bottle_deadshot");
-    level.machine_assets[#"hash_210097a75bb6c49a"].off_model = "p9_sur_vending_ads_off";
-    level.machine_assets[#"hash_210097a75bb6c49a"].on_model = "p9_sur_vending_ads";
+    level.machine_assets[#"talent_deadshot"] = spawnstruct();
+    level.machine_assets[#"talent_deadshot"].weapon = getweapon("zombie_perk_bottle_deadshot");
+    level.machine_assets[#"talent_deadshot"].off_model = "p9_sur_vending_ads_off";
+    level.machine_assets[#"talent_deadshot"].on_model = "p9_sur_vending_ads";
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x23a3bcf8, Offset: 0x538
 // Size: 0x34
 function deadshot_register_clientfield() {
@@ -72,7 +71,7 @@ function deadshot_register_clientfield() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3e07d264, Offset: 0x578
 // Size: 0xc
 function deadshot_set_clientfield(*state) {
@@ -80,7 +79,7 @@ function deadshot_set_clientfield(*state) {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf8fbf0b, Offset: 0x590
 // Size: 0x9a
 function deadshot_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -96,7 +95,7 @@ function deadshot_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *c
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf5e41239, Offset: 0x638
 // Size: 0x24
 function give_deadshot_perk() {
@@ -104,7 +103,7 @@ function give_deadshot_perk() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x792422c1, Offset: 0x668
 // Size: 0x44
 function take_deadshot_perk(*b_pause, *str_perk, *str_result, *n_slot) {
@@ -112,7 +111,7 @@ function take_deadshot_perk(*b_pause, *str_perk, *str_result, *n_slot) {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0xc744e96d, Offset: 0x6b8
 // Size: 0x2a6
 function function_4d088c19(*inflictor, attacker, damage, *flags, meansofdeath, *weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, boneindex, *surfacetype) {

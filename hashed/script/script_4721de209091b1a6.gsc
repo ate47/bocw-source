@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
 
 #namespace namespace_f9b02f80;
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x66d6f82a, Offset: 0xf8
 // Size: 0x9e
 function function_196f2c38() {
@@ -24,7 +23,7 @@ function function_196f2c38() {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7cfa46c7, Offset: 0x1a0
 // Size: 0x112
 function killstreak_dialog_queued(dialogkey, killstreaktype, killstreakid) {
@@ -45,7 +44,7 @@ function killstreak_dialog_queued(dialogkey, killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe14091bb, Offset: 0x2c0
 // Size: 0xcc
 function play_killstreak_ready_dialog(killstreaktype, taacomwaittime) {
@@ -59,13 +58,13 @@ function play_killstreak_ready_dialog(killstreaktype, taacomwaittime) {
         return;
     }
     if (isdefined(taacomwaittime)) {
-        wait(taacomwaittime);
+        wait taacomwaittime;
     }
     self play_taacom_dialog("ready", killstreaktype);
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x43c028f2, Offset: 0x398
 // Size: 0x7c
 function play_taacom_dialog_response(dialogkey, killstreaktype, killstreakid, pilotindex) {
@@ -78,7 +77,7 @@ function play_taacom_dialog_response(dialogkey, killstreaktype, killstreakid, pi
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xb61125e1, Offset: 0x420
 // Size: 0x6c
 function play_taacom_dialog(dialogkey, killstreaktype, killstreakid, soundevent, var_8a6b001a, weapon, priority) {
@@ -98,7 +97,7 @@ function function_daaa6db3(weapon, var_df17fa82, var_53c10ed8) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x15ea122c, Offset: 0x4e8
 // Size: 0x44
 function play_taacom_dialog_response_on_owner(dialogkey, killstreaktype, killstreakid) {
@@ -148,7 +147,7 @@ function function_248fc9f7(dialogkey, team, exclusions, objectivekey, killstreak
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd7c98a5e, Offset: 0x6d8
 // Size: 0x3c
 function play_killstreak_firewall_being_hacked_dialog(killstreaktype, killstreakid) {
@@ -158,7 +157,7 @@ function play_killstreak_firewall_being_hacked_dialog(killstreaktype, killstreak
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x59daf57f, Offset: 0x720
 // Size: 0x3c
 function play_killstreak_firewall_hacked_dialog(killstreaktype, killstreakid) {
@@ -168,7 +167,7 @@ function play_killstreak_firewall_hacked_dialog(killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9032971c, Offset: 0x768
 // Size: 0x3c
 function play_killstreak_being_hacked_dialog(killstreaktype, killstreakid) {
@@ -178,7 +177,7 @@ function play_killstreak_being_hacked_dialog(killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbda802d5, Offset: 0x7b0
 // Size: 0x44
 function play_killstreak_hacked_dialog(killstreaktype, killstreakid, hacker) {
@@ -188,7 +187,7 @@ function play_killstreak_hacked_dialog(killstreaktype, killstreakid, hacker) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x907658de, Offset: 0x800
 // Size: 0x44
 function play_killstreak_start_dialog(hardpointtype, team, killstreak_id) {
@@ -198,7 +197,7 @@ function play_killstreak_start_dialog(hardpointtype, team, killstreak_id) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x83282755, Offset: 0x850
 // Size: 0x50
 function play_pilot_dialog(dialogkey, killstreaktype, killstreakid, pilotindex) {
@@ -208,7 +207,7 @@ function play_pilot_dialog(dialogkey, killstreaktype, killstreakid, pilotindex) 
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x13c25e38, Offset: 0x8a8
 // Size: 0x44
 function play_pilot_dialog_on_owner(dialogkey, killstreaktype, killstreakid) {
@@ -218,7 +217,7 @@ function play_pilot_dialog_on_owner(dialogkey, killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xed639306, Offset: 0x8f8
 // Size: 0x3c
 function play_destroyed_dialog_on_owner(killstreaktype, killstreakid) {
@@ -228,12 +227,12 @@ function play_destroyed_dialog_on_owner(killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc9a5c1a, Offset: 0x940
 // Size: 0x1cc
 function function_1110a5de(killstreaktype) {
-    assert(isdefined(killstreaktype), "<unknown string>");
-    assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
+    assert(isdefined(killstreaktype), "<dev string:x38>");
+    assert(isdefined(level.killstreaks[killstreaktype]), "<dev string:x74>");
     pilotdialogarraykey = level.killstreaks[killstreaktype].script_bundle.var_b7bd2ff9;
     if (isdefined(pilotdialogarraykey)) {
         taacombundles = getscriptbundles("mpdialog_taacom");
@@ -255,7 +254,7 @@ function function_1110a5de(killstreaktype) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x65a11931, Offset: 0xb18
 // Size: 0x56
 function get_killstreak_inform_dialog(killstreaktype) {
@@ -266,7 +265,7 @@ function get_killstreak_inform_dialog(killstreaktype) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe825c2db, Offset: 0xb78
 // Size: 0x30
 function get_mpdialog_tacom_bundle(name) {
@@ -277,7 +276,7 @@ function get_mpdialog_tacom_bundle(name) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x45cce7e6, Offset: 0xbb0
 // Size: 0x4c
 function function_d2219b7d(type) {
@@ -286,7 +285,7 @@ function function_d2219b7d(type) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5b52c96a, Offset: 0xc08
 // Size: 0xda
 function get_random_pilot_index(killstreaktype) {

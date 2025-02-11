@@ -1,35 +1,34 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5f261a5d57de5f7c;
-#using script_4ccfb58a9443a60b;
-#using script_7a5293d92c61c788;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_6167e26342be354b;
-#using scripts\core_common\lui_shared.gsc;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_4ccfb58a9443a60b;
+#using script_5f261a5d57de5f7c;
+#using script_6167e26342be354b;
+#using script_7a5293d92c61c788;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_perk_mule_kick;
 
@@ -42,7 +41,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc486cbd2, Offset: 0x368
 // Size: 0x64
 function private preinit() {
@@ -54,33 +53,33 @@ function private preinit() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x17d8056a, Offset: 0x3d8
 // Size: 0x17c
 function function_27473e44() {
-    zm_perks::register_perk_basic_info(#"hash_17e4ae593eaf4a47", #"perk_tombstone", 2000, #"hash_4a88c89fbf0061f6", getweapon("zombie_perk_bottle_mulekick"), undefined, #"zmperksmulekick");
-    zm_perks::register_perk_precache_func(#"hash_17e4ae593eaf4a47", &precache);
-    zm_perks::register_perk_clientfields(#"hash_17e4ae593eaf4a47", &register_clientfield, &set_clientfield);
-    zm_perks::register_perk_machine(#"hash_17e4ae593eaf4a47", &perk_machine_setup);
-    zm_perks::register_perk_threads(#"hash_17e4ae593eaf4a47", &perk_give, &function_6df7ba74);
-    zm_perks::register_perk_host_migration_params(#"hash_17e4ae593eaf4a47", "vending_mulekick", "mulekick_light");
+    zm_perks::register_perk_basic_info(#"talent_mulekick", #"perk_tombstone", 2000, #"hash_4a88c89fbf0061f6", getweapon("zombie_perk_bottle_mulekick"), undefined, #"zmperksmulekick");
+    zm_perks::register_perk_precache_func(#"talent_mulekick", &precache);
+    zm_perks::register_perk_clientfields(#"talent_mulekick", &register_clientfield, &set_clientfield);
+    zm_perks::register_perk_machine(#"talent_mulekick", &perk_machine_setup);
+    zm_perks::register_perk_threads(#"talent_mulekick", &perk_give, &function_6df7ba74);
+    zm_perks::register_perk_host_migration_params(#"talent_mulekick", "vending_mulekick", "mulekick_light");
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x619e21d1, Offset: 0x560
 // Size: 0x106
 function precache() {
     level._effect[#"mulekick_light"] = "zombie/fx9_perk_mulekick";
-    level.machine_assets[#"hash_17e4ae593eaf4a47"] = spawnstruct();
-    level.machine_assets[#"hash_17e4ae593eaf4a47"].weapon = getweapon("zombie_perk_bottle_mulekick");
-    level.machine_assets[#"hash_17e4ae593eaf4a47"].off_model = "p9_fxanim_zm_gp_mule_kick_mod";
-    level.machine_assets[#"hash_17e4ae593eaf4a47"].on_model = "p9_fxanim_zm_gp_mule_kick_mod";
-    level.machine_assets[#"hash_17e4ae593eaf4a47"].power_on_callback = &function_c60d9d72;
+    level.machine_assets[#"talent_mulekick"] = spawnstruct();
+    level.machine_assets[#"talent_mulekick"].weapon = getweapon("zombie_perk_bottle_mulekick");
+    level.machine_assets[#"talent_mulekick"].off_model = "p9_fxanim_zm_gp_mule_kick_mod";
+    level.machine_assets[#"talent_mulekick"].on_model = "p9_fxanim_zm_gp_mule_kick_mod";
+    level.machine_assets[#"talent_mulekick"].power_on_callback = &function_c60d9d72;
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x47b60c98, Offset: 0x670
 // Size: 0x74
 function register_clientfield() {
@@ -91,7 +90,7 @@ function register_clientfield() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6708c267, Offset: 0x6f0
 // Size: 0xc
 function set_clientfield(*state) {
@@ -99,7 +98,7 @@ function set_clientfield(*state) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe39e6b05, Offset: 0x708
 // Size: 0x7c
 function function_5fd3f2ba(player) {
@@ -110,7 +109,7 @@ function function_5fd3f2ba(player) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6626a55f, Offset: 0x790
 // Size: 0x312
 function function_aee99628(player) {
@@ -143,7 +142,7 @@ function function_aee99628(player) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53302391, Offset: 0xab0
 // Size: 0x3c
 function function_c60d9d72() {
@@ -152,7 +151,7 @@ function function_c60d9d72() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6170dc4a, Offset: 0xaf8
 // Size: 0x9a
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -168,7 +167,7 @@ function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision)
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd8caefb6, Offset: 0xba0
 // Size: 0x6c
 function perk_give() {
@@ -180,7 +179,7 @@ function perk_give() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba765f55, Offset: 0xc18
 // Size: 0x13c
 function function_6a6169b2(var_2c2030) {
@@ -201,7 +200,7 @@ function function_6a6169b2(var_2c2030) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xe56bfcbb, Offset: 0xd60
 // Size: 0xdc
 function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
@@ -218,13 +217,13 @@ function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaa1f49e7, Offset: 0xe48
 // Size: 0x2ac
 function function_9335851() {
     self endon(#"disconnect", #"hash_73b1e35c66a4e898");
     while (true) {
-        wait(1);
+        wait 1;
         a_weapons = self getweaponslistprimaries();
         foreach (weapon in a_weapons) {
             w_current = self getcurrentweapon();
@@ -258,7 +257,7 @@ function function_9335851() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6aeacb42, Offset: 0x1100
 // Size: 0x3e
 function function_9ae34cb7() {

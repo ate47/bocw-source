@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_139ae0bb0a87141c;
-#using scripts\core_common\stealth\utility.gsc;
 #using script_7b68dad851540de;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\util_shared;
 
 #namespace debug;
 
@@ -25,13 +24,13 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x8f50faab, Offset: 0xd0
     // Size: 0x210
     function debug_manager() {
-        function_5ac4dc99("<unknown string>", "<unknown string>");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
-        function_5ac4dc99("<unknown string>", -1);
-        function_5ac4dc99("<unknown string>", "<unknown string>");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
+        function_5ac4dc99("<dev string:x38>", "<dev string:x49>");
+        function_5ac4dc99("<dev string:x4e>", "<dev string:x49>");
+        function_5ac4dc99("<dev string:x64>", "<dev string:x49>");
+        function_5ac4dc99("<dev string:x82>", -1);
+        function_5ac4dc99("<dev string:x9c>", "<dev string:x49>");
+        function_5ac4dc99("<dev string:xb5>", "<dev string:x49>");
+        function_5ac4dc99("<dev string:xd3>", "<dev string:xf1>");
         thread function_f5dd6400();
         while (true) {
             waitframe(1);
@@ -39,10 +38,10 @@ function scalevolume(*ent, *vol) {
             if (!debug_enabled()) {
                 continue;
             }
-            function_84811192("<unknown string>", "<unknown string>");
-            function_84811192("<unknown string>", "<unknown string>" + level flag::get("<unknown string>"));
-            function_84811192("<unknown string>", "<unknown string>" + level flag::get("<unknown string>"));
-            function_ea707af9("<unknown string>");
+            function_84811192("<dev string:xf5>", "<dev string:x100>");
+            function_84811192("<dev string:xf5>", "<dev string:x115>" + level flag::get("<dev string:x12a>"));
+            function_84811192("<dev string:xf5>", "<dev string:x13d>" + level flag::get("<dev string:x152>"));
+            function_ea707af9("<dev string:xf5>");
             function_6a467cff();
             function_5a47b49c();
         }
@@ -58,21 +57,21 @@ function scalevolume(*ent, *vol) {
         hudelem.x = -50;
         hudelem.y = 450;
         hudelem.color = (0.5, 1, 0.5);
-        hudelem settext("<unknown string>");
+        hudelem settext("<dev string:x165>");
         z = 0;
         space = 10;
-        tab = "<unknown string>";
+        tab = "<dev string:x17f>";
         while (true) {
             if (debug_enabled() && getplayers().size > 0) {
                 player = getplayers()[0];
-                if (!isdefined(player.stealth) || !player flag::get("<unknown string>")) {
+                if (!isdefined(player.stealth) || !player flag::get("<dev string:x12a>")) {
                     hudelem.alpha = 0;
                 } else {
                     hudelem.alpha = 1;
                 }
-                function_84811192("<unknown string>", "<unknown string>");
-                function_84811192("<unknown string>", "<unknown string>" + self.script_stealthgroup);
-                function_84811192("<unknown string>", tab + "<unknown string>");
+                function_84811192("<dev string:x185>", "<dev string:x18f>");
+                function_84811192("<dev string:x185>", "<dev string:x19b>" + self.script_stealthgroup);
+                function_84811192("<dev string:x185>", tab + "<dev string:x1ae>");
                 keys = getarraykeys(self.stealth.spotted_list);
                 ais = level.stealth.enemies[#"allies"];
                 foreach (ai in ais) {
@@ -81,29 +80,29 @@ function scalevolume(*ent, *vol) {
                     }
                     foreach (key in keys) {
                         if (ai.unique_id == key) {
-                            msg = tab + "<unknown string>" + self getentitynumber() + "<unknown string>" + self.stealth.spotted_list[key];
-                            function_84811192("<unknown string>", msg);
+                            msg = tab + "<dev string:x1bf>" + self getentitynumber() + "<dev string:x1c4>" + self.stealth.spotted_list[key];
+                            function_84811192("<dev string:x185>", msg);
                         }
                     }
                 }
-                function_84811192("<unknown string>", "<unknown string>" + player.maxvisibledist);
-                if (getplayers()[0] flag::get("<unknown string>")) {
-                    function_84811192("<unknown string>", "<unknown string>");
+                function_84811192("<dev string:x185>", "<dev string:x1cb>" + player.maxvisibledist);
+                if (getplayers()[0] flag::get("<dev string:x1df>")) {
+                    function_84811192("<dev string:x185>", "<dev string:x1f4>");
                 }
                 if (getplayers()[0] isnotarget()) {
-                    function_84811192("<unknown string>", "<unknown string>");
+                    function_84811192("<dev string:x185>", "<dev string:x201>");
                 }
                 if (is_true(getplayers()[0].ignoreme)) {
-                    function_84811192("<unknown string>", "<unknown string>");
+                    function_84811192("<dev string:x185>", "<dev string:x211>");
                 }
                 if (isdefined(getplayers()[0].stealth.var_f6c2537d) && getplayers()[0].stealth.var_f6c2537d.size > 0) {
-                    function_84811192("<unknown string>", "<unknown string>");
+                    function_84811192("<dev string:x185>", "<dev string:x221>");
                 }
             } else {
                 hudelem.alpha = 0;
             }
-            function_ea707af9("<unknown string>");
-            wait(0.05);
+            function_ea707af9("<dev string:x185>");
+            wait 0.05;
         }
     }
 
@@ -113,18 +112,18 @@ function scalevolume(*ent, *vol) {
     // Size: 0x118
     function debug_friendly() {
         self endon(#"death");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
+        function_5ac4dc99("<dev string:x234>", "<dev string:x249>");
         while (true) {
             if (debug_enabled()) {
                 space = 10;
                 count = 0;
-                if (self flag::get("<unknown string>")) {
-                    print3d(self.origin + (0, 0, count * space * -1), "<unknown string>", (0.2, 1, 0.2), 1, 0.5);
+                if (self flag::get("<dev string:x1df>")) {
+                    print3d(self.origin + (0, 0, count * space * -1), "<dev string:x24f>", (0.2, 1, 0.2), 1, 0.5);
                 }
                 count++;
-                self draw_enemies("<unknown string>");
+                self draw_enemies("<dev string:x25c>");
             }
-            wait(0.05);
+            wait 0.05;
         }
     }
 
@@ -134,8 +133,8 @@ function scalevolume(*ent, *vol) {
     // Size: 0x100
     function debug_enemy() {
         self endon(#"death");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
-        function_5ac4dc99("<unknown string>", "<unknown string>");
+        function_5ac4dc99("<dev string:x266>", "<dev string:x249>");
+        function_5ac4dc99("<dev string:x27c>", "<dev string:x49>");
         while (true) {
             if (is_true(self.in_melee_death)) {
                 return;
@@ -147,7 +146,7 @@ function scalevolume(*ent, *vol) {
             if (num == self getentitynumber()) {
                 function_48f1fd1c();
             }
-            wait(0.05);
+            wait 0.05;
         }
     }
 
@@ -156,7 +155,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0xe8c682fa, Offset: 0xa68
     // Size: 0x54
     function debug_enabled() {
-        dvar = getdvarstring(#"hash_4bda603314a2d6dc", "<unknown string>");
+        dvar = getdvarstring(#"debug_stealth", "<dev string:x49>");
         return int(dvar);
     }
 
@@ -165,7 +164,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x7c40719c, Offset: 0xac8
     // Size: 0x54
     function function_f7282bd9() {
-        dvar = getdvarstring(#"hash_1d243583f36b0230", "<unknown string>");
+        dvar = getdvarstring(#"hash_1d243583f36b0230", "<dev string:x249>");
         return int(dvar);
     }
 
@@ -174,7 +173,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x1799361a, Offset: 0xb28
     // Size: 0x54
     function function_579409ff() {
-        dvar = getdvarstring(#"hash_447f76d8e8bca45a", "<unknown string>");
+        dvar = getdvarstring(#"hash_447f76d8e8bca45a", "<dev string:x249>");
         return int(dvar);
     }
 
@@ -183,7 +182,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x56d0ee37, Offset: 0xb88
     // Size: 0x54
     function function_467590e0() {
-        dvar = getdvarstring(#"hash_41f17bf6a4d5df10", "<unknown string>");
+        dvar = getdvarstring(#"hash_41f17bf6a4d5df10", "<dev string:x49>");
         return int(dvar);
     }
 
@@ -192,7 +191,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x2efec3b9, Offset: 0xbe8
     // Size: 0x54
     function function_bc93e0c7() {
-        dvar = getdvarstring(#"hash_5edfe6f0786c6c47", "<unknown string>");
+        dvar = getdvarstring(#"hash_5edfe6f0786c6c47", "<dev string:x49>");
         return int(dvar);
     }
 
@@ -201,7 +200,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0xea6175d8, Offset: 0xc48
     // Size: 0x54
     function function_5c17f559() {
-        dvar = getdvarstring(#"hash_6ec105f47827e22a", "<unknown string>");
+        dvar = getdvarstring(#"hash_6ec105f47827e22a", "<dev string:x49>");
         return int(dvar);
     }
 
@@ -210,7 +209,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0xc279354e, Offset: 0xca8
     // Size: 0x54
     function function_57295e02() {
-        dvar = getdvarstring(#"hash_85ac7cbf1863d36", "<unknown string>");
+        dvar = getdvarstring(#"hash_85ac7cbf1863d36", "<dev string:x49>");
         return int(dvar);
     }
 
@@ -219,7 +218,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x3b77fb39, Offset: 0xd08
     // Size: 0x54
     function function_9570f40e() {
-        dvar = getdvarstring(#"hash_7a5dba75329d3032", "<unknown string>");
+        dvar = getdvarstring(#"hash_7a5dba75329d3032", "<dev string:x49>");
         return int(dvar);
     }
 
@@ -228,7 +227,7 @@ function scalevolume(*ent, *vol) {
     // Checksum 0xedf3badb, Offset: 0xd68
     // Size: 0x34
     function function_ce9fa82d() {
-        return getdvarstring(#"hash_7f779674ec8b206d", "<unknown string>");
+        return getdvarstring(#"hash_7f779674ec8b206d", "<dev string:x49>");
     }
 
     // Namespace stealth_debug/debug
@@ -262,23 +261,23 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x3dd24649, Offset: 0xf20
     // Size: 0x184
     function function_a8d5dec6(msg) {
-        if (!level flag::get("<unknown string>")) {
+        if (!level flag::get("<dev string:x12a>")) {
             return;
         }
         type = undefined;
         name = undefined;
         if (isdefined(self.script_noteworthy)) {
-            type = "<unknown string>";
+            type = "<dev string:x291>";
             name = self.script_noteworthy;
         } else if (isdefined(self.targetname)) {
-            type = "<unknown string>";
+            type = "<dev string:x2a6>";
             name = self.targetname;
         }
-        actor = "<unknown string>" + self getentitynumber() + "<unknown string>" + self.unique_id + "<unknown string>" + self.export;
+        actor = "<dev string:x2b4>" + self getentitynumber() + "<dev string:x2c8>" + self.unique_id + "<dev string:x2d1>" + self.export;
         if (isdefined(type)) {
-            actor += "<unknown string>" + type + "<unknown string>" + name;
+            actor += "<dev string:x2de>" + type + "<dev string:x2e3>" + name;
         }
-        txt = "<unknown string>" + actor + "<unknown string>" + msg;
+        txt = "<dev string:x2e9>" + actor + "<dev string:x2fb>" + msg;
         println(txt);
         if (getdvarint(#"hash_24e197c870156a5d", 0) == 1) {
             self thread function_bd9767df(msg);
@@ -294,11 +293,11 @@ function scalevolume(*ent, *vol) {
             level.stealth.debug.screen[type] = 0;
         }
         x = 10;
-        if (type == "<unknown string>") {
+        if (type == "<dev string:xf5>") {
             y = 50;
-        } else if (type == "<unknown string>") {
+        } else if (type == "<dev string:x185>") {
             y = 150;
-        } else if (type == "<unknown string>") {
+        } else if (type == "<dev string:x305>") {
             y = 250;
         } else {
             y = 350;
@@ -329,11 +328,11 @@ function scalevolume(*ent, *vol) {
         while (true) {
             foreach (point in points) {
                 if (isdefined(point.used_time)) {
-                    print3d(point.origin, "<unknown string>" + point.used_time);
+                    print3d(point.origin, "<dev string:xf1>" + point.used_time);
                     line(point.origin, self.origin);
                 }
             }
-            wait(0.05);
+            wait 0.05;
         }
     }
 
@@ -341,7 +340,7 @@ function scalevolume(*ent, *vol) {
     // Params 1, eflags: 0x0
     // Checksum 0x179c4481, Offset: 0x1370
     // Size: 0x1a0
-    function function_690312e5(type) {
+    function debug_alert(type) {
         if (!debug_enabled()) {
             return;
         }
@@ -349,23 +348,23 @@ function scalevolume(*ent, *vol) {
         self notify(#"hash_4a838a1d085f0c60");
         self endon(#"hash_4a838a1d085f0c60");
         color = (0.2, 1, 0.2);
-        msg = "<unknown string>";
-        if (type == "<unknown string>") {
+        msg = "<dev string:x30d>";
+        if (type == "<dev string:x317>") {
             color = (1, 1, 0);
-            msg = "<unknown string>";
-        } else if (type == "<unknown string>") {
+            msg = "<dev string:x323>";
+        } else if (type == "<dev string:x328>") {
             color = (1, 0.5, 0.25);
-            msg = "<unknown string>";
-        } else if (type == "<unknown string>") {
+            msg = "<dev string:x323>";
+        } else if (type == "<dev string:x334>") {
             color = (1, 0, 0);
-            msg = "<unknown string>";
-        } else if (type == "<unknown string>") {
+            msg = "<dev string:x33e>";
+        } else if (type == "<dev string:x343>") {
             color = (1, 0, 0);
-            msg = "<unknown string>";
+            msg = "<dev string:x352>";
         }
         timer = gettime() + 5000;
         while (gettime() < timer) {
-            wait(0.05);
+            wait 0.05;
             print3d(self.origin + (0, 0, 72), msg, color, 1, 3);
         }
     }
@@ -420,7 +419,7 @@ function scalevolume(*ent, *vol) {
         }
         draworigin = self.stealth.debug_rising[myid];
         while (gettime() - start < life * 1000) {
-            wait(0.05);
+            wait 0.05;
             if (isdefined(self) && isalive(self) && isdefined(self.stealth) && isdefined(self.stealth.debug_rising) && isdefined(self.stealth.debug_rising[myid])) {
                 draworigin = self.origin + self.stealth.debug_rising[myid];
             }
@@ -441,7 +440,7 @@ function scalevolume(*ent, *vol) {
     // Size: 0x1e0
     function draw_enemies(team, *offset) {
         enemies = getactorteamarray(offset);
-        if (offset == "<unknown string>") {
+        if (offset == "<dev string:x25c>") {
             enemies[enemies.size] = getplayers()[0];
         }
         yellow = (1, 1, 0);
@@ -476,78 +475,78 @@ function scalevolume(*ent, *vol) {
         if (function_467590e0()) {
             self draw_fov();
         }
-        animstr = "<unknown string>";
+        animstr = "<dev string:x358>";
         patrolstyle = self namespace_979752dc::get_patrol_style();
         if (isdefined(patrolstyle)) {
             animstr = patrolstyle;
         }
-        if (self ai::has_behavior_attribute("<unknown string>")) {
-            animstr = self ai::get_behavior_attribute("<unknown string>");
+        if (self ai::has_behavior_attribute("<dev string:x362>")) {
+            animstr = self ai::get_behavior_attribute("<dev string:x362>");
         }
-        var_b2d4b874 = "<unknown string>";
-        var_4fa3c3e0 = "<unknown string>";
+        var_b2d4b874 = "<dev string:x36e>";
+        var_4fa3c3e0 = "<dev string:xf1>";
         bounded = 0;
         groupdata = stealth_group::getgroup(self.script_stealthgroup);
         pod = stealth_group::group_findpod(groupdata, self);
         if (isdefined(self.stealth.bsmstate)) {
             switch (self.stealth.bsmstate) {
             case 0:
-                var_b2d4b874 = "<unknown string>";
+                var_b2d4b874 = "<dev string:x379>";
                 break;
             case 1:
-                var_b2d4b874 = "<unknown string>";
+                var_b2d4b874 = "<dev string:x381>";
                 if (isdefined(level.stealth.investigate_volumes[self.script_stealthgroup])) {
                     bounded = 1;
                 }
                 break;
             case 2:
-                var_b2d4b874 = "<unknown string>";
+                var_b2d4b874 = "<dev string:x388>";
                 if (isdefined(level.stealth.hunt_volumes[self.script_stealthgroup])) {
                     bounded = 1;
                 }
                 if (!is_true(pod.bhunkering)) {
-                    var_4fa3c3e0 = "<unknown string>";
+                    var_4fa3c3e0 = "<dev string:x390>";
                 } else {
-                    var_4fa3c3e0 = "<unknown string>";
+                    var_4fa3c3e0 = "<dev string:x39d>";
                 }
                 break;
             case 3:
-                var_b2d4b874 = "<unknown string>";
+                var_b2d4b874 = "<dev string:x3aa>";
                 if (isdefined(level.stealth.combat_volumes[self.script_stealthgroup])) {
                     bounded = 1;
                 }
                 break;
             }
         }
-        print3d(self.origin - (0, 0, count * space), self getentitynumber() + "<unknown string>" + var_b2d4b874 + var_4fa3c3e0, white, 1, size);
+        print3d(self.origin - (0, 0, count * space), self getentitynumber() + "<dev string:x3b4>" + var_b2d4b874 + var_4fa3c3e0, white, 1, size);
         count++;
-        print3d(self.origin - (0, 0, count * space), "<unknown string>" + animstr, white, 1, size);
+        print3d(self.origin - (0, 0, count * space), "<dev string:x3bf>" + animstr, white, 1, size);
         count++;
-        nextline = "<unknown string>";
+        nextline = "<dev string:xf1>";
         if (isdefined(self.enemy)) {
-            nextline += "<unknown string>" + self.enemy getentitynumber() + "<unknown string>";
+            nextline += "<dev string:x3c9>" + self.enemy getentitynumber() + "<dev string:x2de>";
         }
         if (bounded) {
-            nextline += "<unknown string>";
+            nextline += "<dev string:x3d4>";
         }
         if (nextline.size > 0) {
             print3d(self.origin - (0, 0, count * space), nextline, yellow, 1, size);
             count++;
         }
         if (isdefined(self.lightmeter)) {
-            print3d(self.origin - (0, 0, count * space), "<unknown string>" + self.lightmeter, red, 1, size);
+            print3d(self.origin - (0, 0, count * space), "<dev string:x3df>" + self.lightmeter, red, 1, size);
             count++;
         }
-        group = "<unknown string>";
+        group = "<dev string:xf1>";
         if (isdefined(self.script_stealthgroup)) {
-            group = "<unknown string>" + self.script_stealthgroup + "<unknown string>";
+            group = "<dev string:x3ef>" + self.script_stealthgroup + "<dev string:x2de>";
         }
         if (group.size > 0) {
             print3d(self.origin - (0, 0, count * space), group, white, 1, size);
             count++;
         }
         if (getplayers().size > 0 && self cansee(getplayers()[0])) {
-            print3d(self.origin - (0, 0, count * space), "<unknown string>", red, 1, size);
+            print3d(self.origin - (0, 0, count * space), "<dev string:x3fa>", red, 1, size);
             count++;
         }
         if (isdefined(self.shootposoverride)) {
@@ -578,7 +577,7 @@ function scalevolume(*ent, *vol) {
     // Params 8, eflags: 0x0
     // Checksum 0xefed9505, Offset: 0x2340
     // Size: 0x16c
-    function function_391d248f(origin, startangle, endangle, baseangles, len, angleidx, var_6246c419, color) {
+    function draw_arc(origin, startangle, endangle, baseangles, len, angleidx, var_6246c419, color) {
         assert(startangle < endangle);
         prevpt = origin + len * function_3e6e06ae(baseangles, startangle, angleidx);
         nextpt = prevpt;
@@ -605,32 +604,32 @@ function scalevolume(*ent, *vol) {
         color = (1, 0, 0);
         fov_yaw = acos(dot);
         if (isai(self)) {
-            eye_yaw = self gettagangles("<unknown string>")[1];
+            eye_yaw = self gettagangles("<dev string:x40d>")[1];
         } else {
-            eye_yaw = self gettagangles("<unknown string>")[1];
+            eye_yaw = self gettagangles("<dev string:x418>")[1];
         }
         viewdist = getplayers()[0].maxvisibledist;
         if (isai(self)) {
-            start = self gettagorigin("<unknown string>");
+            start = self gettagorigin("<dev string:x40d>");
         } else {
-            start = self gettagorigin("<unknown string>");
+            start = self gettagorigin("<dev string:x418>");
         }
         var_16d2c066 = 10;
-        function_391d248f(start, -1 * fov_yaw, fov_yaw, (0, eye_yaw, 0), viewdist, 1, var_16d2c066, color);
+        draw_arc(start, -1 * fov_yaw, fov_yaw, (0, eye_yaw, 0), viewdist, 1, var_16d2c066, color);
         if (self.fovcosinez > dot) {
             color *= 0.5;
             fov_pitch = acos(self.fovcosinez);
             eye_pitch = 0;
-            function_391d248f(start, -1 * fov_pitch, fov_pitch, (eye_pitch, eye_yaw, 0), viewdist, 0, var_16d2c066, color);
+            draw_arc(start, -1 * fov_pitch, fov_pitch, (eye_pitch, eye_yaw, 0), viewdist, 0, var_16d2c066, color);
         }
         var_346c7ea3 = acos(self.fovcosineperiph);
-        function_391d248f(start, -1 * var_346c7ea3, var_346c7ea3, (0, eye_yaw, 0), sqrt(self.fovcosineperiphmaxdistsq), 1, var_16d2c066, (0.5, 0.5, 0));
+        draw_arc(start, -1 * var_346c7ea3, var_346c7ea3, (0, eye_yaw, 0), sqrt(self.fovcosineperiphmaxdistsq), 1, var_16d2c066, (0.5, 0.5, 0));
         if (is_true(self.flashlight.on)) {
             start = self gettagorigin(self.flashlight.tag);
             yaw = self gettagangles(self.flashlight.tag)[1];
             if (isdefined(start) && isdefined(yaw)) {
                 fov_yaw = 30 * 0.5;
-                function_391d248f(start, -1 * fov_yaw, fov_yaw, (0, yaw, 0), isdefined(self.var_1c936867) ? self.var_1c936867 : 850, 1, var_16d2c066, (1, 1, 0));
+                draw_arc(start, -1 * fov_yaw, fov_yaw, (0, yaw, 0), isdefined(self.var_1c936867) ? self.var_1c936867 : 850, 1, var_16d2c066, (1, 1, 0));
             }
         }
     }
@@ -640,25 +639,25 @@ function scalevolume(*ent, *vol) {
     // Checksum 0x41804c42, Offset: 0x2850
     // Size: 0x34c
     function function_48f1fd1c() {
-        tab = "<unknown string>";
-        function_84811192("<unknown string>", "<unknown string>" + self getentitynumber() + "<unknown string>");
-        function_84811192("<unknown string>", "<unknown string>" + self.script_stealthgroup);
-        function_84811192("<unknown string>", "<unknown string>" + self.alertlevel);
-        function_84811192("<unknown string>", "<unknown string>" + self.stealth.state);
+        tab = "<dev string:x17f>";
+        function_84811192("<dev string:x426>", "<dev string:x42f>" + self getentitynumber() + "<dev string:x446>");
+        function_84811192("<dev string:x426>", "<dev string:x19b>" + self.script_stealthgroup);
+        function_84811192("<dev string:x426>", "<dev string:x44b>" + self.alertlevel);
+        function_84811192("<dev string:x426>", "<dev string:x45b>" + self.stealth.state);
         if (isdefined(self.enemy)) {
             enemy = self.enemy getentitynumber();
         } else {
-            enemy = "<unknown string>";
+            enemy = "<dev string:x46d>";
         }
-        function_84811192("<unknown string>", "<unknown string>" + enemy);
-        function_84811192("<unknown string>", "<unknown string>" + self.stealth.ai_event);
-        if (self.team == "<unknown string>") {
-            team = "<unknown string>";
+        function_84811192("<dev string:x426>", "<dev string:x3c9>" + enemy);
+        function_84811192("<dev string:x426>", "<dev string:x47a>" + self.stealth.ai_event);
+        if (self.team == "<dev string:x25c>") {
+            team = "<dev string:x48d>";
         } else {
-            team = "<unknown string>";
+            team = "<dev string:x25c>";
         }
         enemies = getactorteamarray(team);
-        if (team == "<unknown string>") {
+        if (team == "<dev string:x25c>") {
             enemies[enemies.size] = getplayers()[0];
         }
         foreach (enemy in enemies) {
@@ -669,12 +668,12 @@ function scalevolume(*ent, *vol) {
                 continue;
             }
             if (isdefined(enemy.stealth.spotted_list[self.unique_id])) {
-                function_84811192("<unknown string>", tab + "<unknown string>");
-                msg = tab + "<unknown string>" + enemy getentitynumber() + "<unknown string>" + enemy.stealth.spotted_list[self.unique_id];
-                function_84811192("<unknown string>", msg);
+                function_84811192("<dev string:x426>", tab + "<dev string:x1ae>");
+                msg = tab + "<dev string:x1bf>" + enemy getentitynumber() + "<dev string:x1c4>" + enemy.stealth.spotted_list[self.unique_id];
+                function_84811192("<dev string:x426>", msg);
             }
         }
-        function_ea707af9("<unknown string>");
+        function_ea707af9("<dev string:x426>");
     }
 
     // Namespace stealth_debug/debug
@@ -700,18 +699,18 @@ function scalevolume(*ent, *vol) {
                     curline = levelstealth.var_855b67ea;
                     for (iline = 0; iline < levelstealth.var_42d9f5df; iline++) {
                         if (!isdefined(levelstealth.chatbox[curline]) || levelstealth.chatbox[curline].time > var_12febe81) {
-                            text = "<unknown string>";
+                            text = "<dev string:xf1>";
                             if (isstring(levelstealth.chatbox[curline].speaker)) {
                                 text += levelstealth.chatbox[curline].speaker;
                             } else {
                                 foreach (speaker in levelstealth.chatbox[curline].speaker) {
                                     if (isdefined(speaker)) {
-                                        text += "<unknown string>" + speaker getentitynumber();
+                                        text += "<dev string:x2de>" + speaker getentitynumber();
                                     }
                                 }
                                 levelstealth.chatbox[curline].speaker = text;
                             }
-                            text += "<unknown string>" + levelstealth.chatbox[curline].text;
+                            text += "<dev string:x2e3>" + levelstealth.chatbox[curline].text;
                             debug2dtext((var_b5a9b1ac, cury, 0), text, textcolor, 1, undefined, undefined, cscale);
                             cury += var_1dccd487;
                         }
@@ -765,7 +764,7 @@ function scalevolume(*ent, *vol) {
         }
         for (time = 0; time < duration * 20; time++) {
             print3d(self.origin + (0, 0, 45), message, (0.48, 9.4, 0.76), 0.85);
-            wait(0.05);
+            wait 0.05;
         }
     }
 
@@ -814,15 +813,15 @@ function scalevolume(*ent, *vol) {
             draw_axis(obj.origin, angles, 12);
             print3d(obj.origin - (0, 0, 12), function_9e72a96(obj.scriptbundlename), color, 1, 0.3, 1);
             if (!canuse) {
-                print3d(obj.origin - (0, 0, 20), "<unknown string>" + obj.nextusetime - gettime(), color, 1, 0.3, 1);
+                print3d(obj.origin - (0, 0, 20), "<dev string:x495>" + obj.nextusetime - gettime(), color, 1, 0.3, 1);
             }
-            print3d(obj.origin - (0, 0, 28), "<unknown string>" + obj.var_dd0284ce, color, 1, 0.3, 1);
+            print3d(obj.origin - (0, 0, 28), "<dev string:x4a3>" + obj.var_dd0284ce, color, 1, 0.3, 1);
             if (isdefined(obj.var_2edb5d76) && canuse) {
                 r = sqrt(obj.var_2edb5d76);
-                function_391d248f(obj.origin, 0, 360, angles, r, 1, 8, color);
+                draw_arc(obj.origin, 0, 360, angles, r, 1, 8, color);
             }
             if (claimed) {
-                print3d(obj.origin - (0, 0, 18), "<unknown string>" + obj.claimer getentitynumber(), color, 1, 0.3, 1);
+                print3d(obj.origin - (0, 0, 18), "<dev string:x4b7>" + obj.claimer getentitynumber(), color, 1, 0.3, 1);
                 line(obj.origin, obj.claimer.origin, color, 1, 0, 1);
             }
         }
@@ -842,7 +841,7 @@ function scalevolume(*ent, *vol) {
         }
         debuggroup = function_ce9fa82d();
         foreach (group, group_data in level.stealth.hunt_stealth_group_region_sets) {
-            if (debuggroup != group && debuggroup != "<unknown string>") {
+            if (debuggroup != group && debuggroup != "<dev string:xf1>") {
                 continue;
             }
             foreach (region in group_data.hunt_regions) {
@@ -852,7 +851,7 @@ function scalevolume(*ent, *vol) {
                     line(p0.origin, p1.origin, (0, 0.7, 0), 1, 0, 1);
                 }
                 foreach (smart_object in region.smart_objects) {
-                    function_391d248f(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, (0.7, 0, 0));
+                    draw_arc(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, (0.7, 0, 0));
                 }
                 foreach (point in region.transition_points) {
                     foreach (transition_point in point.transitions) {
@@ -877,7 +876,7 @@ function scalevolume(*ent, *vol) {
         }
         debuggroup = function_ce9fa82d();
         foreach (group, group_data in level.stealth.hunt_stealth_group_region_sets) {
-            if (debuggroup != group && debuggroup != "<unknown string>") {
+            if (debuggroup != group && debuggroup != "<dev string:xf1>") {
                 continue;
             }
             var_7010df74 = [];
@@ -887,19 +886,19 @@ function scalevolume(*ent, *vol) {
                 count = 0;
                 size = 0.5;
                 white = (1, 1, 1);
-                print3d(region.approx_location - (0, 0, count * space), "<unknown string>" + region.index, white, 1, size);
+                print3d(region.approx_location - (0, 0, count * space), "<dev string:x4bf>" + region.index, white, 1, size);
                 count++;
-                print3d(region.approx_location - (0, 0, count * space), "<unknown string>" + region.bfs_score, white, 1, size);
+                print3d(region.approx_location - (0, 0, count * space), "<dev string:x4ca>" + region.bfs_score, white, 1, size);
                 count++;
-                print3d(region.approx_location - (0, 0, count * space), "<unknown string>" + region.shared_data.bfs_assigned, white, 1, size);
+                print3d(region.approx_location - (0, 0, count * space), "<dev string:x4d9>" + region.shared_data.bfs_assigned, white, 1, size);
                 count++;
-                print3d(region.approx_location - (0, 0, count * space), "<unknown string>" + region.shared_data.in_region, white, 1, size);
+                print3d(region.approx_location - (0, 0, count * space), "<dev string:x4e7>" + region.shared_data.in_region, white, 1, size);
                 count++;
-                print3d(region.approx_location - (0, 0, count * space), "<unknown string>" + region.stealth_group, white, 1, size);
+                print3d(region.approx_location - (0, 0, count * space), "<dev string:x3ef>" + region.stealth_group, white, 1, size);
                 cooldowndiff = region.shared_data.bfs_cooldown - gettime();
                 if (cooldowndiff > 0) {
                     count++;
-                    print3d(region.approx_location - (0, 0, count * space), "<unknown string>" + cooldowndiff, white, 1, size);
+                    print3d(region.approx_location - (0, 0, count * space), "<dev string:x4f6>" + cooldowndiff, white, 1, size);
                 }
             }
             foreach (region in group_data.hunt_regions) {

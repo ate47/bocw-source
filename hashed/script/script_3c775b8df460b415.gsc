@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\trials\zm_trial_defend_area.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\trials\zm_trial_defend_area;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_9b24ce43;
 
@@ -64,7 +63,7 @@ function is_active() {
 // Size: 0x2c2
 function private movement_watcher() {
     self endon(#"disconnect", #"hash_17c41292130032eb");
-    wait(zm_round_logic::get_delay_between_rounds() - 2);
+    wait zm_round_logic::get_delay_between_rounds() - 2;
     while (true) {
         var_89276ce9 = 0;
         var_197c85d1 = self getvelocity();
@@ -85,9 +84,9 @@ function private movement_watcher() {
         }
         if (var_89276ce9) {
             if (zm_trial_defend_area::is_active() && is_true(self.var_ccee13fc)) {
-                wait(1);
+                wait 1;
             } else {
-                wait(0.2);
+                wait 0.2;
             }
             continue;
         }

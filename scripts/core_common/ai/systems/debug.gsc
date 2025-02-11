@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace as_debug;
 
@@ -19,7 +18,7 @@
     // Checksum 0x5e7b8ef3, Offset: 0xd8
     // Size: 0x34
     function private preinit() {
-        util::init_dvar("<unknown string>", 0, &delete_all_ai_corpses);
+        util::init_dvar("<dev string:x38>", 0, &delete_all_ai_corpses);
     }
 
     // Namespace as_debug/debug
@@ -35,7 +34,7 @@
     // Checksum 0xed8a13ff, Offset: 0x170
     // Size: 0x62
     function drawdebuglineinternal(frompoint, topoint, color, durationframes) {
-                for (i = 0; i < durationframes; i++) {
+        for (i = 0; i < durationframes; i++) {
             line(frompoint, topoint, color);
             waitframe(1);
         }
@@ -56,7 +55,7 @@
     // Checksum 0xe7e45cde, Offset: 0x248
     // Size: 0x6a
     function debugline(frompoint, topoint, color, durationframes) {
-                for (i = 0; i < durationframes * 20; i++) {
+        for (i = 0; i < durationframes * 20; i++) {
             line(frompoint, topoint, color);
             waitframe(1);
         }
@@ -156,7 +155,7 @@
         state.statevalid = 1;
         self.debuginfo.statelevel++;
         if (isdefined(extrainfo)) {
-            state.extrainfo = extrainfo + "<unknown string>";
+            state.extrainfo = extrainfo + "<dev string:x52>";
         }
         self.debuginfo.states[self.debuginfo.states.size] = state;
     }
@@ -179,9 +178,9 @@
                 assert(isdefined(self.debuginfo.states[i]));
                 if (self.debuginfo.states[i].statename == statename) {
                     if (!isdefined(self.debuginfo.states[i].extrainfo)) {
-                        self.debuginfo.states[i].extrainfo = "<unknown string>";
+                        self.debuginfo.states[i].extrainfo = "<dev string:x57>";
                     }
-                    self.debuginfo.states[i].extrainfo = self.debuginfo.states[i].extrainfo + extrainfo + "<unknown string>";
+                    self.debuginfo.states[i].extrainfo = self.debuginfo.states[i].extrainfo + extrainfo + "<dev string:x52>";
                     break;
                 }
             }
@@ -191,9 +190,9 @@
             lastindex = self.debuginfo.states.size - 1;
             assert(isdefined(self.debuginfo.states[lastindex]));
             if (!isdefined(self.debuginfo.states[lastindex].extrainfo)) {
-                self.debuginfo.states[lastindex].extrainfo = "<unknown string>";
+                self.debuginfo.states[lastindex].extrainfo = "<dev string:x57>";
             }
-            self.debuginfo.states[lastindex].extrainfo = self.debuginfo.states[lastindex].extrainfo + extrainfo + "<unknown string>";
+            self.debuginfo.states[lastindex].extrainfo = self.debuginfo.states[lastindex].extrainfo + extrainfo + "<dev string:x52>";
         }
     }
 
@@ -277,9 +276,9 @@
     // Checksum 0x4e0b0837, Offset: 0x1008
     // Size: 0x56
     function indent(depth) {
-        indent = "<unknown string>";
+        indent = "<dev string:x57>";
         for (i = 0; i < depth; i++) {
-            indent += "<unknown string>";
+            indent += "<dev string:x52>";
         }
         return indent;
     }
@@ -317,11 +316,11 @@
         }
         if (weight <= midvalue) {
             redcolor = 1 - abs((weight - lowestvalue) / halfdeltavalue);
-            recordcircle(point, 2, (redcolor, 0, 0), "<unknown string>", entity);
+            recordcircle(point, 2, (redcolor, 0, 0), "<dev string:x5b>", entity);
             return;
         }
         greencolor = 1 - abs((highestvalue - weight) / halfdeltavalue);
-        recordcircle(point, 2, (0, greencolor, 0), "<unknown string>", entity);
+        recordcircle(point, 2, (0, greencolor, 0), "<dev string:x5b>", entity);
     }
 
     // Namespace as_debug/debug

@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_damage.gsc;
-#using scripts\mp_common\gametypes\globallogic_ui.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic_ui;
+#using scripts\mp_common\player\player_damage;
 
 #namespace player;
 
 // Namespace player/player_callbacks
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xc8ad0438, Offset: 0xc8
 // Size: 0xc4
 function callback_playermelee(eattacker, *idamage, weapon, vorigin, vdir, boneindex, shieldhit, frombehind) {
@@ -22,7 +21,7 @@ function callback_playermelee(eattacker, *idamage, weapon, vorigin, vdir, bonein
 }
 
 // Namespace player/player_callbacks
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x3ff1e3b3, Offset: 0x198
 // Size: 0x174
 function function_74b6d714(attacker, effectname, var_894859a2, durationoverride, weapon) {
@@ -47,7 +46,7 @@ function function_74b6d714(attacker, effectname, var_894859a2, durationoverride,
 }
 
 // Namespace player/player_callbacks
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa99b538b, Offset: 0x318
 // Size: 0x84
 function callback_playershielddamageblocked(damage) {
@@ -60,23 +59,23 @@ function callback_playershielddamageblocked(damage) {
 }
 
 // Namespace player/player_callbacks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe08c4367, Offset: 0x3a8
 // Size: 0xd0
 function callback_playermigrated() {
-    println("<unknown string>" + self.name + "<unknown string>" + gettime());
+    println("<dev string:x38>" + self.name + "<dev string:x43>" + gettime());
     if (isdefined(self.connected) && self.connected) {
         self globallogic_ui::updateobjectivetext();
     }
     level.hostmigrationreturnedplayercount++;
     if (level.hostmigrationreturnedplayercount >= level.players.size * 2 / 3) {
-        println("<unknown string>");
+        println("<dev string:x63>");
         level notify(#"hostmigration_enoughplayers");
     }
 }
 
 // Namespace player/player_callbacks
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0x751414be, Offset: 0x480
 // Size: 0x8c
 function callback_playerlaststand(einflictor, eattacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime, deathanimduration) {

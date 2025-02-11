@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\callings\zm_callings_devgui.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\callings\zm_callings_devgui;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_callings;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_callings/zm_callings
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd8fe2101, Offset: 0x118
 // Size: 0x18a
 function private preinit() {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace zm_callings/zm_callings
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb473f154, Offset: 0x2b0
 // Size: 0x1c
 function private postinit() {
@@ -45,7 +44,7 @@ function private postinit() {
 }
 
 // Namespace zm_callings/zm_callings
-// Params 6, eflags: 0x6 linked
+// Params 6, eflags: 0x4
 // Checksum 0x7882a2eb, Offset: 0x2d8
 // Size: 0x22c
 function private function_c3be3572(var_9c939fff, var_27426b47, target, xp, var_b68d50cb = 1, var_7b2027fe = 1) {
@@ -74,7 +73,7 @@ function private function_c3be3572(var_9c939fff, var_27426b47, target, xp, var_b
 }
 
 // Namespace zm_callings/zm_callings
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb7ab4196, Offset: 0x510
 // Size: 0x544
 function function_f3393d6a() {
@@ -107,7 +106,7 @@ function function_f3393d6a() {
     str_gametype = util::get_game_type();
     if (self.var_eb15d3ac == str_gametype) {
         s_tcm = level.var_314051a1.var_2e61f0ce[self.var_e06cb519].var_203c6468[self.var_bf6f8ec3];
-        foreach (task in s_tcm.var_272b4041) {
+        foreach (task in s_tcm.tcmpact) {
             self function_c3be3572(task.task, #"hash_647ebc7d24425fee", task.target, task.xp);
         }
         self function_c3be3572(s_tcm.tcmgoal, #"tcmgoal", s_tcm.tcmgoaltarget, s_tcm.tcmgoalxp, 0, 0);
@@ -115,7 +114,7 @@ function function_f3393d6a() {
 }
 
 // Namespace zm_callings/zm_callings
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x6347474, Offset: 0xa60
 // Size: 0x13c
 function private function_10a1ac3c(var_d1017f27, var_e06cb519, var_bf6f8ec3) {
@@ -134,7 +133,7 @@ function private function_10a1ac3c(var_d1017f27, var_e06cb519, var_bf6f8ec3) {
 }
 
 // Namespace zm_callings/zm_callings
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x7fa41dde, Offset: 0xba8
 // Size: 0x15a
 function private function_66714869(var_d1017f27, var_e06cb519, var_bf6f8ec3, n_inc) {
@@ -153,7 +152,7 @@ function private function_66714869(var_d1017f27, var_e06cb519, var_bf6f8ec3, n_i
 }
 
 // Namespace zm_callings/zm_callings
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xbe96db64, Offset: 0xd10
 // Size: 0x16c
 function private function_a6a40735(var_d1017f27, var_e06cb519, var_bf6f8ec3, n_value, var_32a60884 = 0) {
@@ -170,7 +169,7 @@ function private function_a6a40735(var_d1017f27, var_e06cb519, var_bf6f8ec3, n_v
 }
 
 // Namespace zm_callings/zm_callings
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd4f2a730, Offset: 0xe88
 // Size: 0x3a
 function private function_7b01d125(var_a0639b8c, var_f65a9845) {
@@ -178,7 +177,7 @@ function private function_7b01d125(var_a0639b8c, var_f65a9845) {
 }
 
 // Namespace zm_callings/zm_callings
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3ee45c59, Offset: 0xed0
 // Size: 0x358
 function private function_104c5d35() {
@@ -204,14 +203,14 @@ function private function_104c5d35() {
             self luinotifyevent(#"zombie_callings_notification", 4, 3, function_7b01d125(self.var_e06cb519, self.var_d0b65bbe) + 1, self.var_e06cb519 + 1, self getentitynumber());
             self stats::inc_stat(#"playercalling", #"seasons", self.var_e06cb519, #"factions", self.var_d0b65bbe, #"hash_7a54171ce10db54f", 1);
             /#
-                iprintln("<unknown string>" + function_9e72a96(var_acbd7392) + "<unknown string>" + function_9e72a96(self.var_d0b65bbe));
+                iprintln("<dev string:x38>" + function_9e72a96(var_acbd7392) + "<dev string:x54>" + function_9e72a96(self.var_d0b65bbe));
             #/
         }
     }
 }
 
 // Namespace zm_callings/zm_callings
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb2111017, Offset: 0x1230
 // Size: 0x28c
 function function_4368582a(var_d1017f27, n_value = 1) {
@@ -223,7 +222,7 @@ function function_4368582a(var_d1017f27, n_value = 1) {
             self function_a6a40735(var_d1017f27, self.var_e06cb519, self.var_bf6f8ec3, n_target, 1);
             self luinotifyevent(#"zombie_callings_notification", 3, 2, var_d1017f27.var_de86e878, self getentitynumber());
             /#
-                iprintln(self.name + "<unknown string>" + function_9e72a96(var_d1017f27.var_ad971622) + "<unknown string>" + var_d1017f27.n_xp + "<unknown string>");
+                iprintln(self.name + "<dev string:x7e>" + function_9e72a96(var_d1017f27.var_ad971622) + "<dev string:x92>" + var_d1017f27.n_xp + "<dev string:xab>");
             #/
             self function_104c5d35();
             uploadstats(self);
@@ -232,7 +231,7 @@ function function_4368582a(var_d1017f27, n_value = 1) {
             /#
                 progress = var_e4edaaf0 + n_value;
                 target = n_target;
-                iprintln(self.name + "<unknown string>" + function_9e72a96(var_d1017f27.var_ad971622) + "<unknown string>" + progress + "<unknown string>" + target);
+                iprintln(self.name + "<dev string:x7e>" + function_9e72a96(var_d1017f27.var_ad971622) + "<dev string:xb2>" + progress + "<dev string:xc5>" + target);
             #/
             self function_66714869(var_d1017f27, self.var_e06cb519, self.var_bf6f8ec3, n_value);
         }

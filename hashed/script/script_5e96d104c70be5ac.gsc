@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using script_437ce686d29bb81b;
-#using scripts\weapons\weapons.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_437ce686d29bb81b;
+#using script_7a8059ca02b7b09e;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weapons;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_8d0ae0b4;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa51d2ffa, Offset: 0x190
 // Size: 0x42c
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
     callback::on_item_drop(&on_item_drop);
     callback::on_item_pickup(&on_item_pickup);
     callback::on_spawned(&on_player_spawned);
-    callback::add_callback(#"hash_17028f0b9883e5be", &function_e38db3d4);
+    callback::add_callback(#"objective_started", &function_e38db3d4);
     callback::add_callback(#"objective_ended", &function_f13d2749);
     callback::add_callback(#"hash_276921163232533", &function_8a38be09);
     callback::add_callback(#"hash_29edd9425510b40d", &function_e89b1c3f);
@@ -53,11 +52,11 @@ function private preinit() {
     callback::on_ai_killed(&on_ai_killed);
     telemetry::function_98df8818(#"hash_b88b6d2e0028e13", &function_abbc84ad);
     telemetry::function_98df8818(#"hash_42d03088c9b0534b", &function_882720b2);
-    telemetry::add_callback(#"hash_1f5aa545c7334d3a", &function_9cac835e);
+    telemetry::add_callback(#"flourish_start", &function_9cac835e);
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed83bb18, Offset: 0x5c8
 // Size: 0x3c2
 function function_72c32279() {
@@ -69,13 +68,13 @@ function function_72c32279() {
         return;
     }
     /#
-        println("<unknown string>" + getutc());
-        println("<unknown string>" + util::get_map_name());
-        println("<unknown string>" + level.gametype);
-        println("<unknown string>" + sessionmodeisprivateonlinegame());
-        println("<unknown string>" + sessionmodeissystemlink());
-        println("<unknown string>" + isdedicated());
-        println("<unknown string>");
+        println("<dev string:x38>" + getutc());
+        println("<dev string:x63>" + util::get_map_name());
+        println("<dev string:x8e>" + level.gametype);
+        println("<dev string:xbe>" + sessionmodeisprivateonlinegame());
+        println("<dev string:xf4>" + sessionmodeissystemlink());
+        println("<dev string:x127>" + isdedicated());
+        println("<dev string:x15b>");
     #/
     utc = getutc();
     if (isdefined(game.telemetry)) {
@@ -99,7 +98,7 @@ function function_72c32279() {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5ecfd3fd, Offset: 0x998
 // Size: 0x57c
 function function_d519e318() {
@@ -112,11 +111,11 @@ function function_d519e318() {
         player function_143fa1b9();
     }
     /#
-        println("<unknown string>" + function_f8d53445());
-        println("<unknown string>" + gettime());
-        println("<unknown string>" + util::get_map_name());
-        println("<unknown string>" + level.gametype);
-        println("<unknown string>" + getutc());
+        println("<dev string:x197>" + function_f8d53445());
+        println("<dev string:x1cb>" + gettime());
+        println("<dev string:x1f9>" + util::get_map_name());
+        println("<dev string:x222>" + level.gametype);
+        println("<dev string:x250>" + getutc());
     #/
     utc = getutc();
     matchend = {};
@@ -138,25 +137,25 @@ function function_d519e318() {
     matchend.star_level = isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0;
     if (isdefined(game.telemetry.var_dc73ada2)) {
         time_seconds = utc - game.telemetry.var_dc73ada2;
-        println("<unknown string>" + time_seconds);
+        println("<dev string:x279>" + time_seconds);
         matchend.var_dc73ada2 = game.telemetry.var_dc73ada2;
     }
     match_duration = function_f8d53445() / 1000;
-    println("<unknown string>" + match_duration);
+    println("<dev string:x2b3>" + match_duration);
     if (isdefined(game.telemetry.player_count)) {
-        println("<unknown string>" + game.telemetry.player_count);
+        println("<dev string:x2f0>" + game.telemetry.player_count);
         matchend.player_count = game.telemetry.player_count;
     }
     if (isdefined(game.telemetry.life_count)) {
-        println("<unknown string>" + game.telemetry.life_count);
+        println("<dev string:x322>" + game.telemetry.life_count);
         matchend.life_count = game.telemetry.life_count;
     }
     function_92d1707f(#"hash_572d4a196995ede6", matchend);
-    println("<unknown string>");
+    println("<dev string:x352>");
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x35f3ae59, Offset: 0xf20
 // Size: 0x18c
 function private on_round_end(data) {
@@ -176,7 +175,7 @@ function private on_round_end(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9b941cb0, Offset: 0x10b8
 // Size: 0x13f2
 function private function_2d28a3b3(*data) {
@@ -318,7 +317,7 @@ function private function_2d28a3b3(*data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x810005eb, Offset: 0x24b8
 // Size: 0x366
 function private function_4bd3e96c() {
@@ -327,10 +326,10 @@ function private function_4bd3e96c() {
         weapon_names = getarraykeys(self.pers[#"hash_69b63c99be1fb428"]);
         for (weapon_index = 0; weapon_index < weapon_names.size; weapon_index += 1) {
             weapon_name = weapon_names[weapon_index];
-            var_dc08e79b = self.pers[#"hash_69b63c99be1fb428"][weapon_name];
-            var_fa5921b6 = var_dc08e79b[#"xpearned"];
+            weapon_struct = self.pers[#"hash_69b63c99be1fb428"][weapon_name];
+            var_fa5921b6 = weapon_struct[#"xpearned"];
             if (isdefined(var_fa5921b6) && var_fa5921b6 > 0) {
-                var_cad81941 = {#weapon_name:weapon_name, #time_used_s:isdefined(var_dc08e79b[#"timeused"]) ? var_dc08e79b[#"timeused"] : 0, #kills:isdefined(var_dc08e79b[#"kills"]) ? var_dc08e79b[#"kills"] : 0, #shots:isdefined(var_dc08e79b[#"shots"]) ? var_dc08e79b[#"shots"] : 0, #hits:isdefined(var_dc08e79b[#"hits"]) ? var_dc08e79b[#"hits"] : 0, #var_fa5921b6:isdefined(var_dc08e79b[#"xpearned"]) ? var_dc08e79b[#"xpearned"] : 0, #game_type:hash(isdefined(level.gametype) ? level.gametype : #""), #round_number:zm_utility::get_round_number(), #star_level:zm_utility::function_e3025ca5(), #flourish_count:isdefined(var_dc08e79b[#"flourish_count"]) ? var_dc08e79b[#"flourish_count"] : 0};
+                var_cad81941 = {#weapon_name:weapon_name, #time_used_s:isdefined(weapon_struct[#"timeused"]) ? weapon_struct[#"timeused"] : 0, #kills:isdefined(weapon_struct[#"kills"]) ? weapon_struct[#"kills"] : 0, #shots:isdefined(weapon_struct[#"shots"]) ? weapon_struct[#"shots"] : 0, #hits:isdefined(weapon_struct[#"hits"]) ? weapon_struct[#"hits"] : 0, #var_fa5921b6:isdefined(weapon_struct[#"xpearned"]) ? weapon_struct[#"xpearned"] : 0, #game_type:hash(isdefined(level.gametype) ? level.gametype : #""), #round_number:zm_utility::get_round_number(), #star_level:zm_utility::function_e3025ca5(), #flourish_count:isdefined(weapon_struct[#"flourish_count"]) ? weapon_struct[#"flourish_count"] : 0};
                 self function_678f57c8(#"hash_2da62e026250c65e", var_cad81941);
             }
         }
@@ -338,15 +337,15 @@ function private function_4bd3e96c() {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62bec32e, Offset: 0x2828
 // Size: 0x544
 function on_player_connect(*data) {
     if (!is_true(self.pers[#"telemetry"].connected)) {
         /#
-            println("<unknown string>" + gettime());
-            println("<unknown string>" + getutc());
-            println("<unknown string>" + self.name);
+            println("<dev string:x38c>" + gettime());
+            println("<dev string:x3bf>" + getutc());
+            println("<dev string:x3f5>" + self.name);
         #/
         self.pers[#"weaponstats"] = [];
         if (!isdefined(self.pers[#"telemetry"])) {
@@ -373,12 +372,12 @@ function on_player_connect(*data) {
         if (isdefined(game.telemetry.player_count)) {
             self.pers[#"telemetry"].var_6ba64843 = game.telemetry.player_count;
             game.telemetry.player_count++;
-            println("<unknown string>" + game.telemetry.player_count);
+            println("<dev string:x425>" + game.telemetry.player_count);
         } else {
-            println("<unknown string>");
+            println("<dev string:x45d>");
             return;
         }
-        println("<unknown string>");
+        println("<dev string:x4bb>");
         playerdata = {};
         playerdata.utc_connect_time_s = self.pers[#"telemetry"].utc_connect_time_s;
         playerdata.var_6ba64843 = isdefined(self.pers[#"telemetry"].var_6ba64843) ? self.pers[#"telemetry"].var_6ba64843 : 0;
@@ -390,7 +389,7 @@ function on_player_connect(*data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfe29f96, Offset: 0x2d78
 // Size: 0x2e
 function function_b9cd2b6c(xp) {
@@ -398,7 +397,7 @@ function function_b9cd2b6c(xp) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6ea04b4b, Offset: 0x2db0
 // Size: 0x904
 function function_143fa1b9() {
@@ -408,8 +407,8 @@ function function_143fa1b9() {
     self.pers[#"telemetry"].connected = 0;
     playerdata = {};
     /#
-        println("<unknown string>" + self.name);
-        println("<unknown string>" + gettime());
+        println("<dev string:x500>" + self.name);
+        println("<dev string:x533>" + gettime());
     #/
     playerdata.utc_connect_time_s = 0;
     playerdata.utc_disconnect_time_s = 0;
@@ -462,7 +461,7 @@ function function_143fa1b9() {
     playerdata.star_level = zm_utility::function_e3025ca5();
     playerdata.var_c3b47473 = isdefined(game.telemetry.var_dd636281) ? game.telemetry.var_dd636281 : 0;
     if (is_true(level.host_ended_game)) {
-        playerdata.var_a3ba1678 = #"hash_95f500e64a2ae03";
+        playerdata.var_a3ba1678 = #"host_aborted";
     } else if (is_true(self.var_b9ff264c)) {
         playerdata.var_a3ba1678 = #"win";
     } else {
@@ -473,7 +472,7 @@ function function_143fa1b9() {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3f97f6ac, Offset: 0x36c0
 // Size: 0x24
 function on_player_disconnect(*data) {
@@ -481,7 +480,7 @@ function on_player_disconnect(*data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x59d2112c, Offset: 0x36f0
 // Size: 0x1a4
 function on_player_spawned() {
@@ -495,19 +494,19 @@ function on_player_spawned() {
         self.pers[#"telemetry"].life.life_index = game.telemetry.life_count;
         game.telemetry.life_count++;
         /#
-            println("<unknown string>" + self.name);
-            println("<unknown string>" + game.telemetry.life_count);
+            println("<dev string:x569>" + self.name);
+            println("<dev string:x599>" + game.telemetry.life_count);
         #/
     }
-    println("<unknown string>");
+    println("<dev string:x5cf>");
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfde597, Offset: 0x38a0
 // Size: 0xd4
 function private function_3f08a12b(data) {
-    assert(isdefined(data.weapon), "<unknown string>");
+    assert(isdefined(data.weapon), "<dev string:x615>");
     var_abb39438 = {};
     var_abb39438.wallbuy_weapon = data.weapon.statname;
     var_abb39438.weapon_rarity = hash(data.rarity);
@@ -517,12 +516,12 @@ function private function_3f08a12b(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa76c66a3, Offset: 0x3980
 // Size: 0x23c
 function private on_item_pickup(params) {
     item = params.item;
-    weapon = namespace_a0d533d1::function_2b83d3ff(item);
+    weapon = item_inventory_util::function_2b83d3ff(item);
     if (isdefined(item) && isdefined(weapon)) {
         weapon.var_dc9b0289 = gettime();
         if (is_true(params.var_7b753bce)) {
@@ -551,12 +550,12 @@ function private on_item_pickup(params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfb50d15f, Offset: 0x3bc8
 // Size: 0x234
 function private on_item_drop(params) {
     item = params.item;
-    weapon = namespace_a0d533d1::function_2b83d3ff(item);
+    weapon = item_inventory_util::function_2b83d3ff(item);
     if (isdefined(item) && isdefined(weapon)) {
         itemdata = {};
         itemdata.weapon = weapon.statname;
@@ -585,7 +584,7 @@ function private on_item_drop(params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x777334b9, Offset: 0x3e08
 // Size: 0xa4
 function private function_1f5722ec(data) {
@@ -599,7 +598,7 @@ function private function_1f5722ec(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc27d1d1b, Offset: 0x3eb8
 // Size: 0xf4
 function private function_3b4b8944(data) {
@@ -617,7 +616,7 @@ function private function_3b4b8944(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe0d134d5, Offset: 0x3fb8
 // Size: 0xe4
 function private function_2d2b9f81(data) {
@@ -631,7 +630,7 @@ function private function_2d2b9f81(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc8ce3fe3, Offset: 0x40a8
 // Size: 0x320
 function function_abbc84ad(data) {
@@ -662,7 +661,7 @@ function function_abbc84ad(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x17ee31d4, Offset: 0x43d0
 // Size: 0x5ec
 function private function_8a38be09(*params) {
@@ -701,7 +700,7 @@ function private function_8a38be09(*params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4150c8b1, Offset: 0x49c8
 // Size: 0x294
 function private function_e89b1c3f(*params) {
@@ -722,7 +721,7 @@ function private function_e89b1c3f(*params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf9cb3149, Offset: 0x4c68
 // Size: 0x41c
 function private function_e38db3d4(params, *activator) {
@@ -746,7 +745,7 @@ function private function_e38db3d4(params, *activator) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x18b7d272, Offset: 0x5090
 // Size: 0x738
 function private function_f13d2749(params) {
@@ -777,7 +776,7 @@ function private function_f13d2749(params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb16e3cb8, Offset: 0x57d0
 // Size: 0x32
 function private on_ai_spawned(*params) {
@@ -788,7 +787,7 @@ function private on_ai_spawned(*params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x480cad28, Offset: 0x5810
 // Size: 0xce
 function private on_ai_damage(params) {
@@ -804,7 +803,7 @@ function private on_ai_damage(params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x87300b41, Offset: 0x58e8
 // Size: 0xc2
 function private on_player_damage(params) {
@@ -820,7 +819,7 @@ function private on_player_damage(params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcb1a28a7, Offset: 0x59b8
 // Size: 0x594
 function private on_ai_killed(params) {
@@ -856,7 +855,7 @@ function private on_ai_killed(params) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7eccdee1, Offset: 0x5f58
 // Size: 0x1dc
 function function_882720b2(data) {
@@ -867,7 +866,7 @@ function function_882720b2(data) {
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbaeeea1e, Offset: 0x6140
 // Size: 0x9c
 function function_9cac835e(data) {

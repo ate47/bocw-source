@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\util_shared;
 
 #namespace sound;
 
 // Namespace sound/sound_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3243d603, Offset: 0xc0
 // Size: 0x94
 function loop_fx_sound(alias, origin, ender) {
@@ -19,7 +18,7 @@ function loop_fx_sound(alias, origin, ender) {
 }
 
 // Namespace sound/sound_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa79df5c1, Offset: 0x160
 // Size: 0x4c
 function loop_delete(ender, ent) {
@@ -29,7 +28,7 @@ function loop_delete(ender, ent) {
 }
 
 // Namespace sound/sound_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x75252f0d, Offset: 0x1b8
 // Size: 0xbc
 function play_in_space(alias, origin, *master) {
@@ -46,7 +45,7 @@ function play_in_space(alias, origin, *master) {
 }
 
 // Namespace sound/sound_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6237fd23, Offset: 0x280
 // Size: 0x14c
 function loop_on_tag(alias, tag, bstopsoundondeath) {
@@ -72,7 +71,7 @@ function loop_on_tag(alias, tag, bstopsoundondeath) {
 }
 
 // Namespace sound/sound_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x56dfdeb6, Offset: 0x3d8
 // Size: 0x204
 function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *radio_dialog) {
@@ -91,12 +90,12 @@ function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *radio_dialog) {
     }
     /#
         if (self === level.player_radio_emitter) {
-            println("<unknown string>" + tag);
+            println("<dev string:x38>" + tag);
         }
     #/
     org playsoundwithnotify(tag, "sounddone");
     if (isdefined(var_50bba55f)) {
-        assert(var_50bba55f, "<unknown string>");
+        assert(var_50bba55f, "<dev string:x5a>");
         if (!isdefined(wait_for_sounddone_or_death(org))) {
             org stopsounds();
         }
@@ -111,7 +110,7 @@ function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *radio_dialog) {
 }
 
 // Namespace sound/sound_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf08a5cfb, Offset: 0x5e8
 // Size: 0x60
 function wait_for_sounddone_or_death(org, other) {
@@ -124,7 +123,7 @@ function wait_for_sounddone_or_death(org, other) {
 }
 
 // Namespace sound/sound_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb3b7a9b8, Offset: 0x650
 // Size: 0x7c
 function delete_on_death_wait_sound(ent, sounddone) {
@@ -190,7 +189,7 @@ function loop_in_space(alias, origin, ender) {
     org playloopsound(alias);
     level waittill(ender);
     org stoploopsound();
-    wait(0.1);
+    wait 0.1;
     org delete();
 }
 
@@ -207,7 +206,7 @@ function delete_on_death_wait(ent, *sounddone) {
 }
 
 // Namespace sound/sound_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7ccd5af3, Offset: 0x9b0
 // Size: 0x174
 function play_on_players(sound, team) {

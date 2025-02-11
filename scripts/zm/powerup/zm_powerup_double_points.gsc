@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_powerup_double_points;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x77163ea1, Offset: 0x1d0
 // Size: 0xa4
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x71de011e, Offset: 0x280
 // Size: 0x8c
 function grab_double_points(player) {
@@ -46,7 +45,7 @@ function grab_double_points(player) {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe30feb95, Offset: 0x318
 // Size: 0x1ac
 function function_6fd6ae61(e_powerup, player) {
@@ -69,7 +68,7 @@ function function_6fd6ae61(e_powerup, player) {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xce31ebcb, Offset: 0x4d0
 // Size: 0x344
 function double_points_powerup(drop_item, player) {
@@ -103,7 +102,7 @@ function double_points_powerup(drop_item, player) {
     if (bgb::is_team_enabled(#"zm_bgb_temporal_gift")) {
         n_wait += 30;
     }
-    wait(n_wait);
+    wait n_wait;
     zombie_utility::set_zombie_var_team(#"zombie_point_scalar", team, 1);
     level._race_team_double_points = undefined;
     players = getplayers();

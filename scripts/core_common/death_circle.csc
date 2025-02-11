@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace death_circle;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x71130b0, Offset: 0x290
 // Size: 0x348
 function private preinit() {
@@ -34,15 +33,15 @@ function private preinit() {
     clientfield::register("allplayers", "deathcircleopacityflag", 1, 1, "counter", &function_1a4228a5, 0, 0);
     clientfield::register("toplayer", "deathcircleeffects", 1, 2, "int", undefined, 0, 1);
     clientfield::register("allplayers", "outsidedeathcircle", 1, 1, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("hudItems.warzone.collapseTimerState", #"hash_593f03dd48d5bc1f", #"collapsetimerstate", 1, 2, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("hudItems.warzone.collapseProgress", #"hash_593f03dd48d5bc1f", #"collapseprogress", 1, 7, "float", undefined, 0, 0);
+    clientfield::function_5b7d846d("hudItems.warzone.collapseTimerState", #"warzone_global", #"collapsetimerstate", 1, 2, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("hudItems.warzone.collapseProgress", #"warzone_global", #"collapseprogress", 1, 7, "float", undefined, 0, 0);
     callback::on_localclient_connect(&on_localclient_connect);
     callback::on_localplayer_spawned(&on_localplayer_spawned);
     level.var_32e10fc2 = [];
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbec9eb97, Offset: 0x5e0
 // Size: 0x94
 function private function_4df027f2() {
@@ -61,7 +60,7 @@ function private function_4df027f2() {
 }
 
 // Namespace death_circle/death_circle
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9a152562, Offset: 0x680
 // Size: 0x424
 function function_a380fe5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -114,7 +113,7 @@ function function_a380fe5(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace death_circle/death_circle
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe6c7357f, Offset: 0xab0
 // Size: 0x14c
 function function_1a4228a5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -135,7 +134,7 @@ function function_1a4228a5(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace death_circle/death_circle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdfcd11, Offset: 0xc08
 // Size: 0xa4
 function on_localclient_connect(localclientnum) {
@@ -148,7 +147,7 @@ function on_localclient_connect(localclientnum) {
 }
 
 // Namespace death_circle/death_circle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5a2873d3, Offset: 0xcb8
 // Size: 0x3c
 function on_localplayer_spawned(localclientnum) {
@@ -158,7 +157,7 @@ function on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace death_circle/death_circle
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x274b7b71, Offset: 0xd00
 // Size: 0x13e
 function private function_382da026(localclientnum) {
@@ -185,7 +184,7 @@ function private function_382da026(localclientnum) {
 }
 
 // Namespace death_circle/death_circle
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xec989775, Offset: 0xe48
 // Size: 0x8c
 function private function_7eb327bd(localclientnum) {
@@ -199,7 +198,7 @@ function private function_7eb327bd(localclientnum) {
 }
 
 // Namespace death_circle/death_circle
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x8eb90421, Offset: 0xee0
 // Size: 0x9a
 function private function_43d7470c(localclientnum, intensity = 0) {
@@ -214,7 +213,7 @@ function private function_43d7470c(localclientnum, intensity = 0) {
 }
 
 // Namespace death_circle/death_circle
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6f0d91e2, Offset: 0xf88
 // Size: 0x236
 function private function_d69170b(localclientnum, intensity = 0) {
@@ -260,7 +259,7 @@ function private function_63d6411e() {
 }
 
 // Namespace death_circle/death_circle
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x600f92c2, Offset: 0x11f8
 // Size: 0x140
 function private function_32f7227c(deathcircle, currentradius, localclientnum) {
@@ -278,7 +277,7 @@ function private function_32f7227c(deathcircle, currentradius, localclientnum) {
 }
 
 // Namespace death_circle/death_circle
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7545b535, Offset: 0x1340
 // Size: 0x22e
 function private function_a453467f(localclientnum) {
@@ -307,7 +306,7 @@ function private function_a453467f(localclientnum) {
 }
 
 // Namespace death_circle/death_circle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1204126, Offset: 0x1578
 // Size: 0x74
 function function_71f8d788() {

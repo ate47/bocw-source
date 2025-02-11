@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
 #using script_24c32478acf44108;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using script_4dc6a9b234b838e1;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\ai\zombie_vortex.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_6167e26342be354b;
-#using scripts\core_common\item_inventory.gsc;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\hud_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_4dc6a9b234b838e1;
+#using script_6167e26342be354b;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\zombie_vortex;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\weapons\weaponobjects;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
-#namespace namespace_71f583f0;
+#namespace zm_weap_black_hole_bomb;
 
-// Namespace namespace_71f583f0/namespace_71f583f0
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
 // Params 0, eflags: 0x5
 // Checksum 0x61866ae, Offset: 0x248
 // Size: 0x4c
@@ -29,8 +28,8 @@ function private autoexec __init__system__() {
     system::register(#"hash_4f25b1a89459b1f8", &preinit, &postinit, undefined, "zm_weapons");
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 0, eflags: 0x6 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 0, eflags: 0x4
 // Checksum 0x34e0f970, Offset: 0x2a0
 // Size: 0x174
 function private preinit() {
@@ -41,11 +40,11 @@ function private preinit() {
     zm_weapons::function_76403f51(level.var_2e1abf5f);
     callback::add_callback(#"on_ai_killed", &function_ca505fd3);
     namespace_9ff9f642::register_slowdown(#"hash_2c88ef7895dccf65", 0.7, 1);
-    namespace_9ff9f642::register_slowdown(#"hash_54dc5d9bfaadb765", 0.6, 1);
+    namespace_9ff9f642::register_slowdown(#"bhb_slowdown", 0.6, 1);
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 15, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 15, eflags: 0x0
 // Checksum 0x4bf5c185, Offset: 0x420
 // Size: 0xd2
 function function_995359b9(inflictor, attacker, *damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *boneindex, *modelindex, *surfacetype, *vsurfacenormal) {
@@ -55,8 +54,8 @@ function function_995359b9(inflictor, attacker, *damage, *flags, *meansofdeath, 
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0xf29a264e, Offset: 0x500
 // Size: 0xbc
 function function_ca505fd3(params) {
@@ -65,24 +64,24 @@ function function_ca505fd3(params) {
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 0, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x5c8
 // Size: 0x4
 function postinit() {
     
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x9954158, Offset: 0x5d8
 // Size: 0x22
 function function_54881ba1(watcher) {
     watcher.onspawn = &function_e38ab081;
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 2, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 2, eflags: 0x0
 // Checksum 0x4c82d002, Offset: 0x608
 // Size: 0x5c
 function function_e38ab081(*watcher, player) {
@@ -91,8 +90,8 @@ function function_e38ab081(*watcher, player) {
     self thread function_93a73145(player);
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x10c8d410, Offset: 0x670
 // Size: 0x1a4
 function function_93a73145(owner) {
@@ -114,8 +113,8 @@ function function_93a73145(owner) {
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x6 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x4
 // Checksum 0xd090a0af, Offset: 0x820
 // Size: 0x16c
 function private function_600a82c(player) {
@@ -141,8 +140,8 @@ function private function_600a82c(player) {
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x47880bd4, Offset: 0x998
 // Size: 0xf4
 function function_f576c273(var_a495cbed) {
@@ -158,12 +157,12 @@ function function_f576c273(var_a495cbed) {
     var_a495cbed thread function_c2f76b45(teleport_trigger);
     var_a495cbed waittill(#"explode");
     teleport_trigger notify(#"hash_5e52043e21f343d7");
-    wait(0.1);
+    wait 0.1;
     teleport_trigger delete();
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 2, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 2, eflags: 0x0
 // Checksum 0x1fa725c, Offset: 0xa98
 // Size: 0x284
 function function_7ceb96bf(player, *endon_condition) {
@@ -202,8 +201,8 @@ function function_7ceb96bf(player, *endon_condition) {
     endon_condition function_13fce2b({#origin:origin, #angles:angles});
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x3cdf59b4, Offset: 0xd28
 // Size: 0x158
 function function_c2f76b45(var_69cf75ad) {
@@ -217,20 +216,20 @@ function function_c2f76b45(var_69cf75ad) {
         if (isplayer(ent_player) && !ent_player isonground() && !is_true(ent_player.lander) && !ent_player function_b4813488() && !ent_player isonladder() && !ent_player isziplining()) {
             var_69cf75ad thread function_f6b48774(ent_player, &function_7ceb96bf, &function_a0b4dce9);
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x6e1f87cb, Offset: 0xe88
 // Size: 0xc
 function function_a0b4dce9(*ent_player) {
     
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 3, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 3, eflags: 0x0
 // Checksum 0x194dbb23, Offset: 0xea0
 // Size: 0x13c
 function function_f6b48774(ent, on_enter_payload, on_exit_payload) {
@@ -256,8 +255,8 @@ function function_f6b48774(ent, on_enter_payload, on_exit_payload) {
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x583fbbe8, Offset: 0xfe8
 // Size: 0x70
 function function_fa82badd(trig) {
@@ -273,8 +272,8 @@ function function_fa82badd(trig) {
     return true;
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x293e5ca2, Offset: 0x1060
 // Size: 0x44
 function function_8658dbc9(ent) {
@@ -284,8 +283,8 @@ function function_8658dbc9(ent) {
     ent._triggers[self getentitynumber()] = 1;
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x7b5322f7, Offset: 0x10b0
 // Size: 0x64
 function function_570c993c(ent) {
@@ -298,8 +297,8 @@ function function_570c993c(ent) {
     ent._triggers[self getentitynumber()] = 0;
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0xdfa2baf, Offset: 0x1120
 // Size: 0x32c
 function function_13fce2b(var_9e4b7aff) {
@@ -323,22 +322,22 @@ function function_13fce2b(var_9e4b7aff) {
         level [[ level.var_6ca5d247 ]](self);
     }
     function_16713f43(var_9e4b7aff.origin);
-    self val::set(#"hash_58dc4106d3bee61b", "freezecontrols", 1);
-    self val::set(#"hash_58dc4106d3bee61b", "disable_offhand_weapons", 1);
-    self val::set(#"hash_58dc4106d3bee61b", "disable_weapons", 1);
+    self val::set(#"bhb_teleport", "freezecontrols", 1);
+    self val::set(#"bhb_teleport", "disable_offhand_weapons", 1);
+    self val::set(#"bhb_teleport", "disable_weapons", 1);
     self playsound(#"hash_2bdcf53469acd60d");
     self dontinterpolate();
     self setorigin(destination);
     self setplayerangles(var_9e4b7aff.angles);
-    self val::reset(#"hash_58dc4106d3bee61b", "freezecontrols");
-    self val::reset(#"hash_58dc4106d3bee61b", "disable_offhand_weapons");
-    self val::reset(#"hash_58dc4106d3bee61b", "disable_weapons");
+    self val::reset(#"bhb_teleport", "freezecontrols");
+    self val::reset(#"bhb_teleport", "disable_offhand_weapons");
+    self val::reset(#"bhb_teleport", "disable_weapons");
     self zm_stats::increment_challenge_stat(#"hash_5a6d38dd5c5f950d");
     self thread function_e788f77();
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 1, eflags: 0x0
 // Checksum 0x292e212, Offset: 0x1458
 // Size: 0xd4
 function function_16713f43(pos) {
@@ -350,26 +349,26 @@ function function_16713f43(pos) {
     var_d3d9d70c thread function_f7e9dfd7();
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 0, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 0, eflags: 0x0
 // Checksum 0x44669ffc, Offset: 0x1538
 // Size: 0xa
 function function_e788f77() {
-    wait(1);
+    wait 1;
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 0, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 0, eflags: 0x0
 // Checksum 0x261674d4, Offset: 0x1550
 // Size: 0x44
 function function_f7e9dfd7() {
-    wait(2);
+    wait 2;
     playsoundatposition("wpn_bhbomb_exit_end", self.origin);
     self delete();
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 7, eflags: 0x2 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 7, eflags: 0x0
 // Checksum 0x41fef2d9, Offset: 0x15a0
 // Size: 0x814
 function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vortex_time, svortex, eattacker, weapon) {
@@ -399,7 +398,7 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
             switch (ai_zombie.var_6f84b820) {
             case #"normal":
                 if (ai_zombie.archetype === #"zombie_dog") {
-                    ai_zombie thread namespace_9ff9f642::slowdown(#"hash_54dc5d9bfaadb765");
+                    ai_zombie thread namespace_9ff9f642::slowdown(#"bhb_slowdown");
                     if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
                         var_34e3b3f7 = ai_zombie.maxhealth * 0.4;
                         ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
@@ -470,33 +469,33 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
     }
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 0, eflags: 0x6 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 0, eflags: 0x4
 // Checksum 0xb5229ee0, Offset: 0x1dc0
 // Size: 0x76
 function private function_fb7c4f41() {
-    self notify(#"hash_1035c763ec8428ac");
-    self endon(#"death", #"hash_1035c763ec8428ac");
-    wait(0.25);
+    self notify(#"affected_fx");
+    self endon(#"death", #"affected_fx");
+    wait 0.25;
     self clientfield::set("" + #"hash_399ab6541d717dc7", 0);
     self.blockingpain = 0;
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 3, eflags: 0x6 linked
+// Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
+// Params 3, eflags: 0x4
 // Checksum 0x88df7af6, Offset: 0x1e40
 // Size: 0x7c
 function private vortex_explosion(*v_vortex_explosion_origin, eattacker, *n_vortex_radius) {
     self.origin += (0, 0, 50);
     self detonate(n_vortex_radius);
     /#
-        recordstar(self.origin, (1, 0, 1), "<unknown string>");
+        recordstar(self.origin, (1, 0, 1), "<dev string:x38>");
     #/
 }
 
 /#
 
-    // Namespace namespace_71f583f0/namespace_71f583f0
+    // Namespace zm_weap_black_hole_bomb/zm_weap_black_hole_bomb
     // Params 1, eflags: 0x0
     // Checksum 0xc9c6d395, Offset: 0x1ec8
     // Size: 0x4c

@@ -1,45 +1,44 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_85cd2e9a28ea8a1;
-#using script_3dc93ca9902a9cda;
-#using scripts\cp_common\snd.gsc;
-#using script_7cf3e180e994d17f;
 #using script_1aa56b3bc89b63e5;
-#using script_3de86a21a0c8d47b;
-#using scripts\cp\cp_takedown_af_chase.gsc;
+#using script_2d443451ce681a;
 #using script_31e9b35aaacbbd93;
-#using script_61cfc2ab8e60625;
-#using scripts\cp_common\hms_util.gsc;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
-#using scripts\cp_common\util.gsc;
-#using scripts\cp_common\skipto.gsc;
 #using script_32399001bdb550da;
 #using script_35ae72be7b4fec10;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\stealth\utility.gsc;
 #using script_37f9ff47f340fbe8;
-#using scripts\core_common\colors_shared.gsc;
-#using scripts\core_common\exploder_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\cp_common\objectives.gsc;
-#using scripts\cp_common\dialogue.gsc;
-#using script_2d443451ce681a;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_3dc93ca9902a9cda;
+#using script_3de86a21a0c8d47b;
+#using script_61cfc2ab8e60625;
+#using script_85cd2e9a28ea8a1;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\colors_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\struct;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\cp\cp_takedown_af_chase;
+#using scripts\cp\cp_takedown_fx;
+#using scripts\cp_common\dialogue;
+#using scripts\cp_common\gametypes\globallogic_ui;
+#using scripts\cp_common\hms_util;
+#using scripts\cp_common\objectives;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\snd;
+#using scripts\cp_common\util;
 
 #namespace tkdn_af_hill;
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0xd2e51276, Offset: 0xb20
 // Size: 0x164
 function starting(var_d3440450) {
@@ -51,15 +50,15 @@ function starting(var_d3440450) {
     namespace_b100dd86::function_5aabc3fb();
     exploder::exploder("hit3_prop_mist");
     player = getplayers()[0];
-    player namespace_db2381c4::function_c8bc54e4();
+    player cp_takedown_fx::function_c8bc54e4();
     exploder::activate_radiant_exploder("airfield_intro_lights");
     thread namespace_a052577e::function_a42cfb58();
     plane_flyover = vehicle::simple_spawn_and_drive("plane_flyover");
     level thread scene::play_from_time("scene_tkd_hit3_intro", "shot 1", undefined, 1, 1, 1, 0, 0);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 2, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 2, eflags: 0x0
 // Checksum 0x4732da97, Offset: 0xc90
 // Size: 0xe94
 function main(var_d3440450, *var_50cc0d4f) {
@@ -88,8 +87,8 @@ function main(var_d3440450, *var_50cc0d4f) {
     player = getplayers()[0];
     level.player = player;
     player endon(#"death");
-    level.var_49a5d2a4 = getvehiclearray("af_chase_veh", "targetname")[0];
-    level.var_49a5d2a4 val::set(#"hash_57927fe94524d139", "allowdeath", 0);
+    level.chase_truck = getvehiclearray("af_chase_veh", "targetname")[0];
+    level.chase_truck val::set(#"chase_truck", "allowdeath", 0);
     thread function_cc465a2(player);
     level.player val::set(#"hash_50cb2a8c58c8ad4", "ignoreme", 1);
     level.adler val::set(#"hash_50cb2a8c58c8ad4", "ignoreme", 1);
@@ -105,7 +104,7 @@ function main(var_d3440450, *var_50cc0d4f) {
         clip disconnectpaths(0, 1);
     }
     level music::setmusicstate("b2.0_recon", undefined, 6);
-    snd::function_7db65a93("snd_overlook_scene");
+    snd::client_msg("snd_overlook_scene");
     waitframe(1);
     level.player val::reset(#"hash_50cb2a8c58c8ad4", "ignoreme");
     player waittill(#"camera_up");
@@ -122,7 +121,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     level thread util::delay("play_b4.1_identify_mus", undefined, &music::function_edda155f, "b4.1_identify");
     level waittill(#"start_sniping", #"hash_380fe6172e5e75ed");
     level flag::set("start_sniping");
-    snd::function_7db65a93("start_sniping");
+    snd::client_msg("start_sniping");
     thread function_4bc0b384(player);
     thread function_7a77e3be(player);
     thread function_84d4429e(player);
@@ -153,7 +152,7 @@ function main(var_d3440450, *var_50cc0d4f) {
         level.arash waittill(#"hash_3d799b8c342663fa");
         level thread scene::play("scene_tkd_hit3_intro_overlook_arash", "hit_impact", [level.arash]);
         level thread scene::play("scene_tkd_hit3_intro_overlook_enemy4", "hit_impact");
-        snd::function_7db65a93(#"hash_1797695d0ca67ad8");
+        snd::client_msg(#"hash_1797695d0ca67ad8");
         level.arash waittill(#"hash_377b8997737880e7");
         level flag::set("arash_in_plane");
         thread function_4f024edb();
@@ -182,8 +181,8 @@ function main(var_d3440450, *var_50cc0d4f) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x8cdd07b6, Offset: 0x1b30
 // Size: 0x38
 function function_84d4429e(player) {
@@ -191,24 +190,24 @@ function function_84d4429e(player) {
     player notify(#"weapon_fired");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x44a20ff5, Offset: 0x1b70
 // Size: 0x11c
 function function_4f024edb() {
-    level.var_fac9425c stopanimscripted();
+    level.af_enemy2 stopanimscripted();
     af_enemy3 = getaiarray("af_enemy3", "targetname")[0];
     if (isalive(af_enemy3)) {
         af_enemy3 stopanimscripted();
         af_enemy3 thread scene::play("scene_tkd_hit3_intro_overlook_guy3", "react_shot", [af_enemy3]);
     }
-    level scene::play("scene_tkd_hit3_intro_overlook", "hit", [level.var_fac9425c]);
+    level scene::play("scene_tkd_hit3_intro_overlook", "hit", [level.af_enemy2]);
     af_enemy4 = getaiarray("af_enemy4", "targetname")[0];
     function_9967d19b(af_enemy4);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x56355e75, Offset: 0x1c98
 // Size: 0xb0
 function function_ca9dd78b() {
@@ -221,8 +220,8 @@ function function_ca9dd78b() {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0xee7fbcfc, Offset: 0x1d50
 // Size: 0x332
 function function_32398bfb(player) {
@@ -231,15 +230,15 @@ function function_32398bfb(player) {
     level.arash stopanimscripted();
     player.var_35ee6252 = undefined;
     setslowmotion(1, 0.5, 0);
-    var_cc2c9bdb = player.origin;
+    player_org = player.origin;
     var_cac40761 = player.angles;
     var_ca71a1c8 = "black";
     thread namespace_61e6d095::function_28027c42(#"hash_4fe4ea6c5e05ffb7");
     exploder::exploder("airfield_sniper_bullet_light");
     level thread scene::play("scene_tkd_hit3_intro_overlook_bullet_cam", "fancy_bulletcam", [level.arash]);
-    snd::function_7db65a93(#"hash_1533b6e574c5cfe7");
+    snd::client_msg(#"hash_1533b6e574c5cfe7");
     level waittill(#"hash_387a7c439d244e6b");
-    screenshake(var_cc2c9bdb, 0.2, 2, 0, 0.33, 0, -1, 0, 12.5, 40, 0, 4);
+    screenshake(player_org, 0.2, 2, 0, 0.33, 0, -1, 0, 12.5, 40, 0, 4);
     exploder::stop_exploder("airfield_sniper_bullet_light");
     level waittill(#"hash_57e0731c62f19ce1");
     setslowmotion(0.5, 1, 0.4);
@@ -248,15 +247,15 @@ function function_32398bfb(player) {
     level util::delay(0.005, undefined, &lui::screen_fade_in, 0, "black");
     player stopanimscripted(0, 1);
     level flag::set("arash_in_plane");
-    snd::function_7db65a93(#"hash_3620fe1626778dde");
+    snd::client_msg(#"hash_3620fe1626778dde");
     waitframe(1);
-    player setorigin(var_cc2c9bdb);
+    player setorigin(player_org);
     player setplayerangles(var_cac40761);
     namespace_61e6d095::function_4279fd02(#"hash_4fe4ea6c5e05ffb7");
     waitframe(1);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
+// Namespace tkdn_af_hill/cp_takedown_af_hill
 // Params 0, eflags: 0x0
 // Checksum 0xb7a63632, Offset: 0x2090
 // Size: 0x74
@@ -266,7 +265,7 @@ function function_c8a35cef() {
     setdvar(#"hash_1e892dbf6ecb7caa", 0);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
+// Namespace tkdn_af_hill/cp_takedown_af_hill
 // Params 0, eflags: 0x0
 // Checksum 0x2319cfea, Offset: 0x2110
 // Size: 0x7c
@@ -276,8 +275,8 @@ function function_b0d8b75() {
     setdvar(#"hash_1e892dbf6ecb7caa", 0.75);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x2e68dbe7, Offset: 0x2198
 // Size: 0x44
 function function_5dd4ff85() {
@@ -285,8 +284,8 @@ function function_5dd4ff85() {
     level thread scene::play("scene_tkd_hit3_intro_overlook_enemy4", "overlook_shot");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x1162b368, Offset: 0x21e8
 // Size: 0xe4
 function function_31afa2db() {
@@ -300,8 +299,8 @@ function function_31afa2db() {
     level.player setmovespeedscale(1);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0xeeea77a1, Offset: 0x22d8
 // Size: 0x12c
 function function_254c9ae() {
@@ -315,8 +314,8 @@ function function_254c9ae() {
     level flag::set("overlook_guys_done");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0xcd2683b0, Offset: 0x2410
 // Size: 0x10c
 function function_b432f86a(nodename) {
@@ -331,8 +330,8 @@ function function_b432f86a(nodename) {
     self ai::set_goal(nodename, "targetname", 1);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0xa1b1a462, Offset: 0x2528
 // Size: 0xbe
 function function_7a77e3be(player) {
@@ -347,8 +346,8 @@ function function_7a77e3be(player) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0xac87cce7, Offset: 0x25f0
 // Size: 0xec
 function function_4bc0b384(player) {
@@ -362,7 +361,7 @@ function function_4bc0b384(player) {
     player takeweapon(level.var_42db149f);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
+// Namespace tkdn_af_hill/cp_takedown_af_hill
 // Params 0, eflags: 0x0
 // Checksum 0x46136da0, Offset: 0x26e8
 // Size: 0x98
@@ -371,24 +370,24 @@ function function_ef1d8a47() {
     while (plane != undefined) {
         org = plane gettagorigin("tag_origin");
         /#
-            print3d(org, "scene_tkd_hit3_intro_overlook_guy3", (1, 1, 1), 1, 0.25);
+            print3d(org, "<dev string:x38>", (1, 1, 1), 1, 0.25);
         #/
-        wait(0.05);
+        wait 0.05;
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 4, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 4, eflags: 0x0
 // Checksum 0x53cc913e, Offset: 0x2788
 // Size: 0xa4
 function cleanup(*name, *starting, *direct, *player) {
     level flag::set("end_binocs");
-    level.var_49a5d2a4 = getvehiclearray("af_chase_veh", "targetname")[0];
-    level.var_49a5d2a4 val::set(#"hash_57927fe94524d139", "allowdeath", 0);
+    level.chase_truck = getvehiclearray("af_chase_veh", "targetname")[0];
+    level.chase_truck val::set(#"chase_truck", "allowdeath", 0);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0xd9613376, Offset: 0x2838
 // Size: 0x44
 function init_flags() {
@@ -396,16 +395,16 @@ function init_flags() {
     level flag::init("af_fade_in_complete");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x94aae9b2, Offset: 0x2888
 // Size: 0x34
 function init_clientfields() {
     clientfield::register("world", "fake_snipercam_slomo", 1, 1, "int");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x1a83562f, Offset: 0x28c8
 // Size: 0xc4
 function function_22b7fffd() {
@@ -415,8 +414,8 @@ function function_22b7fffd() {
     scene::add_scene_func("scene_tkd_hit3_intro_overlook_enemy4", &function_f0cab8f5, "overlook_shot");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x3726caf6, Offset: 0x2998
 // Size: 0x4c
 function function_2fc20b49(a_ents) {
@@ -424,8 +423,8 @@ function function_2fc20b49(a_ents) {
     thread function_94c3f34a(#"hash_f4e2cb35f1a71a6", a_ents);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x7440cfe, Offset: 0x29f0
 // Size: 0xbc
 function function_309e4828(a_ents) {
@@ -437,8 +436,8 @@ function function_309e4828(a_ents) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0xde00c3ea, Offset: 0x2ab8
 // Size: 0x5a
 function function_f0cab8f5(a_ents) {
@@ -448,19 +447,19 @@ function function_f0cab8f5(a_ents) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x21380e23, Offset: 0x2b20
 // Size: 0xa4
 function function_9b3565b1(a_ents) {
     level endon(#"hash_1a8ccb31e7a09c0e");
     level waittill(#"hash_4d3bb4cb42226cd8");
-    level.var_fac9425c = a_ents[#"hash_4b83e4cb49ee37d1"];
-    thread scene::play("scene_tkd_hit3_intro_overlook_guy2", "overlook_shot_part2", [level.var_fac9425c, level.var_2124e12b]);
+    level.af_enemy2 = a_ents[#"af_enemy2"];
+    thread scene::play("scene_tkd_hit3_intro_overlook_guy2", "overlook_shot_part2", [level.af_enemy2, level.var_2124e12b]);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 2, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 2, eflags: 0x0
 // Checksum 0x37488da3, Offset: 0x2bd0
 // Size: 0x74
 function function_94c3f34a(name, ents) {
@@ -471,7 +470,7 @@ function function_94c3f34a(name, ents) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
+// Namespace tkdn_af_hill/cp_takedown_af_hill
 // Params 0, eflags: 0x0
 // Checksum 0x60b21f83, Offset: 0x2c50
 // Size: 0x34
@@ -480,8 +479,8 @@ function function_78bc26d5() {
     self vehicle::toggle_force_driver_taillights(1);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0xca678bc1, Offset: 0x2c90
 // Size: 0x44
 function function_f7c7ce51() {
@@ -489,12 +488,12 @@ function function_f7c7ce51() {
     level.arash namespace_979752dc::function_2324f175(0);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x462fdfaf, Offset: 0x2ce0
 // Size: 0x2d4
 function function_dd77a447() {
-    level endoncallback(&function_8c38a6f0, #"hash_63e5acd07208c35d");
+    level endoncallback(&function_8c38a6f0, #"car_arrive");
     player = getplayers()[0];
     player util::show_hint_text(#"hash_a9076dcaa02f4e", 0, "camera_up", -1);
     waitframe(1);
@@ -513,25 +512,25 @@ function function_dd77a447() {
     while (player getcurrentweapon().name != "eq_binoculars" || !player adsbuttonpressed()) {
         waitframe(1);
     }
-    wait(2);
+    wait 2;
     thread function_d75e55a1(struct::get("cargo_bay_lookat", "targetname"), "vox_cp_tdwn_07100_adlr_anysignofarash_3c", 6);
     thread function_8c011eca();
-    wait(7);
+    wait 7;
     guys = getentarray("af_intro_enemies", "script_noteworthy", 1);
     lines = ["vox_cp_tdwn_07100_adlr_thatsnothim_fc", "vox_cp_tdwn_07100_adlr_nope_c0", "vox_cp_tdwn_07100_adlr_justaguard_88"];
     thread function_d75e55a1(guys, lines);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x6 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x4
 // Checksum 0xce2eaad0, Offset: 0x2fc0
 // Size: 0x44
 function private function_8c38a6f0(*parms) {
     getplayers()[0] notifyonplayercommandremove("binoculars", "+actionslot 4");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0xa4e59909, Offset: 0x3010
 // Size: 0x54
 function function_76b7bfa7() {
@@ -540,8 +539,8 @@ function function_76b7bfa7() {
     thread function_dd77a447();
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x6b3387e6, Offset: 0x3070
 // Size: 0xd4
 function function_8c011eca() {
@@ -555,7 +554,7 @@ function function_8c011eca() {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
+// Namespace tkdn_af_hill/cp_takedown_af_hill
 // Params 0, eflags: 0x0
 // Checksum 0xb5160212, Offset: 0x3150
 // Size: 0x7c
@@ -565,14 +564,14 @@ function function_9f929cf3() {
     self vehicle::toggle_force_driver_taillights(0);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 4, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 4, eflags: 0x0
 // Checksum 0x7f8a5007, Offset: 0x31d8
 // Size: 0x342
 function function_d75e55a1(targets, lines, fov = 2, var_dc8ec980 = 5) {
     level endon(#"player_break_stealth_fired");
     level endon(#"player_break_stealth_tarmac");
-    level endon(#"hash_63e5acd07208c35d");
+    level endon(#"car_arrive");
     if (!isarray(targets)) {
         targets = [targets];
     }
@@ -592,12 +591,12 @@ function function_d75e55a1(targets, lines, fov = 2, var_dc8ec980 = 5) {
         var_32a7c3bf = undefined;
         while (!isdefined(var_32a7c3bf)) {
             eye_pos = player getplayercamerapos();
-            var_8067795d = player getplayerangles();
-            var_a74a4e75 = anglestoforward(var_8067795d);
+            eye_angles = player getplayerangles();
+            eye_dir = anglestoforward(eye_angles);
             foreach (targ in targets) {
                 /#
                 #/
-                if (!is_true(targ.var_181d1cf5) && targ function_e779ff3c(player, eye_pos, var_8067795d, var_dd9a54cd, var_a74a4e75, fov)) {
+                if (!is_true(targ.var_181d1cf5) && targ function_e779ff3c(player, eye_pos, eye_angles, var_dd9a54cd, eye_dir, fov)) {
                     var_32a7c3bf = targ;
                     break;
                 }
@@ -610,30 +609,30 @@ function function_d75e55a1(targets, lines, fov = 2, var_dc8ec980 = 5) {
         } else {
             level flag::set(lines[i]);
         }
-        wait(var_dc8ec980);
+        wait var_dc8ec980;
         i++;
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 6, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 6, eflags: 0x0
 // Checksum 0x33297326, Offset: 0x3528
 // Size: 0xee
-function function_e779ff3c(player, eye_pos, var_8067795d, var_dd9a54cd, *var_a74a4e75, *fov) {
-    level endon(#"hash_63e5acd07208c35d");
+function function_e779ff3c(player, eye_pos, eye_angles, var_dd9a54cd, *eye_dir, *fov) {
+    level endon(#"car_arrive");
     self endon(#"death");
     target_pos = self.origin + (0, 0, 30);
-    if (var_8067795d getcurrentweapon().name != "eq_binoculars" || !var_8067795d adsbuttonpressed()) {
+    if (eye_angles getcurrentweapon().name != "eq_binoculars" || !eye_angles adsbuttonpressed()) {
         return false;
     }
-    if (util::within_fov(var_dd9a54cd, var_a74a4e75, target_pos, fov)) {
+    if (util::within_fov(var_dd9a54cd, eye_dir, target_pos, fov)) {
         return true;
     }
     return false;
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x4e7e1399, Offset: 0x3620
 // Size: 0xcc
 function function_b12fabe5(player) {
@@ -651,8 +650,8 @@ function function_b12fabe5(player) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x2224f4ec, Offset: 0x36f8
 // Size: 0x94
 function function_9967d19b(var_5077b72a) {
@@ -664,8 +663,8 @@ function function_9967d19b(var_5077b72a) {
     array::thread_all(guys, &function_f1f9011d);
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0xbabba64a, Offset: 0x3798
 // Size: 0x144
 function function_f1f9011d() {
@@ -683,8 +682,8 @@ function function_f1f9011d() {
     self stopanimscripted();
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x6ad4d3f, Offset: 0x38e8
 // Size: 0x204
 function function_cc465a2(player) {
@@ -692,25 +691,25 @@ function function_cc465a2(player) {
     level endon(#"hash_1a8ccb31e7a09c0e");
     thread function_b12fabe5(player);
     ret = level flag::wait_till_any(["player_break_stealth_fired", "player_break_stealth_tarmac", "stealth_spotted"]);
-    snd::function_7db65a93(#"hash_1e58e46360c0a83b");
+    snd::client_msg(#"hash_1e58e46360c0a83b");
     if (ret._notify == "stealth_spotted" && level flag::get("player_fired_at_arash")) {
         return;
     }
     if (ret._notify == #"player_break_stealth_tarmac" && level flag::get("start_sniping")) {
         return;
     }
-    wait(0.2);
+    wait 0.2;
     level.woods thread dialogue::queue("vox_cp_tdwn_07200_wood_masonno_1d");
     level scene::stop("scene_tkd_hit3_intro_overlook");
     level scene::stop("scene_tkd_hit3_intro_overlook_adler");
     function_9967d19b();
-    wait(3);
+    wait 3;
     level util::missionfailedwrapper(#"hash_307e01d87701c37");
     level.player notifyonplayercommandremove("blow_rc_car", "+attack");
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 1, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 1, eflags: 0x0
 // Checksum 0x5041fef7, Offset: 0x3af8
 // Size: 0x398
 function function_a2015343(var_d3440450) {
@@ -735,8 +734,8 @@ function function_a2015343(var_d3440450) {
     level.woods.radius = 50;
     level.woods.enableterrainik = 1;
     if (isdefined(var_d3440450)) {
-        var_57d91ef1 = struct::get_array(var_d3440450 + "_start", "targetname");
-        foreach (spot in var_57d91ef1) {
+        start_spots = struct::get_array(var_d3440450 + "_start", "targetname");
+        foreach (spot in start_spots) {
             if (spot.script_noteworthy == "adler") {
                 level.adler forceteleport(spot.origin, spot.angles);
             }
@@ -747,8 +746,8 @@ function function_a2015343(var_d3440450) {
     }
 }
 
-// Namespace tkdn_af_hill/namespace_a19fe693
-// Params 0, eflags: 0x2 linked
+// Namespace tkdn_af_hill/cp_takedown_af_hill
+// Params 0, eflags: 0x0
 // Checksum 0x5044d0a2, Offset: 0x3e98
 // Size: 0x224
 function function_61f33d07() {

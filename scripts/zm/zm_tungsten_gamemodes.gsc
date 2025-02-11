@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace zm_tungsten_gamemodes;
 
 // Namespace zm_tungsten_gamemodes/zm_tungsten_gamemodes

@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_dcd37093;
 
 // Namespace namespace_dcd37093/namespace_25c52f74
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb094e3ac, Offset: 0x2d8
 // Size: 0x494
 function function_d28e9b17() {
@@ -86,7 +85,7 @@ function function_d28e9b17() {
 }
 
 // Namespace namespace_dcd37093/namespace_25c52f74
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5ade3241, Offset: 0x778
 // Size: 0x94
 function function_c2d94d61() {
@@ -98,7 +97,7 @@ function function_c2d94d61() {
 }
 
 // Namespace namespace_dcd37093/namespace_25c52f74
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x4b1f6f82, Offset: 0x818
 // Size: 0x2c8
 function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
@@ -146,7 +145,7 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
 }
 
 // Namespace namespace_dcd37093/namespace_25c52f74
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8416e37a, Offset: 0xae8
 // Size: 0x136
 function private function_61888137(*org) {
@@ -158,21 +157,21 @@ function private function_61888137(*org) {
     while (!namespace_dfc652ee::function_f759a457()) {
         waitframe(1);
     }
-    wait(timeout - 3);
+    wait timeout - 3;
     if (isdefined(self)) {
         self notify(#"hash_6733dfa48ff87a81");
     }
-    wait(3);
+    wait 3;
     self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_boxers_active_end");
     self notify(#"hash_1e2c098e8231a30f");
 }
 
 // Namespace namespace_dcd37093/namespace_25c52f74
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xda9f2a53, Offset: 0xc28
 // Size: 0x334
 function private function_f0855523(org) {
-    result = self waittill(#"hash_1e2c098e8231a30f", #"entering_last_stand", #"hash_77af89fb2b44942f", #"hash_df25520ab279dff", #"hash_562d458e34274132", #"player_died", #"disconnect", #"enter_vehicle", #"death", #"clone_shutdown");
+    result = self waittill(#"hash_1e2c098e8231a30f", #"entering_last_stand", #"kill_shield", #"hash_df25520ab279dff", #"hash_562d458e34274132", #"player_died", #"disconnect", #"enter_vehicle", #"death", #"clone_shutdown");
     self notify(#"hash_1e2c098e8231a30f");
     if (isdefined(org) && isdefined(org.trigger1)) {
         org.trigger1 delete();
@@ -197,7 +196,7 @@ function private function_f0855523(org) {
         }
         self.doa.var_c3159deb = undefined;
     }
-    wait(5);
+    wait 5;
     if (isdefined(org) && isdefined(org.var_f9c2f48c)) {
         org.var_f9c2f48c delete();
     }

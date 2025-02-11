@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\ai\state.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\ai\state;
 
 #namespace ai_leave;
 
@@ -79,7 +78,7 @@ function function_e35eee4d() {
         if (!canbeseen) {
             self delete();
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 

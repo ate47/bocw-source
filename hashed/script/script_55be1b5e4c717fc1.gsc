@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\cp_common\gamedifficulty.gsc;
+#using scripts\core_common\system_shared;
+#using scripts\cp_common\gamedifficulty;
 
 #namespace gadget_health_regen;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x59059c20, Offset: 0xd8
 // Size: 0x34
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x82180c7a, Offset: 0x118
 // Size: 0x42
 function function_71343595(*var_b16fafc9, *weapon) {
@@ -30,7 +29,7 @@ function function_71343595(*var_b16fafc9, *weapon) {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x292be9cb, Offset: 0x168
 // Size: 0x3a
 function function_3211c56a(*var_337562a8) {

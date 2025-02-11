@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
 
 #namespace zm_frontend_zm_bgb_chance;
 
@@ -18,16 +17,16 @@
     // Checksum 0xedec958f, Offset: 0xb0
     // Size: 0x1bc
     function zm_frontend_bgb_devgui() {
-        setdvar(#"bgb_test_power_boost_devgui", "<unknown string>");
-        setdvar(#"bgb_test_success_fail_devgui", "<unknown string>");
-        bgb_devgui_base = "<unknown string>";
+        setdvar(#"bgb_test_power_boost_devgui", "<dev string:x38>");
+        setdvar(#"bgb_test_success_fail_devgui", "<dev string:x38>");
+        bgb_devgui_base = "<dev string:x3c>";
         a_n_amounts = array(1, 5, 10, 100);
         for (i = 0; i < a_n_amounts.size; i++) {
             n_amount = a_n_amounts[i];
-            adddebugcommand(bgb_devgui_base + i + "<unknown string>" + n_amount + "<unknown string>" + n_amount + "<unknown string>");
+            adddebugcommand(bgb_devgui_base + i + "<dev string:x59>" + n_amount + "<dev string:x64>" + n_amount + "<dev string:x78>");
         }
-        adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + 1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + 1 + "<unknown string>");
+        adddebugcommand("<dev string:x7f>" + "<dev string:xaf>" + "<dev string:xb6>" + "<dev string:xd5>" + 1 + "<dev string:xda>");
+        adddebugcommand("<dev string:xe0>" + "<dev string:xaf>" + "<dev string:x111>" + "<dev string:xd5>" + 1 + "<dev string:xda>");
         level thread bgb_devgui_think();
     }
 
@@ -41,27 +40,27 @@
         for (;;) {
             n_val_powerboost = getdvarstring(#"bgb_test_power_boost_devgui");
             n_val_successfail = getdvarstring(#"bgb_test_success_fail_devgui");
-            if (n_val_powerboost != "<unknown string>") {
+            if (n_val_powerboost != "<dev string:x38>") {
                 b_powerboost_toggle = !b_powerboost_toggle;
-                level clientfield::set("<unknown string>", b_powerboost_toggle);
+                level clientfield::set("<dev string:x131>", b_powerboost_toggle);
                 if (b_powerboost_toggle) {
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:x14f>");
                 } else {
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:x168>");
                 }
             }
-            if (n_val_successfail != "<unknown string>") {
+            if (n_val_successfail != "<dev string:x38>") {
                 b_successfail_toggle = !b_successfail_toggle;
-                level clientfield::set("<unknown string>", b_successfail_toggle);
+                level clientfield::set("<dev string:x182>", b_successfail_toggle);
                 if (b_successfail_toggle) {
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:x1a1>");
                 } else {
-                    iprintlnbold("<unknown string>");
+                    iprintlnbold("<dev string:x1b1>");
                 }
             }
-            setdvar(#"bgb_test_power_boost_devgui", "<unknown string>");
-            setdvar(#"bgb_test_success_fail_devgui", "<unknown string>");
-            wait(0.5);
+            setdvar(#"bgb_test_power_boost_devgui", "<dev string:x38>");
+            setdvar(#"bgb_test_success_fail_devgui", "<dev string:x38>");
+            wait 0.5;
         }
     }
 

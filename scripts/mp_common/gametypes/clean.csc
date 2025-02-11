@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace clean;
 
@@ -10,8 +9,8 @@
 // Checksum 0xad93b8e3, Offset: 0x170
 // Size: 0x294
 function event_handler[gametype_init] main(*eventstruct) {
-    clientfield::register_clientuimodel("hudItems.cleanCarryCount", #"hash_6f4b11a0bee9b73d", #"cleancarrycount", 14000, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.cleanCarryFull", #"hash_6f4b11a0bee9b73d", #"cleancarryfull", 14000, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.cleanCarryCount", #"hud_items", #"cleancarrycount", 14000, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.cleanCarryFull", #"hud_items", #"cleancarryfull", 14000, 1, "int", undefined, 0, 0);
     clientfield::register("scriptmover", "taco_flag", 14000, 2, "int", &function_11abf5b2, 0, 0);
     clientfield::register("allplayers", "taco_carry", 14000, 1, "int", &function_aa7bb941, 0, 0);
     clientfield::register("scriptmover", "taco_waypoint", 14000, 1, "int", &function_a4a5d612, 0, 0);

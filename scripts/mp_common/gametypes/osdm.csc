@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace osdm;
 
 // Namespace osdm/gametype_init

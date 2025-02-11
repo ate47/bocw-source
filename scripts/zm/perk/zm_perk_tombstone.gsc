@@ -1,32 +1,31 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_5f261a5d57de5f7c;
-#using script_4ccfb58a9443a60b;
-#using script_7a5293d92c61c788;
-#using scripts\zm_common\gametypes\zm_gametype.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_vo.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using script_6167e26342be354b;
-#using scripts\core_common\lui_shared.gsc;
 #using script_471b31bd963b388e;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_4ccfb58a9443a60b;
+#using script_5f261a5d57de5f7c;
+#using script_6167e26342be354b;
+#using script_7a5293d92c61c788;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\gametypes\zm_gametype;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_vo;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_perk_tombstone;
 
@@ -39,7 +38,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xed380ff5, Offset: 0x488
 // Size: 0x14
 function private preinit() {
@@ -47,7 +46,7 @@ function private preinit() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb7d1b507, Offset: 0x4a8
 // Size: 0x274
 function function_27473e44() {
@@ -68,7 +67,7 @@ function function_27473e44() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbe062b40, Offset: 0x728
 // Size: 0xf6
 function precache() {
@@ -84,7 +83,7 @@ function precache() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5dfb3654, Offset: 0x828
 // Size: 0x114
 function register_clientfield() {
@@ -96,7 +95,7 @@ function register_clientfield() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbd9c1a93, Offset: 0x948
 // Size: 0x2c
 function set_clientfield(state) {
@@ -104,7 +103,7 @@ function set_clientfield(state) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x2be3c07d, Offset: 0x980
 // Size: 0x9a
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -120,7 +119,7 @@ function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision)
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xa28
 // Size: 0x4
 function perk_give() {
@@ -128,7 +127,7 @@ function perk_give() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x21e27bb6, Offset: 0xa38
 // Size: 0x3e
 function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
@@ -137,7 +136,7 @@ function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc868fe5b, Offset: 0xa80
 // Size: 0xc0
 function function_7c589e7(slot, item_name) {
@@ -153,7 +152,7 @@ function function_7c589e7(slot, item_name) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcef2ae51, Offset: 0xb48
 // Size: 0x74
 function on_player_laststand() {
@@ -165,7 +164,7 @@ function on_player_laststand() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa8a8964c, Offset: 0xbc8
 // Size: 0x522
 function function_716834ed() {
@@ -225,7 +224,7 @@ function function_716834ed() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x21d9d1e1, Offset: 0x10f8
 // Size: 0x282
 function function_314e7dbf(stash) {
@@ -275,7 +274,7 @@ function function_314e7dbf(stash) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe87206b0, Offset: 0x1388
 // Size: 0x6c
 function on_player_revived(*params) {
@@ -287,7 +286,7 @@ function on_player_revived(*params) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x69701a6f, Offset: 0x1400
 // Size: 0x34
 function on_joined_spectate() {
@@ -297,7 +296,7 @@ function on_joined_spectate() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x33d4175c, Offset: 0x1440
 // Size: 0x2c
 function on_spawned() {
@@ -306,7 +305,7 @@ function on_spawned() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb51917c6, Offset: 0x1478
 // Size: 0x1f6
 function function_dfd10619() {
@@ -314,7 +313,7 @@ function function_dfd10619() {
     level endon(#"end_game");
     usinggamepad = self gamepadusedlast();
     while (usinggamepad && self weaponswitchbuttonpressed() || !usinggamepad && self fragbuttonpressed()) {
-        wait(1);
+        wait 1;
     }
     self.var_1399a943 = 1;
     var_6de5125c = 0;
@@ -323,7 +322,7 @@ function function_dfd10619() {
         if (!is_true(self.revivetrigger.beingrevived) && !is_true(self.var_16735873) && self.bleedout_time > 4) {
             var_6de5125c = 1;
         }
-        wait(0.1);
+        wait 0.1;
     }
     if (is_true(self.var_45ef153) || is_true(level.var_45ef153)) {
         self zm_laststand::auto_revive();
@@ -334,7 +333,7 @@ function function_dfd10619() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x162774c6, Offset: 0x1678
 // Size: 0xe6
 function function_c1ae3843() {
@@ -356,7 +355,7 @@ function function_c1ae3843() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2b24fb5, Offset: 0x1768
 // Size: 0x170
 function spawn_corpse() {
@@ -375,13 +374,13 @@ function spawn_corpse() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfb920f0f, Offset: 0x18e0
 // Size: 0x22a
 function function_cf07c32a() {
     self endon(#"death");
     while (true) {
-        wait(1);
+        wait 1;
         var_3ab39d83 = self.origin + (0, 0, 30);
         var_9568b0fc = anglestoforward(self.angles);
         var_9568b0fc = vectornormalize(var_9568b0fc);
@@ -408,7 +407,7 @@ function function_cf07c32a() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x31bf7e02, Offset: 0x1b18
 // Size: 0x16c
 function revive_trigger_spawn() {
@@ -430,14 +429,14 @@ function revive_trigger_spawn() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2edf8a79, Offset: 0x1c90
 // Size: 0x624
 function revive_trigger_think(t_secondary) {
     self endon(#"disconnect", #"zombified", #"stop_revive_trigger", #"death");
     level endon(#"end_game");
     while (true) {
-        wait(0.1);
+        wait 0.1;
         if (isdefined(t_secondary)) {
             t_revive = t_secondary;
         } else if (isdefined(self.revivetrigger)) {
@@ -517,7 +516,7 @@ function revive_trigger_think(t_secondary) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa21c00f2, Offset: 0x22c0
 // Size: 0x512
 function function_fe8b87d5() {
@@ -565,7 +564,7 @@ function function_fe8b87d5() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4e8a70ee, Offset: 0x27e0
 // Size: 0x1d4
 function function_19412563() {
@@ -587,7 +586,7 @@ function function_19412563() {
         } else {
             self val::reset("tombstone_shadow", "disable_usability");
         }
-        wait(0.25);
+        wait 0.25;
     }
     if (isdefined(self)) {
         self val::reset("tombstone_shadow", "disable_usability");
@@ -595,7 +594,7 @@ function function_19412563() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x61aa12bc, Offset: 0x29c0
 // Size: 0xce
 function function_88575fbe() {
@@ -617,12 +616,12 @@ function function_88575fbe() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x20f50fc4, Offset: 0x2a98
 // Size: 0x2b4
 function function_9ebf012d() {
     self endon(#"disconnect");
-    println("<unknown string>");
+    println("<dev string:x38>");
     spawnpoint = zm_gametype::onfindvalidspawnpoint();
     origin = spawnpoint.origin;
     angles = spawnpoint.angles;
@@ -668,7 +667,7 @@ function function_9ebf012d() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd37b0756, Offset: 0x2d58
 // Size: 0x160
 function function_26a6d33c() {
@@ -684,7 +683,7 @@ function function_26a6d33c() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa0df8e99, Offset: 0x2ec0
 // Size: 0x10c
 function function_b3b8c37d(e_reviver) {
@@ -705,7 +704,7 @@ function function_b3b8c37d(e_reviver) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7490e05c, Offset: 0x2fd8
 // Size: 0xf4
 function function_eedd0275() {
@@ -723,7 +722,7 @@ function function_eedd0275() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe3d77461, Offset: 0x30d8
 // Size: 0x74
 function private function_3c87c880() {
@@ -734,7 +733,7 @@ function private function_3c87c880() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x63213a7a, Offset: 0x3158
 // Size: 0x4c
 function function_6cc3fb63() {
@@ -744,7 +743,7 @@ function function_6cc3fb63() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc30fe052, Offset: 0x31b0
 // Size: 0x12e
 function function_575d770f() {
@@ -768,7 +767,7 @@ function function_575d770f() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7399c665, Offset: 0x32e8
 // Size: 0xe4
 function function_3db7ced3() {
@@ -784,7 +783,7 @@ function function_3db7ced3() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6803cbf0, Offset: 0x33d8
 // Size: 0x146
 function on_player_bleedout() {
@@ -795,7 +794,7 @@ function on_player_bleedout() {
             self.var_6d71557a = undefined;
         }
     }
-    wait(1);
+    wait 1;
     if (!isdefined(self)) {
         return;
     }
@@ -815,7 +814,7 @@ function on_player_bleedout() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x76495fc4, Offset: 0x3528
 // Size: 0x1c
 function on_disconnect() {
@@ -823,7 +822,7 @@ function on_disconnect() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9b3d8e43, Offset: 0x3550
 // Size: 0x218
 function function_8fddd50e() {
@@ -845,7 +844,7 @@ function function_8fddd50e() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x603760d1, Offset: 0x3770
 // Size: 0xb4
 function function_330c66cc() {
@@ -860,7 +859,7 @@ function function_330c66cc() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ada45c4, Offset: 0x3830
 // Size: 0x9e
 function function_cde4678f() {
@@ -875,7 +874,7 @@ function function_cde4678f() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x855f03aa, Offset: 0x38d8
 // Size: 0x52
 function function_c7f0270c(player) {
@@ -888,7 +887,7 @@ function function_c7f0270c(player) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5e0b9213, Offset: 0x3938
 // Size: 0x6c
 function function_f11599cf(player_owner) {
@@ -899,7 +898,7 @@ function function_f11599cf(player_owner) {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x301bc4ba, Offset: 0x39b0
 // Size: 0x14c
 function function_64d23fc() {
@@ -917,7 +916,7 @@ function function_64d23fc() {
         player.var_67a30a9 = undefined;
         arrayremoveindex(player.var_7d3caa9, 0);
     }
-    wait(0.1);
+    wait 0.1;
     if (isdefined(self)) {
         playfx(#"hash_7338c45a04f946da", self.origin);
     }
@@ -927,7 +926,7 @@ function function_64d23fc() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xff68939b, Offset: 0x3b08
 // Size: 0x686
 function function_8bc73ff9() {
@@ -1018,12 +1017,12 @@ function function_8bc73ff9() {
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb54aebbd, Offset: 0x4198
 // Size: 0x4c
 function special_revive() {
     self endon(#"disconnect");
-    wait(1);
+    wait 1;
     while (level.var_9427911d > 1) {
         waitframe(1);
     }

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace serversettings;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace serversettings/serversettings
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3e2acae4, Offset: 0x120
 // Size: 0x24
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace serversettings/serversettings
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x617ce26e, Offset: 0x150
 // Size: 0x4c6
 function init() {
@@ -65,12 +64,12 @@ function init() {
     constrain_map_size(level.mapsize);
     for (;;) {
         update();
-        wait(5);
+        wait 5;
     }
 }
 
 // Namespace serversettings/serversettings
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xace2cec8, Offset: 0x620
 // Size: 0x1f4
 function update() {
@@ -100,7 +99,7 @@ function update() {
 }
 
 // Namespace serversettings/serversettings
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x73419522, Offset: 0x820
 // Size: 0x234
 function constrain_gametype(gametype) {
@@ -146,7 +145,7 @@ function constrain_gametype(gametype) {
 }
 
 // Namespace serversettings/serversettings
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9bd4e54d, Offset: 0xa60
 // Size: 0x1b4
 function constrain_map_size(mapsize) {

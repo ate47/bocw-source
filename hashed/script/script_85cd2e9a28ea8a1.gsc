@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\snd_utility.gsc;
 #using script_3dc93ca9902a9cda;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\snd_utility;
 
 #namespace snd;
 
 /#
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x64c55d1, Offset: 0xa8
     // Size: 0x154
     function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
-        if (isdefined(text) == 0 || text == "<unknown string>") {
+        if (isdefined(text) == 0 || text == "<dev string:x38>") {
             return;
         }
         color = function_ea2f17d1(color, (1, 1, 1));
@@ -28,7 +27,7 @@
         debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, duration);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 2, eflags: 0x0
     // Checksum 0xb317af6f, Offset: 0x208
     // Size: 0x134
@@ -48,7 +47,7 @@
         return center;
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 2, eflags: 0x0
     // Checksum 0x7dc8fc41, Offset: 0x348
     // Size: 0xa4
@@ -61,7 +60,7 @@
         return defaultpos;
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x4
     // Checksum 0xdcca15ce, Offset: 0x3f8
     // Size: 0x41c
@@ -102,10 +101,10 @@
             }
             framefrac = float(framecount) / float(var_48c93ed9);
             framefrac = math::clamp(framefrac, 0, 1);
-            alpha = function_b918d683(1 - framefrac, "<unknown string>");
+            alpha = function_b918d683(1 - framefrac, "<dev string:x3c>");
             var_8b9208e = alpha * alpha;
             colorscale = function_2677a7e2(color, alpha);
-            function_65bb0ccd(text, posx, posy, scale, "<unknown string>", colorscale, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
+            function_65bb0ccd(text, posx, posy, scale, "<dev string:x47>", colorscale, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
             framecount += 1;
             waitframe(1);
         }
@@ -114,7 +113,7 @@
         }
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x2bd59671, Offset: 0x820
     // Size: 0x1a4
@@ -137,15 +136,15 @@
         println(text);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x8041cb65, Offset: 0x9d0
     // Size: 0x64
-    function function_fa8480e6(origin, text, color, alpha, scale, duration, centered) {
+    function snd_print3d(origin, text, color, alpha, scale, duration, centered) {
         print3d(origin, text, color, alpha, scale, duration, centered);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x691a9b8a, Offset: 0xa40
     // Size: 0x64
@@ -153,7 +152,7 @@
         print3d(text, color, alpha, scale, duration, right, 1);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 12, eflags: 0x0
     // Checksum 0x26c5b635, Offset: 0xab0
     // Size: 0x3c4
@@ -161,7 +160,7 @@
         color = function_ea2f17d1(color, (1, 1, 1));
         alpha = function_ea2f17d1(alpha, 1);
         scale = function_ea2f17d1(scale, 1);
-        var_6c897a55 = function_ea2f17d1(var_6c897a55, "<unknown string>");
+        var_6c897a55 = function_ea2f17d1(var_6c897a55, "<dev string:x4c>");
         duration = function_ea2f17d1(duration, 1);
         offset = (0, 0, 0);
         width = 11 * scale * text.size;
@@ -202,7 +201,7 @@
         function_669c57bc(position[0], position[1], text, color, alpha, scale, duration);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 11, eflags: 0x0
     // Checksum 0x745c490, Offset: 0xe80
     // Size: 0x6b4
@@ -210,13 +209,13 @@
         color = function_ea2f17d1(color, (1, 1, 1));
         alpha = function_ea2f17d1(alpha, 1);
         scale = function_ea2f17d1(scale, 1);
-        var_6c897a55 = function_ea2f17d1(var_6c897a55, "<unknown string>");
+        var_6c897a55 = function_ea2f17d1(var_6c897a55, "<dev string:x4c>");
         duration = int(function_ea2f17d1(duration, 1));
         var_b69585e4 = scale < 0;
         scale = abs(scale);
         textsize = text.size;
-        if (issubstr(text, "<unknown string>")) {
-            lines = strtok(text, "<unknown string>");
+        if (issubstr(text, "<dev string:x54>")) {
+            lines = strtok(text, "<dev string:x54>");
             if (isarray(lines) && lines.size > 1) {
                 longest = 0;
                 foreach (line in lines) {
@@ -287,7 +286,7 @@
         print3d(position, text, color, alpha, scale, duration, centered);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 4, eflags: 0x4
     // Checksum 0x53916600, Offset: 0x1540
     // Size: 0x184
@@ -315,14 +314,14 @@
         }
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 4, eflags: 0x4
     // Checksum 0xdbe6df7e, Offset: 0x16d0
     // Size: 0x1fa
     function private function_6ee9efa7(color, depthtest, duration, offset) {
-        assert(isdefined(self.origin) == 1, "<unknown string>");
-        assert(isvec(color) == 1, "<unknown string>");
-        assert(isdefined(duration) == 1, "<unknown string>");
+        assert(isdefined(self.origin) == 1, "<dev string:x59>");
+        assert(isvec(color) == 1, "<dev string:x7e>");
+        assert(isdefined(duration) == 1, "<dev string:x9c>");
         framecount = 0;
         var_5c8bd7d0 = array();
         var_5c8bd7d0[0] = self.origin;
@@ -346,15 +345,15 @@
         }
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 5, eflags: 0x0
     // Checksum 0xb7dfc480, Offset: 0x18d8
     // Size: 0x15c
-    function function_31d6fc52(var_9632a625, color, depthtest, duration, offset) {
+    function snd_drawpath(var_9632a625, color, depthtest, duration, offset) {
         color = function_ea2f17d1(color, (1, 1, 1));
         depthtest = function_ea2f17d1(depthtest, 0);
         duration = function_ea2f17d1(duration, 5);
-        if (function_81fac19d(!isdefined(var_9632a625), "<unknown string>")) {
+        if (function_81fac19d(!isdefined(var_9632a625), "<dev string:xbd>")) {
             return;
         }
         if (is_true(level._snd.var_8c37ff34)) {
@@ -362,11 +361,11 @@
         } else {
             duration = int(20 * duration);
         }
-        assert(duration > 2, "<unknown string>");
+        assert(duration > 2, "<dev string:xe5>");
         var_9632a625 thread function_6ee9efa7(color, depthtest, duration, offset);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x8ad4b588, Offset: 0x1a40
     // Size: 0x404
@@ -404,7 +403,7 @@
         }
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x9a76f413, Offset: 0x1e50
     // Size: 0x64
@@ -412,7 +411,7 @@
         function_a787fe30(origin, angles, var_81cc59c8, color, alpha, depthtest, duration);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 7, eflags: 0x0
     // Checksum 0x274e5b09, Offset: 0x1ec0
     // Size: 0x2ac
@@ -445,7 +444,7 @@
         line(origin - up, origin + up, colb, alpha, depthtest, duration);
     }
 
-    // Namespace snd/namespace_ce2d072f
+    // Namespace snd/snd_draw
     // Params 8, eflags: 0x0
     // Checksum 0xde28ddaa, Offset: 0x2178
     // Size: 0x384
@@ -461,19 +460,19 @@
         arrow_forward = anglestoforward(angles);
         arrowhead_forward = arrow_forward;
         arrowhead_right = anglestoright(angles);
-        var_54ff912b = anglestoup(angles);
-        var_feb4bec6 = var_54ff912b;
+        arrowhead_up = anglestoup(angles);
+        arrowhead_down = arrowhead_up;
         arrow_forward = vectorscale(arrow_forward, length);
         arrowhead_forward = vectorscale(arrowhead_forward, length - var_e3c3c3d9);
         arrowhead_right = vectorscale(arrowhead_right, var_e3c3c3d9);
-        var_54ff912b = vectorscale(var_54ff912b, var_e3c3c3d9);
-        var_feb4bec6 = vectorscale(var_feb4bec6, -1 * var_e3c3c3d9);
+        arrowhead_up = vectorscale(arrowhead_up, var_e3c3c3d9);
+        arrowhead_down = vectorscale(arrowhead_down, -1 * var_e3c3c3d9);
         o = origin;
         a = o + arrow_forward;
         b = o + arrowhead_forward - arrowhead_right;
         c = o + arrowhead_forward + arrowhead_right;
-        d = o + arrowhead_forward + var_54ff912b;
-        e = o + arrowhead_forward + var_feb4bec6;
+        d = o + arrowhead_forward + arrowhead_up;
+        e = o + arrowhead_forward + arrowhead_down;
         line(o, a, color, alpha, depthtest, duration);
         line(a, b, color, alpha, depthtest, duration);
         line(b, c, color, alpha, depthtest, duration);
@@ -485,8 +484,8 @@
 
 #/
 
-// Namespace snd/namespace_ce2d072f
-// Params 1, eflags: 0x2 linked
+// Namespace snd/snd_draw
+// Params 1, eflags: 0x0
 // Checksum 0xda089e8e, Offset: 0x2508
 // Size: 0x26
 function function_79f31114(screenheight) {
@@ -494,8 +493,8 @@ function function_79f31114(screenheight) {
     return var_bfd4f22d;
 }
 
-// Namespace snd/namespace_ce2d072f
-// Params 2, eflags: 0x2 linked
+// Namespace snd/snd_draw
+// Params 2, eflags: 0x0
 // Checksum 0xd0525f8b, Offset: 0x2538
 // Size: 0xca
 function function_df9f894b(var_841c640a, screensize) {
@@ -506,8 +505,8 @@ function function_df9f894b(var_841c640a, screensize) {
     return array(int(var_a6a4856f), int(var_81ae8d4d));
 }
 
-// Namespace snd/namespace_ce2d072f
-// Params 2, eflags: 0x2 linked
+// Namespace snd/snd_draw
+// Params 2, eflags: 0x0
 // Checksum 0xcf8267c0, Offset: 0x2610
 // Size: 0x10a
 function function_da7b7c0e(var_841c640a, screensize) {

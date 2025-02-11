@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_59f62971655f7103;
-#using scripts\core_common\battlechatter.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace grapple;
 

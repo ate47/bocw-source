@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
+#using script_164a456ce05c3483;
+#using script_17dcb1172e441bf6;
 #using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
+#using script_1b0b07ff57d1dde3;
+#using script_1ce46999727f2f2b;
+#using script_1ee011cd0961afd7;
 #using script_2a5bf5b4a00cee0d;
 #using script_40f967ad5d18ea74;
 #using script_47851dbeea22fe66;
-#using script_1ce46999727f2f2b;
-#using script_164a456ce05c3483;
 #using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_1b0b07ff57d1dde3;
-#using script_1ee011cd0961afd7;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_6e90e490;
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73908d6b, Offset: 0x460
 // Size: 0x87c
 function init() {
@@ -97,7 +96,7 @@ function init() {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1cbed34, Offset: 0xce8
 // Size: 0xac
 function function_db945ce9() {
@@ -111,7 +110,7 @@ function function_db945ce9() {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x764203f7, Offset: 0xda0
 // Size: 0x61c
 function function_3332c6a1() {
@@ -151,7 +150,7 @@ function function_3332c6a1() {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x525206d, Offset: 0x13c8
 // Size: 0x38
 function function_fa6f7ba7() {
@@ -160,11 +159,11 @@ function function_fa6f7ba7() {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa18a4a99, Offset: 0x1408
 // Size: 0x144
 function function_c937e51f(var_f40cf449) {
-    assert(var_f40cf449 < 2048, "<unknown string>");
+    assert(var_f40cf449 < 2048, "<dev string:x38>");
     level endon(#"game_over", #"hash_4254d6c79b4ea2bc");
     self notify("25862a390086cba3");
     self endon("25862a390086cba3");
@@ -184,7 +183,7 @@ function function_c937e51f(var_f40cf449) {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6c6217a0, Offset: 0x1558
 // Size: 0x6ac
 function updatehud() {
@@ -230,7 +229,7 @@ function updatehud() {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf6ddb85e, Offset: 0x1c10
 // Size: 0x6c
 function function_9aff0a25(var_9ba84610) {
@@ -241,7 +240,7 @@ function function_9aff0a25(var_9ba84610) {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xef772df9, Offset: 0x1c88
 // Size: 0xd4
 function showhint(var_9ba84610, set = 1) {
@@ -256,13 +255,13 @@ function showhint(var_9ba84610, set = 1) {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x88700326, Offset: 0x1d68
 // Size: 0xf0
 function function_c28bc3eb(var_9ba84610, set = 1, delay = 0) {
     level endon(#"game_over");
     if (delay > 0) {
-        wait(delay);
+        wait delay;
     }
     foreach (player in getplayers()) {
         player showhint(var_9ba84610, set);
@@ -270,7 +269,7 @@ function function_c28bc3eb(var_9ba84610, set = 1, delay = 0) {
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7babb476, Offset: 0x1e60
 // Size: 0x1d2
 function function_47e11416(id, time = 4, force = 0, var_84f4f42e = 0) {
@@ -287,7 +286,7 @@ function function_47e11416(id, time = 4, force = 0, var_84f4f42e = 0) {
         return;
     }
     while (isdefined(self) && is_true(self.doa.var_91fab440)) {
-        wait(0.5);
+        wait 0.5;
     }
     if (isdefined(self)) {
         self.doa.var_91fab440 = id;
@@ -298,7 +297,7 @@ function function_47e11416(id, time = 4, force = 0, var_84f4f42e = 0) {
     if (!is_true(var_84f4f42e)) {
         self.doa.var_578b6ad4 = gettime() + 10000 + time * 1000;
     }
-    wait(time);
+    wait time;
     if (isdefined(self)) {
         self clientfield::set("set_text_bubble", 0);
         self.doa.var_91fab440 = undefined;

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace status_effect_blind;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_blind/status_effect_blind
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x13d89638, Offset: 0x120
 // Size: 0x6c
 function private preinit() {
@@ -27,11 +26,11 @@ function private preinit() {
 }
 
 // Namespace status_effect_blind/status_effect_blind
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xecfe850c, Offset: 0x198
 // Size: 0x260
 function blind_apply(var_756fda07, weapon, applicant) {
-    self.owner.flashendtime = gettime() + int(var_756fda07.var_77449e9);
+    self.owner.flashendtime = gettime() + int(var_756fda07.seduration);
     self.owner.lastflashedby = applicant;
     self.owner.var_ba6bbd30 = weapon;
     if (self.owner == applicant) {
@@ -61,7 +60,7 @@ function blind_apply(var_756fda07, weapon, applicant) {
 }
 
 // Namespace status_effect_blind/status_effect_blind
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8be74690, Offset: 0x400
 // Size: 0x7e
 function private function_8a261309() {

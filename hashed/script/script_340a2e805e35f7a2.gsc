@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\item_world.gsc;
 #using script_1160d62024d6945b;
-#using script_471b31bd963b388e;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_drop.gsc;
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\territory.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_471b31bd963b388e;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_drop;
+#using scripts\core_common\item_world;
+#using scripts\core_common\struct;
+#using scripts\core_common\territory;
+#using scripts\core_common\territory_util;
 
 #namespace namespace_65181344;
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x69b6e044, Offset: 0x210
 // Size: 0x1b8
 function private function_2c4d3d40() {
@@ -39,12 +38,12 @@ function private function_2c4d3d40() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xec14da01, Offset: 0x3d0
 // Size: 0x324
 function private function_440f0490(itemlistbundle) {
-    assert(isdefined(itemlistbundle) && itemlistbundle.type === "<unknown string>");
-    assert(itemlistbundle.itemlist.size > 0, "<unknown string>" + itemlistbundle.name + "<unknown string>");
+    assert(isdefined(itemlistbundle) && itemlistbundle.type === "<dev string:x38>");
+    assert(itemlistbundle.itemlist.size > 0, "<dev string:x4e>" + itemlistbundle.name + "<dev string:x65>");
     if (itemlistbundle.itemlist.size <= 0) {
         return;
     }
@@ -76,7 +75,7 @@ function private function_440f0490(itemlistbundle) {
         currentweight += weights[weightindex];
         if (var_d54615ef <= currentweight) {
             itemlistbundle = getscriptbundle(itemlistbundle.itemlist[weightindex].itementry);
-            assert(itemlistbundle.type === "<unknown string>");
+            assert(itemlistbundle.type === "<dev string:x72>");
             break;
         }
     }
@@ -84,7 +83,7 @@ function private function_440f0490(itemlistbundle) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd048251, Offset: 0x700
 // Size: 0xe
 function private function_6a5c090c() {
@@ -92,7 +91,7 @@ function private function_6a5c090c() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7019201f, Offset: 0x718
 // Size: 0x180
 function function_9e9f43cd() {
@@ -115,7 +114,7 @@ function function_9e9f43cd() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80713a46, Offset: 0x8a0
 // Size: 0x194
 function function_e88ecf7f() {
@@ -140,7 +139,7 @@ function function_e88ecf7f() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa1ab3cdb, Offset: 0xa40
 // Size: 0x146
 function private function_35461e5f(index, row, stashitem = 0, falling = 2) {
@@ -164,7 +163,7 @@ function private function_35461e5f(index, row, stashitem = 0, falling = 2) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x666506dd, Offset: 0xb90
 // Size: 0x3a8
 function private function_62c0d32d(index, item_name, stashitem = 0, falling = 2) {
@@ -198,7 +197,7 @@ function private function_62c0d32d(index, item_name, stashitem = 0, falling = 2)
             weapon = weaponinfo.weapon;
             var_e91aba42 = weaponinfo.var_fd90b0bb;
         }
-    } else if (isdefined(itementry.var_a53e9db0) || isdefined(itementry.var_3e805062)) {
+    } else if (isdefined(itementry.random_attachments) || isdefined(itementry.var_3e805062)) {
         weapon = function_67456242(itementry);
     } else {
         weapon = item_world_util::function_35e06774(itementry, isdefined(itementry.attachments));
@@ -222,7 +221,7 @@ function private function_62c0d32d(index, item_name, stashitem = 0, falling = 2)
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd618c04c, Offset: 0xf40
 // Size: 0x84
 function private function_98013deb(row) {
@@ -237,7 +236,7 @@ function private function_98013deb(row) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xeec1c122, Offset: 0xfd0
 // Size: 0xaec
 function private _spawn_item(point, row, stashitem = 0) {
@@ -333,7 +332,7 @@ function private _spawn_item(point, row, stashitem = 0) {
         }
     }
     function_43cd95f4(point.id, item_name);
-    if (isdefined(itementry.var_a53e9db0) || isdefined(itementry.var_3e805062)) {
+    if (isdefined(itementry.random_attachments) || isdefined(itementry.var_3e805062)) {
         function_126ac556(point.id, function_67456242(itementry));
     }
     if (stashitem) {
@@ -361,7 +360,7 @@ function private _spawn_item(point, row, stashitem = 0) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x21802470, Offset: 0x1ac8
 // Size: 0x4fc
 function private function_f0e5262b(item_name, point, childindex, stashitem = 0, targetname) {
@@ -415,7 +414,7 @@ function private function_f0e5262b(item_name, point, childindex, stashitem = 0, 
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xefe68463, Offset: 0x1fd0
 // Size: 0x6da
 function private function_ea39d1fa(stash) {
@@ -444,7 +443,7 @@ function private function_ea39d1fa(stash) {
             }
             var_1dd9b7f1 = getscriptbundle(var_ee110db8.replacement);
             if (var_1dd9b7f1.type !== #"itemspawnlist") {
-                assert(0, "<unknown string>" + var_ee110db8);
+                assert(0, "<dev string:x83>" + var_ee110db8);
                 continue;
             }
             var_eff83f3 = var_1dd9b7f1;
@@ -516,7 +515,7 @@ function private function_ea39d1fa(stash) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf841600f, Offset: 0x26b8
 // Size: 0x7e4
 function private function_216a69d6(spawnchance) {
@@ -623,7 +622,7 @@ function private function_216a69d6(spawnchance) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x18efc4ef, Offset: 0x2ea8
 // Size: 0x8c
 function private _spawn() {
@@ -635,7 +634,7 @@ function private _spawn() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5a86c79, Offset: 0x2f40
 // Size: 0x1fa
 function private _setup() {
@@ -643,7 +642,7 @@ function private _setup() {
     if (isdefined(self.itemlistbundle) && isdefined(level.var_fb9a8536[self.itemlistbundle.name])) {
         self.itemlistbundle = getscriptbundle(level.var_fb9a8536[self.itemlistbundle.name]);
     }
-    assert(isdefined(self.itemlistbundle), "<unknown string>" + self.scriptbundlename + "<unknown string>");
+    assert(isdefined(self.itemlistbundle), "<dev string:xcb>" + self.scriptbundlename + "<dev string:xdd>");
     if (!isdefined(self.itemlistbundle.itemlist)) {
         self.itemlistbundle.itemlist = [];
     }
@@ -661,7 +660,7 @@ function private _setup() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2195aded, Offset: 0x3148
 // Size: 0x76
 function private _teardown() {
@@ -682,7 +681,7 @@ function private _teardown() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd2ff2ebb, Offset: 0x31c8
 // Size: 0x44
 function function_3095d12a() {
@@ -694,16 +693,16 @@ function function_3095d12a() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd3c3693e, Offset: 0x3218
 // Size: 0xa4
 function private function_9db93def() {
-    assert(isdefined(self.target) && self.target != "<unknown string>", "<unknown string>" + self.origin + "<unknown string>");
-    assert(self.target !== self.targetname, "<unknown string>" + self.origin + "<unknown string>" + self.target + "<unknown string>");
+    assert(isdefined(self.target) && self.target != "<dev string:xeb>", "<dev string:xef>" + self.origin + "<dev string:x10d>");
+    assert(self.target !== self.targetname, "<dev string:xef>" + self.origin + "<dev string:x130>" + self.target + "<dev string:x16d>");
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x6470d421, Offset: 0x32c8
 // Size: 0x6b0
 function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxattachments) {
@@ -736,7 +735,7 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
     var_5f5def05 = min(var_5f5def05, 8);
     var_5f5def05 = min(var_5f5def05, attachments.size + limit);
     for (index = 0; index < possibleattachments.size && attachments.size < var_5f5def05; index++) {
-        var_41ade915 = possibleattachments[index].var_6be1bec7;
+        var_41ade915 = possibleattachments[index].attachment_type;
         var_fe35755b = getscriptbundle(var_41ade915);
         if (!isstruct(var_fe35755b)) {
             assert(0);
@@ -754,7 +753,7 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
         }
         var_8d5b1d0 = arraycopy(attachments);
         foreach (attachment in var_fe35755b.attachments) {
-            var_8d5b1d0[var_8d5b1d0.size] = attachment.var_6be1bec7;
+            var_8d5b1d0[var_8d5b1d0.size] = attachment.attachment_type;
         }
         weapon = getweapon(itementry.weapon.name, var_8d5b1d0);
         weapon = function_1242e467(weapon);
@@ -771,13 +770,13 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x13db6acf, Offset: 0x3980
 // Size: 0x532
 function function_67456242(itementry) {
     assert(isstruct(itementry));
     assert(itementry.itemtype == #"weapon");
-    assert(isdefined(itementry.var_a53e9db0) || isdefined(itementry.var_3e805062));
+    assert(isdefined(itementry.random_attachments) || isdefined(itementry.var_3e805062));
     weapon = item_world_util::function_35e06774(itementry, 1);
     attachments = weapon.attachments;
     availableslots = [];
@@ -809,8 +808,8 @@ function function_67456242(itementry) {
         weapon = getweapon(itementry.weapon.name, data.currentattachments);
         weapon = function_1242e467(weapon);
     }
-    if (isdefined(itementry.var_a53e9db0)) {
-        data.possibleattachments = itementry.var_a53e9db0;
+    if (isdefined(itementry.random_attachments)) {
+        data.possibleattachments = itementry.random_attachments;
         data.currentattachments = function_a8e0dc24(itementry, data, 2147483647, var_a3a56d95, maxattachments);
         weapon = getweapon(itementry.weapon.name, data.currentattachments);
         weapon = function_1242e467(weapon);
@@ -819,7 +818,7 @@ function function_67456242(itementry) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 7, eflags: 0x6 linked
+// Params 7, eflags: 0x4
 // Checksum 0x91279168, Offset: 0x3ec0
 // Size: 0x16f2
 function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stashitem = 0, falling = 2, &var_a1b91de4 = undefined, var_7d55e249 = undefined) {
@@ -1075,7 +1074,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
         if (isdefined(itemlistbundle) && isdefined(level.var_fb9a8536[itemlistbundle.name])) {
             var_12ab6449 = getscriptbundle(level.var_fb9a8536[itemlistbundle.name]);
             if (!isdefined(var_12ab6449)) {
-                println("<unknown string>" + itemlistbundle.name);
+                println("<dev string:x173>" + itemlistbundle.name);
                 assert(0);
                 continue;
             }
@@ -1109,7 +1108,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1fce277, Offset: 0x55c0
 // Size: 0x118
 function function_62fdaf9e() {
@@ -1128,7 +1127,7 @@ function function_62fdaf9e() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfd64f2a4, Offset: 0x56e0
 // Size: 0x4c
 function init_spawn_system() {
@@ -1207,11 +1206,11 @@ function reset_items() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe517073, Offset: 0x5ce0
 // Size: 0xca
 function function_ca77960f() {
-    var_1d9375fc = struct::get_array("scriptbundle_itemspawnlist", "classname");
+    item_spawn_groups = struct::get_array("scriptbundle_itemspawnlist", "classname");
     if (isdefined(level.var_9af526f0)) {
         var_52096b93 = spawnstruct();
         var_52096b93.scriptbundlename = level.var_9af526f0;
@@ -1221,13 +1220,13 @@ function function_ca77960f() {
         var_52096b93.count = -1;
         var_52096b93.modelscale = 1;
         var_52096b93.target = #"hash_4f6d836b1441bd94";
-        var_1d9375fc[var_1d9375fc.size] = var_52096b93;
+        item_spawn_groups[item_spawn_groups.size] = var_52096b93;
     }
-    return var_1d9375fc;
+    return item_spawn_groups;
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x86ca0b76, Offset: 0x5db8
 // Size: 0x2f4
 function function_50a2c746(&var_f38d5b52, var_87e9f374 = 0) {
@@ -1236,8 +1235,8 @@ function function_50a2c746(&var_f38d5b52, var_87e9f374 = 0) {
         if (var_87e9f374) {
         }
     #/
-    var_1d9375fc = function_ca77960f();
-    foreach (group in var_1d9375fc) {
+    item_spawn_groups = function_ca77960f();
+    foreach (group in item_spawn_groups) {
         if (!isdefined(group.target)) {
             continue;
         }
@@ -1274,7 +1273,7 @@ function function_50a2c746(&var_f38d5b52, var_87e9f374 = 0) {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x33f369b1, Offset: 0x60b8
 // Size: 0x8
 function private function_4233b851() {
@@ -1283,7 +1282,7 @@ function private function_4233b851() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x76c280ad, Offset: 0x60c8
 // Size: 0x624
 function setup_groups() {
@@ -1353,11 +1352,11 @@ function setup_groups() {
     /#
     #/
     level.var_f1f90fd3 = float(gettime() - starttime) / 1000;
-    println("<unknown string>" + var_282e0a11);
+    println("<dev string:x1bd>" + var_282e0a11);
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9f53f8f8, Offset: 0x66f8
 // Size: 0x546
 function function_5eada592(scriptbundlename, linkto = 1) {
@@ -1481,14 +1480,14 @@ function function_ae93ad7b(scriptbundlename, points, falling = 2, var_9961d9f3) 
             foreach (attachment in attachments) {
                 var_41ade915 = item_world_util::function_6a0ee21a(attachment);
                 attachmentitem = function_4ba8fde(var_41ade915);
-                namespace_a0d533d1::function_8b7b98f(item, attachmentitem);
+                item_inventory_util::function_8b7b98f(item, attachmentitem);
             }
         }
     }
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf50e39a0, Offset: 0x7050
 // Size: 0x4b0
 function function_fd87c780(scriptbundlename, itemcount, falling = 2, var_9961d9f3) {
@@ -1539,7 +1538,7 @@ function function_fd87c780(scriptbundlename, itemcount, falling = 2, var_9961d9f
             foreach (attachment in attachments) {
                 var_41ade915 = item_world_util::function_6a0ee21a(attachment);
                 attachmentitem = function_4ba8fde(var_41ade915);
-                namespace_a0d533d1::function_8b7b98f(item, attachmentitem);
+                item_inventory_util::function_8b7b98f(item, attachmentitem);
             }
         }
     }

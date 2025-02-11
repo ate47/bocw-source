@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_b9a55edd207e4ca;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_44b0b8420eabacad;
+#using script_b9a55edd207e4ca;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace namespace_f2e23b4a;
 

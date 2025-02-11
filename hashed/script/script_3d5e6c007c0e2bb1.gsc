@@ -1,34 +1,33 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
 #using script_350cffecd05ef6cf;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_bf41daf8;
 
 // Namespace namespace_bf41daf8/namespace_28beea98
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69664f53, Offset: 0x240
 // Size: 0x568
 function barrelupdate(model_name = "zombietron_barrel") {
@@ -37,7 +36,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
         self endon(#"disconnect");
     }
     waitframe(1);
-    self endon(#"hash_3e2226cc328d43a7", #"hash_562d458e34274132");
+    self endon(#"barrels_done", #"hash_562d458e34274132");
     org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
     if (isdefined(org)) {
         org.targetname = "barrelUpdate";
@@ -100,16 +99,16 @@ function barrelupdate(model_name = "zombietron_barrel") {
     while (isdefined(org) && isdefined(self)) {
         org.origin = self.origin;
         org rotateto(org.angles + (0, 180, 0), 1.2);
-        wait(1.2);
+        wait 1.2;
     }
 }
 
 // Namespace namespace_bf41daf8/namespace_28beea98
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x1f3889ef, Offset: 0x7b0
 // Size: 0x2a8
 function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
-    player endon(#"hash_3e2226cc328d43a7");
+    player endon(#"barrels_done");
     if (isplayer(player)) {
         player endon(#"disconnect");
     }
@@ -152,11 +151,11 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
 }
 
 // Namespace namespace_bf41daf8/namespace_28beea98
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x857bb948, Offset: 0xa60
 // Size: 0x116
 function private function_61888137(*org) {
-    self endon(#"hash_3e2226cc328d43a7", #"hash_562d458e34274132");
+    self endon(#"barrels_done", #"hash_562d458e34274132");
     if (isplayer(self)) {
         self endon(#"disconnect");
     }
@@ -164,16 +163,16 @@ function private function_61888137(*org) {
     while (!namespace_dfc652ee::function_f759a457()) {
         waitframe(1);
     }
-    wait(timeout - 3);
+    wait timeout - 3;
     if (isdefined(self)) {
         self notify(#"hash_6733dfa48ff87a81");
     }
-    wait(3);
-    self notify(#"hash_3e2226cc328d43a7");
+    wait 3;
+    self notify(#"barrels_done");
 }
 
 // Namespace namespace_bf41daf8/namespace_28beea98
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2998299b, Offset: 0xb80
 // Size: 0x114
 function private function_6ad92846(player) {
@@ -201,16 +200,16 @@ function private function_6ad92846(player) {
 }
 
 // Namespace namespace_bf41daf8/namespace_28beea98
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7a9b5326, Offset: 0xca0
 // Size: 0x37c
 function private function_f0855523(org) {
     if (isplayer(self)) {
         self endon(#"disconnect");
     }
-    self waittill(#"hash_3e2226cc328d43a7", #"entering_last_stand", #"hash_77af89fb2b44942f", #"hash_df25520ab279dff", #"hash_562d458e34274132", #"player_died", #"enter_vehicle", #"clone_shutdown", #"death");
+    self waittill(#"barrels_done", #"entering_last_stand", #"kill_shield", #"hash_df25520ab279dff", #"hash_562d458e34274132", #"player_died", #"enter_vehicle", #"clone_shutdown", #"death");
     if (isdefined(self)) {
-        self notify(#"hash_3e2226cc328d43a7");
+        self notify(#"barrels_done");
     }
     if (isdefined(org) && isdefined(org.trigger1)) {
         org.trigger1 delete();
@@ -237,7 +236,7 @@ function private function_f0855523(org) {
         self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_barrel_active_lp");
         self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_barrel_active_end");
     }
-    wait(5);
+    wait 5;
     if (isdefined(org) && isdefined(org.barrel1)) {
         org.barrel1 delete();
     }

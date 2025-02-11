@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_unitrigger;
 
 #namespace namespace_5ce39742;
 
 // Namespace namespace_5ce39742/namespace_5ce39742
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc9a21ef, Offset: 0xf0
 // Size: 0x160
 function init() {
@@ -33,7 +32,7 @@ function init() {
 }
 
 // Namespace namespace_5ce39742/namespace_5ce39742
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc97122bb, Offset: 0x258
 // Size: 0x224
 function function_a5680385(e_player) {
@@ -62,7 +61,7 @@ function function_a5680385(e_player) {
 }
 
 // Namespace namespace_5ce39742/namespace_5ce39742
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c5c9555, Offset: 0x488
 // Size: 0x262
 function function_5b0907b8() {
@@ -89,7 +88,7 @@ function function_5b0907b8() {
 }
 
 // Namespace namespace_5ce39742/namespace_5ce39742
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1227e52f, Offset: 0x6f8
 // Size: 0x10e
 function function_2fbfe4fb(player) {
@@ -108,11 +107,11 @@ function function_2fbfe4fb(player) {
 }
 
 // Namespace namespace_5ce39742/namespace_5ce39742
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9e4b3ffc, Offset: 0x810
 // Size: 0x8c
 function function_bc566f03() {
-    wait(60);
+    wait 60;
     self notify(#"time_out");
     self.activate = 0;
     self thread function_6393ca3a();
@@ -124,11 +123,11 @@ function function_bc566f03() {
 }
 
 // Namespace namespace_5ce39742/namespace_5ce39742
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7dd5685f, Offset: 0x8a8
 // Size: 0x16
 function function_6393ca3a() {
-    wait(60);
+    wait 60;
     self.var_e12c4557 = 1;
 }
 

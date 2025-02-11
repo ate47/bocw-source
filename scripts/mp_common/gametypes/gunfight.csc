@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
 #using script_13da4e6b98ca81a1;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace gunfight;
 
@@ -14,10 +13,10 @@ function event_handler[gametype_init] main(*eventstruct) {
     clientfield::register("world", "activeTrigger", 1, 1, "int", &function_f789a70b, 0, 0);
     clientfield::register("scriptmover", "scriptid", 1, 1, "int", &function_e116df6c, 0, 0);
     clientfield::register("allplayers", "gunfight_pregame_rob", 9000, 1, "int", &function_f923f745, 0, 0);
-    callback::add_callback(#"hash_34e39ee0c9fa0092", &function_3022f6ba);
+    callback::add_callback(#"server_objective", &function_3022f6ba);
     level.var_9c5e7d9 = #"hash_5b34830d9a8a7f52";
     level._effect[#"zoneedgemarker"] = [];
-    level._effect[#"zoneedgemarker"][0] = #"hash_1f447aeb1973f7b6";
+    level._effect[#"zoneedgemarker"][0] = #"ui/fx8_infil_marker_neutral";
     level._effect[#"zoneedgemarker"][1] = #"hash_5c2ae9f4f331d4b9";
     level._effect[#"zoneedgemarker"][2] = #"hash_7d1b0f001ea88b82";
     level._effect[#"zoneedgemarker"][3] = #"hash_7981eb245ea536fc";

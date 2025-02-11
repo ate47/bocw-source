@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\rat_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\rat_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
 
 #namespace rat;
 
@@ -30,38 +29,38 @@
     function private preinit() {
         init();
         level.rat.common.gethostplayer = &util::gethostplayer;
-        addratscriptcmd("<unknown string>", &derriesezombiespawnnavmeshtest);
-        addratscriptcmd("<unknown string>", &function_b8181e0d);
-        addratscriptcmd("<unknown string>", &function_38d6a592);
-        addratscriptcmd("<unknown string>", &function_ff8061ca);
-        addratscriptcmd("<unknown string>", &function_1428d95e);
-        addratscriptcmd("<unknown string>", &function_63a39134);
-        addratscriptcmd("<unknown string>", &function_26a15f4d);
-        addratscriptcmd("<unknown string>", &function_3d37c034);
-        addratscriptcmd("<unknown string>", &function_7a11ca68);
-        addratscriptcmd("<unknown string>", &function_782c6850);
-        addratscriptcmd("<unknown string>", &function_125e2d8d);
-        addratscriptcmd("<unknown string>", &function_e7dffcf9);
-        addratscriptcmd("<unknown string>", &function_c3aa7d01);
-        addratscriptcmd("<unknown string>", &function_684f2efb);
-        addratscriptcmd("<unknown string>", &function_123195b9);
-        addratscriptcmd("<unknown string>", &function_c79c0501);
-        addratscriptcmd("<unknown string>", &function_3bbff2c5);
-        addratscriptcmd("<unknown string>", &function_ea4b3f00);
-        addratscriptcmd("<unknown string>", &function_8f340c78);
-        addratscriptcmd("<unknown string>", &function_1bd3da0f);
-        addratscriptcmd("<unknown string>", &function_6ea9a113);
-        addratscriptcmd("<unknown string>", &function_e2143adf);
-        addratscriptcmd("<unknown string>", &function_ff8f5737);
-        addratscriptcmd("<unknown string>", &function_5b9ddfdb);
-        addratscriptcmd("<unknown string>", &function_d49caa1a);
-        addratscriptcmd("<unknown string>", &function_d52c7fc3);
-        addratscriptcmd("<unknown string>", &function_d87f9fe1);
-        addratscriptcmd("<unknown string>", &function_94ac25d9);
-        addratscriptcmd("<unknown string>", &function_a6f7ea4a);
-        addratscriptcmd("<unknown string>", &function_303319e9);
-        addratscriptcmd("<unknown string>", &function_d71d4f64);
-        addratscriptcmd("<unknown string>", &function_e1bdc812);
+        addratscriptcmd("<dev string:x38>", &derriesezombiespawnnavmeshtest);
+        addratscriptcmd("<dev string:x4f>", &function_b8181e0d);
+        addratscriptcmd("<dev string:x5b>", &function_38d6a592);
+        addratscriptcmd("<dev string:x68>", &function_ff8061ca);
+        addratscriptcmd("<dev string:x75>", &function_1428d95e);
+        addratscriptcmd("<dev string:x8c>", &function_63a39134);
+        addratscriptcmd("<dev string:xa2>", &function_26a15f4d);
+        addratscriptcmd("<dev string:xb3>", &function_3d37c034);
+        addratscriptcmd("<dev string:xc7>", &function_7a11ca68);
+        addratscriptcmd("<dev string:xdf>", &function_782c6850);
+        addratscriptcmd("<dev string:xf5>", &function_125e2d8d);
+        addratscriptcmd("<dev string:x10d>", &function_e7dffcf9);
+        addratscriptcmd("<dev string:x123>", &function_c3aa7d01);
+        addratscriptcmd("<dev string:x137>", &function_684f2efb);
+        addratscriptcmd("<dev string:x151>", &function_123195b9);
+        addratscriptcmd("<dev string:x169>", &function_c79c0501);
+        addratscriptcmd("<dev string:x177>", &function_3bbff2c5);
+        addratscriptcmd("<dev string:x18c>", &function_ea4b3f00);
+        addratscriptcmd("<dev string:x1a1>", &function_8f340c78);
+        addratscriptcmd("<dev string:x1ba>", &function_1bd3da0f);
+        addratscriptcmd("<dev string:x1cc>", &function_6ea9a113);
+        addratscriptcmd("<dev string:x1e2>", &function_e2143adf);
+        addratscriptcmd("<dev string:x1f8>", &function_ff8f5737);
+        addratscriptcmd("<dev string:x217>", &function_5b9ddfdb);
+        addratscriptcmd("<dev string:x233>", &function_d49caa1a);
+        addratscriptcmd("<dev string:x251>", &function_d52c7fc3);
+        addratscriptcmd("<dev string:x26d>", &function_d87f9fe1);
+        addratscriptcmd("<dev string:x27f>", &function_94ac25d9);
+        addratscriptcmd("<dev string:x297>", &function_a6f7ea4a);
+        addratscriptcmd("<dev string:x2b2>", &function_303319e9);
+        addratscriptcmd("<dev string:x2cf>", &function_d71d4f64);
+        addratscriptcmd("<dev string:x2e7>", &function_e1bdc812);
     }
 
     // Namespace rat/rat
@@ -77,7 +76,7 @@
     // Checksum 0x298abc3a, Offset: 0x6a0
     // Size: 0x278
     function function_303319e9(params) {
-        zombies = getaiarchetypearray("<unknown string>", level.zombie_team);
+        zombies = getaiarchetypearray("<dev string:x2fb>", level.zombie_team);
         player = getplayer(params);
         forward = anglestoforward(player.angles);
         distance = 31;
@@ -97,8 +96,8 @@
                 zombie.var_67faa700 = 1;
                 zombie.ignoremelee = 1;
                 zombie.ignore_round_spawn_failsafe = 1;
-                zombie pathmode("<unknown string>");
-                zombie orientmode("<unknown string>", player.angles[1]);
+                zombie pathmode("<dev string:x305>");
+                zombie orientmode("<dev string:x312>", player.angles[1]);
             }
         }
     }
@@ -108,7 +107,7 @@
     // Checksum 0x20c88a36, Offset: 0x920
     // Size: 0xf0
     function function_d71d4f64(params) {
-        zombies = getaiarchetypearray("<unknown string>", level.zombie_team);
+        zombies = getaiarchetypearray("<dev string:x2fb>", level.zombie_team);
         foreach (zombie in zombies) {
             function_55e20e75(params._id, zombie.origin);
             function_55e20e75(params._id, zombie.angles);
@@ -163,10 +162,10 @@
     // Checksum 0x9b7e545d, Offset: 0xca8
     // Size: 0x154
     function function_d52c7fc3(params) {
-                for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
+        for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
             triggerstub = level._unitriggers.trigger_stubs[i];
             if (isdefined(triggerstub.script_noteworthy)) {
-                if (triggerstub.script_noteworthy == "<unknown string>" || triggerstub.script_noteworthy == "<unknown string>") {
+                if (triggerstub.script_noteworthy == "<dev string:x320>" || triggerstub.script_noteworthy == "<dev string:x32c>") {
                     origin = (triggerstub.origin[0], triggerstub.origin[1], triggerstub.origin[2]);
                     function_55e20e75(params._id, origin);
                     angles = (triggerstub.angles[0], triggerstub.angles[1], triggerstub.angles[2]);
@@ -209,10 +208,10 @@
     // Checksum 0x84ff8f05, Offset: 0x1038
     // Size: 0x144
     function function_ff8f5737(params) {
-                for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
+        for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
             triggerstub = level._unitriggers.trigger_stubs[i];
             if (isdefined(triggerstub.target)) {
-                if (triggerstub.target == "<unknown string>") {
+                if (triggerstub.target == "<dev string:x338>") {
                     origin = (triggerstub.origin[0], triggerstub.origin[1], triggerstub.origin[2]);
                     function_55e20e75(params._id, origin);
                     angles = (triggerstub.angles[0], triggerstub.angles[1] + 180, triggerstub.angles[2]);
@@ -227,10 +226,10 @@
     // Checksum 0xb94c928, Offset: 0x1188
     // Size: 0x144
     function function_5b9ddfdb(params) {
-                for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
+        for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
             triggerstub = level._unitriggers.trigger_stubs[i];
             if (isdefined(triggerstub.target)) {
-                if (triggerstub.target == "<unknown string>") {
+                if (triggerstub.target == "<dev string:x348>") {
                     origin = (triggerstub.origin[0], triggerstub.origin[1], triggerstub.origin[2]);
                     function_55e20e75(params._id, origin);
                     angles = (triggerstub.angles[0], triggerstub.angles[1] + 180, triggerstub.angles[2]);
@@ -283,7 +282,7 @@
         host = util::gethostplayer();
         skip = 0;
         if (isdefined(params.var_f870f386)) {
-            if (params.var_f870f386 == "<unknown string>") {
+            if (params.var_f870f386 == "<dev string:x355>") {
                 skip = 1;
             }
         }
@@ -306,7 +305,7 @@
     function function_c79c0501(params) {
         if (isdefined(params.round)) {
             setdvar(#"scr_zombie_round", int(params.round));
-            adddebugcommand("<unknown string>");
+            adddebugcommand("<dev string:x35d>");
         }
     }
 
@@ -320,7 +319,7 @@
             num = int(params.num);
         }
         if (num > 0) {
-            adddebugcommand("<unknown string>" + num);
+            adddebugcommand("<dev string:x374>" + num);
         }
     }
 
@@ -337,11 +336,11 @@
     // Checksum 0x2759beda, Offset: 0x1700
     // Size: 0x1f8
     function function_684f2efb(params) {
-        trigs = getentarray("<unknown string>", "<unknown string>");
+        trigs = getentarray("<dev string:x394>", "<dev string:x3a7>");
         foreach (ent in trigs) {
-            ent_parts = getentarray(ent.target, "<unknown string>");
+            ent_parts = getentarray(ent.target, "<dev string:x3a7>");
             foreach (e in ent_parts) {
-                if (isdefined(e.script_noteworthy) && e.script_noteworthy == "<unknown string>") {
+                if (isdefined(e.script_noteworthy) && e.script_noteworthy == "<dev string:x3b5>") {
                     master_switch = e;
                     function_55e20e75(params._id, master_switch.origin);
                     angles = (master_switch.angles[0], master_switch.angles[1], master_switch.angles[2]);
@@ -370,7 +369,7 @@
     // Checksum 0x919d9bfe, Offset: 0x1958
     // Size: 0x92
     function function_125e2d8d(*params) {
-        zombie_doors = getentarray("<unknown string>", "<unknown string>");
+        zombie_doors = getentarray("<dev string:x3c6>", "<dev string:x3a7>");
         count = 0;
         if (isdefined(zombie_doors)) {
             for (i = 0; i < zombie_doors.size; i++) {
@@ -387,12 +386,12 @@
     // Checksum 0xba9cc823, Offset: 0x19f8
     // Size: 0x134
     function function_e7dffcf9(params) {
-        zombie_doors = getentarray("<unknown string>", "<unknown string>");
+        zombie_doors = getentarray("<dev string:x3c6>", "<dev string:x3a7>");
         if (isdefined(zombie_doors)) {
             for (i = 0; i < zombie_doors.size; i++) {
                 door = zombie_doors[i];
                 if (isdefined(door.script_noteworthy)) {
-                    if (door.script_noteworthy == "<unknown string>" && door._door_open == 0) {
+                    if (door.script_noteworthy == "<dev string:x3d5>" && door._door_open == 0) {
                         function_55e20e75(params._id, door.origin);
                         angles = (door.angles[0], door.angles[1] + 90, door.angles[2]);
                         function_55e20e75(params._id, angles);
@@ -407,9 +406,9 @@
     // Checksum 0x5c15b105, Offset: 0x1b38
     // Size: 0x134
     function function_7a11ca68(params) {
-                for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
+        for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
             triggerstub = level._unitriggers.trigger_stubs[i];
-            if (triggerstub.cursor_hint == "<unknown string>") {
+            if (triggerstub.cursor_hint == "<dev string:x3e0>") {
                 origin = triggerstub zm_unitrigger::unitrigger_origin();
                 origin = (origin[0], origin[1], origin[2] - 40);
                 function_55e20e75(params._id, origin);
@@ -425,9 +424,9 @@
     // Checksum 0x314311b4, Offset: 0x1c78
     // Size: 0x124
     function function_782c6850(params) {
-                for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
+        for (i = 0; i < level._unitriggers.trigger_stubs.size; i++) {
             triggerstub = level._unitriggers.trigger_stubs[i];
-            if (isdefined(triggerstub.hint_string) && triggerstub.hint_string == "<unknown string>") {
+            if (isdefined(triggerstub.hint_string) && triggerstub.hint_string == "<dev string:x3ef>") {
                 origin = triggerstub zm_unitrigger::unitrigger_origin();
                 function_55e20e75(params._id, origin);
                 angles = triggerstub.angles;
@@ -444,7 +443,7 @@
     function function_3d37c034(*params) {
         a_e_players = getplayers();
         foreach (e_player in a_e_players) {
-            if (isdefined(e_player.intermission) || e_player.sessionstate == "<unknown string>" || e_player.sessionstate == "<unknown string>") {
+            if (isdefined(e_player.intermission) || e_player.sessionstate == "<dev string:x402>" || e_player.sessionstate == "<dev string:x40f>") {
                 continue;
             }
             return 1;
@@ -479,7 +478,7 @@
         zombie = zm_devgui::devgui_zombie_spawn();
         if (isdefined(zombie)) {
             zombie forceteleport(spawn, player.angles + (0, 180, 0));
-            zombie pathmode("<unknown string>");
+            zombie pathmode("<dev string:x305>");
         }
     }
 
@@ -520,7 +519,7 @@
             inrat = 1;
         }
         if (inrat) {
-            wait(10);
+            wait 10;
         }
         enemy = zm_devgui::devgui_zombie_spawn();
         enemy.is_rat_test = 1;
@@ -530,12 +529,12 @@
         failed_attack_spot = [];
         size = 0;
         failed_attack_spot_size = 0;
-        wait(0.2);
+        wait 0.2;
         foreach (zone in level.zones) {
             foreach (loc in zone.a_loc_types[#"zombie_location"]) {
                 angles = (0, 0, 0);
                 enemy forceteleport(loc.origin, angles);
-                wait(0.2);
+                wait 0.2;
                 node = undefined;
                 for (j = 0; j < level.exterior_goals.size; j++) {
                     if (isdefined(level.exterior_goals[j].script_string) && level.exterior_goals[j].script_string == loc.script_string) {
@@ -549,7 +548,7 @@
                         failed_node_origin[size] = node.origin;
                         size++;
                     }
-                    wait(0.2);
+                    wait 0.2;
                     for (j = 0; j < node.attack_spots.size; j++) {
                         isattackpath = enemy setgoal(node.attack_spots[j]);
                         if (!isattackpath) {
@@ -557,18 +556,18 @@
                             failed_attack_spot[failed_attack_spot_size] = node.attack_spots[j];
                             failed_attack_spot_size++;
                         }
-                        wait(0.2);
+                        wait 0.2;
                     }
                 }
             }
         }
         if (inrat) {
-            errmsg = "<unknown string>";
+            errmsg = "<dev string:x41f>";
             for (i = 0; i < size; i++) {
-                errmsg += "<unknown string>" + failed_spawn_origin[i] + "<unknown string>" + failed_node_origin[i] + "<unknown string>";
+                errmsg += "<dev string:x43a>" + failed_spawn_origin[i] + "<dev string:x446>" + failed_node_origin[i] + "<dev string:x452>";
             }
             for (i = 0; i < failed_attack_spot_size; i++) {
-                errmsg += "<unknown string>" + failed_attack_spot_spawn_origin[i] + "<unknown string>" + failed_attack_spot[i] + "<unknown string>";
+                errmsg += "<dev string:x43a>" + failed_attack_spot_spawn_origin[i] + "<dev string:x458>" + failed_attack_spot[i] + "<dev string:x452>";
             }
             if (size > 0 || failed_attack_spot_size > 0) {
                 ratreportcommandresult(params._id, 0, errmsg);

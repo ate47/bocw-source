@@ -1,25 +1,24 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\bb.gsc;
-#using scripts\mp_common\util.gsc;
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\core_common\dogtags.gsc;
-#using scripts\killstreaks\mp\killstreaks.gsc;
-#using scripts\mp_common\gametypes\spawning.gsc;
-#using scripts\mp_common\gametypes\globallogic_utils.gsc;
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\mp_common\gametypes\gametype.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using script_44b0b8420eabacad;
-#using scripts\core_common\spawning_shared.gsc;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
+#using script_44b0b8420eabacad;
+#using scripts\core_common\dogtags;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\mp\killstreaks;
+#using scripts\mp_common\bb;
+#using scripts\mp_common\gametypes\gametype;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\globallogic_spawn;
+#using scripts\mp_common\gametypes\globallogic_utils;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\spawning;
+#using scripts\mp_common\player\player_utils;
+#using scripts\mp_common\util;
 
 #namespace tdm;
 
@@ -121,7 +120,7 @@ function onscoreclosemusic() {
             level notify(#"sndmusichalfway");
             return;
         }
-        wait(1);
+        wait 1;
     }
 }
 

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\math_shared.csc;
 #using script_140d5347de8af85c;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
 
 #namespace easing;
 
@@ -150,10 +149,10 @@ function ease_angles(localclientnum, target, time, ease_type, axis, additive, ea
 }
 
 // Namespace easing/easing
-// Params 12, eflags: 0x40
+// Params 12, eflags: 0x40 variadic
 // Checksum 0x9aa330e6, Offset: 0xdb0
 // Size: 0x5be
-function function_d4a4a726(localclientnum, start_value, target_value, time, var_f71e2d8f, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
+function function_d4a4a726(localclientnum, start_value, target_value, time, callback_func, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
     assert(isdefined(level.ease_funcs));
     assert(isdefined(level.ease_funcs[ease_type]));
     localplayer = function_5c10bd79(localclientnum);
@@ -203,7 +202,7 @@ function function_d4a4a726(localclientnum, start_value, target_value, time, var_
             break;
         }
         var_b3160f0.delta = var_b3160f0.cur_value - var_88a4b08c;
-        util::function_50f54b6f(self, var_f71e2d8f, var_b3160f0, vararg);
+        util::function_50f54b6f(self, callback_func, var_b3160f0, vararg);
         waitframe(1);
         new_time = float(localplayer getclienttime()) / 1000;
         cur_time += new_time - last_time;
@@ -213,9 +212,9 @@ function function_d4a4a726(localclientnum, start_value, target_value, time, var_
     var_b3160f0.delta = var_b3160f0.target_value - var_88a4b08c;
     var_b3160f0.var_37e98bce = 1;
     var_b3160f0.localclientnum = localclientnum;
-    util::function_50f54b6f(self, var_f71e2d8f, var_b3160f0, vararg);
+    util::function_50f54b6f(self, callback_func, var_b3160f0, vararg);
     if (isdefined(self)) {
-        self notify(#"hash_133229f708f5d10", {#start_value:start_value, #target_value:target_value, #time:time, #var_f71e2d8f:var_f71e2d8f, #ease_type:ease_type, #localclientnum:localclientnum});
+        self notify(#"ease_done", {#start_value:start_value, #target_value:target_value, #time:time, #callback_func:callback_func, #ease_type:ease_type, #localclientnum:localclientnum});
     }
 }
 

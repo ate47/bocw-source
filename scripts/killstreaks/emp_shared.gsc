@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\emp_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\killstreaks\emp_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace emp;
 
@@ -36,7 +35,7 @@ function init_shared() {
 }
 
 // Namespace emp/emp_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x96ab1297, Offset: 0x4a0
 // Size: 0x120
 function fx_flesh_hit_neck_fatal(params) {
@@ -53,7 +52,7 @@ function fx_flesh_hit_neck_fatal(params) {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe2db60df, Offset: 0x5c8
 // Size: 0xd0
 function initturretvehicle() {
@@ -71,7 +70,7 @@ function initturretvehicle() {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8efa9ea6, Offset: 0x6a0
 // Size: 0x2c
 function onplayerspawned() {
@@ -80,7 +79,7 @@ function onplayerspawned() {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x495924b7, Offset: 0x6d8
 // Size: 0x3c
 function onplayerconnect() {
@@ -100,17 +99,17 @@ function deployempturret(emp) {
     emp.vehicle setanim(#"o_turret_emp_core_deploy", 1);
     length = getanimlength(#"o_turret_emp_core_deploy");
     emp.vehicle clientfield::set("emp_turret_deploy", 1);
-    wait(length * 0.75);
+    wait length * 0.75;
     emp.vehicle thread playempfx();
     emp.vehicle playsound(#"mpl_emp_turret_activate");
     emp.vehicle setanim(#"o_turret_emp_core_spin", 1);
     player thread emp_jamenemies(emp, 0);
-    wait(length * 0.25);
+    wait length * 0.25;
     emp.vehicle clearanim(#"o_turret_emp_core_deploy", 0);
 }
 
 // Namespace emp/emp_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x392fc51a, Offset: 0x908
 // Size: 0x6c
 function doneempfx(fxtagorigin) {
@@ -120,7 +119,7 @@ function doneempfx(fxtagorigin) {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf4957d29, Offset: 0x980
 // Size: 0x3a
 function playempfx() {
@@ -151,7 +150,7 @@ function oncancelplacement(emp) {
 }
 
 // Namespace emp/emp_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x93db705b, Offset: 0xa98
 // Size: 0x5c
 function onturretdeath(*inflictor, attacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime) {
@@ -170,7 +169,7 @@ function ondeathafterframeend(attacker, weapon) {
 }
 
 // Namespace emp/emp_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc2458c10, Offset: 0xb48
 // Size: 0x9c
 function ondeath(attacker, weapon) {
@@ -192,7 +191,7 @@ function onshutdown(emp) {
 }
 
 // Namespace emp/emp_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5e5f943c, Offset: 0xc20
 // Size: 0xfc
 function shutdownemp(emp) {
@@ -217,7 +216,7 @@ function shutdownemp(emp) {
 }
 
 // Namespace emp/emp_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3f89619d, Offset: 0xd28
 // Size: 0x54
 function stopemp(currentteam, currentownerentnum, originalteam, killstreakid) {
@@ -226,7 +225,7 @@ function stopemp(currentteam, currentownerentnum, originalteam, killstreakid) {
 }
 
 // Namespace emp/emp_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8bf59565, Offset: 0xd88
 // Size: 0x58
 function stopempeffect(team, ownerentnum) {
@@ -236,7 +235,7 @@ function stopempeffect(team, ownerentnum) {
 }
 
 // Namespace emp/emp_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa14a9190, Offset: 0xde8
 // Size: 0x34
 function stopemprule(killstreakoriginalteam, killstreakid) {
@@ -244,7 +243,7 @@ function stopemprule(killstreakoriginalteam, killstreakid) {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x65ea43f8, Offset: 0xe28
 // Size: 0x1c
 function hasactiveemp() {
@@ -252,7 +251,7 @@ function hasactiveemp() {
 }
 
 // Namespace emp/emp_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ff3d025, Offset: 0xe50
 // Size: 0x28
 function teamhasactiveemp(team) {
@@ -260,7 +259,7 @@ function teamhasactiveemp(team) {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xece9bbfb, Offset: 0xe80
 // Size: 0x192
 function getenemies() {
@@ -286,7 +285,7 @@ function getenemies() {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe5b7ee1a, Offset: 0x1020
 // Size: 0x10
 function function_d12cde1c() {
@@ -294,7 +293,7 @@ function function_d12cde1c() {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a833a84, Offset: 0x1038
 // Size: 0x182
 function enemyempactive() {
@@ -333,7 +332,7 @@ function enemyempowner() {
 }
 
 // Namespace emp/emp_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbd268130, Offset: 0x1288
 // Size: 0x23c
 function emp_jamenemies(empent, hacked) {
@@ -352,7 +351,7 @@ function emp_jamenemies(empent, hacked) {
     level notify(#"emp_updated");
     level notify(#"emp_deployed");
     visionsetnaked("flash_grenade", 1.5);
-    wait(0.1);
+    wait 0.1;
     visionsetnaked("flash_grenade", 0);
     visionsetnaked("default", 5);
     radius = isdefined(level.empkillstreakbundle.ksdamageradius) ? level.empkillstreakbundle.ksdamageradius : 750;
@@ -364,7 +363,7 @@ function emp_jamenemies(empent, hacked) {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97d2c35, Offset: 0x14d0
 // Size: 0xc4
 function emptracker() {
@@ -378,7 +377,7 @@ function emptracker() {
 }
 
 // Namespace emp/emp_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x39bc4cad, Offset: 0x15a0
 // Size: 0xa0
 function updateemp() {
@@ -393,7 +392,7 @@ function updateemp() {
 }
 
 // Namespace emp/emp_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x523cedaf, Offset: 0x1648
 // Size: 0x12c
 function destroyotherteamsequipment(attacker, weapon, radius) {
@@ -409,7 +408,7 @@ function destroyotherteamsequipment(attacker, weapon, radius) {
 }
 
 // Namespace emp/emp_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7ac2a210, Offset: 0x1780
 // Size: 0x1cc
 function destroyequipment(attacker, team, weapon, radius) {
@@ -445,7 +444,7 @@ function destroyequipment(attacker, team, weapon, radius) {
 }
 
 // Namespace emp/emp_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x382aaece, Offset: 0x1958
 // Size: 0x118
 function destroytacticalinsertions(attacker, victimteam, radius) {
@@ -470,7 +469,7 @@ function destroytacticalinsertions(attacker, victimteam, radius) {
 }
 
 // Namespace emp/emp_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb02ef77c, Offset: 0x1a78
 // Size: 0xd0
 function destroyotherteamsactivevehicles(attacker, weapon, radius) {
@@ -483,7 +482,7 @@ function destroyotherteamsactivevehicles(attacker, weapon, radius) {
 }
 
 // Namespace emp/emp_shared
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x768211e8, Offset: 0x1b50
 // Size: 0xc04
 function private destroyactivevehicles(attacker, team, weapon, radius) {
@@ -605,7 +604,7 @@ function private destroyactivevehicles(attacker, team, weapon, radius) {
 }
 
 // Namespace emp/emp_shared
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xe55c76f1, Offset: 0x2760
 // Size: 0x26c
 function private destroyentities(entities, attacker, team, weapon, radius) {

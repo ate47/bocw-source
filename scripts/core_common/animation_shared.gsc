@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_6c2a6f88ebaa044;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\string_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\animation_debug_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\animation_debug_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\string_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace animation;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf51ebb, Offset: 0x528
 // Size: 0xf4
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8de79dfa, Offset: 0x628
 // Size: 0x6c
 function reset_player(*params) {
@@ -63,7 +62,7 @@ function last_frame(animation, v_origin_or_ent, v_angles_or_tag) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x45ac6b17, Offset: 0x748
 // Size: 0x1e4
 function play_siege(str_anim, n_rate = 1) {
@@ -71,12 +70,12 @@ function play_siege(str_anim, n_rate = 1) {
     self endon(#"death", #"scene_stop", #"stop_siege_anim");
     /#
         if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
-            iprintlnbold("right" + function_9e72a96(str_anim) + "<unknown string>");
-            println("right" + function_9e72a96(str_anim) + "<unknown string>");
+            iprintlnbold("<dev string:x38>" + function_9e72a96(str_anim) + "<dev string:x50>");
+            println("<dev string:x38>" + function_9e72a96(str_anim) + "<dev string:x50>");
         }
     #/
     if (isdedicated()) {
-        println("<unknown string>" + function_9e72a96(str_anim) + "<unknown string>");
+        println("<dev string:xa4>" + function_9e72a96(str_anim) + "<dev string:xbb>");
         waitframe(1);
         return;
     }
@@ -87,11 +86,11 @@ function play_siege(str_anim, n_rate = 1) {
         return;
     }
     n_length = function_658484f7(str_anim);
-    wait(n_length);
+    wait n_length;
 }
 
 // Namespace animation/animation_shared
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0xc2cf8053, Offset: 0x938
 // Size: 0x1ba
 function play(animation, v_origin_or_ent, v_angles_or_tag, n_rate = 1, n_blend_in = 0.2, n_blend_out = 0.2, n_lerp = 0, n_start_time = 0, b_show_player_firstperson_weapon = 0, b_unlink_after_completed = 1, var_f4b34dc1, paused = 0, mode = "normal", var_dc569aa8 = "linear", var_1971fee9 = 0) {
@@ -106,7 +105,7 @@ function play(animation, v_origin_or_ent, v_angles_or_tag, n_rate = 1, n_blend_i
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xef212ea6, Offset: 0xb00
 // Size: 0x74
 function stop(n_blend = 0.2, var_8b43f3e3 = 0) {
@@ -123,10 +122,10 @@ function stop(n_blend = 0.2, var_8b43f3e3 = 0) {
     // Checksum 0xc76ee1ec, Offset: 0xb80
     // Size: 0x204
     function debug_print(str_animation, str_msg) {
-        str_dvar = getdvarstring(#"debug_anim_shared", "<unknown string>");
-        if (str_dvar != "<unknown string>") {
+        str_dvar = getdvarstring(#"debug_anim_shared", "<dev string:x136>");
+        if (str_dvar != "<dev string:x136>") {
             if (!isstring(str_animation)) {
-                str_animation = isdefined(function_9e72a96(str_animation)) ? "<unknown string>" + function_9e72a96(str_animation) : "<unknown string>";
+                str_animation = isdefined(function_9e72a96(str_animation)) ? "<dev string:x136>" + function_9e72a96(str_animation) : "<dev string:x136>";
             }
             b_print = 0;
             if (strisnumber(str_dvar)) {
@@ -137,7 +136,7 @@ function stop(n_blend = 0.2, var_8b43f3e3 = 0) {
                 b_print = 1;
             }
             if (b_print) {
-                printtoprightln(str_animation + "<unknown string>" + string::rjust(str_msg, 10) + "<unknown string>" + string::rjust("<unknown string>" + self getentitynumber(), 4) + "<unknown string>" + string::rjust("<unknown string>" + gettime(), 6) + "<unknown string>", (1, 1, 0), -1);
+                printtoprightln(str_animation + "<dev string:x13a>" + string::rjust(str_msg, 10) + "<dev string:x13a>" + string::rjust("<dev string:x136>" + self getentitynumber(), 4) + "<dev string:x141>" + string::rjust("<dev string:x136>" + gettime(), 6) + "<dev string:x147>", (1, 1, 0), -1);
             }
         }
     }
@@ -145,7 +144,7 @@ function stop(n_blend = 0.2, var_8b43f3e3 = 0) {
 #/
 
 // Namespace animation/animation_shared
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0xe6fcffa7, Offset: 0xd90
 // Size: 0xa4c
 function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, n_blend_out, n_lerp, n_start_time, b_show_player_firstperson_weapon, b_unlink_after_completed, var_f4b34dc1, paused, mode, var_dc569aa8, var_1971fee9) {
@@ -153,7 +152,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     self endoncallback(&function_2adc2518, #"death", #"entering_last_stand", #"new_scripted_anim");
     function_2ddeb362("animation::_play " + animation);
     /#
-        debug_print(animation, "<unknown string>");
+        debug_print(animation, "<dev string:x14c>");
     #/
     flag::set_val("firstframe", n_rate == 0 && !is_true(paused) && n_start_time === 0);
     flag::set(#"scripted_anim_this_frame");
@@ -175,7 +174,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         str_tag = v_angles_or_tag;
         v_origin = v_origin_or_ent gettagorigin(str_tag);
         v_angles = v_origin_or_ent gettagangles(str_tag);
-        assert(isdefined(v_origin) && isdefined(v_angles), "<unknown string>" + function_9e72a96(animation) + "<unknown string>" + v_origin_or_ent getentitynumber() + "<unknown string>" + v_angles_or_tag + "<unknown string>");
+        assert(isdefined(v_origin) && isdefined(v_angles), "<dev string:x157>" + function_9e72a96(animation) + "<dev string:x18b>" + v_origin_or_ent getentitynumber() + "<dev string:x19b>" + v_angles_or_tag + "<dev string:x1a9>");
         if (!isdefined(v_origin)) {
             v_origin = v_origin_or_ent.origin;
         }
@@ -236,15 +235,15 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         self animscripted(animation, v_origin, v_angles, animation, mode, undefined, n_rate, n_blend_in, n_lerp, n_start_time, 1, b_show_player_firstperson_weapon, var_f4b34dc1, paused, var_dc569aa8, var_1971fee9);
         var_1abb7e22 = 1;
     } else {
-        println("<unknown string>" + self getentitynumber() + "<unknown string>" + function_9e72a96(animation));
+        println("<dev string:x1ae>" + self getentitynumber() + "<dev string:x1cf>" + function_9e72a96(animation));
     }
     if (isplayer(self)) {
         thread set_player_clamps(max(n_lerp, n_blend_in));
     }
     /#
-        self.var_80c69db6 = "<unknown string>";
+        self.var_80c69db6 = "<dev string:x1ef>";
         self.var_6c4bb19 = {#animation:animation, #v_origin_or_ent:v_origin_or_ent, #v_angles_or_tag:v_angles_or_tag, #var_f4b34dc1:var_f4b34dc1};
-        if (level flag::get("<unknown string>")) {
+        if (level flag::get("<dev string:x1f9>")) {
             self thread anim_info_render_thread();
         }
     #/
@@ -272,7 +271,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         flag::clear(#"scriptedanim");
         flag::clear(#"firstframe");
         /#
-            debug_print(animation, "<unknown string>");
+            debug_print(animation, "<dev string:x207>");
         #/
         waittillframeend();
         flag::clear(#"scripted_anim_this_frame");
@@ -280,7 +279,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbdc55746, Offset: 0x17e8
 // Size: 0x9e
 function function_2adc2518(str_notify) {
@@ -295,7 +294,7 @@ function function_2adc2518(str_notify) {
 }
 
 // Namespace animation/animation_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x1001b7f7, Offset: 0x1890
 // Size: 0x15a
 function _blend_out(animation, n_blend, *n_rate, *n_start_time) {
@@ -313,7 +312,7 @@ function _blend_out(animation, n_blend, *n_rate, *n_start_time) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4b34c3a3, Offset: 0x19f8
 // Size: 0x4a
 function _get_align_ent(e_align) {
@@ -328,13 +327,13 @@ function _get_align_ent(e_align) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc1abf93c, Offset: 0x1a50
 // Size: 0x186
 function _get_align_pos(v_origin_or_ent = self.origin, v_angles_or_tag = isdefined(self.angles) ? self.angles : (0, 0, 0)) {
     s = spawnstruct();
     if (isvec(v_origin_or_ent)) {
-        assert(isvec(v_angles_or_tag), "<unknown string>");
+        assert(isvec(v_angles_or_tag), "<dev string:x210>");
         s.origin = v_origin_or_ent;
         s.angles = v_angles_or_tag;
     } else {
@@ -365,7 +364,7 @@ function teleport(animation, v_origin_or_ent, v_angles_or_tag, time = 0) {
 }
 
 // Namespace animation/animation_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7814b083, Offset: 0x1cb8
 // Size: 0xdc
 function function_a23b2a60(animation, var_f9e56773 = 0, var_d7b4a07c = 1) {
@@ -378,7 +377,7 @@ function function_a23b2a60(animation, var_f9e56773 = 0, var_d7b4a07c = 1) {
 }
 
 // Namespace animation/animation_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x95a6ae64, Offset: 0x1da0
 // Size: 0xcc
 function reach(animation, v_origin_or_ent, v_angles_or_tag, b_disable_arrivals = 0, b_shoot = 1, var_5207b7a8 = undefined) {
@@ -389,7 +388,7 @@ function reach(animation, v_origin_or_ent, v_angles_or_tag, b_disable_arrivals =
 }
 
 // Namespace animation/animation_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7ddbc8ed, Offset: 0x1e78
 // Size: 0x51e
 function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disable_arrivals = 0, b_shoot = 1, var_5207b7a8 = undefined) {
@@ -429,9 +428,9 @@ function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disabl
         self childthread function_d7627522(animation, v_goal);
         s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_timed_out");
         /#
-            if (s_waitresult._notify === "<unknown string>") {
-                iprintlnbold("<unknown string>" + function_9e72a96(animation) + "<unknown string>" + v_goal);
-                println("<unknown string>" + function_9e72a96(animation) + "<unknown string>" + v_goal);
+            if (s_waitresult._notify === "<dev string:x239>") {
+                iprintlnbold("<dev string:x24c>" + function_9e72a96(animation) + "<dev string:x264>" + v_goal);
+                println("<dev string:x24c>" + function_9e72a96(animation) + "<dev string:x264>" + v_goal);
             }
         #/
         if (ai::has_behavior_attribute("disablearrivals")) {
@@ -454,7 +453,7 @@ function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disabl
 }
 
 // Namespace animation/animation_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xad1a6129, Offset: 0x23a0
 // Size: 0x15c
 function function_d7627522(animation, v_goal, radius = 100) {
@@ -472,7 +471,7 @@ function function_d7627522(animation, v_goal, radius = 100) {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe049a6c, Offset: 0x2508
 // Size: 0x134
 function function_ba45bb6c() {
@@ -480,7 +479,7 @@ function function_ba45bb6c() {
     var_89ae1c69 = self.origin;
     var_dc2b2d0b = 0;
     while (true) {
-        wait(1);
+        wait 1;
         var_ab436758 = self.origin;
         if (distance(var_ab436758, var_89ae1c69) < 60) {
             var_dc2b2d0b += 1;
@@ -504,8 +503,8 @@ function function_ba45bb6c() {
     function debug_anim_reach(v_goal, str_anim) {
         self endon(#"death", #"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim");
         while (true) {
-            level flag::wait_till("<unknown string>");
-            print3d(self.origin, "<unknown string>" + function_9e72a96(str_anim) + "<unknown string>" + v_goal + "<unknown string>" + (ispointonnavmesh(v_goal) ? "<unknown string>" : "<unknown string>"), (1, 0, 0), 1, 0.4, 1);
+            level flag::wait_till("<dev string:x1f9>");
+            print3d(self.origin, "<dev string:x269>" + function_9e72a96(str_anim) + "<dev string:x279>" + v_goal + "<dev string:x27e>" + (ispointonnavmesh(v_goal) ? "<dev string:x296>" : "<dev string:x29e>"), (1, 0, 0), 1, 0.4, 1);
             line(self.origin, v_goal, (1, 0, 0));
             circle(v_goal, 10, (1, 0, 0));
             waitframe(1);
@@ -515,7 +514,7 @@ function function_ba45bb6c() {
 #/
 
 // Namespace animation/animation_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9d320741, Offset: 0x27b8
 // Size: 0x92
 function set_death_anim(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, n_blend_out, n_lerp) {
@@ -529,7 +528,7 @@ function set_death_anim(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_b
 }
 
 // Namespace animation/animation_shared
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xdbeebcf6, Offset: 0x2858
 // Size: 0xa4
 function _do_death_anim(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, n_blend_out, n_lerp) {
@@ -541,7 +540,7 @@ function _do_death_anim(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_b
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe2a09226, Offset: 0x2908
 // Size: 0xb2
 function set_player_clamps(blend_time) {
@@ -550,7 +549,7 @@ function set_player_clamps(blend_time) {
             blend_time = 0;
         }
         if (blend_time > 0 && !is_true(self.var_cdb243ec)) {
-            wait(blend_time);
+            wait blend_time;
         }
         self setviewclamp(self.player_anim_clamp_right, self.player_anim_clamp_left, self.player_anim_clamp_top, self.player_anim_clamp_bottom, undefined, self.var_fcbf7c5a);
         self.var_cdb243ec = 1;
@@ -558,7 +557,7 @@ function set_player_clamps(blend_time) {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9d00091d, Offset: 0x29c8
 // Size: 0x2e
 function function_d497dbe7() {
@@ -567,19 +566,19 @@ function function_d497dbe7() {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4fe75d20, Offset: 0x2a00
 // Size: 0x74
 function add_notetrack_func(funcname, func) {
     if (!isdefined(level._animnotifyfuncs)) {
         level._animnotifyfuncs = [];
     }
-    assert(!isdefined(level._animnotifyfuncs[funcname]), "<unknown string>");
+    assert(!isdefined(level._animnotifyfuncs[funcname]), "<dev string:x2a7>");
     level._animnotifyfuncs[funcname] = func;
 }
 
 // Namespace animation/animation_shared
-// Params 4, eflags: 0x42 linked
+// Params 4, eflags: 0x40 variadic
 // Checksum 0xf3956afa, Offset: 0x2a80
 // Size: 0x11a
 function add_global_notetrack_handler(str_note, func, pass_notify_params, ...) {
@@ -598,7 +597,7 @@ function add_global_notetrack_handler(str_note, func, pass_notify_params, ...) {
 }
 
 // Namespace animation/animation_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x512b6ff8, Offset: 0x2ba8
 // Size: 0x120
 function call_notetrack_handler(str_note, param1, param2) {
@@ -617,7 +616,7 @@ function call_notetrack_handler(str_note, param1, param2) {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xec3e5cf, Offset: 0x2cd0
 // Size: 0x56c
 function setup_notetracks() {
@@ -654,7 +653,7 @@ function setup_notetracks() {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc18163f2, Offset: 0x3248
 // Size: 0xce
 function handle_notetracks(animation) {
@@ -673,7 +672,7 @@ function handle_notetracks(animation) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x642dd68b, Offset: 0x3320
 // Size: 0xe2
 function cracks_on(str_type) {
@@ -694,7 +693,7 @@ function cracks_on(str_type) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x84dfdbc9, Offset: 0x3410
 // Size: 0xe2
 function cracks_off(str_type) {
@@ -715,7 +714,7 @@ function cracks_off(str_type) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xff3e9b55, Offset: 0x3500
 // Size: 0xa4
 function enable_headlook(b_on = 1) {
@@ -730,7 +729,7 @@ function enable_headlook(b_on = 1) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5f7180e9, Offset: 0x35b0
 // Size: 0xac
 function enable_headlook_notorso(b_on = 1) {
@@ -745,7 +744,7 @@ function enable_headlook_notorso(b_on = 1) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9250fcf, Offset: 0x3668
 // Size: 0x5e
 function is_valid_weapon(weaponobject) {
@@ -756,7 +755,7 @@ function is_valid_weapon(weaponobject) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb9f4acfa, Offset: 0x36d0
 // Size: 0x192
 function attach_weapon(weaponobject, tag = "tag_weapon_right") {
@@ -788,7 +787,7 @@ function attach_weapon(weaponobject, tag = "tag_weapon_right") {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa739d764, Offset: 0x3870
 // Size: 0xda
 function detach_weapon(weaponobject, tag = "tag_weapon_right") {
@@ -807,7 +806,7 @@ function detach_weapon(weaponobject, tag = "tag_weapon_right") {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe6ae0213, Offset: 0x3958
 // Size: 0x294
 function fire_weapon(str_tag, *var_58b849e) {
@@ -827,7 +826,7 @@ function fire_weapon(str_tag, *var_58b849e) {
             v_start_ang = self gettagangles(var_58b849e);
             v_end_pos = v_start_pos + vectorscale(anglestoforward(v_start_ang), 100);
             if (isdefined(self.item) && self.item.type === "projectile" && !isinarray(["ball", "grenade", "rocketlauncher", "turret", "pistol", "pistol spread"], self.item.weapclass)) {
-                println("<unknown string>" + self.item.name);
+                println("<dev string:x2cd>" + self.item.name);
                 return;
             }
             magicbullet(self.item, v_start_pos, v_end_pos, self);
@@ -836,7 +835,7 @@ function fire_weapon(str_tag, *var_58b849e) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x21e4c1aa, Offset: 0x3bf8
 // Size: 0x9c
 function function_71d33ba3(var_9114191, *var_58b849e) {
@@ -851,11 +850,11 @@ function function_71d33ba3(var_9114191, *var_58b849e) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x652aaab0, Offset: 0x3ca0
 // Size: 0x25c
 function function_eb0aa7cf(n_pulse = 100, bone) {
-    assert(!issentient(self), "<unknown string>");
+    assert(!issentient(self), "<dev string:x309>");
     if (!isdefined(bone)) {
         bone = "tag_physics_pulse";
     }
@@ -885,7 +884,7 @@ function function_eb0aa7cf(n_pulse = 100, bone) {
 }
 
 // Namespace animation/animation_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xed7fa764, Offset: 0x3f08
 // Size: 0x6c
 function function_6eb39026(var_1d146ef3, *var_e43fc2fe) {
@@ -898,7 +897,7 @@ function function_6eb39026(var_1d146ef3, *var_e43fc2fe) {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1e4613c1, Offset: 0x3f80
 // Size: 0x64
 function private function_bd10424d() {
@@ -910,7 +909,7 @@ function private function_bd10424d() {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x661af1e5, Offset: 0x3ff0
 // Size: 0x64
 function private function_e97a4b27() {
@@ -922,7 +921,7 @@ function private function_e97a4b27() {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8b3de43a, Offset: 0x4060
 // Size: 0x64
 function private function_a37627b3() {
@@ -934,7 +933,7 @@ function private function_a37627b3() {
 }
 
 // Namespace animation/animation_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd7259732, Offset: 0x40d0
 // Size: 0x64
 function private function_54657829() {
@@ -946,7 +945,7 @@ function private function_54657829() {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x441783bd, Offset: 0x4140
 // Size: 0x94
 function private function_f2729fc0(quick) {
@@ -964,7 +963,7 @@ function private function_f2729fc0(quick) {
 }
 
 // Namespace animation/animation_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xca279285, Offset: 0x41e0
 // Size: 0xac
 function private function_d8cae271(quick) {

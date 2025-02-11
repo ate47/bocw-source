@@ -1,19 +1,18 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\zm_common\zm_weapons.csc;
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\zm_common\zm_score.csc;
-#using scripts\zm_common\zm_magicbox.csc;
-#using scripts\zm_common\zm_equipment.csc;
-#using scripts\zm_common\zm_bgb.csc;
-#using scripts\zm_common\zm_audio.csc;
-#using scripts\zm_common\util.csc;
-#using scripts\core_common\player\player_stats.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\aat_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_loadout;
 
@@ -26,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb565f678, Offset: 0x178
 // Size: 0x3c
 function private preinit() {
@@ -60,7 +59,7 @@ function on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcc7227ac, Offset: 0x3b8
 // Size: 0x40
 function function_622d8349(localclientnum) {
@@ -71,7 +70,7 @@ function function_622d8349(localclientnum) {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf7bdb001, Offset: 0x400
 // Size: 0x92
 function get_loadout_item(localclientnum, slot) {
@@ -88,7 +87,7 @@ function get_loadout_item(localclientnum, slot) {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1d935ce0, Offset: 0x4a0
 // Size: 0x92
 function function_439b009a(localclientnum, slot) {

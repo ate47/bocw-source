@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_inventory.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_inventory;
 
 #namespace zm_ui_inventory;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ui_inventory/zm_ui_inventory
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6f736028, Offset: 0x138
 // Size: 0x178
 function private preinit() {
@@ -36,7 +35,7 @@ function private preinit() {
 }
 
 // Namespace zm_ui_inventory/zm_ui_inventory
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x16f15948, Offset: 0x2b8
 // Size: 0x1c
 function private onconnect() {
@@ -44,7 +43,7 @@ function private onconnect() {
 }
 
 // Namespace zm_ui_inventory/zm_ui_inventory
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5332ff19, Offset: 0x2e0
 // Size: 0x82
 function private function_13ad9a60() {
@@ -59,7 +58,7 @@ function private function_13ad9a60() {
 }
 
 // Namespace zm_ui_inventory/zm_ui_inventory
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xde76d80c, Offset: 0x370
 // Size: 0xdc
 function function_7df6bb60(fieldname, value, player) {

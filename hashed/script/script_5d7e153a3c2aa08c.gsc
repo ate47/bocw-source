@@ -1,35 +1,34 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_7d0013bbc05623b9;
-#using scripts\cp_common\hms_util.gsc;
-#using scripts\cp_common\util.gsc;
 #using script_3dc93ca9902a9cda;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using script_7d0013bbc05623b9;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\hms_util;
+#using scripts\cp_common\util;
 
-#namespace namespace_c53a738b;
+#namespace grenade_ammo_box;
 
-// Namespace namespace_c53a738b/namespace_c53a738b
+// Namespace grenade_ammo_box/grenade_ammo_box
 // Params 0, eflags: 0x5
 // Checksum 0x8312ce39, Offset: 0x1c8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2d57c6f56fffc76a", undefined, &function_2a159d3e, undefined, undefined);
+    system::register(#"grenade_ammo_box", undefined, &init_postload, undefined, undefined);
 }
 
-// Namespace namespace_c53a738b/namespace_c53a738b
-// Params 0, eflags: 0x6 linked
+// Namespace grenade_ammo_box/grenade_ammo_box
+// Params 0, eflags: 0x4
 // Checksum 0x2d4e30ba, Offset: 0x210
 // Size: 0x31c
-function private function_2a159d3e() {
+function private init_postload() {
     level.var_7b32679c = [];
     level.var_7b32679c[getweapon(#"frag_grenade")] = {#str_hint:#"hash_3211ac4e9118211f", #var_9c0ef0ca:"frag_"};
     level.var_7b32679c[getweapon(#"hatchet")] = {#str_hint:#"hash_492213f4afcbea1e", #var_9c0ef0ca:"hatchet_"};
     level.var_7b32679c[getweapon(#"eq_molotov")] = {#str_hint:#"hash_1e02ff8dfeec0303", #var_9c0ef0ca:"molotov_"};
-    level.var_7b32679c[getweapon(#"hash_675e85b293a65c14")] = {#str_hint:#"hash_58f8d39b06c60ed0", #var_9c0ef0ca:"mine_"};
+    level.var_7b32679c[getweapon(#"land_mine_cp")] = {#str_hint:#"hash_58f8d39b06c60ed0", #var_9c0ef0ca:"mine_"};
     level.var_7b32679c[getweapon(#"hash_5453c9b880261bcb")] = {#str_hint:#"hash_1488b8b01aeb103b", #var_9c0ef0ca:"flash_"};
     level.var_7b32679c[getweapon(#"willy_pete")] = {#str_hint:#"hash_24bc2d8182caba04", #var_9c0ef0ca:"smoke_"};
     level.var_7b32679c[getweapon(#"hash_364914e1708cb629")] = {#str_hint:#"hash_1a78feacd6c51ab6", #var_9c0ef0ca:"stim_"};
@@ -38,8 +37,8 @@ function private function_2a159d3e() {
     array::thread_all(var_2611f92b, &function_fcd7744f);
 }
 
-// Namespace namespace_c53a738b/namespace_c53a738b
-// Params 0, eflags: 0x6 linked
+// Namespace grenade_ammo_box/grenade_ammo_box
+// Params 0, eflags: 0x4
 // Checksum 0xa96ff18, Offset: 0x538
 // Size: 0xb4
 function private function_fcd7744f() {
@@ -49,8 +48,8 @@ function private function_fcd7744f() {
     self function_417045b(w_grenade, w_grenade.clipsize);
 }
 
-// Namespace namespace_c53a738b/namespace_c53a738b
-// Params 1, eflags: 0x6 linked
+// Namespace grenade_ammo_box/grenade_ammo_box
+// Params 1, eflags: 0x4
 // Checksum 0x6a6e3e70, Offset: 0x5f8
 // Size: 0x220
 function private function_1ba6c697(var_4847a929) {
@@ -65,7 +64,7 @@ function private function_1ba6c697(var_4847a929) {
         w_grenade = getweapon(#"eq_molotov");
         break;
     case #"mine":
-        w_grenade = getweapon(#"hash_675e85b293a65c14");
+        w_grenade = getweapon(#"land_mine_cp");
         break;
     case #"flash":
         w_grenade = getweapon(#"hash_5453c9b880261bcb");
@@ -80,12 +79,12 @@ function private function_1ba6c697(var_4847a929) {
         w_grenade = getweapon(var_4847a929);
         break;
     }
-    assert(w_grenade != getweapon("<unknown string>"), "<unknown string>" + var_4847a929 + "<unknown string>");
+    assert(w_grenade != getweapon("<dev string:x38>"), "<dev string:x40>" + var_4847a929 + "<dev string:x73>");
     return w_grenade;
 }
 
-// Namespace namespace_c53a738b/namespace_c53a738b
-// Params 2, eflags: 0x6 linked
+// Namespace grenade_ammo_box/grenade_ammo_box
+// Params 2, eflags: 0x4
 // Checksum 0xdc74f456, Offset: 0x820
 // Size: 0x23c
 function private function_417045b(w_grenade, n_count) {
@@ -113,14 +112,14 @@ function private function_417045b(w_grenade, n_count) {
     self prompts::function_263320e2(#"use", str_hint);
 }
 
-// Namespace namespace_c53a738b/namespace_c53a738b
-// Params 1, eflags: 0x6 linked
+// Namespace grenade_ammo_box/grenade_ammo_box
+// Params 1, eflags: 0x4
 // Checksum 0xbe2fc15, Offset: 0xa68
 // Size: 0x2bc
 function private function_d5fc8564(s_info) {
     player = s_info.player;
     player endon(#"death");
-    player val::set(#"hash_2d57c6f56fffc76a", "disable_offhand_weapons", 1);
+    player val::set(#"grenade_ammo_box", "disable_offhand_weapons", 1);
     waitframe(1);
     if (player hasweapon(self.w_grenade)) {
         n_current = player getweaponammoclip(self.w_grenade);
@@ -145,16 +144,16 @@ function private function_d5fc8564(s_info) {
         player setweaponammoclip(self.w_grenade, self.n_count);
         self function_417045b(var_a865c8a2, var_a560ecaa);
     }
-    player val::reset_all(#"hash_2d57c6f56fffc76a");
+    player val::reset_all(#"grenade_ammo_box");
 }
 
-// Namespace namespace_c53a738b/namespace_c53a738b
-// Params 0, eflags: 0x6 linked
+// Namespace grenade_ammo_box/grenade_ammo_box
+// Params 0, eflags: 0x4
 // Checksum 0x269ec01e, Offset: 0xd30
 // Size: 0x64
 function private function_990bc6e() {
-    self playgestureviewmodel(#"hash_6dc0055905c5e7af");
-    wait(0.3);
+    self playgestureviewmodel(#"ges_drophand");
+    wait 0.3;
     self playrumbleonentity("damage_light");
     snd::play("fly_grenade_ammo_crate_pickup");
 }

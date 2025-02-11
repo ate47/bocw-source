@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_trial_util.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\status_effects\status_effect_util.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\music_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\music_shared;
+#using scripts\core_common\status_effects\status_effect_util;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_trial;
+#using scripts\zm_common\zm_trial_util;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_c1466447;
 
@@ -119,11 +118,11 @@ function private on_player_spawned() {
 // Size: 0x154
 function function_40c7a8fd() {
     level endon(#"hash_7646638df88a3656", #"end_game");
-    wait(3.5);
+    wait 3.5;
     foreach (player in getplayers()) {
         player clientfield::set_to_player("" + #"hash_b905d796914b710", 1);
     }
-    wait(2);
+    wait 2;
     setslowmotion(1, 1.25);
     level.var_79514f31 = spawn("script_origin", (0, 0, 0));
     level.var_79514f31 playloopsound(#"hash_1eafdf46ffbf2308");
@@ -140,7 +139,7 @@ function private function_69fa75f8() {
         self clientfield::set_to_player("" + #"hash_1b9477ddcf30191f", 1);
         self function_e0c7d69(0);
         while (true) {
-            s_waitresult = self waittilltimeout(1, #"weapon_fired", #"hash_3e0895cd0cc16d2d", #"lightning_ball_created", #"hash_4d733389a8e35a7c");
+            s_waitresult = self waittilltimeout(1, #"weapon_fired", #"hash_3e0895cd0cc16d2d", #"lightning_ball_created", #"viper_bite_projectile");
             if (s_waitresult._notify != "timeout") {
                 self clientfield::set_to_player("" + #"hash_1b9477ddcf30191f", 0);
                 self function_e0c7d69(1);
@@ -161,7 +160,7 @@ function function_6d8cf829() {
     while (true) {
         n_perks = self.var_67ba1237.size + self.var_466b927f.size;
         self clientfield::set_to_player("" + #"hash_52347bec3f1339fd", n_perks);
-        wait(1);
+        wait 1;
     }
 }
 
@@ -175,14 +174,14 @@ function private function_ad641569() {
     self endon(#"disconnect");
     level endoncallback(&function_1a109202, #"hash_7646638df88a3656", #"host_migration_begin");
     while (true) {
-        wait(randomintrangeinclusive(5, 15));
+        wait randomintrangeinclusive(5, 15);
         var_6eabfd9d = getstatuseffect("blind_zm_catalyst");
         n_duration = randomintrangeinclusive(5000, 7500);
         self status_effect::status_effect_apply(var_6eabfd9d, undefined, self, 0, n_duration);
-        wait(float(n_duration) / 1000);
+        wait float(n_duration) / 1000;
         var_3caa2c0f = getstatuseffect("deaf_electricity_catalyst");
         self status_effect::status_effect_apply(var_3caa2c0f, undefined, self, 0, n_duration);
-        wait(float(n_duration) / 1000);
+        wait float(n_duration) / 1000;
         if (self status_effect::function_4617032e(var_6eabfd9d.setype)) {
             self status_effect::function_408158ef(var_6eabfd9d.setype, var_6eabfd9d.var_18d16a6b);
         }
@@ -217,7 +216,7 @@ function function_1a109202(str_notify) {
 // Size: 0xc0
 function private function_604ff1eb() {
     level endon(#"hash_7646638df88a3656", #"end_game");
-    wait(5);
+    wait 5;
     foreach (player in getplayers()) {
         player thread function_ad641569();
     }

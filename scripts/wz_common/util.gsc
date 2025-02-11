@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_1cc417743d7c262d;
-#using scripts\core_common\globallogic\globallogic_player.gsc;
-#using scripts\core_common\death_circle.gsc;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\globallogic\globallogic_player;
 
 #namespace util;
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x72ec1a0d, Offset: 0x98
 // Size: 0x54
 function function_8076d591(event, params) {
@@ -18,7 +17,7 @@ function function_8076d591(event, params) {
 }
 
 // Namespace util/util
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4dcbbd8c, Offset: 0xf8
 // Size: 0x1ae
 function function_de15dc32(*killed_player, disconnected_player) {
@@ -44,7 +43,7 @@ function function_de15dc32(*killed_player, disconnected_player) {
 }
 
 // Namespace util/util
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b1bba52, Offset: 0x2b0
 // Size: 0x13a
 function function_47851c07() {

@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace clientids;
 
@@ -39,6 +38,6 @@ function on_player_connect() {
         self.clientid = level.clientid;
         level.clientid++;
     }
-    println("<unknown string>" + self.name + "<unknown string>" + self.clientid);
+    println("<dev string:x38>" + self.name + "<dev string:x44>" + self.clientid);
 }
 

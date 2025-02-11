@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace zm_ping;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ping/zm_ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb8bdedf3, Offset: 0x100
 // Size: 0x9c
 function private preinit() {
@@ -23,11 +22,11 @@ function private preinit() {
 }
 
 // Namespace zm_ping/zm_ping
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x35db924e, Offset: 0x1a8
 // Size: 0x8c
 function function_9e0598bb(id) {
-    assert(isentity(self), "<unknown string>");
+    assert(isentity(self), "<dev string:x38>");
     if (!isentity(self)) {
         return;
     }
@@ -35,16 +34,16 @@ function function_9e0598bb(id) {
 }
 
 // Namespace zm_ping/zm_ping
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbe744457, Offset: 0x240
 // Size: 0x54
 function function_550247bd(id) {
-    assert(id > 10, "<unknown string>");
+    assert(id > 10, "<dev string:x6e>");
     function_9e0598bb(id - 10);
 }
 
 // Namespace zm_ping/zm_ping
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7861cd38, Offset: 0x2a0
 // Size: 0xba
 function private function_142ecedc(param) {

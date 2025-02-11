@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
 #using script_61828ad9e71c6616;
 #using script_7bdcff4f92f3d220;
-#using scripts\killstreaks\remotemissile_shared.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\remotemissile_shared;
 
 #namespace remotemissile;
 
@@ -19,12 +18,12 @@ function private autoexec __init__system__() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa6fae1e1, Offset: 0x1b0
 // Size: 0x164
 function private preinit() {
     clientfield::register("world", "" + #"hash_59ec82b1a72deb72", 1, 1, "int");
-    clientfield::register("toplayer", "" + #"hash_7bdbbf163a28169", 6000, 1, "int");
+    clientfield::register("toplayer", "" + #"remotemissile_fov", 6000, 1, "int");
     clientfield::register("toplayer", "" + #"hash_4241f7b51f8c144", 8000, 1, "int");
     init_shared("killstreak_remote_missile" + "_zm", &function_ea3ce28b);
     if (isdefined(level.killstreakrules[#"hero_weapons"])) {
@@ -35,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc182d8f, Offset: 0x320
 // Size: 0xca
 function function_ea3ce28b(killstreaktype) {
@@ -50,7 +49,7 @@ function function_ea3ce28b(killstreaktype) {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4092d0eb, Offset: 0x3f8
 // Size: 0xbc
 function function_903cf6aa() {
@@ -62,13 +61,13 @@ function function_903cf6aa() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa4b30b8, Offset: 0x4c0
 // Size: 0xb4
 function function_3e6a41b7() {
     level function_f7599440(0);
     self clientfield::set_to_player("" + #"hash_4241f7b51f8c144", 0);
-    wait(2);
+    wait 2;
     if (isplayer(self)) {
         self val::reset(#"remote_missile", "ignoreme");
         self val::reset(#"remote_missile", "takedamage");
@@ -76,7 +75,7 @@ function function_3e6a41b7() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbbcb5377, Offset: 0x580
 // Size: 0xbe
 function function_f7599440(on) {

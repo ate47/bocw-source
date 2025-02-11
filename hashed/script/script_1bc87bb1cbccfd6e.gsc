@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_48a4cce0f86a3f65;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using script_35ae72be7b4fec10;
+#using script_48a4cce0f86a3f65;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\gametypes\globallogic_ui;
 
 #namespace helicopter;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x270
 // Size: 0x4
 function private _preload() {
@@ -26,13 +25,13 @@ function private _preload() {
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9c5c271e, Offset: 0x280
 // Size: 0xec
 function function_2b057725() {
     level.player = isdefined(level.player) ? level.player : getplayers()[0];
-    if (!namespace_61e6d095::exists(#"hash_6481c47ace299b25")) {
-        namespace_61e6d095::create(#"hash_6481c47ace299b25", #"chopper");
+    if (!namespace_61e6d095::exists(#"chopper_display")) {
+        namespace_61e6d095::create(#"chopper_display", #"chopper");
     }
     level.player val::set(#"helicopter", "show_weapon_hud", 0);
     level.player thread function_3cc2b159();
@@ -40,15 +39,15 @@ function function_2b057725() {
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf543bc69, Offset: 0x378
 // Size: 0x154
 function function_437dfc97() {
     level.player = isdefined(level.player) ? level.player : getplayers()[0];
     self notify("30dbc82404b4037b");
     self endon("30dbc82404b4037b");
-    if (namespace_61e6d095::exists(#"hash_6481c47ace299b25")) {
-        namespace_61e6d095::remove(#"hash_6481c47ace299b25");
+    if (namespace_61e6d095::exists(#"chopper_display")) {
+        namespace_61e6d095::remove(#"chopper_display");
     }
     level.player val::reset(#"helicopter", "show_crosshair");
     level.player val::reset(#"helicopter", "show_weapon_hud");
@@ -59,7 +58,7 @@ function function_437dfc97() {
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd16233f4, Offset: 0x4d8
 // Size: 0x186
 function private function_3cc2b159() {
@@ -81,7 +80,7 @@ function private function_3cc2b159() {
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdcf3e675, Offset: 0x668
 // Size: 0x4f6
 function function_d7c9c129() {
@@ -132,7 +131,7 @@ function function_d7c9c129() {
             } else if (level flag::get("chopper_hud_target_highlighted") && !level flag::get("chopper_hud_delayed_reticle_clear")) {
                 level flag::clear("chopper_hud_target_highlighted");
                 level flag::set("chopper_hud_delayed_reticle_clear");
-                self thread function_3c5aae6c();
+                self thread chopper_hud_delayed_reticle_clear();
             } else if (!level flag::get("chopper_hud_delayed_reticle_clear")) {
                 function_5c086305();
             }
@@ -142,19 +141,19 @@ function function_d7c9c129() {
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x615b5f45, Offset: 0xb68
 // Size: 0x74
-function function_3c5aae6c() {
+function chopper_hud_delayed_reticle_clear() {
     self endon(#"hash_6f1306832c75c68f", #"death");
-    level endon(#"hash_64a6c893bf1f6460");
+    level endon(#"chopper_hud_target_highlighted");
     waitframe(3);
     function_5c086305();
     level flag::clear("chopper_hud_delayed_reticle_clear");
 }
 
 // Namespace helicopter/namespace_dd60787e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xceed6729, Offset: 0xbe8
 // Size: 0x94
 function function_5c086305() {

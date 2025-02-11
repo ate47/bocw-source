@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\round.gsc;
-#using scripts\mp_common\gametypes\hud_message.gsc;
-#using scripts\mp_common\gametypes\hostmigration.gsc;
-#using scripts\mp_common\gametypes\globallogic_score.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_7f6cd71c43c45c57;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\hud_message_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\hud_message_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\globallogic_score;
+#using scripts\mp_common\gametypes\hostmigration;
+#using scripts\mp_common\gametypes\hud_message;
+#using scripts\mp_common\gametypes\round;
 
 #namespace globallogic_utils;
 
@@ -38,18 +37,18 @@ function is_winner(outcome, team_or_player) {
 function testshock() {
     self endon(#"death", #"disconnect");
     for (;;) {
-        wait(3);
+        wait 3;
         numshots = randomint(6);
         for (i = 0; i < numshots; i++) {
             iprintlnbold(numshots);
             self shellshock(#"frag_grenade_mp", 0.2);
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x61731ce2, Offset: 0x280
 // Size: 0x10e
 function timeuntilroundend() {
@@ -73,7 +72,7 @@ function timeuntilroundend() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3dc9a282, Offset: 0x398
 // Size: 0x3c
 function gettimeremaining() {
@@ -81,7 +80,7 @@ function gettimeremaining() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdd42a5ff, Offset: 0x3e0
 // Size: 0x44
 function registerpostroundevent(eventfunc) {
@@ -92,7 +91,7 @@ function registerpostroundevent(eventfunc) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5de604a0, Offset: 0x430
 // Size: 0x56
 function executepostroundevents() {
@@ -129,12 +128,12 @@ function getvalueinrange(value, minvalue, maxvalue) {
         if (level.teambased) {
             for (i = 0; i < numplayers - 1; i++) {
                 if (level.placement[#"all"][i].score < level.placement[#"all"][i + 1].score) {
-                    println("<unknown string>");
+                    println("<dev string:x38>");
                     for (j = 0; j < numplayers; j++) {
                         player = level.placement[#"all"][j];
-                        println("<unknown string>" + j + "<unknown string>" + player.name + "<unknown string>" + player.score);
+                        println("<dev string:x4e>" + j + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.score);
                     }
-                    assertmsg("<unknown string>");
+                    assertmsg("<dev string:x60>");
                     break;
                 }
             }
@@ -142,12 +141,12 @@ function getvalueinrange(value, minvalue, maxvalue) {
         }
         for (i = 0; i < numplayers - 1; i++) {
             if (level.placement[#"all"][i].pointstowin < level.placement[#"all"][i + 1].pointstowin) {
-                println("<unknown string>");
+                println("<dev string:x38>");
                 for (j = 0; j < numplayers; j++) {
                     player = level.placement[#"all"][j];
-                    println("<unknown string>" + j + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
+                    println("<dev string:x4e>" + j + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.pointstowin);
                 }
-                assertmsg("<unknown string>");
+                assertmsg("<dev string:x60>");
                 break;
             }
         }
@@ -156,7 +155,7 @@ function getvalueinrange(value, minvalue, maxvalue) {
 #/
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ca64f7b, Offset: 0x790
 // Size: 0x22
 function isvalidclass(c) {
@@ -175,16 +174,16 @@ function playtickingsound(gametype_tick_sound) {
         self playsound(gametype_tick_sound);
         if (time > 10) {
             time -= 1;
-            wait(1);
+            wait 1;
         } else if (time > 4) {
             time -= 0.5;
-            wait(0.5);
+            wait 0.5;
         } else if (time > 1) {
             time -= 0.4;
-            wait(0.4);
+            wait 0.4;
         } else {
             time -= 0.3;
-            wait(0.3);
+            wait 0.3;
         }
         hostmigration::waittillhostmigrationdone();
     }
@@ -201,7 +200,7 @@ function stoptickingsound() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1a79e0dd, Offset: 0x908
 // Size: 0x11c
 function gametimer() {
@@ -222,25 +221,25 @@ function gametimer() {
             game.playabletimepassed += gettime() - prevtime;
         }
         prevtime = gettime();
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8ba2103, Offset: 0xa30
 // Size: 0x7c
 function disableplayerroundstartdelay() {
     player = self;
     player endon(#"death", #"disconnect");
     if (getroundstartdelay()) {
-        wait(getroundstartdelay());
+        wait getroundstartdelay();
     }
     player disableroundstartdelay();
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5c0fd5e4, Offset: 0xab8
 // Size: 0x54
 function getroundstartdelay() {
@@ -252,7 +251,7 @@ function getroundstartdelay() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x27fd4f9a, Offset: 0xb18
 // Size: 0xa4
 function applyroundstartdelay() {
@@ -267,7 +266,7 @@ function applyroundstartdelay() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x43f5156b, Offset: 0xbc8
 // Size: 0x66
 function gettimepassed() {
@@ -281,7 +280,7 @@ function gettimepassed() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5242d31, Offset: 0xc38
 // Size: 0x54
 function pausetimer(pauseplayabletimer = 0) {
@@ -294,7 +293,7 @@ function pausetimer(pauseplayabletimer = 0) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15e0b91b, Offset: 0xc98
 // Size: 0x60
 function resumetimer() {
@@ -321,7 +320,7 @@ function resumetimerdiscardoverride(discardtime) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6e367979, Offset: 0xd50
 // Size: 0x1c
 function getscoreremaining(score) {
@@ -329,7 +328,7 @@ function getscoreremaining(score) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xafeaf995, Offset: 0xd78
 // Size: 0x50
 function function_fd90317f(user, var_b393387d) {
@@ -340,7 +339,7 @@ function function_fd90317f(user, var_b393387d) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x35a26ebe, Offset: 0xdd0
 // Size: 0x56
 function getscoreperminute(var_d0266750) {
@@ -349,7 +348,7 @@ function getscoreperminute(var_d0266750) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x74ca1f1f, Offset: 0xe30
 // Size: 0x6e
 function getestimatedtimeuntilscorelimit(total_score, var_d0266750) {
@@ -368,18 +367,18 @@ function getestimatedtimeuntilscorelimit(total_score, var_d0266750) {
 function rumbler() {
     self endon(#"disconnect");
     while (true) {
-        wait(0.1);
+        wait 0.1;
         self playrumbleonentity("damage_heavy");
     }
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xeb561703, Offset: 0xef8
 // Size: 0x24
 function waitfortimeornotify(time, notifyname) {
     self endon(notifyname);
-    wait(time);
+    wait time;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -388,10 +387,10 @@ function waitfortimeornotify(time, notifyname) {
 // Size: 0x60
 function waitfortimeornotifynoartillery(time, notifyname) {
     self endon(notifyname);
-    wait(time);
+    wait time;
     while (isdefined(level.artilleryinprogress)) {
         assert(level.artilleryinprogress);
-        wait(0.25);
+        wait 0.25;
     }
 }
 
@@ -436,7 +435,7 @@ function gethitlocheight(shitloc) {
     // Checksum 0xd3a3b75a, Offset: 0x1100
     // Size: 0x5a
     function debugline(start, end) {
-                for (i = 0; i < 50; i++) {
+        for (i = 0; i < 50; i++) {
             line(start, end);
             waitframe(1);
         }
@@ -445,7 +444,7 @@ function gethitlocheight(shitloc) {
 #/
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc0040d95, Offset: 0x1168
 // Size: 0x24
 function function_4aa8d809(index, string) {
@@ -455,7 +454,7 @@ function function_4aa8d809(index, string) {
 /#
 
     // Namespace globallogic_utils/globallogic_utils
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x826d07e3, Offset: 0x1198
     // Size: 0x23c
     function function_8d61a6c2(var_c1e98979) {
@@ -464,17 +463,17 @@ function function_4aa8d809(index, string) {
         log_string = level.var_336c35f1[var_c1e98979];
         winner = round::get_winner();
         if (isplayer(winner)) {
-            print("<unknown string>" + winner getxuid() + "<unknown string>" + winner.name + "<unknown string>");
+            print("<dev string:x8b>" + winner getxuid() + "<dev string:x9d>" + winner.name + "<dev string:xa2>");
         }
         if (isdefined(winner)) {
             if (isplayer(winner)) {
-                log_string = log_string + "<unknown string>" + winner getxuid() + "<unknown string>" + winner.name + "<unknown string>";
+                log_string = log_string + "<dev string:xa7>" + winner getxuid() + "<dev string:x9d>" + winner.name + "<dev string:xa2>";
             } else {
-                log_string = log_string + "<unknown string>" + winner;
+                log_string = log_string + "<dev string:xa7>" + winner;
             }
         }
         foreach (team, str_team in level.teams) {
-            log_string = log_string + "<unknown string>" + str_team + "<unknown string>" + game.stat[#"teamscores"][team];
+            log_string = log_string + "<dev string:xb2>" + str_team + "<dev string:x5a>" + game.stat[#"teamscores"][team];
         }
         print(log_string);
     }
@@ -499,12 +498,12 @@ function add_map_error(msg) {
 function print_map_errors() {
     if (isdefined(level.maperrors) && level.maperrors.size > 0) {
         /#
-            println("<unknown string>");
+            println("<dev string:xb8>");
             for (i = 0; i < level.maperrors.size; i++) {
-                println("<unknown string>" + level.maperrors[i]);
+                println("<dev string:xe2>" + level.maperrors[i]);
             }
-            println("<unknown string>");
-            util::error("<unknown string>");
+            println("<dev string:xed>");
+            util::error("<dev string:x117>");
         #/
         callback::abort_level();
         return true;
@@ -513,7 +512,7 @@ function print_map_errors() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6e8a6132, Offset: 0x1518
 // Size: 0x22
 function function_308e3379() {

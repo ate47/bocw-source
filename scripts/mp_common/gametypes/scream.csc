@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_348e9eb082638f90;
 #using script_13da4e6b98ca81a1;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\serverfield_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using script_348e9eb082638f90;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace scream;
 
@@ -19,14 +18,14 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.var_373c2e89 = #"hash_2ec26772dd39fa83";
     level.scream_deathmatch_timer = scream_deathmatch_timer::register();
     callback::on_spawned(&on_player_spawned);
-    clientfield::register("toplayer", "scream_slasher_postfx", 17000, 1, "int", &function_9b21dea8, 0, 0);
-    clientfield::register("allplayers", "scream_role_assignment", 17000, 2, "int", &function_5a4b8269, 0, 0);
+    clientfield::register("toplayer", "scream_slasher_postfx", 17000, 1, "int", &scream_slasher_postfx, 0, 0);
+    clientfield::register("allplayers", "scream_role_assignment", 17000, 2, "int", &scream_role_assignment, 0, 0);
     clientfield::register("allplayers", "scream_underscores", 17000, 1, "int", &function_b5673685, 0, 0);
-    clientfield::register("scriptmover", "scream_scrambler", 17000, 1, "int", &function_994883d0, 0, 0);
-    clientfield::register_clientuimodel("hudItems.alivePlayerCount", #"hash_6f4b11a0bee9b73d", #"aliveplayercount", 17000, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.aliveTeammateCount", #"hash_6f4b11a0bee9b73d", #"aliveteammatecount", 1, 4, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.screamSlasherClientNum0", #"hash_6f4b11a0bee9b73d", #"hash_43a11e70b97fcf39", 17000, 7, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.screamSlasherClientNum1", #"hash_6f4b11a0bee9b73d", #"hash_43a11d70b97fcd86", 17000, 7, "int", undefined, 0, 0);
+    clientfield::register("scriptmover", "scream_scrambler", 17000, 1, "int", &scream_scrambler, 0, 0);
+    clientfield::register_clientuimodel("hudItems.alivePlayerCount", #"hud_items", #"aliveplayercount", 17000, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.aliveTeammateCount", #"hud_items", #"aliveteammatecount", 1, 4, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.screamSlasherClientNum0", #"hud_items", #"hash_43a11e70b97fcf39", 17000, 7, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.screamSlasherClientNum1", #"hud_items", #"hash_43a11d70b97fcd86", 17000, 7, "int", undefined, 0, 0);
     serverfield::register("scream_slasher_chasing_vo", 17000, 1, "int");
     function_f2817d0c();
 }
@@ -58,7 +57,7 @@ function on_player_spawned(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0xebda41a1, Offset: 0x648
 // Size: 0x114
-function function_5a4b8269(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function scream_role_assignment(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!bwastimejump) {
         return;
     }
@@ -86,7 +85,7 @@ function function_5a4b8269(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xfebbec5f, Offset: 0x768
 // Size: 0x19e
-function function_9b21dea8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function scream_slasher_postfx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         postfx = #"hash_3ffcd14aabd4005d";
         if (!self function_da43934d() || function_65b9eb0f(fieldname) || game.state == #"postgame") {
@@ -267,7 +266,7 @@ function private docooldown(cooldown) {
     if (!isplayer(self) || !isdefined(cooldown)) {
         return;
     }
-    wait(cooldown);
+    wait cooldown;
 }
 
 // Namespace scream/scream
@@ -375,7 +374,7 @@ function private function_874de2c1(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0x8df3e3f, Offset: 0x1800
 // Size: 0xb4
-function function_994883d0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function scream_scrambler(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump && !function_1cbf351b(fieldname)) {
         function_e5a9ae33(fieldname, self getentitynumber(), 20000);
         return;

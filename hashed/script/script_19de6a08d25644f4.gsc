@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\ai_interface.gsc;
+#using scripts\core_common\ai\systems\ai_interface;
 
 #namespace namespace_835228b4;
 
 // Namespace namespace_835228b4/namespace_297e5893
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdfd9fac5, Offset: 0x88
 // Size: 0x15c
 function function_7304e94b() {

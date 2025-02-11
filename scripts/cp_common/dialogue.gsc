@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\face.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\systems\face;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\util_shared;
 
 #namespace dialogue;
 
 // Namespace dialogue/dialogue
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1aa12232, Offset: 0xe0
 // Size: 0x17c
 function queue(alias, timeout, var_bcc3bb15) {
     /#
         if (getdvarint(#"hash_c994d2af0329db3", 0) != 0) {
-            var_88f2fd1a = function_9119c373(alias, "<unknown string>");
-            if (isstring(var_88f2fd1a) && var_88f2fd1a != "<unknown string>") {
-                txt = "<unknown string>" + alias + "<unknown string>";
+            var_88f2fd1a = function_9119c373(alias, "<dev string:x38>");
+            if (isstring(var_88f2fd1a) && var_88f2fd1a != "<dev string:x43>") {
+                txt = "<dev string:x49>" + alias + "<dev string:x70>";
                 iprintlnbold(txt);
                 println(txt);
             }
@@ -35,7 +34,7 @@ function queue(alias, timeout, var_bcc3bb15) {
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1e562d07, Offset: 0x268
 // Size: 0x56
 function function_47b06180() {
@@ -48,15 +47,15 @@ function function_47b06180() {
 }
 
 // Namespace dialogue/dialogue
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x46825204, Offset: 0x2c8
 // Size: 0x23c
 function radio(alias, timeout, var_1ccdc84c, var_bcc3bb15) {
     /#
         if (getdvarint(#"hash_c994d2af0329db3", 0) != 0) {
-            var_88f2fd1a = function_9119c373(alias, "<unknown string>");
-            if (isstring(var_88f2fd1a) && var_88f2fd1a != "<unknown string>") {
-                txt = "<unknown string>" + alias + "<unknown string>";
+            var_88f2fd1a = function_9119c373(alias, "<dev string:x38>");
+            if (isstring(var_88f2fd1a) && var_88f2fd1a != "<dev string:x87>") {
+                txt = "<dev string:x8d>" + alias + "<dev string:xb4>";
                 iprintlnbold(txt);
                 println(txt);
             }
@@ -87,7 +86,7 @@ function radio(alias, timeout, var_1ccdc84c, var_bcc3bb15) {
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x36cb8744, Offset: 0x510
 // Size: 0x114
 function function_9e580f95() {
@@ -107,7 +106,7 @@ function function_9e580f95() {
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7b85b140, Offset: 0x630
 // Size: 0x44
 function private function_d708473a() {
@@ -133,12 +132,12 @@ function function_dcdd0cb6() {
 // Params 1, eflags: 0x0
 // Checksum 0x93166dfb, Offset: 0x6d0
 // Size: 0x52
-function function_952d1770(alias) {
+function radio_safe(alias) {
     return radio(alias, float(function_60d95f53()) / 1000);
 }
 
 // Namespace dialogue/dialogue
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd8016b9d, Offset: 0x730
 // Size: 0x44
 function function_96171f6d(alias, timeout, var_bcc3bb15) {
@@ -146,7 +145,7 @@ function function_96171f6d(alias, timeout, var_bcc3bb15) {
 }
 
 // Namespace dialogue/dialogue
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xac517cf6, Offset: 0x780
 // Size: 0xfc
 function player_gesture(alias, var_9a8be594, gestures, var_e01a79b9, targetents, timeout, var_bcc3bb15) {
@@ -165,7 +164,7 @@ function player_gesture(alias, var_9a8be594, gestures, var_e01a79b9, targetents,
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x358b9e0d, Offset: 0x888
 // Size: 0xec
 function function_3db52a33() {
@@ -193,7 +192,7 @@ function function_d37e4893() {
 }
 
 // Namespace dialogue/dialogue
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xf440e0c6, Offset: 0x9d0
 // Size: 0x364
 function private _play_player_dialogue(alias, var_9a8be594, gestures, var_e01a79b9, var_9e354358) {
@@ -209,7 +208,7 @@ function private _play_player_dialogue(alias, var_9a8be594, gestures, var_e01a79
     player_dialogue_emitter = self function_7ddb5aa3();
     /#
         if (isdefined(player_dialogue_emitter) && self == player_dialogue_emitter) {
-            println("<unknown string>" + alias);
+            println("<dev string:xcb>" + alias);
         }
     #/
     if (var_9a8be594 > 0) {
@@ -218,9 +217,9 @@ function private _play_player_dialogue(alias, var_9a8be594, gestures, var_e01a79
         org playsoundwithnotify(alias, "sounddone");
     }
     if (isdefined(gestures)) {
-        assert(isdefined(var_e01a79b9), "<unknown string>");
+        assert(isdefined(var_e01a79b9), "<dev string:xee>");
         if (isarray(gestures)) {
-            assert(gestures.size == var_e01a79b9.size, "<unknown string>");
+            assert(gestures.size == var_e01a79b9.size, "<dev string:x141>");
             for (i = 0; i < gestures.size; i++) {
                 if (isdefined(var_9e354358) && isdefined(var_9e354358[i])) {
                     player util::delay(var_e01a79b9[i], undefined, &function_ef63262c, gestures[i], var_9e354358[i]);
@@ -235,29 +234,29 @@ function private _play_player_dialogue(alias, var_9a8be594, gestures, var_e01a79
         }
     }
     if (var_9a8be594 > 0) {
-        wait(var_9a8be594);
+        wait var_9a8be594;
     }
     if (!isdefined(sound::wait_for_sounddone_or_death(org, player))) {
         org stopsounds();
     }
-    wait(0.05);
+    wait 0.05;
     org delete();
 }
 
 // Namespace dialogue/dialogue
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbbf279e8, Offset: 0xd40
 // Size: 0xf2
-function function_ef63262c(var_ee58f129, lookatent) {
-    assert(self == level.player, "<unknown string>");
+function function_ef63262c(gesturename, lookatent) {
+    assert(self == level.player, "<dev string:x1a1>");
     self endon(#"death");
     var_cdd69f44 = 0;
     blendtime = undefined;
     var_85e88aeb = 0;
     if (isdefined(lookatent) && isentity(lookatent)) {
-        var_cdd69f44 = self playgestureviewmodel(var_ee58f129, lookatent, 1, blendtime);
+        var_cdd69f44 = self playgestureviewmodel(gesturename, lookatent, 1, blendtime);
     } else {
-        var_cdd69f44 = self playgestureviewmodel(var_ee58f129, undefined, 1, blendtime);
+        var_cdd69f44 = self playgestureviewmodel(gesturename, undefined, 1, blendtime);
     }
     if (var_cdd69f44) {
     }
@@ -265,7 +264,7 @@ function function_ef63262c(var_ee58f129, lookatent) {
 }
 
 // Namespace dialogue/dialogue
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x97b4570d, Offset: 0xe40
 // Size: 0x7c
 function private function_8026ba41(alias) {
@@ -278,7 +277,7 @@ function private function_8026ba41(alias) {
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x608ff950, Offset: 0xec8
 // Size: 0x54
 function private function_bbd6c05b() {
@@ -293,7 +292,7 @@ function private function_bbd6c05b() {
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8d40aa63, Offset: 0xf28
 // Size: 0xa6
 function private function_7ddb5aa3() {
@@ -310,7 +309,7 @@ function private function_7ddb5aa3() {
 }
 
 // Namespace dialogue/dialogue
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf73f9eb9, Offset: 0xfd8
 // Size: 0xb6
 function private function_dc8dd8fa() {

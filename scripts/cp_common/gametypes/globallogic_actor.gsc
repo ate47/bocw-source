@@ -1,28 +1,27 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weapon_utils.gsc;
 #using script_4ab78e327b76395f;
-#using scripts\cp_common\gametypes\globallogic_utils.gsc;
-#using scripts\cp_common\gametypes\globallogic.gsc;
-#using scripts\cp_common\friendlyfire.gsc;
-#using scripts\cp_common\challenges.gsc;
-#using scripts\cp_common\bb.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_player.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\damagefeedback_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ammo_shared.gsc;
-#using scripts\core_common\ai\systems\shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai\systems\shared;
+#using scripts\core_common\ammo_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\damagefeedback_shared;
+#using scripts\core_common\globallogic\globallogic_player;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\bb;
+#using scripts\cp_common\challenges;
+#using scripts\cp_common\friendlyfire;
+#using scripts\cp_common\gametypes\globallogic;
+#using scripts\cp_common\gametypes\globallogic_utils;
+#using scripts\weapons\weapon_utils;
 
 #namespace globallogic_actor;
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x992f7dbb, Offset: 0x1e0
 // Size: 0x54
 function callback_actorspawned(spawner) {
@@ -32,7 +31,7 @@ function callback_actorspawned(spawner) {
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 16, eflags: 0x2 linked
+// Params 16, eflags: 0x0
 // Checksum 0x914790c2, Offset: 0x240
 // Size: 0xb24
 function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, modelindex, surfacetype, surfacenormal) {
@@ -58,10 +57,10 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
         self.attackerdata = [];
         self.attackerdamage = [];
     }
-    var_d3e9a2bd = isdefined(eattacker) && (self.team === eattacker.team || util::function_9b7092ef(self.team, eattacker.team));
+    same_team = isdefined(eattacker) && (self.team === eattacker.team || util::function_9b7092ef(self.team, eattacker.team));
     if (isdefined(level.friendlyfiredisabled) && !level.friendlyfiredisabled) {
         if (isdefined(level.var_edbfa7b)) {
-            if (isplayer(eattacker) && var_d3e9a2bd) {
+            if (isplayer(eattacker) && same_team) {
                 idamage = int(idamage * level.var_edbfa7b);
                 if (idamage < 1) {
                     idamage = 1;
@@ -91,7 +90,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
     if (idflags & 8192 && idamage < unmodified) {
         idamage = unmodified;
     }
-    assert(isdefined(idamage), "<unknown string>");
+    assert(isdefined(idamage), "<dev string:x38>");
     if (!isdefined(vdir)) {
         idflags |= 4;
     }
@@ -106,7 +105,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
                 eattacker.hits++;
             }
         } else if (isai(eattacker)) {
-            if (var_d3e9a2bd && smeansofdeath == "MOD_MELEE") {
+            if (same_team && smeansofdeath == "MOD_MELEE") {
                 return;
             }
         }
@@ -118,8 +117,8 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
             eattacker = eattacker.driver;
         }
         if (isplayer(eattacker)) {
-            println("<unknown string>" + weapon.name + "<unknown string>" + smeansofdeath);
-            if (!var_d3e9a2bd) {
+            println("<dev string:x74>" + weapon.name + "<dev string:x91>" + smeansofdeath);
+            if (!same_team) {
                 if (smeansofdeath == "MOD_MELEE") {
                     eattacker notify(#"melee_kill");
                 }
@@ -146,7 +145,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
         }
     }
     if (!(idflags & 8192)) {
-        if (level.teambased && isdefined(eattacker) && eattacker != self && var_d3e9a2bd && !isplayer(eattacker)) {
+        if (level.teambased && isdefined(eattacker) && eattacker != self && same_team && !isplayer(eattacker)) {
             if (level.friendlyfire == 0) {
                 return;
             } else if (level.friendlyfire == 1) {
@@ -166,7 +165,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
         }
         if (isdefined(eattacker) && eattacker != self) {
             if (!isdefined(einflictor) || !isai(einflictor) || isvehicle(einflictor) && einflictor getseatoccupant(0) === eattacker) {
-                if (idamage > 0 && !var_d3e9a2bd && self.team != #"neutral" && shitloc !== "riotshield" && self.health - idamage > 0) {
+                if (idamage > 0 && !same_team && self.team != #"neutral" && shitloc !== "riotshield" && self.health - idamage > 0) {
                     eattacker thread damagefeedback::update(smeansofdeath, einflictor, undefined, weapon, self, psoffsettime, shitloc, 0);
                 }
             }
@@ -181,7 +180,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x13d44633, Offset: 0xd70
 // Size: 0x6f4
 function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime) {
@@ -237,7 +236,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
         }
     }
     if (isdefined(player) && isplayer(player)) {
-        player notify(#"hash_629056f40d06c7", {#victim:self, #mod:smeansofdeath, #weapon:weapon});
+        player notify(#"killed_ai", {#victim:self, #mod:smeansofdeath, #weapon:weapon});
         if (smeansofdeath == "MOD_MELEE" || smeansofdeath == "MOD_MELEE_ASSASSINATE" || smeansofdeath == "MOD_MELEE_WEAPON_BUTT") {
             player.var_4b6c9aa0++;
         }
@@ -276,7 +275,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x434e20a9, Offset: 0x1470
 // Size: 0x3c
 function callback_actorcloned(original) {
@@ -285,11 +284,11 @@ function callback_actorcloned(original) {
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x93ac4051, Offset: 0x14b8
 // Size: 0xd8
 function function_bb02eb15(*einflictor, eattacker, *weapon, lpattackteam) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     if (isdefined(self.attackers)) {
         for (j = 0; j < self.attackers.size; j++) {
             player = self.attackers[j];
@@ -305,11 +304,11 @@ function function_bb02eb15(*einflictor, eattacker, *weapon, lpattackteam) {
             damage_done = self.attackerdamage[player.clientid].damage;
         }
     }
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xb0b0fe98, Offset: 0x1598
 // Size: 0x7c
 function function_c10ff087(eattacker, einflictor, weapon, meansofdeath, damage) {

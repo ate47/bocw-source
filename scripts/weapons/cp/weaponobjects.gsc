@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_6b221588ece2c4aa;
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace weaponobjects;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbc700707, Offset: 0x100
 // Size: 0x34
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8fa70be9, Offset: 0x140
 // Size: 0x7c
 function start_gametype() {
@@ -34,7 +33,7 @@ function start_gametype() {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb987aada, Offset: 0x1c8
 // Size: 0x9c
 function on_player_spawned() {

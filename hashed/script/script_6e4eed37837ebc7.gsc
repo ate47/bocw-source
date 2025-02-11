@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_2d7ccca3;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4bf1cc6e, Offset: 0x168
 // Size: 0x7c
 function private preinit() {
@@ -25,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xbef3e245, Offset: 0x1f0
 // Size: 0x126
 function private function_39a250e3() {
@@ -91,7 +90,7 @@ function private event_handler[player_loadoutchanged] function_688d2014(eventstr
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9497a90, Offset: 0x638
 // Size: 0x494
 function private function_63ac35a3(weapon) {
@@ -149,7 +148,7 @@ function private function_63ac35a3(weapon) {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x89af6db6, Offset: 0xad8
 // Size: 0x9a4
 function private function_e7085388(weapon, var_e3774219 = 0) {
@@ -234,7 +233,7 @@ function private function_e7085388(weapon, var_e3774219 = 0) {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6d49443a, Offset: 0x1488
 // Size: 0xbc
 function private function_e7967fc8(weapon, var_cdd95e58 = 0) {
@@ -254,7 +253,7 @@ function private function_e7967fc8(weapon, var_cdd95e58 = 0) {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb5b5bd05, Offset: 0x1550
 // Size: 0x3a
 function private function_62c1bfaa(weapon) {
@@ -262,7 +261,7 @@ function private function_62c1bfaa(weapon) {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xccfe3498, Offset: 0x1598
 // Size: 0x52
 function private function_e3774219(weapon) {
@@ -271,7 +270,7 @@ function private function_e3774219(weapon) {
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x361cc528, Offset: 0x15f8
 // Size: 0x44
 function private function_42ee343f(eventstring, data) {

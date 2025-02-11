@@ -1,24 +1,23 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_ping.gsc;
-#using scripts\zm_common\zm_blockers.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_3411bb48d41bd3b;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_blockers;
+#using scripts\zm_common\zm_ping;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_utility;
 
-#namespace namespace_1367bdba;
+#namespace zm_barricade;
 
-// Namespace namespace_1367bdba/namespace_1367bdba
+// Namespace zm_barricade/zm_barricade
 // Params 0, eflags: 0x0
 // Checksum 0xa8ae54c0, Offset: 0x168
 // Size: 0x64
@@ -28,8 +27,8 @@ function function_59122168() {
     array::thread_all(level.barricades, &function_14354831);
 }
 
-// Namespace namespace_1367bdba/namespace_1367bdba
-// Params 0, eflags: 0x2 linked
+// Namespace zm_barricade/zm_barricade
+// Params 0, eflags: 0x0
 // Checksum 0x768edb7a, Offset: 0x1d8
 // Size: 0x44
 function function_fdc4ca3c() {
@@ -37,7 +36,7 @@ function function_fdc4ca3c() {
     level.var_21326085 = 1;
 }
 
-// Namespace namespace_1367bdba/event_1524de24
+// Namespace zm_barricade/event_1524de24
 // Params 1, eflags: 0x20
 // Checksum 0x8ed5b747, Offset: 0x228
 // Size: 0xc
@@ -45,8 +44,8 @@ function event_handler[event_1524de24] function_9d78f548(*eventstruct) {
     
 }
 
-// Namespace namespace_1367bdba/namespace_1367bdba
-// Params 0, eflags: 0x2 linked
+// Namespace zm_barricade/zm_barricade
+// Params 0, eflags: 0x0
 // Checksum 0x461c7d56, Offset: 0x240
 // Size: 0x5ec
 function function_14354831() {
@@ -130,8 +129,8 @@ function function_14354831() {
     self thread function_55ce3493();
 }
 
-// Namespace namespace_1367bdba/namespace_1367bdba
-// Params 0, eflags: 0x6 linked
+// Namespace zm_barricade/zm_barricade
+// Params 0, eflags: 0x4
 // Checksum 0x7f0722f7, Offset: 0x838
 // Size: 0x64
 function private function_d58c97c8() {
@@ -141,8 +140,8 @@ function private function_d58c97c8() {
     setenablenode(self.neg_end, 0);
 }
 
-// Namespace namespace_1367bdba/namespace_1367bdba
-// Params 0, eflags: 0x6 linked
+// Namespace zm_barricade/zm_barricade
+// Params 0, eflags: 0x4
 // Checksum 0x76a29290, Offset: 0x8a8
 // Size: 0x1b8
 function private function_348283c9() {
@@ -165,8 +164,8 @@ function private function_348283c9() {
     }
 }
 
-// Namespace namespace_1367bdba/namespace_1367bdba
-// Params 0, eflags: 0x6 linked
+// Namespace zm_barricade/zm_barricade
+// Params 0, eflags: 0x4
 // Checksum 0xf7540089, Offset: 0xa68
 // Size: 0x168
 function private function_55ce3493() {

@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\system_shared;
 
 #namespace gestures;
 
@@ -12,7 +11,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace gestures/gestures
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x655df593, Offset: 0x108
 // Size: 0x324
 function main() {
@@ -43,15 +42,15 @@ function main() {
 // Checksum 0xaef28b, Offset: 0x438
 // Size: 0xc2
 function give_gesture(gestureweapon) {
-    assert(gestureweapon != level.weaponnone, "<unknown string>");
-    assert(!isdefined(self.gestureweapon) || self.gestureweapon == level.weaponnone, "<unknown string>");
+    assert(gestureweapon != level.weaponnone, "<dev string:x38>");
+    assert(!isdefined(self.gestureweapon) || self.gestureweapon == level.weaponnone, "<dev string:x68>");
     self setactionslot(3, "taunt");
     self giveweapon(gestureweapon);
     self.gestureweapon = gestureweapon;
 }
 
 // Namespace gestures/gestures
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9e09705c, Offset: 0x508
 // Size: 0x8e
 function clear_gesture() {
@@ -64,17 +63,17 @@ function clear_gesture() {
 }
 
 // Namespace gestures/gestures
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d0e05cf, Offset: 0x5a0
 // Size: 0x72
-function function_e198bde3(var_ee58f129) {
-    if (!isdefined(var_ee58f129)) {
+function function_e198bde3(gesturename) {
+    if (!isdefined(gesturename)) {
         return 0;
     }
-    if (var_ee58f129 == "") {
+    if (gesturename == "") {
         return 0;
     }
-    var_45e6768d = var_ee58f129;
+    var_45e6768d = gesturename;
     if (!ishash(var_45e6768d)) {
         var_45e6768d = hash(var_45e6768d);
     }
@@ -82,14 +81,14 @@ function function_e198bde3(var_ee58f129) {
 }
 
 // Namespace gestures/gestures
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb658db97, Offset: 0x620
 // Size: 0x182
-function function_a5202150(var_ee58f129, weaponname) {
+function function_a5202150(gesturename, weaponname) {
     if (!isdefined(level.gesturedata)) {
         level.gesturedata = [];
     }
-    var_45e6768d = function_e198bde3(var_ee58f129);
+    var_45e6768d = function_e198bde3(gesturename);
     if (!ishash(var_45e6768d)) {
         return;
     }
@@ -110,14 +109,14 @@ function function_a5202150(var_ee58f129, weaponname) {
 }
 
 // Namespace gestures/gestures
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a791289, Offset: 0x7b0
 // Size: 0xb6
-function function_ba4529d4(var_ee58f129) {
+function function_ba4529d4(gesturename) {
     if (!isdefined(level.gesturedata)) {
         level.gesturedata = [];
     }
-    var_45e6768d = function_e198bde3(var_ee58f129);
+    var_45e6768d = function_e198bde3(gesturename);
     if (!ishash(var_45e6768d)) {
         return;
     }
@@ -128,11 +127,11 @@ function function_ba4529d4(var_ee58f129) {
 }
 
 // Namespace gestures/gestures
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x792dfe5d, Offset: 0x870
 // Size: 0x22e
-function function_8cc27b6d(var_ee58f129) {
-    var_45e6768d = function_e198bde3(var_ee58f129);
+function function_8cc27b6d(gesturename) {
+    var_45e6768d = function_e198bde3(gesturename);
     if (!ishash(var_45e6768d)) {
         return false;
     }
@@ -162,45 +161,45 @@ function function_8cc27b6d(var_ee58f129) {
 }
 
 // Namespace gestures/gestures
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x816bd4f5, Offset: 0xaa8
 // Size: 0x72
 function function_c77349d4(var_851342cf) {
-    var_ee58f129 = undefined;
+    gesturename = undefined;
     if (isdefined(var_851342cf)) {
         weapon = self getcurrentweapon();
         stancetype = weapon.var_6566504b;
-        var_ee58f129 = function_d12fe2ad(var_851342cf, stancetype);
+        gesturename = function_d12fe2ad(var_851342cf, stancetype);
     }
-    return var_ee58f129;
+    return gesturename;
 }
 
 // Namespace gestures/gestures
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x3e760902, Offset: 0xb28
 // Size: 0x7e
-function play_gesture(var_ee58f129, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall) {
-    if (self function_8cc27b6d(var_ee58f129)) {
-        return self function_b6cc48ed(var_ee58f129, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
+function play_gesture(gesturename, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall) {
+    if (self function_8cc27b6d(gesturename)) {
+        return self function_b6cc48ed(gesturename, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
     }
     return 0;
 }
 
 // Namespace gestures/gestures
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x607fc772, Offset: 0xbb0
 // Size: 0x5a
-function function_b6cc48ed(var_ee58f129, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall) {
-    return self playgestureviewmodel(var_ee58f129, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
+function function_b6cc48ed(gesturename, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall) {
+    return self playgestureviewmodel(gesturename, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
 }
 
 // Namespace gestures/gestures
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x517d8a8c, Offset: 0xc18
 // Size: 0x7a
 function function_56e00fbf(var_851342cf, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall) {
-    var_ee58f129 = self function_c77349d4(var_851342cf);
-    return play_gesture(var_ee58f129, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
+    gesturename = self function_c77349d4(var_851342cf);
+    return play_gesture(gesturename, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
 }
 
 // Namespace gestures/gestures
@@ -208,12 +207,12 @@ function function_56e00fbf(var_851342cf, target, var_a085312c, blendtime, startt
 // Checksum 0xa41481c6, Offset: 0xca0
 // Size: 0x7a
 function function_e62f6dde(var_851342cf, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall) {
-    var_ee58f129 = self function_c77349d4(var_851342cf);
-    return function_b6cc48ed(var_ee58f129, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
+    gesturename = self function_c77349d4(var_851342cf);
+    return function_b6cc48ed(gesturename, target, var_a085312c, blendtime, starttime, var_15fc620c, stopall);
 }
 
 // Namespace gestures/gestures
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x18b14b98, Offset: 0xd28
 // Size: 0x262
 function function_f3e2696f(ent, weapon, weapon_options, timeout, var_1e89628f, var_1d78d31, callbackfail) {

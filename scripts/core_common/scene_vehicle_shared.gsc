@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\scene_objects_shared.gsc;
+#using scripts\core_common\scene_objects_shared;
+#using scripts\core_common\vehicle_ai_shared;
 
 #namespace scene;
 
@@ -14,7 +13,7 @@ class cscenevehicle : csceneobject {
     var var_1f97724a;
 
     // Namespace cscenevehicle/scene_vehicle_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x6921855e, Offset: 0x4e8
     // Size: 0x11c
     function function_d09b043() {
@@ -30,7 +29,7 @@ class cscenevehicle : csceneobject {
     }
 
     // Namespace cscenevehicle/scene_vehicle_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x85899549, Offset: 0x1a0
     // Size: 0xec
     function _spawn_ent() {
@@ -45,7 +44,7 @@ class cscenevehicle : csceneobject {
     }
 
     // Namespace cscenevehicle/scene_vehicle_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa257737d, Offset: 0x478
     // Size: 0x64
     function _cleanup() {
@@ -55,7 +54,7 @@ class cscenevehicle : csceneobject {
     }
 
     // Namespace cscenevehicle/scene_vehicle_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x92706175, Offset: 0x298
     // Size: 0x13c
     function _set_values(ent = self._e) {
@@ -68,7 +67,7 @@ class cscenevehicle : csceneobject {
     }
 
     // Namespace cscenevehicle/scene_vehicle_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x5944cc73, Offset: 0x3e0
     // Size: 0x8c
     function _prepare() {

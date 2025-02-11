@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using script_54f593f5beb1464a;
 #using script_2a30ac7aa0ee8988;
+#using script_54f593f5beb1464a;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_5f402033;
 
@@ -16,7 +15,7 @@ function autoexec function_ceb1991() {
 }
 
 // Namespace namespace_5f402033/namespace_5f402033
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x24548dfc, Offset: 0xd0
 // Size: 0x10dc
 function function_c2e022a9() {

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\killstreaks\killstreak_hacking.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreak_hacking;
 
 #namespace killstreak_detect;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xde72276e, Offset: 0x140
 // Size: 0x114
 function init_shared() {
@@ -29,7 +28,7 @@ function init_shared() {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd5e0095f, Offset: 0x260
 // Size: 0x5c
 function killstreaktargetset(killstreakentity, offset = (0, 0, 0)) {

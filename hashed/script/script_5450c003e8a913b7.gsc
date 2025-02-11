@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_3819e7a1427df6d2;
-#using script_3072532951b5b4ae;
-#using scripts\core_common\stealth\debug.gsc;
-#using scripts\core_common\stealth\threat_sight.gsc;
-#using script_16a28d93ee216f6f;
-#using scripts\core_common\stealth\event.gsc;
 #using script_139ae0bb0a87141c;
-#using scripts\core_common\stealth\utility.gsc;
+#using script_16a28d93ee216f6f;
+#using script_3072532951b5b4ae;
 #using script_3ad66e3076c279ab;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\debug;
+#using scripts\core_common\stealth\event;
+#using scripts\core_common\stealth\threat_sight;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\util;
 
 #namespace enemy;
 
@@ -22,10 +21,10 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_f1f700ac;
+#namespace stealth_enemy;
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x128b2276, Offset: 0x4f8
 // Size: 0x16c
 function main() {
@@ -47,8 +46,8 @@ function main() {
     self thread function_2b1c382();
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x2386c914, Offset: 0x670
 // Size: 0x1ac
 function init_flags() {
@@ -67,8 +66,8 @@ function init_flags() {
     self namespace_979752dc::group_flag_init("stealth_disable_unresponsive_ai_check");
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x8091a5ab, Offset: 0x828
 // Size: 0x84
 function stealth_init_goal_radius() {
@@ -81,8 +80,8 @@ function stealth_init_goal_radius() {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0xb350fcf1, Offset: 0x8b8
 // Size: 0x1cc
 function init_settings() {
@@ -92,8 +91,8 @@ function init_settings() {
     self.stealth.max_warnings = 2;
     self.stealth.reachedinvestigate = 0;
     /#
-        self.stealth.ai_event = "patrol";
-        self.stealth.var_29672bb5 = "patrol";
+        self.stealth.ai_event = "<dev string:x38>";
+        self.stealth.var_29672bb5 = "<dev string:x38>";
     #/
     self.newenemyreactiondistsq = sqr(400);
     self namespace_cc4354b9::corpse_init_entity();
@@ -114,8 +113,8 @@ function init_settings() {
     self stealth_threat_sight::threat_sight_set_state("hidden");
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x6a7784f6, Offset: 0xa90
 // Size: 0x10c
 function function_2b1c382() {
@@ -138,8 +137,8 @@ function function_2b1c382() {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0xe9855d76, Offset: 0xba8
 // Size: 0x1fc
 function death_cleanup() {
@@ -165,8 +164,8 @@ function death_cleanup() {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0xac274e4e, Offset: 0xdb0
 // Size: 0x34
 function death_vo_cleanup() {
@@ -175,20 +174,20 @@ function death_vo_cleanup() {
     self delete();
 }
 
-// Namespace namespace_f1f700ac/enemy
+// Namespace stealth_enemy/enemy
 // Params 1, eflags: 0x0
 // Checksum 0x4a5237f8, Offset: 0xdf0
 // Size: 0xa0
 function add_active_sense_function(func) {
-    assert(isdefined(self.stealth), "ALERT" + self getentitynumber() + "<unknown string>" + self.origin);
+    assert(isdefined(self.stealth), "<dev string:x3c>" + self getentitynumber() + "<dev string:x5f>" + self.origin);
     if (!isdefined(self.stealth.active_sense_funcs)) {
         self.stealth.active_sense_funcs = [];
     }
     self.stealth.active_sense_funcs[self.stealth.active_sense_funcs.size] = func;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x38025f3a, Offset: 0xe98
 // Size: 0x57a
 function proximity_check() {
@@ -266,8 +265,8 @@ function proximity_check() {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0xe11bc337, Offset: 0x1420
 // Size: 0x15c
 function set_blind(blind, force) {
@@ -293,8 +292,8 @@ function set_blind(blind, force) {
     set_sight_state("hidden");
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0xf061e94c, Offset: 0x1588
 // Size: 0x3c2
 function set_sight_state(state) {
@@ -349,13 +348,13 @@ function set_sight_state(state) {
         self.fovcosineperiphmaxdistsq = 16384;
         break;
     case #"hash_5689f41e8c0ad00":
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x6b>");
         break;
     case #"hash_2689c03316776ffb":
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x6b>");
         break;
     case #"elevated":
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x6b>");
         break;
     }
     if (isdefined(self.var_e6b70cdb)) {
@@ -366,8 +365,8 @@ function set_sight_state(state) {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0x14f6c22d, Offset: 0x1958
 // Size: 0x2f2
 function set_alert_level(type, event) {
@@ -381,21 +380,21 @@ function set_alert_level(type, event) {
     self notify(#"set_alert_level");
     self endon(#"set_alert_level");
     if (isdefined(event) && namespace_979752dc::function_7211414e(self.alertlevelscript) < namespace_979752dc::function_7211414e(type)) {
-        self notify(#"hash_7943e96754003c55");
+        self notify(#"alert_level_increase");
         event.var_c0659057 = namespace_979752dc::function_7211414e(type);
         players = getplayers();
         if (isdefined(players) && players.size > 0) {
             foreach (player in players) {
-                player notify(#"hash_543e034b500f035d", event);
+                player notify(#"stealth_alert", event);
             }
         }
     }
     self.alertlevelscript = type;
     while (isdefined(self.syncedmeleetarget)) {
-        wait(0.05);
+        wait 0.05;
     }
     /#
-        self thread stealth_debug::function_690312e5(type);
+        self thread stealth_debug::debug_alert(type);
     #/
     self namespace_979752dc::set_stealth_state(type);
     self notify(#"hash_1969930500784d9a", type);
@@ -408,8 +407,8 @@ function set_alert_level(type, event) {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0xa664f67d, Offset: 0x1c58
 // Size: 0xf4
 function set_default_stealth_funcs() {
@@ -421,8 +420,8 @@ function set_default_stealth_funcs() {
     level namespace_979752dc::set_stealth_func("combat", &bt_event_handler_severity);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0xda7d5b92, Offset: 0x1d58
 // Size: 0x34c
 function monitor_damage_thread(rangeauto, rangesight) {
@@ -476,8 +475,8 @@ function monitor_damage_thread(rangeauto, rangesight) {
     self stealth_event::event_broadcast_axis("ally_killed", "ally_hurt_peripheral", other, rangeauto, rangesight);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 13, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 13, eflags: 0x0
 // Checksum 0x14bae7b8, Offset: 0x20b0
 // Size: 0x1a8
 function check_kill_damage(*inflictor, *attacker, damage, *flags, meansofdamage, weapon, *var_fd90b0bb, point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {
@@ -497,8 +496,8 @@ function check_kill_damage(*inflictor, *attacker, damage, *flags, meansofdamage,
     return hitloc;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x41409c65, Offset: 0x2260
 // Size: 0xec
 function headtrack_player_toggle(bool) {
@@ -520,7 +519,7 @@ function headtrack_player_toggle(bool) {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
+// Namespace stealth_enemy/enemy
 // Params 1, eflags: 0x0
 // Checksum 0x138f574, Offset: 0x2358
 // Size: 0x74
@@ -529,12 +528,12 @@ function lock_player_headtracking_off(duration) {
     self notify(#"hash_602f82a12f43d586");
     self endon(#"hash_602f82a12f43d586");
     self disable_player_headtracking();
-    wait(duration);
+    wait duration;
     self enable_player_headtracking();
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x1a508b63, Offset: 0x23d8
 // Size: 0x2c
 function disable_player_headtracking() {
@@ -542,16 +541,16 @@ function disable_player_headtracking() {
     headtrack_player_toggle(0);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0xa4300639, Offset: 0x2410
 // Size: 0x16
 function enable_player_headtracking() {
     self.stealth.allowplayerheadtracking = 1;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0xfa13523a, Offset: 0x2430
 // Size: 0x3d6
 function event_handler_should_ignore(event) {
@@ -609,8 +608,8 @@ function event_handler_should_ignore(event) {
     return 0;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x17751dae, Offset: 0x2810
 // Size: 0x1e8
 function should_ignore_sprint_footstep(event) {
@@ -637,8 +636,8 @@ function should_ignore_sprint_footstep(event) {
     return true;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x8f053c9e, Offset: 0x2a00
 // Size: 0xbc
 function event_override_disguise(event) {
@@ -656,8 +655,8 @@ function event_override_disguise(event) {
     return false;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0xd53c6685, Offset: 0x2ac8
 // Size: 0xe8
 function event_anyone_within_radius(eventorigin, dist) {
@@ -671,8 +670,8 @@ function event_anyone_within_radius(eventorigin, dist) {
     return false;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0xa893b9c3, Offset: 0x2bb8
 // Size: 0x3d2
 function event_handler_translate_severity(event) {
@@ -732,8 +731,8 @@ function event_handler_translate_severity(event) {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0x6aad5940, Offset: 0x2f98
 // Size: 0x4a
 function trigger_cover_blown(*event, bdocoverblownreaction) {
@@ -744,8 +743,8 @@ function trigger_cover_blown(*event, bdocoverblownreaction) {
     self.stealth.bdocoverblownreaction = bdocoverblownreaction;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0xe412336e, Offset: 0x2ff0
 // Size: 0x2b4
 function react_announce(event) {
@@ -755,31 +754,31 @@ function react_announce(event) {
     switch (var_bed01a48) {
     case #"investigate":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
-        println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
+        println("<dev string:xa3>" + self getentitynumber() + "<dev string:xbe>" + event.typeorig + "<dev string:xf2>");
         /#
-            stealth_debug::function_65b21ab8(self, "<unknown string>");
+            stealth_debug::function_65b21ab8(self, "<dev string:x115>");
         #/
         return true;
     case #"cover_blown":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "coverblown", delaytime);
-        println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
+        println("<dev string:xa3>" + self getentitynumber() + "<dev string:x11d>" + event.typeorig + "<dev string:xf2>");
         /#
-            stealth_debug::function_65b21ab8(self, "<unknown string>");
+            stealth_debug::function_65b21ab8(self, "<dev string:x151>");
         #/
         return true;
     case #"combat":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "combat", 1);
-        println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
+        println("<dev string:xa3>" + self getentitynumber() + "<dev string:x162>" + event.typeorig + "<dev string:xf2>");
         /#
-            stealth_debug::function_65b21ab8(self, "<unknown string>");
+            stealth_debug::function_65b21ab8(self, "<dev string:x191>");
         #/
         return true;
     }
     return false;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x592f722c, Offset: 0x32b0
 // Size: 0x49c
 function react_announce_specific(event) {
@@ -803,27 +802,27 @@ function react_announce_specific(event) {
         case #"found_corpse":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", event.typeorig, delaytime);
             /#
-                stealth_debug::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<dev string:x19d>");
             #/
             return true;
         case #"bulletwhizby":
         case #"gunshot":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", 0.2, event);
             /#
-                stealth_debug::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<dev string:x1b0>");
             #/
             return true;
         case #"ally_damaged":
         case #"gunshot_teammate":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", randomfloatrange(0.8, 1.3), event);
             /#
-                stealth_debug::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<dev string:x1c7>");
             #/
             return true;
         case #"ally_killed":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "ally_killed", 0.5);
             /#
-                stealth_debug::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<dev string:x1dc>");
             #/
             return true;
         case #"proximity":
@@ -836,15 +835,15 @@ function react_announce_specific(event) {
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
             return true;
         default:
-            println("<unknown string>" + event.typeorig + "<unknown string>");
+            println("<dev string:x1e9>" + event.typeorig + "<dev string:x202>");
             break;
         }
     }
     return false;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0xa2ccfdd0, Offset: 0x3758
 // Size: 0x1cc
 function setpatrolstyle_base() {
@@ -863,20 +862,20 @@ function setpatrolstyle_base() {
     self thread function_6935155f("patrol", delay);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0x4c7a9d7f, Offset: 0x3930
 // Size: 0x4c
 function function_6935155f(style, delay) {
     self endon(#"death");
     if (delay > 0) {
-        wait(delay);
+        wait delay;
     }
     self namespace_979752dc::set_patrol_style(style);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 2, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 2, eflags: 0x0
 // Checksum 0xb68c44ab, Offset: 0x3988
 // Size: 0x4c
 function bt_set_stealth_state(statename, event) {
@@ -884,8 +883,8 @@ function bt_set_stealth_state(statename, event) {
     self [[ self.fnsetstealthstate ]](statename, event);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x4fd57da3, Offset: 0x39e0
 // Size: 0x28e
 function bt_event_handler_severity(event) {
@@ -925,8 +924,8 @@ function bt_event_handler_severity(event) {
     return true;
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x71c2bdb3, Offset: 0x3c78
 // Size: 0x4c
 function bt_event_investigate(event) {
@@ -934,8 +933,8 @@ function bt_event_investigate(event) {
     self bt_set_stealth_state("investigate", event);
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x8d5e0b26, Offset: 0x3cd0
 // Size: 0x34c
 function bt_event_cover_blown(event) {
@@ -977,8 +976,8 @@ function bt_event_cover_blown(event) {
     }
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 1, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 1, eflags: 0x0
 // Checksum 0x66b373e1, Offset: 0x4028
 // Size: 0x11c
 function bt_event_combat(event) {
@@ -986,7 +985,7 @@ function bt_event_combat(event) {
         return;
     }
     self endon(#"death");
-    self notify(#"hash_543c5a6a505d931b");
+    self notify(#"investigate_behavior");
     self notify(#"stop_going_to_node");
     self set_alert_level("attack", event);
     self bt_set_stealth_state("combat", event);
@@ -999,8 +998,8 @@ function bt_event_combat(event) {
     self flag::set("stealth_attack");
 }
 
-// Namespace namespace_f1f700ac/enemy
-// Params 0, eflags: 0x2 linked
+// Namespace stealth_enemy/enemy
+// Params 0, eflags: 0x0
 // Checksum 0x2e2b5396, Offset: 0x4150
 // Size: 0x6a
 function set_provide_cover_fire() {
@@ -1009,7 +1008,7 @@ function set_provide_cover_fire() {
     self endon(#"stealth_investigate");
     self endon(#"stealth_hunt");
     self endon(#"stealth_combat");
-    wait(5);
+    wait 5;
     self.providecoveringfire = 0;
 }
 

@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\gib.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\aat_shared.csc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace ammomod_brainrot;
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4598ab3, Offset: 0x380
 // Size: 0x2ac
 function init_brainrot() {
@@ -30,7 +29,7 @@ function init_brainrot() {
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x1e97dc0c, Offset: 0x638
 // Size: 0x64
 function function_e437bd26(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -38,7 +37,7 @@ function function_e437bd26(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8fb64855, Offset: 0x6a8
 // Size: 0x544
 function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -129,7 +128,7 @@ function function_b9c917cc(localclientnum, *str_bundle) {
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6c5b2cf4, Offset: 0xc70
 // Size: 0xa4
 function function_1d8434b9(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

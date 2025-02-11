@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\teleport_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\teleport_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace trigger;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6bef66dd, Offset: 0x280
 // Size: 0x3c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x602f8469, Offset: 0x2c8
 // Size: 0xdc
 function add_handler(var_60ffbed2, func_handler, func_init, var_114fa26c = is_trigger_once()) {
@@ -48,7 +47,7 @@ function add_handler(var_60ffbed2, func_handler, func_init, var_114fa26c = is_tr
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9c59c82, Offset: 0x3b0
 // Size: 0x5c
 function init_flags(str_kvp) {
@@ -58,7 +57,7 @@ function init_flags(str_kvp) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95c8d99a, Offset: 0x418
 // Size: 0x2c4
 function trigger_think() {
@@ -95,7 +94,7 @@ function add_flags(flags) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd28ef4ed, Offset: 0x740
 // Size: 0x1c8
 function get_trigger_look_target() {
@@ -115,7 +114,7 @@ function get_trigger_look_target() {
         a_potential_target_structs = struct::get_array(self.target);
         a_targets = arraycombine(a_targets, a_potential_target_structs, 1, 0);
         if (a_targets.size > 0) {
-            assert(a_targets.size == 1, "<unknown string>" + self.origin + "<unknown string>");
+            assert(a_targets.size == 1, "<dev string:x38>" + self.origin + "<dev string:x4b>");
             e_target = a_targets[0];
         }
     }
@@ -123,7 +122,7 @@ function get_trigger_look_target() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7d289733, Offset: 0x910
 // Size: 0x210
 function look_trigger(trigger) {
@@ -149,12 +148,12 @@ function look_trigger(trigger) {
             }
             continue;
         }
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x71>");
     }
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x45fcfe51, Offset: 0xb28
 // Size: 0x120
 function trigger_spawner(*s_info) {
@@ -172,7 +171,7 @@ function trigger_spawner(*s_info) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x664c0d54, Offset: 0xc50
 // Size: 0x5c
 function trigger_spawner_spawn() {
@@ -183,7 +182,7 @@ function trigger_spawner_spawn() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc57758e1, Offset: 0xcb8
 // Size: 0xd4
 function trigger_notify(s_info) {
@@ -197,7 +196,7 @@ function trigger_notify(s_info) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaccbae2e, Offset: 0xd98
 // Size: 0x80
 function function_ac2f203a(str_flag) {
@@ -213,7 +212,7 @@ function function_ac2f203a(str_flag) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73b7a577, Offset: 0xe20
 // Size: 0xa8
 function flag_set_trigger() {
@@ -224,7 +223,7 @@ function flag_set_trigger() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8d8c83a0, Offset: 0xed0
 // Size: 0xb0
 function flag_clear_trigger(*s_info) {
@@ -235,7 +234,7 @@ function flag_clear_trigger(*s_info) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdecb7164, Offset: 0xf88
 // Size: 0x102
 function add_tokens_to_trigger_flags(tokens) {
@@ -259,9 +258,9 @@ function add_tokens_to_trigger_flags(tokens) {
 function friendly_respawn_trigger(trigger) {
     trigger endon(#"death");
     spawners = getentarray(trigger.target, "targetname");
-    assert(spawners.size == 1, "<unknown string>" + trigger.target + "<unknown string>");
+    assert(spawners.size == 1, "<dev string:x98>" + trigger.target + "<dev string:xde>");
     spawner = spawners[0];
-    assert(!isdefined(spawner.script_forcecolor), "<unknown string>" + spawner.origin + "<unknown string>");
+    assert(!isdefined(spawner.script_forcecolor), "<dev string:x101>" + spawner.origin + "<dev string:x119>");
     spawners = undefined;
     spawner endon(#"death");
     while (true) {
@@ -272,7 +271,7 @@ function friendly_respawn_trigger(trigger) {
             level.respawn_spawner = spawner;
         }
         level flag::set("respawn_friendlies");
-        wait(0.5);
+        wait 0.5;
     }
 }
 
@@ -285,12 +284,12 @@ function friendly_respawn_clear(trigger) {
     while (true) {
         trigger waittill(#"trigger");
         level flag::clear("respawn_friendlies");
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe236cfdd, Offset: 0x1298
 // Size: 0x1f8
 function script_flag_set_touching(trigger) {
@@ -332,7 +331,7 @@ function script_flag_set_touching(trigger) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb975432d, Offset: 0x1498
 // Size: 0x42
 function _detect_touched() {
@@ -358,7 +357,7 @@ function trigger_delete_on_touch(trigger) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7ad2b871, Offset: 0x1560
 // Size: 0xa4
 function trigger_once(*s_info) {
@@ -366,16 +365,16 @@ function trigger_once(*s_info) {
     waittillframeend();
     if (isdefined(self)) {
         /#
-            println("<unknown string>");
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
-            println("<unknown string>");
+            println("<dev string:x144>");
+            println("<dev string:x148>" + self getentitynumber() + "<dev string:x17b>" + self.origin);
+            println("<dev string:x144>");
         #/
         self delete();
     }
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x24814820, Offset: 0x1610
 // Size: 0xe8
 function get_all(...) {
@@ -396,7 +395,7 @@ function get_all(...) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0x8c662510, Offset: 0x1700
 // Size: 0x72
 function is_trigger_of_type(...) {
@@ -409,13 +408,13 @@ function is_trigger_of_type(...) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb217081e, Offset: 0x1780
 // Size: 0x1b0
 function wait_till(str_name, str_key = "targetname", e_entity, b_assert = 1) {
     if (isdefined(str_name)) {
         triggers = getentarray(str_name, str_key);
-        assert(!b_assert || triggers.size > 0, "<unknown string>" + str_name + "<unknown string>" + str_key);
+        assert(!b_assert || triggers.size > 0, "<dev string:x18b>" + str_name + "<dev string:x1a2>" + str_key);
         if (triggers.size > 0) {
             if (triggers.size == 1) {
                 trigger_hit = triggers[0];
@@ -436,7 +435,7 @@ function wait_till(str_name, str_key = "targetname", e_entity, b_assert = 1) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe7daadba, Offset: 0x1938
 // Size: 0x272
 function _trigger_wait(e_entity) {
@@ -449,15 +448,15 @@ function _trigger_wait(e_entity) {
     }
     /#
         if (is_look_trigger()) {
-            assert(!isarray(e_entity), "<unknown string>");
-        } else if (self.classname === "<unknown string>") {
-            assert(!isarray(e_entity), "<unknown string>");
+            assert(!isarray(e_entity), "<dev string:x1ac>");
+        } else if (self.classname === "<dev string:x1da>") {
+            assert(!isarray(e_entity), "<dev string:x1ec>");
         }
     #/
     while (true) {
         if (is_look_trigger()) {
             waitresult = self waittill(#"trigger_look");
-            wait(self.delaynotify);
+            wait self.delaynotify;
             e_other = waitresult.activator;
             if (isdefined(e_entity)) {
                 if (e_other !== e_entity) {
@@ -466,7 +465,7 @@ function _trigger_wait(e_entity) {
             }
         } else if (self.classname === "trigger_damage") {
             waitresult = self waittill(#"trigger");
-            wait(self.delaynotify);
+            wait self.delaynotify;
             e_other = waitresult.activator;
             if (isdefined(e_entity)) {
                 if (e_other !== e_entity) {
@@ -475,7 +474,7 @@ function _trigger_wait(e_entity) {
             }
         } else {
             waitresult = self waittill(#"trigger");
-            wait(self.delaynotify);
+            wait self.delaynotify;
             e_other = waitresult.activator;
             if (isdefined(e_entity)) {
                 if (isarray(e_entity)) {
@@ -494,7 +493,7 @@ function _trigger_wait(e_entity) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6e2a3a32, Offset: 0x1bb8
 // Size: 0x90
 function _trigger_wait_think(s_tracker, e_entity) {
@@ -505,7 +504,7 @@ function _trigger_wait_think(s_tracker, e_entity) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3c62a02e, Offset: 0x1c50
 // Size: 0x17c
 function use(str_name, str_key = "targetname", ent = getplayers()[0], b_assert = 1) {
@@ -513,7 +512,7 @@ function use(str_name, str_key = "targetname", ent = getplayers()[0], b_assert =
         e_trig = getent(str_name, str_key);
         if (!isdefined(e_trig)) {
             if (b_assert) {
-                assertmsg("<unknown string>" + str_name + "<unknown string>" + str_key);
+                assertmsg("<dev string:x18b>" + str_name + "<dev string:x1a2>" + str_key);
             }
             return;
         }
@@ -534,7 +533,7 @@ function use(str_name, str_key = "targetname", ent = getplayers()[0], b_assert =
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8306f269, Offset: 0x1dd8
 // Size: 0x8c
 function set_flag_permissions(msg) {
@@ -546,7 +545,7 @@ function set_flag_permissions(msg) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2f02fefe, Offset: 0x1e70
 // Size: 0x23c
 function update_based_on_flags() {
@@ -596,7 +595,7 @@ function update_based_on_flags() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x73076252, Offset: 0x20b8
 // Size: 0x46
 function is_look_trigger() {
@@ -604,7 +603,7 @@ function is_look_trigger() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xcf74ba63, Offset: 0x2108
 // Size: 0x44
 function is_trigger_once() {
@@ -612,7 +611,7 @@ function is_trigger_once() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x42 linked
+// Params 1, eflags: 0x40 variadic
 // Checksum 0xefa246ac, Offset: 0x2158
 // Size: 0x196
 function wait_till_any(...) {
@@ -622,7 +621,7 @@ function wait_till_any(...) {
     } else {
         a_str_targetnames = vararg;
     }
-    assert(a_str_targetnames.size, "<unknown string>");
+    assert(a_str_targetnames.size, "<dev string:x21c>");
     a_triggers = [];
     a_triggers = arraycombine(a_triggers, getentarray(a_str_targetnames[0], "targetname"), 1, 0);
     for (i = 1; i < a_str_targetnames.size; i++) {
@@ -645,7 +644,7 @@ function wait_for_either(str_targetname1, str_targetname2) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6103c7fa, Offset: 0x2340
 // Size: 0x5e
 function _ent_waits_for_trigger(trigger) {
@@ -684,7 +683,7 @@ function trigger_on_timeout(n_time, b_cancel_on_triggered = 1, str_name, str_key
         }
     }
     trig endon(#"death");
-    wait(n_time);
+    wait n_time;
     trig use();
 }
 
@@ -699,7 +698,7 @@ function multiple_waits(str_trigger_name, str_trigger_notify) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbff9f15b, Offset: 0x25f0
 // Size: 0x34
 function multiple_wait(str_trigger_notify) {
@@ -709,7 +708,7 @@ function multiple_wait(str_trigger_notify) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xf5692a8c, Offset: 0x2630
 // Size: 0x74
 function add_function(trigger, str_remove_on, func, param_1, param_2, param_3, param_4, param_5, param_6) {
@@ -717,7 +716,7 @@ function add_function(trigger, str_remove_on, func, param_1, param_2, param_3, p
 }
 
 // Namespace trigger/trigger_shared
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x92334b01, Offset: 0x26b0
 // Size: 0xf0
 function _do_trigger_function(trigger, str_remove_on, func, param_1, param_2, param_3, param_4, param_5, param_6) {
@@ -737,7 +736,7 @@ function _do_trigger_function(trigger, str_remove_on, func, param_1, param_2, pa
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf74b288a, Offset: 0x27a8
 // Size: 0x188
 function kill_spawner_trigger(*s_info) {
@@ -754,7 +753,7 @@ function kill_spawner_trigger(*s_info) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd821bdf, Offset: 0x2938
 // Size: 0xb0
 function trigger_group(*s_info) {
@@ -794,7 +793,7 @@ function function_thread(ent, on_enter_payload, on_exit_payload) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ab6471a, Offset: 0x2b18
 // Size: 0x4c
 function ent_already_in(var_d35ff8d8) {
@@ -811,7 +810,7 @@ function ent_already_in(var_d35ff8d8) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1ef5ed75, Offset: 0x2b70
 // Size: 0x40
 function add_to_ent(ent, var_d35ff8d8) {
@@ -822,7 +821,7 @@ function add_to_ent(ent, var_d35ff8d8) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x421d8d35, Offset: 0x2bb8
 // Size: 0x4c
 function remove_from_ent(ent, var_d35ff8d8) {
@@ -850,7 +849,7 @@ function trigger_wait() {
 }
 
 // Namespace trigger/trigger_shared
-// Params 2, eflags: 0x40
+// Params 2, eflags: 0x40 variadic
 // Checksum 0x80db8896, Offset: 0x2c88
 // Size: 0x114
 function run(func, ...) {
@@ -869,7 +868,7 @@ function run(func, ...) {
 }
 
 // Namespace trigger/trigger_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x582d8e76, Offset: 0x2da8
 // Size: 0x3c
 function function_996dfbe2(*s_info, ent, func, a_args) {

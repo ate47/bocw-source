@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
 
 #namespace zm_mgturret;
 
@@ -96,11 +95,11 @@ function turret_suppression_fire(targets) {
     for (;;) {
         while (self.suppresionfire) {
             self turretsettarget(0, targets[randomint(targets.size)]);
-            wait(2 + randomfloat(2));
+            wait 2 + randomfloat(2);
         }
         self turretcleartarget(0);
         while (!self.suppresionfire) {
-            wait(1);
+            wait 1;
         }
     }
 }
@@ -156,8 +155,8 @@ function burst_fire(turret, manual_target) {
             turret thread random_spread(manual_target);
         }
         turret do_shoot();
-        wait(turret_burst + randomfloat(turret_burst_range));
-        wait(turret_delay + randomfloat(turret_delay_range));
+        wait turret_burst + randomfloat(turret_burst_range);
+        wait turret_delay + randomfloat(turret_delay_range);
     }
 }
 
@@ -233,7 +232,7 @@ function avoid_synchronization(time) {
         level._zm_mgturret_firing = 0;
     }
     level._zm_mgturret_firing++;
-    wait(time);
+    wait time;
     level._zm_mgturret_firing--;
 }
 
@@ -245,10 +244,10 @@ function do_shoot() {
     self endon(#"death", #"turretstatechange");
     for (;;) {
         while (is_true(level._zm_mgturret_firing)) {
-            wait(0.1);
+            wait 0.1;
         }
         thread avoid_synchronization(0.1);
-        wait(0.112);
+        wait 0.112;
     }
 }
 
@@ -261,7 +260,7 @@ function turret_timer(duration) {
         return;
     }
     self endon(#"turretstatechange");
-    wait(duration);
+    wait duration;
     if (isdefined(self)) {
         self notify(#"turretstatechange");
     }
@@ -284,7 +283,7 @@ function random_spread(ent) {
             ent.origin = self.manual_target.origin;
         }
         ent.origin += (20 - randomfloat(40), 20 - randomfloat(40), 20 - randomfloat(60));
-        wait(0.2);
+        wait 0.2;
     }
 }
 

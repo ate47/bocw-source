@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_215d7818c548cb51;
 #using script_5b2a3c052bf17d0e;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
 #using script_6b2d896ac43eb90;
-#using scripts\core_common\player\player_free_fall.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\player\player_free_fall;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_7ec6ae9f;
 
@@ -27,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc6e72392, Offset: 0x228
 // Size: 0x14c
 function private preinit() {
@@ -44,7 +43,7 @@ function private preinit() {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94d8b2b4, Offset: 0x380
 // Size: 0x324
 function function_ea2db6a9(instance) {
@@ -71,11 +70,11 @@ function function_ea2db6a9(instance) {
         }
         instance.a_triggers[instance.a_triggers.size] = trigger;
     }
-    instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_8ebdf278);
+    instance callback::function_d8abfc3d(#"portal_activated", &function_8ebdf278);
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfc26c8b8, Offset: 0x6b0
 // Size: 0xf6
 function function_16ee428c(*params) {
@@ -89,7 +88,7 @@ function function_16ee428c(*params) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3de1fc8, Offset: 0x7b0
 // Size: 0x540
 function function_1c5803d9(eventstruct) {
@@ -162,7 +161,7 @@ function function_1c5803d9(eventstruct) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x43320b5e, Offset: 0xcf8
 // Size: 0x624
 function private function_dda69211(player, vehicle, var_2b357ce9) {
@@ -219,7 +218,7 @@ function private function_dda69211(player, vehicle, var_2b357ce9) {
         }
         if (isalive(player)) {
             if (isdefined(var_2b357ce9)) {
-                var_2b357ce9 notify(#"hash_5bc4e4b06c059733");
+                var_2b357ce9 notify(#"player_exiting");
             }
             namespace_957938f0::function_59d43f02(self, player, 1);
         }
@@ -234,7 +233,7 @@ function private function_dda69211(player, vehicle, var_2b357ce9) {
             vehicle makevehicleusable();
             vehicle.var_b591d382 = undefined;
         }
-        wait(3);
+        wait 3;
         if (isdefined(player)) {
             player clientfield::set("phase_rift_player_fx", 0);
         }
@@ -242,7 +241,7 @@ function private function_dda69211(player, vehicle, var_2b357ce9) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x711b143f, Offset: 0x1328
 // Size: 0x2ec
 function function_a41c43bd(var_2b357ce9, mdl_portal, *vehicle) {
@@ -276,7 +275,7 @@ function function_a41c43bd(var_2b357ce9, mdl_portal, *vehicle) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd12d0725, Offset: 0x1620
 // Size: 0xd4
 function function_d3d632c3(mdl_portal) {
@@ -289,7 +288,7 @@ function function_d3d632c3(mdl_portal) {
     if (!isdefined(self.var_3b53f898)) {
         self.var_3b53f898 = 15;
     }
-    wait(self.var_3b53f898);
+    wait self.var_3b53f898;
     if (isdefined(mdl_portal)) {
         arrayremovevalue(level.var_ff7bf48c, mdl_portal);
     }
@@ -302,7 +301,7 @@ function function_d3d632c3(mdl_portal) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x14776e5d, Offset: 0x1700
 // Size: 0xfc
 function function_8ebdf278(*eventstruct) {
@@ -316,6 +315,6 @@ function function_8ebdf278(*eventstruct) {
             }
         }
     }
-    self callback::function_52ac9652(#"hash_345e9169ebba28fb", &function_8ebdf278);
+    self callback::function_52ac9652(#"portal_activated", &function_8ebdf278);
 }
 

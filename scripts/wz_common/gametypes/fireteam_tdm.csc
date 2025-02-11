@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_78825cbb1ab9f493;
-#using scripts\core_common\player\player_insertion.csc;
+#using scripts\core_common\player\player_insertion;
 
 #namespace fireteam_tdm;
 

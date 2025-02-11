@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_32399001bdb550da;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\healthoverlay.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\healthoverlay;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\system_shared;
 
 #namespace loadout;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace loadout/loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2e2f2033, Offset: 0x250
 // Size: 0x64
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace loadout/loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1ffdef4c, Offset: 0x2c0
 // Size: 0x44
 function on_connect() {
@@ -37,7 +36,7 @@ function on_connect() {
 }
 
 // Namespace loadout/loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa9eb6ed8, Offset: 0x310
 // Size: 0x1e
 function private function_6fddd9e2() {
@@ -47,7 +46,7 @@ function private function_6fddd9e2() {
 }
 
 // Namespace loadout/loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9b7bf5aa, Offset: 0x338
 // Size: 0x74
 function private init() {
@@ -58,7 +57,7 @@ function private init() {
 }
 
 // Namespace loadout/loadout
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8ce59d6e, Offset: 0x3b8
 // Size: 0x144
 function function_5890c14e() {
@@ -86,7 +85,7 @@ function function_bac6b417(equipment_name) {
 }
 
 // Namespace loadout/loadout
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2ccee897, Offset: 0x560
 // Size: 0x14c
 function private function_5536bd9e() {
@@ -107,11 +106,11 @@ function private function_5536bd9e() {
 }
 
 // Namespace loadout/loadout
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x17e22503, Offset: 0x6b8
 // Size: 0x22e
 function giveloadout(*team, *weaponclass, *var_d4a479a1) {
-    profileNamedStart(#"");
+    pixbeginevent(#"");
     defaultweapon = getweapon("ar_accurate_t9");
     self takeallweapons();
     self giveweapon(defaultweapon);
@@ -137,11 +136,11 @@ function giveloadout(*team, *weaponclass, *var_d4a479a1) {
     }
     self flag::set(#"loadout_given");
     callback::callback(#"on_loadout");
-    profileNamedStop();
+    pixendevent();
 }
 
 // Namespace loadout/loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x939bb00b, Offset: 0x8f0
 // Size: 0x1a
 function setclass(newclass) {
@@ -172,7 +171,7 @@ function isexplosivedamage(meansofdeath) {
 }
 
 // Namespace loadout/loadout
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xaaa75981, Offset: 0x9c0
 // Size: 0x74
 function function_88c673cf(player) {

@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\ability_util.gsc;
-#using scripts\abilities\ability_power.gsc;
-#using scripts\core_common\match_record.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\bots\bot_action.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\abilities\ability_power;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\bots\bot_action;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\match_record;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace ability_player;
 
@@ -23,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ability_player/ability_player
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xfe1d91a1, Offset: 0x1f8
 // Size: 0xec
 function private preinit() {
@@ -41,7 +40,7 @@ function private preinit() {
 }
 
 // Namespace ability_player/ability_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x790ac6b9, Offset: 0x2f0
 // Size: 0xdc
 function on_player_connect() {
@@ -65,7 +64,7 @@ function on_player_connect() {
 }
 
 // Namespace ability_player/ability_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfbff3354, Offset: 0x3d8
 // Size: 0x2c6
 function on_player_spawned() {
@@ -101,7 +100,7 @@ function on_player_spawned() {
 }
 
 // Namespace ability_player/ability_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9b33f36b, Offset: 0x6a8
 // Size: 0x1c
 function on_player_disconnect() {
@@ -127,7 +126,7 @@ function is_using_any_gadget() {
 }
 
 // Namespace ability_player/ability_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4eee4cee, Offset: 0x740
 // Size: 0x19e
 function gadgets_save_power(game_ended) {
@@ -190,7 +189,7 @@ function function_116ec442() {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xffe42a8b, Offset: 0x9f8
 // Size: 0x7c
 function function_c22f319e(weapon, var_4dd90b81 = 0) {
@@ -200,7 +199,7 @@ function function_c22f319e(weapon, var_4dd90b81 = 0) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3aa6ade0, Offset: 0xa80
 // Size: 0x1b4
 function function_f2250880(weapon, var_4dd90b81 = 0) {
@@ -232,7 +231,7 @@ function function_f2250880(weapon, var_4dd90b81 = 0) {
 }
 
 // Namespace ability_player/ability_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb19f6cc, Offset: 0xc40
 // Size: 0xcc
 function function_9c46835d(*params) {
@@ -248,7 +247,7 @@ function function_9c46835d(*params) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9156bf5f, Offset: 0xd18
 // Size: 0x94
 function function_95218c27(slot, var_4dd90b81 = 0) {
@@ -273,7 +272,7 @@ function function_c2d9d3e1() {
 }
 
 // Namespace ability_player/ability_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe001257f, Offset: 0xe00
 // Size: 0x54
 function function_32e782df(*params) {
@@ -287,7 +286,7 @@ function function_32e782df(*params) {
 }
 
 // Namespace ability_player/ability_player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd49120a9, Offset: 0xe60
 // Size: 0xd0
 function on_end_game() {
@@ -312,7 +311,7 @@ function script_set_cclass(*cclass, *save) {
 }
 
 // Namespace ability_player/ability_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8ffeae48, Offset: 0xf58
 // Size: 0x7e
 function register_gadget(type) {
@@ -326,7 +325,7 @@ function register_gadget(type) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe81c7f3d, Offset: 0xfe0
 // Size: 0x4e
 function register_gadget_should_notify(type, should_notify) {
@@ -337,7 +336,7 @@ function register_gadget_should_notify(type, should_notify) {
 }
 
 // Namespace ability_player/ability_player
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd18de440, Offset: 0x1038
 // Size: 0x24c
 function register_gadget_possession_callbacks(type, on_give, on_take) {
@@ -367,7 +366,7 @@ function register_gadget_possession_callbacks(type, on_give, on_take) {
 }
 
 // Namespace ability_player/ability_player
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x9ae6e811, Offset: 0x1290
 // Size: 0x24c
 function register_gadget_activation_callbacks(type, turn_on, turn_off) {
@@ -465,7 +464,7 @@ function register_gadget_ready_callbacks(type, ready_func) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7f1f926, Offset: 0x19c0
 // Size: 0x134
 function register_gadget_primed_callbacks(type, primed_func) {
@@ -484,7 +483,7 @@ function register_gadget_primed_callbacks(type, primed_func) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6f88b9c9, Offset: 0x1b00
 // Size: 0x4e
 function register_gadget_is_inuse_callbacks(type, inuse_func) {
@@ -495,7 +494,7 @@ function register_gadget_is_inuse_callbacks(type, inuse_func) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3b22e524, Offset: 0x1b58
 // Size: 0x4e
 function register_gadget_is_flickering_callbacks(type, flickering_func) {
@@ -542,7 +541,7 @@ function gadget_is_flickering(slot) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf55322e, Offset: 0x1d88
 // Size: 0x28a
 function give_gadget(slot, weapon) {
@@ -581,7 +580,7 @@ function give_gadget(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb29aca41, Offset: 0x2020
 // Size: 0x138
 function take_gadget(slot, weapon) {
@@ -604,7 +603,7 @@ function take_gadget(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x830ffd0d, Offset: 0x2160
 // Size: 0x5cc
 function turn_gadget_on(slot, weapon) {
@@ -667,7 +666,7 @@ function turn_gadget_on(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xcc7aac2a, Offset: 0x2738
 // Size: 0x43c
 function turn_gadget_off(slot, weapon) {
@@ -713,7 +712,7 @@ function turn_gadget_off(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3e99f582, Offset: 0x2b80
 // Size: 0x162
 function function_50557027(slot, weapon) {
@@ -737,7 +736,7 @@ function function_50557027(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5da6bd3d, Offset: 0x2cf0
 // Size: 0x14a
 function function_d5260ebe(slot, weapon) {
@@ -811,7 +810,7 @@ function gadget_checkheroabilitykill(attacker) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf164dcd7, Offset: 0x30b8
 // Size: 0x122
 function gadget_flicker(slot, weapon) {
@@ -832,7 +831,7 @@ function gadget_flicker(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4e5da812, Offset: 0x31e8
 // Size: 0x4fa
 function gadget_ready(slot, weapon) {
@@ -890,7 +889,7 @@ function gadget_ready(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3cd1356, Offset: 0x36f0
 // Size: 0x122
 function gadget_primed(slot, weapon) {
@@ -911,7 +910,7 @@ function gadget_primed(slot, weapon) {
 }
 
 // Namespace ability_player/ability_player
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x18de6823, Offset: 0x3820
 // Size: 0xfe
 function tutorial_timer(weapon, var_8be5aa55, var_de825ec6) {
@@ -924,7 +923,7 @@ function tutorial_timer(weapon, var_8be5aa55, var_de825ec6) {
 }
 
 // Namespace ability_player/ability_player
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4de8cb98, Offset: 0x3928
 // Size: 0x8e
 function tutorial_init(weapon) {
@@ -962,19 +961,19 @@ function tutorial_hints(slot, weapon, var_8430d11b, var_6c65cb8d, var_eadf8864, 
             break;
         }
         if (self isinvehicle() || self function_8bc54983() || self scene::is_igc_active() || self isplayinganimscripted()) {
-            wait(5);
+            wait 5;
             continue;
         }
         if (self tutorial_timer(weapon, "recentlyUsed")) {
-            wait(5);
+            wait 5;
             continue;
         }
         if (self tutorial_timer(weapon, "recentlyEquip")) {
-            wait(5);
+            wait 5;
             continue;
         }
         if (self tutorial_timer(weapon, "recentlyReady")) {
-            wait(5);
+            wait 5;
             continue;
         }
         if (!self tutorial_timer(weapon, "recentlyEquipText") && isdefined(var_6c65cb8d) && isdefined(var_be7c29a3) && self [[ var_be7c29a3 ]](slot, weapon)) {
@@ -990,7 +989,7 @@ function tutorial_hints(slot, weapon, var_8430d11b, var_6c65cb8d, var_eadf8864, 
                 self function_374c4352(var_eadf8864);
             #/
         }
-        wait(5);
+        wait 5;
     }
 }
 
@@ -1025,7 +1024,7 @@ function function_fc4dc54(*var_6fcde3b6) {
         if (ishash(str)) {
             str = function_9e72a96(str);
         }
-        toprint = "<unknown string>" + str;
+        toprint = "<dev string:x38>" + str;
         println(toprint);
     }
 
@@ -1034,7 +1033,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xa23cd371, Offset: 0x3e70
     // Size: 0x3c
     function abilities_print(str) {
-        toprint = "<unknown string>" + str;
+        toprint = "<dev string:x50>" + str;
         println(toprint);
     }
 
@@ -1043,13 +1042,13 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xb70180a6, Offset: 0x3eb8
     // Size: 0xe4
     function abilities_devgui_init() {
-        setdvar(#"scr_abilities_devgui_cmd", "<unknown string>");
-        setdvar(#"scr_abilities_devgui_arg", "<unknown string>");
+        setdvar(#"scr_abilities_devgui_cmd", "<dev string:x66>");
+        setdvar(#"scr_abilities_devgui_arg", "<dev string:x66>");
         setdvar(#"scr_abilities_devgui_player", 0);
         if (isdedicated()) {
             return;
         }
-        level.abilities_devgui_base = "<unknown string>";
+        level.abilities_devgui_base = "<dev string:x6a>";
         level.abilities_devgui_player_connect = &abilities_devgui_player_connect;
         level.abilities_devgui_player_disconnect = &abilities_devgui_player_disconnect;
         level thread abilities_devgui_think();
@@ -1063,7 +1062,7 @@ function function_fc4dc54(*var_6fcde3b6) {
         if (!isdefined(level.abilities_devgui_base)) {
             return;
         }
-        wait(2);
+        wait 2;
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (players[i] != self) {
@@ -1079,8 +1078,8 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xedb3e254, Offset: 0x4050
     // Size: 0x12e
     function abilities_devgui_add_player_commands(root, pname, index) {
-        add_cmd_with_root = "<unknown string>" + root + pname + "<unknown string>";
-        pid = "<unknown string>" + index;
+        add_cmd_with_root = "<dev string:x7e>" + root + pname + "<dev string:x8d>";
+        pid = "<dev string:x66>" + index;
         menu_index = 1;
         if (isdefined(level.abilities_devgui_add_gadgets_custom)) {
             menu_index = self [[ level.abilities_devgui_add_gadgets_custom ]](root, pname, pid, menu_index);
@@ -1100,11 +1099,11 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Size: 0x104
     function abilities_devgui_add_player_command(root, pid, cmdname, *menu_index, cmddvar, argdvar) {
         if (!isdefined(argdvar)) {
-            argdvar = "<unknown string>";
+            argdvar = "<dev string:x92>";
         }
-        var_eece3d04 = "<unknown string>" + "<unknown string>" + "<unknown string>" + cmdname;
-        var_9b1fa683 = "<unknown string>" + "<unknown string>" + "<unknown string>" + cmddvar;
-        var_dc0fa12c = "<unknown string>" + "<unknown string>" + "<unknown string>" + argdvar + "<unknown string>";
+        var_eece3d04 = "<dev string:x9d>" + "<dev string:xa8>" + "<dev string:xc7>" + cmdname;
+        var_9b1fa683 = "<dev string:xcc>" + "<dev string:xd5>" + "<dev string:xc7>" + cmddvar;
+        var_dc0fa12c = "<dev string:xcc>" + "<dev string:xf1>" + "<dev string:xc7>" + argdvar + "<dev string:x10d>";
         util::add_queued_debug_command(pid + menu_index + var_eece3d04 + var_9b1fa683 + var_dc0fa12c);
     }
 
@@ -1113,12 +1112,12 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0x7d5b9ec8, Offset: 0x4298
     // Size: 0x16a
     function abilities_devgui_add_power(add_cmd_with_root, pid, menu_index) {
-        root = add_cmd_with_root + "<unknown string>" + menu_index + "<unknown string>";
-        abilities_devgui_add_player_command(root, pid, "<unknown string>", 1, "<unknown string>", "<unknown string>");
-        abilities_devgui_add_player_command(root, pid, "<unknown string>", 2, "<unknown string>", "<unknown string>");
+        root = add_cmd_with_root + "<dev string:x114>" + menu_index + "<dev string:x8d>";
+        abilities_devgui_add_player_command(root, pid, "<dev string:x11e>", 1, "<dev string:x12c>", "<dev string:x66>");
+        abilities_devgui_add_player_command(root, pid, "<dev string:x137>", 2, "<dev string:x14b>", "<dev string:x66>");
         for (power = 0; power <= 1; power += 0.25) {
-            abilities_devgui_add_player_command(root, pid, "<unknown string>" + power, 2, "<unknown string>", "<unknown string>" + power);
-            abilities_devgui_add_player_command(root, pid, "<unknown string>" + power, 2, "<unknown string>", "<unknown string>" + power);
+            abilities_devgui_add_player_command(root, pid, "<dev string:x159>" + power, 2, "<dev string:x171>", "<dev string:x66>" + power);
+            abilities_devgui_add_player_command(root, pid, "<dev string:x186>" + power, 2, "<dev string:x19c>", "<dev string:x66>" + power);
         }
         menu_index++;
         return menu_index;
@@ -1132,7 +1131,7 @@ function function_fc4dc54(*var_6fcde3b6) {
         if (sessionmodeiszombiesgame() || sessionmodeiswarzonegame()) {
             return;
         }
-        root = add_cmd_with_root + "<unknown string>" + menu_index + "<unknown string>";
+        root = add_cmd_with_root + "<dev string:x1af>" + menu_index + "<dev string:x8d>";
         session_mode = currentsessionmode();
         var_a2865de6 = getplayerroletemplatecount(session_mode);
         for (i = 1; i < var_a2865de6; i++) {
@@ -1145,11 +1144,11 @@ function function_fc4dc54(*var_6fcde3b6) {
             }
             var_d59b8ebf = getplayerrolecategoryinfo(var_854a6ba2);
             var_eb49090f = function_9e72a96(function_b14806c6(i, session_mode));
-            var_4f6b7b98 = isdefined(var_eb49090f) ? var_eb49090f : "<unknown string>";
+            var_4f6b7b98 = isdefined(var_eb49090f) ? var_eb49090f : "<dev string:x1b8>";
             if (!isdefined(var_d59b8ebf.enabled) || var_d59b8ebf.enabled == 0) {
-                var_4f6b7b98 += "<unknown string>";
+                var_4f6b7b98 += "<dev string:x1c0>";
             }
-            abilities_devgui_add_player_command(root, pid, var_4f6b7b98, i, "<unknown string>", i);
+            abilities_devgui_add_player_command(root, pid, var_4f6b7b98, i, "<dev string:x1cf>", i);
         }
         menu_index++;
         return menu_index;
@@ -1210,12 +1209,12 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xd112bc7e, Offset: 0x4858
     // Size: 0xbc
     function function_1c3e8791(&a_weapons, &var_dd06e779) {
-                for (i = 0; i < 1024; i++) {
+        for (i = 0; i < 1024; i++) {
             iteminfo = getunlockableiteminfofromindex(i, 0);
             if (isdefined(iteminfo)) {
                 reference_s = iteminfo.namehash;
                 loadoutslotname = iteminfo.loadoutslotname;
-                if (loadoutslotname == "<unknown string>") {
+                if (loadoutslotname == "<dev string:x1e1>") {
                     function_2ced294(a_weapons, var_dd06e779, reference_s);
                 }
             }
@@ -1227,7 +1226,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0x8a394fbb, Offset: 0x4920
     // Size: 0x586
     function abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index) {
-        a_weapons = enumerateweapons("<unknown string>");
+        a_weapons = enumerateweapons("<dev string:x1f3>");
         a_gadgetweapons = [];
         for (i = 0; i < a_weapons.size; i++) {
             if (isdefined(a_weapons[i]) && a_weapons[i].isgadget) {
@@ -1306,17 +1305,17 @@ function function_fc4dc54(*var_6fcde3b6) {
                 var_4557f227[var_4557f227.size] = a_gadgetweapons[i];
             }
         }
-        function_174037fe(add_cmd_with_root, pid, a_equipment, "<unknown string>", menu_index);
+        function_174037fe(add_cmd_with_root, pid, a_equipment, "<dev string:x1fd>", menu_index);
         menu_index++;
-        function_76032a31(add_cmd_with_root, pid, a_heal, "<unknown string>", menu_index);
+        function_76032a31(add_cmd_with_root, pid, a_heal, "<dev string:x20f>", menu_index);
         menu_index++;
-        function_a40d04ca(add_cmd_with_root, pid, var_c5b1a23e, "<unknown string>", menu_index);
+        function_a40d04ca(add_cmd_with_root, pid, var_c5b1a23e, "<dev string:x229>", menu_index);
         menu_index++;
-        function_174037fe(add_cmd_with_root, pid, var_dd06e779, "<unknown string>", menu_index);
+        function_174037fe(add_cmd_with_root, pid, var_dd06e779, "<dev string:x23b>", menu_index);
         menu_index++;
-        function_174037fe(add_cmd_with_root, pid, var_4557f227, "<unknown string>", menu_index);
+        function_174037fe(add_cmd_with_root, pid, var_4557f227, "<dev string:x250>", menu_index);
         menu_index++;
-        function_a40d04ca(add_cmd_with_root, pid, var_ef060ee3, "<unknown string>", menu_index);
+        function_a40d04ca(add_cmd_with_root, pid, var_ef060ee3, "<dev string:x26b>", menu_index);
         menu_index++;
         return menu_index;
     }
@@ -1327,7 +1326,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Size: 0xa4
     function function_174037fe(root, pid, a_weapons, weapon_type, *menu_index) {
         if (isdefined(weapon_type)) {
-            player_devgui_root = pid + menu_index + "<unknown string>";
+            player_devgui_root = pid + menu_index + "<dev string:x8d>";
             for (i = 0; i < weapon_type.size; i++) {
                 function_b04fbf27(player_devgui_root, a_weapons, getweaponname(weapon_type[i]), i + 1);
             }
@@ -1340,7 +1339,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Size: 0xa4
     function function_76032a31(root, pid, a_weapons, weapon_type, *menu_index) {
         if (isdefined(weapon_type)) {
-            player_devgui_root = pid + menu_index + "<unknown string>";
+            player_devgui_root = pid + menu_index + "<dev string:x8d>";
             for (i = 0; i < weapon_type.size; i++) {
                 function_50543efb(player_devgui_root, a_weapons, getweaponname(weapon_type[i]), i + 1);
             }
@@ -1353,7 +1352,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Size: 0xa4
     function function_a40d04ca(root, pid, a_weapons, weapon_type, *menu_index) {
         if (isdefined(weapon_type)) {
-            player_devgui_root = pid + menu_index + "<unknown string>";
+            player_devgui_root = pid + menu_index + "<dev string:x8d>";
             for (i = 0; i < weapon_type.size; i++) {
                 function_90502d72(player_devgui_root, a_weapons, getweaponname(weapon_type[i]), i + 1);
             }
@@ -1365,7 +1364,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xaa26521b, Offset: 0x50c0
     // Size: 0xac
     function function_b04fbf27(root, pid, weap_name, *cmdindex) {
-        util::add_queued_debug_command(pid + cmdindex + "<unknown string>" + "<unknown string>" + "<unknown string>" + weap_name + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + cmdindex + "<unknown string>");
+        util::add_queued_debug_command(pid + cmdindex + "<dev string:x9d>" + "<dev string:xa8>" + "<dev string:xc7>" + weap_name + "<dev string:xcc>" + "<dev string:xd5>" + "<dev string:xc7>" + "<dev string:x286>" + "<dev string:xcc>" + "<dev string:xf1>" + "<dev string:xc7>" + cmdindex + "<dev string:x10d>");
     }
 
     // Namespace ability_player/ability_player
@@ -1373,7 +1372,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xce0a1027, Offset: 0x5178
     // Size: 0xac
     function function_50543efb(root, pid, weap_name, *cmdindex) {
-        util::add_queued_debug_command(pid + cmdindex + "<unknown string>" + "<unknown string>" + "<unknown string>" + weap_name + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + cmdindex + "<unknown string>");
+        util::add_queued_debug_command(pid + cmdindex + "<dev string:x9d>" + "<dev string:xa8>" + "<dev string:xc7>" + weap_name + "<dev string:xcc>" + "<dev string:xd5>" + "<dev string:xc7>" + "<dev string:x2a3>" + "<dev string:xcc>" + "<dev string:xf1>" + "<dev string:xc7>" + cmdindex + "<dev string:x10d>");
     }
 
     // Namespace ability_player/ability_player
@@ -1381,7 +1380,7 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xb8e32ce4, Offset: 0x5230
     // Size: 0xac
     function function_90502d72(root, pid, weap_name, *cmdindex) {
-        util::add_queued_debug_command(pid + cmdindex + "<unknown string>" + "<unknown string>" + "<unknown string>" + weap_name + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + cmdindex + "<unknown string>");
+        util::add_queued_debug_command(pid + cmdindex + "<dev string:x9d>" + "<dev string:xa8>" + "<dev string:xc7>" + weap_name + "<dev string:xcc>" + "<dev string:xd5>" + "<dev string:xc7>" + "<dev string:x2c2>" + "<dev string:xcc>" + "<dev string:xf1>" + "<dev string:xc7>" + cmdindex + "<dev string:x10d>");
     }
 
     // Namespace ability_player/ability_player
@@ -1392,7 +1391,7 @@ function function_fc4dc54(*var_6fcde3b6) {
         if (!isdefined(level.abilities_devgui_base)) {
             return;
         }
-        remove_cmd_with_root = "<unknown string>" + level.abilities_devgui_base + self.playername + "<unknown string>";
+        remove_cmd_with_root = "<dev string:x2df>" + level.abilities_devgui_base + self.playername + "<dev string:x10d>";
         util::add_queued_debug_command(remove_cmd_with_root);
     }
 
@@ -1401,15 +1400,15 @@ function function_fc4dc54(*var_6fcde3b6) {
     // Checksum 0xd0adc2ed, Offset: 0x5350
     // Size: 0x368
     function abilities_devgui_think() {
-        setdvar(#"hash_67d528f29bfc7c97", "<unknown string>");
+        setdvar(#"hash_67d528f29bfc7c97", "<dev string:x66>");
         for (;;) {
-            cmd = "<unknown string>";
-            arg = getdvarstring(#"hash_67d528f29bfc7c97", "<unknown string>");
-            if (arg == "<unknown string>") {
+            cmd = "<dev string:x1cf>";
+            arg = getdvarstring(#"hash_67d528f29bfc7c97", "<dev string:x66>");
+            if (arg == "<dev string:x66>") {
                 cmd = getdvarstring(#"scr_abilities_devgui_cmd");
                 arg = getdvarstring(#"scr_abilities_devgui_arg");
             }
-            if (cmd == "<unknown string>") {
+            if (cmd == "<dev string:x66>") {
                 waitframe(1);
                 continue;
             }
@@ -1443,10 +1442,10 @@ function function_fc4dc54(*var_6fcde3b6) {
             default:
                 break;
             }
-            setdvar(#"hash_67d528f29bfc7c97", "<unknown string>");
-            setdvar(#"scr_abilities_devgui_cmd", "<unknown string>");
-            setdvar(#"scr_abilities_devgui_player", "<unknown string>");
-            wait(0.5);
+            setdvar(#"hash_67d528f29bfc7c97", "<dev string:x66>");
+            setdvar(#"scr_abilities_devgui_cmd", "<dev string:x66>");
+            setdvar(#"scr_abilities_devgui_player", "<dev string:x2f1>");
+            wait 0.5;
         }
     }
 
@@ -1649,7 +1648,7 @@ function function_fc4dc54(*var_6fcde3b6) {
                     }
                 }
             }
-            wait(1);
+            wait 1;
         }
     }
 
@@ -1661,15 +1660,15 @@ function function_fc4dc54(*var_6fcde3b6) {
         if (sessionmodeiszombiesgame()) {
             return;
         }
-        if (self isinmovemode("<unknown string>")) {
-            adddebugcommand("<unknown string>");
-            wait(0.5);
+        if (self isinmovemode("<dev string:x2f7>")) {
+            adddebugcommand("<dev string:x2f7>");
+            wait 0.5;
         }
-        if (self isinmovemode("<unknown string>")) {
-            adddebugcommand("<unknown string>");
-            wait(0.5);
+        if (self isinmovemode("<dev string:x2fe>")) {
+            adddebugcommand("<dev string:x2fe>");
+            wait 0.5;
         }
-        if (var_a5c8eb94 == "<unknown string>") {
+        if (var_a5c8eb94 == "<dev string:x308>") {
             startindex = self player_role::get();
             index = startindex;
             do {
@@ -1681,7 +1680,7 @@ function function_fc4dc54(*var_6fcde3b6) {
                     index = 0;
                 }
             } while (!self player_role::is_valid(index));
-        } else if (var_a5c8eb94 == "<unknown string>") {
+        } else if (var_a5c8eb94 == "<dev string:x30d>") {
             startindex = self player_role::get();
             index = startindex;
             do {
@@ -1705,7 +1704,7 @@ function function_fc4dc54(*var_6fcde3b6) {
             if (level.numlives) {
                 self.pers[#"lives"]++;
             }
-            self suicide("<unknown string>");
+            self suicide("<dev string:x312>");
             waitframe(1);
             if (isdefined(self)) {
                 self luinotifyevent(#"hash_2dddf8559f5b304d", 1, 1);

@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\util_shared;
 
 #namespace dev_shared;
 
@@ -22,7 +21,7 @@
     function function_b49b1b6b(localclientnum) {
         var_39073e7a = undefined;
         var_b49b1b6b = undefined;
-        a_effects = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
+        a_effects = array("<dev string:x38>", "<dev string:x60>", "<dev string:x8e>", "<dev string:xb8>", "<dev string:xe6>", "<dev string:x117>", "<dev string:x148>", "<dev string:x181>");
         var_767a6d22 = 0;
         while (true) {
             n_dist = getdvarint(#"hash_4348ec71a8b13ef1", 0);
@@ -33,10 +32,10 @@
                     var_b49b1b6b = undefined;
                 }
                 if (!isdefined(var_39073e7a)) {
-                    var_39073e7a = util::spawn_model(localclientnum, "<unknown string>");
+                    var_39073e7a = util::spawn_model(localclientnum, "<dev string:x1b1>");
                 }
                 if (!isdefined(var_b49b1b6b)) {
-                    var_b49b1b6b = util::playfxontag(localclientnum, a_effects[var_114d05f], var_39073e7a, "<unknown string>");
+                    var_b49b1b6b = util::playfxontag(localclientnum, a_effects[var_114d05f], var_39073e7a, "<dev string:x1b1>");
                 }
                 v_pos = getcamposbylocalclientnum(localclientnum);
                 v_ang = getcamanglesbylocalclientnum(localclientnum);
@@ -58,7 +57,7 @@
     // Checksum 0xfa6f5aa5, Offset: 0x370
     // Size: 0x5c
     function add_devgui_cmd(localclientnum, menu_path, cmds) {
-        adddebugcommand(localclientnum, "<unknown string>" + menu_path + "<unknown string>" + cmds + "<unknown string>");
+        adddebugcommand(localclientnum, "<dev string:x1bf>" + menu_path + "<dev string:x1cf>" + cmds + "<dev string:x1d6>");
     }
 
     // Namespace dev_shared/dev_shared
@@ -68,8 +67,8 @@
     function function_cbe4bccb() {
         self thread function_681e8519();
         self thread function_f3346975();
-        add_devgui_cmd(0, "<unknown string>", "<unknown string>");
-        add_devgui_cmd(0, "<unknown string>", "<unknown string>");
+        add_devgui_cmd(0, "<dev string:x1dc>", "<dev string:x204>");
+        add_devgui_cmd(0, "<dev string:x218>", "<dev string:x241>");
     }
 
     // Namespace dev_shared/dev_shared
@@ -80,19 +79,19 @@
         mode = currentsessionmode();
         while (mode >= 4) {
             mode = currentsessionmode();
-            wait(1);
+            wait 1;
         }
         bodies = getallcharacterbodies(mode);
         foreach (playerbodytype in bodies) {
-            body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<unknown string>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
-            add_devgui_cmd(0, "<unknown string>" + body_name + "<unknown string>", "<unknown string>" + playerbodytype + "<unknown string>");
+            body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<dev string:x255>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
+            add_devgui_cmd(0, "<dev string:x25a>" + body_name + "<dev string:x27d>", "<dev string:x289>" + playerbodytype + "<dev string:x29d>");
             var_13240050 = function_d299ef16(playerbodytype, mode);
             for (outfitindex = 0; outfitindex < var_13240050; outfitindex++) {
                 var_9cf37283 = function_d7c3cf6c(playerbodytype, outfitindex, mode);
                 if (var_9cf37283.valid) {
                     var_346660ac = function_2c6232e5(makelocalizedstring(var_9cf37283.var_74996050));
-                    var_1bf829f2 = outfitindex + "<unknown string>" + var_346660ac + "<unknown string>" + function_9e72a96(var_9cf37283.namehash) + "<unknown string>" + outfitindex;
-                    add_devgui_cmd(0, "<unknown string>" + body_name + "<unknown string>" + var_1bf829f2, "<unknown string>" + playerbodytype + "<unknown string>" + outfitindex);
+                    var_1bf829f2 = outfitindex + "<dev string:x255>" + var_346660ac + "<dev string:x255>" + function_9e72a96(var_9cf37283.namehash) + "<dev string:x2a3>" + outfitindex;
+                    add_devgui_cmd(0, "<dev string:x25a>" + body_name + "<dev string:x2a8>" + var_1bf829f2, "<dev string:x289>" + playerbodytype + "<dev string:x2ad>" + outfitindex);
                 }
             }
         }
@@ -103,7 +102,7 @@
     // Checksum 0x943d163b, Offset: 0x740
     // Size: 0x44
     function function_2c6232e5(in_string) {
-        out_string = strreplace(in_string, "<unknown string>", "<unknown string>");
+        out_string = strreplace(in_string, "<dev string:x2a3>", "<dev string:x2b2>");
         return out_string;
     }
 
@@ -113,12 +112,12 @@
     // Size: 0x214
     function function_681e8519() {
         level endon(#"game_ended");
-        a_weapons = enumerateweapons("<unknown string>");
+        a_weapons = enumerateweapons("<dev string:x2b6>");
         var_cab50ba0 = [];
         a_grenades = [];
         a_equipment = [];
         for (i = 0; i < a_weapons.size; i++) {
-            if (strstartswith(getweaponname(a_weapons[i]), "<unknown string>")) {
+            if (strstartswith(getweaponname(a_weapons[i]), "<dev string:x2c0>")) {
                 arrayinsert(a_equipment, a_weapons[i], 0);
                 continue;
             }
@@ -130,10 +129,10 @@
                 arrayinsert(a_grenades, a_weapons[i], 0);
             }
         }
-        player_devgui_base = "<unknown string>";
-        level thread function_30285c9c(player_devgui_base, "<unknown string>", var_cab50ba0, "<unknown string>");
-        level thread function_30285c9c(player_devgui_base, "<unknown string>", a_grenades, "<unknown string>");
-        level thread function_30285c9c(player_devgui_base, "<unknown string>", a_equipment, "<unknown string>");
+        player_devgui_base = "<dev string:x2c7>";
+        level thread function_30285c9c(player_devgui_base, "<dev string:x2df>", var_cab50ba0, "<dev string:x2fb>");
+        level thread function_30285c9c(player_devgui_base, "<dev string:x2df>", a_grenades, "<dev string:x303>");
+        level thread function_30285c9c(player_devgui_base, "<dev string:x2df>", a_equipment, "<dev string:x30f>");
     }
 
     // Namespace dev_shared/dev_shared
@@ -142,15 +141,15 @@
     // Size: 0x124
     function function_30285c9c(root, pname, a_weapons, weapon_type) {
         level endon(#"game_ended");
-        player_devgui_root = root + pname + "<unknown string>";
+        player_devgui_root = root + pname + "<dev string:x2a8>";
         if (isdefined(a_weapons)) {
             for (i = 0; i < a_weapons.size; i++) {
                 name = getweaponname(a_weapons[i]);
                 displayname = a_weapons[i].displayname;
                 if (displayname == #"") {
-                    displayname = "<unknown string>";
+                    displayname = "<dev string:x31c>";
                 } else {
-                    displayname = "<unknown string>" + makelocalizedstring(displayname) + "<unknown string>";
+                    displayname = "<dev string:x323>" + makelocalizedstring(displayname) + "<dev string:x329>";
                 }
                 function_8c49f3a8(player_devgui_root, weapon_type, name, displayname);
             }
@@ -162,7 +161,7 @@
     // Checksum 0xb2ba5974, Offset: 0xae0
     // Size: 0x7c
     function function_8c49f3a8(root, weapon_type, weap_name, displayname) {
-        command = root + weapon_type + "<unknown string>" + weap_name + displayname + "<unknown string>" + weap_name + "<unknown string>";
+        command = root + weapon_type + "<dev string:x2a8>" + weap_name + displayname + "<dev string:x32e>" + weap_name + "<dev string:x33a>";
         adddebugcommand(0, command);
     }
 

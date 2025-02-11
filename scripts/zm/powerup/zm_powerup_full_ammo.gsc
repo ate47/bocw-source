@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_placeable_mine.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
 #using script_1caf36ff04a85ff6;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\hud_util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\hud_util_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_placeable_mine;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_powerup_full_ammo;
 
@@ -27,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2ec1ee35, Offset: 0x168
 // Size: 0x8c
 function private preinit() {
@@ -38,7 +37,7 @@ function private preinit() {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4787895a, Offset: 0x200
 // Size: 0x8c
 function grab_full_ammo(player) {
@@ -51,7 +50,7 @@ function grab_full_ammo(player) {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdb989ee2, Offset: 0x298
 // Size: 0x1c4
 function function_dae1df4d(e_powerup, player) {
@@ -73,7 +72,7 @@ function function_dae1df4d(e_powerup, player) {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x67bbeefd, Offset: 0x468
 // Size: 0x29c
 function full_ammo_powerup(drop_item, player) {
@@ -123,7 +122,7 @@ function function_3ecbd9d(w_weapon) {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb8079f6, Offset: 0x828
 // Size: 0x5c
 function full_ammo_on_hud(*drop_item, player_team) {

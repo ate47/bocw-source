@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\wz_common\util.gsc;
 #using script_471b31bd963b388e;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\match_record.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\contracts_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\match_record;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\wz_common\util;
 
 #namespace wz_progression;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x89b04ef7, Offset: 0x1d0
 // Size: 0x29c
 function private preinit() {
@@ -40,7 +39,7 @@ function private preinit() {
     callback::on_downed(&function_a117c988);
     callback::on_player_killed(&on_player_killed);
     callback::function_14dae612(&function_14dae612);
-    callback::add_callback("on_driving_wz_vehicle", &function_207e668);
+    callback::add_callback("on_driving_wz_vehicle", &on_driving_wz_vehicle);
     callback::add_callback("on_exit_locked_on_vehicle", &on_exit_locked_on_vehicle);
     callback::add_callback(#"hash_677c43609aa6ce47", &function_5648f82);
     callback::add_callback(#"hash_1019ab4b81d07b35", &team_eliminated);
@@ -48,7 +47,7 @@ function private preinit() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x478
 // Size: 0x4
 function private postinit() {
@@ -56,7 +55,7 @@ function private postinit() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x98ecd327, Offset: 0x488
 // Size: 0xcc
 function function_cfc02934() {
@@ -68,7 +67,7 @@ function function_cfc02934() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x74a9236e, Offset: 0x560
 // Size: 0x90
 function function_ec3a8858() {
@@ -85,7 +84,7 @@ function function_ec3a8858() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc8fbadbb, Offset: 0x5f8
 // Size: 0xbc
 function private function_f874ca5e(placement_player) {
@@ -100,7 +99,7 @@ function private function_f874ca5e(placement_player) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8dc3c30f, Offset: 0x6c0
 // Size: 0xcc
 function player_connected() {
@@ -115,7 +114,7 @@ function player_connected() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb62ed20a, Offset: 0x798
 // Size: 0x3bc
 function function_2c8aac6() {
@@ -125,7 +124,7 @@ function function_2c8aac6() {
         return;
     }
     if (is_true(player.pers[#"hash_77f848fcd417ea53"])) {
-        println("<unknown string>" + (isdefined(player.name) ? player.name : "<unknown string>") + "<unknown string>");
+        println("<dev string:x38>" + (isdefined(player.name) ? player.name : "<dev string:x43>") + "<dev string:x55>");
         return;
     }
     if (!isdefined(self.pers[#"teameliminatedtime"])) {
@@ -146,12 +145,12 @@ function function_2c8aac6() {
         player [[ level.var_13de4626 ]]();
     }
     player function_4835d26a();
-    println("<unknown string>" + (isdefined(player.name) ? player.name : "<unknown string>") + "<unknown string>" + (isdefined(player.pers[#"placement_player"]) ? player.pers[#"placement_player"] : "<unknown string>") + "<unknown string>" + "<unknown string>" + (isdefined(player.pers[#"placement_team"]) ? player.pers[#"placement_team"] : "<unknown string>") + "<unknown string>" + "<unknown string>" + (isdefined(player.pers[#"kills"]) ? player.pers[#"kills"] : "<unknown string>") + "<unknown string>");
+    println("<dev string:x78>" + (isdefined(player.name) ? player.name : "<dev string:x43>") + "<dev string:x9f>" + (isdefined(player.pers[#"placement_player"]) ? player.pers[#"placement_player"] : "<dev string:xb7>") + "<dev string:xc2>" + "<dev string:xc7>" + (isdefined(player.pers[#"placement_team"]) ? player.pers[#"placement_team"] : "<dev string:xb7>") + "<dev string:xc2>" + "<dev string:xdd>" + (isdefined(player.pers[#"kills"]) ? player.pers[#"kills"] : "<dev string:xb7>") + "<dev string:xc2>");
     player.pers[#"hash_77f848fcd417ea53"] = 1;
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8f663333, Offset: 0xb60
 // Size: 0x44
 function player_disconnected() {
@@ -160,7 +159,7 @@ function player_disconnected() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xac3e392b, Offset: 0xbb0
 // Size: 0x64
 function private function_fb20ad56() {
@@ -170,7 +169,7 @@ function private function_fb20ad56() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x85a3d4aa, Offset: 0xc20
 // Size: 0x64
 function private function_d61fdbef() {
@@ -180,7 +179,7 @@ function private function_d61fdbef() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x58ec702, Offset: 0xc90
 // Size: 0x64
 function private function_67949803() {
@@ -190,7 +189,7 @@ function private function_67949803() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x715e31d4, Offset: 0xd00
 // Size: 0x64
 function private function_a0fea1a9() {
@@ -200,7 +199,7 @@ function private function_a0fea1a9() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x57ffe523, Offset: 0xd70
 // Size: 0xe4
 function private function_3217b0d2() {
@@ -216,7 +215,7 @@ function private function_3217b0d2() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x33a2209, Offset: 0xe60
 // Size: 0xf4
 function private function_6a7970fe() {
@@ -232,21 +231,21 @@ function private function_6a7970fe() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8c036254, Offset: 0xf60
 // Size: 0x290
 function team_eliminated(params) {
     team = params.team;
     team_placement = params.var_293493b;
     if (!isdefined(team)) {
-        println("<unknown string>");
+        println("<dev string:xea>");
         return;
     }
     a_players = getplayers(team);
     if (isdefined(level.var_29ab88df)) {
         level [[ level.var_29ab88df ]](a_players, team_placement);
     }
-    println("<unknown string>" + (isdefined(team) ? team : "<unknown string>") + "<unknown string>" + team_placement + "<unknown string>");
+    println("<dev string:x123>" + (isdefined(team) ? team : "<dev string:x146>") + "<dev string:x156>" + team_placement + "<dev string:x16b>");
     foreach (player in a_players) {
         if (!isdefined(player.pers) || is_true(player.pers[#"hash_2283e9384383a6e9"])) {
             continue;
@@ -269,11 +268,11 @@ function team_eliminated(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdfb85714, Offset: 0x11f8
 // Size: 0x4a8
 function function_5648f82(team) {
-    println("<unknown string>" + (isdefined(team) ? team : "<unknown string>"));
+    println("<dev string:x170>" + (isdefined(team) ? team : "<dev string:x146>"));
     if (isdefined(team)) {
         foreach (player in getplayers(team)) {
             if (!player stats::function_f94325d3()) {
@@ -316,10 +315,10 @@ function function_5648f82(team) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x10636454, Offset: 0x16a8
 // Size: 0x29c
-function function_207e668(params) {
+function on_driving_wz_vehicle(params) {
     if (level.inprematchperiod) {
         return;
     }
@@ -357,19 +356,19 @@ function function_207e668(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1d9e536e, Offset: 0x1950
 // Size: 0x7c
 function function_d0c523bf() {
     self endon(#"death", #"exit_vehicle", #"disconnect");
-    wait(5);
+    wait 5;
     if (self isinvehicle()) {
         self stats::function_d40764f3(#"vehicle_escapes", 1);
     }
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9024b4c6, Offset: 0x19d8
 // Size: 0x3fa
 function function_f8072c71(player) {
@@ -384,7 +383,7 @@ function function_f8072c71(player) {
     var_7c6311c4 = self.vehicleclass === "boat";
     var_f03db647 = !var_b01d9212 && !var_7c6311c4;
     while (isdefined(self) && isdefined(player)) {
-        wait(1);
+        wait 1;
         if (isdefined(self) && isdefined(player)) {
             distancetraveled = int(distancetraveled + distance2d(self.origin, prevposition));
             prevposition = self.origin;
@@ -426,7 +425,7 @@ function function_f8072c71(player) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa9cb0ca7, Offset: 0x1de0
 // Size: 0x5c
 function on_exit_locked_on_vehicle(params) {
@@ -437,7 +436,7 @@ function on_exit_locked_on_vehicle(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8b5cd82a, Offset: 0x1e48
 // Size: 0x46
 function function_c9a18304(eventstruct) {
@@ -458,7 +457,7 @@ function function_da21a17c() {
     prevposition = self.origin;
     distancetraveled = 0;
     while (isdefined(self)) {
-        wait(1);
+        wait 1;
         if (isdefined(self)) {
             distancetraveled = int(distancetraveled + distance2d(self.origin, prevposition));
             prevposition = self.origin;
@@ -478,7 +477,7 @@ function function_da21a17c() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcc75fdb6, Offset: 0x2050
 // Size: 0x46
 function function_3de8b6e0(params) {
@@ -488,7 +487,7 @@ function function_3de8b6e0(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2aeed5f1, Offset: 0x20a0
 // Size: 0x268
 function function_36e144fa(params) {
@@ -531,7 +530,7 @@ function function_36e144fa(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdae7f48f, Offset: 0x2310
 // Size: 0xce
 function private function_a117c988() {
@@ -546,7 +545,7 @@ function private function_a117c988() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x38557d08, Offset: 0x23e8
 // Size: 0x144
 function private on_player_killed(*params) {
@@ -571,7 +570,7 @@ function private on_player_killed(*params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd3e026c1, Offset: 0x2538
 // Size: 0xbb4
 function function_35ac33e1(attacker, victim, var_c5948a69 = {}) {
@@ -704,7 +703,7 @@ function function_35ac33e1(attacker, victim, var_c5948a69 = {}) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa07c9e64, Offset: 0x30f8
 // Size: 0xa2
 function function_c7aa9338(array) {
@@ -717,7 +716,7 @@ function function_c7aa9338(array) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc1b4163b, Offset: 0x31a8
 // Size: 0x1bc
 function function_8920ad6e(params) {
@@ -746,7 +745,7 @@ function function_8920ad6e(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x440c2117, Offset: 0x3370
 // Size: 0x1a4
 function function_106be0dc(params) {
@@ -773,7 +772,7 @@ function function_106be0dc(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf083142f, Offset: 0x3520
 // Size: 0x11c
 function function_393ec79e(params) {
@@ -791,7 +790,7 @@ function function_393ec79e(params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x36ed9f26, Offset: 0x3648
 // Size: 0xbc
 function function_6c478b00(params) {
@@ -825,7 +824,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6634a8c8, Offset: 0x37f8
 // Size: 0x278
 function function_16de96c7(player) {
@@ -876,7 +875,7 @@ function function_16de96c7(player) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x737bebb8, Offset: 0x3a78
 // Size: 0x33c
 function on_game_playing(*params) {
@@ -903,7 +902,7 @@ function on_game_playing(*params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3adab3cd, Offset: 0x3dc0
 // Size: 0xa0
 function function_14dae612() {
@@ -914,7 +913,7 @@ function function_14dae612() {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x68295906, Offset: 0x3e68
 // Size: 0xc6
 function on_challenge_complete(*params) {
@@ -930,7 +929,7 @@ function on_challenge_complete(*params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf787eab1, Offset: 0x3f38
 // Size: 0x3a
 function on_character_unlock(*params) {
@@ -941,7 +940,7 @@ function on_character_unlock(*params) {
 }
 
 // Namespace wz_progression/wz_progression
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2cac3225, Offset: 0x3f80
 // Size: 0x12c
 function on_item_pickup(params) {

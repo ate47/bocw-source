@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.csc;
+#using scripts\core_common\math_shared;
 
 #namespace gfx;
 

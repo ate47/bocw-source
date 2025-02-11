@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_1e38a8f6;
 
 // Namespace namespace_1e38a8f6/namespace_78f31cd9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x625b856e, Offset: 0xd8
 // Size: 0x54
 function init() {
@@ -15,7 +14,7 @@ function init() {
 }
 
 // Namespace namespace_1e38a8f6/namespace_78f31cd9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe1c8f518, Offset: 0x138
 // Size: 0x44
 function function_ca0a1ea4() {
@@ -26,12 +25,12 @@ function function_ca0a1ea4() {
 }
 
 // Namespace namespace_1e38a8f6/namespace_78f31cd9
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x19bb31bb, Offset: 0x188
 // Size: 0x25c
 function function_9e94a567() {
     while (!is_true(level.gameended)) {
-        wait(0.5);
+        wait 0.5;
         if (!isdefined(level.teams)) {
             continue;
         }

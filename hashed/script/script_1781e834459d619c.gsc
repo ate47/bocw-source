@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
 #using script_1cc417743d7c262d;
 #using script_5312dbb58ee628a8;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
 
 #namespace missile_turret;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace missile_turret/missile_turret
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd817326a, Offset: 0x110
 // Size: 0x44
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace missile_turret/missile_turret
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x20b05a35, Offset: 0x160
 // Size: 0x2c
 function function_4b645b3f(killstreaktype) {
@@ -34,7 +33,7 @@ function function_4b645b3f(killstreaktype) {
 }
 
 // Namespace missile_turret/missile_turret
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x69de5f88, Offset: 0x198
 // Size: 0x66
 function turret_destroyed(attacker, weapon) {

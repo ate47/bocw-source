@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
 
 #namespace aimappingtableutility;
 

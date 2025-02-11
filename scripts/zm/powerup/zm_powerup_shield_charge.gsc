@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_powerups;
 
 #namespace zm_powerup_shield_charge;
 
@@ -76,11 +75,11 @@ function shield_charge_powerup(*item, player) {
     // Checksum 0x8f1cf069, Offset: 0x3e8
     // Size: 0x7c
     function shield_devgui() {
-        level flag::wait_till("<unknown string>");
-        wait(1);
+        level flag::wait_till("<dev string:x38>");
+        wait 1;
         zm_devgui::add_custom_devgui_callback(&shield_devgui_callback);
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x54>");
+        adddebugcommand("<dev string:xa8>");
     }
 
     // Namespace zm_powerup_shield_charge/zm_powerup_shield_charge

@@ -1,29 +1,28 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_1a9763988299e68d;
-#using script_2a5bf5b4a00cee0d;
-#using script_40f967ad5d18ea74;
-#using script_3faf478d5b0850fe;
-#using script_47851dbeea22fe66;
 #using script_164a456ce05c3483;
-#using script_4d748e58ce25b60c;
-#using script_5f20d3b434d24884;
-#using script_774302f762d76254;
+#using script_17dcb1172e441bf6;
+#using script_1a9763988299e68d;
+#using script_1b01e95a6b5270fd;
 #using script_1b0b07ff57d1dde3;
 #using script_1ee011cd0961afd7;
+#using script_2a5bf5b4a00cee0d;
+#using script_3faf478d5b0850fe;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_4d748e58ce25b60c;
 #using script_5701633066d199f2;
-#using script_1b01e95a6b5270fd;
-#using script_17dcb1172e441bf6;
+#using script_5f20d3b434d24884;
 #using script_74a56359b7d02ab6;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_774302f762d76254;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace doa_enemy;
 
@@ -43,7 +42,7 @@ class class_3593c7e6 {
     var var_fde25292;
 
     // Namespace class_3593c7e6/doa_enemy
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0xa7db2f15, Offset: 0x298
     // Size: 0x4e
     constructor() {
@@ -56,7 +55,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x27eb6f26, Offset: 0x408
     // Size: 0xa
     function function_10c2bd8() {
@@ -64,7 +63,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2d99a4a5, Offset: 0x420
     // Size: 0xa
     function function_744739a() {
@@ -72,7 +71,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xc5cba342, Offset: 0x4a0
     // Size: 0xa
     function function_17454656() {
@@ -80,7 +79,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd385d756, Offset: 0x3f0
     // Size: 0xa
     function getspawner() {
@@ -88,7 +87,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xf76129d5, Offset: 0x3a8
     // Size: 0xa
     function getname() {
@@ -96,7 +95,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x56a222ca, Offset: 0x450
     // Size: 0x1a
     function function_3262a6e9(var_c940cca) {
@@ -104,7 +103,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb564f1d8, Offset: 0x538
     // Size: 0x24
     function function_36573e6c(name) {
@@ -112,7 +111,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1fb8884b, Offset: 0x438
     // Size: 0xa
     function function_4a15d1dd() {
@@ -120,7 +119,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x4a32cce3, Offset: 0x3c0
     // Size: 0xa
     function gettype() {
@@ -128,7 +127,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x6f4b0899, Offset: 0x478
     // Size: 0x1a
     function function_7edd7727(val) {
@@ -136,7 +135,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xd1ba831, Offset: 0x4f0
     // Size: 0x3c
     function function_7f3e577e(range = 100) {
@@ -144,7 +143,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 6, eflags: 0x2 linked
+    // Params 6, eflags: 0x0
     // Checksum 0xbe7c7cb2, Offset: 0x300
     // Size: 0x9e
     function init(spawner, name, type, init_func, think_func, var_af7a3d7c) {
@@ -159,7 +158,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x900c76cc, Offset: 0x3d8
     // Size: 0xa
     function function_b8c8dfea() {
@@ -167,7 +166,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x3a6105fd, Offset: 0x568
     // Size: 0x22
     function function_baae6c9d(name) {
@@ -175,7 +174,7 @@ class class_3593c7e6 {
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xfd63a4bb, Offset: 0x4b8
     // Size: 0x2a
     function canspawn() {
@@ -188,7 +187,7 @@ class class_3593c7e6 {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbee9c7e, Offset: 0x8f0
 // Size: 0x2a8
 function init() {
@@ -223,7 +222,7 @@ function init() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf9ca4a1a, Offset: 0xba0
 // Size: 0xe4
 function function_2f73ff73() {
@@ -240,7 +239,7 @@ function function_2f73ff73() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x283dce0a, Offset: 0xc90
 // Size: 0x2c
 function main() {
@@ -249,7 +248,7 @@ function main() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc45a1d89, Offset: 0xcc8
 // Size: 0x8a
 function function_c617d577() {
@@ -263,7 +262,7 @@ function function_c617d577() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x57f119b2, Offset: 0xd60
 // Size: 0x14e
 function function_7495bd30() {
@@ -275,7 +274,7 @@ function function_7495bd30() {
     level.doa.var_afae28e0 = 0;
     while (true) {
         last = level.doa.var_afae28e0;
-        wait(1);
+        wait 1;
         if (last == level.doa.var_afae28e0) {
             if (level.doa.var_2ad97fac < 30) {
                 level.doa.var_2ad97fac++;
@@ -290,7 +289,7 @@ function function_7495bd30() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bce00c9, Offset: 0xeb8
 // Size: 0x38
 function function_e7e91016() {
@@ -301,7 +300,7 @@ function function_e7e91016() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xabf173a1, Offset: 0xef8
 // Size: 0x60
 function function_83d593c5(var_7a8f2a62) {
@@ -311,7 +310,7 @@ function function_83d593c5(var_7a8f2a62) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x993d9ce1, Offset: 0xf60
 // Size: 0x50
 function function_251ee3bd(name) {
@@ -323,7 +322,7 @@ function function_251ee3bd(name) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x660097ee, Offset: 0xfb8
 // Size: 0x124
 function function_eff7e0fb(spawner, name, type, init, think, canspawn) {
@@ -343,7 +342,7 @@ function function_eff7e0fb(spawner, name, type, init, think, canspawn) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d2a72f1, Offset: 0x10e8
 // Size: 0x4c
 function function_c89f6305() {
@@ -353,7 +352,7 @@ function function_c89f6305() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x66c9dd81, Offset: 0x1140
 // Size: 0x1c
 function function_8a080c79() {
@@ -361,7 +360,7 @@ function function_8a080c79() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4bb23a12, Offset: 0x1168
 // Size: 0x24
 function killme() {
@@ -369,7 +368,7 @@ function killme() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9672d939, Offset: 0x1198
 // Size: 0xa2
 function function_d7c5adee(name) {
@@ -381,7 +380,7 @@ function function_d7c5adee(name) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2222e36d, Offset: 0x1248
 // Size: 0x126
 function function_924423d(ent) {
@@ -404,7 +403,7 @@ function function_924423d(ent) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x40a17eb3, Offset: 0x1378
 // Size: 0x10a
 function function_f7086924(var_64a23077) {
@@ -424,7 +423,7 @@ function function_f7086924(var_64a23077) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0x4a65be0c, Offset: 0x1490
 // Size: 0x1b6
 function function_5982ca9d(spawndef, count = 10, targetpoint, radius = 0, generator, enemy, var_294cccb7, arena, groupid, expiresat) {
@@ -451,7 +450,7 @@ function function_5982ca9d(spawndef, count = 10, targetpoint, radius = 0, genera
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0x84695ddc, Offset: 0x1650
 // Size: 0xba
 function function_4e8ae191(spawndef, count = 10, targetpoint, radius = 0, generator, enemy, var_294cccb7, arena, groupid, expiresat) {
@@ -460,7 +459,7 @@ function function_4e8ae191(spawndef, count = 10, targetpoint, radius = 0, genera
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0x1ee33bdb, Offset: 0x1718
 // Size: 0x17c
 function function_a6b807ea(spawndef, count = 10, targetpoint, radius = 0, generator, enemy, var_294cccb7, arena, groupid, var_1be0f060 = 0, expiresat) {
@@ -472,7 +471,7 @@ function function_a6b807ea(spawndef, count = 10, targetpoint, radius = 0, genera
             return;
         }
     }
-    assert(level.doa.var_dcbded2.size < 500, "<unknown string>");
+    assert(level.doa.var_dcbded2.size < 500, "<dev string:x38>");
     queueitem = function_5982ca9d(spawndef, count, targetpoint, radius, generator, enemy, var_294cccb7, arena, groupid, expiresat);
     if (!var_1be0f060) {
         level.doa.var_dcbded2[level.doa.var_dcbded2.size] = queueitem;
@@ -482,7 +481,7 @@ function function_a6b807ea(spawndef, count = 10, targetpoint, radius = 0, genera
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe5ea792f, Offset: 0x18a0
 // Size: 0x16
 function function_a0acdb92() {
@@ -490,7 +489,7 @@ function function_a0acdb92() {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x36ccb6d1, Offset: 0x18c0
 // Size: 0x63c
 function function_7292bc() {
@@ -562,7 +561,7 @@ function function_7292bc() {
                     if (var_68a09a83 >= sizeneeded) {
                         break;
                     }
-                    wait(1);
+                    wait 1;
                 }
             }
             if (queueitem.radius > 0) {
@@ -574,20 +573,20 @@ function function_7292bc() {
             if (isdefined(ai)) {
                 /#
                     if (isdefined(ai)) {
-                        namespace_1e25ad94::debugmsg("<unknown string>" + ai getentitynumber() + "<unknown string>" + [[ queueitem.spawndef ]]->getname() + "<unknown string>" + ai.origin);
+                        namespace_1e25ad94::debugmsg("<dev string:x71>" + ai getentitynumber() + "<dev string:x80>" + [[ queueitem.spawndef ]]->getname() + "<dev string:x96>" + ai.origin);
                     } else {
-                        namespace_1e25ad94::debugmsg("<unknown string>" + [[ queueitem.spawndef ]]->getname());
+                        namespace_1e25ad94::debugmsg("<dev string:xa6>" + [[ queueitem.spawndef ]]->getname());
                     }
                 #/
             }
             continue;
         }
-        wait(0.25);
+        wait 0.25;
     }
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x43ed4bf6, Offset: 0x1f08
 // Size: 0x3d0
 function spawnai(spawnparams, spawnloc) {
@@ -638,7 +637,7 @@ function spawnai(spawnparams, spawnloc) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x4f7cbb86, Offset: 0x22e0
 // Size: 0x2a6
 function function_db55a448(spawndef, var_190085e3, enemy, target) {
@@ -688,21 +687,21 @@ function function_db55a448(spawndef, var_190085e3, enemy, target) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6847869c, Offset: 0x2590
 // Size: 0x7c
 function function_b56f90d7(delay = 0.1) {
     self endon(#"hash_5251ab0953e7989f");
     self endon(#"death");
     if (delay > 0) {
-        wait(delay);
+        wait delay;
     }
     self namespace_ec06fe4a::function_4f72130c();
     self solid();
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd4d9dbf5, Offset: 0x2618
 // Size: 0x192
 function function_4b2f19cb() {

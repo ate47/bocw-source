@@ -1,4 +1,3 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace debug_menu;
 
 /#
@@ -24,8 +23,8 @@
             hud.debug_hudelem = 1;
         }
         hud.location = 0;
-        hud.alignx = "<unknown string>";
-        hud.aligny = "<unknown string>";
+        hud.alignx = "<dev string:x38>";
+        hud.aligny = "<dev string:x40>";
         hud.foreground = 1;
         hud.fontscale = scale;
         hud.sort = sort;

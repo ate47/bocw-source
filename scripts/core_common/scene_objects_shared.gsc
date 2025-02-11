@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\scene_vehicle_shared.gsc;
-#using scripts\core_common\scene_model_shared.gsc;
-#using scripts\core_common\scene_actor_shared.gsc;
-#using scripts\core_common\scene_player_shared.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\teleport_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\scene_actor_shared;
+#using scripts\core_common\scene_model_shared;
+#using scripts\core_common\scene_player_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\scene_vehicle_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\teleport_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\weapons\weapon_utils;
 
 #namespace scene;
 
@@ -54,7 +53,7 @@ class csceneobject {
     var var_f4b34dc1;
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x742fc0b1, Offset: 0x900
     // Size: 0x36
     constructor() {
@@ -65,17 +64,17 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x82 linked class_linked
+    // Params 0, eflags: 0x80 class_linked
     // Checksum 0x373b54ca, Offset: 0x940
     // Size: 0x24
     function destructor() {
         /#
-            log("xanim");
+            log("<dev string:x38>");
         #/
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1536e6c0, Offset: 0x91b0
     // Size: 0x46
     function is_actor() {
@@ -83,7 +82,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe7ae31dd, Offset: 0x9378
     // Size: 0x4a
     function in_a_different_scene() {
@@ -91,14 +90,14 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0xc2c1746b, Offset: 0x6360
     // Size: 0x546
     function function_9a43e31(player, var_6410e385, b_camera = 0) {
         if (isdefined(player)) {
             /#
-                var_cd31cd6a = getdvarstring(#"hash_575aeb603638c901", "<unknown string>");
-                if (isdefined(player.var_96494502) || var_cd31cd6a != "<unknown string>") {
+                var_cd31cd6a = getdvarstring(#"hash_575aeb603638c901", "<dev string:x226>");
+                if (isdefined(player.var_96494502) || var_cd31cd6a != "<dev string:x226>") {
                     weapon = isdefined(player.var_96494502) ? player.var_96494502 : getweapon(var_cd31cd6a);
                 }
             #/
@@ -171,7 +170,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x80f724d1, Offset: 0x1db0
     // Size: 0x4
     function function_d09b043() {
@@ -179,7 +178,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x6be3d62f, Offset: 0x3598
     // Size: 0x34
     function function_ee94f77() {
@@ -189,7 +188,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xc7d70e71, Offset: 0x5480
     // Size: 0xce
     function function_1205d1f0() {
@@ -208,7 +207,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xc1f06490, Offset: 0x5d90
     // Size: 0x224
     function function_128f0294(s_shot, var_37fa9b04) {
@@ -249,7 +248,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2cfa5c07, Offset: 0x4c00
     // Size: 0x32c
     function function_14f96d6b() {
@@ -289,7 +288,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x80f724d1, Offset: 0x8b28
     // Size: 0x4
     function _spawn_ent() {
@@ -297,13 +296,13 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x31880f4e, Offset: 0x9c08
     // Size: 0x178
     function error(condition, str_msg) {
         if (condition) {
             /#
-                str_msg = "<unknown string>" + function_9e72a96(_o_scene._str_name) + "<unknown string>" + (isdefined("<unknown string>") ? "<unknown string>" + "<unknown string>" : isdefined(_str_shot) ? "<unknown string>" + _str_shot : "<unknown string>") + "<unknown string>" + (isdefined("<unknown string>") ? "<unknown string>" + "<unknown string>" : isdefined(_s.name) ? "<unknown string>" + _s.name : "<unknown string>") + "<unknown string>" + str_msg;
+                str_msg = "<dev string:x33c>" + function_9e72a96(_o_scene._str_name) + "<dev string:x342>" + (isdefined("<dev string:x34a>") ? "<dev string:x226>" + "<dev string:x34a>" : isdefined(_str_shot) ? "<dev string:x226>" + _str_shot : "<dev string:x226>") + "<dev string:x35a>" + (isdefined("<dev string:x32b>") ? "<dev string:x226>" + "<dev string:x32b>" : isdefined(_s.name) ? "<dev string:x226>" + _s.name : "<dev string:x226>") + "<dev string:x361>" + str_msg;
             #/
             if (is_true(_o_scene._b_testing)) {
                 /#
@@ -319,13 +318,13 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb45817ba, Offset: 0x3ff0
     // Size: 0x314
     function cleanup() {
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                printtoprightln("<unknown string>" + (isdefined(_s.name) ? _s.name : _s.model));
+                printtoprightln("<dev string:x20b>" + (isdefined(_s.name) ? _s.name : _s.model));
             }
         #/
         function_fda037ff();
@@ -357,7 +356,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x19a94640, Offset: 0x24d0
     // Size: 0x304
     function function_1e19d813() {
@@ -389,7 +388,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x958f463, Offset: 0x4658
     // Size: 0xd4
     function function_2035b6d6(_e) {
@@ -400,7 +399,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xbd91cba0, Offset: 0x9070
     // Size: 0x1c
     function function_209522a0() {
@@ -408,7 +407,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x80f724d1, Offset: 0x4878
     // Size: 0x4
     function _cleanup() {
@@ -416,7 +415,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf32c9db3, Offset: 0x4f38
     // Size: 0x6c
     function function_20f309bf(str_notify) {
@@ -430,7 +429,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 7, eflags: 0x2 linked
+    // Params 7, eflags: 0x0
     // Checksum 0xce34e4fd, Offset: 0x7cf0
     // Size: 0x78c
     function _play_anim(animation, n_rate, n_blend, var_b2e32ae2, n_time, var_7d32b2c6, paused) {
@@ -452,12 +451,12 @@ class csceneobject {
         }
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                printtoprightln("<unknown string>" + (isdefined(_s.name) ? _s.name : _s.model) + "<unknown string>" + function_9e72a96(animation));
+                printtoprightln("<dev string:x249>" + (isdefined(_s.name) ? _s.name : _s.model) + "<dev string:x27b>" + function_9e72a96(animation));
             }
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
                 if (!isdefined(level.animation_played)) {
                     level.animation_played = [];
-                    animation_played_name = (isdefined(_s.name) ? _s.name : _s.model) + "<unknown string>" + animation;
+                    animation_played_name = (isdefined(_s.name) ? _s.name : _s.model) + "<dev string:x27b>" + animation;
                     if (!isdefined(level.animation_played)) {
                         level.animation_played = [];
                     } else if (!isarray(level.animation_played)) {
@@ -491,13 +490,13 @@ class csceneobject {
         }
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                log(toupper(_s.type) + "<unknown string>" + function_9e72a96(animation) + "<unknown string>");
-                printtoprightln("<unknown string>" + (isdefined(_s.name) ? _s.name : _s.model) + "<unknown string>" + function_9e72a96(animation));
+                log(toupper(_s.type) + "<dev string:x282>" + function_9e72a96(animation) + "<dev string:x292>");
+                printtoprightln("<dev string:x29f>" + (isdefined(_s.name) ? _s.name : _s.model) + "<dev string:x27b>" + function_9e72a96(animation));
             }
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
                 if (isdefined(level.animation_played)) {
                     for (i = 0; i < level.animation_played.size; i++) {
-                        animation_played_name = (isdefined(_s.name) ? _s.name : _s.model) + "<unknown string>" + animation;
+                        animation_played_name = (isdefined(_s.name) ? _s.name : _s.model) + "<dev string:x27b>" + animation;
                         if (level.animation_played[i] == animation_played_name) {
                             arrayremovevalue(level.animation_played, animation_played_name);
                             i--;
@@ -509,7 +508,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xc0b7375d, Offset: 0x6118
     // Size: 0xde
     function set_objective() {
@@ -528,7 +527,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa1c8ea40, Offset: 0x5a40
     // Size: 0x25e
     function function_23575fad() {
@@ -564,7 +563,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x91d12a0e, Offset: 0x6058
     // Size: 0xb6
     function restore_saved_ent() {
@@ -576,7 +575,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x4d1eca8d, Offset: 0x2190
     // Size: 0x3e
     function function_24f8cfb5(str_shot) {
@@ -584,7 +583,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x9a277ace, Offset: 0x2090
     // Size: 0xf6
     function function_27898329(str_current_anim) {
@@ -599,7 +598,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd812842c, Offset: 0x9840
     // Size: 0x204
     function skip_animation_on_server() {
@@ -608,7 +607,7 @@ class csceneobject {
                 foreach (player in [[ _func_get ]](_str_team)) {
                     /#
                         if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                            printtoprightln("<unknown string>" + current_playing_anim[player getentitynumber()] + "<unknown string>" + gettime(), (0.8, 0.8, 0.8));
+                            printtoprightln("<dev string:x2f8>" + current_playing_anim[player getentitynumber()] + "<dev string:x27b>" + gettime(), (0.8, 0.8, 0.8));
                         }
                     #/
                     skip_anim_on_server(player, current_playing_anim[player getentitynumber()]);
@@ -617,7 +616,7 @@ class csceneobject {
             }
             /#
                 if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                    printtoprightln("<unknown string>" + current_playing_anim[_n_ent_num] + "<unknown string>" + gettime(), (0.8, 0.8, 0.8));
+                    printtoprightln("<dev string:x2f8>" + current_playing_anim[_n_ent_num] + "<dev string:x27b>" + gettime(), (0.8, 0.8, 0.8));
                 }
             #/
             skip_anim_on_server(_e, current_playing_anim[_n_ent_num]);
@@ -625,7 +624,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x13b3ebf9, Offset: 0x3980
     // Size: 0x7c
     function run_wait(wait_time) {
@@ -637,7 +636,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xae58ded9, Offset: 0x8e60
     // Size: 0xa6
     function is_alive() {
@@ -648,7 +647,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xa3cb9827, Offset: 0x27e0
     // Size: 0xd4
     function function_2f4c1d30(ent = self._e) {
@@ -659,7 +658,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0xc1873c9e, Offset: 0x6200
     // Size: 0x102
     function function_376c9d87(var_ec50a0d3, n_movement, player) {
@@ -683,7 +682,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xc7ddc881, Offset: 0x3810
     // Size: 0xc8
     function function_37c00617() {
@@ -697,7 +696,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xf83269cc, Offset: 0x8f60
     // Size: 0x72
     function function_3919a776() {
@@ -708,7 +707,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0x9b487b8d, Offset: 0x6a88
     // Size: 0x20
     function animation_lookup(animation, *ent, *b_camera) {
@@ -716,7 +715,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x59ed9f30, Offset: 0x8e28
     // Size: 0x2c
     function function_3e22944e() {
@@ -724,7 +723,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xce42e37c, Offset: 0x3bb0
     // Size: 0x1a4
     function function_47bd9bac(actor, str_shot) {
@@ -746,7 +745,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb61e5f50, Offset: 0x8df8
     // Size: 0x22
     function function_48382a1c() {
@@ -754,7 +753,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa8f3f737, Offset: 0x1908
     // Size: 0x2cc
     function function_4b3d4226() {
@@ -792,7 +791,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2cc45761, Offset: 0x8f10
     // Size: 0x44
     function function_4de466fd() {
@@ -800,7 +799,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0xb590dfcb, Offset: 0x970
     // Size: 0x74
     function set_ent_val(str_key, value, ent = self._e) {
@@ -810,7 +809,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe02d7eaf, Offset: 0x90c0
     // Size: 0x2e
     function function_527113ae() {
@@ -818,7 +817,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb55dede5, Offset: 0xa68
     // Size: 0x9c
     function _set_values(ent = self._e) {
@@ -827,7 +826,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd94f4060, Offset: 0x3678
     // Size: 0x6e
     function function_587971b6() {
@@ -836,7 +835,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x97203cf5, Offset: 0x2020
     // Size: 0x68
     function function_595c601b() {
@@ -849,7 +848,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0x8b3126c, Offset: 0x68b0
     // Size: 0x1d0
     function function_5b2306f5(weapon, var_3b97696d, b_camera = 0) {
@@ -872,7 +871,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x19c8da29, Offset: 0x8cd8
     // Size: 0x58
     function get_lerp_time() {
@@ -881,7 +880,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa5466e6a, Offset: 0x8488
     // Size: 0x2fc
     function function_5c082667() {
@@ -922,7 +921,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x570c5f1f, Offset: 0x8d38
     // Size: 0xb8
     function function_5c2a9efa() {
@@ -936,7 +935,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x405b5d26, Offset: 0x3a08
     // Size: 0x19c
     function scene_reach() {
@@ -953,7 +952,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x2109f253, Offset: 0x28c0
     // Size: 0x184
     function function_638ad737(str_shot) {
@@ -969,7 +968,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x1d3a003f, Offset: 0x9250
     // Size: 0x120
     function in_this_scene(ent) {
@@ -994,7 +993,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x876286de, Offset: 0x9628
     // Size: 0x20c
     function skip_animation_on_client() {
@@ -1003,7 +1002,7 @@ class csceneobject {
                 foreach (player in [[ _func_get ]](_str_team)) {
                     /#
                         if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                            printtoprightln("<unknown string>" + current_playing_anim[player getentitynumber()] + "<unknown string>" + gettime(), (0.8, 0.8, 0.8));
+                            printtoprightln("<dev string:x2d1>" + current_playing_anim[player getentitynumber()] + "<dev string:x27b>" + gettime(), (0.8, 0.8, 0.8));
                         }
                     #/
                     skip_anim_on_client(player, current_playing_anim[player getentitynumber()]);
@@ -1011,7 +1010,7 @@ class csceneobject {
             } else {
                 /#
                     if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                        printtoprightln("<unknown string>" + current_playing_anim[_n_ent_num] + "<unknown string>" + gettime(), (0.8, 0.8, 0.8));
+                        printtoprightln("<dev string:x2d1>" + current_playing_anim[_n_ent_num] + "<dev string:x27b>" + gettime(), (0.8, 0.8, 0.8));
                     }
                 #/
                 skip_anim_on_client(_e, current_playing_anim[_n_ent_num]);
@@ -1022,7 +1021,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb548f84f, Offset: 0x90f8
     // Size: 0xb0
     function function_71b7c9e3(player) {
@@ -1035,7 +1034,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x1f0d593a, Offset: 0x4fb0
     // Size: 0x4c4
     function function_72f549e0(s_shot, var_37fa9b04) {
@@ -1100,7 +1099,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x3c415ee4, Offset: 0x22c8
     // Size: 0x9c
     function function_730a4c60(str_shot) {
@@ -1113,7 +1112,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf99a1d41, Offset: 0x9ac0
     // Size: 0x2c
     function skip_scene(b_wait_one_frame) {
@@ -1124,7 +1123,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x35c240ce, Offset: 0x9d88
     // Size: 0xc4
     function warning(condition, str_msg) {
@@ -1139,7 +1138,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1031479a, Offset: 0x9a50
     // Size: 0x66
     function skip_scene_shot_animations() {
@@ -1153,16 +1152,16 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 4, eflags: 0x2 linked
+    // Params 4, eflags: 0x0
     // Checksum 0x2f96e54b, Offset: 0x6ab0
     // Size: 0x752
     function play_anim(animation, b_camera_anim = 0, var_e052b59a = 0, n_start_time = 0) {
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
                 if (isdefined(_s.name)) {
-                    printtoprightln("<unknown string>" + _s.name);
+                    printtoprightln("<dev string:x22a>" + _s.name);
                 } else {
-                    printtoprightln("<unknown string>" + _s.model);
+                    printtoprightln("<dev string:x22a>" + _s.model);
                 }
             }
         #/
@@ -1254,7 +1253,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x9c735eef, Offset: 0x3f58
     // Size: 0x8c
     function _stop(b_dont_clear_anim = 0) {
@@ -1268,7 +1267,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xcd8edc43, Offset: 0x7210
     // Size: 0x1f6
     function function_8536906e(var_2d86d11f) {
@@ -1291,7 +1290,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x5dd16393, Offset: 0x1be0
     // Size: 0x1c4
     function _prepare() {
@@ -1315,7 +1314,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x7bab7999, Offset: 0x4738
     // Size: 0x134
     function function_8a75270e(_e) {
@@ -1330,7 +1329,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xbb152368, Offset: 0x3e30
     // Size: 0x11c
     function stop(b_clear = 0, b_dont_clear_anim = 0) {
@@ -1354,7 +1353,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xf793010b, Offset: 0xc80
     // Size: 0x37c
     function spawn() {
@@ -1380,7 +1379,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x41c85478, Offset: 0x7410
     // Size: 0x4e6
     function update_alignment() {
@@ -1408,7 +1407,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xa4a0f051, Offset: 0xba0
     // Size: 0xd4
     function first_init(s_objdef, o_scene) {
@@ -1425,7 +1424,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd7c1a9a3, Offset: 0x38e0
     // Size: 0x94
     function _dynamic_paths() {
@@ -1437,7 +1436,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x21d27ce3, Offset: 0x8790
     // Size: 0x6c
     function function_98561e95() {
@@ -1450,7 +1449,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x74e17e4b, Offset: 0x4550
     // Size: 0xfc
     function function_9960f8f0(_e) {
@@ -1463,7 +1462,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1c427b50, Offset: 0x9228
     // Size: 0x1c
     function function_9a6b1e3f() {
@@ -1471,7 +1470,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x7ed3c6eb, Offset: 0x9098
     // Size: 0x1c
     function is_shared_player() {
@@ -1479,7 +1478,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe78050b2, Offset: 0x11b0
     // Size: 0x750
     function prepare() {
@@ -1570,7 +1569,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x35179631, Offset: 0x3d60
     // Size: 0xc4
     function function_9e4b3920() {
@@ -1584,7 +1583,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x295c92dc, Offset: 0x23c8
     // Size: 0x4c
     function function_9ec459a2() {
@@ -1594,7 +1593,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x4f6ee7dd, Offset: 0x2220
     // Size: 0x9c
     function get_shot(str_shot) {
@@ -1607,7 +1606,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x76e4763c, Offset: 0x7900
     // Size: 0x3e4
     function function_a04fb5f4() {
@@ -1645,7 +1644,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd8ac3bf7, Offset: 0x6310
     // Size: 0x44
     function function_a808aac7() {
@@ -1656,7 +1655,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe95003dc, Offset: 0x9200
     // Size: 0x1c
     function is_vehicle() {
@@ -1664,7 +1663,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x6f4f7a6c, Offset: 0x9560
     // Size: 0xbc
     function skip_anim_on_server(entity, anim_name) {
@@ -1686,7 +1685,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x25b96457, Offset: 0x21d8
     // Size: 0x3e
     function function_b260bdcc(str_shot) {
@@ -1694,7 +1693,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xd7f3f2f7, Offset: 0x5738
     // Size: 0x300
     function function_b485ee21(s_shot, var_37fa9b04) {
@@ -1722,7 +1721,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x47ff02e9, Offset: 0x5ca8
     // Size: 0x26
     function function_b52254e6() {
@@ -1733,7 +1732,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x959db714, Offset: 0x1dc0
     // Size: 0x144
     function get_animation_name(_str_shot, var_b8995d3f = 0) {
@@ -1753,7 +1752,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb6544004, Offset: 0x4888
     // Size: 0x36c
     function function_bc0facbb() {
@@ -1796,7 +1795,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xc9069567, Offset: 0x93d0
     // Size: 0x102
     function _should_skip_anim(animation) {
@@ -1815,7 +1814,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x99dd7139, Offset: 0x2a50
     // Size: 0xb3e
     function play(str_shot = "play", n_start_time) {
@@ -1823,8 +1822,8 @@ class csceneobject {
         var_4da22aea = undefined;
         if (!isdefined(n_shot) && !has_streamer_hint()) {
             /#
-                if (level flag::get("client")) {
-                    var_320710a9 = "capture" + str_shot + "skip_started" + _str_name + "<unknown string>" + function_9e72a96(_o_scene._str_name);
+                if (level flag::get("<dev string:x4c>")) {
+                    var_320710a9 = "<dev string:x5a>" + str_shot + "<dev string:x65>" + _str_name + "<dev string:x77>" + function_9e72a96(_o_scene._str_name);
                     iprintln(var_320710a9);
                     println(var_320710a9);
                 }
@@ -1880,9 +1879,9 @@ class csceneobject {
                         case #"cameraswitcher":
                             /#
                                 if (ishash(entry)) {
-                                    error(!isassetloaded("<unknown string>", entry), "<unknown string>" + function_9e72a96(entry) + "<unknown string>");
+                                    error(!isassetloaded("<dev string:xb2>", entry), "<dev string:xba>" + function_9e72a96(entry) + "<dev string:xc3>");
                                 } else {
-                                    error(!isassetloaded("<unknown string>", entry), "<unknown string>" + entry + "<unknown string>");
+                                    error(!isassetloaded("<dev string:xb2>", entry), "<dev string:xba>" + entry + "<dev string:xc3>");
                                 }
                             #/
                             var_aa49b05f = 1;
@@ -1892,14 +1891,14 @@ class csceneobject {
                             /#
                                 if (is_true(_s.issiege)) {
                                     if (ishash(entry)) {
-                                        error(!isassetloaded("<unknown string>", entry), "<unknown string>" + function_9e72a96(entry) + "<unknown string>");
+                                        error(!isassetloaded("<dev string:x111>", entry), "<dev string:x11a>" + function_9e72a96(entry) + "<dev string:x124>");
                                     } else {
-                                        error(!isassetloaded("<unknown string>", entry), "<unknown string>" + entry + "<unknown string>");
+                                        error(!isassetloaded("<dev string:x111>", entry), "<dev string:x11a>" + entry + "<dev string:x17d>");
                                     }
                                 } else if (ishash(entry)) {
-                                    error(!isassetloaded("<unknown string>", entry), "<unknown string>" + function_9e72a96(entry) + "<unknown string>");
+                                    error(!isassetloaded("<dev string:x1d5>", entry), "<dev string:x1de>" + function_9e72a96(entry) + "<dev string:xc3>");
                                 } else {
-                                    error(!isassetloaded("<unknown string>", entry), "<unknown string>" + entry + "<unknown string>");
+                                    error(!isassetloaded("<dev string:x1d5>", entry), "<dev string:x1de>" + entry + "<dev string:xc3>");
                                 }
                             #/
                             if (!isdefined(var_4da22aea)) {
@@ -1912,7 +1911,7 @@ class csceneobject {
                             break;
                         default:
                             /#
-                                error(1, "<unknown string>" + str_entry_type + "<unknown string>");
+                                error(1, "<dev string:x1e8>" + str_entry_type + "<dev string:x205>");
                             #/
                             break;
                         }
@@ -1953,7 +1952,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x67dbdea1, Offset: 0x2470
     // Size: 0x58
     function has_streamer_hint() {
@@ -1964,7 +1963,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x8735c90b, Offset: 0x8820
     // Size: 0x3e
     function function_d2039b28() {
@@ -1972,15 +1971,15 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x9d57f7e, Offset: 0x9b28
     // Size: 0xd4
     function log(str_msg) {
-        println(_o_scene._s.type + "<unknown string>" + function_9e72a96(_o_scene._str_name) + "<unknown string>" + (isdefined("<unknown string>") ? "<unknown string>" + "<unknown string>" : isdefined(_s.name) ? "<unknown string>" + _s.name : "<unknown string>") + "<unknown string>" + str_msg);
+        println(_o_scene._s.type + "<dev string:x31f>" + function_9e72a96(_o_scene._str_name) + "<dev string:x324>" + (isdefined("<dev string:x32b>") ? "<dev string:x226>" + "<dev string:x32b>" : isdefined(_s.name) ? "<dev string:x226>" + _s.name : "<dev string:x226>") + "<dev string:x336>" + str_msg);
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x3d53cbd7, Offset: 0x8fe0
     // Size: 0x5a
     function is_player() {
@@ -1988,7 +1987,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xbe944ed2, Offset: 0x9048
     // Size: 0x1c
     function is_player_model() {
@@ -1996,7 +1995,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x4070ffdc, Offset: 0x88b0
     // Size: 0x26c
     function spawn_ent() {
@@ -2031,7 +2030,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x12dc12ad, Offset: 0x35d8
     // Size: 0x96
     function function_dd4f74e1() {
@@ -2043,7 +2042,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x4ef3ef55, Offset: 0x1f10
     // Size: 0x106
     function function_e0df299e(_str_shot) {
@@ -2059,7 +2058,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x3ef22eec, Offset: 0x2420
     // Size: 0x46
     function function_e91c94b9(n_shot) {
@@ -2072,7 +2071,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2280fb8, Offset: 0x5558
     // Size: 0x1d4
     function function_ea176ba9() {
@@ -2099,7 +2098,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa238c769, Offset: 0x1008
     // Size: 0x19a
     function _spawn() {
@@ -2124,7 +2123,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x76600537, Offset: 0x36f0
     // Size: 0x114
     function function_ebbbd00d() {
@@ -2151,7 +2150,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x58a49bb7, Offset: 0x5fc0
     // Size: 0x6a
     function _assign_unique_name() {
@@ -2163,7 +2162,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2c64da1c, Offset: 0x2370
     // Size: 0x4c
     function function_f0e3e344() {
@@ -2173,7 +2172,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xddaa01f4, Offset: 0x5cd8
     // Size: 0xb0
     function function_f12c5e67(s_shot) {
@@ -2184,7 +2183,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x16c06e07, Offset: 0x8b38
     // Size: 0x192
     function kill_ent() {
@@ -2213,7 +2212,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x780dfa0e, Offset: 0xb10
     // Size: 0x84
     function _reset_values(ent = self._e) {
@@ -2224,7 +2223,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x7f9888ef, Offset: 0x8808
     // Size: 0xc
     function on_play_anim(*ent) {
@@ -2232,7 +2231,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x43675cc2, Offset: 0x94e0
     // Size: 0x74
     function skip_anim_on_client(entity, anim_name) {
@@ -2252,7 +2251,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa8e1024a, Offset: 0x8868
     // Size: 0x3e
     function function_f9936b53() {
@@ -2260,7 +2259,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xb96d956f, Offset: 0x9f0
     // Size: 0x6c
     function reset_ent_val(str_key, ent = self._e) {
@@ -2270,7 +2269,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd6ebbf18, Offset: 0x6038
     // Size: 0x12
     function get_orig_name() {
@@ -2278,7 +2277,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x950e1653, Offset: 0x4310
     // Size: 0x234
     function function_fda037ff() {
@@ -2314,7 +2313,7 @@ class csceneobject {
     }
 
     // Namespace csceneobject/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x1cbf386b, Offset: 0x9af8
     // Size: 0x22
     function is_skipping_scene() {
@@ -2358,7 +2357,7 @@ class cscene {
     var var_b0ff34ce;
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x37c5475e, Offset: 0xb2f0
     // Size: 0x66
     constructor() {
@@ -2373,17 +2372,17 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x82 linked class_linked
+    // Params 0, eflags: 0x80 class_linked
     // Checksum 0x6dee273b, Offset: 0xb360
     // Size: 0x24
     function destructor() {
         /#
-            log("<unknown string>");
+            log("<dev string:x367>");
         #/
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xa7039595, Offset: 0x10730
     // Size: 0x154
     function wait_till_shot_ready(str_shot, o_exclude) {
@@ -2407,7 +2406,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x3b2167bd, Offset: 0xd4e0
     // Size: 0x4c
     function _is_ent_player(ent, str_team) {
@@ -2415,7 +2414,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x5000019, Offset: 0xc080
     // Size: 0x5e
     function function_85ed339(s_obj) {
@@ -2427,7 +2426,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xa3c1a7a9, Offset: 0xd5c0
     // Size: 0x44
     function _is_ent_vehicle(ent, *str_team) {
@@ -2435,7 +2434,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xeaa95ca9, Offset: 0x10400
     // Size: 0x122
     function get_ents() {
@@ -2458,7 +2457,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x49d267fc, Offset: 0xc268
     // Size: 0x170
     function add_to_sync_list(str_shot) {
@@ -2479,7 +2478,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x8b6aaf43, Offset: 0x10a08
     // Size: 0x102
     function wait_till_objects_ready(str_shot, &array) {
@@ -2493,7 +2492,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x3d3de96a, Offset: 0xd168
     // Size: 0x138
     function function_13804c36(ent, var_3b0de5fa) {
@@ -2510,7 +2509,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x17ec1aed, Offset: 0xd570
     // Size: 0x44
     function _is_ent_actor(ent, *str_team) {
@@ -2518,7 +2517,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xf86b54f5, Offset: 0x11da0
     // Size: 0xc4
     function error(condition, str_msg) {
@@ -2528,7 +2527,7 @@ class cscene {
                     scene::error_on_screen(str_msg);
                 #/
             } else {
-                assertmsg(_s.type + "<unknown string>" + function_9e72a96(_str_name) + "<unknown string>" + function_9e72a96(str_msg));
+                assertmsg(_s.type + "<dev string:x31f>" + function_9e72a96(_str_name) + "<dev string:x361>" + function_9e72a96(str_msg));
             }
             thread on_error();
             return true;
@@ -2537,7 +2536,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x823bed80, Offset: 0xf870
     // Size: 0x10a
     function has_next_shot(str_current_shot = self._a_active_shots[0]) {
@@ -2556,7 +2555,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x51e613e8, Offset: 0xf4b8
     // Size: 0x198
     function function_1b4fe4c4() {
@@ -2575,7 +2574,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xbf4b29d5, Offset: 0xbe48
     // Size: 0x18
     function function_24f8cfb5(str_shot) {
@@ -2583,7 +2582,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x26bc46d6, Offset: 0xc500
     // Size: 0x1ba
     function new_object(str_type) {
@@ -2613,7 +2612,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xaa69e330, Offset: 0xcdc8
     // Size: 0x396
     function _assign_ents_by_name(&a_objects, &a_ents) {
@@ -2641,7 +2640,7 @@ class cscene {
             }
             /#
                 foreach (i, ent in a_ents) {
-                    error(isstring(i) || ishash(i), "<unknown string>" + i + "<unknown string>");
+                    error(isstring(i) || ishash(i), "<dev string:x3f4>" + i + "<dev string:x205>");
                 }
             #/
         }
@@ -2649,7 +2648,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x7f4009a2, Offset: 0xf6c0
     // Size: 0xc8
     function function_3e22b6ac() {
@@ -2663,7 +2662,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x186744a3, Offset: 0xf848
     // Size: 0x1a
     function scene_skip_completed() {
@@ -2671,7 +2670,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x37b1937c, Offset: 0xb390
     // Size: 0x5b8
     function function_4412dc65(str_shot) {
@@ -2697,7 +2696,7 @@ class cscene {
                     }
                     v_pos = (1350, 195, 0);
                     var_204b44d3 = var_9d90ef8b * n_frame_counter / ceil(var_9d90ef8b * 30);
-                    var_962ef8af = "<unknown string>" + n_frame_counter + "<unknown string>" + ceil(var_9d90ef8b * 30) + "<unknown string>" + var_204b44d3 + "<unknown string>" + var_9d90ef8b + "<unknown string>";
+                    var_962ef8af = "<dev string:x37a>" + n_frame_counter + "<dev string:x394>" + ceil(var_9d90ef8b * 30) + "<dev string:x399>" + var_204b44d3 + "<dev string:x394>" + var_9d90ef8b + "<dev string:x3ac>";
                     debug2dtext(v_pos, var_962ef8af, undefined, undefined, undefined, 1, 0.8);
                     v_pos += (0, 20, 0) * 2;
                     foreach (obj in _a_objects) {
@@ -2708,15 +2707,15 @@ class cscene {
                             continue;
                         }
                         animation = obj._str_current_anim;
-                        if (!isdefined(animation) || !isassetloaded("<unknown string>", animation)) {
+                        if (!isdefined(animation) || !isassetloaded("<dev string:x1d5>", animation)) {
                             continue;
                         }
                         var_13edeb1f = getanimframecount(animation);
                         var_7b160393 = ceil(obj._e getanimtime(animation) * var_13edeb1f);
                         var_958054e5 = getanimlength(animation);
                         var_f667af2f = obj._e getanimtime(animation) * var_958054e5;
-                        var_2e63fccd = obj._str_name + "<unknown string>" + function_9e72a96(animation);
-                        var_1cae5962 = "<unknown string>" + str_shot + "<unknown string>" + var_7b160393 + "<unknown string>" + var_13edeb1f + "<unknown string>" + var_f667af2f + "<unknown string>" + var_958054e5 + "<unknown string>";
+                        var_2e63fccd = obj._str_name + "<dev string:x3b3>" + function_9e72a96(animation);
+                        var_1cae5962 = "<dev string:x3be>" + str_shot + "<dev string:x3c8>" + var_7b160393 + "<dev string:x394>" + var_13edeb1f + "<dev string:x3d4>" + var_f667af2f + "<dev string:x394>" + var_958054e5 + "<dev string:x3ac>";
                         debug2dtext(v_pos, var_2e63fccd, undefined, undefined, undefined, 1, 0.8);
                         v_pos += (0, 20, 0);
                         debug2dtext(v_pos, var_1cae5962, undefined, undefined, undefined, 1, 0.8);
@@ -2730,7 +2729,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x9e1858e5, Offset: 0x10c60
     // Size: 0x18c
     function sync_with_other_scenes(str_shot) {
@@ -2752,7 +2751,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xc3eedae2, Offset: 0xc220
     // Size: 0x1c
     function set_request_time(str_shot) {
@@ -2760,7 +2759,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf13b39e4, Offset: 0xbe88
     // Size: 0x1a0
     function function_4f12fd77(s_obj) {
@@ -2780,7 +2779,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xa94ec6e7, Offset: 0xc0e8
     // Size: 0x130
     function function_558aaa66(s_instance, s_obj) {
@@ -2796,7 +2795,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x10920d86, Offset: 0x11ae0
     // Size: 0xbe
     function _skip_scene() {
@@ -2810,7 +2809,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x4a1e0e56, Offset: 0x11c80
     // Size: 0x74
     function add_object(o_object) {
@@ -2823,7 +2822,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xcd275c, Offset: 0x10df8
     // Size: 0xe2
     function get_valid_objects() {
@@ -2842,7 +2841,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe4bd1ad2, Offset: 0x10ee8
     // Size: 0x14
     function on_error() {
@@ -2850,7 +2849,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xba69de41, Offset: 0x10530
     // Size: 0xa
     function get_root() {
@@ -2858,7 +2857,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xed670770, Offset: 0x11d00
     // Size: 0x24
     function remove_object(o_object) {
@@ -2866,14 +2865,14 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x99c28ddb, Offset: 0x10f38
     // Size: 0x810
     function skip_scene(var_11843b70, str_shot = self._a_active_shots[0]) {
         if (!is_true(var_11843b70) && is_true(_s.disablesceneskipping)) {
             /#
                 if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                    printtoprightln("<unknown string>" + _s.name + "<unknown string>" + gettime(), (1, 0, 0));
+                    printtoprightln("<dev string:x511>" + _s.name + "<dev string:x27b>" + gettime(), (1, 0, 0));
                 }
             #/
             finish_scene_skipping();
@@ -2885,14 +2884,14 @@ class cscene {
         }
         /#
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                printtoprightln("<unknown string>" + _s.name + "<unknown string>" + gettime(), (0, 1, 0));
+                printtoprightln("<dev string:x546>" + _s.name + "<dev string:x27b>" + gettime(), (0, 1, 0));
             }
         #/
         if (!is_true(var_11843b70)) {
             if (is_skipping_player_scene()) {
                 /#
                     if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                        printtoprightln("<unknown string>" + gettime());
+                        printtoprightln("<dev string:x55e>" + gettime());
                     }
                 #/
                 if (getdvarint(#"scene_skip_no_fade", 0) == 0) {
@@ -2920,20 +2919,20 @@ class cscene {
         flag::wait_till(str_shot + "go");
         /#
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                printtoprightln("<unknown string>" + _s.name + "<unknown string>" + gettime(), (0, 0, 1));
+                printtoprightln("<dev string:x583>" + _s.name + "<dev string:x27b>" + gettime(), (0, 0, 1));
             }
         #/
         thread _skip_scene();
         /#
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                printtoprightln("<unknown string>" + gettime(), (0, 1, 0));
+                printtoprightln("<dev string:x5a3>" + gettime(), (0, 1, 0));
             }
         #/
         /#
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
                 if (isdefined(level.animation_played)) {
                     for (i = 0; i < level.animation_played.size; i++) {
-                        printtoprightln("<unknown string>" + level.animation_played[i], (1, 0, 0), -1);
+                        printtoprightln("<dev string:x5d8>" + level.animation_played[i], (1, 0, 0), -1);
                     }
                 }
             }
@@ -2948,7 +2947,7 @@ class cscene {
             }
             /#
                 if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                    printtoprightln("<unknown string>" + _s.name + "<unknown string>" + gettime(), (1, 0.5, 0));
+                    printtoprightln("<dev string:x5f5>" + _s.name + "<dev string:x27b>" + gettime(), (1, 0.5, 0));
                 }
             #/
             _call_shot_funcs("skip_completed");
@@ -2972,7 +2971,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x66ffdafb, Offset: 0x10700
     // Size: 0x22
     function is_looping() {
@@ -2980,14 +2979,14 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x54114096, Offset: 0x11e70
     // Size: 0x64
     function warning(condition, str_msg) {
         if (condition) {
             if (_b_testing) {
                 /#
-                    scene::warning_on_screen("<unknown string>" + _str_name + "<unknown string>" + str_msg);
+                    scene::warning_on_screen("<dev string:x33c>" + _str_name + "<dev string:x636>" + str_msg);
                 #/
             }
             return true;
@@ -2996,7 +2995,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x16e0b57d, Offset: 0x10b18
     // Size: 0x2c
     function wait_till_shot_finished(str_shot) {
@@ -3004,7 +3003,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 5, eflags: 0x2 linked
+    // Params 5, eflags: 0x0
     // Checksum 0x2029f4ae, Offset: 0xd2a8
     // Size: 0x22e
     function _assign_ents_by_type(&a_objects, &a_ents, str_type, func_test, str_team) {
@@ -3036,7 +3035,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x146a4ed7, Offset: 0xfdb8
     // Size: 0x26a
     function stop(b_clear = 0, b_finished = 0) {
@@ -3057,12 +3056,12 @@ class cscene {
         }
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                printtoprightln("<unknown string>" + _s.name);
+                printtoprightln("<dev string:x4e3>" + _s.name);
             }
             if (isdefined(_e_root) && isdefined(_e_root.last_scene_state_instance)) {
                 if (!b_finished) {
-                    level.last_scene_state[_str_name] = level.last_scene_state[_str_name] + "<unknown string>";
-                    _e_root.last_scene_state_instance[_str_name] = _e_root.last_scene_state_instance[_str_name] + "<unknown string>";
+                    level.last_scene_state[_str_name] = level.last_scene_state[_str_name] + "<dev string:x505>";
+                    _e_root.last_scene_state_instance[_str_name] = _e_root.last_scene_state_instance[_str_name] + "<dev string:x505>";
                 }
                 if (!isdefined(_e_root.scriptbundlename)) {
                     _e_root notify(#"stop_debug_display");
@@ -3073,13 +3072,13 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 5, eflags: 0x2 linked
+    // Params 5, eflags: 0x0
     // Checksum 0x33c80c5b, Offset: 0xb950
     // Size: 0x4f0
     function init(str_scenedef, s_scenedef, e_align, a_ents, b_test_run) {
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                printtoprightln("<unknown string>" + str_scenedef);
+                printtoprightln("<dev string:x3e1>" + str_scenedef);
             }
         #/
         s_scenedef scene::function_585fb738();
@@ -3123,17 +3122,17 @@ class cscene {
                     _e_root.last_scene_state_instance = [];
                 }
                 if (!isdefined(level.last_scene_state[_str_name])) {
-                    level.last_scene_state[_str_name] = "<unknown string>";
+                    level.last_scene_state[_str_name] = "<dev string:x226>";
                 }
                 if (!isdefined(_e_root.last_scene_state_instance[_str_name])) {
-                    _e_root.last_scene_state_instance[_str_name] = "<unknown string>";
+                    _e_root.last_scene_state_instance[_str_name] = "<dev string:x226>";
                 }
             #/
         }
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xf9a2f2d4, Offset: 0x10f08
     // Size: 0x26
     function is_scene_shared() {
@@ -3144,7 +3143,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x8841da1a, Offset: 0x10890
     // Size: 0x170
     function function_9a5f92e7() {
@@ -3165,7 +3164,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa3bbcdac, Offset: 0x11ba8
     // Size: 0x22
     function function_9c8ba4a0() {
@@ -3173,7 +3172,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x331f7735, Offset: 0xca00
     // Size: 0x340
     function assign_ents(a_ents) {
@@ -3214,19 +3213,19 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xd94c4ac3, Offset: 0x11750
     // Size: 0x386
     function finish_scene_skipping() {
         /#
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                printtoprightln("<unknown string>" + gettime(), (1, 0, 0));
+                printtoprightln("<dev string:x613>" + gettime(), (1, 0, 0));
             }
         #/
         if (is_skipping_scene()) {
             /#
                 if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                    printtoprightln("<unknown string>" + gettime());
+                    printtoprightln("<dev string:x55e>" + gettime());
                 }
             #/
             if (getdvarint(#"scene_skip_no_fade", 0) == 0) {
@@ -3258,7 +3257,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xf6bbaa81, Offset: 0xc850
     // Size: 0x1a4
     function sync_with_client_scene(str_shot, b_test_run = 0) {
@@ -3296,7 +3295,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0x881994db, Offset: 0xd7c0
     // Size: 0x136
     function get_anim_relative_start_time(animation, n_start_time, b_camera_anim = 0) {
@@ -3322,7 +3321,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x928bdb0, Offset: 0xf658
     // Size: 0x5e
     function function_ab0c6edb() {
@@ -3332,7 +3331,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2ab614cb, Offset: 0xfd90
     // Size: 0x1a
     function has_init_state() {
@@ -3340,7 +3339,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x356fb9d, Offset: 0xbe68
     // Size: 0x18
     function function_b260bdcc(str_shot) {
@@ -3348,7 +3347,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x2075242f, Offset: 0xc6c8
     // Size: 0x15c
     function get_valid_object_defs() {
@@ -3366,7 +3365,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xc6575b62, Offset: 0xd610
     // Size: 0x1a8
     function get_objects(type, str_team) {
@@ -3392,7 +3391,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x3a419cba, Offset: 0xf808
     // Size: 0x32
     function is_skipping_player_scene() {
@@ -3400,7 +3399,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xc3942db3, Offset: 0xc830
     // Size: 0x16
     function get_object_id() {
@@ -3409,7 +3408,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x70112283, Offset: 0xc248
     // Size: 0x18
     function get_request_time(str_shot) {
@@ -3417,7 +3416,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x6784b5ca, Offset: 0x10548
     // Size: 0x1ac
     function function_bc0facbb() {
@@ -3442,7 +3441,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xf59d5a41, Offset: 0x10b50
     // Size: 0x102
     function wait_till_objects_finished(str_shot, &array) {
@@ -3456,7 +3455,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb0d7bf2b, Offset: 0xf988
     // Size: 0xe6
     function get_next_shot(str_current_shot) {
@@ -3473,14 +3472,14 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 4, eflags: 0x2 linked
+    // Params 4, eflags: 0x0
     // Checksum 0x719d385b, Offset: 0xd900
     // Size: 0x16e6
     function play(str_shot = "play", a_ents, b_testing = 0, str_mode = "") {
         function_2ddeb362("cScene::play : " + _s.name + " shot " + str_shot);
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                printtoprightln("<unknown string>" + _s.name);
+                printtoprightln("<dev string:x413>" + _s.name);
             }
         #/
         if (str_mode == "single_loop") {
@@ -3590,18 +3589,18 @@ class cscene {
         }
         if (strstartswith(_str_mode, "capture") || _s scene::is_igc() && scene::function_a4dedc63(1)) {
             /#
-                depth = getdvarstring(#"hash_3018c0b9207d1c", "<unknown string>");
-                fps = getdvarstring(#"hash_51617678bebb961a", "<unknown string>");
-                fmt = getdvarstring(#"hash_4bf15ae7a6fbf73c", "<unknown string>");
-                if (scene::function_6a0b0afe(_str_mode) || getdvarint(#"hash_6a54249f0cc48945", 0) == 2 || scene::function_24f8cfb5(_str_name, str_shot) || _str_mode === "<unknown string>") {
+                depth = getdvarstring(#"hash_3018c0b9207d1c", "<dev string:x426>");
+                fps = getdvarstring(#"hash_51617678bebb961a", "<dev string:x42b>");
+                fmt = getdvarstring(#"hash_4bf15ae7a6fbf73c", "<dev string:x431>");
+                if (scene::function_6a0b0afe(_str_mode) || getdvarint(#"hash_6a54249f0cc48945", 0) == 2 || scene::function_24f8cfb5(_str_name, str_shot) || _str_mode === "<dev string:x438>") {
                     if (scene::function_6a0b0afe(_str_mode) || getdvarint(#"hash_6a54249f0cc48945", 0) == 2) {
-                        var_3a6bcf6e = _str_name + "<unknown string>" + str_shot;
+                        var_3a6bcf6e = _str_name + "<dev string:x440>" + str_shot;
                     } else {
                         var_3a6bcf6e = _str_name;
                     }
                     level flag::set(#"scene_menu_disable");
-                    str_command = "<unknown string>" + depth + "<unknown string>" + fps + "<unknown string>" + fmt + "<unknown string>" + _str_name + "<unknown string>" + var_3a6bcf6e;
-                    adddebugcommand("<unknown string>");
+                    str_command = "<dev string:x44a>" + depth + "<dev string:x31f>" + fps + "<dev string:x31f>" + fmt + "<dev string:x464>" + _str_name + "<dev string:x31f>" + var_3a6bcf6e;
+                    adddebugcommand("<dev string:x472>");
                     adddebugcommand(str_command);
                 }
             #/
@@ -3709,11 +3708,11 @@ class cscene {
             }
         }
         /#
-            if (strstartswith(_str_mode, "<unknown string>") || _s scene::is_igc() && scene::function_a4dedc63(1)) {
-                conv = getdvarstring(#"hash_7b946c8966b56a8e", "<unknown string>");
+            if (strstartswith(_str_mode, "<dev string:x488>") || _s scene::is_igc() && scene::function_a4dedc63(1)) {
+                conv = getdvarstring(#"hash_7b946c8966b56a8e", "<dev string:x426>");
                 if (scene::function_6a0b0afe(_str_mode) || function_b260bdcc(str_shot) || getdvarint(#"hash_6a54249f0cc48945", 0) == 2) {
                     level flag::clear(#"scene_menu_disable");
-                    adddebugcommand("<unknown string>" + conv);
+                    adddebugcommand("<dev string:x493>" + conv);
                 }
             }
         #/
@@ -3721,7 +3720,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xacee0ff4, Offset: 0xc3e0
     // Size: 0x118
     function remove_from_sync_list(str_shot) {
@@ -3740,13 +3739,13 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x7f378724, Offset: 0xfa78
     // Size: 0x30c
     function run_next(str_current_shot) {
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                printtoprightln("<unknown string>" + gettime());
+                printtoprightln("<dev string:x4a6>" + gettime());
             }
         #/
         b_run_next_scene = 0;
@@ -3774,7 +3773,7 @@ class cscene {
                     var_1a15e649 = get_next_shot(str_current_shot);
                     /#
                         if (getdvarint(#"debug_scene_skip", 0) > 0 && is_skipping_scene()) {
-                            printtoprightln("<unknown string>" + str_current_shot + "<unknown string>" + gettime(), (1, 1, 0));
+                            printtoprightln("<dev string:x4bd>" + str_current_shot + "<dev string:x27b>" + gettime(), (1, 1, 0));
                         }
                     #/
                     switch (_s.scenetype) {
@@ -3793,7 +3792,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xab87a0ba, Offset: 0xd538
     // Size: 0x2a
     function function_d1827f5c(ent, *str_team) {
@@ -3801,15 +3800,15 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x17da52de, Offset: 0x11d30
     // Size: 0x64
     function log(str_msg) {
-        println(_s.type + "<unknown string>" + function_9e72a96(_str_name) + "<unknown string>" + str_msg);
+        println(_s.type + "<dev string:x31f>" + function_9e72a96(_str_name) + "<dev string:x361>" + str_msg);
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x866e291e, Offset: 0x11bd8
     // Size: 0x9a
     function has_player() {
@@ -3825,7 +3824,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x6dd8d5e1, Offset: 0xc030
     // Size: 0x46
     function is_player(s_obj) {
@@ -3836,7 +3835,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xc59e40f9, Offset: 0xf318
     // Size: 0x198
     function function_db6a44af() {
@@ -3855,7 +3854,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xbefb4c36, Offset: 0xeff0
     // Size: 0x31e
     function function_e6945023(player) {
@@ -3897,7 +3896,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xfb73b2a8, Offset: 0x10030
     // Size: 0x3c8
     function _call_shot_funcs(str_shot, b_waittill_go = 0) {
@@ -3944,7 +3943,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x5ea44b8, Offset: 0xcd48
     // Size: 0x78
     function assign_ent(o_obj, ent) {
@@ -3958,7 +3957,7 @@ class cscene {
     }
 
     // Namespace cscene/scene_objects_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb442a582, Offset: 0xf790
     // Size: 0x6e
     function is_skipping_scene() {
@@ -3968,7 +3967,7 @@ class cscene {
 }
 
 // Namespace scene/scene_objects_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa793ae67, Offset: 0x840
 // Size: 0x52
 function prepare_player_model_anim(ent) {
@@ -3979,7 +3978,7 @@ function prepare_player_model_anim(ent) {
 }
 
 // Namespace scene/scene_objects_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x696b439e, Offset: 0x8a0
 // Size: 0x52
 function prepare_generic_model_anim(ent) {

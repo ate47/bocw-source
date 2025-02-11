@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\spawn_manager.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\spawn_manager;
 
 #namespace spawn_manager;
 
@@ -14,7 +13,7 @@
     function function_50a58f3() {
         for (;;) {
             if (!getdvarint(#"ai_debugspawnmanager", 0)) {
-                wait(0.1);
+                wait 0.1;
                 continue;
             }
             managers = function_aaa872c1();
@@ -47,7 +46,7 @@
         if (getdvarint(#"ai_debugspawnmanager", 0)) {
             if (!isdefined(level.var_9d76aef3)) {
                 level.var_9d76aef3 = newdebughudelem();
-                level.var_9d76aef3.alignx = "<unknown string>";
+                level.var_9d76aef3.alignx = "<dev string:x38>";
                 level.var_9d76aef3.x = 120;
                 level.var_9d76aef3.y = 40;
                 level.var_9d76aef3.fontscale = 1.5;
@@ -56,11 +55,11 @@
             if (!isdefined(level.var_472721ed)) {
                 level.var_472721ed = [];
             }
-            level.var_9d76aef3 settext("<unknown string>" + spawn_ai + "<unknown string>" + var_743c45a5 + "<unknown string>" + var_b9ce72a0 + "<unknown string>" + max_ai + "<unknown string>" + var_93847faa);
+            level.var_9d76aef3 settext("<dev string:x40>" + spawn_ai + "<dev string:x5d>" + var_743c45a5 + "<dev string:x6e>" + var_b9ce72a0 + "<dev string:x73>" + max_ai + "<dev string:x81>" + var_93847faa);
             for (i = 0; i < level.var_2db12862.size; i++) {
                 if (!isdefined(level.var_472721ed[i])) {
                     level.var_472721ed[i] = newdebughudelem();
-                    level.var_472721ed[i].alignx = "<unknown string>";
+                    level.var_472721ed[i].alignx = "<dev string:x38>";
                     level.var_472721ed[i].x = 125;
                     level.var_472721ed[i].fontscale = 1;
                     level.var_472721ed[i].y = level.var_9d76aef3.y + (i + 1) * 15;
@@ -76,12 +75,12 @@
                 } else {
                     level.var_472721ed[i].color = (0.4, 0.4, 0.4);
                 }
-                text = "<unknown string>" + level.var_2db12862[i].sm_id + "<unknown string>";
-                text += "<unknown string>" + level.var_2db12862[i].spawncount;
-                text += "<unknown string>" + level.var_2db12862[i].var_5ee53e3.size + "<unknown string>" + level.var_2db12862[i].var_2023678c + "<unknown string>" + level.var_2db12862[i].var_b02a42f7 + "<unknown string>";
-                text += "<unknown string>" + level.var_2db12862[i].var_e6c22a54.size;
+                text = "<dev string:x98>" + level.var_2db12862[i].sm_id + "<dev string:x9d>";
+                text += "<dev string:xa2>" + level.var_2db12862[i].spawncount;
+                text += "<dev string:xba>" + level.var_2db12862[i].var_5ee53e3.size + "<dev string:xce>" + level.var_2db12862[i].var_2023678c + "<dev string:xd4>" + level.var_2db12862[i].var_b02a42f7 + "<dev string:xd9>";
+                text += "<dev string:xde>" + level.var_2db12862[i].var_e6c22a54.size;
                 if (isdefined(level.var_2db12862[i].var_ed3f1bbb)) {
-                    text += "<unknown string>" + level.var_2db12862[i].var_ed3f1bbb + "<unknown string>" + level.var_2db12862[i].var_3ea8113 + "<unknown string>" + level.var_2db12862[i].var_ff71eda6 + "<unknown string>";
+                    text += "<dev string:xee>" + level.var_2db12862[i].var_ed3f1bbb + "<dev string:x100>" + level.var_2db12862[i].var_3ea8113 + "<dev string:xd4>" + level.var_2db12862[i].var_ff71eda6 + "<dev string:xd9>";
                 }
                 level.var_472721ed[i] settext(text);
             }
@@ -139,15 +138,15 @@
                     var_d5ae2adf = 0;
                     var_e8343926 = 0;
                 }
-                if (level.test_player buttonpressed("<unknown string>")) {
+                if (level.test_player buttonpressed("<dev string:x105>")) {
                     var_e8343926 = var_d5ae2adf;
-                    if (level.test_player buttonpressed("<unknown string>")) {
+                    if (level.test_player buttonpressed("<dev string:x116>")) {
                         var_d5ae2adf--;
                         if (var_d5ae2adf < 0) {
                             var_d5ae2adf = 0;
                         }
                     }
-                    if (level.test_player buttonpressed("<unknown string>")) {
+                    if (level.test_player buttonpressed("<dev string:x121>")) {
                         var_d5ae2adf++;
                         if (var_d5ae2adf > level.var_2db12862.size - 1) {
                             var_d5ae2adf = level.var_2db12862.size - 1;
@@ -178,7 +177,7 @@
             } else {
                 function_565627f7();
             }
-            wait(0.25);
+            wait 0.25;
         }
     }
 
@@ -189,7 +188,7 @@
     function function_258a6c7() {
         while (true) {
             if (!getdvarint(#"ai_debugspawnmanager", 0)) {
-                wait(0.1);
+                wait 0.1;
                 continue;
             }
             if (isdefined(level.var_362ad52e)) {
@@ -199,8 +198,8 @@
                         current_spawner = spawn_manager.spawners[i];
                         if (isdefined(current_spawner) && current_spawner.count > 0) {
                             var_20c0d5a8 = current_spawner.var_7600cd86 - current_spawner.var_5ee53e3.size;
-                            print3d(current_spawner.origin + (0, 0, 65), "<unknown string>" + current_spawner.count, (0, 1, 0), 1, 1.25, 2);
-                            print3d(current_spawner.origin + (0, 0, 85), "<unknown string>" + current_spawner.var_5ee53e3.size + "<unknown string>" + var_20c0d5a8 + "<unknown string>" + current_spawner.var_7600cd86, (0, 1, 0), 1, 1.25, 2);
+                            print3d(current_spawner.origin + (0, 0, 65), "<dev string:x12e>" + current_spawner.count, (0, 1, 0), 1, 1.25, 2);
+                            print3d(current_spawner.origin + (0, 0, 85), "<dev string:x138>" + current_spawner.var_5ee53e3.size + "<dev string:x6e>" + var_20c0d5a8 + "<dev string:x6e>" + current_spawner.var_7600cd86, (0, 1, 0), 1, 1.25, 2);
                         }
                     }
                 }
@@ -232,7 +231,7 @@
         }
         if (!isdefined(level.var_311b1407)) {
             level.var_311b1407 = newdebughudelem();
-            level.var_311b1407.alignx = "<unknown string>";
+            level.var_311b1407.alignx = "<dev string:x38>";
             level.var_311b1407.x = 10;
             level.var_311b1407.y = 150;
             level.var_311b1407.fontscale = 1.25;
@@ -240,68 +239,68 @@
         }
         if (!isdefined(level.var_efdd94a4)) {
             level.var_efdd94a4 = newdebughudelem();
-            level.var_efdd94a4.alignx = "<unknown string>";
+            level.var_efdd94a4.alignx = "<dev string:x38>";
             level.var_efdd94a4.x = 10;
             level.var_efdd94a4.y = 165;
             level.var_efdd94a4.color = (1, 1, 1);
         }
         if (!isdefined(level.var_3ad36502)) {
             level.var_3ad36502 = newdebughudelem();
-            level.var_3ad36502.alignx = "<unknown string>";
+            level.var_3ad36502.alignx = "<dev string:x38>";
             level.var_3ad36502.x = 10;
             level.var_3ad36502.y = 180;
             level.var_3ad36502.color = (1, 1, 1);
         }
         if (!isdefined(level.var_af390e0d)) {
             level.var_af390e0d = newdebughudelem();
-            level.var_af390e0d.alignx = "<unknown string>";
+            level.var_af390e0d.alignx = "<dev string:x38>";
             level.var_af390e0d.x = 10;
             level.var_af390e0d.y = 195;
             level.var_af390e0d.color = (1, 1, 1);
         }
         if (!isdefined(level.var_d8499d3d)) {
             level.var_d8499d3d = newdebughudelem();
-            level.var_d8499d3d.alignx = "<unknown string>";
+            level.var_d8499d3d.alignx = "<dev string:x38>";
             level.var_d8499d3d.x = 10;
             level.var_d8499d3d.y = 210;
             level.var_d8499d3d.color = (1, 1, 1);
         }
         if (!isdefined(level.var_ae00cf1d)) {
             level.var_ae00cf1d = newdebughudelem();
-            level.var_ae00cf1d.alignx = "<unknown string>";
+            level.var_ae00cf1d.alignx = "<dev string:x38>";
             level.var_ae00cf1d.x = 10;
             level.var_ae00cf1d.y = 225;
             level.var_ae00cf1d.color = (1, 1, 1);
         }
         if (!isdefined(level.var_92f8da9a)) {
             level.var_92f8da9a = newdebughudelem();
-            level.var_92f8da9a.alignx = "<unknown string>";
+            level.var_92f8da9a.alignx = "<dev string:x38>";
             level.var_92f8da9a.x = 10;
             level.var_92f8da9a.y = 240;
             level.var_92f8da9a.color = (1, 1, 1);
         }
         if (!isdefined(level.var_254556d9)) {
             level.var_254556d9 = newdebughudelem();
-            level.var_254556d9.alignx = "<unknown string>";
+            level.var_254556d9.alignx = "<dev string:x38>";
             level.var_254556d9.x = 10;
             level.var_254556d9.y = 255;
             level.var_254556d9.color = (1, 1, 1);
         }
         if (!isdefined(level.var_6c6a96f9)) {
             level.var_6c6a96f9 = newdebughudelem();
-            level.var_6c6a96f9.alignx = "<unknown string>";
+            level.var_6c6a96f9.alignx = "<dev string:x38>";
             level.var_6c6a96f9.x = 10;
             level.var_6c6a96f9.y = 270;
             level.var_6c6a96f9.color = (1, 1, 1);
         }
-        if (level.test_player buttonpressed("<unknown string>")) {
-            if (level.test_player buttonpressed("<unknown string>")) {
+        if (level.test_player buttonpressed("<dev string:x14c>")) {
+            if (level.test_player buttonpressed("<dev string:x121>")) {
                 level.var_809f2ccb++;
                 if (level.var_809f2ccb > 7) {
                     level.var_809f2ccb = 7;
                 }
             }
-            if (level.test_player buttonpressed("<unknown string>")) {
+            if (level.test_player buttonpressed("<dev string:x116>")) {
                 level.var_809f2ccb--;
                 if (level.var_809f2ccb < 0) {
                     level.var_809f2ccb = 0;
@@ -311,11 +310,11 @@
         function_cfed27e3();
         var_3f9688af = 0;
         var_a1951b12 = 0;
-        if (level.test_player buttonpressed("<unknown string>")) {
-            if (level.test_player buttonpressed("<unknown string>")) {
+        if (level.test_player buttonpressed("<dev string:x14c>")) {
+            if (level.test_player buttonpressed("<dev string:x15c>")) {
                 var_a1951b12 = 1;
             }
-            if (level.test_player buttonpressed("<unknown string>")) {
+            if (level.test_player buttonpressed("<dev string:x169>")) {
                 var_3f9688af = 1;
             }
         }
@@ -341,11 +340,11 @@
                 break;
             case 1:
                 if (self.var_2023678c + add < self.var_ff71eda6) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x177>");
                     break;
                 }
                 if (self.var_2023678c + add > self.var_b02a42f7) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x1de>");
                     break;
                 }
                 var_178e08a4 = 1;
@@ -353,7 +352,7 @@
                 break;
             case 2:
                 if (self.var_b02a42f7 + add < self.var_2023678c) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x249>");
                     break;
                 }
                 var_178e08a4 = 1;
@@ -361,7 +360,7 @@
                 break;
             case 3:
                 if (self.var_3ea8113 + add > self.var_ff71eda6) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x2b4>");
                     break;
                 }
                 var_178e08a4 = 1;
@@ -369,11 +368,11 @@
                 break;
             case 4:
                 if (self.var_ff71eda6 + add < self.var_3ea8113) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x319>");
                     break;
                 }
                 if (self.var_ff71eda6 + add > self.var_7600cd86) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x37e>");
                     break;
                 }
                 var_178e08a4 = 1;
@@ -381,11 +380,11 @@
                 break;
             case 5:
                 if (self.var_82a78b41 + add > self.var_e6c22a54.size) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x3df>");
                     break;
                 }
                 if (self.var_82a78b41 + add <= 0) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x455>");
                     break;
                 }
                 if (self.var_82a78b41 + add < self.var_ae34b6c9) {
@@ -401,7 +400,7 @@
                 break;
             case 6:
                 if (self.var_ae34b6c9 + add > self.var_25a70a68) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x47e>");
                     break;
                 }
                 var_178e08a4 = 1;
@@ -409,7 +408,7 @@
                 break;
             case 7:
                 if (self.var_25a70a68 + add < self.var_ae34b6c9) {
-                    function_7b732419("<unknown string>");
+                    function_7b732419("<dev string:x4ec>");
                     break;
                 }
                 var_178e08a4 = 1;
@@ -421,14 +420,14 @@
             level.var_362ad52e function_2973e587();
         }
         if (isdefined(self)) {
-            level.var_3ad36502 settext("<unknown string>" + self.var_2023678c);
-            level.var_af390e0d settext("<unknown string>" + self.var_b02a42f7);
-            level.var_d8499d3d settext("<unknown string>" + self.var_3ea8113);
-            level.var_ae00cf1d settext("<unknown string>" + self.var_ff71eda6);
+            level.var_3ad36502 settext("<dev string:x55a>" + self.var_2023678c);
+            level.var_af390e0d settext("<dev string:x573>" + self.var_b02a42f7);
+            level.var_d8499d3d settext("<dev string:x58c>" + self.var_3ea8113);
+            level.var_ae00cf1d settext("<dev string:x5a4>" + self.var_ff71eda6);
             if (isdefined(self.var_82a78b41)) {
-                level.var_92f8da9a settext("<unknown string>" + self.var_82a78b41);
-                level.var_254556d9 settext("<unknown string>" + self.var_ae34b6c9);
-                level.var_6c6a96f9 settext("<unknown string>" + self.var_25a70a68);
+                level.var_92f8da9a settext("<dev string:x5bc>" + self.var_82a78b41);
+                level.var_254556d9 settext("<dev string:x5d2>" + self.var_ae34b6c9);
+                level.var_6c6a96f9 settext("<dev string:x5ec>" + self.var_25a70a68);
             }
         }
     }
@@ -535,7 +534,7 @@
         }
         self.spawners = self function_bf4a387a();
         assert(self.count >= self.var_e7162da5);
-        assert(self.count <= self.var_af7f3520);
+        assert(self.count <= self.count_max);
         assert(self.var_7600cd86 >= self.var_2023678c);
         assert(self.var_7600cd86 <= self.var_b02a42f7);
         assert(self.var_ff71eda6 <= self.var_7600cd86);
@@ -559,8 +558,8 @@
     // Size: 0x3c
     function function_57ab061() {
         self endon(#"modified");
-        wait(10);
-        level.var_311b1407 settext("<unknown string>");
+        wait 10;
+        level.var_311b1407 settext("<dev string:x606>");
     }
 
     // Namespace spawn_manager/namespace_50a58f3

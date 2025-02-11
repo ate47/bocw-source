@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\stealth\debug.gsc;
-#using scripts\core_common\stealth\utility.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\stealth\debug;
+#using scripts\core_common\stealth\utility;
+#using scripts\core_common\util_shared;
 
 #namespace player;
 
@@ -18,7 +17,7 @@ function scalevolume(*ent, *vol) {
 #namespace stealth_player;
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0930c02, Offset: 0x228
 // Size: 0x174
 function main() {
@@ -26,7 +25,7 @@ function main() {
         return;
     }
     self endon(#"death");
-    self endon(#"hash_6de499574267aed9");
+    self endon(#"stealth_disabled");
     self.stealth = spawnstruct();
     self.stealth.var_103386e8 = self namespace_979752dc::group_flag_init("stealth_spotted");
     self flag::init("stealth_enabled");
@@ -45,7 +44,7 @@ function main() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x516c00af, Offset: 0x3a8
 // Size: 0x6c
 function maxvisibility_thread() {
@@ -60,7 +59,7 @@ function maxvisibility_thread() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaf03cc80, Offset: 0x420
 // Size: 0x8a
 function maxvisibility_shouldupdate() {
@@ -80,7 +79,7 @@ function maxvisibility_shouldupdate() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9fe9ffbd, Offset: 0x4b8
 // Size: 0x18a
 function get_detect_range() {
@@ -114,7 +113,7 @@ function combatstate_thread(enabled = 1) {
         return;
     }
     self endon(#"death");
-    self endon(#"hash_6de499574267aed9");
+    self endon(#"stealth_disabled");
     self endon(#"hash_4330b0368e7f1373");
     self endon(#"disconnect");
     self childthread playerattackedmonitor();
@@ -212,7 +211,7 @@ function combatstate_thread(enabled = 1) {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44863108, Offset: 0xce0
 // Size: 0xd6
 function combatstate_updatethread() {
@@ -232,8 +231,8 @@ function combatstate_addupdatefunc(key, func) {
     assert(isplayer(self));
     assert(isdefined(self.stealth));
     assert(isdefined(self.stealth.combatstate));
-    assert(isdefined(key), "<unknown string>");
-    assert(!isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
+    assert(isdefined(key), "<dev string:x38>");
+    assert(!isdefined(self.stealth.combatstate.updatefuncs[key]), "<dev string:x65>" + key + "<dev string:x89>");
     self.stealth.combatstate.updatefuncs[key] = func;
 }
 
@@ -245,13 +244,13 @@ function combatstate_removeupdatefunc(key) {
     assert(isplayer(self));
     assert(isdefined(self.stealth));
     assert(isdefined(self.stealth.combatstate));
-    assert(isdefined(key), "<unknown string>");
-    assert(isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
+    assert(isdefined(key), "<dev string:x38>");
+    assert(isdefined(self.stealth.combatstate.updatefuncs[key]), "<dev string:x65>" + key + "<dev string:x9d>");
     self.stealth.combatstate.updatefuncs[key] = undefined;
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3c38066c, Offset: 0xfe0
 // Size: 0x42
 function playerattackedmonitor() {
@@ -262,11 +261,11 @@ function playerattackedmonitor() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xeaeb71ba, Offset: 0x1030
 // Size: 0x154
 function stealthhints_thread() {
-    self endon(#"hash_6de499574267aed9");
+    self endon(#"stealth_disabled");
     self.stealth.hints = spawnstruct();
     self.stealth.hints.causeofdeath = undefined;
     self.stealth.hints.investigators = [];
@@ -280,7 +279,7 @@ function stealthhints_thread() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x52293d8, Offset: 0x1190
 // Size: 0x410
 function stealthhints_eventmonitor() {
@@ -341,7 +340,7 @@ function stealthhints_eventmonitor() {
 }
 
 // Namespace stealth_player/player
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xeec863f4, Offset: 0x15a8
 // Size: 0x216
 function stealthhints_aimonitor(ai, eventtype) {
@@ -364,7 +363,7 @@ function stealthhints_aimonitor(ai, eventtype) {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6f5c4af, Offset: 0x17c8
 // Size: 0xa8
 function stealthhints_deathmonitor() {
@@ -382,7 +381,7 @@ function stealthhints_deathmonitor() {
 }
 
 // Namespace stealth_player/player
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x28f58967, Offset: 0x1878
 // Size: 0x9a
 function stealthhints_combatmonitor() {

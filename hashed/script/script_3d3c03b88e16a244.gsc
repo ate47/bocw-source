@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\spawner_shared.gsc;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\spawner_shared;
 
 #namespace namespace_baa4b777;
 
@@ -27,7 +26,7 @@ function autoexec init() {
 #/
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcdeb0367, Offset: 0x118
 // Size: 0x7a
 function private function_f9fa2bbb() {
@@ -39,7 +38,7 @@ function private function_f9fa2bbb() {
 }
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8b5fffb5, Offset: 0x1a0
 // Size: 0x1c
 function private function_580889d1(*entity) {
@@ -47,7 +46,7 @@ function private function_580889d1(*entity) {
 }
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1ca671d2, Offset: 0x1c8
 // Size: 0x1c
 function private function_2c84ab00(*entity) {
@@ -55,7 +54,7 @@ function private function_2c84ab00(*entity) {
 }
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x2b93c0f3, Offset: 0x1f0
 // Size: 0x2c
 function private function_b8053d02(*entity) {
@@ -64,7 +63,7 @@ function private function_b8053d02(*entity) {
 }
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x228
 // Size: 0x4
 function private registerbehaviorscriptfunctions() {
@@ -72,11 +71,11 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x58679d25, Offset: 0x238
 // Size: 0x2a
 function private function_fa765ef3() {
-    if (is_true(self.var_d003d23c)) {
+    if (is_true(self.is_companion)) {
         self.pushable = 0;
     }
 }
@@ -89,7 +88,7 @@ function private function_fa765ef3() {
     // Size: 0x54
     function private function_ee21651d(message) {
         if (getdvarint(#"hash_71bbda417e2a07e9", 0)) {
-            println("<unknown string>" + message);
+            println("<dev string:x38>" + message);
         }
     }
 

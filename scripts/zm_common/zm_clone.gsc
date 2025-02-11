@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\struct;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_clone;
 
@@ -90,7 +89,7 @@ function spawn_player_clone(player, origin = player.origin, forceweapon, forcemo
 }
 
 // Namespace zm_clone/zm_clone
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0xcb8e4d3a, Offset: 0x608
 // Size: 0xb2
 function clone_damage_func(*einflictor, eattacker, idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex) {
@@ -125,11 +124,11 @@ function clone_animate(animtype) {
 }
 
 // Namespace zm_clone/zm_clone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x111725b9, Offset: 0x788
 // Size: 0x9a
 function clone_actor_animate(animtype) {
-    wait(0.1);
+    wait 0.1;
     switch (animtype) {
     case #"laststand":
         self setanimstatefromasd("laststand");
@@ -142,7 +141,7 @@ function clone_actor_animate(animtype) {
 }
 
 // Namespace zm_clone/zm_clone
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8fdd1623, Offset: 0x830
 // Size: 0x162
 function clone_mover_animate(animtype) {

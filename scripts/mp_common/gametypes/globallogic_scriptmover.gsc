@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_player.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\damage.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\damage;
+#using scripts\core_common\globallogic\globallogic_player;
+#using scripts\core_common\weapons_shared;
 
 #namespace globallogic_scriptmover;
 
 // Namespace globallogic_scriptmover/globallogic_scriptmover
-// Params 17, eflags: 0x2 linked
+// Params 17, eflags: 0x0
 // Checksum 0x44844bb6, Offset: 0xa0
 // Size: 0x334
 function function_8c7ec52f(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, iboneindex, imodelindex, spartname, isurfacetype, vsurfacenormal) {

@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\audio_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\util_shared.csc;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace gun;
 
@@ -10,7 +9,7 @@
 // Checksum 0xc0505651, Offset: 0xb0
 // Size: 0x4c
 function autoexec ignore_systems() {
-    if (util::get_game_type() === #"hash_451623a99cfee5d9") {
+    if (util::get_game_type() === #"gun_rambo") {
         system::ignore(#"killstreaks");
     }
 }
@@ -23,8 +22,8 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.isgungame = 1;
     setdvar(#"hash_137c8b2b96ac6c72", 0.2);
     setdvar(#"compassradarpingfadetime", 0.75);
-    if (util::get_game_type() === #"hash_451623a99cfee5d9") {
-        function_11e3e877(#"hash_23815f34187640d9", #"hash_8d0717b4d7850b6");
+    if (util::get_game_type() === #"gun_rambo") {
+        function_11e3e877(#"surface_enter", #"hash_8d0717b4d7850b6");
         function_11e3e877(#"hash_6be5853fe57d01b0", #"hash_8d0717b4d7850b6");
         function_11e3e877(#"hash_6251d9bc015e4542", #"hash_8d0717b4d7850b6");
         function_11e3e877(#"hash_6a2ccf46147cb7d8", #"hash_8d0717b4d7850b6");

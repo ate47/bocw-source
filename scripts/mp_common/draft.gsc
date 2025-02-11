@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_loadout.gsc;
 #using script_1cc417743d7c262d;
-#using scripts\mp_common\gametypes\globallogic.gsc;
-#using scripts\core_common\serverfield_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spectating.gsc;
-#using scripts\core_common\rat_shared.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rat_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\mp_common\gametypes\globallogic;
+#using scripts\mp_common\player\player_loadout;
 
 #namespace draft;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x41646830, Offset: 0x280
 // Size: 0x17c
 function private preinit() {
@@ -39,7 +38,7 @@ function private preinit() {
     level.var_5be52892 = 0;
     level.draftstage = 0;
     /#
-        level.var_5fa54158 = "<unknown string>";
+        level.var_5fa54158 = "<dev string:x38>";
     #/
     /#
         level thread function_e8a5f9ba();
@@ -53,10 +52,10 @@ function private preinit() {
     // Checksum 0x3450e8b4, Offset: 0x408
     // Size: 0x3c
     function function_6bea5139() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
-        wait(5);
-        level.var_5fa54158 = "<unknown string>";
+        self notify("<dev string:x3c>");
+        self endon("<dev string:x3c>");
+        wait 5;
+        level.var_5fa54158 = "<dev string:x38>";
     }
 
     // Namespace draft/draft
@@ -77,7 +76,7 @@ function private preinit() {
     // Checksum 0x2f50b710, Offset: 0x4c0
     // Size: 0xe6
     function function_947fe5c4(character) {
-        if (character != "<unknown string>") {
+        if (character != "<dev string:x38>") {
             var_44dd7e5d = hash(character);
             playerroletemplatecount = getplayerroletemplatecount(currentsessionmode());
             for (i = 0; i < playerroletemplatecount; i++) {
@@ -95,16 +94,16 @@ function private preinit() {
     // Checksum 0x3bf82ac1, Offset: 0x5b0
     // Size: 0x13a
     function function_e8a5f9ba() {
-        current = getdvarstring(#"character", "<unknown string>");
-        if (current != "<unknown string>") {
+        current = getdvarstring(#"character", "<dev string:x38>");
+        if (current != "<dev string:x38>") {
             while (true) {
                 autoselection = getdvarstring(#"character");
-                if (autoselection != "<unknown string>" && autoselection != current) {
+                if (autoselection != "<dev string:x38>" && autoselection != current) {
                     foreach (player in level.players) {
                         player function_947fe5c4(autoselection);
                     }
                 }
-                wait(1);
+                wait 1;
             }
         }
     }
@@ -112,7 +111,7 @@ function private preinit() {
 #/
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbb25f189, Offset: 0x6f8
 // Size: 0x92
 function is_enabled() {
@@ -127,7 +126,7 @@ function is_enabled() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe7d94cd9, Offset: 0x798
 // Size: 0x72
 function is_draft_this_round() {
@@ -144,7 +143,7 @@ function is_draft_this_round() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8c574ea7, Offset: 0x818
 // Size: 0x30
 function function_2c7b2ff() {
@@ -166,7 +165,7 @@ function start_cooldown() {
         timeleft = (var_e5e81b59 - gettime()) / 1000;
         player clientfield::set_player_uimodel("PositionDraft.cooldown", int(timeleft));
         player.var_7d68fce3 = timeleft;
-        wait(1);
+        wait 1;
     }
     player.var_7d68fce3 = 0;
     player clientfield::set_player_uimodel("PositionDraft.cooldown", 0);
@@ -185,7 +184,7 @@ function clear_cooldown() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc4623d60, Offset: 0xa20
 // Size: 0x92
 function function_904deeb2() {
@@ -206,7 +205,7 @@ function function_904deeb2() {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5ba1507c, Offset: 0xac0
 // Size: 0x182
 function can_select_character(characterindex) {
@@ -234,7 +233,7 @@ function can_select_character(characterindex) {
 }
 
 // Namespace draft/draft
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xee59a7cc, Offset: 0xc50
 // Size: 0x122
 function select_character(characterindex, forceselection, *var_8a239568) {
@@ -256,7 +255,7 @@ function select_character(characterindex, forceselection, *var_8a239568) {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x722cf44a, Offset: 0xd80
 // Size: 0xc4
 function function_ca33311e() {
@@ -265,24 +264,24 @@ function function_ca33311e() {
         foreach (player in level.players) {
             player resetinactivitytimer();
         }
-        wait(5);
+        wait 5;
     }
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfc587d19, Offset: 0xe50
 // Size: 0x6c
 function function_9f408cf7(*oldval, newval) {
     player = self;
     /#
-        function_95c03d66("<unknown string>" + player.name + "<unknown string>");
+        function_95c03d66("<dev string:x50>" + player.name + "<dev string:x5b>");
     #/
     player function_4b8d2217(newval);
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd2a229eb, Offset: 0xec8
 // Size: 0x2c
 function client_ready() {
@@ -291,7 +290,7 @@ function client_ready() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x672b2db1, Offset: 0xf00
 // Size: 0x13c
 function draft_initialize() {
@@ -304,33 +303,33 @@ function draft_initialize() {
 }
 
 // Namespace draft/draft
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d2d6f64, Offset: 0x1048
 // Size: 0x64
 function function_c5394b83(starttime, seconds) {
     if (gettime() - starttime > int(seconds * 1000)) {
-        println("<unknown string>");
+        println("<dev string:x6a>");
         return true;
     }
     return false;
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaf487856, Offset: 0x10b8
 // Size: 0x158
 function all_players_connected() {
     var_5c6783e9 = getnumexpectedplayers(0);
     if (level.players.size < var_5c6783e9) {
         /#
-            function_95c03d66("<unknown string>" + var_5c6783e9 + "<unknown string>" + level.players.size);
+            function_95c03d66("<dev string:xa2>" + var_5c6783e9 + "<dev string:xcc>" + level.players.size);
         #/
         return false;
     }
     foreach (player in level.players) {
         if (!player function_9b95ed9f() && !isbot(player)) {
             /#
-                function_95c03d66("<unknown string>" + player.name + "<unknown string>");
+                function_95c03d66("<dev string:xe5>" + player.name + "<dev string:x105>");
             #/
             return false;
         }
@@ -339,7 +338,7 @@ function all_players_connected() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x68bee914, Offset: 0x1218
 // Size: 0x92
 function function_d255fb3e() {
@@ -371,7 +370,7 @@ function function_21f5a2c1() {
     foreach (team, _ in level.teams) {
         if (teamcount[team] < var_e8cb777) {
             /#
-                function_95c03d66("<unknown string>" + var_e8cb777 + "<unknown string>" + team + "<unknown string>" + teamcount[team]);
+                function_95c03d66("<dev string:x11c>" + var_e8cb777 + "<dev string:x157>" + team + "<dev string:x15d>" + teamcount[team]);
             #/
             return false;
         }
@@ -380,18 +379,18 @@ function function_21f5a2c1() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbc2489ab, Offset: 0x14c8
 // Size: 0x194
 function wait_for_players() {
     while (!function_d255fb3e()) {
-        wait(0.2);
+        wait 0.2;
     }
     level.var_b318d3d1 = getgametypesetting(#"drafttime") + getgametypesetting(#"hash_4e4352bd1aaeedfe") + 20;
     function_ee80d2e8(int(max(0, level.var_b318d3d1)));
     starttime = gettime();
     while (!all_players_connected()) {
-        wait(0.2);
+        wait 0.2;
         if (function_c5394b83(starttime, 20)) {
             break;
         }
@@ -401,7 +400,7 @@ function wait_for_players() {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcc381e07, Offset: 0x1668
 // Size: 0xb6
 function decrement(timeremaining) {
@@ -432,7 +431,7 @@ function function_3e648d9b() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xabd2b942, Offset: 0x1760
 // Size: 0x580
 function draft_run() {
@@ -463,11 +462,11 @@ function draft_run() {
                     ready = 0;
                 }
             }
-            wait(1);
+            wait 1;
         }
     } else {
         while (!function_d255fb3e()) {
-            wait(1);
+            wait 1;
         }
         level.var_9205f2e8 = gettime();
         while (timeremaining > 0 && !level.gameended) {
@@ -492,7 +491,7 @@ function draft_run() {
                 level clientfield::set_world_uimodel("PositionDraft.timeRemaining", 0);
                 break;
             }
-            wait(1);
+            wait 1;
         }
         level clientfield::set_world_uimodel("PositionDraft.timeRemaining", 0);
     }
@@ -505,16 +504,16 @@ function draft_run() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99a3b2f2, Offset: 0x1ce8
 // Size: 0x2c
 function function_404f08f3() {
     level clientfield::set_world_uimodel("PositionDraft.timeRemaining", 0);
-    wait(2);
+    wait 2;
 }
 
 // Namespace draft/draft
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc6db5ff4, Offset: 0x1d20
 // Size: 0x2a
 function sort_categories(left, right, *param) {
@@ -522,7 +521,7 @@ function sort_categories(left, right, *param) {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf1220ab, Offset: 0x1d58
 // Size: 0xdb6
 function assign_remaining_players(only_assign_player) {
@@ -583,7 +582,7 @@ function assign_remaining_players(only_assign_player) {
         teams[player.team][teams[player.team].size] = player;
     }
     foreach (team in teams) {
-        println("<unknown string>" + team[0].team);
+        println("<dev string:x169>" + team[0].team);
         playersneedingassignment = [];
         foreach (character in validcharacters) {
             character.available = 0;
@@ -592,10 +591,10 @@ function assign_remaining_players(only_assign_player) {
             }
         }
         /#
-            println("<unknown string>");
+            println("<dev string:x19a>");
             foreach (player in team) {
                 characterindex = player player_role::get();
-                println("<unknown string>" + player.name + "<unknown string>" + characterindex);
+                println("<dev string:x1b8>" + player.name + "<dev string:x1cb>" + characterindex);
             }
         #/
         foreach (player in team) {
@@ -625,7 +624,7 @@ function assign_remaining_players(only_assign_player) {
                 playersneedingassignment[playersneedingassignment.size] = player;
             }
         }
-        println("<unknown string>");
+        println("<dev string:x1e1>");
         foreach (player in playersneedingassignment) {
             categories = [];
             categorynames = getarraykeys(categorymap);
@@ -654,17 +653,17 @@ function assign_remaining_players(only_assign_player) {
                 selectedcharacter = array::random(selectedcategory);
             }
             if (validcharacters.size == 0) {
-                println("<unknown string>");
-                println("<unknown string>");
-                println("<unknown string>");
-                println("<unknown string>");
-                println("<unknown string>");
-                println("<unknown string>");
-                println("<unknown string>");
-                println("<unknown string>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
+                println("<dev string:x205>");
                 globallogic::exit_level();
                 while (true) {
-                    wait(10);
+                    wait 10;
                 }
             }
             if (!isdefined(selectedcharacter) || selectedcharacter == 0) {
@@ -675,7 +674,7 @@ function assign_remaining_players(only_assign_player) {
             if (isdefined(oldspecialistindex) && oldspecialistindex != selectedcharacter) {
                 player.pers[#"class"] = undefined;
             }
-            println("<unknown string>" + player.name + "<unknown string>" + selectedcharacter);
+            println("<dev string:x239>" + player.name + "<dev string:x256>" + selectedcharacter);
             if (player select_character(selectedcharacter, 1, 1)) {
                 characters[selectedcharacter].available = 0;
             }
@@ -684,7 +683,7 @@ function assign_remaining_players(only_assign_player) {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5742102c, Offset: 0x2b18
 // Size: 0x218
 function game_start() {
@@ -707,18 +706,18 @@ function game_start() {
         }
         timeremaining = decrement(timeremaining);
         if (timeremaining == 0) {
-            wait(0.75);
+            wait 0.75;
             luinotifyevent(#"quick_fade", 0);
-            wait(0.25);
+            wait 0.25;
             continue;
         }
-        wait(1);
+        wait 1;
     }
     level notify(#"hash_4c62fe02843b1a98");
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa630a329, Offset: 0x2d38
 // Size: 0x3dc
 function draft_finalize() {
@@ -728,7 +727,7 @@ function draft_finalize() {
             assign_remaining_players(player);
         }
         if (player.sessionstate == "playing") {
-            println("<unknown string>" + player.name + "<unknown string>" + player.curclass + "<unknown string>" + player getspecialistindex());
+            println("<dev string:x25f>" + player.name + "<dev string:x27b>" + player.curclass + "<dev string:x287>" + player getspecialistindex());
             if (!is_true(level.disableclassselection)) {
                 player loadout::give_loadout(player.team, player.curclass);
             }
@@ -758,7 +757,7 @@ function draft_finalize() {
 }
 
 // Namespace draft/draft
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x220b5ba7, Offset: 0x3120
 // Size: 0x274
 function set_draft_stage(draftstage) {
@@ -767,19 +766,19 @@ function set_draft_stage(draftstage) {
     waitframe(1);
     /#
         if (draftstage == 0) {
-            println("<unknown string>");
+            println("<dev string:x29c>");
         } else if (draftstage == 1) {
-            println("<unknown string>");
+            println("<dev string:x2b2>");
         } else if (draftstage == 2) {
-            println("<unknown string>");
+            println("<dev string:x2ce>");
         } else if (draftstage == 3) {
-            println("<unknown string>");
+            println("<dev string:x2f3>");
         } else if (draftstage == 5) {
-            println("<unknown string>");
+            println("<dev string:x30a>");
         } else if (draftstage == 6) {
-            println("<unknown string>");
+            println("<dev string:x326>");
         } else if (draftstage == 7) {
-            println("<unknown string>");
+            println("<dev string:x342>");
         }
     #/
     if (draftstage == 1) {
@@ -812,7 +811,7 @@ function set_draft_stage(draftstage) {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe5435ec6, Offset: 0x33a0
 // Size: 0x34
 function watch_game_ended() {
@@ -829,7 +828,7 @@ function start() {
     level thread watch_game_ended();
     level thread function_ca33311e();
     waitframe(1);
-    println("<unknown string>");
+    println("<dev string:x35c>");
     set_draft_stage(1);
     set_draft_stage(3);
     if (level.var_5be52892 == 1) {
@@ -842,7 +841,7 @@ function start() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf9d31b67, Offset: 0x34f8
 // Size: 0x20c
 function open() {
@@ -859,7 +858,7 @@ function open() {
             if (!getdvarint(#"hash_1f80dbba75375e3d", 0)) {
                 customloadoutindex = self.pers[#"loadoutindex"];
                 if (isdefined(customloadoutindex)) {
-                    self [[ level.curclass ]]("<unknown string>" + customloadoutindex);
+                    self [[ level.curclass ]]("<dev string:x36c>" + customloadoutindex);
                 }
             }
             return;
@@ -875,7 +874,7 @@ function open() {
 }
 
 // Namespace draft/draft
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9ea61f95, Offset: 0x3710
 // Size: 0x44
 function close() {

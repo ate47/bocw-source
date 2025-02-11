@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_jetski;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_jetski/player_jetski
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd082846, Offset: 0x108
 // Size: 0x54
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace player_jetski/player_jetski
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x829f71d1, Offset: 0x168
 // Size: 0x9c
 function private function_966d6664() {
@@ -37,7 +36,7 @@ function private function_966d6664() {
 }
 
 // Namespace player_jetski/player_jetski
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xce4cd85a, Offset: 0x210
 // Size: 0x24
 function private function_4fc75987(*params) {

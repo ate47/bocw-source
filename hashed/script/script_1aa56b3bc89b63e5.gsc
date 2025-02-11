@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_3819e7a1427df6d2;
-#using script_27ef3076a14eb66a;
 #using script_1478fbd17fe393cf;
+#using script_27ef3076a14eb66a;
 #using script_35ae72be7b4fec10;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace snipercam;
 
@@ -20,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace snipercam/snipercam
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb43c2ceb, Offset: 0x1e0
 // Size: 0xd4
 function set_enabled(enabled, on_damage = 0, var_895878e1 = 3) {
@@ -49,7 +48,7 @@ function set_enabled(enabled, on_damage = 0, var_895878e1 = 3) {
 #/
 
 // Namespace snipercam/snipercam
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9f089411, Offset: 0x330
 // Size: 0x64
 function private function_f64316de() {
@@ -58,7 +57,7 @@ function private function_f64316de() {
 }
 
 // Namespace snipercam/snipercam
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb77ca251, Offset: 0x3a0
 // Size: 0x2c
 function private function_b5597fc3() {
@@ -67,7 +66,7 @@ function private function_b5597fc3() {
 }
 
 // Namespace snipercam/snipercam
-// Params 13, eflags: 0x6 linked
+// Params 13, eflags: 0x4
 // Checksum 0xcce5ce54, Offset: 0x3d8
 // Size: 0x21c
 function private function_4ad903f4(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, modelindex) {
@@ -95,7 +94,7 @@ function private function_4ad903f4(einflictor, eattacker, idamage, idflags, smea
 }
 
 // Namespace snipercam/snipercam
-// Params 13, eflags: 0x6 linked
+// Params 13, eflags: 0x4
 // Checksum 0xd528aa84, Offset: 0x600
 // Size: 0x53c
 function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *modelindex) {
@@ -112,7 +111,7 @@ function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage
         player = psoffsettime;
     }
     player flag::set("snipercam");
-    namespace_61e6d095::function_28027c42(#"hash_d7f94b2708cafa2");
+    namespace_61e6d095::function_28027c42(#"sniper_cam");
     player val::set(#"snipercam", "freezecontrols", 1);
     player val::set(#"snipercam", "takedamage", 0);
     player val::set(#"snipercam", "show_weapon_hud", 0);
@@ -125,7 +124,7 @@ function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage
     setslowmotion(1, 0.5, 0);
     self clientfield::set("start_snipercam", self.var_ca3bd64e);
     var_b487436a = 1.3 * 0.1;
-    wait(parms.var_684cf08c);
+    wait parms.var_684cf08c;
     setslowmotion(0.5, 1, 0.5);
     self setentitypaused(0);
     player ghost();
@@ -138,15 +137,15 @@ function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage
         self setnormalhealth(1);
         self kill(player.origin, player, player, modelindex);
     }
-    wait(parms.var_6051349d);
+    wait parms.var_6051349d;
     self clientfield::set("stop_snipercam", 1);
-    wait(0.1);
+    wait 0.1;
     self notify(#"hash_377b8997737880e7");
     hint_tutorial::function_57a24ab5(1);
     player val::reset_all(#"snipercam");
     player show();
     self clientfield::set("stop_snipercam", 0);
     player flag::clear("snipercam");
-    namespace_61e6d095::function_4279fd02(#"hash_d7f94b2708cafa2");
+    namespace_61e6d095::function_4279fd02(#"sniper_cam");
 }
 

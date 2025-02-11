@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\oob.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace hoverjet;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7a062220, Offset: 0x1c8
 // Size: 0x2c4
 function private preinit() {
@@ -34,17 +33,17 @@ function private preinit() {
 }
 
 // Namespace hoverjet/hoverjet
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a01095a, Offset: 0x498
 // Size: 0x4c
 function function_c2464efa() {
     level endon(#"game_ended");
-    wait(10);
+    wait 10;
     forcestreamxmodel(#"hash_76243a4980804272", 8, 1);
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x920d8638, Offset: 0x4f0
 // Size: 0x1ce
 function function_84c254b5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -72,7 +71,7 @@ function function_84c254b5(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa7683d13, Offset: 0x6c8
 // Size: 0xd4
 function function_274341d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -88,7 +87,7 @@ function function_274341d(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x467ab5ae, Offset: 0x7a8
 // Size: 0x74
 function function_c73e5b73(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -98,7 +97,7 @@ function function_c73e5b73(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x149fcbde, Offset: 0x828
 // Size: 0x1f4
 function function_14ba47a8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -124,7 +123,7 @@ function function_14ba47a8(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x996b6817, Offset: 0xa28
 // Size: 0x254
 function function_bccb03b1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -153,7 +152,7 @@ function function_bccb03b1(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6cfc0680, Offset: 0xc88
 // Size: 0xde
 function function_ef49742c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -174,7 +173,7 @@ function function_ef49742c(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace hoverjet/hoverjet
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x70a60ea3, Offset: 0xd70
 // Size: 0xde
 function function_dd10e132(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

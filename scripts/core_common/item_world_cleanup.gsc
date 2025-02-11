@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\weapons\weaponobjects.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\item_world.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\death_circle.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\death_circle;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\item_world;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\weapons\weaponobjects;
 
 #namespace item_world_cleanup;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x783e9d2d, Offset: 0x130
 // Size: 0x1c
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7de46208, Offset: 0x158
 // Size: 0x234
 function private _cleanup() {
@@ -44,12 +43,12 @@ function private _cleanup() {
             util::wait_network_frame(1);
             [[ func ]]();
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1864cde2, Offset: 0x398
 // Size: 0x2dc
 function private function_a534560c() {
@@ -93,7 +92,7 @@ function private function_a534560c() {
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa05269dc, Offset: 0x680
 // Size: 0x134
 function private function_b465b436(*current_origin, *var_c5a0bed8, previous_origin, var_7c597200) {
@@ -114,7 +113,7 @@ function private function_b465b436(*current_origin, *var_c5a0bed8, previous_orig
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xfd9f7102, Offset: 0x7c0
 // Size: 0x690
 function private function_35e11623(current_origin, var_c5a0bed8, *previous_origin, *var_7c597200) {
@@ -195,7 +194,7 @@ function private function_35e11623(current_origin, var_c5a0bed8, *previous_origi
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x372e7e1f, Offset: 0xe58
 // Size: 0x20c
 function private function_b7c5f376(*current_origin, *var_c5a0bed8, previous_origin, var_7c597200) {
@@ -229,7 +228,7 @@ function private function_b7c5f376(*current_origin, *var_c5a0bed8, previous_orig
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xb9fb9169, Offset: 0x1070
 // Size: 0x17c
 function private function_6ef5c287(*current_origin, *var_c5a0bed8, previous_origin, var_7c597200) {
@@ -255,7 +254,7 @@ function private function_6ef5c287(*current_origin, *var_c5a0bed8, previous_orig
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xb93d4b13, Offset: 0x11f8
 // Size: 0x584
 function private function_ada16428(current_origin, var_c5a0bed8, *previous_origin, *var_7c597200) {
@@ -320,7 +319,7 @@ function private function_ada16428(current_origin, var_c5a0bed8, *previous_origi
             if (safedelete) {
                 /#
                     if (getdvarint(#"hash_55e8ad2b1d030870", 0)) {
-                        iprintlnbold("<unknown string>" + vehicle.scriptvehicletype + "<unknown string>" + vehicle.origin);
+                        iprintlnbold("<dev string:x38>" + vehicle.scriptvehicletype + "<dev string:x46>" + vehicle.origin);
                     }
                     deleted++;
                 #/
@@ -335,13 +334,13 @@ function private function_ada16428(current_origin, var_c5a0bed8, *previous_origi
     arrayremovevalue(level.var_cd8f416a, undefined, 0);
     /#
         if (getdvarint(#"hash_55e8ad2b1d030870", 0) && deleted > 0) {
-            iprintlnbold("<unknown string>" + level.var_cd8f416a.size + "<unknown string>" + deleted);
+            iprintlnbold("<dev string:x4f>" + level.var_cd8f416a.size + "<dev string:x62>" + deleted);
         }
     #/
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x61ca7509, Offset: 0x1788
 // Size: 0x86
 function private function_213a12e4() {
@@ -360,7 +359,7 @@ function private function_213a12e4() {
 }
 
 // Namespace item_world_cleanup/item_world_cleanup
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x3472a98b, Offset: 0x1818
 // Size: 0xac
 function private function_3703bc36(entity, origin, radius, var_7e2f7f1f = 0) {

@@ -1,33 +1,32 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_perks.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_unitrigger.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_power.gsc;
-#using scripts\zm_common\zm_magicbox.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_customgame.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\bb.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\potm_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\potm_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\zm_common\bb;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_customgame;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_magicbox;
+#using scripts\zm_common\zm_perks;
+#using scripts\zm_common\zm_power;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_unitrigger;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_vapor_random;
 
@@ -244,7 +243,7 @@ function function_6842bdd7(player) {
                 var_5137b086 = #"hash_c5eaf038e40129b";
             }
             break;
-        case #"hash_210097a75bb6c49a":
+        case #"talent_deadshot":
             if (player function_8b1a219a()) {
                 var_5137b086 = #"hash_2f89c70e07ddab1c";
             } else {
@@ -258,21 +257,21 @@ function function_6842bdd7(player) {
                 var_5137b086 = #"hash_2d6886135fa75f38";
             }
             break;
-        case #"hash_5930cf0eb070e35a":
+        case #"talent_speedcola":
             if (player function_8b1a219a()) {
                 var_5137b086 = #"hash_1589f4207559932b";
             } else {
                 var_5137b086 = #"hash_1c530c71188469b5";
             }
             break;
-        case #"hash_7f98b3dd3cce95aa":
+        case #"talent_quickrevive":
             if (player function_8b1a219a()) {
                 var_5137b086 = #"hash_1c6b895369b478b4";
             } else {
                 var_5137b086 = #"hash_45143147d543f878";
             }
             break;
-        case #"hash_602a1b6107105f07":
+        case #"talent_staminup":
             if (player function_8b1a219a()) {
                 var_5137b086 = #"hash_307615269eadecab";
             } else {
@@ -368,7 +367,7 @@ function function_20fe0559() {
 // Size: 0x184
 function function_44481969() {
     /#
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x38>");
     #/
     array::thread_all(level.var_93995710, &function_8dd97732);
     var_8dd5d69f = array::exclude(level.var_93995710, level.var_8feb4083);
@@ -401,12 +400,12 @@ function function_2cc4144b(var_83225a27) {
     level.bottle_spawn_location = util::spawn_model("tag_origin", self.origin, self.angles);
     if (isdefined(level.bottle_spawn_location)) {
         level.bottle_spawn_location.origin += (0, 0, 15);
-        wait(1);
+        wait 1;
         self notify(#"bottle_spawned");
         self thread start_perk_bottle_cycling();
         self thread perk_bottle_motion();
         var_ceb50987 = zm_perks::get_perk_weapon_model(var_83225a27);
-        wait(3);
+        wait 3;
         self notify(#"done_cycling");
         if (isdefined(level.bottle_spawn_location)) {
             level.bottle_spawn_location setmodel(var_ceb50987);
@@ -439,7 +438,7 @@ function start_perk_bottle_cycling() {
             if (isdefined(str_model) && isdefined(level.bottle_spawn_location)) {
                 level.bottle_spawn_location setmodel(str_model);
             }
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
@@ -498,14 +497,14 @@ function function_bb1ac745(s_altar) {
     // Size: 0xe4
     function private function_5d55ce5f() {
         level waittill(#"start_zombie_round_logic");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x54>");
         while (true) {
-            cmd = getdvarstring(#"hash_655adfd9dc05d377", "<unknown string>");
-            setdvar(#"hash_655adfd9dc05d377", "<unknown string>");
+            cmd = getdvarstring(#"hash_655adfd9dc05d377", "<dev string:xba>");
+            setdvar(#"hash_655adfd9dc05d377", "<dev string:xba>");
             switch (cmd) {
             case #"cycle_altar":
                 function_44481969();
-                wait(1);
+                wait 1;
                 break;
             }
             waitframe(1);

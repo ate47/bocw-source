@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_54f593f5beb1464a;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
 
 #namespace character_unlock_fixup;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace character_unlock_fixup/character_unlock_fixup
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xabd2b192, Offset: 0x100
 // Size: 0x10
 function private preinit() {
@@ -23,11 +22,11 @@ function private preinit() {
 }
 
 // Namespace character_unlock_fixup/character_unlock_fixup
-// Params 5, eflags: 0x40
+// Params 5, eflags: 0x40 variadic
 // Checksum 0x3eb5fb09, Offset: 0x118
 // Size: 0x1e8
 function register_character_unlock(unlock_name, unlock_stat, item, var_f27097cc, ...) {
-    assert(vararg.size > 0, "<unknown string>");
+    assert(vararg.size > 0, "<dev string:x38>");
     var_9ba1646c = {#var_2b469a7d:unlock_stat, #required_item:item, #var_3845495:[], #var_849d923d:var_f27097cc, #activation_func:undefined};
     for (i = 0; i < vararg.size; i++) {
         if (!isdefined(var_9ba1646c.var_3845495)) {
@@ -53,11 +52,11 @@ function register_character_unlock(unlock_name, unlock_stat, item, var_f27097cc,
 function function_90ee7a97(unlock_name, activation_func) {
     var_9ba1646c = level.var_7d8da246[unlock_name];
     if (!isdefined(var_9ba1646c)) {
-        assertmsg("<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
+        assertmsg("<dev string:x7d>" + function_9e72a96(unlock_name) + "<dev string:x96>");
         return;
     }
     if (!isdefined(activation_func)) {
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:xa8>");
         return;
     }
     var_9ba1646c.activation_func = activation_func;
@@ -151,7 +150,7 @@ function function_c67a5089() {
 }
 
 // Namespace character_unlock_fixup/character_unlock_fixup
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc4d991f1, Offset: 0xa98
 // Size: 0x3c
 function function_f53ec921(a, b) {

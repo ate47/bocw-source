@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.csc;
-#using scripts\zm_common\zm_utility.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
-#using scripts\core_common\struct.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_wallbuy;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd57cf030, Offset: 0x518
 // Size: 0x184
 function private preinit() {
@@ -38,7 +37,7 @@ function private preinit() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc98c64b2, Offset: 0x6a8
 // Size: 0x28
 function private postinit() {
@@ -48,7 +47,7 @@ function private postinit() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa323821f, Offset: 0x6d8
 // Size: 0x7f4
 function init() {
@@ -117,7 +116,7 @@ function init() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x88ccdd42, Offset: 0xed8
 // Size: 0xfe
 function is_wallbuy(w_to_check) {
@@ -139,16 +138,16 @@ function is_wallbuy(w_to_check) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd46a1227, Offset: 0xfe0
 // Size: 0x2b8
 function wallbuy_player_connect(localclientnum) {
     keys = getarraykeys(level._active_wallbuys);
-    println("tag_origin" + localclientnum);
+    println("<dev string:x38>" + localclientnum);
     for (i = 0; i < keys.size; i++) {
         wallbuy = level._active_wallbuys[keys[i]];
         if (wallbuy.weapon == level.weaponnone) {
-            assertmsg("<unknown string>" + wallbuy.zombie_weapon_upgrade);
+            assertmsg("<dev string:x51>" + wallbuy.zombie_weapon_upgrade);
             continue;
         }
         fx = level._effect[#"870mcs_zm_fx"];
@@ -171,7 +170,7 @@ function wallbuy_player_connect(localclientnum) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xfcc78aab, Offset: 0x12a0
 // Size: 0xb4e
 function private function_86b59fcc(chalk_model) {
@@ -180,7 +179,7 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_4114b6ac9879d85b":
     case #"hash_52461e82e039d255":
     case #"hash_2c44506b5a4adcdb":
-    case #"hash_ac25ab880b31bd8":
+    case #"p9_zm_chalk_buy_ar_accurate_t9_legendary":
         type = "ar_accurate_t9";
         break;
     case #"hash_6ecb9dec9aef326b":
@@ -207,26 +206,26 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_43ae9259432dc19a":
     case #"hash_71426057e03b3e72":
     case #"hash_790da02037dd644d":
-    case #"hash_ba8c7ceeda6ed4d":
+    case #"p9_zm_chalk_buy_ar_standard_t9_legendary":
     case #"hash_7fe6418bb07f4ae0":
         type = "ar_standard_t9";
         break;
     case #"hash_745733ece2111ab9":
     case #"hash_3ff49c8e71e9dc0c":
     case #"hash_2dd4a593ef2e247e":
-    case #"hash_d397711f1c62cbe":
+    case #"p9_zm_chalk_buy_ar_damage_t9_uncommon":
     case #"hash_1568f0b938324e29":
         type = "ar_damage_t9";
         break;
     case #"hash_2dcb24fbfe46d3bc":
     case #"hash_443ceef9e10fd8e9":
     case #"hash_3ca55cea67d20afe":
-    case #"hash_848977a03c3b1ef":
+    case #"p9_zm_chalk_buy_pistol_burst_t9_rare":
     case #"hash_27cd288e1e9117c7":
         type = "pistol_burst_t9";
         break;
     case #"hash_6e28fb91e31fd0a3":
-    case #"hash_d66744391171107":
+    case #"p9_zm_chalk_buy_pistol_revolver_t9_legendary":
     case #"hash_379b00da2dadc632":
     case #"hash_2b53bc14567b5374":
     case #"hash_4be59669e7ac1a58":
@@ -260,17 +259,17 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_51743a61c66a83df":
         type = "shotgun_semiauto_t9";
         break;
-    case #"hash_5faafb95e1aa195":
+    case #"p9_zm_chalk_buy_smg_burst_t9_rare":
     case #"hash_76106fbb17a9333b":
     case #"hash_58d6dda2cd160f0d":
     case #"hash_76fdbf97a01d50e2":
     case #"hash_392ea9010ac3d050":
         type = "smg_burst_t9";
         break;
-    case #"hash_79657cde0c5653d":
+    case #"p9_zm_chalk_buy_smg_capacity_t9_uncommon":
     case #"hash_24e100271d4db100":
     case #"hash_324d4ff006f88243":
-    case #"hash_1c2f17746576ef2":
+    case #"p9_zm_chalk_buy_smg_capacity_t9_epic":
     case #"hash_4cd0c4d654c097e3":
         type = "smg_capacity_t9";
         break;
@@ -282,7 +281,7 @@ function private function_86b59fcc(chalk_model) {
         type = "smg_fastfire_t9";
         break;
     case #"hash_6e02b1b03c4851e0":
-    case #"hash_962248c2202b4bb":
+    case #"p9_zm_chalk_buy_smg_standard_t9_epic":
     case #"hash_3c9529d3ceaa44da":
     case #"hash_48e083bcbb4008bc":
     case #"hash_2d22e43805a1636f":
@@ -312,7 +311,7 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_79145df8314cb715":
     case #"hash_43eb62442d7e07e5":
     case #"hash_6a21a738e317037a":
-    case #"hash_9fe66529bbb2c82":
+    case #"p9_zm_chalk_buy_sniper_quickscope_t9_ultra":
     case #"hash_784963b4918e79e8":
         type = "sniper_quickscope_t9";
         break;
@@ -340,7 +339,7 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_3b9d5ca8c3de8781":
     case #"hash_54876b09baf22c04":
     case #"hash_41289888933ab576":
-    case #"hash_6c3b4712eee1576":
+    case #"p9_zm_chalk_buy_tr_longburst_t9_uncommon":
     case #"hash_61f8215c2cb9e5a1":
         type = "tr_longburst_t9";
         break;
@@ -358,7 +357,7 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_7aac84dfbabbc8c4":
         type = "tr_precisionsemi_t9";
         break;
-    case #"hash_459809dbd6bd924":
+    case #"p9_zm_chalk_buy_lmg_accurate_t9_uncommon":
     case #"hash_2dc6bb27c0b0e4ae":
     case #"hash_105d1ea51841aaaf":
     case #"hash_79b96a652941ad58":
@@ -372,15 +371,15 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_55484f922fe3ceba":
         type = "lmg_light_t9";
         break;
-    case #"hash_6aa7ab77fdbf3b5":
-    case #"hash_cd1d3edd0162e83":
+    case #"p9_zm_chalk_buy_lmg_slowfire_t9_ultra":
+    case #"p9_zm_chalk_buy_lmg_slowfire_t9_uncommon":
     case #"hash_389b434e6c79984a":
     case #"hash_39c50389490c51a8":
-    case #"hash_76deb48b5a725fd":
+    case #"p9_zm_chalk_buy_lmg_slowfire_t9_rare":
         type = "lmg_slowfire_t9";
         break;
     default:
-        println("<unknown string>" + chalk_model);
+        println("<dev string:x70>" + chalk_model);
         type = 0;
         break;
     }
@@ -388,7 +387,7 @@ function private function_86b59fcc(chalk_model) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e4abcd9, Offset: 0x1df8
 // Size: 0x7c2
 function function_8f12abec(localclientnum) {
@@ -411,7 +410,7 @@ function function_8f12abec(localclientnum) {
         name_hash = #"hash_4d8398888735db8";
         break;
     case #"ar_fastfire_t9":
-        var_254469d1 = #"hash_9e1422a498a153";
+        var_254469d1 = #"p9_zm_chalk_buy_ar_fastfire_t9_col";
         name_hash = #"hash_717baccca4cf03d1";
         break;
     case #"ar_mobility_t9":
@@ -479,7 +478,7 @@ function function_8f12abec(localclientnum) {
         name_hash = #"hash_1895010b5180880c";
         break;
     case #"sniper_powersemi_t9":
-        var_254469d1 = #"hash_23fca34f81467e8";
+        var_254469d1 = #"p9_zm_chalk_buy_sniper_powersemi_t9_col";
         name_hash = #"hash_1fed797b830c9f74";
         break;
     case #"sniper_quickscope_t9":
@@ -518,7 +517,7 @@ function function_8f12abec(localclientnum) {
         name_hash = #"hash_115345b891f63176";
         break;
     case #"lmg_accurate_t9":
-        var_254469d1 = #"hash_7c2e5b18f3e46c4";
+        var_254469d1 = #"p9_zm_chalk_buy_lmg_accurate_t9_col";
         name_hash = #"hash_7eb1b81fdce9b908";
         break;
     default:
@@ -537,7 +536,7 @@ function function_8f12abec(localclientnum) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xe92c344d, Offset: 0x25c8
 // Size: 0x42a
 function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsnap, fieldname, *bwastimejump) {
@@ -547,9 +546,9 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
         }
     }
     struct = level._active_wallbuys[bwastimejump];
-    println("<unknown string>" + bnewent);
+    println("<dev string:xc7>" + bnewent);
     if (!isdefined(struct) || !isdefined(struct.models[bnewent]) || !isdefined(struct.models[bnewent].parent_struct)) {
-        assertmsg("<unknown string>" + bwastimejump);
+        assertmsg("<dev string:xdc>" + bwastimejump);
         return;
     }
     switch (binitialsnap) {
@@ -593,7 +592,7 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6f77c3f2, Offset: 0x2a00
 // Size: 0x430
 function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
@@ -650,7 +649,7 @@ function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6ba4dd40, Offset: 0x2e38
 // Size: 0x18a
 function function_51f5fb94(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -683,7 +682,7 @@ function function_51f5fb94(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbf21f6ad, Offset: 0x2fd0
 // Size: 0x7c
 function function_5ed44212(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

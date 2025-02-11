@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\exploder_shared.gsc;
+#using scripts\core_common\exploder_shared;
 
 #namespace flowgraph_fx;
 

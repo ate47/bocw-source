@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\util_shared;
 
 #namespace entityheadicons;
 
@@ -14,7 +13,7 @@ function init_shared() {
 }
 
 // Namespace entityheadicons/entityheadicons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1572933, Offset: 0xd8
 // Size: 0x3c
 function start_gametype() {
@@ -27,7 +26,7 @@ function start_gametype() {
 }
 
 // Namespace entityheadicons/entityheadicons_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7b9c5ace, Offset: 0x120
 // Size: 0x1fc
 function setentityheadicon(team, owner, objective) {
@@ -50,7 +49,7 @@ function setentityheadicon(team, owner, objective) {
     if (isdefined(objective)) {
         if (isdefined(owner) && !level.teambased) {
             if (!isplayer(owner)) {
-                assert(isdefined(owner.owner), "<unknown string>");
+                assert(isdefined(owner.owner), "<dev string:x38>");
                 owner = owner.owner;
             }
             if (isdefined(objective)) {
@@ -70,7 +69,7 @@ function setentityheadicon(team, owner, objective) {
 }
 
 // Namespace entityheadicons/entityheadicons_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7b9a75aa, Offset: 0x328
 // Size: 0xa4
 function updateentityheadteamobjective(entity, team, objective) {
@@ -82,7 +81,7 @@ function updateentityheadteamobjective(entity, team, objective) {
 }
 
 // Namespace entityheadicons/entityheadicons_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x940d6350, Offset: 0x3d8
 // Size: 0x9c
 function updateentityheadclientobjective(entity, objective) {
@@ -94,7 +93,7 @@ function updateentityheadclientobjective(entity, objective) {
 }
 
 // Namespace entityheadicons/entityheadicons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc1660904, Offset: 0x480
 // Size: 0x5c
 function destroyheadiconsondeath() {
@@ -105,7 +104,7 @@ function destroyheadiconsondeath() {
 }
 
 // Namespace entityheadicons/entityheadicons_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x727d36be, Offset: 0x4e8
 // Size: 0x9e
 function destroyentityheadicons() {

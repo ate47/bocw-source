@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\lui_shared;
 
 #namespace stim_count;
 
@@ -12,7 +11,7 @@ class class_44eccfcc : cluielem {
     var var_d5213cbb;
 
     // Namespace namespace_44eccfcc/stim_count
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xf05f24af, Offset: 0x248
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -20,7 +19,7 @@ class class_44eccfcc : cluielem {
     }
 
     // Namespace namespace_44eccfcc/stim_count
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x91e89886, Offset: 0x290
     // Size: 0x24
     function close(player) {
@@ -28,7 +27,7 @@ class class_44eccfcc : cluielem {
     }
 
     // Namespace namespace_44eccfcc/stim_count
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x45fb2823, Offset: 0x2c0
     // Size: 0x44
     function function_6eef7f4f(player, value) {
@@ -36,7 +35,7 @@ class class_44eccfcc : cluielem {
     }
 
     // Namespace namespace_44eccfcc/stim_count
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x584bd58, Offset: 0x1f8
     // Size: 0x44
     function setup_clientfields() {
@@ -57,7 +56,7 @@ function register() {
 }
 
 // Namespace stim_count/stim_count
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa4df70d2, Offset: 0x118
 // Size: 0x38
 function open(player, flags = 0) {
@@ -73,7 +72,7 @@ function close(player) {
 }
 
 // Namespace stim_count/stim_count
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe6010a6a, Offset: 0x180
 // Size: 0x1a
 function is_open(player) {
@@ -81,7 +80,7 @@ function is_open(player) {
 }
 
 // Namespace stim_count/stim_count
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf1d2d20d, Offset: 0x1a8
 // Size: 0x28
 function function_6eef7f4f(player, value) {

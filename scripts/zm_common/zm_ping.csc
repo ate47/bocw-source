@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace zm_ping;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ping/zm_ping
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x11eea6b, Offset: 0x670
 // Size: 0x17d4
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
     function_5ae4a10c(array(#"hash_334445b2169a33a9", #"hash_94b3a8b935248d0"), "ammocache", #"hash_6d999ac22537eeb7", #"hash_e98c059b131f86c", #"hash_1d81c3d4a23328ba");
     function_5ae4a10c(array(#"p9_fxanim_zm_gp_dac_xmodel", #"hash_7dc3d2d824dee8f0"), "pc_terminal", #"hash_393d988e963356ec", #"hash_2e657370192514b5", #"hash_5c22f831283cbe0d", 0, -20);
     function_5ae4a10c(array(#"hash_2b8015fa585f3b83", #"hash_6e47d6576612543c"), "fizz_machine", #"hash_a8b446447be6cb5", #"hash_307d328d2ca73346", #"hash_27298efc7e453782");
-    function_5ae4a10c(array(#"hash_847710b9f01fee3", #"hash_15f88361c2fa15c"), "crafting_table", #"hash_27a696fe263f18f5", #"hash_4990f9c23cc9c32a", #"hash_4290c0ae929fe8c4");
+    function_5ae4a10c(array(#"p9_fxanim_zm_gp_crafting_xmodel", #"hash_15f88361c2fa15c"), "crafting_table", #"hash_27a696fe263f18f5", #"hash_4990f9c23cc9c32a", #"hash_4290c0ae929fe8c4");
     function_5ae4a10c(#"hash_7336039cd7e006a4", "pack_a_punch", #"hash_632b8df2d8b1e18b", #"hash_5e9f5daa234fe730", #"hash_154530b7f83b7426");
     function_5ae4a10c(array(#"hash_74c59e8a4df12e7f", #"hash_6847db4bdfca2dc8"), "armor_station", #"hash_9c7074e60cba94e", #"hash_51d31303312306d", #"hash_44bb09aa82404023", 1, -20);
     function_5ae4a10c("p9_fxanim_zm_gp_chest_01_sml_low_xmodel", "explore_chest_small", #"hash_526ea917d293160b", #"hash_69eda3d15a6035ab", #"hash_4c2e7f9c9b051d54");
@@ -42,7 +41,7 @@ function private preinit() {
     function_5ae4a10c(#"hash_401a47741ffd646f", "explore_chest_gold", #"hash_607c4680a1d5e42a", #"hash_69eda3d15a6035ab", #"hash_4c2e7f9c9b051d54");
     function_5ae4a10c(array("p9_gold_surcrystal_medium_01", "p9_gold_surcrystal_medium_02", #"hash_608da839b1edf856", #"hash_608da739b1edf6a3"), "loot_pod", #"hash_786b6df51c6c7977", #"hash_2e354b187fdbfbbc", #"hash_237f8ac6e3096959");
     function_5ae4a10c(#"hash_1750a0152f36afa4", "dark_aether_crystal", #"hash_69364657a8e13bea", #"zmpingitemquest", undefined, 0, 32);
-    function_5ae4a10c(#"hash_8b8c98dda08574e", "large_essence", #"hash_1f00efce440309fb", #"zmpingitemaetherium", #"hash_42a9c56cfc3985b9");
+    function_5ae4a10c(#"p9_sur_essence_container", "large_essence", #"hash_1f00efce440309fb", #"zmpingitemaetherium", #"hash_42a9c56cfc3985b9");
     function_5ae4a10c(undefined, "magicbox", #"hash_3f01b77865c1572d", #"hash_4542da19e0c104c", #"hash_5135a0345a6ece48");
     function_5ae4a10c(undefined, "wallbuy", &function_d1852e75, #"hash_5fc866a41152b3c", #"hash_5507b821f566791f");
     function_5ae4a10c(#"hash_615f17c2d8b69f96", "exfil_radio", undefined, #"hash_4e2a478df2a81e8c");
@@ -60,9 +59,9 @@ function private preinit() {
     function_5ae4a10c(#"p7_zm_power_up_insta_kill", "powerup_insta_kill", #"hash_1784640b956f2f85", #"hash_504ad9537b38881f", #"hash_79ac89cbcace5b3b");
     function_5ae4a10c(#"p7_zm_power_up_max_ammo", "powerup_max_ammo", #"zombie/powerup_max_ammo", #"hash_2a901c3db306ba24", #"hash_4612fc19f97f58ad");
     function_5ae4a10c(#"p7_zm_power_up_double_points", "powerup_double_points", #"hash_774207d74b355a8a", #"hash_25d360e4ab517722", #"hash_3f59065a3419e61d");
-    function_5ae4a10c(#"p7_zm_power_up_carpenter", "powerup_carpenter", #"hash_7ee3cb05607f53f3", #"hash_23e7594539b63cb8", #"hash_bfa2b9c3bd06c40");
-    function_5ae4a10c(#"p7_zm_power_up_firesale", "powerup_firesale", #"hash_2c7bc0fa0980f8f5", #"hash_365549a15c5bde23", #"hash_8ea2b7214fa0627");
-    function_5ae4a10c(#"wpn_t9_zm_perk_can_powerup", "powerup_free_perk", #"hash_165c84a677f7a58c", #"zmpingperkcan", #"hash_16e60be7e8413d5");
+    function_5ae4a10c(#"p7_zm_power_up_carpenter", "powerup_carpenter", #"hash_7ee3cb05607f53f3", #"hash_23e7594539b63cb8", #"ui_icon_zombie_powerup_carpenter_large");
+    function_5ae4a10c(#"p7_zm_power_up_firesale", "powerup_firesale", #"hash_2c7bc0fa0980f8f5", #"hash_365549a15c5bde23", #"ui_icon_zombie_powerup_firesale_large");
+    function_5ae4a10c(#"wpn_t9_zm_perk_can_powerup", "powerup_free_perk", #"hash_165c84a677f7a58c", #"zmpingperkcan", #"ui_icon_zombie_powerup_random_perk_can_large");
     function_5ae4a10c(#"p8_zm_power_up_bonfire_sale", "powerup_bonfire_sale", undefined);
     function_5ae4a10c(#"zombie_z_money_icon", "powerup_bonus_points", #"hash_5162c283a9d6ee16", #"hash_3321e0bf2e424c30", #"hash_241cbd09653f7bbf");
     function_5ae4a10c(#"p8_zm_powerup_full_power", "powerup_hero_power", #"hash_50af8943ead42bcc", #"hash_3580f779bbcaa04d", #"hash_6e55b93f6580badb");
@@ -81,8 +80,8 @@ function private preinit() {
     function_5ae4a10c(#"hash_6ceeb1e8c8e22a40", "fizz_machine", #"hash_a8b446447be6cb5", #"hash_307d328d2ca73346", #"hash_27298efc7e453782");
     function_5ae4a10c(#"hash_51706bfde1e71907", "fizz_machine", #"hash_a8b446447be6cb5", #"hash_307d328d2ca73346", #"hash_27298efc7e453782");
     function_5ae4a10c(#"p8_wz_ep_fishing_pole", "fishing", #"hash_37f2a930f03bac8c", #"hash_5b20033c44a4321f", #"hash_3495a362a9bca583", 0, -32);
-    function_5ae4a10c(#"hash_c4ab57344c6af29", "round_accelerant", #"hash_20fd9d10230088d", #"hash_5b20033c44a4321f", #"hash_2db109b3b20b0fbe", 0, 0);
-    function_5ae4a10c(array(#"p9_sur_machine_phd_slider"), "perk_phd_slider", #"hash_79fbaba94cc08a3d", #"hash_2be744903390f195", #"hash_745f20bc47e3d33", 1, -20);
+    function_5ae4a10c(#"p9_sur_essence_container_orange", "round_accelerant", #"hash_20fd9d10230088d", #"hash_5b20033c44a4321f", #"hash_2db109b3b20b0fbe", 0, 0);
+    function_5ae4a10c(array(#"p9_sur_machine_phd_slider"), "perk_phd_slider", #"hash_79fbaba94cc08a3d", #"hash_2be744903390f195", #"ui_icon_minimap_phdslider", 1, -20);
     function_5ae4a10c(#"hash_2730e79c7f028537", "aetherium_neutralizer", #"hash_348e920f379ab2a8", undefined, #"hash_541d134aef3a5f87", 1, 0);
     function_5ae4a10c(undefined, "mimic_prop_spawn");
     clientfield::register("scriptmover", "" + #"hash_dfecc4e02f58398", 1, 3, "int", &function_3ed2984b, 0, 0);
@@ -90,7 +89,7 @@ function private preinit() {
 }
 
 // Namespace zm_ping/zm_ping
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xa8d15a29, Offset: 0x1e50
 // Size: 0x56
 function function_3ed2984b(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -98,7 +97,7 @@ function function_3ed2984b(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_ping/zm_ping
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xef533afa, Offset: 0x1eb0
 // Size: 0x5a
 function function_1bcf5171(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -106,7 +105,7 @@ function function_1bcf5171(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_ping/zm_ping
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x7535074b, Offset: 0x1f18
 // Size: 0x1cc
 function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, icon, var_b5a47119 = 0, zoffset = 0) {
@@ -121,7 +120,7 @@ function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, ico
     }
     /#
         if (isdefined(level.var_2d1b0ac[targetname]) && isdefined(displayname)) {
-            assert(level.var_2d1b0ac[targetname] == displayname, "world_event_monster_house");
+            assert(level.var_2d1b0ac[targetname] == displayname, "<dev string:x38>");
         }
     #/
     if (isdefined(displayname)) {
@@ -138,11 +137,11 @@ function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, ico
 }
 
 // Namespace zm_ping/zm_ping
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc70f1360, Offset: 0x20f0
 // Size: 0x46
 function private function_d1852e75(ent) {
-    assert(isdefined(ent.var_ed875153), "<unknown string>");
+    assert(isdefined(ent.var_ed875153), "<dev string:x71>");
     return ent.var_ed875153;
 }
 

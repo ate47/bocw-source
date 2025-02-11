@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace deathicons;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace deathicons/deathicons
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc4f7baa8, Offset: 0x110
 // Size: 0x44
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace deathicons/deathicons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4eadeaa3, Offset: 0x160
 // Size: 0x3c
 function init() {
@@ -37,7 +36,7 @@ function init() {
 }
 
 // Namespace deathicons/deathicons
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x85391fbf, Offset: 0x1a8
 // Size: 0xe
 function on_player_connect() {
@@ -53,7 +52,7 @@ function update_enabled() {
 }
 
 // Namespace deathicons/deathicons
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb5510193, Offset: 0x1d0
 // Size: 0x24c
 function add(entity, dyingplayer, team) {
@@ -86,19 +85,19 @@ function add(entity, dyingplayer, team) {
 }
 
 // Namespace deathicons/deathicons
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x67dd799e, Offset: 0x428
 // Size: 0x6c
 function destroy_slowly(timeout, deathiconobjid) {
-    wait(timeout);
+    wait timeout;
     objective_setstate(deathiconobjid, "done");
-    wait(1);
+    wait 1;
     objective_delete(deathiconobjid);
     gameobjects::release_obj_id(deathiconobjid);
 }
 
 // Namespace deathicons/deathicons
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0x66727b84, Offset: 0x4a0
 // Size: 0xd4
 function ragdoll_override(*idamage, smeansofdeath, *weapon, *shitloc, *vdir, *vattackerorigin, *deathanimduration, *einflictor, *ragdoll_jib, body) {

@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\vehicle_shared;
 
 #namespace player_sedan;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_sedan/player_sedan
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa4791f91, Offset: 0x100
 // Size: 0x2c
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace player_sedan/player_sedan
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x43070e46, Offset: 0x138
 // Size: 0xaa
 function private function_3ca3e81e() {
@@ -36,7 +35,7 @@ function private function_3ca3e81e() {
 }
 
 // Namespace player_sedan/player_sedan
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c9e00ed, Offset: 0x1f0
 // Size: 0xc4
 function function_9c00eeec(params) {
@@ -55,7 +54,7 @@ function function_9c00eeec(params) {
 }
 
 // Namespace player_sedan/player_sedan
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xee5a0fa9, Offset: 0x2c0
 // Size: 0xbc
 function function_9303f902(params) {

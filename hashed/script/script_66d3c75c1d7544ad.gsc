@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_2cab06c8;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_2cab06c8/namespace_2cab06c8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x99bcdc16, Offset: 0xe8
 // Size: 0x3c
 function postinit() {
@@ -26,7 +25,7 @@ function postinit() {
 }
 
 // Namespace namespace_2cab06c8/namespace_2cab06c8
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x117bc3b6, Offset: 0x130
 // Size: 0x86
 function on_vehicle_spawned() {
@@ -48,8 +47,8 @@ function on_vehicle_spawned() {
     // Size: 0x74
     function init_devgui() {
         mapname = util::get_map_name();
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x38>" + mapname + "<dev string:x49>");
+        adddebugcommand("<dev string:x38>" + mapname + "<dev string:xae>");
     }
 
 #/

@@ -1,27 +1,26 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\ai\archetype_locomotion_utility.gsc;
-#using scripts\core_common\ai\archetype_human_locomotion.gsc;
-#using scripts\core_common\ai\archetype_cover_utility.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\archetype_human_interface.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\ai_interface.gsc;
-#using scripts\core_common\ai\systems\ai_blackboard.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_cover_utility;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\archetype_human_interface;
+#using scripts\core_common\ai\archetype_human_locomotion;
+#using scripts\core_common\ai\archetype_locomotion_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\ai_blackboard;
+#using scripts\core_common\ai\systems\ai_interface;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\util_shared;
 
-#namespace namespace_ae9b2918;
+#namespace archetypehuman;
 
-// Namespace namespace_ae9b2918/archetype_human
+// Namespace archetypehuman/archetype_human
 // Params 0, eflags: 0x1
 // Checksum 0x5ebac609, Offset: 0x508
 // Size: 0x294
@@ -48,8 +47,8 @@ function autoexec init() {
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0x625e4292, Offset: 0x7a8
 // Size: 0x108
 function private function_b98fe2d6() {
@@ -62,8 +61,8 @@ function private function_b98fe2d6() {
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0xbd67b5b9, Offset: 0x8b8
 // Size: 0xa0
 function private function_2f2d0057() {
@@ -78,8 +77,8 @@ function private function_2f2d0057() {
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0xcde6bcbf, Offset: 0x960
 // Size: 0x52
 function private function_168bc21c(trigger) {
@@ -90,16 +89,16 @@ function private function_168bc21c(trigger) {
     self.var_a8f2b553 = undefined;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x0
 // Checksum 0x6c2f1c3e, Offset: 0x9c0
 // Size: 0x2c
 function function_1ed72d78(params) {
     level.enablehipflip = int(params.value);
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0x8dcbf737, Offset: 0x9f8
 // Size: 0x13c
 function private archetypehumaninit() {
@@ -116,8 +115,8 @@ function private archetypehumaninit() {
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0xa14806b, Offset: 0xb40
 // Size: 0xdc
 function private archetypehumanblackboardinit() {
@@ -133,8 +132,8 @@ function private archetypehumanblackboardinit() {
     gibserverutils::togglespawngibs(self, 1);
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x62dadb08, Offset: 0xc28
 // Size: 0xcc
 function private archetypehumanonbehavecallback(entity) {
@@ -147,8 +146,8 @@ function private archetypehumanonbehavecallback(entity) {
     blackboard::addblackboardevent("self_grenade_throw", grenadethrowinfo, randomintrange(3000, 4000));
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x3466eb40, Offset: 0xd00
 // Size: 0x5c
 function private archetypehumanonanimscriptedcallback(entity) {
@@ -156,8 +155,8 @@ function private archetypehumanonanimscriptedcallback(entity) {
     humansoldierserverutils::vignettemodecallback(entity, "vignette_mode", vignettemode, vignettemode);
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 9, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 9, eflags: 0x4
 // Checksum 0xec27d55c, Offset: 0xd68
 // Size: 0x300
 function private humangibkilledoverride(inflictor, attacker, damage, meansofdeath, weapon, var_fd90b0bb, *dir, hitloc, *offsettime) {
@@ -190,7 +189,7 @@ function private humangibkilledoverride(inflictor, attacker, damage, meansofdeat
     return weapon;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
+// Namespace archetypehuman/archetype_human
 // Params 6, eflags: 0x4
 // Checksum 0xe4c93842, Offset: 0x1070
 // Size: 0xcc
@@ -205,8 +204,8 @@ function private trygibbinghead(entity, *damage, weapon, var_fd90b0bb, hitloc, i
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 6, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 6, eflags: 0x4
 // Checksum 0xd1ebc3c0, Offset: 0x1148
 // Size: 0x20c
 function private trygibbinglimb(entity, *damage, weapon, var_fd90b0bb, hitloc, isexplosive) {
@@ -237,8 +236,8 @@ function private trygibbinglimb(entity, *damage, weapon, var_fd90b0bb, hitloc, i
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 7, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 7, eflags: 0x4
 // Checksum 0x871eb71d, Offset: 0x1360
 // Size: 0x23c
 function private trygibbinglegs(entity, *damage, weapon, var_fd90b0bb, hitloc, isexplosive, *attacker) {
@@ -271,8 +270,8 @@ function private trygibbinglegs(entity, *damage, weapon, var_fd90b0bb, hitloc, i
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 13, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 13, eflags: 0x0
 // Checksum 0xee227ade, Offset: 0x15a8
 // Size: 0x2ba
 function damageoverride(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, modelindex) {
@@ -306,8 +305,8 @@ function damageoverride(einflictor, eattacker, idamage, idflags, smeansofdeath, 
     return idamage;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x0
 // Checksum 0x83050fcb, Offset: 0x1870
 // Size: 0xa94
 function registerbehaviorscriptfunctions() {
@@ -365,8 +364,8 @@ function registerbehaviorscriptfunctions() {
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_55fa05bf88eac67", &function_7d7cd25d);
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x28ae69dc, Offset: 0x2310
 // Size: 0x70
 function private function_51f81dca(entity) {
@@ -379,8 +378,8 @@ function private function_51f81dca(entity) {
     return false;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x0
 // Checksum 0xc5ece391, Offset: 0x2388
 // Size: 0x40
 function function_30579259(entity) {
@@ -390,8 +389,8 @@ function function_30579259(entity) {
     return false;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x9029ffca, Offset: 0x23d0
 // Size: 0x40
 function private function_f7392d4f(entity) {
@@ -401,8 +400,8 @@ function private function_f7392d4f(entity) {
     return false;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0xf3df881e, Offset: 0x2418
 // Size: 0x40
 function private function_15543ed6(entity) {
@@ -412,8 +411,8 @@ function private function_15543ed6(entity) {
     return false;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x1fd09fd, Offset: 0x2460
 // Size: 0x78
 function private function_f59fad45(entity) {
@@ -428,8 +427,8 @@ function private function_f59fad45(entity) {
     return 0;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x21ea1881, Offset: 0x24e0
 // Size: 0x1de
 function private function_51074ea9(entity) {
@@ -463,8 +462,8 @@ function private function_51074ea9(entity) {
     return false;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0xa38b295, Offset: 0x26c8
 // Size: 0x56
 function private function_235ee25b(entity) {
@@ -474,8 +473,8 @@ function private function_235ee25b(entity) {
     return result;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x70ea32dc, Offset: 0x2728
 // Size: 0x17c
 function private function_a6e2c113(entity) {
@@ -496,8 +495,8 @@ function private function_a6e2c113(entity) {
     return 1;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x517b2098, Offset: 0x28b0
 // Size: 0xf0
 function private function_dfe73cad(entity) {
@@ -516,8 +515,8 @@ function private function_dfe73cad(entity) {
     return 0;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0xda897934, Offset: 0x29a8
 // Size: 0xac
 function private function_13cd8bfe(entity) {
@@ -532,8 +531,8 @@ function private function_13cd8bfe(entity) {
     return 1;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x375bb04, Offset: 0x2a60
 // Size: 0x30
 function private function_964f867d(entity) {
@@ -541,8 +540,8 @@ function private function_964f867d(entity) {
     return true;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x3c5f3499, Offset: 0x2a98
 // Size: 0x30
 function private function_ecaeb285(entity) {
@@ -550,8 +549,8 @@ function private function_ecaeb285(entity) {
     return true;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0xe58ead37, Offset: 0x2ad0
 // Size: 0x30
 function private function_bbd29e0c(entity) {
@@ -559,8 +558,8 @@ function private function_bbd29e0c(entity) {
     return true;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x0
 // Checksum 0x11103435, Offset: 0x2b08
 // Size: 0xec
 function function_3e09cbf3(entity) {
@@ -569,9 +568,9 @@ function function_3e09cbf3(entity) {
         var_7d558504 = entity hasvalidinterrupt("pain");
         /#
             if (!var_7d558504) {
-                record3dtext("CQB", entity.origin, (1, 0, 0), "<unknown string>", entity);
+                record3dtext("<dev string:x38>", entity.origin, (1, 0, 0), "<dev string:x4d>", entity);
             } else {
-                record3dtext("<unknown string>", entity.origin, (1, 0.5, 0), "<unknown string>", entity);
+                record3dtext("<dev string:x5b>", entity.origin, (1, 0.5, 0), "<dev string:x4d>", entity);
             }
         #/
         return var_7d558504;
@@ -579,8 +578,8 @@ function function_3e09cbf3(entity) {
     return 0;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x0
 // Checksum 0x9d4b3f70, Offset: 0x2c00
 // Size: 0x1e8
 function function_88dcd11f() {
@@ -616,8 +615,8 @@ function function_88dcd11f() {
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0x470f50cc, Offset: 0x2df0
 // Size: 0x92
 function private function_aa0b0ac5() {
@@ -629,8 +628,8 @@ function private function_aa0b0ac5() {
     self.var_dd1cd771 = undefined;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x0
 // Checksum 0x95cd8c15, Offset: 0x2e90
 // Size: 0x1e
 function function_9b60b3a4() {
@@ -638,8 +637,8 @@ function function_9b60b3a4() {
     self notify(#"hash_797e6bb8a86ac7b2");
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0xe6974b7b, Offset: 0x2eb8
 // Size: 0x4c
 function private function_ee4915e0() {
@@ -650,8 +649,8 @@ function private function_ee4915e0() {
     self thread function_88dcd11f();
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0x23a85138, Offset: 0x2f10
 // Size: 0x4c
 function private function_fbc6c789() {
@@ -662,8 +661,8 @@ function private function_fbc6c789() {
     self function_9b60b3a4();
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0xc968c832, Offset: 0x2f68
 // Size: 0x80
 function private function_d5f8b410(entity) {
@@ -676,8 +675,8 @@ function private function_d5f8b410(entity) {
     return false;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x89f1f3d, Offset: 0x2ff0
 // Size: 0x74
 function private function_7d7cd25d(entity) {
@@ -688,18 +687,18 @@ function private function_7d7cd25d(entity) {
     }
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x4
 // Checksum 0x6df17d1d, Offset: 0x3070
 // Size: 0x4c
 function private function_405a8025() {
     self endon(#"death", #"hash_8ec72b512d886d2");
-    wait(self.var_b01e0de4);
+    wait self.var_b01e0de4;
     self asmsetanimationrate(1);
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x48dc3176, Offset: 0x30c8
 // Size: 0x5c
 function private function_2c95bf72(entity) {
@@ -709,8 +708,8 @@ function private function_2c95bf72(entity) {
     aiutility::releaseclaimnode(entity);
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 1, eflags: 0x6 linked
+// Namespace archetypehuman/archetype_human
+// Params 1, eflags: 0x4
 // Checksum 0x27d7c8b9, Offset: 0x3130
 // Size: 0x8a
 function private function_4e71bfb4(entity) {
@@ -725,8 +724,8 @@ function private function_4e71bfb4(entity) {
     return true;
 }
 
-// Namespace namespace_ae9b2918/archetype_human
-// Params 0, eflags: 0x2 linked
+// Namespace archetypehuman/archetype_human
+// Params 0, eflags: 0x0
 // Checksum 0x97d9292e, Offset: 0x31c8
 // Size: 0x32
 function function_f27f3a91() {

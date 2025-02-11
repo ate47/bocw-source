@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_round_logic.gsc;
-#using scripts\zm_common\zm_trial.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_round_logic;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_trial;
 
 #namespace zm_trial_no_powerups;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xac3bdc6f, Offset: 0x100
 // Size: 0x5c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3de33f9c, Offset: 0x168
 // Size: 0xb0
 function private on_begin() {
@@ -44,7 +43,7 @@ function private on_begin() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbb04ef05, Offset: 0x220
 // Size: 0xb4
 function private on_end(*round_reset) {
@@ -56,7 +55,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xce5508f8, Offset: 0x2e0
 // Size: 0x54
 function is_active() {
@@ -65,7 +64,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa329c57c, Offset: 0x340
 // Size: 0xf2
 function function_2fc5f13() {
@@ -78,7 +77,7 @@ function function_2fc5f13() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4f0e4ad0, Offset: 0x440
 // Size: 0xa0
 function private function_138aec8e(attacker) {

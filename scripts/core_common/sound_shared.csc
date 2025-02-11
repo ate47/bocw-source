@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_71463f7d72636705;
 
 #namespace sound;
 
 // Namespace sound/sound_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x18a531f4, Offset: 0xa0
 // Size: 0x8c
 function loop_fx_sound(clientnum, alias, origin, ender) {
@@ -17,7 +16,7 @@ function loop_fx_sound(clientnum, alias, origin, ender) {
 }
 
 // Namespace sound/sound_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x35259931, Offset: 0x138
 // Size: 0x34
 function play_in_space(localclientnum, alias, origin) {
@@ -25,7 +24,7 @@ function play_in_space(localclientnum, alias, origin) {
 }
 
 // Namespace sound/sound_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x943ed535, Offset: 0x178
 // Size: 0x34
 function loop_delete(ender, sound_entity) {
@@ -34,7 +33,7 @@ function loop_delete(ender, sound_entity) {
 }
 
 // Namespace sound/sound_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcf2dfbb5, Offset: 0x1b8
 // Size: 0x4c
 function play_on_client(sound_alias) {
@@ -53,7 +52,7 @@ function loop_on_client(sound_alias, min_delay, max_delay, end_on) {
     }
     for (;;) {
         play_on_client(sound_alias);
-        wait(min_delay + randomfloat(max_delay));
+        wait min_delay + randomfloat(max_delay);
     }
 }
 

@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_67ce8e728d8f37ba;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace mp_miami;
 
@@ -31,7 +30,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_miami/mp_miami
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa4072a75, Offset: 0x318
 // Size: 0x9c
 function function_f92fe90c() {
@@ -44,13 +43,13 @@ function function_f92fe90c() {
 }
 
 // Namespace mp_miami/mp_miami
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6f5036, Offset: 0x3c0
 // Size: 0x124
 function function_7858899c(var_37473ebc) {
     level endon(#"game_ended");
     while (!isdefined(level.var_58bc5d04)) {
-        wait(1);
+        wait 1;
     }
     while (true) {
         foreach (sign in var_37473ebc) {
@@ -58,29 +57,29 @@ function function_7858899c(var_37473ebc) {
                 continue;
             }
             sign clientfield::increment("neon_rob", 1);
-            wait(0.5);
+            wait 0.5;
             if (!isdefined(sign)) {
                 continue;
             }
             sign clientfield::increment("neon_rob", 1);
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace mp_miami/mp_miami
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0f0b8f, Offset: 0x4f0
 // Size: 0x54
 function function_3fbfa2de() {
-    var_4c927798 = getent("diving_board_trig", "targetname");
-    if (isdefined(var_4c927798)) {
-        var_4c927798 callback::on_trigger(&function_2e1e9186);
+    diving_board_trig = getent("diving_board_trig", "targetname");
+    if (isdefined(diving_board_trig)) {
+        diving_board_trig callback::on_trigger(&function_2e1e9186);
     }
 }
 
 // Namespace mp_miami/mp_miami
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xce171654, Offset: 0x550
 // Size: 0xfe
 function function_2e1e9186(info) {
@@ -99,7 +98,7 @@ function function_2e1e9186(info) {
 }
 
 // Namespace mp_miami/mp_miami
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x658
 // Size: 0x4
 function on_end_game() {

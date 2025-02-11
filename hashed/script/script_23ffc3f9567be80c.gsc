@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_3ddf84b7bb3bf47d;
-#using script_3751b21462a54a7d;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\laststand_shared.gsc;
 #using script_1287f54612f9bfce;
-#using scripts\core_common\content_manager.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_3751b21462a54a7d;
+#using script_3ddf84b7bb3bf47d;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\content_manager;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_c71c7ca5;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_c71c7ca5/namespace_c71c7ca5
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5fe50096, Offset: 0x218
 // Size: 0x5c
 function preinit() {
@@ -37,11 +36,11 @@ function preinit() {
 }
 
 // Namespace namespace_c71c7ca5/namespace_c71c7ca5
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3739adb6, Offset: 0x280
 // Size: 0x84
 function postinit() {
-    mapdestinations = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
+    mapdestinations = struct::get_array(#"content_destination", "variantname");
     if (zm_utility::is_classic() && isdefined(mapdestinations) && mapdestinations.size > 0) {
         level thread function_f72d912(mapdestinations[0]);
     }
@@ -61,14 +60,14 @@ function function_1142ba4a(var_beee4994, *hint_string, *model) {
 }
 
 // Namespace namespace_c71c7ca5/namespace_c71c7ca5
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc51c4cd0, Offset: 0x3e0
 // Size: 0x25c
 function function_5be7e51b(struct, modelname, hint_string, callbackfunction) {
-    assert(isstruct(struct), "<unknown string>");
-    assert(isfunctionptr(callbackfunction), "<unknown string>");
-    assert(isdefined(modelname), "<unknown string>");
-    assert(isdefined(hint_string), "<unknown string>");
+    assert(isstruct(struct), "<dev string:x38>");
+    assert(isfunctionptr(callbackfunction), "<dev string:x56>");
+    assert(isdefined(modelname), "<dev string:x7b>");
+    assert(isdefined(hint_string), "<dev string:x9d>");
     scriptmodel = content_manager::spawn_script_model(struct, modelname);
     objid = zm_utility::function_f5a222a8(#"hash_3632525bd692cfc8", scriptmodel);
     struct.objectiveid = objid;
@@ -88,7 +87,7 @@ function function_5be7e51b(struct, modelname, hint_string, callbackfunction) {
 }
 
 // Namespace namespace_c71c7ca5/namespace_c71c7ca5
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xda2f4bba, Offset: 0x648
 // Size: 0x154
 function function_18aca533(*eventstruct) {
@@ -113,7 +112,7 @@ function function_18aca533(*eventstruct) {
 }
 
 // Namespace namespace_c71c7ca5/namespace_c71c7ca5
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbbb07d2d, Offset: 0x7a8
 // Size: 0x44
 function function_f72d912(destination) {
@@ -123,7 +122,7 @@ function function_f72d912(destination) {
 }
 
 // Namespace namespace_c71c7ca5/namespace_c71c7ca5
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa69a3b83, Offset: 0x7f8
 // Size: 0x16c
 function function_399aa551(destination) {

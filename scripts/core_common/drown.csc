@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\visionset_mgr_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\visionset_mgr_shared;
 
 #namespace drown;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x31744ef7, Offset: 0x128
 // Size: 0xbc
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc9d627c, Offset: 0x1f0
 // Size: 0x4b6
 function setup_radius_values() {
@@ -58,7 +57,7 @@ function setup_radius_values() {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf2905a47, Offset: 0x6b0
 // Size: 0x54
 function player_spawned(localclientnum) {
@@ -70,7 +69,7 @@ function player_spawned(localclientnum) {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x154e4cdf, Offset: 0x710
 // Size: 0x3e
 function player_init_drown_values() {
@@ -83,7 +82,7 @@ function player_init_drown_values() {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf9867746, Offset: 0x758
 // Size: 0x3c
 function player_watch_drown_shutdown(localclientnum) {
@@ -92,7 +91,7 @@ function player_watch_drown_shutdown(localclientnum) {
 }
 
 // Namespace drown/drown
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa1a15b66, Offset: 0x7a0
 // Size: 0x7e
 function function_1a9dc208() {
@@ -105,7 +104,7 @@ function function_1a9dc208() {
 }
 
 // Namespace drown/drown
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb4252d4f, Offset: 0x828
 // Size: 0x7a
 function enable_drown(localclientnum, stage) {
@@ -116,7 +115,7 @@ function enable_drown(localclientnum, stage) {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbe6dc0e, Offset: 0x8b0
 // Size: 0xc
 function disable_drown(*localclientnum) {
@@ -124,7 +123,7 @@ function disable_drown(*localclientnum) {
 }
 
 // Namespace drown/drown
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x44ab4cea, Offset: 0x8c8
 // Size: 0x2f4
 function player_drown_fx(localclientnum, stage) {
@@ -155,7 +154,7 @@ function player_drown_fx(localclientnum, stage) {
 }
 
 // Namespace drown/drown
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x54e9e718, Offset: 0xbc8
 // Size: 0x194
 function player_fade_out_drown_fx(localclientnum) {
@@ -176,7 +175,7 @@ function player_fade_out_drown_fx(localclientnum) {
 }
 
 // Namespace drown/drown
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8c4e4168, Offset: 0xd68
 // Size: 0xb4
 function drown_stage_callback(localclientnum, *oldval, newval, bnewent, *binitialsnap, *fieldname, *bwastimejump) {

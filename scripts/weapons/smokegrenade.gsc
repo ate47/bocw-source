@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\globallogic\globallogic_score.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\sound_shared.gsc;
-#using scripts\core_common\contracts_shared.gsc;
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\contracts_shared;
+#using scripts\core_common\globallogic\globallogic_score;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\util_shared;
 
 #namespace smokegrenade;
 
 // Namespace smokegrenade/smokegrenade
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc626cf39, Offset: 0x1c0
 // Size: 0x184
 function init_shared() {
@@ -31,7 +30,7 @@ function init_shared() {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4e876bc, Offset: 0x350
 // Size: 0x66
 function function_79d42bea(weapon) {
@@ -43,7 +42,7 @@ function function_79d42bea(weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4140889, Offset: 0x3c0
 // Size: 0x72
 function function_36d48dce(weapon) {
@@ -55,7 +54,7 @@ function function_36d48dce(weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x37cee441, Offset: 0x440
 // Size: 0x72
 function function_f199623f(weapon) {
@@ -67,7 +66,7 @@ function function_f199623f(weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x30d52cb1, Offset: 0x4c0
 // Size: 0x72
 function function_184e15d2(weapon) {
@@ -79,7 +78,7 @@ function function_184e15d2(weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x4a6c0bbb, Offset: 0x540
 // Size: 0x16c
 function watchsmokegrenadedetonation(owner, statweapon, smokeweapon, duration, totaltime) {
@@ -98,7 +97,7 @@ function watchsmokegrenadedetonation(owner, statweapon, smokeweapon, duration, t
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x6c174fb7, Offset: 0x6b8
 // Size: 0x3d0
 function smokedetonate(owner, statweapon, smokeweapon, position, radius, effectlifetime, smokeblockduration) {
@@ -155,7 +154,7 @@ function smokedetonate(owner, statweapon, smokeweapon, position, radius, effectl
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xfc8157cd, Offset: 0xa90
 // Size: 0x94
 function damageeffectarea(owner, position, radius, height) {
@@ -167,7 +166,7 @@ function damageeffectarea(owner, position, radius, height) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x28b6c147, Offset: 0xb30
 // Size: 0x64
 function smokeblocksight(radius) {
@@ -188,13 +187,13 @@ function function_f02a8a0b(radius) {
     /#
         while (true) {
             sphere(self.origin, radius, (1, 0, 0), 0.25, 0, 20, 15);
-            wait(0.75);
+            wait 0.75;
         }
     #/
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdbb88a6c, Offset: 0xc10
 // Size: 0x62
 function function_c7b93adf(weapon) {
@@ -206,18 +205,18 @@ function function_c7b93adf(weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf419c216, Offset: 0xc80
 // Size: 0x54
 function waitanddelete(time) {
     self ghost();
     self endon(#"death");
-    wait(time);
+    wait time;
     self delete();
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x812da11d, Offset: 0xce0
 // Size: 0x1fc
 function spawnsmokegrenadetrigger(smokeweapon, duration, owner) {
@@ -251,7 +250,7 @@ function spawnsmokegrenadetrigger(smokeweapon, duration, owner) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x99d8e7db, Offset: 0xee8
 // Size: 0x366
 function private function_aff603b2(attacker, victim, *weapon, attackerweapon, *meansofdeath) {
@@ -295,14 +294,14 @@ function private function_aff603b2(attacker, victim, *weapon, attackerweapon, *m
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb3c64dd3, Offset: 0x1258
 // Size: 0xbe
-function function_367ce00e(var_7acab93a) {
+function function_367ce00e(skiptrigger) {
     foreach (trigger in level.smoke_grenade_triggers) {
         if (self istouching(trigger)) {
-            if (isdefined(var_7acab93a)) {
-                if (var_7acab93a != trigger) {
+            if (isdefined(skiptrigger)) {
+                if (skiptrigger != trigger) {
                     return trigger;
                 }
                 continue;
@@ -314,14 +313,14 @@ function function_367ce00e(var_7acab93a) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1a8ea45b, Offset: 0x1320
 // Size: 0xe0
-function function_4cc4db89(team, var_7acab93a) {
+function function_4cc4db89(team, skiptrigger) {
     foreach (trigger in level.smoke_grenade_triggers) {
         if (!trigger util::isenemyteam(team) && self istouching(trigger)) {
-            if (isdefined(var_7acab93a)) {
-                if (var_7acab93a != trigger) {
+            if (isdefined(skiptrigger)) {
+                if (skiptrigger != trigger) {
                     return trigger;
                 }
                 continue;
@@ -333,7 +332,7 @@ function function_4cc4db89(team, var_7acab93a) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbf2f7e92, Offset: 0x1408
 // Size: 0x15a
 function function_65fc89ee(*weapon) {
@@ -351,7 +350,7 @@ function function_65fc89ee(*weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x98239116, Offset: 0x1570
 // Size: 0x130
 function function_50ef4b12(weapon) {
@@ -377,7 +376,7 @@ function function_50ef4b12(weapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6fac6d3c, Offset: 0x16a8
 // Size: 0x78
 function private function_579815a1(weapon) {
@@ -420,7 +419,7 @@ function function_87d0a127(grenadeent, *smokeweapon) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf1bdb6f2, Offset: 0x1898
 // Size: 0x38c
 function function_8b6ddd71(grenadeent, smokeweapon) {
@@ -503,7 +502,7 @@ function event_handler[grenade_fire] function_debb0d4e(eventstruct) {
 }
 
 // Namespace smokegrenade/smokegrenade
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x69445872, Offset: 0x1ec0
 // Size: 0x13c
 function playsmokesound(position, duration, startsound, stopsound, loopsound) {
@@ -518,13 +517,13 @@ function playsmokesound(position, duration, startsound, stopsound, loopsound) {
             smokesound playloopsound(loopsound);
         }
         if (duration > 0.5) {
-            wait(duration - 0.5);
+            wait duration - 0.5;
         }
         if (isdefined(stopsound)) {
             thread sound::play_in_space(stopsound, position);
         }
         smokesound stoploopsound(0.5);
-        wait(0.5);
+        wait 0.5;
         smokesound delete();
     }
 }

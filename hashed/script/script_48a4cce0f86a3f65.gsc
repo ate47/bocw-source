@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_35ae72be7b4fec10;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
-#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\gametypes\globallogic_ui;
 
 #namespace entname;
 
 // Namespace entname/ent_name
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x512f45b, Offset: 0xb0
 // Size: 0x134
 function add(name, team = 1) {
@@ -29,7 +28,7 @@ function add(name, team = 1) {
 }
 
 // Namespace entname/ent_name
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe8863206, Offset: 0x1f0
 // Size: 0x72
 function remove() {
@@ -43,7 +42,7 @@ function remove() {
 }
 
 // Namespace entname/ent_name
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbd8cfd5c, Offset: 0x270
 // Size: 0x20
 function remove_all() {
@@ -52,7 +51,7 @@ function remove_all() {
 }
 
 // Namespace entname/ent_name
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdfe1a5f7, Offset: 0x298
 // Size: 0x54
 function private function_ef33f38e() {
@@ -63,7 +62,7 @@ function private function_ef33f38e() {
 }
 
 // Namespace entname/ent_name
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5ef7a039, Offset: 0x2f8
 // Size: 0x3c
 function private _cleanup(*eventstruct) {
@@ -72,7 +71,7 @@ function private _cleanup(*eventstruct) {
 }
 
 // Namespace entname/ent_name
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa2924b39, Offset: 0x340
 // Size: 0x2ec
 function private function_7d76b3ac() {
@@ -91,7 +90,7 @@ function private function_7d76b3ac() {
     while (isdefined(level.var_479cdca1)) {
         new_name = #"";
         new_team = 0;
-        if (isdefined(player.lookatent) && distancesquared(player.origin, player.lookatent.origin) <= level.var_435c3a22[#"hash_71b8f2363319bff4"]) {
+        if (isdefined(player.lookatent) && distancesquared(player.origin, player.lookatent.origin) <= level.var_435c3a22[#"cg_maxActorNameDist"]) {
             ent_num = player.lookatent getentitynumber();
             ent_name = level.var_479cdca1[ent_num];
             if (isdefined(ent_name)) {
@@ -112,11 +111,11 @@ function private function_7d76b3ac() {
 }
 
 // Namespace entname/ent_name
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd3be33b0, Offset: 0x638
 // Size: 0x60
 function private function_e65ba67(dvar) {
-    if (dvar.name == #"hash_71b8f2363319bff4") {
+    if (dvar.name == #"cg_maxActorNameDist") {
         dvar.value *= dvar.value;
     }
     level.var_435c3a22[dvar.name] = dvar.value;

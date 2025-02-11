@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace bot_stance;
 
 // Namespace bot_stance/bot_stance
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x80
 // Size: 0x4
 function preinit() {
@@ -10,7 +9,7 @@ function preinit() {
 }
 
 // Namespace bot_stance/bot_stance
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf15f8531, Offset: 0x90
 // Size: 0x13c
 function think() {
@@ -35,7 +34,7 @@ function think() {
 }
 
 // Namespace bot_stance/bot_stance
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x81b71739, Offset: 0x1d8
 // Size: 0x1c0
 function private function_29975d32() {
@@ -72,7 +71,7 @@ function private function_29975d32() {
 }
 
 // Namespace bot_stance/bot_stance
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xce590123, Offset: 0x3a0
 // Size: 0x176
 function private function_a4a505a9() {

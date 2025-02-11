@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\ai\systems\shared.gsc;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\shared;
 
 #namespace init;
 
 // Namespace init/init
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1fc4577, Offset: 0xd8
 // Size: 0xc2
 function initweapon(weapon) {
@@ -20,7 +19,7 @@ function initweapon(weapon) {
 }
 
 // Namespace init/init
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x71f0272f, Offset: 0x1a8
 // Size: 0x45a
 function main() {
@@ -83,7 +82,7 @@ function main() {
 }
 
 // Namespace init/init
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x69c7f25b, Offset: 0x610
 // Size: 0xe4
 function addtomissiles(grenade) {
@@ -137,7 +136,7 @@ function event_handler[missile_fire] function_596d3a28(eventstruct) {
 }
 
 // Namespace init/init
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x838
 // Size: 0x4
 function end_script() {

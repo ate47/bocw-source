@@ -1,23 +1,22 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
 #using script_24c32478acf44108;
 #using script_72401f526ba71638;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\perks.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_2ab93693;
 
@@ -30,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1af0b525, Offset: 0x308
 // Size: 0x6a4
 function private preinit() {
@@ -67,7 +66,7 @@ function private preinit() {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc335892a, Offset: 0x9b8
 // Size: 0xe
 function on_connect() {
@@ -75,7 +74,7 @@ function on_connect() {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xecbdd6f0, Offset: 0x9d0
 // Size: 0x94
 function function_309daad7(params) {
@@ -88,7 +87,7 @@ function function_309daad7(params) {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x119be78e, Offset: 0xa70
 // Size: 0xa2
 function private function_baaff75b(var_cb73750, entity) {
@@ -100,7 +99,7 @@ function private function_baaff75b(var_cb73750, entity) {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4945a0ad, Offset: 0xb20
 // Size: 0xdc
 function private function_ca26e871(entity) {
@@ -115,7 +114,7 @@ function private function_ca26e871(entity) {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x9e15570f, Offset: 0xc08
 // Size: 0x704
 function private function_1cbc22b0(weapon, n_radius) {
@@ -195,7 +194,7 @@ function private function_1cbc22b0(weapon, n_radius) {
                 }
             }
         }
-        wait(1);
+        wait 1;
     }
     if (isplayer(self)) {
         self flag::decrement("zm_field_upgrade_in_use");
@@ -206,7 +205,7 @@ function private function_1cbc22b0(weapon, n_radius) {
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xfd9b3463, Offset: 0x1318
 // Size: 0xc76
 function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53ab1f = 0) {
@@ -348,8 +347,8 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
     // Checksum 0x49e6512c, Offset: 0x1f98
     // Size: 0x486
     function function_da2298bc() {
-        self notify("<unknown string>");
-        self endon("<unknown string>");
+        self notify("<dev string:x38>");
+        self endon("<dev string:x38>");
         while (getdvarint(#"hash_3ce5890428b398f1", 0) && isarray(level.var_686c81d7) && level.var_686c81d7.size) {
             foreach (var_3889eb68 in level.var_686c81d7) {
                 if (!isdefined(var_3889eb68)) {
@@ -364,20 +363,20 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
                         }
                         var_b68b8d0 = 200 + n_index * 120;
                         cylinder(var_3889eb68.origin, var_3889eb68.origin + (0, 0, var_3889eb68.n_height), var_3889eb68.n_radius, v_color, 0, var_1bc24030);
-                        debug2dtext((500, var_b68b8d0, 0), "<unknown string>" + var_3889eb68.var_c91dca7e, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
+                        debug2dtext((500, var_b68b8d0, 0), "<dev string:x4c>" + var_3889eb68.var_c91dca7e, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
                         if (var_3889eb68.var_bb41cf71) {
-                            debug2dtext((500, var_b68b8d0 + 20, 0), "<unknown string>" + var_3889eb68.var_fc827c27, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
+                            debug2dtext((500, var_b68b8d0 + 20, 0), "<dev string:x72>" + var_3889eb68.var_fc827c27, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
                         }
-                        debug2dtext((500, var_b68b8d0 + 40, 0), "<unknown string>" + var_3889eb68.var_5b61dff6, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
-                        debug2dtext((500, var_b68b8d0 + 60, 0), "<unknown string>" + var_3889eb68.n_duration, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
+                        debug2dtext((500, var_b68b8d0 + 40, 0), "<dev string:x95>" + var_3889eb68.var_5b61dff6, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
+                        debug2dtext((500, var_b68b8d0 + 60, 0), "<dev string:xc5>" + var_3889eb68.n_duration, v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
                         if (var_3889eb68.weapon.name === #"hash_6319e23758cd25e" && isdefined(var_3889eb68.var_8ad82414)) {
-                            debug2dtext((500, var_b68b8d0 + 80, 0), "<unknown string>" + floor(var_3889eb68.var_8ad82414), v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
+                            debug2dtext((500, var_b68b8d0 + 80, 0), "<dev string:xe0>" + floor(var_3889eb68.var_8ad82414), v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
                         }
-                        debug2dtext((500, var_b68b8d0 + 100, 0), "<unknown string>", v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
+                        debug2dtext((500, var_b68b8d0 + 100, 0), "<dev string:x110>", v_color, undefined, (0, 0, 0), 1, 0.8, var_1bc24030);
                     }
                 }
             }
-            wait(1);
+            wait 1;
         }
     }
 

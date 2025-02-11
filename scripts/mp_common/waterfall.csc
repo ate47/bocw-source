@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\water_surface.csc;
-#using scripts\core_common\trigger_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\water_surface;
 
 #namespace waterfall;
 
@@ -95,7 +94,7 @@ function trig_enter_waterfall(localplayer) {
     playsound(0, #"amb_waterfall_hit", (0, 0, 0));
     while (trigger istouching(localplayer)) {
         localplayer playrumbleonentity(localclientnum, "waterfall_rumble");
-        wait(0.1);
+        wait 0.1;
     }
 }
 

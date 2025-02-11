@@ -1,18 +1,17 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm.gsc;
-#using scripts\core_common\weapons_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\table_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\table_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\weapons_shared;
+#using scripts\zm_common\zm;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_attackables;
 
@@ -25,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4a96f261, Offset: 0x1e0
 // Size: 0x176
 function private preinit() {
@@ -46,7 +45,7 @@ function private preinit() {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x360
 // Size: 0x4
 function private postinit() {
@@ -80,7 +79,7 @@ function get_attackable() {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8a77e720, Offset: 0x4c8
 // Size: 0xc2
 function get_attackable_slot(entity) {
@@ -96,7 +95,7 @@ function get_attackable_slot(entity) {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6ce2ac47, Offset: 0x598
 // Size: 0xd6
 function private clear_slots() {
@@ -123,7 +122,7 @@ function activate() {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x323eb567, Offset: 0x6c0
 // Size: 0xe
 function deactivate() {
@@ -131,7 +130,7 @@ function deactivate() {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbdd0218b, Offset: 0x6d8
 // Size: 0x84
 function do_damage(damage) {
@@ -146,7 +145,7 @@ function do_damage(damage) {
 }
 
 // Namespace zm_attackables/zm_attackables
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb6046d4, Offset: 0x768
 // Size: 0x94
 function attackable_callback(entity) {

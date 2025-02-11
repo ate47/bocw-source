@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm\archetype\archetype_zod_companion.gsc;
 #using script_ed50e9299d3e143;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_player.gsc;
-#using scripts\zm_common\zm_devgui.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using script_3819e7a1427df6d2;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm\archetype\archetype_zod_companion;
+#using scripts\zm_common\zm_devgui;
+#using scripts\zm_common\zm_player;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_spawner;
 
 #namespace namespace_ca8676a3;
 
@@ -262,10 +261,10 @@ function private function_d37f3f18() {
     // Checksum 0x3d6f92aa, Offset: 0xe40
     // Size: 0x8c
     function private function_851f409b() {
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x38>");
+        adddebugcommand("<dev string:x8b>");
+        adddebugcommand("<dev string:xef>");
+        adddebugcommand("<dev string:x14d>");
         zm_devgui::add_custom_devgui_callback(&function_18227767);
     }
 
@@ -284,13 +283,13 @@ function private function_d37f3f18() {
             }
             break;
         case #"hash_dc11efc5ca22f74":
-            function_e3e858b1(250, "<unknown string>");
+            function_e3e858b1(250, "<dev string:x1b3>");
             break;
         case #"hash_35381ef4960cf279":
-            function_e3e858b1(250, "<unknown string>");
+            function_e3e858b1(250, "<dev string:x1bd>");
             break;
         case #"hash_22d1be7a17698c91":
-            function_e3e858b1(250, "<unknown string>");
+            function_e3e858b1(250, "<dev string:x1c4>");
             break;
         default:
             break;
@@ -303,7 +302,7 @@ function private function_d37f3f18() {
     // Size: 0x194
     function private function_e3e858b1(dist, move_speed) {
         if (!isdefined(move_speed)) {
-            move_speed = "<unknown string>";
+            move_speed = "<dev string:x1c4>";
         }
         ais = getaiarchetypearray(#"zod_companion");
         if (ais.size > 0) {

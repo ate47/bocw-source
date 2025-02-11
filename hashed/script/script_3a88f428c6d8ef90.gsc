@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_19367cd29a4485db;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\scoreevents.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\perks.gsc;
 #using script_2c5daa95f8fec03c;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\scoreevents;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_b61a349a;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaefc58f0, Offset: 0x160
 // Size: 0x3c
 function private preinit() {
@@ -33,7 +32,7 @@ function private preinit() {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x1a8
 // Size: 0x4
 function private postinit() {
@@ -41,7 +40,7 @@ function private postinit() {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4b2be121, Offset: 0x1b8
 // Size: 0x94
 function on_player_connect() {
@@ -53,7 +52,7 @@ function on_player_connect() {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6a83bede, Offset: 0x258
 // Size: 0x74
 function function_f35fa4e7() {
@@ -69,7 +68,7 @@ function function_f35fa4e7() {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x79d2aa09, Offset: 0x2d8
 // Size: 0xf4
 function function_39ab0a6a(eventstruct) {
@@ -91,7 +90,7 @@ function function_39ab0a6a(eventstruct) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xce798829, Offset: 0x3d8
 // Size: 0x1c4
 function on_weapon_fired(eventstruct) {
@@ -124,7 +123,7 @@ function on_weapon_fired(eventstruct) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x941e9af0, Offset: 0x5a8
 // Size: 0x31c
 function function_998f8321(weapon) {
@@ -167,7 +166,7 @@ function function_998f8321(weapon) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 12, eflags: 0x2 linked
+// Params 12, eflags: 0x0
 // Checksum 0xddc32704, Offset: 0x8d0
 // Size: 0xba4
 function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *surfacetype) {
@@ -349,7 +348,7 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xac865eff, Offset: 0x1480
 // Size: 0x1a
 function function_1fd0807c(n_percent, n_base_damage) {
@@ -357,7 +356,7 @@ function function_1fd0807c(n_percent, n_base_damage) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4454dbcb, Offset: 0x14a8
 // Size: 0x96
 function function_cf4432e8(weapon, attacker) {
@@ -371,7 +370,7 @@ function function_cf4432e8(weapon, attacker) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a4c07c, Offset: 0x1548
 // Size: 0x58
 function function_1d2de48d(attacker) {
@@ -384,7 +383,7 @@ function function_1d2de48d(attacker) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x11fc8984, Offset: 0x15a8
 // Size: 0x79c
 function function_817f0439(damage, weapon, *vpoint, *shitloc) {
@@ -500,7 +499,7 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x28f7782a, Offset: 0x1d50
 // Size: 0x12c
 function function_8a6ccd14(weapon, n_tier, var_570564b8 = 0, var_497316dc = 0) {
@@ -525,12 +524,12 @@ function function_8a6ccd14(weapon, n_tier, var_570564b8 = 0, var_497316dc = 0) {
     function function_6aa829ef() {
         level endon(#"game_ended");
         namespace_420b39d3::function_d8ef0f00(&function_6cb3521c);
-        adddebugcommand("<unknown string>" + 0 + "<unknown string>");
-        adddebugcommand("<unknown string>" + 1 + "<unknown string>");
-        adddebugcommand("<unknown string>" + 2 + "<unknown string>");
-        adddebugcommand("<unknown string>" + 3 + "<unknown string>");
-        adddebugcommand("<unknown string>" + 4 + "<unknown string>");
-        adddebugcommand("<unknown string>" + 5 + "<unknown string>");
+        adddebugcommand("<dev string:x38>" + 0 + "<dev string:x98>");
+        adddebugcommand("<dev string:x9d>" + 1 + "<dev string:x98>");
+        adddebugcommand("<dev string:xfd>" + 2 + "<dev string:x98>");
+        adddebugcommand("<dev string:x15d>" + 3 + "<dev string:x98>");
+        adddebugcommand("<dev string:x1bd>" + 4 + "<dev string:x98>");
+        adddebugcommand("<dev string:x21d>" + 5 + "<dev string:x98>");
     }
 
     // Namespace namespace_b61a349a/namespace_b61a349a
@@ -538,8 +537,8 @@ function function_8a6ccd14(weapon, n_tier, var_570564b8 = 0, var_497316dc = 0) {
     // Checksum 0x5cab919c, Offset: 0x1fc0
     // Size: 0x118
     function function_6cb3521c(params) {
-        tokens = strtok(params.value, "<unknown string>");
-        if (!tokens.size || tokens[0] != "<unknown string>") {
+        tokens = strtok(params.value, "<dev string:x27d>");
+        if (!tokens.size || tokens[0] != "<dev string:x282>") {
             return;
         }
         foreach (player in getplayers()) {

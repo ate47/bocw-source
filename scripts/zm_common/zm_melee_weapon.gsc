@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\trials\zm_trial_disable_buys.gsc;
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_stats.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_loadout.gsc;
-#using scripts\zm_common\zm_laststand.gsc;
-#using scripts\zm_common\zm_equipment.gsc;
-#using scripts\zm_common\zm_contracts.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\item_inventory.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\activecamo_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\activecamo_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\item_inventory;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\trials\zm_trial_disable_buys;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_contracts;
+#using scripts\zm_common\zm_equipment;
+#using scripts\zm_common\zm_laststand;
+#using scripts\zm_common\zm_loadout;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_stats;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace zm_melee_weapon;
 
@@ -29,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x5ad62296, Offset: 0x1d8
 // Size: 0x20
 function private preinit() {
@@ -39,7 +38,7 @@ function private preinit() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x200
 // Size: 0x4
 function private postinit() {
@@ -47,7 +46,7 @@ function private postinit() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xac0f4fcf, Offset: 0x210
 // Size: 0x2f8
 function init(weapon_name, flourish_weapon_name, cost, wallbuy_targetname, hint_string, vo_dialog_id, flourish_fn, is_ee = 0, in_box = 0) {
@@ -82,7 +81,7 @@ function init(weapon_name, flourish_weapon_name, cost, wallbuy_targetname, hint_
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xb2af3bd6, Offset: 0x510
 // Size: 0xde
 function prepare_stub(stub, weapon, flourish_weapon, cost, *wallbuy_targetname, hint_string, vo_dialog_id, flourish_fn) {
@@ -101,7 +100,7 @@ function prepare_stub(stub, weapon, flourish_weapon, cost, *wallbuy_targetname, 
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x87e15988, Offset: 0x5f8
 // Size: 0x78
 function find_melee_weapon(weapon) {
@@ -115,7 +114,7 @@ function find_melee_weapon(weapon) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x898624ac, Offset: 0x678
 // Size: 0x94
 function add_stub(stub, weapon) {
@@ -126,7 +125,7 @@ function add_stub(stub, weapon) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xd6526252, Offset: 0x718
 // Size: 0xe0
 function add_melee_weapon(weapon, flourish_weapon, cost, wallbuy_targetname, hint_string, vo_dialog_id, flourish_fn) {
@@ -145,7 +144,7 @@ function add_melee_weapon(weapon, flourish_weapon, cost, wallbuy_targetname, hin
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x545b6a7c, Offset: 0x800
 // Size: 0x6a
 function set_fallback_weapon(weapon_name, fallback_weapon_name) {
@@ -156,7 +155,7 @@ function set_fallback_weapon(weapon_name, fallback_weapon_name) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xde7efd63, Offset: 0x878
 // Size: 0xac
 function determine_fallback_weapon() {
@@ -171,7 +170,7 @@ function determine_fallback_weapon() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x120e2e5, Offset: 0x930
 // Size: 0x4e
 function give_fallback_weapon(*immediate) {
@@ -180,7 +179,7 @@ function give_fallback_weapon(*immediate) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb86315a9, Offset: 0x988
 // Size: 0x4a
 function take_fallback_weapon() {
@@ -190,7 +189,7 @@ function take_fallback_weapon() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8b5eaa33, Offset: 0x9e0
 // Size: 0x70
 function player_can_see_weapon_prompt() {
@@ -204,7 +203,7 @@ function player_can_see_weapon_prompt() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2060e3b9, Offset: 0xa58
 // Size: 0x360
 function function_e5bf8f08(player) {
@@ -258,7 +257,7 @@ function function_e5bf8f08(player) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8e8fb163, Offset: 0xdc0
 // Size: 0x6c
 function spectator_respawn_all() {
@@ -268,7 +267,7 @@ function spectator_respawn_all() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x77888b70, Offset: 0xe38
 // Size: 0x104
 function spectator_respawn(wallbuy_targetname, *weapon) {
@@ -287,7 +286,7 @@ function spectator_respawn(wallbuy_targetname, *weapon) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc52cb2bb, Offset: 0xf48
 // Size: 0x54
 function trigger_hide_all() {
@@ -297,7 +296,7 @@ function trigger_hide_all() {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3dbf249a, Offset: 0xfa8
 // Size: 0x74
 function trigger_hide(wallbuy_targetname) {
@@ -308,7 +307,7 @@ function trigger_hide(wallbuy_targetname) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x30da5b00, Offset: 0x1028
 // Size: 0xa0
 function change_melee_weapon(weapon, current_weapon) {
@@ -321,7 +320,7 @@ function change_melee_weapon(weapon, current_weapon) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xe2bb1cf0, Offset: 0x10d0
 // Size: 0x800
 function melee_weapon_think(weapon, cost, flourish_fn, vo_dialog_id, flourish_weapon) {
@@ -353,37 +352,37 @@ function melee_weapon_think(weapon, cost, flourish_fn, vo_dialog_id, flourish_we
             continue;
         }
         if (player zm_utility::in_revive_trigger()) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (player isthrowinggrenade()) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (player zm_utility::is_drinking()) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (zm_trial_disable_buys::is_active()) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         player_has_weapon = player hasweapon(weapon);
         if (player_has_weapon || player zm_loadout::has_powerup_weapon()) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (player isswitchingweapons()) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         current_weapon = player getcurrentweapon();
         if (zm_loadout::is_placeable_mine(current_weapon) || zm_equipment::is_equipment(current_weapon)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (player laststand::player_is_in_laststand() || is_true(player.intermission)) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (isdefined(player.check_override_melee_wallbuy_purchase)) {
@@ -444,7 +443,7 @@ function melee_weapon_think(weapon, cost, flourish_fn, vo_dialog_id, flourish_we
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xea820b3c, Offset: 0x18d8
 // Size: 0x16c
 function melee_weapon_show(player) {
@@ -479,7 +478,7 @@ function award_melee_weapon(weapon_name) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2822a42b, Offset: 0x1ae8
 // Size: 0x1b4
 function give_melee_weapon(vo_dialog_id, flourish_weapon, weapon, flourish_fn, trigger) {
@@ -509,7 +508,7 @@ function give_melee_weapon(vo_dialog_id, flourish_weapon, weapon, flourish_fn, t
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf03f7fed, Offset: 0x1ca8
 // Size: 0xa0
 function do_melee_weapon_flourish_begin(flourish_weapon) {
@@ -523,7 +522,7 @@ function do_melee_weapon_flourish_begin(flourish_weapon) {
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x37e1782d, Offset: 0x1d50
 // Size: 0x294
 function do_melee_weapon_flourish_end(original_weapon, flourish_weapon, weapon) {

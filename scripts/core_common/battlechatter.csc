@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_59f62971655f7103;
-#using scripts\core_common\struct.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\map.csc;
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\map;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
 
 #namespace battlechatter;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xdbab748, Offset: 0x450
 // Size: 0xec
 function private preinit() {
@@ -31,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdeaefc8a, Offset: 0x548
 // Size: 0x120
 function function_4bc12499() {
@@ -55,7 +54,7 @@ function function_4bc12499() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbecc7057, Offset: 0x670
 // Size: 0x322
 function function_f1d27638(var_f7f4481f) {
@@ -101,7 +100,7 @@ function function_f1d27638(var_f7f4481f) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x84f625d6, Offset: 0x9a0
 // Size: 0x1c2
 function get_death_vox(playerbundle, meansofdeath) {
@@ -143,14 +142,14 @@ function get_death_vox(playerbundle, meansofdeath) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x4dd7f090, Offset: 0xb70
 // Size: 0x1d4
 function function_d2f35e13(localclientnum, successplayer, weapon, var_6ac148bc, var_5d738b56, seed) {
     while (isdefined(var_6ac148bc) && soundplaying(var_6ac148bc)) {
         waitframe(1);
     }
-    wait(0.4);
+    wait 0.4;
     if (!isdefined(successplayer)) {
         return;
     }
@@ -178,7 +177,7 @@ function function_d2f35e13(localclientnum, successplayer, weapon, var_6ac148bc, 
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xd58cc530, Offset: 0xd50
 // Size: 0x16c
 function function_50e36ba7(attacker, weapon, var_5d738b56, seed) {
@@ -195,7 +194,7 @@ function function_50e36ba7(attacker, weapon, var_5d738b56, seed) {
     }
     var_17a094cf = var_9f84e4a9 + var_5c238c21.var_c8d8482c;
     var_57c1e152 = isdefined(var_5c238c21.var_57c1e152) ? var_5c238c21.var_57c1e152 : 0;
-    wait(var_57c1e152);
+    wait var_57c1e152;
     if (!isdefined(attacker) || !isplayer(attacker)) {
         return;
     }
@@ -207,7 +206,7 @@ function function_50e36ba7(attacker, weapon, var_5d738b56, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xaa1f937d, Offset: 0xec8
 // Size: 0x18c
 function function_afa6ac4b(attacker, weapon, var_5d738b56, seed) {
@@ -239,14 +238,14 @@ function function_afa6ac4b(attacker, weapon, var_5d738b56, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0x11e334bb, Offset: 0x1060
 // Size: 0x17c
 function function_29f600fe(localclientnum, attacker, var_eefecef8, var_d1927bab, var_5d738b56, seed) {
     while (isdefined(var_d1927bab) && soundplaying(var_d1927bab)) {
         waitframe(1);
     }
-    wait(0.25);
+    wait 0.25;
     if (!isdefined(attacker)) {
         return;
     }
@@ -270,7 +269,7 @@ function function_29f600fe(localclientnum, attacker, var_eefecef8, var_d1927bab,
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x34a7499, Offset: 0x11e8
 // Size: 0x3ec
 function game_end_vox(player, eventid) {
@@ -326,14 +325,14 @@ function game_end_vox(player, eventid) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xc78e45d0, Offset: 0x15e0
 // Size: 0x7c
 function function_cc6f6e09(player, var_81485093, var_b7095947) {
     while (isdefined(var_b7095947) && soundplaying(var_b7095947)) {
         waitframe(1);
     }
-    wait(0.25);
+    wait 0.25;
     if (!isdefined(player)) {
         return;
     }
@@ -341,7 +340,7 @@ function function_cc6f6e09(player, var_81485093, var_b7095947) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x633403b7, Offset: 0x1668
 // Size: 0x4ea
 function function_c8663dbc(weapon, player) {
@@ -455,7 +454,7 @@ function function_c8663dbc(weapon, player) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x548209e8, Offset: 0x1b60
 // Size: 0x1bc
 function function_bf569dab(hacker, originalowner, eventid, weapon) {
@@ -473,7 +472,7 @@ function function_bf569dab(hacker, originalowner, eventid, weapon) {
     while (isdefined(var_6ae4c5af) && soundplaying(var_6ae4c5af)) {
         waitframe(1);
     }
-    wait(0.1);
+    wait 0.1;
     if (!function_5d7ad9a9(hacker, originalowner)) {
         return;
     }
@@ -499,7 +498,7 @@ function function_bf569dab(hacker, originalowner, eventid, weapon) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3bc16eb6, Offset: 0x1d28
 // Size: 0x104
 function function_ee8935da(player) {
@@ -528,7 +527,7 @@ function function_ee8935da(player) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x973fdcaa, Offset: 0x1e38
 // Size: 0xcc
 function function_ad01601e(localclientnum, characterindex) {
@@ -543,7 +542,7 @@ function function_ad01601e(localclientnum, characterindex) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x44ab651f, Offset: 0x1f10
 // Size: 0x14a
 function play_dialog(dialogkey, localclientnum) {
@@ -565,18 +564,18 @@ function play_dialog(dialogkey, localclientnum) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1ce06d65, Offset: 0x2068
 // Size: 0x32
 function update_voice_origin(voicebox) {
     while (true) {
-        wait(0.1);
+        wait 0.1;
         return;
     }
 }
 
 // Namespace battlechatter/battlechatter
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x5117f609, Offset: 0x20a8
 // Size: 0x126
 function private function_edf14b78(var_726a8c2e, *var_cc6c1b8f, localclientnum, weapon, seed) {
@@ -603,7 +602,7 @@ function private function_edf14b78(var_726a8c2e, *var_cc6c1b8f, localclientnum, 
 }
 
 // Namespace battlechatter/battlechatter
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x36433f0d, Offset: 0x21d8
 // Size: 0x116
 function function_6bed8fc0(speakingplayer, var_76787d10, seed) {
@@ -626,7 +625,7 @@ function function_6bed8fc0(speakingplayer, var_76787d10, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb1324cc, Offset: 0x22f8
 // Size: 0x54
 function function_6afb2bd4(speakingplayer, weapon, *localclientnum, seed) {
@@ -634,7 +633,7 @@ function function_6afb2bd4(speakingplayer, weapon, *localclientnum, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf9679d1d, Offset: 0x2358
 // Size: 0x4c
 function equipcallback(speakingplayer, weapon, *localclientnum, seed) {
@@ -642,7 +641,7 @@ function equipcallback(speakingplayer, weapon, *localclientnum, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xf563a784, Offset: 0x23b0
 // Size: 0x54
 function function_22ea6c18(speakingplayer, weapon, *localclientnum, seed) {
@@ -650,7 +649,7 @@ function function_22ea6c18(speakingplayer, weapon, *localclientnum, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x7f1fb85e, Offset: 0x2410
 // Size: 0x54
 function function_7d29bb1e(speakingplayer, weapon, *localclientnum, seed) {
@@ -658,7 +657,7 @@ function function_7d29bb1e(speakingplayer, weapon, *localclientnum, seed) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x50b90e10, Offset: 0x2470
 // Size: 0x25e
 function function_f47a0e3b(localclientnum, speakingplayer, dialogkey) {
@@ -677,7 +676,7 @@ function function_f47a0e3b(localclientnum, speakingplayer, dialogkey) {
             }
         } else {
             /#
-                iprintlnbold("<unknown string>" + function_9e72a96(dialogkey) + "<unknown string>");
+                iprintlnbold("<dev string:x38>" + function_9e72a96(dialogkey) + "<dev string:x4d>");
             #/
         }
     } else if (isdefined(playerbundle.voiceprefix) && isdefined(playerbundle.(dialogkey))) {

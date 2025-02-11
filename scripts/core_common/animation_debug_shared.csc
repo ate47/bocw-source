@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\flag_shared.csc;
-#using scripts\core_common\animation_shared.csc;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
 
 #namespace animation;
 
@@ -10,11 +9,11 @@
 // Checksum 0x4323bbdc, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_26dee29e21290041", &preinit, undefined, undefined, undefined);
+    system::register(#"animation_debug", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace animation/animation_debug_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x169ade, Offset: 0xe0
 // Size: 0x1c
 function preinit() {
@@ -37,7 +36,7 @@ function preinit() {
             a_players = getlocalplayers();
             foreach (player in a_players) {
                 var_16f8cca9 = player getlocalclientnumber();
-                a_ents = getentarray(var_16f8cca9, "<unknown string>", "<unknown string>");
+                a_ents = getentarray(var_16f8cca9, "<dev string:x38>", "<dev string:x42>");
                 foreach (ent in a_ents) {
                     ent thread anim_info_render_thread();
                 }
@@ -59,24 +58,24 @@ function preinit() {
         self endon(#"_anim_info_render_thread_", #"death", #"scriptedanim");
         level endon(#"kill_anim_debug");
         while (true) {
-            level flag::wait_till("<unknown string>");
+            level flag::wait_till("<dev string:x5c>");
             _init_frame();
-            str_extra_info = "<unknown string>";
+            str_extra_info = "<dev string:x6a>";
             color = (0, 1, 1);
             if (flag::get(#"firstframe")) {
-                str_extra_info += "<unknown string>";
+                str_extra_info += "<dev string:x6e>";
             }
             var_958054e5 = getanimlength(animation);
             var_f667af2f = self getanimtime(animation) * var_958054e5;
             var_4ef0e636 = int(var_f667af2f * 30);
             var_477f1c98 = int(var_958054e5 * 30);
-            str_extra_info += "<unknown string>" + var_f667af2f + "<unknown string>" + var_958054e5 + "<unknown string>" + var_4ef0e636 + "<unknown string>" + var_477f1c98 + "<unknown string>";
+            str_extra_info += "<dev string:x7f>" + var_f667af2f + "<dev string:x8e>" + var_958054e5 + "<dev string:x93>" + var_4ef0e636 + "<dev string:x8e>" + var_477f1c98 + "<dev string:xa7>";
             s_pos = _get_align_pos(v_origin_or_ent, v_angles_or_tag);
             self anim_origin_render(s_pos.origin, s_pos.angles);
             line(self.origin, s_pos.origin, color, 0.5, 1);
             sphere(s_pos.origin, 2, (0.3, 0.3, 0.3), 0.5, 1);
             if (!isvec(v_origin_or_ent) && v_origin_or_ent != self && v_origin_or_ent != level) {
-                str_name = "<unknown string>";
+                str_name = "<dev string:xac>";
                 if (isdefined(v_origin_or_ent.animname)) {
                     str_name = v_origin_or_ent.animname;
                 } else if (isdefined(v_origin_or_ent.targetname)) {
@@ -85,7 +84,7 @@ function preinit() {
                 print3d(v_origin_or_ent.origin + (0, 0, 5), str_name, (0.3, 0.3, 0.3), 1, 0.15);
             }
             self anim_origin_render(self.origin, self.angles);
-            str_name = "<unknown string>";
+            str_name = "<dev string:xac>";
             if (isdefined(self.anim_debug_name)) {
                 str_name = self.anim_debug_name;
             } else if (isdefined(self.animname)) {
@@ -93,13 +92,13 @@ function preinit() {
             } else if (isdefined(self.targetname)) {
                 str_name = self.targetname;
             }
-            print3d(self.origin, self getentnum() + get_ent_type() + "<unknown string>" + str_name, color, 0.8, 0.3);
-            print3d(self.origin - (0, 0, 5), "<unknown string>" + function_9e72a96(animation), color, 0.8, 0.3);
+            print3d(self.origin, self getentnum() + get_ent_type() + "<dev string:xb7>" + str_name, color, 0.8, 0.3);
+            print3d(self.origin - (0, 0, 5), "<dev string:xc1>" + function_9e72a96(animation), color, 0.8, 0.3);
             print3d(self.origin - (0, 0, 7), str_extra_info, color, 0.8, 0.15);
-            render_tag("<unknown string>", "<unknown string>");
-            render_tag("<unknown string>", "<unknown string>");
-            render_tag("<unknown string>", "<unknown string>");
-            render_tag("<unknown string>", "<unknown string>");
+            render_tag("<dev string:xd8>", "<dev string:xec>");
+            render_tag("<dev string:xf5>", "<dev string:x108>");
+            render_tag("<dev string:x110>", "<dev string:x11e>");
+            render_tag("<dev string:x128>", "<dev string:x136>");
             _reset_frame();
             waitframe(1);
         }
@@ -110,7 +109,7 @@ function preinit() {
     // Checksum 0x923e8cab, Offset: 0x918
     // Size: 0x72
     function get_ent_type() {
-        return "<unknown string>" + (isdefined(isdefined(self.classname) ? self.classname : self.type) ? "<unknown string>" + (isdefined(self.classname) ? self.classname : self.type) : "<unknown string>") + "<unknown string>";
+        return "<dev string:x140>" + (isdefined(isdefined(self.classname) ? self.classname : self.type) ? "<dev string:x6a>" + (isdefined(self.classname) ? self.classname : self.type) : "<dev string:x6a>") + "<dev string:x145>";
     }
 
     // Namespace animation/animation_debug_shared

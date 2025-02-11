@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
 
 #namespace hacker_tool;
 
@@ -98,7 +97,7 @@ function watchhackspeed(localclientnum, isbreachingfirewall) {
             targetent = targetentarray[0];
             break;
         }
-        wait(0.02);
+        wait 0.02;
     }
     targetent watchtargethack(localclientnum, player, isbreachingfirewall);
 }
@@ -156,7 +155,7 @@ function watchtargethack(localclientnum, player, isbreachingfirewall) {
                 level.friendlyhackingsoundid[localclientnum] = undefined;
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
@@ -187,7 +186,7 @@ function watchforemp(localclientnum) {
         } else {
             setuimodelvalue(createuimodel(function_1df4c3b0(localclientnum, #"blackhat"), "status"), 0);
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 

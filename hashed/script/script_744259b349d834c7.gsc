@@ -1,30 +1,29 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\ai\systems\behavior_state_machine.gsc;
-#using scripts\core_common\ai\systems\destructible_character.gsc;
 #using script_2c5daa95f8fec03c;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\systems\blackboard.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_utility.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_notetracks.gsc;
-#using scripts\core_common\ai\systems\animation_state_machine_mocomp.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using script_3819e7a1427df6d2;
+#using scripts\core_common\ai\archetype_damage_utility;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\animation_state_machine_mocomp;
+#using scripts\core_common\ai\systems\animation_state_machine_notetracks;
+#using scripts\core_common\ai\systems\animation_state_machine_utility;
+#using scripts\core_common\ai\systems\behavior_state_machine;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai\systems\blackboard;
+#using scripts\core_common\ai\systems\destructible_character;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
 
 #namespace namespace_19c99142;
 
@@ -37,7 +36,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf802dde7, Offset: 0x698
 // Size: 0x24e
 function preinit() {
@@ -65,7 +64,7 @@ function preinit() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb1542ccc, Offset: 0x8f0
 // Size: 0x4c4
 function function_7ba58c09() {
@@ -108,8 +107,8 @@ function function_7ba58c09() {
     function_6dc728a2(self, #"command_spot", &function_43413efd);
     function_6dc728a2(self, #"chase", &function_8d707ed2);
     function_82dc224a(self, #"command_spot", &function_fe96f51d);
-    function_6dc728a2(self, #"hash_110ee879f18b605f", &function_5f116663);
-    function_82dc224a(self, #"hash_110ee879f18b605f", &function_9db27415);
+    function_6dc728a2(self, #"procedural_traversal", &function_5f116663);
+    function_82dc224a(self, #"procedural_traversal", &function_9db27415);
     function_82dc224a(self, #"hash_6192d8af630c6c07", &function_d5ecd46a);
     function_6dc728a2(self, #"circle", &function_71d2268d);
     self.var_d8861a5f = 1;
@@ -121,7 +120,7 @@ function function_7ba58c09() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x44f15f66, Offset: 0xdc0
 // Size: 0x32
 function private function_ed796ba1() {
@@ -130,7 +129,7 @@ function private function_ed796ba1() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcd52e9be, Offset: 0xe00
 // Size: 0x2c
 function private function_7310a1fd(entity) {
@@ -139,7 +138,7 @@ function private function_7310a1fd(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x61746a37, Offset: 0xe38
 // Size: 0x18b4
 function registerbehaviorscriptfunctions() {
@@ -254,7 +253,7 @@ function registerbehaviorscriptfunctions() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe0e26b2, Offset: 0x26f8
 // Size: 0x90
 function function_878b889a() {
@@ -269,7 +268,7 @@ function function_878b889a() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3900d21a, Offset: 0x2790
 // Size: 0x22c
 function function_9db77ef8(params) {
@@ -296,7 +295,7 @@ function function_9db77ef8(params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x715ab344, Offset: 0x29c8
 // Size: 0x9c
 function private function_e7956bb6() {
@@ -310,7 +309,7 @@ function private function_e7956bb6() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9070ba48, Offset: 0x2a70
 // Size: 0x13c
 function function_940cd1d8() {
@@ -320,13 +319,13 @@ function function_940cd1d8() {
     self clientfield::set("soaSpawnCompleteCF", 1);
     self setmodel(#"hash_26b01bce96eb07bc");
     self thread flag::set_for_time(1.2, #"hash_f0028251a31e1fe");
-    wait(1.4);
+    wait 1.4;
     self clientfield::set("soaSpawnCompleteCF", 2);
     self setmodel(#"hash_4330c469894950e2");
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe04cff98, Offset: 0x2bb8
 // Size: 0x2a
 function private function_a5b798b5(entity) {
@@ -334,7 +333,7 @@ function private function_a5b798b5(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x19adbd38, Offset: 0x2bf0
 // Size: 0x54
 function function_42ea6b21(entity) {
@@ -345,7 +344,7 @@ function function_42ea6b21(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe50abb44, Offset: 0x2c50
 // Size: 0x64
 function function_539e0920(*params) {
@@ -356,7 +355,7 @@ function function_539e0920(*params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x96e54408, Offset: 0x2cc0
 // Size: 0xe
 function function_54fa701a() {
@@ -364,7 +363,7 @@ function function_54fa701a() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc3e50b09, Offset: 0x2cd8
 // Size: 0xc2
 function private function_6415297d(potential_target, *var_ab0d150d) {
@@ -381,7 +380,7 @@ function private function_6415297d(potential_target, *var_ab0d150d) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf0b9620b, Offset: 0x2da8
 // Size: 0x1bc
 function function_be4a6e08(target_player, score) {
@@ -402,7 +401,7 @@ function function_be4a6e08(target_player, score) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe968f316, Offset: 0x2f70
 // Size: 0x1a4
 function private function_73156638(entity) {
@@ -415,7 +414,7 @@ function private function_73156638(entity) {
                 var_2cfb4597 = entity.origin - entity.favoriteenemy.origin;
                 if (vectordot(player_forward, var_2cfb4597) < 0) {
                     entity playsound(#"hash_3192d760955b3f62");
-                    wait(5);
+                    wait 5;
                 }
             }
         }
@@ -424,7 +423,7 @@ function private function_73156638(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc191ad95, Offset: 0x3120
 // Size: 0x102
 function private function_7d9fb4f4(params) {
@@ -441,7 +440,7 @@ function private function_7d9fb4f4(params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3fada74c, Offset: 0x3230
 // Size: 0x1b4
 function function_66c569e2(params) {
@@ -468,7 +467,7 @@ function function_66c569e2(params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60138ca9, Offset: 0x33f0
 // Size: 0x1d6
 function function_bc16962c(entity, new_health) {
@@ -497,7 +496,7 @@ function function_bc16962c(entity, new_health) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x73e9f441, Offset: 0x35d0
 // Size: 0x70
 function function_859e7ea2(*inflictor, *attacker, damage, *dflags, *meansofdeath, *weapon, *var_fd90b0bb, *vpoint, *dir, *shitloc, *offsettime, *boneindex, *modelindex) {
@@ -505,7 +504,7 @@ function function_859e7ea2(*inflictor, *attacker, damage, *dflags, *meansofdeath
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x5b2e26bc, Offset: 0x3648
 // Size: 0x3c4
 function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofdeath, weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, *boneindex, *surfacetype) {
@@ -547,12 +546,12 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x22883811, Offset: 0x3a18
 // Size: 0x15a
 function private function_671249fb(weakpoint, var_31e96b81, eattacker) {
     if (weakpoint.type === #"armor" && weakpoint.currstate === 1) {
-        namespace_81245006::function_ef87b7e8(weakpoint, var_31e96b81);
+        namespace_81245006::damageweakpoint(weakpoint, var_31e96b81);
         if (namespace_81245006::function_f29756fe(weakpoint) === 3 && isdefined(weakpoint.var_f371ebb0)) {
             destructserverutils::function_8475c53a(self, weakpoint.var_f371ebb0);
             set_head_model(self, 1);
@@ -570,7 +569,7 @@ function private function_671249fb(weakpoint, var_31e96b81, eattacker) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9a50fb16, Offset: 0x3b80
 // Size: 0x138
 function private function_35979cdd(entity) {
@@ -589,10 +588,10 @@ function private function_35979cdd(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x17d37b3e, Offset: 0x3cc0
 // Size: 0x3a
-function private function_a3efd2ac(entity) {
+function private pain_update(entity) {
     entity.var_5b358a38 = 0;
     entity.var_5015c6e8 = 0;
     entity.var_40994afa = 0;
@@ -600,7 +599,7 @@ function private function_a3efd2ac(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd28d1fac, Offset: 0x3d08
 // Size: 0x46
 function private function_fd74c2ff(entity) {
@@ -612,7 +611,7 @@ function private function_fd74c2ff(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xda044e9a, Offset: 0x3d58
 // Size: 0x22
 function function_71d28905(entity) {
@@ -620,7 +619,7 @@ function function_71d28905(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x59e37542, Offset: 0x3d88
 // Size: 0x24
 function function_7b84cb6a(entity) {
@@ -628,15 +627,15 @@ function function_7b84cb6a(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf1bce19e, Offset: 0x3db8
 // Size: 0x24
 function function_38f6cd8c(entity) {
-    function_a3efd2ac(entity);
+    pain_update(entity);
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xed160aeb, Offset: 0x3de8
 // Size: 0x24
 function function_d9ab9fda(entity) {
@@ -644,7 +643,7 @@ function function_d9ab9fda(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x917067e3, Offset: 0x3e18
 // Size: 0x22
 function function_7fe60089(entity) {
@@ -652,7 +651,7 @@ function function_7fe60089(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ac88b04, Offset: 0x3e48
 // Size: 0x8c
 function function_33d6f18(entity) {
@@ -663,15 +662,15 @@ function function_33d6f18(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2e90067e, Offset: 0x3ee0
 // Size: 0x24
 function function_6fec468f(entity) {
-    function_a3efd2ac(entity);
+    pain_update(entity);
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa8b4f4ef, Offset: 0x3f10
 // Size: 0x24
 function function_d01b93a(entity) {
@@ -679,7 +678,7 @@ function function_d01b93a(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x6807b3a, Offset: 0x3f40
 // Size: 0x17c
 function set_head_model(entity, damaged = self.var_c07d2388 === #"hash_19947ae2c7a338bd", var_12db14c5 = self.var_c07d2388, var_6faf2e31) {
@@ -704,7 +703,7 @@ function set_head_model(entity, damaged = self.var_c07d2388 === #"hash_19947ae2c
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x41164203, Offset: 0x40c8
 // Size: 0x1de
 function function_c86ef1cd(entity) {
@@ -739,7 +738,7 @@ function function_c86ef1cd(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2fa54241, Offset: 0x42b0
 // Size: 0x26a
 function function_cc9102fc(entity) {
@@ -771,7 +770,7 @@ function function_cc9102fc(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x89c86d8a, Offset: 0x4528
 // Size: 0x29a
 function private function_690b6f24(entity) {
@@ -798,7 +797,7 @@ function private function_690b6f24(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc9eee580, Offset: 0x47d0
 // Size: 0x144
 function private function_a95ee556(target) {
@@ -817,7 +816,7 @@ function private function_a95ee556(target) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c222ef2, Offset: 0x4920
 // Size: 0x24
 function function_fa692036(entity) {
@@ -825,7 +824,7 @@ function function_fa692036(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa7d3990c, Offset: 0x4950
 // Size: 0x60
 function function_1ae5d56a(entity, asmstatename) {
@@ -836,7 +835,7 @@ function function_1ae5d56a(entity, asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3755552d, Offset: 0x49b8
 // Size: 0x190
 function function_78d5d69e(entity, *asmstatename) {
@@ -869,7 +868,7 @@ function function_78d5d69e(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8140b6e9, Offset: 0x4b50
 // Size: 0x130
 function function_d27b2a9a(entity, *asmstatename) {
@@ -888,7 +887,7 @@ function function_d27b2a9a(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1887e692, Offset: 0x4c88
 // Size: 0xe4
 function function_e8a2d39a(entity, zombie) {
@@ -905,7 +904,7 @@ function function_e8a2d39a(entity, zombie) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6ee1f570, Offset: 0x4d78
 // Size: 0x16
 function function_a25a16fc(entity) {
@@ -913,7 +912,7 @@ function function_a25a16fc(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb98482f2, Offset: 0x4d98
 // Size: 0x2d2
 function private query_all_possible_targets() {
@@ -960,12 +959,12 @@ function private query_all_possible_targets() {
             }
             level.var_4206745e[level.var_4206745e.size] = target;
         }
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf14cbbd4, Offset: 0x5078
 // Size: 0x33a
 function private designate_preferred_soa_for_players() {
@@ -1005,12 +1004,12 @@ function private designate_preferred_soa_for_players() {
             }
         }
         level.var_632f9a2e = var_db920e6e;
-        wait(1);
+        wait 1;
     }
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x92d4b22a, Offset: 0x53c0
 // Size: 0x134
 function function_a64f7068() {
@@ -1034,7 +1033,7 @@ function function_a64f7068() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x509e8a4d, Offset: 0x5500
 // Size: 0xfc
 function private function_179244e9(entity) {
@@ -1054,7 +1053,7 @@ function private function_179244e9(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa02d7a08, Offset: 0x5608
 // Size: 0x166
 function private function_2ca0d658(entity) {
@@ -1066,11 +1065,11 @@ function private function_2ca0d658(entity) {
     entity.var_6017b1f7 = undefined;
     for (i = 0; i < bound_zombies.size; i++) {
         bound = bound_zombies[i];
-        bound flag::clear(#"hash_66428e102eda132b");
+        bound flag::clear(#"leading_pack");
         if (isdefined(entity.favoriteenemy) && i <= bound_zombies.size / 2) {
             bound.var_ff3cbd9e = 1;
             if (i === 0) {
-                bound flag::set(#"hash_66428e102eda132b");
+                bound flag::set(#"leading_pack");
                 entity.var_6017b1f7 = bound;
             }
         } else {
@@ -1081,7 +1080,7 @@ function private function_2ca0d658(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x567d4236, Offset: 0x5778
 // Size: 0x1b8
 function function_3d972f3(entity) {
@@ -1107,11 +1106,11 @@ function function_3d972f3(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7364245d, Offset: 0x5938
 // Size: 0x280
 function function_85d7a413(entity, target) {
-    assert(isdefined(target), "sprint");
+    assert(isdefined(target), "<dev string:x38>");
     target_player = undefined;
     if (isplayer(entity.favoriteenemy)) {
         target_player = entity.favoriteenemy;
@@ -1148,7 +1147,7 @@ function function_85d7a413(entity, target) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x19099d1b, Offset: 0x5bc0
 // Size: 0x156
 function function_3975c89d(entity) {
@@ -1165,7 +1164,7 @@ function function_3975c89d(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xda43f6e1, Offset: 0x5d20
 // Size: 0x2c
 function function_d5ecd46a(entity) {
@@ -1173,7 +1172,7 @@ function function_d5ecd46a(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfee42e, Offset: 0x5d58
 // Size: 0x16
 function function_da71e09a(entity) {
@@ -1181,11 +1180,11 @@ function function_da71e09a(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3fbed0a2, Offset: 0x5d78
 // Size: 0x15e
 function function_708afe1d(entity, state) {
-    assert(isinarray([#"hash_6192d8af630c6c07", #"chase", #"command_spot", #"hash_685254f9ed0ce346", #"hash_110ee879f18b605f", #"circle"], state), "<unknown string>");
+    assert(isinarray([#"hash_6192d8af630c6c07", #"chase", #"command_spot", #"hash_685254f9ed0ce346", #"procedural_traversal", #"circle"], state), "<dev string:x52>");
     if (isdefined(entity.var_75b76562) && isdefined(entity.var_826cce6d[entity.var_75b76562])) {
         [[ entity.var_826cce6d[entity.var_75b76562] ]](entity);
     }
@@ -1196,7 +1195,7 @@ function function_708afe1d(entity, state) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x2d867540, Offset: 0x5ee0
 // Size: 0x88
 function function_6dc728a2(entity, state, func) {
@@ -1209,7 +1208,7 @@ function function_6dc728a2(entity, state, func) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf15387, Offset: 0x5f70
 // Size: 0x88
 function function_82dc224a(entity, state, func) {
@@ -1222,7 +1221,7 @@ function function_82dc224a(entity, state, func) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1a4c52a5, Offset: 0x6000
 // Size: 0x72c
 function function_38cf7fb8(entity) {
@@ -1296,8 +1295,8 @@ function function_38cf7fb8(entity) {
         new_move_speed = [[ entity.var_acf89fbb ]](entity, new_move_speed);
     }
     /#
-        var_3700e49b = getdvarstring(#"hash_39b0926e73c73f6c", "<unknown string>");
-        if (var_3700e49b !== "<unknown string>") {
+        var_3700e49b = getdvarstring(#"hash_39b0926e73c73f6c", "<dev string:x76>");
+        if (var_3700e49b !== "<dev string:x76>") {
             new_move_speed = var_3700e49b;
         }
     #/
@@ -1323,7 +1322,7 @@ function function_38cf7fb8(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1c611931, Offset: 0x6738
 // Size: 0x162
 function function_52ca7e05(entity) {
@@ -1341,7 +1340,7 @@ function function_52ca7e05(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x33e2a3ff, Offset: 0x68a8
 // Size: 0x24
 function private function_b7623789(entity) {
@@ -1349,7 +1348,7 @@ function private function_b7623789(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6e71e204, Offset: 0x68d8
 // Size: 0x69a
 function function_f10f6b15(entity) {
@@ -1429,7 +1428,7 @@ function function_f10f6b15(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x938dd9bd, Offset: 0x6f80
 // Size: 0x24
 function function_a6e66d26(entity) {
@@ -1437,7 +1436,7 @@ function function_a6e66d26(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x64d40e79, Offset: 0x6fb0
 // Size: 0x46
 function function_2aa322b7(time_s) {
@@ -1446,7 +1445,7 @@ function function_2aa322b7(time_s) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdfb3a344, Offset: 0x7000
 // Size: 0x9c
 function function_31c9342d() {
@@ -1459,7 +1458,7 @@ function function_31c9342d() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4a2daa1, Offset: 0x70a8
 // Size: 0x33c
 function private function_73f51fce(*entity) {
@@ -1506,7 +1505,7 @@ function private function_73f51fce(*entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x180e2282, Offset: 0x73f0
 // Size: 0xf4
 function function_ca5c24db(entity) {
@@ -1514,34 +1513,34 @@ function function_ca5c24db(entity) {
         return;
     }
     var_4d21f369 = function_da71e09a(entity);
-    if (var_4d21f369 === #"hash_110ee879f18b605f") {
+    if (var_4d21f369 === #"procedural_traversal") {
         return;
     }
     entity.var_293428fc = entity.traversalendpos;
     if (isdefined(entity.traversemantlenode)) {
         entity.var_293428fc = (entity.var_293428fc[0], entity.var_293428fc[1], max(entity.traversalendpos[2], entity.traversemantlenode.origin[2]));
     }
-    function_708afe1d(entity, #"hash_110ee879f18b605f");
+    function_708afe1d(entity, #"procedural_traversal");
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5c212743, Offset: 0x74f0
 // Size: 0x50
 function function_5a2c32ca(entity) {
     var_4d21f369 = function_da71e09a(entity);
-    if (var_4d21f369 === #"hash_110ee879f18b605f") {
+    if (var_4d21f369 === #"procedural_traversal") {
         return true;
     }
     return false;
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd4795064, Offset: 0x7548
 // Size: 0x1e2
 function function_5f116663(entity) {
-    assert(isdefined(entity.var_293428fc), "<unknown string>");
+    assert(isdefined(entity.var_293428fc), "<dev string:x7a>");
     end_pos = entity.var_293428fc;
     delta_z = math::clamp(entity.origin[2] - end_pos[2], 0, 200);
     delta_z *= 0.5;
@@ -1551,7 +1550,7 @@ function function_5f116663(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc1d3ebc7, Offset: 0x7738
 // Size: 0x44
 function function_9db27415(entity) {
@@ -1562,7 +1561,7 @@ function function_9db27415(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x748d19ab, Offset: 0x7788
 // Size: 0x56
 function function_69e1fc18(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1571,7 +1570,7 @@ function function_69e1fc18(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xe7d06125, Offset: 0x77e8
 // Size: 0x424
 function function_88023de5(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1612,7 +1611,7 @@ function function_88023de5(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xfecd3cae, Offset: 0x7c18
 // Size: 0x54
 function function_fdde7e99(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1620,7 +1619,7 @@ function function_fdde7e99(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x90bb0d83, Offset: 0x7c78
 // Size: 0xbe
 function function_e4d60b47(entity) {
@@ -1631,7 +1630,7 @@ function function_e4d60b47(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5adb286a, Offset: 0x7d40
 // Size: 0x44
 function function_18936a77(entity) {
@@ -1641,7 +1640,7 @@ function function_18936a77(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe6c50c2a, Offset: 0x7d90
 // Size: 0x24
 function function_fa0a3cc(entity) {
@@ -1649,7 +1648,7 @@ function function_fa0a3cc(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5f976473, Offset: 0x7dc0
 // Size: 0xcc
 function function_ca416ac3(entity) {
@@ -1668,7 +1667,7 @@ function function_ca416ac3(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2542059f, Offset: 0x7e98
 // Size: 0x5a
 function function_8b051aff(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1677,7 +1676,7 @@ function function_8b051aff(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xc8103991, Offset: 0x7f00
 // Size: 0xe4
 function function_90db0e6d(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1690,7 +1689,7 @@ function function_90db0e6d(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xea1b1f5d, Offset: 0x7ff0
 // Size: 0x36
 function function_d7a2a6d3(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -1698,7 +1697,7 @@ function function_d7a2a6d3(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x52c40fe4, Offset: 0x8030
 // Size: 0x68
 function private function_5b44f9c2(entity, asmstatename) {
@@ -1711,7 +1710,7 @@ function private function_5b44f9c2(entity, asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x526ed5f1, Offset: 0x80a0
 // Size: 0x94
 function private function_b2314b9(entity, *asmstatename) {
@@ -1726,7 +1725,7 @@ function private function_b2314b9(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6d62aaaf, Offset: 0x8140
 // Size: 0x30
 function private function_8df98513(entity, *asmstatename) {
@@ -1735,7 +1734,7 @@ function private function_8df98513(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x49786dd6, Offset: 0x8178
 // Size: 0x10e
 function private function_82f2b2fd(entity) {
@@ -1754,7 +1753,7 @@ function private function_82f2b2fd(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7c174083, Offset: 0x8290
 // Size: 0xb8
 function function_efa1ad6b(entity) {
@@ -1768,7 +1767,7 @@ function function_efa1ad6b(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd8205a87, Offset: 0x8350
 // Size: 0x2ce
 function private function_71cc3e18(entity) {
@@ -1815,7 +1814,7 @@ function private function_71cc3e18(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb476a6dd, Offset: 0x8628
 // Size: 0x1a2
 function private function_31a8422e(entity, asmstatename) {
@@ -1835,7 +1834,7 @@ function private function_31a8422e(entity, asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x203ee87c, Offset: 0x87d8
 // Size: 0x12a
 function private function_6965f1e3(entity, *asmstatename) {
@@ -1859,7 +1858,7 @@ function private function_6965f1e3(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x4b349d47, Offset: 0x8910
 // Size: 0x5a
 function private function_9769881(entity, *asmstatename) {
@@ -1870,7 +1869,7 @@ function private function_9769881(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3dc2e22e, Offset: 0x8978
 // Size: 0x3a2
 function function_ff6a04bc(entity) {
@@ -1913,10 +1912,10 @@ function function_ff6a04bc(entity) {
     /#
         if (getdvarint(#"hash_20ead0e6e8e713d8", 0) > 0) {
             if (isdefined(var_2dc610d5)) {
-                function_ae63c292(var_2dc610d5, "<unknown string>", (1, 1, 0));
+                function_ae63c292(var_2dc610d5, "<dev string:x9f>", (1, 1, 0));
             }
             if (isdefined(var_ee604c66)) {
-                function_ae63c292(var_ee604c66, "<unknown string>", (1, 1, 0));
+                function_ae63c292(var_ee604c66, "<dev string:xbb>", (1, 1, 0));
             }
         }
     #/
@@ -1924,7 +1923,7 @@ function function_ff6a04bc(entity) {
         /#
             /#
                 if (is_true(level.var_a2c1c3a5)) {
-                    println("<unknown string>" + "<unknown string>");
+                    println("<dev string:xda>" + "<dev string:xec>");
                 }
             #/
         #/
@@ -1936,7 +1935,7 @@ function function_ff6a04bc(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd4a6ebbd, Offset: 0x8d28
 // Size: 0xae
 function function_fc7356e3(entity, var_79c8d3ac) {
@@ -1945,7 +1944,7 @@ function function_fc7356e3(entity, var_79c8d3ac) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc02952a2, Offset: 0x8de0
 // Size: 0x66
 function private function_77c135e2(entity) {
@@ -1959,7 +1958,7 @@ function private function_77c135e2(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd122a51f, Offset: 0x8e50
 // Size: 0x7e
 function private function_f98327eb(entity, asmstatename) {
@@ -1971,7 +1970,7 @@ function private function_f98327eb(entity, asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x230c5b6b, Offset: 0x8ed8
 // Size: 0x90
 function private function_1a0791fc(entity, *asmstatename) {
@@ -1986,7 +1985,7 @@ function private function_1a0791fc(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x51751329, Offset: 0x8f70
 // Size: 0xe2
 function private function_3e895403(entity, *asmstatename) {
@@ -2006,7 +2005,7 @@ function private function_3e895403(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x95f1e2d8, Offset: 0x9060
 // Size: 0xb2
 function function_f4e85274(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -2019,7 +2018,7 @@ function function_f4e85274(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa804d722, Offset: 0x9120
 // Size: 0x1f4
 function function_3b5becd0(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -2048,7 +2047,7 @@ function function_3b5becd0(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xa28b98d3, Offset: 0x9320
 // Size: 0x36
 function function_80985f6(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -2056,7 +2055,7 @@ function function_80985f6(entity, *mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x471e83f7, Offset: 0x9360
 // Size: 0x16
 function private function_cd4d42c4(var_1e74aaf8) {
@@ -2064,7 +2063,7 @@ function private function_cd4d42c4(var_1e74aaf8) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdced4f61, Offset: 0x9380
 // Size: 0x57c
 function function_b046be53(entity) {
@@ -2083,8 +2082,8 @@ function function_b046be53(entity) {
             circle_range += 50;
         }
         foreach (angle in angle_offsets) {
-            var_43ed722a = absangleclamp360(var_edd2d153 + angle);
-            target_vec = anglestoforward((0, var_43ed722a, 0));
+            target_angle = absangleclamp360(var_edd2d153 + angle);
+            target_vec = anglestoforward((0, target_angle, 0));
             target_pos = entity.favoriteenemy.origin + target_vec * circle_range;
             var_c38ec8b1 = getclosestpointonnavmesh(target_pos, 64, entity getpathfindingradius());
             if (isdefined(var_c38ec8b1)) {
@@ -2133,7 +2132,7 @@ function function_b046be53(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd9572ada, Offset: 0x9908
 // Size: 0x58
 function function_d1293a5a(entity) {
@@ -2144,7 +2143,7 @@ function function_d1293a5a(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcfe8fb06, Offset: 0x9968
 // Size: 0x10e
 function function_25517868(entity) {
@@ -2166,7 +2165,7 @@ function function_25517868(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1107be17, Offset: 0x9a80
 // Size: 0x2c
 function function_71d2268d(entity) {
@@ -2174,12 +2173,12 @@ function function_71d2268d(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x25311f26, Offset: 0x9ab8
 // Size: 0x1a6
 function private function_5d447a73() {
     var_4d21f369 = function_da71e09a(self);
-    if (var_4d21f369 === #"hash_110ee879f18b605f") {
+    if (var_4d21f369 === #"procedural_traversal") {
         if (isdefined(self.var_d1669ee1)) {
             to_goal = self.var_d1669ee1.goal - self.origin;
             var_64e52c8e = int(vectortoyaw(to_goal));
@@ -2201,7 +2200,7 @@ function private function_5d447a73() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9a4355b5, Offset: 0x9c68
 // Size: 0xa
 function private function_1a63a646() {
@@ -2209,7 +2208,7 @@ function private function_1a63a646() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8e14814a, Offset: 0x9c80
 // Size: 0x76
 function private soalocomotionstrafeupdate(entity) {
@@ -2219,7 +2218,7 @@ function private soalocomotionstrafeupdate(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcb8cff3f, Offset: 0x9d00
 // Size: 0xc2
 function private soashouldlocomotionstrafeflip(entity) {
@@ -2234,7 +2233,7 @@ function private soashouldlocomotionstrafeflip(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc49e1622, Offset: 0x9dd0
 // Size: 0x36
 function private soashoulduselocomotionblendspace(*entity) {
@@ -2242,7 +2241,7 @@ function private soashoulduselocomotionblendspace(*entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc6e01e7, Offset: 0x9e10
 // Size: 0x7a8
 function function_47f3f527(entity) {
@@ -2357,7 +2356,7 @@ function function_47f3f527(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x6eb29155, Offset: 0xa5c0
 // Size: 0x8a
 function private function_6aee3a5b(entity, player) {
@@ -2366,7 +2365,7 @@ function private function_6aee3a5b(entity, player) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x12af42b0, Offset: 0xa658
 // Size: 0x32
 function function_60ddd10a(entity) {
@@ -2377,7 +2376,7 @@ function function_60ddd10a(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9792e13b, Offset: 0xa698
 // Size: 0x50
 function function_fc775f13(entity) {
@@ -2389,7 +2388,7 @@ function function_fc775f13(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2c555410, Offset: 0xa6f0
 // Size: 0x192
 function function_961c1fc0(entity) {
@@ -2401,7 +2400,7 @@ function function_961c1fc0(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xd25e8869, Offset: 0xa890
 // Size: 0x5a
 function function_190c6600(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -2410,7 +2409,7 @@ function function_190c6600(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x48f677ed, Offset: 0xa8f8
 // Size: 0x354
 function function_2a8799e1(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -2419,7 +2418,7 @@ function function_2a8799e1(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     var_67662307 = length(var_d15ca860);
     var_8d977686 = length2d(var_d15ca860);
     percentage = 1 - var_67662307 / var_6ceb29a9.length;
-    var_84560a5f = 1 - var_8d977686 / var_6ceb29a9.var_1a655500;
+    percentage_2d = 1 - var_8d977686 / var_6ceb29a9.var_1a655500;
     speed_percentage = 1;
     if (percentage < 0.5) {
         speed_percentage = 0.7 + easesine(percentage / 0.5, 1, 0) * 0.3;
@@ -2434,9 +2433,9 @@ function function_2a8799e1(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     if (var_67662307 > speed) {
         new_origin = mocompduration.origin + vectornormalize(var_3354f994) * speed;
         if (var_6ceb29a9.delta_z < var_6ceb29a9.var_1a655500) {
-            z_percentage = easesine(var_84560a5f, 1, 1);
+            z_percentage = easesine(percentage_2d, 1, 1);
         } else {
-            z_percentage = easepower(var_84560a5f, 2, 0, 1);
+            z_percentage = easepower(percentage_2d, 2, 0, 1);
         }
         new_origin = (new_origin[0], new_origin[1], var_6ceb29a9.start[2] + var_6ceb29a9.delta_z * z_percentage);
     } else {
@@ -2450,7 +2449,7 @@ function function_2a8799e1(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x32b5359a, Offset: 0xac58
 // Size: 0x36
 function function_1d3f5ac(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -2458,7 +2457,7 @@ function function_1d3f5ac(entity, *mocompanim, *mocompanimblendouttime, *mocompa
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8982c3d1, Offset: 0xac98
 // Size: 0x50
 function function_4a46d613(entity) {
@@ -2470,7 +2469,7 @@ function function_4a46d613(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x79eff39f, Offset: 0xacf0
 // Size: 0x76
 function function_ee1f25af(entity) {
@@ -2482,7 +2481,7 @@ function function_ee1f25af(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x327c6af7, Offset: 0xad70
 // Size: 0xfe
 function function_43413efd(entity) {
@@ -2496,7 +2495,7 @@ function function_43413efd(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x757e1eaa, Offset: 0xae78
 // Size: 0x174
 function function_89dbf30f(entity) {
@@ -2530,7 +2529,7 @@ function function_89dbf30f(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd6e4553f, Offset: 0xaff8
 // Size: 0x70
 function function_4cc12c9(entity) {
@@ -2543,7 +2542,7 @@ function function_4cc12c9(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x833a9ef4, Offset: 0xb070
 // Size: 0x146
 function function_fe96f51d(entity) {
@@ -2568,7 +2567,7 @@ function function_fe96f51d(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2b001eb, Offset: 0xb1c0
 // Size: 0x7a
 function function_e417cf33(entity) {
@@ -2582,11 +2581,11 @@ function function_e417cf33(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6f83a93e, Offset: 0xb248
 // Size: 0x122
 function function_4fa84b3f(entity, n_to_spawn) {
-    assert(isdefined(n_to_spawn), "<unknown string>");
+    assert(isdefined(n_to_spawn), "<dev string:x109>");
     if (!getdvarint(#"hash_137e2f2e88299f9c", 1) > 0) {
         return false;
     }
@@ -2609,7 +2608,7 @@ function function_4fa84b3f(entity, n_to_spawn) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x68f8f650, Offset: 0xb378
 // Size: 0x6e
 function function_adbacb27(entity) {
@@ -2624,7 +2623,7 @@ function function_adbacb27(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x88c422bc, Offset: 0xb3f0
 // Size: 0xc2
 function function_ba8a29f2(entity) {
@@ -2639,7 +2638,7 @@ function function_ba8a29f2(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6b049cf7, Offset: 0xb4c0
 // Size: 0xa0
 function function_76e0c5a7(entity, asmstatename) {
@@ -2653,7 +2652,7 @@ function function_76e0c5a7(entity, asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc7a9c6fc, Offset: 0xb568
 // Size: 0x1e2
 function function_8096be0e(entity, *asmstatename) {
@@ -2687,7 +2686,7 @@ function function_8096be0e(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x146f77fd, Offset: 0xb758
 // Size: 0x40
 function function_9b1c356b(entity, *asmstatename) {
@@ -2697,7 +2696,7 @@ function function_9b1c356b(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdb45194a, Offset: 0xb7a0
 // Size: 0x1fe
 function function_6b68419c(soa) {
@@ -2713,7 +2712,7 @@ function function_6b68419c(soa) {
     self clearpath();
     self.keep_moving = 0;
     self callback::function_d8abfc3d(#"on_ai_killed", &function_a4a6ada4);
-    assert(self.archetype === #"zombie" || self.archetype === #"tormentor", "<unknown string>");
+    assert(self.archetype === #"zombie" || self.archetype === #"tormentor", "<dev string:x129>");
     if (math::cointoss()) {
         if (self.zombie_arms_position == "up") {
             self.variant_type = 6;
@@ -2729,7 +2728,7 @@ function function_6b68419c(soa) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3290d949, Offset: 0xb9a8
 // Size: 0x13c
 function function_8f117c65() {
@@ -2752,7 +2751,7 @@ function function_8f117c65() {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4b2d27b0, Offset: 0xbaf0
 // Size: 0x11a
 function function_a4a6ada4(*s_params) {
@@ -2774,7 +2773,7 @@ function function_a4a6ada4(*s_params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2bb187ef, Offset: 0xbc18
 // Size: 0x2fc
 function function_d9fe2b0(zombie) {
@@ -2811,7 +2810,7 @@ function function_d9fe2b0(zombie) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x13b6bd86, Offset: 0xbf20
 // Size: 0x202
 function function_dd116fa9(zombie, var_5f5dd627 = 0) {
@@ -2844,7 +2843,7 @@ function function_dd116fa9(zombie, var_5f5dd627 = 0) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe0912e1a, Offset: 0xc130
 // Size: 0x16
 function function_9dd68a24(zombie) {
@@ -2852,7 +2851,7 @@ function function_9dd68a24(zombie) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb0b9c523, Offset: 0xc150
 // Size: 0x46
 function function_9d13a2e7(zombie) {
@@ -2860,7 +2859,7 @@ function function_9d13a2e7(zombie) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xaef845ee, Offset: 0xc1a0
 // Size: 0x44
 function private function_5bb7560c(*params) {
@@ -2870,7 +2869,7 @@ function private function_5bb7560c(*params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x11a2dc4d, Offset: 0xc1f0
 // Size: 0x16
 function function_2905c7db(zombie) {
@@ -2878,7 +2877,7 @@ function function_2905c7db(zombie) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x12bfa6f9, Offset: 0xc210
 // Size: 0x92
 function function_c33fb385(zombie, state) {
@@ -2896,7 +2895,7 @@ function function_c33fb385(zombie, state) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x88da806, Offset: 0xc2b0
 // Size: 0x88
 function function_7d12a873(zombie, state, func) {
@@ -2909,7 +2908,7 @@ function function_7d12a873(zombie, state, func) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x32eefced, Offset: 0xc340
 // Size: 0x56
 function function_351bf6f2(entity) {
@@ -2925,7 +2924,7 @@ function function_351bf6f2(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc01eaad1, Offset: 0xc3a0
 // Size: 0xa4
 function function_dfbc9dea(entity) {
@@ -2940,7 +2939,7 @@ function function_dfbc9dea(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe8bb98ab, Offset: 0xc450
 // Size: 0x1a
 function function_36c559fa(entity) {
@@ -2948,7 +2947,7 @@ function function_36c559fa(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6cedca80, Offset: 0xc478
 // Size: 0x44
 function function_8ca0249d(entity) {
@@ -2958,7 +2957,7 @@ function function_8ca0249d(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4ac80d9c, Offset: 0xc4c8
 // Size: 0x56
 function function_43b0545a(entity, asmstatename) {
@@ -2969,7 +2968,7 @@ function function_43b0545a(entity, asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x625a32e0, Offset: 0xc528
 // Size: 0xb2
 function function_15080704(behaviortreeentity, *asmstatename) {
@@ -2989,7 +2988,7 @@ function function_15080704(behaviortreeentity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x80891c2d, Offset: 0xc5e8
 // Size: 0x3a
 function function_1a29c303(entity, *asmstatename) {
@@ -2999,7 +2998,7 @@ function function_1a29c303(entity, *asmstatename) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60b38b4e, Offset: 0xc630
 // Size: 0x5bc
 function function_4b5c56a5(entity) {
@@ -3062,7 +3061,7 @@ function function_4b5c56a5(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4d2e122d, Offset: 0xcbf8
 // Size: 0x18
 function function_3c14ef44(entity) {
@@ -3070,7 +3069,7 @@ function function_3c14ef44(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9b03f032, Offset: 0xcc18
 // Size: 0x5a
 function function_b003534e(entity, range) {
@@ -3079,7 +3078,7 @@ function function_b003534e(entity, range) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb7943843, Offset: 0xcc80
 // Size: 0x48c
 function function_a91b9ba0(entity, target) {
@@ -3132,7 +3131,7 @@ function function_a91b9ba0(entity, target) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4e24664e, Offset: 0xd118
 // Size: 0x44
 function private function_71c5e86a(*params) {
@@ -3141,7 +3140,7 @@ function private function_71c5e86a(*params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6a6319f9, Offset: 0xd168
 // Size: 0x2c
 function function_7600184c(entity) {
@@ -3157,7 +3156,7 @@ function private function_422fc905(*params) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x895c97cf, Offset: 0xd1d8
 // Size: 0x4f8
 function function_88f1c3bf(entity) {
@@ -3182,7 +3181,7 @@ function function_88f1c3bf(entity) {
         entity.var_7418f498 zombie_utility::set_zombie_run_cycle_override_value("walk");
     }
     while (function_3c14ef44(entity)) {
-        wait(0.5);
+        wait 0.5;
         if (!function_3c14ef44(entity)) {
             break;
         }
@@ -3217,7 +3216,7 @@ function function_88f1c3bf(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca28829d, Offset: 0xd6d8
 // Size: 0x24
 function function_881fda47(entity) {
@@ -3225,7 +3224,7 @@ function function_881fda47(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x38e2cb73, Offset: 0xd708
 // Size: 0x1f0
 function function_1b2f34c9(entity) {
@@ -3253,7 +3252,7 @@ function function_1b2f34c9(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8af2bf90, Offset: 0xd900
 // Size: 0xda
 function function_264f914c(entity) {
@@ -3270,7 +3269,7 @@ function function_264f914c(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2931763b, Offset: 0xd9e8
 // Size: 0xc
 function function_8d707ed2(*entity) {
@@ -3278,7 +3277,7 @@ function function_8d707ed2(*entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb52f43a3, Offset: 0xda00
 // Size: 0x22
 function function_1be46939(entity) {
@@ -3286,7 +3285,7 @@ function function_1be46939(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb9410b37, Offset: 0xda30
 // Size: 0x8c
 function function_39994f21(entity) {
@@ -3297,15 +3296,15 @@ function function_39994f21(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbad283c0, Offset: 0xdac8
 // Size: 0x24
 function function_2953d806(entity) {
-    function_a3efd2ac(entity);
+    pain_update(entity);
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf2e26f6e, Offset: 0xdaf8
 // Size: 0x24
 function function_114e7369(entity) {
@@ -3313,7 +3312,7 @@ function function_114e7369(entity) {
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x2388f876, Offset: 0xdb28
 // Size: 0x114
 function function_1f8fc149(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -3332,7 +3331,7 @@ function function_1f8fc149(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xe65b277, Offset: 0xdc48
 // Size: 0x104
 function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
@@ -3352,43 +3351,43 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0x98d193b8, Offset: 0xdd58
     // Size: 0x548
     function function_ed9529fa() {
-        function_5ac4dc99(#"hash_1d6cd903d17ac72", "<unknown string>");
+        function_5ac4dc99(#"hash_1d6cd903d17ac72", "<dev string:x76>");
         function_cd140ee9(#"hash_1d6cd903d17ac72", &function_fb306c05);
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x169>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x193>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x1c0>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x1e4>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x212>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x22a>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x255>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x278>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x2ae>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x2d4>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x308>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x330>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x36b>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x38d>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x3bf>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x3db>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x402>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x418>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x441>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x458>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x487>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x49e>" + "<dev string:x1bb>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<dev string:x147>" + "<dev string:x4c8>" + "<dev string:x187>" + __index + "<dev string:x18c>" + "<dev string:x4e4>" + "<dev string:x1bb>");
         __index++;
     }
 
@@ -3397,8 +3396,8 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0xccd310fd, Offset: 0xe2a8
     // Size: 0x284
     function function_fb306c05(dvar) {
-        tokens = strtok(dvar.value, "<unknown string>");
-        switch (isdefined(tokens[0]) ? tokens[0] : "<unknown string>") {
+        tokens = strtok(dvar.value, "<dev string:x513>");
+        switch (isdefined(tokens[0]) ? tokens[0] : "<dev string:x76>") {
         case #"hash_19c2cf4f6a62ed5d":
             function_c221c3cc();
             break;
@@ -3438,7 +3437,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
         default:
             return;
         }
-        setdvar(#"hash_1d6cd903d17ac72", "<unknown string>");
+        setdvar(#"hash_1d6cd903d17ac72", "<dev string:x76>");
     }
 
     // Namespace namespace_19c99142/namespace_19c99142
@@ -3451,7 +3450,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
         foreach (soa in soas) {
             soa.var_b1ee9658 = level.var_b1ee9658;
         }
-        iprintlnbold("<unknown string>" + (level.var_b1ee9658 ? "<unknown string>" : "<unknown string>"));
+        iprintlnbold("<dev string:x518>" + (level.var_b1ee9658 ? "<dev string:x528>" : "<dev string:x52e>"));
     }
 
     // Namespace namespace_19c99142/namespace_19c99142
@@ -3464,7 +3463,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
         foreach (soa in soas) {
             soa.var_ed05cdb2 = level.var_ed05cdb2;
         }
-        iprintlnbold("<unknown string>" + (level.var_ed05cdb2 ? "<unknown string>" : "<unknown string>"));
+        iprintlnbold("<dev string:x535>" + (level.var_ed05cdb2 ? "<dev string:x528>" : "<dev string:x52e>"));
     }
 
     // Namespace namespace_19c99142/namespace_19c99142
@@ -3490,7 +3489,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
             level.var_a2c1c3a5 = 1;
             if (isdefined(level.var_48137965)) {
                 recordsphere(level.var_48137965, 15, (1, 0, 0));
-                record3dtext("<unknown string>", level.var_48137965 + (0, 0, 15), (1, 0, 0));
+                record3dtext("<dev string:x54a>", level.var_48137965 + (0, 0, 15), (1, 0, 0));
             }
             soas = function_df254269();
             foreach (soa in soas) {
@@ -3499,12 +3498,12 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
                 bound = function_a25a16fc(soa);
                 potential = array::get_all_closest(soa.origin, zombies, bound, undefined, 500);
                 if (isdefined(soa.var_8cdffa65)) {
-                    function_ae63c292(soa.var_8cdffa65.start_pos, "<unknown string>", (1, 0, 1));
-                    function_ae63c292(soa.var_8cdffa65.end_pos, "<unknown string>", (1, 0, 1));
+                    function_ae63c292(soa.var_8cdffa65.start_pos, "<dev string:x558>", (1, 0, 1));
+                    function_ae63c292(soa.var_8cdffa65.end_pos, "<dev string:x567>", (1, 0, 1));
                     recordline(soa.var_8cdffa65.start_pos, soa.var_8cdffa65.end_pos, (1, 0, 1));
                 }
                 if (isdefined(soa.var_4d56625b)) {
-                    record3dtext("<unknown string>" + soa.var_4d56625b, soa.origin + (0, 0, 72), (0, 1, 0));
+                    record3dtext("<dev string:x574>" + soa.var_4d56625b, soa.origin + (0, 0, 72), (0, 1, 0));
                 }
             }
             if (isdefined(level.var_aa8f3642)) {
@@ -3514,7 +3513,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
             }
             if (isdefined(level.var_7a4dc7e8)) {
                 foreach (point in level.var_7a4dc7e8) {
-                    function_ae63c292(point.origin, "<unknown string>", (1, 0, 0));
+                    function_ae63c292(point.origin, "<dev string:x582>", (1, 0, 0));
                 }
             }
             waitframe(1);
@@ -3526,7 +3525,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0x28009714, Offset: 0xec00
     // Size: 0x1a4
     function function_7c39bab6() {
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x59a>");
         soas = function_df254269();
         foreach (soa in soas) {
             zombies = isdefined(level.var_4206745e) ? level.var_4206745e : [];
@@ -3563,7 +3562,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Size: 0x8c
     function function_c645776b() {
         setdvar(#"hash_4ac64c7f46b01880", !getdvar(#"hash_4ac64c7f46b01880", 0));
-        iprintlnbold("<unknown string>" + getdvar(#"hash_4ac64c7f46b01880", 0));
+        iprintlnbold("<dev string:x5b8>" + getdvar(#"hash_4ac64c7f46b01880", 0));
     }
 
     // Namespace namespace_19c99142/namespace_19c99142
@@ -3571,11 +3570,11 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0xba19611e, Offset: 0xefc8
     // Size: 0x12a
     function function_eadaa815() {
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x5d3>");
         foreach (soa in function_df254269()) {
             if (isdefined(soa.favoriteenemy)) {
                 if (!isdefined(soa.var_9634511)) {
-                    soa.var_9634511 = beamlaunch(soa, soa.favoriteenemy, "<unknown string>", "<unknown string>", getweapon("<unknown string>"));
+                    soa.var_9634511 = beamlaunch(soa, soa.favoriteenemy, "<dev string:x5f6>", "<dev string:x604>", getweapon("<dev string:x60e>"));
                     continue;
                 }
                 soa.var_9634511 delete();
@@ -3589,7 +3588,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0xe6c75a58, Offset: 0xf100
     // Size: 0xc8
     function function_f528b32c() {
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x61f>");
         foreach (soa in function_df254269()) {
             soa forceteleport(soa.origin + (0, 0, 100));
         }
@@ -3600,7 +3599,7 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0xb6692208, Offset: 0xf1d0
     // Size: 0x19e
     function function_e970dd48() {
-        iprintlnbold("<unknown string>");
+        iprintlnbold("<dev string:x637>");
         foreach (soa in function_df254269()) {
             soa.var_ad1a2a3c = int(max((soa.var_ad1a2a3c + 1) % 4, 1));
             switch (soa.var_ad1a2a3c) {
@@ -3624,11 +3623,11 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     function function_b4a17ed2() {
         level.var_97c9c115 = [];
         foreach (soa in function_df254269()) {
-            var_c1437145 = arraygetclosest(soa.origin, function_a1ef346b());
-            if (!isdefined(var_c1437145)) {
+            nearest_player = arraygetclosest(soa.origin, function_a1ef346b());
+            if (!isdefined(nearest_player)) {
                 continue;
             }
-            tacquery = function_6aee3a5b(soa, var_c1437145);
+            tacquery = function_6aee3a5b(soa, nearest_player);
             if (isdefined(tacquery)) {
                 level.var_97c9c115 = arraycombine(tacquery, level.var_97c9c115, 0);
             }
@@ -3640,12 +3639,12 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0x822f99a, Offset: 0xf4a0
     // Size: 0x176
     function function_4de3c0c() {
-        level.("<unknown string>") = !is_true(level.("<unknown string>"));
-        if (!is_true(level.("<unknown string>"))) {
-            level notify(#"kill_" + "<unknown string>");
+        level.("<dev string:x651>") = !is_true(level.("<dev string:x651>"));
+        if (!is_true(level.("<dev string:x651>"))) {
+            level notify(#"kill_" + "<dev string:x651>");
             return;
         }
-        level endon(#"kill_" + "<unknown string>");
+        level endon(#"kill_" + "<dev string:x651>");
         while (true) {
             i = 0;
             if (isdefined(level.var_97c9c115)) {
@@ -3663,12 +3662,12 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     // Checksum 0x29d83b58, Offset: 0xf620
     // Size: 0x2ca
     function function_2e7ab4e5() {
-        level.("<unknown string>") = !is_true(level.("<unknown string>"));
-        if (!is_true(level.("<unknown string>"))) {
-            level notify(#"kill_" + "<unknown string>");
+        level.("<dev string:x66a>") = !is_true(level.("<dev string:x66a>"));
+        if (!is_true(level.("<dev string:x66a>"))) {
+            level notify(#"kill_" + "<dev string:x66a>");
             return;
         }
-        level endon(#"kill_" + "<unknown string>");
+        level endon(#"kill_" + "<dev string:x66a>");
         while (true) {
             foreach (soa in function_df254269()) {
                 if (!soa haspath()) {
@@ -3677,14 +3676,14 @@ function function_576a104c(entity, *mocompanim, *mocompanimblendouttime, *mocomp
                 var_30b7a63c = soa predictpath();
                 status = var_30b7a63c[#"path_prediction_status"];
                 if (status == 2) {
-                    flag_str = soa flag::get(#"hash_5c35337a4e15867") ? "<unknown string>" : "<unknown string>";
-                    record3dtext("<unknown string>" + flag_str, soa.origin + (0, 0, 70), (0, 1, 0));
+                    flag_str = soa flag::get(#"hash_5c35337a4e15867") ? "<dev string:x68a>" : "<dev string:x68f>";
+                    record3dtext("<dev string:x694>" + flag_str, soa.origin + (0, 0, 70), (0, 1, 0));
                     final_pos = soa getfinalpathpos();
                     recordline(soa.origin, final_pos, (0, 1, 0));
                     continue;
                 }
-                flag_str = soa flag::get(#"hash_5c35337a4e15867") ? "<unknown string>" : "<unknown string>";
-                record3dtext("<unknown string>" + flag_str, soa.origin + (0, 0, 70), (1, 0, 0));
+                flag_str = soa flag::get(#"hash_5c35337a4e15867") ? "<dev string:x68f>" : "<dev string:x68a>";
+                record3dtext("<dev string:x6a6>" + flag_str, soa.origin + (0, 0, 70), (1, 0, 0));
             }
             waitframe(1);
         }

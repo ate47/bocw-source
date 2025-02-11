@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\popups_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\popups_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_vote;
 
 // Namespace zm_vote/zm_vote
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x68d40966, Offset: 0x140
 // Size: 0xa4
 function init() {
@@ -20,7 +19,7 @@ function init() {
 }
 
 // Namespace zm_vote/zm_vote
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5007160a, Offset: 0x1f0
 // Size: 0x44c
 function function_c65468ef(var_2d1ee75a, var_ac9c0ee1, var_f965fa7, var_556c090f = 0) {
@@ -59,7 +58,7 @@ function function_c65468ef(var_2d1ee75a, var_ac9c0ee1, var_f965fa7, var_556c090f
         b_passed = var_8b9e1fe4 function_4b4f57db(var_556c090f);
         level.var_6f754d87 = 0;
         if (is_true(b_passed)) {
-            var_8b9e1fe4 notify(#"hash_2a14368bde086f2e");
+            var_8b9e1fe4 notify(#"vote_passed");
         } else {
             b_passed = 0;
             if (isdefined(level.var_1ea1d494)) {
@@ -81,11 +80,11 @@ function function_c65468ef(var_2d1ee75a, var_ac9c0ee1, var_f965fa7, var_556c090f
 }
 
 // Namespace zm_vote/zm_vote
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9f5eccbb, Offset: 0x648
 // Size: 0x2e2
 function function_4b4f57db(var_556c090f = 0) {
-    self endon(#"hash_2c37ff2ab3cc12c5");
+    self endon(#"vote_canceled");
     while (true) {
         var_d46eae05 = 0;
         foreach (player in function_a1ef346b()) {
@@ -120,10 +119,10 @@ function function_4b4f57db(var_556c090f = 0) {
             player clientfield::set_player_uimodel("sr_vote_prompt.numPlayersNeeded", math::clamp(var_162efdd8, 0, var_d46eae05));
         }
         if (var_162efdd8 <= 0) {
-            wait(0.5);
+            wait 0.5;
             return 1;
         } else if (self.var_96d8430e.size + self.var_e6ae7b0.size >= var_d46eae05) {
-            wait(0.5);
+            wait 0.5;
             return 0;
         }
         waitframe(1);
@@ -131,17 +130,17 @@ function function_4b4f57db(var_556c090f = 0) {
 }
 
 // Namespace zm_vote/zm_vote
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x182cd7a9, Offset: 0x938
 // Size: 0x5e
 function function_e7c57e4() {
-    self endon(#"delete", #"death", #"hash_2a14368bde086f2e", #"hash_2c37ff2ab3cc12c5");
-    wait(30);
-    self notify(#"hash_2c37ff2ab3cc12c5");
+    self endon(#"delete", #"death", #"vote_passed", #"vote_canceled");
+    wait 30;
+    self notify(#"vote_canceled");
 }
 
 // Namespace zm_vote/zm_vote
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf1feb07c, Offset: 0x9a0
 // Size: 0x378
 function function_287ce935(var_8b9e1fe4, var_e058812d = 0) {
@@ -154,7 +153,7 @@ function function_287ce935(var_8b9e1fe4, var_e058812d = 0) {
     }
     self notify("1b72edef6a8e42ef");
     self endon("1b72edef6a8e42ef");
-    var_8b9e1fe4 endon(#"hash_2a14368bde086f2e", #"hash_2c37ff2ab3cc12c5");
+    var_8b9e1fe4 endon(#"vote_passed", #"vote_canceled");
     self endon(#"death");
     self clientfield::set_player_uimodel("sr_vote_prompt.starter", var_8b9e1fe4.var_2d1ee75a getentitynumber());
     var_f4f8379d = 0;
@@ -200,13 +199,13 @@ function function_287ce935(var_8b9e1fe4, var_e058812d = 0) {
 }
 
 // Namespace zm_vote/zm_vote
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x78d88c12, Offset: 0xd20
 // Size: 0x40
 function function_3728d19b() {
     if (isdefined(level.var_c5beea37)) {
         var_8b9e1fe4 = level.var_c5beea37;
-        var_8b9e1fe4 notify(#"hash_2c37ff2ab3cc12c5");
+        var_8b9e1fe4 notify(#"vote_canceled");
     }
 }
 

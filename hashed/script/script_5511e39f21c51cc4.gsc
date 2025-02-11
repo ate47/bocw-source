@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\player\player_utils.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\mp_common\challenges.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
 #using script_4721de209091b1a6;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\killstreaks\helicopter_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\helicopter_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\mp_common\challenges;
+#using scripts\mp_common\player\player_utils;
 
 #namespace helicopter;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace helicopter/helicopter_guard
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa2aad656, Offset: 0x1a8
 // Size: 0x104
 function private preinit() {
@@ -41,7 +40,7 @@ function private preinit() {
 }
 
 // Namespace helicopter/helicopter_guard
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb40cdb06, Offset: 0x2b8
 // Size: 0x158
 function function_6af968ce(attacker, weapon, mod) {
@@ -61,7 +60,7 @@ function function_6af968ce(attacker, weapon, mod) {
 }
 
 // Namespace helicopter/helicopter_guard
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x78a38fcd, Offset: 0x418
 // Size: 0xc
 function function_34f03cda(*hardpointtype) {
@@ -69,7 +68,7 @@ function function_34f03cda(*hardpointtype) {
 }
 
 // Namespace helicopter/helicopter_guard
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xf79adaad, Offset: 0x430
 // Size: 0x148
 function function_4d5e1035(attacker, weapon, type, weapon_damage, event, playercontrolled, hardpointtype) {
@@ -92,7 +91,7 @@ function function_4d5e1035(attacker, weapon, type, weapon_damage, event, playerc
 }
 
 // Namespace helicopter/helicopter_guard
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x2164be41, Offset: 0x580
 // Size: 0x12e
 function function_d45a1f8d(einflictor, attacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {

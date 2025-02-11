@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_40fc784c60f9fa7b;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace namespace_d2883a2e;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_d2883a2e/namespace_d2883a2e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44a27d8, Offset: 0x1a0
 // Size: 0x84
 function preinit() {
@@ -30,7 +29,7 @@ function preinit() {
 }
 
 // Namespace namespace_d2883a2e/namespace_d2883a2e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf1b5f1cd, Offset: 0x230
 // Size: 0x3c
 function postinit() {
@@ -61,7 +60,7 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
 }
 
 // Namespace namespace_d2883a2e/namespace_d2883a2e
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf612e33c, Offset: 0x378
 // Size: 0x74c
 function on_vehicle_spawned() {
@@ -76,7 +75,7 @@ function on_vehicle_spawned() {
             fall thread scene::init(fall.scriptbundlename);
         }
     }
-    wait(1);
+    wait 1;
     waitframe(1);
     if (isdefined(var_6031fb1f) && isdefined(var_d8cde75b)) {
         /#
@@ -170,7 +169,7 @@ function on_vehicle_spawned() {
                     var_c11876a8 delete();
                 }
             }
-            wait(10);
+            wait 10;
             if (isalive(var_6031fb1f)) {
                 var_6031fb1f player_vehicle::function_a2626745();
             }
@@ -179,7 +178,7 @@ function on_vehicle_spawned() {
 }
 
 // Namespace namespace_d2883a2e/namespace_d2883a2e
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4ec84cf0, Offset: 0xad0
 // Size: 0x282
 function function_a6b2f443(vehicle) {
@@ -227,7 +226,7 @@ function function_a6b2f443(vehicle) {
             return;
         }
         str_type = function_9e72a96(self.vehicletype);
-        if (str_type === "<unknown string>") {
+        if (str_type === "<dev string:x38>") {
             return;
         }
         self endon(#"death");
@@ -245,7 +244,7 @@ function function_a6b2f443(vehicle) {
         level.var_6eef6733[function_9e72a96(self.vehicletype)][level.var_6eef6733[function_9e72a96(self.vehicletype)].size] = self;
         v_spawn_pos = self.origin;
         level thread function_f567f0cd();
-        level flag::wait_till("<unknown string>");
+        level flag::wait_till("<dev string:x5c>");
         location = self.origin;
         if (isdefined(self.target)) {
             deploy = struct::get(self.target);
@@ -292,12 +291,12 @@ function function_a6b2f443(vehicle) {
                 n_total += var_f0ffe8b2.size;
                 foreach (var_3ed342fe in var_f0ffe8b2) {
                     if (isvehicle(var_3ed342fe) && isdefined(var_f0ffe8b2) && isdefined(var_f0ffe8b2[0]) && isdefined(var_f0ffe8b2[0].vehicletype)) {
-                        debug2dtext((810, var_bd9acc19, 0), function_9e72a96(var_f0ffe8b2[0].vehicletype) + "<unknown string>" + var_f0ffe8b2.size, var_3ed342fe function_b2775b52());
+                        debug2dtext((810, var_bd9acc19, 0), function_9e72a96(var_f0ffe8b2[0].vehicletype) + "<dev string:x74>" + var_f0ffe8b2.size, var_3ed342fe function_b2775b52());
                         break;
                     }
                 }
             }
-            debug2dtext((810, 176, 0), "<unknown string>" + n_total, (1, 1, 1));
+            debug2dtext((810, 176, 0), "<dev string:x7a>" + n_total, (1, 1, 1));
             waitframe(1);
         }
     }
@@ -319,9 +318,9 @@ function function_a6b2f443(vehicle) {
     // Size: 0x9c
     function init_devgui() {
         mapname = util::get_map_name();
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<dev string:x94>" + mapname + "<dev string:xa5>");
+        adddebugcommand("<dev string:x94>" + mapname + "<dev string:x10a>");
+        adddebugcommand("<dev string:x94>" + mapname + "<dev string:x171>");
     }
 
     // Namespace namespace_d2883a2e/namespace_d2883a2e

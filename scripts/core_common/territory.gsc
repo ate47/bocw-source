@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\territory_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\oob;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\territory_util;
+#using scripts\core_common\util_shared;
 
 #namespace territory;
 
@@ -19,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace territory/territory
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7be487df, Offset: 0x170
 // Size: 0x3d0
 function private preinit() {
@@ -28,7 +27,7 @@ function private preinit() {
     for (index = 1; index <= territories.size; index++) {
         territories[index - 1].id = index;
     }
-    var_97191da8 = getdvarstring(#"hash_31435ea827fda47b", "");
+    var_97191da8 = getdvarstring(#"g_territory", "");
     var_45072867 = strtok(var_97191da8, " ");
     var_45072867 = array::randomize(var_45072867);
     foreach (var_8f246125 in var_45072867) {
@@ -56,13 +55,13 @@ function private preinit() {
     /#
         mapname = util::get_map_name();
         foreach (territory in territories) {
-            adddebugcommand("<unknown string>" + mapname + "<unknown string>" + territory.targetname + "<unknown string>" + territory.targetname + "<unknown string>");
+            adddebugcommand("<dev string:x38>" + mapname + "<dev string:x49>" + territory.targetname + "<dev string:x5d>" + territory.targetname + "<dev string:x74>");
         }
     #/
 }
 
 // Namespace territory/territory
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa6aac48f, Offset: 0x548
 // Size: 0x156
 function private function_49695e98(center, mins, maxs, origin) {
@@ -81,7 +80,7 @@ function private function_49695e98(center, mins, maxs, origin) {
 }
 
 // Namespace territory/territory
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc452abb1, Offset: 0x6a8
 // Size: 0x45a
 function private function_7904ef68(territory) {
@@ -127,7 +126,7 @@ function private function_7904ef68(territory) {
 }
 
 // Namespace territory/territory
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1f51d45d, Offset: 0xb10
 // Size: 0x122
 function function_1deaf019(name, key, territory = level.territory) {
@@ -145,7 +144,7 @@ function function_1deaf019(name, key, territory = level.territory) {
 }
 
 // Namespace territory/territory
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xb0307fcf, Offset: 0xc40
 // Size: 0x7a
 function function_1f583d2e(name, key = "targetname", territory = level.territory) {

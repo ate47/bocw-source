@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\abilities\gadgets\gadget_smart_cover.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\abilities\gadgets\gadget_smart_cover;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_util;
 
 #namespace smart_cover;
 
@@ -18,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x35915a90, Offset: 0x100
 // Size: 0x6c
 function private preinit() {
@@ -29,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xef6fd263, Offset: 0x178
 // Size: 0x84
 function onsmartcoverplaced(smartcover) {
@@ -38,7 +37,7 @@ function onsmartcoverplaced(smartcover) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7e352def, Offset: 0x208
 // Size: 0x114
 function function_a430cceb(attacker, weapon) {
@@ -54,13 +53,13 @@ function function_a430cceb(attacker, weapon) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xfb25d82a, Offset: 0x328
 // Size: 0x14a
 function function_9a2b3318(origin, *angles, *player) {
     if (isdefined(level.smartcoversettings.bundle.var_bc78f60e)) {
         length2 = sqr(level.smartcoversettings.bundle.var_bc78f60e + level.smartcoversettings.bundle.maxwidth);
-        foreach (protectedzone in level.smartcoversettings.var_d6a27a84) {
+        foreach (protectedzone in level.smartcoversettings.objectivezones) {
             if (isdefined(protectedzone)) {
                 dist2 = distance2dsquared(player, protectedzone.origin);
                 if (dist2 < length2) {
@@ -76,15 +75,15 @@ function function_9a2b3318(origin, *angles, *player) {
 // Params 1, eflags: 0x0
 // Checksum 0x73aa84cf, Offset: 0x480
 // Size: 0x34
-function function_18f38647(zone) {
-    array::add(level.smartcoversettings.var_d6a27a84, zone);
+function addprotectedzone(zone) {
+    array::add(level.smartcoversettings.objectivezones, zone);
 }
 
 // Namespace smart_cover/gadget_smart_cover
 // Params 1, eflags: 0x0
 // Checksum 0x401001e6, Offset: 0x4c0
 // Size: 0x34
-function function_60a53911(zone) {
-    arrayremovevalue(level.smartcoversettings.var_d6a27a84, zone);
+function removeprotectedzone(zone) {
+    arrayremovevalue(level.smartcoversettings.objectivezones, zone);
 }
 

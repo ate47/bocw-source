@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\gadgets\gadget_concertina_wire.gsc;
-#using scripts\core_common\system_shared.gsc;
+#using scripts\abilities\gadgets\gadget_concertina_wire;
+#using scripts\core_common\system_shared;
 
 #namespace concertina_wire;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xaf3aee0, Offset: 0x100
 // Size: 0x3c
 function private preinit() {
@@ -22,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7e384db9, Offset: 0x148
 // Size: 0xc
 function onconcertinawireplaced(*concertinawire) {

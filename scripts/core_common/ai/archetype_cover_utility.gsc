@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\archetype_human_cover.gsc;
-#using scripts\core_common\ai\systems\behavior_tree_utility.gsc;
-#using scripts\core_common\ai\archetype_utility.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
+#using scripts\core_common\ai\archetype_human_cover;
+#using scripts\core_common\ai\archetype_utility;
+#using scripts\core_common\ai\systems\behavior_tree_utility;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\math_shared;
 
 #namespace aiutility;
 
@@ -98,7 +97,7 @@ function autoexec registerbehaviorscriptfunctions() {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7f3f37a2, Offset: 0x1358
 // Size: 0x64
 function private coverreloadinitialize(entity) {
@@ -108,7 +107,7 @@ function private coverreloadinitialize(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x7b7378, Offset: 0x13c8
 // Size: 0x6c
 function private function_6c5a8f1e(entity) {
@@ -120,7 +119,7 @@ function private function_6c5a8f1e(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe7521bc1, Offset: 0x1440
 // Size: 0x3c
 function private supportspeekcovercondition(entity) {
@@ -131,7 +130,7 @@ function private supportspeekcovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa300cac0, Offset: 0x1488
 // Size: 0x64
 function private coverpeekinitialize(entity) {
@@ -141,7 +140,7 @@ function private coverpeekinitialize(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x17116f2a, Offset: 0x14f8
 // Size: 0x46
 function private coverpeekterminate(entity) {
@@ -151,7 +150,7 @@ function private coverpeekterminate(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x65fb6f52, Offset: 0x1548
 // Size: 0x144
 function private supportsleancovercondition(entity) {
@@ -171,7 +170,7 @@ function private supportsleancovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3b2e8456, Offset: 0x1698
 // Size: 0x312
 function private shouldleanatcovercondition(entity) {
@@ -209,7 +208,7 @@ function private shouldleanatcovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd2f21d31, Offset: 0x19b8
 // Size: 0x46
 function private function_5d1688a6(entity) {
@@ -223,7 +222,7 @@ function private function_5d1688a6(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1a878fcb, Offset: 0x1a08
 // Size: 0x42
 function private continueleaningatcovercondition(entity) {
@@ -234,7 +233,7 @@ function private continueleaningatcovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa821e140, Offset: 0x1a58
 // Size: 0xae
 function private coverleaninitialize(entity) {
@@ -248,7 +247,7 @@ function private coverleaninitialize(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc5073ba3, Offset: 0x1b10
 // Size: 0xde
 function private function_bbe42083(entity) {
@@ -271,7 +270,7 @@ function private function_bbe42083(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5980dd22, Offset: 0x1bf8
 // Size: 0x6a
 function private coverleanterminate(entity) {
@@ -283,7 +282,7 @@ function private coverleanterminate(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1918e46b, Offset: 0x1c70
 // Size: 0x76
 function private function_9e5575be(entity) {
@@ -295,7 +294,7 @@ function private function_9e5575be(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xab731993, Offset: 0x1cf0
 // Size: 0x23c
 function private supportsovercovercondition(entity) {
@@ -324,7 +323,7 @@ function private supportsovercovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcd13a2bc, Offset: 0x1f38
 // Size: 0xba
 function private shouldoveratcovercondition(entity) {
@@ -336,7 +335,7 @@ function private shouldoveratcovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x48e8d674, Offset: 0x2000
 // Size: 0x46
 function private function_74e272f2(entity) {
@@ -350,7 +349,7 @@ function private function_74e272f2(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x65762cac, Offset: 0x2050
 // Size: 0x42
 function private function_2b201dbe(entity) {
@@ -361,7 +360,7 @@ function private function_2b201dbe(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x428fb56b, Offset: 0x20a0
 // Size: 0x96
 function private coveroverinitialize(entity) {
@@ -374,7 +373,7 @@ function private coveroverinitialize(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1e17794c, Offset: 0x2140
 // Size: 0xde
 function private function_2f4d2a0a(entity) {
@@ -397,7 +396,7 @@ function private function_2f4d2a0a(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5d0ef7f9, Offset: 0x2228
 // Size: 0x52
 function private coveroverterminate(entity) {
@@ -408,7 +407,7 @@ function private coveroverterminate(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x987456b, Offset: 0x2288
 // Size: 0x46
 function private function_b605a3b2(entity) {
@@ -418,7 +417,7 @@ function private function_b605a3b2(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3d360ce, Offset: 0x22d8
 // Size: 0x16
 function private function_af89626a(entity) {
@@ -426,7 +425,7 @@ function private function_af89626a(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf85a5dd9, Offset: 0x22f8
 // Size: 0x152
 function private coveridleinitialize(entity) {
@@ -451,7 +450,7 @@ function private coveridleinitialize(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x463986cf, Offset: 0x2458
 // Size: 0x46
 function private coveridleterminate(entity) {
@@ -461,7 +460,7 @@ function private coveridleterminate(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc9b4182e, Offset: 0x24a8
 // Size: 0x128
 function isatcrouchnode(entity) {
@@ -474,7 +473,7 @@ function isatcrouchnode(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc1f0de33, Offset: 0x25d8
 // Size: 0x158
 function function_1d3ee45b(entity) {
@@ -487,7 +486,7 @@ function function_1d3ee45b(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x897fff89, Offset: 0x2738
 // Size: 0x8a
 function function_3fe92ec8(entity) {
@@ -504,7 +503,7 @@ function function_3fe92ec8(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5a5b8b5a, Offset: 0x27d0
 // Size: 0x154
 function private function_94bbbfa3(entity) {
@@ -531,7 +530,7 @@ function private function_94bbbfa3(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5878874a, Offset: 0x2930
 // Size: 0x5a
 function private function_454e951f(entity) {
@@ -544,7 +543,7 @@ function private function_454e951f(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xba1f58a4, Offset: 0x2998
 // Size: 0x3e
 function isatcoverstrictcondition(entity) {
@@ -552,7 +551,7 @@ function isatcoverstrictcondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x831ff871, Offset: 0x29e0
 // Size: 0x44
 function isatcovermodeover(entity) {
@@ -561,7 +560,7 @@ function isatcovermodeover(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa3b60f86, Offset: 0x2a30
 // Size: 0x44
 function isatcovermodenone(entity) {
@@ -570,7 +569,7 @@ function isatcovermodenone(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x734dbef8, Offset: 0x2a80
 // Size: 0x98
 function function_d18f7e29(entity) {
@@ -600,7 +599,7 @@ function function_bd4a2ff7(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfd1162f7, Offset: 0x2bb0
 // Size: 0x5e
 function shouldcoveridleonly(entity) {
@@ -614,7 +613,7 @@ function shouldcoveridleonly(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x745d7d3, Offset: 0x2c18
 // Size: 0x2a
 function issuppressedatcovercondition(entity) {
@@ -625,7 +624,7 @@ function issuppressedatcovercondition(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5912c7d6, Offset: 0x2c50
 // Size: 0x10
 function function_5d963944(*entity) {
@@ -633,7 +632,7 @@ function function_5d963944(*entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa543997d, Offset: 0x2c68
 // Size: 0x3c
 function keepclaimednodeandchoosecoverdirection(entity) {
@@ -642,7 +641,7 @@ function keepclaimednodeandchoosecoverdirection(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x67239c46, Offset: 0x2cb0
 // Size: 0x54
 function resetcoverparameters(entity) {
@@ -652,7 +651,7 @@ function resetcoverparameters(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc4357123, Offset: 0x2d10
 // Size: 0x9c
 function choosecoverdirection(entity, stepout) {
@@ -665,7 +664,7 @@ function choosecoverdirection(entity, stepout) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3b2fc7ec, Offset: 0x2db8
 // Size: 0x142
 function function_f6d48a6a(entity) {
@@ -688,7 +687,7 @@ function function_f6d48a6a(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xab18445c, Offset: 0x2f08
 // Size: 0x1d2
 function calculatecoverdirection(entity, stepout) {
@@ -719,7 +718,7 @@ function calculatecoverdirection(entity, stepout) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x842215ed, Offset: 0x30e8
 // Size: 0x16
 function clearcovershootstarttime(entity) {
@@ -727,7 +726,7 @@ function clearcovershootstarttime(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2fca8bdf, Offset: 0x3108
 // Size: 0x16
 function setcovershootstarttime(entity) {
@@ -735,7 +734,7 @@ function setcovershootstarttime(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xed5e7217, Offset: 0x3128
 // Size: 0xd2
 function function_4ec57157(entity) {
@@ -747,16 +746,16 @@ function function_4ec57157(entity) {
         if (gettime() - starttime > 5000) {
             return;
         }
-        wait(0.05);
+        wait 0.05;
     }
     starttime = gettime();
     while (entity asmistransitionrunning()) {
         if (gettime() - starttime > 5000) {
             return;
         }
-        wait(0.05);
+        wait 0.05;
     }
-    wait(0.25);
+    wait 0.25;
     entity.lastcanshootenemytime = 0;
     entity.lastcanshootlastsightpostime = 0;
 }
@@ -770,7 +769,7 @@ function canbeflanked(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc3c2d1e2, Offset: 0x3238
 // Size: 0x22
 function setcanbeflanked(entity, canbeflanked) {
@@ -778,7 +777,7 @@ function setcanbeflanked(entity, canbeflanked) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6745e833, Offset: 0x3268
 // Size: 0xe4
 function cleanupcovermode(entity) {
@@ -793,7 +792,7 @@ function cleanupcovermode(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0x1be8d6a8, Offset: 0x3358
 // Size: 0xfa
 function private function_1587e509(entity, aimlimits, var_b0b60311, var_ec53bfd8) {
@@ -813,7 +812,7 @@ function private function_1587e509(entity, aimlimits, var_b0b60311, var_ec53bfd8
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3b94484a, Offset: 0x3460
 // Size: 0xaa
 function private function_db059f5c(entity, aimlimits) {
@@ -825,7 +824,7 @@ function private function_db059f5c(entity, aimlimits) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xbce0bd95, Offset: 0x3518
 // Size: 0x8e
 function private function_cfe04a8d(entity, aimtable, var_b0b60311, var_ec53bfd8) {

@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\sound_shared.csc;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\core_common\exploder_shared.csc;
-#using scripts\core_common\callbacks_shared.csc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\exploder_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\sound_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
 
 #namespace fx;
 
@@ -17,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xa3372eb7, Offset: 0x2f8
 // Size: 0x54
 function private preinit() {
@@ -27,7 +26,7 @@ function private preinit() {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3eac9f75, Offset: 0x358
 // Size: 0x64
 function on_player_spawned(localclientnum) {
@@ -37,7 +36,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe5c0eb09, Offset: 0x3c8
 // Size: 0x290
 function player_init(clientnum) {
@@ -77,13 +76,13 @@ function player_init(clientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc362aea, Offset: 0x660
 // Size: 0x5c
 function validate(fxid, origin) {
     /#
         if (!isdefined(level._effect[fxid])) {
-            assertmsg("<unknown string>" + fxid + "<unknown string>" + origin);
+            assertmsg("<dev string:x38>" + fxid + "<dev string:x4f>" + origin);
         }
     #/
 }
@@ -109,7 +108,7 @@ function create_loop_sound() {
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x42e725f, Offset: 0x7d0
 // Size: 0xe6
 function create_effect(type, fxid) {
@@ -148,7 +147,7 @@ function create_loop_effect(fxid) {
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x66bb1380, Offset: 0x970
 // Size: 0x84
 function set_forward_and_up_vectors() {
@@ -157,12 +156,12 @@ function set_forward_and_up_vectors() {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2eb8daf7, Offset: 0xa00
 // Size: 0x5c
 function oneshot_thread(clientnum) {
     if (self.v[#"delay"] > 0) {
-        wait(self.v[#"delay"]);
+        wait self.v[#"delay"];
     }
     create_trigger(clientnum);
 }
@@ -180,7 +179,7 @@ function oneshot_thread(clientnum) {
 #/
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1b2862d3, Offset: 0xa78
 // Size: 0x154
 function loop_sound(clientnum) {
@@ -198,17 +197,17 @@ function loop_sound(clientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc3d925a9, Offset: 0xbd8
 // Size: 0x46
 function lightning(normalfunc, flashfunc) {
     [[ flashfunc ]]();
-    wait(randomfloatrange(0.05, 0.1));
+    wait randomfloatrange(0.05, 0.1);
     [[ normalfunc ]]();
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x58e4126f, Offset: 0xc28
 // Size: 0xfc
 function loop_thread(clientnum) {
@@ -237,19 +236,19 @@ function loop_thread(clientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd23c0b3c, Offset: 0xd30
 // Size: 0x5c
 function loop_stop(clientnum, timeout) {
     self endon(#"death");
-    wait(timeout);
+    wait timeout;
     if (isdefined(self.looper)) {
         deletefx(clientnum, self.looper);
     }
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x34da7607, Offset: 0xd98
 // Size: 0x3c
 function create_looper(clientnum) {
@@ -258,7 +257,7 @@ function create_looper(clientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe7154e14, Offset: 0xde0
 // Size: 0x246
 function loop(clientnum) {
@@ -266,24 +265,24 @@ function loop(clientnum) {
     self.looperfx = playfx(clientnum, level._effect[self.v[#"fxid"]], self.v[#"origin"], self.v[#"forward"], self.v[#"up"], self.v[#"delay"], self.v[#"primlightfrac"], self.v[#"lightoriginoffs"]);
     while (true) {
         if (isdefined(self.v[#"delay"])) {
-            wait(self.v[#"delay"]);
+            wait self.v[#"delay"];
         }
         while (isfxplaying(clientnum, self.looperfx)) {
-            wait(0.25);
+            wait 0.25;
         }
         self.looperfx = playfx(clientnum, level._effect[self.v[#"fxid"]], self.v[#"origin"], self.v[#"forward"], self.v[#"up"], 0, self.v[#"primlightfrac"], self.v[#"lightoriginoffs"]);
     }
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4b438ecf, Offset: 0x1030
 // Size: 0x18c
 function create_trigger(clientnum) {
     validate(self.v[#"fxid"], self.v[#"origin"]);
     /#
         if (getdvarint(#"debug_fx", 0) > 0) {
-            println("<unknown string>" + self.v[#"fxid"]);
+            println("<dev string:x59>" + self.v[#"fxid"]);
         }
     #/
     self.looperfx = playfx(clientnum, level._effect[self.v[#"fxid"]], self.v[#"origin"], self.v[#"forward"], self.v[#"up"], self.v[#"delay"], self.v[#"primlightfrac"], self.v[#"lightoriginoffs"]);
@@ -291,7 +290,7 @@ function create_trigger(clientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xaf4422d8, Offset: 0x11c8
 // Size: 0x7c
 function function_3539a829(local_client_num, friendly_fx, enemy_fx, tag) {
@@ -324,7 +323,7 @@ function blinky_light(localclientnum, tagname, friendlyfx, enemyfx) {
     self thread blinky_emp_wait(localclientnum);
     while (true) {
         if (isdefined(self.stunned) && self.stunned) {
-            wait(0.1);
+            wait 0.1;
             continue;
         }
         if (isdefined(self)) {
@@ -335,7 +334,7 @@ function blinky_light(localclientnum, tagname, friendlyfx, enemyfx) {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x19213dbc, Offset: 0x13e0
 // Size: 0x56
 function stop_blinky_light(localclientnum) {
@@ -348,7 +347,7 @@ function stop_blinky_light(localclientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb2e6d26f, Offset: 0x1440
 // Size: 0x5c
 function blinky_emp_wait(localclientnum) {
@@ -359,7 +358,7 @@ function blinky_emp_wait(localclientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb978ae27, Offset: 0x14a8
 // Size: 0x1f8
 function function_3b26f98c(localclientnum) {
@@ -378,7 +377,7 @@ function function_3b26f98c(localclientnum) {
 }
 
 // Namespace fx/fx_shared
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x70e47667, Offset: 0x16a8
 // Size: 0x94
 function function_29150e99(*current_time, elapsed_time, *local_client_num, duration, var_8a5c2b54, var_dc3fdb72, constant, postfx) {
@@ -388,7 +387,7 @@ function function_29150e99(*current_time, elapsed_time, *local_client_num, durat
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x116e39f5, Offset: 0x1748
 // Size: 0x1fc
 function private function_1725d99a() {
@@ -411,7 +410,7 @@ function private function_1725d99a() {
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x56f41549, Offset: 0x1950
 // Size: 0x3a4
 function function_a795470c() {
@@ -463,7 +462,7 @@ function function_a795470c() {
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4482d368, Offset: 0x1d00
 // Size: 0x170
 function function_5409b584() {
@@ -484,7 +483,7 @@ function function_5409b584() {
 }
 
 // Namespace fx/fx_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xfb52f778, Offset: 0x1e78
 // Size: 0x28c
 function function_82104e32(var_904e61ce, var_f7259b16, var_ff9d26ff) {
@@ -539,7 +538,7 @@ function function_82104e32(var_904e61ce, var_f7259b16, var_ff9d26ff) {
 }
 
 // Namespace fx/fx_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a3b6f2c, Offset: 0x2110
 // Size: 0x1d8
 function trace_distance() {
@@ -558,14 +557,14 @@ function trace_distance() {
         if (getdvarint(#"_internal_debug_dof", 0) == 1) {
             var_cba8e949 = 1;
             debugstar(trace[#"position"], var_cba8e949, (0, 1, 0));
-            print3d(trace[#"position"], "<unknown string>" + dist, (0, 1, 0), 1, 0.2, var_cba8e949);
+            print3d(trace[#"position"], "<dev string:x6c>" + dist, (0, 1, 0), 1, 0.2, var_cba8e949);
         }
     #/
     return dist;
 }
 
 // Namespace fx/fx_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xd5948de4, Offset: 0x22f0
 // Size: 0x32c
 function function_70ba68f1(var_e4db2d63, var_904e61ce, var_ff9d26ff, var_f7259b16, tag) {
@@ -574,7 +573,7 @@ function function_70ba68f1(var_e4db2d63, var_904e61ce, var_ff9d26ff, var_f7259b1
     self endon(#"death");
     if (!isdefined(var_e4db2d63)) {
         /#
-            iprintlnbold("<unknown string>");
+            iprintlnbold("<dev string:x79>");
         #/
         return;
     }
@@ -608,11 +607,11 @@ function function_70ba68f1(var_e4db2d63, var_904e61ce, var_ff9d26ff, var_f7259b1
         self function_1816c600(var_904e61ce, var_f7259b16);
         self function_d7be9a9f(var_608ff588, var_ff9d26ff);
         /#
-            var_b756ce7 = int(ceil(var_ae5fe668 * 50));
-            debugstar(target_origin, var_b756ce7, (0, 1, 0));
-            print3d(target_origin, "<unknown string>" + var_608ff588, (0, 1, 0), 1, 0.5, var_b756ce7);
+            wait_frames = int(ceil(var_ae5fe668 * 50));
+            debugstar(target_origin, wait_frames, (0, 1, 0));
+            print3d(target_origin, "<dev string:x94>" + var_608ff588, (0, 1, 0), 1, 0.5, wait_frames);
         #/
-        wait(var_ae5fe668);
+        wait var_ae5fe668;
     }
     self function_c2856ebd(0.05);
 }

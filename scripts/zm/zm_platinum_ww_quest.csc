@@ -1,14 +1,13 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_3461e14083d6d41b;
-#using scripts\core_common\postfx_shared.csc;
-#using scripts\zm_common\zm_ping.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\postfx_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_ping;
 
 #namespace zm_platinum_ww_quest;
 
 // Namespace zm_platinum_ww_quest/zm_platinum_ww_quest
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xea0d0b03, Offset: 0x118
 // Size: 0xb4
 function init() {
@@ -18,7 +17,7 @@ function init() {
 }
 
 // Namespace zm_platinum_ww_quest/zm_platinum_ww_quest
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x8916e56b, Offset: 0x1d8
 // Size: 0xa4
 function function_3cc5163a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {

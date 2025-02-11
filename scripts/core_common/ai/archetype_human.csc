@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
 
 #namespace archetype_human;
 
@@ -23,7 +22,7 @@ function autoexec main() {
 #namespace humanclientutils;
 
 // Namespace humanclientutils/archetype_human
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x595fd9a2, Offset: 0x158
 // Size: 0x94
 function facialdialoguehandler(*localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {

@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_32399001bdb550da;
-#using scripts\abilities\ability_util.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\perks.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
 #using script_25c09ccacf057919;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using script_32399001bdb550da;
+#using scripts\abilities\ability_util;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\perks;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\cp_common\util;
 
 #namespace profile_traits;
 
@@ -24,13 +23,13 @@ function private autoexec __init__system__() {
 }
 
 // Namespace profile_traits/profile_traits
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6379e107, Offset: 0x170
 // Size: 0x3b4
 function private preinit() {
     /#
-        function_bba23c40("<unknown string>", 0.75);
-        function_bba23c40("<unknown string>", 0.75);
+        function_bba23c40("<dev string:x38>", 0.75);
+        function_bba23c40("<dev string:x53>", 0.75);
     #/
     level.var_e85d5a3f = spawnstruct();
     var_1f7a9822 = getscriptbundle(#"profile_traits");
@@ -46,21 +45,21 @@ function private preinit() {
         }
     }
     /#
-        function_5ac4dc99("<unknown string>", 0);
-        function_5ac4dc99("<unknown string>", -1);
-        function_5ac4dc99("<unknown string>", -1);
-        function_5ac4dc99("<unknown string>", 0);
-        function_cd140ee9("<unknown string>", &function_df62d47f);
-        function_cd140ee9("<unknown string>", &function_df62d47f);
-        function_cd140ee9("<unknown string>", &function_df62d47f);
-        function_cd140ee9("<unknown string>", &function_df62d47f);
+        function_5ac4dc99("<dev string:x70>", 0);
+        function_5ac4dc99("<dev string:x88>", -1);
+        function_5ac4dc99("<dev string:x9e>", -1);
+        function_5ac4dc99("<dev string:xb7>", 0);
+        function_cd140ee9("<dev string:x70>", &function_df62d47f);
+        function_cd140ee9("<dev string:x88>", &function_df62d47f);
+        function_cd140ee9("<dev string:x9e>", &function_df62d47f);
+        function_cd140ee9("<dev string:xb7>", &function_df62d47f);
         for (i = 0; i < level.var_e85d5a3f.var_e4f193a3.size; i++) {
             var_fb7d23d9 = level.var_e85d5a3f.var_e4f193a3[i];
-            adddebugcommand("<unknown string>" + var_fb7d23d9.var_7c0b3589 + "<unknown string>" + i + "<unknown string>" + i + "<unknown string>");
-            adddebugcommand("<unknown string>" + var_fb7d23d9.var_7c0b3589 + "<unknown string>" + i + "<unknown string>" + i + "<unknown string>");
+            adddebugcommand("<dev string:xd4>" + var_fb7d23d9.var_7c0b3589 + "<dev string:x100>" + i + "<dev string:x105>" + i + "<dev string:x123>");
+            adddebugcommand("<dev string:x129>" + var_fb7d23d9.var_7c0b3589 + "<dev string:x100>" + i + "<dev string:x158>" + i + "<dev string:x123>");
         }
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
+        adddebugcommand("<dev string:x179>");
+        adddebugcommand("<dev string:x1cc>");
     #/
 }
 
@@ -82,7 +81,7 @@ function private preinit() {
         level endon(#"game_ended");
         waitframe(1);
         player = getplayers()[0];
-        if (params.name == "<unknown string>") {
+        if (params.name == "<dev string:x88>") {
             var_e3ffeeb4 = params.value;
             if (var_e3ffeeb4 > -1) {
                 assert(var_e3ffeeb4 < level.var_e85d5a3f.var_e4f193a3.size);
@@ -92,7 +91,7 @@ function private preinit() {
             }
             return;
         }
-        if (params.name == "<unknown string>") {
+        if (params.name == "<dev string:x9e>") {
             var_eccea24e = params.value;
             if (var_eccea24e > -1) {
                 assert(var_eccea24e < level.var_e85d5a3f.var_e4f193a3.size);
@@ -102,7 +101,7 @@ function private preinit() {
             }
             return;
         }
-        if (params.name == "<unknown string>") {
+        if (params.name == "<dev string:x70>") {
             var_6eee7673 = params.value;
             if (var_6eee7673) {
                 player function_56266435();
@@ -110,7 +109,7 @@ function private preinit() {
             }
             return;
         }
-        if (params.name == "<unknown string>") {
+        if (params.name == "<dev string:xb7>") {
             if (params.value) {
                 player thread function_30a971a4();
                 return;
@@ -130,20 +129,20 @@ function private preinit() {
         for (i = 0; i < level.var_e85d5a3f.var_e4f193a3.size; i++) {
             trait = level.var_e85d5a3f.var_e4f193a3[i];
             hudelem = newdebughudelem(player);
-            hudelem.alignx = "<unknown string>";
-            hudelem.aligny = "<unknown string>";
+            hudelem.alignx = "<dev string:x22f>";
+            hudelem.aligny = "<dev string:x237>";
             hudelem.x = 400;
             hudelem.y = 220 + i * 14;
             hudelem.foreground = 1;
             hudelem.fontscale = 1;
-            hudelem settext(trait.ref_name + "<unknown string>");
+            hudelem settext(trait.ref_name + "<dev string:x23e>");
             hudelem.var_16021753 = 0;
             hudelem.var_300d73bc = 0;
             hudelem.color = (0.75, 0.75, 0.75);
             player.var_adeb44c2[i] = hudelem;
         }
         while (true) {
-            wait(0.5);
+            wait 0.5;
             for (i = 0; i < level.var_e85d5a3f.var_e4f193a3.size; i++) {
                 trait = level.var_e85d5a3f.var_e4f193a3[i];
                 var_16021753 = function_a996bd5e(trait.bitflag);
@@ -159,23 +158,23 @@ function private preinit() {
                 if (var_16021753 != hudelem.var_16021753 || var_300d73bc != hudelem.var_300d73bc) {
                     hudelem.var_16021753 = var_16021753;
                     hudelem.var_300d73bc = var_300d73bc;
-                    var_63d9d5cb = trait.ref_name + "<unknown string>";
+                    var_63d9d5cb = trait.ref_name + "<dev string:x259>";
                     if (var_16021753) {
-                        var_63d9d5cb += "<unknown string>";
+                        var_63d9d5cb += "<dev string:x25f>";
                         hudelem.color = (0, 1, 0);
                     } else {
-                        var_63d9d5cb += "<unknown string>";
+                        var_63d9d5cb += "<dev string:x271>";
                         hudelem.color = (0.75, 0.75, 0.75);
                     }
                     if (var_300d73bc == -1) {
-                        var_63d9d5cb += "<unknown string>";
+                        var_63d9d5cb += "<dev string:x280>";
                     } else if (var_300d73bc) {
-                        var_63d9d5cb += "<unknown string>";
+                        var_63d9d5cb += "<dev string:x294>";
                         if (!var_16021753) {
                             hudelem.color = (1, 0, 0);
                         }
                     } else {
-                        var_63d9d5cb += "<unknown string>";
+                        var_63d9d5cb += "<dev string:x2a5>";
                         if (var_16021753) {
                             hudelem.color = (1, 0, 0);
                         }
@@ -203,7 +202,7 @@ function private preinit() {
 #/
 
 // Namespace profile_traits/profile_traits
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x29d17bc8, Offset: 0xc90
 // Size: 0x16
 function function_979631fd() {
@@ -211,7 +210,7 @@ function function_979631fd() {
 }
 
 // Namespace profile_traits/profile_traits
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d3fe6a5, Offset: 0xcb0
 // Size: 0x16
 function function_3937b542() {
@@ -219,7 +218,7 @@ function function_3937b542() {
 }
 
 // Namespace profile_traits/profile_traits
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x655a07d1, Offset: 0xcd0
 // Size: 0xe4
 function function_d9b59414(var_f2c93983) {
@@ -231,11 +230,11 @@ function function_d9b59414(var_f2c93983) {
             return trait.bitflag;
         }
     }
-    assertmsg("<unknown string>" + var_f2c93983 + "<unknown string>");
+    assertmsg("<dev string:x2b3>" + var_f2c93983 + "<dev string:x2fc>");
 }
 
 // Namespace profile_traits/profile_traits
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x495ef678, Offset: 0xdc0
 // Size: 0x2c
 function function_56266435() {
@@ -259,7 +258,7 @@ function function_a996bd5e(var_f03e5d1b) {
 }
 
 // Namespace profile_traits/profile_traits
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x66fcf477, Offset: 0xea8
 // Size: 0xbc
 function function_18198dfb(var_f03e5d1b) {
@@ -275,7 +274,7 @@ function function_18198dfb(var_f03e5d1b) {
 }
 
 // Namespace profile_traits/profile_traits
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb617d7c4, Offset: 0xf70
 // Size: 0x21c
 function function_1c1fa213(var_f03e5d1b) {
@@ -292,7 +291,7 @@ function function_1c1fa213(var_f03e5d1b) {
             } else if (trait.ref_name == "jugernog") {
                 player player::function_b933de24("jugernog", 0);
             }
-            println("<unknown string>" + trait.ref_name + "<unknown string>");
+            println("<dev string:x301>" + trait.ref_name + "<dev string:x2fc>");
         }
     }
     if (var_b3903404 & var_f03e5d1b) {
@@ -303,7 +302,7 @@ function function_1c1fa213(var_f03e5d1b) {
 }
 
 // Namespace profile_traits/profile_traits
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c4b5843, Offset: 0x1198
 // Size: 0x1e8
 function function_d53bb873() {
@@ -322,7 +321,7 @@ function function_d53bb873() {
                 player.health = 125;
                 player.maxhealth = 125;
             }
-            println("<unknown string>" + trait.ref_name + "<unknown string>");
+            println("<dev string:x325>" + trait.ref_name + "<dev string:x2fc>");
         }
     }
 }

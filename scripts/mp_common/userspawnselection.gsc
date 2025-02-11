@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\globallogic_spawn.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\killcam_shared.gsc;
-#using script_44b0b8420eabacad;
 #using script_335d0650ed05d36d;
-#using scripts\core_common\spawning_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using script_44b0b8420eabacad;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\killcam_shared;
+#using scripts\core_common\spawning_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\mp_common\gametypes\globallogic_spawn;
 
 #namespace userspawnselection;
 
@@ -24,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7974e5e4, Offset: 0x228
 // Size: 0x1ec
 function private preinit() {
@@ -37,7 +36,7 @@ function private preinit() {
     level.usespawngroups = getgametypesetting(#"usespawngroups");
     level.spawngroups = [];
     level.next_spawn_group_index = 0;
-    level.var_abb55703 = &function_a316ca82;
+    level.playerspawnedfromspawnbeacon = &function_a316ca82;
     level.registeravailablespawnbeacon = &registeravailablespawnbeacon;
     level.var_13edf38c = &removespawnbeacon;
     level.spawnselect_timelimit_ms = getdvarint(#"spawnselect_timelimit_ms", 10000);
@@ -52,7 +51,7 @@ function private preinit() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x53c07f69, Offset: 0x420
 // Size: 0xa0
 function function_127864f2(player) {
@@ -76,11 +75,11 @@ function function_93076e1d() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x73223e6c, Offset: 0x518
 // Size: 0x3e
 function function_a316ca82(player) {
-    spawnbeacon = player function_b9573d36();
+    spawnbeacon = player getspawnbeaconplayerspawnedfrom();
     if (isdefined(spawnbeacon)) {
         return true;
     }
@@ -88,7 +87,7 @@ function function_a316ca82(player) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb8956721, Offset: 0x560
 // Size: 0x74
 function onplayerspawned() {
@@ -102,7 +101,7 @@ function onplayerspawned() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe5c00a81, Offset: 0x5e0
 // Size: 0x5c
 function registeravailablespawnbeacon(spawnbeaconid, spawnbeacon) {
@@ -111,7 +110,7 @@ function registeravailablespawnbeacon(spawnbeaconid, spawnbeacon) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x76545831, Offset: 0x648
 // Size: 0xac
 function removespawnbeacon(spawnbeaconid) {
@@ -126,7 +125,7 @@ function removespawnbeacon(spawnbeaconid) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b1fe15d, Offset: 0x700
 // Size: 0xe
 function isspawnselectenabled() {
@@ -184,7 +183,7 @@ function getspawngroupwithscriptnoteworthy(script_noteworthy) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbcd284f6, Offset: 0x9a8
 // Size: 0x64
 function changeusability(isusable) {
@@ -194,7 +193,7 @@ function changeusability(isusable) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xfbd613e3, Offset: 0xa18
 // Size: 0x54
 function changevisibility(isvisible) {
@@ -214,7 +213,7 @@ function changeteam(teamname) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfa2500c6, Offset: 0xb28
 // Size: 0xb8
 function setspawngroupsenabled() {
@@ -236,7 +235,7 @@ function canplayerusespawngroup(*spawngroupindex) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60b2d4c0, Offset: 0xc00
 // Size: 0x28
 function setspawngroupforplayer(selectedspawngroupindex) {
@@ -244,10 +243,10 @@ function setspawngroupforplayer(selectedspawngroupindex) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1904eb60, Offset: 0xc30
 // Size: 0x174
-function function_b9573d36() {
+function getspawnbeaconplayerspawnedfrom() {
     player = self;
     if (level.spawnselectenabled !== 1 && level.var_6cd68fbe === 1) {
         return player.var_583f6cce;
@@ -282,7 +281,7 @@ function fillspawnlists() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x936c8f85, Offset: 0xe68
 // Size: 0x70
 function clearcacheforplayer() {
@@ -295,7 +294,7 @@ function clearcacheforplayer() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6a88ff1d, Offset: 0xee0
 // Size: 0x16
 function clearcacheforallplayers() {
@@ -321,7 +320,7 @@ function getlastchosenspawngroupforplayer() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf5d3e812, Offset: 0xfa8
 // Size: 0x34
 function onroundchange() {
@@ -340,7 +339,7 @@ function function_5cd68e00() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b4227c2, Offset: 0x1020
 // Size: 0x10
 function supressspawnselectionmenuforallplayers() {
@@ -348,7 +347,7 @@ function supressspawnselectionmenuforallplayers() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x10bad694, Offset: 0x1038
 // Size: 0x164
 function shouldshowspawnselectionmenu() {
@@ -361,7 +360,7 @@ function shouldshowspawnselectionmenu() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf6da6e9c, Offset: 0x11a8
 // Size: 0x18
 function activatespawnselectionmenu() {
@@ -369,7 +368,7 @@ function activatespawnselectionmenu() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9826ec4e, Offset: 0x11c8
 // Size: 0x80
 function openspawnselect() {
@@ -383,7 +382,7 @@ function openspawnselect() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb363f1b6, Offset: 0x1250
 // Size: 0x38
 function closespawnselect() {
@@ -400,7 +399,7 @@ function function_fed7687f() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc560ac63, Offset: 0x12c0
 // Size: 0xa0
 function closespawnselectionmenuforallplayers() {
@@ -411,7 +410,7 @@ function closespawnselectionmenuforallplayers() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4b7d457a, Offset: 0x1368
 // Size: 0x54
 function function_b55c5868() {
@@ -421,7 +420,7 @@ function function_b55c5868() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe2f944a, Offset: 0x13c8
 // Size: 0x184
 function waitforspawnselection() {
@@ -455,7 +454,7 @@ function waitforspawnselection() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xaaeb9f4b, Offset: 0x1558
 // Size: 0x84
 function watchforselectiontimeout() {
@@ -466,12 +465,12 @@ function watchforselectiontimeout() {
             self luinotifyevent(#"force_spawn_selection");
             return;
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xeabc1290, Offset: 0x15e8
 // Size: 0x1c
 function private on_player_disconnect() {
@@ -479,7 +478,7 @@ function private on_player_disconnect() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x800233bc, Offset: 0x1610
 // Size: 0x20e
 function filter_spawnpoints(*spawnpoints) {
@@ -499,7 +498,7 @@ function filter_spawnpoints(*spawnpoints) {
     }
     if (!isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid])) {
         /#
-            print("<unknown string>");
+            print("<dev string:x38>");
         #/
         level.spawnselect.lastchosenplayerspawns[e_player.clientid] = -1;
         return undefined;
@@ -514,7 +513,7 @@ function filter_spawnpoints(*spawnpoints) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xbdac9af, Offset: 0x1828
 // Size: 0x5ca
 function private function_259770ba(e_player) {
@@ -530,39 +529,39 @@ function private function_259770ba(e_player) {
     }
     if (!isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid])) {
         /#
-            print("<unknown string>");
+            print("<dev string:x38>");
         #/
         level.spawnselect.lastchosenplayerspawns[e_player.clientid] = -1;
         return undefined;
     }
     if (e_player getteam() != level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team) {
         /#
-            println("<unknown string>");
-            println("<unknown string>" + spawbeaconid + "<unknown string>");
-            println("<unknown string>" + e_player.team + "<unknown string>");
+            println("<dev string:x98>");
+            println("<dev string:xe2>" + spawbeaconid + "<dev string:x102>");
+            println("<dev string:x107>" + e_player.team + "<dev string:x102>");
             for (index = 0; index < level.spawnselect.vox_plr_1_revive_down_2.size; index++) {
                 if (!isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid])) {
                     continue;
                 }
-                println("<unknown string>" + index + "<unknown string>");
-                println("<unknown string>" + level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].objectiveid + "<unknown string>");
-                println("<unknown string>" + level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team + "<unknown string>");
+                println("<dev string:x11b>" + index + "<dev string:x102>");
+                println("<dev string:x12a>" + level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].objectiveid + "<dev string:x102>");
+                println("<dev string:x13c>" + level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team + "<dev string:x102>");
                 if (isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].owner.playername)) {
-                    println("<unknown string>" + level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].owner.playername + "<unknown string>");
+                    println("<dev string:x146>" + level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].owner.playername + "<dev string:x102>");
                 }
-                println("<unknown string>");
+                println("<dev string:x158>");
             }
-            println("<unknown string>" + level.numgametypereservedobjectives + "<unknown string>");
-            println("<unknown string>" + level.releasedobjectives.size + "<unknown string>");
-            println("<unknown string>");
+            println("<dev string:x16f>" + level.numgametypereservedobjectives + "<dev string:x102>");
+            println("<dev string:x189>" + level.releasedobjectives.size + "<dev string:x102>");
+            println("<dev string:x1a7>");
             foreach (objid in level.releasedobjectives) {
-                println(objid + "<unknown string>");
+                println(objid + "<dev string:x102>");
             }
-            println("<unknown string>");
+            println("<dev string:x1c4>");
             foreach (objid in level.spawnbeaconsettings.var_e7571ff1) {
-                println(objid + "<unknown string>");
+                println(objid + "<dev string:x102>");
             }
-            println("<unknown string>");
+            println("<dev string:x1e4>");
         #/
         assert(e_player.team == level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team);
         return undefined;
@@ -572,7 +571,7 @@ function private function_259770ba(e_player) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x611d9a31, Offset: 0x1e00
 // Size: 0x20
 function private getclientfieldprefix(id) {
@@ -580,7 +579,7 @@ function private getclientfieldprefix(id) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x507855b4, Offset: 0x1e28
 // Size: 0x14c
 function private registerclientfields() {
@@ -596,7 +595,7 @@ function private registerclientfields() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a6ed7ae, Offset: 0x1f80
 // Size: 0x2c
 function waitandenablespawngroups() {
@@ -613,7 +612,7 @@ function function_4f78b01d(shoulddisable) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8e22dba, Offset: 0x1ff0
 // Size: 0x13e
 function on_start_gametype() {
@@ -636,7 +635,7 @@ function on_start_gametype() {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x7d8bb86f, Offset: 0x2138
 // Size: 0x1f0
 function private setupspawnlistforspawngroup(spawngroupkey, spawnlistname, team) {
@@ -671,7 +670,7 @@ function private setupspawnlistforspawngroup(spawngroupkey, spawnlistname, team)
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd806d74f, Offset: 0x2330
 // Size: 0x13e
 function private setupspawngroup(spawngroup) {
@@ -690,7 +689,7 @@ function private setupspawngroup(spawngroup) {
 }
 
 // Namespace userspawnselection/userspawnselection
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc492f1d9, Offset: 0x2478
 // Size: 0x98
 function getteamclientfieldvalue(team) {

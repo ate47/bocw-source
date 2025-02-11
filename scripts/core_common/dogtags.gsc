@@ -1,20 +1,19 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\oob.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\spectating.gsc;
 #using script_6167e26342be354b;
-#using scripts\core_common\scoreevents_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using script_7a8059ca02b7b09e;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\scoreevents_shared;
+#using scripts\core_common\spectating;
+#using scripts\core_common\util_shared;
 
 #namespace dogtags;
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x749d670e, Offset: 0x2a0
 // Size: 0x14c
 function init() {
@@ -30,7 +29,7 @@ function init() {
 }
 
 // Namespace dogtags/dogtags
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0x3fa35690, Offset: 0x3f8
 // Size: 0x420
 function private function_bf06b7aa(victim, *attacker, on_use_function, var_f75dca66, var_78bc5595) {
@@ -84,11 +83,11 @@ function private function_bf06b7aa(victim, *attacker, on_use_function, var_f75dc
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xcce527b2, Offset: 0x820
 // Size: 0x154
 function private function_329adc0f(dogtag) {
-    dogtag gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+    dogtag gameobjects::allow_use(#"group_none");
     playfx("ui/fx_kill_confirmed_vanish", dogtag.curorigin);
     dogtag notify(#"reset");
     waitframe(1);
@@ -110,7 +109,7 @@ function private function_329adc0f(dogtag) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb2527665, Offset: 0x980
 // Size: 0x54
 function private function_afe6cbc4(victim) {
@@ -121,7 +120,7 @@ function private function_afe6cbc4(victim) {
 }
 
 // Namespace dogtags/dogtags
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x6c5bc577, Offset: 0x9e0
 // Size: 0x564
 function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacker_and_victim_only, posoffset, var_f75dca66, var_1c1cfb90, var_78bc5595) {
@@ -141,7 +140,7 @@ function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacke
     } else {
         dogtag = function_bf06b7aa(victim, attacker, on_use_function, var_f75dca66, var_78bc5595);
     }
-    dogtag gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+    dogtag gameobjects::allow_use(#"group_all");
     baseoffset = (0, 0, 14);
     pos = victim.origin + baseoffset;
     if (isvec(posoffset)) {
@@ -190,7 +189,7 @@ function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacke
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe9f148b3, Offset: 0xf50
 // Size: 0x34
 function private function_9b289986(index = 0) {
@@ -198,13 +197,13 @@ function private function_9b289986(index = 0) {
 }
 
 // Namespace dogtags/dogtags
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x16f78513, Offset: 0xf90
 // Size: 0x164
 function function_78a745d7(var_561c6e7c, var_5bb2a7e9) {
     dropangles = (-60, randomint(360), 0);
     force = anglestoforward(dropangles) * randomfloatrange(150, 220);
-    self.var_2581d0d = var_5bb2a7e9 magicmissile(getweapon(#"hash_1a8e376e04ffed9d"), var_561c6e7c, force);
+    self.var_2581d0d = var_5bb2a7e9 magicmissile(getweapon(#"dogtag_drop"), var_561c6e7c, force);
     self.var_2581d0d setmodel(#"tag_origin");
     self.var_2581d0d hide();
     self.var_2581d0d notsolid();
@@ -214,7 +213,7 @@ function function_78a745d7(var_561c6e7c, var_5bb2a7e9) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x89e30a5c, Offset: 0x1100
 // Size: 0x74
 function function_b2a61c9d() {
@@ -226,7 +225,7 @@ function function_b2a61c9d() {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfc9de1fc, Offset: 0x1180
 // Size: 0x1b0
 function function_b9937933() {
@@ -253,7 +252,7 @@ function function_b9937933() {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd3cbfca1, Offset: 0x1338
 // Size: 0x11e
 function function_924c73e6() {
@@ -278,7 +277,7 @@ function function_924c73e6() {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x73db0dad, Offset: 0x1460
 // Size: 0x3d4
 function onuse(player) {
@@ -333,7 +332,7 @@ function onuse(player) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4e73184e, Offset: 0x1840
 // Size: 0x18c
 function reset_tags() {
@@ -346,7 +345,7 @@ function reset_tags() {
     self.curorigin = (0, 0, 5000);
     self.trigger.origin = (0, 0, 5000);
     self.tacinsert = 0;
-    self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
+    self gameobjects::allow_use(#"group_none");
     if (level.var_70e5d775 === 1) {
         self stoploopsound();
     }
@@ -364,7 +363,7 @@ function reset_tags() {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8926f46e, Offset: 0x19d8
 // Size: 0x2c
 function onpickup(event) {
@@ -372,7 +371,7 @@ function onpickup(event) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd83238d8, Offset: 0x1a10
 // Size: 0x94
 function clear_on_victim_disconnect(victim) {
@@ -387,7 +386,7 @@ function clear_on_victim_disconnect(victim) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x48a7d8a2, Offset: 0x1ab0
 // Size: 0xf2
 function on_spawn_player() {
@@ -411,7 +410,7 @@ function on_spawn_player() {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3d8ff398, Offset: 0x1bb0
 // Size: 0xc4
 function on_player_killed(*params) {
@@ -421,7 +420,7 @@ function on_player_killed(*params) {
         /#
             var_f26d6aa7 = getdvarint(#"hash_40b119703c5fa11e", 0);
             if (var_f26d6aa7 > 0) {
-                wait(var_f26d6aa7);
+                wait var_f26d6aa7;
                 self dt_respawn();
             }
         #/
@@ -429,7 +428,7 @@ function on_player_killed(*params) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x25f940d2, Offset: 0x1c80
 // Size: 0x7a
 function function_1d8e2a5b(activator) {
@@ -443,7 +442,7 @@ function function_1d8e2a5b(activator) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x854c2d89, Offset: 0x1d08
 // Size: 0x78
 function team_updater(tags) {
@@ -457,7 +456,7 @@ function team_updater(tags) {
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7aab9594, Offset: 0x1d88
 // Size: 0x104
 function time_out(victim) {
@@ -474,7 +473,7 @@ function time_out(victim) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5a2d28af, Offset: 0x1e98
 // Size: 0x34
 function checkallowspectating() {
@@ -484,7 +483,7 @@ function checkallowspectating() {
 }
 
 // Namespace dogtags/dogtags
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xa6d0bc90, Offset: 0x1ed8
 // Size: 0x150
 function should_spawn_tags(*einflictor, attacker, *idamage, *smeansofdeath, *weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -507,7 +506,7 @@ function should_spawn_tags(*einflictor, attacker, *idamage, *smeansofdeath, *wea
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa83662cd, Offset: 0x2030
 // Size: 0xc4
 function onusedogtag(player) {
@@ -526,7 +525,7 @@ function onusedogtag(player) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x16b0aa16, Offset: 0x2100
 // Size: 0x84
 function dt_respawn() {
@@ -540,12 +539,12 @@ function dt_respawn() {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7e0d6d78, Offset: 0x2190
 // Size: 0x7a
 function waittillcanspawnclient() {
     for (;;) {
-        wait(0.05);
+        wait 0.05;
         if (isdefined(self) && (self.sessionstate == "spectator" || !isalive(self))) {
             self.pers[#"lives"] = 1;
             self thread [[ level.spawnclient ]]();

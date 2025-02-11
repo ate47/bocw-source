@@ -1,22 +1,21 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_weapons.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_spawner.gsc;
-#using scripts\zm_common\zm_score.gsc;
-#using scripts\zm_common\zm_powerups.gsc;
-#using scripts\zm_common\zm_pack_a_punch_util.gsc;
-#using scripts\zm_common\zm_pack_a_punch.gsc;
-#using scripts\zm_common\zm_bgb.gsc;
-#using scripts\zm_common\zm_audio.gsc;
-#using scripts\zm_common\util.gsc;
-#using scripts\core_common\ai\zombie_death.gsc;
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\laststand_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\zombie_death;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\laststand_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\util;
+#using scripts\zm_common\zm_audio;
+#using scripts\zm_common\zm_bgb;
+#using scripts\zm_common\zm_pack_a_punch;
+#using scripts\zm_common\zm_pack_a_punch_util;
+#using scripts\zm_common\zm_powerups;
+#using scripts\zm_common\zm_score;
+#using scripts\zm_common\zm_spawner;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_weapons;
 
 #namespace namespace_47a807c3;
 
@@ -29,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_47a807c3/namespace_33e4d1e0
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x180
 // Size: 0x4
 function private preinit() {
@@ -48,19 +47,19 @@ function function_8d37256a(e_player) {
 }
 
 // Namespace namespace_47a807c3/namespace_33e4d1e0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb0b0bcd0, Offset: 0x258
 // Size: 0x5c
 function function_ad31c153() {
     self endon(#"death", #"bled_out");
     if (self laststand::player_is_in_laststand()) {
         self waittill(#"player_revived");
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace namespace_47a807c3/namespace_33e4d1e0
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3f8c78d7, Offset: 0x2c0
 // Size: 0x24c
 function function_81eaae89(e_player) {
@@ -92,13 +91,13 @@ function function_81eaae89(e_player) {
 }
 
 // Namespace namespace_47a807c3/namespace_33e4d1e0
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbd05039a, Offset: 0x518
 // Size: 0x22c
 function function_40935801() {
     self notify(#"picked_up_pap");
     self endon(#"picked_up_pap", #"death", #"bled_out");
-    wait(30);
+    wait 30;
     self function_ad31c153();
     var_e8145621 = self getweaponslistprimaries();
     w_current_weapon = self getcurrentweapon();
@@ -127,7 +126,7 @@ function function_40935801() {
 function function_35ae342e(e_player) {
     if (e_player isthrowinggrenade()) {
         while (e_player getcurrentweapon() == getweapon(#"none")) {
-            wait(0.1);
+            wait 0.1;
         }
     }
     w_current_weapon = e_player getcurrentweapon();
@@ -152,13 +151,13 @@ function function_35ae342e(e_player) {
 }
 
 // Namespace namespace_47a807c3/namespace_33e4d1e0
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8bb2d683, Offset: 0x950
 // Size: 0x204
 function private function_d0ea0364(w_upgrade_weapon) {
     self notify("picked_up_pap_" + w_upgrade_weapon.name);
     self endon("picked_up_pap_" + w_upgrade_weapon.name);
-    wait(30);
+    wait 30;
     var_75c77fa = self zm_weapons::get_base_weapon(w_upgrade_weapon);
     a_w_weapons = self getweaponslist();
     foreach (w_weapon in a_w_weapons) {

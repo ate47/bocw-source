@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_43548f456dfe4be4;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\system_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace killstreaks;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x427e6b5, Offset: 0xf0
 // Size: 0x34
 function private preinit() {
@@ -24,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x451a461a, Offset: 0x130
 // Size: 0xf4
 function init() {
@@ -38,7 +37,7 @@ function init() {
     /#
         level.killstreak_init_end_time = getmillisecondsraw();
         elapsed_time = level.killstreak_init_end_time - level.killstreak_init_start_time;
-        println("<unknown string>" + elapsed_time + "<unknown string>");
+        println("<dev string:x38>" + elapsed_time + "<dev string:x59>");
         level thread killstreak_debug_think();
     #/
 }

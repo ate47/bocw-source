@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_396f7d71538c9677;
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\weapons\weapon_utils.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\weapons\weapon_utils;
 
 #namespace battlechatter;
 
@@ -234,7 +233,7 @@ function event_handler[grenade_stuck] function_de1402a2(eventstruct) {
 }
 
 // Namespace battlechatter/namespace_5232fbcc
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xb2796bed, Offset: 0xf88
 // Size: 0x186
 function private function_1bc99c5e(*attacker, *inflictor, weapon, *mod, killstreaktype) {
@@ -253,7 +252,7 @@ function private function_1bc99c5e(*attacker, *inflictor, weapon, *mod, killstre
 }
 
 // Namespace battlechatter/namespace_5232fbcc
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xd46d23c1, Offset: 0x1118
 // Size: 0x27c
 function private function_b18b0b7b(attacker, inflictor, weapon, mod) {
@@ -305,7 +304,7 @@ function event_handler[player_killed] onplayerkilled(eventstruct) {
 }
 
 // Namespace battlechatter/namespace_5232fbcc
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x26ca5c84, Offset: 0x1490
 // Size: 0x34a
 function function_5e1705fa(thrower, projectile, weapon) {
@@ -319,7 +318,7 @@ function function_5e1705fa(thrower, projectile, weapon) {
     if (!isdefined(var_7d44e33d) || !isdefined(var_7d44e33d.var_2c07bbf1)) {
         return;
     }
-    wait(isdefined(var_7d44e33d.var_613ebcfa) ? var_7d44e33d.var_613ebcfa : 0.1);
+    wait isdefined(var_7d44e33d.var_613ebcfa) ? var_7d44e33d.var_613ebcfa : 0.1;
     if (!(isdefined(projectile) && isdefined(thrower) && isdefined(weapon))) {
         return;
     }
@@ -345,7 +344,7 @@ function function_5e1705fa(thrower, projectile, weapon) {
 }
 
 // Namespace battlechatter/namespace_5232fbcc
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xa31ff658, Offset: 0x17e8
 // Size: 0x44
 function private function_26ab78d1(player, weapon, *weaponinstance) {
@@ -356,7 +355,7 @@ function private function_26ab78d1(player, weapon, *weaponinstance) {
 }
 
 // Namespace battlechatter/namespace_5232fbcc
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xdcefb9c6, Offset: 0x1838
 // Size: 0x3c
 function private function_fe2a1661(player, weapon) {

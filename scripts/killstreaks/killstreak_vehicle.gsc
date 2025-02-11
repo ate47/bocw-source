@@ -1,31 +1,30 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\battlechatter.gsc;
-#using scripts\weapons\deployable.gsc;
-#using scripts\core_common\visionset_mgr_shared.gsc;
-#using scripts\core_common\vehicle_ai_shared.gsc;
-#using scripts\core_common\vehicles\rcxd.gsc;
-#using scripts\core_common\vehicle_shared.gsc;
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\oob.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\killstreaks\remote_weapons.gsc;
-#using scripts\killstreaks\killstreakrules_shared.gsc;
-#using scripts\killstreaks\killstreak_hacking.gsc;
 #using script_4721de209091b1a6;
-#using scripts\killstreaks\killstreak_bundles.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\challenges_shared.gsc;
-#using scripts\core_common\audio_shared.gsc;
-#using scripts\abilities\ability_player.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\core_common\audio_shared;
+#using scripts\core_common\battlechatter;
+#using scripts\core_common\challenges_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\oob;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\core_common\vehicle_ai_shared;
+#using scripts\core_common\vehicle_death_shared;
+#using scripts\core_common\vehicle_shared;
+#using scripts\core_common\vehicles\rcxd;
+#using scripts\core_common\visionset_mgr_shared;
+#using scripts\killstreaks\killstreak_bundles;
+#using scripts\killstreaks\killstreak_hacking;
+#using scripts\killstreaks\killstreakrules_shared;
+#using scripts\killstreaks\killstreaks_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\killstreaks\remote_weapons;
+#using scripts\weapons\deployable;
 
 #namespace killstreak_vehicle;
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc404562, Offset: 0x270
 // Size: 0x194
 function init_killstreak(bundle) {
@@ -42,7 +41,7 @@ function init_killstreak(bundle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x18e48469, Offset: 0x410
 // Size: 0x134
 function init_vehicle(var_19e1140) {
@@ -64,7 +63,7 @@ function init_vehicle(var_19e1140) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc460546c, Offset: 0x550
 // Size: 0xda
 function function_3c6cec8b() {
@@ -82,7 +81,7 @@ function function_3c6cec8b() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x94fc9819, Offset: 0x638
 // Size: 0xa4
 function function_aba709c3(*hacker) {
@@ -95,7 +94,7 @@ function function_aba709c3(*hacker) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb9b81be2, Offset: 0x6e8
 // Size: 0xdc
 function function_2df6e3bf(hacker) {
@@ -110,7 +109,7 @@ function function_2df6e3bf(hacker) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x899a9480, Offset: 0x7d0
 // Size: 0x4c
 function function_fff56140(owner) {
@@ -119,7 +118,7 @@ function function_fff56140(owner) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb7f7364f, Offset: 0x828
 // Size: 0x2c
 function function_5e2ea3ef(owner, *ishacked) {
@@ -150,7 +149,7 @@ function can_activate(placement) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x62d6fd34, Offset: 0x8e8
 // Size: 0x508
 function activate_vehicle(type) {
@@ -220,7 +219,7 @@ function activate_vehicle(type) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xba42784e, Offset: 0xdf8
 // Size: 0x62
 function function_11fa7e00(killstreak_type, original_team, killstreak_id, start_cooldown) {
@@ -231,7 +230,7 @@ function function_11fa7e00(killstreak_type, original_team, killstreak_id, start_
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x644c6e86, Offset: 0xe68
 // Size: 0x3e
 function function_f07460c5(*hacker) {
@@ -242,7 +241,7 @@ function function_f07460c5(*hacker) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60468e1d, Offset: 0xeb0
 // Size: 0x1cc
 function function_c9aa9ee5(vehicle) {
@@ -266,7 +265,7 @@ function function_c9aa9ee5(vehicle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdebbe792, Offset: 0x1088
 // Size: 0x66
 function function_88d23aaa(vehicle) {
@@ -277,7 +276,7 @@ function function_88d23aaa(vehicle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xba7a8575, Offset: 0x10f8
 // Size: 0xe4
 function function_8cb72281(vehicle, exitrequestedbyowner) {
@@ -295,7 +294,7 @@ function function_8cb72281(vehicle, exitrequestedbyowner) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf13fa633, Offset: 0x11e8
 // Size: 0x12c
 function function_2cee4434() {
@@ -344,21 +343,21 @@ function watch_exit() {
 function function_e99d09a3() {
     self endon(#"shutdown");
     for (inwater = 0; !inwater; inwater = trace[#"fraction"] < 1) {
-        wait(0.5);
+        wait 0.5;
         trace = physicstrace(self.origin + (0, 0, 10), self.origin + (0, 0, 6), (-2, -2, -2), (2, 2, 2), self, 4);
     }
     self function_822e1f64();
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb472f1b7, Offset: 0x14e8
 // Size: 0x11c
 function watch_water() {
     self endon(#"shutdown");
     var_8a7edebd = isdefined(self.var_f3c54d1d) ? self.var_f3c54d1d : 10;
     for (inwater = 0; !inwater; inwater = depth > var_8a7edebd) {
-        wait(0.5);
+        wait 0.5;
         depth = getwaterheight(self.origin) - self.origin[2];
     }
     if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
@@ -368,7 +367,7 @@ function watch_water() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4fb1e98c, Offset: 0x1610
 // Size: 0x5c
 function watch_timeout() {
@@ -378,7 +377,7 @@ function watch_timeout() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe074956b, Offset: 0x1678
 // Size: 0x34
 function function_822e1f64() {
@@ -388,7 +387,7 @@ function function_822e1f64() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf2d71917, Offset: 0x16b8
 // Size: 0x28
 function function_1f46c433() {
@@ -397,7 +396,7 @@ function function_1f46c433() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x41fcbaa4, Offset: 0x16e8
 // Size: 0x44
 function function_68a07849(weapon, driver) {
@@ -408,7 +407,7 @@ function function_68a07849(weapon, driver) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7a2d033b, Offset: 0x1738
 // Size: 0x204
 function watch_shutdown(driver, *killstreaktype) {
@@ -441,7 +440,7 @@ function watch_shutdown(driver, *killstreaktype) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1fa80eb, Offset: 0x1948
 // Size: 0xec
 function function_584fb7a3() {
@@ -455,7 +454,7 @@ function function_584fb7a3() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5190abfd, Offset: 0x1a40
 // Size: 0xd8
 function function_22528515() {
@@ -471,7 +470,7 @@ function function_22528515() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 15, eflags: 0x2 linked
+// Params 15, eflags: 0x0
 // Checksum 0x3eabcd15, Offset: 0x1b20
 // Size: 0x1ac
 function on_damage(*einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
@@ -493,7 +492,7 @@ function on_damage(*einflictor, eattacker, idamage, idflags, smeansofdeath, weap
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x289f2ead, Offset: 0x1cd8
 // Size: 0x2cc
 function on_death(*einflictor, eattacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime) {
@@ -520,7 +519,7 @@ function on_death(*einflictor, eattacker, *idamage, *smeansofdeath, weapon, *vdi
     if (isdefined(player)) {
         player val::set(#"hash_7412aa1ce117e2a5", "freezecontrols");
         vehicle thread function_de865657(var_2105be53);
-        wait(0.2);
+        wait 0.2;
         if (isdefined(player)) {
             player val::reset(#"hash_7412aa1ce117e2a5", "freezecontrols");
         }
@@ -533,7 +532,7 @@ function on_death(*einflictor, eattacker, *idamage, *smeansofdeath, weapon, *vdi
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x97921e16, Offset: 0x1fb0
 // Size: 0x64
 function watch_game_ended() {
@@ -545,18 +544,18 @@ function watch_game_ended() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbc153eaa, Offset: 0x2020
 // Size: 0x4a
 function function_de865657(waittime) {
     self endon(#"death");
-    wait(waittime);
+    wait waittime;
     self ghost();
     self.var_4217cfcb = 1;
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x35c25662, Offset: 0x2078
 // Size: 0xbc
 function vehicle_death() {
@@ -570,7 +569,7 @@ function vehicle_death() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe9fa6f3f, Offset: 0x2140
 // Size: 0x3b0
 function explode(attacker, weapon) {
@@ -581,12 +580,12 @@ function explode(attacker, weapon) {
     }
     attacker = self [[ level.figure_out_attacker ]](attacker);
     self vehicle_death();
-    var_d3213f00 = 0;
+    destroyedbyenemy = 0;
     var_3906173b = isdefined(weapon) && weapon.name === "gadget_icepick";
     if (!is_true(self.abandoned) && isplayer(attacker)) {
         bundle = self.var_22a05c26;
         if (util::function_fbce7263(self.team, attacker.team)) {
-            var_d3213f00 = 1;
+            destroyedbyenemy = 1;
             if (isdefined(bundle)) {
                 attacker challenges::destroy_killstreak_vehicle(weapon, self, bundle.var_ebc402ca);
                 self killstreaks::function_73566ec7(attacker, weapon, owner);
@@ -601,21 +600,21 @@ function explode(attacker, weapon) {
                     self namespace_f9b02f80::play_destroyed_dialog_on_owner(bundle.var_d3413870, self.killstreak_id);
                     attacker battlechatter::function_eebf94f6(bundle.var_d3413870, weapon);
                 }
-                self.owner killstreaks::function_e9873ef7(bundle.var_d3413870, self.killstreak_id, #"hash_47e685e10dcee57");
+                self.owner killstreaks::function_e9873ef7(bundle.var_d3413870, self.killstreak_id, #"streak_destroyed");
             }
         }
     }
-    if (oob::istouchinganyoobtrigger() && !var_d3213f00 && !var_3906173b) {
+    if (oob::istouchinganyoobtrigger() && !destroyedbyenemy && !var_3906173b) {
         self.owner killstreaks::function_e9873ef7(bundle.var_d3413870, self.killstreak_id, #"hash_7e23b3e299f4835b");
     }
     if (isdefined(bundle) && isdefined(bundle.var_bb6c29b4) && isdefined(weapon) && weapon == getweapon(#"shock_rifle")) {
         playfx(bundle.var_bb6c29b4, self.origin);
     }
-    return var_d3213f00;
+    return destroyedbyenemy;
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x5cdd92f8, Offset: 0x24f8
 // Size: 0x70
 function function_e9da8b7d(einflictor, eattacker, *smeansofdeath, *weapon) {
@@ -629,7 +628,7 @@ function function_e9da8b7d(einflictor, eattacker, *smeansofdeath, *weapon) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x1759254a, Offset: 0x2570
 // Size: 0x76
 function function_e94c2667() {
@@ -713,7 +712,7 @@ function function_d75fbe15(origin, angles) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xee88a2e2, Offset: 0x2a08
 // Size: 0x1ce
 function function_c82e14d2(origin, angles, heightoffset) {
@@ -741,7 +740,7 @@ function function_c82e14d2(origin, angles, heightoffset) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2828e4f7, Offset: 0x2be0
 // Size: 0x1f6
 function function_b4682bd6(origin, *angles) {
@@ -773,7 +772,7 @@ function function_b4682bd6(origin, *angles) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xabf5a172, Offset: 0x2de0
 // Size: 0xfa
 function function_d4896942(bundle, killstreakname, customendon) {
@@ -785,13 +784,13 @@ function function_d4896942(bundle, killstreakname, customendon) {
         self.var_7132bbb7 = 1;
         self namespace_f9b02f80::play_pilot_dialog_on_owner("damageEvaded", killstreakname, self.killstreak_id);
         self.var_b6286a42 = gettime() + 5000;
-        wait(isdefined(bundle.var_2eeb71d2) ? bundle.var_2eeb71d2 : 5);
+        wait isdefined(bundle.var_2eeb71d2) ? bundle.var_2eeb71d2 : 5;
         self.var_7132bbb7 = undefined;
     }
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x339ed086, Offset: 0x2ee8
 // Size: 0xd0
 function function_31f9c728(bundle, killstreakname, var_61bbac7a, var_2f984f68, customendon) {
@@ -806,7 +805,7 @@ function function_31f9c728(bundle, killstreakname, var_61bbac7a, var_2f984f68, c
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xc119d5a, Offset: 0x2fc0
 // Size: 0x1dc
 function function_849819e9(missile, bundle, killstreakname, var_61bbac7a) {
@@ -829,12 +828,12 @@ function function_849819e9(missile, bundle, killstreakname, var_61bbac7a) {
                 return;
             }
         }
-        wait(0.1);
+        wait 0.1;
     }
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x12c72749, Offset: 0x31a8
 // Size: 0x2e0
 function function_6650cc9c(missile, bundle, killstreakname, var_2f984f68) {
@@ -845,7 +844,7 @@ function function_6650cc9c(missile, bundle, killstreakname, var_2f984f68) {
         return;
     }
     missile endon(#"death");
-    wait(0.2);
+    wait 0.2;
     if (isdefined(self.var_b6286a42) && self.var_b6286a42 < gettime()) {
         self namespace_f9b02f80::play_pilot_dialog_on_owner("incomingMissile", killstreakname, self.killstreak_id);
         self.var_b6286a42 = gettime() + 5000;
@@ -866,9 +865,9 @@ function function_6650cc9c(missile, bundle, killstreakname, var_2f984f68) {
         if (var_38fa5914) {
             self playsoundtoplayer(var_2f984f68, self.owner);
         }
-        var_6ce65309 = (dist - neardist) / range;
-        beep_interval = lerpfloat(var_6f2344f0, var_cd12ce4c, var_6ce65309);
-        wait(beep_interval);
+        normalizeddist = (dist - neardist) / range;
+        beep_interval = lerpfloat(var_6f2344f0, var_cd12ce4c, normalizeddist);
+        wait beep_interval;
     }
 }
 

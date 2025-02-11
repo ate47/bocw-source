@@ -1,36 +1,35 @@
-// Atian COD Tools GSC CW decompiler test
-#using script_4937c6974f43bb71;
-#using script_32399001bdb550da;
-#using scripts\core_common\fx_shared.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using script_31e9b35aaacbbd93;
-#using script_3dc93ca9902a9cda;
-#using scripts\cp_common\objectives.gsc;
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
-#using scripts\cp_common\skipto.gsc;
-#using script_7d0013bbc05623b9;
-#using scripts\cp_common\util.gsc;
-#using script_4ccd0c3512b52a10;
-#using scripts\cp\cp_takedown.gsc;
-#using scripts\cp\cp_takedown_raid_apt.gsc;
-#using scripts\cp\cp_takedown_raid_bar.gsc;
-#using scripts\cp_common\dialogue.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using script_61cfc2ab8e60625;
 #using script_2d443451ce681a;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\trigger_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using script_31e9b35aaacbbd93;
+#using script_32399001bdb550da;
+#using script_3dc93ca9902a9cda;
+#using script_4937c6974f43bb71;
+#using script_4ccd0c3512b52a10;
+#using script_61cfc2ab8e60625;
+#using script_7d0013bbc05623b9;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\fx_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\trigger_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp\cp_takedown;
+#using scripts\cp\cp_takedown_raid_apt;
+#using scripts\cp\cp_takedown_raid_bar;
+#using scripts\cp_common\dialogue;
+#using scripts\cp_common\gametypes\globallogic_ui;
+#using scripts\cp_common\objectives;
+#using scripts\cp_common\skipto;
+#using scripts\cp_common\util;
 
 #namespace namespace_c9f7b6af;
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd7ee6d75, Offset: 0x600
 // Size: 0x324
 function starting(*var_d3440450) {
@@ -59,7 +58,7 @@ function starting(*var_d3440450) {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4e54a7cc, Offset: 0x930
 // Size: 0x634
 function main(var_d3440450, var_50cc0d4f) {
@@ -119,7 +118,7 @@ function main(var_d3440450, var_50cc0d4f) {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x54e9e0b1, Offset: 0xf70
 // Size: 0x7c
 function function_3f65ad3b(a_ents) {
@@ -132,26 +131,26 @@ function function_3f65ad3b(a_ents) {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7dd558fa, Offset: 0xff8
 // Size: 0x34
 function function_5424b11() {
-    self waittill(#"hash_630282df563251d6");
-    wait(1);
+    self waittill(#"end_anim");
+    wait 1;
     self deletedelay();
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x81b07a53, Offset: 0x1038
 // Size: 0x44
 function function_3df72127() {
     level waittill(#"hash_211c1837b9121eb1");
-    util::delay(0.1, undefined, &namespace_96850e69::function_49ebaad2);
+    util::delay(0.1, undefined, &objectives_ui::function_49ebaad2);
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x436184c2, Offset: 0x1088
 // Size: 0x114
 function function_c05edfd0() {
@@ -165,7 +164,7 @@ function function_c05edfd0() {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x67309734, Offset: 0x11a8
 // Size: 0x200
 function function_d5cc022() {
@@ -195,7 +194,7 @@ function function_d5cc022() {
 // Checksum 0x2e3810d5, Offset: 0x13b0
 // Size: 0xb4
 function function_37ddf68b(a_ents) {
-    door = a_ents[#"hash_1aeea238444bdd4d"];
+    door = a_ents[#"yard_gate"];
     var_b7ec8c4b = getent("yard_gate_clip", "targetname");
     org = getent("yard_gate_org", "targetname");
     var_b7ec8c4b linkto(org);
@@ -203,19 +202,19 @@ function function_37ddf68b(a_ents) {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd3b63b21, Offset: 0x1470
 // Size: 0x94
 function function_4bc3dba() {
     level flag::wait_till("flag_close_bar_door");
     level thread scene::play("scene_tkd_hit2_intro_bar_v2", "Bar_Door_Close");
-    wait(3);
+    wait 3;
     level thread tkdn_raid_bar::function_a5d7de3c();
     setsaveddvar(#"hash_6b57212fd4fcdd3a", 300);
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc8aafd9, Offset: 0x1510
 // Size: 0x4c
 function function_b7d7ba47() {
@@ -224,19 +223,19 @@ function function_b7d7ba47() {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x645ccf10, Offset: 0x1568
 // Size: 0x9c
 function function_709cb1b3() {
     player = getplayers()[0];
     level flag::wait_till("flag_window_guy");
     level thread scene::play("scene_tkd_hit2_alley_civilians", "drug_waiting");
-    wait(1.5);
+    wait 1.5;
     level thread scene::play("scene_tkd_hit2_alley_civilians", "drug_deal");
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x90aa2026, Offset: 0x1610
 // Size: 0x24
 function cleanup(*name, *starting, *direct, *player) {
@@ -244,7 +243,7 @@ function cleanup(*name, *starting, *direct, *player) {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x92a60679, Offset: 0x1640
 // Size: 0x24
 function init_flags() {
@@ -252,7 +251,7 @@ function init_flags() {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1670
 // Size: 0x4
 function init_clientfields() {
@@ -260,7 +259,7 @@ function init_clientfields() {
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x1680
 // Size: 0x4
 function function_22b7fffd() {

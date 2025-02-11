@@ -1,11 +1,10 @@
-// Atian COD Tools GSC CW decompiler test
 #namespace snipercam;
 
 // Namespace snipercam/namespace_7db676d5
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xf76920a5, Offset: 0xa0
 // Size: 0x366
-function function_83d35e98(attacker, var_4fa5c66a, var_83634238, victim, mode = 1) {
+function function_83d35e98(attacker, var_4fa5c66a, attackerangles, victim, mode = 1) {
     parms = spawnstruct();
     var_83ca76ef = 200;
     var_3d5fa3d5 = 30;
@@ -15,10 +14,10 @@ function function_83d35e98(attacker, var_4fa5c66a, var_83634238, victim, mode = 
     }
     parms.attacker = attacker;
     parms.var_4fa5c66a = var_4fa5c66a;
-    parms.var_83634238 = var_83634238;
+    parms.attackerangles = attackerangles;
     parms.victim = victim;
     parms.startpos = var_4fa5c66a;
-    parms.startpos += anglestoforward(var_83634238) * var_83ca76ef;
+    parms.startpos += anglestoforward(attackerangles) * var_83ca76ef;
     parms.targetpos = victim gettagorigin(target_tag);
     parms.targetpos += vectornormalize(parms.startpos - parms.targetpos) * var_3d5fa3d5;
     parms.var_b21e26bd = victim gettagorigin("j_head");

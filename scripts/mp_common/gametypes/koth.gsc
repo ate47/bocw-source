@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\globallogic.gsc;
 #using script_50d0f08de978328d;
+#using scripts\mp_common\gametypes\globallogic;
 
 #namespace koth;
 

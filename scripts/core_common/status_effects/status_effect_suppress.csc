@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\serverfield_shared.csc;
-#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace status_effect_suppress;
 
@@ -13,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x44cf26c7, Offset: 0x100
 // Size: 0x2c
 function private preinit() {

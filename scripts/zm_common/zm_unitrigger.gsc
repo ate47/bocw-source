@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\gametypes\globallogic.gsc;
-#using scripts\zm_common\zm_zonemgr.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\zm_common\zm_lockdown_util.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\ai_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\gametypes\globallogic;
+#using scripts\zm_common\zm_lockdown_util;
+#using scripts\zm_common\zm_utility;
+#using scripts\zm_common\zm_zonemgr;
 
 #namespace zm_unitrigger;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x8cf9f849, Offset: 0x258
 // Size: 0x248
 function create(var_9d80e6ef = "", var_e0bc0661 = 64, func_unitrigger_logic = &function_69168e61, var_4478092b, var_98f0ce74 = 0) {
@@ -68,7 +67,7 @@ function function_fac87205(var_9d80e6ef, var_e0bc0661, var_98f0ce74 = 0, var_85b
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe60f3eff, Offset: 0x5a0
 // Size: 0xd0
 function function_69168e61() {
@@ -102,7 +101,7 @@ function function_cf3f2bd8() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2546e21, Offset: 0x738
 // Size: 0x18c
 function private preinit() {
@@ -127,7 +126,7 @@ function private preinit() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7d2ffdc4, Offset: 0x8d0
 // Size: 0x4c
 function private postinit() {
@@ -137,7 +136,7 @@ function private postinit() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x900ac728, Offset: 0x928
 // Size: 0x106
 function function_28304f6a() {
@@ -154,12 +153,12 @@ function function_28304f6a() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x4c4409c7, Offset: 0xa38
 // Size: 0x3ee
 function private register_unitrigger_internal(unitrigger_stub, trigger_func) {
     if (!isdefined(unitrigger_stub.script_unitrigger_type)) {
-        println("<unknown string>");
+        println("<dev string:x38>");
         return;
     }
     if (isdefined(trigger_func)) {
@@ -200,7 +199,7 @@ function private register_unitrigger_internal(unitrigger_stub, trigger_func) {
         unitrigger_stub.test_radius_sq = (box_radius + 15) * (box_radius + 15);
         break;
     default:
-        println("<unknown string>" + unitrigger_stub.targetname + "<unknown string>");
+        println("<dev string:x83>" + unitrigger_stub.targetname + "<dev string:xac>");
         return;
     }
     if (unitrigger_stub.radius > level._unitriggers.largest_radius) {
@@ -218,7 +217,7 @@ function private register_unitrigger_internal(unitrigger_stub, trigger_func) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf2d6fa42, Offset: 0xe30
 // Size: 0x2c
 function register_unitrigger(unitrigger_stub, trigger_func) {
@@ -226,7 +225,7 @@ function register_unitrigger(unitrigger_stub, trigger_func) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a16cf5b, Offset: 0xe68
 // Size: 0x24
 function unregister_unitrigger(unitrigger_stub) {
@@ -234,7 +233,7 @@ function unregister_unitrigger(unitrigger_stub) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1d6b531f, Offset: 0xe98
 // Size: 0x28c
 function unregister_unitrigger_internal(unitrigger_stub, var_a68f8009 = 0) {
@@ -273,7 +272,7 @@ function unregister_unitrigger_internal(unitrigger_stub, var_a68f8009 = 0) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x62721c90, Offset: 0x1130
 // Size: 0x644
 function register_static_unitrigger(unitrigger_stub, trigger_func, recalculate_zone) {
@@ -346,7 +345,7 @@ function register_static_unitrigger(unitrigger_stub, trigger_func, recalculate_z
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x12484d94, Offset: 0x1780
 // Size: 0xfc
 function register_dyn_unitrigger(unitrigger_stub, trigger_func, *recalculate_zone) {
@@ -365,7 +364,7 @@ function register_dyn_unitrigger(unitrigger_stub, trigger_func, *recalculate_zon
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb0e7d2bd, Offset: 0x1888
 // Size: 0x94
 function reregister_unitrigger(unitrigger_stub) {
@@ -390,7 +389,7 @@ function reregister_unitrigger_as_dynamic(unitrigger_stub) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xca612398, Offset: 0x1978
 // Size: 0xca
 function function_a7620bfb(n_radius = 64, var_4478092b = 1) {
@@ -409,7 +408,7 @@ function function_a7620bfb(n_radius = 64, var_4478092b = 1) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xcca38d78, Offset: 0x1a50
 // Size: 0x112
 function function_9267812e(n_width = 64, n_length = 64, n_height = 64, var_4478092b = 1) {
@@ -443,7 +442,7 @@ function function_3f621bbe(s_stub) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xac1deef1, Offset: 0x1bc8
 // Size: 0x3e
 function unitrigger_origin() {
@@ -456,7 +455,7 @@ function unitrigger_origin() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x68378448, Offset: 0x1c10
 // Size: 0x94
 function function_47625e58(s_stub, origin, v_angles) {
@@ -473,7 +472,7 @@ function function_47625e58(s_stub, origin, v_angles) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x95f5a61a, Offset: 0x1cb0
 // Size: 0x94
 function function_c9e3607c(s_stub, str_icon, w_weapon) {
@@ -488,7 +487,7 @@ function function_c9e3607c(s_stub, str_icon, w_weapon) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xbc8df214, Offset: 0x1d50
 // Size: 0x74
 function unitrigger_set_hint_string(s_stub, str_hint, param1, param2) {
@@ -514,7 +513,7 @@ function function_413f9fcf(s_stub, ent, default_ref, cost) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x99e49b9, Offset: 0x1e70
 // Size: 0x44
 function function_2547d31f(s_stub, var_404301da) {
@@ -523,7 +522,7 @@ function function_2547d31f(s_stub, var_404301da) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc4155a4f, Offset: 0x1ec0
 // Size: 0xac
 function function_89380dda(s_stub, var_840cc2c8 = 1) {
@@ -541,7 +540,7 @@ function function_89380dda(s_stub, var_840cc2c8 = 1) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x60d8aa40, Offset: 0x1f78
 // Size: 0x54
 function unitrigger_force_per_player_triggers(s_stub, opt_on_off = 1) {
@@ -551,7 +550,7 @@ function unitrigger_force_per_player_triggers(s_stub, opt_on_off = 1) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf6bc5fbb, Offset: 0x1fd8
 // Size: 0x54
 function function_c4a5fdf5(s_stub, opt_on_off = 1) {
@@ -572,7 +571,7 @@ function function_f1794fbf(s_stub, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcd1c890d, Offset: 0x2090
 // Size: 0x44
 function unitrigger_trigger(player) {
@@ -583,7 +582,7 @@ function unitrigger_trigger(player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf573f6e7, Offset: 0x20e0
 // Size: 0xec
 function function_91a18523(s_stub, var_a6b7a40d) {
@@ -601,7 +600,7 @@ function function_91a18523(s_stub, var_a6b7a40d) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x172f49d2, Offset: 0x21d8
 // Size: 0x52
 function private function_699abf2(s_stub, trigger) {
@@ -612,7 +611,7 @@ function private function_699abf2(s_stub, trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x34ed4afb, Offset: 0x2238
 // Size: 0xdc
 function private function_5d7dd248(s_stub, trigger) {
@@ -626,7 +625,7 @@ function private function_5d7dd248(s_stub, trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xafe621ca, Offset: 0x2320
 // Size: 0x214
 function function_d0676c62(s_stub, trigger, player) {
@@ -663,7 +662,7 @@ function function_d0676c62(s_stub, trigger, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7e616483, Offset: 0x2540
 // Size: 0xdc
 function private function_5c2f213d(s_stub, trigger) {
@@ -677,7 +676,7 @@ function private function_5c2f213d(s_stub, trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x468b328, Offset: 0x2628
 // Size: 0x124
 function private function_933f3bf3(s_stub, trigger, player) {
@@ -685,7 +684,7 @@ function private function_933f3bf3(s_stub, trigger, player) {
     if (isdefined(s_stub.prompt_and_visibility_func)) {
         usable = trigger [[ s_stub.prompt_and_visibility_func ]](player);
         if (!isdefined(usable)) {
-            assertmsg("<unknown string>" + (isdefined(s_stub.targetname) ? s_stub.targetname : "<unknown string>") + "<unknown string>" + (isdefined(s_stub.origin) ? s_stub.origin : (0, 0, 0)) + "<unknown string>");
+            assertmsg("<dev string:xbc>" + (isdefined(s_stub.targetname) ? s_stub.targetname : "<dev string:xcb>") + "<dev string:xde>" + (isdefined(s_stub.origin) ? s_stub.origin : (0, 0, 0)) + "<dev string:xe6>");
             usable = 0;
         }
         trigger triggerenable(usable);
@@ -695,7 +694,7 @@ function private function_933f3bf3(s_stub, trigger, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe7ea43a, Offset: 0x2758
 // Size: 0x8c
 function private function_2565f0b0(s_stub, trigger) {
@@ -707,7 +706,7 @@ function private function_2565f0b0(s_stub, trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x177ad520, Offset: 0x27f0
 // Size: 0x166
 function private function_94419264() {
@@ -743,7 +742,7 @@ function private function_94419264() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1fe0bcf2, Offset: 0x2960
 // Size: 0xdc
 function private function_ba088f52(trigger) {
@@ -763,7 +762,7 @@ function private function_ba088f52(trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x8ae253f0, Offset: 0x2a48
 // Size: 0x84
 function private function_71b67b2a(trigger) {
@@ -774,7 +773,7 @@ function private function_71b67b2a(trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x50554327, Offset: 0x2ad8
 // Size: 0x1b8
 function private function_358a2fc7() {
@@ -796,7 +795,7 @@ function private function_358a2fc7() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x4744ff4d, Offset: 0x2c98
 // Size: 0x134
 function private function_5b353bb7() {
@@ -813,7 +812,7 @@ function private function_5b353bb7() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3388a650, Offset: 0x2dd8
 // Size: 0x11e
 function private function_d7eef1bc(*zone, zone_name) {
@@ -830,7 +829,7 @@ function private function_d7eef1bc(*zone, zone_name) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xd39ce1d9, Offset: 0x2f00
 // Size: 0xd8
 function private function_3c84a41e(stub, zone_name) {
@@ -843,7 +842,7 @@ function private function_3c84a41e(stub, zone_name) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x12cec001, Offset: 0x2fe0
 // Size: 0xc0
 function private function_f1854fb(*stub) {
@@ -855,7 +854,7 @@ function private function_f1854fb(*stub) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd0417c2, Offset: 0x30a8
 // Size: 0xa4
 function private function_ba39b142() {
@@ -876,7 +875,7 @@ function private function_ba39b142() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb1388d5c, Offset: 0x3158
 // Size: 0x18c
 function private function_522794c2(stub) {
@@ -906,7 +905,7 @@ function private function_522794c2(stub) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x28b7e2ae, Offset: 0x32f0
 // Size: 0xc4
 function cleanup_trigger(trigger, player) {
@@ -921,7 +920,7 @@ function cleanup_trigger(trigger, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x68eefab2, Offset: 0x33c0
 // Size: 0x18e
 function assess_and_apply_visibility(trigger, stub, player, default_keep) {
@@ -953,7 +952,7 @@ function assess_and_apply_visibility(trigger, stub, player, default_keep) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xb87a8301, Offset: 0x3558
 // Size: 0x3e
 function private is_same_trigger(old_trigger, trigger) {
@@ -961,7 +960,7 @@ function private is_same_trigger(old_trigger, trigger) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa55e10f7, Offset: 0x35a0
 // Size: 0x198
 function private check_and_build_trigger_from_unitrigger_stub(stub, player) {
@@ -993,7 +992,7 @@ function private check_and_build_trigger_from_unitrigger_stub(stub, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x691048b0, Offset: 0x3740
 // Size: 0x2a
 function function_68f2282d(var_e7d50e88) {
@@ -1001,7 +1000,7 @@ function function_68f2282d(var_e7d50e88) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc67b235a, Offset: 0x3778
 // Size: 0x3f2
 function private build_trigger_from_unitrigger_stub(s_stub, player) {
@@ -1062,7 +1061,7 @@ function private build_trigger_from_unitrigger_stub(s_stub, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xe93053e4, Offset: 0x3b78
 // Size: 0x76
 function private copy_zombie_keys_onto_trigger(trigger, s_stub) {
@@ -1075,7 +1074,7 @@ function private copy_zombie_keys_onto_trigger(trigger, s_stub) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x3633b320, Offset: 0x3bf8
 // Size: 0x66
 function private function_4bb09c8f(s_stub, player) {
@@ -1089,7 +1088,7 @@ function private function_4bb09c8f(s_stub, player) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xff9bef54, Offset: 0x3c68
 // Size: 0x36
 function private trigger_thread(trigger_func) {
@@ -1100,7 +1099,7 @@ function private trigger_thread(trigger_func) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x42fe53f4, Offset: 0x3ca8
 // Size: 0x454
 function debug_unitriggers() {
@@ -1196,7 +1195,7 @@ function debug_trigger(trigger, var_5ca10e3c, color) {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xee4a5476, Offset: 0x4320
 // Size: 0x7de
 function private function_bb454fe6() {
@@ -1204,11 +1203,11 @@ function private function_bb454fe6() {
     valid_range = level._unitriggers.largest_radius + 15;
     valid_range_sq = valid_range * valid_range;
     while (!isdefined(level.active_zone_names)) {
-        wait(0.1);
+        wait 0.1;
     }
     while (true) {
         if (is_true(level.var_dc25ba05)) {
-            wait(2);
+            wait 2;
             continue;
         }
         waited = 0;
@@ -1370,7 +1369,7 @@ function private run_visibility_function_for_all_triggers() {
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xb920a489, Offset: 0x4c20
 // Size: 0x198
 function private get_closest_unitriggers(org, array, dist = 9999999) {

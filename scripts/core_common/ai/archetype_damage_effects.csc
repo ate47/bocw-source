@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\math_shared.csc;
-#using scripts\core_common\util_shared.csc;
-#using scripts\core_common\array_shared.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\util_shared;
 
 #namespace archetype_damage_effects;
 
@@ -15,7 +14,7 @@ function autoexec main() {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa51fab38, Offset: 0x108
 // Size: 0x4c
 function registerclientfields() {
@@ -23,7 +22,7 @@ function registerclientfields() {
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x15d52480, Offset: 0x160
 // Size: 0x19a
 function actor_fire_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

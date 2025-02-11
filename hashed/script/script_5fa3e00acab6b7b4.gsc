@@ -1,15 +1,14 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\overtime.gsc;
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\core_common\player\player_role.gsc;
-#using scripts\killstreaks\killstreaks_util.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using script_7a8059ca02b7b09e;
-#using scripts\core_common\system_shared.gsc;
 #using script_6167e26342be354b;
-#using scripts\core_common\rank_shared.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\player\player_loadout.gsc;
+#using script_7a8059ca02b7b09e;
+#using scripts\core_common\player\player_loadout;
+#using scripts\core_common\player\player_role;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\rank_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_util;
+#using scripts\mp_common\gametypes\match;
+#using scripts\mp_common\gametypes\overtime;
 
 #namespace namespace_a77a81df;
 
@@ -22,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x13f63ce2, Offset: 0x198
 // Size: 0x29c
 function private preinit() {
@@ -39,23 +38,23 @@ function private preinit() {
     telemetry::add_callback(#"on_loadout", &function_e2162733);
     telemetry::function_98df8818(#"hash_540cddd637f71a5e", &function_c1165a2d);
     telemetry::function_98df8818(#"hash_37f96a1d3c57a089", &function_6c95006e);
-    telemetry::add_callback(#"hash_1f5aa545c7334d3a", &function_9cac835e);
+    telemetry::add_callback(#"flourish_start", &function_9cac835e);
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdb9c245, Offset: 0x440
 // Size: 0x342
 function function_72c32279() {
     if (util::isfirstround()) {
         /#
-            println("<unknown string>" + getutc());
-            println("<unknown string>" + util::get_map_name());
-            println("<unknown string>" + level.gametype);
-            println("<unknown string>" + sessionmodeisprivateonlinegame());
-            println("<unknown string>" + sessionmodeissystemlink());
-            println("<unknown string>" + isdedicated());
-            println("<unknown string>");
+            println("<dev string:x38>" + getutc());
+            println("<dev string:x63>" + util::get_map_name());
+            println("<dev string:x8e>" + level.gametype);
+            println("<dev string:xbe>" + sessionmodeisprivateonlinegame());
+            println("<dev string:xf4>" + sessionmodeissystemlink());
+            println("<dev string:x127>" + isdedicated());
+            println("<dev string:x15b>");
         #/
         utc = getutc();
         if (isdefined(game.telemetry)) {
@@ -83,18 +82,18 @@ function function_72c32279() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x603c0cf4, Offset: 0x790
 // Size: 0x7fc
 function function_d519e318() {
     if (util::isoneround() || util::waslastround()) {
         util::function_64ebd94d();
         /#
-            println("<unknown string>" + function_f8d53445());
-            println("<unknown string>" + gettime());
-            println("<unknown string>" + util::get_map_name());
-            println("<unknown string>" + level.gametype);
-            println("<unknown string>" + getutc());
+            println("<dev string:x197>" + function_f8d53445());
+            println("<dev string:x1cb>" + gettime());
+            println("<dev string:x1f9>" + util::get_map_name());
+            println("<dev string:x222>" + level.gametype);
+            println("<dev string:x250>" + getutc());
         #/
         utc = getutc();
         matchend = {};
@@ -120,17 +119,17 @@ function function_d519e318() {
         matchend.teams = teams;
         if (isdefined(game.telemetry.var_dc73ada2)) {
             time_seconds = utc - game.telemetry.var_dc73ada2;
-            println("<unknown string>" + time_seconds);
+            println("<dev string:x279>" + time_seconds);
             matchend.var_dc73ada2 = game.telemetry.var_dc73ada2;
         }
         match_duration = function_f8d53445() / 1000;
-        println("<unknown string>" + match_duration);
+        println("<dev string:x2b3>" + match_duration);
         if (isdefined(game.telemetry.player_count)) {
-            println("<unknown string>" + game.telemetry.player_count);
+            println("<dev string:x2f0>" + game.telemetry.player_count);
             matchend.player_count = game.telemetry.player_count;
         }
         if (isdefined(game.telemetry.life_count)) {
-            println("<unknown string>" + game.telemetry.life_count);
+            println("<dev string:x322>" + game.telemetry.life_count);
             matchend.life_count = game.telemetry.life_count;
         }
         if (function_feface0c()) {
@@ -148,7 +147,7 @@ function function_d519e318() {
         }
         matchend.server_frame_msec = function_60d95f53();
         function_92d1707f(#"hash_1b52f03009c8c97e", matchend);
-        println("<unknown string>");
+        println("<dev string:x352>");
     }
     if (util::isroundbased()) {
         if (isdefined(game.telemetry.var_29d0de09)) {
@@ -164,15 +163,15 @@ function function_d519e318() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d28744, Offset: 0xf98
 // Size: 0x4d4
 function on_player_connect() {
     if (!is_true(self.pers[#"telemetry"].connected)) {
         /#
-            println("<unknown string>" + gettime());
-            println("<unknown string>" + getutc());
-            println("<unknown string>" + self.name);
+            println("<dev string:x38c>" + gettime());
+            println("<dev string:x3bf>" + getutc());
+            println("<dev string:x3f5>" + self.name);
         #/
         self.pers[#"weaponstats"] = [];
         if (!isdefined(self.pers[#"telemetry"])) {
@@ -191,12 +190,12 @@ function on_player_connect() {
         if (isdefined(game.telemetry.player_count)) {
             self.pers[#"telemetry"].var_6ba64843 = game.telemetry.player_count;
             game.telemetry.player_count++;
-            println("<unknown string>" + game.telemetry.player_count);
+            println("<dev string:x425>" + game.telemetry.player_count);
         } else {
-            println("<unknown string>");
+            println("<dev string:x45d>");
             return;
         }
-        println("<unknown string>");
+        println("<dev string:x4bb>");
         playerdata = {};
         playerdata.utc_connect_time_s = self.pers[#"telemetry"].utc_connect_time_s;
         playerdata.var_6ba64843 = isdefined(self.pers[#"telemetry"].var_6ba64843) ? self.pers[#"telemetry"].var_6ba64843 : 0;
@@ -208,7 +207,7 @@ function on_player_connect() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3ee6e39e, Offset: 0x1478
 // Size: 0x115c
 function on_player_disconnect() {
@@ -218,8 +217,8 @@ function on_player_disconnect() {
     self.pers[#"telemetry"].connected = 0;
     playerdata = {};
     /#
-        println("<unknown string>" + self.name);
-        println("<unknown string>" + gettime());
+        println("<dev string:x500>" + self.name);
+        println("<dev string:x533>" + gettime());
     #/
     playerdata.utc_connect_time_s = 0;
     playerdata.utc_disconnect_time_s = 0;
@@ -259,7 +258,7 @@ function on_player_disconnect() {
             playerdata.var_664364c7 = 0;
         }
         playerdata.var_62eb1d70 = isdefined(self.pers[#"hash_26948141ff5e29a3"]) ? self.pers[#"hash_26948141ff5e29a3"] : 0;
-        println("<unknown string>" + playerdata.var_b0689e83);
+        println("<dev string:x569>" + playerdata.var_b0689e83);
     }
     playerdata.xp_at_start = isdefined(self.pers[#"telemetry"].xp_at_start) ? self.pers[#"telemetry"].xp_at_start : 0;
     playerdata.xp_at_end = self rank::getrankxp();
@@ -331,7 +330,7 @@ function on_player_disconnect() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb644cdbc, Offset: 0x25e0
 // Size: 0x476
 function on_player_spawned() {
@@ -349,11 +348,11 @@ function on_player_spawned() {
         self.pers[#"telemetry"].life.life_index = game.telemetry.life_count;
         game.telemetry.life_count++;
         /#
-            println("<unknown string>" + self.name);
-            println("<unknown string>" + game.telemetry.life_count);
+            println("<dev string:x5aa>" + self.name);
+            println("<dev string:x5da>" + game.telemetry.life_count);
         #/
     }
-    println("<unknown string>");
+    println("<dev string:x610>");
     if (!isdefined(self.pers[#"telemetry"].var_9c9223d5)) {
         var_234012ff = {#operator:"", #var_887376f4:""};
         var_8efad2ca = self player_role::get();
@@ -368,7 +367,7 @@ function on_player_spawned() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf489ea6c, Offset: 0x2a60
 // Size: 0x23c
 function function_f0ffff28() {
@@ -399,7 +398,7 @@ function function_f0ffff28() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x79cda603, Offset: 0x2ca8
 // Size: 0x134
 function function_55a7ded6(data) {
@@ -413,13 +412,13 @@ function function_55a7ded6(data) {
         data.var_cc4bc1dd = arraycopy(data.victim.var_c8836f02);
     }
     /#
-        println("<unknown string>" + data.victim.name);
-        println("<unknown string>" + function_f8d53445());
+        println("<dev string:x656>" + data.victim.name);
+        println("<dev string:x656>" + function_f8d53445());
     #/
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x164ba065, Offset: 0x2de8
 // Size: 0xf8a
 function function_607901f4(data) {
@@ -427,8 +426,8 @@ function function_607901f4(data) {
         return;
     }
     /#
-        println("<unknown string>" + data.victim.name);
-        println("<unknown string>" + function_f8d53445());
+        println("<dev string:x688>" + data.victim.name);
+        println("<dev string:x6b9>" + function_f8d53445());
     #/
     died = 1;
     if (isdefined(data.died)) {
@@ -472,10 +471,10 @@ function function_607901f4(data) {
         deathdata.var_a8ffa14f = victimorigin[0];
         deathdata.var_e6a11c91 = victimorigin[1];
         deathdata.var_d4717832 = victimorigin[2];
-        var_5fceefd4 = isdefined(data.var_5fceefd4) ? data.var_5fceefd4 : data.victim getplayerangles();
-        deathdata.var_7c125af5 = var_5fceefd4[0];
-        deathdata.var_8d9bfe08 = var_5fceefd4[1];
-        deathdata.var_506d83ac = var_5fceefd4[2];
+        victimangles = isdefined(data.victimangles) ? data.victimangles : data.victim getplayerangles();
+        deathdata.var_7c125af5 = victimangles[0];
+        deathdata.var_8d9bfe08 = victimangles[1];
+        deathdata.var_506d83ac = victimangles[2];
         deathdata.var_873aa898 = hash(isdefined(data.victimstance) ? data.victimstance : data.victim getstance());
         deathdata.means_of_death = hash(isdefined(data.smeansofdeath) ? data.smeansofdeath : "");
         deathdata.hit_location = hash(isdefined(data.shitloc) ? data.shitloc : "");
@@ -486,17 +485,17 @@ function function_607901f4(data) {
         }
         if (isdefined(data.attacker) && isplayer(data.attacker)) {
             attackerpos = isdefined(data.attackerorigin) ? data.attackerorigin : data.attacker.origin;
-            var_83634238 = isdefined(data.var_83634238) ? data.var_83634238 : data.attacker getplayerangles();
+            attackerangles = isdefined(data.attackerangles) ? data.attackerangles : data.attacker getplayerangles();
             deathdata.var_47f53c15 = attackerpos[0];
             deathdata.var_1a44e0b5 = attackerpos[1];
             deathdata.var_ed820730 = attackerpos[2];
-            deathdata.var_f202c401 = var_83634238[0];
-            deathdata.var_72c6458a = var_83634238[1];
-            deathdata.var_840c6816 = var_83634238[2];
+            deathdata.var_f202c401 = attackerangles[0];
+            deathdata.var_72c6458a = attackerangles[1];
+            deathdata.var_840c6816 = attackerangles[2];
             deathdata.var_4d858e3d = hash(isdefined(data.attackerstance) ? data.attackerstance : "");
             deathdata.var_1ec9deac = data.attacker playerads();
-            deathdata.var_11737fc2 = util::within_fov(attackerpos, var_83634238, data.victimorigin, 0.5);
-            deathdata.var_cc3e142b = util::within_fov(data.victimorigin, var_5fceefd4, attackerpos, 0.5);
+            deathdata.var_11737fc2 = util::within_fov(attackerpos, attackerangles, data.victimorigin, 0.5);
+            deathdata.var_cc3e142b = util::within_fov(data.victimorigin, victimangles, attackerpos, 0.5);
             deathdata.var_67fadda6 = !data.attacker gamepadusedlast();
             deathdata.var_915c82d0 = isdefined(data.attacker.pers[#"telemetry"].life.life_index) ? data.attacker.pers[#"telemetry"].life.life_index : -1;
             deathdata.var_8e368e7c = isdefined(data.attacker.pers[#"telemetry"].var_ee8d3324) ? data.attacker.pers[#"telemetry"].var_ee8d3324 : 0;
@@ -530,7 +529,7 @@ function function_607901f4(data) {
             }
             if (!sent) {
                 var_75000956[var_75000956.size] = var_6165a2d8;
-                println("<unknown string>" + var_6165a2d8);
+                println("<dev string:x6f8>" + var_6165a2d8);
                 function_6d57b52a(data.victim, var_6165a2d8, data.var_cc4bc1dd);
             }
             deathdata.var_5bf208a0 = var_6165a2d8;
@@ -551,7 +550,7 @@ function function_607901f4(data) {
     }
     deathdata.kills = data.victim.pers[#"kills"] - data.victim.pers[#"telemetry"].life.var_75f84f99;
     deathdata.var_1af2a81e = data.victim.pers[#"telemetry"].life.deathmodifiers;
-    println("<unknown string>" + deathdata.life_index);
+    println("<dev string:x737>" + deathdata.life_index);
     if (isdefined(data.attacker) && isplayer(data.attacker)) {
         data.victim function_678f57c8(#"hash_56b3bb4a34717783", deathdata, #"attacker", data.attacker);
     } else {
@@ -561,7 +560,7 @@ function function_607901f4(data) {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x48708ecc, Offset: 0x3d80
 // Size: 0x6f4
 function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
@@ -657,7 +656,7 @@ function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x15298e07, Offset: 0x4480
 // Size: 0x23c
 function function_abbc84ad(data) {
@@ -685,7 +684,7 @@ function function_abbc84ad(data) {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x81e08425, Offset: 0x46c8
 // Size: 0x3d8
 function function_792e6d18() {
@@ -697,7 +696,7 @@ function function_792e6d18() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xed7e781d, Offset: 0x4aa8
 // Size: 0xc6
 function function_e2162733() {
@@ -711,7 +710,7 @@ function function_e2162733() {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7ca020c, Offset: 0x4b78
 // Size: 0x144
 function function_c1165a2d(data) {
@@ -731,7 +730,7 @@ function function_c1165a2d(data) {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd8ba40ce, Offset: 0x4cc8
 // Size: 0x6a
 function function_6c95006e(data) {
@@ -742,7 +741,7 @@ function function_6c95006e(data) {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x10f010d5, Offset: 0x4d40
 // Size: 0x9c
 function function_9cac835e(data) {
@@ -752,7 +751,7 @@ function function_9cac835e(data) {
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4346a1e3, Offset: 0x4de8
 // Size: 0x60
 function function_8d2c5f27(array) {

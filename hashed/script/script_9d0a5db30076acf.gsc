@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
 #using script_35ae72be7b4fec10;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\system_shared;
 
 #namespace namespace_4ea0b0e1;
 
@@ -15,16 +14,16 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_4ea0b0e1/namespace_4ea0b0e1
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x68e94b8a, Offset: 0x140
 // Size: 0x44
 function private _preload() {
     function_bc948200();
-    callback::add_callback(#"hash_75edd53ff899cd30", &function_83c9fd20);
+    callback::add_callback(#"oob_toggle", &function_83c9fd20);
 }
 
 // Namespace namespace_4ea0b0e1/namespace_4ea0b0e1
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1feb771e, Offset: 0x190
 // Size: 0x34
 function private function_bc948200() {
@@ -32,7 +31,7 @@ function private function_bc948200() {
 }
 
 // Namespace namespace_4ea0b0e1/namespace_4ea0b0e1
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4b390b29, Offset: 0x1d0
 // Size: 0x94
 function private function_83c9fd20(params) {
@@ -47,7 +46,7 @@ function private function_83c9fd20(params) {
 }
 
 // Namespace namespace_4ea0b0e1/namespace_4ea0b0e1
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa50e9e2c, Offset: 0x270
 // Size: 0x14c
 function private set(var_5b36f17f, var_6a374e41) {
@@ -67,7 +66,7 @@ function private set(var_5b36f17f, var_6a374e41) {
 }
 
 // Namespace namespace_4ea0b0e1/namespace_4ea0b0e1
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd2459aeb, Offset: 0x3c8
 // Size: 0xec
 function private close(var_67df10fb = 1) {
@@ -75,7 +74,7 @@ function private close(var_67df10fb = 1) {
     self endon("5bbf1d550b1ef164");
     level endon(#"hash_722cff0020f34cd4");
     if (var_67df10fb >= float(function_60d95f53()) / 1000) {
-        wait(var_67df10fb);
+        wait var_67df10fb;
     }
     if (namespace_61e6d095::exists(#"hash_1a9d78f69978a1f3")) {
         namespace_61e6d095::remove(#"hash_1a9d78f69978a1f3");

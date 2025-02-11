@@ -1,5 +1,4 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\territory.gsc;
+#using scripts\core_common\territory;
 
 #namespace namespace_99c84a33;
 
@@ -26,7 +25,7 @@ function function_67b65e2a(name, index, team, origin, angles) {
 }
 
 // Namespace namespace_99c84a33/namespace_99c84a33
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9db640e8, Offset: 0x1b8
 // Size: 0x34
 function function_99c84a33(index) {

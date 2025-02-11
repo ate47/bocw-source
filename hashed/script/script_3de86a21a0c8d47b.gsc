@@ -1,21 +1,20 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using script_13114d8a31c6152a;
 #using script_35ae72be7b4fec10;
-#using script_4937c6974f43bb71;
-#using scripts\cp_common\util.gsc;
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\lui_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
 #using script_37f9ff47f340fbe8;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\serverfield_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
+#using script_4937c6974f43bb71;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\lui_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\serverfield_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
+#using scripts\cp_common\gametypes\globallogic_ui;
+#using scripts\cp_common\util;
 
 #namespace spy_camera;
 
@@ -28,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcab31a7b, Offset: 0x370
 // Size: 0x20c
 function private preinit() {
@@ -70,29 +69,29 @@ function function_f785d9e9(objects, var_7eb1c6be = 0, var_354b19f1) {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd8198adb, Offset: 0x6e0
 // Size: 0x90
-function private function_654fa552(var_57e553fd) {
+function private function_654fa552(wz_character_richtofen_wz) {
     self endon(#"death", #"hash_54e0f219fc10204a");
     self waittillmatch({#var_aad36d51:0, #fieldvalue:1}, #"hash_72a5fe161eb7a0ce");
-    self notify(#"hash_4e1642d862c17b5b");
-    if (isdefined(var_57e553fd)) {
-        var_57e553fd notify(#"hash_4e1642d862c17b5b");
+    self notify(#"photo_taken");
+    if (isdefined(wz_character_richtofen_wz)) {
+        wz_character_richtofen_wz notify(#"photo_taken");
     }
 }
 
 // Namespace spy_camera/spy_camera
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xc3feba2f, Offset: 0x778
 // Size: 0xac
-function private function_a6928964(var_57e553fd) {
-    self endon(#"death", #"hash_4e1642d862c17b5b", #"hash_54e0f219fc10204a");
+function private function_a6928964(wz_character_richtofen_wz) {
+    self endon(#"death", #"photo_taken", #"hash_54e0f219fc10204a");
     while (true) {
         self waittillmatch({#var_aad36d51:0, #fieldvalue:2}, #"hash_72a5fe161eb7a0ce");
         self notify(#"hash_54596dc066040d8c");
-        if (isdefined(var_57e553fd)) {
-            var_57e553fd notify(#"hash_54596dc066040d8c");
+        if (isdefined(wz_character_richtofen_wz)) {
+            wz_character_richtofen_wz notify(#"hash_54596dc066040d8c");
         }
     }
 }
@@ -123,7 +122,7 @@ function function_c11bdcc0() {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x68c7672a, Offset: 0x8d0
 // Size: 0x1bc
 function on_weapon_change(params) {
@@ -145,7 +144,7 @@ function on_weapon_change(params) {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe0792b0e, Offset: 0xa98
 // Size: 0x2c
 function function_ab7ec803() {
@@ -249,11 +248,11 @@ function function_de6d9b74(prompts) {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x5ed48c8b, Offset: 0xfd0
 // Size: 0xb20
 function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
-    self endon(#"death", #"hash_84ab457ebc19a5a");
+    self endon(#"death", #"ability_deactivated_camera");
     if (!isdefined(self.spy_camera)) {
         self.spy_camera = spawnstruct();
     }
@@ -266,7 +265,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
     var_4308b3d8 = 0;
     var_a30db60b = 0;
     self val::set("spy_camera", "disable_weapon_fire", 1);
-    self notify(#"hash_1f7aaeb7335319e5");
+    self notify(#"ability_activated_camera");
     if (!var_c5c03b2) {
         self notify(#"hash_2afde4f84491f78a");
         self thread function_2d8ba5c4();
@@ -341,10 +340,10 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
                     var_ff17ab00 = var_697c5b2b + gettime();
                     self clientfield::set_to_player("spy_camera_state", 2);
                     namespace_c8e236da::function_f7362969(hash("spy_camera_photo_taken"));
-                    self notify(#"hash_4d3a7c3f614226e3");
+                    self notify(#"take_picture");
                     self val::set("spy_camera", "disable_weapon_fire", 1);
                     self util::delay(float(var_697c5b2b) / 1000 - 0.5, "death", &namespace_c8e236da::function_f7362969, hash("spy_camera_photo_taken"), 0);
-                    wait(float(var_697c5b2b) / 1000 - 0.25);
+                    wait float(var_697c5b2b) / 1000 - 0.25;
                 }
             }
         } else if (var_a30db60b) {
@@ -357,7 +356,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
                 self lui::screen_fade_out(0.1);
                 var_a05f9c5f = 0;
                 self clientfield::set_to_player("spy_camera_state", 0);
-                wait(0.1);
+                wait 0.1;
                 namespace_82bfe441::fade(0, "FadeFast");
                 if (var_c5c03b2) {
                     self clientfield::set_to_player("binoculars_overlay", 0);
@@ -383,11 +382,11 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x59105788, Offset: 0x1af8
 // Size: 0x148
 function private function_376f686f() {
-    self endon(#"hash_5512f0799022267", #"hash_84ab457ebc19a5a", #"death");
+    self endon(#"hash_5512f0799022267", #"ability_deactivated_camera", #"death");
     self notifyonplayercommand("toggle_stance", "+stance");
     self notifyonplayercommand("go_stand", "+gostand");
     while (true) {
@@ -397,16 +396,16 @@ function private function_376f686f() {
         } else {
             self setstance("crouch");
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 
 // Namespace spy_camera/spy_camera
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6a41f88a, Offset: 0x1c48
 // Size: 0x254
 function private function_d704edcd(*var_c5c03b2) {
-    self notify(#"hash_84ab457ebc19a5a");
+    self notify(#"ability_deactivated_camera");
     namespace_c8e236da::removelist();
     self val::reset("spy_camera", "freezecontrols_allowlook");
     self val::reset("spy_camera", "disable_weapon_cycling");
@@ -429,7 +428,7 @@ function private function_d704edcd(*var_c5c03b2) {
 }
 
 // Namespace spy_camera/spy_camera
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xcb122b39, Offset: 0x1ea8
 // Size: 0x2cc
 function private function_2d8ba5c4() {
@@ -454,14 +453,14 @@ function private function_2d8ba5c4() {
             self waittill(#"hash_19f1b179d8ebf1dd");
             self util::hide_hint_text(0);
         } else if (self scene::function_c935c42() || self flag::get(#"lockpicking")) {
-            wait(1);
+            wait 1;
             var_acca0715 = gettime();
         }
         if (self isgestureplaying(#"ges_spy_camera_ads")) {
             self waittill(#"hash_2c04af2e3bf6a169");
             var_acca0715 = gettime();
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 

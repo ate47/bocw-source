@@ -1,13 +1,12 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\ai\zombie_utility.gsc;
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\zombie_utility;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\struct;
+#using scripts\zm_common\zm_utility;
 
 #namespace zm_ffotd;
 
 // Namespace zm_ffotd/zm_ffotd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xa0
 // Size: 0x4
 function main_start() {
@@ -15,7 +14,7 @@ function main_start() {
 }
 
 // Namespace zm_ffotd/zm_ffotd
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xb0
 // Size: 0x4
 function main_end() {

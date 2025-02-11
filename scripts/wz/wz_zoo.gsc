@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
 #using script_72d96920f15049b8;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\load_shared.gsc;
+#using scripts\core_common\compass;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
 
 #namespace wz_zoo;
 
@@ -19,7 +18,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace wz_zoo/wz_zoo
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc89795d7, Offset: 0x2d0
 // Size: 0xac
 function function_564698fd() {
@@ -33,7 +32,7 @@ function function_564698fd() {
 }
 
 // Namespace wz_zoo/wz_zoo
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfa6ba4c2, Offset: 0x388
 // Size: 0x19c
 function function_e8fa58f2() {

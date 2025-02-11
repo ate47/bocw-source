@@ -1,9 +1,8 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\mp_common\gametypes\match.gsc;
-#using scripts\core_common\player\player_stats.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\gamestate_util.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\gamestate_util;
+#using scripts\core_common\player\player_stats;
+#using scripts\core_common\system_shared;
+#using scripts\mp_common\gametypes\match;
 
 #namespace arena;
 
@@ -16,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x321ae3d4, Offset: 0x118
 // Size: 0xac
 function private preinit() {
@@ -30,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8dd99f4d, Offset: 0x1d0
 // Size: 0x6
 function function_51203700() {
@@ -38,7 +37,7 @@ function function_51203700() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd26cfca3, Offset: 0x1e0
 // Size: 0x104
 function on_connecting() {
@@ -59,7 +58,7 @@ function on_connecting() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x12c17c30, Offset: 0x2f0
 // Size: 0x124
 function on_connect() {
@@ -81,7 +80,7 @@ function on_connect() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b198b31, Offset: 0x420
 // Size: 0x21c
 function on_game_playing() {
@@ -109,7 +108,7 @@ function on_game_playing() {
 }
 
 // Namespace arena/arena
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2da69fb4, Offset: 0x648
 // Size: 0x184
 function function_b856a952(team) {
@@ -130,7 +129,7 @@ function function_b856a952(team) {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xfb62ce44, Offset: 0x7d8
 // Size: 0xf4
 function on_disconnect() {
@@ -144,7 +143,7 @@ function on_disconnect() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15b4b314, Offset: 0x8d8
 // Size: 0x154
 function function_77151fd1() {
@@ -165,7 +164,7 @@ function function_77151fd1() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x44705e30, Offset: 0xa38
 // Size: 0xcc
 function cancel_match() {
@@ -181,7 +180,7 @@ function cancel_match() {
 }
 
 // Namespace arena/arena
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x33e24852, Offset: 0xb10
 // Size: 0x434
 function match_end() {

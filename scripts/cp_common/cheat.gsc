@@ -1,6 +1,5 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\system_shared;
 
 #namespace cheat;
 
@@ -95,7 +94,7 @@ function function_ae608e1a() {
         for (index = 0; index < level.var_8c80c829.size; index++) {
             function_7f7b42b7(level.var_8c80c829[index]);
         }
-        wait(0.5);
+        wait 0.5;
     }
 }
 

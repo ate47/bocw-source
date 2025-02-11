@@ -1,7 +1,6 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\system_shared.csc;
-#using scripts\core_common\renderoverridebundle.csc;
-#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\renderoverridebundle;
+#using scripts\core_common\system_shared;
 
 #namespace counteruav;
 
@@ -14,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x7f558bd5, Offset: 0x160
 // Size: 0xd8
 function private preinit() {
@@ -26,7 +25,7 @@ function private preinit() {
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x39cc2a50, Offset: 0x240
 // Size: 0x2c
 function private function_df836293() {
@@ -37,7 +36,7 @@ function private function_df836293() {
 }
 
 // Namespace counteruav/counteruav
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x5ce7da34, Offset: 0x278
 // Size: 0xe6
 function enabled(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -48,27 +47,27 @@ function enabled(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fiel
         self.killstreakbundle = level.var_a03cd507;
         return;
     }
-    self notify(#"hash_367b9a7b1a2d9523");
+    self notify(#"counteruav_off");
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x762555bf, Offset: 0x368
 // Size: 0xb4
 function function_c2aa1607(localclientnum) {
     arrayremovevalue(level.counteruavs, undefined, 0);
     level.counteruavs[level.counteruavs.size] = self;
-    self waittill(#"death", #"hash_367b9a7b1a2d9523");
+    self waittill(#"death", #"counteruav_off");
     function_4236032b(localclientnum, self getentitynumber());
     arrayremovevalue(level.counteruavs, self, 0);
 }
 
 // Namespace counteruav/counteruav
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x4a1a3f8f, Offset: 0x428
 // Size: 0x64
 function function_d8f4d00d() {
-    self endon(#"death", #"hash_367b9a7b1a2d9523");
+    self endon(#"death", #"counteruav_off");
     level waittill("new_cuav_" + self.team);
     if (isdefined(self)) {
         self function_811196d1(1);
@@ -76,7 +75,7 @@ function function_d8f4d00d() {
 }
 
 // Namespace counteruav/counteruav
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xbc6f190b, Offset: 0x498
 // Size: 0x164
 function function_5a528883(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -101,7 +100,7 @@ function function_5a528883(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace counteruav/counteruav
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe6f9d50, Offset: 0x608
 // Size: 0x4c
 function fx_think(*localclientnum) {

@@ -1,12 +1,11 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\abilities\gadgets\gadget_health_regen.gsc;
-#using scripts\abilities\ability_player.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\player\player_shared.gsc;
-#using scripts\core_common\gestures.gsc;
-#using scripts\core_common\gameobjects_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\abilities\ability_player;
+#using scripts\abilities\gadgets\gadget_health_regen;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\gameobjects_shared;
+#using scripts\core_common\gestures;
+#using scripts\core_common\player\player_shared;
+#using scripts\core_common\system_shared;
 
 #namespace pickup_health;
 
@@ -45,11 +44,11 @@ function function_e963e37d() {
         pickup.trigger triggerignoreteam();
         pickup.gameobject = gameobjects::create_use_object(#"neutral", pickup.trigger, [], (0, 0, 0), "pickup_health");
         pickup.gameobject gameobjects::set_objective_entity(pickup.gameobject);
-        pickup.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
-        pickup.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
+        pickup.gameobject gameobjects::set_visible(#"group_all");
+        pickup.gameobject gameobjects::allow_use(#"group_all");
         pickup.gameobject gameobjects::set_use_time(0);
         pickup.gameobject.usecount = 0;
-        pickup.gameobject.var_5ecd70 = pickup;
+        pickup.gameobject.parentobj = pickup;
         pickup.gameobject.onuse = &function_5bb13b48;
     }
 }
@@ -116,7 +115,7 @@ function private offhealthregen(*slot, *weapon) {
 // Checksum 0x2139a104, Offset: 0x6b0
 // Size: 0x24
 function private healingdone() {
-    wait(0.5);
+    wait 0.5;
     self function_2bcfabea();
 }
 
@@ -130,7 +129,7 @@ function private function_5bb13b48(player) {
             if (isdefined(self.objectiveid)) {
                 objective_setinvisibletoplayer(self.objectiveid, player);
             }
-            self.var_5ecd70 setinvisibletoplayer(player);
+            self.parentobj setinvisibletoplayer(player);
             self.trigger setinvisibletoplayer(player);
             player playsoundtoplayer(#"hash_8a4d3f134fa94d7", player);
             self.usecount++;
@@ -144,7 +143,7 @@ function private function_5bb13b48(player) {
         }
     }
     if (!is_true(level.var_aff59367) && self.usecount >= level.var_ad9d03e7) {
-        self.var_5ecd70 delete();
+        self.parentobj delete();
         self gameobjects::disable_object(1);
     }
 }
@@ -157,11 +156,11 @@ function private function_7a80944d(player) {
     level endon(#"game_ended");
     self endon(#"death");
     player endon(#"disconnect");
-    wait(isdefined(level.pickup_respawn_time) ? level.pickup_respawn_time : 0);
+    wait isdefined(level.pickup_respawn_time) ? level.pickup_respawn_time : 0;
     if (isdefined(self.objectiveid)) {
         objective_setvisibletoplayer(self.objectiveid, player);
     }
-    self.var_5ecd70 setvisibletoplayer(player);
+    self.parentobj setvisibletoplayer(player);
     self.trigger setvisibletoplayer(player);
 }
 

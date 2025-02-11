@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreaks_shared.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\load_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\compass.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\compass;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\load_shared;
+#using scripts\core_common\util_shared;
+#using scripts\killstreaks\killstreaks_shared;
 
 #namespace mp_kgb;
 
@@ -26,7 +25,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace mp_kgb/mp_kgb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x6abd59c5, Offset: 0x2a8
 // Size: 0x1c
 function on_game_playing() {
@@ -34,7 +33,7 @@ function on_game_playing() {
 }
 
 // Namespace mp_kgb/mp_kgb
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc66b28e6, Offset: 0x2d0
 // Size: 0x170
 function function_29584e41() {

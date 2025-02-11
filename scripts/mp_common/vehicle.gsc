@@ -1,8 +1,7 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\vehicle_death_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\vehicle_death_shared;
 
 #namespace vehicle;
 
@@ -15,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace vehicle/vehicle
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x128
 // Size: 0x4
 function private preinit() {
@@ -23,7 +22,7 @@ function private preinit() {
 }
 
 // Namespace vehicle/vehicle
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4704396e, Offset: 0x138
 // Size: 0xec
 function player_is_occupant_invulnerable(attacker, *smeansofdeath) {
@@ -44,7 +43,7 @@ function player_is_occupant_invulnerable(attacker, *smeansofdeath) {
 }
 
 // Namespace vehicle/vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd9241490, Offset: 0x230
 // Size: 0x84
 function player_is_driver() {
@@ -67,16 +66,16 @@ function player_is_driver() {
 // Size: 0x8c
 function initvehiclemap() {
     /#
-        root = "<unknown string>";
-        adddebugcommand(root + "<unknown string>");
-        adddebugcommand(root + "<unknown string>");
-        adddebugcommand(root + "<unknown string>");
+        root = "<dev string:x38>";
+        adddebugcommand(root + "<dev string:x54>");
+        adddebugcommand(root + "<dev string:x81>");
+        adddebugcommand(root + "<dev string:xb3>");
     #/
     thread vehiclemainthread();
 }
 
 // Namespace vehicle/vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf530a450, Offset: 0x358
 // Size: 0xda
 function vehiclemainthread() {
@@ -94,7 +93,7 @@ function vehiclemainthread() {
 }
 
 // Namespace vehicle/vehicle
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x1a84ba5e, Offset: 0x440
 // Size: 0x1ee
 function vehiclespawnthread(veh_name, origin, angles, time_interval) {
@@ -103,7 +102,7 @@ function vehiclespawnthread(veh_name, origin, angles, time_interval) {
     while (true) {
         vehicle = veh_spawner spawnfromspawner(veh_name, 1, 1, 1);
         if (!isdefined(vehicle)) {
-            wait(randomfloatrange(1, 2));
+            wait randomfloatrange(1, 2);
             continue;
         }
         vehicle asmrequestsubstate(#"locomotion@movement");
@@ -122,13 +121,13 @@ function vehiclespawnthread(veh_name, origin, angles, time_interval) {
         vehicle waittill(#"death");
         vehicle vehicle_death::deletewhensafe(0.25);
         if (isdefined(time_interval)) {
-            wait(time_interval);
+            wait time_interval;
         }
     }
 }
 
 // Namespace vehicle/vehicle
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x53b3b699, Offset: 0x638
 // Size: 0x1b8
 function vehicleteamthread() {
@@ -157,7 +156,7 @@ function vehicleteamthread() {
 }
 
 // Namespace vehicle/vehicle
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb30e3f43, Offset: 0x7f8
 // Size: 0xea
 function watchplayerexitrequestthread(player) {
@@ -165,7 +164,7 @@ function watchplayerexitrequestthread(player) {
     player endon(#"death", #"disconnect");
     vehicle = self;
     vehicle endon(#"death");
-    wait(1.5);
+    wait 1.5;
     while (true) {
         timeused = 0;
         while (player usebuttonpressed()) {

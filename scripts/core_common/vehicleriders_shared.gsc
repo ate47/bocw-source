@@ -1,16 +1,15 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\core_common\values_shared.gsc;
-#using scripts\core_common\scene_shared.gsc;
-#using scripts\core_common\hostmigration_shared.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\spawner_shared.gsc;
-#using scripts\core_common\flag_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\callbacks_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\animation_shared.gsc;
-#using scripts\core_common\struct.gsc;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\animation_shared;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\callbacks_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\flag_shared;
+#using scripts\core_common\hostmigration_shared;
+#using scripts\core_common\scene_shared;
+#using scripts\core_common\spawner_shared;
+#using scripts\core_common\struct;
+#using scripts\core_common\util_shared;
+#using scripts\core_common\values_shared;
 
 #namespace vehicle;
 
@@ -28,7 +27,7 @@ class class_358332cc {
     var var_dad0959b;
 
     // Namespace class_358332cc/vehicleriders_shared
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0xff9616dc, Offset: 0xd20
     // Size: 0x62
     constructor() {
@@ -56,7 +55,7 @@ function autoexec init() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb450f782, Offset: 0x400
 // Size: 0x378
 function private function_d64f1d30() {
@@ -91,7 +90,7 @@ function private function_d64f1d30() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf53eda71, Offset: 0x780
 // Size: 0x4c
 function function_196797c9(vehicle) {
@@ -103,7 +102,7 @@ function function_196797c9(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4034bf1d, Offset: 0x7d8
 // Size: 0xc
 function private function_810a3de5(*vehicle) {
@@ -111,7 +110,7 @@ function private function_810a3de5(*vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb22291fd, Offset: 0x7f0
 // Size: 0xde
 function private function_41cf7b1d(vehicle) {
@@ -128,7 +127,7 @@ function private function_41cf7b1d(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xa193a85f, Offset: 0x8d8
 // Size: 0xd4
 function private function_f7ce77b(vehicle) {
@@ -145,7 +144,7 @@ function private function_f7ce77b(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xb7118bc, Offset: 0x9b8
 // Size: 0xd4
 function private function_2453a4a2(vehicle) {
@@ -162,7 +161,7 @@ function private function_2453a4a2(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf12c33f6, Offset: 0xa98
 // Size: 0xd4
 function private function_6fd51bb0(vehicle) {
@@ -179,7 +178,7 @@ function private function_6fd51bb0(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xd9b625aa, Offset: 0xb78
 // Size: 0xe6
 function private function_72b503cc(vehicle) {
@@ -197,7 +196,7 @@ function private function_72b503cc(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x1ecd538, Offset: 0xc68
 // Size: 0xae
 function function_999240f5(vehicle) {
@@ -214,7 +213,7 @@ function function_999240f5(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x1bc5ee05, Offset: 0xe28
 // Size: 0xd2
 function private function_faad1dd1(vehicle, position) {
@@ -231,7 +230,7 @@ function private function_faad1dd1(vehicle, position) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x2cfca903, Offset: 0xf08
 // Size: 0x174
 function private function_af0a6edf() {
@@ -252,7 +251,7 @@ function private function_af0a6edf() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x81446a9b, Offset: 0x1088
 // Size: 0x500
 function private on_vehicle_spawned() {
@@ -327,7 +326,7 @@ function private on_vehicle_spawned() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc42fcd1c, Offset: 0x1590
 // Size: 0x198
 function private function_8160dc33() {
@@ -360,7 +359,7 @@ function private function_8160dc33() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x93c9a73c, Offset: 0x1730
 // Size: 0xe6
 function private function_e1008fbd(vehicle) {
@@ -376,7 +375,7 @@ function private function_e1008fbd(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc08067fa, Offset: 0x1820
 // Size: 0xa4
 function private function_2cec1af6(vehicle, seat) {
@@ -398,40 +397,40 @@ function private function_2e28cc0(vehicle, seat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xff6574e1, Offset: 0x1980
 // Size: 0x62
 function get_human_bundle(assertifneeded = 1) {
     if (assertifneeded) {
-        assert(isdefined(self.vehicleridersbundle), "<unknown string>");
+        assert(isdefined(self.vehicleridersbundle), "<dev string:x38>");
     }
     return getscriptbundle(self.vehicleridersbundle);
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x944049c4, Offset: 0x19f0
 // Size: 0x62
 function get_robot_bundle(assertifneeded = 1) {
     if (assertifneeded) {
-        assert(isdefined(self.vehicleridersrobotbundle), "<unknown string>");
+        assert(isdefined(self.vehicleridersrobotbundle), "<dev string:x8c>");
     }
     return getscriptbundle(self.vehicleridersrobotbundle);
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7f8c3a0a, Offset: 0x1a60
 // Size: 0x62
 function get_warlord_bundle(assertifneeded = 1) {
     if (assertifneeded) {
-        assert(isdefined(self.vehicleriderswarlordbundle), "<unknown string>");
+        assert(isdefined(self.vehicleriderswarlordbundle), "<dev string:xe6>");
     }
     return getscriptbundle(self.vehicleriderswarlordbundle);
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x80f5327d, Offset: 0x1ad0
 // Size: 0x172
 function private function_e84837df(ai, vehicle) {
@@ -444,12 +443,12 @@ function private function_e84837df(ai, vehicle) {
     if (ai.archetype == #"warlord") {
         return vehicle get_warlord_bundle();
     }
-    assert(ai.archetype == #"human" || ai.archetype == #"civilian", "<unknown string>" + ai.archetype);
+    assert(ai.archetype == #"human" || ai.archetype == #"civilian", "<dev string:x142>" + ai.archetype);
     return vehicle get_human_bundle();
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x7e48158c, Offset: 0x1c50
 // Size: 0x10e
 function function_b9342b7d(ai, vehicle, seat) {
@@ -464,7 +463,7 @@ function function_b9342b7d(ai, vehicle, seat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xa3957e73, Offset: 0x1d68
 // Size: 0x2a4
 function private init_rider(ai, vehicle, seat) {
@@ -475,10 +474,10 @@ function private init_rider(ai, vehicle, seat) {
     ai.vehicle = vehicle;
     ai.var_5574287b = seat;
     if (isdefined(ai.var_ec30f5da.rideanim) && !isanimlooping(ai.var_ec30f5da.rideanim)) {
-        assertmsg("<unknown string>" + seat + "<unknown string>" + function_9e72a96(ai.vehicle.vehicletype) + "<unknown string>");
+        assertmsg("<dev string:x178>" + seat + "<dev string:x19e>" + function_9e72a96(ai.vehicle.vehicletype) + "<dev string:x1af>");
     }
     if (isdefined(ai.var_ec30f5da.aligntag) && !isdefined(ai.vehicle gettagorigin(ai.var_ec30f5da.aligntag))) {
-        assertmsg("<unknown string>" + seat + "<unknown string>" + function_9e72a96(ai.vehicle.vehicletype) + "<unknown string>" + ai.var_ec30f5da.aligntag + "<unknown string>");
+        assertmsg("<dev string:x178>" + seat + "<dev string:x19e>" + function_9e72a96(ai.vehicle.vehicletype) + "<dev string:x1cb>" + ai.var_ec30f5da.aligntag + "<dev string:x1e1>");
     }
     if (!ai flag::exists("in_vehicle")) {
         ai flag::init("in_vehicle");
@@ -495,11 +494,11 @@ function private init_rider(ai, vehicle, seat) {
 function fill_riders(a_ai, vehicle, seat) {
     assert(isvehicle(vehicle));
     if (!function_196797c9(vehicle)) {
-        assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+        assertmsg("<dev string:x1e7>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x1fb>");
         return;
     }
     if (isdefined(seat)) {
-        assert(seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>");
+        assert(seat == "<dev string:x221>" || seat == "<dev string:x22b>" || seat == "<dev string:x239>" || seat == "<dev string:x241>" || seat == "<dev string:x24c>");
     } else {
         seat = "all";
     }
@@ -563,21 +562,21 @@ function fill_riders(a_ai, vehicle, seat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc447d2f4, Offset: 0x2550
 // Size: 0x40a
 function unload(seat) {
     self endon(#"death");
     assert(isvehicle(self));
     if (!function_196797c9(self)) {
-        assertmsg("<unknown string>" + function_9e72a96(self.vehicletype) + "<unknown string>");
+        assertmsg("<dev string:x1e7>" + function_9e72a96(self.vehicletype) + "<dev string:x1fb>");
         return;
     }
     if (isdefined(seat) && seat != "undefined") {
         if (seat == "passengers") {
             seat = "passenger1";
         }
-        assert(seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>");
+        assert(seat == "<dev string:x221>" || seat == "<dev string:x22b>" || seat == "<dev string:x239>" || seat == "<dev string:x241>" || seat == "<dev string:x24c>" || seat == "<dev string:x257>" || seat == "<dev string:x262>");
     } else {
         seat = "all";
     }
@@ -626,7 +625,7 @@ function unload(seat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x1db98b94, Offset: 0x2968
 // Size: 0x1bc
 function private function_114d7bd3(vehicle) {
@@ -638,7 +637,7 @@ function private function_114d7bd3(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai flag::get("<unknown string>"));
+        assert(ai flag::get("<dev string:x269>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "driver", incombat);
@@ -649,7 +648,7 @@ function private function_114d7bd3(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x51ae654b, Offset: 0x2b30
 // Size: 0x1bc
 function private function_b56639f2(vehicle) {
@@ -661,7 +660,7 @@ function private function_b56639f2(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai flag::get("<unknown string>"));
+        assert(ai flag::get("<dev string:x269>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "passenger1", incombat);
@@ -672,7 +671,7 @@ function private function_b56639f2(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x6ee00364, Offset: 0x2cf8
 // Size: 0x1bc
 function private function_2ef91b74(vehicle) {
@@ -684,7 +683,7 @@ function private function_2ef91b74(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai flag::get("<unknown string>"));
+        assert(ai flag::get("<dev string:x269>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "gunner1", incombat);
@@ -695,7 +694,7 @@ function private function_2ef91b74(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x938e2c9, Offset: 0x2ec0
 // Size: 0x1bc
 function private function_da0917a4(vehicle) {
@@ -707,7 +706,7 @@ function private function_da0917a4(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai flag::get("<unknown string>"));
+        assert(ai flag::get("<dev string:x269>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "gunner2", incombat);
@@ -718,7 +717,7 @@ function private function_da0917a4(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5171b354, Offset: 0x3088
 // Size: 0x3fc
 function private function_2ca26543(vehicle) {
@@ -741,7 +740,7 @@ function private function_2ca26543(vehicle) {
             if (ai flag::get("dead_in_vehicle")) {
                 continue;
             }
-            assert(ai flag::get("<unknown string>"));
+            assert(ai flag::get("<dev string:x269>"));
             incombat = function_b214280f(ai);
             if (!var_f982fa99) {
                 if (incombat && isdefined(ai.var_ec30f5da.var_b7605392)) {
@@ -776,16 +775,16 @@ function private function_2ca26543(vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xee92adb9, Offset: 0x3490
 // Size: 0x6e8
 function get_out(vehicle, ai, seat, incombat = 0) {
     assert(isdefined(ai));
-    assert(isalive(ai), "<unknown string>");
-    assert(isactor(ai) || function_8d8e91af(ai), "<unknown string>");
-    assert(isdefined(ai.vehicle), "<unknown string>");
+    assert(isalive(ai), "<dev string:x277>");
+    assert(isactor(ai) || function_8d8e91af(ai), "<dev string:x29b>");
+    assert(isdefined(ai.vehicle), "<dev string:x2dd>");
     assert(isdefined(ai.var_ec30f5da));
-    assert(seat == "<unknown string>" || seat == "<unknown string>" || issubstr(seat, "<unknown string>") || seat == "<unknown string>" || seat == "<unknown string>");
+    assert(seat == "<dev string:x221>" || seat == "<dev string:x22b>" || issubstr(seat, "<dev string:x239>") || seat == "<dev string:x241>" || seat == "<dev string:x24c>");
     if (isdefined(vehicle.var_761c973.var_e30918cc)) {
         array::add(vehicle.var_761c973.var_e30918cc, ai);
     }
@@ -836,7 +835,7 @@ function get_out(vehicle, ai, seat, incombat = 0) {
         exit_variable(ai, incombat);
         break;
     default:
-        assertmsg("<unknown string>");
+        assertmsg("<dev string:x2f6>");
         return;
     }
     if (isdefined(ai)) {
@@ -858,7 +857,7 @@ function get_out(vehicle, ai, seat, incombat = 0) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x22092e68, Offset: 0x3b80
 // Size: 0x4fc
 function exit_ground(ai, incombat) {
@@ -877,7 +876,7 @@ function exit_ground(ai, incombat) {
     if (incombat && isdefined(ai.var_ec30f5da.var_adf2b93b)) {
         exitanim = ai.var_ec30f5da.var_adf2b93b;
     }
-    assert(isdefined(exitanim), "<unknown string>" + ai.var_ec30f5da.position + "<unknown string>");
+    assert(isdefined(exitanim), "<dev string:x319>" + ai.var_ec30f5da.position + "<dev string:x334>");
     if (isdefined(exitanim)) {
         tagorigin = ai.vehicle gettagorigin(ai.var_ec30f5da.aligntag);
         tagangles = ai.vehicle gettagangles(ai.var_ec30f5da.aligntag);
@@ -907,7 +906,7 @@ function exit_ground(ai, incombat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x774afdf5, Offset: 0x4088
 // Size: 0x3d4
 function deploy_fast_rope(vehicle, seat) {
@@ -936,8 +935,8 @@ function deploy_fast_rope(vehicle, seat) {
     deployanim = vehicleridersbundle.objects[var_9ff2ab61].var_805b9934;
     idleanim = vehicleridersbundle.objects[var_9ff2ab61].var_fa69f447;
     dropanim = vehicleridersbundle.objects[var_9ff2ab61].var_36aac3fb;
-    assert(isdefined(attachtag), "<unknown string>");
-    assert(isdefined(var_4aedb29c), "<unknown string>");
+    assert(isdefined(attachtag), "<dev string:x358>");
+    assert(isdefined(var_4aedb29c), "<dev string:x379>");
     tagorigin = vehicle gettagorigin(attachtag);
     tagangles = vehicle gettagangles(attachtag);
     var_80fd8136 = util::spawn_anim_model(var_4aedb29c, tagorigin, tagangles);
@@ -957,13 +956,13 @@ function deploy_fast_rope(vehicle, seat) {
         tagorigin = vehicle gettagorigin(attachtag);
         tagangles = vehicle gettagangles(attachtag);
         var_80fd8136 animation::play(dropanim, tagorigin, tagangles);
-        wait(10);
+        wait 10;
     }
     var_80fd8136 delete();
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9e5b11, Offset: 0x4468
 // Size: 0x4c
 function private function_b214280f(ai) {
@@ -971,7 +970,7 @@ function private function_b214280f(ai) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xc57d1e89, Offset: 0x44c0
 // Size: 0x8a
 function private function_422cecb5(ai, incombat) {
@@ -985,7 +984,7 @@ function private function_422cecb5(ai, incombat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 4, eflags: 0x6 linked
+// Params 4, eflags: 0x4
 // Checksum 0xa886d4c4, Offset: 0x4558
 // Size: 0xa4
 function private function_2893ab77(vehicle, seat, animname, incombat) {
@@ -998,7 +997,7 @@ function private function_2893ab77(vehicle, seat, animname, incombat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x7bb68abc, Offset: 0x4608
 // Size: 0x100
 function remove_riders_after_wait(vehicle, a_riders_to_remove) {
@@ -1012,7 +1011,7 @@ function remove_riders_after_wait(vehicle, a_riders_to_remove) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xb557cf2c, Offset: 0x4710
 // Size: 0xa4
 function private handle_falling_death() {
@@ -1026,7 +1025,7 @@ function private handle_falling_death() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x50b83454, Offset: 0x47c0
 // Size: 0xe0
 function ragdoll_dead_exit_rider(ai) {
@@ -1041,7 +1040,7 @@ function ragdoll_dead_exit_rider(ai) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x3d37ea0, Offset: 0x48a8
 // Size: 0x168
 function private forward_euler_integration(e_move, v_target_landing, n_initial_speed) {
@@ -1058,18 +1057,18 @@ function private forward_euler_integration(e_move, v_target_landing, n_initial_s
             position = v_target_landing;
         }
         /#
-            recordline(previousposition, position, (1, 0.5, 0), "<unknown string>", self);
+            recordline(previousposition, position, (1, 0.5, 0), "<dev string:x39a>", self);
         #/
         hostmigration::waittillhostmigrationdone();
         e_move moveto(position, 0.1);
         if (!landed) {
-            wait(0.1);
+            wait 0.1;
         }
     }
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3bc44ad5, Offset: 0x4a18
 // Size: 0x638
 function exit_variable(ai, incombat) {
@@ -1082,7 +1081,7 @@ function exit_variable(ai, incombat) {
         animation::play(ai.var_ec30f5da.var_3e03e2dc, ai.vehicle, ai.var_ec30f5da.aligntag, 1, 0, 0);
     } else {
         ai animation::set_death_anim(ai.var_ec30f5da.exithighdeathanim);
-        assert(isdefined(ai.var_ec30f5da.exithighanim), "<unknown string>" + ai.var_ec30f5da.position + "<unknown string>");
+        assert(isdefined(ai.var_ec30f5da.exithighanim), "<dev string:x319>" + ai.var_ec30f5da.position + "<dev string:x334>");
         animation::play(ai.var_ec30f5da.exithighanim, ai.vehicle, ai.var_ec30f5da.aligntag, 1, 0, 0);
     }
     if (incombat && isdefined(ai.var_ec30f5da.exithighloopdeathanim)) {
@@ -1130,7 +1129,7 @@ function exit_variable(ai, incombat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d62c42a, Offset: 0x5058
 // Size: 0xc0
 function exit_high_loop_anim(e_parent, incombat) {
@@ -1145,19 +1144,19 @@ function exit_high_loop_anim(e_parent, incombat) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x639da0a2, Offset: 0x5120
 // Size: 0xea
 function get_height(e_ignore = self) {
     trace = groundtrace(self.origin + (0, 0, 10), self.origin + (0, 0, -10000), 0, e_ignore, 0);
     /#
-        recordline(self.origin + (0, 0, 10), trace[#"position"], (1, 0.5, 0), "<unknown string>", self);
+        recordline(self.origin + (0, 0, 10), trace[#"position"], (1, 0.5, 0), "<dev string:x39a>", self);
     #/
     return distance(self.origin, trace[#"position"]);
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xa5f919e5, Offset: 0x5218
 // Size: 0x888
 function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
@@ -1182,13 +1181,13 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
         seat = "passenger1";
     }
     assert(isactor(ai) || function_8d8e91af(ai));
-    assert(isdefined(seat) && (seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>"));
+    assert(isdefined(seat) && (seat == "<dev string:x221>" || seat == "<dev string:x22b>" || seat == "<dev string:x239>" || seat == "<dev string:x241>" || seat == "<dev string:x24c>"));
     switch (seat) {
     case #"driver":
         if (vehicle.var_761c973.var_9e2a2132 && vehicle flag::get("driver_occupied")) {
             /#
                 if (var_7c3e4d44) {
-                    assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+                    assertmsg("<dev string:x3a8>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x3d0>");
                 }
             #/
             return 0;
@@ -1199,7 +1198,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
         if (vehicle.var_761c973.var_709c0a6f && vehicle flag::get("passenger1_occupied")) {
             /#
                 if (var_7c3e4d44) {
-                    assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+                    assertmsg("<dev string:x3fd>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x428>");
                 }
             #/
             return 0;
@@ -1213,7 +1212,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
                 if (vehicle flag::get("gunner2_occupied")) {
                     /#
                         if (var_7c3e4d44) {
-                            assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+                            assertmsg("<dev string:x458>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x480>");
                         }
                     #/
                     return 0;
@@ -1224,7 +1223,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
             } else {
                 /#
                     if (var_7c3e4d44) {
-                        assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+                        assertmsg("<dev string:x4b0>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x4d9>");
                     }
                 #/
                 return 0;
@@ -1236,7 +1235,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
         if (vehicle.var_761c973.var_cc0d1da && vehicle flag::get("gunner2_occupied")) {
             /#
                 if (var_7c3e4d44) {
-                    assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+                    assertmsg("<dev string:x507>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x530>");
                 }
             #/
             return 0;
@@ -1248,7 +1247,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
         if (var_b11e7fca == "none") {
             /#
                 if (var_7c3e4d44) {
-                    assertmsg("<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>");
+                    assertmsg("<dev string:x55e>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x584>");
                 }
             #/
             return 0;
@@ -1260,7 +1259,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
     assert(isdefined(ai.var_ec30f5da));
     assert(isdefined(ai.vehicle));
     if (!isdefined(ai.var_ec30f5da.rideanim)) {
-        assertmsg("<unknown string>" + seat + "<unknown string>" + function_9e72a96(vehicle.vehicletype) + "<unknown string>" + function_e84837df(ai, vehicle));
+        assertmsg("<dev string:x5c2>" + seat + "<dev string:x19e>" + function_9e72a96(vehicle.vehicletype) + "<dev string:x5e6>" + function_e84837df(ai, vehicle));
         return;
     }
     assert(isdefined(vehicle.var_761c973.riders));
@@ -1277,7 +1276,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x13fdaf14, Offset: 0x5aa8
 // Size: 0x94
 function private function_bcc6902b(ai) {
@@ -1288,7 +1287,7 @@ function private function_bcc6902b(ai) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xa2a20c15, Offset: 0x5b48
 // Size: 0xbc
 function private function_88042c5b(ai, animname) {
@@ -1304,7 +1303,7 @@ function private function_88042c5b(ai, animname) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x7bbe8ff7, Offset: 0x5c10
 // Size: 0x74
 function private function_1585495a(ai, animname) {
@@ -1315,7 +1314,7 @@ function private function_1585495a(ai, animname) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf3facbf2, Offset: 0x5c90
 // Size: 0x1a0
 function private function_8a1b8aa0(ai, vehicle) {
@@ -1336,7 +1335,7 @@ function private function_8a1b8aa0(ai, vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xae09c872, Offset: 0x5e38
 // Size: 0x1fc
 function function_ce8e453c() {
@@ -1360,7 +1359,7 @@ function function_ce8e453c() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xf0d93db3, Offset: 0x6040
 // Size: 0x94
 function private function_991034a3(ai, vehicle) {
@@ -1372,7 +1371,7 @@ function private function_991034a3(ai, vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0xefb5b892, Offset: 0x60e0
 // Size: 0xc4
 function private handle_rider_death(ai, vehicle) {
@@ -1386,7 +1385,7 @@ function private handle_rider_death(ai, vehicle) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xe29e1e60, Offset: 0x61b0
 // Size: 0x14c
 function private function_15dbe5e9(*params) {
@@ -1402,7 +1401,7 @@ function private function_15dbe5e9(*params) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 5, eflags: 0x6 linked
+// Params 5, eflags: 0x4
 // Checksum 0xf7cf61e8, Offset: 0x6308
 // Size: 0x21c
 function private function_6f25a21f(ai, *vehicle, exitanim, startorigin, startangles) {
@@ -1428,7 +1427,7 @@ function private function_6f25a21f(ai, *vehicle, exitanim, startorigin, startang
     vehicle thread animation::play(exitanim, startorigin, startangles, 1, 0.1, 0.1, 0, currenttime);
     animlength = getanimlength(exitanim);
     waittime = animlength * (var_46ea0aaf - currenttime);
-    wait(waittime);
+    wait waittime;
     if (!isdefined(vehicle)) {
         return;
     }
@@ -1438,7 +1437,7 @@ function private function_6f25a21f(ai, *vehicle, exitanim, startorigin, startang
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x20608d13, Offset: 0x6530
 // Size: 0xb8
 function private on_vehicle_killed() {
@@ -1454,7 +1453,7 @@ function private on_vehicle_killed() {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x449f4b48, Offset: 0x65f0
 // Size: 0x17c
 function kill_rider(entity) {
@@ -1479,7 +1478,7 @@ function kill_rider(entity) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xcb3dbe6f, Offset: 0x6778
 // Size: 0x2c
 function delete_rider_asap(entity) {
@@ -1506,7 +1505,7 @@ function function_86c7bebb(seat = "all") {
         if (seat == "passengers") {
             seat = "passenger1";
         }
-        assert(seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>" || seat == "<unknown string>");
+        assert(seat == "<dev string:x221>" || seat == "<dev string:x22b>" || seat == "<dev string:x239>" || seat == "<dev string:x241>" || seat == "<dev string:x24c>" || seat == "<dev string:x257>" || seat == "<dev string:x262>");
     } else {
         seat = "all";
     }

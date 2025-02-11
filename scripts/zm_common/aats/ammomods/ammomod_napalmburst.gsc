@@ -1,17 +1,16 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\zm_common\zm_utility.gsc;
-#using scripts\core_common\ai\systems\gib.gsc;
-#using scripts\core_common\util_shared.gsc;
-#using scripts\core_common\system_shared.gsc;
-#using scripts\core_common\math_shared.gsc;
-#using scripts\core_common\clientfield_shared.gsc;
-#using scripts\core_common\array_shared.gsc;
-#using scripts\core_common\aat_shared.gsc;
+#using scripts\core_common\aat_shared;
+#using scripts\core_common\ai\systems\gib;
+#using scripts\core_common\array_shared;
+#using scripts\core_common\clientfield_shared;
+#using scripts\core_common\math_shared;
+#using scripts\core_common\system_shared;
+#using scripts\core_common\util_shared;
+#using scripts\zm_common\zm_utility;
 
 #namespace ammomod_napalmburst;
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdc47c2e0, Offset: 0x260
 // Size: 0x3dc
 function init_napalmburst() {
@@ -36,7 +35,7 @@ function init_napalmburst() {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x147782cc, Offset: 0x648
 // Size: 0xdc
 function private function_e8018847(aat_name = "ammomod_napalmburst") {
@@ -59,7 +58,7 @@ function private function_e8018847(aat_name = "ammomod_napalmburst") {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0x80fabf, Offset: 0x730
 // Size: 0x304
 function result(death, attacker, mod, weapon, var_fd90b0bb, vpoint, *shitloc, *boneindex = self.origin) {
@@ -105,7 +104,7 @@ function result(death, attacker, mod, weapon, var_fd90b0bb, vpoint, *shitloc, *b
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x9862234d, Offset: 0xa40
 // Size: 0xc2
 function private function_4f7f29ab(e_attacker) {
@@ -121,7 +120,7 @@ function private function_4f7f29ab(e_attacker) {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xe5e176f4, Offset: 0xb10
 // Size: 0x280
 function function_c8e3a0dc(var_4589e270, var_23255fc5, e_attacker, *mod, w_weapon, var_fd90b0bb) {
@@ -157,7 +156,7 @@ function function_c8e3a0dc(var_4589e270, var_23255fc5, e_attacker, *mod, w_weapo
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x44ea484a, Offset: 0xd98
 // Size: 0x296
 function function_80b0dbe5(e_attacker, w_weapon, tier) {
@@ -171,12 +170,12 @@ function function_80b0dbe5(e_attacker, w_weapon, tier) {
         var_9b6cf9b5 *= 2;
     }
     i = 0;
-    var_9fa954e6 = 5;
+    total_ticks = 5;
     if (tier >= 2) {
-        var_9fa954e6 = 10;
+        total_ticks = 10;
     }
     var_2c5684be = 0;
-    while (i <= var_9fa954e6) {
+    while (i <= total_ticks) {
         if (tier >= 1 && !var_2c5684be) {
             if (var_9b6cf9b5 >= self.health && w_weapon.name !== #"hero_flamethrower") {
                 self.var_9b0f545e = 1;
@@ -190,13 +189,13 @@ function function_80b0dbe5(e_attacker, w_weapon, tier) {
             self dodamage(var_70ab6bc, self.origin, e_attacker, undefined, "none", "MOD_AAT", 0, w_weapon);
         }
         i++;
-        wait(1);
+        wait 1;
     }
     if (self ishidden()) {
         while (self ishidden()) {
-            wait(1);
+            wait 1;
         }
-        wait(1);
+        wait 1;
     }
     self function_68364c40();
     self notify(#"hash_1a322c9f227ee");
@@ -204,7 +203,7 @@ function function_80b0dbe5(e_attacker, w_weapon, tier) {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xe6e9ba44, Offset: 0x1038
 // Size: 0x58
 function function_74816787() {
@@ -218,7 +217,7 @@ function function_74816787() {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xade8717e, Offset: 0x1098
 // Size: 0x54
 function function_68364c40() {
@@ -232,7 +231,7 @@ function function_68364c40() {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x51afefa3, Offset: 0x10f8
 // Size: 0x114
 function function_be5234be(attacker, mod, weapon, var_fd90b0bb, tier = 0) {
@@ -247,7 +246,7 @@ function function_be5234be(attacker, mod, weapon, var_fd90b0bb, tier = 0) {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x58207c2d, Offset: 0x1218
 // Size: 0xcc
 function zombie_death_gib(*e_attacker, w_weapon, var_fd90b0bb) {

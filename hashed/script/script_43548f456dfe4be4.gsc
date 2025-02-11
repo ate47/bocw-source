@@ -1,10 +1,9 @@
-// Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\killstreakrules_shared.gsc;
+#using scripts\killstreaks\killstreakrules_shared;
 
 #namespace killstreakrules;
 
 // Namespace killstreakrules/killstreakrules
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb2c940a9, Offset: 0x1b0
 // Size: 0x54c
 function init() {
@@ -49,7 +48,7 @@ function init() {
 }
 
 // Namespace killstreakrules/killstreakrules
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x757e0f89, Offset: 0x708
 // Size: 0xa4
 function function_65739e7b(type, *team, *isemped) {
