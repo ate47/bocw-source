@@ -7,9 +7,10 @@
 // Params 1, eflags: 0x20
 // Checksum 0x70626b5, Offset: 0x90
 // Size: 0x6a
-function event_handler[level_init] main(*eventstruct) {
+function event_handler[level_init] main( *eventstruct )
+{
     precache();
-    setmapcenter((0, 0, 0));
+    setmapcenter( ( 0, 0, 0 ) );
     core_frontend_fx::main();
     core_frontend_sound::main();
     world.playerroles = undefined;
@@ -20,7 +21,8 @@ function event_handler[level_init] main(*eventstruct) {
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x108
 // Size: 0x4
-function precache() {
+function precache()
+{
     
 }
 

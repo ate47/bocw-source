@@ -10,27 +10,30 @@
 // Params 0, eflags: 0x5
 // Checksum 0x50c3c48d, Offset: 0xc0
 // Size: 0x44
-function private autoexec __init__system__() {
-    system::register(#"recon_car", &preinit, undefined, undefined, #"killstreaks");
+function private autoexec __init__system__()
+{
+    system::register( #"recon_car", &preinit, undefined, undefined, #"killstreaks" );
 }
 
 // Namespace recon_car/recon_car
 // Params 0, eflags: 0x4
 // Checksum 0x6f53ebb6, Offset: 0x110
 // Size: 0x84
-function private preinit() {
+function private preinit()
+{
     killstreak_detect::init_shared();
-    bundle = getscriptbundle("killstreak_recon_car");
+    bundle = getscriptbundle( "killstreak_recon_car" );
     level.var_af161ca6 = bundle;
-    killstreak_vehicle::init_killstreak(bundle);
-    vehicle::add_vehicletype_callback(bundle.ksvehicle, &spawned);
+    killstreak_vehicle::init_killstreak( bundle );
+    vehicle::add_vehicletype_callback( bundle.ksvehicle, &spawned );
 }
 
 // Namespace recon_car/recon_car
 // Params 1, eflags: 0x0
 // Checksum 0x3943719f, Offset: 0x1a0
 // Size: 0x1e
-function spawned(*localclientnum) {
+function spawned( *localclientnum )
+{
     self.killstreakbundle = level.var_af161ca6;
 }
 
@@ -38,15 +41,17 @@ function spawned(*localclientnum) {
 // Params 0, eflags: 0x4
 // Checksum 0xbcd17c26, Offset: 0x1c8
 // Size: 0x2c
-function private function_3665db4d() {
-    function_334b8df9(level.var_af161ca6.var_1c30ba81, -1);
+function private function_3665db4d()
+{
+    function_334b8df9( level.var_af161ca6.var_1c30ba81, -1 );
 }
 
 // Namespace recon_car/recon_car
 // Params 0, eflags: 0x4
 // Checksum 0xbd593419, Offset: 0x200
 // Size: 0x24
-function private function_b8d95025() {
-    function_58250a30(level.var_af161ca6.var_1c30ba81);
+function private function_b8d95025()
+{
+    function_58250a30( level.var_af161ca6.var_1c30ba81 );
 }
 

@@ -14,7 +14,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0xd40cc751, Offset: 0xc8
 // Size: 0x34
-function init() {
+function init()
+{
     namespace_41f5b853::init();
     namespace_f63bdb08::init();
     function_32d5e898();
@@ -24,7 +25,8 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0x105158e1, Offset: 0x108
 // Size: 0xc
-function function_32d5e898(*localclientnum) {
+function function_32d5e898( *localclientnum )
+{
     
 }
 

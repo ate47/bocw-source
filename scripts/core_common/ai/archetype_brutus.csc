@@ -11,15 +11,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0xd936eb8f, Offset: 0xb0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"brutus", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"brutus", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace archetype_brutus/archetype_brutus
 // Params 0, eflags: 0x1
 // Checksum 0x80f724d1, Offset: 0xf8
 // Size: 0x4
-function autoexec precache() {
+function autoexec precache()
+{
     
 }
 
@@ -27,7 +29,8 @@ function autoexec precache() {
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x108
 // Size: 0x4
-function private preinit() {
+function private preinit()
+{
     
 }
 
@@ -35,7 +38,8 @@ function private preinit() {
 // Params 5, eflags: 0x0
 // Checksum 0x1b397cbc, Offset: 0x118
 // Size: 0x2c
-function function_6e2a738c(*localclientnum, *pos, *surface, *notetrack, *bone) {
+function function_6e2a738c( *localclientnum, *pos, *surface, *notetrack, *bone )
+{
     
 }
 

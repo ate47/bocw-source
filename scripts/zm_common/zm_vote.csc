@@ -9,11 +9,12 @@
 // Params 0, eflags: 0x0
 // Checksum 0xef2bebd8, Offset: 0x118
 // Size: 0x154
-function init() {
-    clientfield::register_clientuimodel("sr_vote_prompt.numPlayersNeeded", #"hash_469205ac2d4fe20c", #"hash_2f2580a3787aa336", 1, 2, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("sr_vote_prompt.show", #"hash_469205ac2d4fe20c", #"show", 1, 3, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("sr_vote_prompt.starter", #"hash_469205ac2d4fe20c", #"starter", 1, 7, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("sr_vote_prompt.status", #"hash_469205ac2d4fe20c", #"status", 1, 2, "int", undefined, 0, 0);
+function init()
+{
+    clientfield::register_clientuimodel( "sr_vote_prompt.numPlayersNeeded", #"sr_vote_prompt", #"numplayersneeded", 1, 2, "int", undefined, 0, 0 );
+    clientfield::register_clientuimodel( "sr_vote_prompt.show", #"sr_vote_prompt", #"show", 1, 3, "int", undefined, 0, 0 );
+    clientfield::register_clientuimodel( "sr_vote_prompt.starter", #"sr_vote_prompt", #"starter", 1, 7, "int", undefined, 0, 0 );
+    clientfield::register_clientuimodel( "sr_vote_prompt.status", #"sr_vote_prompt", #"status", 1, 2, "int", undefined, 0, 0 );
     namespace_52c8f34d::preinit();
 }
 

@@ -10,7 +10,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xa8
 // Size: 0x4
-function function_107f09b() {
+function function_107f09b()
+{
     
 }
 
@@ -18,7 +19,8 @@ function function_107f09b() {
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xb8
 // Size: 0x4
-function function_6f09ac2d() {
+function function_6f09ac2d()
+{
     
 }
 
@@ -26,7 +28,8 @@ function function_6f09ac2d() {
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xc8
 // Size: 0x4
-function function_ed6f2e1a() {
+function function_ed6f2e1a()
+{
     
 }
 

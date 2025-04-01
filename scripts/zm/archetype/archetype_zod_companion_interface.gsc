@@ -7,7 +7,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x5a9b1619, Offset: 0x90
 // Size: 0x4c
-function registerzodcompanioninterfaceattributes() {
-    ai::registermatchedinterface(#"zod_companion", #"sprint", 0, array(1, 0));
+function registerzodcompanioninterfaceattributes()
+{
+    ai::registermatchedinterface( #"zod_companion", #"sprint", 0, array( 1, 0 ) );
 }
 

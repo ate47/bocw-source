@@ -27,24 +27,29 @@
 // Params 0, eflags: 0x0
 // Checksum 0x3c9157a0, Offset: 0x178
 // Size: 0x10c
-function init() {
-    clientfield::register("world", "" + #"hash_1c39840b9d4a1796", 24000, 1, "int", &function_1eabdf8e, 0, 0);
-    clientfield::register("world", "" + #"hash_9472de3e8d1f6e1", 24000, 1, "int", &function_3bb686a9, 0, 0);
-    clientfield::register("world", "" + #"hash_6f9aa7ac9543a791", 24000, 1, "int", &function_d3e5f256, 0, 0);
+function init()
+{
+    clientfield::register( "world", "" + #"hash_1c39840b9d4a1796", 24000, 1, "int", &function_1eabdf8e, 0, 0 );
+    clientfield::register( "world", "" + #"hash_9472de3e8d1f6e1", 24000, 1, "int", &function_3bb686a9, 0, 0 );
+    clientfield::register( "world", "" + #"hash_6f9aa7ac9543a791", 24000, 1, "int", &function_d3e5f256, 0, 0 );
 }
 
 // Namespace namespace_54685ebd/namespace_54685ebd
 // Params 7, eflags: 0x0
 // Checksum 0x55cf6b33, Offset: 0x290
 // Size: 0xfe
-function function_1eabdf8e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump == 1) {
-        var_f5c1bd65 = struct::get("fuse_box_loc", "targetname");
-        level.var_bb84f715 = playfx(fieldname, #"hash_3b9fd592c82308fa", var_f5c1bd65.origin, anglestoforward(var_f5c1bd65.angles), (0, 0, 1));
+function function_1eabdf8e( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump == 1 )
+    {
+        var_f5c1bd65 = struct::get( "fuse_box_loc", "targetname" );
+        level.var_bb84f715 = playfx( fieldname, #"hash_3b9fd592c82308fa", var_f5c1bd65.origin, anglestoforward( var_f5c1bd65.angles ), ( 0, 0, 1 ) );
         return;
     }
-    if (isdefined(level.var_bb84f715)) {
-        stopfx(fieldname, level.var_bb84f715);
+    
+    if ( isdefined( level.var_bb84f715 ) )
+    {
+        stopfx( fieldname, level.var_bb84f715 );
         level.var_bb84f715 = undefined;
     }
 }
@@ -53,15 +58,19 @@ function function_1eabdf8e(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x4686ec6c, Offset: 0x398
 // Size: 0x126
-function function_3bb686a9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump == 1) {
-        var_c2e428e = struct::get("switch_spark_loc", "targetname");
-        level.var_c76e5c41 = playfx(fieldname, #"hash_179a76b8d709e8bb", var_c2e428e.origin, anglestoforward(var_c2e428e.angles), (0, 0, 1));
-        playsound(fieldname, #"hash_487cbd8d6e939533", var_c2e428e.origin);
+function function_3bb686a9( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump == 1 )
+    {
+        var_c2e428e = struct::get( "switch_spark_loc", "targetname" );
+        level.var_c76e5c41 = playfx( fieldname, #"hash_179a76b8d709e8bb", var_c2e428e.origin, anglestoforward( var_c2e428e.angles ), ( 0, 0, 1 ) );
+        playsound( fieldname, #"hash_487cbd8d6e939533", var_c2e428e.origin );
         return;
     }
-    if (isdefined(level.var_c76e5c41)) {
-        stopfx(fieldname, level.var_c76e5c41);
+    
+    if ( isdefined( level.var_c76e5c41 ) )
+    {
+        stopfx( fieldname, level.var_c76e5c41 );
         level.var_c76e5c41 = undefined;
     }
 }
@@ -70,11 +79,13 @@ function function_3bb686a9(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x4470d193, Offset: 0x4c8
 // Size: 0xec
-function function_d3e5f256(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump == 1) {
-        var_a546a03e = struct::get("fuse_box_loc", "targetname");
-        level.var_f9a78d10 = playfx(fieldname, #"hash_179a76b8d709e8bb", var_a546a03e.origin, anglestoforward(var_a546a03e.angles), (0, 0, 1));
-        playsound(fieldname, #"hash_487cbd8d6e939533", var_a546a03e.origin);
+function function_d3e5f256( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump == 1 )
+    {
+        var_a546a03e = struct::get( "fuse_box_loc", "targetname" );
+        level.var_f9a78d10 = playfx( fieldname, #"hash_179a76b8d709e8bb", var_a546a03e.origin, anglestoforward( var_a546a03e.angles ), ( 0, 0, 1 ) );
+        playsound( fieldname, #"hash_487cbd8d6e939533", var_a546a03e.origin );
     }
 }
 

@@ -29,26 +29,33 @@
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
 // Params 3, eflags: 0x0
 // Checksum 0x207bbcbc, Offset: 0x240
-// Size: 0x1aa
-function function_124c1a34(player, model, note) {
-    blade = namespace_ec06fe4a::spawnmodel(self.origin, model);
-    if (!isdefined(blade)) {
+// Size: 0x1aa, Type: bool
+function function_124c1a34( player, model, note )
+{
+    blade = namespace_ec06fe4a::spawnmodel( self.origin, model );
+    
+    if ( !isdefined( blade ) )
+    {
         return false;
     }
+    
     blade.targetname = "blade";
-    blade setplayercollision(0);
+    blade setplayercollision( 0 );
     blade enablelinkto();
-    blade linkto(self, undefined, (0, -70, 0));
-    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", blade.origin, 1 | 512 | 8, 30, 50);
-    if (!isdefined(trigger)) {
+    blade linkto( self, undefined, ( 0, -70, 0 ) );
+    trigger = namespace_ec06fe4a::spawntrigger( "trigger_radius", blade.origin, 1 | 512 | 8, 30, 50 );
+    
+    if ( !isdefined( trigger ) )
+    {
         blade delete();
         return false;
     }
+    
     trigger.targetname = "blade";
     trigger enablelinkto();
-    trigger linkto(blade);
-    trigger thread function_7daf5356(player, note);
-    blade namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sawblade_active_lp");
+    trigger linkto( blade );
+    trigger thread function_7daf5356( player, note );
+    blade namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_sawblade_active_lp" );
     self.blade = blade;
     self.trigger = trigger;
     return true;
@@ -58,34 +65,48 @@ function function_124c1a34(player, model, note) {
 // Params 1, eflags: 0x0
 // Checksum 0x3947973e, Offset: 0x3f8
 // Size: 0x228
-function sawbladeupdate(model = "zombietron_sawblade") {
-    note = namespace_ec06fe4a::function_7fcca25d("end_sawblad_pickup");
-    self endon(note);
-    if (isplayer(self)) {
-        self endon(#"disconnect");
+function sawbladeupdate( model = "zombietron_sawblade" )
+{
+    note = namespace_ec06fe4a::function_7fcca25d( "end_sawblad_pickup" );
+    self endon( note );
+    
+    if ( isplayer( self ) )
+    {
+        self endon( #"disconnect" );
     }
-    waitframe(1);
-    self endon(#"blades_done");
-    if (!isdefined(self.doa.var_1739bd8e)) {
+    
+    waitframe( 1 );
+    self endon( #"blades_done" );
+    
+    if ( !isdefined( self.doa.var_1739bd8e ) )
+    {
         self.doa.var_1739bd8e = [];
     }
-    org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
-    if (!isdefined(org)) {
+    
+    org = namespace_ec06fe4a::spawnmodel( self.origin, "tag_origin" );
+    
+    if ( !isdefined( org ) )
+    {
         return;
     }
+    
     org.targetname = "sawbladeUpdate";
-    org.angles = (0, randomint(180), 0);
+    org.angles = ( 0, randomint( 180 ), 0 );
     org enablelinkto();
-    self.doa.var_1739bd8e[self.doa.var_1739bd8e.size] = org;
-    org linkto(self, undefined, (0, 0, 32));
-    self thread function_40fc311d(org, note);
-    self thread function_20139eee(org, note);
-    result = org function_124c1a34(self, model, note);
-    if (result == 0) {
-        self notify(note);
+    self.doa.var_1739bd8e[ self.doa.var_1739bd8e.size ] = org;
+    org linkto( self, undefined, ( 0, 0, 32 ) );
+    self thread function_40fc311d( org, note );
+    self thread function_20139eee( org, note );
+    result = org function_124c1a34( self, model, note );
+    
+    if ( result == 0 )
+    {
+        self notify( note );
     }
-    while (isdefined(org)) {
-        org rotateto(org.angles + (0, 180, 0), 0.4);
+    
+    while ( isdefined( org ) )
+    {
+        org rotateto( org.angles + ( 0, 180, 0 ), 0.4 );
         wait 0.4;
     }
 }
@@ -94,37 +115,58 @@ function sawbladeupdate(model = "zombietron_sawblade") {
 // Params 2, eflags: 0x4
 // Checksum 0xfaa6d6fb, Offset: 0x628
 // Size: 0x2a8
-function private function_7daf5356(player, endnote) {
-    player endon(endnote);
-    if (isplayer(player)) {
-        player endon(#"disconnect");
+function private function_7daf5356( player, endnote )
+{
+    player endon( endnote );
+    
+    if ( isplayer( player ) )
+    {
+        player endon( #"disconnect" );
     }
-    self endon(#"death");
-    while (true) {
-        result = self waittill(#"trigger");
+    
+    self endon( #"death" );
+    
+    while ( true )
+    {
+        result = self waittill( #"trigger" );
         guy = result.activator;
-        if (!isdefined(guy)) {
+        
+        if ( !isdefined( guy ) )
+        {
             continue;
         }
-        if (isplayer(guy)) {
+        
+        if ( isplayer( guy ) )
+        {
             continue;
         }
-        if (is_true(guy.var_b88e74c3) || is_true(guy.boss)) {
+        
+        if ( is_true( guy.var_b88e74c3 ) || is_true( guy.boss ) )
+        {
             continue;
         }
-        guy namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sawblade_active_impact");
-        if (isactor(guy)) {
-            vel = vectorscale(self.origin - player.origin, 0.2);
-            if (!is_true(guy.no_gib)) {
-                guy namespace_ed80aead::function_1f275794(vel, player);
-                guy thread namespace_ec06fe4a::function_570729f0(randomintrange(5, 10), player);
-                guy dodamage(guy.maxhealth >> 1, guy.origin, player, player, "none", "MOD_UNKNOWN");
-            } else {
-                guy dodamage(guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN");
+        
+        guy namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_sawblade_active_impact" );
+        
+        if ( isactor( guy ) )
+        {
+            vel = vectorscale( self.origin - player.origin, 0.2 );
+            
+            if ( !is_true( guy.no_gib ) )
+            {
+                guy namespace_ed80aead::function_1f275794( vel, player );
+                guy thread namespace_ec06fe4a::function_570729f0( randomintrange( 5, 10 ), player );
+                guy dodamage( guy.maxhealth >> 1, guy.origin, player, player, "none", "MOD_UNKNOWN" );
             }
+            else
+            {
+                guy dodamage( guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN" );
+            }
+            
             continue;
         }
-        guy dodamage(guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN");
+        
+        guy dodamage( guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN" );
     }
 }
 
@@ -132,47 +174,68 @@ function private function_7daf5356(player, endnote) {
 // Params 2, eflags: 0x4
 // Checksum 0xac128985, Offset: 0x8d8
 // Size: 0xd6
-function private function_40fc311d(*org, endnote) {
-    self endon(endnote);
-    if (isplayer(self)) {
-        self endon(#"disconnect");
+function private function_40fc311d( *org, endnote )
+{
+    self endon( endnote );
+    
+    if ( isplayer( self ) )
+    {
+        self endon( #"disconnect" );
     }
-    timeout = max(max(40, self namespace_1c2a96f9::function_4808b985(40)), self namespace_1c2a96f9::function_2ce61fb9(40));
-    while (!namespace_dfc652ee::function_f759a457()) {
-        waitframe(1);
+    
+    timeout = max( max( 40, self namespace_1c2a96f9::function_4808b985( 40 ) ), self namespace_1c2a96f9::function_2ce61fb9( 40 ) );
+    
+    while ( !namespace_dfc652ee::function_f759a457() )
+    {
+        waitframe( 1 );
     }
+    
     wait timeout;
-    self notify(endnote);
+    self notify( endnote );
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
 // Params 2, eflags: 0x4
 // Checksum 0xc899a5f5, Offset: 0x9b8
 // Size: 0x214
-function private function_20139eee(org, endnote) {
-    self waittill(endnote, #"player_died", #"kill_shield", #"disconnect", #"death", #"enter_vehicle", #"hash_df25520ab279dff", #"clone_shutdown");
-    if (isdefined(self)) {
-        self notify(endnote);
+function private function_20139eee( org, endnote )
+{
+    self waittill( endnote, #"player_died", #"kill_shield", #"disconnect", #"death", #"enter_vehicle", #"hash_df25520ab279dff", #"clone_shutdown" );
+    
+    if ( isdefined( self ) )
+    {
+        self notify( endnote );
     }
+    
     util::wait_network_frame();
-    if (isdefined(org.trigger)) {
+    
+    if ( isdefined( org.trigger ) )
+    {
         org.trigger delete();
     }
-    if (isdefined(org.blade)) {
+    
+    if ( isdefined( org.blade ) )
+    {
         org.blade unlink();
-        vel = (0, 0, 20);
-        if (isdefined(self)) {
+        vel = ( 0, 0, 20 );
+        
+        if ( isdefined( self ) )
+        {
             vel = org.blade.origin - self.origin;
         }
-        org.blade physicslaunch(org.blade.origin, vel);
-        org.blade namespace_e32bb68::function_ae271c0b("evt_doa_pickup_sawblade_active_lp");
-        org.blade namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sawblade_lose_blade");
+        
+        org.blade physicslaunch( org.blade.origin, vel );
+        org.blade namespace_e32bb68::function_ae271c0b( "evt_doa_pickup_sawblade_active_lp" );
+        org.blade namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_sawblade_lose_blade" );
         wait 5;
         org.blade delete();
     }
-    if (isdefined(self)) {
-        arrayremovevalue(self.doa.var_1739bd8e, org);
+    
+    if ( isdefined( self ) )
+    {
+        arrayremovevalue( self.doa.var_1739bd8e, org );
     }
+    
     org delete();
 }
 

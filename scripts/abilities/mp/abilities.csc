@@ -15,15 +15,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0xcec9cd49, Offset: 0xd0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"abilities", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"abilities", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace abilities/abilities
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x118
 // Size: 0x4
-function private preinit() {
+function private preinit()
+{
     
 }
 

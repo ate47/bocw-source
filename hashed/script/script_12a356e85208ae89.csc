@@ -28,19 +28,23 @@
 // Params 0, eflags: 0x0
 // Checksum 0xe0ef36a9, Offset: 0x1e0
 // Size: 0x254
-function init() {
-    clientfield::register("world", "setWild", 1, 2, "int", &setwild, 0, 0);
-    clientfield::register("world", "setWildTOD", 1, 3, "int", &settod, 0, 0);
-    clientfield::register("world", "setWildSection", 1, 3, "int", &setsection, 0, 0);
-    clientfield::register("world", "wilddeactivated", 1, 1, "counter", &wilddeactivated, 0, 0);
-    var_581c8f9a = struct::get_array("doa_wild");
+function init()
+{
+    clientfield::register( "world", "setWild", 1, 2, "int", &setwild, 0, 0 );
+    clientfield::register( "world", "setWildTOD", 1, 3, "int", &settod, 0, 0 );
+    clientfield::register( "world", "setWildSection", 1, 3, "int", &setsection, 0, 0 );
+    clientfield::register( "world", "wilddeactivated", 1, 1, "counter", &wilddeactivated, 0, 0 );
+    var_581c8f9a = struct::get_array( "doa_wild" );
     level.doa.var_581c8f9a = [];
-    foreach (wild in var_581c8f9a) {
+    
+    foreach ( wild in var_581c8f9a )
+    {
         var_f784a248 = spawnstruct();
         var_f784a248.name = wild.script_noteworthy;
-        var_f784a248.id = int(wild.script_int);
-        level.doa.var_581c8f9a[level.doa.var_581c8f9a.size] = var_f784a248;
+        var_f784a248.id = int( wild.script_int );
+        level.doa.var_581c8f9a[ level.doa.var_581c8f9a.size ] = var_f784a248;
     }
+    
     function_32d5e898();
 }
 
@@ -48,12 +52,15 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0xe4e088c2, Offset: 0x440
 // Size: 0x8e
-function function_32d5e898(localclientnum) {
+function function_32d5e898( localclientnum )
+{
     level.doa.var_47dcd1f = undefined;
     level.doa.var_f9d8fba5 = undefined;
     level.doa.var_7c19cda1 = undefined;
-    if (isdefined(level.doa.var_e2a9584a)) {
-        stopradiantexploder(localclientnum, level.doa.var_e2a9584a);
+    
+    if ( isdefined( level.doa.var_e2a9584a ) )
+    {
+        stopradiantexploder( localclientnum, level.doa.var_e2a9584a );
         level.doa.var_e2a9584a = undefined;
     }
 }
@@ -62,18 +69,23 @@ function function_32d5e898(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0x47e5d4f, Offset: 0x4d8
 // Size: 0x54
-function wilddeactivated(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    function_32d5e898(bwastimejump);
+function wilddeactivated( localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    function_32d5e898( bwastimejump );
 }
 
 // Namespace doa_wild/doa_wild
 // Params 7, eflags: 0x0
 // Checksum 0xe6ee4851, Offset: 0x538
 // Size: 0xf0
-function setwild(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function setwild( *localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
     level.doa.var_47dcd1f = undefined;
-    foreach (wild in level.doa.var_581c8f9a) {
-        if (wild.id == bwastimejump) {
+    
+    foreach ( wild in level.doa.var_581c8f9a )
+    {
+        if ( wild.id == bwastimejump )
+        {
             level.doa.var_47dcd1f = wild;
             return;
         }
@@ -84,7 +96,8 @@ function setwild(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fie
 // Params 7, eflags: 0x0
 // Checksum 0x57841d66, Offset: 0x630
 // Size: 0x56
-function setsection(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function setsection( *localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
     level.doa.var_f9d8fba5 = bwastimejump + 1;
 }
 
@@ -92,44 +105,55 @@ function setsection(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
 // Params 7, eflags: 0x0
 // Checksum 0xc51a9db, Offset: 0x690
 // Size: 0x35c
-function settod(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (isdefined(level.doa.var_e2a9584a)) {
-        stopradiantexploder(fieldname, level.doa.var_e2a9584a);
+function settod( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( isdefined( level.doa.var_e2a9584a ) )
+    {
+        stopradiantexploder( fieldname, level.doa.var_e2a9584a );
         level.doa.var_e2a9584a = undefined;
     }
-    if (!isdefined(level.doa.var_47dcd1f)) {
+    
+    if ( !isdefined( level.doa.var_47dcd1f ) )
+    {
         return;
     }
+    
     level.doa.var_7c19cda1 = "morning";
-    switch (bwastimejump) {
-    case 0:
-        level.doa.var_7c19cda1 = "morning";
-        setworldfogactivebank(fieldname, 1);
-        break;
-    case 1:
-        level.doa.var_7c19cda1 = "noon";
-        setworldfogactivebank(fieldname, 2);
-        break;
-    case 2:
-        level.doa.var_7c19cda1 = "dusk";
-        setworldfogactivebank(fieldname, 4);
-        break;
-    case 3:
-        level.doa.var_7c19cda1 = "night";
-        setworldfogactivebank(fieldname, 8);
-        break;
-    default:
-        level.doa.var_7c19cda1 = "morning";
-        setworldfogactivebank(fieldname, 1);
-        break;
+    
+    switch ( bwastimejump )
+    {
+        case 0:
+            level.doa.var_7c19cda1 = "morning";
+            setworldfogactivebank( fieldname, 1 );
+            break;
+        case 1:
+            level.doa.var_7c19cda1 = "noon";
+            setworldfogactivebank( fieldname, 2 );
+            break;
+        case 2:
+            level.doa.var_7c19cda1 = "dusk";
+            setworldfogactivebank( fieldname, 4 );
+            break;
+        case 3:
+            level.doa.var_7c19cda1 = "night";
+            setworldfogactivebank( fieldname, 8 );
+            break;
+        default:
+            level.doa.var_7c19cda1 = "morning";
+            setworldfogactivebank( fieldname, 1 );
+            break;
     }
+    
     /#
-        namespace_1e25ad94::debugmsg("<dev string:x38>" + level.doa.var_47dcd1f.name + "<dev string:x41>" + level.doa.var_7c19cda1);
+        namespace_1e25ad94::debugmsg( "<dev string:x38>" + level.doa.var_47dcd1f.name + "<dev string:x41>" + level.doa.var_7c19cda1 );
     #/
+    
     level.doa.var_e2a9584a = "fxexp_" + level.doa.var_47dcd1f.name + "_section_" + level.doa.var_f9d8fba5 + "_" + level.doa.var_7c19cda1;
+    
     /#
-        namespace_1e25ad94::debugmsg("<dev string:x5b>" + level.doa.var_e2a9584a + "<dev string:x74>" + fieldname);
+        namespace_1e25ad94::debugmsg( "<dev string:x5b>" + level.doa.var_e2a9584a + "<dev string:x74>" + fieldname );
     #/
-    playradiantexploder(fieldname, level.doa.var_e2a9584a);
+    
+    playradiantexploder( fieldname, level.doa.var_e2a9584a );
 }
 

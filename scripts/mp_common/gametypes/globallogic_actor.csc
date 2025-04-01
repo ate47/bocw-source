@@ -11,15 +11,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0xf4acac49, Offset: 0xb0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"globallogic_actor", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"globallogic_actor", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace globallogic_actor/globallogic_actor
 // Params 0, eflags: 0x4
 // Checksum 0xb11258bf, Offset: 0xf8
 // Size: 0x2c
-function private preinit() {
-    level._effect[#"rcbombexplosion"] = #"killstreaks/fx_rcxd_exp";
+function private preinit()
+{
+    level._effect[ #"rcbombexplosion" ] = #"killstreaks/fx_rcxd_exp";
 }
 

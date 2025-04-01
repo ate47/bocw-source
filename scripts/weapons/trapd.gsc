@@ -7,7 +7,8 @@
 // Params 1, eflags: 0x0
 // Checksum 0xfcf00259, Offset: 0xb0
 // Size: 0x15e
-function function_ae7e49da(watcher) {
+function function_ae7e49da( watcher )
+{
     watcher.watchforfire = 1;
     watcher.activatesound = #"wpn_claymore_alert";
     watcher.hackable = 0;
@@ -18,7 +19,7 @@ function function_ae7e49da(watcher) {
     watcher.ignoredirection = undefined;
     watcher.immediatedetonation = 1;
     watcher.immunespecialty = "specialty_immunetriggerbetty";
-    watcher.detectiondot = cos(70);
+    watcher.detectiondot = cos( 70 );
     watcher.detectionmindist = 20;
     watcher.detectiongraceperiod = 0.6;
     watcher.stuntime = 3;
@@ -35,7 +36,8 @@ function function_ae7e49da(watcher) {
 // Params 1, eflags: 0x0
 // Checksum 0xe4b7c022, Offset: 0x218
 // Size: 0x146
-function function_1daa29fc(watcher) {
+function function_1daa29fc( watcher )
+{
     watcher.watchforfire = 1;
     watcher.activatesound = #"wpn_claymore_alert";
     watcher.hackable = 0;
@@ -62,7 +64,8 @@ function function_1daa29fc(watcher) {
 // Params 1, eflags: 0x0
 // Checksum 0x708e08a4, Offset: 0x368
 // Size: 0x146
-function function_d8d3b49b(watcher) {
+function function_d8d3b49b( watcher )
+{
     watcher.watchforfire = 1;
     watcher.activatesound = #"wpn_claymore_alert";
     watcher.hackable = 0;
@@ -89,7 +92,8 @@ function function_d8d3b49b(watcher) {
 // Params 1, eflags: 0x0
 // Checksum 0xb6445b43, Offset: 0x4b8
 // Size: 0x146
-function function_518130e(watcher) {
+function function_518130e( watcher )
+{
     watcher.watchforfire = 1;
     watcher.activatesound = #"wpn_claymore_alert";
     watcher.hackable = 0;
@@ -116,9 +120,10 @@ function function_518130e(watcher) {
 // Params 3, eflags: 0x0
 // Checksum 0x18ecd8b6, Offset: 0x608
 // Size: 0xc4
-function function_367f94ba(*attacker, *weapon, *target) {
+function function_367f94ba( *attacker, *weapon, *target )
+{
     self.killcament.starttime = gettime();
-    self molotov::function_462c8632(self.owner, self.origin, (0, 0, 1), (0, 0, -400), self.killcament, self.team, getscriptbundle(self.weapon.customsettings));
+    self molotov::function_462c8632( self.owner, self.origin, ( 0, 0, 1 ), ( 0, 0, -400 ), self.killcament, self.team, getscriptbundle( self.weapon.customsettings ) );
     self hide();
     wait 10;
     self delete();

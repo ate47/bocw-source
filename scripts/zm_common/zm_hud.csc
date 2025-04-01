@@ -10,7 +10,8 @@
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xa8
 // Size: 0x4
-function private preinit() {
+function private preinit()
+{
     
 }
 
@@ -18,7 +19,8 @@ function private preinit() {
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xb8
 // Size: 0x4
-function private postinit() {
+function private postinit()
+{
     
 }
 

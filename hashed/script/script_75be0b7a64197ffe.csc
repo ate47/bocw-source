@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xa0
 // Size: 0x4
-function init() {
+function init()
+{
     
 }
 
@@ -17,10 +18,11 @@ function init() {
 // Params 7, eflags: 0x0
 // Checksum 0xf5d27417, Offset: 0xb0
 // Size: 0xac
-function function_ac525f72(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
-    self endon(#"death", #"disconnect");
-    self postfx::playpostfxbundle(#"hash_66a9fee7028a1e13");
+function function_ac525f72( *localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump )
+{
+    self endon( #"death", #"disconnect" );
+    self postfx::playpostfxbundle( #"hash_66a9fee7028a1e13" );
     wait 8;
-    self postfx::exitpostfxbundle(#"hash_66a9fee7028a1e13");
+    self postfx::exitpostfxbundle( #"hash_66a9fee7028a1e13" );
 }
 

@@ -14,15 +14,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0x6994554a, Offset: 0xc8
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"zm_blockers", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"zm_blockers", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace zm_blockers/zm_blockers
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x110
 // Size: 0x4
-function private preinit() {
+function private preinit()
+{
     
 }
 
@@ -30,7 +32,8 @@ function private preinit() {
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x120
 // Size: 0x4
-function private postinit() {
+function private postinit()
+{
     
 }
 

@@ -23,17 +23,19 @@
 // Params 0, eflags: 0x0
 // Checksum 0x4730bbb2, Offset: 0x140
 // Size: 0x4c
-function init() {
-    clientfield::register("scriptmover", "world_loot_type", 1, 8, "int", &function_6def98d8, 0, 0);
+function init()
+{
+    clientfield::register( "scriptmover", "world_loot_type", 1, 8, "int", &function_6def98d8, 0, 0 );
 }
 
 // Namespace namespace_41f5b853/namespace_41f5b853
 // Params 7, eflags: 0x4
 // Checksum 0x57088c26, Offset: 0x198
 // Size: 0x72
-function private function_6def98d8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self endon(#"death");
-    self util::waittill_dobj(fieldname);
+function private function_6def98d8( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    self endon( #"death" );
+    self util::waittill_dobj( fieldname );
     self.loottype = bwastimejump;
 }
 

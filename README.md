@@ -20,5 +20,6 @@ Pools dumped:
 | rawfilepreproc    | 60  | `/`                      |
 | rawtextfile       | 61  | `/`                      |
 | stringtable       | 63  | `/`                      |
+| ddl               | 66  | `/ddl/`                  |
 | scriptparsetree   | 68  | `/`                      |
 | scriptbundle      | 87  | `/scriptbundle/`         |

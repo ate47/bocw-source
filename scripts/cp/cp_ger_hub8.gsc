@@ -14,10 +14,11 @@
 // Params 1, eflags: 0x20
 // Checksum 0x35ca5aac, Offset: 0x220
 // Size: 0xa4
-function event_handler[level_init] main(*eventstruct) {
-    setclearanceceiling(16);
+function event_handler[level_init] main( *eventstruct )
+{
+    setclearanceceiling( 16 );
     namespace_31c67f6d::function_1c920347();
-    level thread lui::add_luimenu("full_screen_movie", &full_screen_movie::register);
+    level thread lui::add_luimenu( "full_screen_movie", &full_screen_movie::register );
     level function_5b503df2();
     init_clientfields();
     load::main();
@@ -28,17 +29,20 @@ function event_handler[level_init] main(*eventstruct) {
 // Params 0, eflags: 0x0
 // Checksum 0x1939a800, Offset: 0x2d0
 // Size: 0x21c
-function function_5b503df2() {
-    skipto::add("post_prisoner", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, undefined, undefined, "safehouse");
-    skipto::add("post_prisoner_lie", &namespace_fdde5f3d::function_82c37b22, &namespace_fdde5f3d::function_c649acda, undefined, undefined, "safehouse");
+function function_5b503df2()
+{
+    skipto::add( "post_prisoner", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, undefined, undefined, "safehouse" );
+    skipto::add( "post_prisoner_lie", &namespace_fdde5f3d::function_82c37b22, &namespace_fdde5f3d::function_c649acda, undefined, undefined, "safehouse" );
+    
     /#
-        skipto::add_dev("<dev string:x38>", &namespace_fdde5f3d::function_cbf93ca7, &namespace_fdde5f3d::function_fb10b77d, "<dev string:x38>", &namespace_fdde5f3d::function_6bb0fd28, undefined, undefined, "<dev string:x4e>");
-        skipto::add_dev("<dev string:x5b>", &function_9b8c8f2a, &function_f4db46d4, "<dev string:x73>", &function_4cc0959f, undefined, undefined, "<dev string:x91>");
+        skipto::add_dev( "<dev string:x38>", &namespace_fdde5f3d::function_cbf93ca7, &namespace_fdde5f3d::function_fb10b77d, "<dev string:x38>", &namespace_fdde5f3d::function_6bb0fd28, undefined, undefined, "<dev string:x4e>" );
+        skipto::add_dev( "<dev string:x5b>", &rescue_main, &function_f4db46d4, "<dev string:x73>", &rescue_cleanup, undefined, undefined, "<dev string:x91>" );
     #/
+    
     /#
-        skipto::add_dev("<dev string:x9d>", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, "<dev string:xc0>");
-        skipto::add_dev("<dev string:xd3>", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, "<dev string:xc0>");
-        skipto::add_dev("<dev string:xf7>", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, "<dev string:xc0>");
+        skipto::add_dev( "<dev string:x9d>", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, "<dev string:xc0>" );
+        skipto::add_dev( "<dev string:xd3>", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, "<dev string:xc0>" );
+        skipto::add_dev( "<dev string:xf7>", &namespace_fdde5f3d::main, &namespace_fdde5f3d::starting, "<dev string:xc0>" );
     #/
 }
 
@@ -46,27 +50,35 @@ function function_5b503df2() {
 // Params 0, eflags: 0x0
 // Checksum 0x3d0c3dec, Offset: 0x4f8
 // Size: 0xf4
-function init_clientfields() {
-    clientfield::register("world", "prop_wash", 1, 1, "int");
-    clientfield::register("scriptmover", "clf_cargoplane_client_register", 1, 1, "int");
-    clientfield::register("scriptmover", "clf_cargoplane_landing_lights", 1, 1, "int");
-    clientfield::register("scriptmover", "clf_cargoplane_nav_lights", 1, 1, "int");
-    clientfield::register("toplayer", "clf_pstfx_burn_safehouse", 1, 1, "int");
+function init_clientfields()
+{
+    clientfield::register( "world", "prop_wash", 1, 1, "int" );
+    clientfield::register( "scriptmover", "clf_cargoplane_client_register", 1, 1, "int" );
+    clientfield::register( "scriptmover", "clf_cargoplane_landing_lights", 1, 1, "int" );
+    clientfield::register( "scriptmover", "clf_cargoplane_nav_lights", 1, 1, "int" );
+    clientfield::register( "toplayer", "clf_pstfx_burn_safehouse", 1, 1, "int" );
 }
 
 // Namespace cp_ger_hub8/cp_ger_hub8
 // Params 1, eflags: 0x0
 // Checksum 0x7a485819, Offset: 0x5f8
 // Size: 0x140
-function function_f4db46d4(*var_d3440450) {
-    level thread scene::init_streamer(#"scene_hub_post_prisoner_brainwash_find_bell", getplayers());
-    cargo_plane = getent("cargo_plane", "targetname");
-    if (isdefined(cargo_plane)) {
+function function_f4db46d4( *var_d3440450 )
+{
+    level thread scene::init_streamer( #"scene_hub_post_prisoner_brainwash_find_bell", getplayers() );
+    cargo_plane = getent( "cargo_plane", "targetname" );
+    
+    if ( isdefined( cargo_plane ) )
+    {
         cargo_plane delete();
     }
-    plane_cargo = getentarray("plane_cargo", "targetname");
-    foreach (cargo in plane_cargo) {
-        if (isdefined(cargo)) {
+    
+    plane_cargo = getentarray( "plane_cargo", "targetname" );
+    
+    foreach ( cargo in plane_cargo )
+    {
+        if ( isdefined( cargo ) )
+        {
             cargo delete();
         }
     }
@@ -76,24 +88,30 @@ function function_f4db46d4(*var_d3440450) {
 // Params 2, eflags: 0x0
 // Checksum 0x1b0b8442, Offset: 0x740
 // Size: 0xf4
-function function_9b8c8f2a(*var_d3440450, *var_50cc0d4f) {
-    while (!isdefined(level.player_connected) || isdefined(level.player_connected) && level.player_connected != 1) {
-        waitframe(1);
+function rescue_main( *var_d3440450, *var_50cc0d4f )
+{
+    while ( !isdefined( level.player_connected ) || isdefined( level.player_connected ) && level.player_connected != 1 )
+    {
+        waitframe( 1 );
     }
-    if (isdefined(level.var_d7d201ba) && isdefined(level.var_28c22d88)) {
-        level.player flag::set(level.var_d7d201ba);
+    
+    if ( isdefined( level.var_d7d201ba ) && isdefined( level.var_28c22d88 ) )
+    {
+        level.player flag::set( level.var_d7d201ba );
     }
-    scene::init("scene_hub_post_prisoner_brainwash_find_bell");
+    
+    scene::init( "scene_hub_post_prisoner_brainwash_find_bell" );
     wait 3;
-    scene::play("scene_hub_post_prisoner_brainwash_find_bell");
-    scene::stop("scene_hub_post_prisoner_brainwash_find_bell", 1);
+    scene::play( "scene_hub_post_prisoner_brainwash_find_bell" );
+    scene::stop( "scene_hub_post_prisoner_brainwash_find_bell", 1 );
 }
 
 // Namespace cp_ger_hub8/cp_ger_hub8
 // Params 4, eflags: 0x0
 // Checksum 0x53d6ae99, Offset: 0x840
 // Size: 0x24
-function function_4cc0959f(*str_objective, *var_50cc0d4f, *var_aa1a6455, *player) {
+function rescue_cleanup( *str_objective, *var_50cc0d4f, *var_aa1a6455, *player )
+{
     
 }
 

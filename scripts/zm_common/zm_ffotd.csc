@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x88
 // Size: 0x4
-function main_start() {
+function main_start()
+{
     
 }
 
@@ -14,7 +15,8 @@ function main_start() {
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x98
 // Size: 0x4
-function main_end() {
+function main_end()
+{
     
 }
 

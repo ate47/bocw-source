@@ -14,15 +14,17 @@
 // Params 0, eflags: 0x0
 // Checksum 0x25f0f55e, Offset: 0xd8
 // Size: 0x2c
-function init() {
-    vehicle::add_vehicletype_callback("spider", &function_2503e2a);
+function init()
+{
+    vehicle::add_vehicletype_callback( "spider", &function_2503e2a );
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5
 // Params 1, eflags: 0x4
 // Checksum 0xdbf83d2b, Offset: 0x110
 // Size: 0xc
-function private function_2503e2a(*localclientnum) {
+function private function_2503e2a( *localclientnum )
+{
     
 }
 

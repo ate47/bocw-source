@@ -38,7 +38,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0xdb9d9df4, Offset: 0x188
 // Size: 0x16
-function init() {
+function init()
+{
     level.doa.var_f5a14209 = [];
 }
 
@@ -46,18 +47,22 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x110bd332, Offset: 0x1a8
 // Size: 0x2c
-function function_f69dda63() {
-    namespace_268747c0::function_96e2f261(level.doa.var_f5a14209, 1);
+function function_f69dda63()
+{
+    namespace_268747c0::function_96e2f261( level.doa.var_f5a14209, 1 );
 }
 
 // Namespace namespace_40bb01c9/namespace_40bb01c9
 // Params 0, eflags: 0x0
 // Checksum 0xbb0514ef, Offset: 0x1e0
 // Size: 0xbe
-function function_ddb3fb8f() {
-    foreach (trap in level.doa.var_f5a14209) {
-        trap notify(#"destroy_hazard", {#var_760a0807:1});
+function function_ddb3fb8f()
+{
+    foreach ( trap in level.doa.var_f5a14209 )
+    {
+        trap notify( #"destroy_hazard", { #var_760a0807:1 } );
     }
+    
     level.doa.var_f5a14209 = [];
 }
 

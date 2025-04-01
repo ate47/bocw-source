@@ -10,30 +10,40 @@
 // Params 1, eflags: 0x20
 // Checksum 0x53900032, Offset: 0x108
 // Size: 0xfc
-function event_handler[gametype_init] main(*eventstruct) {
-    if (getgametypesetting(#"silentplant") != 0) {
-        setsoundcontext("bomb_plant", "silent");
+function event_handler[gametype_init] main( *eventstruct )
+{
+    if ( getgametypesetting( #"silentplant" ) != 0 )
+    {
+        setsoundcontext( "bomb_plant", "silent" );
     }
+    
     level.var_e4935474 = [];
-    clientfield::function_5b7d846d("hudItems.war.attackingTeam", #"war_data", #"attackingteam", 1, 2, "int", undefined, 0, 1);
-    clientfield::register("scriptmover", "entityModelsNum", 1, 10, "int", &function_e116df6c, 0, 0);
+    clientfield::function_5b7d846d( "hudItems.war.attackingTeam", #"war_data", #"attackingteam", 1, 2, "int", undefined, 0, 1 );
+    clientfield::register( "scriptmover", "entityModelsNum", 1, 10, "int", &function_e116df6c, 0, 0 );
 }
 
 // Namespace sd/sd
 // Params 7, eflags: 0x0
 // Checksum 0xfa39d1ca, Offset: 0x210
 // Size: 0xec
-function function_e116df6c(*localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (!isdefined(level.var_e4935474)) {
+function function_e116df6c( *localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( !isdefined( level.var_e4935474 ) )
+    {
         level.var_e4935474 = [];
     }
-    if (bwastimejump != fieldname) {
+    
+    if ( bwastimejump != fieldname )
+    {
         entitynumber = self getentitynumber();
-        if (bwastimejump != -1) {
-            level.var_e4935474[entitynumber] = {};
-            level.var_e4935474[entitynumber].var_eec7f99d = bwastimejump;
-            level.var_e4935474[entitynumber].var_7c69bb09 = self.team;
+        
+        if ( bwastimejump != -1 )
+        {
+            level.var_e4935474[ entitynumber ] = {};
+            level.var_e4935474[ entitynumber ].var_eec7f99d = bwastimejump;
+            level.var_e4935474[ entitynumber ].var_7c69bb09 = self.team;
         }
+        
         codcaster::function_12acfa84();
     }
 }

@@ -46,7 +46,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x7e3290d9, Offset: 0x1f8
 // Size: 0x1c4
-function init() {
+function init()
+{
     function_32d5e898();
     namespace_81522b3c::init();
     namespace_df4fbf0::init();
@@ -66,15 +67,16 @@ function init() {
     namespace_8c89a9e9::init();
     namespace_6e561646::init();
     namespace_7457b8d5::init();
-    clientfield::register("actor", "enable_on_radar", 1, 1, "int", &function_c85f904d, 0, 0);
-    clientfield::register("vehicle", "enable_on_radar", 1, 1, "int", &function_c85f904d, 0, 0);
+    clientfield::register( "actor", "enable_on_radar", 1, 1, "int", &function_c85f904d, 0, 0 );
+    clientfield::register( "vehicle", "enable_on_radar", 1, 1, "int", &function_c85f904d, 0, 0 );
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
 // Params 1, eflags: 0x0
 // Checksum 0xa34645e0, Offset: 0x3c8
 // Size: 0xc
-function function_32d5e898(*localclientnum) {
+function function_32d5e898( *localclientnum )
+{
     
 }
 
@@ -82,7 +84,8 @@ function function_32d5e898(*localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0xebfdaafc, Offset: 0x3e0
 // Size: 0x54
-function function_c85f904d(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function function_c85f904d( *localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
     self enableonradar();
 }
 

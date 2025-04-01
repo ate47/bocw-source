@@ -6,40 +6,46 @@
 #using scripts\core_common\util_shared;
 #using scripts\core_common\vehicle_shared;
 
-#namespace namespace_e90dbdc;
+#namespace duga_fx;
 
-// Namespace namespace_e90dbdc/cp_rus_duga_fx
+// Namespace duga_fx/cp_rus_duga_fx
 // Params 0, eflags: 0x5
 // Checksum 0xfcf21be7, Offset: 0xb8
 // Size: 0x4c
-function private autoexec __init__system__() {
-    system::register(#"hash_73b8202bcd843669", &_preload, &function_fa076c68, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"duga_fx", &_preload, &function_fa076c68, undefined, undefined );
 }
 
-// Namespace namespace_e90dbdc/cp_rus_duga_fx
+// Namespace duga_fx/cp_rus_duga_fx
 // Params 0, eflags: 0x4
 // Checksum 0x4d58faac, Offset: 0x110
 // Size: 0x34
-function private _preload() {
-    if (!isdefined(level._fx)) {
+function private _preload()
+{
+    if ( !isdefined( level._fx ) )
+    {
         level._fx = {};
     }
+    
     function_bc948200();
 }
 
-// Namespace namespace_e90dbdc/cp_rus_duga_fx
+// Namespace duga_fx/cp_rus_duga_fx
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x150
 // Size: 0x4
-function private function_fa076c68() {
+function private function_fa076c68()
+{
     
 }
 
-// Namespace namespace_e90dbdc/cp_rus_duga_fx
+// Namespace duga_fx/cp_rus_duga_fx
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x160
 // Size: 0x4
-function private function_bc948200() {
+function private function_bc948200()
+{
     
 }
 

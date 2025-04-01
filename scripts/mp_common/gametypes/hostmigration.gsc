@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x88
 // Size: 0x4
-function callback_hostmigrationsave() {
+function callback_hostmigrationsave()
+{
     
 }
 
@@ -14,7 +15,8 @@ function callback_hostmigrationsave() {
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x98
 // Size: 0x4
-function callback_prehostmigrationsave() {
+function callback_prehostmigrationsave()
+{
     
 }
 
@@ -22,31 +24,39 @@ function callback_prehostmigrationsave() {
 // Params 0, eflags: 0x0
 // Checksum 0x9ca184a8, Offset: 0xa8
 // Size: 0x1d8
-function callback_hostmigration() {
-    setslowmotion(1, 1, 0);
+function callback_hostmigration()
+{
+    setslowmotion( 1, 1, 0 );
     level.hostmigrationreturnedplayercount = 0;
-    if (level.inprematchperiod) {
-        level waittill(#"prematch_over");
+    
+    if ( level.inprematchperiod )
+    {
+        level waittill( #"prematch_over" );
     }
-    if (level.gameended) {
-        println("<dev string:x38>" + gettime() + "<dev string:x57>");
+    
+    if ( level.gameended )
+    {
+        println( "<dev string:x38>" + gettime() + "<dev string:x57>" );
         return;
     }
-    println("<dev string:x38>" + gettime());
+    
+    println( "<dev string:x38>" + gettime() );
     level.hostmigrationtimer = 1;
-    sethostmigrationstatus(1);
-    level notify(#"host_migration_begin");
+    sethostmigrationstatus( 1 );
+    level notify( #"host_migration_begin" );
     thread locktimer();
     players = level.players;
+    
     for (i = 0; i < players.size; i++) {
-        player = players[i];
+        player = players[ i ];
         player thread hostmigrationtimerthink();
     }
-    level endon(#"host_migration_begin");
+    
+    level endon( #"host_migration_begin" );
     hostmigrationwait();
     level.hostmigrationtimer = undefined;
-    sethostmigrationstatus(0);
-    println("<dev string:x81>" + gettime());
-    level notify(#"host_migration_end");
+    sethostmigrationstatus( 0 );
+    println( "<dev string:x81>" + gettime() );
+    level notify( #"host_migration_end" );
 }
 

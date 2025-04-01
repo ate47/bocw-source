@@ -35,8 +35,9 @@
 // Params 0, eflags: 0x0
 // Checksum 0xa9367f99, Offset: 0x2f0
 // Size: 0x5c
-function init() {
-    clientfield::register("scriptmover", "dragonTrapState", 1, 2, "int", &dragontrapstate, 0, 0);
+function init()
+{
+    clientfield::register( "scriptmover", "dragonTrapState", 1, 2, "int", &dragontrapstate, 0, 0 );
     function_32d5e898();
 }
 
@@ -44,7 +45,8 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0xf9968b92, Offset: 0x358
 // Size: 0xc
-function function_32d5e898(*localclientnum) {
+function function_32d5e898( *localclientnum )
+{
     
 }
 
@@ -52,13 +54,16 @@ function function_32d5e898(*localclientnum) {
 // Params 0, eflags: 0x0
 // Checksum 0x7fccf34f, Offset: 0x370
 // Size: 0x64
-function function_79445831() {
-    self notify("18d073f66f509708");
-    self endon("18d073f66f509708");
-    var_f3b82c6d = self.var_f3b82c6d;
-    self waittill(#"death");
-    if (isdefined(var_f3b82c6d)) {
-        var_f3b82c6d delete();
+function function_79445831()
+{
+    self notify( "18d073f66f509708" );
+    self endon( "18d073f66f509708" );
+    fakemodel = self.fakemodel;
+    self waittill( #"death" );
+    
+    if ( isdefined( fakemodel ) )
+    {
+        fakemodel delete();
     }
 }
 
@@ -66,14 +71,17 @@ function function_79445831() {
 // Params 1, eflags: 0x0
 // Checksum 0x58f38a48, Offset: 0x3e0
 // Size: 0xec
-function function_6f3ad355(localclientnum) {
-    if (isdefined(self.var_f3b82c6d)) {
-        self.var_f3b82c6d delete();
+function function_6f3ad355( localclientnum )
+{
+    if ( isdefined( self.fakemodel ) )
+    {
+        self.fakemodel delete();
     }
-    namespace_1e25ad94::debugmsg("Initializing dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin);
-    self.var_f3b82c6d = spawn(localclientnum, self.origin, "script_model");
-    self.var_f3b82c6d setmodel("zombietron_dragonhead_trap");
-    self.var_f3b82c6d.angles = self.angles;
+    
+    namespace_1e25ad94::debugmsg( "Initializing dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin );
+    self.fakemodel = spawn( localclientnum, self.origin, "script_model" );
+    self.fakemodel setmodel( "zombietron_dragonhead_trap" );
+    self.fakemodel.angles = self.angles;
     self thread function_79445831();
 }
 
@@ -81,42 +89,53 @@ function function_6f3ad355(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0x6955961b, Offset: 0x4d8
 // Size: 0x35a
-function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    switch (bwastimejump) {
-    case 0:
-        if (isdefined(self.var_f3b82c6d)) {
-            self.var_f3b82c6d delete();
-        }
-        namespace_1e25ad94::debugmsg("Destroying dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin);
-        break;
-    case 1:
-        self function_6f3ad355(fieldname);
-        break;
-    case 2:
-        if (!isdefined(self.var_f3b82c6d)) {
-            self function_6f3ad355(fieldname);
-        }
-        assert(isdefined(self.var_f3b82c6d));
-        self.var_f3b82c6d setmodel("zombietron_dragonhead_trap");
-        stopforcestreamingxmodel(#"zombietron_dragonhead_trap");
-        forcestreamxmodel(#"zombietron_dragonhead_trap_active");
-        namespace_1e25ad94::debugmsg("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap");
-        self.var_f3b82c6d thread namespace_83eb6304::function_8b1a4e9c(fieldname, "dragonTrap");
-        break;
-    case 3:
-        if (!isdefined(self.var_f3b82c6d)) {
-            self function_6f3ad355(fieldname);
-        }
-        assert(isdefined(self.var_f3b82c6d));
-        self.var_f3b82c6d setmodel("zombietron_dragonhead_trap_active");
-        stopforcestreamingxmodel(#"zombietron_dragonhead_trap_active");
-        forcestreamxmodel(#"zombietron_dragonhead_trap");
-        namespace_1e25ad94::debugmsg("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap_active");
-        wait 1;
-        if (isdefined(self.var_f3b82c6d)) {
-            self.var_f3b82c6d thread namespace_83eb6304::function_f58618d7(fieldname, "dragonTrap", "tag_mouth_fx_anim");
-        }
-        break;
+function dragontrapstate( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    switch ( bwastimejump )
+    {
+        case 0:
+            if ( isdefined( self.fakemodel ) )
+            {
+                self.fakemodel delete();
+            }
+            
+            namespace_1e25ad94::debugmsg( "Destroying dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin );
+            break;
+        case 1:
+            self function_6f3ad355( fieldname );
+            break;
+        case 2:
+            if ( !isdefined( self.fakemodel ) )
+            {
+                self function_6f3ad355( fieldname );
+            }
+            
+            assert( isdefined( self.fakemodel ) );
+            self.fakemodel setmodel( "zombietron_dragonhead_trap" );
+            stopforcestreamingxmodel( #"zombietron_dragonhead_trap" );
+            forcestreamxmodel( #"zombietron_dragonhead_trap_active" );
+            namespace_1e25ad94::debugmsg( "Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap" );
+            self.fakemodel thread namespace_83eb6304::function_8b1a4e9c( fieldname, "dragonTrap" );
+            break;
+        case 3:
+            if ( !isdefined( self.fakemodel ) )
+            {
+                self function_6f3ad355( fieldname );
+            }
+            
+            assert( isdefined( self.fakemodel ) );
+            self.fakemodel setmodel( "zombietron_dragonhead_trap_active" );
+            stopforcestreamingxmodel( #"zombietron_dragonhead_trap_active" );
+            forcestreamxmodel( #"zombietron_dragonhead_trap" );
+            namespace_1e25ad94::debugmsg( "Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap_active" );
+            wait 1;
+            
+            if ( isdefined( self.fakemodel ) )
+            {
+                self.fakemodel thread namespace_83eb6304::function_f58618d7( fieldname, "dragonTrap", "tag_mouth_fx_anim" );
+            }
+            
+            break;
     }
 }
 

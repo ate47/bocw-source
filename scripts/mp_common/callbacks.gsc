@@ -18,15 +18,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0xa773a395, Offset: 0xf0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"callback", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"callback", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x4
 // Checksum 0xcbe596e4, Offset: 0x138
 // Size: 0x14
-function private preinit() {
+function private preinit()
+{
     set_default_callbacks();
 }
 
@@ -34,39 +36,47 @@ function private preinit() {
 // Params 2, eflags: 0x0
 // Checksum 0xef95eaef, Offset: 0x158
 // Size: 0x6c
-function on_prematch_end(func, obj) {
-    if (self == level) {
-        add_callback(#"prematch_end", func, obj);
+function on_prematch_end( func, obj )
+{
+    if ( self == level )
+    {
+        add_callback( #"prematch_end", func, obj );
         return;
     }
-    function_d8abfc3d(#"prematch_end", func, obj);
+    
+    function_d8abfc3d( #"prematch_end", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x878d8a9f, Offset: 0x1d0
 // Size: 0x6c
-function function_c11071a8(func, obj) {
-    if (self == level) {
-        add_callback(#"prematch_start", func, obj);
+function function_c11071a8( func, obj )
+{
+    if ( self == level )
+    {
+        add_callback( #"prematch_start", func, obj );
         return;
     }
-    function_d8abfc3d(#"prematch_start", func, obj);
+    
+    function_d8abfc3d( #"prematch_start", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0xe11c1727, Offset: 0x248
 // Size: 0x3c
-function on_changed_specialist(func, obj) {
-    add_callback(#"changed_specialist", func, obj);
+function on_changed_specialist( func, obj )
+{
+    add_callback( #"changed_specialist", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x0
 // Checksum 0xec6ffaaf, Offset: 0x290
 // Size: 0x2cc
-function set_default_callbacks() {
+function set_default_callbacks()
+{
     level.callbackstartgametype = &globallogic::callback_startgametype;
     level.callbackplayerconnect = &player::callback_playerconnect;
     level.callbackplayerdisconnect = &player::callback_playerdisconnect;

@@ -13,26 +13,33 @@
 // Params 0, eflags: 0x5
 // Checksum 0x57959bce, Offset: 0x4b8
 // Size: 0x54
-function private autoexec __init__system__() {
-    system::register(#"zm_wallbuy", &preinit, &postinit, undefined, #"zm");
+function private autoexec __init__system__()
+{
+    system::register( #"zm_wallbuy", &preinit, &postinit, undefined, #"zm" );
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
 // Params 0, eflags: 0x4
 // Checksum 0xd57cf030, Offset: 0x518
 // Size: 0x184
-function private preinit() {
-    if (!is_true(getgametypesetting(#"zmwallbuysenabled"))) {
+function private preinit()
+{
+    if ( !is_true( getgametypesetting( #"zmwallbuysenabled" ) ) )
+    {
         return;
     }
-    level flag::init("weapon_wallbuys_created");
-    if (zm_utility::get_story() != 1 && !zm_utility::is_survival()) {
-        level._effect[#"wallbuy_ambient_fx"] = "zombie/fx8_wallbuy_amb";
-        level._effect[#"hash_6928ec90dff78e0c"] = "zombie/fx8_wallbuy_amb_reverse";
-        level._effect[#"wallbuy_reveal_fx"] = "zombie/fx8_wallbuy_reveal";
-        clientfield::register("scriptmover", "wallbuy_ambient_fx", 1, 3, "int", &function_51f5fb94, 0, 0);
-        clientfield::register("scriptmover", "wallbuy_reveal_fx", 1, 1, "int", &function_5ed44212, 0, 0);
+    
+    level flag::init( "weapon_wallbuys_created" );
+    
+    if ( zm_utility::get_story() != 1 && !zm_utility::is_survival() )
+    {
+        level._effect[ #"wallbuy_ambient_fx" ] = "zombie/fx8_wallbuy_amb";
+        level._effect[ #"hash_6928ec90dff78e0c" ] = "zombie/fx8_wallbuy_amb_reverse";
+        level._effect[ #"wallbuy_reveal_fx" ] = "zombie/fx8_wallbuy_reveal";
+        clientfield::register( "scriptmover", "wallbuy_ambient_fx", 1, 3, "int", &function_51f5fb94, 0, 0 );
+        clientfield::register( "scriptmover", "wallbuy_reveal_fx", 1, 1, "int", &function_5ed44212, 0, 0 );
     }
+    
     init();
 }
 
@@ -40,8 +47,10 @@ function private preinit() {
 // Params 0, eflags: 0x4
 // Checksum 0xc98c64b2, Offset: 0x6a8
 // Size: 0x28
-function private postinit() {
-    if (!getgametypesetting(#"zmwallbuysenabled")) {
+function private postinit()
+{
+    if ( !getgametypesetting( #"zmwallbuysenabled" ) )
+    {
         return;
     }
 }
@@ -50,90 +59,133 @@ function private postinit() {
 // Params 0, eflags: 0x0
 // Checksum 0xa323821f, Offset: 0x6d8
 // Size: 0x7f4
-function init() {
+function init()
+{
     spawn_list = [];
-    spawnable_weapon_spawns = struct::get_array("weapon_upgrade", "targetname");
-    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("bowie_upgrade", "targetname"), 1, 0);
-    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("sickle_upgrade", "targetname"), 1, 0);
-    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("tazer_upgrade", "targetname"), 1, 0);
-    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("buildable_wallbuy", "targetname"), 1, 0);
-    if (is_true(level.use_autofill_wallbuy)) {
-        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, level.active_autofill_wallbuys, 1, 0);
+    spawnable_weapon_spawns = struct::get_array( "weapon_upgrade", "targetname" );
+    spawnable_weapon_spawns = arraycombine( spawnable_weapon_spawns, struct::get_array( "bowie_upgrade", "targetname" ), 1, 0 );
+    spawnable_weapon_spawns = arraycombine( spawnable_weapon_spawns, struct::get_array( "sickle_upgrade", "targetname" ), 1, 0 );
+    spawnable_weapon_spawns = arraycombine( spawnable_weapon_spawns, struct::get_array( "tazer_upgrade", "targetname" ), 1, 0 );
+    spawnable_weapon_spawns = arraycombine( spawnable_weapon_spawns, struct::get_array( "buildable_wallbuy", "targetname" ), 1, 0 );
+    
+    if ( is_true( level.use_autofill_wallbuy ) )
+    {
+        spawnable_weapon_spawns = arraycombine( spawnable_weapon_spawns, level.active_autofill_wallbuys, 1, 0 );
     }
-    if (!is_true(level.headshots_only)) {
-        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("claymore_purchase", "targetname"), 1, 0);
+    
+    if ( !is_true( level.headshots_only ) )
+    {
+        spawnable_weapon_spawns = arraycombine( spawnable_weapon_spawns, struct::get_array( "claymore_purchase", "targetname" ), 1, 0 );
     }
+    
     location = level.scr_zm_map_start_location;
-    if ((location == "default" || location == "") && isdefined(level.default_start_location)) {
+    
+    if ( ( location == "default" || location == "" ) && isdefined( level.default_start_location ) )
+    {
         location = level.default_start_location;
     }
+    
     match_string = level.scr_zm_ui_gametype;
-    if ("" != location) {
+    
+    if ( "" != location )
+    {
         match_string = match_string + "_" + location;
     }
+    
     match_string_plus_space = " " + match_string;
+    
     for (i = 0; i < spawnable_weapon_spawns.size; i++) {
-        spawnable_weapon = spawnable_weapon_spawns[i];
-        spawnable_weapon.weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
-        weapon_group = function_e2703c27(spawnable_weapon.weapon);
-        if (weapon_group == #"weapon_pistol" && !getgametypesetting(#"zmweaponspistol") || weapon_group == #"weapon_cqb" && !getgametypesetting(#"zmweaponsshotgun") || weapon_group == #"weapon_smg" && !getgametypesetting(#"zmweaponssmg") || weapon_group == #"weapon_assault" && !getgametypesetting(#"zmweaponsar") || weapon_group == #"weapon_tactical" && !getgametypesetting(#"zmweaponstr") || weapon_group == #"weapon_lmg" && !getgametypesetting(#"zmweaponslmg") || weapon_group == #"weapon_sniper" && !getgametypesetting(#"zmweaponssniper") || weapon_group == #"weapon_knife" && !getgametypesetting(#"zmweaponsknife")) {
+        spawnable_weapon = spawnable_weapon_spawns[ i ];
+        spawnable_weapon.weapon = getweapon( spawnable_weapon.zombie_weapon_upgrade );
+        weapon_group = function_e2703c27( spawnable_weapon.weapon );
+        
+        if ( weapon_group == #"weapon_pistol" && !getgametypesetting( #"zmweaponspistol" ) || weapon_group == #"weapon_cqb" && !getgametypesetting( #"zmweaponsshotgun" ) || weapon_group == #"weapon_smg" && !getgametypesetting( #"zmweaponssmg" ) || weapon_group == #"weapon_assault" && !getgametypesetting( #"zmweaponsar" ) || weapon_group == #"weapon_tactical" && !getgametypesetting( #"zmweaponstr" ) || weapon_group == #"weapon_lmg" && !getgametypesetting( #"zmweaponslmg" ) || weapon_group == #"weapon_sniper" && !getgametypesetting( #"zmweaponssniper" ) || weapon_group == #"weapon_knife" && !getgametypesetting( #"zmweaponsknife" ) )
+        {
             continue;
         }
-        if (isdefined(spawnable_weapon.zombie_weapon_upgrade) && spawnable_weapon.weapon.isgrenadeweapon && is_true(level.headshots_only)) {
+        
+        if ( isdefined( spawnable_weapon.zombie_weapon_upgrade ) && spawnable_weapon.weapon.isgrenadeweapon && is_true( level.headshots_only ) )
+        {
             continue;
         }
-        if (!isdefined(spawnable_weapon.script_noteworthy) || spawnable_weapon.script_noteworthy == "") {
-            spawn_list[spawn_list.size] = spawnable_weapon;
+        
+        if ( !isdefined( spawnable_weapon.script_noteworthy ) || spawnable_weapon.script_noteworthy == "" )
+        {
+            spawn_list[ spawn_list.size ] = spawnable_weapon;
             continue;
         }
-        matches = strtok(spawnable_weapon.script_noteworthy, ",");
+        
+        matches = strtok( spawnable_weapon.script_noteworthy, "," );
+        
         for (j = 0; j < matches.size; j++) {
-            if (matches[j] == match_string || matches[j] == match_string_plus_space) {
-                spawn_list[spawn_list.size] = spawnable_weapon;
+            if ( matches[ j ] == match_string || matches[ j ] == match_string_plus_space )
+            {
+                spawn_list[ spawn_list.size ] = spawnable_weapon;
             }
         }
     }
+    
     level._active_wallbuys = [];
+    
     for (i = 0; i < spawn_list.size; i++) {
-        spawn_list[i].script_label = spawn_list[i].zombie_weapon_upgrade + "_" + spawn_list[i].origin;
-        level._active_wallbuys[spawn_list[i].script_label] = spawn_list[i];
+        spawn_list[ i ].script_label = spawn_list[ i ].zombie_weapon_upgrade + "_" + spawn_list[ i ].origin;
+        level._active_wallbuys[ spawn_list[ i ].script_label ] = spawn_list[ i ];
         numbits = 2;
-        if (isdefined(level._wallbuy_override_num_bits)) {
+        
+        if ( isdefined( level._wallbuy_override_num_bits ) )
+        {
             numbits = level._wallbuy_override_num_bits;
         }
-        clientfield::register("world", spawn_list[i].script_label, 1, numbits, "int", &wallbuy_callback, 0, 1);
-        target_struct = struct::get(spawn_list[i].target, "targetname");
-        if (spawn_list[i].targetname == "buildable_wallbuy") {
+        
+        clientfield::register( "world", spawn_list[ i ].script_label, 1, numbits, "int", &wallbuy_callback, 0, 1 );
+        target_struct = struct::get( spawn_list[ i ].target, "targetname" );
+        
+        if ( spawn_list[ i ].targetname == "buildable_wallbuy" )
+        {
             bits = 4;
-            if (isdefined(level.buildable_wallbuy_weapons)) {
-                bits = getminbitcountfornum(level.buildable_wallbuy_weapons.size + 1);
+            
+            if ( isdefined( level.buildable_wallbuy_weapons ) )
+            {
+                bits = getminbitcountfornum( level.buildable_wallbuy_weapons.size + 1 );
             }
-            clientfield::register("world", spawn_list[i].script_label + "_idx", 1, bits, "int", &wallbuy_callback_idx, 0, 1);
+            
+            clientfield::register( "world", spawn_list[ i ].script_label + "_idx", 1, bits, "int", &wallbuy_callback_idx, 0, 1 );
         }
     }
-    level flag::set("weapon_wallbuys_created");
-    callback::on_localclient_connect(&wallbuy_player_connect);
+    
+    level flag::set( "weapon_wallbuys_created" );
+    callback::on_localclient_connect( &wallbuy_player_connect );
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
 // Params 1, eflags: 0x0
 // Checksum 0x88ccdd42, Offset: 0xed8
-// Size: 0xfe
-function is_wallbuy(w_to_check) {
+// Size: 0xfe, Type: bool
+function is_wallbuy( w_to_check )
+{
     w_base = w_to_check.rootweapon;
-    if (!isdefined(level._active_wallbuys)) {
+    
+    if ( !isdefined( level._active_wallbuys ) )
+    {
         level._active_wallbuys = [];
     }
-    foreach (s_wallbuy in level._active_wallbuys) {
-        if (s_wallbuy.weapon == w_base) {
+    
+    foreach ( s_wallbuy in level._active_wallbuys )
+    {
+        if ( s_wallbuy.weapon == w_base )
+        {
             return true;
         }
     }
-    if (isdefined(level._additional_wallbuy_weapons)) {
-        if (isinarray(level._additional_wallbuy_weapons, w_base)) {
+    
+    if ( isdefined( level._additional_wallbuy_weapons ) )
+    {
+        if ( isinarray( level._additional_wallbuy_weapons, w_base ) )
+        {
             return true;
         }
     }
+    
     return false;
 }
 
@@ -141,30 +193,42 @@ function is_wallbuy(w_to_check) {
 // Params 1, eflags: 0x0
 // Checksum 0xd46a1227, Offset: 0xfe0
 // Size: 0x2b8
-function wallbuy_player_connect(localclientnum) {
-    keys = getarraykeys(level._active_wallbuys);
-    println("<dev string:x38>" + localclientnum);
+function wallbuy_player_connect( localclientnum )
+{
+    keys = getarraykeys( level._active_wallbuys );
+    println( "<dev string:x38>" + localclientnum );
+    
     for (i = 0; i < keys.size; i++) {
-        wallbuy = level._active_wallbuys[keys[i]];
-        if (wallbuy.weapon == level.weaponnone) {
-            assertmsg("<dev string:x51>" + wallbuy.zombie_weapon_upgrade);
+        wallbuy = level._active_wallbuys[ keys[ i ] ];
+        
+        if ( wallbuy.weapon == level.weaponnone )
+        {
+            assertmsg( "<dev string:x51>" + wallbuy.zombie_weapon_upgrade );
             continue;
         }
-        fx = level._effect[#"870mcs_zm_fx"];
-        if (isdefined(level._effect[wallbuy.zombie_weapon_upgrade + "_fx"])) {
-            fx = level._effect[wallbuy.zombie_weapon_upgrade + "_fx"];
+        
+        fx = level._effect[ #"870mcs_zm_fx" ];
+        
+        if ( isdefined( level._effect[ wallbuy.zombie_weapon_upgrade + "_fx" ] ) )
+        {
+            fx = level._effect[ wallbuy.zombie_weapon_upgrade + "_fx" ];
         }
-        target_struct = struct::get(wallbuy.target, "targetname");
-        target_model = zm_utility::spawn_buildkit_weapon_model(localclientnum, wallbuy.weapon, undefined, target_struct.origin, target_struct.angles);
+        
+        target_struct = struct::get( wallbuy.target, "targetname" );
+        target_model = zm_utility::spawn_buildkit_weapon_model( localclientnum, wallbuy.weapon, undefined, target_struct.origin, target_struct.angles );
         target_model hide();
         target_model.parent_struct = target_struct;
-        wallbuy.models[localclientnum] = target_model;
-        wallbuy function_8f12abec(localclientnum);
+        wallbuy.models[ localclientnum ] = target_model;
+        wallbuy function_8f12abec( localclientnum );
     }
-    var_63734e5 = struct::get_array("wallbuy_chalk", "content_key");
-    foreach (wallbuy in var_63734e5) {
-        if (wallbuy.script_noteworthy !== "random") {
-            wallbuy function_8f12abec(localclientnum);
+    
+    var_63734e5 = struct::get_array( "wallbuy_chalk", "content_key" );
+    
+    foreach ( wallbuy in var_63734e5 )
+    {
+        if ( wallbuy.script_noteworthy !== "random" )
+        {
+            wallbuy function_8f12abec( localclientnum );
         }
     }
 }
@@ -173,216 +237,219 @@ function wallbuy_player_connect(localclientnum) {
 // Params 1, eflags: 0x4
 // Checksum 0xfcc78aab, Offset: 0x12a0
 // Size: 0xb4e
-function private function_86b59fcc(chalk_model) {
-    switch (chalk_model) {
-    case #"hash_20f0bd11d1c7311a":
-    case #"hash_4114b6ac9879d85b":
-    case #"hash_52461e82e039d255":
-    case #"hash_2c44506b5a4adcdb":
-    case #"p9_zm_chalk_buy_ar_accurate_t9_legendary":
-        type = "ar_accurate_t9";
-        break;
-    case #"hash_6ecb9dec9aef326b":
-    case #"hash_41f20c122d07164a":
-    case #"hash_56474820a3611dc5":
-    case #"hash_48854064d83b3348":
-    case #"hash_3854be6051783bab":
-        type = "ar_fastfire_t9";
-        break;
-    case #"hash_6d3be6f227583969":
-    case #"hash_6d1c3bb6284644ee":
-    case #"hash_36d10ddd9198e50e":
-    case #"hash_4cf1309f1a8b905c":
-    case #"hash_32a4abc11934bd99":
-        type = "ar_mobility_t9";
-        break;
-    case #"hash_769c146354e1d671":
-    case #"hash_762f5a04b0bb0454":
-    case #"hash_577607a64a513426":
-    case #"hash_17c2f15ed726cf51":
-    case #"hash_39ef3cf83725e046":
-        type = "ar_slowfire_t9";
-        break;
-    case #"hash_43ae9259432dc19a":
-    case #"hash_71426057e03b3e72":
-    case #"hash_790da02037dd644d":
-    case #"p9_zm_chalk_buy_ar_standard_t9_legendary":
-    case #"hash_7fe6418bb07f4ae0":
-        type = "ar_standard_t9";
-        break;
-    case #"hash_745733ece2111ab9":
-    case #"hash_3ff49c8e71e9dc0c":
-    case #"hash_2dd4a593ef2e247e":
-    case #"p9_zm_chalk_buy_ar_damage_t9_uncommon":
-    case #"hash_1568f0b938324e29":
-        type = "ar_damage_t9";
-        break;
-    case #"hash_2dcb24fbfe46d3bc":
-    case #"hash_443ceef9e10fd8e9":
-    case #"hash_3ca55cea67d20afe":
-    case #"p9_zm_chalk_buy_pistol_burst_t9_rare":
-    case #"hash_27cd288e1e9117c7":
-        type = "pistol_burst_t9";
-        break;
-    case #"hash_6e28fb91e31fd0a3":
-    case #"p9_zm_chalk_buy_pistol_revolver_t9_legendary":
-    case #"hash_379b00da2dadc632":
-    case #"hash_2b53bc14567b5374":
-    case #"hash_4be59669e7ac1a58":
-        type = "pistol_revolver_t9";
-        break;
-    case #"hash_1695732d671ca57a":
-    case #"hash_68c106d81829db40":
-    case #"hash_35066567b4a46dad":
-    case #"hash_1d2a087e061b932d":
-    case #"hash_e9d49629e62c0d2":
-        type = "pistol_standard_t9";
-        break;
-    case #"hash_48298b67777081e0":
-    case #"hash_676f8c57163f6572":
-    case #"hash_5e918a77b6b5324d":
-    case #"hash_4150e9fbfece9b4d":
-    case #"hash_7f3c12cc4f0e369a":
-        type = "shotgun_pump_t9";
-        break;
-    case #"hash_2ca5a7d539cc1405":
-    case #"hash_456cfac992bded95":
-    case #"hash_3b5ddb29aabb0e78":
-    case #"hash_362cb24c65bb2b52":
-    case #"hash_175fc1b8b08f272a":
-        type = "shotgun_fullauto_t9";
-        break;
-    case #"hash_5c2430d86756e447":
-    case #"hash_50c7b64345817326":
-    case #"hash_25c9b080e3630b81":
-    case #"hash_10473a5bc109d0f4":
-    case #"hash_51743a61c66a83df":
-        type = "shotgun_semiauto_t9";
-        break;
-    case #"p9_zm_chalk_buy_smg_burst_t9_rare":
-    case #"hash_76106fbb17a9333b":
-    case #"hash_58d6dda2cd160f0d":
-    case #"hash_76fdbf97a01d50e2":
-    case #"hash_392ea9010ac3d050":
-        type = "smg_burst_t9";
-        break;
-    case #"p9_zm_chalk_buy_smg_capacity_t9_uncommon":
-    case #"hash_24e100271d4db100":
-    case #"hash_324d4ff006f88243":
-    case #"p9_zm_chalk_buy_smg_capacity_t9_epic":
-    case #"hash_4cd0c4d654c097e3":
-        type = "smg_capacity_t9";
-        break;
-    case #"hash_1960105d71e18dd6":
-    case #"hash_3a76fbbcc894a8e9":
-    case #"hash_6e8c9c400f472104":
-    case #"hash_53bfdd08b50db789":
-    case #"hash_12ed545197b5448f":
-        type = "smg_fastfire_t9";
-        break;
-    case #"hash_6e02b1b03c4851e0":
-    case #"p9_zm_chalk_buy_smg_standard_t9_epic":
-    case #"hash_3c9529d3ceaa44da":
-    case #"hash_48e083bcbb4008bc":
-    case #"hash_2d22e43805a1636f":
-        type = "smg_standard_t9";
-        break;
-    case #"hash_17bd60f2817f7749":
-    case #"hash_740daa9f71d1583c":
-    case #"hash_3db4d21d6db349f9":
-    case #"hash_420c2f2feccf74ce":
-    case #"hash_1b777c76c52a9e6e":
-        type = "smg_heavy_t9";
-        break;
-    case #"hash_59113c87fb2bc9d3":
-    case #"hash_1d6aff75b26ac79f":
-    case #"hash_55859adb0b38eaa8":
-    case #"hash_15a4232fce4cf254":
-    case #"hash_7871bd04f77b77be":
-        type = "smg_handling_t9";
-        break;
-    case #"hash_453fb708b7848d58":
-    case #"hash_19fee21ebde27a07":
-    case #"hash_3553d63623f693a3":
-    case #"hash_6fe8412e8368ac74":
-    case #"hash_7ec5db7e6e848932":
-        type = "sniper_powersemi_t9";
-        break;
-    case #"hash_79145df8314cb715":
-    case #"hash_43eb62442d7e07e5":
-    case #"hash_6a21a738e317037a":
-    case #"p9_zm_chalk_buy_sniper_quickscope_t9_ultra":
-    case #"hash_784963b4918e79e8":
-        type = "sniper_quickscope_t9";
-        break;
-    case #"hash_4980640454c51fb5":
-    case #"hash_3f7044646cc08d98":
-    case #"hash_4b1b697f32ccfdf2":
-    case #"hash_20b93a829617614a":
-    case #"hash_3ebb88a3709c25a5":
-        type = "sniper_standard_t9";
-        break;
-    case #"hash_53ade1a7dfcaebc8":
-    case #"hash_2157c9674c67731d":
-    case #"hash_4f5bc8b1a89e9455":
-    case #"hash_7da4f0a80749e9ea":
-    case #"hash_7eae261b0bb2f4a3":
-        type = "tr_damagesemi_t9";
-        break;
-    case #"hash_255bf570e79c8b15":
-    case #"hash_17de1ca19c00cbd2":
-    case #"hash_1b4cd5d0ff99abf8":
-    case #"hash_10bce3d2d9d05caa":
-    case #"hash_271c1a495399fc85":
-        type = "tr_fullauto_t9";
-        break;
-    case #"hash_3b9d5ca8c3de8781":
-    case #"hash_54876b09baf22c04":
-    case #"hash_41289888933ab576":
-    case #"p9_zm_chalk_buy_tr_longburst_t9_uncommon":
-    case #"hash_61f8215c2cb9e5a1":
-        type = "tr_longburst_t9";
-        break;
-    case #"hash_6a7f20be318755f3":
-    case #"hash_1842fd1c34d169c2":
-    case #"hash_368ae18211759410":
-    case #"hash_567ce855ee06da0d":
-    case #"hash_25b46f6ea69a62d3":
-        type = "tr_powerburst_t9";
-        break;
-    case #"hash_27c596b133ab8f6":
-    case #"hash_6600b1d26d7e6591":
-    case #"hash_5c6dc71c4b620f8f":
-    case #"hash_79507506b126feb7":
-    case #"hash_7aac84dfbabbc8c4":
-        type = "tr_precisionsemi_t9";
-        break;
-    case #"p9_zm_chalk_buy_lmg_accurate_t9_uncommon":
-    case #"hash_2dc6bb27c0b0e4ae":
-    case #"hash_105d1ea51841aaaf":
-    case #"hash_79b96a652941ad58":
-    case #"hash_3d4630c27b329c23":
-        type = "lmg_accurate_t9";
-        break;
-    case #"hash_789a4a459b3d939b":
-    case #"hash_5df2a83d1fc4c6c0":
-    case #"hash_4df2c6370523e91c":
-    case #"hash_716ec2b58854dacf":
-    case #"hash_55484f922fe3ceba":
-        type = "lmg_light_t9";
-        break;
-    case #"p9_zm_chalk_buy_lmg_slowfire_t9_ultra":
-    case #"p9_zm_chalk_buy_lmg_slowfire_t9_uncommon":
-    case #"hash_389b434e6c79984a":
-    case #"hash_39c50389490c51a8":
-    case #"p9_zm_chalk_buy_lmg_slowfire_t9_rare":
-        type = "lmg_slowfire_t9";
-        break;
-    default:
-        println("<dev string:x70>" + chalk_model);
-        type = 0;
-        break;
+function private function_86b59fcc( chalk_model )
+{
+    switch ( chalk_model )
+    {
+        case #"p9_zm_chalk_buy_ar_accurate_t9_epic":
+        case #"p9_zm_chalk_buy_ar_accurate_t9_ultra":
+        case #"p9_zm_chalk_buy_ar_accurate_t9_uncommon":
+        case #"p9_zm_chalk_buy_ar_accurate_t9_rare":
+        case #"p9_zm_chalk_buy_ar_accurate_t9_legendary":
+            type = "ar_accurate_t9";
+            break;
+        case #"p9_zm_chalk_buy_ar_fastfire_t9_ultra":
+        case #"p9_zm_chalk_buy_ar_fastfire_t9_epic":
+        case #"p9_zm_chalk_buy_ar_fastfire_t9_uncommon":
+        case #"p9_zm_chalk_buy_ar_fastfire_t9_legendary":
+        case #"p9_zm_chalk_buy_ar_fastfire_t9_rare":
+            type = "ar_fastfire_t9";
+            break;
+        case #"p9_zm_chalk_buy_ar_mobility_t9_epic":
+        case #"p9_zm_chalk_buy_ar_mobility_t9_uncommon":
+        case #"p9_zm_chalk_buy_ar_mobility_t9_ultra":
+        case #"p9_zm_chalk_buy_ar_mobility_t9_rare":
+        case #"p9_zm_chalk_buy_ar_mobility_t9_legendary":
+            type = "ar_mobility_t9";
+            break;
+        case #"p9_zm_chalk_buy_ar_slowfire_t9_legendary":
+        case #"p9_zm_chalk_buy_ar_slowfire_t9_rare":
+        case #"p9_zm_chalk_buy_ar_slowfire_t9_uncommon":
+        case #"p9_zm_chalk_buy_ar_slowfire_t9_epic":
+        case #"p9_zm_chalk_buy_ar_slowfire_t9_ultra":
+            type = "ar_slowfire_t9";
+            break;
+        case #"p9_zm_chalk_buy_ar_standard_t9_ultra":
+        case #"p9_zm_chalk_buy_ar_standard_t9_uncommon":
+        case #"p9_zm_chalk_buy_ar_standard_t9_epic":
+        case #"p9_zm_chalk_buy_ar_standard_t9_legendary":
+        case #"p9_zm_chalk_buy_ar_standard_t9_rare":
+            type = "ar_standard_t9";
+            break;
+        case #"p9_zm_chalk_buy_ar_damage_t9_epic":
+        case #"p9_zm_chalk_buy_ar_damage_t9_rare":
+        case #"p9_zm_chalk_buy_ar_damage_t9_ultra":
+        case #"p9_zm_chalk_buy_ar_damage_t9_uncommon":
+        case #"p9_zm_chalk_buy_ar_damage_t9_legendary":
+            type = "ar_damage_t9";
+            break;
+        case #"p9_zm_chalk_buy_pistol_burst_t9_legendary":
+        case #"p9_zm_chalk_buy_pistol_burst_t9_uncommon":
+        case #"p9_zm_chalk_buy_pistol_burst_t9_epic":
+        case #"p9_zm_chalk_buy_pistol_burst_t9_rare":
+        case #"p9_zm_chalk_buy_pistol_burst_t9_ultra":
+            type = "pistol_burst_t9";
+            break;
+        case #"p9_zm_chalk_buy_pistol_revolver_t9_epic":
+        case #"p9_zm_chalk_buy_pistol_revolver_t9_legendary":
+        case #"p9_zm_chalk_buy_pistol_revolver_t9_rare":
+        case #"p9_zm_chalk_buy_pistol_revolver_t9_ultra":
+        case #"p9_zm_chalk_buy_pistol_revolver_t9_uncommon":
+            type = "pistol_revolver_t9";
+            break;
+        case #"hash_1695732d671ca57a":
+        case #"hash_68c106d81829db40":
+        case #"hash_35066567b4a46dad":
+        case #"hash_1d2a087e061b932d":
+        case #"hash_e9d49629e62c0d2":
+            type = "pistol_standard_t9";
+            break;
+        case #"p9_zm_chalk_buy_shotgun_pump_t9_rare":
+        case #"p9_zm_chalk_buy_shotgun_pump_t9_uncommon":
+        case #"p9_zm_chalk_buy_shotgun_pump_t9_legendary":
+        case #"p9_zm_chalk_buy_shotgun_pump_t9_epic":
+        case #"p9_zm_chalk_buy_shotgun_pump_t9_ultra":
+            type = "shotgun_pump_t9";
+            break;
+        case #"p9_zm_chalk_buy_shotgun_fullauto_t9_legendary":
+        case #"p9_zm_chalk_buy_shotgun_fullauto_t9_epic":
+        case #"p9_zm_chalk_buy_shotgun_fullauto_t9_rare":
+        case #"p9_zm_chalk_buy_shotgun_fullauto_t9_ultra":
+        case #"p9_zm_chalk_buy_shotgun_fullauto_t9_uncommon":
+            type = "shotgun_fullauto_t9";
+            break;
+        case #"p9_zm_chalk_buy_shotgun_semiauto_t9_rare":
+        case #"p9_zm_chalk_buy_shotgun_semiauto_t9_epic":
+        case #"p9_zm_chalk_buy_shotgun_semiauto_t9_uncommon":
+        case #"p9_zm_chalk_buy_shotgun_semiauto_t9_legendary":
+        case #"p9_zm_chalk_buy_shotgun_semiauto_t9_ultra":
+            type = "shotgun_semiauto_t9";
+            break;
+        case #"p9_zm_chalk_buy_smg_burst_t9_rare":
+        case #"p9_zm_chalk_buy_smg_burst_t9_uncommon":
+        case #"p9_zm_chalk_buy_smg_burst_t9_ultra":
+        case #"p9_zm_chalk_buy_smg_burst_t9_legendary":
+        case #"p9_zm_chalk_buy_smg_burst_t9_epic":
+            type = "smg_burst_t9";
+            break;
+        case #"p9_zm_chalk_buy_smg_capacity_t9_uncommon":
+        case #"p9_zm_chalk_buy_smg_capacity_t9_legendary":
+        case #"p9_zm_chalk_buy_smg_capacity_t9_ultra":
+        case #"p9_zm_chalk_buy_smg_capacity_t9_epic":
+        case #"p9_zm_chalk_buy_smg_capacity_t9_rare":
+            type = "smg_capacity_t9";
+            break;
+        case #"p9_zm_chalk_buy_smg_fastfire_t9_legendary":
+        case #"p9_zm_chalk_buy_smg_fastfire_t9_rare":
+        case #"p9_zm_chalk_buy_smg_fastfire_t9_epic":
+        case #"p9_zm_chalk_buy_smg_fastfire_t9_ultra":
+        case #"p9_zm_chalk_buy_smg_fastfire_t9_uncommon":
+            type = "smg_fastfire_t9";
+            break;
+        case #"p9_zm_chalk_buy_smg_standard_t9_uncommon":
+        case #"p9_zm_chalk_buy_smg_standard_t9_epic":
+        case #"p9_zm_chalk_buy_smg_standard_t9_rare":
+        case #"p9_zm_chalk_buy_smg_standard_t9_ultra":
+        case #"p9_zm_chalk_buy_smg_standard_t9_legendary":
+            type = "smg_standard_t9";
+            break;
+        case #"p9_zm_chalk_buy_smg_heavy_t9_epic":
+        case #"p9_zm_chalk_buy_smg_heavy_t9_rare":
+        case #"p9_zm_chalk_buy_smg_heavy_t9_legendary":
+        case #"p9_zm_chalk_buy_smg_heavy_t9_uncommon":
+        case #"p9_zm_chalk_buy_smg_heavy_t9_ultra":
+            type = "smg_heavy_t9";
+            break;
+        case #"p9_zm_chalk_buy_smg_handling_t9_legendary":
+        case #"p9_zm_chalk_buy_smg_handling_t9_epic":
+        case #"p9_zm_chalk_buy_smg_handling_t9_ultra":
+        case #"p9_zm_chalk_buy_smg_handling_t9_uncommon":
+        case #"p9_zm_chalk_buy_smg_handling_t9_rare":
+            type = "smg_handling_t9";
+            break;
+        case #"p9_zm_chalk_buy_sniper_powersemi_t9_uncommon":
+        case #"p9_zm_chalk_buy_sniper_powersemi_t9_legendary":
+        case #"p9_zm_chalk_buy_sniper_powersemi_t9_epic":
+        case #"p9_zm_chalk_buy_sniper_powersemi_t9_ultra":
+        case #"p9_zm_chalk_buy_sniper_powersemi_t9_rare":
+            type = "sniper_powersemi_t9";
+            break;
+        case #"p9_zm_chalk_buy_sniper_quickscope_t9_legendary":
+        case #"p9_zm_chalk_buy_sniper_quickscope_t9_epic":
+        case #"p9_zm_chalk_buy_sniper_quickscope_t9_uncommon":
+        case #"p9_zm_chalk_buy_sniper_quickscope_t9_ultra":
+        case #"p9_zm_chalk_buy_sniper_quickscope_t9_rare":
+            type = "sniper_quickscope_t9";
+            break;
+        case #"p9_zm_chalk_buy_sniper_standard_t9_epic":
+        case #"p9_zm_chalk_buy_sniper_standard_t9_rare":
+        case #"p9_zm_chalk_buy_sniper_standard_t9_ultra":
+        case #"p9_zm_chalk_buy_sniper_standard_t9_uncommon":
+        case #"p9_zm_chalk_buy_sniper_standard_t9_legendary":
+            type = "sniper_standard_t9";
+            break;
+        case #"p9_zm_chalk_buy_tr_damagesemi_t9_epic":
+        case #"p9_zm_chalk_buy_tr_damagesemi_t9_rare":
+        case #"p9_zm_chalk_buy_tr_damagesemi_t9_ultra":
+        case #"p9_zm_chalk_buy_tr_damagesemi_t9_legendary":
+        case #"p9_zm_chalk_buy_tr_damagesemi_t9_uncommon":
+            type = "tr_damagesemi_t9";
+            break;
+        case #"p9_zm_chalk_buy_tr_fullauto_t9_epic":
+        case #"p9_zm_chalk_buy_tr_fullauto_t9_ultra":
+        case #"p9_zm_chalk_buy_tr_fullauto_t9_rare":
+        case #"p9_zm_chalk_buy_tr_fullauto_t9_uncommon":
+        case #"p9_zm_chalk_buy_tr_fullauto_t9_legendary":
+            type = "tr_fullauto_t9";
+            break;
+        case #"p9_zm_chalk_buy_tr_longburst_t9_legendary":
+        case #"p9_zm_chalk_buy_tr_longburst_t9_rare":
+        case #"p9_zm_chalk_buy_tr_longburst_t9_ultra":
+        case #"p9_zm_chalk_buy_tr_longburst_t9_uncommon":
+        case #"p9_zm_chalk_buy_tr_longburst_t9_epic":
+            type = "tr_longburst_t9";
+            break;
+        case #"p9_zm_chalk_buy_tr_powerburst_t9_ultra":
+        case #"p9_zm_chalk_buy_tr_powerburst_t9_epic":
+        case #"p9_zm_chalk_buy_tr_powerburst_t9_legendary":
+        case #"p9_zm_chalk_buy_tr_powerburst_t9_uncommon":
+        case #"p9_zm_chalk_buy_tr_powerburst_t9_rare":
+            type = "tr_powerburst_t9";
+            break;
+        case #"hash_27c596b133ab8f6":
+        case #"hash_6600b1d26d7e6591":
+        case #"hash_5c6dc71c4b620f8f":
+        case #"hash_79507506b126feb7":
+        case #"hash_7aac84dfbabbc8c4":
+            type = "tr_precisionsemi_t9";
+            break;
+        case #"p9_zm_chalk_buy_lmg_accurate_t9_uncommon":
+        case #"p9_zm_chalk_buy_lmg_accurate_t9_rare":
+        case #"p9_zm_chalk_buy_lmg_accurate_t9_epic":
+        case #"p9_zm_chalk_buy_lmg_accurate_t9_ultra":
+        case #"p9_zm_chalk_buy_lmg_accurate_t9_legendary":
+            type = "lmg_accurate_t9";
+            break;
+        case #"p9_zm_chalk_buy_lmg_light_t9_epic":
+        case #"p9_zm_chalk_buy_lmg_light_t9_uncommon":
+        case #"p9_zm_chalk_buy_lmg_light_t9_ultra":
+        case #"p9_zm_chalk_buy_lmg_light_t9_legendary":
+        case #"p9_zm_chalk_buy_lmg_light_t9_rare":
+            type = "lmg_light_t9";
+            break;
+        case #"p9_zm_chalk_buy_lmg_slowfire_t9_ultra":
+        case #"p9_zm_chalk_buy_lmg_slowfire_t9_uncommon":
+        case #"p9_zm_chalk_buy_lmg_slowfire_t9_legendary":
+        case #"p9_zm_chalk_buy_lmg_slowfire_t9_epic":
+        case #"p9_zm_chalk_buy_lmg_slowfire_t9_rare":
+            type = "lmg_slowfire_t9";
+            break;
+        default:
+            println( "<dev string:x70>" + chalk_model );
+            type = 0;
+            break;
     }
+    
     return type;
 }
 
@@ -390,147 +457,160 @@ function private function_86b59fcc(chalk_model) {
 // Params 1, eflags: 0x0
 // Checksum 0x2e4abcd9, Offset: 0x1df8
 // Size: 0x7c2
-function function_8f12abec(localclientnum) {
-    if (isdefined(self.var_4972e475)) {
+function function_8f12abec( localclientnum )
+{
+    if ( isdefined( self.var_4972e475 ) )
+    {
         return;
     }
+    
     var_254469d1 = undefined;
     var_9ac76ba3 = 1;
     var_ddaf9f97 = undefined;
-    weapon_type = isdefined(self.script_noteworthy) ? self.script_noteworthy : 0;
-    if (weapon_type === "random" || weapon_type === 0) {
-        weapon_type = function_86b59fcc(self.model);
-        if (weapon_type === 0) {
+    weapon_type = isdefined( self.script_noteworthy ) ? self.script_noteworthy : 0;
+    
+    if ( weapon_type === "random" || weapon_type === 0 )
+    {
+        weapon_type = function_86b59fcc( self.model );
+        
+        if ( weapon_type === 0 )
+        {
             return;
         }
     }
-    switch (weapon_type) {
-    case #"ar_damage_t9":
-        var_254469d1 = #"hash_60d3a1f7d422e966";
-        name_hash = #"hash_4d8398888735db8";
-        break;
-    case #"ar_fastfire_t9":
-        var_254469d1 = #"p9_zm_chalk_buy_ar_fastfire_t9_col";
-        name_hash = #"hash_717baccca4cf03d1";
-        break;
-    case #"ar_mobility_t9":
-        var_254469d1 = #"hash_13c954f44eee4616";
-        name_hash = #"hash_7bd4f5716e446b78";
-        break;
-    case #"ar_slowfire_t9":
-        var_254469d1 = #"hash_43891455ac15b7be";
-        name_hash = #"hash_63e8969bae8c6414";
-        break;
-    case #"ar_standard_t9":
-        var_254469d1 = #"hash_51976978ad5a7a0a";
-        name_hash = #"hash_67e1bb4dbdf802d8";
-        break;
-    case #"ar_accurate_t9":
-        var_254469d1 = #"hash_5465e97890027a63";
-        name_hash = #"hash_4ea07dc5c94ab7f9";
-        break;
-    case #"pistol_burst_t9":
-        var_254469d1 = #"hash_380cbbb95bef9a97";
-        name_hash = #"hash_703b41f88b42f343";
-        break;
-    case #"pistol_revolver_t9":
-        var_254469d1 = #"hash_1551c0e06f65b6e8";
-        name_hash = #"hash_5091c4707ec6b942";
-        break;
-    case #"pistol_semiauto_t9":
-        var_254469d1 = #"hash_1d6b5a3162315d2a";
-        name_hash = #"hash_2439a2ff4beb86b0";
-        break;
-    case #"shotgun_fullauto_t9":
-        var_254469d1 = #"hash_543883d02a25c8f2";
-        name_hash = #"hash_6df0ff702b2613be";
-        break;
-    case #"shotgun_semiauto_t9":
-        var_254469d1 = #"hash_5fb436cc685858bf";
-        name_hash = #"hash_6dcf0445e7c7257b";
-        break;
-    case #"shotgun_pump_t9":
-        var_254469d1 = #"hash_2142923f8242e70a";
-        name_hash = #"hash_1631ac670b00dbfa";
-        break;
-    case #"smg_burst_t9":
-        var_254469d1 = #"hash_3de7cc85209151f9";
-        name_hash = #"hash_2c75287d04644bcb";
-        break;
-    case #"smg_capacity_t9":
-        var_254469d1 = #"hash_269644599df154db";
-        name_hash = #"hash_423632bb711a406b";
-        break;
-    case #"smg_fastfire_t9":
-        var_254469d1 = #"hash_4ea0b0f3291897dd";
-        name_hash = #"hash_6def002686374645";
-        break;
-    case #"smg_handling_t9":
-        var_254469d1 = #"hash_552da77f6dd268f4";
-        name_hash = #"hash_410c31e1c403b298";
-        break;
-    case #"smg_heavy_t9":
-        var_254469d1 = #"hash_3de4a3ba0c0c6176";
-        name_hash = #"hash_42c7bf7c8a2eaad8";
-        break;
-    case #"smg_standard_t9":
-        var_254469d1 = #"hash_1be663d24baec560";
-        name_hash = #"hash_1895010b5180880c";
-        break;
-    case #"sniper_powersemi_t9":
-        var_254469d1 = #"p9_zm_chalk_buy_sniper_powersemi_t9_col";
-        name_hash = #"hash_1fed797b830c9f74";
-        break;
-    case #"sniper_quickscope_t9":
-        var_254469d1 = #"hash_5afdcf904fe36502";
-        name_hash = #"hash_4cf07e30456d6a24";
-        break;
-    case #"sniper_standard_t9":
-        var_254469d1 = #"hash_2dc0ad079e877d92";
-        name_hash = #"hash_755d23459c2344cc";
-        break;
-    case #"tr_damagesemi_t9":
-        var_254469d1 = #"hash_4412650e08944071";
-        name_hash = #"hash_14e7b988f9459207";
-        break;
-    case #"tr_fullauto_t9":
-        var_254469d1 = #"hash_759d98b15bc6f572";
-        break;
-    case #"tr_longburst_t9":
-        var_254469d1 = #"hash_26d132a48416630e";
-        name_hash = #"hash_696d8b6b3a595612";
-        break;
-    case #"tr_powerburst_t9":
-        var_254469d1 = #"hash_6bae63c0650c5b6b";
-        name_hash = #"hash_7e1fb00fccc464b5";
-        break;
-    case #"tr_precisionsemi_t9":
-        var_254469d1 = #"hash_7f13eff55abcf1ec";
-        name_hash = #"hash_1a652a02b8f8208";
-        break;
-    case #"lmg_slowfire_t9":
-        var_254469d1 = #"hash_13c6573ab08b92d1";
-        name_hash = #"hash_5eca49abef9d89ed";
-        break;
-    case #"lmg_light_t9":
-        var_254469d1 = #"hash_373cf28c1cd363c0";
-        name_hash = #"hash_115345b891f63176";
-        break;
-    case #"lmg_accurate_t9":
-        var_254469d1 = #"p9_zm_chalk_buy_lmg_accurate_t9_col";
-        name_hash = #"hash_7eb1b81fdce9b908";
-        break;
-    default:
-        var_254469d1 = #"hash_51976978ad5a7a0a";
-        name_hash = #"hash_151d1b68c65d9d05";
-        var_9ac76ba3 = 0;
-        break;
+    
+    switch ( weapon_type )
+    {
+        case #"ar_damage_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_ar_damage_t9_col";
+            name_hash = #"hash_4d8398888735db8";
+            break;
+        case #"ar_fastfire_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_ar_fastfire_t9_col";
+            name_hash = #"hash_717baccca4cf03d1";
+            break;
+        case #"ar_mobility_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_ar_mobility_t9_col";
+            name_hash = #"hash_7bd4f5716e446b78";
+            break;
+        case #"ar_slowfire_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_ar_slowfire_t9_col";
+            name_hash = #"hash_63e8969bae8c6414";
+            break;
+        case #"ar_standard_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_ar_standard_t9_col";
+            name_hash = #"hash_67e1bb4dbdf802d8";
+            break;
+        case #"ar_accurate_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_ar_accurate_t9_col";
+            name_hash = #"hash_4ea07dc5c94ab7f9";
+            break;
+        case #"pistol_burst_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_pistol_burst_t9_col";
+            name_hash = #"hash_703b41f88b42f343";
+            break;
+        case #"pistol_revolver_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_pistol_revolver_t9_col";
+            name_hash = #"hash_5091c4707ec6b942";
+            break;
+        case #"pistol_semiauto_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_pistol_semiauto_t9_col";
+            name_hash = #"hash_2439a2ff4beb86b0";
+            break;
+        case #"shotgun_fullauto_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_shotgun_fullauto_t9_col";
+            name_hash = #"hash_6df0ff702b2613be";
+            break;
+        case #"shotgun_semiauto_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_shotgun_semiauto_t9_col";
+            name_hash = #"hash_6dcf0445e7c7257b";
+            break;
+        case #"shotgun_pump_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_shotgun_pump_t9_col";
+            name_hash = #"hash_1631ac670b00dbfa";
+            break;
+        case #"smg_burst_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_smg_burst_t9_col";
+            name_hash = #"hash_2c75287d04644bcb";
+            break;
+        case #"smg_capacity_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_smg_capacity_t9_col";
+            name_hash = #"hash_423632bb711a406b";
+            break;
+        case #"smg_fastfire_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_smg_fastfire_t9_col";
+            name_hash = #"hash_6def002686374645";
+            break;
+        case #"smg_handling_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_smg_handling_t9_col";
+            name_hash = #"hash_410c31e1c403b298";
+            break;
+        case #"smg_heavy_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_smg_heavy_t9_col";
+            name_hash = #"hash_42c7bf7c8a2eaad8";
+            break;
+        case #"smg_standard_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_smg_standard_t9_col";
+            name_hash = #"hash_1895010b5180880c";
+            break;
+        case #"sniper_powersemi_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_sniper_powersemi_t9_col";
+            name_hash = #"hash_1fed797b830c9f74";
+            break;
+        case #"sniper_quickscope_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_sniper_quickscope_t9_col";
+            name_hash = #"hash_4cf07e30456d6a24";
+            break;
+        case #"sniper_standard_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_sniper_standard_t9_col";
+            name_hash = #"hash_755d23459c2344cc";
+            break;
+        case #"tr_damagesemi_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_tr_damagesemi_t9_col";
+            name_hash = #"hash_14e7b988f9459207";
+            break;
+        case #"tr_fullauto_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_tr_fullauto_t9_col";
+            break;
+        case #"tr_longburst_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_tr_longburst_t9_col";
+            name_hash = #"hash_696d8b6b3a595612";
+            break;
+        case #"tr_powerburst_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_tr_powerburst_t9_col";
+            name_hash = #"hash_7e1fb00fccc464b5";
+            break;
+        case #"tr_precisionsemi_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_tr_precisionsemi_t9_col";
+            name_hash = #"hash_1a652a02b8f8208";
+            break;
+        case #"lmg_slowfire_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_lmg_slowfire_t9_col";
+            name_hash = #"hash_5eca49abef9d89ed";
+            break;
+        case #"lmg_light_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_lmg_light_t9_col";
+            name_hash = #"hash_115345b891f63176";
+            break;
+        case #"lmg_accurate_t9":
+            var_254469d1 = #"p9_zm_chalk_buy_lmg_accurate_t9_col";
+            name_hash = #"hash_7eb1b81fdce9b908";
+            break;
+        default:
+            var_254469d1 = #"p9_zm_chalk_buy_ar_standard_t9_col";
+            name_hash = #"hash_151d1b68c65d9d05";
+            var_9ac76ba3 = 0;
+            break;
     }
-    var_4972e475 = util::spawn_model(localclientnum, var_254469d1, self.origin, self.angles);
+    
+    var_4972e475 = util::spawn_model( localclientnum, var_254469d1, self.origin, self.angles );
     var_4972e475.var_fc558e74 = "wallbuy";
-    if (var_9ac76ba3) {
+    
+    if ( var_9ac76ba3 )
+    {
         var_4972e475.var_ed875153 = name_hash;
     }
+    
     var_4972e475 function_619a5c20();
     self.var_4972e475 = var_4972e475;
 }
@@ -539,55 +619,80 @@ function function_8f12abec(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0xe92c344d, Offset: 0x25c8
 // Size: 0x42a
-function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsnap, fieldname, *bwastimejump) {
-    if (fieldname) {
-        while (!isdefined(level._active_wallbuys) || !isdefined(level._active_wallbuys[bwastimejump])) {
-            waitframe(1);
+function wallbuy_callback( localclientnum, *oldval, newval, *bnewent, binitialsnap, fieldname, *bwastimejump )
+{
+    if ( fieldname )
+    {
+        while ( !isdefined( level._active_wallbuys ) || !isdefined( level._active_wallbuys[ bwastimejump ] ) )
+        {
+            waitframe( 1 );
         }
     }
-    struct = level._active_wallbuys[bwastimejump];
-    println("<dev string:xc7>" + bnewent);
-    if (!isdefined(struct) || !isdefined(struct.models[bnewent]) || !isdefined(struct.models[bnewent].parent_struct)) {
-        assertmsg("<dev string:xdc>" + bwastimejump);
+    
+    struct = level._active_wallbuys[ bwastimejump ];
+    println( "<dev string:xc7>" + bnewent );
+    
+    if ( !isdefined( struct ) || !isdefined( struct.models[ bnewent ] ) || !isdefined( struct.models[ bnewent ].parent_struct ) )
+    {
+        assertmsg( "<dev string:xdc>" + bwastimejump );
         return;
     }
-    switch (binitialsnap) {
-    case 0:
-        struct.models[bnewent].origin = struct.models[bnewent].parent_struct.origin;
-        struct.models[bnewent].angles = struct.models[bnewent].parent_struct.angles;
-        struct.models[bnewent] hide();
-        break;
-    case 1:
-        if (fieldname) {
-            if (!isdefined(struct.models)) {
-                while (!isdefined(struct.models)) {
-                    waitframe(1);
+    
+    switch ( binitialsnap )
+    {
+        case 0:
+            struct.models[ bnewent ].origin = struct.models[ bnewent ].parent_struct.origin;
+            struct.models[ bnewent ].angles = struct.models[ bnewent ].parent_struct.angles;
+            struct.models[ bnewent ] hide();
+            break;
+        case 1:
+            if ( fieldname )
+            {
+                if ( !isdefined( struct.models ) )
+                {
+                    while ( !isdefined( struct.models ) )
+                    {
+                        waitframe( 1 );
+                    }
+                    
+                    while ( !isdefined( struct.models[ bnewent ] ) )
+                    {
+                        waitframe( 1 );
+                    }
                 }
-                while (!isdefined(struct.models[bnewent])) {
-                    waitframe(1);
+                
+                struct.models[ bnewent ] show();
+                struct.models[ bnewent ].origin = struct.models[ bnewent ].parent_struct.origin;
+            }
+            else
+            {
+                waitframe( 1 );
+                
+                if ( bnewent == 0 )
+                {
+                    playsound( 0, #"zmb_weap_wall", struct.origin );
                 }
+                
+                vec_offset = ( 0, 0, 0 );
+                
+                if ( isdefined( struct.models[ bnewent ].parent_struct.script_vector ) )
+                {
+                    vec_offset = struct.models[ bnewent ].parent_struct.script_vector;
+                }
+                
+                struct.models[ bnewent ].origin = struct.models[ bnewent ].parent_struct.origin + anglestoright( struct.models[ bnewent ].angles + vec_offset ) * 8;
+                struct.models[ bnewent ] show();
+                struct.models[ bnewent ] moveto( struct.models[ bnewent ].parent_struct.origin, 1 );
             }
-            struct.models[bnewent] show();
-            struct.models[bnewent].origin = struct.models[bnewent].parent_struct.origin;
-        } else {
-            waitframe(1);
-            if (bnewent == 0) {
-                playsound(0, #"zmb_weap_wall", struct.origin);
+            
+            break;
+        case 2:
+            if ( isdefined( level.var_680d143d ) )
+            {
+                struct.models[ bnewent ] [[ level.var_680d143d ]]();
             }
-            vec_offset = (0, 0, 0);
-            if (isdefined(struct.models[bnewent].parent_struct.script_vector)) {
-                vec_offset = struct.models[bnewent].parent_struct.script_vector;
-            }
-            struct.models[bnewent].origin = struct.models[bnewent].parent_struct.origin + anglestoright(struct.models[bnewent].angles + vec_offset) * 8;
-            struct.models[bnewent] show();
-            struct.models[bnewent] moveto(struct.models[bnewent].parent_struct.origin, 1);
-        }
-        break;
-    case 2:
-        if (isdefined(level.var_680d143d)) {
-            struct.models[bnewent] [[ level.var_680d143d ]]();
-        }
-        break;
+            
+            break;
     }
 }
 
@@ -595,55 +700,79 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
 // Params 7, eflags: 0x0
 // Checksum 0x6f77c3f2, Offset: 0x2a00
 // Size: 0x430
-function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
-    basefield = getsubstr(bwastimejump, 0, bwastimejump.size - 4);
-    struct = level._active_wallbuys[basefield];
-    if (fieldname == 0) {
-        if (isdefined(struct.models[binitialsnap])) {
-            struct.models[binitialsnap] hide();
+function wallbuy_callback_idx( localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump )
+{
+    basefield = getsubstr( bwastimejump, 0, bwastimejump.size - 4 );
+    struct = level._active_wallbuys[ basefield ];
+    
+    if ( fieldname == 0 )
+    {
+        if ( isdefined( struct.models[ binitialsnap ] ) )
+        {
+            struct.models[ binitialsnap ] hide();
         }
+        
         return;
     }
-    if (fieldname > 0) {
-        weaponname = level.buildable_wallbuy_weapons[fieldname - 1];
-        weapon = getweapon(weaponname);
-        if (!isdefined(struct.models)) {
+    
+    if ( fieldname > 0 )
+    {
+        weaponname = level.buildable_wallbuy_weapons[ fieldname - 1 ];
+        weapon = getweapon( weaponname );
+        
+        if ( !isdefined( struct.models ) )
+        {
             struct.models = [];
         }
-        if (!isdefined(struct.models[binitialsnap])) {
-            target_struct = struct::get(struct.target, "targetname");
+        
+        if ( !isdefined( struct.models[ binitialsnap ] ) )
+        {
+            target_struct = struct::get( struct.target, "targetname" );
             model = undefined;
-            if (isdefined(level.buildable_wallbuy_weapon_models[weaponname])) {
-                model = level.buildable_wallbuy_weapon_models[weaponname];
+            
+            if ( isdefined( level.buildable_wallbuy_weapon_models[ weaponname ] ) )
+            {
+                model = level.buildable_wallbuy_weapon_models[ weaponname ];
             }
+            
             angles = target_struct.angles;
-            if (isdefined(level.var_d9d93dd9[weaponname])) {
-                switch (level.var_d9d93dd9[weaponname]) {
-                case 90:
-                    angles = vectortoangles(anglestoright(angles));
-                    break;
-                case 180:
-                    angles = vectortoangles(anglestoforward(angles) * -1);
-                    break;
-                case 270:
-                    angles = vectortoangles(anglestoright(angles) * -1);
-                    break;
+            
+            if ( isdefined( level.var_d9d93dd9[ weaponname ] ) )
+            {
+                switch ( level.var_d9d93dd9[ weaponname ] )
+                {
+                    case 90:
+                        angles = vectortoangles( anglestoright( angles ) );
+                        break;
+                    case 180:
+                        angles = vectortoangles( anglestoforward( angles ) * -1 );
+                        break;
+                    case 270:
+                        angles = vectortoangles( anglestoright( angles ) * -1 );
+                        break;
                 }
             }
-            target_model = zm_utility::spawn_buildkit_weapon_model(binitialsnap, weapon, undefined, target_struct.origin, angles);
+            
+            target_model = zm_utility::spawn_buildkit_weapon_model( binitialsnap, weapon, undefined, target_struct.origin, angles );
             target_model hide();
             target_model.parent_struct = target_struct;
-            struct.models[binitialsnap] = target_model;
-            if (isdefined(struct.fx[binitialsnap])) {
-                stopfx(binitialsnap, struct.fx[binitialsnap]);
-                struct.fx[binitialsnap] = undefined;
+            struct.models[ binitialsnap ] = target_model;
+            
+            if ( isdefined( struct.fx[ binitialsnap ] ) )
+            {
+                stopfx( binitialsnap, struct.fx[ binitialsnap ] );
+                struct.fx[ binitialsnap ] = undefined;
             }
-            fx = level._effect[#"870mcs_zm_fx"];
-            if (isdefined(level._effect[weaponname + "_fx"])) {
-                fx = level._effect[weaponname + "_fx"];
+            
+            fx = level._effect[ #"870mcs_zm_fx" ];
+            
+            if ( isdefined( level._effect[ weaponname + "_fx" ] ) )
+            {
+                fx = level._effect[ weaponname + "_fx" ];
             }
-            struct.fx[binitialsnap] = playfx(binitialsnap, fx, struct.origin, anglestoforward(struct.angles), anglestoup(struct.angles), 0.1);
-            level notify(#"wallbuy_updated");
+            
+            struct.fx[ binitialsnap ] = playfx( binitialsnap, fx, struct.origin, anglestoforward( struct.angles ), anglestoup( struct.angles ), 0.1 );
+            level notify( #"wallbuy_updated" );
         }
     }
 }
@@ -652,31 +781,38 @@ function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *biniti
 // Params 7, eflags: 0x0
 // Checksum 0x6ba4dd40, Offset: 0x2e38
 // Size: 0x18a
-function function_51f5fb94(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (isdefined(self.var_11154944)) {
-        stopfx(fieldname, self.var_11154944);
+function function_51f5fb94( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( isdefined( self.var_11154944 ) )
+    {
+        stopfx( fieldname, self.var_11154944 );
         self.var_11154944 = undefined;
     }
-    if (bwastimejump) {
-        switch (bwastimejump) {
-        case 3:
-            fx_to_play = #"hash_7df7fa64b947f085";
-            break;
-        case 4:
-            fx_to_play = #"hash_1c2f33d581b291d2";
-            break;
-        case 5:
-            fx_to_play = #"hash_19ef730d1f1a0f98";
-            break;
-        case 6:
-            fx_to_play = #"hash_4c7d47bec47dda6c";
-            break;
-        case 7:
-            fx_to_play = #"hash_2126649becba5c72";
-            break;
+    
+    if ( bwastimejump )
+    {
+        switch ( bwastimejump )
+        {
+            case 3:
+                fx_to_play = #"hash_7df7fa64b947f085";
+                break;
+            case 4:
+                fx_to_play = #"hash_1c2f33d581b291d2";
+                break;
+            case 5:
+                fx_to_play = #"hash_19ef730d1f1a0f98";
+                break;
+            case 6:
+                fx_to_play = #"hash_4c7d47bec47dda6c";
+                break;
+            case 7:
+                fx_to_play = #"hash_2126649becba5c72";
+                break;
         }
-        if (isdefined(fx_to_play)) {
-            self.var_11154944 = util::playfxontag(fieldname, fx_to_play, self, "tag_origin");
+        
+        if ( isdefined( fx_to_play ) )
+        {
+            self.var_11154944 = util::playfxontag( fieldname, fx_to_play, self, "tag_origin" );
         }
     }
 }
@@ -685,9 +821,11 @@ function function_51f5fb94(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xbf21f6ad, Offset: 0x2fd0
 // Size: 0x7c
-function function_5ed44212(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump) {
-        util::playfxontag(fieldname, level._effect[#"wallbuy_reveal_fx"], self, "tag_fx_wall_buy");
+function function_5ed44212( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump )
+    {
+        util::playfxontag( fieldname, level._effect[ #"wallbuy_reveal_fx" ], self, "tag_fx_wall_buy" );
     }
 }
 

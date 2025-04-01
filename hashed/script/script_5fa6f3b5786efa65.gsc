@@ -32,51 +32,75 @@
 // Params 2, eflags: 0x0
 // Checksum 0xd7f0e87b, Offset: 0x308
 // Size: 0x3b2
-function function_44cc3493(var_2177e1d4 = 2, player) {
-    self endon(#"death");
-    level endon(#"game_over");
-    while (var_2177e1d4 > 0) {
-        var_77e4cc0b = arraysortclosest(getaiteamarray(#"axis"), self.origin);
+function function_44cc3493( var_2177e1d4 = 2, player )
+{
+    self endon( #"death" );
+    level endon( #"game_over" );
+    
+    while ( var_2177e1d4 > 0 )
+    {
+        var_77e4cc0b = arraysortclosest( getaiteamarray( #"axis" ), self.origin );
         var_bca95f5f = [];
-        foreach (guy in var_77e4cc0b) {
-            if (is_true(guy.var_85a0c6e6)) {
+        
+        foreach ( guy in var_77e4cc0b )
+        {
+            if ( is_true( guy.var_85a0c6e6 ) )
+            {
                 continue;
             }
-            if (!isdefined(var_bca95f5f)) {
+            
+            if ( !isdefined( var_bca95f5f ) )
+            {
                 var_bca95f5f = [];
-            } else if (!isarray(var_bca95f5f)) {
-                var_bca95f5f = array(var_bca95f5f);
             }
-            var_bca95f5f[var_bca95f5f.size] = guy;
+            else if ( !isarray( var_bca95f5f ) )
+            {
+                var_bca95f5f = array( var_bca95f5f );
+            }
+            
+            var_bca95f5f[ var_bca95f5f.size ] = guy;
         }
-        foreach (guy in var_bca95f5f) {
-            if (isdefined(guy)) {
-                if (is_true(guy.boss)) {
+        
+        foreach ( guy in var_bca95f5f )
+        {
+            if ( isdefined( guy ) )
+            {
+                if ( is_true( guy.boss ) )
+                {
                     continue;
                 }
-                if (is_true(guy.var_85a0c6e6)) {
+                
+                if ( is_true( guy.var_85a0c6e6 ) )
+                {
                     continue;
                 }
-                if (is_true(guy.tesla_death)) {
+                
+                if ( is_true( guy.tesla_death ) )
+                {
                     continue;
                 }
-                in_view = util::within_fov(self.origin, self.angles, guy.origin, 0.9);
-                if (!in_view) {
+                
+                in_view = util::within_fov( self.origin, self.angles, guy.origin, 0.9 );
+                
+                if ( !in_view )
+                {
                     continue;
                 }
-                self namespace_83eb6304::function_3ecfde67("teleporter_disabled");
+                
+                self namespace_83eb6304::function_3ecfde67( "teleporter_disabled" );
                 var_2177e1d4--;
                 guy.var_85a0c6e6 = 1;
-                self.org.origin = self.origin + (0, 0, 40);
-                self.org namespace_83eb6304::function_3ecfde67("tesla_trail");
-                self.org moveto(guy.origin + (0, 0, 40), 0.4);
+                self.org.origin = self.origin + ( 0, 0, 40 );
+                self.org namespace_83eb6304::function_3ecfde67( "tesla_trail" );
+                self.org moveto( guy.origin + ( 0, 0, 40 ), 0.4 );
                 wait 0.4;
-                self.org namespace_83eb6304::turnofffx("tesla_trail");
-                level thread namespace_9038b9d9::function_8d45f3be(guy, player);
-                wait randomfloatrange(0.4, 2);
+                self.org namespace_83eb6304::turnofffx( "tesla_trail" );
+                level thread namespace_9038b9d9::function_8d45f3be( guy, player );
+                wait randomfloatrange( 0.4, 2 );
             }
         }
-        waitframe(1);
+        
+        waitframe( 1 );
     }
 }
 
@@ -84,55 +108,73 @@ function function_44cc3493(var_2177e1d4 = 2, player) {
 // Params 2, eflags: 0x0
 // Checksum 0xbbb3fc9c, Offset: 0x6c8
 // Size: 0x4ec
-function function_465aaf09(player, origin) {
-    if (is_true(level.doa.var_41adf604)) {
+function function_465aaf09( player, origin )
+{
+    if ( is_true( level.doa.var_41adf604 ) )
+    {
         return;
     }
-    if (isdefined(level.doa.var_54c5c3e6)) {
+    
+    if ( isdefined( level.doa.var_54c5c3e6 ) )
+    {
         return;
     }
-    var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
-    origin = (origin[0], origin[1], var_d98803e1[2]);
-    arcademachine = namespace_ec06fe4a::spawnmodel(origin + (0, 0, 12), "zombietron_arcademachine", player.angles + (0, 180, 0), "zombietron_arcademachine");
-    if (!isdefined(arcademachine)) {
+    
+    var_d98803e1 = namespace_ec06fe4a::function_65ee50ba( origin );
+    origin = ( origin[ 0 ], origin[ 1 ], var_d98803e1[ 2 ] );
+    arcademachine = namespace_ec06fe4a::spawnmodel( origin + ( 0, 0, 12 ), "zombietron_arcademachine", player.angles + ( 0, 180, 0 ), "zombietron_arcademachine" );
+    
+    if ( !isdefined( arcademachine ) )
+    {
         return;
     }
-    arcademachine endon(#"death");
-    arcademachine.org = namespace_ec06fe4a::spawnmodel(origin + (0, 0, 12), "tag_origin", (0, 0, 0), "zombietron_arcademachine_org");
-    if (!isdefined(arcademachine.org)) {
+    
+    arcademachine endon( #"death" );
+    arcademachine.org = namespace_ec06fe4a::spawnmodel( origin + ( 0, 0, 12 ), "tag_origin", ( 0, 0, 0 ), "zombietron_arcademachine_org" );
+    
+    if ( !isdefined( arcademachine.org ) )
+    {
         arcademachine delete();
         return;
     }
-    arcademachine.org thread namespace_ec06fe4a::function_d55f042c(arcademachine, "death");
-    arcademachine thread namespace_ec06fe4a::function_d55f042c(level, "game_over");
-    rooms = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
-    level.doa.var_848746c8 = is_true(level.doa.hardcoremode) ? undefined : rooms[randomint(rooms.size)];
+    
+    arcademachine.org thread namespace_ec06fe4a::function_d55f042c( arcademachine, "death" );
+    arcademachine thread namespace_ec06fe4a::function_d55f042c( level, "game_over" );
+    rooms = array( "slideways", "slideways2", "slideways3", "slideways4", "slideways5" );
+    level.doa.var_848746c8 = is_true( level.doa.hardcoremode ) ? undefined : rooms[ randomint( rooms.size ) ];
     level.doa.var_54c5c3e6 = arcademachine;
-    arcademachine namespace_e32bb68::function_3a59ec34("evt_doa_pickup_arcade_active_lp");
-    arcademachine thread namespace_ec06fe4a::function_2d920b3c(1, 0);
+    arcademachine namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_arcade_active_lp" );
+    arcademachine thread namespace_ec06fe4a::function_2d920b3c( 1, 0 );
     timeout = gettime() + 30000;
-    while (timeout > gettime()) {
-        if (level flag::get("doa_round_over")) {
+    
+    while ( timeout > gettime() )
+    {
+        if ( level flag::get( "doa_round_over" ) )
+        {
             break;
         }
-        result = level waittilltimeout(randomfloatrange(1, 4), #"exit_taken", #"arena_completed");
-        arcademachine namespace_83eb6304::function_3ecfde67("lightningStrike");
-        arcademachine namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
-        arcademachine thread function_44cc3493(randomintrange(1, 5), player);
-        if (result._notify != #"timeout") {
+        
+        result = level waittilltimeout( randomfloatrange( 1, 4 ), #"exit_taken", #"arena_completed" );
+        arcademachine namespace_83eb6304::function_3ecfde67( "lightningStrike" );
+        arcademachine namespace_e32bb68::function_3a59ec34( "evt_doa_lightning_bolt" );
+        arcademachine thread function_44cc3493( randomintrange( 1, 5 ), player );
+        
+        if ( result._notify != #"timeout" )
+        {
             break;
         }
     }
-    arcademachine namespace_83eb6304::function_3ecfde67("arcade_spark");
-    arcademachine notify(#"hash_7bf2519960a3852a");
-    arcademachine namespace_83eb6304::function_3ecfde67("wild_portal_radial_burst");
-    arcademachine namespace_e32bb68::function_3a59ec34("evt_doa_teleporter_wilds_burst");
-    arcademachine namespace_83eb6304::function_3ecfde67("turret_impact");
-    arcademachine namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sentry_land");
-    arcademachine moveto(arcademachine.origin + (0, 0, 3000), 1);
+    
+    arcademachine namespace_83eb6304::function_3ecfde67( "arcade_spark" );
+    arcademachine notify( #"hash_7bf2519960a3852a" );
+    arcademachine namespace_83eb6304::function_3ecfde67( "wild_portal_radial_burst" );
+    arcademachine namespace_e32bb68::function_3a59ec34( "evt_doa_teleporter_wilds_burst" );
+    arcademachine namespace_83eb6304::function_3ecfde67( "turret_impact" );
+    arcademachine namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_sentry_land" );
+    arcademachine moveto( arcademachine.origin + ( 0, 0, 3000 ), 1 );
     level.doa.var_54c5c3e6 = undefined;
     wait 1;
-    arcademachine.org namespace_83eb6304::turnofffx("tesla_trail");
+    arcademachine.org namespace_83eb6304::turnofffx( "tesla_trail" );
     arcademachine.org delete();
     arcademachine delete();
 }

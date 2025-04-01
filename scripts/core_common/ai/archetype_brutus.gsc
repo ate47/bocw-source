@@ -9,10 +9,11 @@
 // Params 0, eflags: 0x1
 // Checksum 0x7ced4030, Offset: 0xa0
 // Size: 0x54
-function autoexec init() {
+function autoexec init()
+{
     brutusinterface::registerbrutusinterfaceattributes();
     registerbehaviorscriptfunctions();
-    spawner::add_archetype_spawn_function(#"brutus", &function_517fd069);
+    spawner::add_archetype_spawn_function( #"brutus", &function_517fd069 );
 }
 
 /#
@@ -20,9 +21,10 @@ function autoexec init() {
     // Namespace archetypebrutus/archetype_brutus
     // Params 0, eflags: 0x4
     // Checksum 0xa338ef4e, Offset: 0x100
-    // Size: 0x24
-    function private function_651f04c3() {
-        assert(isdefined(self.ai));
+    // Size: 0x24, Type: dev
+    function private function_651f04c3()
+    {
+        assert( isdefined( self.ai ) );
     }
 
 #/
@@ -31,9 +33,10 @@ function autoexec init() {
 // Params 0, eflags: 0x4
 // Checksum 0xe96b30f5, Offset: 0x130
 // Size: 0x62
-function private function_517fd069() {
-    blackboard::createblackboardforentity(self);
-    ai::createinterfaceforentity(self);
+function private function_517fd069()
+{
+    blackboard::createblackboardforentity( self );
+    ai::createinterfaceforentity( self );
     self.___archetypeonanimscriptedcallback = &function_666b2409;
     self.___archetypeonbehavecallback = &function_3cdbfffd;
 }
@@ -42,7 +45,8 @@ function private function_517fd069() {
 // Params 1, eflags: 0x4
 // Checksum 0xdaef7faf, Offset: 0x1a0
 // Size: 0xc
-function private function_3cdbfffd(*entity) {
+function private function_3cdbfffd( *entity )
+{
     
 }
 
@@ -50,7 +54,8 @@ function private function_3cdbfffd(*entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x955fe402, Offset: 0x1b8
 // Size: 0x2c
-function private function_666b2409(*entity) {
+function private function_666b2409( *entity )
+{
     self.__blackboard = undefined;
     self function_517fd069();
 }
@@ -59,7 +64,8 @@ function private function_666b2409(*entity) {
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x1f0
 // Size: 0x4
-function private registerbehaviorscriptfunctions() {
+function private registerbehaviorscriptfunctions()
+{
     
 }
 
@@ -68,10 +74,12 @@ function private registerbehaviorscriptfunctions() {
     // Namespace archetypebrutus/archetype_brutus
     // Params 1, eflags: 0x4
     // Checksum 0x6e797976, Offset: 0x200
-    // Size: 0x54
-    function private function_f9f08bb1(message) {
-        if (getdvarint(#"scr_brutusdebug", 0)) {
-            println("<dev string:x38>" + message);
+    // Size: 0x54, Type: dev
+    function private function_f9f08bb1( message )
+    {
+        if ( getdvarint( #"scr_brutusdebug", 0 ) )
+        {
+            println( "<dev string:x38>" + message );
         }
     }
 
@@ -81,8 +89,10 @@ function private registerbehaviorscriptfunctions() {
 // Params 4, eflags: 0x0
 // Checksum 0x352492e3, Offset: 0x260
 // Size: 0x44
-function function_f8aa76ea(entity, *attribute, *oldvalue, value) {
-    if (value) {
+function function_f8aa76ea( entity, *attribute, *oldvalue, value )
+{
+    if ( value )
+    {
         oldvalue function_d4c687c9();
     }
 }

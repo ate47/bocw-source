@@ -28,7 +28,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x138
 // Size: 0x4
-function init() {
+function init()
+{
     
 }
 
@@ -36,7 +37,8 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0xb60cd786, Offset: 0x148
 // Size: 0xc
-function function_32d5e898(*localclientnum) {
+function function_32d5e898( *localclientnum )
+{
     
 }
 

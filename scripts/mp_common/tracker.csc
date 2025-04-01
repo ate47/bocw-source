@@ -11,15 +11,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0x949a6fb2, Offset: 0xb0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"tracker", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"tracker", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace tracker/tracker
 // Params 0, eflags: 0x4
 // Checksum 0x98b8c2b9, Offset: 0xf8
 // Size: 0x14
-function private preinit() {
+function private preinit()
+{
     init_shared();
 }
 

@@ -30,23 +30,29 @@
 // Params 0, eflags: 0x0
 // Checksum 0x10be4304, Offset: 0x1a0
 // Size: 0xdc
-function init() {
-    clientfield::register("actor", "clone_activated", 1, 1, "int", &clone_activated, 0, 1);
-    clientfield::register("actor", "clone_damaged", 1, 1, "int", &clone_damaged, 0, 0);
-    clientfield::register("allplayers", "clone_activated", 1, 1, "int", &player_clone_activated, 0, 0);
+function init()
+{
+    clientfield::register( "actor", "clone_activated", 1, 1, "int", &clone_activated, 0, 1 );
+    clientfield::register( "actor", "clone_damaged", 1, 1, "int", &clone_damaged, 0, 0 );
+    clientfield::register( "allplayers", "clone_activated", 1, 1, "int", &player_clone_activated, 0, 0 );
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
 // Params 7, eflags: 0x0
 // Checksum 0xc338d9d3, Offset: 0x288
 // Size: 0x8c
-function clone_activated(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump) {
+function clone_activated( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump )
+    {
         self._isclone = 1;
-        if (isdefined(level._monitor_tracker)) {
-            self thread [[ level._monitor_tracker ]](fieldname);
+        
+        if ( isdefined( level._monitor_tracker ) )
+        {
+            self thread [[ level._monitor_tracker ]]( fieldname );
         }
-        self thread gadget_clone_render::transition_shader(fieldname);
+        
+        self thread gadget_clone_render::transition_shader( fieldname );
     }
 }
 
@@ -54,50 +60,60 @@ function clone_activated(localclientnum, *oldval, newval, *bnewent, *binitialsna
 // Params 7, eflags: 0x0
 // Checksum 0x916eca02, Offset: 0x320
 // Size: 0xac
-function player_clone_activated(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (!isdefined(self)) {
+function player_clone_activated( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( !isdefined( self ) )
+    {
         return;
     }
-    if (bwastimejump) {
-        self thread gadget_clone_render::transition_shader(fieldname);
+    
+    if ( bwastimejump )
+    {
+        self thread gadget_clone_render::transition_shader( fieldname );
         return;
     }
-    self notify(#"clone_shader_off");
-    self mapshaderconstant(fieldname, 0, "scriptVector3", 1, 0, 0, 1);
+    
+    self notify( #"clone_shader_off" );
+    self mapshaderconstant( fieldname, 0, "scriptVector3", 1, 0, 0, 1 );
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
 // Params 1, eflags: 0x0
 // Checksum 0x7549b940, Offset: 0x3d8
 // Size: 0x5a
-function clone_damage_flicker(*localclientnum) {
-    self endon(#"death");
-    self notify(#"start_flicker");
-    self endon(#"start_flicker");
-    self waittill(#"stop_flicker");
+function clone_damage_flicker( *localclientnum )
+{
+    self endon( #"death" );
+    self notify( #"start_flicker" );
+    self endon( #"start_flicker" );
+    self waittill( #"stop_flicker" );
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
 // Params 0, eflags: 0x0
 // Checksum 0xe3ef54fa, Offset: 0x440
 // Size: 0x56
-function clone_damage_finish() {
-    self endon(#"death");
-    self endon(#"start_flicker");
-    self endon(#"stop_flicker");
+function clone_damage_finish()
+{
+    self endon( #"death" );
+    self endon( #"start_flicker" );
+    self endon( #"stop_flicker" );
     wait 0.2;
-    self notify(#"stop_flicker");
+    self notify( #"stop_flicker" );
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
 // Params 7, eflags: 0x0
 // Checksum 0x408a9250, Offset: 0x4a0
 // Size: 0x74
-function clone_damaged(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump) {
-        self thread clone_damage_flicker(fieldname);
+function clone_damaged( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump )
+    {
+        self thread clone_damage_flicker( fieldname );
         return;
     }
+    
     self thread clone_damage_finish();
 }
 

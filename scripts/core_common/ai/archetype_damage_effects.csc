@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x1
 // Checksum 0x20b19007, Offset: 0xe8
 // Size: 0x14
-function autoexec main() {
+function autoexec main()
+{
     registerclientfields();
 }
 
@@ -17,32 +18,41 @@ function autoexec main() {
 // Params 0, eflags: 0x0
 // Checksum 0xa51fab38, Offset: 0x108
 // Size: 0x4c
-function registerclientfields() {
-    clientfield::register("actor", "arch_actor_fire_fx", 1, 2, "int", &actor_fire_fx, 0, 0);
+function registerclientfields()
+{
+    clientfield::register( "actor", "arch_actor_fire_fx", 1, 2, "int", &actor_fire_fx, 0, 0 );
 }
 
 // Namespace archetype_damage_effects/archetype_damage_effects
 // Params 7, eflags: 0x0
 // Checksum 0x15d52480, Offset: 0x160
 // Size: 0x19a
-function actor_fire_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self endon(#"death");
-    self util::waittill_dobj(fieldname);
-    switch (bwastimejump) {
-    case 0:
-        if (isdefined(self.activefx)) {
-            self stopallloopsounds(1);
-            foreach (fx in self.activefx) {
-                stopfx(fieldname, fx);
+function actor_fire_fx( localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    self endon( #"death" );
+    self util::waittill_dobj( fieldname );
+    
+    switch ( bwastimejump )
+    {
+        case 0:
+            if ( isdefined( self.activefx ) )
+            {
+                self stopallloopsounds( 1 );
+                
+                foreach ( fx in self.activefx )
+                {
+                    stopfx( fieldname, fx );
+                }
+                
+                self.activefx = [];
             }
-            self.activefx = [];
-        }
-        break;
-    case 1:
-    case 2:
-    case 3:
-        self.activefx = playtagfxset(fieldname, "weapon_hero_molotov_fire_3p", self);
-        break;
+            
+            break;
+        case 1:
+        case 2:
+        case 3:
+            self.activefx = playtagfxset( fieldname, "weapon_hero_molotov_fire_3p", self );
+            break;
     }
 }
 

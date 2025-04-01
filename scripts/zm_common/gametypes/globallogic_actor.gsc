@@ -14,17 +14,19 @@
 // Params 1, eflags: 0x0
 // Checksum 0x77d31302, Offset: 0xc8
 // Size: 0x3c
-function callback_actorspawned(spawner) {
-    self thread spawner::spawn_think(spawner);
-    bb::logaispawn(self, spawner);
+function callback_actorspawned( spawner )
+{
+    self thread spawner::spawn_think( spawner );
+    bb::logaispawn( self, spawner );
 }
 
 // Namespace globallogic_actor/globallogic_actor
 // Params 1, eflags: 0x0
 // Checksum 0x51c00440, Offset: 0x110
 // Size: 0x3c
-function callback_actorcloned(original) {
-    destructserverutils::copydestructstate(original, self);
-    gibserverutils::copygibstate(original, self);
+function callback_actorcloned( original )
+{
+    destructserverutils::copydestructstate( original, self );
+    gibserverutils::copygibstate( original, self );
 }
 

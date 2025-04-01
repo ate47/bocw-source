@@ -16,8 +16,9 @@
 // Params 0, eflags: 0x0
 // Checksum 0x87a93b6d, Offset: 0xe8
 // Size: 0x3a
-function setupattackproperties() {
-    self val::reset(#"attack_properties", "ignoreall");
+function setupattackproperties()
+{
+    self val::reset( #"attack_properties", "ignoreall" );
     self.meleeattackdist = 64;
 }
 
@@ -25,7 +26,8 @@ function setupattackproperties() {
 // Params 0, eflags: 0x0
 // Checksum 0x52984d6d, Offset: 0x130
 // Size: 0x3c
-function enteredplayablearea() {
+function enteredplayablearea()
+{
     self zm_spawner::zombie_complete_emerging_into_playable_area();
     self.pushable = 1;
     self setupattackproperties();

@@ -7,8 +7,10 @@
 // Params 1, eflags: 0x20
 // Checksum 0xd934819e, Offset: 0xa0
 // Size: 0x2a
-function event_handler[level_init] main(*eventstruct) {
-    if (util::get_map_name() !== "wz_russia") {
+function event_handler[level_init] main( *eventstruct )
+{
+    if ( util::get_map_name() !== "wz_russia" )
+    {
         return;
     }
 }

@@ -29,7 +29,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x140
 // Size: 0x4
-function init() {
+function init()
+{
     
 }
 
@@ -37,7 +38,8 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0xb60cd786, Offset: 0x150
 // Size: 0xc
-function function_32d5e898(*localclientnum) {
+function function_32d5e898( *localclientnum )
+{
     
 }
 
@@ -45,7 +47,8 @@ function function_32d5e898(*localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0xbde161df, Offset: 0x168
 // Size: 0x3c
-function function_86515c3b(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function function_86515c3b( *localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
     
 }
 

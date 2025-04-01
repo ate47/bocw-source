@@ -28,7 +28,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x138
 // Size: 0x4
-function init() {
+function init()
+{
     
 }
 
@@ -36,12 +37,16 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x5388bfc0, Offset: 0x148
 // Size: 0xba
-function function_2d3e0ee4() {
-    foreach (door in level.doa.var_a8a563fc) {
-        if (isdefined(door.model)) {
+function function_2d3e0ee4()
+{
+    foreach ( door in level.doa.var_a8a563fc )
+    {
+        if ( isdefined( door.model ) )
+        {
             door.model delete();
         }
     }
+    
     level.doa.var_a8a563fc = [];
 }
 
@@ -49,14 +54,19 @@ function function_2d3e0ee4() {
 // Params 0, eflags: 0x0
 // Checksum 0xa893064e, Offset: 0x210
 // Size: 0x13e
-function function_fabbde0d() {
-    foreach (door in level.doa.var_a8a563fc) {
-        var_c9d9522c = isdefined(door.model) ? door.model : door.script_string;
-        assert(isdefined(var_c9d9522c));
-        model = namespace_f63bdb08::function_2a1e5c1f(door.origin, door.angles, var_c9d9522c, undefined, 1, 2, door.script_parameters);
-        if (isdefined(door.model)) {
+function function_fabbde0d()
+{
+    foreach ( door in level.doa.var_a8a563fc )
+    {
+        var_c9d9522c = isdefined( door.model ) ? door.model : door.script_string;
+        assert( isdefined( var_c9d9522c ) );
+        model = namespace_f63bdb08::function_2a1e5c1f( door.origin, door.angles, var_c9d9522c, undefined, 1, 2, door.script_parameters );
+        
+        if ( isdefined( door.model ) )
+        {
             door.model delete();
         }
+        
         door.model = model;
     }
 }

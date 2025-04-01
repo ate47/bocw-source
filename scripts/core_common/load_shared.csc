@@ -11,16 +11,18 @@
 // Params 0, eflags: 0x5
 // Checksum 0x8781ce26, Offset: 0xd8
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"load", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"load", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace load/load_shared
 // Params 0, eflags: 0x0
 // Checksum 0x291e7f35, Offset: 0x120
 // Size: 0x34
-function main() {
-    assert(isdefined(level.var_f18a6bd6));
+function main()
+{
+    assert( isdefined( level.var_f18a6bd6 ) );
     [[ level.var_f18a6bd6 ]]();
 }
 
@@ -28,17 +30,25 @@ function main() {
 // Params 0, eflags: 0x4
 // Checksum 0xc69033f6, Offset: 0x160
 // Size: 0x8c
-function private preinit() {
-    if (sessionmodeiscampaigngame()) {
+function private preinit()
+{
+    if ( sessionmodeiscampaigngame() )
+    {
         level.game_mode_suffix = "_cp";
-    } else if (sessionmodeiszombiesgame()) {
+    }
+    else if ( sessionmodeiszombiesgame() )
+    {
         level.game_mode_suffix = "_zm";
-    } else {
+    }
+    else
+    {
         level.game_mode_suffix = "_mp";
     }
+    
     /#
         level thread first_frame();
     #/
+    
     apply_mature_filter();
 }
 
@@ -47,10 +57,11 @@ function private preinit() {
     // Namespace load/load_shared
     // Params 0, eflags: 0x0
     // Checksum 0x2989ad46, Offset: 0x1f8
-    // Size: 0x38
-    function first_frame() {
+    // Size: 0x38, Type: dev
+    function first_frame()
+    {
         level.first_frame = 1;
-        waitframe(1);
+        waitframe( 1 );
         level.first_frame = undefined;
         level.var_22944a63 = 1;
     }
@@ -61,11 +72,15 @@ function private preinit() {
 // Params 0, eflags: 0x0
 // Checksum 0xb2f16b99, Offset: 0x238
 // Size: 0xb8
-function apply_mature_filter() {
-    if (!util::is_mature()) {
-        a_mature_models = findstaticmodelindexarray("mature_content");
-        foreach (model in a_mature_models) {
-            hidestaticmodel(model);
+function apply_mature_filter()
+{
+    if ( !util::is_mature() )
+    {
+        a_mature_models = findstaticmodelindexarray( "mature_content" );
+        
+        foreach ( model in a_mature_models )
+        {
+            hidestaticmodel( model );
         }
     }
 }
@@ -74,9 +89,11 @@ function apply_mature_filter() {
 // Params 0, eflags: 0x0
 // Checksum 0x3a6dec54, Offset: 0x2f8
 // Size: 0x3c
-function art_review() {
-    if (getdvarint(#"art_review", 0)) {
-        level waittill(#"forever");
+function art_review()
+{
+    if ( getdvarint( #"art_review", 0 ) )
+    {
+        level waittill( #"forever" );
     }
 }
 

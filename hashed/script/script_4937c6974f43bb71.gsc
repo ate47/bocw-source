@@ -7,9 +7,10 @@
 // Params 3, eflags: 0x0
 // Checksum 0xf23dee38, Offset: 0x120
 // Size: 0x84
-function fade(var_564144a4, var_b8e08e16 = "FadeImmediate", var_ee0e1f8 = 0) {
-    globallogic_ui::function_9ed5232e("hudItems.cpHudFadeControl.fadeSpeed", var_b8e08e16);
-    globallogic_ui::function_9ed5232e("hudItems.cpHudFadeControl.customFadeSpeed", var_ee0e1f8);
-    globallogic_ui::function_9ed5232e("hudItems.cpHudFadeControl.doFadeOut", var_564144a4);
+function fade( var_564144a4, var_b8e08e16 = "FadeImmediate", var_ee0e1f8 = 0 )
+{
+    globallogic_ui::function_9ed5232e( "hudItems.cpHudFadeControl.fadeSpeed", var_b8e08e16 );
+    globallogic_ui::function_9ed5232e( "hudItems.cpHudFadeControl.customFadeSpeed", var_ee0e1f8 );
+    globallogic_ui::function_9ed5232e( "hudItems.cpHudFadeControl.doFadeOut", var_564144a4 );
 }
 

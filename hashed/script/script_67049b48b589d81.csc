@@ -28,12 +28,16 @@
 // Params 2, eflags: 0x0
 // Checksum 0x4650e45, Offset: 0x158
 // Size: 0x8c
-function function_73d79e7d(parent, offset = (0, 0, 0)) {
-    self endon(#"entityshutdown", #"death");
-    while (isdefined(parent)) {
+function function_73d79e7d( parent, offset = ( 0, 0, 0 ) )
+{
+    self endon( #"entityshutdown", #"death" );
+    
+    while ( isdefined( parent ) )
+    {
         self.origin = parent.origin + offset;
-        waitframe(1);
+        waitframe( 1 );
     }
+    
     self delete();
 }
 
@@ -41,21 +45,33 @@ function function_73d79e7d(parent, offset = (0, 0, 0)) {
 // Params 2, eflags: 0x0
 // Checksum 0xa1db2625, Offset: 0x1f0
 // Size: 0xb4
-function function_d55f042c(other, note) {
-    if (!isdefined(other)) {
+function function_d55f042c( other, note )
+{
+    if ( !isdefined( other ) )
+    {
         return;
     }
-    self endon(#"entityshutdown", #"death");
-    if (isplayer(other)) {
-        if (note == "disconnect") {
-            other waittill(note);
-        } else {
-            other waittill(note, #"disconnect");
+    
+    self endon( #"entityshutdown", #"death" );
+    
+    if ( isplayer( other ) )
+    {
+        if ( note == "disconnect" )
+        {
+            other waittill( note );
         }
-    } else {
-        other waittill(note);
+        else
+        {
+            other waittill( note, #"disconnect" );
+        }
     }
-    if (isdefined(self)) {
+    else
+    {
+        other waittill( note );
+    }
+    
+    if ( isdefined( self ) )
+    {
         self delete();
     }
 }
@@ -64,17 +80,25 @@ function function_d55f042c(other, note) {
 // Params 5, eflags: 0x0
 // Checksum 0xbb401297, Offset: 0x2b0
 // Size: 0xc2
-function spawnmodel(localclientnum, origin, modelname = "tag_origin", angles, targetname) {
-    if (!function_3238d10d(origin)) {
+function spawnmodel( localclientnum, origin, modelname = "tag_origin", angles, targetname )
+{
+    if ( !validateorigin( origin ) )
+    {
         return;
     }
-    if (getnumfreeentities(localclientnum) <= 0) {
+    
+    if ( getnumfreeentities( localclientnum ) <= 0 )
+    {
         return;
     }
-    mdl = util::spawn_model(localclientnum, modelname, origin, angles);
-    if (isdefined(mdl) && isdefined(targetname)) {
+    
+    mdl = util::spawn_model( localclientnum, modelname, origin, angles );
+    
+    if ( isdefined( mdl ) && isdefined( targetname ) )
+    {
         mdl.targetname = targetname;
     }
+    
     return mdl;
 }
 

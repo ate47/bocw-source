@@ -8,17 +8,19 @@
 // Params 0, eflags: 0x5
 // Checksum 0x8aa35b0d, Offset: 0xd8
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"globallogic_ui", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"globallogic_ui", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace globallogic_ui/globallogic_ui
 // Params 0, eflags: 0x4
 // Checksum 0x3f61d04d, Offset: 0x120
 // Size: 0xb4
-function private preinit() {
-    clientfield::register_clientuimodel("hudItems.playerInCombat", #"hud_items", #"hash_9f530669e6c8547", 1, 1, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.serverDifficulty", #"hud_items", #"hash_60ba5c277db66bc7", 1, 3, "int", undefined, 0, 0);
+function private preinit()
+{
+    clientfield::register_clientuimodel( "hudItems.playerInCombat", #"hud_items", #"playerincombat", 1, 1, "int", undefined, 0, 0 );
+    clientfield::register_clientuimodel( "hudItems.serverDifficulty", #"hud_items", #"serverdifficulty", 1, 3, "int", undefined, 0, 0 );
     function_11bcbb57();
 }
 
@@ -26,7 +28,8 @@ function private preinit() {
 // Params 0, eflags: 0x0
 // Checksum 0x820ea654, Offset: 0x1e0
 // Size: 0x14
-function function_11bcbb57() {
+function function_11bcbb57()
+{
     cp_chyron::register();
 }
 

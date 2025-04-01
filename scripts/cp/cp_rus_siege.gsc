@@ -27,28 +27,33 @@
 // Params 1, eflags: 0x20
 // Checksum 0xbeb5f9df, Offset: 0x3a8
 // Size: 0x1ae
-function event_handler[level_init] main(*eventstruct) {
-    setclearanceceiling(16);
+function event_handler[level_init] main( *eventstruct )
+{
+    setclearanceceiling( 16 );
     preload();
     function_37dfd679();
     load::main();
     profilestart();
+    
     /#
         level.disablestattracking = 1;
     #/
-    level flag::set("no_corpse_pickup ");
-    setdvar(#"compassmaxrange", "2100");
-    callback::on_spawned(&namespace_534279a::function_6e9256df);
+    
+    level flag::set( "no_corpse_pickup " );
+    setdvar( #"compassmaxrange", "2100" );
+    callback::on_spawned( &namespace_534279a::function_6e9256df );
     hms_util::function_2f3616f8();
     level thread namespace_9e5ef376::blocker_init();
     level thread namespace_534279a::function_ce0f72f4();
-    level thread namespace_604e2e22::function_1e2a0690("aa_parapet", "parapet_aa_gunner", "scene_sge_0000_ambient_aa_gun_graveyard");
-    level thread namespace_604e2e22::function_b9170a35("aa_north");
-    level thread namespace_604e2e22::function_b9170a35("aa_west");
+    level thread namespace_604e2e22::function_1e2a0690( "aa_parapet", "parapet_aa_gunner", "scene_sge_0000_ambient_aa_gun_graveyard" );
+    level thread namespace_604e2e22::function_b9170a35( "aa_north" );
+    level thread namespace_604e2e22::function_b9170a35( "aa_west" );
+    
     /#
         level thread hms_util::function_32397759();
         level thread hms_util::function_5056f90d();
     #/
+    
     profilestop();
 }
 
@@ -56,7 +61,8 @@ function event_handler[level_init] main(*eventstruct) {
 // Params 1, eflags: 0x24
 // Checksum 0x5c65cc7, Offset: 0x560
 // Size: 0x24
-function private event_handler[checkpoint_restore] function_83a031fd(*eventstruct) {
+function private event_handler[checkpoint_restore] function_83a031fd( *eventstruct )
+{
     level thread namespace_ce17746::function_91d00da9();
 }
 
@@ -64,32 +70,35 @@ function private event_handler[checkpoint_restore] function_83a031fd(*eventstruc
 // Params 0, eflags: 0x0
 // Checksum 0x8fe2bb55, Offset: 0x590
 // Size: 0xc4
-function preload() {
-    clientfield::register("scriptmover", "radar_fx", 1, 1, "int");
-    clientfield::register("toplayer", "bullet_hit", 1, 1, "int");
-    clientfield::register("actor", "toggle_bone_constraint", 1, 1, "int");
-    clientfield::register("toplayer", "stream_intro_assets", 1, 1, "int");
+function preload()
+{
+    clientfield::register( "scriptmover", "radar_fx", 1, 1, "int" );
+    clientfield::register( "toplayer", "bullet_hit", 1, 1, "int" );
+    clientfield::register( "actor", "toggle_bone_constraint", 1, 1, "int" );
+    clientfield::register( "toplayer", "stream_intro_assets", 1, 1, "int" );
 }
 
 // Namespace cp_rus_siege/cp_rus_siege
 // Params 0, eflags: 0x0
 // Checksum 0x923c2516, Offset: 0x660
 // Size: 0x5cc
-function function_37dfd679() {
-    skipto::function_eb91535d("infil", &namespace_ce17746::main, &namespace_ce17746::starting, "Infil", &namespace_ce17746::cleanup, "interior_cathedral_01");
-    skipto::function_eb91535d("emp_flash", &namespace_b11c1856::main, &namespace_b11c1856::starting, "EMP", &namespace_b11c1856::cleanup, "vista_buildings_main_street");
-    skipto::function_eb91535d("courtyard", &namespace_9e5ef376::function_802a0aed, &namespace_9e5ef376::function_abfa576, "Courtyard", &namespace_9e5ef376::function_77335d30, ["west_wall_blockout", "st_nicholas_church_02", "bell_tower_complete", "church_back_tower_01", "chapel", "interior_cathedral_01"]);
-    skipto::function_eb91535d("catacombs", &namespace_c34cd176::function_41e4735f, &namespace_c34cd176::function_25a6167c, "Catacombs", &namespace_c34cd176::function_fa1a97a3, ["catacombs", "west_wall_blockout", "st_nicholas_church_02", "bell_tower_complete", "church_back_tower_01", "chapel", "interior_cathedral_01"]);
-    skipto::function_eb91535d("graveyard", &namespace_9940c067::function_8b10d19c, &namespace_9940c067::function_d7e02379, "Graveyard", &namespace_9940c067::function_cdf0a865, ["catacombs", "graveyard", "graveyard_extra_structures", "radar_towers", "chapel", "interior_cathedral_01"]);
-    skipto::function_eb91535d("outro", &namespace_9e5ef376::outro_main, &namespace_9e5ef376::function_4b8cec86, "Outro", &namespace_9e5ef376::outro_cleanup, ["ending_geo", "graveyard", "graveyard_extra_structures", "radar_towers"]);
-    skipto::function_eb91535d("looseends", &namespace_ef60e103::function_2435d3e, &namespace_ef60e103::function_7ab616c1, "Loose Ends", &namespace_ef60e103::function_8f77588);
+function function_37dfd679()
+{
+    skipto::function_eb91535d( "infil", &namespace_ce17746::main, &namespace_ce17746::starting, "Infil", &namespace_ce17746::cleanup, "interior_cathedral_01" );
+    skipto::function_eb91535d( "emp_flash", &namespace_b11c1856::main, &namespace_b11c1856::starting, "EMP", &namespace_b11c1856::cleanup, "vista_buildings_main_street" );
+    skipto::function_eb91535d( "courtyard", &namespace_9e5ef376::function_802a0aed, &namespace_9e5ef376::function_abfa576, "Courtyard", &namespace_9e5ef376::function_77335d30, [ "west_wall_blockout", "st_nicholas_church_02", "bell_tower_complete", "church_back_tower_01", "chapel", "interior_cathedral_01" ] );
+    skipto::function_eb91535d( "catacombs", &namespace_c34cd176::function_41e4735f, &namespace_c34cd176::function_25a6167c, "Catacombs", &namespace_c34cd176::function_fa1a97a3, [ "catacombs", "west_wall_blockout", "st_nicholas_church_02", "bell_tower_complete", "church_back_tower_01", "chapel", "interior_cathedral_01" ] );
+    skipto::function_eb91535d( "graveyard", &namespace_9940c067::function_8b10d19c, &namespace_9940c067::function_d7e02379, "Graveyard", &namespace_9940c067::function_cdf0a865, [ "catacombs", "graveyard", "graveyard_extra_structures", "radar_towers", "chapel", "interior_cathedral_01" ] );
+    skipto::function_eb91535d( "outro", &namespace_9e5ef376::outro_main, &namespace_9e5ef376::function_4b8cec86, "Outro", &namespace_9e5ef376::outro_cleanup, [ "ending_geo", "graveyard", "graveyard_extra_structures", "radar_towers" ] );
+    skipto::function_eb91535d( "looseends", &namespace_ef60e103::function_2435d3e, &namespace_ef60e103::function_7ab616c1, "Loose Ends", &namespace_ef60e103::function_8f77588 );
+    
     /#
-        level.var_965c6227[#"infil"] = ["<dev string:x38>", "<dev string:x41>", "<dev string:x4c>", "<dev string:x56>"];
-        level.var_965c6227[#"emp_flash"] = ["<dev string:x62>", "<dev string:x41>", "<dev string:x69>", "<dev string:x56>"];
-        level.var_965c6227[#"Courtyard"] = ["<dev string:x72>", "<dev string:x7f>", "<dev string:x4c>", "<dev string:x56>"];
-        level.var_965c6227[#"hash_290c103dfab4ef4f"] = ["<dev string:x89>", "<dev string:x7f>", "<dev string:x97>", "<dev string:x56>"];
-        level.var_965c6227[#"outro"] = ["<dev string:x9f>", "<dev string:x7f>", "<dev string:x69>", "<dev string:x56>"];
-        level.var_965c6227[#"hash_9ed59b801f5827f"] = ["<dev string:xa8>", "<dev string:x7f>", "<dev string:x69>", "<dev string:x56>"];
+        level.var_965c6227[ #"infil" ] = [ "<dev string:x38>", "<dev string:x41>", "<dev string:x4c>", "<dev string:x56>" ];
+        level.var_965c6227[ #"emp_flash" ] = [ "<dev string:x62>", "<dev string:x41>", "<dev string:x69>", "<dev string:x56>" ];
+        level.var_965c6227[ #"Courtyard" ] = [ "<dev string:x72>", "<dev string:x7f>", "<dev string:x4c>", "<dev string:x56>" ];
+        level.var_965c6227[ #"hash_290c103dfab4ef4f" ] = [ "<dev string:x89>", "<dev string:x7f>", "<dev string:x97>", "<dev string:x56>" ];
+        level.var_965c6227[ #"outro" ] = [ "<dev string:x9f>", "<dev string:x7f>", "<dev string:x69>", "<dev string:x56>" ];
+        level.var_965c6227[ #"hash_9ed59b801f5827f" ] = [ "<dev string:xa8>", "<dev string:x7f>", "<dev string:x69>", "<dev string:x56>" ];
     #/
 }
 
@@ -97,15 +106,17 @@ function function_37dfd679() {
 // Params 0, eflags: 0x0
 // Checksum 0xe2443ce5, Offset: 0xc38
 // Size: 0x24
-function function_689c12cc() {
-    self clientfield::set("radar_fx", 1);
+function function_689c12cc()
+{
+    self clientfield::set( "radar_fx", 1 );
 }
 
 // Namespace cp_rus_siege/cp_rus_siege
 // Params 0, eflags: 0x0
 // Checksum 0xeab46ecc, Offset: 0xc68
 // Size: 0x24
-function function_557003b4() {
-    self clientfield::set("radar_fx", 0);
+function function_557003b4()
+{
+    self clientfield::set( "radar_fx", 0 );
 }
 

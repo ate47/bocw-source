@@ -1,7 +1,6 @@
 #using script_1ba01e8491ed7a4c;
 #using script_290b454abd681dd4;
 #using script_5513c8efed5ff300;
-#using script_5c61e20c89cabf93;
 #using script_6daaa06aadd7d155;
 #using script_7409560e3a0c9884;
 #using script_7db4d4b76c28f07c;
@@ -17,6 +16,7 @@
 #using scripts\core_common\player\player_role;
 #using scripts\core_common\util_shared;
 #using scripts\core_common\vehicle_shared;
+#using scripts\cp_common\ammo_perks;
 #using scripts\cp_common\skipto;
 #using scripts\cp_common\util;
 #using scripts\killstreaks\killstreaks_util;
@@ -27,37 +27,40 @@
 // Params 1, eflags: 0x20
 // Checksum 0xb1ff7540, Offset: 0x228
 // Size: 0x174
-function event_handler[level_init] main(*eventstruct) {
-    setclearanceceiling(16);
+function event_handler[level_init] main( *eventstruct )
+{
+    setclearanceceiling( 16 );
     init_clientfields();
     function_37dfd679();
-    setdvar(#"hkai_pathfinditerationlimit", 5000);
+    setdvar( #"hkai_pathfinditerationlimit", 5000 );
     load::main();
     init_callbacks();
-    level.player = getplayers()[0];
+    level.player = getplayers()[ 0 ];
     level.var_30eb363 = #"hash_4e516e60f6798859";
     level.var_85b00b2b = #"hash_67c0d8cb1c978161";
-    level.var_3ff1b984[getweapon(#"ac130")] = 1;
-    setdvar(#"compassmaxrange", "2100");
-    vehicle::add_spawn_function_by_type("vehicle_t9_mil_ru_truck_light_cp_canvas_top", &util::delay, 1, undefined, &setteam, "axis");
+    level.var_3ff1b984[ getweapon( #"ac130" ) ] = 1;
+    setdvar( #"compassmaxrange", "2100" );
+    vehicle::add_spawn_function_by_type( "vehicle_t9_mil_ru_truck_light_cp_canvas_top", &util::delay, 1, undefined, &setteam, "axis" );
 }
 
 // Namespace cp_sidemission_tundra/cp_sidemission_tundra
 // Params 0, eflags: 0x0
 // Checksum 0xa36c9eed, Offset: 0x3a8
 // Size: 0x144
-function function_37dfd679() {
-    skipto::function_eb91535d("tundra_intro", &namespace_4e717b5b::intro_main, &namespace_4e717b5b::function_ae18fec1, "tundra_intro", &namespace_4e717b5b::cleanup);
-    skipto::add_dev("dev_vip_active", &namespace_da32b76a::function_baff9422, &namespace_da32b76a::function_c17355e, "dev_vip_active", undefined, undefined, "tundra_combat");
-    skipto::function_eb91535d("tundra_combat", &namespace_da32b76a::function_bf8d2448, &namespace_da32b76a::function_c17355e, "tundra_combat", &namespace_da32b76a::cleanup);
-    skipto::function_eb91535d("tundra_outro", &namespace_19fc4094::outro_main, &namespace_19fc4094::function_4b8cec86, "tundra_outro", &namespace_19fc4094::cleanup);
+function function_37dfd679()
+{
+    skipto::function_eb91535d( "tundra_intro", &namespace_4e717b5b::intro_main, &namespace_4e717b5b::function_ae18fec1, "tundra_intro", &namespace_4e717b5b::cleanup );
+    skipto::add_dev( "dev_vip_active", &namespace_da32b76a::function_baff9422, &namespace_da32b76a::function_c17355e, "dev_vip_active", undefined, undefined, "tundra_combat" );
+    skipto::function_eb91535d( "tundra_combat", &namespace_da32b76a::function_bf8d2448, &namespace_da32b76a::function_c17355e, "tundra_combat", &namespace_da32b76a::cleanup );
+    skipto::function_eb91535d( "tundra_outro", &namespace_19fc4094::outro_main, &namespace_19fc4094::function_4b8cec86, "tundra_outro", &namespace_19fc4094::cleanup );
 }
 
 // Namespace cp_sidemission_tundra/cp_sidemission_tundra
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x4f8
 // Size: 0x4
-function init_clientfields() {
+function init_clientfields()
+{
     
 }
 
@@ -65,21 +68,25 @@ function init_clientfields() {
 // Params 0, eflags: 0x0
 // Checksum 0xe047ec6b, Offset: 0x508
 // Size: 0x44
-function init_callbacks() {
-    callback::on_spawned(&function_283abac2);
-    callback::on_actor_killed(&namespace_ba979a10::function_ead0a373);
+function init_callbacks()
+{
+    callback::on_spawned( &function_283abac2 );
+    callback::on_actor_killed( &namespace_ba979a10::function_ead0a373 );
 }
 
 // Namespace cp_sidemission_tundra/cp_sidemission_tundra
 // Params 0, eflags: 0x0
 // Checksum 0xd829c78b, Offset: 0x558
 // Size: 0xb4
-function function_283abac2() {
-    if (skipto::function_c0f982ff()[0] === "tundra_intro") {
+function function_283abac2()
+{
+    if ( skipto::function_c0f982ff()[ 0 ] === "tundra_intro" )
+    {
         level.var_a7b99722 = "finish_tundra_initial_black";
     }
-    self setcharacterbodytype(1);
-    self setcharacteroutfit(6);
+    
+    self setcharacterbodytype( 1 );
+    self setcharacteroutfit( 6 );
     self.var_9d386cb9 = "Mason";
     self thread namespace_ba979a10::function_b1ea4c94();
     self function_2b05a144();
@@ -90,18 +97,22 @@ function function_283abac2() {
 // Params 0, eflags: 0x0
 // Checksum 0xef4cbd51, Offset: 0x618
 // Size: 0x1fc
-function function_2b05a144() {
+function function_2b05a144()
+{
     var_4f2ba130 = self getweaponslist();
-    foreach (e_w in var_4f2ba130) {
-        self takeweapon(e_w);
+    
+    foreach ( e_w in var_4f2ba130 )
+    {
+        self takeweapon( e_w );
     }
-    level.var_f0935a68 = getweapon(#"ar_standard_t9", "acog", "heavy", "grip", "extclip", "steadyaim");
-    var_2105d8b1 = getweapon(#"sniper_quickscope_t9", "heavy", "fastreload", "compensator");
-    self giveweapon(level.var_f0935a68);
-    self giveweapon(var_2105d8b1);
-    self switchtoweapon(level.var_f0935a68);
-    self givemaxammo(level.var_f0935a68);
-    self givemaxammo(var_2105d8b1);
+    
+    level.var_f0935a68 = getweapon( #"ar_standard_t9", "acog", "heavy", "grip", "extclip", "steadyaim" );
+    var_2105d8b1 = getweapon( #"sniper_quickscope_t9", "heavy", "fastreload", "compensator" );
+    self giveweapon( level.var_f0935a68 );
+    self giveweapon( var_2105d8b1 );
+    self switchtoweapon( level.var_f0935a68 );
+    self givemaxammo( level.var_f0935a68 );
+    self givemaxammo( var_2105d8b1 );
     self thread function_f32834b0();
     self thread function_1e41c00b();
 }
@@ -110,12 +121,15 @@ function function_2b05a144() {
 // Params 0, eflags: 0x0
 // Checksum 0x94fad29b, Offset: 0x820
 // Size: 0x84
-function function_f32834b0() {
-    frag = getweapon(#"frag_grenade");
+function function_f32834b0()
+{
+    frag = getweapon( #"frag_grenade" );
     player = self;
-    if (!self hasweapon(frag)) {
-        self giveweapon(frag);
-        self givemaxammo(frag);
+    
+    if ( !self hasweapon( frag ) )
+    {
+        self giveweapon( frag );
+        self givemaxammo( frag );
     }
 }
 
@@ -123,11 +137,14 @@ function function_f32834b0() {
 // Params 0, eflags: 0x0
 // Checksum 0xe4f8d326, Offset: 0x8b0
 // Size: 0x74
-function function_1e41c00b() {
-    flash = getweapon(#"willy_pete");
-    if (!self hasweapon(flash)) {
-        self giveweapon(flash);
-        self givemaxammo(flash);
+function function_1e41c00b()
+{
+    flash = getweapon( #"willy_pete" );
+    
+    if ( !self hasweapon( flash ) )
+    {
+        self giveweapon( flash );
+        self givemaxammo( flash );
     }
 }
 

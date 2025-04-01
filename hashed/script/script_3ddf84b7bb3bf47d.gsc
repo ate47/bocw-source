@@ -6,11 +6,14 @@
 // Params 0, eflags: 0x0
 // Checksum 0x6e23a5ea, Offset: 0xb8
 // Size: 0x5c
-function preinit() {
-    if (isdefined(level.var_6b33db60)) {
+function preinit()
+{
+    if ( isdefined( level.var_6b33db60 ) )
+    {
         return;
     }
+    
     level.var_6b33db60 = 1;
-    level clientfield::register("scriptmover", "item_machine_spawn_rob", 1, 1, "int");
+    level clientfield::register( "scriptmover", "item_machine_spawn_rob", 1, 1, "int" );
 }
 

@@ -1,4 +1,3 @@
-#using script_4266a5d281c65453;
 #using scripts\core_common\callbacks_shared;
 #using scripts\core_common\globallogic\globallogic_vehicle;
 #using scripts\core_common\system_shared;
@@ -6,6 +5,7 @@
 #using scripts\cp_common\gametypes\globallogic;
 #using scripts\cp_common\gametypes\globallogic_actor;
 #using scripts\cp_common\gametypes\globallogic_player;
+#using scripts\cp_common\gametypes\globallogic_scriptmover;
 #using scripts\weapons\deployable;
 
 #namespace callback;
@@ -14,15 +14,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0x2f5016a8, Offset: 0xd0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"callback", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"callback", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x4
 // Checksum 0xf6c31ded, Offset: 0x118
 // Size: 0x14
-function private preinit() {
+function private preinit()
+{
     set_default_callbacks();
 }
 
@@ -30,31 +32,35 @@ function private preinit() {
 // Params 2, eflags: 0x0
 // Checksum 0xc5bdb3f1, Offset: 0x138
 // Size: 0x3c
-function function_8a0395cd(func, obj) {
-    function_d8abfc3d(#"hash_31c83c1c404a846b", func, obj);
+function function_8a0395cd( func, obj )
+{
+    function_d8abfc3d( #"hash_31c83c1c404a846b", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x3edf1371, Offset: 0x180
 // Size: 0x3c
-function function_b9e4759f(func, obj) {
-    function_52ac9652(#"hash_31c83c1c404a846b", func, obj);
+function function_b9e4759f( func, obj )
+{
+    function_52ac9652( #"hash_31c83c1c404a846b", func, obj );
 }
 
 // Namespace callback/event_bcae220e
 // Params 1, eflags: 0x20
 // Checksum 0x8223909e, Offset: 0x1c8
 // Size: 0x2c
-function event_handler[event_bcae220e] function_980de2d1(eventstruct) {
-    self callback(#"hash_31c83c1c404a846b", eventstruct);
+function event_handler[event_bcae220e] function_980de2d1( eventstruct )
+{
+    self callback( #"hash_31c83c1c404a846b", eventstruct );
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x0
 // Checksum 0x614efb7d, Offset: 0x200
 // Size: 0x20c
-function set_default_callbacks() {
+function set_default_callbacks()
+{
     level.callbackstartgametype = &globallogic::callback_startgametype;
     level.callbackplayerconnect = &globallogic_player::callback_playerconnect;
     level.callbackplayerdisconnect = &globallogic_player::callback_playerdisconnect;

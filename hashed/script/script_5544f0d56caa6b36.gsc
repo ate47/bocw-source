@@ -25,21 +25,24 @@
 // Params 0, eflags: 0x5
 // Checksum 0xb96a6957, Offset: 0x120
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"hash_75aa82b3ae89f54e", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"hash_75aa82b3ae89f54e", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace namespace_89fd9b3e/namespace_89fd9b3e
 // Params 0, eflags: 0x4
 // Checksum 0xc61323a2, Offset: 0x168
 // Size: 0x9c
-function private preinit() {
-    if (util::get_game_type() === #"hash_75aa82b3ae89f54e") {
+function private preinit()
+{
+    if ( util::get_game_type() === #"hash_75aa82b3ae89f54e" )
+    {
         level.var_612d6a21 = 1;
         level.var_51514f45 = 0.25;
         level.var_e2fec446 = 0.25;
         level.var_12f3d2fc = 0.5;
-        callback::add_callback(#"hash_7852c3cae4d4082a", &function_2d9abf0f);
+        callback::add_callback( #"hash_7852c3cae4d4082a", &function_2d9abf0f );
     }
 }
 
@@ -47,10 +50,13 @@ function private preinit() {
 // Params 0, eflags: 0x0
 // Checksum 0xb085fa4c, Offset: 0x210
 // Size: 0xc0
-function function_2d9abf0f() {
-    if (getdvarint(#"hash_505f9e51193386d9", 0)) {
-        foreach (player in getplayers()) {
-            player zm_stats::increment_challenge_stat(#"hash_3551fbb8f9272df6");
+function function_2d9abf0f()
+{
+    if ( getdvarint( #"hash_505f9e51193386d9", 0 ) )
+    {
+        foreach ( player in getplayers() )
+        {
+            player zm_stats::increment_challenge_stat( #"hash_3551fbb8f9272df6" );
         }
     }
 }

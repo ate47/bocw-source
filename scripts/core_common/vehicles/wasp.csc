@@ -9,19 +9,23 @@
 // Params 0, eflags: 0x5
 // Checksum 0xfeb5455, Offset: 0xe8
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"wasp", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"wasp", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace wasp/wasp
 // Params 0, eflags: 0x4
 // Checksum 0xc543dc18, Offset: 0x130
 // Size: 0xac
-function private preinit() {
-    clientfield::register("vehicle", "rocket_wasp_hijacked", 1, 1, "int", &handle_lod_display_for_driver, 0, 0);
-    level.sentinelbundle = getscriptbundle("killstreak_sentinel");
-    if (isdefined(level.sentinelbundle)) {
-        vehicle::add_vehicletype_callback(level.sentinelbundle.ksvehicle, &spawned);
+function private preinit()
+{
+    clientfield::register( "vehicle", "rocket_wasp_hijacked", 1, 1, "int", &handle_lod_display_for_driver, 0, 0 );
+    level.sentinelbundle = getscriptbundle( "killstreak_sentinel" );
+    
+    if ( isdefined( level.sentinelbundle ) )
+    {
+        vehicle::add_vehicletype_callback( level.sentinelbundle.ksvehicle, &spawned );
     }
 }
 
@@ -29,7 +33,8 @@ function private preinit() {
 // Params 1, eflags: 0x0
 // Checksum 0x8117659f, Offset: 0x1e8
 // Size: 0x1e
-function spawned(*localclientnum) {
+function spawned( *localclientnum )
+{
     self.killstreakbundle = level.sentinelbundle;
 }
 
@@ -37,13 +42,17 @@ function spawned(*localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0x10efe27, Offset: 0x210
 // Size: 0xa4
-function handle_lod_display_for_driver(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self endon(#"death");
-    if (isdefined(self)) {
-        if (self function_4add50a7()) {
-            self sethighdetail(1);
-            waitframe(1);
-            self vehicle::lights_off(bwastimejump);
+function handle_lod_display_for_driver( localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    self endon( #"death" );
+    
+    if ( isdefined( self ) )
+    {
+        if ( self function_4add50a7() )
+        {
+            self sethighdetail( 1 );
+            waitframe( 1 );
+            self vehicle::lights_off( bwastimejump );
         }
     }
 }

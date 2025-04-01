@@ -18,7 +18,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x93a7581f, Offset: 0x108
 // Size: 0x1c
-function init() {
-    function_cae618b4("spawner_zombietron_crawler");
+function init()
+{
+    function_cae618b4( "spawner_zombietron_crawler" );
 }
 

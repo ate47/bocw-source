@@ -2,19 +2,14 @@
 #using script_1cf95a746cd3f159;
 #using script_249ad86aa2dfe47b;
 #using script_2e03cad685678246;
-#using script_32399001bdb550da;
 #using script_32a61480150c683;
 #using script_37f9d93127300ffe;
-#using script_44b80b0107caf36c;
-#using script_4ae261b2785dda9f;
-#using script_4ccd0c3512b52a10;
 #using script_5513c8efed5ff300;
 #using script_5a7c9cfbe3d9580c;
 #using script_5d2b67be820bed1a;
 #using script_6197a9cdaa8affb5;
 #using script_61fee52bb750ac99;
 #using script_683d0089d435e1fe;
-#using script_6ee68b6afcbff255;
 #using script_7d45a9db3b7a66b2;
 #using script_90d212a8f2df0eb;
 #using script_93de924cdc949f;
@@ -40,10 +35,15 @@
 #using scripts\core_common\util_shared;
 #using scripts\core_common\values_shared;
 #using scripts\cp\cp_nam_prisoner_fx;
+#using scripts\cp\cp_nam_prisoner_rat_tunnels;
 #using scripts\cp_common\dialogue;
 #using scripts\cp_common\gametypes\battlechatter;
+#using scripts\cp_common\gametypes\save;
 #using scripts\cp_common\objectives;
+#using scripts\cp_common\objectives_ui;
+#using scripts\cp_common\player_decision;
 #using scripts\cp_common\skipto;
+#using scripts\cp_common\smart_bundle;
 #using scripts\cp_common\util;
 
 #namespace cp_nam_prisoner;
@@ -52,163 +52,187 @@
 // Params 1, eflags: 0x24
 // Checksum 0xcbd6d6d5, Offset: 0x1118
 // Size: 0x22c
-function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_7a2f53d3, k in ["vfx_ambientwar_group_id"]) {
-        if (!isdefined(level.var_41204f29)) {
+function private event_handler[createstruct] function_e0a8e4ba( struct )
+{
+    foreach ( var_7a2f53d3, k in [ "vfx_ambientwar_group_id" ] )
+    {
+        if ( !isdefined( level.var_41204f29 ) )
+        {
             level.var_41204f29 = [];
-        } else if (!isarray(level.var_41204f29)) {
-            level.var_41204f29 = array(level.var_41204f29);
         }
-        if (!isinarray(level.var_41204f29, tolower(k))) {
-            level.var_41204f29[level.var_41204f29.size] = tolower(k);
+        else if ( !isarray( level.var_41204f29 ) )
+        {
+            level.var_41204f29 = array( level.var_41204f29 );
+        }
+        
+        if ( !isinarray( level.var_41204f29, tolower( k ) ) )
+        {
+            level.var_41204f29[ level.var_41204f29.size ] = tolower( k );
         }
     }
-    level.var_5e990e96 = arraycopy(level.var_41204f29);
-    if (isdefined(level.struct)) {
-        temp = arraycopy(level.struct);
+    
+    level.var_5e990e96 = arraycopy( level.var_41204f29 );
+    
+    if ( isdefined( level.struct ) )
+    {
+        temp = arraycopy( level.struct );
         level.struct = [];
-        foreach (struct in temp) {
-            struct::init(struct);
+        
+        foreach ( struct in temp )
+        {
+            struct::init( struct );
         }
     }
-    function_6c07201b("CreateStruct", &function_e0a8e4ba);
+    
+    function_6c07201b( "CreateStruct", &function_e0a8e4ba );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 0, eflags: 0x1
 // Checksum 0x1a0f0016, Offset: 0x1350
 // Size: 0x1c
-function autoexec function_c2a965f4() {
-    util::add_gametype("coop");
+function autoexec function_c2a965f4()
+{
+    util::add_gametype( "coop" );
 }
 
 // Namespace cp_nam_prisoner/level_init
 // Params 1, eflags: 0x20
 // Checksum 0x2ad0168d, Offset: 0x1378
 // Size: 0x42c
-function event_handler[level_init] main(*eventstruct) {
-    setclearanceceiling(16);
+function event_handler[level_init] main( *eventstruct )
+{
+    setclearanceceiling( 16 );
     level.missionid = savegame::function_8136eb5a();
     function_bf4b4b7e();
     function_c26b0bc0();
     init_clientfields();
     function_6890cc65();
     function_31b460ba();
-    level thread lui::add_luimenu("full_screen_movie", &full_screen_movie::register);
+    level thread lui::add_luimenu( "full_screen_movie", &full_screen_movie::register );
     load::main();
-    callback::on_connect(&on_player_connect);
-    callback::on_spawned(&on_player_spawned);
+    callback::on_connect( &on_player_connect );
+    callback::on_spawned( &on_player_spawned );
     level thread namespace_8589bd1a::main();
-    compass::setupminimap("");
-    setdvar(#"compassmaxrange", "2100");
-    level flag::set("no_corpse_pickup");
+    compass::setupminimap( "" );
+    setdvar( #"compassmaxrange", "2100" );
+    level flag::set( "no_corpse_pickup" );
     level thread namespace_d9b153b9::function_7933659();
-    white_room_script_brushmodel = getentarray("white_room_script_brushmodel", "targetname");
-    foreach (brushmodel in white_room_script_brushmodel) {
-        if (isdefined(brushmodel)) {
-            brushmodel movex(512, 0.1);
+    white_room_script_brushmodel = getentarray( "white_room_script_brushmodel", "targetname" );
+    
+    foreach ( brushmodel in white_room_script_brushmodel )
+    {
+        if ( isdefined( brushmodel ) )
+        {
+            brushmodel movex( 512, 0.1 );
         }
     }
-    level battlechatter::function_2ab9360b(1);
+    
+    level battlechatter::function_2ab9360b( 1 );
     level function_767a5911();
     level thread function_d56266e4();
     level thread function_7a4dcbd4();
     level thread function_a8f776a0();
     level thread function_42ad70e6();
-    level thread namespace_d9b153b9::function_c318ce4a("river_path_rob_light");
-    level thread namespace_d9b153b9::function_c318ce4a("bridge_path_rob_light");
+    level thread namespace_d9b153b9::function_c318ce4a( "river_path_rob_light" );
+    level thread namespace_d9b153b9::function_c318ce4a( "bridge_path_rob_light" );
     level thread namespace_d9b153b9::function_6b921cdd();
-    level.stealth.funcs[#"event_should_ignore"] = &namespace_d9b153b9::function_b08684ac;
+    level.stealth.funcs[ #"event_should_ignore" ] = &namespace_d9b153b9::function_b08684ac;
+    
     /#
         level namespace_d9b153b9::function_feb24b1d();
         level namespace_d9b153b9::function_d20966e6();
     #/
-    level thread namespace_8af9269b::function_1acebbc0("trigger_zipline_bridge", undefined, undefined, undefined, undefined, undefined, 1);
+    
+    level thread namespace_8af9269b::function_1acebbc0( "trigger_zipline_bridge", undefined, undefined, undefined, undefined, undefined, 1 );
     level thread namespace_d9b153b9::function_ad9087cb();
     level thread namespace_d9b153b9::function_7ad4f5cb();
-    level flag::wait_till("game_start");
-    util::function_eefca70f(1);
+    level flag::wait_till( "game_start" );
+    util::function_eefca70f( 1 );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 0, eflags: 0x0
 // Checksum 0xa79973f1, Offset: 0x17b0
 // Size: 0x454
-function init_clientfields() {
-    clientfield::register("toplayer", "pstfx_waterfall_droplets", 1, 1, "int");
-    clientfield::register("scriptmover", "rice_paddies_heli_1_spark_fx", 1, 1, "int");
-    clientfield::register("toplayer", "lerp_fov", 1, 7, "int");
-    clientfield::register("toplayer", "pstfx_slowed", 1, 1, "int");
-    clientfield::register("toplayer", "pstfx_napalm_dirt", 1, 1, "int");
-    clientfield::register("toplayer", "pstfx_injection", 1, 1, "int");
-    clientfield::register("toplayer", "pstfx_teleport", 1, 3, "int");
-    clientfield::register("toplayer", "set_player_pbg_bank", 1, 3, "int");
-    clientfield::register("world", "dmg_models_and_vol_decals_napalm_strike", 1, 1, "int");
-    clientfield::register("world", "dmg_models_and_vol_decals_village", 1, 1, "int");
-    clientfield::register("scriptmover", "render_texture_switch", 1, 3, "int");
-    clientfield::register("item", "render_texture_switch", 1, 3, "int");
-    clientfield::register("vehicle", "render_texture_switch", 1, 3, "int");
-    clientfield::register("actor", "render_texture_switch", 1, 3, "int");
-    clientfield::register("scriptmover", "render_texture_switch_window", 1, 3, "int");
-    clientfield::register("toplayer", "rt_flashlight", 1, 1, "int");
-    clientfield::register("toplayer", "rt_character_visibility", 1, 3, "int");
-    clientfield::register("scriptmover", "slide_projector_anim", 1, 1, "int");
-    clientfield::register("scriptmover", "darkroom_light", 1, 1, "int");
-    clientfield::register("world", "streamer_handler", 1, 20, "int");
-    clientfield::register("world", "toggle_occluder", 1, 4, "int");
-    clientfield::register("actor", "toggle_bone_constraint", 1, 1, "int");
-    clientfield::register("toplayer", "force_stream_weapons", 1, 7, "int");
+function init_clientfields()
+{
+    clientfield::register( "toplayer", "pstfx_waterfall_droplets", 1, 1, "int" );
+    clientfield::register( "scriptmover", "rice_paddies_heli_1_spark_fx", 1, 1, "int" );
+    clientfield::register( "toplayer", "lerp_fov", 1, 7, "int" );
+    clientfield::register( "toplayer", "pstfx_slowed", 1, 1, "int" );
+    clientfield::register( "toplayer", "pstfx_napalm_dirt", 1, 1, "int" );
+    clientfield::register( "toplayer", "pstfx_injection", 1, 1, "int" );
+    clientfield::register( "toplayer", "pstfx_teleport", 1, 3, "int" );
+    clientfield::register( "toplayer", "set_player_pbg_bank", 1, 3, "int" );
+    clientfield::register( "world", "dmg_models_and_vol_decals_napalm_strike", 1, 1, "int" );
+    clientfield::register( "world", "dmg_models_and_vol_decals_village", 1, 1, "int" );
+    clientfield::register( "scriptmover", "render_texture_switch", 1, 3, "int" );
+    clientfield::register( "item", "render_texture_switch", 1, 3, "int" );
+    clientfield::register( "vehicle", "render_texture_switch", 1, 3, "int" );
+    clientfield::register( "actor", "render_texture_switch", 1, 3, "int" );
+    clientfield::register( "scriptmover", "render_texture_switch_window", 1, 3, "int" );
+    clientfield::register( "toplayer", "rt_flashlight", 1, 1, "int" );
+    clientfield::register( "toplayer", "rt_character_visibility", 1, 3, "int" );
+    clientfield::register( "scriptmover", "slide_projector_anim", 1, 1, "int" );
+    clientfield::register( "scriptmover", "darkroom_light", 1, 1, "int" );
+    clientfield::register( "world", "streamer_handler", 1, 20, "int" );
+    clientfield::register( "world", "toggle_occluder", 1, 4, "int" );
+    clientfield::register( "actor", "toggle_bone_constraint", 1, 1, "int" );
+    clientfield::register( "toplayer", "force_stream_weapons", 1, 7, "int" );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 0, eflags: 0x0
 // Checksum 0xec34e70e, Offset: 0x1c10
 // Size: 0x13f4
-function function_bf4b4b7e() {
-    skipto::function_eb91535d("intro", &namespace_3ab3b856::main, &namespace_3ab3b856::start, "Intro", &namespace_3ab3b856::cleanup, ["rice_paddies", "jungle_path"]);
-    skipto::function_eb91535d("rice_paddies_1", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 1", &namespace_c6aa31df::cleanup, ["rice_paddies", "jungle_path"]);
-    skipto::function_eb91535d("jungle_path_1", &namespace_1bc068e2::main, &namespace_1bc068e2::start, "Jungle Path 1", &namespace_1bc068e2::cleanup);
-    skipto::function_eb91535d("middle_paths_1", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 1", &function_b78161a2);
-    skipto::function_eb91535d("path_end_1", &function_1f911b89, &function_89a69212, "Path End 1", &function_aa96d24b);
-    skipto::function_eb91535d("memory_1", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 1", &namespace_b508dca::function_e4f91def);
-    skipto::function_eb91535d("rice_paddies_2", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 2", &namespace_c6aa31df::cleanup, ["rice_paddies", "jungle_path"]);
-    skipto::function_eb91535d("jungle_path_2", &namespace_1bc068e2::main, &namespace_1bc068e2::start, "Jungle Path 2", &namespace_1bc068e2::cleanup);
-    skipto::function_eb91535d("middle_paths_2", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 2", &function_b78161a2);
-    skipto::function_eb91535d("path_end_2", &function_1f911b89, &function_89a69212, "Path End 2", &function_aa96d24b);
-    skipto::function_eb91535d("memory_2", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 2", &namespace_b508dca::function_e4f91def);
-    skipto::function_eb91535d("rice_paddies_3", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 3", &namespace_c6aa31df::cleanup, ["rice_paddies", "jungle_path", "memory_3"]);
-    skipto::function_eb91535d("jungle_path_3", &namespace_1bc068e2::main, &namespace_1bc068e2::start, "Jungle Path 3", &namespace_1bc068e2::cleanup);
-    skipto::function_eb91535d("middle_paths_3", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 3", &function_b78161a2);
-    skipto::function_eb91535d("path_end_3", &function_1f911b89, &function_89a69212, "Path End 3", &function_aa96d24b);
-    skipto::function_eb91535d("memory_3", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 3", &namespace_b508dca::function_e4f91def);
-    skipto::function_eb91535d("rice_paddies_4", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 4", &namespace_c6aa31df::cleanup, ["rice_paddies", "jungle_path", "middle_paths", "memory_3"]);
-    skipto::function_eb91535d("middle_paths_4", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 4", &function_b78161a2);
-    skipto::function_eb91535d("memory_4", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 4", &namespace_b508dca::function_e4f91def);
+function function_bf4b4b7e()
+{
+    skipto::function_eb91535d( "intro", &namespace_3ab3b856::main, &namespace_3ab3b856::start, "Intro", &namespace_3ab3b856::cleanup, [ "rice_paddies", "jungle_path" ] );
+    skipto::function_eb91535d( "rice_paddies_1", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 1", &namespace_c6aa31df::cleanup, [ "rice_paddies", "jungle_path" ] );
+    skipto::function_eb91535d( "jungle_path_1", &namespace_1bc068e2::main, &namespace_1bc068e2::start, "Jungle Path 1", &namespace_1bc068e2::cleanup );
+    skipto::function_eb91535d( "middle_paths_1", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 1", &function_b78161a2 );
+    skipto::function_eb91535d( "path_end_1", &function_1f911b89, &function_89a69212, "Path End 1", &function_aa96d24b );
+    skipto::function_eb91535d( "memory_1", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 1", &namespace_b508dca::function_e4f91def );
+    skipto::function_eb91535d( "rice_paddies_2", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 2", &namespace_c6aa31df::cleanup, [ "rice_paddies", "jungle_path" ] );
+    skipto::function_eb91535d( "jungle_path_2", &namespace_1bc068e2::main, &namespace_1bc068e2::start, "Jungle Path 2", &namespace_1bc068e2::cleanup );
+    skipto::function_eb91535d( "middle_paths_2", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 2", &function_b78161a2 );
+    skipto::function_eb91535d( "path_end_2", &function_1f911b89, &function_89a69212, "Path End 2", &function_aa96d24b );
+    skipto::function_eb91535d( "memory_2", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 2", &namespace_b508dca::function_e4f91def );
+    skipto::function_eb91535d( "rice_paddies_3", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 3", &namespace_c6aa31df::cleanup, [ "rice_paddies", "jungle_path", "memory_3" ] );
+    skipto::function_eb91535d( "jungle_path_3", &namespace_1bc068e2::main, &namespace_1bc068e2::start, "Jungle Path 3", &namespace_1bc068e2::cleanup );
+    skipto::function_eb91535d( "middle_paths_3", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 3", &function_b78161a2 );
+    skipto::function_eb91535d( "path_end_3", &function_1f911b89, &function_89a69212, "Path End 3", &function_aa96d24b );
+    skipto::function_eb91535d( "memory_3", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 3", &namespace_b508dca::function_e4f91def );
+    skipto::function_eb91535d( "rice_paddies_4", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "Rice Paddies 4", &namespace_c6aa31df::cleanup, [ "rice_paddies", "jungle_path", "middle_paths", "memory_3" ] );
+    skipto::function_eb91535d( "middle_paths_4", &function_a0bcc84e, &function_38e5adc8, "Middle Paths 4", &function_b78161a2 );
+    skipto::function_eb91535d( "memory_4", &namespace_b508dca::function_690ab87a, &namespace_b508dca::function_99791793, "Memory 4", &namespace_b508dca::function_e4f91def );
+    
     /#
-        skipto::add_dev("<dev string:x38>", &function_a0bcc84e, &function_38e5adc8, "<dev string:x4a>", &function_b78161a2, undefined, undefined, ["<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>"]);
-        skipto::add_dev("<dev string:xd8>", &function_a0bcc84e, &function_38e5adc8, "<dev string:xeb>", &function_b78161a2, undefined, undefined, ["<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>"]);
-        skipto::add_dev("<dev string:xfa>", &function_a0bcc84e, &function_38e5adc8, "<dev string:x110>", &function_b78161a2, undefined, undefined, ["<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>"]);
-        skipto::add_dev("<dev string:x122>", &function_a0bcc84e, &function_38e5adc8, "<dev string:x134>", &function_b78161a2, undefined, undefined, ["<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>"]);
-        skipto::add_dev("<dev string:x142>", &namespace_bf7b1fb2::main, &namespace_bf7b1fb2::start, "<dev string:x14f>", &namespace_bf7b1fb2::cleanup, undefined, undefined, ["<dev string:xae>", "<dev string:x158>"]);
-        skipto::add_dev("<dev string:x161>", &namespace_dfa5ee23::main, &namespace_dfa5ee23::start, "<dev string:x170>", &namespace_dfa5ee23::cleanup, undefined, undefined, ["<dev string:x68>", "<dev string:x77>", "<dev string:xa3>"]);
-        skipto::add_dev("<dev string:x17b>", &namespace_dfa5ee23::function_909afeee, undefined, "<dev string:x18f>", undefined, undefined, undefined, ["<dev string:x68>", "<dev string:x77>", "<dev string:xa3>"]);
-        skipto::add_dev("<dev string:x19f>", &namespace_d12540d8::main, &namespace_d12540d8::start, "<dev string:x1b6>", &namespace_d12540d8::cleanup, undefined, undefined, ["<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:x1c9>", "<dev string:xa3>"]);
-        skipto::add_dev("<dev string:x1dc>", &namespace_d12540d8::function_5f076197, &namespace_d12540d8::function_f4f616bb, "<dev string:x1f1>", &namespace_d12540d8::function_f3b9155f, undefined, undefined, ["<dev string:x87>", "<dev string:x1c9>"]);
-        skipto::add_dev("<dev string:x209>", &cp_nam_prisoner_rat_tunnels::main, &cp_nam_prisoner_rat_tunnels::start, "<dev string:x21c>", &cp_nam_prisoner_rat_tunnels::cleanup, undefined, undefined, ["<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>"]);
-        skipto::add_dev("<dev string:x22b>", &function_12df253a, &function_b171555f, "<dev string:x23f>", &function_442af1f7, undefined, undefined, ["<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x260>", &function_12df253a, &function_b171555f, "<dev string:x278>", &function_442af1f7, undefined, undefined, ["<dev string:x259>"]);
-        skipto::add_dev("<dev string:x28c>", &function_12df253a, &function_b171555f, "<dev string:x2a4>", &function_442af1f7, undefined, undefined, ["<dev string:x259>"]);
-        skipto::add_dev("<dev string:x2b8>", &function_12df253a, &function_b171555f, "<dev string:x2d0>", &function_442af1f7, undefined, undefined, ["<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x2e4>", &function_12df253a, &function_b171555f, "<dev string:x300>", &function_442af1f7, undefined, undefined, ["<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x318>", &function_12df253a, &function_b171555f, "<dev string:x330>", &function_442af1f7, undefined, undefined, ["<dev string:x1c9>", "<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x344>", &function_12df253a, &function_b171555f, "<dev string:x363>", &function_442af1f7, undefined, undefined, ["<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x37e>", &function_12df253a, &function_b171555f, "<dev string:x39d>", &function_442af1f7, undefined, undefined, ["<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x3b9>", &function_12df253a, &function_b171555f, "<dev string:x3d8>", &function_442af1f7, undefined, undefined, ["<dev string:x24f>", "<dev string:x259>"]);
-        skipto::add_dev("<dev string:x3f3>", &function_e14708f, undefined, "<dev string:x259>", undefined, undefined, undefined, ["<dev string:x259>"]);
-        skipto::add_dev("<dev string:x3fe>", &function_12df253a, undefined, "<dev string:x24f>", undefined, undefined, undefined, ["<dev string:x24f>"]);
-        skipto::add_dev("<dev string:x40c>", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "<dev string:x430>", &namespace_c6aa31df::cleanup, undefined, undefined, ["<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:x1c9>", "<dev string:xa3>", "<dev string:x158>", "<dev string:x454>", "<dev string:x259>", "<dev string:x24f>"]);
-        skipto::add_dev("<dev string:x463>", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "<dev string:x487>", &namespace_c6aa31df::cleanup, undefined, undefined, ["<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:x1c9>", "<dev string:xa3>", "<dev string:x158>", "<dev string:x454>", "<dev string:x259>", "<dev string:x24f>"]);
-        skipto::add_dev("<dev string:x4ab>", &function_12df253a, undefined, "<dev string:x4c4>", undefined, undefined, undefined, ["<dev string:x24f>"]);
+        skipto::add_dev( "<dev string:x38>", &function_a0bcc84e, &function_38e5adc8, "<dev string:x4a>", &function_b78161a2, undefined, undefined, [ "<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>" ] );
+        skipto::add_dev( "<dev string:xd8>", &function_a0bcc84e, &function_38e5adc8, "<dev string:xeb>", &function_b78161a2, undefined, undefined, [ "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>" ] );
+        skipto::add_dev( "<dev string:xfa>", &function_a0bcc84e, &function_38e5adc8, "<dev string:x110>", &function_b78161a2, undefined, undefined, [ "<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>" ] );
+        skipto::add_dev( "<dev string:x122>", &function_a0bcc84e, &function_38e5adc8, "<dev string:x134>", &function_b78161a2, undefined, undefined, [ "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>" ] );
+        skipto::add_dev( "<dev string:x142>", &namespace_bf7b1fb2::main, &namespace_bf7b1fb2::start, "<dev string:x14f>", &namespace_bf7b1fb2::cleanup, undefined, undefined, [ "<dev string:xae>", "<dev string:x158>" ] );
+        skipto::add_dev( "<dev string:x161>", &namespace_dfa5ee23::main, &namespace_dfa5ee23::start, "<dev string:x170>", &namespace_dfa5ee23::cleanup, undefined, undefined, [ "<dev string:x68>", "<dev string:x77>", "<dev string:xa3>" ] );
+        skipto::add_dev( "<dev string:x17b>", &namespace_dfa5ee23::function_909afeee, undefined, "<dev string:x18f>", undefined, undefined, undefined, [ "<dev string:x68>", "<dev string:x77>", "<dev string:xa3>" ] );
+        skipto::add_dev( "<dev string:x19f>", &namespace_d12540d8::main, &namespace_d12540d8::start, "<dev string:x1b6>", &namespace_d12540d8::cleanup, undefined, undefined, [ "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:x1c9>", "<dev string:xa3>" ] );
+        skipto::add_dev( "<dev string:x1dc>", &namespace_d12540d8::function_5f076197, &namespace_d12540d8::function_f4f616bb, "<dev string:x1f1>", &namespace_d12540d8::function_f3b9155f, undefined, undefined, [ "<dev string:x87>", "<dev string:x1c9>" ] );
+        skipto::add_dev( "<dev string:x209>", &cp_nam_prisoner_rat_tunnels::main, &cp_nam_prisoner_rat_tunnels::start, "<dev string:x21c>", &cp_nam_prisoner_rat_tunnels::cleanup, undefined, undefined, [ "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:xa3>", "<dev string:xae>", "<dev string:xc0>" ] );
+        skipto::add_dev( "<dev string:x22b>", &function_12df253a, &function_b171555f, "<dev string:x23f>", &function_442af1f7, undefined, undefined, [ "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x260>", &function_12df253a, &function_b171555f, "<dev string:x278>", &function_442af1f7, undefined, undefined, [ "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x28c>", &function_12df253a, &function_b171555f, "<dev string:x2a4>", &function_442af1f7, undefined, undefined, [ "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x2b8>", &function_12df253a, &function_b171555f, "<dev string:x2d0>", &function_442af1f7, undefined, undefined, [ "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x2e4>", &function_12df253a, &function_b171555f, "<dev string:x300>", &function_442af1f7, undefined, undefined, [ "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x318>", &function_12df253a, &function_b171555f, "<dev string:x330>", &function_442af1f7, undefined, undefined, [ "<dev string:x1c9>", "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x344>", &function_12df253a, &function_b171555f, "<dev string:x363>", &function_442af1f7, undefined, undefined, [ "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x37e>", &function_12df253a, &function_b171555f, "<dev string:x39d>", &function_442af1f7, undefined, undefined, [ "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x3b9>", &function_12df253a, &function_b171555f, "<dev string:x3d8>", &function_442af1f7, undefined, undefined, [ "<dev string:x24f>", "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x3f3>", &function_e14708f, undefined, "<dev string:x259>", undefined, undefined, undefined, [ "<dev string:x259>" ] );
+        skipto::add_dev( "<dev string:x3fe>", &function_12df253a, undefined, "<dev string:x24f>", undefined, undefined, undefined, [ "<dev string:x24f>" ] );
+        skipto::add_dev( "<dev string:x40c>", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "<dev string:x430>", &namespace_c6aa31df::cleanup, undefined, undefined, [ "<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:x1c9>", "<dev string:xa3>", "<dev string:x158>", "<dev string:x454>", "<dev string:x259>", "<dev string:x24f>" ] );
+        skipto::add_dev( "<dev string:x463>", &namespace_c6aa31df::main, &namespace_c6aa31df::start, "<dev string:x487>", &namespace_c6aa31df::cleanup, undefined, undefined, [ "<dev string:x58>", "<dev string:x68>", "<dev string:x77>", "<dev string:x87>", "<dev string:x1c9>", "<dev string:xa3>", "<dev string:x158>", "<dev string:x454>", "<dev string:x259>", "<dev string:x24f>" ] );
+        skipto::add_dev( "<dev string:x4ab>", &function_12df253a, undefined, "<dev string:x4c4>", undefined, undefined, undefined, [ "<dev string:x24f>" ] );
     #/
 }
 
@@ -216,129 +240,194 @@ function function_bf4b4b7e() {
 // Params 1, eflags: 0x0
 // Checksum 0x10fdb076, Offset: 0x3010
 // Size: 0x21c
-function function_38e5adc8(str_objective) {
-    if (str_objective == "middle_paths_1") {
-        level thread namespace_d9b153b9::function_be6f6790("middle_paths_temple_parrots", "flag_fxanim_parrots_fly");
+function function_38e5adc8( str_objective )
+{
+    if ( str_objective == "middle_paths_1" )
+    {
+        level thread namespace_d9b153b9::function_be6f6790( "middle_paths_temple_parrots", "flag_fxanim_parrots_fly" );
     }
-    if (str_objective == "middle_paths_2") {
+    
+    if ( str_objective == "middle_paths_2" )
+    {
         level thread namespace_1bc068e2::function_df9f3034();
     }
-    if (str_objective == "middle_paths_3") {
+    
+    if ( str_objective == "middle_paths_3" )
+    {
         level thread namespace_1bc068e2::function_fde06cb6();
-        level flag::set("flag_jungle_lab_rob");
+        level flag::set( "flag_jungle_lab_rob" );
     }
-    if (str_objective == "middle_paths_4") {
-        level thread namespace_d9b153b9::function_1e281213("model_jungle_lab", 4, "flag_jungle_lab_rob", "render_texture_switch", "flag_in_end_path", "flag_jungle_path_3_rob_sm");
-        level thread namespace_d9b153b9::function_1e281213("model_jungle_lab2", 4, "flag_jungle_lab_rob2", "render_texture_switch", "flag_in_end_path", "flag_middle_paths_4_rob_sm");
-        level thread namespace_d9b153b9::function_58c94625("model_jungle_lab", "flag_jungle_path_3_rob_sm");
-        level thread namespace_d9b153b9::function_58c94625("model_jungle_lab2", "flag_middle_paths_4_rob_sm");
-        level flag::set("flag_jungle_lab_rob");
-        level flag::set("flag_jungle_lab_rob2");
+    
+    if ( str_objective == "middle_paths_4" )
+    {
+        level thread namespace_d9b153b9::function_1e281213( "model_jungle_lab", 4, "flag_jungle_lab_rob", "render_texture_switch", "flag_in_end_path", "flag_jungle_path_3_rob_sm" );
+        level thread namespace_d9b153b9::function_1e281213( "model_jungle_lab2", 4, "flag_jungle_lab_rob2", "render_texture_switch", "flag_in_end_path", "flag_middle_paths_4_rob_sm" );
+        level thread namespace_d9b153b9::function_58c94625( "model_jungle_lab", "flag_jungle_path_3_rob_sm" );
+        level thread namespace_d9b153b9::function_58c94625( "model_jungle_lab2", "flag_middle_paths_4_rob_sm" );
+        level flag::set( "flag_jungle_lab_rob" );
+        level flag::set( "flag_jungle_lab_rob2" );
     }
+    
     level.var_86d6c2ab = 1;
     level thread namespace_c6aa31df::function_886bcebf();
-    level thread namespace_c6aa31df::function_d1fa28d3("rice_paddies", 1);
+    level thread namespace_c6aa31df::function_d1fa28d3( "rice_paddies", 1 );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 2, eflags: 0x0
 // Checksum 0x2e714ce4, Offset: 0x3238
 // Size: 0x6f4
-function function_a0bcc84e(str_objective, var_50cc0d4f) {
-    if (var_50cc0d4f) {
-        if (str_objective != "middle_paths_4") {
+function function_a0bcc84e( str_objective, var_50cc0d4f )
+{
+    if ( var_50cc0d4f )
+    {
+        if ( str_objective != "middle_paths_4" )
+        {
             level thread namespace_1bc068e2::function_41b7e43b();
         }
-    } else {
-        level.player districts::function_a7d79fcb(["sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance"]);
     }
-    level thread function_d2f93be3("flag_rice_paddies_district_off", "flag_rice_paddies_district_on", 1, ["rice_paddies"]);
-    if (!level flag::get("flag_sniper_overlook")) {
-        level thread function_d2f93be3("flag_sniper_overlook_district_on", "flag_sniper_overlook_district_off", 0, ["sniper_overlook"]);
+    else
+    {
+        level.player districts::function_a7d79fcb( [ "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance" ] );
     }
-    if (!level flag::get("flag_caves")) {
-        level thread function_d2f93be3("flag_caves_district_on", "flag_caves_district_off", 0, ["caves"]);
+    
+    level thread function_d2f93be3( "flag_rice_paddies_district_off", "flag_rice_paddies_district_on", 1, [ "rice_paddies" ] );
+    
+    if ( !level flag::get( "flag_sniper_overlook" ) )
+    {
+        level thread function_d2f93be3( "flag_sniper_overlook_district_on", "flag_sniper_overlook_district_off", 0, [ "sniper_overlook" ] );
     }
-    if (str_objective == "middle_paths_4") {
-        namespace_b6fe1dbe::music("21.0_crazy_doors");
-        level.player districts::function_a7d79fcb("bunker");
-        level thread namespace_d9b153b9::function_f8c7740b("bunker_door_start_function_end", ["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance"], 0, 3);
+    
+    if ( !level flag::get( "flag_caves" ) )
+    {
+        level thread function_d2f93be3( "flag_caves_district_on", "flag_caves_district_off", 0, [ "caves" ] );
     }
-    if (!isdefined(level.var_e7a42933)) {
-        level.var_e7a42933 = ["flag_sniper_overlook", "flag_village", "flag_caves", "flag_rat_tunnels", "flag_memory_4_obey", "flag_memory_4_disobey"];
+    
+    if ( str_objective == "middle_paths_4" )
+    {
+        namespace_b6fe1dbe::music( "21.0_crazy_doors" );
+        level.player districts::function_a7d79fcb( "bunker" );
+        level thread namespace_d9b153b9::function_f8c7740b( "bunker_door_start_function_end", [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance" ], 0, 3 );
     }
-    if (!level flag::get("flag_creek_path")) {
+    
+    if ( !isdefined( level.var_e7a42933 ) )
+    {
+        level.var_e7a42933 = [ "flag_sniper_overlook", "flag_village", "flag_caves", "flag_rat_tunnels", "flag_memory_4_obey", "flag_memory_4_disobey" ];
+    }
+    
+    if ( !level flag::get( "flag_creek_path" ) )
+    {
         level thread namespace_d09d57dd::creek_path();
     }
-    if (!level flag::get("flag_bridge_path")) {
+    
+    if ( !level flag::get( "flag_bridge_path" ) )
+    {
         level thread namespace_371f22ea::bridge_path();
     }
-    if (!level flag::get("flag_waterfall_path")) {
+    
+    if ( !level flag::get( "flag_waterfall_path" ) )
+    {
         level thread namespace_18c72e49::waterfall_path();
     }
-    if (!level flag::get("flag_river_path")) {
+    
+    if ( !level flag::get( "flag_river_path" ) )
+    {
         level thread namespace_6020b123::river_path();
     }
+    
     level thread namespace_1bc068e2::function_109ea983();
     temp_array = [];
-    foreach (flag in level.var_e7a42933) {
-        if (!level flag::get(flag)) {
-            if (!isdefined(temp_array)) {
+    
+    foreach ( flag in level.var_e7a42933 )
+    {
+        if ( !level flag::get( flag ) )
+        {
+            if ( !isdefined( temp_array ) )
+            {
                 temp_array = [];
-            } else if (!isarray(temp_array)) {
-                temp_array = array(temp_array);
             }
-            if (!isinarray(temp_array, flag)) {
-                temp_array[temp_array.size] = flag;
+            else if ( !isarray( temp_array ) )
+            {
+                temp_array = array( temp_array );
+            }
+            
+            if ( !isinarray( temp_array, flag ) )
+            {
+                temp_array[ temp_array.size ] = flag;
             }
         }
     }
+    
     level.var_e7a42933 = temp_array;
-    level flag::wait_till_any(level.var_e7a42933);
+    level flag::wait_till_any( level.var_e7a42933 );
     next_obj = undefined;
-    foreach (flag in level.var_e7a42933) {
-        if (level flag::get(flag)) {
-            arrayremovevalue(level.var_e7a42933, flag);
-            if (isdefined(flag) && issubstr(flag, "memory_4")) {
+    
+    foreach ( flag in level.var_e7a42933 )
+    {
+        if ( level flag::get( flag ) )
+        {
+            arrayremovevalue( level.var_e7a42933, flag );
+            
+            if ( isdefined( flag ) && issubstr( flag, "memory_4" ) )
+            {
                 next_obj = "memory_4";
-                if (level flag::get("flag_memory_4_obey")) {
+                
+                if ( level flag::get( "flag_memory_4_obey" ) )
+                {
                     level.var_731c10af.var_d8a772da = "exit";
                 }
-            } else {
-                next_obj = "path_end_" + level.var_731c10af.paths[#"rice_paddies"].count;
-                str = getsubstr(flag, 5);
+            }
+            else
+            {
+                next_obj = "path_end_" + level.var_731c10af.paths[ #"rice_paddies" ].count;
+                str = getsubstr( flag, 5 );
                 level.var_731c10af.var_d8a772da = str;
             }
+            
             break;
         }
     }
-    level skipto::function_4e3ab877(str_objective, 0);
-    level skipto::function_51726ac8([next_obj], 0, level.player);
+    
+    level skipto::function_4e3ab877( str_objective, 0 );
+    level skipto::function_51726ac8( [ next_obj ], 0, level.player );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 4, eflags: 0x0
 // Checksum 0x12463ca1, Offset: 0x3938
 // Size: 0x1c6
-function function_d2f93be3(var_290853ad, var_3a44f626, turn_off, districts) {
-    level endon(#"flag_in_end_path");
-    level flag::clear(var_290853ad);
-    level flag::clear(var_3a44f626);
-    while (true) {
-        level flag::wait_till(var_290853ad);
-        if (isdefined(turn_off) && is_true(turn_off)) {
-            level districts::function_930f8c81(districts);
-        } else if (!isdefined(turn_off) || isdefined(turn_off) && !is_true(turn_off)) {
-            level districts::function_a7d79fcb(districts);
+function function_d2f93be3( var_290853ad, var_3a44f626, turn_off, districts )
+{
+    level endon( #"flag_in_end_path" );
+    level flag::clear( var_290853ad );
+    level flag::clear( var_3a44f626 );
+    
+    while ( true )
+    {
+        level flag::wait_till( var_290853ad );
+        
+        if ( isdefined( turn_off ) && is_true( turn_off ) )
+        {
+            level districts::function_930f8c81( districts );
         }
-        waitframe(1);
-        level flag::wait_till(var_3a44f626);
-        if (isdefined(turn_off) && is_true(turn_off)) {
-            level districts::function_a7d79fcb(districts);
-        } else if (!isdefined(turn_off) || isdefined(turn_off) && !is_true(turn_off)) {
-            level districts::function_930f8c81(districts);
+        else if ( !isdefined( turn_off ) || isdefined( turn_off ) && !is_true( turn_off ) )
+        {
+            level districts::function_a7d79fcb( districts );
         }
-        waitframe(1);
+        
+        waitframe( 1 );
+        level flag::wait_till( var_3a44f626 );
+        
+        if ( isdefined( turn_off ) && is_true( turn_off ) )
+        {
+            level districts::function_a7d79fcb( districts );
+        }
+        else if ( !isdefined( turn_off ) || isdefined( turn_off ) && !is_true( turn_off ) )
+        {
+            level districts::function_930f8c81( districts );
+        }
+        
+        waitframe( 1 );
     }
 }
 
@@ -346,34 +435,52 @@ function function_d2f93be3(var_290853ad, var_3a44f626, turn_off, districts) {
 // Params 4, eflags: 0x0
 // Checksum 0xe2d5a94c, Offset: 0x3b08
 // Size: 0x234
-function function_b78161a2(str_objective, *var_50cc0d4f, *var_aa1a6455, *player) {
-    if (player == "middle_paths_1") {
-        level thread namespace_c6aa31df::function_c8f499c5("rice_paddies_1");
+function function_b78161a2( str_objective, *var_50cc0d4f, *var_aa1a6455, *player )
+{
+    if ( player == "middle_paths_1" )
+    {
+        level thread namespace_c6aa31df::function_c8f499c5( "rice_paddies_1" );
     }
-    if (player == "middle_paths_2") {
-        level thread namespace_c6aa31df::function_c8f499c5("rice_paddies_2");
-        light_jungle_bulb_fire_left_night = getentarray("light_jungle_bulb_fire_left_night", "targetname");
-        if (isdefined(light_jungle_bulb_fire_left_night) && light_jungle_bulb_fire_left_night.size > 0) {
-            array::thread_all(light_jungle_bulb_fire_left_night, &namespace_d9b153b9::ent_cleanup);
+    
+    if ( player == "middle_paths_2" )
+    {
+        level thread namespace_c6aa31df::function_c8f499c5( "rice_paddies_2" );
+        light_jungle_bulb_fire_left_night = getentarray( "light_jungle_bulb_fire_left_night", "targetname" );
+        
+        if ( isdefined( light_jungle_bulb_fire_left_night ) && light_jungle_bulb_fire_left_night.size > 0 )
+        {
+            array::thread_all( light_jungle_bulb_fire_left_night, &namespace_d9b153b9::ent_cleanup );
         }
-        light_jungle_bulb_fire_right_night = getentarray("light_jungle_bulb_fire_right_night", "targetname");
-        if (isdefined(light_jungle_bulb_fire_right_night) && light_jungle_bulb_fire_right_night.size > 0) {
-            array::thread_all(light_jungle_bulb_fire_right_night, &namespace_d9b153b9::ent_cleanup);
-        }
-    }
-    if (player == "middle_paths_3") {
-        level thread namespace_c6aa31df::function_c8f499c5("rice_paddies_3");
-        var_c64a655c = getent("flag_waterfall_path_player_right_trigger", "targetname");
-        if (isdefined(var_c64a655c)) {
-            var_c64a655c triggerenable(0);
-        }
-        var_cd34e60a = getent("flag_waterfall_path_player_left_trigger", "targetname");
-        if (isdefined(var_cd34e60a)) {
-            var_cd34e60a triggerenable(0);
+        
+        light_jungle_bulb_fire_right_night = getentarray( "light_jungle_bulb_fire_right_night", "targetname" );
+        
+        if ( isdefined( light_jungle_bulb_fire_right_night ) && light_jungle_bulb_fire_right_night.size > 0 )
+        {
+            array::thread_all( light_jungle_bulb_fire_right_night, &namespace_d9b153b9::ent_cleanup );
         }
     }
-    if (player == "middle_paths_4") {
-        level thread namespace_c6aa31df::function_c8f499c5("rice_paddies_4");
+    
+    if ( player == "middle_paths_3" )
+    {
+        level thread namespace_c6aa31df::function_c8f499c5( "rice_paddies_3" );
+        var_c64a655c = getent( "flag_waterfall_path_player_right_trigger", "targetname" );
+        
+        if ( isdefined( var_c64a655c ) )
+        {
+            var_c64a655c triggerenable( 0 );
+        }
+        
+        var_cd34e60a = getent( "flag_waterfall_path_player_left_trigger", "targetname" );
+        
+        if ( isdefined( var_cd34e60a ) )
+        {
+            var_cd34e60a triggerenable( 0 );
+        }
+    }
+    
+    if ( player == "middle_paths_4" )
+    {
+        level thread namespace_c6aa31df::function_c8f499c5( "rice_paddies_4" );
     }
 }
 
@@ -381,20 +488,22 @@ function function_b78161a2(str_objective, *var_50cc0d4f, *var_aa1a6455, *player)
 // Params 1, eflags: 0x0
 // Checksum 0xcd305299, Offset: 0x3d48
 // Size: 0xf2
-function function_89a69212(*str_objective) {
-    switch (level.var_731c10af.var_d8a772da) {
-    case #"caves":
-        level flag::set("flag_caves");
-        break;
-    case #"village":
-        level flag::set("flag_village");
-        break;
-    case #"sniper_overlook":
-        level flag::set("flag_sniper_overlook");
-        break;
-    case #"rat_tunnels":
-        level flag::set("flag_rat_tunnels");
-        break;
+function function_89a69212( *str_objective )
+{
+    switch ( level.var_731c10af.var_d8a772da )
+    {
+        case #"caves":
+            level flag::set( "flag_caves" );
+            break;
+        case #"village":
+            level flag::set( "flag_village" );
+            break;
+        case #"sniper_overlook":
+            level flag::set( "flag_sniper_overlook" );
+            break;
+        case #"rat_tunnels":
+            level flag::set( "flag_rat_tunnels" );
+            break;
     }
 }
 
@@ -402,135 +511,190 @@ function function_89a69212(*str_objective) {
 // Params 2, eflags: 0x0
 // Checksum 0x87b519ae, Offset: 0x3e48
 // Size: 0xbd4
-function function_1f911b89(str_objective, *var_50cc0d4f) {
+function function_1f911b89( str_objective, *var_50cc0d4f )
+{
     level thread namespace_d9b153b9::function_5f3438c4();
-    level flag::set("flag_in_end_path");
+    level flag::set( "flag_in_end_path" );
     var_4ddb3cd5 = [];
     var_ad715f38 = undefined;
-    switch (level.var_731c10af.var_d8a772da) {
-    case #"caves":
-        level thread namespace_bf7b1fb2::caves();
-        var_4ddb3cd5 = ["village", "sniper_overlook_entrance", "sniper_overlook", "rat_tunnels_entrance", "rat_tunnels", "rice_paddies", "jungle_path", "middle_paths", "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3"];
-        var_ad715f38 = "flag_caves1_room3_start_vo";
-        level thread namespace_d9b153b9::function_f8c7740b("bunker_door_start_function_end", ["caves"], 0, 3);
-        break;
-    case #"village":
-        level thread namespace_dfa5ee23::village();
-        var_4ddb3cd5 = ["caves_entrance", "caves", "sniper_overlook_entrance", "sniper_overlook", "rat_tunnels_entrance", "rat_tunnels", "rice_paddies"];
-        level thread namespace_d9b153b9::function_f8c7740b("flag_village_start_wave_04", ["memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3"], 0);
-        var_ad715f38 = "flag_village_start_wave_06";
-        level thread namespace_d9b153b9::function_f8c7740b("bunker_door_start_function_end", ["jungle_path", "middle_paths", "village"], 0, 3);
-        break;
-    case #"sniper_overlook":
-        level thread namespace_d12540d8::sniper_overlook();
-        var_4ddb3cd5 = ["caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels", "rice_paddies"];
-        level thread namespace_d9b153b9::function_f8c7740b("flag_sniper_overlook_district_cleanup", ["village", "middle_paths", "jungle_path", "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3"], 0);
-        var_ad715f38 = "flag_sniper_in_strike";
-        level thread namespace_d9b153b9::function_f8c7740b("bunker_door_start_function_end", ["sniper_overlook_entrance", "sniper_overlook"], 0, 3);
-        break;
-    case #"rat_tunnels":
-        level thread cp_nam_prisoner_rat_tunnels::rat_tunnels();
-        var_4ddb3cd5 = ["caves", "sniper_overlook_entrance", "sniper_overlook", "rice_paddies", "jungle_path"];
-        level thread namespace_d9b153b9::function_f8c7740b("flag_rat_tunnels_entrance_progression", ["caves_entrance", "middle_paths", "village", "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3"], 0);
-        var_ad715f38 = "flag_rat_tunnels_player_dead";
-        level thread namespace_d9b153b9::function_f8c7740b("bunker_door_start_function_end", ["rat_tunnels_entrance", "rat_tunnels"], 0, 3);
-        break;
+    
+    switch ( level.var_731c10af.var_d8a772da )
+    {
+        case #"caves":
+            level thread namespace_bf7b1fb2::caves();
+            var_4ddb3cd5 = [ "village", "sniper_overlook_entrance", "sniper_overlook", "rat_tunnels_entrance", "rat_tunnels", "rice_paddies", "jungle_path", "middle_paths", "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3" ];
+            var_ad715f38 = "flag_caves1_room3_start_vo";
+            level thread namespace_d9b153b9::function_f8c7740b( "bunker_door_start_function_end", [ "caves" ], 0, 3 );
+            break;
+        case #"village":
+            level thread namespace_dfa5ee23::village();
+            var_4ddb3cd5 = [ "caves_entrance", "caves", "sniper_overlook_entrance", "sniper_overlook", "rat_tunnels_entrance", "rat_tunnels", "rice_paddies" ];
+            level thread namespace_d9b153b9::function_f8c7740b( "flag_village_start_wave_04", [ "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3" ], 0 );
+            var_ad715f38 = "flag_village_start_wave_06";
+            level thread namespace_d9b153b9::function_f8c7740b( "bunker_door_start_function_end", [ "jungle_path", "middle_paths", "village" ], 0, 3 );
+            break;
+        case #"sniper_overlook":
+            level thread namespace_d12540d8::sniper_overlook();
+            var_4ddb3cd5 = [ "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels", "rice_paddies" ];
+            level thread namespace_d9b153b9::function_f8c7740b( "flag_sniper_overlook_district_cleanup", [ "village", "middle_paths", "jungle_path", "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3" ], 0 );
+            var_ad715f38 = "flag_sniper_in_strike";
+            level thread namespace_d9b153b9::function_f8c7740b( "bunker_door_start_function_end", [ "sniper_overlook_entrance", "sniper_overlook" ], 0, 3 );
+            break;
+        case #"rat_tunnels":
+            level thread cp_nam_prisoner_rat_tunnels::rat_tunnels();
+            var_4ddb3cd5 = [ "caves", "sniper_overlook_entrance", "sniper_overlook", "rice_paddies", "jungle_path" ];
+            level thread namespace_d9b153b9::function_f8c7740b( "flag_rat_tunnels_entrance_progression", [ "caves_entrance", "middle_paths", "village", "memory_2_obey", "memory_2_disobey", "memory_2_jungle_path_fork_right", "memory_2_jungle_path_fork_left", "memory_3" ], 0 );
+            var_ad715f38 = "flag_rat_tunnels_player_dead";
+            level thread namespace_d9b153b9::function_f8c7740b( "bunker_door_start_function_end", [ "rat_tunnels_entrance", "rat_tunnels" ], 0, 3 );
+            break;
     }
-    level.player districts::function_930f8c81(var_4ddb3cd5);
-    if (isdefined(level.var_731c10af.var_d8a772da) && level.var_731c10af.var_d8a772da == level.var_baa7cf92) {
+    
+    level.player districts::function_930f8c81( var_4ddb3cd5 );
+    
+    if ( isdefined( level.var_731c10af.var_d8a772da ) && level.var_731c10af.var_d8a772da == level.var_baa7cf92 )
+    {
         destination = "obey";
         var_5f6d86a3 = "bunker";
-    } else {
+    }
+    else
+    {
         destination = "disobey";
-        if (level.var_731c10af.var_e15e5b51.size == 2) {
+        
+        if ( level.var_731c10af.var_e15e5b51.size == 2 )
+        {
             var_5f6d86a3 = "bunker";
-        } else {
+        }
+        else
+        {
             var_5f6d86a3 = "lab";
         }
     }
-    if (isdefined(var_ad715f38)) {
-        level thread namespace_d9b153b9::function_f8c7740b(var_ad715f38, var_5f6d86a3, 1);
-        if (level.var_731c10af.var_42659717 == 1 && isdefined(level.var_731c10af.var_d8a772da) && level.var_731c10af.var_d8a772da != level.var_baa7cf92) {
-            level thread namespace_b508dca::function_bf552fd1(var_ad715f38);
-        }
-    } else {
-        level thread namespace_d9b153b9::function_f8c7740b("flag_bunker_door_interact_used", var_5f6d86a3, 1);
-        if (level.var_731c10af.var_42659717 == 1 && isdefined(level.var_731c10af.var_d8a772da) && level.var_731c10af.var_d8a772da != level.var_baa7cf92) {
-            level thread namespace_b508dca::function_bf552fd1("flag_bunker_door_interact_used");
+    
+    if ( isdefined( var_ad715f38 ) )
+    {
+        level thread namespace_d9b153b9::function_f8c7740b( var_ad715f38, var_5f6d86a3, 1 );
+        
+        if ( level.var_731c10af.var_42659717 == 1 && isdefined( level.var_731c10af.var_d8a772da ) && level.var_731c10af.var_d8a772da != level.var_baa7cf92 )
+        {
+            level thread namespace_b508dca::function_bf552fd1( var_ad715f38 );
         }
     }
-    door_struct = namespace_d9b153b9::door_setup(level.var_731c10af.var_d8a772da + "_door_struct");
-    door_struct thread namespace_b508dca::function_133140de(level.var_731c10af.var_d8a772da, destination);
-    level flag::wait_till(level.var_731c10af.var_d8a772da + "_complete");
-    if (!isdefined(level.var_9fd1c625.var_e3cc02a9)) {
+    else
+    {
+        level thread namespace_d9b153b9::function_f8c7740b( "flag_bunker_door_interact_used", var_5f6d86a3, 1 );
+        
+        if ( level.var_731c10af.var_42659717 == 1 && isdefined( level.var_731c10af.var_d8a772da ) && level.var_731c10af.var_d8a772da != level.var_baa7cf92 )
+        {
+            level thread namespace_b508dca::function_bf552fd1( "flag_bunker_door_interact_used" );
+        }
+    }
+    
+    door_struct = namespace_d9b153b9::door_setup( level.var_731c10af.var_d8a772da + "_door_struct" );
+    door_struct thread namespace_b508dca::function_133140de( level.var_731c10af.var_d8a772da, destination );
+    level flag::wait_till( level.var_731c10af.var_d8a772da + "_complete" );
+    
+    if ( !isdefined( level.var_9fd1c625.var_e3cc02a9 ) )
+    {
         level.var_9fd1c625.var_e3cc02a9 = [];
-    } else if (!isarray(level.var_9fd1c625.var_e3cc02a9)) {
-        level.var_9fd1c625.var_e3cc02a9 = array(level.var_9fd1c625.var_e3cc02a9);
     }
-    if (!isinarray(level.var_9fd1c625.var_e3cc02a9, hash(level.var_731c10af.var_d8a772da))) {
-        level.var_9fd1c625.var_e3cc02a9[level.var_9fd1c625.var_e3cc02a9.size] = hash(level.var_731c10af.var_d8a772da);
+    else if ( !isarray( level.var_9fd1c625.var_e3cc02a9 ) )
+    {
+        level.var_9fd1c625.var_e3cc02a9 = array( level.var_9fd1c625.var_e3cc02a9 );
     }
-    level.player stats::function_505387a6(#"hash_5ac2b710366d831", hash(level.var_731c10af.var_d8a772da), 1);
+    
+    if ( !isinarray( level.var_9fd1c625.var_e3cc02a9, hash( level.var_731c10af.var_d8a772da ) ) )
+    {
+        level.var_9fd1c625.var_e3cc02a9[ level.var_9fd1c625.var_e3cc02a9.size ] = hash( level.var_731c10af.var_d8a772da );
+    }
+    
+    level.player stats::function_505387a6( #"hash_5ac2b710366d831", hash( level.var_731c10af.var_d8a772da ), 1 );
+    
     for (i = 0; i < level.var_9ba0ebb2; i++) {
-        entry = level.var_8b6003c3[i];
-        if (level.player stats::function_e3eb9a8b(#"hash_5ac2b710366d831", entry)) {
-            if (!isdefined(level.var_9fd1c625.var_e3cc02a9)) {
+        entry = level.var_8b6003c3[ i ];
+        
+        if ( level.player stats::function_e3eb9a8b( #"hash_5ac2b710366d831", entry ) )
+        {
+            if ( !isdefined( level.var_9fd1c625.var_e3cc02a9 ) )
+            {
                 level.var_9fd1c625.var_e3cc02a9 = [];
-            } else if (!isarray(level.var_9fd1c625.var_e3cc02a9)) {
-                level.var_9fd1c625.var_e3cc02a9 = array(level.var_9fd1c625.var_e3cc02a9);
             }
-            if (!isinarray(level.var_9fd1c625.var_e3cc02a9, entry)) {
-                level.var_9fd1c625.var_e3cc02a9[level.var_9fd1c625.var_e3cc02a9.size] = entry;
+            else if ( !isarray( level.var_9fd1c625.var_e3cc02a9 ) )
+            {
+                level.var_9fd1c625.var_e3cc02a9 = array( level.var_9fd1c625.var_e3cc02a9 );
+            }
+            
+            if ( !isinarray( level.var_9fd1c625.var_e3cc02a9, entry ) )
+            {
+                level.var_9fd1c625.var_e3cc02a9[ level.var_9fd1c625.var_e3cc02a9.size ] = entry;
             }
         }
     }
-    if (level.var_9fd1c625.var_e3cc02a9.size >= level.var_9ba0ebb2) {
-        level.player stats::function_dad108fa(#"hash_2a7a0008a3c3e07d", 1);
+    
+    if ( level.var_9fd1c625.var_e3cc02a9.size >= level.var_9ba0ebb2 )
+    {
+        level.player stats::function_dad108fa( #"hash_2a7a0008a3c3e07d", 1 );
     }
-    level flag::clear("flag_in_end_path");
-    level skipto::function_4e3ab877(var_50cc0d4f);
+    
+    level flag::clear( "flag_in_end_path" );
+    level skipto::function_4e3ab877( var_50cc0d4f );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 4, eflags: 0x0
 // Checksum 0x31bb87ca, Offset: 0x4a28
 // Size: 0x1fa
-function function_aa96d24b(str_objective, *var_50cc0d4f, *var_aa1a6455, *player) {
+function function_aa96d24b( str_objective, *var_50cc0d4f, *var_aa1a6455, *player )
+{
     level thread namespace_d9b153b9::function_5f3438c4();
-    if (player == "path_end_1") {
-        while (!isdefined(level.var_731c10af.path_end_1)) {
+    
+    if ( player == "path_end_1" )
+    {
+        while ( !isdefined( level.var_731c10af.path_end_1 ) )
+        {
             wait 0.05;
         }
+        
         var_c79d614f = level.var_731c10af.path_end_1;
     }
-    if (player == "path_end_2") {
-        while (!isdefined(level.var_731c10af.path_end_2)) {
+    
+    if ( player == "path_end_2" )
+    {
+        while ( !isdefined( level.var_731c10af.path_end_2 ) )
+        {
             wait 0.05;
         }
+        
         var_c79d614f = level.var_731c10af.path_end_2;
     }
-    if (player == "path_end_3") {
-        while (!isdefined(level.var_731c10af.path_end_3)) {
+    
+    if ( player == "path_end_3" )
+    {
+        while ( !isdefined( level.var_731c10af.path_end_3 ) )
+        {
             wait 0.05;
         }
+        
         var_c79d614f = level.var_731c10af.path_end_3;
     }
-    if (isdefined(var_c79d614f)) {
-        switch (var_c79d614f) {
-        case #"caves":
-            level thread namespace_bf7b1fb2::cleanup();
-            break;
-        case #"village":
-            level thread namespace_dfa5ee23::cleanup();
-            break;
-        case #"sniper_overlook":
-            level thread namespace_d12540d8::cleanup();
-            break;
-        case #"rat_tunnels":
-            level thread cp_nam_prisoner_rat_tunnels::cleanup();
-            break;
-        default:
-            break;
+    
+    if ( isdefined( var_c79d614f ) )
+    {
+        switch ( var_c79d614f )
+        {
+            case #"caves":
+                level thread namespace_bf7b1fb2::cleanup();
+                break;
+            case #"village":
+                level thread namespace_dfa5ee23::cleanup();
+                break;
+            case #"sniper_overlook":
+                level thread namespace_d12540d8::cleanup();
+                break;
+            case #"rat_tunnels":
+                level thread cp_nam_prisoner_rat_tunnels::cleanup();
+                break;
+            default:
+                break;
         }
     }
 }
@@ -539,17 +703,18 @@ function function_aa96d24b(str_objective, *var_50cc0d4f, *var_aa1a6455, *player)
 // Params 0, eflags: 0x0
 // Checksum 0x65721395, Offset: 0x4c30
 // Size: 0x27c
-function function_c26b0bc0() {
-    level flag::init("visit_start");
-    level flag::init("visit_restart");
-    level flag::init("exit_ready");
-    level flag::init("flag_mem_count_1");
-    level flag::init("flag_mem_count_2");
-    level flag::init("flag_mem_2_obj_obey");
-    level flag::init("flag_mem_2_obj_disobey");
-    level flag::init("flag_mem_count_3");
-    level flag::init("flag_mem_count_4");
-    level flag::init("flag_in_end_path");
+function function_c26b0bc0()
+{
+    level flag::init( "visit_start" );
+    level flag::init( "visit_restart" );
+    level flag::init( "exit_ready" );
+    level flag::init( "flag_mem_count_1" );
+    level flag::init( "flag_mem_count_2" );
+    level flag::init( "flag_mem_2_obj_obey" );
+    level flag::init( "flag_mem_2_obj_disobey" );
+    level flag::init( "flag_mem_count_3" );
+    level flag::init( "flag_mem_count_4" );
+    level flag::init( "flag_in_end_path" );
     level thread namespace_3ab3b856::function_c26b0bc0();
     level thread namespace_c6aa31df::function_c26b0bc0();
     level thread namespace_1bc068e2::function_c26b0bc0();
@@ -569,21 +734,25 @@ function function_c26b0bc0() {
 // Params 0, eflags: 0x0
 // Checksum 0xa8d013ff, Offset: 0x4eb8
 // Size: 0x34
-function function_6890cc65() {
-    spawner::add_spawn_function_group("rice_paddies_v3_enemies_1", "targetname", &namespace_d9b153b9::function_c1e6a263);
+function function_6890cc65()
+{
+    spawner::add_spawn_function_group( "rice_paddies_v3_enemies_1", "targetname", &namespace_d9b153b9::function_c1e6a263 );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 0, eflags: 0x0
 // Checksum 0xbf1af59f, Offset: 0x4ef8
 // Size: 0x108
-function function_d56266e4() {
-    level flag::wait_till("all_players_spawned");
-    player = getplayers()[0];
-    player endon(#"death");
-    a_vols = getentarray("vol_waterfall", "targetname");
-    foreach (e_vol in a_vols) {
-        player thread function_8c5f16dd(e_vol);
+function function_d56266e4()
+{
+    level flag::wait_till( "all_players_spawned" );
+    player = getplayers()[ 0 ];
+    player endon( #"death" );
+    a_vols = getentarray( "vol_waterfall", "targetname" );
+    
+    foreach ( e_vol in a_vols )
+    {
+        player thread function_8c5f16dd( e_vol );
     }
 }
 
@@ -591,21 +760,31 @@ function function_d56266e4() {
 // Params 1, eflags: 0x0
 // Checksum 0xae4ac71f, Offset: 0x5008
 // Size: 0xee
-function function_8c5f16dd(volume) {
-    self endon(#"death");
-    while (true) {
-        involume = self clientfield::get_to_player("pstfx_waterfall_droplets") == 1;
-        while (!self istouching(volume)) {
-            waitframe(1);
+function function_8c5f16dd( volume )
+{
+    self endon( #"death" );
+    
+    while ( true )
+    {
+        involume = self clientfield::get_to_player( "pstfx_waterfall_droplets" ) == 1;
+        
+        while ( !self istouching( volume ) )
+        {
+            waitframe( 1 );
         }
-        if (!involume) {
-            self clientfield::set_to_player("pstfx_waterfall_droplets", 1);
+        
+        if ( !involume )
+        {
+            self clientfield::set_to_player( "pstfx_waterfall_droplets", 1 );
         }
-        while (self istouching(volume)) {
-            waitframe(1);
+        
+        while ( self istouching( volume ) )
+        {
+            waitframe( 1 );
         }
-        self clientfield::set_to_player("pstfx_waterfall_droplets", 0);
-        waitframe(1);
+        
+        self clientfield::set_to_player( "pstfx_waterfall_droplets", 0 );
+        waitframe( 1 );
     }
 }
 
@@ -613,9 +792,12 @@ function function_8c5f16dd(volume) {
 // Params 0, eflags: 0x0
 // Checksum 0x63ad4a57, Offset: 0x5100
 // Size: 0x4b6
-function function_31b460ba() {
+function function_31b460ba()
+{
     transient = savegame::function_6440b06b();
-    if (!isdefined(transient.var_731c10af)) {
+    
+    if ( !isdefined( transient.var_731c10af ) )
+    {
         level.var_8b493c47 = 1;
         transient.var_731c10af = spawnstruct();
         transient.var_731c10af.var_42659717 = 0;
@@ -624,34 +806,38 @@ function function_31b460ba() {
         transient.var_731c10af.var_e53f209f = [];
         transient.var_731c10af.var_d8a772da = undefined;
     }
+    
     level.var_731c10af = transient.var_731c10af;
     level.var_731c10af.var_42659717 = transient.var_731c10af.var_42659717;
     level.var_731c10af.var_e15e5b51 = transient.var_731c10af.var_e15e5b51;
     level.var_731c10af.var_e53f209f = transient.var_731c10af.var_e53f209f;
     level.var_731c10af.var_d8a772da = transient.var_731c10af.var_d8a772da;
-    function_3fbf16c1("rice_paddies");
-    function_3fbf16c1("jungle_path");
-    function_3fbf16c1("creek_path");
-    function_3fbf16c1("bridge_path");
-    function_3fbf16c1("waterfall_path");
-    function_3fbf16c1("river_path");
-    function_3fbf16c1("sniper_overlook");
-    function_3fbf16c1("village");
-    function_3fbf16c1("caves");
-    function_3fbf16c1("rat_tunnels");
-    function_3fbf16c1("memory_1");
-    function_3fbf16c1("memory_2");
-    function_3fbf16c1("memory_3");
-    function_3fbf16c1("memory_4");
-    persistent = savegame::function_6440b06b(#"persistent");
-    if (!isdefined(persistent.var_9fd1c625)) {
+    function_3fbf16c1( "rice_paddies" );
+    function_3fbf16c1( "jungle_path" );
+    function_3fbf16c1( "creek_path" );
+    function_3fbf16c1( "bridge_path" );
+    function_3fbf16c1( "waterfall_path" );
+    function_3fbf16c1( "river_path" );
+    function_3fbf16c1( "sniper_overlook" );
+    function_3fbf16c1( "village" );
+    function_3fbf16c1( "caves" );
+    function_3fbf16c1( "rat_tunnels" );
+    function_3fbf16c1( "memory_1" );
+    function_3fbf16c1( "memory_2" );
+    function_3fbf16c1( "memory_3" );
+    function_3fbf16c1( "memory_4" );
+    persistent = savegame::function_6440b06b( #"persistent" );
+    
+    if ( !isdefined( persistent.var_9fd1c625 ) )
+    {
         persistent.var_9fd1c625 = spawnstruct();
         persistent.var_9fd1c625.var_e3cc02a9 = [];
         persistent.var_9fd1c625.var_204d167f = [];
     }
-    level.var_8b6003c3 = [#"sniper_overlook", #"village", #"caves", #"rat_tunnels"];
+    
+    level.var_8b6003c3 = [ #"sniper_overlook", #"village", #"caves", #"rat_tunnels" ];
     level.var_9ba0ebb2 = level.var_8b6003c3.size;
-    level.var_607cc7b3 = [#"hash_f9ee0df7af7bf0c", #"memory_2_obey", #"hash_4a1e9d19df428406", #"hash_121dd2e848275e06", #"memory_2_disobey", #"hash_4ef3d1128f238290", #"memory_4"];
+    level.var_607cc7b3 = [ #"hash_f9ee0df7af7bf0c", #"memory_2_obey", #"hash_4a1e9d19df428406", #"memory_1_disobey", #"memory_2_disobey", #"memory_3_disobey", #"memory_4" ];
     level.var_93b4bbca = level.var_607cc7b3.size;
     level.var_9fd1c625 = persistent.var_9fd1c625;
     level.var_9fd1c625.var_e3cc02a9 = persistent.var_9fd1c625.var_e3cc02a9;
@@ -662,32 +848,41 @@ function function_31b460ba() {
 // Params 1, eflags: 0x0
 // Checksum 0x2ee73010, Offset: 0x55c0
 // Size: 0x1ac
-function function_3fbf16c1(var_e5c02698) {
+function function_3fbf16c1( var_e5c02698 )
+{
     transient = savegame::function_6440b06b();
-    if (!isdefined(transient.var_731c10af.paths[var_e5c02698])) {
-        transient.var_731c10af.paths[var_e5c02698] = spawnstruct();
-        transient.var_731c10af.paths[var_e5c02698].str = var_e5c02698;
-        transient.var_731c10af.paths[var_e5c02698].count = 0;
+    
+    if ( !isdefined( transient.var_731c10af.paths[ var_e5c02698 ] ) )
+    {
+        transient.var_731c10af.paths[ var_e5c02698 ] = spawnstruct();
+        transient.var_731c10af.paths[ var_e5c02698 ].str = var_e5c02698;
+        transient.var_731c10af.paths[ var_e5c02698 ].count = 0;
     }
-    level.var_731c10af.paths[var_e5c02698] = transient.var_731c10af.paths[var_e5c02698];
-    level.var_731c10af.paths[var_e5c02698].str = transient.var_731c10af.paths[var_e5c02698].str;
-    level.var_731c10af.paths[var_e5c02698].count = transient.var_731c10af.paths[var_e5c02698].count;
-    namespace_d9b153b9::function_e106e062(var_e5c02698, transient.var_731c10af.paths[var_e5c02698].count);
-    level cp_nam_prisoner_fx::function_e5b8c5f(var_e5c02698);
-    level thread cp_nam_prisoner_fx::function_158c95d7(var_e5c02698);
+    
+    level.var_731c10af.paths[ var_e5c02698 ] = transient.var_731c10af.paths[ var_e5c02698 ];
+    level.var_731c10af.paths[ var_e5c02698 ].str = transient.var_731c10af.paths[ var_e5c02698 ].str;
+    level.var_731c10af.paths[ var_e5c02698 ].count = transient.var_731c10af.paths[ var_e5c02698 ].count;
+    namespace_d9b153b9::function_e106e062( var_e5c02698, transient.var_731c10af.paths[ var_e5c02698 ].count );
+    level cp_nam_prisoner_fx::function_e5b8c5f( var_e5c02698 );
+    level thread cp_nam_prisoner_fx::function_158c95d7( var_e5c02698 );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 0, eflags: 0x0
 // Checksum 0x4afafd10, Offset: 0x5778
 // Size: 0xd4
-function on_player_connect() {
-    if (isdefined(level.var_28c22d88) && array::contains(level.var_28c22d88, "intro") || level.var_28c22d88.size == 0) {
-        util::function_f3cadc9a("cp_nam_prisoner_player_ready");
-        if (isdefined(level.var_d7d201ba) && !self flag::exists(level.var_d7d201ba)) {
-            self flag::init(level.var_d7d201ba);
+function on_player_connect()
+{
+    if ( isdefined( level.var_28c22d88 ) && array::contains( level.var_28c22d88, "intro" ) || level.var_28c22d88.size == 0 )
+    {
+        util::function_f3cadc9a( "cp_nam_prisoner_player_ready" );
+        
+        if ( isdefined( level.var_d7d201ba ) && !self flag::exists( level.var_d7d201ba ) )
+        {
+            self flag::init( level.var_d7d201ba );
         }
     }
+    
     self function_48737ebb();
 }
 
@@ -695,24 +890,30 @@ function on_player_connect() {
 // Params 0, eflags: 0x0
 // Checksum 0x5ef1a681, Offset: 0x5858
 // Size: 0xfa
-function function_48737ebb() {
+function function_48737ebb()
+{
     var_1584d516 = self player_decision::function_1c4fb6d4();
-    level.gender = self namespace_70eba6e6::function_33bf99f8(1);
+    level.gender = self namespace_70eba6e6::function_33bf99f8( 1 );
+    
     /#
-        var_9a7b5d79 = getdvarint(#"hash_4dd19684bf68597b", -1);
-        if (var_9a7b5d79 != -1) {
+        var_9a7b5d79 = getdvarint( #"hash_4dd19684bf68597b", -1 );
+        
+        if ( var_9a7b5d79 != -1 )
+        {
             var_1584d516 = var_9a7b5d79;
         }
     #/
-    switch (var_1584d516) {
-    case 0:
-        level.var_9a750f = 1;
-        break;
-    case 1:
-        level.var_6c6e6d75 = 1;
-        break;
-    case 2:
-        break;
+    
+    switch ( var_1584d516 )
+    {
+        case 0:
+            level.var_9a750f = 1;
+            break;
+        case 1:
+            level.var_6c6e6d75 = 1;
+            break;
+        case 2:
+            break;
     }
 }
 
@@ -720,20 +921,26 @@ function function_48737ebb() {
 // Params 0, eflags: 0x0
 // Checksum 0x3173b7c9, Offset: 0x5960
 // Size: 0x184
-function on_player_spawned() {
-    level.player = getplayers()[0];
-    if (isdefined(level.var_28c22d88)) {
-        level thread namespace_d9b153b9::force_weapon_loadout(level.var_28c22d88[0]);
-    } else {
-        level thread namespace_d9b153b9::force_weapon_loadout("");
+function on_player_spawned()
+{
+    level.player = getplayers()[ 0 ];
+    
+    if ( isdefined( level.var_28c22d88 ) )
+    {
+        level thread namespace_d9b153b9::force_weapon_loadout( level.var_28c22d88[ 0 ] );
     }
-    self setcharacterbodytype(1);
-    self setcharacteroutfit(1);
+    else
+    {
+        level thread namespace_d9b153b9::force_weapon_loadout( "" );
+    }
+    
+    self setcharacterbodytype( 1 );
+    self setcharacteroutfit( 1 );
     self util::function_a5318821();
-    callback::function_c046382d(&namespace_d9b153b9::vo_death);
-    setdvar(#"hash_5f6e4f9f1fde7a30", 40);
-    setdvar(#"r_motionblurmode", 2);
-    setdvar(#"r_motionblurstrength", 0.2);
+    callback::function_c046382d( &namespace_d9b153b9::vo_death );
+    setdvar( #"hash_5f6e4f9f1fde7a30", 40 );
+    setdvar( #"r_motionblurmode", 2 );
+    setdvar( #"r_motionblurstrength", 0.2 );
     level.player namespace_d9b153b9::player_teleport();
     level.player_connected = 1;
 }
@@ -742,224 +949,364 @@ function on_player_spawned() {
 // Params 2, eflags: 0x0
 // Checksum 0x8934755d, Offset: 0x5af0
 // Size: 0xf84
-function function_e5c19f38(*visit, section) {
-    if (!function_ba77db22("rice_paddies")) {
-        namespace_d9b153b9::function_e106e062("rice_paddies", 1);
+function function_e5c19f38( *visit, section )
+{
+    if ( !function_ba77db22( "rice_paddies" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "rice_paddies", 1 );
     }
-    if (section == "jungle_path_1") {
+    
+    if ( section == "jungle_path_1" )
+    {
         return;
     }
-    if (!function_ba77db22("jungle_path")) {
-        namespace_d9b153b9::function_e106e062("jungle_path", 1);
+    
+    if ( !function_ba77db22( "jungle_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "jungle_path", 1 );
     }
-    if (section == "middle_paths_1") {
+    
+    if ( section == "middle_paths_1" )
+    {
         return;
     }
-    if (section == "dev_waterfall_path") {
+    
+    if ( section == "dev_waterfall_path" )
+    {
         return;
     }
-    if (section == "dev_creek_path") {
+    
+    if ( section == "dev_creek_path" )
+    {
         return;
     }
-    if (section == "dev_bridge_path") {
-        if (!function_ba77db22("creek_path")) {
-            namespace_d9b153b9::function_e106e062("creek_path", 1);
+    
+    if ( section == "dev_bridge_path" )
+    {
+        if ( !function_ba77db22( "creek_path" ) )
+        {
+            namespace_d9b153b9::function_e106e062( "creek_path", 1 );
         }
+        
         return;
     }
-    if (section == "dev_village" || section == "dev_sniper_overlook" || section == "dev_memory_b" || section == "dev_memory_a") {
-        if (!function_ba77db22("creek_path")) {
-            namespace_d9b153b9::function_e106e062("creek_path", 1);
+    
+    if ( section == "dev_village" || section == "dev_sniper_overlook" || section == "dev_memory_b" || section == "dev_memory_a" )
+    {
+        if ( !function_ba77db22( "creek_path" ) )
+        {
+            namespace_d9b153b9::function_e106e062( "creek_path", 1 );
         }
-        if (!function_ba77db22("bridge_path")) {
-            namespace_d9b153b9::function_e106e062("bridge_path", 1);
+        
+        if ( !function_ba77db22( "bridge_path" ) )
+        {
+            namespace_d9b153b9::function_e106e062( "bridge_path", 1 );
         }
-        if (section == "dev_memory_b") {
-            if (!function_ba77db22("village")) {
-                namespace_d9b153b9::function_e106e062("village", 1);
+        
+        if ( section == "dev_memory_b" )
+        {
+            if ( !function_ba77db22( "village" ) )
+            {
+                namespace_d9b153b9::function_e106e062( "village", 1 );
             }
         }
-        if (section == "dev_memory_a") {
-            if (!function_ba77db22("sniper_overlook")) {
-                namespace_d9b153b9::function_e106e062("sniper_overlook", 1);
+        
+        if ( section == "dev_memory_a" )
+        {
+            if ( !function_ba77db22( "sniper_overlook" ) )
+            {
+                namespace_d9b153b9::function_e106e062( "sniper_overlook", 1 );
             }
         }
-        foreach (path_end in level.var_731c10af.var_e53f209f) {
-            level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+        
+        foreach ( path_end in level.var_731c10af.var_e53f209f )
+        {
+            level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
         }
+        
         return;
     }
-    if (!function_ba77db22("waterfall_path")) {
-        namespace_d9b153b9::function_e106e062("waterfall_path", 1);
+    
+    if ( !function_ba77db22( "waterfall_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "waterfall_path", 1 );
     }
-    if (section == "dev_river_path") {
+    
+    if ( section == "dev_river_path" )
+    {
         return;
     }
-    if (!function_ba77db22("river_path")) {
-        namespace_d9b153b9::function_e106e062("river_path", 1);
+    
+    if ( !function_ba77db22( "river_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "river_path", 1 );
     }
-    if (section == "path_end_1") {
+    
+    if ( section == "path_end_1" )
+    {
         return;
     }
-    if (section == "dev_rat_tunnels") {
+    
+    if ( section == "dev_rat_tunnels" )
+    {
         return;
     }
-    if (section == "dev_memory_1_disobey") {
-        if (!function_ba77db22("rat_tunnels")) {
-            level thread flag::set("flag_rat_tunnels");
-            namespace_d9b153b9::function_e106e062("rat_tunnels", 1);
+    
+    if ( section == "dev_memory_1_disobey" )
+    {
+        if ( !function_ba77db22( "rat_tunnels" ) )
+        {
+            level thread flag::set( "flag_rat_tunnels" );
+            namespace_d9b153b9::function_e106e062( "rat_tunnels", 1 );
         }
-        foreach (path_end in level.var_731c10af.var_e53f209f) {
-            level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+        
+        foreach ( path_end in level.var_731c10af.var_e53f209f )
+        {
+            level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
         }
+        
         return;
     }
-    if (!function_ba77db22("caves")) {
-        level thread flag::set("flag_caves");
-        namespace_d9b153b9::function_e106e062("caves", 1);
+    
+    if ( !function_ba77db22( "caves" ) )
+    {
+        level thread flag::set( "flag_caves" );
+        namespace_d9b153b9::function_e106e062( "caves", 1 );
     }
-    foreach (path_end in level.var_731c10af.var_e53f209f) {
-        level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+    
+    foreach ( path_end in level.var_731c10af.var_e53f209f )
+    {
+        level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
     }
-    if (section == "memory_1") {
+    
+    if ( section == "memory_1" )
+    {
         return;
     }
-    if (!function_ba77db22("memory_1")) {
-        namespace_d9b153b9::function_e106e062("memory_1", 1);
+    
+    if ( !function_ba77db22( "memory_1" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "memory_1", 1 );
     }
-    if (section == "rice_paddies_2") {
+    
+    if ( section == "rice_paddies_2" )
+    {
         return;
     }
-    if (!function_ba77db22("rice_paddies")) {
-        namespace_d9b153b9::function_e106e062("rice_paddies", 2);
+    
+    if ( !function_ba77db22( "rice_paddies" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "rice_paddies", 2 );
     }
-    if (section == "jungle_path_2") {
+    
+    if ( section == "jungle_path_2" )
+    {
         return;
     }
-    if (!function_ba77db22("jungle_path")) {
-        namespace_d9b153b9::function_e106e062("jungle_path", 2);
+    
+    if ( !function_ba77db22( "jungle_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "jungle_path", 2 );
     }
-    if (section == "middle_paths_2") {
+    
+    if ( section == "middle_paths_2" )
+    {
         return;
     }
-    if (!function_ba77db22("creek_path")) {
-        namespace_d9b153b9::function_e106e062("creek_path", 1);
+    
+    if ( !function_ba77db22( "creek_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "creek_path", 1 );
     }
-    if (!function_ba77db22("bridge_path")) {
-        namespace_d9b153b9::function_e106e062("bridge_path", 1);
+    
+    if ( !function_ba77db22( "bridge_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "bridge_path", 1 );
     }
-    if (section == "path_end_2") {
+    
+    if ( section == "path_end_2" )
+    {
         return;
     }
-    if (section == "dev_memory_2_disobey") {
-        if (!function_ba77db22("rat_tunnels")) {
-            level thread flag::set("flag_rat_tunnels");
-            namespace_d9b153b9::function_e106e062("rat_tunnels", 1);
+    
+    if ( section == "dev_memory_2_disobey" )
+    {
+        if ( !function_ba77db22( "rat_tunnels" ) )
+        {
+            level thread flag::set( "flag_rat_tunnels" );
+            namespace_d9b153b9::function_e106e062( "rat_tunnels", 1 );
         }
-        foreach (path_end in level.var_731c10af.var_e53f209f) {
-            level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+        
+        foreach ( path_end in level.var_731c10af.var_e53f209f )
+        {
+            level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
         }
+        
         return;
     }
-    if (!function_ba77db22("village")) {
-        level thread flag::set("flag_village");
-        namespace_d9b153b9::function_e106e062("village", 1);
+    
+    if ( !function_ba77db22( "village" ) )
+    {
+        level thread flag::set( "flag_village" );
+        namespace_d9b153b9::function_e106e062( "village", 1 );
     }
-    foreach (path_end in level.var_731c10af.var_e53f209f) {
-        level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+    
+    foreach ( path_end in level.var_731c10af.var_e53f209f )
+    {
+        level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
     }
-    if (section == "memory_2") {
+    
+    if ( section == "memory_2" )
+    {
         return;
     }
-    if (!function_ba77db22("memory_2")) {
-        namespace_d9b153b9::function_e106e062("memory_2", 1);
+    
+    if ( !function_ba77db22( "memory_2" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "memory_2", 1 );
     }
-    if (section == "rice_paddies_3") {
+    
+    if ( section == "rice_paddies_3" )
+    {
         return;
     }
-    if (!function_ba77db22("rice_paddies")) {
-        namespace_d9b153b9::function_e106e062("rice_paddies", 3);
+    
+    if ( !function_ba77db22( "rice_paddies" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "rice_paddies", 3 );
     }
-    if (section == "jungle_path_3") {
+    
+    if ( section == "jungle_path_3" )
+    {
         return;
     }
-    if (!function_ba77db22("jungle_path")) {
-        namespace_d9b153b9::function_e106e062("jungle_path", 3);
+    
+    if ( !function_ba77db22( "jungle_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "jungle_path", 3 );
     }
-    if (section == "middle_paths_3") {
+    
+    if ( section == "middle_paths_3" )
+    {
         return;
     }
-    if (!function_ba77db22("creek_path")) {
-        namespace_d9b153b9::function_e106e062("creek_path", 2);
+    
+    if ( !function_ba77db22( "creek_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "creek_path", 2 );
     }
-    if (!function_ba77db22("bridge_path")) {
-        namespace_d9b153b9::function_e106e062("bridge_path", 2);
+    
+    if ( !function_ba77db22( "bridge_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "bridge_path", 2 );
     }
-    if (section == "path_end_3") {
+    
+    if ( section == "path_end_3" )
+    {
         return;
     }
-    if (section == "dev_memory_3_disobey") {
-        if (!function_ba77db22("rat_tunnels")) {
-            level thread flag::set("flag_rat_tunnels");
-            namespace_d9b153b9::function_e106e062("rat_tunnels", 1);
+    
+    if ( section == "dev_memory_3_disobey" )
+    {
+        if ( !function_ba77db22( "rat_tunnels" ) )
+        {
+            level thread flag::set( "flag_rat_tunnels" );
+            namespace_d9b153b9::function_e106e062( "rat_tunnels", 1 );
         }
-        foreach (path_end in level.var_731c10af.var_e53f209f) {
-            level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+        
+        foreach ( path_end in level.var_731c10af.var_e53f209f )
+        {
+            level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
         }
+        
         return;
     }
-    if (!function_ba77db22("sniper_overlook")) {
-        level thread flag::set("flag_sniper_overlook");
-        namespace_d9b153b9::function_e106e062("sniper_overlook", 1);
+    
+    if ( !function_ba77db22( "sniper_overlook" ) )
+    {
+        level thread flag::set( "flag_sniper_overlook" );
+        namespace_d9b153b9::function_e106e062( "sniper_overlook", 1 );
     }
-    foreach (path_end in level.var_731c10af.var_e53f209f) {
-        level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+    
+    foreach ( path_end in level.var_731c10af.var_e53f209f )
+    {
+        level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
     }
-    if (section == "memory_3") {
+    
+    if ( section == "memory_3" )
+    {
         return;
     }
-    if (!function_ba77db22("memory_3")) {
-        namespace_d9b153b9::function_e106e062("memory_3", 1);
+    
+    if ( !function_ba77db22( "memory_3" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "memory_3", 1 );
     }
-    if (!level flag::get("exit_ready")) {
-        level flag::set("exit_ready");
+    
+    if ( !level flag::get( "exit_ready" ) )
+    {
+        level flag::set( "exit_ready" );
     }
-    if (section == "rice_paddies_4") {
+    
+    if ( section == "rice_paddies_4" )
+    {
         return;
     }
-    if (!function_ba77db22("rice_paddies")) {
-        namespace_d9b153b9::function_e106e062("rice_paddies", 4);
+    
+    if ( !function_ba77db22( "rice_paddies" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "rice_paddies", 4 );
     }
-    if (section == "jungle_path_4") {
+    
+    if ( section == "jungle_path_4" )
+    {
         return;
     }
-    if (!function_ba77db22("jungle_path")) {
-        namespace_d9b153b9::function_e106e062("jungle_path", 4);
+    
+    if ( !function_ba77db22( "jungle_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "jungle_path", 4 );
     }
-    if (section == "middle_paths_4") {
+    
+    if ( section == "middle_paths_4" )
+    {
         return;
     }
-    if (!function_ba77db22("waterfall_path")) {
-        namespace_d9b153b9::function_e106e062("waterfall_path", 2);
+    
+    if ( !function_ba77db22( "waterfall_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "waterfall_path", 2 );
     }
-    if (!function_ba77db22("river_path")) {
-        namespace_d9b153b9::function_e106e062("river_path", 2);
+    
+    if ( !function_ba77db22( "river_path" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "river_path", 2 );
     }
-    if (section == "path_end_4") {
+    
+    if ( section == "path_end_4" )
+    {
         return;
     }
-    if (!function_ba77db22("rat_tunnels")) {
-        level thread flag::set("flag_rat_tunnels");
-        namespace_d9b153b9::function_e106e062("rat_tunnels", 1);
+    
+    if ( !function_ba77db22( "rat_tunnels" ) )
+    {
+        level thread flag::set( "flag_rat_tunnels" );
+        namespace_d9b153b9::function_e106e062( "rat_tunnels", 1 );
     }
-    foreach (path_end in level.var_731c10af.var_e53f209f) {
-        level thread namespace_d9b153b9::function_2d527091("flag_" + path_end + "_backtrack_blocker");
+    
+    foreach ( path_end in level.var_731c10af.var_e53f209f )
+    {
+        level thread namespace_d9b153b9::function_2d527091( "flag_" + path_end + "_backtrack_blocker" );
     }
-    if (section == "memory_4") {
+    
+    if ( section == "memory_4" )
+    {
         return;
     }
-    if (!function_ba77db22("memory_4")) {
-        namespace_d9b153b9::function_e106e062("memory_4", 1);
+    
+    if ( !function_ba77db22( "memory_4" ) )
+    {
+        namespace_d9b153b9::function_e106e062( "memory_4", 1 );
     }
 }
 
@@ -967,183 +1314,219 @@ function function_e5c19f38(*visit, section) {
 // Params 0, eflags: 0x0
 // Checksum 0x1e215cbf, Offset: 0x6a80
 // Size: 0x11f4
-function function_767a5911() {
-    while (!isdefined(level.var_28c22d88) || level.var_28c22d88.size == 0) {
+function function_767a5911()
+{
+    while ( !isdefined( level.var_28c22d88 ) || level.var_28c22d88.size == 0 )
+    {
         wait 0.05;
     }
-    switch (level.var_28c22d88[0]) {
-    case #"intro":
-        break;
-    case #"dev_rice_paddies_1_all_districts":
-    case #"rice_paddies_1":
-        break;
-    case #"jungle_path_1":
-        level flag::set("flag_rice_paddies");
-        level function_e5c19f38(1, "jungle_path_1");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths"], 1);
-        break;
-    case #"dev_waterfall_path":
-    case #"dev_creek_path":
-    case #"middle_paths_1":
-        level flag::set("flag_rice_paddies");
-        level flag::set("flag_jungle_path");
-        level function_e5c19f38(1, "dev_waterfall_path");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance"], 1);
-        break;
-    case #"dev_river_path":
-        level flag::set("flag_rice_paddies");
-        level flag::set("flag_jungle_path");
-        level function_e5c19f38(1, "dev_river_path");
-        break;
-    case #"dev_bridge_path":
-        level flag::set("flag_rice_paddies");
-        level flag::set("flag_jungle_path");
-        level function_e5c19f38(1, "dev_bridge_path");
-        break;
-    case #"path_end_1":
-    case #"hash_57932fa2a5147f7d":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "caves";
-        }
-        level function_e5c19f38(1, "path_end_1");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "sniper_overlook", "village", "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels"], 1);
-        break;
-    case #"dev_village":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "village";
-        }
-        level function_e5c19f38(1, "dev_village");
-        break;
-    case #"dev_sniper_overlook":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "sniper_overlook";
-        }
-        level function_e5c19f38(1, "dev_sniper_overlook");
-        break;
-    case #"dev_memory_2_disobey":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "sniper_overlook";
-        }
-        level function_e5c19f38(2, "dev_memory_2_disobey");
-        break;
-    case #"dev_memory_3_disobey":
-    case #"dev_memory_3_disobey_end":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "caves";
-        }
-        level function_e5c19f38(3, "dev_memory_3_disobey");
-        break;
-    case #"dev_rat_tunnels":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "rat_tunnels";
-        }
-        level function_e5c19f38(1, "path_end_1");
-        break;
-    case #"dev_memory_1_disobey":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "rat_tunnels";
-        }
-        level function_e5c19f38(1, "dev_memory_1_disobey");
-        break;
-    case #"memory_1":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "caves";
-        }
-        level function_e5c19f38(1, "memory_1");
-        level districts::function_a7d79fcb(["bunker", "lab"], 1);
-        break;
-    case #"hash_33d35e99f904418":
-    case #"rice_paddies_2":
-        level function_e5c19f38(2, "rice_paddies_2");
-        break;
-    case #"jungle_path_2":
-        level flag::set("flag_rice_paddies");
-        level function_e5c19f38(2, "jungle_path_2");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths"], 1);
-        break;
-    case #"middle_paths_2":
-        level flag::set("flag_rice_paddies");
-        level flag::set("flag_jungle_path");
-        level function_e5c19f38(2, "middle_paths_2");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance"], 1);
-        break;
-    case #"path_end_2":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "village";
-        }
-        level function_e5c19f38(2, "path_end_2");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "sniper_overlook", "village", "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels"], 1);
-        break;
-    case #"memory_2":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "village";
-        }
-        level function_e5c19f38(2, "memory_2");
-        level districts::function_a7d79fcb(["bunker", "lab"], 1);
-        break;
-    case #"rice_paddies_3":
-        level function_e5c19f38(3, "rice_paddies_3");
-        break;
-    case #"jungle_path_3":
-        level flag::set("flag_rice_paddies");
-        level function_e5c19f38(3, "jungle_path_3");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "memory_3"], 1);
-        break;
-    case #"middle_paths_3":
-        level flag::set("flag_rice_paddies");
-        level flag::set("flag_jungle_path");
-        level function_e5c19f38(3, "middle_paths_3");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance", "memory_3"], 1);
-        break;
-    case #"path_end_3":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "sniper_overlook";
-        }
-        level function_e5c19f38(3, "path_end_3");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "sniper_overlook", "village", "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels", "memory_3"], 1);
-        break;
-    case #"memory_3":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "sniper_overlook";
-        }
-        level function_e5c19f38(3, "memory_3");
-        level districts::function_a7d79fcb(["bunker", "lab"], 1);
-        break;
-    case #"hash_3c53d27e3038e7ca":
-    case #"hash_38adaba11a0b5d14":
-    case #"hash_38adaaa11a0b5b61":
-    case #"dev_infinite_hallway_loop_2":
-    case #"dev_memory_3_end":
-    case #"hash_6f9002fa3e695a0c":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "sniper_overlook";
-        }
-        level function_e5c19f38(3, "memory_3");
-        break;
-    case #"rice_paddies_4":
-        level function_e5c19f38(4, "rice_paddies_4");
-        break;
-    case #"middle_paths_4":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "exit";
-        }
-        level flag::set("flag_rice_paddies");
-        level flag::set("flag_jungle_path");
-        level function_e5c19f38(4, "middle_paths_4");
-        level districts::function_a7d79fcb(["rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance", "memory_3"], 1);
-        break;
-    case #"memory_4":
-        if (!isdefined(level.var_731c10af.var_d8a772da)) {
-            level.var_731c10af.var_d8a772da = "exit";
-        }
-        level function_e5c19f38(4, "memory_4");
-        level districts::function_a7d79fcb(["bunker"], 1);
-        break;
+    
+    switch ( level.var_28c22d88[ 0 ] )
+    {
+        case #"intro":
+            break;
+        case #"dev_rice_paddies_1_all_districts":
+        case #"rice_paddies_1":
+            break;
+        case #"jungle_path_1":
+            level flag::set( "flag_rice_paddies" );
+            level function_e5c19f38( 1, "jungle_path_1" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths" ], 1 );
+            break;
+        case #"dev_waterfall_path":
+        case #"dev_creek_path":
+        case #"middle_paths_1":
+            level flag::set( "flag_rice_paddies" );
+            level flag::set( "flag_jungle_path" );
+            level function_e5c19f38( 1, "dev_waterfall_path" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance" ], 1 );
+            break;
+        case #"dev_river_path":
+            level flag::set( "flag_rice_paddies" );
+            level flag::set( "flag_jungle_path" );
+            level function_e5c19f38( 1, "dev_river_path" );
+            break;
+        case #"dev_bridge_path":
+            level flag::set( "flag_rice_paddies" );
+            level flag::set( "flag_jungle_path" );
+            level function_e5c19f38( 1, "dev_bridge_path" );
+            break;
+        case #"path_end_1":
+        case #"hash_57932fa2a5147f7d":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "caves";
+            }
+            
+            level function_e5c19f38( 1, "path_end_1" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "sniper_overlook", "village", "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels" ], 1 );
+            break;
+        case #"dev_village":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "village";
+            }
+            
+            level function_e5c19f38( 1, "dev_village" );
+            break;
+        case #"dev_sniper_overlook":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "sniper_overlook";
+            }
+            
+            level function_e5c19f38( 1, "dev_sniper_overlook" );
+            break;
+        case #"dev_memory_2_disobey":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "sniper_overlook";
+            }
+            
+            level function_e5c19f38( 2, "dev_memory_2_disobey" );
+            break;
+        case #"dev_memory_3_disobey":
+        case #"dev_memory_3_disobey_end":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "caves";
+            }
+            
+            level function_e5c19f38( 3, "dev_memory_3_disobey" );
+            break;
+        case #"dev_rat_tunnels":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "rat_tunnels";
+            }
+            
+            level function_e5c19f38( 1, "path_end_1" );
+            break;
+        case #"dev_memory_1_disobey":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "rat_tunnels";
+            }
+            
+            level function_e5c19f38( 1, "dev_memory_1_disobey" );
+            break;
+        case #"memory_1":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "caves";
+            }
+            
+            level function_e5c19f38( 1, "memory_1" );
+            level districts::function_a7d79fcb( [ "bunker", "lab" ], 1 );
+            break;
+        case #"hash_33d35e99f904418":
+        case #"rice_paddies_2":
+            level function_e5c19f38( 2, "rice_paddies_2" );
+            break;
+        case #"jungle_path_2":
+            level flag::set( "flag_rice_paddies" );
+            level function_e5c19f38( 2, "jungle_path_2" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths" ], 1 );
+            break;
+        case #"middle_paths_2":
+            level flag::set( "flag_rice_paddies" );
+            level flag::set( "flag_jungle_path" );
+            level function_e5c19f38( 2, "middle_paths_2" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance" ], 1 );
+            break;
+        case #"path_end_2":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "village";
+            }
+            
+            level function_e5c19f38( 2, "path_end_2" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "sniper_overlook", "village", "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels" ], 1 );
+            break;
+        case #"memory_2":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "village";
+            }
+            
+            level function_e5c19f38( 2, "memory_2" );
+            level districts::function_a7d79fcb( [ "bunker", "lab" ], 1 );
+            break;
+        case #"rice_paddies_3":
+            level function_e5c19f38( 3, "rice_paddies_3" );
+            break;
+        case #"jungle_path_3":
+            level flag::set( "flag_rice_paddies" );
+            level function_e5c19f38( 3, "jungle_path_3" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "memory_3" ], 1 );
+            break;
+        case #"middle_paths_3":
+            level flag::set( "flag_rice_paddies" );
+            level flag::set( "flag_jungle_path" );
+            level function_e5c19f38( 3, "middle_paths_3" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance", "memory_3" ], 1 );
+            break;
+        case #"path_end_3":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "sniper_overlook";
+            }
+            
+            level function_e5c19f38( 3, "path_end_3" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "sniper_overlook", "village", "caves_entrance", "caves", "rat_tunnels_entrance", "rat_tunnels", "memory_3" ], 1 );
+            break;
+        case #"memory_3":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "sniper_overlook";
+            }
+            
+            level function_e5c19f38( 3, "memory_3" );
+            level districts::function_a7d79fcb( [ "bunker", "lab" ], 1 );
+            break;
+        case #"hash_3c53d27e3038e7ca":
+        case #"hash_38adaba11a0b5d14":
+        case #"hash_38adaaa11a0b5b61":
+        case #"dev_infinite_hallway_loop_2":
+        case #"dev_memory_3_end":
+        case #"hash_6f9002fa3e695a0c":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "sniper_overlook";
+            }
+            
+            level function_e5c19f38( 3, "memory_3" );
+            break;
+        case #"rice_paddies_4":
+            level function_e5c19f38( 4, "rice_paddies_4" );
+            break;
+        case #"middle_paths_4":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "exit";
+            }
+            
+            level flag::set( "flag_rice_paddies" );
+            level flag::set( "flag_jungle_path" );
+            level function_e5c19f38( 4, "middle_paths_4" );
+            level districts::function_a7d79fcb( [ "rice_paddies", "jungle_path", "middle_paths", "sniper_overlook_entrance", "village", "caves_entrance", "rat_tunnels_entrance", "memory_3" ], 1 );
+            break;
+        case #"memory_4":
+            if ( !isdefined( level.var_731c10af.var_d8a772da ) )
+            {
+                level.var_731c10af.var_d8a772da = "exit";
+            }
+            
+            level function_e5c19f38( 4, "memory_4" );
+            level districts::function_a7d79fcb( [ "bunker" ], 1 );
+            break;
     }
-    if (level.var_28c22d88[0] != "dev_lab") {
-        level thread namespace_d9b153b9::function_c318ce4a("lab_brainwash_spov_lights");
-        lab_brainwash_spov_lights = getentarray("lab_brainwash_spov_lights", "targetname");
-        array::thread_all(lab_brainwash_spov_lights, &namespace_d9b153b9::ent_cleanup);
+    
+    if ( level.var_28c22d88[ 0 ] != "dev_lab" )
+    {
+        level thread namespace_d9b153b9::function_c318ce4a( "lab_brainwash_spov_lights" );
+        lab_brainwash_spov_lights = getentarray( "lab_brainwash_spov_lights", "targetname" );
+        array::thread_all( lab_brainwash_spov_lights, &namespace_d9b153b9::ent_cleanup );
     }
 }
 
@@ -1151,19 +1534,28 @@ function function_767a5911() {
 // Params 1, eflags: 0x0
 // Checksum 0x6e5f3bb2, Offset: 0x7c80
 // Size: 0x8e
-function function_ba77db22(var_c79d614f) {
-    if (!isdefined(level.var_8b493c47)) {
+function function_ba77db22( var_c79d614f )
+{
+    if ( !isdefined( level.var_8b493c47 ) )
+    {
         return 1;
     }
-    if (isdefined(level.var_5d170909)) {
+    
+    if ( isdefined( level.var_5d170909 ) )
+    {
         return 1;
     }
-    if (!isdefined(level.var_2bcc3c68)) {
+    
+    if ( !isdefined( level.var_2bcc3c68 ) )
+    {
         return 0;
     }
-    if (isdefined(level.var_2bcc3c68) && isdefined(var_c79d614f) && issubstr(level.var_2bcc3c68, var_c79d614f)) {
+    
+    if ( isdefined( level.var_2bcc3c68 ) && isdefined( var_c79d614f ) && issubstr( level.var_2bcc3c68, var_c79d614f ) )
+    {
         return 1;
     }
+    
     return 0;
 }
 
@@ -1171,32 +1563,47 @@ function function_ba77db22(var_c79d614f) {
 // Params 0, eflags: 0x0
 // Checksum 0x6c2be591, Offset: 0x7d18
 // Size: 0x3c2
-function function_7a4dcbd4() {
-    level endon(#"start_outro");
-    level endon(#"flag_memory_4");
-    if (!level flag::get("visit_start")) {
-        level flag::set("visit_start");
+function function_7a4dcbd4()
+{
+    level endon( #"start_outro" );
+    level endon( #"flag_memory_4" );
+    
+    if ( !level flag::get( "visit_start" ) )
+    {
+        level flag::set( "visit_start" );
     }
+    
     function_f06a113d();
-    while (true) {
-        if (level.var_731c10af.var_42659717 == 1) {
-            level thread namespace_d9b153b9::function_fa427f65("night");
-        } else {
-            level thread namespace_d9b153b9::function_fa427f65("day");
+    
+    while ( true )
+    {
+        if ( level.var_731c10af.var_42659717 == 1 )
+        {
+            level thread namespace_d9b153b9::function_fa427f65( "night" );
         }
+        else
+        {
+            level thread namespace_d9b153b9::function_fa427f65( "day" );
+        }
+        
         level thread namespace_d9b153b9::function_2d527091();
         level thread namespace_d9b153b9::function_dac4d056();
-        level flag::wait_till("visit_restart");
+        level flag::wait_till( "visit_restart" );
         wait 0.25;
-        level flag::clear("visit_restart");
-        level notify(#"hash_39f79162a63bad6e");
+        level flag::clear( "visit_restart" );
+        level notify( #"hash_39f79162a63bad6e" );
         level thread namespace_d9b153b9::function_3642c497();
-        foreach (flag in level.var_5f862848) {
-            if (flag == "flag_rat_tunnels" || flag == "flag_caves" || flag == "flag_sniper_overlook" || flag == "flag_village") {
+        
+        foreach ( flag in level.var_5f862848 )
+        {
+            if ( flag == "flag_rat_tunnels" || flag == "flag_caves" || flag == "flag_sniper_overlook" || flag == "flag_village" )
+            {
                 continue;
             }
-            level flag::clear(flag);
+            
+            level flag::clear( flag );
         }
+        
         level thread namespace_c6aa31df::function_a08d5cab();
         level thread namespace_1bc068e2::function_a08d5cab();
         level thread namespace_d09d57dd::function_a08d5cab();
@@ -1206,10 +1613,13 @@ function function_7a4dcbd4() {
         level thread namespace_b508dca::function_a08d5cab();
         smart_bundle::function_92da2014();
         weapons = level.player getweaponslistprimaries();
-        foreach (weapon in weapons) {
-            level.player takeweapon(weapon);
+        
+        foreach ( weapon in weapons )
+        {
+            level.player takeweapon( weapon );
         }
-        waitframe(1);
+        
+        waitframe( 1 );
     }
 }
 
@@ -1217,13 +1627,16 @@ function function_7a4dcbd4() {
 // Params 0, eflags: 0x0
 // Checksum 0x63f172fd, Offset: 0x80e8
 // Size: 0x114
-function function_f06a113d() {
+function function_f06a113d()
+{
     level.var_5f862848 = [];
-    foreach (struct in level.var_731c10af.paths) {
+    
+    foreach ( struct in level.var_731c10af.paths )
+    {
         flag = "flag_" + struct.str;
-        level.var_5f862848[level.var_5f862848.size] = hash(flag);
+        level.var_5f862848[ level.var_5f862848.size ] = hash( flag );
         flag = struct.str + "_completed";
-        level.var_5f862848[level.var_5f862848.size] = hash(flag);
+        level.var_5f862848[ level.var_5f862848.size ] = hash( flag );
     }
 }
 
@@ -1231,22 +1644,28 @@ function function_f06a113d() {
 // Params 0, eflags: 0x0
 // Checksum 0x9748a67, Offset: 0x8208
 // Size: 0x1cc
-function function_42ad70e6() {
-    level flag::wait_till("level_intro_complete");
+function function_42ad70e6()
+{
+    level flag::wait_till( "level_intro_complete" );
     show_splash = 0;
-    if (skipto::function_fb89516e("intro") || skipto::function_fb89516e("rice_paddies_1")) {
-        level flag::wait_till("player_intro_anim_done");
+    
+    if ( skipto::function_fb89516e( "intro" ) || skipto::function_fb89516e( "rice_paddies_1" ) )
+    {
+        level flag::wait_till( "player_intro_anim_done" );
         show_splash = 1;
         wait 0.5;
     }
-    objectives::scripted("locate_lz_victor", undefined, #"hash_403374c99ce65eb0", show_splash);
-    if (skipto::function_fb89516e("intro") || skipto::function_fb89516e("rice_paddies_1")) {
-        level flag::wait_till_any(array("flag_rice_paddies_enemies_retreat_4", "rice_paddies_final_retreat"));
-        rice_paddies_obj = struct::get("rice_paddies_obj", "targetname");
-        objectives::goto("rice_paddies_obj", rice_paddies_obj.origin, undefined, 1);
-        level.players[0] thread objectives_ui::show_objectives();
-        level flag::wait_till("flag_rice_paddies_end");
-        objectives::complete("rice_paddies_obj");
+    
+    objectives::scripted( "locate_lz_victor", undefined, #"hash_403374c99ce65eb0", show_splash );
+    
+    if ( skipto::function_fb89516e( "intro" ) || skipto::function_fb89516e( "rice_paddies_1" ) )
+    {
+        level flag::wait_till_any( array( "flag_rice_paddies_enemies_retreat_4", "rice_paddies_final_retreat" ) );
+        rice_paddies_obj = struct::get( "rice_paddies_obj", "targetname" );
+        objectives::goto( "rice_paddies_obj", rice_paddies_obj.origin, undefined, 1 );
+        level.players[ 0 ] thread objectives_ui::show_objectives();
+        level flag::wait_till( "flag_rice_paddies_end" );
+        objectives::complete( "rice_paddies_obj" );
     }
 }
 
@@ -1254,34 +1673,41 @@ function function_42ad70e6() {
 // Params 0, eflags: 0x0
 // Checksum 0x9fa37360, Offset: 0x83e0
 // Size: 0x1dc
-function function_a8f776a0() {
-    level flag::wait_till("visit_start");
-    if (!level flag::get("exit_ready")) {
-        door_struct = namespace_d9b153b9::door_setup("memory_4_obey_door_struct", undefined, 1);
-        level namespace_b508dca::function_ed113f39(1, "memory_4_obey_door_struct");
-        level namespace_b508dca::function_810379ec("final_door_struct");
-        level flag::wait_till("exit_ready");
-        level thread namespace_b508dca::function_ed113f39(undefined, "memory_4_obey_door_struct");
+function function_a8f776a0()
+{
+    level flag::wait_till( "visit_start" );
+    
+    if ( !level flag::get( "exit_ready" ) )
+    {
+        door_struct = namespace_d9b153b9::door_setup( "memory_4_obey_door_struct", undefined, 1 );
+        level namespace_b508dca::function_ed113f39( 1, "memory_4_obey_door_struct" );
+        level namespace_b508dca::function_810379ec( "final_door_struct" );
+        level flag::wait_till( "exit_ready" );
+        level thread namespace_b508dca::function_ed113f39( undefined, "memory_4_obey_door_struct" );
         level thread namespace_b508dca::function_c066544();
-        level flag::wait_till("visit_restart");
-        level flag::wait_till_clear("visit_restart");
+        level flag::wait_till( "visit_restart" );
+        level flag::wait_till_clear( "visit_restart" );
         wait 0.25;
-    } else {
-        level namespace_b508dca::function_810379ec("final_door_struct");
+    }
+    else
+    {
+        level namespace_b508dca::function_810379ec( "final_door_struct" );
         level thread namespace_b508dca::function_c066544();
     }
+    
     level thread function_5988c333();
-    door_struct = namespace_d9b153b9::door_setup("memory_4_obey_door_struct");
-    door_struct namespace_b508dca::function_133140de("memory_4_obey", "obey");
+    door_struct = namespace_d9b153b9::door_setup( "memory_4_obey_door_struct" );
+    door_struct namespace_b508dca::function_133140de( "memory_4_obey", "obey" );
 }
 
 // Namespace cp_nam_prisoner/cp_nam_prisoner
 // Params 0, eflags: 0x0
 // Checksum 0xfff1647b, Offset: 0x85c8
 // Size: 0x44
-function function_5988c333() {
-    level flag::wait_till("level_intro_complete");
-    level exploder::exploder("temple_bunker_door_light_01");
+function function_5988c333()
+{
+    level flag::wait_till( "level_intro_complete" );
+    level exploder::exploder( "temple_bunker_door_light_01" );
 }
 
 /#
@@ -1289,112 +1715,154 @@ function function_5988c333() {
     // Namespace cp_nam_prisoner/cp_nam_prisoner
     // Params 1, eflags: 0x0
     // Checksum 0x4e9d9c72, Offset: 0x8618
-    // Size: 0x10
-    function function_b171555f(*str_objective) {
+    // Size: 0x10, Type: dev
+    function function_b171555f( *str_objective )
+    {
         
     }
 
     // Namespace cp_nam_prisoner/cp_nam_prisoner
     // Params 2, eflags: 0x0
     // Checksum 0x3af4db15, Offset: 0x8630
-    // Size: 0x72c
-    function function_12df253a(str_objective, *var_50cc0d4f) {
-        if (var_50cc0d4f == "<dev string:x260>" || var_50cc0d4f == "<dev string:x28c>" || var_50cc0d4f == "<dev string:x2b8>" || var_50cc0d4f == "<dev string:x2e4>" || var_50cc0d4f == "<dev string:x22b>") {
-            if (var_50cc0d4f == "<dev string:x260>") {
-                level thread function_796816e2(1);
-                level thread namespace_b508dca::function_690ab87a("<dev string:x4d9>", 1);
-            } else if (var_50cc0d4f == "<dev string:x28c>") {
-                level thread function_796816e2(2);
-                level thread namespace_b508dca::function_690ab87a("<dev string:x4e5>", 1);
-            } else if (var_50cc0d4f == "<dev string:x2b8>") {
-                level thread function_796816e2(3);
-                level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
-            } else if (var_50cc0d4f == "<dev string:x2e4>" || var_50cc0d4f == "<dev string:x22b>") {
-                level thread function_796816e2(3);
+    // Size: 0x72c, Type: dev
+    function function_12df253a( str_objective, *var_50cc0d4f )
+    {
+        if ( var_50cc0d4f == "<dev string:x260>" || var_50cc0d4f == "<dev string:x28c>" || var_50cc0d4f == "<dev string:x2b8>" || var_50cc0d4f == "<dev string:x2e4>" || var_50cc0d4f == "<dev string:x22b>" )
+        {
+            if ( var_50cc0d4f == "<dev string:x260>" )
+            {
+                level thread function_796816e2( 1 );
+                level thread namespace_b508dca::function_690ab87a( "<dev string:x4d9>", 1 );
+            }
+            else if ( var_50cc0d4f == "<dev string:x28c>" )
+            {
+                level thread function_796816e2( 2 );
+                level thread namespace_b508dca::function_690ab87a( "<dev string:x4e5>", 1 );
+            }
+            else if ( var_50cc0d4f == "<dev string:x2b8>" )
+            {
+                level thread function_796816e2( 3 );
+                level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
+            }
+            else if ( var_50cc0d4f == "<dev string:x2e4>" || var_50cc0d4f == "<dev string:x22b>" )
+            {
+                level thread function_796816e2( 3 );
                 level.var_2ae942a4 = 3;
                 level.var_7f958422 = 1;
-                level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
-                level flag::set("<dev string:x4fd>");
-                while (!isdefined(level.var_4a91225a.door_left)) {
+                level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
+                level flag::set( "<dev string:x4fd>" );
+                
+                while ( !isdefined( level.infinite_hallway_exit_unlock_door_struct.door_left ) )
+                {
                     wait 0.05;
                 }
-                level.var_4a91225a.door_left setmodel("<dev string:x51f>");
+                
+                level.infinite_hallway_exit_unlock_door_struct.door_left setmodel( "<dev string:x51f>" );
             }
-            level flag::wait_till("<dev string:x544>");
-            level skipto::function_4e3ab877(var_50cc0d4f, 0);
-        } else if (var_50cc0d4f == "<dev string:x4ab>") {
-            level thread function_796816e2(3);
-            level flag::set("<dev string:x555>");
+            
+            level flag::wait_till( "<dev string:x544>" );
+            level skipto::function_4e3ab877( var_50cc0d4f, 0 );
+        }
+        else if ( var_50cc0d4f == "<dev string:x4ab>" )
+        {
+            level thread function_796816e2( 3 );
+            level flag::set( "<dev string:x555>" );
             level.var_872cf153 = 1;
-            level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
+            level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
         }
-        if (var_50cc0d4f == "<dev string:x318>") {
-            door_struct = namespace_d9b153b9::door_setup("<dev string:x570>");
-            door_struct namespace_b508dca::function_133140de("<dev string:x1c9>", "<dev string:x58f>");
-            level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
-            level flag::wait_till("<dev string:x597>");
-            level thread namespace_d9b153b9::force_weapon_loadout("<dev string:x344>");
-            level thread function_796816e2(3);
-            level flag::wait_till("<dev string:x544>");
-            level skipto::function_4e3ab877(var_50cc0d4f, 0);
+        
+        if ( var_50cc0d4f == "<dev string:x318>" )
+        {
+            door_struct = namespace_d9b153b9::door_setup( "<dev string:x570>" );
+            door_struct namespace_b508dca::function_133140de( "<dev string:x1c9>", "<dev string:x58f>" );
+            level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
+            level flag::wait_till( "<dev string:x597>" );
+            level thread namespace_d9b153b9::force_weapon_loadout( "<dev string:x344>" );
+            level thread function_796816e2( 3 );
+            level flag::wait_till( "<dev string:x544>" );
+            level skipto::function_4e3ab877( var_50cc0d4f, 0 );
         }
-        if (var_50cc0d4f == "<dev string:x344>") {
-            level thread function_796816e2(3);
+        
+        if ( var_50cc0d4f == "<dev string:x344>" )
+        {
+            level thread function_796816e2( 3 );
             level.var_2ae942a4 = 1;
             level.var_7f958422 = 1;
-            level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
-            while (!isdefined(level.var_4a91225a.door_left)) {
+            level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
+            
+            while ( !isdefined( level.infinite_hallway_exit_unlock_door_struct.door_left ) )
+            {
                 wait 0.05;
             }
-            level.var_4a91225a.door_left setmodel("<dev string:x51f>");
-            level flag::wait_till("<dev string:x544>");
-            level skipto::function_4e3ab877(var_50cc0d4f, 0);
+            
+            level.infinite_hallway_exit_unlock_door_struct.door_left setmodel( "<dev string:x51f>" );
+            level flag::wait_till( "<dev string:x544>" );
+            level skipto::function_4e3ab877( var_50cc0d4f, 0 );
         }
-        if (var_50cc0d4f == "<dev string:x37e>") {
-            level thread function_796816e2(3);
+        
+        if ( var_50cc0d4f == "<dev string:x37e>" )
+        {
+            level thread function_796816e2( 3 );
             level.var_2ae942a4 = 2;
             level.var_7f958422 = 1;
-            level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
-            while (!isdefined(level.var_4a91225a.door_left)) {
+            level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
+            
+            while ( !isdefined( level.infinite_hallway_exit_unlock_door_struct.door_left ) )
+            {
                 wait 0.05;
             }
-            level.var_4a91225a.door_left setmodel("<dev string:x51f>");
-            level flag::wait_till("<dev string:x544>");
-            level skipto::function_4e3ab877(var_50cc0d4f, 0);
+            
+            level.infinite_hallway_exit_unlock_door_struct.door_left setmodel( "<dev string:x51f>" );
+            level flag::wait_till( "<dev string:x544>" );
+            level skipto::function_4e3ab877( var_50cc0d4f, 0 );
         }
-        if (var_50cc0d4f == "<dev string:x3b9>") {
-            level thread function_796816e2(3);
+        
+        if ( var_50cc0d4f == "<dev string:x3b9>" )
+        {
+            level thread function_796816e2( 3 );
             level.var_2ae942a4 = 3;
             level.var_7f958422 = 1;
-            level thread namespace_b508dca::function_690ab87a("<dev string:x4f1>", 1);
-            level exploder::exploder("<dev string:x5b9>");
-            while (!isdefined(level.var_4a91225a.door_left)) {
+            level thread namespace_b508dca::function_690ab87a( "<dev string:x4f1>", 1 );
+            level exploder::exploder( "<dev string:x5b9>" );
+            
+            while ( !isdefined( level.infinite_hallway_exit_unlock_door_struct.door_left ) )
+            {
                 wait 0.05;
             }
-            level.var_4a91225a.door_left setmodel("<dev string:x51f>");
-            level flag::wait_till("<dev string:x544>");
-            level skipto::function_4e3ab877(var_50cc0d4f, 0);
+            
+            level.infinite_hallway_exit_unlock_door_struct.door_left setmodel( "<dev string:x51f>" );
+            level flag::wait_till( "<dev string:x544>" );
+            level skipto::function_4e3ab877( var_50cc0d4f, 0 );
         }
     }
 
     // Namespace cp_nam_prisoner/cp_nam_prisoner
     // Params 1, eflags: 0x0
     // Checksum 0x2d57492c, Offset: 0x8d68
-    // Size: 0xfc
-    function function_796816e2(visit) {
-        level thread function_b78161a2("<dev string:x5ce>");
-        level thread function_aa96d24b("<dev string:x5e0>");
-        if (visit == 1) {
+    // Size: 0xfc, Type: dev
+    function function_796816e2( visit )
+    {
+        level thread function_b78161a2( "<dev string:x5ce>" );
+        level thread function_aa96d24b( "<dev string:x5e0>" );
+        
+        if ( visit == 1 )
+        {
             return;
         }
-        level thread function_b78161a2("<dev string:x5ee>");
-        level thread function_aa96d24b("<dev string:x600>");
-        if (visit == 2) {
+        
+        level thread function_b78161a2( "<dev string:x5ee>" );
+        level thread function_aa96d24b( "<dev string:x600>" );
+        
+        if ( visit == 2 )
+        {
             return;
         }
-        level thread function_b78161a2("<dev string:x60e>");
-        level thread function_aa96d24b("<dev string:x620>");
-        if (visit == 3) {
+        
+        level thread function_b78161a2( "<dev string:x60e>" );
+        level thread function_aa96d24b( "<dev string:x620>" );
+        
+        if ( visit == 3 )
+        {
             return;
         }
     }
@@ -1402,96 +1870,115 @@ function function_5988c333() {
     // Namespace cp_nam_prisoner/cp_nam_prisoner
     // Params 4, eflags: 0x0
     // Checksum 0xf9aa9b6f, Offset: 0x8e70
-    // Size: 0x114
-    function function_442af1f7(str_objective, *var_50cc0d4f, *var_aa1a6455, *player) {
-        if (player == "<dev string:x260>") {
-            level thread namespace_b508dca::function_e4f91def("<dev string:x4d9>");
+    // Size: 0x114, Type: dev
+    function function_442af1f7( str_objective, *var_50cc0d4f, *var_aa1a6455, *player )
+    {
+        if ( player == "<dev string:x260>" )
+        {
+            level thread namespace_b508dca::function_e4f91def( "<dev string:x4d9>" );
         }
-        if (player == "<dev string:x28c>") {
-            level thread namespace_b508dca::function_e4f91def("<dev string:x4e5>");
+        
+        if ( player == "<dev string:x28c>" )
+        {
+            level thread namespace_b508dca::function_e4f91def( "<dev string:x4e5>" );
         }
-        if (player == "<dev string:x2b8>" || player == "<dev string:x2e4>" || player == "<dev string:x318>" || player == "<dev string:x344>" || player == "<dev string:x37e>" || player == "<dev string:x3b9>") {
-            level thread namespace_b508dca::function_e4f91def("<dev string:x4f1>");
+        
+        if ( player == "<dev string:x2b8>" || player == "<dev string:x2e4>" || player == "<dev string:x318>" || player == "<dev string:x344>" || player == "<dev string:x37e>" || player == "<dev string:x3b9>" )
+        {
+            level thread namespace_b508dca::function_e4f91def( "<dev string:x4f1>" );
         }
     }
 
     // Namespace cp_nam_prisoner/cp_nam_prisoner
     // Params 2, eflags: 0x0
     // Checksum 0x75a1caca, Offset: 0x8f90
-    // Size: 0x714
-    function function_e14708f(*str_objective, *var_50cc0d4f) {
-        level.player val::set(#"hash_8afeb39b36eac06", "<dev string:x62e>", 1);
-        level.player val::set(#"hash_4def8e7d4212f296", "<dev string:x641>", 0);
-        level scene::init("<dev string:x64d>");
-        level thread scene::play("<dev string:x67d>", "<dev string:x696>");
-        exploder::exploder("<dev string:x6a4>");
-        exploder::exploder("<dev string:x6ba>");
-        level.player clientfield::set_to_player("<dev string:x6d0>", 1);
+    // Size: 0x714, Type: dev
+    function function_e14708f( *str_objective, *var_50cc0d4f )
+    {
+        level.player val::set( #"hash_8afeb39b36eac06", "<dev string:x62e>", 1 );
+        level.player val::set( #"hash_4def8e7d4212f296", "<dev string:x641>", 0 );
+        level scene::init( "<dev string:x64d>" );
+        level thread scene::play( "<dev string:x67d>", "<dev string:x696>" );
+        exploder::exploder( "<dev string:x6a4>" );
+        exploder::exploder( "<dev string:x6ba>" );
+        level.player clientfield::set_to_player( "<dev string:x6d0>", 1 );
         wait 3;
-        level thread scene::play("<dev string:x64d>");
-        while (level.player getanimtime("<dev string:x6e7>") < 0.3) {
+        level thread scene::play( "<dev string:x64d>" );
+        
+        while ( level.player getanimtime( "<dev string:x6e7>" ) < 0.3 )
+        {
             wait 0.05;
         }
-        exploder::stop_exploder("<dev string:x6a4>");
-        level.player waittillmatch({#notetrack:"<dev string:x71b>"}, #"hash_6c3b2262d1660c02");
-        level scene::stop("<dev string:x64d>", 1);
-        exploder::stop_exploder("<dev string:x6ba>");
-        level flag::set("<dev string:x722>");
-        level scene::init("<dev string:x740>");
-        exploder::exploder("<dev string:x76f>");
-        level.player clientfield::set_to_player("<dev string:x6d0>", 2);
+        
+        exploder::stop_exploder( "<dev string:x6a4>" );
+        level.player waittillmatch( { #notetrack:"<dev string:x71b>" }, #"hash_6c3b2262d1660c02" );
+        level scene::stop( "<dev string:x64d>", 1 );
+        exploder::stop_exploder( "<dev string:x6ba>" );
+        level flag::set( "<dev string:x722>" );
+        level scene::init( "<dev string:x740>" );
+        exploder::exploder( "<dev string:x76f>" );
+        level.player clientfield::set_to_player( "<dev string:x6d0>", 2 );
         wait 3;
-        level scene::play("<dev string:x740>");
-        level scene::stop("<dev string:x740>", 1);
-        exploder::stop_exploder("<dev string:x76f>");
-        level scene::init("<dev string:x785>");
-        exploder::exploder("<dev string:x7b0>");
-        level.player clientfield::set_to_player("<dev string:x6d0>", 3);
+        level scene::play( "<dev string:x740>" );
+        level scene::stop( "<dev string:x740>", 1 );
+        exploder::stop_exploder( "<dev string:x76f>" );
+        level scene::init( "<dev string:x785>" );
+        exploder::exploder( "<dev string:x7b0>" );
+        level.player clientfield::set_to_player( "<dev string:x6d0>", 3 );
         wait 3;
-        videostart("<dev string:x7c6>", 1);
-        level scene::play("<dev string:x785>", "<dev string:x7e5>");
-        level scene::stop("<dev string:x785>", 1);
-        scene::add_scene_func("<dev string:x785>", &function_e0f175e2, "<dev string:x7f4>");
-        level scene::play("<dev string:x785>", "<dev string:x7f4>");
-        level scene::stop("<dev string:x785>", 1);
-        level scene::play("<dev string:x785>", "<dev string:x803>");
-        level scene::stop("<dev string:x785>", 1);
-        exploder::stop_exploder("<dev string:x7b0>");
-        level scene::init("<dev string:x812>");
-        exploder::exploder("<dev string:x83e>");
-        level.player clientfield::set_to_player("<dev string:x6d0>", 2);
+        videostart( "<dev string:x7c6>", 1 );
+        level scene::play( "<dev string:x785>", "<dev string:x7e5>" );
+        level scene::stop( "<dev string:x785>", 1 );
+        scene::add_scene_func( "<dev string:x785>", &function_e0f175e2, "<dev string:x7f4>" );
+        level scene::play( "<dev string:x785>", "<dev string:x7f4>" );
+        level scene::stop( "<dev string:x785>", 1 );
+        level scene::play( "<dev string:x785>", "<dev string:x803>" );
+        level scene::stop( "<dev string:x785>", 1 );
+        exploder::stop_exploder( "<dev string:x7b0>" );
+        level scene::init( "<dev string:x812>" );
+        exploder::exploder( "<dev string:x83e>" );
+        level.player clientfield::set_to_player( "<dev string:x6d0>", 2 );
         wait 3;
-        level scene::play("<dev string:x812>");
-        level scene::stop("<dev string:x812>", 1);
-        exploder::stop_exploder("<dev string:x83e>");
-        level.player clientfield::set_to_player("<dev string:x6d0>", 0);
-        level thread scene::stop("<dev string:x67d>", "<dev string:x696>");
-        level scene::delete_scene_spawned_ents("<dev string:x67d>");
-        struct = struct::get("<dev string:x854>", "<dev string:x696>");
-        level.player setorigin(struct.origin);
-        level.player setplayerangles(struct.angles);
+        level scene::play( "<dev string:x812>" );
+        level scene::stop( "<dev string:x812>", 1 );
+        exploder::stop_exploder( "<dev string:x83e>" );
+        level.player clientfield::set_to_player( "<dev string:x6d0>", 0 );
+        level thread scene::stop( "<dev string:x67d>", "<dev string:x696>" );
+        level scene::delete_scene_spawned_ents( "<dev string:x67d>" );
+        struct = struct::get( "<dev string:x854>", "<dev string:x696>" );
+        level.player setorigin( struct.origin );
+        level.player setplayerangles( struct.angles );
         a_ai = getactorarray();
-        foreach (ai in a_ai) {
-            if (isdefined(ai)) {
+        
+        foreach ( ai in a_ai )
+        {
+            if ( isdefined( ai ) )
+            {
                 ai delete();
             }
         }
-        level.player val::reset(#"hash_8afeb39b36eac06", "<dev string:x62e>");
-        level.player val::set(#"hash_4def8e7d4212f296", "<dev string:x641>", 1);
+        
+        level.player val::reset( #"hash_8afeb39b36eac06", "<dev string:x62e>" );
+        level.player val::set( #"hash_4def8e7d4212f296", "<dev string:x641>", 1 );
     }
 
     // Namespace cp_nam_prisoner/cp_nam_prisoner
     // Params 1, eflags: 0x0
     // Checksum 0x756fe8c2, Offset: 0x96b0
-    // Size: 0x9c
-    function function_e0f175e2(a_ents) {
-        var_12ad454a = a_ents[#"hash_28ae04489b451200"];
-        var_27a03f = a_ents[#"hash_28ae07489b451719"];
-        if (isdefined(var_12ad454a)) {
-            var_12ad454a thread namespace_d9b153b9::function_b0ea272(undefined, "<dev string:x87b>");
+    // Size: 0x9c, Type: dev
+    function function_e0f175e2( a_ents )
+    {
+        var_12ad454a = a_ents[ #"hash_28ae04489b451200" ];
+        var_27a03f = a_ents[ #"hash_28ae07489b451719" ];
+        
+        if ( isdefined( var_12ad454a ) )
+        {
+            var_12ad454a thread namespace_d9b153b9::function_b0ea272( undefined, "<dev string:x87b>" );
         }
-        if (isdefined(var_27a03f)) {
-            var_27a03f thread namespace_d9b153b9::function_b0ea272(undefined, "<dev string:x897>");
+        
+        if ( isdefined( var_27a03f ) )
+        {
+            var_27a03f thread namespace_d9b153b9::function_b0ea272( undefined, "<dev string:x897>" );
         }
     }
 

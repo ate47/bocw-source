@@ -31,47 +31,69 @@
 // Params 2, eflags: 0x0
 // Checksum 0x4e1f79b1, Offset: 0x1c0
 // Size: 0x318
-function function_90cdf7ba(type, origin) {
+function function_90cdf7ba( type, origin )
+{
     count = 1;
     var_e254c3ed = undefined;
-    switch (type) {
-    case 34:
-        count = randomintrange(5, 10);
-        name = "skeleton_spear";
-        var_2d8ae5ef = "player_trail_" + self.doa.color;
-        killnote = array("doa_exit_taken", "arena_completed", "game_over");
-        var_4d5cf4b2 = level;
-        namespace_e32bb68::function_3a59ec34("guardian_type_skeleton");
-        break;
-    default:
-        assert(0, "<dev string:x38>");
-        break;
+    
+    switch ( type )
+    {
+        case 34:
+            count = randomintrange( 5, 10 );
+            name = "skeleton_spear";
+            var_2d8ae5ef = "player_trail_" + self.doa.color;
+            killnote = array( "doa_exit_taken", "arena_completed", "game_over" );
+            var_4d5cf4b2 = level;
+            namespace_e32bb68::function_3a59ec34( "guardian_type_skeleton" );
+            break;
+        default:
+            assert( 0, "<dev string:x38>" );
+            break;
     }
-    spawndef = doa_enemy::function_d7c5adee(name);
-    if (isdefined(spawndef)) {
-        while (count) {
+    
+    spawndef = doa_enemy::function_d7c5adee( name );
+    
+    if ( isdefined( spawndef ) )
+    {
+        while ( count )
+        {
             count--;
             var_1c446dd6 = namespace_ec06fe4a::function_38de0ce8();
-            if (var_1c446dd6 >= 44) {
+            
+            if ( var_1c446dd6 >= 44 )
+            {
                 continue;
             }
-            ai = doa_enemy::function_db55a448(spawndef, origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
-            if (isdefined(ai)) {
+            
+            ai = doa_enemy::function_db55a448( spawndef, origin + ( randomintrange( -40, 40 ), randomintrange( -40, 40 ), 0 ) );
+            
+            if ( isdefined( ai ) )
+            {
                 ai.owner = self;
-                if (isdefined(var_2d8ae5ef)) {
-                    ai namespace_83eb6304::function_3ecfde67(var_2d8ae5ef);
+                
+                if ( isdefined( var_2d8ae5ef ) )
+                {
+                    ai namespace_83eb6304::function_3ecfde67( var_2d8ae5ef );
                 }
-                if (isdefined(var_e254c3ed)) {
+                
+                if ( isdefined( var_e254c3ed ) )
+                {
                     ai thread [[ var_e254c3ed ]]();
                 }
-                if (isdefined(killnote) && isdefined(var_4d5cf4b2)) {
-                    if (isarray(killnote)) {
-                        foreach (note in killnote) {
-                            ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, note);
+                
+                if ( isdefined( killnote ) && isdefined( var_4d5cf4b2 ) )
+                {
+                    if ( isarray( killnote ) )
+                    {
+                        foreach ( note in killnote )
+                        {
+                            ai thread namespace_ec06fe4a::function_d55f042c( var_4d5cf4b2, note );
                         }
+                        
                         continue;
                     }
-                    ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, killnote);
+                    
+                    ai thread namespace_ec06fe4a::function_d55f042c( var_4d5cf4b2, killnote );
                 }
             }
         }

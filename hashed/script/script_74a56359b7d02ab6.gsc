@@ -28,7 +28,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x138
 // Size: 0x4
-function init() {
+function init()
+{
     
 }
 

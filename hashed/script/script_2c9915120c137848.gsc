@@ -32,7 +32,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0xd2221b12, Offset: 0x1b8
 // Size: 0x2c
-function init() {
+function init()
+{
     level.doa.var_ecd679f7 = [];
     main();
 }
@@ -41,7 +42,8 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0xdd75d757, Offset: 0x1f0
 // Size: 0x26
-function main() {
+function main()
+{
     function_e2f97f03();
     level.doa.var_ecd679f7 = [];
 }
@@ -50,15 +52,22 @@ function main() {
 // Params 1, eflags: 0x0
 // Checksum 0x168203e9, Offset: 0x220
 // Size: 0xe4
-function function_e2f97f03(context = 0) {
-    foreach (item in level.doa.var_ecd679f7) {
-        if (!isdefined(item)) {
+function function_e2f97f03( context = 0 )
+{
+    foreach ( item in level.doa.var_ecd679f7 )
+    {
+        if ( !isdefined( item ) )
+        {
             continue;
         }
-        if (context != 0 && item.context != context) {
+        
+        if ( context != 0 && item.context != context )
+        {
             continue;
         }
-        if (isdefined(item.var_28a48bb3)) {
+        
+        if ( isdefined( item.var_28a48bb3 ) )
+        {
             item thread [[ item.var_28a48bb3 ]]();
         }
     }
@@ -68,86 +77,120 @@ function function_e2f97f03(context = 0) {
 // Params 2, eflags: 0x0
 // Checksum 0x768702b3, Offset: 0x310
 // Size: 0x6f8
-function function_de7fb95(var_c904ca7c, context = 0) {
-    var_8f43e5f8 = struct::get_array(var_c904ca7c + "_pressureplate_object", "script_noteworthy");
-    var_baf628cc = getentarray(var_c904ca7c + "_pressureplate_object", "script_noteworthy");
-    var_7b8ab46d = arraycombine(var_8f43e5f8, var_baf628cc);
-    foreach (target in var_7b8ab46d) {
+function function_de7fb95( var_c904ca7c, context = 0 )
+{
+    var_8f43e5f8 = struct::get_array( var_c904ca7c + "_pressureplate_object", "script_noteworthy" );
+    var_baf628cc = getentarray( var_c904ca7c + "_pressureplate_object", "script_noteworthy" );
+    var_7b8ab46d = arraycombine( var_8f43e5f8, var_baf628cc );
+    
+    foreach ( target in var_7b8ab46d )
+    {
         action = 0;
-        assert(isdefined(target.script_parameters) && isdefined("<dev string:x38>"));
-        toks = strtok(target.script_parameters, ";");
-        assert(toks.size > 0);
-        switch (toks[0]) {
-        case #"elevator_brushmodel":
-            action = 3;
-            var_41157a40 = &function_92bae57c;
-            var_4af56c19 = &function_2efb907a;
-            break;
-        case #"elevator":
-            action = 1;
-            var_41157a40 = &function_9592df27;
-            var_4af56c19 = &function_2efb907a;
-            break;
-        case #"door":
-            action = 2;
-            var_41157a40 = &function_8a173823;
-            var_4af56c19 = &function_1e0322f;
-            break;
+        assert( isdefined( target.script_parameters ) && isdefined( "<dev string:x38>" ) );
+        toks = strtok( target.script_parameters, ";" );
+        assert( toks.size > 0 );
+        
+        switch ( toks[ 0 ] )
+        {
+            case #"elevator_brushmodel":
+                action = 3;
+                var_41157a40 = &function_92bae57c;
+                var_4af56c19 = &function_2efb907a;
+                break;
+            case #"elevator":
+                action = 1;
+                var_41157a40 = &function_9592df27;
+                var_4af56c19 = &function_2efb907a;
+                break;
+            case #"door":
+                action = 2;
+                var_41157a40 = &function_8a173823;
+                var_4af56c19 = &function_1e0322f;
+                break;
         }
+        
         target.type = action;
         target.var_41157a40 = var_41157a40;
         target.var_28a48bb3 = var_4af56c19;
         target.context = context;
-        if (isdefined(target.model)) {
-            target.script_model = namespace_ec06fe4a::spawnmodel(target.origin, target.model, target.angles, "pressure_plate_object");
+        
+        if ( isdefined( target.model ) )
+        {
+            target.script_model = namespace_ec06fe4a::spawnmodel( target.origin, target.model, target.angles, "pressure_plate_object" );
         }
-        if (target.type == 2) {
-            assert(toks.size > 1, "<dev string:x6d>");
-            target.doortype = int(toks[1]);
-            assert(target.doortype >= 1 && target.doortype <= 3, "<dev string:x99>");
-            target.script_model namespace_f63bdb08::function_94c7c0d9(target.doortype, 8, context);
-        } else if (target.type == 1 || target.type == 3) {
-            if (isdefined(target.script_model)) {
-                target.script_model setmovingplatformenabled(1);
+        
+        if ( target.type == 2 )
+        {
+            assert( toks.size > 1, "<dev string:x6d>" );
+            target.doortype = int( toks[ 1 ] );
+            assert( target.doortype >= 1 && target.doortype <= 3, "<dev string:x99>" );
+            target.script_model namespace_f63bdb08::function_94c7c0d9( target.doortype, 8, context );
+        }
+        else if ( target.type == 1 || target.type == 3 )
+        {
+            if ( isdefined( target.script_model ) )
+            {
+                target.script_model setmovingplatformenabled( 1 );
             }
-            assert(toks.size > 2, "<dev string:xae>");
-            target.verticaldistance = int(toks[1]);
-            target.var_edf3aca7 = int(toks[2]);
-            if (toks.size > 3) {
-                switch (toks[3]) {
-                case #"loot":
-                    assert(isdefined(target.target), "<dev string:xde>");
-                    target.lootitems = struct::get_array(target.target, "targetname");
-                    assert(target.lootitems.size, "<dev string:x112>");
-                    break;
+            
+            assert( toks.size > 2, "<dev string:xae>" );
+            target.verticaldistance = int( toks[ 1 ] );
+            target.var_edf3aca7 = int( toks[ 2 ] );
+            
+            if ( toks.size > 3 )
+            {
+                switch ( toks[ 3 ] )
+                {
+                    case #"loot":
+                        assert( isdefined( target.target ), "<dev string:xde>" );
+                        target.lootitems = struct::get_array( target.target, "targetname" );
+                        assert( target.lootitems.size, "<dev string:x112>" );
+                        break;
                 }
             }
-            if (toks.size > 4) {
-                switch (toks[4]) {
-                case #"hash_6b07679758a7acc":
-                    if (target.lootitems.size > 1) {
-                        item = target.lootitems[randomint(target.lootitems.size)];
-                        target.lootitems = [];
-                        if (!isdefined(target.lootitems)) {
+            
+            if ( toks.size > 4 )
+            {
+                switch ( toks[ 4 ] )
+                {
+                    case #"hash_6b07679758a7acc":
+                        if ( target.lootitems.size > 1 )
+                        {
+                            item = target.lootitems[ randomint( target.lootitems.size ) ];
                             target.lootitems = [];
-                        } else if (!isarray(target.lootitems)) {
-                            target.lootitems = array(target.lootitems);
+                            
+                            if ( !isdefined( target.lootitems ) )
+                            {
+                                target.lootitems = [];
+                            }
+                            else if ( !isarray( target.lootitems ) )
+                            {
+                                target.lootitems = array( target.lootitems );
+                            }
+                            
+                            target.lootitems[ target.lootitems.size ] = item;
                         }
-                        target.lootitems[target.lootitems.size] = item;
-                    }
-                    break;
+                        
+                        break;
                 }
             }
         }
-        if (isdefined(target.var_41157a40)) {
+        
+        if ( isdefined( target.var_41157a40 ) )
+        {
             target thread [[ target.var_41157a40 ]]();
         }
-        if (!isdefined(level.doa.var_ecd679f7)) {
+        
+        if ( !isdefined( level.doa.var_ecd679f7 ) )
+        {
             level.doa.var_ecd679f7 = [];
-        } else if (!isarray(level.doa.var_ecd679f7)) {
-            level.doa.var_ecd679f7 = array(level.doa.var_ecd679f7);
         }
-        level.doa.var_ecd679f7[level.doa.var_ecd679f7.size] = target;
+        else if ( !isarray( level.doa.var_ecd679f7 ) )
+        {
+            level.doa.var_ecd679f7 = array( level.doa.var_ecd679f7 );
+        }
+        
+        level.doa.var_ecd679f7[ level.doa.var_ecd679f7.size ] = target;
     }
 }
 
@@ -155,41 +198,60 @@ function function_de7fb95(var_c904ca7c, context = 0) {
 // Params 0, eflags: 0x0
 // Checksum 0xaef90ac8, Offset: 0xa10
 // Size: 0x328
-function function_9592df27() {
-    self.script_model endon(#"death");
-    if (isdefined(self.lootitems)) {
-        foreach (item in self.lootitems) {
-            assert(isdefined(item.script_noteworthy), "<dev string:x14c>");
-            switch (item.script_noteworthy) {
-            case #"pickup_item":
-                if (!isdefined(self.var_152b081b)) {
-                    self.var_152b081b = [];
-                }
-                assert(isdefined(item.script_parameters), "<dev string:x171>");
-                def = namespace_dfc652ee::function_6265bde4(item.script_parameters);
-                assert(isdefined(def), "<dev string:x199>");
-                pickupitem = namespace_dfc652ee::itemspawn(def, item.origin, item.angles, undefined, 1);
-                if (isdefined(pickupitem)) {
-                    pickupitem thread namespace_ec06fe4a::function_73d79e7d(self.script_model, 1, (0, 0, 20));
-                    pickupitem notify(#"hash_2a866f50cc161ca8");
-                    if (!isdefined(self.var_152b081b)) {
+function function_9592df27()
+{
+    self.script_model endon( #"death" );
+    
+    if ( isdefined( self.lootitems ) )
+    {
+        foreach ( item in self.lootitems )
+        {
+            assert( isdefined( item.script_noteworthy ), "<dev string:x14c>" );
+            
+            switch ( item.script_noteworthy )
+            {
+                case #"pickup_item":
+                    if ( !isdefined( self.var_152b081b ) )
+                    {
                         self.var_152b081b = [];
-                    } else if (!isarray(self.var_152b081b)) {
-                        self.var_152b081b = array(self.var_152b081b);
                     }
-                    self.var_152b081b[self.var_152b081b.size] = pickupitem;
-                }
-                break;
+                    
+                    assert( isdefined( item.script_parameters ), "<dev string:x171>" );
+                    def = namespace_dfc652ee::function_6265bde4( item.script_parameters );
+                    assert( isdefined( def ), "<dev string:x199>" );
+                    pickupitem = namespace_dfc652ee::itemspawn( def, item.origin, item.angles, undefined, 1 );
+                    
+                    if ( isdefined( pickupitem ) )
+                    {
+                        pickupitem thread namespace_ec06fe4a::function_73d79e7d( self.script_model, 1, ( 0, 0, 20 ) );
+                        pickupitem notify( #"hash_2a866f50cc161ca8" );
+                        
+                        if ( !isdefined( self.var_152b081b ) )
+                        {
+                            self.var_152b081b = [];
+                        }
+                        else if ( !isarray( self.var_152b081b ) )
+                        {
+                            self.var_152b081b = array( self.var_152b081b );
+                        }
+                        
+                        self.var_152b081b[ self.var_152b081b.size ] = pickupitem;
+                    }
+                    
+                    break;
             }
         }
     }
-    self.var_cb52058d = self.origin + (0, 0, self.verticaldistance);
-    var_d893beb9 = abs(self.verticaldistance);
-    while (true) {
-        self waittill(#"plate_activated");
-        self function_1efdf194(self.var_cb52058d[2], self.var_edf3aca7, var_d893beb9);
-        self waittill(#"plate_deactivated");
-        self function_1efdf194(self.origin[2], self.var_edf3aca7, var_d893beb9);
+    
+    self.var_cb52058d = self.origin + ( 0, 0, self.verticaldistance );
+    var_d893beb9 = abs( self.verticaldistance );
+    
+    while ( true )
+    {
+        self waittill( #"plate_activated" );
+        self function_1efdf194( self.var_cb52058d[ 2 ], self.var_edf3aca7, var_d893beb9 );
+        self waittill( #"plate_deactivated" );
+        self function_1efdf194( self.origin[ 2 ], self.var_edf3aca7, var_d893beb9 );
     }
 }
 
@@ -197,59 +259,82 @@ function function_9592df27() {
 // Params 3, eflags: 0x0
 // Checksum 0xbb2c9a59, Offset: 0xd40
 // Size: 0x12c
-function function_1efdf194(var_705bb15a, totaltime, totaldist) {
-    if (var_705bb15a == self.origin[2]) {
-        deltaz = abs(self.origin[2] - self.script_model.origin[2]);
+function function_1efdf194( var_705bb15a, totaltime, totaldist )
+{
+    if ( var_705bb15a == self.origin[ 2 ] )
+    {
+        deltaz = abs( self.origin[ 2 ] - self.script_model.origin[ 2 ] );
         desiredpos = self.origin;
     }
-    if (var_705bb15a == self.var_cb52058d[2]) {
-        deltaz = abs(self.script_model.origin[2] - self.var_cb52058d[2]);
+    
+    if ( var_705bb15a == self.var_cb52058d[ 2 ] )
+    {
+        deltaz = abs( self.script_model.origin[ 2 ] - self.var_cb52058d[ 2 ] );
         desiredpos = self.var_cb52058d;
     }
-    timedelta = math::clamp(deltaz / totaldist * totaltime, 0.05, totaltime);
-    self.script_model moveto(desiredpos, timedelta);
+    
+    timedelta = math::clamp( deltaz / totaldist * totaltime, 0.05, totaltime );
+    self.script_model moveto( desiredpos, timedelta );
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
 // Params 0, eflags: 0x0
 // Checksum 0x75dc6723, Offset: 0xe78
 // Size: 0x328
-function function_92bae57c() {
-    if (isdefined(self.lootitems)) {
-        foreach (item in self.lootitems) {
-            assert(isdefined(item.script_noteworthy), "<dev string:x14c>");
-            switch (item.script_noteworthy) {
-            case #"pickup_item":
-                if (!isdefined(self.var_152b081b)) {
-                    self.var_152b081b = [];
-                }
-                assert(isdefined(item.script_parameters), "<dev string:x171>");
-                def = namespace_dfc652ee::function_6265bde4(item.script_parameters);
-                assert(isdefined(def), "<dev string:x199>");
-                pickupitem = namespace_dfc652ee::itemspawn(def, item.origin, item.angles, undefined, 1);
-                if (isdefined(pickupitem)) {
-                    pickupitem thread namespace_ec06fe4a::function_73d79e7d(self, 1, (0, 0, 20));
-                    pickupitem notify(#"hash_2a866f50cc161ca8");
-                    if (!isdefined(self.var_152b081b)) {
+function function_92bae57c()
+{
+    if ( isdefined( self.lootitems ) )
+    {
+        foreach ( item in self.lootitems )
+        {
+            assert( isdefined( item.script_noteworthy ), "<dev string:x14c>" );
+            
+            switch ( item.script_noteworthy )
+            {
+                case #"pickup_item":
+                    if ( !isdefined( self.var_152b081b ) )
+                    {
                         self.var_152b081b = [];
-                    } else if (!isarray(self.var_152b081b)) {
-                        self.var_152b081b = array(self.var_152b081b);
                     }
-                    self.var_152b081b[self.var_152b081b.size] = pickupitem;
-                }
-                break;
+                    
+                    assert( isdefined( item.script_parameters ), "<dev string:x171>" );
+                    def = namespace_dfc652ee::function_6265bde4( item.script_parameters );
+                    assert( isdefined( def ), "<dev string:x199>" );
+                    pickupitem = namespace_dfc652ee::itemspawn( def, item.origin, item.angles, undefined, 1 );
+                    
+                    if ( isdefined( pickupitem ) )
+                    {
+                        pickupitem thread namespace_ec06fe4a::function_73d79e7d( self, 1, ( 0, 0, 20 ) );
+                        pickupitem notify( #"hash_2a866f50cc161ca8" );
+                        
+                        if ( !isdefined( self.var_152b081b ) )
+                        {
+                            self.var_152b081b = [];
+                        }
+                        else if ( !isarray( self.var_152b081b ) )
+                        {
+                            self.var_152b081b = array( self.var_152b081b );
+                        }
+                        
+                        self.var_152b081b[ self.var_152b081b.size ] = pickupitem;
+                    }
+                    
+                    break;
             }
         }
     }
+    
     self.startpos = self.origin;
-    self.var_cb52058d = self.origin + (0, 0, self.verticaldistance);
-    var_d893beb9 = abs(self.verticaldistance);
-    while (true) {
-        self waittill(#"plate_activated");
-        dest = self.var_cb52058d[2];
-        self function_4b059395(dest, self.var_edf3aca7, var_d893beb9);
-        self waittill(#"plate_deactivated");
-        self function_4b059395(self.startpos[2], self.var_edf3aca7, var_d893beb9);
+    self.var_cb52058d = self.origin + ( 0, 0, self.verticaldistance );
+    var_d893beb9 = abs( self.verticaldistance );
+    
+    while ( true )
+    {
+        self waittill( #"plate_activated" );
+        dest = self.var_cb52058d[ 2 ];
+        self function_4b059395( dest, self.var_edf3aca7, var_d893beb9 );
+        self waittill( #"plate_deactivated" );
+        self function_4b059395( self.startpos[ 2 ], self.var_edf3aca7, var_d893beb9 );
     }
 }
 
@@ -257,37 +342,52 @@ function function_92bae57c() {
 // Params 3, eflags: 0x0
 // Checksum 0x18ff1bdd, Offset: 0x11a8
 // Size: 0x11c
-function function_4b059395(var_705bb15a, totaltime, totaldist) {
-    if (var_705bb15a == self.startpos[2]) {
-        deltaz = abs(self.startpos[2] - self.origin[2]);
+function function_4b059395( var_705bb15a, totaltime, totaldist )
+{
+    if ( var_705bb15a == self.startpos[ 2 ] )
+    {
+        deltaz = abs( self.startpos[ 2 ] - self.origin[ 2 ] );
         desiredpos = self.startpos;
     }
-    if (var_705bb15a == self.var_cb52058d[2]) {
-        deltaz = abs(self.origin[2] - self.var_cb52058d[2]);
+    
+    if ( var_705bb15a == self.var_cb52058d[ 2 ] )
+    {
+        deltaz = abs( self.origin[ 2 ] - self.var_cb52058d[ 2 ] );
         desiredpos = self.var_cb52058d;
     }
-    timedelta = math::clamp(deltaz / totaldist * totaltime, 0.05, totaltime);
-    self moveto(desiredpos, timedelta);
+    
+    timedelta = math::clamp( deltaz / totaldist * totaltime, 0.05, totaltime );
+    self moveto( desiredpos, timedelta );
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
 // Params 0, eflags: 0x0
 // Checksum 0x79efdfc6, Offset: 0x12d0
 // Size: 0xfc
-function function_2efb907a() {
-    if (isdefined(self.var_152b081b)) {
-        foreach (item in self.var_152b081b) {
-            if (!isdefined(item)) {
+function function_2efb907a()
+{
+    if ( isdefined( self.var_152b081b ) )
+    {
+        foreach ( item in self.var_152b081b )
+        {
+            if ( !isdefined( item ) )
+            {
                 continue;
             }
+            
             item delete();
         }
+        
         self.var_152b081b = undefined;
     }
-    if (isdefined(self.trigger)) {
+    
+    if ( isdefined( self.trigger ) )
+    {
         self.trigger delete();
     }
-    if (isdefined(self.script_model)) {
+    
+    if ( isdefined( self.script_model ) )
+    {
         self.script_model delete();
     }
 }
@@ -296,14 +396,17 @@ function function_2efb907a() {
 // Params 0, eflags: 0x0
 // Checksum 0x44947ffc, Offset: 0x13d8
 // Size: 0xc0
-function function_8a173823() {
-    self.script_model endon(#"death");
-    level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = self.script_model;
-    while (true) {
-        self waittill(#"plate_activated");
-        self thread namespace_f63bdb08::function_49957ef3(self.script_model, 0);
-        self waittill(#"plate_deactivated");
-        self thread namespace_f63bdb08::function_4c065330(self.script_model);
+function function_8a173823()
+{
+    self.script_model endon( #"death" );
+    level.doa.var_b8ef1466[ level.doa.var_b8ef1466.size ] = self.script_model;
+    
+    while ( true )
+    {
+        self waittill( #"plate_activated" );
+        self thread namespace_f63bdb08::function_49957ef3( self.script_model, 0 );
+        self waittill( #"plate_deactivated" );
+        self thread namespace_f63bdb08::function_4c065330( self.script_model );
     }
 }
 
@@ -311,12 +414,17 @@ function function_8a173823() {
 // Params 0, eflags: 0x0
 // Checksum 0x69d715, Offset: 0x14a0
 // Size: 0x7c
-function function_1e0322f() {
-    if (isdefined(self.trigger)) {
+function function_1e0322f()
+{
+    if ( isdefined( self.trigger ) )
+    {
         self.trigger delete();
     }
-    arrayremovevalue(level.doa.var_b8ef1466, self.script_model);
-    if (isdefined(self.script_model)) {
+    
+    arrayremovevalue( level.doa.var_b8ef1466, self.script_model );
+    
+    if ( isdefined( self.script_model ) )
+    {
         self.script_model delete();
     }
 }

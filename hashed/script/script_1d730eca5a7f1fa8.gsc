@@ -30,44 +30,54 @@
 // Params 1, eflags: 0x0
 // Checksum 0x1b04c5de, Offset: 0x1b0
 // Size: 0x15c
-function function_b784c6bd(type) {
-    switch (type) {
-    case 10:
-        self namespace_83eb6304::function_3ecfde67("player_healOS");
-        self.health += 150;
-        if (self.health < self.health) {
-            self.health = self.health;
-        } else if (self.health > 150) {
-            self.health = 150;
-        }
-        break;
-    case 12:
-        break;
-    case 46:
-        self.doa.var_ccd8393c++;
-        self namespace_83eb6304::function_3ecfde67("divine_shield");
-        self namespace_83eb6304::function_3ecfde67("player_respawn_red");
-        self namespace_83eb6304::function_3ecfde67("player_respawn_yellow");
-        break;
+function function_b784c6bd( type )
+{
+    switch ( type )
+    {
+        case 10:
+            self namespace_83eb6304::function_3ecfde67( "player_healOS" );
+            self.health += 150;
+            
+            if ( self.health < self.health )
+            {
+                self.health = self.health;
+            }
+            else if ( self.health > 150 )
+            {
+                self.health = 150;
+            }
+            
+            break;
+        case 12:
+            break;
+        case 46:
+            self.doa.var_ccd8393c++;
+            self namespace_83eb6304::function_3ecfde67( "divine_shield" );
+            self namespace_83eb6304::function_3ecfde67( "player_respawn_red" );
+            self namespace_83eb6304::function_3ecfde67( "player_respawn_yellow" );
+            break;
     }
-    self thread function_6acf8fc6(type);
+    
+    self thread function_6acf8fc6( type );
 }
 
 // Namespace namespace_b754744b/namespace_e4817c87
 // Params 1, eflags: 0x0
 // Checksum 0x6996c3dc, Offset: 0x318
 // Size: 0xaa
-function function_a6ab97f0(type) {
-    switch (type) {
-    case 10:
-        break;
-    case 12:
-        break;
-    case 46:
-        self.doa.var_ccd8393c = 0;
-        self namespace_83eb6304::turnofffx("divine_shield");
-        self namespace_83eb6304::function_3ecfde67("divine_shield_off");
-        break;
+function function_a6ab97f0( type )
+{
+    switch ( type )
+    {
+        case 10:
+            break;
+        case 12:
+            break;
+        case 46:
+            self.doa.var_ccd8393c = 0;
+            self namespace_83eb6304::turnofffx( "divine_shield" );
+            self namespace_83eb6304::function_3ecfde67( "divine_shield_off" );
+            break;
     }
 }
 
@@ -75,18 +85,22 @@ function function_a6ab97f0(type) {
 // Params 1, eflags: 0x0
 // Checksum 0x96aaa816, Offset: 0x3d0
 // Size: 0xc4
-function function_6acf8fc6(type) {
-    self endon(#"disconnect");
-    switch (type) {
-    case 10:
-        break;
-    case 12:
-        break;
-    case 46:
-        timeout = self namespace_1c2a96f9::function_4808b985(1800);
-        self waittilltimeout(timeout, #"hash_226c5964dec34ae7");
-        break;
+function function_6acf8fc6( type )
+{
+    self endon( #"disconnect" );
+    
+    switch ( type )
+    {
+        case 10:
+            break;
+        case 12:
+            break;
+        case 46:
+            timeout = self namespace_1c2a96f9::function_4808b985( 1800 );
+            self waittilltimeout( timeout, #"hash_226c5964dec34ae7" );
+            break;
     }
-    self thread function_a6ab97f0(type);
+    
+    self thread function_a6ab97f0( type );
 }
 

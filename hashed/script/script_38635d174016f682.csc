@@ -29,44 +29,53 @@
     // Namespace namespace_1e25ad94/namespace_1e25ad94
     // Params 4, eflags: 0x0
     // Checksum 0xab8bb00d, Offset: 0x138
-    // Size: 0x94
-    function debug_circle(origin, radius, seconds, color) {
-        if (!isdefined(seconds)) {
+    // Size: 0x94, Type: dev
+    function debug_circle( origin, radius, seconds, color )
+    {
+        if ( !isdefined( seconds ) )
+        {
             seconds = 1;
         }
-        if (!isdefined(color)) {
-            color = (1, 0, 0);
+        
+        if ( !isdefined( color ) )
+        {
+            color = ( 1, 0, 0 );
         }
-        frames = int(20 * seconds);
-        circle(origin, radius, color, 0, 1, frames);
+        
+        frames = int( 20 * seconds );
+        circle( origin, radius, color, 0, 1, frames );
     }
 
     // Namespace namespace_1e25ad94/namespace_1e25ad94
     // Params 4, eflags: 0x0
     // Checksum 0x695c2953, Offset: 0x1d8
-    // Size: 0x64
-    function debug_line(p1, p2, seconds, color) {
-        line(p1, p2, color, 1, 0, int(seconds * 20));
+    // Size: 0x64, Type: dev
+    function debug_line( p1, p2, seconds, color )
+    {
+        line( p1, p2, color, 1, 0, int( seconds * 20 ) );
     }
 
     // Namespace namespace_1e25ad94/namespace_1e25ad94
     // Params 4, eflags: 0x0
     // Checksum 0xd972f431, Offset: 0x248
-    // Size: 0x1b0
-    function function_1d1f2c26(point, timesec, size, color) {
-        self endon(#"hash_20de371f231f3e8a");
+    // Size: 0x1b0, Type: dev
+    function function_1d1f2c26( point, timesec, size, color )
+    {
+        self endon( #"hash_20de371f231f3e8a" );
         end = gettime() + timesec * 1000;
-        halfwidth = int(size / 2);
-        var_692eeaa1 = point + (halfwidth * -1, 0, 0);
-        l2 = point + (halfwidth, 0, 0);
-        var_74d6c120 = point + (0, halfwidth * -1, 0);
-        var_be7dd479 = point + (0, halfwidth, 0);
-        var_cfbcbc57 = point + (0, 0, halfwidth * -1);
-        var_9e09d8f2 = point + (0, 0, halfwidth);
-        while (end > gettime()) {
-            line(var_692eeaa1, l2, color, 1, 0, 1);
-            line(var_74d6c120, var_be7dd479, color, 1, 0, 1);
-            line(var_cfbcbc57, var_9e09d8f2, color, 1, 0, 1);
+        halfwidth = int( size / 2 );
+        var_692eeaa1 = point + ( halfwidth * -1, 0, 0 );
+        l2 = point + ( halfwidth, 0, 0 );
+        var_74d6c120 = point + ( 0, halfwidth * -1, 0 );
+        var_be7dd479 = point + ( 0, halfwidth, 0 );
+        var_cfbcbc57 = point + ( 0, 0, halfwidth * -1 );
+        var_9e09d8f2 = point + ( 0, 0, halfwidth );
+        
+        while ( end > gettime() )
+        {
+            line( var_692eeaa1, l2, color, 1, 0, 1 );
+            line( var_74d6c120, var_be7dd479, color, 1, 0, 1 );
+            line( var_cfbcbc57, var_9e09d8f2, color, 1, 0, 1 );
             wait 0.05;
         }
     }
@@ -74,22 +83,25 @@
     // Namespace namespace_1e25ad94/namespace_1e25ad94
     // Params 3, eflags: 0x0
     // Checksum 0x2186e6a5, Offset: 0x400
-    // Size: 0x1c0
-    function debugorigin(timesec, size, color) {
-        self endon(#"hash_60eabc6ae83239fe");
+    // Size: 0x1c0, Type: dev
+    function debugorigin( timesec, size, color )
+    {
+        self endon( #"hash_60eabc6ae83239fe" );
         end = gettime() + timesec * 1000;
-        halfwidth = int(size / 2);
-        while (end > gettime()) {
+        halfwidth = int( size / 2 );
+        
+        while ( end > gettime() )
+        {
             point = self.origin;
-            var_692eeaa1 = point + (halfwidth * -1, 0, 0);
-            l2 = point + (halfwidth, 0, 0);
-            var_74d6c120 = point + (0, halfwidth * -1, 0);
-            var_be7dd479 = point + (0, halfwidth, 0);
-            var_cfbcbc57 = point + (0, 0, halfwidth * -1);
-            var_9e09d8f2 = point + (0, 0, halfwidth);
-            line(var_692eeaa1, l2, color, 1, 0, 1);
-            line(var_74d6c120, var_be7dd479, color, 1, 0, 1);
-            line(var_cfbcbc57, var_9e09d8f2, color, 1, 0, 1);
+            var_692eeaa1 = point + ( halfwidth * -1, 0, 0 );
+            l2 = point + ( halfwidth, 0, 0 );
+            var_74d6c120 = point + ( 0, halfwidth * -1, 0 );
+            var_be7dd479 = point + ( 0, halfwidth, 0 );
+            var_cfbcbc57 = point + ( 0, 0, halfwidth * -1 );
+            var_9e09d8f2 = point + ( 0, 0, halfwidth );
+            line( var_692eeaa1, l2, color, 1, 0, 1 );
+            line( var_74d6c120, var_be7dd479, color, 1, 0, 1 );
+            line( var_cfbcbc57, var_9e09d8f2, color, 1, 0, 1 );
             wait 0.05;
         }
     }
@@ -97,9 +109,10 @@
     // Namespace namespace_1e25ad94/namespace_1e25ad94
     // Params 1, eflags: 0x0
     // Checksum 0x81372dc5, Offset: 0x5c8
-    // Size: 0x34
-    function debugmsg(txt) {
-        println("<dev string:x38>" + txt);
+    // Size: 0x34, Type: dev
+    function debugmsg( txt )
+    {
+        println( "<dev string:x38>" + txt );
     }
 
 #/

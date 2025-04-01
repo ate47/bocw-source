@@ -31,62 +31,86 @@
 // Params 5, eflags: 0x0
 // Checksum 0xfd98cab6, Offset: 0x208
 // Size: 0x4dc
-function function_32160152(player, modelname, origin, angles, scale = 1) {
-    model = namespace_ec06fe4a::spawnmodel(origin, modelname, angles);
-    if (isdefined(model)) {
-        model setscale(scale);
+function function_32160152( player, modelname, origin, angles, scale = 1 )
+{
+    model = namespace_ec06fe4a::spawnmodel( origin, modelname, angles );
+    
+    if ( isdefined( model ) )
+    {
+        model setscale( scale );
         scenedef = #"hash_30c46dd666dd7707";
         var_2468c36a = "fireworks";
-        model namespace_83eb6304::function_3ecfde67("glow_white");
-        model namespace_e32bb68::function_3a59ec34("evt_doa_pickup_giftbox_activated");
-        model scene::play(scenedef, model);
-        model waittill(#"scenes_done");
-        model namespace_e32bb68::function_3a59ec34("evt_doa_pickup_giftbox_explode");
+        model namespace_83eb6304::function_3ecfde67( "glow_white" );
+        model namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_giftbox_activated" );
+        model scene::play( scenedef, model );
+        model waittill( #"scenes_done" );
+        model namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_giftbox_explode" );
         model namespace_ec06fe4a::function_8c808737();
-        model thread namespace_ec06fe4a::function_52afe5df(1);
-        model namespace_83eb6304::turnofffx("glow_yellow");
-        model namespace_83eb6304::turnofffx("player_trail_yellow");
-        waitframe(1);
-        roll = randomint(100);
-        if (roll < 60) {
+        model thread namespace_ec06fe4a::function_52afe5df( 1 );
+        model namespace_83eb6304::turnofffx( "glow_yellow" );
+        model namespace_83eb6304::turnofffx( "player_trail_yellow" );
+        waitframe( 1 );
+        roll = randomint( 100 );
+        
+        if ( roll < 60 )
+        {
             spawnorigin = model.origin;
             players = getplayers();
-            foreach (player in players) {
-                if (!isdefined(player.doa.vehicle)) {
+            
+            foreach ( player in players )
+            {
+                if ( !isdefined( player.doa.vehicle ) )
+                {
                     continue;
                 }
-                distsq = distancesquared(player.doa.vehicle.origin, spawnorigin);
-                if (distsq < sqr(64)) {
-                    namespace_dfc652ee::function_ad7ac41b(spawnorigin, 1, 32, 27, 1);
+                
+                distsq = distancesquared( player.doa.vehicle.origin, spawnorigin );
+                
+                if ( distsq < sqr( 64 ) )
+                {
+                    namespace_dfc652ee::function_ad7ac41b( spawnorigin, 1, 32, 27, 1 );
                     return;
                 }
             }
-            doa_enemy::function_a6b807ea(doa_enemy::function_d7c5adee("spider"), randomint(4) + 1, model.origin);
+            
+            doa_enemy::function_a6b807ea( doa_enemy::function_d7c5adee( "spider" ), randomint( 4 ) + 1, model.origin );
             return;
         }
-        model namespace_83eb6304::function_3ecfde67("fireworks");
-        model namespace_e32bb68::function_3a59ec34("evt_doa_pickup_giftbox_fireworks");
-        if (roll == 99) {
-            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 14, 1);
+        
+        model namespace_83eb6304::function_3ecfde67( "fireworks" );
+        model namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_giftbox_fireworks" );
+        
+        if ( roll == 99 )
+        {
+            namespace_dfc652ee::function_ad7ac41b( origin, 1, 32, 14, 1 );
             return;
         }
-        if (roll > 92) {
-            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 16, 1);
+        
+        if ( roll > 92 )
+        {
+            namespace_dfc652ee::function_ad7ac41b( origin, 1, 32, 16, 1 );
             return;
         }
-        if (roll > 85) {
-            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 46, 1);
+        
+        if ( roll > 85 )
+        {
+            namespace_dfc652ee::function_ad7ac41b( origin, 1, 32, 46, 1 );
             return;
         }
-        if (roll > 80) {
-            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 8, 1);
+        
+        if ( roll > 80 )
+        {
+            namespace_dfc652ee::function_ad7ac41b( origin, 1, 32, 8, 1 );
             return;
         }
-        if (roll > 65) {
-            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 9, 1);
+        
+        if ( roll > 65 )
+        {
+            namespace_dfc652ee::function_ad7ac41b( origin, 1, 32, 9, 1 );
             return;
         }
-        namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 32, 1);
+        
+        namespace_dfc652ee::function_ad7ac41b( origin, 1, 32, 32, 1 );
     }
 }
 

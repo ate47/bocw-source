@@ -1,12 +1,7 @@
-#using script_1478fbd17fe393cf;
 #using script_1b9f100b85b7e21d;
-#using script_242c10c325cd35e9;
 #using script_290b454abd681dd4;
-#using script_32399001bdb550da;
-#using script_37b6f550ae3342d4;
 #using script_37f9ff47f340fbe8;
 #using script_3dc93ca9902a9cda;
-#using script_4ae261b2785dda9f;
 #using script_52da18c20f45c56a;
 #using script_7409560e3a0c9884;
 #using script_eb1a9e047313195;
@@ -27,11 +22,16 @@
 #using scripts\core_common\vehicle_shared;
 #using scripts\core_common\vehicleriders_shared;
 #using scripts\cp_common\dialogue;
+#using scripts\cp_common\evac;
 #using scripts\cp_common\gametypes\battlechatter;
+#using scripts\cp_common\gametypes\save;
+#using scripts\cp_common\hint_tutorial;
 #using scripts\cp_common\objectives;
+#using scripts\cp_common\player_decision;
 #using scripts\cp_common\skipto;
 #using scripts\cp_common\snd;
 #using scripts\cp_common\util;
+#using scripts\killstreaks\cp\ac130;
 #using scripts\killstreaks\killstreaks_shared;
 
 #namespace namespace_19fc4094;
@@ -40,15 +40,16 @@
 // Params 1, eflags: 0x0
 // Checksum 0x6904ae63, Offset: 0x920
 // Size: 0x114
-function function_4b8cec86(*var_d3440450) {
-    level flag::set("tundra_intro_done");
-    level flag::set("player_is_rappelling");
-    level flag::set("player_rappel_done");
-    level flag::set("flag_picture_vo_finished");
-    level battlechatter::function_2ab9360b(1);
+function function_4b8cec86( *var_d3440450 )
+{
+    level flag::set( "tundra_intro_done" );
+    level flag::set( "player_is_rappelling" );
+    level flag::set( "player_rappel_done" );
+    level flag::set( "flag_picture_vo_finished" );
+    level battlechatter::function_2ab9360b( 1 );
     level thread namespace_ba979a10::setup_allies();
     level.var_85b00b2b = undefined;
-    waitframe(1);
+    waitframe( 1 );
     level.woods thread namespace_ba979a10::function_c70f5d3();
     level thread namespace_ba979a10::function_d6af6077();
     level thread namespace_ba979a10::function_7fe34c6e();
@@ -58,13 +59,14 @@ function function_4b8cec86(*var_d3440450) {
 // Params 2, eflags: 0x0
 // Checksum 0x83875cc9, Offset: 0xa40
 // Size: 0x36c
-function outro_main(*var_d3440450, var_50cc0d4f) {
-    level flag::wait_till("level_is_go");
-    player = getplayers()[0];
-    level notify(#"hash_146b46855a0f35b8");
-    level flag::set("flag_spawn_motor_pool_enemies");
-    level flag::set("flag_spawn_radar_enemies");
-    level flag::set("flag_spawn_fuel_depot_enemies");
+function outro_main( *var_d3440450, var_50cc0d4f )
+{
+    level flag::wait_till( "level_is_go" );
+    player = getplayers()[ 0 ];
+    level notify( #"hash_146b46855a0f35b8" );
+    level flag::set( "flag_spawn_motor_pool_enemies" );
+    level flag::set( "flag_spawn_radar_enemies" );
+    level flag::set( "flag_spawn_fuel_depot_enemies" );
     level.var_9090a594 = #"hash_62df17fd9f467834";
     level.var_5bb760e8 = #"hash_375f464aa679494f";
     level.var_fe86dfc1 = 1;
@@ -74,54 +76,66 @@ function outro_main(*var_d3440450, var_50cc0d4f) {
     level.var_f7ac00e1 = #"hash_5ce979f55b4f6483";
     level.var_24f69721 = "scene_sm_tundra_heli_load";
     level thread function_8416099b();
-    player thread function_df7926cc(var_50cc0d4f);
-    level flag::wait_till("continue_evac_outro");
-    player thread namespace_f9ae7d19::main(player.origin, "start_evac_heli_infil", undefined, 2);
+    player thread function_df7926cc( var_50cc0d4f );
+    level flag::wait_till( "continue_evac_outro" );
+    player thread evac::main( player.origin, "start_evac_heli_infil", undefined, 2 );
     player thread function_29758311();
     level thread function_8b371bd3();
     level thread function_45a92388();
     level thread function_619efcd8();
-    level waittill(#"evac_helicopter_board_trigger");
-    objectives::complete("exfil");
-    if (player_decision::function_e40c7d56() == 3) {
-        player stats::function_dad108fa(#"hash_7af2992eebf41338", 1);
+    level waittill( #"evac_helicopter_board_trigger" );
+    objectives::complete( "exfil" );
+    
+    if ( player_decision::function_e40c7d56() == 3 )
+    {
+        player stats::function_dad108fa( #"hash_7af2992eebf41338", 1 );
     }
+    
     level.player.oobdisabled = 1;
     wait 6;
-    thread util::screen_fade_out(3);
-    snd::client_msg(#"hash_305dcf2b80864ec");
+    thread util::screen_fade_out( 3 );
+    snd::client_msg( #"hash_305dcf2b80864ec" );
     wait 3;
     safehouse = skipto::function_6914f647();
-    skipto = skipto::function_547ca7d2(safehouse);
-    skipto::function_1c2dfc20(safehouse, skipto);
-    level waittill(#"never");
+    skipto = skipto::function_547ca7d2( safehouse );
+    skipto::function_1c2dfc20( safehouse, skipto );
+    level waittill( #"never" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0x19237a8e, Offset: 0xdb8
 // Size: 0xc4
-function function_8416099b() {
-    level endon(#"continue_evac_outro");
-    waitframe(1);
-    level util::delay(40, undefined, &flag::set, "continue_evac_outro");
-    while (true) {
-        if (!flag::get("evac_player_left_building")) {
+function function_8416099b()
+{
+    level endon( #"continue_evac_outro" );
+    waitframe( 1 );
+    level util::delay( 40, undefined, &flag::set, "continue_evac_outro" );
+    
+    while ( true )
+    {
+        if ( !flag::get( "evac_player_left_building" ) )
+        {
             break;
         }
-        if (level flag::get("smoke_tossed")) {
+        
+        if ( level flag::get( "smoke_tossed" ) )
+        {
             break;
         }
-        waitframe(1);
+        
+        waitframe( 1 );
     }
-    level flag::set("continue_evac_outro");
+    
+    level flag::set( "continue_evac_outro" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xe88
 // Size: 0x4
-function init_flags() {
+function init_flags()
+{
     
 }
 
@@ -129,7 +143,8 @@ function init_flags() {
 // Params 4, eflags: 0x0
 // Checksum 0xd94ec91c, Offset: 0xe98
 // Size: 0x24
-function cleanup(*name, *starting, *direct, *player) {
+function cleanup( *name, *starting, *direct, *player )
+{
     
 }
 
@@ -137,87 +152,103 @@ function cleanup(*name, *starting, *direct, *player) {
 // Params 0, eflags: 0x0
 // Checksum 0x573ff721, Offset: 0xec8
 // Size: 0xf4
-function function_40ceace8() {
-    if (is_true(level.player getnoncheckpointdata("thrown_smoke_hint"))) {
+function function_40ceace8()
+{
+    if ( is_true( level.player getnoncheckpointdata( "thrown_smoke_hint" ) ) )
+    {
         wait 3;
         return;
     }
+    
     wait 1;
-    level.player freezecontrols(1);
-    hint_tutorial::function_4c2d4fc4(#"hash_16785e69a5ae33b8", #"hash_2d09e9a82cb227f8");
+    level.player freezecontrols( 1 );
+    hint_tutorial::function_4c2d4fc4( #"hash_16785e69a5ae33b8", #"hash_2d09e9a82cb227f8" );
     hint_tutorial::pause();
     wait 0.1;
-    level.player freezecontrols(0);
-    level.player setnoncheckpointdata("thrown_smoke_hint", 1);
+    level.player freezecontrols( 0 );
+    level.player setnoncheckpointdata( "thrown_smoke_hint", 1 );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0xd2b4ea5a, Offset: 0xfc8
 // Size: 0x274
-function function_8b371bd3() {
-    player = getplayers()[0];
-    level flag::wait_till("smoke_tossed");
-    player dialogue::queue("vox_cp_rcir_01300_masn_smokeout_98");
+function function_8b371bd3()
+{
+    player = getplayers()[ 0 ];
+    level flag::wait_till( "smoke_tossed" );
+    player dialogue::queue( "vox_cp_rcir_01300_masn_smokeout_98" );
     wait 1;
-    dialogue::radio("vox_cp_rcir_01300_pilo_choppersjustafe_d3");
+    dialogue::radio( "vox_cp_rcir_01300_pilo_choppersjustafe_d3" );
     level thread function_13a1ac05();
     wait 4;
-    level.woods dialogue::radio("vox_cp_rcir_01300_wood_looksharpmoreon_c2");
+    level.woods dialogue::radio( "vox_cp_rcir_01300_wood_looksharpmoreon_c2" );
     wait 10;
-    level.woods dialogue::radio("vox_cp_rcir_01300_wood_redsincoming_23");
+    level.woods dialogue::radio( "vox_cp_rcir_01300_wood_redsincoming_23" );
     wait 10;
-    level.woods dialogue::radio("vox_cp_rcir_01300_wood_itsanassholepar_d7");
+    level.woods dialogue::radio( "vox_cp_rcir_01300_wood_itsanassholepar_d7" );
     wait 15;
-    dialogue::radio("vox_cp_rcir_01300_pilo_hangonimnearlyt_7e");
+    dialogue::radio( "vox_cp_rcir_01300_pilo_hangonimnearlyt_7e" );
     wait 10;
-    dialogue::radio("vox_cp_rcir_01300_pilo_eyesonsmoketouc_46");
-    level flag::wait_till("flag_evac_stop_smoke");
-    dialogue::radio("vox_cp_rcir_01300_wood_aboutfuckingtim_f2");
-    level.woods dialogue::radio("vox_cp_rcir_01300_wood_movingtomyexfil_b4");
-    if (!level flag::get("evac_helicopter_board_trigger")) {
-        level.woods dialogue::radio("vox_cp_rcir_01300_wood_dontfuckingforg_c0");
+    dialogue::radio( "vox_cp_rcir_01300_pilo_eyesonsmoketouc_46" );
+    level flag::wait_till( "flag_evac_stop_smoke" );
+    dialogue::radio( "vox_cp_rcir_01300_wood_aboutfuckingtim_f2" );
+    level.woods dialogue::radio( "vox_cp_rcir_01300_wood_movingtomyexfil_b4" );
+    
+    if ( !level flag::get( "evac_helicopter_board_trigger" ) )
+    {
+        level.woods dialogue::radio( "vox_cp_rcir_01300_wood_dontfuckingforg_c0" );
     }
-    if (!level flag::get("evac_helicopter_board_trigger")) {
-        level.woods dialogue::radio("vox_cp_rcir_01300_wood_illseeyouinafew_fe");
+    
+    if ( !level flag::get( "evac_helicopter_board_trigger" ) )
+    {
+        level.woods dialogue::radio( "vox_cp_rcir_01300_wood_illseeyouinafew_fe" );
     }
-    level waittill(#"evac_helicopter_board_trigger");
-    dialogue::radio("vox_cp_rcir_01300_wood_niceworkdownthe_ea");
-    dialogue::radio("vox_cp_rcir_01300_wood_ithinkperseusis_49");
+    
+    level waittill( #"evac_helicopter_board_trigger" );
+    dialogue::radio( "vox_cp_rcir_01300_wood_niceworkdownthe_ea" );
+    dialogue::radio( "vox_cp_rcir_01300_wood_ithinkperseusis_49" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0x48c1f143, Offset: 0x1248
 // Size: 0x24
-function function_13a1ac05() {
+function function_13a1ac05()
+{
     wait 10;
-    level flag::set("ac130_allowed");
+    level flag::set( "ac130_allowed" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0xb3f61295, Offset: 0x1278
 // Size: 0x13c
-function function_619efcd8() {
-    level endon(#"evac_helicopter_board_trigger");
-    level flag::wait_till("evac_chopper_landed");
+function function_619efcd8()
+{
+    level endon( #"evac_helicopter_board_trigger" );
+    level flag::wait_till( "evac_chopper_landed" );
     nags = [];
     speaker = [];
-    nags[nags.size] = "vox_cp_rcir_01300_wood_letsgohomeslice_bc";
-    speaker[speaker.size] = level.woods;
-    nags[nags.size] = "vox_cp_rcir_01300_wood_getonthedamncho_27";
-    speaker[speaker.size] = level.woods;
-    nags[nags.size] = "vox_cp_rcir_01300_wood_moveyourasssowe_fc";
-    speaker[speaker.size] = level.woods;
+    nags[ nags.size ] = "vox_cp_rcir_01300_wood_letsgohomeslice_bc";
+    speaker[ speaker.size ] = level.woods;
+    nags[ nags.size ] = "vox_cp_rcir_01300_wood_getonthedamncho_27";
+    speaker[ speaker.size ] = level.woods;
+    nags[ nags.size ] = "vox_cp_rcir_01300_wood_moveyourasssowe_fc";
+    speaker[ speaker.size ] = level.woods;
     wait 25;
     i = 0;
-    while (!level flag::get("evac_helicopter_board_trigger")) {
-        speaker[i] dialogue::queue("" + nags[i]);
+    
+    while ( !level flag::get( "evac_helicopter_board_trigger" ) )
+    {
+        speaker[ i ] dialogue::queue( "" + nags[ i ] );
         i++;
-        if (i >= nags.size) {
+        
+        if ( i >= nags.size )
+        {
             i = 0;
         }
+        
         wait 25;
     }
 }
@@ -226,52 +257,60 @@ function function_619efcd8() {
 // Params 0, eflags: 0x0
 // Checksum 0xa4bebb62, Offset: 0x13c0
 // Size: 0xf4
-function function_45a92388() {
-    level endon(#"hash_5dfc215255b7bf4");
-    level endon(#"ac130_support_used");
+function function_45a92388()
+{
+    level endon( #"hash_5dfc215255b7bf4" );
+    level endon( #"ac130_support_used" );
     level thread function_d78fcf75();
-    level flag::wait_till("ac130_allowed");
-    dialogue::radio("vox_cp_rcir_01300_cmnd_masonwehaveairs_f0");
+    level flag::wait_till( "ac130_allowed" );
+    dialogue::radio( "vox_cp_rcir_01300_cmnd_masonwehaveairs_f0" );
     wait 0.5;
-    dialogue::radio("vox_cp_rcir_01300_cmnd_callitinifyoune_c3");
+    dialogue::radio( "vox_cp_rcir_01300_cmnd_callitinifyoune_c3" );
     wait 15;
-    level.woods dialogue::radio("vox_cp_rcir_01300_wood_tangoseverywher_e3");
+    level.woods dialogue::radio( "vox_cp_rcir_01300_wood_tangoseverywher_e3" );
     wait 15;
-    level.woods dialogue::radio("vox_cp_rcir_01300_wood_mightwanttocall_14");
+    level.woods dialogue::radio( "vox_cp_rcir_01300_wood_mightwanttocall_14" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0xf30ecdbe, Offset: 0x14c0
 // Size: 0x9c
-function function_d78fcf75() {
-    player = getplayers()[0];
-    level flag::wait_till("ac130_support_used");
-    player dialogue::queue("vox_cp_rcir_01300_masn_senditin_9f");
-    dialogue::radio("vox_cp_rcir_01300_pilo_rogerthat_fe");
-    level.woods dialogue::queue("vox_cp_rcir_01300_wood_timetorainsomep_19");
+function function_d78fcf75()
+{
+    player = getplayers()[ 0 ];
+    level flag::wait_till( "ac130_support_used" );
+    player dialogue::queue( "vox_cp_rcir_01300_masn_senditin_9f" );
+    dialogue::radio( "vox_cp_rcir_01300_pilo_rogerthat_fe" );
+    level.woods dialogue::queue( "vox_cp_rcir_01300_wood_timetorainsomep_19" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 0, eflags: 0x0
 // Checksum 0xdc134722, Offset: 0x1568
 // Size: 0xfc
-function function_de351837() {
-    level endon(#"smoke_tossed");
+function function_de351837()
+{
+    level endon( #"smoke_tossed" );
     nags = [];
     speaker = [];
-    nags[nags.size] = "vox_cp_rcir_01300_cmnd_masonwecantbrin_1f";
-    speaker[speaker.size] = level.woods;
-    nags[nags.size] = "vox_cp_rcir_01300_cmnd_whatsyoursituat_19";
-    speaker[speaker.size] = level.woods;
+    nags[ nags.size ] = "vox_cp_rcir_01300_cmnd_masonwecantbrin_1f";
+    speaker[ speaker.size ] = level.woods;
+    nags[ nags.size ] = "vox_cp_rcir_01300_cmnd_whatsyoursituat_19";
+    speaker[ speaker.size ] = level.woods;
     wait 20;
     i = 0;
-    while (!level flag::get("smoke_tossed")) {
-        speaker[i] dialogue::queue("" + nags[i]);
+    
+    while ( !level flag::get( "smoke_tossed" ) )
+    {
+        speaker[ i ] dialogue::queue( "" + nags[ i ] );
         i++;
-        if (i >= nags.size) {
+        
+        if ( i >= nags.size )
+        {
             i = 0;
         }
+        
         wait 15;
     }
 }
@@ -280,13 +319,16 @@ function function_de351837() {
 // Params 0, eflags: 0x0
 // Checksum 0xc9fbd33d, Offset: 0x1670
 // Size: 0x84
-function function_503fd35b() {
-    self endon(#"stop_smoke_throw_hint");
-    self waittill(#"hash_338ed48ff527b98c");
+function function_503fd35b()
+{
+    self endon( #"stop_smoke_throw_hint" );
+    self waittill( #"hash_338ed48ff527b98c" );
     wait 0.5;
     waittime = 8;
-    while (true) {
-        self thread util::show_hint_text(#"hash_8626041b4a29d", 0, "stop_smoke_throw_hint", waittime);
+    
+    while ( true )
+    {
+        self thread util::show_hint_text( #"hash_8626041b4a29d", 0, "stop_smoke_throw_hint", waittime );
         wait waittime * 2;
     }
 }
@@ -295,57 +337,74 @@ function function_503fd35b() {
 // Params 0, eflags: 0x0
 // Checksum 0x9480e7f4, Offset: 0x1700
 // Size: 0xc6
-function function_b8b78cfa() {
-    self endon(#"stop_smoke_throw_hint");
-    secondaryoffhand = getweapon(#"willy_pete");
-    self giveweapon(secondaryoffhand);
-    self setweaponammoclip(secondaryoffhand, 1);
-    self setweaponammostock(secondaryoffhand, 1);
-    self switchtooffhand(secondaryoffhand);
-    self notify(#"hash_338ed48ff527b98c");
+function function_b8b78cfa()
+{
+    self endon( #"stop_smoke_throw_hint" );
+    secondaryoffhand = getweapon( #"willy_pete" );
+    self giveweapon( secondaryoffhand );
+    self setweaponammoclip( secondaryoffhand, 1 );
+    self setweaponammostock( secondaryoffhand, 1 );
+    self switchtooffhand( secondaryoffhand );
+    self notify( #"hash_338ed48ff527b98c" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 1, eflags: 0x0
 // Checksum 0x2a87fd89, Offset: 0x17d0
 // Size: 0x36c
-function function_df7926cc(var_50cc0d4f) {
-    if (var_50cc0d4f) {
+function function_df7926cc( var_50cc0d4f )
+{
+    if ( var_50cc0d4f )
+    {
         wait 4;
     }
-    level flag::wait_till("flag_picture_vo_finished");
+    
+    level flag::wait_till( "flag_picture_vo_finished" );
     self thread function_503fd35b();
-    self notifyonplayercommand("evac_smoke_out", "+actionslot 1");
-    self notifyonplayercommand("evac_smoke_out", "+actionslot 1");
+    self notifyonplayercommand( "evac_smoke_out", "+actionslot 1" );
+    self notifyonplayercommand( "evac_smoke_out", "+actionslot 1" );
     function_40ceace8();
-    thread savegame::checkpoint_save(1);
-    if (self gamepadusedlast()) {
-        self notifyonplayercommand("evac_smoke_out", "+actionslot 1");
-    } else {
-        self notifyonplayercommand("evac_smoke_out", "+actionslot 3");
+    thread savegame::checkpoint_save( 1 );
+    
+    if ( self gamepadusedlast() )
+    {
+        self notifyonplayercommand( "evac_smoke_out", "+actionslot 1" );
     }
+    else
+    {
+        self notifyonplayercommand( "evac_smoke_out", "+actionslot 3" );
+    }
+    
     thread function_b8b78cfa();
     level thread function_de351837();
-    while (true) {
-        waitresult = self waittill(#"grenade_fire");
+    
+    while ( true )
+    {
+        waitresult = self waittill( #"grenade_fire" );
         grenade = waitresult.projectile;
-        if (grenade.model == #"hash_6038b41696ad5e3a") {
+        
+        if ( grenade.model == #"wpn_t9_eqp_smoke_grenade_projectile" )
+        {
             break;
         }
     }
-    self notify(#"stop_smoke_throw_hint");
+    
+    self notify( #"stop_smoke_throw_hint" );
     grenade makegrenadedud();
-    ret = grenade waittilltimeout(10, ["death", #"projectile_impact", #"explode"]);
+    ret = grenade waittilltimeout( 10, [ "death", #"projectile_impact", #"explode" ] );
     level.var_a16d9e19 = grenade.origin;
-    namespace_f9ae7d19::function_d1e14c76(level.var_a16d9e19);
-    e_vol = getent("volume_evac_loc", "targetname");
-    if (isdefined(e_vol) && isdefined(level.var_dc8cac2a)) {
+    evac::function_d1e14c76( level.var_a16d9e19 );
+    e_vol = getent( "volume_evac_loc", "targetname" );
+    
+    if ( isdefined( e_vol ) && isdefined( level.var_dc8cac2a ) )
+    {
         e_vol.origin = level.var_a16d9e19;
-        level.var_dc8cac2a[level.var_dc8cac2a.size] = e_vol;
+        level.var_dc8cac2a[ level.var_dc8cac2a.size ] = e_vol;
     }
-    self util::delay(1, undefined, &flag::set, "start_evac_heli_infil");
+    
+    self util::delay( 1, undefined, &flag::set, "start_evac_heli_infil" );
     wait 2;
-    level flag::set("smoke_tossed");
+    level flag::set( "smoke_tossed" );
     level thread namespace_c1cfab6c::function_ac85ea08();
     level thread function_c32ef30a();
 }
@@ -354,15 +413,16 @@ function function_df7926cc(var_50cc0d4f) {
 // Params 0, eflags: 0x0
 // Checksum 0xf1161c99, Offset: 0x1b48
 // Size: 0xf4
-function function_c32ef30a() {
-    level waittill(#"evac_chopper_landed");
+function function_c32ef30a()
+{
+    level waittill( #"evac_chopper_landed" );
     level.var_85b00b2b = #"hash_73070752ddd02cad";
-    level flag::set("woods_pause_overwatch");
-    savegame::checkpoint_save(1);
+    level flag::set( "woods_pause_overwatch" );
+    savegame::checkpoint_save( 1 );
     level thread namespace_ba979a10::function_7094e60a();
-    level thread namespace_f9ae7d19::function_ec8bba3b("evac_heli_kill");
+    level thread evac::function_ec8bba3b( "evac_heli_kill" );
     level thread namespace_ba979a10::function_fe17f833();
-    level flag::wait_till("evac_helicopter_board_trigger");
+    level flag::wait_till( "evac_helicopter_board_trigger" );
     level thread namespace_ae270045::function_5e3101b2();
 }
 
@@ -370,54 +430,70 @@ function function_c32ef30a() {
 // Params 0, eflags: 0x0
 // Checksum 0x94313eff, Offset: 0x1c48
 // Size: 0x364
-function function_29758311() {
-    level endon(#"hash_5dfc215255b7bf4");
-    level endon(#"flag_evac_exfil_ready");
-    level flag::wait_till("ac130_allowed");
-    self notifyonplayercommand("ac130_support", "+actionslot 3");
-    self thread util::show_hint_text(#"hash_61be2df0c12c63bb", 0, "ac130_support", 10);
-    self waittill(#"ac130_support");
-    if (self flag::get("in_action")) {
+function function_29758311()
+{
+    level endon( #"hash_5dfc215255b7bf4" );
+    level endon( #"flag_evac_exfil_ready" );
+    level flag::wait_till( "ac130_allowed" );
+    self notifyonplayercommand( "ac130_support", "+actionslot 3" );
+    self thread util::show_hint_text( #"hash_61be2df0c12c63bb", 0, "ac130_support", 10 );
+    self waittill( #"ac130_support" );
+    
+    if ( self flag::get( "in_action" ) )
+    {
         level action_utility::function_396e2076();
-        self flag::wait_till_clear("in_action");
+        self flag::wait_till_clear( "in_action" );
     }
-    level flag::set("ac130_support_used");
-    thread function_f0b82c4a(level.player.origin);
-    weap = getweapon("ac130");
-    if (isdefined(weap)) {
-        self giveweapon(weap);
-        self switchtoweapon(weap);
+    
+    level flag::set( "ac130_support_used" );
+    thread function_f0b82c4a( level.player.origin );
+    weap = getweapon( "ac130" );
+    
+    if ( isdefined( weap ) )
+    {
+        self giveweapon( weap );
+        self switchtoweapon( weap );
         level.var_dd0b1f89 = 8;
-        level flag::set("evac_start_next_wave");
-        level.player playrumbleonentity(#"damage_light");
+        level flag::set( "evac_start_next_wave" );
+        level.player playrumbleonentity( #"damage_light" );
         wait 0.3;
         level.var_dd0b1f89 = 15;
-    } else {
-        level.player playrumbleonentity(#"damage_light");
-        level flag::set("evac_start_next_wave");
     }
-    level.player val::set(#"hash_7645d8013148a52a", "takedamage", 0);
-    level.player thread function_9c5feec7(weap);
-    namespace_8bcd067b::function_1c110d7a(level.player getorigin(), 8000);
-    self killstreaks::give("ac130");
-    self killstreaks::usekillstreak("ac130", 0);
-    if (isdefined(weap)) {
+    else
+    {
+        level.player playrumbleonentity( #"damage_light" );
+        level flag::set( "evac_start_next_wave" );
     }
-    ret = self waittill(#"gunner_left", #"hash_b7f6494fbf8dd9d");
+    
+    level.player val::set( #"hash_7645d8013148a52a", "takedamage", 0 );
+    level.player thread function_9c5feec7( weap );
+    namespace_8bcd067b::function_1c110d7a( level.player getorigin(), 8000 );
+    self killstreaks::give( "ac130" );
+    self killstreaks::usekillstreak( "ac130", 0 );
+    
+    if ( isdefined( weap ) )
+    {
+    }
+    
+    ret = self waittill( #"gunner_left", #"hash_b7f6494fbf8dd9d" );
 }
 
 // Namespace namespace_19fc4094/namespace_19fc4094
 // Params 1, eflags: 0x0
 // Checksum 0x11d63657, Offset: 0x1fb8
 // Size: 0x148
-function function_f0b82c4a(org) {
-    var_c85f2d8e = ["tundra_ac130_fb_veh1", "tundra_ac130_fb_veh2", "tundra_ac130_fb_veh3"];
-    var_c3025e74 = [];
-    var_6eacda7b = struct::get("bunker_center_struct", "targetname");
-    if (isdefined(var_6eacda7b) && distance2d(var_6eacda7b.origin, org) < 1024) {
-        foreach (var_af1a2359 in var_c85f2d8e) {
-            var_c3025e74[var_c3025e74.size] = vehicle::simple_spawn_single_and_drive(var_af1a2359);
-            waitframe(1);
+function function_f0b82c4a( org )
+{
+    var_c85f2d8e = [ "tundra_ac130_fb_veh1", "tundra_ac130_fb_veh2", "tundra_ac130_fb_veh3" ];
+    vehs = [];
+    var_6eacda7b = struct::get( "bunker_center_struct", "targetname" );
+    
+    if ( isdefined( var_6eacda7b ) && distance2d( var_6eacda7b.origin, org ) < 1024 )
+    {
+        foreach ( var_af1a2359 in var_c85f2d8e )
+        {
+            vehs[ vehs.size ] = vehicle::simple_spawn_single_and_drive( var_af1a2359 );
+            waitframe( 1 );
         }
     }
 }
@@ -426,23 +502,33 @@ function function_f0b82c4a(org) {
 // Params 1, eflags: 0x0
 // Checksum 0xb67ad4ec, Offset: 0x2108
 // Size: 0x13c
-function function_9c5feec7(weap) {
+function function_9c5feec7( weap )
+{
     var_a80e07df = 25;
-    if (isdefined(level.ac130.killstreak_duration)) {
+    
+    if ( isdefined( level.ac130.killstreak_duration ) )
+    {
         var_a80e07df = level.ac130.killstreak_duration / 1000 + 2;
     }
-    self waittilltimeout(var_a80e07df, #"gunner_left", #"hash_b7f6494fbf8dd9d");
-    if (getaiteamarray("axis").size < 7) {
-        level flag::set("evac_start_next_wave");
+    
+    self waittilltimeout( var_a80e07df, #"gunner_left", #"hash_b7f6494fbf8dd9d" );
+    
+    if ( getaiteamarray( "axis" ).size < 7 )
+    {
+        level flag::set( "evac_start_next_wave" );
+        
         /#
-            iprintln("<dev string:x38>");
+            iprintln( "<dev string:x38>" );
         #/
     }
+    
     wait 2;
-    level.player val::reset(#"hash_7645d8013148a52a", "takedamage");
-    if (isdefined(weap)) {
+    level.player val::reset( #"hash_7645d8013148a52a", "takedamage" );
+    
+    if ( isdefined( weap ) )
+    {
         wait 4;
-        self takeweapon(weap);
+        self takeweapon( weap );
     }
 }
 

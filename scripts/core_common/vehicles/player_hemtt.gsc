@@ -8,25 +8,28 @@
 // Params 0, eflags: 0x5
 // Checksum 0x96e1ef0e, Offset: 0x108
 // Size: 0x44
-function private autoexec __init__system__() {
-    system::register(#"hash_5b215c4eff8f5759", &preinit, undefined, undefined, #"player_vehicle");
+function private autoexec __init__system__()
+{
+    system::register( #"hash_5b215c4eff8f5759", &preinit, undefined, undefined, #"player_vehicle" );
 }
 
 // Namespace player_hemtt/player_hemtt
 // Params 0, eflags: 0x4
 // Checksum 0xdf1feafe, Offset: 0x158
 // Size: 0x2c
-function private preinit() {
-    vehicle::add_main_callback("hemtt_wz", &function_7cb966e4);
+function private preinit()
+{
+    vehicle::add_main_callback( "hemtt_wz", &function_7cb966e4 );
 }
 
 // Namespace player_hemtt/player_hemtt
 // Params 0, eflags: 0x4
 // Checksum 0xb1ba4c97, Offset: 0x190
 // Size: 0xc2
-function private function_7cb966e4() {
-    callback::function_d8abfc3d(#"hash_666d48a558881a36", &function_3fbda54b);
-    callback::function_d8abfc3d(#"hash_2c1cafe2a67dfef8", &function_4a8e844a);
+function private function_7cb966e4()
+{
+    callback::function_d8abfc3d( #"hash_666d48a558881a36", &function_3fbda54b );
+    callback::function_d8abfc3d( #"hash_2c1cafe2a67dfef8", &function_4a8e844a );
     self.var_93dc9da9 = "veh_truck_wall_imp";
     self.var_4ca92b57 = 30;
     self.var_57371c71 = 60;
@@ -39,13 +42,18 @@ function private function_7cb966e4() {
 // Params 1, eflags: 0x4
 // Checksum 0x7bbf547a, Offset: 0x260
 // Size: 0x94
-function private function_3fbda54b(params) {
+function private function_3fbda54b( params )
+{
     player = params.player;
     seatindex = params.eventstruct.seat_index;
-    if (seatindex == 0) {
-        playfxontag("vehicle/fx8_exhaust_truck_cargo_startup_os", self, "tag_fx_exhaust");
-        if (isdefined(player)) {
-            player playrumbleonentity("jet_rumble");
+    
+    if ( seatindex == 0 )
+    {
+        playfxontag( "vehicle/fx8_exhaust_truck_cargo_startup_os", self, "tag_fx_exhaust" );
+        
+        if ( isdefined( player ) )
+        {
+            player playrumbleonentity( "jet_rumble" );
         }
     }
 }
@@ -54,13 +62,18 @@ function private function_3fbda54b(params) {
 // Params 1, eflags: 0x4
 // Checksum 0x4eac7e21, Offset: 0x300
 // Size: 0x94
-function private function_4a8e844a(params) {
+function private function_4a8e844a( params )
+{
     player = params.player;
     seatindex = params.eventstruct.seat_index;
-    if (seatindex == 0) {
-        playfxontag("vehicle/fx8_exhaust_truck_cargo_startup_os", self, "tag_fx_exhaust");
-        if (isdefined(player)) {
-            player playrumbleonentity("jet_rumble");
+    
+    if ( seatindex == 0 )
+    {
+        playfxontag( "vehicle/fx8_exhaust_truck_cargo_startup_os", self, "tag_fx_exhaust" );
+        
+        if ( isdefined( player ) )
+        {
+            player playrumbleonentity( "jet_rumble" );
         }
     }
 }

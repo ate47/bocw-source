@@ -15,18 +15,26 @@
 // Namespace globallogic_utils/globallogic_utils
 // Params 2, eflags: 0x0
 // Checksum 0x451e158c, Offset: 0xf8
-// Size: 0xba
-function is_winner(outcome, team_or_player) {
-    if (isplayer(team_or_player)) {
-        if (outcome.players.size && outcome.players[0] == team_or_player) {
+// Size: 0xba, Type: bool
+function is_winner( outcome, team_or_player )
+{
+    if ( isplayer( team_or_player ) )
+    {
+        if ( outcome.players.size && outcome.players[ 0 ] == team_or_player )
+        {
             return true;
         }
-        if (isdefined(outcome.team) && outcome.team == team_or_player.team) {
+        
+        if ( isdefined( outcome.team ) && outcome.team == team_or_player.team )
+        {
             return true;
         }
-    } else if (isdefined(outcome.team) && outcome.team == team_or_player) {
+    }
+    else if ( isdefined( outcome.team ) && outcome.team == team_or_player )
+    {
         return true;
     }
+    
     return false;
 }
 
@@ -34,14 +42,18 @@ function is_winner(outcome, team_or_player) {
 // Params 0, eflags: 0x0
 // Checksum 0xd193563d, Offset: 0x1c0
 // Size: 0xb8
-function testshock() {
-    self endon(#"death", #"disconnect");
-    for (;;) {
+function testshock()
+{
+    self endon( #"death", #"disconnect" );
+    
+    for ( ;; )
+    {
         wait 3;
-        numshots = randomint(6);
+        numshots = randomint( 6 );
+        
         for (i = 0; i < numshots; i++) {
-            iprintlnbold(numshots);
-            self shellshock(#"frag_grenade_mp", 0.2);
+            iprintlnbold( numshots );
+            self shellshock( #"frag_grenade_mp", 0.2 );
             wait 0.1;
         }
     }
@@ -51,55 +63,72 @@ function testshock() {
 // Params 0, eflags: 0x0
 // Checksum 0x61731ce2, Offset: 0x280
 // Size: 0x10e
-function timeuntilroundend() {
-    if (level.gameended) {
-        timepassed = float(gettime() - level.gameendtime) / 1000;
-        timeremaining = level.roundenddelay[3] - timepassed;
-        if (timeremaining < 0) {
+function timeuntilroundend()
+{
+    if ( level.gameended )
+    {
+        timepassed = float( gettime() - level.gameendtime ) / 1000;
+        timeremaining = level.roundenddelay[ 3 ] - timepassed;
+        
+        if ( timeremaining < 0 )
+        {
             return 0;
         }
+        
         return timeremaining;
     }
-    if (level.timelimit <= 0) {
+    
+    if ( level.timelimit <= 0 )
+    {
         return undefined;
     }
-    if (!isdefined(level.starttime)) {
+    
+    if ( !isdefined( level.starttime ) )
+    {
         return undefined;
     }
-    timepassed = float(gettimepassed() - level.starttime) / 1000;
+    
+    timepassed = float( gettimepassed() - level.starttime ) / 1000;
     timeremaining = level.timelimit * 60 - timepassed;
-    return timeremaining + level.roundenddelay[3];
+    return timeremaining + level.roundenddelay[ 3 ];
 }
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 0, eflags: 0x0
 // Checksum 0x3dc9a282, Offset: 0x398
 // Size: 0x3c
-function gettimeremaining() {
-    return level.timelimit * int(60 * 1000) - gettimepassed();
+function gettimeremaining()
+{
+    return level.timelimit * int( 60 * 1000 ) - gettimepassed();
 }
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x0
 // Checksum 0xdd42a5ff, Offset: 0x3e0
 // Size: 0x44
-function registerpostroundevent(eventfunc) {
-    if (!isdefined(level.postroundevents)) {
+function registerpostroundevent( eventfunc )
+{
+    if ( !isdefined( level.postroundevents ) )
+    {
         level.postroundevents = [];
     }
-    level.postroundevents[level.postroundevents.size] = eventfunc;
+    
+    level.postroundevents[ level.postroundevents.size ] = eventfunc;
 }
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 0, eflags: 0x0
 // Checksum 0x5de604a0, Offset: 0x430
 // Size: 0x56
-function executepostroundevents() {
-    if (!isdefined(level.postroundevents)) {
+function executepostroundevents()
+{
+    if ( !isdefined( level.postroundevents ) )
+    {
         return;
     }
+    
     for (i = 0; i < level.postroundevents.size; i++) {
-        [[ level.postroundevents[i] ]]();
+        [[ level.postroundevents[ i ] ]]();
     }
 }
 
@@ -107,13 +136,18 @@ function executepostroundevents() {
 // Params 3, eflags: 0x0
 // Checksum 0xa13b8664, Offset: 0x490
 // Size: 0x46
-function getvalueinrange(value, minvalue, maxvalue) {
-    if (value > maxvalue) {
+function getvalueinrange( value, minvalue, maxvalue )
+{
+    if ( value > maxvalue )
+    {
         return maxvalue;
     }
-    if (value < minvalue) {
+    
+    if ( value < minvalue )
+    {
         return minvalue;
     }
+    
     return value;
 }
 
@@ -122,31 +156,42 @@ function getvalueinrange(value, minvalue, maxvalue) {
     // Namespace globallogic_utils/globallogic_utils
     // Params 0, eflags: 0x0
     // Checksum 0xf6f4f7e9, Offset: 0x4e0
-    // Size: 0x2a8
-    function assertproperplacement() {
-        numplayers = level.placement[#"all"].size;
-        if (level.teambased) {
+    // Size: 0x2a8, Type: dev
+    function assertproperplacement()
+    {
+        numplayers = level.placement[ #"all" ].size;
+        
+        if ( level.teambased )
+        {
             for (i = 0; i < numplayers - 1; i++) {
-                if (level.placement[#"all"][i].score < level.placement[#"all"][i + 1].score) {
-                    println("<dev string:x38>");
+                if ( level.placement[ #"all" ][ i ].score < level.placement[ #"all" ][ i + 1 ].score )
+                {
+                    println( "<dev string:x38>" );
+                    
                     for (j = 0; j < numplayers; j++) {
-                        player = level.placement[#"all"][j];
-                        println("<dev string:x4e>" + j + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.score);
+                        player = level.placement[ #"all" ][ j ];
+                        println( "<dev string:x4e>" + j + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.score );
                     }
-                    assertmsg("<dev string:x60>");
+                    
+                    assertmsg( "<dev string:x60>" );
                     break;
                 }
             }
+            
             return;
         }
+        
         for (i = 0; i < numplayers - 1; i++) {
-            if (level.placement[#"all"][i].pointstowin < level.placement[#"all"][i + 1].pointstowin) {
-                println("<dev string:x38>");
+            if ( level.placement[ #"all" ][ i ].pointstowin < level.placement[ #"all" ][ i + 1 ].pointstowin )
+            {
+                println( "<dev string:x38>" );
+                
                 for (j = 0; j < numplayers; j++) {
-                    player = level.placement[#"all"][j];
-                    println("<dev string:x4e>" + j + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.pointstowin);
+                    player = level.placement[ #"all" ][ j ];
+                    println( "<dev string:x4e>" + j + "<dev string:x54>" + player.name + "<dev string:x5a>" + player.pointstowin );
                 }
-                assertmsg("<dev string:x60>");
+                
+                assertmsg( "<dev string:x60>" );
                 break;
             }
         }
@@ -157,34 +202,47 @@ function getvalueinrange(value, minvalue, maxvalue) {
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x0
 // Checksum 0x4ca64f7b, Offset: 0x790
-// Size: 0x22
-function isvalidclass(c) {
-    return isdefined(c) && c != "";
+// Size: 0x22, Type: bool
+function isvalidclass( c )
+{
+    return isdefined( c ) && c != "";
 }
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x0
 // Checksum 0xa4640ba8, Offset: 0x7c0
 // Size: 0x118
-function playtickingsound(gametype_tick_sound) {
-    self endon(#"death", #"stop_ticking");
-    level endon(#"game_ended");
+function playtickingsound( gametype_tick_sound )
+{
+    self endon( #"death", #"stop_ticking" );
+    level endon( #"game_ended" );
     time = level.bombtimer;
-    while (true) {
-        self playsound(gametype_tick_sound);
-        if (time > 10) {
+    
+    while ( true )
+    {
+        self playsound( gametype_tick_sound );
+        
+        if ( time > 10 )
+        {
             time -= 1;
             wait 1;
-        } else if (time > 4) {
+        }
+        else if ( time > 4 )
+        {
             time -= 0.5;
             wait 0.5;
-        } else if (time > 1) {
+        }
+        else if ( time > 1 )
+        {
             time -= 0.4;
             wait 0.4;
-        } else {
+        }
+        else
+        {
             time -= 0.3;
             wait 0.3;
         }
+        
         hostmigration::waittillhostmigrationdone();
     }
 }
@@ -193,9 +251,11 @@ function playtickingsound(gametype_tick_sound) {
 // Params 0, eflags: 0x0
 // Checksum 0x43b488f3, Offset: 0x8e0
 // Size: 0x1e
-function stoptickingsound() {
-    if (isdefined(self)) {
-        self notify(#"stop_ticking");
+function stoptickingsound()
+{
+    if ( isdefined( self ) )
+    {
+        self notify( #"stop_ticking" );
     }
 }
 
@@ -203,23 +263,33 @@ function stoptickingsound() {
 // Params 0, eflags: 0x0
 // Checksum 0x1a79e0dd, Offset: 0x908
 // Size: 0x11c
-function gametimer() {
-    level endon(#"game_ended");
+function gametimer()
+{
+    level endon( #"game_ended" );
     level.var_8a3a9ca4.roundstart = gettime();
     level.starttime = gettime();
     level.discardtime = 0;
-    if (isdefined(game.roundmillisecondsalreadypassed)) {
+    
+    if ( isdefined( game.roundmillisecondsalreadypassed ) )
+    {
         level.starttime -= game.roundmillisecondsalreadypassed;
         game.roundmillisecondsalreadypassed = undefined;
     }
+    
     prevtime = gettime() - 1000;
-    while (game.state == #"playing") {
-        if (!level.timerstopped) {
+    
+    while ( game.state == #"playing" )
+    {
+        if ( !level.timerstopped )
+        {
             game.timepassed += gettime() - prevtime;
         }
-        if (!level.playabletimerstopped) {
+        
+        if ( !level.playabletimerstopped )
+        {
             game.playabletimepassed += gettime() - prevtime;
         }
+        
         prevtime = gettime();
         wait 1;
     }
@@ -229,12 +299,16 @@ function gametimer() {
 // Params 0, eflags: 0x0
 // Checksum 0x8ba2103, Offset: 0xa30
 // Size: 0x7c
-function disableplayerroundstartdelay() {
+function disableplayerroundstartdelay()
+{
     player = self;
-    player endon(#"death", #"disconnect");
-    if (getroundstartdelay()) {
+    player endon( #"death", #"disconnect" );
+    
+    if ( getroundstartdelay() )
+    {
         wait getroundstartdelay();
     }
+    
     player disableroundstartdelay();
 }
 
@@ -242,11 +316,15 @@ function disableplayerroundstartdelay() {
 // Params 0, eflags: 0x0
 // Checksum 0x5c0fd5e4, Offset: 0xab8
 // Size: 0x54
-function getroundstartdelay() {
-    waittime = level.roundstartexplosivedelay - float([[ level.gettimepassed ]]()) / 1000;
-    if (waittime > 0) {
+function getroundstartdelay()
+{
+    waittime = level.roundstartexplosivedelay - float( [[ level.gettimepassed ]]() ) / 1000;
+    
+    if ( waittime > 0 )
+    {
         return waittime;
     }
+    
     return 0;
 }
 
@@ -254,13 +332,19 @@ function getroundstartdelay() {
 // Params 0, eflags: 0x0
 // Checksum 0x27fd4f9a, Offset: 0xb18
 // Size: 0xa4
-function applyroundstartdelay() {
-    self endon(#"disconnect", #"joined_spectators", #"death");
-    if (game.state == #"pregame") {
-        level waittill(#"game_playing");
-    } else {
-        waitframe(1);
+function applyroundstartdelay()
+{
+    self endon( #"disconnect", #"joined_spectators", #"death" );
+    
+    if ( game.state == #"pregame" )
+    {
+        level waittill( #"game_playing" );
     }
+    else
+    {
+        waitframe( 1 );
+    }
+    
     self enableroundstartdelay();
     self thread disableplayerroundstartdelay();
 }
@@ -269,13 +353,18 @@ function applyroundstartdelay() {
 // Params 0, eflags: 0x0
 // Checksum 0x43f5156b, Offset: 0xbc8
 // Size: 0x66
-function gettimepassed() {
-    if (!isdefined(level.starttime)) {
+function gettimepassed()
+{
+    if ( !isdefined( level.starttime ) )
+    {
         return 0;
     }
-    if (level.timerstopped) {
-        return (level.timerpausetime - level.starttime - level.discardtime);
+    
+    if ( level.timerstopped )
+    {
+        return ( level.timerpausetime - level.starttime - level.discardtime );
     }
+    
     return gettime() - level.starttime - level.discardtime;
 }
 
@@ -283,11 +372,15 @@ function gettimepassed() {
 // Params 1, eflags: 0x0
 // Checksum 0x5242d31, Offset: 0xc38
 // Size: 0x54
-function pausetimer(pauseplayabletimer = 0) {
+function pausetimer( pauseplayabletimer = 0 )
+{
     level.playabletimerstopped = pauseplayabletimer;
-    if (level.timerstopped) {
+    
+    if ( level.timerstopped )
+    {
         return;
     }
+    
     level.timerstopped = 1;
     level.timerpausetime = gettime();
 }
@@ -296,13 +389,18 @@ function pausetimer(pauseplayabletimer = 0) {
 // Params 0, eflags: 0x0
 // Checksum 0x15e0b91b, Offset: 0xc98
 // Size: 0x60
-function resumetimer() {
-    if (!level.timerstopped) {
+function resumetimer()
+{
+    if ( !level.timerstopped )
+    {
         return;
     }
+    
     level.timerstopped = 0;
     level.playabletimerstopped = 0;
-    if (isdefined(level.discardtime)) {
+    
+    if ( isdefined( level.discardtime ) )
+    {
         level.discardtime += gettime() - level.timerpausetime;
     }
 }
@@ -311,10 +409,13 @@ function resumetimer() {
 // Params 1, eflags: 0x0
 // Checksum 0x5e41099e, Offset: 0xd00
 // Size: 0x44
-function resumetimerdiscardoverride(discardtime) {
-    if (!level.timerstopped) {
+function resumetimerdiscardoverride( discardtime )
+{
+    if ( !level.timerstopped )
+    {
         return;
     }
+    
     level.timerstopped = 0;
     level.discardtime = discardtime + level.var_9d348da1;
 }
@@ -323,7 +424,8 @@ function resumetimerdiscardoverride(discardtime) {
 // Params 1, eflags: 0x0
 // Checksum 0x6e367979, Offset: 0xd50
 // Size: 0x1c
-function getscoreremaining(score) {
+function getscoreremaining( score )
+{
     return level.scorelimit - score;
 }
 
@@ -331,10 +433,13 @@ function getscoreremaining(score) {
 // Params 2, eflags: 0x0
 // Checksum 0xafeaf995, Offset: 0xd78
 // Size: 0x50
-function function_fd90317f(user, var_b393387d) {
-    if (level.cumulativeroundscores && isdefined(game.lastroundscore[user])) {
-        return (var_b393387d - game.lastroundscore[user]);
+function function_fd90317f( user, var_b393387d )
+{
+    if ( level.cumulativeroundscores && isdefined( game.lastroundscore[ user ] ) )
+    {
+        return ( var_b393387d - game.lastroundscore[ user ] );
     }
+    
     return var_b393387d;
 }
 
@@ -342,8 +447,9 @@ function function_fd90317f(user, var_b393387d) {
 // Params 1, eflags: 0x0
 // Checksum 0x35a26ebe, Offset: 0xdd0
 // Size: 0x56
-function getscoreperminute(var_d0266750) {
-    minutespassed = gettimepassed() / int(60 * 1000) + 0.0001;
+function getscoreperminute( var_d0266750 )
+{
+    minutespassed = gettimepassed() / int( 60 * 1000 ) + 0.0001;
     return var_d0266750 / minutespassed;
 }
 
@@ -351,12 +457,16 @@ function getscoreperminute(var_d0266750) {
 // Params 2, eflags: 0x0
 // Checksum 0x74ca1f1f, Offset: 0xe30
 // Size: 0x6e
-function getestimatedtimeuntilscorelimit(total_score, var_d0266750) {
-    scoreperminute = self getscoreperminute(var_d0266750);
-    scoreremaining = self getscoreremaining(total_score);
-    if (!scoreperminute) {
+function getestimatedtimeuntilscorelimit( total_score, var_d0266750 )
+{
+    scoreperminute = self getscoreperminute( var_d0266750 );
+    scoreremaining = self getscoreremaining( total_score );
+    
+    if ( !scoreperminute )
+    {
         return 999999;
     }
+    
     return scoreremaining / scoreperminute;
 }
 
@@ -364,11 +474,14 @@ function getestimatedtimeuntilscorelimit(total_score, var_d0266750) {
 // Params 0, eflags: 0x0
 // Checksum 0xc2a039c2, Offset: 0xea8
 // Size: 0x48
-function rumbler() {
-    self endon(#"disconnect");
-    while (true) {
+function rumbler()
+{
+    self endon( #"disconnect" );
+    
+    while ( true )
+    {
         wait 0.1;
-        self playrumbleonentity("damage_heavy");
+        self playrumbleonentity( "damage_heavy" );
     }
 }
 
@@ -376,8 +489,9 @@ function rumbler() {
 // Params 2, eflags: 0x0
 // Checksum 0xeb561703, Offset: 0xef8
 // Size: 0x24
-function waitfortimeornotify(time, notifyname) {
-    self endon(notifyname);
+function waitfortimeornotify( time, notifyname )
+{
+    self endon( notifyname );
     wait time;
 }
 
@@ -385,11 +499,14 @@ function waitfortimeornotify(time, notifyname) {
 // Params 2, eflags: 0x0
 // Checksum 0xb0384710, Offset: 0xf28
 // Size: 0x60
-function waitfortimeornotifynoartillery(time, notifyname) {
-    self endon(notifyname);
+function waitfortimeornotifynoartillery( time, notifyname )
+{
+    self endon( notifyname );
     wait time;
-    while (isdefined(level.artilleryinprogress)) {
-        assert(level.artilleryinprogress);
+    
+    while ( isdefined( level.artilleryinprogress ) )
+    {
+        assert( level.artilleryinprogress );
         wait 0.25;
     }
 }
@@ -398,33 +515,36 @@ function waitfortimeornotifynoartillery(time, notifyname) {
 // Params 1, eflags: 0x0
 // Checksum 0x599a5a41, Offset: 0xf90
 // Size: 0x166
-function gethitlocheight(shitloc) {
-    switch (shitloc) {
-    case #"head":
-    case #"helmet":
-    case #"neck":
-        return 60;
-    case #"left_arm_lower":
-    case #"left_arm_upper":
-    case #"torso_upper":
-    case #"right_arm_lower":
-    case #"left_hand":
-    case #"right_arm_upper":
-    case #"gun":
-    case #"right_hand":
-        return 48;
-    case #"torso_lower":
-        return 40;
-    case #"right_leg_upper":
-    case #"left_leg_upper":
-        return 32;
-    case #"left_leg_lower":
-    case #"right_leg_lower":
-        return 10;
-    case #"left_foot":
-    case #"right_foot":
-        return 5;
+function gethitlocheight( shitloc )
+{
+    switch ( shitloc )
+    {
+        case #"head":
+        case #"helmet":
+        case #"neck":
+            return 60;
+        case #"left_arm_lower":
+        case #"left_arm_upper":
+        case #"torso_upper":
+        case #"right_arm_lower":
+        case #"left_hand":
+        case #"right_arm_upper":
+        case #"gun":
+        case #"right_hand":
+            return 48;
+        case #"torso_lower":
+            return 40;
+        case #"right_leg_upper":
+        case #"left_leg_upper":
+            return 32;
+        case #"left_leg_lower":
+        case #"right_leg_lower":
+            return 10;
+        case #"left_foot":
+        case #"right_foot":
+            return 5;
     }
+    
     return 48;
 }
 
@@ -433,11 +553,12 @@ function gethitlocheight(shitloc) {
     // Namespace globallogic_utils/globallogic_utils
     // Params 2, eflags: 0x0
     // Checksum 0xd3a3b75a, Offset: 0x1100
-    // Size: 0x5a
-    function debugline(start, end) {
+    // Size: 0x5a, Type: dev
+    function debugline( start, end )
+    {
         for (i = 0; i < 50; i++) {
-            line(start, end);
-            waitframe(1);
+            line( start, end );
+            waitframe( 1 );
         }
     }
 
@@ -447,8 +568,9 @@ function gethitlocheight(shitloc) {
 // Params 2, eflags: 0x0
 // Checksum 0xc0040d95, Offset: 0x1168
 // Size: 0x24
-function function_4aa8d809(index, string) {
-    level.var_336c35f1[index] = string;
+function function_4aa8d809( index, string )
+{
+    level.var_336c35f1[ index ] = string;
 }
 
 /#
@@ -456,26 +578,37 @@ function function_4aa8d809(index, string) {
     // Namespace globallogic_utils/globallogic_utils
     // Params 1, eflags: 0x0
     // Checksum 0x826d07e3, Offset: 0x1198
-    // Size: 0x23c
-    function function_8d61a6c2(var_c1e98979) {
-        assert(isdefined(var_c1e98979));
-        assert(isdefined(level.var_336c35f1[var_c1e98979]));
-        log_string = level.var_336c35f1[var_c1e98979];
+    // Size: 0x23c, Type: dev
+    function function_8d61a6c2( var_c1e98979 )
+    {
+        assert( isdefined( var_c1e98979 ) );
+        assert( isdefined( level.var_336c35f1[ var_c1e98979 ] ) );
+        log_string = level.var_336c35f1[ var_c1e98979 ];
         winner = round::get_winner();
-        if (isplayer(winner)) {
-            print("<dev string:x8b>" + winner getxuid() + "<dev string:x9d>" + winner.name + "<dev string:xa2>");
+        
+        if ( isplayer( winner ) )
+        {
+            print( "<dev string:x8b>" + winner getxuid() + "<dev string:x9d>" + winner.name + "<dev string:xa2>" );
         }
-        if (isdefined(winner)) {
-            if (isplayer(winner)) {
+        
+        if ( isdefined( winner ) )
+        {
+            if ( isplayer( winner ) )
+            {
                 log_string = log_string + "<dev string:xa7>" + winner getxuid() + "<dev string:x9d>" + winner.name + "<dev string:xa2>";
-            } else {
+            }
+            else
+            {
                 log_string = log_string + "<dev string:xa7>" + winner;
             }
         }
-        foreach (team, str_team in level.teams) {
-            log_string = log_string + "<dev string:xb2>" + str_team + "<dev string:x5a>" + game.stat[#"teamscores"][team];
+        
+        foreach ( team, str_team in level.teams )
+        {
+            log_string = log_string + "<dev string:xb2>" + str_team + "<dev string:x5a>" + game.stat[ #"teamscores" ][ team ];
         }
-        print(log_string);
+        
+        print( log_string );
     }
 
 #/
@@ -484,30 +617,39 @@ function function_4aa8d809(index, string) {
 // Params 1, eflags: 0x0
 // Checksum 0xbf8ebafc, Offset: 0x13e0
 // Size: 0x44
-function add_map_error(msg) {
-    if (!isdefined(level.maperrors)) {
+function add_map_error( msg )
+{
+    if ( !isdefined( level.maperrors ) )
+    {
         level.maperrors = [];
     }
-    level.maperrors[level.maperrors.size] = msg;
+    
+    level.maperrors[ level.maperrors.size ] = msg;
 }
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 0, eflags: 0x0
 // Checksum 0x570f0037, Offset: 0x1430
-// Size: 0xdc
-function print_map_errors() {
-    if (isdefined(level.maperrors) && level.maperrors.size > 0) {
+// Size: 0xdc, Type: bool
+function print_map_errors()
+{
+    if ( isdefined( level.maperrors ) && level.maperrors.size > 0 )
+    {
         /#
-            println("<dev string:xb8>");
+            println( "<dev string:xb8>" );
+            
             for (i = 0; i < level.maperrors.size; i++) {
-                println("<dev string:xe2>" + level.maperrors[i]);
+                println( "<dev string:xe2>" + level.maperrors[ i ] );
             }
-            println("<dev string:xed>");
-            util::error("<dev string:x117>");
+            
+            println( "<dev string:xed>" );
+            util::error( "<dev string:x117>" );
         #/
+        
         callback::abort_level();
         return true;
     }
+    
     return false;
 }
 
@@ -515,7 +657,8 @@ function print_map_errors() {
 // Params 0, eflags: 0x0
 // Checksum 0x6e8a6132, Offset: 0x1518
 // Size: 0x22
-function function_308e3379() {
-    return strendswith(level.gametype, "_bb");
+function function_308e3379()
+{
+    return strendswith( level.gametype, "_bb" );
 }
 

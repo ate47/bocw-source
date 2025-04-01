@@ -4,7 +4,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x353a988b, Offset: 0xa0
 // Size: 0x1c
-function init() {
-    function_cae618b4("spawner_zombietron_zombie");
+function init()
+{
+    function_cae618b4( "spawner_zombietron_zombie" );
 }
 

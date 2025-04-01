@@ -11,15 +11,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0x929312ae, Offset: 0xb0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"zm_progress", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"zm_progress", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace zm_progress/zm_progress
 // Params 0, eflags: 0x4
 // Checksum 0xddc5a3fa, Offset: 0xf8
 // Size: 0x14
-function private preinit() {
+function private preinit()
+{
     zm_build_progress::register();
 }
 

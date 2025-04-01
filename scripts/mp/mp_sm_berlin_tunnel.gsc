@@ -7,9 +7,10 @@
 // Params 1, eflags: 0x20
 // Checksum 0xddd573e5, Offset: 0x98
 // Size: 0x5c
-function event_handler[level_init] main(*eventstruct) {
+function event_handler[level_init] main( *eventstruct )
+{
     load::main();
-    compass::setupminimap("");
-    setdvar(#"hash_7b06b8037c26b99b", 147);
+    compass::setupminimap( "" );
+    setdvar( #"hash_7b06b8037c26b99b", 147 );
 }
 

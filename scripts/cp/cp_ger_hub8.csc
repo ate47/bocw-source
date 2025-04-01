@@ -13,28 +13,33 @@
 // Params 1, eflags: 0x20
 // Checksum 0xe2a7089b, Offset: 0x160
 // Size: 0xfc
-function event_handler[level_init] main(*eventstruct) {
+function event_handler[level_init] main( *eventstruct )
+{
     full_screen_movie::register();
     namespace_fa9f53a2::main();
-    clientfield::register("world", "prop_wash", 1, 1, "int", &function_766abe10, 0, 0);
-    clientfield::register("toplayer", "clf_pstfx_burn_safehouse", 1, 1, "int", &function_3a7543ef, 0, 0);
+    clientfield::register( "world", "prop_wash", 1, 1, "int", &function_766abe10, 0, 0 );
+    clientfield::register( "toplayer", "clf_pstfx_burn_safehouse", 1, 1, "int", &function_3a7543ef, 0, 0 );
     load::main();
-    util::waitforclient(0);
-    forcestreamxmodel("p9_sr_evidence_perseus_bloody_dossier_01_anim");
+    util::waitforclient( 0 );
+    forcestreamxmodel( "p9_sr_evidence_perseus_bloody_dossier_01_anim" );
 }
 
 // Namespace cp_ger_hub8/cp_ger_hub8
 // Params 7, eflags: 0x0
 // Checksum 0x9d6cc210, Offset: 0x268
 // Size: 0x11c
-function function_766abe10(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    ents = getdynentarray("prop_blast_me");
+function function_766abe10( *localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    ents = getdynentarray( "prop_blast_me" );
+    
     for (i = 0; i < 20; i++) {
-        foreach (ent in ents) {
-            launchdynent(ent, (-0.15, 0, 0));
+        foreach ( ent in ents )
+        {
+            launchdynent( ent, ( -0.15, 0, 0 ) );
         }
-        waitframe(1);
-        waitframe(1);
+        
+        waitframe( 1 );
+        waitframe( 1 );
     }
 }
 
@@ -42,10 +47,13 @@ function function_766abe10(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x4
 // Checksum 0x6b63d747, Offset: 0x390
 // Size: 0x9c
-function private function_3a7543ef(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (self postfx::function_556665f2("pstfx_burn_safehouse")) {
-        self postfx::stoppostfxbundle("pstfx_burn_safehouse");
+function private function_3a7543ef( *localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( self postfx::function_556665f2( "pstfx_burn_safehouse" ) )
+    {
+        self postfx::stoppostfxbundle( "pstfx_burn_safehouse" );
     }
-    self postfx::playpostfxbundle("pstfx_burn_safehouse");
+    
+    self postfx::playpostfxbundle( "pstfx_burn_safehouse" );
 }
 

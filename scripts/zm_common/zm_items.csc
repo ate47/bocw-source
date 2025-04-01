@@ -10,16 +10,18 @@
 // Params 0, eflags: 0x5
 // Checksum 0xdb3bc700, Offset: 0xe8
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"zm_items", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"zm_items", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace zm_items/zm_items
 // Params 0, eflags: 0x4
 // Checksum 0x6c95e290, Offset: 0x130
 // Size: 0x64
-function private preinit() {
-    clientfield::register("item", "highlight_item", 1, 2, "int", &function_39e7c9dd, 0, 0);
+function private preinit()
+{
+    clientfield::register( "item", "highlight_item", 1, 2, "int", &function_39e7c9dd, 0, 0 );
     level thread function_f88c74e1();
 }
 
@@ -27,10 +29,12 @@ function private preinit() {
 // Params 0, eflags: 0x4
 // Checksum 0xc88cb986, Offset: 0x1a0
 // Size: 0x70
-function private function_f88c74e1() {
-    while (isdefined(self)) {
-        wait_result = level waittill(#"inventory_pickup");
-        function_c79ecd60(wait_result.param1, wait_result.param2, undefined, undefined, wait_result.param3, undefined, undefined, undefined, undefined);
+function private function_f88c74e1()
+{
+    while ( isdefined( self ) )
+    {
+        wait_result = level waittill( #"inventory_pickup" );
+        function_c79ecd60( wait_result.param1, wait_result.param2, undefined, undefined, wait_result.param3, undefined, undefined, undefined, undefined );
     }
 }
 
@@ -38,11 +42,14 @@ function private function_f88c74e1() {
 // Params 7, eflags: 0x0
 // Checksum 0x80307c8b, Offset: 0x218
 // Size: 0x84
-function function_39e7c9dd(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (bwastimejump) {
-        self playrenderoverridebundle("rob_sonar_set_friendly");
+function function_39e7c9dd( *localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump )
+{
+    if ( bwastimejump )
+    {
+        self playrenderoverridebundle( "rob_sonar_set_friendly" );
         return;
     }
-    self stoprenderoverridebundle("rob_sonar_set_friendly");
+    
+    self stoprenderoverridebundle( "rob_sonar_set_friendly" );
 }
 

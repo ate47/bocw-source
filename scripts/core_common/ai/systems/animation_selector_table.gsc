@@ -4,13 +4,16 @@
 // Params 2, eflags: 0x0
 // Checksum 0x845416cd, Offset: 0x80
 // Size: 0xa4
-function registeranimationselectortableevaluator(functionname, functionptr) {
-    if (!isdefined(level._astevaluatorscriptfunctions)) {
+function registeranimationselectortableevaluator( functionname, functionptr )
+{
+    if ( !isdefined( level._astevaluatorscriptfunctions ) )
+    {
         level._astevaluatorscriptfunctions = [];
     }
-    functionname = tolower(functionname);
-    assert(isdefined(functionname) && isdefined(functionptr));
-    assert(!isdefined(level._astevaluatorscriptfunctions[functionname]));
-    level._astevaluatorscriptfunctions[functionname] = functionptr;
+    
+    functionname = tolower( functionname );
+    assert( isdefined( functionname ) && isdefined( functionptr ) );
+    assert( !isdefined( level._astevaluatorscriptfunctions[ functionname ] ) );
+    level._astevaluatorscriptfunctions[ functionname ] = functionptr;
 }
 

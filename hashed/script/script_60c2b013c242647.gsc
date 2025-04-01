@@ -30,24 +30,30 @@
 // Params 1, eflags: 0x0
 // Checksum 0xed457933, Offset: 0x220
 // Size: 0x1f0
-function function_922745a1(player) {
-    self endon(#"death");
-    self endon(#"hash_1e744934a54fe4bc");
-    player endon(#"disconnect");
-    weapon = getweapon("zombietron_sprinkler_grenade");
-    top = self.origin + (0, 0, 32);
-    while (true) {
-        self rotateto(self.angles + (0, 15, 0), 0.2);
+function function_922745a1( player )
+{
+    self endon( #"death" );
+    self endon( #"hash_1e744934a54fe4bc" );
+    player endon( #"disconnect" );
+    weapon = getweapon( "zombietron_sprinkler_grenade" );
+    top = self.origin + ( 0, 0, 32 );
+    
+    while ( true )
+    {
+        self rotateto( self.angles + ( 0, 15, 0 ), 0.2 );
         wait 0.2;
-        forward = anglestoforward(self.angles + (0, 0, 500));
-        velocity = forward * (getdvarint(#"hash_6e23b1c0ac2fdd38", 150) + randomintrange(-50, 50));
-        boost = sin(self.angles[1]);
-        if (boost < 0) {
+        forward = anglestoforward( self.angles + ( 0, 0, 500 ) );
+        velocity = forward * ( getdvarint( #"hash_6e23b1c0ac2fdd38", 150 ) + randomintrange( -50, 50 ) );
+        boost = sin( self.angles[ 1 ] );
+        
+        if ( boost < 0 )
+        {
             boost *= -1;
         }
-        up = mapfloat(0, 1, 300, 900, boost);
-        velocity += (0, 0, up);
-        player magicgrenadetype(weapon, top, velocity);
+        
+        up = mapfloat( 0, 1, 300, 900, boost );
+        velocity += ( 0, 0, up );
+        player magicgrenadetype( weapon, top, velocity );
     }
 }
 
@@ -55,39 +61,49 @@ function function_922745a1(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x5f95795c, Offset: 0x418
 // Size: 0x2d4
-function function_d275f769(player, origin) {
-    var_497e327b = origin + (0, 0, 800);
-    sprinkler = namespace_ec06fe4a::spawnmodel(var_497e327b, "zombietron_sprinkler");
-    if (!isdefined(sprinkler)) {
+function function_d275f769( player, origin )
+{
+    var_497e327b = origin + ( 0, 0, 800 );
+    sprinkler = namespace_ec06fe4a::spawnmodel( var_497e327b, "zombietron_sprinkler" );
+    
+    if ( !isdefined( sprinkler ) )
+    {
         return;
     }
+    
     sprinkler.targetname = "sprinkler";
     sprinkler notsolid();
     target = player.origin;
-    if (isdefined(player.doa.vehicle)) {
-        target = namespace_ec06fe4a::function_65ee50ba(player.origin);
+    
+    if ( isdefined( player.doa.vehicle ) )
+    {
+        target = namespace_ec06fe4a::function_65ee50ba( player.origin );
     }
-    mark = target + (0, 0, 12);
-    sprinkler moveto(mark, 0.5);
-    sprinkler waittilltimeout(1, #"movedone");
-    sprinkler namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_land");
-    sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_land");
-    physicsexplosionsphere(mark, 200, 128, 2);
-    playrumbleonposition("grenade_rumble", mark);
+    
+    mark = target + ( 0, 0, 12 );
+    sprinkler moveto( mark, 0.5 );
+    sprinkler waittilltimeout( 1, #"movedone" );
+    sprinkler namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_sprinkler_land" );
+    sprinkler namespace_83eb6304::function_3ecfde67( "sprinkler_land" );
+    physicsexplosionsphere( mark, 200, 128, 2 );
+    playrumbleonposition( "grenade_rumble", mark );
     wait 1;
-    if (isdefined(player)) {
-        sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_active");
-        sprinkler thread function_922745a1(player);
-        timeout = player namespace_1c2a96f9::function_4808b985(10);
-        player waittilltimeout(timeout, #"disconnect");
+    
+    if ( isdefined( player ) )
+    {
+        sprinkler namespace_83eb6304::function_3ecfde67( "sprinkler_active" );
+        sprinkler thread function_922745a1( player );
+        timeout = player namespace_1c2a96f9::function_4808b985( 10 );
+        player waittilltimeout( timeout, #"disconnect" );
     }
-    sprinkler notify(#"hash_1e744934a54fe4bc");
-    sprinkler namespace_83eb6304::turnofffx("sprinkler_active");
+    
+    sprinkler notify( #"hash_1e744934a54fe4bc" );
+    sprinkler namespace_83eb6304::turnofffx( "sprinkler_active" );
     wait 2;
-    sprinkler namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_takeoff");
-    sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_takeoff");
-    sprinkler moveto(var_497e327b, 0.5);
-    sprinkler waittilltimeout(1, #"movedone");
+    sprinkler namespace_e32bb68::function_3a59ec34( "evt_doa_pickup_sprinkler_takeoff" );
+    sprinkler namespace_83eb6304::function_3ecfde67( "sprinkler_takeoff" );
+    sprinkler moveto( var_497e327b, 0.5 );
+    sprinkler waittilltimeout( 1, #"movedone" );
     sprinkler delete();
 }
 

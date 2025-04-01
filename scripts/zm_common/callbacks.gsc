@@ -17,15 +17,17 @@
 // Params 0, eflags: 0x5
 // Checksum 0xebad4c22, Offset: 0xf0
 // Size: 0x3c
-function private autoexec __init__system__() {
-    system::register(#"callback", &preinit, undefined, undefined, undefined);
+function private autoexec __init__system__()
+{
+    system::register( #"callback", &preinit, undefined, undefined, undefined );
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x4
 // Checksum 0xa82a32e6, Offset: 0x138
 // Size: 0x1c
-function private preinit() {
+function private preinit()
+{
     level thread setup_callbacks();
 }
 
@@ -33,7 +35,8 @@ function private preinit() {
 // Params 0, eflags: 0x0
 // Checksum 0xcedea19f, Offset: 0x160
 // Size: 0xf0
-function setup_callbacks() {
+function setup_callbacks()
+{
     setdefaultcallbacks();
     level.idflags_noflag = 0;
     level.idflags_radius = 1;
@@ -55,7 +58,8 @@ function setup_callbacks() {
 // Params 0, eflags: 0x0
 // Checksum 0x1f5ec44d, Offset: 0x258
 // Size: 0x17c
-function setdefaultcallbacks() {
+function setdefaultcallbacks()
+{
     level.callbackstartgametype = &globallogic::callback_startgametype;
     level.callbackplayerconnect = &globallogic_player::callback_playerconnect;
     level.callbackplayerdisconnect = &globallogic_player::callback_playerdisconnect;
@@ -78,119 +82,134 @@ function setdefaultcallbacks() {
 // Params 1, eflags: 0x0
 // Checksum 0x751650f7, Offset: 0x3e0
 // Size: 0x44
-function function_2750bb69(weapon) {
-    self callback(#"hash_6dc96d04d1ba7f5a", {#weapon:weapon});
+function function_2750bb69( weapon )
+{
+    self callback( #"hash_6dc96d04d1ba7f5a", { #weapon:weapon } );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x8d87ddb8, Offset: 0x430
 // Size: 0x3c
-function function_6e6149a6(func, obj) {
-    add_callback(#"hash_1eda827ff5e6895b", func, obj);
+function function_6e6149a6( func, obj )
+{
+    add_callback( #"hash_1eda827ff5e6895b", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x7b10dcd5, Offset: 0x478
 // Size: 0x3c
-function function_823e7181(func, obj) {
-    remove_callback(#"hash_34edc1c4f45e5572", func, obj);
+function function_823e7181( func, obj )
+{
+    remove_callback( #"hash_34edc1c4f45e5572", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x5dcc96c6, Offset: 0x4c0
 // Size: 0x3c
-function function_4b58e5ab(func, obj) {
-    add_callback(#"hash_210adcf09e99fba1", func, obj);
+function function_4b58e5ab( func, obj )
+{
+    add_callback( #"hash_210adcf09e99fba1", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x8a928d53, Offset: 0x508
 // Size: 0x3c
-function function_66d5d485(func, obj) {
-    remove_callback(#"hash_1863ba8e81df2a64", func, obj);
+function function_66d5d485( func, obj )
+{
+    remove_callback( #"hash_1863ba8e81df2a64", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x9cc3a6ff, Offset: 0x550
 // Size: 0x3c
-function function_dfd4b1a0(func, obj) {
-    add_callback(#"hash_7cdd5b06f3e281c6", func, obj);
+function function_dfd4b1a0( func, obj )
+{
+    add_callback( #"hash_7cdd5b06f3e281c6", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0xcdca3227, Offset: 0x598
 // Size: 0x3c
-function function_34700b93(func, obj) {
-    remove_callback(#"hash_4e737d409e1399c9", func, obj);
+function function_34700b93( func, obj )
+{
+    remove_callback( #"hash_4e737d409e1399c9", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0xd7808127, Offset: 0x5e0
 // Size: 0x3c
-function function_74872db6(func, obj) {
-    add_callback(#"hash_6df5348c2fb9a509", func, obj);
+function function_74872db6( func, obj )
+{
+    add_callback( #"hash_6df5348c2fb9a509", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0xe7af0daf, Offset: 0x628
 // Size: 0x3c
-function function_50fdac80(func, obj) {
-    remove_callback(#"hash_6df5348c2fb9a509", func, obj);
+function function_50fdac80( func, obj )
+{
+    remove_callback( #"hash_6df5348c2fb9a509", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0xfaf36842, Offset: 0x670
 // Size: 0x3c
-function on_round_end(func, obj) {
-    add_callback(#"on_round_end", func, obj);
+function on_round_end( func, obj )
+{
+    add_callback( #"on_round_end", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x7dc8176, Offset: 0x6b8
 // Size: 0x3c
-function remove_on_round_end(func, obj) {
-    remove_callback(#"on_round_end", func, obj);
+function remove_on_round_end( func, obj )
+{
+    remove_callback( #"on_round_end", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x3b1e07d7, Offset: 0x700
 // Size: 0x3c
-function function_b3c9adb7(func, obj) {
-    add_callback(#"hash_7d40e25056b9275c", func, obj);
+function function_b3c9adb7( func, obj )
+{
+    add_callback( #"hash_7d40e25056b9275c", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x348d14b3, Offset: 0x748
 // Size: 0x3c
-function function_342b2f6(func, obj) {
-    remove_callback(#"hash_7d40e25056b9275c", func, obj);
+function function_342b2f6( func, obj )
+{
+    remove_callback( #"hash_7d40e25056b9275c", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x1bb32e3d, Offset: 0x790
 // Size: 0x3c
-function function_aebeafc0(func, obj) {
-    add_callback(#"hash_790b67aca1bf8fc0", func, obj);
+function function_aebeafc0( func, obj )
+{
+    add_callback( #"hash_790b67aca1bf8fc0", func, obj );
 }
 
 // Namespace callback/callbacks
 // Params 2, eflags: 0x0
 // Checksum 0x656d5924, Offset: 0x7d8
 // Size: 0x3c
-function function_3e2ed898(func, obj) {
-    remove_callback(#"hash_790b67aca1bf8fc0", func, obj);
+function function_3e2ed898( func, obj )
+{
+    remove_callback( #"hash_790b67aca1bf8fc0", func, obj );
 }
 
