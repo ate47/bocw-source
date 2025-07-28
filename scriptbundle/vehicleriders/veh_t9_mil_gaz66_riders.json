@@ -1,0 +1,170 @@
+{
+    "objects": [
+        {
+            "exitgroundanim": "anim#hash_14fe39fe8e2a2e2b",
+            "ridedeathanim": "anim#hash_2cf5174c367f0554",
+            "fastrope": 0,
+            "aligntag": "tag_driver",
+            "rideanim": "anim#hash_19bf1899ad28d391",
+            "startanim": "anim#hash_57f9ea29200efd1a",
+            "position": "driver",
+            "stopanim": "anim#hash_378668e502c6fec8",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_3263736e15e8312d",
+            "ridedeathanim": "anim#hash_37195da49126dfca",
+            "fastrope": 0,
+            "aligntag": "tag_passenger1",
+            "rideanim": "anim#hash_3294da4f9199a1db",
+            "startanim": "anim#hash_48f2310d1e18e714",
+            "position": "passenger1",
+            "stopanim": "anim#hash_7879259d465ed1c6",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_42e1921a85a5d271",
+            "ridedeathanim": "anim#hash_33401ed1b5f5e3e",
+            "fastrope": 0,
+            "aligntag": "tag_guy8",
+            "rideanim": "anim#hash_5fd9b13da1fbcaa7",
+            "startanim": "anim#hash_1cbceccf8b05c1f8",
+            "position": "crew1",
+            "stopanim": "anim#hash_3afd650dcf5c7f62",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_598645bff96fcafe",
+            "ridedeathanim": "anim#hash_1ec79179bba44d57",
+            "fastrope": 0,
+            "aligntag": "tag_guy4",
+            "rideanim": "anim#hash_1d417f2504672140",
+            "startanim": "anim#hash_22716ed4deda94df",
+            "position": "crew2",
+            "stopanim": "anim#hash_751298a8036f2277",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_4c055e54bf4e783f",
+            "ridedeathanim": "anim#hash_1f9b946462412708",
+            "fastrope": 0,
+            "aligntag": "tag_guy7",
+            "rideanim": "anim#hash_7e3c0535c6decdad",
+            "startanim": "anim#hash_293225efb1fa520e",
+            "position": "crew3",
+            "stopanim": "anim#hash_17b56bb74517f504",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_22f3f12759558ffc",
+            "ridedeathanim": "anim#hash_557ff053a2536d11",
+            "fastrope": 0,
+            "aligntag": "tag_guy3",
+            "rideanim": "anim#hash_3c2e8209754c93d6",
+            "startanim": "anim#hash_fb67c3877a02b55",
+            "position": "crew4",
+            "stopanim": "anim#hash_6549310848483881",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_5f182db52e451af5",
+            "ridedeathanim": "anim#hash_459e1715db397dd2",
+            "fastrope": 0,
+            "aligntag": "tag_guy6",
+            "rideanim": "anim#hash_2c1d251a869fdf63",
+            "startanim": "anim#hash_5d54e23f4ea7839c",
+            "position": "crew5",
+            "stopanim": "anim#hash_442f05bd684bfd2e",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_71aa9c5bce520cb2",
+            "ridedeathanim": "anim#hash_7085e1766fd925fb",
+            "fastrope": 0,
+            "aligntag": "tag_guy2",
+            "rideanim": "anim#hash_4e8d9cfb5e52b78c",
+            "startanim": "anim#hash_24b281d804e379c3",
+            "position": "crew6",
+            "stopanim": "anim#hash_62c67b0101925043",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_c1085fdcd61593",
+            "ridedeathanim": "anim#hash_17fe0d8a4c8c87fc",
+            "fastrope": 0,
+            "aligntag": "tag_guy5",
+            "rideanim": "anim#hash_4e83777ed53fc6d9",
+            "startanim": "anim#hash_672b847e49610622",
+            "position": "crew7",
+            "stopanim": "anim#hash_1400a4c6d06cdc70",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_ca22d45df2a5bc0",
+            "ridedeathanim": "anim#hash_2171b6932f81b15",
+            "fastrope": 0,
+            "aligntag": "tag_guy1",
+            "rideanim": "anim#hash_3bd7766995ff9522",
+            "startanim": "anim#hash_8ee35757e786af9",
+            "position": "crew8",
+            "stopanim": "anim#hash_1e82470231b83ead",
+            "valid": 1
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "model": "model#veh_t8_vintage_gaz66_troopbed",
+    "type": "vehicleriders",
+    "hash_4301b21d": 10,
+    "vmtype": "both",
+    "dropspeed": 250,
+    "name": "veh_t9_mil_gaz66_riders",
+    "highexitlandheight": 32
+}

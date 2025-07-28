@@ -1,11 +1,11 @@
 {
-    "description": "#hash_41c4974e7268f714",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_41c4974e7268f714",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_passenger_gunner_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_3f7706052c635ce1",
-    "statname": "#hash_4c09c6ee2ec16f04",
-    "var_8645ce54": "#hash_48bff267d6c71f6c",
-    "iconlarge": "#hash_5fcdb4ffc5c77525"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_gunner",
+    "statname": "#gunner_kills",
+    "stringref": "localized18#hash_48bff267d6c71f6c",
+    "iconlarge": "image#ui_icon_medal_gunner_large"
 }

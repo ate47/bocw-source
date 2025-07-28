@@ -1,68 +1,71 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_3cccc06a98d1d71"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4009_ksp_45_golden_propsector"
         },
         {
-            "var_fe10649e": "#hash_5dee2a8382d557c8"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4009_ksp_45_golden_propsector_2"
         },
         {
-            "var_fe10649e": "#hash_5dee2b8382d5597b"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4009_ksp_45_golden_propsector_3"
         },
         {
-            "var_fe10649e": "#hash_5dee308382d561fa"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4009_ksp_45_golden_propsector_4"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_burst_bp_nugget_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_nugget_mtxitem",
             "itemid": "32774438"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_nugget_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_nugget_mtxitem",
             "itemid": "17803580"
         },
         {
-            "var_4a4bc969": "#c_t9_uk_pl_mi6_uncharted_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_mi6_uncharted_mtxitem",
             "itemid": "19865801"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#callingcards_goldenprospector_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_goldenprospector_mtxitem",
             "itemid": "18569823"
         },
         {
-            "var_4a4bc969": "#emblems_goldenprospector_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_goldenprospector_animated_mtxitem",
             "itemid": "19560738"
         },
         {
-            "var_4a4bc969": "#t9_charm_rough_nugget_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_rough_nugget_mtxitem",
             "itemid": "19153659"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_gilded_age_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_heli_gunship_hind_mpx_gilded_age_mtxitem",
             "itemid": "33277823"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_scheming_hands_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_scheming_hands_mtxitem",
             "itemid": "33171136"
         }
     ],
-    "itemname": "#hash_6dc7fc45606c40af",
-    "var_375a1747": "#hash_3cccc06a98d1d71",
-    "var_3040f0d1": "#hash_3cccc06a98d1d71",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4009_ksp_45_golden_propsector",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4009_ksp_45_golden_propsector",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_4009_ksp_45_golden_propsector",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4009_ksp_45_golden_propsector_mtxbundle",
-    "var_a788fada": "#hash_3454ddee56be245e",
-    "titlestring": "#hash_13aff85c130dc792",
-    "var_566825be": "#hash_753972376f50518a",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4009_ksp_45_golden_propsector_small",
+    "titlestring": "localized18#hash_13aff85c130dc792",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4009_ksp_45_golden_propsector",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4d0884e609d8b6ce",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_4d0884e609d8b6ce",
+    "hash_db3e02ab": 750,
     "itemid": "27232257"
 }

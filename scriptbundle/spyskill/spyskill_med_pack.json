@@ -1,0 +1,10 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "scorestreak": "killstreak_spy_med_pack",
+    "type": "spyskill",
+    "hash_a99abf33": "spy_med_pack",
+    "name": "spyskill_med_pack",
+    "hash_a58f84b8": 5,
+    "cooldown": 75,
+    "hash_e1bfe02c": 36
+}

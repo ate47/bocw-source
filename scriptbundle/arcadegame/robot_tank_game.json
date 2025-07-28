@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_18de7c7fd66f0957",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_3350fff79f2ea3c",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_robottank",
+    "hash_9864ed1": 1,
+    "name": "robot_tank_game",
+    "hash_6855e4be": "#robot_tank_game_mtxitem",
+    "displayname": "localized18#hash_4809e5cc60b89eed",
+    "filename": "#hash_39eb85dd9cf90d9d",
+    "action": "localized18#hash_40c7237c771b42d",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_robottank",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_robottank",
+    "hash_48152d43": 1
+}

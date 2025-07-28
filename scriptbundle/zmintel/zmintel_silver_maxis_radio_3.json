@@ -1,39 +1,42 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_2770cadd6b9899a3",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 12.29,
-            "var_36bf8e05": "#hash_69f2cee50cee4fc6"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 12.29,
+            "hash_36bf8e05": "localized19#hash_69f2cee50cee4fc6"
         },
         {
             "soundevent": "#hash_2770c9dd6b9897f0",
-            "var_f35c5951": 14,
-            "var_5d4b5964": 15.51,
-            "var_36bf8e05": "#hash_1588a25db8084f9f"
+            "hash_f35c5951": 14,
+            "hash_5d4b5964": 15.51,
+            "hash_36bf8e05": "localized19#hash_1588a25db8084f9f"
         },
         {
             "soundevent": "#hash_2770ccdd6b989d09",
-            "var_f35c5951": 30.5,
-            "var_5d4b5964": 4.31,
-            "var_36bf8e05": "#hash_2357817909233180"
+            "hash_f35c5951": 30.5,
+            "hash_5d4b5964": 4.31,
+            "hash_36bf8e05": "localized19#hash_2357817909233180"
         }
     ],
-    "description": "#hash_25b054c75c9cdf2c",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "model": "#hash_2a2df769d600b242",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_7dcfe35ccda755f1",
-    "var_2a12d36": 1,
+    "description": "localized19#hash_25b054c75c9cdf2c",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_radio_transmissions",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#p9_zm_ndu_radio_transmissions_inspect",
+    "hash_2a12d36": 1,
     "type": "zmintel",
-    "var_ad4ad686": "#maxis",
+    "season": 0,
+    "hash_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_silver_maxis_radio_3",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_3397bdbdac50e304",
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_3397bdbdac50e304",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_silver"
 }

@@ -114,7 +114,7 @@ version hash_9be154f778fa7357 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -141,7 +141,7 @@ version hash_9be154f778fa7357 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -183,9 +183,9 @@ version hash_9be154f778fa7357 {
     // offset: 0x980, bitSize: 0x40(0x8 Byte(s))
     string(8) game_type;
     // offset: 0x9c0, bitSize: 0x40(0x8 Byte(s))
-    string(8) hash_106c75f69663f02b;
+    string(8) team1_name;
     // offset: 0xa00, bitSize: 0x40(0x8 Byte(s))
-    string(8) hash_26389d74630e4f9c;
+    string(8) team2_name;
     // offset: 0xa40, bitSize: 0xa0(0x14 Byte(s))
     client_header client;
     // offset: 0xae0, bitSize: 0x80(0x10 Byte(s))

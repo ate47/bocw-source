@@ -1,10 +1,10 @@
 {
-    "description": "#hash_6fcb5856d39439c4",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_6fcb5856d39439c4",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_spy_investigator_won",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_3d3e41edb4e69fab",
-    "var_8645ce54": "#hash_298c8edabd884d3c",
-    "iconlarge": "#hash_6d4db69f74a82f8b"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_3d3e41edb4e69fab",
+    "stringref": "localized18#hash_298c8edabd884d3c",
+    "iconlarge": "image#hash_6d4db69f74a82f8b"
 }

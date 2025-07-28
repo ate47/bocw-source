@@ -1,0 +1,23 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&gold_ai_zombie",
+            "hash_a949845f": 30,
+            "hash_857deb66": 70
+        },
+        {
+            "entryname": "scriptbundle&gold_ai_zombie_heavy",
+            "hash_a949845f": 5,
+            "hash_857deb66": 25
+        },
+        {
+            "entryname": "scriptbundle&gold_ai_mimic",
+            "hash_a949845f": 1,
+            "hash_857deb66": 5
+        }
+    ],
+    "hash_d961aeb3": 0.3,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "exfil_gold_2"
+}

@@ -1,5 +1,5 @@
 {
-    "var_96fd2041": [
+    "#hash_96fd2041": [
         {
             "setting": "#auto_sprint_gamepad",
             "value": "0"
@@ -9,6 +9,6 @@
             "value": "0"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "name": "codcaster_settings_overrides"
 }

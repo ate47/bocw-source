@@ -1,10 +1,10 @@
 {
-    "description": "#hash_436bcf9102d4a65e",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_436bcf9102d4a65e",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_eliminated_enemy",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_245f0c4222ce97af",
-    "var_8645ce54": "#hash_6b0c85a183cac06e",
-    "iconlarge": "#hash_5b677442dcff25bf"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_elimination",
+    "stringref": "localized18#medal/eliminated_enemy",
+    "iconlarge": "image#ui_icon_medal_elimination_large"
 }

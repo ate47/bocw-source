@@ -1,0 +1,19 @@
+{
+    "description": "localized19#hash_73fbf05d031b6a00",
+    "hash_812bb4e9": "localized19#hash_650a7cb1071bb638",
+    "tagname": "mdl_cp_rus_kgb_item_07",
+    "UnlockMap": "cp_rus_kgb",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_kgb_generals_letter_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_kgb_07",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_650a7cb1071bb638",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_be0a72ace0805ca",
+    "hash_434e678e": 1,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_kgb_generals_letter",
+    "hash_5eeb1ad0": "localized19#hash_1c144fe73f127092"
+}

@@ -1,0 +1,20 @@
+{
+    "description": "localized19#hash_63f6cf9bf49d066f",
+    "tagname": "mdl_cp_sidemission_takedown_item_04",
+    "UnlockMap": "cp_nam_armada",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_chaos_floppy_disk_01",
+    "type": "collectible",
+    "callback": "chaos_floppy_disk",
+    "name": "p9_cp_sidemission_takedown_04",
+    "UnlockType": 2,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_35dfe9c079d08ceb",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_42cac359d52e1d37",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "hint": "localized19#hash_2879a6ccf4f083c8",
+    "thumbnail": "image#hash_f154389e9f8e6cb"
+}

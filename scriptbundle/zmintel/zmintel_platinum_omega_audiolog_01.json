@@ -1,107 +1,120 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_483a728009834bb0",
-            "var_5d4b5964": 9.07,
-            "var_36bf8e05": "#hash_12914ed26a941dce"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 9.07,
+            "hash_36bf8e05": "localized19#hash_12914ed26a941dce"
         },
         {
             "soundevent": "#hash_483a738009834d63",
-            "var_5d4b5964": 8.06,
-            "var_36bf8e05": "#hash_28cb0872f038d507"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 8.06,
+            "hash_36bf8e05": "localized19#hash_28cb0872f038d507"
         },
         {
             "soundevent": "#hash_69b7dd19b5543ed7",
-            "var_f35c5951": 0.3,
-            "var_5d4b5964": 7.08,
-            "var_36bf8e05": "#hash_370f21537dc9be05"
+            "hash_f35c5951": 0.3,
+            "hash_5d4b5964": 7.08,
+            "hash_36bf8e05": "localized19#hash_370f21537dc9be05"
         },
         {
             "soundevent": "#hash_483a7580098350c9",
-            "var_f35c5951": 0.1,
-            "var_5d4b5964": 12.67,
-            "var_36bf8e05": "#hash_6e6d8b1db38a56c1"
+            "hash_f35c5951": 0.1,
+            "hash_5d4b5964": 12.67,
+            "hash_36bf8e05": "localized19#hash_6e6d8b1db38a56c1"
         },
         {
             "soundevent": "#hash_69b7db19b5543b71",
-            "var_5d4b5964": 4.35,
-            "var_36bf8e05": "#hash_1fb338b3ca56a527"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 4.35,
+            "hash_36bf8e05": "localized19#hash_1fb338b3ca56a527"
         },
         {
             "soundevent": "#hash_483a77800983542f",
-            "var_5d4b5964": 12.99,
-            "var_36bf8e05": "#hash_d014cd847f62803"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 12.99,
+            "hash_36bf8e05": "localized19#hash_d014cd847f62803"
         },
         {
             "soundevent": "#hash_69b7d919b554380b",
-            "var_5d4b5964": 7.13,
-            "var_36bf8e05": "#hash_7a833c3316742bc9"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 7.13,
+            "hash_36bf8e05": "localized19#hash_7a833c3316742bc9"
         },
         {
             "soundevent": "#hash_483a798009835795",
-            "var_5d4b5964": 3.9,
-            "var_36bf8e05": "#hash_46ed15f96627c31d"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 3.9,
+            "hash_36bf8e05": "localized19#hash_46ed15f96627c31d"
         },
         {
             "soundevent": "#hash_69b7d719b55434a5",
-            "var_5d4b5964": 11.75,
-            "var_36bf8e05": "#hash_40557bf8b26f6a2b"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 11.75,
+            "hash_36bf8e05": "localized19#hash_40557bf8b26f6a2b"
         },
         {
             "soundevent": "#hash_483a7b8009835afb",
-            "var_5d4b5964": 1,
-            "var_36bf8e05": "#hash_1174427555bfd8df"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 1,
+            "hash_36bf8e05": "localized19#hash_1174427555bfd8df"
         },
         {
             "soundevent": "#hash_77af1faf1e29fc0e",
-            "var_f35c5951": 0.6,
-            "var_5d4b5964": 10.92,
-            "var_36bf8e05": "#hash_711c27a5f021e252"
+            "hash_f35c5951": 0.6,
+            "hash_5d4b5964": 10.92,
+            "hash_36bf8e05": "localized19#hash_711c27a5f021e252"
         },
         {
             "soundevent": "#hash_3e9f94902a1c6256",
-            "var_f35c5951": 0.3,
-            "var_5d4b5964": 9.58,
-            "var_36bf8e05": "#hash_278fa9d0554ce7fe"
+            "hash_f35c5951": 0.3,
+            "hash_5d4b5964": 9.58,
+            "hash_36bf8e05": "localized19#hash_278fa9d0554ce7fe"
         },
         {
             "soundevent": "#hash_3e9f93902a1c60a3",
-            "var_f35c5951": 0.2,
-            "var_5d4b5964": 12.74,
-            "var_36bf8e05": "#hash_384e17dd1d5e771"
+            "hash_f35c5951": 0.2,
+            "hash_5d4b5964": 12.74,
+            "hash_36bf8e05": "localized19#hash_384e17dd1d5e771"
         },
         {
             "soundevent": "#hash_77af1eaf1e29fa5b",
-            "var_5d4b5964": 3.24,
-            "var_36bf8e05": "#hash_21297e696b636ff5"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 3.24,
+            "hash_36bf8e05": "localized19#hash_21297e696b636ff5"
         },
         {
             "soundevent": "#hash_3e9f99902a1c6ad5",
-            "var_f35c5951": 0.2,
-            "var_5d4b5964": 9.34,
-            "var_36bf8e05": "#hash_226c0be6a68d7373"
+            "hash_f35c5951": 0.2,
+            "hash_5d4b5964": 9.34,
+            "hash_36bf8e05": "localized19#hash_226c0be6a68d7373"
         },
         {
             "soundevent": "#hash_77af24af1e2a048d",
-            "var_5d4b5964": 5.7,
-            "var_36bf8e05": "#hash_66fbbe2f075eae57"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 5.7,
+            "hash_36bf8e05": "localized19#hash_66fbbe2f075eae57"
         }
     ],
-    "description": "#hash_28675e85633c3fba",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#exploration",
-    "model": "#hash_20f9a15d3e077602",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_7af8f043b1133323",
+    "description": "localized19#hash_28675e85633c3fba",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#exploration",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_reel_to_reel_audio_recorder_01",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#hash_7af8f043b1133323",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 4,
-    "var_ad4ad686": "#omega",
+    "hash_ad4ad686": "#omega",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_platinum_omega_audiolog_01",
-    "var_9be0526e": "#audiolog",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#tape",
-    "title": "#hash_7dbec077f827900a",
+    "hash_9be0526e": "#audiolog",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#tape",
+    "title": "localized19#hash_7dbec077f827900a",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_platinum"
 }

@@ -1,11 +1,11 @@
 {
-    "description": "#hash_66cb0c2941d9f1d4",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_66cb0c2941d9f1d4",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_war_machine_x2_multikill_summary",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_2e5e4335fa3bfa6",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_boomer",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_3a9d0c9891937a08",
-    "iconlarge": "#hash_7fe59b3402d35456"
+    "stringref": "localized18#hash_3a9d0c9891937a08",
+    "iconlarge": "image#ui_icon_medal_boomer_large"
 }

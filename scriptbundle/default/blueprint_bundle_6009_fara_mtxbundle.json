@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_kreiger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_kreiger_mtxitem",
             "itemid": "18675602"
         },
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_krieger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_krieger_mtxitem",
             "itemid": "29852136"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_assembly_mpx_mech_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_assembly_mpx_mech_mtxitem",
             "itemid": "24191373"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_deadflowers_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_deadflowers_mtxitem",
             "itemid": "30023910"
         },
         {
-            "var_4a4bc969": "#t9_charm_f_bomb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_f_bomb_mtxitem",
             "itemid": "20457045"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_krieger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_krieger_mtxitem",
             "itemid": "20301420"
         },
         {
-            "var_4a4bc969": "#reticle_137_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_137_mtxitem",
             "itemid": "19060784"
         },
         {
-            "var_4a4bc969": "#emblems_r82_6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r82_6_animated_mtxitem",
             "itemid": "24776039"
         },
         {
-            "var_4a4bc969": "#callingcards_mech1_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_mech1_s6_animated_mtxitem",
             "itemid": "18578676"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_2b9b9d1688c5f0e4",
-    "var_375a1747": "#hash_edb41cbec0741c2",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6009_fara",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6009_fara_mtxbundle",
-    "var_a788fada": "#hash_7a011e6212e31faf",
-    "titlestring": "#hash_25619fe8230fe6b8",
-    "var_566825be": "#hash_7a5da0db0f6db1b7",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6009_fara_small",
+    "titlestring": "localized18#hash_25619fe8230fe6b8",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6009_fara",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1c054209427d3680",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1c054209427d3680",
+    "hash_db3e02ab": 2000,
     "itemid": "17808731"
 }

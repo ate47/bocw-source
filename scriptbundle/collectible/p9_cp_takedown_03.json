@@ -1,0 +1,16 @@
+{
+    "description": "localized19#hash_6bdd1c268dc4278e",
+    "tagname": "mdl_cp_takedown_item_03",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_takedown_spent_colt1911_01",
+    "type": "collectible",
+    "name": "p9_cp_takedown_03",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_342c9c45cfa2fa52",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_39b637ca825123d0",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_takedown_pistol"
+}

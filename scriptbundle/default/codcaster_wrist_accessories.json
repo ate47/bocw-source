@@ -1,0 +1,58 @@
+{
+    "#hash_189aaf3": [
+        {
+            "teamname": "#hash_29263c8a882c99e5",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_empire_pc"
+        },
+        {
+            "teamname": "#hash_6f3b5d7916ab6229",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_faze_pc"
+        },
+        {
+            "teamname": "#hash_7fb5045dd9aaa6d9",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_guerillas_pc"
+        },
+        {
+            "teamname": "#hash_2401ff8cbe2bdd13",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_legion_pc"
+        },
+        {
+            "teamname": "#hash_37eaa846402867d7",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_mutineers_pc"
+        },
+        {
+            "teamname": "#hash_722e864632d1516a",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_rokkr_pc"
+        },
+        {
+            "teamname": "#hash_1d6146e965566977",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_royalravens_pc"
+        },
+        {
+            "teamname": "#hash_1898e8419d776984",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_subliners_pc"
+        },
+        {
+            "teamname": "#surge",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_surge_pc"
+        },
+        {
+            "teamname": "#ultra",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_ultra_pc"
+        },
+        {
+            "teamname": "#thieves",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_thieves_pc"
+        },
+        {
+            "teamname": "#optic",
+            "hash_91c3a45c": "#wristaccessory_t9_esports_optic_pc"
+        },
+        {
+            "teamname": "#cdl",
+            "hash_91c3a45c": "#hash_175c3ff8271a466d"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "name": "codcaster_wrist_accessories"
+}

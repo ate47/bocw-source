@@ -1,9 +1,9 @@
 {
     "mod": "MOD_UNKNOWN",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_unknown",
-    "displayname": "#hash_7cceb74accb55241",
-    "icon": "#ui_icon_meansofdeath_unknown",
-    "iconlarge": "#ui_icon_meansofdeath_unknown_xl"
+    "displayname": "localized18#ui/mod_unknown",
+    "icon": "image#ui_icon_meansofdeath_unknown",
+    "iconlarge": "image#ui_icon_meansofdeath_unknown_xl"
 }

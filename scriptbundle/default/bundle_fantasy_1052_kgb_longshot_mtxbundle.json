@@ -1,55 +1,59 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_winter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_winter_mtxitem",
             "itemid": "19715451"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_carbon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_carbon_mtxitem",
             "itemid": "19695520"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_bullshark_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_bullshark_mtxitem",
             "itemid": "30636964"
         },
         {
-            "var_4a4bc969": "#callingcards_longshot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_longshot_mtxitem",
             "itemid": "28859601"
         },
         {
-            "var_4a4bc969": "#execution_127_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_127_mtxitem",
             "itemid": "31333820"
         },
         {
-            "var_4a4bc969": "#reticle_38_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_38_mtxitem",
             "itemid": "29969650"
         },
         {
-            "var_4a4bc969": "#emblems_longshot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_longshot_mtxitem",
             "itemid": "19247608"
         },
         {
-            "var_4a4bc969": "#t9_charm_ice_axe_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_ice_axe_mtxitem",
             "itemid": "28337284"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_longshot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_longshot_mtxitem",
             "itemid": "28147759"
         }
     ],
-    "itemname": "#hash_7a2a2310b55d5ae7",
-    "var_375a1747": "#hash_37ad015012a6acc9",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_fantasy_1052_kgb_longshot",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_fantasy_1052_kgb_longshot",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "bundle_fantasy_1052_kgb_longshot_mtxbundle",
-    "titlestring": "#hash_1323dce08255a0fb",
-    "var_566825be": "#hash_4e8b335769cd689c",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_1323dce08255a0fb",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_fantasy_1052_kgb_longshot",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_34869aaf8b152cbf",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_34869aaf8b152cbf",
+    "hash_db3e02ab": 2000,
     "itemid": "22514525"
 }

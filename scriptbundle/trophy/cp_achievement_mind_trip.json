@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_606fb157c7e2d2a4",
-    "var_86b354f": 30,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Silver",
+    "description": "localized18#hash_606fb157c7e2d2a4",
+    "hash_86b354f": 30,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Silver",
     "type": "trophy",
-    "var_4a95afca": "#hash_49f9b3066f78c8a4",
-    "image": "#hash_755a7a06880fd84e",
+    "hash_4a95afca": "image#hash_49f9b3066f78c8a4",
+    "image": "image#hash_755a7a06880fd84e",
     "name": "cp_achievement_mind_trip",
-    "title": "#hash_65a18e49dd22915c"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_65a18e49dd22915c",
+    "hash_621379a": 0
 }

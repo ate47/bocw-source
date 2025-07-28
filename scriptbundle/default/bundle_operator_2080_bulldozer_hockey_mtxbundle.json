@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_bulldozer_hawk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_bulldozer_hawk_mtxitem",
             "itemid": "23741895"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_bulldozer_mtxitem",
             "itemid": "20317561"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_especial_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_especial_mtxitem",
             "itemid": "28935797"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_especial_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_especial_mtxitem",
             "itemid": "31691839"
         },
         {
-            "var_4a4bc969": "#emblems_s25_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s25_bulldozer_mtxitem",
             "itemid": "28024022"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s25_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s25_bulldozer_mtxitem",
             "itemid": "33140257"
         },
         {
-            "var_4a4bc969": "#callingcards_s25_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s25_bulldozer_mtxitem",
             "itemid": "29666344"
         },
         {
-            "var_4a4bc969": "#t9_charm_hockeymask_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_hockeymask_mtxitem",
             "itemid": "22445734"
         }
     ],
-    "itemname": "#hash_7dcfb6fe6a0b2071",
-    "var_375a1747": "#hash_64da639d8b9e67ff",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2080_bulldozer_hockey",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2080_bulldozer_hockey",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2080_bulldozer_hockey_mtxbundle",
-    "var_a788fada": "#hash_11bf7ac553c45e30",
-    "titlestring": "#hash_47de51cd7955f90b",
-    "var_566825be": "#hash_4b82a983eb8109c8",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_11bf7ac553c45e30",
+    "titlestring": "localized18#hash_47de51cd7955f90b",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2080_bulldozer_hockey",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_67965b218c7c638f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_67965b218c7c638f",
+    "hash_db3e02ab": 2000,
     "itemid": "21615706"
 }

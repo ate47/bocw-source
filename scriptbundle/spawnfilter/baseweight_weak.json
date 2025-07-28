@@ -1,7 +1,7 @@
 {
     "friendlyinfluencer": "baseweight_weak_friendly",
-    "var_922067c4": "scriptbundle",
-    "var_ee89b13f": "baseweight_weak",
+    "configstringfiletype": "scriptbundle",
+    "hash_ee89b13f": "baseweight_weak",
     "type": "spawnfilter",
     "vmtype": "both",
     "name": "baseweight_weak",

@@ -1,9 +1,9 @@
 {
     "mod": "MOD_DIEHARD",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_diehard",
-    "displayname": "#hash_68c7cf57605b3ec7",
-    "icon": "#ui_icon_meansofdeath_explosive_death",
-    "iconlarge": "#ui_icon_meansofdeath_explosive_death_xl"
+    "displayname": "localized18#ui/mod_suicide",
+    "icon": "image#ui_icon_meansofdeath_explosive_death",
+    "iconlarge": "image#ui_icon_meansofdeath_explosive_death_xl"
 }

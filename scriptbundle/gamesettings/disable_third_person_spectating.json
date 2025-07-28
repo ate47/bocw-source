@@ -1,13 +1,18 @@
 {
-    "hinttext": "#hash_3b71ddff42712bde",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_3b71ddff42712bde",
+    "configstringfiletype": "scriptbundle",
     "value2": "0",
     "value1": "1",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "disable_third_person_spectating",
-    "displayname": "#hash_397d2856dac7e9aa",
-    "var_9600a8ab": "#hash_94eb0e3329edf5f",
-    "var_bd2ff709": "#menu/enabled",
-    "var_9de86f42": 2,
-    "setting": "disableThirdPersonSpectating"
+    "displayname": "localized18#hash_397d2856dac7e9aa",
+    "label1": "localized18#menu/disabled",
+    "label2": "localized18#menu/enabled",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
+    "setting": "disableThirdPersonSpectating",
+    "isenableddisabled": 0
 }

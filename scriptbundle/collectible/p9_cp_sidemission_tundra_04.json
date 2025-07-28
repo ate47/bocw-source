@@ -1,0 +1,21 @@
+{
+    "description": "localized19#hash_1f88388cdd97e16e",
+    "tagname": "mdl_cp_sidemission_tundra_item_04",
+    "UnlockMap": "cp_nam_armada",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_red_circus_vadim_doc_01",
+    "type": "collectible",
+    "hash_34754728": "localized19#hash_1c8813eba3d3c667",
+    "hash_444770d3": "image#evidenceboard_review_red_circus_vadim_doc",
+    "name": "p9_cp_sidemission_tundra_04",
+    "UnlockType": 2,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_7601b34c5566f032",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_71408831eb913b30",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 3,
+    "hint": "localized19#hash_7f27ed604f7a4762",
+    "thumbnail": "image#evidenceboard_review_red_circus_vadim_doc"
+}

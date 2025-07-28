@@ -4,13 +4,16 @@
             "filters": "#zombie"
         }
     ],
-    "description": "#hash_352d017a618bf4fc",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_352d017a618bf4fc",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_496878dda89dba2c",
-    "image": "#hash_1991030797694853",
+    "hash_4a95afca": "image#hash_496878dda89dba2c",
+    "image": "image#hash_1991030797694853",
     "name": "doa_achievement_escapewild",
-    "title": "#hash_7dfdc4ff25177af4"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_7dfdc4ff25177af4",
+    "hash_621379a": 0
 }

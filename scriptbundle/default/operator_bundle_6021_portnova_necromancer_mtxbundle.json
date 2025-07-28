@@ -1,75 +1,79 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_2dd7d09b1e3ee3f2"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6021_portnova_necromancer"
         },
         {
-            "var_fe10649e": "#hash_548973edbe7805fc"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6021_portnova_necromancer_01"
         },
         {
-            "var_fe10649e": "#hash_548976edbe780b15"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6021_portnova_necromancer_02"
         },
         {
-            "var_fe10649e": "#hash_548975edbe780962"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6021_portnova_necromancer_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_breakout_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_breakout_mtxitem",
             "itemid": "22892354"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_halloween_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_halloween_mtxitem",
             "itemid": "21977831"
         },
         {
-            "var_4a4bc969": "#smg_accurate_bp_halloween_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_accurate_bp_halloween_mtxitem",
             "itemid": "27298066"
         },
         {
-            "var_4a4bc969": "#tr_fastburst_bp_halloween_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_fastburst_bp_halloween_mtxitem",
             "itemid": "26057532"
         },
         {
-            "var_4a4bc969": "#t9_charm_bone_saw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bone_saw_mtxitem",
             "itemid": "19382352"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_halloween_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_halloween_mtxitem",
             "itemid": "26346689"
         },
         {
-            "var_4a4bc969": "#execution_210_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_210_mtxitem",
             "itemid": "32139140"
         },
         {
-            "var_4a4bc969": "#emblems_necromancer_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_necromancer_s6_animated_mtxitem",
             "itemid": "25348162"
         },
         {
-            "var_4a4bc969": "#callingcards_necromancer_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_necromancer_s6_animated_mtxitem",
             "itemid": "22262168"
         },
         {
-            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_legendary_mtxitem",
             "itemid": "32109261"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_7065d3cbb9c3030c",
-    "var_375a1747": "#hash_2dd7d09b1e3ee3f2",
-    "var_3040f0d1": "#hash_2dd7d09b1e3ee3f2",
-    "var_8ee7db29": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6021_portnova_necromancer",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_6021_portnova_necromancer",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6021_portnova_necromancer_mtxbundle",
-    "var_a788fada": "#hash_170ee0813a10d4bd",
-    "titlestring": "#hash_13b7c2707a85c8aa",
-    "var_566825be": "#hash_2dcd66683a1fc775",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6021_portnova_necromancer_small",
+    "titlestring": "localized18#hash_13b7c2707a85c8aa",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6021_portnova_necromancer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_bc304c2bd21f726",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_bc304c2bd21f726",
+    "hash_db3e02ab": 750,
     "itemid": "24767864"
 }

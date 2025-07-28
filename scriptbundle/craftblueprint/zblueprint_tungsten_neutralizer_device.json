@@ -1,0 +1,15 @@
+{
+    "hash_4dbc4aee": "localized19#hash_57381e8243f9e1d4",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "result": "weapon#hash_42b14769a6933558",
+    "type": "craftblueprint",
+    "hash_e414062": -12,
+    "component01": "weapon#hash_3aba1fe198803a12",
+    "name": "zblueprint_tungsten_neutralizer_device",
+    "displayname": "Neutralizer Device",
+    "postcraft": "one_time_craft",
+    "componentcount": 1,
+    "takecomponents": 1,
+    "hash_c028dcfe": 0,
+    "hash_318c150c": "SECTION_QUESTS"
+}

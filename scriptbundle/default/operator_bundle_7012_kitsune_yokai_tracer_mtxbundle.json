@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_jpn_pl_kitsune_yokai_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_jpn_pl_kitsune_yokai_mtxitem",
             "itemid": "20560275"
         },
         {
-            "var_4a4bc969": "#prt_mp_jps_kitsune_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_jps_kitsune_mtxitem",
             "itemid": "32530210"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_yokai_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_yokai_mtxitem",
             "itemid": "19514190"
         },
         {
-            "var_4a4bc969": "#loot_sniper_cannon_bp_yokai_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_sniper_cannon_bp_yokai_mtxitem",
             "itemid": "23274481"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_yokai_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_yokai_mtxitem",
             "itemid": "30244802"
         },
         {
-            "var_4a4bc969": "#t9_charm_kitsune_mask_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_kitsune_mask_mtxitem",
             "itemid": "21556831"
         },
         {
-            "var_4a4bc969": "#execution_171_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_171_mtxitem",
             "itemid": "25332076"
         },
         {
-            "var_4a4bc969": "#callingcards_yokai_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_yokai_animated_mtxitem",
             "itemid": "20960244"
         },
         {
-            "var_4a4bc969": "#emblems_yokai_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_yokai_mtxitem",
             "itemid": "20122989"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_237987bc07c1e4ef",
-    "var_375a1747": "#hash_2f9052778272521",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7012_kitsune_yokai_tracer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7012_kitsune_yokai_tracer_mtxbundle",
-    "var_a788fada": "#hash_3ae58556b9c7c742",
-    "titlestring": "#hash_7f77545e6b752cb5",
-    "var_566825be": "#hash_e54ee4f9d3cf94e",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7012_kitsune_yokai_tracer_small",
+    "titlestring": "localized18#hash_7f77545e6b752cb5",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7012_kitsune_yokai_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_34f7d1d3bd4f736d",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_34f7d1d3bd4f736d",
+    "hash_db3e02ab": 2000,
     "itemid": "30824939"
 }

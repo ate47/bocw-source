@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_standard_bp_qjackal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_qjackal_mtxitem",
             "itemid": "27556899"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_operator_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_operator_mtxitem",
             "itemid": "22532231"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_standoppro_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_standoppro_mtxitem",
             "itemid": "31072062"
         },
         {
-            "var_4a4bc969": "#t9_charm_canteen_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_canteen_mtxitem",
             "itemid": "17972768"
         }
     ],
-    "itemname": "#hash_2a84f691ffb76a0e",
-    "var_375a1747": "#hash_63fe60546547cb00",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2048_sniper_standard_canyon_coverage",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2048_sniper_standard_canyon_coverage",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2048_sniper_standard_canyon_coverage_mtxbundle",
-    "var_a788fada": "#hash_5c8497e4c789e773",
-    "titlestring": "#hash_71be1ae2497af92f",
-    "var_566825be": "#hash_630d6a5dd266d65b",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2048_sniper_standard_canyon_coverage_small",
+    "titlestring": "localized18#hash_71be1ae2497af92f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2048_sniper_standard_canyon_coverage",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_b3825a5cdc063eb",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_b3825a5cdc063eb",
+    "hash_db3e02ab": 2000,
     "itemid": "25428461"
 }

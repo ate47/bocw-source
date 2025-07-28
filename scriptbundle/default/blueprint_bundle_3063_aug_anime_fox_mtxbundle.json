@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_animemeow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_animemeow_mtxitem",
             "itemid": "32204262"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_animeskater_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_animeskater_mtxitem",
             "itemid": "20931144"
         },
         {
-            "var_4a4bc969": "#emblems_ninetails_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ninetails_animated_mtxitem",
             "itemid": "28467716"
         },
         {
-            "var_4a4bc969": "#t9_charm_luckycat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_luckycat_mtxitem",
             "itemid": "27125334"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_truck_transport_mpx_bidol_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_truck_transport_mpx_bidol_mtxitem",
             "itemid": "19964254"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_animepop_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_animepop_mtxitem",
             "itemid": "18528325"
         }
     ],
-    "itemname": "#hash_45ad90a7a1bcb10b",
-    "var_375a1747": "#hash_1f6c7eaefeced2c5",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3063_aug_anime_fox",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3063_aug_anime_fox",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3063_aug_anime_fox_mtxbundle",
-    "var_a788fada": "#hash_60556173cca89906",
-    "titlestring": "#hash_45b99f92225a7501",
-    "var_566825be": "#hash_5f2d07dac9f32c52",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3063_aug_anime_fox_small",
+    "titlestring": "localized18#hash_45b99f92225a7501",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3063_aug_anime_fox",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4f32aca9b4bf3dc1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4f32aca9b4bf3dc1",
+    "hash_db3e02ab": 2000,
     "itemid": "25123108"
 }

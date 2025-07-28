@@ -1,8 +1,8 @@
 {
-    "description": "#hash_75ed95ba52b54f12",
+    "description": "localized18#hash_75ed95ba52b54f12",
     "widget": "#badasserymedal",
     "name": "medal_multikillstreak_20_zm",
-    "iconsmall": "#hash_40908dc65f28d3c1",
-    "var_8645ce54": "#hash_345f003f842f7782",
-    "iconlarge": "#hash_e7d6249e28c3945"
+    "iconsmall": "image#ui_icon_medal_zm_streaks_bloodbath",
+    "stringref": "localized18#hash_345f003f842f7782",
+    "iconlarge": "image#ui_icon_medal_zm_streaks_bloodbath_large"
 }

@@ -1,6 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "mpdialog_player",
     "vmtype": "both",
-    "name": "ofc_nikolai"
+    "name": "ofc_nikolai",
+    "hash_d853c1af": 0
 }

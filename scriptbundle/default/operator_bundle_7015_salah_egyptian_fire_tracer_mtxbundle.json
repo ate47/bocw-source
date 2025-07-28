@@ -1,78 +1,82 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_322c8a3f274bf6d"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7015_salah_egyptian_fire_tracer"
         },
         {
-            "var_fe10649e": "#hash_1644016817426ad9"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7015_salah_egyptian_fire_tracer_01"
         },
         {
-            "var_fe10649e": "#hash_1643fe68174265c0"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7015_salah_egyptian_fire_tracer_02"
         },
         {
-            "var_fe10649e": "#hash_1643ff6817426773"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7015_salah_egyptian_fire_tracer_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_eg_pl_quicksand_khopesh_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_eg_pl_quicksand_khopesh_mtxitem",
             "itemid": "25493352"
         },
         {
-            "var_4a4bc969": "#prt_mp_eg_quicksand_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_eg_quicksand_mtxitem",
             "itemid": "33165094"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_egyptian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_egyptian_mtxitem",
             "itemid": "30510537"
         },
         {
-            "var_4a4bc969": "#sniper_accurate_bp_egyptian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_accurate_bp_egyptian_mtxitem",
             "itemid": "26429024"
         },
         {
-            "var_4a4bc969": "#pistol_fullauto_bp_egyptian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_fullauto_bp_egyptian_mtxitem",
             "itemid": "32156661"
         },
         {
-            "var_4a4bc969": "#execution_097_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_097_mtxitem",
             "itemid": "20268006"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_digital_egyptian_fire_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_digital_egyptian_fire_mtxitem",
             "itemid": "22224391"
         },
         {
-            "var_4a4bc969": "#t9_charm_sphinx_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sphinx_mtxitem",
             "itemid": "21205896"
         },
         {
-            "var_4a4bc969": "#emblems_egyptian_fire_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_egyptian_fire_animated_mtxitem",
             "itemid": "21427262"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_egyptian_fire_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_egyptian_fire_s6_mtxitem",
             "itemid": "23955986"
         },
         {
-            "var_4a4bc969": "#reticle_143_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_143_mtxitem",
             "itemid": "31764030"
         },
         {
-            "var_4a4bc969": "#callingcards_egyptian_fire_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_egyptian_fire_animated_mtxitem",
             "itemid": "26427977"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_2ea9d7af1977bbab",
-    "var_375a1747": "#hash_322c8a3f274bf6d",
-    "var_8ee7db29": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7015_salah_egyptian_fire_tracer",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7015_salah_egyptian_fire_tracer_mtxbundle",
-    "var_a788fada": "#hash_effc420106b3fda",
-    "titlestring": "#hash_275ac6605c1c564",
-    "var_566825be": "#hash_150961c1ea81ffe6",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7015_salah_egyptian_fire_tracer_small",
+    "titlestring": "localized18#hash_275ac6605c1c564",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7015_salah_egyptian_fire_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_d48066ba5271694",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_d48066ba5271694",
+    "hash_db3e02ab": 750,
     "itemid": "25852109"
 }

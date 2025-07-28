@@ -1,0 +1,13 @@
+{
+    "#hash_5fa96b51": [
+        {
+            "hash_1b48d0fc": "#spawner_bo5_zombie_zm_tungsten"
+        },
+        {
+            "hash_1b48d0fc": "#spawner_bo5_zombie_zm_tungsten_omega_soldier"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailistentry",
+    "name": "tungsten_ai_zombie"
+}

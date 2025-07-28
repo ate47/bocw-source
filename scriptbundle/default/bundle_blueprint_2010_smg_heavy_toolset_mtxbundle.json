@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_heavy_bp_swiss_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_swiss_mtxitem",
             "itemid": "24701217"
         },
         {
-            "var_4a4bc969": "#t9_charm_multi_tool_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_multi_tool_mtxitem",
             "itemid": "27474850"
         },
         {
-            "var_4a4bc969": "#emblems_diversetoolset_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_diversetoolset_mtxitem",
             "itemid": "19007536"
         }
     ],
-    "itemname": "#hash_251235811807efea",
-    "var_375a1747": "#hash_8e973f927d8c11c",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2010_smg_heavy_toolset",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2010_smg_heavy_toolset",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2010_smg_heavy_toolset_mtxbundle",
-    "var_a788fada": "#hash_2cadb3955331ffdf",
-    "titlestring": "#hash_27265f6d604715ee",
-    "var_566825be": "#hash_4a73875828896d27",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2010_smg_heavy_toolset_small",
+    "titlestring": "localized18#hash_27265f6d604715ee",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2010_smg_heavy_toolset",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2f0868cf2314e662",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2f0868cf2314e662",
+    "hash_db3e02ab": 2000,
     "itemid": "33516732"
 }

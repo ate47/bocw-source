@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_strace_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_strace_mtxitem",
             "itemid": "20301266"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_strace_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_strace_mtxitem",
             "itemid": "19370866"
         },
         {
-            "var_4a4bc969": "#t9_charm_racing_wheel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_racing_wheel_mtxitem",
             "itemid": "23146466"
         },
         {
-            "var_4a4bc969": "#fav_light_wz_mpx_street_racer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#fav_light_wz_mpx_street_racer_mtxitem",
             "itemid": "20150093"
         },
         {
-            "var_4a4bc969": "#emblems_drift_racer_02_final_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_drift_racer_02_final_mtxitem",
             "itemid": "25350714"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_drift_racer_final_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_drift_racer_final_mtxitem",
             "itemid": "24196890"
         }
     ],
-    "itemname": "#hash_1a6b1606388c602e",
-    "var_375a1747": "#hash_18ab5f3fee2d233c",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4050_ak_47_drift_racer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4050_ak_47_drift_racer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4050_ak_47_drift_racer_mtxbundle",
-    "var_a788fada": "#hash_2d4ff8d5ba6b1653",
-    "titlestring": "#hash_39a267e7a6bce528",
-    "var_566825be": "#hash_2aaef2aabd2c007b",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4050_ak_47_drift_racer_small",
+    "titlestring": "localized18#hash_39a267e7a6bce528",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4050_ak_47_drift_racer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_24f7e5ff124b9870",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_24f7e5ff124b9870",
+    "hash_db3e02ab": 2000,
     "itemid": "21683795"
 }

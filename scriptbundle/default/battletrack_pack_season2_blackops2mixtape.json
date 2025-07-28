@@ -1,19 +1,20 @@
 {
-    "var_50c23eb3": [
+    "#hash_50c23eb3": [
         {
-            "track": "#battletrack_bo2_adrenaline"
+            "track": "scriptbundle#battletrack_bo2_adrenaline"
         },
         {
-            "track": "#battletrack_bo2_damned100ae"
+            "track": "scriptbundle#battletrack_bo2_damned100ae"
         },
         {
-            "track": "#battletrack_bo2_maintheme"
+            "track": "scriptbundle#battletrack_bo2_maintheme"
         },
         {
-            "track": "#battletrack_bo2_shadows"
+            "track": "scriptbundle#battletrack_bo2_shadows"
         }
     ],
     "name": "battletrack_pack_season2_blackops2mixtape",
-    "var_6855e4be": "#battletrack_pack_season2_blackops2mixtape_mtxitem",
-    "title": "#hash_335e2ea13dc5d66c"
+    "hash_6855e4be": "#battletrack_pack_season2_blackops2mixtape_mtxitem",
+    "title": "localized18#hash_335e2ea13dc5d66c",
+    "hash_9bf5cf77": 0
 }

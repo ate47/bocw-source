@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_cub_pl_dgi_havana_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_cub_pl_dgi_havana_mtxitem",
             "itemid": "29879723"
         },
         {
-            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_cub_dgi_mtxitem",
             "itemid": "21801561"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_cubarevo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_cubarevo_mtxitem",
             "itemid": "29623114"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_cubarevo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_cubarevo_mtxitem",
             "itemid": "30334284"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_mpx_cuban_pride_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_boat_pgb_mpx_cuban_pride_mtxitem",
             "itemid": "18337988"
         }
     ],
-    "itemname": "#hash_3b123c6fabd211a0",
-    "var_375a1747": "#hash_3a7e95809117ea6",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2057_mendo_revolucion",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2057_mendo_revolucion",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2057_mendo_revolucion_mtxbundle",
-    "var_a788fada": "#hash_2cf6b3e79de2a97d",
-    "titlestring": "#hash_35e3a7fc3d0b8a6f",
-    "var_566825be": "#hash_1c3e67963ed2d735",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2057_mendo_revolucion_small",
+    "titlestring": "localized18#hash_35e3a7fc3d0b8a6f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2057_mendo_revolucion",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_465182c085f4672b",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_465182c085f4672b",
+    "hash_db3e02ab": 2000,
     "itemid": "31480054"
 }

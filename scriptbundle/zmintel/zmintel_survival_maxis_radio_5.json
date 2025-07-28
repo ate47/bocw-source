@@ -1,71 +1,77 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_1354df628f67e7",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 8.34,
-            "var_36bf8e05": "#hash_21376a10ecbe2d1c"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 8.34,
+            "hash_36bf8e05": "localized19#hash_21376a10ecbe2d1c"
         },
         {
             "soundevent": "#hash_1353df628f6634",
-            "var_f35c5951": 0.6,
-            "var_5d4b5964": 9.44,
-            "var_36bf8e05": "#hash_7492b876f258c805"
+            "hash_f35c5951": 0.6,
+            "hash_5d4b5964": 9.44,
+            "hash_36bf8e05": "localized19#hash_7492b876f258c805"
         },
         {
             "soundevent": "#hash_1356df628f6b4d",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 12.54,
-            "var_36bf8e05": "#hash_4241b13ebdabef22"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 12.54,
+            "hash_36bf8e05": "localized19#hash_4241b13ebdabef22"
         },
         {
             "soundevent": "#hash_1355df628f699a",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 8.85,
-            "var_36bf8e05": "#hash_1885729f65b75c9b"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 8.85,
+            "hash_36bf8e05": "localized19#hash_1885729f65b75c9b"
         },
         {
             "soundevent": "#hash_1350df628f611b",
-            "var_f35c5951": 0.6,
-            "var_5d4b5964": 9.2,
-            "var_36bf8e05": "#hash_33af7dab4795bfa8"
+            "hash_f35c5951": 0.6,
+            "hash_5d4b5964": 9.2,
+            "hash_36bf8e05": "localized19#hash_33af7dab4795bfa8"
         },
         {
             "soundevent": "#hash_134fdf628f5f68",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 5.97,
-            "var_36bf8e05": "#hash_740ec114d5e2061"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 5.97,
+            "hash_36bf8e05": "localized19#hash_740ec114d5e2061"
         },
         {
             "soundevent": "#hash_1352df628f6481",
-            "var_5d4b5964": 5.78,
-            "var_36bf8e05": "#hash_7e48f7ac9daa75ae"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 5.78,
+            "hash_36bf8e05": "localized19#hash_7e48f7ac9daa75ae"
         },
         {
             "soundevent": "#hash_1351df628f62ce",
-            "var_5d4b5964": 2.05,
-            "var_36bf8e05": "#hash_50eed0cf13c0ace7"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 2.05,
+            "hash_36bf8e05": "localized19#hash_50eed0cf13c0ace7"
         },
         {
             "soundevent": "#hash_134cdf628f5a4f",
-            "var_5d4b5964": 1.92,
-            "var_36bf8e05": "#hash_4f696ed9426fb704"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 1.92,
+            "hash_36bf8e05": "localized19#hash_4f696ed9426fb704"
         }
     ],
-    "description": "#hash_784c2e3e6460d5cb",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "model": "#hash_2a2df769d600b242",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_7dcfe35ccda755f1",
+    "description": "localized19#hash_784c2e3e6460d5cb",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_radio_transmissions",
+    "hash_824079e7": "#survival",
+    "uimodel": "model#p9_zm_ndu_radio_transmissions_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#maxis",
+    "hash_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_maxis_radio_5",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_26c1e9adb5723571"
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_26c1e9adb5723571",
+    "hash_4efbbcfe": 0
 }

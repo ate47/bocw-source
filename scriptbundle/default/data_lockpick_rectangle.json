@@ -1,0 +1,28 @@
+{
+    "prompts": [
+        {
+            "prompt": "localized19#hash_33e60d34a6557dfb"
+        },
+        {
+            "prompt": "localized19#hash_19741664378db4c4"
+        }
+    ],
+    "hash_f1206d0d": "full arc",
+    "configstringfiletype": "scriptbundle",
+    "hash_4436bd13": "look",
+    "hash_d74b78fc": "auto",
+    "hash_84bfe4cb": 15,
+    "hash_c9b335a4": "rumble&minigame_lockpick_unlocked",
+    "name": "data_lockpick_rectangle",
+    "hash_c63cb3f6": "image#hud_lockpick_keyhole_1",
+    "hash_23cf06aa": "image#hud_lockpick_frame_1",
+    "hash_416f46a4": "image#hud_lockpick_frame_mask_1",
+    "hash_346d34d3": "rumble&minigame_lockpick_picking",
+    "hash_71de0627": "alternating sides",
+    "hash_b0b43710": 180,
+    "hash_ba0f6bb4": 20,
+    "hash_59079673": 10,
+    "hash_1c764e77": 5,
+    "hash_9be11610": 5,
+    "hash_426eb8da": 0.5
+}

@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_cub_pl_dgi_brawler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_cub_pl_dgi_brawler_mtxitem",
             "itemid": "31927095"
         },
         {
-            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_cub_dgi_mtxitem",
             "itemid": "21801561"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_brawlerking_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_brawlerking_mtxitem",
             "itemid": "29543291"
         },
         {
-            "var_4a4bc969": "#callingcards_firstrulecollective_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_firstrulecollective_mtxitem",
             "itemid": "25585024"
         },
         {
-            "var_4a4bc969": "#reticle_43_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_43_mtxitem",
             "itemid": "20117299"
         }
     ],
-    "itemname": "#hash_5020a753da2ff9da",
-    "var_375a1747": "#hash_43f12718ccf6a4e8",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1078_mendo_first_rule_collective",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1078_mendo_first_rule_collective",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1078_mendo_first_rule_collective_mtxbundle",
-    "titlestring": "#hash_773f4724919b41e7",
-    "var_566825be": "#hash_5e1af407555027a9",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_773f4724919b41e7",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1078_mendo_first_rule_collective",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_74e017059d344543",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_74e017059d344543",
+    "hash_db3e02ab": 2000,
     "itemid": "26416563"
 }

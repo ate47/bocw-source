@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_war_is_a_crime",
-    "quote": "#hash_66bb486aa0fb4acf",
-    "author": "#hash_7b728f3215143808"
+    "quote": "localized18#hash_66bb486aa0fb4acf",
+    "author": "localized18#hash_7b728f3215143808"
 }

@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_366950cdaf4e96da",
+    "tagname": "mdl_cp_rus_yamantau_item_07",
+    "UnlockMap": "cp_rus_yamantau",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_yamantau_ural_mnt_map_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_yamantau_07",
+    "UnlockType": 1,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_208e797db872c6c6",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_58dd58c2c1bfd4f4",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#hash_294d131e4050305a"
+}

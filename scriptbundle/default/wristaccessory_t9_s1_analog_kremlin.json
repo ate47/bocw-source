@@ -1,10 +1,10 @@
 {
-    "description": "#hash_662aa6b44843d01d",
+    "description": "localized18#hash_662aa6b44843d01d",
     "image": "ui_icon_wrist_accessories_kremlin_01",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s1_analog_kremlin",
-    "var_6855e4be": "#wristaccessory_t9_s1_analog_kremlin_mtxitem",
-    "displayname": "#hash_752d13940ffaff0b",
-    "var_8d478ea4": "#hash_adf088a7c39604b",
-    "var_d27eb4c6": "#hash_a3d2c11e6d1d7fe"
+    "hash_6855e4be": "#wristaccessory_t9_s1_analog_kremlin_mtxitem",
+    "displayname": "localized18#hash_752d13940ffaff0b",
+    "hash_8d478ea4": "model#wrist_watch_t9_s1_analog_kremlin_01_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s1_analog_kremlin_01_world"
 }

@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_capacity_bp_rebel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_rebel_mtxitem",
             "itemid": "25027383"
         },
         {
-            "var_4a4bc969": "#loot_sniper_cannon_bp_rebel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_sniper_cannon_bp_rebel_mtxitem",
             "itemid": "23963349"
         },
         {
-            "var_4a4bc969": "#t9_charm_banana_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_banana_mtxitem",
             "itemid": "23723717"
         },
         {
-            "var_4a4bc969": "#emblems_r82_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r82_s6_mtxitem",
             "itemid": "29517046"
         },
         {
-            "var_4a4bc969": "#callingcards_rebel_fighter_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_rebel_fighter_s6_mtxitem",
             "itemid": "24633105"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_gorillahead_011_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_gorillahead_011_s6_mtxitem",
             "itemid": "25129046"
         }
     ],
-    "itemname": "#hash_69e2f1adbb304725",
-    "var_375a1747": "#hash_12c0042870246bcf",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_6023_bullfrog_banana_wars",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6023_bullfrog_banana_wars",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6023_bullfrog_banana_wars_mtxbundle",
-    "var_a788fada": "#hash_50d98f14e920e5ba",
-    "titlestring": "#hash_14acfb2cd4b933ec",
-    "var_566825be": "#hash_429c4693fc52b086",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6023_bullfrog_banana_wars_small",
+    "titlestring": "localized18#hash_14acfb2cd4b933ec",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6023_bullfrog_banana_wars",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1e67de872755df5c",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1e67de872755df5c",
+    "hash_db3e02ab": 2000,
     "itemid": "18700752"
 }

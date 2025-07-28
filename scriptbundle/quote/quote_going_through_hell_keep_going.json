@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_going_through_hell_keep_going",
-    "quote": "#hash_42fb366b3556a354",
-    "author": "#hash_4e55371bb0e6c43f"
+    "quote": "localized18#hash_42fb366b3556a354",
+    "author": "localized18#hash_4e55371bb0e6c43f"
 }

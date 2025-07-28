@@ -1,0 +1,77 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 0,
+            "hash_e2b21dfe": 0,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_6eeb911a0f8b7389",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 0,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 0,
+            "hash_e2b21dfe": 0,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_5d13bdc8bef790a8",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 0,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 0,
+            "hash_e2b21dfe": 0,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_2db47506fc58f2cc",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 0,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 0,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_f3547e4f0bd4f76",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 1,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 0,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_a60c9d8d9f21340",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 1,
+            "MaskText": 0,
+            "DrawByLine": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "computerscreencontentlists",
+    "name": "operation_chaos_floppy_decrypt"
+}

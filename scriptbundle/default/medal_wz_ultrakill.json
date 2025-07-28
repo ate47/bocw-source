@@ -1,10 +1,10 @@
 {
-    "description": "#hash_76bb7104a9311d3d",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_76bb7104a9311d3d",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_wz_ultrakill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_6854ec49d2c006b2",
-    "var_8645ce54": "#hash_682fccbad2ec39eb",
-    "iconlarge": "#hash_47af42e62a1279b2"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_6854ec49d2c006b2",
+    "stringref": "localized18#hash_682fccbad2ec39eb",
+    "iconlarge": "image#hash_47af42e62a1279b2"
 }

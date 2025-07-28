@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_5645f2877478d631",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_5645f2877478d631",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_4e902059249eeef3",
-    "image": "#hash_bfb415947a1b039",
+    "hash_4a95afca": "image#hash_4e902059249eeef3",
+    "image": "image#hash_bfb415947a1b039",
     "name": "cp_achievement_old_faithful",
-    "title": "#hash_65f87c291d0ae89f"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_65f87c291d0ae89f",
+    "hash_621379a": 0
 }

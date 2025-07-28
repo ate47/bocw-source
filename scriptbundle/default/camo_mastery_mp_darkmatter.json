@@ -1,7 +1,7 @@
 {
-    "filter": "#hash_4742349d01c06f47",
-    "image": "#hash_25334e6226641b18",
+    "filter": "#camo_mp",
+    "image": "image#menu_camo_mastery_mp_darkmatter_pattern",
     "name": "camo_mastery_mp_darkmatter",
-    "displayname": "#hash_3f946adcf575b6c9",
+    "displayname": "localized18#hash_3f946adcf575b6c9",
     "category": "#mastery"
 }

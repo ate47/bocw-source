@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_vcp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_vcp_mtxitem",
             "itemid": "24211842"
         },
         {
-            "var_4a4bc969": "#t9_charm_vietn_helmet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_vietn_helmet_mtxitem",
             "itemid": "19885922"
         },
         {
-            "var_4a4bc969": "#callingcards_ratsnake_136_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ratsnake_136_mtxitem",
             "itemid": "32184671"
         }
     ],
-    "itemname": "#hash_6008bc3717129d18",
-    "var_375a1747": "#hash_7f39d5f3d0e96bea",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2069_ar_damage_entrenched",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2069_ar_damage_entrenched",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2069_ar_damage_entrenched_mtxbundle",
-    "var_a788fada": "#hash_6228486538cbe3a7",
-    "titlestring": "#hash_38441c6547cff7c2",
-    "var_566825be": "#hash_38a8847679cf35ef",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2069_ar_damage_entrenched_small",
+    "titlestring": "localized18#hash_38441c6547cff7c2",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2069_ar_damage_entrenched",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3fe237f1ad4ebe3e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3fe237f1ad4ebe3e",
+    "hash_db3e02ab": 2000,
     "itemid": "24028316"
 }

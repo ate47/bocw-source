@@ -1,14 +1,19 @@
 {
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "configstringfiletype": "scriptbundle",
     "value2": "0",
     "value1": "1",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "cumulative_round_scores",
-    "displayname": "#hash_f0c96698cb0c96",
-    "var_9600a8ab": "#hash_1aba847ac9288fac",
-    "var_bd2ff709": "#hash_4558ee5092c314e9",
-    "var_9de86f42": 2,
-    "var_4c593dfd": "#hash_1b667eb8b6270fa7",
-    "var_35fb1141": "#hash_11e698e464030e8e",
-    "setting": "cumulativeRoundScores"
+    "displayname": "localized18#menu/win_rule",
+    "label1": "localized18#hash_1aba847ac9288fac",
+    "label2": "localized18#menu/round_wins",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hinttext2": "localized18#hash_1b667eb8b6270fa7",
+    "hinttext1": "localized18#hash_11e698e464030e8e",
+    "hash_765cfd09": 0,
+    "setting": "cumulativeRoundScores",
+    "isenableddisabled": 0
 }

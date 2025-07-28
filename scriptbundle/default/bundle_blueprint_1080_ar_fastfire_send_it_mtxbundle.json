@@ -1,26 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_stamp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_stamp_mtxitem",
             "itemid": "28485435"
         },
         {
-            "var_4a4bc969": "#t9_charm_world_globe_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_world_globe_mtxitem",
             "itemid": "22381257"
         },
         {
-            "var_4a4bc969": "#emblems_35_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_35_mtxitem",
             "itemid": "27234237"
         }
     ],
-    "itemname": "#hash_3180316bf2965fff",
-    "var_375a1747": "#hash_2d160583706f1095",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1080_ar_fastfire_send_it",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1080_ar_fastfire_send_it",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1080_ar_fastfire_send_it_mtxbundle",
-    "titlestring": "#hash_659726c6f1840658",
-    "var_566825be": "#hash_58a5a7dc724a324e",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_659726c6f1840658",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1080_ar_fastfire_send_it",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_592dbb2865ec4d20",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_592dbb2865ec4d20",
+    "hash_db3e02ab": 2000,
     "itemid": "23528029"
 }

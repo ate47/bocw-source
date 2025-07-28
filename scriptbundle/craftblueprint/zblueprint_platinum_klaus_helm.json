@@ -1,0 +1,17 @@
+{
+    "hash_4dbc4aee": "localized19#hash_10de2f227973d282",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "result": "weapon#hash_42b14769a6933558",
+    "type": "craftblueprint",
+    "hash_e414062": -12,
+    "component01": "weapon#hash_20e70fea5c05962f",
+    "component02": "weapon#hash_72550fd24eede748",
+    "component03": "weapon#hash_73c6d3d77629df15",
+    "name": "zblueprint_platinum_klaus_helm",
+    "displayname": "Klaus Helm",
+    "postcraft": "one_time_craft",
+    "componentcount": 3,
+    "takecomponents": 1,
+    "hash_c028dcfe": 0,
+    "hash_318c150c": "SECTION_QUESTS"
+}

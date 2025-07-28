@@ -1,28 +1,32 @@
 {
     "tips": [
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6f1684d04816abc1",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6f1684d04816abc1",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_19481119522d1c23",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_19481119522d1c23",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_27e50aa627ab1755",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_27e50aa627ab1755",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 0,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_multiplayer_escort",
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#none"
+    "hash_e0d5cde7": 0,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#NONE",
+    "hash_b96cb18c": 0
 }

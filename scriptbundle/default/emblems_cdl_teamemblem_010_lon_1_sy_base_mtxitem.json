@@ -1,21 +1,31 @@
 {
     "entitlementlist": [
         {
-            "var_386af035": "#cdl_team_pack_01_ravens_sy_mtxentitlement"
+            "hash_386af035": "#cdl_team_pack_01_ravens_sy_mtxentitlement"
         }
     ],
-    "itemname": "#hash_67b8e196c57e301b",
-    "var_e9d9a8d0": 1,
-    "emblem": "#hash_67b8e196c57e301b",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "itemname": "#emblems_cdl_teamemblem_010_lon_1_sy_base",
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "emblem": "#emblems_cdl_teamemblem_010_lon_1_sy_base",
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 1,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
+    "hash_b6d84534": 0,
     "name": "emblems_cdl_teamemblem_010_lon_1_sy_base_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#emblem",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 2,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:2",
+    "hash_84dc7961": 0,
     "itemid": "19646893",
-    "var_326b2570": "#hash_4d42f65db68ba9ad"
+    "hash_326b2570": "#hash_4d42f65db68ba9ad"
 }

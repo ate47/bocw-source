@@ -1,0 +1,8 @@
+{
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "craftfoundry",
+    "blueprintcount": 1,
+    "blueprint01": "scriptbundle&zblueprint_gold_wonderweapon",
+    "name": "ztable_gold_wonderweapon",
+    "displayname": "WonderWeapon"
+}

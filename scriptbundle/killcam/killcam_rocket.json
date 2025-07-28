@@ -1,0 +1,10 @@
+{
+    "killcambackdist": 250,
+    "killcamtype": 5,
+    "type": "killcam",
+    "hash_5022638e": 0.1,
+    "vmtype": "none",
+    "name": "killcam_rocket",
+    "killcamupdist": 100,
+    "hash_e7bad890": "explosive fast"
+}

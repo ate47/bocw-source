@@ -1,0 +1,14 @@
+{
+    "destroyed": "#hash_128838dc716bc3b2",
+    "ready": "#hash_642ce8c15f318ed6",
+    "configstringfiletype": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_1825528ca0450dd0",
+    "vmtype": "both",
+    "name": "cdp_droneop4_kls_hellstorm",
+    "arrive": "#hash_20421f1bb285296",
+    "kill1": "#hash_6ddcd8d27b31dbd1",
+    "kill3": "#hash_6ddcd6d27b31d86b",
+    "kill2": "#hash_6ddcd5d27b31d6b8",
+    "killnone": "#hash_7e95f7d3f864979"
+}

@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_cia_agent_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_cia_agent_mtxitem",
             "itemid": "19435418"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_cia_mtxitem",
             "itemid": "20084886"
         },
         {
-            "var_4a4bc969": "#smg_accurate_bp_zombied_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_accurate_bp_zombied_mtxitem",
             "itemid": "22750290"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_zombied_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_zombied_mtxitem",
             "itemid": "22492984"
         },
         {
-            "var_4a4bc969": "#t9_charm_vtg_camera_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_vtg_camera_mtxitem",
             "itemid": "31419528"
         },
         {
-            "var_4a4bc969": "#emblems_zombiesrecon_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_zombiesrecon_s5_animated_mtxitem",
             "itemid": "21440237"
         },
         {
-            "var_4a4bc969": "#callingcards_zombiesrecon_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_zombiesrecon_s5_animated_mtxitem",
             "itemid": "18477021"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_zombiesrecon_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_zombiesrecon_s5_mtxitem",
             "itemid": "33072838"
         }
     ],
-    "itemname": "#hash_518a98a3ccf975d3",
-    "var_375a1747": "#hash_41c08ad97ea8db59",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5021_sims_recon_photo",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5021_sims_recon_photo",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5021_sims_recon_photo_mtxbundle",
-    "var_a788fada": "#hash_36ec8b10550fa68a",
-    "titlestring": "#hash_5393f6c6642cf99",
-    "var_566825be": "#hash_38deeb140eb29d6",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5021_sims_recon_photo_small",
+    "titlestring": "localized18#hash_5393f6c6642cf99",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5021_sims_recon_photo",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2046dc7dbdd336d9",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2046dc7dbdd336d9",
+    "hash_db3e02ab": 2000,
     "itemid": "31762137"
 }

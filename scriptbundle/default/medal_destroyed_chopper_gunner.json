@@ -1,10 +1,10 @@
 {
-    "description": "#hash_6563a04ddd4ce59a",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_6563a04ddd4ce59a",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_destroyed_chopper_gunner",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_632551ca80606337",
-    "var_8645ce54": "#hash_3c839e22186186aa",
-    "iconlarge": "#hash_7c64f130ec1bbb47"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_downed",
+    "stringref": "localized18#hash_3c839e22186186aa",
+    "iconlarge": "image#ui_icon_medal_downed_large"
 }

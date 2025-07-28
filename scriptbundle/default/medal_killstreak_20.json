@@ -1,11 +1,11 @@
 {
-    "description": "#hash_16232ecf6b32ad7e",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_16232ecf6b32ad7e",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_killstreak_20",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_7071d7b9d43864ab",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_relentless",
     "statname": "#hash_4a72871f32aa66a1",
-    "var_8645ce54": "#hash_37a56d01eb8c75ce",
-    "iconlarge": "#hash_34ba9aa7213b0c8b"
+    "stringref": "localized18#medal/killstreak_20",
+    "iconlarge": "image#ui_icon_medal_relentless_large"
 }

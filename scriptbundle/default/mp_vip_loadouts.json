@@ -1,0 +1,802 @@
+{
+    "defaultloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#talent_spycraft"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_tracker"
+                },
+                {
+                    "talent": "#talent_gungho"
+                }
+            ],
+            "secondaryattachments": [
+                {},
+                {},
+                {},
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#suppressed2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#fastreload2"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {},
+                {},
+                {}
+            ],
+            "bonuscards": [
+                {},
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1c0df17894dcc4a2",
+            "hash_26b5c8ef": -1,
+            "primary": "#pistol_semiauto_t9",
+            "specialgrenade": "#listening_device",
+            "secondary": "#knife_loadout",
+            "hash_285151c1": 1,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 1
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_ghost"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_quartermaster"
+                },
+                {
+                    "talent": "#talent_gungho"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#light"
+                },
+                {
+                    "attachment": "#fastreload2"
+                },
+                {
+                    "attachment": "#handle2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_perk_1_greed"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1c0df07894dcc2ef",
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_handling_t9",
+            "specialgrenade": "#tear_gas",
+            "secondary": "#pistol_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_coldblooded"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#fastreload2"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1c0def7894dcc13c",
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_light_t9",
+            "specialgrenade": "#land_mine",
+            "secondary": "#launcher_standard_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_threatperception"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_ghost"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#mixhandle"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#stalker"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_gearhound"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1c0dee7894dcbf89",
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_longburst_t9",
+            "specialgrenade": "#missile_turret",
+            "secondary": "#shotgun_semiauto_t9",
+            "hash_285151c1": 1,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 1
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_ghost"
+                },
+                {
+                    "talent": "#talent_coldblooded"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#compensator2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope4x"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_lawbreaker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1c0ded7894dcbdd6",
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_standard_t9",
+            "specialgrenade": "#gadget_jammer",
+            "secondary": "#smg_heavy_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_tracker"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#suppressed2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#mixclip"
+                },
+                {
+                    "attachment": "#handle"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1c0dec7894dcbc23",
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_handling_t9",
+            "specialgrenade": "#gadget_jammer",
+            "secondary": "#shotgun_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        }
+    ],
+    "#hash_2f9f5375": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#talent_threatperception"
+                },
+                {
+                    "talent": "#talent_logistics"
+                },
+                {
+                    "talent": "#talent_ghost"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot1",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_standard_t9",
+            "specialgrenade": "#land_mine",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        }
+    ],
+    "defaultcustomloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot1",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_standard_t9",
+            "specialgrenade": "#land_mine",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot2",
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_standard_t9",
+            "specialgrenade": "#listening_device",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot3",
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_accurate_t9",
+            "specialgrenade": "#land_mine",
+            "secondary": "#launcher_standard_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot4",
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_quickscope_t9",
+            "specialgrenade": "#listening_device",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot5",
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_damagesemi_t9",
+            "specialgrenade": "#land_mine",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot6",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_damage_t9",
+            "specialgrenade": "#land_mine",
+            "secondary": "#shotgun_pump_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_threatperception"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot7",
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_handling_t9",
+            "specialgrenade": "#listening_device",
+            "secondary": "#knife_loadout",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_threatperception"
+                },
+                {
+                    "talent": "#talent_logistics"
+                },
+                {
+                    "talent": "#talent_ghost"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot8",
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_heavy_t9",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#shotgun_pump_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_threatperception"
+                },
+                {
+                    "talent": "#talent_highvaluetarget"
+                },
+                {
+                    "talent": "#talent_ghost"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot9",
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_standard_t9",
+            "specialgrenade": "#gadget_supplypod",
+            "secondary": "#launcher_standard_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_coldblooded"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot10",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_mobility_t9",
+            "specialgrenade": "#missile_turret",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        }
+    ],
+    "killstreaks": [
+        {
+            "killstreak": "#uav"
+        }
+    ],
+    "name": "mp_vip_loadouts",
+    "sessionmode": "mp"
+}

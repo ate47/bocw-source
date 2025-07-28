@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_fastfire_bp_highnoon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_fastfire_bp_highnoon_mtxitem",
             "itemid": "33419918"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_highnoon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_highnoon_mtxitem",
             "itemid": "18089230"
         },
         {
-            "var_4a4bc969": "#t9_charm_sheriff_hat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sheriff_hat_mtxitem",
             "itemid": "18410171"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_assembly_mpx_high_noon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_tactical_raft_assembly_mpx_high_noon_mtxitem",
             "itemid": "21047179"
         },
         {
-            "var_4a4bc969": "#emblem_skullstar_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_skullstar_s6_mtxitem",
             "itemid": "18449013"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_cowboyskull_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_cowboyskull_s6_mtxitem",
             "itemid": "25338387"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_163bbabaae117586",
-    "var_375a1747": "#hash_153e965b9ffa60a8",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6034_mg_82_reckoning",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6034_mg_82_reckoning_mtxbundle",
-    "var_a788fada": "#hash_4479e894b6a6773",
-    "titlestring": "#hash_39efa3cb47518410",
-    "var_566825be": "#hash_75212f9d994b565b",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6034_mg_82_reckoning_small",
+    "titlestring": "localized18#hash_39efa3cb47518410",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6034_mg_82_reckoning",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_67faf0a0638513d8",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_67faf0a0638513d8",
+    "hash_db3e02ab": 2000,
     "itemid": "31551734"
 }

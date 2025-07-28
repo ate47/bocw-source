@@ -1,79 +1,84 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_lao_pl_serpent_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_lao_pl_serpent_mtxitem",
             "itemid": "31449283"
         },
         {
-            "var_4a4bc969": "#prt_mp_lao_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_lao_mtxitem",
             "itemid": "30933020"
         },
         {
-            "var_4a4bc969": "#c_t9_ger_pl_west_gsg9_3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_west_gsg9_3_mtxitem",
             "itemid": "22635828"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_west_mtxitem",
             "itemid": "31131649"
         },
         {
-            "var_4a4bc969": "#c_t9_ger_pl_west_gsg9_hardhat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_west_gsg9_hardhat_mtxitem",
             "itemid": "25410064"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter2_vargas_steel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter2_vargas_steel_mtxitem",
             "itemid": "25719930"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter2_mtxitem",
             "itemid": "19048863"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter2_vargas_bunker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter2_vargas_bunker_mtxitem",
             "itemid": "27708360"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_cia_grit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_cia_grit_mtxitem",
             "itemid": "24395642"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_cia_mtxitem",
             "itemid": "20084886"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_cia_advisor_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_cia_advisor_mtxitem",
             "itemid": "26638417"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_eagleclaw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_eagleclaw_mtxitem",
             "itemid": "32356724"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_woods_mtxitem",
             "itemid": "28004165"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_whirlwind_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_whirlwind_mtxitem",
             "itemid": "32434283"
         },
         {
-            "var_4a4bc969": "#c_t9_fra_pl_dgse_mademoiselle_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_fra_pl_dgse_mademoiselle_mtxitem",
             "itemid": "29811989"
         },
         {
-            "var_4a4bc969": "#prt_mp_fra_dgse_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_fra_dgse_mtxitem",
             "itemid": "18057790"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_53d279488e7c2a67",
-    "var_375a1747": "#hash_6f891afb35dac8dd",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7503_vault_nato_warsaw_02",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7503_vault_nato_warsaw_02_mtxbundle",
-    "var_a788fada": "#hash_6efe2e6f628ab7c6",
-    "titlestring": "#hash_6d21669ecf138cc8",
-    "var_566825be": "#hash_225dc9ccdf19e012",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7503_vault_nato_warsaw_02_small",
+    "titlestring": "localized18#hash_6d21669ecf138cc8",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7503_vault_nato_warsaw_02",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_741eef3371f7ea10",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_741eef3371f7ea10",
+    "hash_db3e02ab": 2000,
     "itemid": "19013838"
 }

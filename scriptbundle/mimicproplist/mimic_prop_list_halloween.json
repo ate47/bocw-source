@@ -1,11 +1,19 @@
 {
-    "var_e451a3f7": [
+    "#hash_e451a3f7": [
         {
-            "var_6748b2d2": "amb_rattle_metal",
-            "var_dcb0ac7c": "#item_zm_ltm_halloween_jackolantern_01"
+            "rattle_sound": "amb_rattle_metal",
+            "hash_dcb0ac7c": "scriptbundle#item_zm_ltm_halloween_jackolantern_01",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "mimicproplist",
     "name": "mimic_prop_list_halloween"
 }

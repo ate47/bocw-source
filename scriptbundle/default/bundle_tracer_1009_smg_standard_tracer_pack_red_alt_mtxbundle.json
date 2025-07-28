@@ -1,40 +1,45 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_standard_bp_bwidow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_bp_bwidow_mtxitem",
             "itemid": "23044363"
         },
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_bwidow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_bwidow_mtxitem",
             "itemid": "31745056"
         },
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_shadow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_shadow_mtxitem",
             "itemid": "25628711"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#t9_charm_bwidow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bwidow_mtxitem",
             "itemid": "32000054"
         },
         {
-            "var_4a4bc969": "#emblems_blackwidow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_blackwidow_mtxitem",
             "itemid": "31920388"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_438da53b75fe4108",
-    "var_c919e644": "#hash_78bf3c96f8f62f7c",
-    "var_375a1747": "#hash_5daf2715a298fea6",
+    "parenttag": "#bundle_tracer_1009_smg_standard_tracer_pack_red",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_tracer_1009_smg_standard_tracer_pack_red_alt",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_tracer_1009_smg_standard_tracer_pack_red_alt_mtxbundle",
-    "var_a788fada": "#hash_15def8c3c0a1d5fd",
-    "titlestring": "#hash_2266eec60cb56a2f",
-    "var_566825be": "#hash_4cc1af9d8d8f5495",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_tracer_1009_smg_standard_tracer_pack_red_small_alt",
+    "titlestring": "localized18#hash_2266eec60cb56a2f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_tracer_1009_smg_standard_tracer_pack_red_alt",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_756772fcda298ceb",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_756772fcda298ceb",
+    "hash_db3e02ab": 2000,
     "itemid": "19888136"
 }

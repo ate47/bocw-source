@@ -1,0 +1,8 @@
+{
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "craftfoundry",
+    "blueprintcount": 1,
+    "blueprint01": "scriptbundle&zblueprint_tungsten_damaged_teleporter",
+    "name": "ztable_tungsten_damaged_teleporter",
+    "displayname": "Damaged Teleporter"
+}

@@ -1,54 +1,57 @@
 {
-    "var_a66f0381": [
+    "#hash_a66f0381": [
         {
-            "var_8a7be802": "#uie_t7_icon_codpoints",
-            "var_e4bc3a3b": "1 1 1 1",
-            "var_791b2eac": 0.6,
-            "var_46d14a19": 0.6,
+            "hash_8a7be802": "image#uie_t7_icon_codpoints",
+            "hash_e4bc3a3b": "1 1 1 1",
+            "hash_791b2eac": 0.6,
+            "hash_46d14a19": 0.6,
             "category": "#currency",
-            "rarity": 9
+            "rarity": "enum:9",
+            "enabled": 0
         },
         {
-            "var_8a7be802": "#hash_10c7b4ec39105b6d",
-            "var_e4bc3a3b": "0.956863 0.482414 0.0705882 1",
-            "var_791b2eac": 1,
-            "var_46d14a19": 1,
+            "hash_8a7be802": "image#ui_rarity_legendary",
+            "hash_e4bc3a3b": "0.956863 0.482414 0.0705882 1",
+            "hash_791b2eac": 1,
+            "hash_46d14a19": 1,
             "category": "#all",
-            "rarity": 3
+            "rarity": "enum:3",
+            "enabled": 0
         },
         {
-            "var_8a7be802": "#hash_377dbb06569f5ad5",
-            "var_e4bc3a3b": "0.87451 0.439399 0.0617227 1",
-            "var_791b2eac": 0.6,
-            "var_46d14a19": 0.6,
+            "hash_8a7be802": "image#hash_377dbb06569f5ad5",
+            "hash_e4bc3a3b": "0.87451 0.439399 0.0617227 1",
+            "hash_791b2eac": 0.6,
+            "hash_46d14a19": 0.6,
             "category": "#sticker",
-            "rarity": 4,
+            "rarity": "enum:4",
             "enabled": 1
         },
         {
-            "var_8a7be802": "#hash_377dbb06569f5ad5",
-            "var_e4bc3a3b": "0.956863 0.482414 0.0705882 1",
-            "var_791b2eac": 0.6,
-            "var_46d14a19": 0.6,
+            "hash_8a7be802": "image#hash_377dbb06569f5ad5",
+            "hash_e4bc3a3b": "0.956863 0.482414 0.0705882 1",
+            "hash_791b2eac": 0.6,
+            "hash_46d14a19": 0.6,
             "category": "#calling_card",
-            "rarity": 0
+            "rarity": "enum:0",
+            "enabled": 0
         },
         {
-            "var_8a7be802": "#hash_7d0198034ede5480",
-            "var_e4bc3a3b": "0.87451 0.439399 0.0617227 1",
-            "var_791b2eac": 0.8,
-            "var_46d14a19": 0.8,
+            "hash_8a7be802": "image#ui_icon_obit_swatbuddy",
+            "hash_e4bc3a3b": "0.87451 0.439399 0.0617227 1",
+            "hash_791b2eac": 0.8,
+            "hash_46d14a19": 0.8,
             "category": "#all",
-            "rarity": 5,
+            "rarity": "enum:5",
             "enabled": 1
         },
         {
-            "var_8a7be802": "#hash_69af6b9dbcea3e5e",
-            "var_e4bc3a3b": "0.376471 0.364706 0.360784 1.0",
-            "var_791b2eac": 0.8,
-            "var_46d14a19": 0.8,
+            "hash_8a7be802": "image#ui_icon_mtx_weapon",
+            "hash_e4bc3a3b": "0.376471 0.364706 0.360784 1.0",
+            "hash_791b2eac": 0.8,
+            "hash_46d14a19": 0.8,
             "category": "#all",
-            "rarity": 0,
+            "rarity": "enum:0",
             "enabled": 1
         }
     ],

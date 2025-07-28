@@ -4,13 +4,16 @@
             "filters": "#multiplayer"
         }
     ],
-    "description": "#hash_7f679b864b845467",
-    "var_86b354f": 30,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Silver",
+    "description": "localized18#hash_7f679b864b845467",
+    "hash_86b354f": 30,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Silver",
     "type": "trophy",
-    "var_4a95afca": "#hash_7ea6a33ae89237b9",
-    "image": "#hash_58ce8368cbb76216",
+    "hash_4a95afca": "image#hash_7ea6a33ae89237b9",
+    "image": "image#hash_58ce8368cbb76216",
     "name": "mp_achievement_match_wins",
-    "title": "#hash_dcc60f6b5af415d"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_dcc60f6b5af415d",
+    "hash_621379a": 0
 }

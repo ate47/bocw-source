@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_powerburst_bp_bush_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_bp_bush_mtxitem",
             "itemid": "25573093"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_fcarbon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_fcarbon_mtxitem",
             "itemid": "26617111"
         },
         {
-            "var_4a4bc969": "#tr_precisionsemi_bp_reinforced_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_bp_reinforced_mtxitem",
             "itemid": "25710669"
         },
         {
-            "var_4a4bc969": "#tr_precisionsemi_speckled_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_speckled_mtxitem",
             "itemid": "31290180"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_resp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_resp_mtxitem",
             "itemid": "24425291"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_arvnr2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_arvnr2_mtxitem",
             "itemid": "18013978"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_smu_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_smu_mtxitem",
             "itemid": "27510272"
         },
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_fighter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_fighter_mtxitem",
             "itemid": "25366229"
         },
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_sovietops_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_sovietops_mtxitem",
             "itemid": "27750435"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_4329629423864274",
-    "var_375a1747": "#hash_4c986a9832688356",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_7509_vault_tac_rifle_pack",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_7509_vault_tac_rifle_pack_mtxbundle",
-    "var_a788fada": "#hash_bc5ce56188f4507",
-    "titlestring": "#hash_6b2794015281c8fe",
-    "var_566825be": "#hash_49b40e13e6cf90f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_7509_vault_tac_rifle_pack_small",
+    "titlestring": "localized18#hash_6b2794015281c8fe",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_7509_vault_tac_rifle_pack",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_ddfbadb399d99b2",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_ddfbadb399d99b2",
+    "hash_db3e02ab": 2000,
     "itemid": "28625022"
 }

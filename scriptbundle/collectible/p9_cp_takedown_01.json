@@ -1,0 +1,16 @@
+{
+    "description": "localized19#hash_b1ac650df204264",
+    "tagname": "mdl_cp_takedown_item_01",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_takedown_photo_arash_01",
+    "type": "collectible",
+    "name": "p9_cp_takedown_01",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_7c5079572657b974",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_5e1f8ec311ca5a66",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_takedown_photo_arash"
+}

@@ -1,0 +1,17 @@
+{
+    "hash_b5adab9c": 100,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_8833ab8f": 85,
+    "type": "scriptedcamerazoom",
+    "hash_c0a8a9c6": "gdt_spy_camera_zoom_stop",
+    "hash_691507ba": 6,
+    "hash_9cbc1120": "gdt_spy_camera_zoom_lp",
+    "hash_b4e0311b": 0.2,
+    "name": "ac130_scripted_camera_zoom",
+    "hash_8dd70933": 250,
+    "hash_11f00a95": 85,
+    "zoom_rate": 0.33,
+    "hash_b0ea9e6d": 2,
+    "hash_2afe6ba0": "gdt_spy_camera_zoom_start",
+    "hash_e99a5258": 20000
+}

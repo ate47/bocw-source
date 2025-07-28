@@ -1,15 +1,15 @@
 {
     "faction": [
         {
-            "var_d2446fa0": "#faction_mp"
+            "hash_d2446fa0": "scriptbundle#faction_mp"
         },
         {
-            "var_d2446fa0": "#faction_mp_bnd"
+            "hash_d2446fa0": "scriptbundle#faction_mp_bnd"
         },
         {
-            "var_d2446fa0": "#faction_mp_hva"
+            "hash_d2446fa0": "scriptbundle#faction_mp_hva"
         }
     ],
-    "var_49ab12c7": "#faction_codcaster",
+    "hash_49ab12c7": "scriptbundle#faction_codcaster",
     "name": "factions_mp_bnd_hva"
 }

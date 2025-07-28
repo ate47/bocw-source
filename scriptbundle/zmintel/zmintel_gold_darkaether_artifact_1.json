@@ -1,24 +1,29 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
-            "soundevent": "#hash_7a604f110b32858b"
+            "soundevent": "#hash_7a604f110b32858b",
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 0
         }
     ],
-    "description": "#hash_6d90c726586f032d",
-    "itemspawnentry": "#item_zmintel_gold_darkaether_artifact_1",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#main_quest",
-    "model": "#hash_42841f448127f000",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_5beb35ea656e0a2f",
+    "description": "localized19#hash_6d90c726586f032d",
+    "itemspawnentry": "scriptbundle#item_zmintel_gold_darkaether_artifact_1",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#main_quest",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_gold_aetherium_container",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#p9_zm_gold_aetherium_container_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#dark_aether",
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_6098b72d515f39d5",
     "name": "zmintel_gold_darkaether_artifact_1",
-    "var_9be0526e": "#artifact",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "title": "#hash_568ab340b440f83b",
+    "hash_9be0526e": "#artifact",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "title": "localized19#hash_568ab340b440f83b",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_gold"
 }

@@ -1,0 +1,27 @@
+{
+    "#hash_ded0efe5": [
+        {
+            "name": "t9_bot_cac_mp_hardened"
+        }
+    ],
+    "hash_65a25108": 1,
+    "hash_e0e4be1b": 0.66,
+    "hash_363a4bcd": 0.6,
+    "hash_ea800f8": 1,
+    "configstringfiletype": "scriptbundle",
+    "burstdelay": 0.7,
+    "allowsprint": 1,
+    "type": "botdifficulty",
+    "hash_d70788cb": 0.7,
+    "allowmelee": 1,
+    "hash_fa680c5e": 10,
+    "vmtype": "server",
+    "name": "t9_bot_difficulty_mp_hardened",
+    "allowprone": 0,
+    "shoottime": 0.5,
+    "hash_33be320f": 1,
+    "hash_d20ff29c": 60,
+    "hash_b489efb7": 0.4,
+    "allowslide": 0,
+    "allowcrouch": 0
+}

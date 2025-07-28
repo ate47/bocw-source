@@ -1,88 +1,92 @@
 {
     "tips": [
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_61e59dd0a2020ebe",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_61e59dd0a2020ebe",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1b5258b1060016e3",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1b5258b1060016e3",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_2a36cbefbd015085",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_2a36cbefbd015085",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_39163589cfd31e9b",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_39163589cfd31e9b",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_257b5c516334cf7e",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_257b5c516334cf7e",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_2314bae1f7a18942",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_2314bae1f7a18942",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6bbdd7383a50f37c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6bbdd7383a50f37c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_f74d9422263b46d",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_f74d9422263b46d",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_52d0e4b20f3092cb",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_52d0e4b20f3092cb",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_102b3825e32eeb98",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_102b3825e32eeb98",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_449c7c13101c6315",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_449c7c13101c6315",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_179f4bb6f67149b3",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_179f4bb6f67149b3",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_48f9fc58b0432149",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_48f9fc58b0432149",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 0,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_zombies_classic",
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#none"
+    "hash_e0d5cde7": 0,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#NONE",
+    "hash_b96cb18c": 0
 }

@@ -1,56 +1,59 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_7c2a239729c33e79"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_3011_mac_10_motherboard_01"
         },
         {
-            "var_fe10649e": "#hash_7c2a209729c33960"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_3011_mac_10_motherboard_02"
         },
         {
-            "var_fe10649e": "#hash_7c2a219729c33b13"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_3011_mac_10_motherboard_03"
         },
         {
-            "var_fe10649e": "#hash_7c2a269729c34392"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_3011_mac_10_motherboard_04"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#loot_smg_fastfire_bp_intercell_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_fastfire_bp_intercell_mtxitem",
             "itemid": "21629211"
         },
         {
-            "var_4a4bc969": "#sniper_powersemi_bp_intercell_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_powersemi_bp_intercell_mtxitem",
             "itemid": "26775665"
         },
         {
-            "var_4a4bc969": "#reticle_79_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_79_mtxitem",
             "itemid": "18469233"
         },
         {
-            "var_4a4bc969": "#emblems_celldivisionreactive_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_celldivisionreactive_animated_mtxitem",
             "itemid": "29574748"
         },
         {
-            "var_4a4bc969": "#callingcards_celldivisionreactive_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_celldivisionreactive_animated_mtxitem",
             "itemid": "31449180"
         },
         {
-            "var_4a4bc969": "#t9_charm_surgical_mask_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_surgical_mask_02_mtxitem",
             "itemid": "20267664"
         }
     ],
-    "itemname": "#hash_8d64ed59fb5781f",
-    "var_375a1747": "#hash_7c2a239729c33e79",
-    "var_3040f0d1": "#hash_7c2a239729c33e79",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 31,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3011_mac_10_motherboard",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3011_mac_10_motherboard_01",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_blueprint_bundle_3011_mac_10_motherboard_01",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 31,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3011_mac_10_motherboard_mtxbundle",
-    "var_a788fada": "#hash_7e1fe75bfac04000",
-    "titlestring": "#hash_1a744dbb1a38a634",
-    "var_566825be": "#hash_3e3273c4d984a3cc",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3011_mac_10_motherboard_small",
+    "titlestring": "localized18#hash_1a744dbb1a38a634",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3011_mac_10_motherboard",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_79b38d7c181b3e24",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_79b38d7c181b3e24",
+    "hash_db3e02ab": 750,
     "itemid": "20253120"
 }

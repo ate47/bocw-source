@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_396f64dd3410aad3",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_3c827660c16e9c80",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_plaque_attack",
+    "hash_9864ed1": 0,
+    "name": "plaque_attack_game",
+    "hash_6855e4be": "#plaque_attack_game_mtxitem",
+    "displayname": "localized18#hash_34c367a6f7b1a2f9",
+    "filename": "#hash_53e3f1c35ee53009",
+    "action": "localized18#hash_78972e113f5f0595",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_plaque_attack",
+    "hash_8b592b62": "image#hash_5bf935d464b277a4",
+    "hash_48152d43": 0
+}

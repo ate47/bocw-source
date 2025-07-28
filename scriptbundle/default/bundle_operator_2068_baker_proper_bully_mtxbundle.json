@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_ringleader_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_ringleader_mtxitem",
             "itemid": "27563843"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_bstreet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_bstreet_mtxitem",
             "itemid": "19789935"
         },
         {
-            "var_4a4bc969": "#callingcards_properbully_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_properbully_mtxitem",
             "itemid": "18620353"
         },
         {
-            "var_4a4bc969": "#reticle_70_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_70_mtxitem",
             "itemid": "19862059"
         }
     ],
-    "itemname": "#hash_5e762888d44dc757",
-    "var_375a1747": "#hash_ff8e01a43a2f2e5",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2068_baker_proper_bully",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2068_baker_proper_bully",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2068_baker_proper_bully_mtxbundle",
-    "var_a788fada": "#hash_1983c02abc2e13ea",
-    "titlestring": "#hash_c29bb17d31c70f1",
-    "var_566825be": "#hash_17a94235af026d76",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2068_baker_proper_bully_small",
+    "titlestring": "localized18#hash_c29bb17d31c70f1",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2068_baker_proper_bully",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_67a43bf56616b1f1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_67a43bf56616b1f1",
+    "hash_db3e02ab": 2000,
     "itemid": "29447778"
 }

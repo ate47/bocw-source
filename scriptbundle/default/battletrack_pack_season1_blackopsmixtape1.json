@@ -1,19 +1,19 @@
 {
-    "var_50c23eb3": [
+    "#hash_50c23eb3": [
         {
-            "track": "#battletrack_bo1_pentagon"
+            "track": "scriptbundle#battletrack_bo1_pentagon"
         },
         {
-            "track": "#battletrack_bo1_rooftops"
+            "track": "scriptbundle#battletrack_bo1_rooftops"
         },
         {
-            "track": "#battletrack_bo1_115"
+            "track": "scriptbundle#battletrack_bo1_115"
         },
         {
-            "track": "#battletrack_bo1_damned"
+            "track": "scriptbundle#battletrack_bo1_damned"
         }
     ],
     "name": "battletrack_pack_season1_blackopsmixtape1",
-    "var_6855e4be": "#battletrack_pack_season1_blackopsmixtape1_mtxitem",
-    "title": "#hash_56b79d59da1d5801"
+    "hash_6855e4be": "#battletrack_pack_season1_blackopsmixtape1_mtxitem",
+    "title": "localized18#hash_56b79d59da1d5801"
 }

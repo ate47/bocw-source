@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_adler_wire_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_adler_wire_mtxitem",
             "itemid": "29906613"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_hero_adler_mtxitem",
             "itemid": "31112941"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_blazer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_blazer_mtxitem",
             "itemid": "28853121"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_blazer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_blazer_mtxitem",
             "itemid": "23501403"
         },
         {
-            "var_4a4bc969": "#callingcards_ptfo_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ptfo_animated_mtxitem",
             "itemid": "25470435"
         },
         {
-            "var_4a4bc969": "#emblems_ptfo_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ptfo_animated_mtxitem",
             "itemid": "26865042"
         },
         {
-            "var_4a4bc969": "#emblems_ptfo_06_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ptfo_06_animated_mtxitem",
             "itemid": "31061116"
         },
         {
-            "var_4a4bc969": "#t9_charm_objective_marker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_objective_marker_mtxitem",
             "itemid": "29812528"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_ptfo_04_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_ptfo_04_mtxitem",
             "itemid": "19730914"
         }
     ],
-    "itemname": "#hash_62151f84c8232455",
-    "var_375a1747": "#hash_288fc702005f475f",
-    "var_579fd6c3": 53,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_fantasy_2053_russell_adler_ptfo",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_fantasy_2053_russell_adler_ptfo",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 53,
+    "hash_99071a5f": 0,
     "name": "bundle_fantasy_2053_russell_adler_ptfo_mtxbundle",
-    "var_a788fada": "#hash_12cf6f02b8a9af62",
-    "titlestring": "#hash_2816b08501d63e8b",
-    "var_566825be": "#hash_29961ba14fdf5cca",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_12cf6f02b8a9af62",
+    "titlestring": "localized18#hash_2816b08501d63e8b",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_fantasy_2053_russell_adler_ptfo",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7ebf39ab144cdd0f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7ebf39ab144cdd0f",
+    "hash_db3e02ab": 2000,
     "itemid": "29081617"
 }

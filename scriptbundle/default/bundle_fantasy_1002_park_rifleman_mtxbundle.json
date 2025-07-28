@@ -1,46 +1,51 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#e0po_c_t9_uk_pl_mi6_handler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#e0po_c_t9_uk_pl_mi6_handler_mtxitem",
             "itemid": "26432999"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#ar_standard_bp_rifleer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_standard_bp_rifleer_mtxitem",
             "itemid": "26001662"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_rifleer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_rifleer_mtxitem",
             "itemid": "20077334"
         },
         {
-            "var_4a4bc969": "#callingcards_riflier_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_riflier_mtxitem",
             "itemid": "32349149"
         },
         {
-            "var_4a4bc969": "#emblems_riflier_flipbook_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_riflier_flipbook_mtxitem",
             "itemid": "29517946"
         },
         {
-            "var_4a4bc969": "#t9_charm_bullet_556_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bullet_556_mtxitem",
             "itemid": "32058871"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_riflier_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_riflier_mtxitem",
             "itemid": "18752004"
         }
     ],
-    "itemname": "#hash_14b5b5b493750816",
-    "var_375a1747": "#hash_1445348ebbc472a0",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_fantasy_1002_park_rifleman",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_fantasy_1002_park_rifleman",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_fantasy_1002_park_rifleman_mtxbundle",
-    "titlestring": "#hash_7796d4999b01416e",
-    "var_566825be": "#hash_137f92aa5b31698f",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_7796d4999b01416e",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_fantasy_1002_park_rifleman",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_20ed79ca7ad95e2",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_20ed79ca7ad95e2",
+    "hash_db3e02ab": 2000,
     "itemid": "29923557"
 }

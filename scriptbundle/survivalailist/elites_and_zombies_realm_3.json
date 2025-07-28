@@ -1,0 +1,18 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&inf_elites",
+            "hash_a949845f": 1,
+            "hash_857deb66": 10000
+        },
+        {
+            "entryname": "scriptbundle&default_zombies_realm_3",
+            "hash_a949845f": 6,
+            "hash_857deb66": 1
+        }
+    ],
+    "hash_d961aeb3": 0.2,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "elites_and_zombies_realm_3"
+}

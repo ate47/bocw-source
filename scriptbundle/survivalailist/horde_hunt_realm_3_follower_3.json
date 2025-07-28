@@ -1,13 +1,13 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_steiner_hvt",
-            "var_a949845f": 1,
-            "var_857deb66": 100
+            "entryname": "scriptbundle&survival_ai_steiner_hvt",
+            "hash_a949845f": 1,
+            "hash_857deb66": 100
         }
     ],
-    "var_d961aeb3": 0.5,
-    "var_922067c4": "scriptbundle",
+    "hash_d961aeb3": 0.5,
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "horde_hunt_realm_3_follower_3"
 }

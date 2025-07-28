@@ -1,8 +1,8 @@
 {
-    "description": "#hash_4818a388961dc865",
+    "description": "localized18#hash_4818a388961dc865",
     "widget": "#badasserymedal",
     "name": "medal_kill_steiner_caught_with_ieu_zm",
-    "iconsmall": "#hash_1dc6d00516d2c36a",
-    "var_8645ce54": "#hash_278621dd37293c73",
-    "iconlarge": "#hash_b453a3aab43018a"
+    "iconsmall": "image#ui_icon_medal_zm_easy_target",
+    "stringref": "localized18#hash_278621dd37293c73",
+    "iconlarge": "image#ui_icon_medal_zm_easy_target_large"
 }

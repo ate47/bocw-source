@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_57288931b650cd71",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_57288931b650cd71",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_22800692a4a50378",
-    "image": "#hash_733059294cefba2",
+    "hash_4a95afca": "image#hash_22800692a4a50378",
+    "image": "image#hash_733059294cefba2",
     "name": "cp_achievement_firing_range",
-    "title": "#hash_264d98f2f078b0df"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_264d98f2f078b0df",
+    "hash_621379a": 0
 }

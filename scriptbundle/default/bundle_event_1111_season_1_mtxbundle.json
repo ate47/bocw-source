@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_powersemi_bp_frostbite_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_powersemi_bp_frostbite_mtxitem",
             "itemid": "26981677"
         },
         {
-            "var_4a4bc969": "#callingcards_christmas2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_christmas2_mtxitem",
             "itemid": "31564136"
         },
         {
-            "var_4a4bc969": "#t9_charm_snowman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_snowman_mtxitem",
             "itemid": "31976010"
         },
         {
-            "var_4a4bc969": "#t9_charm_gold_bell_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_gold_bell_mtxitem",
             "itemid": "23778164"
         },
         {
-            "var_4a4bc969": "#emblems_firstdayofwinter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_firstdayofwinter_mtxitem",
             "itemid": "20162825"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_378bb2af2c32ccf9",
-    "var_375a1747": "#hash_4aa27ceefa0f4bfb",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_event_1111_season_1",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_event_1111_season_1_mtxbundle",
-    "titlestring": "#hash_fbb8c82f3e4f09",
-    "var_566825be": "#hash_57bc937ba012706a",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_fbb8c82f3e4f09",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_event_1111_season_1",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3f1fda09a5433b09",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3f1fda09a5433b09",
+    "hash_db3e02ab": 2000,
     "itemid": "22950569"
 }

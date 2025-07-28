@@ -1,10 +1,11 @@
 {
     "achievementname": "t9_activate_battlepass_xp_token_epic",
     "name": "battlepass_xp_token_epic",
-    "var_6855e4be": "#battlepass_xp_token_epic_mtxitem",
-    "title": "#hash_1a35b3c76cbc88e2",
-    "category": "#hash_1c5d758624c9b051",
-    "icon": "#hash_49521a979195c7b2",
-    "subtitle": "#hash_3a5b9e15a45132e1",
-    "rarity": 3
+    "hash_6855e4be": "#battlepass_xp_token_epic_mtxitem",
+    "title": "localized18#hash_1a35b3c76cbc88e2",
+    "category": "#battle_pass",
+    "icon": "image#ui_icon_2xpbp_epic_large",
+    "subtitle": "localized18#hash_3a5b9e15a45132e1",
+    "hash_66251d82": 0,
+    "rarity": "enum:3"
 }

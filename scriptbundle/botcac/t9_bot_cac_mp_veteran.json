@@ -1,0 +1,207 @@
+{
+    "secondaryweapons": [
+        {
+            "name": "launcher_standard_t9"
+        },
+        {
+            "name": "pistol_burst_t9"
+        },
+        {
+            "name": "pistol_revolver_t9"
+        },
+        {
+            "name": "pistol_semiauto_t9"
+        },
+        {
+            "name": "shotgun_pump_t9"
+        },
+        {
+            "name": "shotgun_semiauto_t9"
+        }
+    ],
+    "primaryweapons": [
+        {
+            "name": "ar_accurate_t9"
+        },
+        {
+            "name": "ar_damage_t9"
+        },
+        {
+            "name": "ar_fastfire_t9"
+        },
+        {
+            "name": "ar_mobility_t9"
+        },
+        {
+            "name": "ar_standard_t9"
+        },
+        {
+            "name": "lmg_accurate_t9"
+        },
+        {
+            "name": "lmg_light_t9"
+        },
+        {
+            "name": "lmg_slowfire_t9"
+        },
+        {
+            "name": "smg_burst_t9"
+        },
+        {
+            "name": "smg_capacity_t9"
+        },
+        {
+            "name": "smg_handling_t9"
+        },
+        {
+            "name": "smg_heavy_t9"
+        },
+        {
+            "name": "smg_standard_t9"
+        },
+        {
+            "name": "sniper_powersemi_t9"
+        },
+        {
+            "name": "sniper_quickscope_t9"
+        },
+        {
+            "name": "sniper_standard_t9"
+        },
+        {
+            "name": "tr_damagesemi_t9"
+        },
+        {
+            "name": "tr_longburst_t9"
+        },
+        {
+            "name": "tr_powerburst_t9"
+        },
+        {
+            "name": "tr_precisionsemi_t9"
+        }
+    ],
+    "#hash_137939d4": [
+        {
+            "name": "gadget_jammer"
+        },
+        {
+            "name": "gadget_supplypod"
+        },
+        {
+            "name": "tear_gas"
+        },
+        {
+            "name": "trophy_system"
+        },
+        {
+            "name": "missile_turret"
+        },
+        {}
+    ],
+    "#hash_414c7d4d": [
+        {
+            "name": "frag_grenade"
+        },
+        {
+            "name": "eq_molotov"
+        },
+        {
+            "name": "eq_sticky_grenade"
+        },
+        {
+            "name": "hatchet"
+        }
+    ],
+    "#hash_6a79474d": [
+        {
+            "name": "eq_flash_grenade"
+        },
+        {
+            "name": "eq_slow_grenade"
+        },
+        {
+            "name": "eq_stimshot"
+        }
+    ],
+    "killstreaks": [
+        {
+            "name": "uav"
+        },
+        {
+            "name": "remote_missile"
+        },
+        {
+            "name": "counteruav"
+        },
+        {
+            "name": "planemortar"
+        },
+        {
+            "name": "napalm_strike"
+        },
+        {
+            "name": "weapon_armor"
+        },
+        {
+            "name": "recon_plane"
+        },
+        {
+            "name": "straferun"
+        },
+        {
+            "name": "helicopter_comlink"
+        },
+        {
+            "name": "jetfighter"
+        },
+        {
+            "name": "sig_lmg"
+        },
+        {
+            "name": "hero_annihilator"
+        },
+        {
+            "name": "hero_pineapplegun"
+        },
+        {
+            "name": "sig_bow_flame"
+        }
+    ],
+    "#hash_378cddbe": [
+        {
+            "name": "talent_resistance"
+        },
+        {
+            "name": "talent_flakjacket"
+        },
+        {},
+        {}
+    ],
+    "#hash_455c795d": [
+        {
+            "name": "talent_logistics"
+        },
+        {
+            "name": "talent_quartermaster"
+        },
+        {},
+        {}
+    ],
+    "#hash_4c2986fb": [
+        {
+            "name": "talent_ghost"
+        },
+        {
+            "name": "talent_gungho"
+        },
+        {},
+        {}
+    ],
+    "secondaryattachments": "acog barrel barrel2 compensator compensator2 custom1 dualoptic elo elo2 elo3 extclip extclip2 fastreload fastreload2 grip grip2 handle handle2 heavy heavy2 holo light light2 mixbarrel mixbarrel2 mixbody mixbody2 mixclip mixclip2 mixhandle mixhandle2 mixmuzzle mixmuzzle2 mixstock mixstock2 mixunder mixunder2 quickdraw quickdraw2 reddot reflex reflex2 reflex3 reflex4 speedgrip speedgrip2 sprintout sprintout2 stalker stalker2 steadyaim steadyaim2 suppressed suppressed2 ",
+    "configstringfiletype": "scriptbundle",
+    "type": "botcac",
+    "vmtype": "server",
+    "name": "t9_bot_cac_mp_veteran",
+    "primaryattachments": "acog barrel barrel2 compensator compensator2 custom1 dualoptic elo elo2 elo3 extclip extclip2 fastreload fastreload2 grip grip2 handle handle2 heavy heavy2 holo light light2 mixbarrel mixbarrel2 mixbody mixbody2 mixclip mixclip2 mixhandle mixhandle2 mixmuzzle mixmuzzle2 mixstock mixstock2 mixunder mixunder2 quickdraw quickdraw2 reddot reflex reflex2 reflex3 reflex4 speedgrip speedgrip2 sprintout sprintout2 stalker stalker2 steadyaim steadyaim2 suppressed suppressed2 "
+}

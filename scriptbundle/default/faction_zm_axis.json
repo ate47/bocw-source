@@ -1,8 +1,8 @@
 {
-    "displaynameshort": "#hash_38223f843a2c25cc",
+    "displaynameshort": "localized18#hash_38223f843a2c25cc",
     "name": "faction_zm_axis",
-    "displayname": "#hash_38223f843a2c25cc",
-    "icon": "#hash_42852911f5a00447",
-    "var_42185d9b": "White",
+    "displayname": "localized18#hash_38223f843a2c25cc",
+    "icon": "image#hash_42852911f5a00447",
+    "hash_42185d9b": "White",
     "color": "EnemyOrange"
 }

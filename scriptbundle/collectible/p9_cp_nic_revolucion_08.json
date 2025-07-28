@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_4b5d628fc64d46e7",
+    "tagname": "mdl_cp_nic_revolucion_item_08",
+    "UnlockMap": "cp_rus_kgb",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_perseus_floppy_disk_01",
+    "type": "collectible",
+    "name": "p9_cp_nic_revolucion_08",
+    "UnlockType": 2,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_3e8f012b59103b43",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_4412de500f8d975f",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#hash_4fd453bb6765a8b8"
+}

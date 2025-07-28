@@ -1,11 +1,11 @@
 {
-    "displaynameshort": "#hash_7ea8aa66549c1c2b",
-    "var_306f8f14": "#superfaction_nato",
+    "displaynameshort": "localized18#hash_7ea8aa66549c1c2b",
+    "superfaction": "scriptbundle#superfaction_nato",
     "name": "faction_mp_bnd",
-    "displayname": "#hash_298226c3193fe756",
-    "icon": "#hash_f2518c965feed08",
-    "iconsmall": "#hash_5a55cb2eec4e8d7c",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "blops_commander_bnd",
+    "displayname": "localized18#hash_298226c3193fe756",
+    "icon": "image#ui_icon_factions_bnd",
+    "iconsmall": "image#ui_icon_factions_bnd_small",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&blops_commander_bnd",
     "color": "FriendlyBlue"
 }

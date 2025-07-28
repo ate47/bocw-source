@@ -63,6 +63,6 @@ version hash_771118076be96b70 {
     // offset: 0x1b8, bitSize: 0x6e00(0xdc0 Byte(s)), array:0x20(hti:0xffff)
     playerdata player[32];
     // offset: 0x6fb8, bitSize: 0x8(0x1 Byte(s))
-    uint:5 hash_20f6a5a2a3e21a16;
+    uint:5 roundstied;
 };
 

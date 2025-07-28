@@ -1,8 +1,8 @@
 {
-    "description": "#hash_4584557d45de0e9f",
+    "description": "localized18#hash_4584557d45de0e9f",
     "widget": "#badasserymedal",
     "name": "medal_crbrs_variants_multikill_zm",
-    "iconsmall": "#hash_af55f364a91f692",
-    "var_8645ce54": "#hash_4839637f208af4b5",
-    "iconlarge": "#hash_5594f2f8501a5fd2"
+    "iconsmall": "image#hash_af55f364a91f692",
+    "stringref": "localized18#hash_4839637f208af4b5",
+    "iconlarge": "image#hash_5594f2f8501a5fd2"
 }

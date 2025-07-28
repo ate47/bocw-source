@@ -1,14 +1,19 @@
 {
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value1": "0",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "reboot_players",
-    "displayname": "#hash_7e3df9b665464b2f",
-    "var_9600a8ab": "#menu/auto",
-    "var_bd2ff709": "#hash_34a189e3711dc6e9",
-    "var_9de86f42": 2,
-    "var_4c593dfd": "#hash_475fe078c6f8dff7",
-    "var_35fb1141": "#hash_4eaa3053ce374044",
-    "setting": "rebootPlayers"
+    "displayname": "localized18#hash_7e3df9b665464b2f",
+    "label1": "localized18#menu/auto",
+    "label2": "localized18#menu/interactive",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hinttext2": "localized18#hash_475fe078c6f8dff7",
+    "hinttext1": "localized18#hash_4eaa3053ce374044",
+    "hash_765cfd09": 0,
+    "setting": "rebootPlayers",
+    "isenableddisabled": 0
 }

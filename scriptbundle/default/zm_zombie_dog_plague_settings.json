@@ -1,54 +1,55 @@
 {
-    "var_15c336d1": [
+    "#hash_15c336d1": [
         {
             "start_round": 1,
-            "var_928e93a0": 25
+            "hash_928e93a0": 25
         },
         {
             "start_round": 11,
-            "var_928e93a0": 50
+            "hash_928e93a0": 50
         },
         {
             "start_round": 16,
-            "var_928e93a0": 100
+            "hash_928e93a0": 100
         },
         {
             "start_round": 21,
-            "var_928e93a0": 275
+            "hash_928e93a0": 275
         },
         {
             "start_round": 26,
-            "var_928e93a0": 600
+            "hash_928e93a0": 600
         },
         {
             "start_round": 31,
-            "var_928e93a0": 750
+            "hash_928e93a0": 750
         },
         {
             "start_round": 36,
-            "var_928e93a0": 450
+            "hash_928e93a0": 450
         }
     ],
-    "var_349be1e8": [
+    "#hash_349be1e8": [
         {
             "type": "#fire",
             "weakness": 1
         }
     ],
-    "var_604a84a1": 1,
-    "var_10460f1e": 1,
+    "hash_604a84a1": 1,
+    "hash_10460f1e": 1,
     "scoreevent": "#hash_20b3941538a2ee2e",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "maxhealth": 12000,
-    "var_a3160086": 200,
-    "var_7b22b800": 1,
-    "var_fc420d71": 1,
+    "hash_a3160086": 200,
+    "hash_7b22b800": 1,
+    "instakilldamagescale": 1,
     "name": "zm_zombie_dog_plague_settings",
-    "var_628192b0": 1,
-    "var_97b22faa": 1,
+    "weakpointdamagescale": 1,
+    "hash_97b22faa": 1,
     "damagescale": 1,
     "category": "#normal",
+    "hash_854eebd": 0,
     "stunduration": 5,
-    "var_dc706c6c": "#hash_154a6442ed71f351",
-    "var_450edb3b": 1
+    "hash_dc706c6c": "#hash_154a6442ed71f351",
+    "animationspeed": 1
 }

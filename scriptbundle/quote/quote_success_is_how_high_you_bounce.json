@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_success_is_how_high_you_bounce",
-    "quote": "#hash_34b306bfccd58db3",
-    "author": "#hash_634634cfd78bd43d"
+    "quote": "localized18#hash_34b306bfccd58db3",
+    "author": "localized18#hash_634634cfd78bd43d"
 }

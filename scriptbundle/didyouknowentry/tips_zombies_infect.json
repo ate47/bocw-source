@@ -1,58 +1,62 @@
 {
     "tips": [
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_198a8e6004f7560a",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_198a8e6004f7560a",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6450a8b2338ab954",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6450a8b2338ab954",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4588cd5412655c2f",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4588cd5412655c2f",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_3ab83bf46215233e",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_3ab83bf46215233e",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_115ac61372657f06",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_115ac61372657f06",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_22c7e90c780c7a2f",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_22c7e90c780c7a2f",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_73f560be73755131",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_73f560be73755131",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6e77843312d6cbad",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6e77843312d6cbad",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 0,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_zombies_infect",
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#none"
+    "hash_e0d5cde7": 0,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#NONE",
+    "hash_b96cb18c": 0
 }

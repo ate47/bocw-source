@@ -1,32 +1,32 @@
 {
-    "var_c6169187": [
+    "#hash_c6169187": [
         {
-            "var_f8641e3": "#s4_beatrice_c_s4_mp_fra_beatrice_15_mtxitem"
+            "hash_f8641e3": "#s4_beatrice_c_s4_mp_fra_beatrice_15_mtxitem"
         }
     ],
-    "var_5393a4bb": "#hash_11b38f56ee2c474c",
-    "var_5a7ab7ae": "#hash_57daa8ed61ad656d",
-    "var_99594ca4": "#hash_11b38f56ee2c474c",
-    "var_35ad2f6d": "#hash_79061705c73dd2ba",
-    "var_8322c847": "#hash_196a1783379a5f4",
-    "var_b24ffe02": "#hash_527179e0eadfbf8f",
-    "var_9e8da4c6": "#hash_1929174fb0ccedcf",
-    "var_97f0d3bb": "#hash_602bb4e35d4f9702",
-    "var_e4771b8b": "mtx_global_purchase_confirmed",
+    "hash_5393a4bb": "localized18#hash_11b38f56ee2c474c",
+    "hash_5a7ab7ae": "localized18#hash_57daa8ed61ad656d",
+    "hash_99594ca4": "localized18#hash_11b38f56ee2c474c",
+    "hash_35ad2f6d": "image#hash_79061705c73dd2ba",
+    "hash_8322c847": "image#hash_196a1783379a5f4",
+    "hash_b24ffe02": "image#hash_527179e0eadfbf8f",
+    "hash_9e8da4c6": "image#hash_1929174fb0ccedcf",
+    "hash_97f0d3bb": "localized18#hash_602bb4e35d4f9702",
+    "hash_e4771b8b": "mtx_global_purchase_confirmed",
     "name": "mtx_battle_pass_data_season_9",
-    "var_42c48b92": "#hash_60c2d546e05a19e5",
-    "var_21e49ac6": "mtx_global_battlepass_purchase_S9",
-    "var_1496e997": "#hash_584ded3575489a0b",
-    "var_6e830db8": "#hash_3d4b3bccc3257566",
-    "seasonname": "#hash_17dd6c35229684b",
-    "var_261476a2": "#hash_79061705c73dd2ba",
-    "var_d580508b": "#hash_5fae04d49e3af7ec",
-    "var_e4ec2ee1": "#hash_79061705c73dd2ba",
-    "var_419b5c0b": "#hash_11b38f56ee2c474c",
-    "var_1a8f344c": "#s4_battle_pass_season_9_premium_mtxbundle",
-    "var_e0d52f49": "#hash_69e7d09c453fb9ae",
-    "var_22155959": "mtx_global_tier_purchase_S9",
-    "var_a7d281c0": "#hash_5e858a725f4440ec",
-    "var_6d7e036e": "#hash_4236754aceef9cd5",
-    "var_a43221e0": "#hash_11b38f56ee2c474c"
+    "hash_42c48b92": "image#hash_60c2d546e05a19e5",
+    "hash_21e49ac6": "mtx_global_battlepass_purchase_S9",
+    "hash_1496e997": "image#v_ui_preview_battlepass_bundle_topper",
+    "hash_6e830db8": "localized18#hash_3d4b3bccc3257566",
+    "seasonname": "localized18#hash_17dd6c35229684b",
+    "hash_261476a2": "image#hash_79061705c73dd2ba",
+    "hash_d580508b": "image#hash_5fae04d49e3af7ec",
+    "hash_e4ec2ee1": "image#hash_79061705c73dd2ba",
+    "hash_419b5c0b": "localized18#hash_11b38f56ee2c474c",
+    "hash_1a8f344c": "#s4_battle_pass_season_9_premium_mtxbundle",
+    "hash_e0d52f49": "localized18#hash_69e7d09c453fb9ae",
+    "hash_22155959": "mtx_global_tier_purchase_S9",
+    "hash_a7d281c0": "image#hash_5e858a725f4440ec",
+    "hash_6d7e036e": "localized18#hash_4236754aceef9cd5",
+    "hash_a43221e0": "localized18#hash_11b38f56ee2c474c"
 }

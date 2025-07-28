@@ -1,10 +1,11 @@
 {
-    "var_9fc71d24": "#hash_28be048d12a7030f",
-    "description": "#hash_7764207b76a170ab",
+    "hash_9fc71d24": "model#hash_28be048d12a7030f",
+    "description": "localized18#hash_7764207b76a170ab",
     "image": "ui_icon_wrist_accessories_bracelet_mardi_gras_tile",
+    "hash_9b474412": 0,
     "name": "wristaccessory_t9_s2_bracelet_mardi_gras",
-    "var_6855e4be": "#wristaccessory_t9_s2_bracelet_mardi_gras_mtxitem",
-    "displayname": "#hash_1101d7776dc10e91",
-    "var_8d478ea4": "#hash_32ef9732bb7f531f",
-    "var_d27eb4c6": "#hash_6b9720893f0f3332"
+    "hash_6855e4be": "#wristaccessory_t9_s2_bracelet_mardi_gras_mtxitem",
+    "displayname": "localized18#hash_1101d7776dc10e91",
+    "hash_8d478ea4": "model#wrist_watch_t9_s2_bracelet_mardi_gras_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s2_bracelet_mardi_gras_world"
 }

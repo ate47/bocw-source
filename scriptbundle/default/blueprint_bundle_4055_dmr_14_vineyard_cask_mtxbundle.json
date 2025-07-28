@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_precisionsemi_bp_excellence_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_bp_excellence_mtxitem",
             "itemid": "26248436"
         },
         {
-            "var_4a4bc969": "#t9_charm_tanner_hat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_tanner_hat_mtxitem",
             "itemid": "24891710"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_109_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_109_mtxitem",
             "itemid": "31944034"
         }
     ],
-    "itemname": "#hash_487ab161a566a70c",
-    "var_375a1747": "#hash_11c20201632dcfb6",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4055_dmr_14_vineyard_cask",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4055_dmr_14_vineyard_cask",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4055_dmr_14_vineyard_cask_mtxbundle",
-    "var_a788fada": "#hash_7f7a58d7cb70fdb",
-    "titlestring": "#hash_47cd7e82803c5afb",
-    "var_566825be": "#hash_18cadaff2b254ec3",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4055_dmr_14_vineyard_cask_small",
+    "titlestring": "localized18#hash_47cd7e82803c5afb",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4055_dmr_14_vineyard_cask",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7695d688a15096bf",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7695d688a15096bf",
+    "hash_db3e02ab": 2000,
     "itemid": "29893006"
 }

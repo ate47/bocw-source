@@ -1,10 +1,10 @@
 {
-    "description": "#hash_7d9fa272f5a9104d",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_7d9fa272f5a9104d",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_rcxd_killjoy",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_6c525e5eeea170a0",
-    "var_8645ce54": "#hash_46f96928c6c8839b",
-    "iconlarge": "#hash_3d327be42c731bdc"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_road_rage",
+    "stringref": "localized18#medal/rcxd_killjoy",
+    "iconlarge": "image#ui_icon_medal_road_rage_large"
 }

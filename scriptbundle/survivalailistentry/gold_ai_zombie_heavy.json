@@ -1,0 +1,10 @@
+{
+    "#hash_5fa96b51": [
+        {
+            "hash_1b48d0fc": "#spawner_bo5_zombie_zm_gold_armor_heavy"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailistentry",
+    "name": "gold_ai_zombie_heavy"
+}

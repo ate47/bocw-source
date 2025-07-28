@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_fastfire_bp_lochness_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_fastfire_bp_lochness_mtxitem",
             "itemid": "28374903"
         },
         {
-            "var_4a4bc969": "#ar_mobility_bp_lochness_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_lochness_mtxitem",
             "itemid": "23479612"
         },
         {
-            "var_4a4bc969": "#t9_charm_sasquatch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sasquatch_mtxitem",
             "itemid": "18730507"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_assembly_mpx_murky_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_tactical_raft_assembly_mpx_murky_mtxitem",
             "itemid": "22412071"
         },
         {
-            "var_4a4bc969": "#emblems_batutut_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_batutut_s5_mtxitem",
             "itemid": "31181996"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_fly_fishing_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_fly_fishing_s5_mtxitem",
             "itemid": "24357489"
         }
     ],
-    "itemname": "#hash_e7c9fb927ff176e",
-    "var_375a1747": "#hash_6996257ffa6700d4",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5048_ameli_lake_side",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5048_ameli_lake_side",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5048_ameli_lake_side_mtxbundle",
-    "var_a788fada": "#hash_267fbabfcd8b750f",
-    "titlestring": "#hash_560a73cbe64a57b8",
-    "var_566825be": "#hash_1c6b8abe3eaa20d7",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5048_ameli_lake_side_small",
+    "titlestring": "localized18#hash_560a73cbe64a57b8",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5048_ameli_lake_side",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6348f604ee65f80",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6348f604ee65f80",
+    "hash_db3e02ab": 2000,
     "itemid": "30314353"
 }

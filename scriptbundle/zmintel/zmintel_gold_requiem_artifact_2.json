@@ -1,24 +1,29 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
-            "soundevent": "#hash_7a604f110b32858b"
+            "soundevent": "#hash_7a604f110b32858b",
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 0
         }
     ],
-    "description": "#hash_632d9760a33c5bdb",
-    "itemspawnentry": "#item_zmintel_gold_requiem_artifact_2",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#ww_quest",
-    "model": "#hash_4c74d3b31f671c7e",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_50ae6be2ef1d2cdd",
+    "description": "localized19#hash_632d9760a33c5bdb",
+    "itemspawnentry": "scriptbundle#item_zmintel_gold_requiem_artifact_2",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#ww_quest",
+    "hash_4138e7ed": 0,
+    "model": "model#hash_4c74d3b31f671c7e",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#hash_50ae6be2ef1d2cdd",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "hash_ad4ad686": "#requiem",
     "soundloop": "#hash_6098b72d515f39d5",
     "name": "zmintel_gold_requiem_artifact_2",
-    "var_9be0526e": "#artifact",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "title": "#hash_debd99c9050f1a1",
+    "hash_9be0526e": "#artifact",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "title": "localized19#hash_debd99c9050f1a1",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_gold"
 }

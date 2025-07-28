@@ -1,50 +1,60 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_uk_pl_mi6_skyhook_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_mi6_skyhook_sy_mtxitem",
             "itemid": "18223423"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_ghillie_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_ghillie_sy_mtxitem",
             "itemid": "25260636"
         },
         {
-            "var_4a4bc969": "#melee_sledgehammer_bp_predator_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_sledgehammer_bp_predator_sy_mtxitem",
             "itemid": "32607572"
         },
         {
-            "var_4a4bc969": "#t9_charm_listening_device_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_listening_device_sy_mtxitem",
             "itemid": "27034076"
         },
         {
-            "var_4a4bc969": "#callingcards_sonybundle_s4_sheet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_sonybundle_s4_sheet_mtxitem",
             "itemid": "30319901"
         },
         {
-            "var_4a4bc969": "#emblems_pspluss4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_pspluss4_mtxitem",
             "itemid": "18620750"
         },
         {
-            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_legendary_mtxitem",
             "itemid": "32109261"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#sony_psplus_season_04",
-    "var_247d9ed7": "sony_psplus_season_04",
-    "var_208d76b5": "#hash_43ddece245017939",
-    "var_70f66e54": "#hash_224ce1cba368a94e",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "sony_psplus_season_04",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_sony_psplus_season_04",
+    "hash_70f66e54": "#hash_224ce1cba368a94e",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "sony_psplus_season_04_mtxentitlement",
-    "var_a788fada": "#hash_6d141835ac21c00e",
-    "titlestring": "#hash_65b3315d06945846",
-    "var_566825be": "#hash_6d055432e19e0cfa",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_sony_psplus_season_04_small",
+    "titlestring": "localized18#hash_65b3315d06945846",
+    "hash_566825be": "image#ui_icon_mtx_titles_sony_psplus_season_04",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#orbis",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#orbis",
     "itemid": "18340020",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

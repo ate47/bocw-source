@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#special_nailgun_bp_naildome_mtxitem",
+            "hash_4a4bc969": "scriptbundle#special_nailgun_bp_naildome_mtxitem",
             "itemid": "20575560"
         },
         {
-            "var_4a4bc969": "#execution_059_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_059_mtxitem",
             "itemid": "19003658"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_cigar_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_cigar_mtxitem",
             "itemid": "23546429"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_analog_horror_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_analog_horror_mtxitem",
             "itemid": "29257277"
         },
         {
-            "var_4a4bc969": "#emblems_nail_gun_final_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_nail_gun_final_mtxitem",
             "itemid": "22258859"
         },
         {
-            "var_4a4bc969": "#callingcards_nail_gun_final_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_nail_gun_final_mtxitem",
             "itemid": "32672483"
         }
     ],
-    "itemname": "#hash_5b27469416ba3ae9",
-    "var_375a1747": "#hash_2d485e9e9137c703",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4005_nail_gun_melee_two",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4005_nail_gun_melee_two",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4005_nail_gun_melee_two_mtxbundle",
-    "var_a788fada": "#hash_410bff73ffd74086",
-    "titlestring": "#hash_79275004b28f4d5e",
-    "var_566825be": "#hash_524141a355b30fd2",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4005_nail_gun_melee_two_small",
+    "titlestring": "localized18#hash_79275004b28f4d5e",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4005_nail_gun_melee_two",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_39cd4dad4d10e12",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_39cd4dad4d10e12",
+    "hash_db3e02ab": 2000,
     "itemid": "32635055"
 }

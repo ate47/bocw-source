@@ -1,0 +1,17 @@
+{
+    "description": "localized19#hash_70c25f0a27b019ca",
+    "tagname": "mdl_cp_takedown_item_07",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_takedown_strategy_sketch_01",
+    "type": "collectible",
+    "name": "p9_cp_takedown_07",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_47f5b074d4918ab6",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_5515337276a6aa44",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "hash_3935a020": "ss",
+    "thumbnail": "image#evidenceboard_review_takedown_back_alley"
+}

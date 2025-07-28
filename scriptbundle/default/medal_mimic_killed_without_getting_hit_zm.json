@@ -1,8 +1,8 @@
 {
-    "description": "#hash_5736a9100ba0bd49",
+    "description": "localized18#hash_5736a9100ba0bd49",
     "widget": "#badasserymedal",
     "name": "medal_mimic_killed_without_getting_hit_zm",
-    "iconsmall": "#hash_27cbfe25745398d",
-    "var_8645ce54": "#hash_29bdf309b1de8857",
-    "iconlarge": "#hash_2a9602205adcf911"
+    "iconsmall": "image#ui_icon_medal_zm_canttouchthis",
+    "stringref": "localized18#hash_29bdf309b1de8857",
+    "iconlarge": "image#ui_icon_medal_zm_canttouchthis_large"
 }

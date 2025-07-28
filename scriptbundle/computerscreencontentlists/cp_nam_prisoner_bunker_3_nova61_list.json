@@ -1,0 +1,35 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_52d56b4295b10327",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 0,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 1
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 0,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_67d92ba65be5770a",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 0,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "computerscreencontentlists",
+    "name": "cp_nam_prisoner_bunker_3_nova61_list"
+}

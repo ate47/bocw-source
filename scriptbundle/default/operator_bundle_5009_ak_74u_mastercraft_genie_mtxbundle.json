@@ -1,56 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_heavy_bp_arabian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_arabian_mtxitem",
             "itemid": "25997098"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_arabian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_arabian_mtxitem",
             "itemid": "26322992"
         },
         {
-            "var_4a4bc969": "#c_t9_rus_pl_stitch_torn_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_stitch_torn_mtxitem",
             "itemid": "31025101"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_stitch_mtxitem",
             "itemid": "30156871"
         },
         {
-            "var_4a4bc969": "#t9_charm_genie_bottle_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_genie_bottle_mtxitem",
             "itemid": "21532026"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s5_digital_arabian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s5_digital_arabian_mtxitem",
             "itemid": "31919269"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_truck_transport_player_assembly_mpx_arabian_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_truck_transport_player_assembly_mpx_arabian_mtxitem",
             "itemid": "18894248"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_abra_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_abra_mtxitem",
             "itemid": "32633138"
         },
         {
-            "var_4a4bc969": "#emblems_genie_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_genie_s5_animated_mtxitem",
             "itemid": "30071446"
         },
         {
-            "var_4a4bc969": "#callingcards_genie_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_genie_s5_animated_mtxitem",
             "itemid": "21461312"
         }
     ],
-    "itemname": "#hash_11c8074cd528f8d3",
-    "var_375a1747": "#hash_47e18b29dfe53f4d",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5009_ak_74u_mastercraft_genie",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5009_ak_74u_mastercraft_genie",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5009_ak_74u_mastercraft_genie_mtxbundle",
-    "var_a788fada": "#hash_51a0e8f990bb7282",
-    "titlestring": "#hash_2b51b6216f201d33",
-    "var_566825be": "#hash_12c304c046f1f08e",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5009_ak_74u_mastercraft_genie_small",
+    "titlestring": "localized18#hash_2b51b6216f201d33",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5009_ak_74u_mastercraft_genie",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_21d1c97bf94b48d7",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_21d1c97bf94b48d7",
+    "hash_db3e02ab": 2000,
     "itemid": "24079415"
 }

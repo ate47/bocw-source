@@ -1,70 +1,73 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_28b18cf792d720c8"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two"
         },
         {
-            "var_fe10649e": "#hash_271f7c8987883bc5"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two_2"
         },
         {
-            "var_fe10649e": "#hash_271f7b8987883a12"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two_3"
         },
         {
-            "var_fe10649e": "#hash_271f768987883193"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two_4"
         },
         {
-            "var_fe10649e": "#hash_271f7b8987883a12"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two_3"
         },
         {
-            "var_fe10649e": "#hash_271f7c8987883bc5"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two_2"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_ger_pl_west_tagger_ii_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_west_tagger_ii_mtxitem",
             "itemid": "31435630"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_west_mtxitem",
             "itemid": "31131649"
         },
         {
-            "var_4a4bc969": "#ar_damage_resist_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_resist_mtxitem",
             "itemid": "23725156"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_resist_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_resist_mtxitem",
             "itemid": "26124866"
         },
         {
-            "var_4a4bc969": "#callingcards_graffiti_77_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_graffiti_77_animated_mtxitem",
             "itemid": "24319705"
         },
         {
-            "var_4a4bc969": "#emblems_grafitti_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_grafitti_animated_mtxitem",
             "itemid": "20651999"
         },
         {
-            "var_4a4bc969": "#t9_charm_paintbrush_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_paintbrush_mtxitem",
             "itemid": "18610083"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_grafitti_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_grafitti_mtxitem",
             "itemid": "23396707"
         }
     ],
-    "itemname": "#hash_4c96081c259193d6",
-    "var_375a1747": "#hash_28b18cf792d720c8",
-    "var_3040f0d1": "#hash_28b18cf792d720c8",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4025_beck_tagger_two",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_4025_beck_tagger_two",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4025_beck_tagger_two_mtxbundle",
-    "var_a788fada": "#hash_7b8373ff0d5c35b5",
-    "titlestring": "#hash_7c11c4f0a224801c",
-    "var_566825be": "#hash_4ec380802a917b0d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4025_beck_tagger_two_small",
+    "titlestring": "localized18#hash_7c11c4f0a224801c",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4025_beck_tagger_two",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_43c9392cb6475e8c",
-    "var_db3e02ab": 500,
+    "hash_f3c937a9": "localized18#hash_43c9392cb6475e8c",
+    "hash_db3e02ab": 500,
     "itemid": "26767855"
 }

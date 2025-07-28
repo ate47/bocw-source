@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_light_bp_bcowboy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_bcowboy_mtxitem",
             "itemid": "22485282"
         },
         {
-            "var_4a4bc969": "#callingcards_pinkstampede_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_pinkstampede_mtxitem",
             "itemid": "20091215"
         },
         {
-            "var_4a4bc969": "#emblems_r8g_12_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g_12_mtxitem",
             "itemid": "26211716"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_bubblegum_blaster_16_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_bubblegum_blaster_16_mtxitem",
             "itemid": "21287019"
         }
     ],
-    "itemname": "#hash_5ca67ab553f2c508",
-    "var_375a1747": "#hash_e58bfa43a13cb6e",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2078_lmg_light_pink_stampede",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2078_lmg_light_pink_stampede",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2078_lmg_light_pink_stampede_mtxbundle",
-    "var_a788fada": "#hash_747f1bdd9a2e2e35",
-    "titlestring": "#hash_43ea65bf76a8a574",
-    "var_566825be": "#hash_4455048bd7378d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2078_lmg_light_pink_stampede_small",
+    "titlestring": "localized18#hash_43ea65bf76a8a574",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2078_lmg_light_pink_stampede",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3dc5b65383acce64",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3dc5b65383acce64",
+    "hash_db3e02ab": 2000,
     "itemid": "22624084"
 }

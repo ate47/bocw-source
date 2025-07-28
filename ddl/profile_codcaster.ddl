@@ -182,7 +182,7 @@ version hash_3eb1fd7cd24cd83c {
     // offset: 0x17e4d, bitSize: 0x1
     bool codcaster_playercard;
     // offset: 0x17e4e, bitSize: 0x1
-    bool hash_23c54591c2b5fb47;
+    bool codcaster_playerlist;
     // offset: 0x17e4f, bitSize: 0x1
     bool codcaster_playernumbers_nameplates;
     // offset: 0x17e50, bitSize: 0x1
@@ -406,7 +406,7 @@ version hash_b22e17c2f335ff45 {
     // offset: 0xdfed, bitSize: 0x1
     bool codcaster_playercard;
     // offset: 0xdfee, bitSize: 0x1
-    bool hash_23c54591c2b5fb47;
+    bool codcaster_playerlist;
     // offset: 0xdfef, bitSize: 0x1
     bool codcaster_playernumbers_nameplates;
     // offset: 0xdff0, bitSize: 0x1
@@ -634,7 +634,7 @@ version hash_fc176cdbc78ac397 {
     // offset: 0xe03d, bitSize: 0x1
     bool codcaster_playercard;
     // offset: 0xe03e, bitSize: 0x1
-    bool hash_23c54591c2b5fb47;
+    bool codcaster_playerlist;
     // offset: 0xe03f, bitSize: 0x1
     bool codcaster_playernumbers_nameplates;
     // offset: 0xe040, bitSize: 0x1
@@ -862,7 +862,7 @@ version hash_8229dfc4966c4c7f {
     // offset: 0xe03d, bitSize: 0x1
     bool codcaster_playercard;
     // offset: 0xe03e, bitSize: 0x1
-    bool hash_23c54591c2b5fb47;
+    bool codcaster_playerlist;
     // offset: 0xe03f, bitSize: 0x1
     bool codcaster_playernumbers_nameplates;
     // offset: 0xe040, bitSize: 0x1
@@ -1125,7 +1125,7 @@ version hash_deb3d357f21544c2 {
     // offset: 0x17585, bitSize: 0x1
     bool codcaster_playercard;
     // offset: 0x17586, bitSize: 0x1
-    bool hash_23c54591c2b5fb47;
+    bool codcaster_playerlist;
     // offset: 0x17587, bitSize: 0x1
     bool codcaster_playernumbers_nameplates;
     // offset: 0x17588, bitSize: 0x1

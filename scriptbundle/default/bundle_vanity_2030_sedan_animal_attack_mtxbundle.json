@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_tiger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_civ_ru_sedan_80s_mpx_tiger_mtxitem",
             "itemid": "20635889"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_vulture_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_heli_gunship_hind_mpx_vulture_mtxitem",
             "itemid": "21543816"
         },
         {
-            "var_4a4bc969": "#fav_light_wz_mpx_king_cobra_mtxitem",
+            "hash_4a4bc969": "scriptbundle#fav_light_wz_mpx_king_cobra_mtxitem",
             "itemid": "27626167"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_mpx_cheetah_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_mpx_cheetah_mtxitem",
             "itemid": "22095846"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_piranha_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_mpx_piranha_mtxitem",
             "itemid": "30821488"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_snowmobile_mpx_direwolf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_snowmobile_mpx_direwolf_mtxitem",
             "itemid": "32846600"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_truck_light_mpx_warthog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_truck_light_mpx_warthog_mtxitem",
             "itemid": "29348566"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_mpx_shark_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_boat_pgb_mpx_shark_mtxitem",
             "itemid": "28857740"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_anime_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_anime_mtxitem",
             "itemid": "26033837"
         }
     ],
-    "itemname": "#hash_40b99942c1fd9d69",
-    "var_375a1747": "#hash_13284b89bdcf049b",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_vanity_2030_sedan_animal_attack",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_vanity_2030_sedan_animal_attack",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_2030_sedan_animal_attack_mtxbundle",
-    "var_a788fada": "#hash_6277526cb2c6ebe6",
-    "titlestring": "#hash_54b5f42ba5c94fd8",
-    "var_566825be": "#hash_1c4f966878924772",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_vanity_2030_sedan_animal_attack_small",
+    "titlestring": "localized18#hash_54b5f42ba5c94fd8",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_vanity_2030_sedan_animal_attack",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_57d58f47d1b2aaa0",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_57d58f47d1b2aaa0",
+    "hash_db3e02ab": 2000,
     "itemid": "22469072"
 }

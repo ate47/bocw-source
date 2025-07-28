@@ -1,5 +1,5 @@
 {
-    "var_16c83fbf": [
+    "#hash_16c83fbf": [
         {
             "overrides": [
                 {
@@ -14,7 +14,8 @@
                     "key": "#hash_62bf14968131be83",
                     "value": "0"
                 }
-            ]
+            ],
+            "mainmode": 0
         },
         {
             "overrides": [
@@ -38,20 +39,26 @@
     "lobbymode": 1,
     "id": 21,
     "backtarget": "director_online",
+    "hash_32aac4c1": 0,
     "maxlocalclientsnetwork": 1,
     "mainmode": 4,
-    "var_d16ccae8": 1,
+    "hash_d16ccae8": 1,
     "isprivate": 1,
     "showteams": 1,
+    "lobbytype": 0,
     "menumusic": "lobby_mp",
     "room": "#private_lobby_pose",
-    "var_7f60c82f": 6,
-    "kicker": "#hash_5dd231fd15db7531",
+    "hash_7f60c82f": 6,
+    "kicker": "localized18#hash_5dd231fd15db7531",
+    "isadvertised": 0,
     "maxclients": 6,
     "name": "director_online_pregame",
     "networkmode": 2,
     "errtarget": "director_online_pregame",
     "egamemodes": 2,
-    "title": "#hash_27307830087a401",
+    "hash_ec76767d": 0,
+    "title": "localized18#hash_27307830087a401",
+    "hash_f68d7d0": 0,
+    "isgame": 0,
     "maxlocalclients": 2
 }

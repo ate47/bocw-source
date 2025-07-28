@@ -1,64 +1,64 @@
 {
-    "var_9aa52b6d": [
+    "#hash_9aa52b6d": [
         {
-            "itemname": "#hash_3bf055d527bf8dcf",
-            "var_5ec2d292": 55
+            "itemname": "localized18#hash_3bf055d527bf8dcf",
+            "hash_5ec2d292": 55
         },
         {
-            "itemname": "#hash_7d88de2b507ef1c8",
-            "var_5ec2d292": 76
+            "itemname": "localized18#hash_7d88de2b507ef1c8",
+            "hash_5ec2d292": 76
         },
         {
-            "itemname": "#hash_6077a40e6b83b1f0",
-            "var_5ec2d292": 38
+            "itemname": "localized18#hash_6077a40e6b83b1f0",
+            "hash_5ec2d292": 38
         },
         {
-            "itemname": "#hash_36a4c583f4ea6f02",
-            "var_5ec2d292": 71
+            "itemname": "localized18#hash_36a4c583f4ea6f02",
+            "hash_5ec2d292": 71
         },
         {
-            "itemname": "#hash_5c950d15e0353390",
-            "var_5ec2d292": 65
+            "itemname": "localized18#hash_5c950d15e0353390",
+            "hash_5ec2d292": 65
         },
         {
-            "itemname": "#hash_79a0850764df737a",
-            "var_5ec2d292": 5
+            "itemname": "localized18#hash_79a0850764df737a",
+            "hash_5ec2d292": 5
         },
         {
-            "itemname": "#hash_24f8e3a6f366bd39",
-            "var_5ec2d292": 100
+            "itemname": "localized18#hash_24f8e3a6f366bd39",
+            "hash_5ec2d292": 100
         },
         {
-            "itemname": "#hash_37654313060d4bad",
-            "var_5ec2d292": 95
+            "itemname": "localized18#hash_37654313060d4bad",
+            "hash_5ec2d292": 95
         }
     ],
-    "var_c6169187": [
+    "#hash_c6169187": [
         {
-            "var_f8641e3": "#c_t9_jpn_pl_kitsune_boss_mtxitem"
+            "hash_f8641e3": "#c_t9_jpn_pl_kitsune_boss_mtxitem"
         }
     ],
-    "var_5393a4bb": "#hash_6721e31479cb2352",
-    "var_99594ca4": "#hash_6721e31479cb2352",
-    "var_35ad2f6d": "#hash_6dc436376c826556",
-    "var_8322c847": "#hash_4b8d479506f82b11",
-    "var_b24ffe02": "#hash_4d4e00d60d9ab1d",
-    "var_9e8da4c6": "#hash_5e7618cafffda725",
-    "var_e4771b8b": "mtx_global_purchase_confirmed_S5",
+    "hash_5393a4bb": "localized18#hash_6721e31479cb2352",
+    "hash_99594ca4": "localized18#hash_6721e31479cb2352",
+    "hash_35ad2f6d": "image#hash_6dc436376c826556",
+    "hash_8322c847": "image#hash_4b8d479506f82b11",
+    "hash_b24ffe02": "image#hash_4d4e00d60d9ab1d",
+    "hash_9e8da4c6": "image#hash_5e7618cafffda725",
+    "hash_e4771b8b": "mtx_global_purchase_confirmed_S5",
     "name": "mtx_battle_pass_data_season_5",
-    "var_42c48b92": "#hash_16cd909054c5c915",
-    "var_21e49ac6": "mtx_global_battlepass_purchase_S5",
-    "var_1496e997": "#hash_6a8b80258ec99dd6",
-    "var_6e830db8": "#hash_101330fff5a39d8c",
-    "seasonname": "#hash_32d25ef8e01950c1",
-    "var_261476a2": "#hash_661f4244af439706",
-    "var_d580508b": "#hash_3425c683b7255058",
-    "var_e4ec2ee1": "#hash_6dc436376c826556",
-    "var_419b5c0b": "#hash_6721e31479cb2352",
-    "var_1a8f344c": "#battle_pass_season_5_promo_mtxbundle",
-    "var_e0d52f49": "#hash_421eeffd5f9d3774",
-    "var_22155959": "mtx_global_tier_purchase_S5",
-    "var_a7d281c0": "#hash_66cad18ef185d777",
-    "var_6d7e036e": "#hash_75c860274d7a23bb",
-    "var_a43221e0": "#hash_6721e31479cb2352"
+    "hash_42c48b92": "image#hash_16cd909054c5c915",
+    "hash_21e49ac6": "mtx_global_battlepass_purchase_S5",
+    "hash_1496e997": "image#hash_6a8b80258ec99dd6",
+    "hash_6e830db8": "localized18#hash_101330fff5a39d8c",
+    "seasonname": "localized18#hash_32d25ef8e01950c1",
+    "hash_261476a2": "image#hash_661f4244af439706",
+    "hash_d580508b": "image#hash_3425c683b7255058",
+    "hash_e4ec2ee1": "image#hash_6dc436376c826556",
+    "hash_419b5c0b": "localized18#hash_6721e31479cb2352",
+    "hash_1a8f344c": "#battle_pass_season_5_promo_mtxbundle",
+    "hash_e0d52f49": "localized18#hash_421eeffd5f9d3774",
+    "hash_22155959": "mtx_global_tier_purchase_S5",
+    "hash_a7d281c0": "image#hash_66cad18ef185d777",
+    "hash_6d7e036e": "localized18#hash_75c860274d7a23bb",
+    "hash_a43221e0": "localized18#hash_6721e31479cb2352"
 }

@@ -1,11 +1,11 @@
 {
-    "description": "#hash_362f02cb813956f2",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_362f02cb813956f2",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_cuav_during_active_enemy_spy_plane",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_1c2ae8e995cf5493",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_blackout",
     "statname": "#hash_522722579f6b3630",
-    "var_8645ce54": "#hash_3c3b7f72193a9f22",
-    "iconlarge": "#hash_7103195ea08485f3"
+    "stringref": "localized18#hash_3c3b7f72193a9f22",
+    "iconlarge": "image#ui_icon_medal_blackout_large"
 }

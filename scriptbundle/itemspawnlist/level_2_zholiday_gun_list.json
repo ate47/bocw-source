@@ -2,40 +2,50 @@
     "itemlist": [
         {
             "minweight": 600,
-            "var_a6762160": "#uncommon_gun_list",
+            "itementry": "scriptbundle#uncommon_gun_list",
             "maxweight": 600,
             "available": -1
         },
         {
             "minweight": 350,
-            "var_a6762160": "#rare_gun_list",
+            "itementry": "scriptbundle#rare_gun_list",
             "maxweight": 350,
             "available": -1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#epic_gun_list",
+            "itementry": "scriptbundle#epic_gun_list",
             "maxweight": 50,
             "available": -1
         },
         {
             "minweight": 5,
-            "var_a6762160": "#legendary_gun_list",
+            "itementry": "scriptbundle#legendary_gun_list",
             "maxweight": 5,
             "available": -1
         },
         {
             "minweight": 2,
-            "var_a6762160": "#named_gun_list",
+            "itementry": "scriptbundle#named_gun_list",
             "maxweight": 2,
             "available": -1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "level_2_zholiday_gun_list",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

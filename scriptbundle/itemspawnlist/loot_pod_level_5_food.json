@@ -2,70 +2,80 @@
     "itemlist": [
         {
             "minweight": 60,
-            "var_a6762160": "#scrap_item_sr",
+            "itementry": "scriptbundle#scrap_item_sr",
             "maxweight": 60,
             "available": 1
         },
         {
             "minweight": 80,
-            "var_a6762160": "#armor_shard_item_sr",
+            "itementry": "scriptbundle#armor_shard_item_sr",
             "maxweight": 80,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#ammo_item_survival",
+            "itementry": "scriptbundle#ammo_item_survival",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#level_5_gun_list",
+            "itementry": "scriptbundle#level_5_gun_list",
             "maxweight": 10,
             "available": 1
         },
         {
             "minweight": 20,
-            "var_a6762160": "#uncommon_equipment_list",
+            "itementry": "scriptbundle#uncommon_equipment_list",
             "maxweight": 20,
             "available": 1
         },
         {
             "minweight": 20,
-            "var_a6762160": "#rare_equipment_list",
+            "itementry": "scriptbundle#rare_equipment_list",
             "maxweight": 20,
             "available": 1
         },
         {
             "minweight": 20,
-            "var_a6762160": "#epic_equipment_list",
+            "itementry": "scriptbundle#epic_equipment_list",
             "maxweight": 20,
             "available": 1
         },
         {
             "minweight": 5,
-            "var_a6762160": "#sr_explore_chest_perk_bottles",
+            "itementry": "scriptbundle#sr_explore_chest_perk_bottles",
             "maxweight": 5,
             "available": 1
         },
         {
             "minweight": 90,
-            "var_a6762160": "#resource_item_sr",
+            "itementry": "scriptbundle#resource_item_sr",
             "maxweight": 90,
             "available": 1
         },
         {
             "minweight": 90,
-            "var_a6762160": "#zm_food_parent_list",
+            "itementry": "scriptbundle#zm_food_parent_list",
             "maxweight": 90,
             "available": 1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "loot_pod_level_5_food",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_greater_the_difficulty_greater_the_glory",
-    "quote": "#hash_37aa9e0ccde9b7c3",
-    "author": "#hash_34e77381df6b20af"
+    "quote": "localized18#hash_37aa9e0ccde9b7c3",
+    "author": "localized18#hash_34e77381df6b20af"
 }

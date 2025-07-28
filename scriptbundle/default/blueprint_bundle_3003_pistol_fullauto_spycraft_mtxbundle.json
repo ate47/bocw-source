@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#pistol_fullauto_bp_phased_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_fullauto_bp_phased_mtxitem",
             "itemid": "32450461"
         },
         {
-            "var_4a4bc969": "#t9_charm_space_scanner_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_space_scanner_mtxitem",
             "itemid": "31281386"
         },
         {
-            "var_4a4bc969": "#emblems_spycraft_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_spycraft_animated_mtxitem",
             "itemid": "23768620"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_spycraft_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_spycraft_mtxitem",
             "itemid": "27090232"
         }
     ],
-    "itemname": "#hash_781349e3a553e486",
-    "var_375a1747": "#hash_c3005e12655128",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3003_pistol_fullauto_spycraft",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3003_pistol_fullauto_spycraft",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3003_pistol_fullauto_spycraft_mtxbundle",
-    "var_a788fada": "#hash_5b5545a26e8bc81",
-    "titlestring": "#hash_2420fa82cf4fbdef",
-    "var_566825be": "#hash_3d3ee38f371a9cd9",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3003_pistol_fullauto_spycraft_small",
+    "titlestring": "localized18#hash_2420fa82cf4fbdef",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3003_pistol_fullauto_spycraft",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6855dcb9d278deab",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6855dcb9d278deab",
+    "hash_db3e02ab": 2000,
     "itemid": "23809291"
 }

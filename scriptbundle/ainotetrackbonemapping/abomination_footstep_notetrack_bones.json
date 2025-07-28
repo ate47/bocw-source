@@ -1,7 +1,7 @@
 {
     "footstep_left_large": "j_index_le_1",
-    "var_922067c4": "scriptbundle",
-    "model": "#hash_830ac1ac3897581",
+    "configstringfiletype": "scriptbundle",
+    "model": "model#c_t9_zmb_abomination_fb",
     "type": "ainotetrackbonemapping",
     "footstep_right_back": "j_index_ri_1",
     "name": "abomination_footstep_notetrack_bones",

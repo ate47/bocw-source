@@ -1,0 +1,77 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_cd0aa6000ec2a07",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_4318e6bfea89db41",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 1
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_768d1038a48ca154",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_601f3f16ac692174",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 0,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_4318e5bfea89d98e",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "computerscreencontentlists",
+    "name": "cp_rus_kgb_restricted_area_computer_node_fail"
+}

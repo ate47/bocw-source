@@ -1,59 +1,68 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_streetcred_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_streetcred_mtxitem",
             "itemid": "28952205"
         },
         {
-            "var_4a4bc969": "#t9_charm_smoke_gren_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_smoke_gren_mtxitem",
             "itemid": "25879988"
         },
         {
-            "var_4a4bc969": "#po_c_t9_cub_pl_dgi_barrio_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_cub_pl_dgi_barrio_mtxitem",
             "itemid": "24836368"
         },
         {
-            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_cub_dgi_mtxitem",
             "itemid": "21801561"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_silver_streak_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_silver_streak_mtxitem",
             "itemid": "29331820"
         },
         {
-            "var_4a4bc969": "#t9_charm_lunch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_lunch_mtxitem",
             "itemid": "23915170"
         },
         {
-            "var_4a4bc969": "#c_t9_uk_pl_mi6_scorch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_mi6_scorch_mtxitem",
             "itemid": "28059667"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#callingcards_expedition_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_expedition_mtxitem",
             "itemid": "24735791"
         },
         {
-            "var_4a4bc969": "#reticle_34_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_34_mtxitem",
             "itemid": "23950812"
         },
         {
-            "var_4a4bc969": "#reticle_42_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_42_mtxitem",
             "itemid": "24713126"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_474ec48dac8b7308",
-    "description": "#hash_67550f7c40faaf62",
-    "var_87756eb4": 1,
-    "var_375a1747": "#hash_524d6d099ce2b9ab",
+    "description": "localized18#hash_67550f7c40faaf62",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 1,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_375a1747": "image#hash_524d6d099ce2b9ab",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "s01_preseason_login_bonus_mtxentitlement",
-    "var_90708fcf": "#hash_660ebce628ccddf2",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_90708fcf": "localized18#hash_660ebce628ccddf2",
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "22098795",
-    "var_7c846082": "#hash_39bc24db0771eb04"
+    "hash_7c846082": "localized18#hash_39bc24db0771eb04"
 }

@@ -1,12 +1,19 @@
 {
-    "var_e451a3f7": [
+    "#hash_e451a3f7": [
         {
-            "var_6748b2d2": "amb_rattle_metal_deep",
-            "model": "#hash_36b7a0497be180ed",
-            "var_83556f31": 1
+            "rattle_sound": "amb_rattle_metal_deep",
+            "model": "model#p9_fxanim_zm_gp_chest_01_med_xmodel",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 1,
+            "pitch": 0
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "mimicproplist",
     "name": "sr_medium_chest"
 }

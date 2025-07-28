@@ -1,10 +1,10 @@
 {
-    "description": "#hash_7137289bdf076ec0",
+    "description": "localized18#hash_7137289bdf076ec0",
     "image": "ui_icon_wrist_accessories_watch_cdl_mutineers_1",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_esports_mutineers_pc",
-    "var_6855e4be": "#wristaccessory_t9_esports_mutineers_pc_mtxitem",
-    "displayname": "#hash_47748c8250a82d8",
-    "var_8d478ea4": "#hash_2f14dcab5ab50aca",
-    "var_d27eb4c6": "#hash_62202ae4f24b0063"
+    "hash_6855e4be": "#wristaccessory_t9_esports_mutineers_pc_mtxitem",
+    "displayname": "localized18#hash_47748c8250a82d8",
+    "hash_8d478ea4": "model#c_t9_gen_pl_esports_watch_mutineers_pc",
+    "hash_d27eb4c6": "model#hash_62202ae4f24b0063"
 }

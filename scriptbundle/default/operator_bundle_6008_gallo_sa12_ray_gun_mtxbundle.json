@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#shotgun_semiauto_cb_cosplay_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_cb_cosplay_mtxitem",
             "itemid": "31225047"
         },
         {
-            "var_4a4bc969": "#ar_slowfire_bp_ww_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowfire_bp_ww_mtxitem",
             "itemid": "19409495"
         },
         {
-            "var_4a4bc969": "#t9_charm_raygun_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_raygun_mtxitem",
             "itemid": "17801001"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_digital_ww_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_digital_ww_mtxitem",
             "itemid": "19654657"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_truck_transport_player_assembly_mpx_cosplay_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_truck_transport_player_assembly_mpx_cosplay_mtxitem",
             "itemid": "29618081"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_alwaysrun_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_alwaysrun_mtxitem",
             "itemid": "22571881"
         },
         {
-            "var_4a4bc969": "#emblems_zombie_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_zombie_s6_animated_mtxitem",
             "itemid": "25354665"
         },
         {
-            "var_4a4bc969": "#callingcards_zombie_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_zombie_s6_animated_mtxitem",
             "itemid": "28406000"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_zombie_mastercraft_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_zombie_mastercraft_s6_mtxitem",
             "itemid": "28905798"
         }
     ],
-    "itemname": "#hash_59df638215d47b61",
-    "var_375a1747": "#hash_5e7c6138ec69852f",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_6008_gallo_sa12_ray_gun",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6008_gallo_sa12_ray_gun",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6008_gallo_sa12_ray_gun_mtxbundle",
-    "var_a788fada": "#hash_70829e8f728fd390",
-    "titlestring": "#hash_1859deb5bc35ecef",
-    "var_566825be": "#hash_54b5df772280f51c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6008_gallo_sa12_ray_gun_small",
+    "titlestring": "localized18#hash_1859deb5bc35ecef",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6008_gallo_sa12_ray_gun",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7c135b7fd91355ab",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7c135b7fd91355ab",
+    "hash_db3e02ab": 2000,
     "itemid": "31425069"
 }

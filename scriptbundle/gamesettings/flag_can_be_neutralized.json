@@ -1,10 +1,14 @@
 {
-    "hinttext": "#hash_3b0b7851a398316e",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_3b0b7851a398316e",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "flag_can_be_neutralized",
-    "displayname": "#hash_38c692906c5f729a",
-    "var_9de86f42": 2,
+    "displayname": "localized18#hash_38c692906c5f729a",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "flagCanBeNeutralized",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

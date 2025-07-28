@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_ger_pl_west_winter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_west_winter_mtxitem",
             "itemid": "21024570"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_west_mtxitem",
             "itemid": "31131649"
         },
         {
-            "var_4a4bc969": "#t9_charm_tacsnowman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_tacsnowman_mtxitem",
             "itemid": "29996620"
         },
         {
-            "var_4a4bc969": "#execution_135_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_135_mtxitem",
             "itemid": "30540785"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_bracelet_braided_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_bracelet_braided_02_mtxitem",
             "itemid": "19626407"
         }
     ],
-    "itemname": "#hash_582fed17ce0bbe23",
-    "var_375a1747": "#hash_3022a080487dad79",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_holiday_1027_ingo_winter_assassin",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_holiday_1027_ingo_winter_assassin",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_holiday_1027_ingo_winter_assassin_mtxbundle",
-    "titlestring": "#hash_13cc7a4a91947d9b",
-    "var_566825be": "#hash_1f14064d4f79ce04",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_13cc7a4a91947d9b",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_holiday_1027_ingo_winter_assassin",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_653f54c36bfe315f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_653f54c36bfe315f",
+    "hash_db3e02ab": 2000,
     "itemid": "29890273"
 }

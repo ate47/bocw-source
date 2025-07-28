@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_burst_bp_runman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_runman_mtxitem",
             "itemid": "19137362"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_renegade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_renegade_mtxitem",
             "itemid": "18646338"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_digital_diver_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_digital_diver_mtxitem",
             "itemid": "21548814"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_retro_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_mpx_retro_mtxitem",
             "itemid": "32907382"
         },
         {
-            "var_4a4bc969": "#t9_charm_walkman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_walkman_mtxitem",
             "itemid": "20281876"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_retrorenegade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_retrorenegade_mtxitem",
             "itemid": "25442323"
         },
         {
-            "var_4a4bc969": "#callingcards_retrorenegade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_retrorenegade_mtxitem",
             "itemid": "30935938"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_cabana_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_cabana_mtxitem",
             "itemid": "26346790"
         }
     ],
-    "itemname": "#hash_6484faad6e48ebe6",
-    "var_375a1747": "#hash_7f138a938cf88348",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_mastercraft_1073_smg_burst_retro_renegade",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_mastercraft_1073_smg_burst_retro_renegade",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "bundle_mastercraft_1073_smg_burst_retro_renegade_mtxbundle",
-    "var_a788fada": "#hash_77d05fc0aedae785",
-    "titlestring": "#hash_139ddc05547ca96",
-    "var_566825be": "#hash_1c728cd0951bbfdd",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_mastercraft_1073_smg_burst_retro_renegade_small",
+    "titlestring": "localized18#hash_139ddc05547ca96",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_mastercraft_1073_smg_burst_retro_renegade",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_69ef066e72223aaa",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_69ef066e72223aaa",
+    "hash_db3e02ab": 2000,
     "itemid": "22386569"
 }

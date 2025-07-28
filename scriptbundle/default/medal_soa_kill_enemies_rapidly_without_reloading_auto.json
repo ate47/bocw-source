@@ -1,10 +1,10 @@
 {
-    "description": "#hash_63687e578da7ca0b",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_63687e578da7ca0b",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_soa_kill_enemies_rapidly_without_reloading_auto",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_22ceacda13d138d8",
-    "var_8645ce54": "#hash_6e09ff9cc6c496b1",
-    "iconlarge": "#hash_13b1ee32523dd214"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_22ceacda13d138d8",
+    "stringref": "localized18#hash_6e09ff9cc6c496b1",
+    "iconlarge": "image#hash_13b1ee32523dd214"
 }

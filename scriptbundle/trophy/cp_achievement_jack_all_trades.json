@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_58edec84f20cdbb",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_58edec84f20cdbb",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_5cd8058c4af95672",
-    "image": "#hash_1f6d648c27f76eac",
+    "hash_4a95afca": "image#hash_5cd8058c4af95672",
+    "image": "image#hash_1f6d648c27f76eac",
     "name": "cp_achievement_jack_all_trades",
-    "title": "#hash_2e4cb4fa5baa40c1"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_2e4cb4fa5baa40c1",
+    "hash_621379a": 0
 }

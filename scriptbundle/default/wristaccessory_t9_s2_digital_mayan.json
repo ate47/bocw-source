@@ -1,10 +1,11 @@
 {
-    "var_999715d2": "#hash_fb2bc7bd3c73560",
-    "description": "#hash_78a26ba35ee35882",
+    "hash_999715d2": "#hash_fb2bc7bd3c73560",
+    "description": "localized18#hash_78a26ba35ee35882",
     "image": "ui_icon_wrist_accessories_watch_digital_mayan_1",
+    "hash_9b474412": 0,
     "name": "wristaccessory_t9_s2_digital_mayan",
-    "var_6855e4be": "#wristaccessory_t9_s2_digital_mayan_mtxitem",
-    "displayname": "#hash_16bcbbd18f4c2052",
-    "var_8d478ea4": "#hash_49749f565dcd0d34",
-    "var_d27eb4c6": "#hash_76a625e2725c8eaf"
+    "hash_6855e4be": "#wristaccessory_t9_s2_digital_mayan_mtxitem",
+    "displayname": "localized18#hash_16bcbbd18f4c2052",
+    "hash_8d478ea4": "model#wrist_watch_t9_s2_digital_mayan_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s2_digital_mayan_world"
 }

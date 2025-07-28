@@ -1,24 +1,30 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
-            "soundevent": "#hash_7a604f110b32858b"
+            "soundevent": "#hash_7a604f110b32858b",
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 0
         }
     ],
-    "description": "#hash_1cf8daf54bc99bd",
-    "itemspawnentry": "#item_zmintel_silver_darkaether_artifact_4",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#main_quest",
-    "model": "#hash_4d42f402f7b6780f",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_69cef6cdb6e75fb8",
+    "description": "localized19#hash_1cf8daf54bc99bd",
+    "itemspawnentry": "scriptbundle#item_zmintel_silver_darkaether_artifact_4",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#main_quest",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_pegboard_tools_wrench_01",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#p8_sta_pegboard_tools_wrench_01_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
-    "var_ad4ad686": "#dark_aether",
+    "season": 0,
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_6098b72d515f39d5",
     "name": "zmintel_silver_darkaether_artifact_4",
-    "var_9be0526e": "#artifact",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "title": "#hash_69364157a8e1336b",
-    "var_265ab5cb": "#hash_5f7bd05915dc4411",
+    "hash_9be0526e": "#artifact",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "title": "localized19#hash_69364157a8e1336b",
+    "hash_4efbbcfe": 0,
+    "hash_265ab5cb": "image#ui_icon_inventory_p8_sta_pegboard_tools_wrench_01_color_t9",
     "mapname": "#zm_silver"
 }

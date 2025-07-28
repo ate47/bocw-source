@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_ghostship_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_ghostship_mtxitem",
             "itemid": "31027752"
         },
         {
-            "var_4a4bc969": "#loot_smg_spray_bp_ghostship_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_spray_bp_ghostship_mtxitem",
             "itemid": "18709101"
         },
         {
-            "var_4a4bc969": "#t9_charm_viking_coin_gold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_viking_coin_gold_mtxitem",
             "itemid": "32683938"
         },
         {
-            "var_4a4bc969": "#reticle_121_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_121_mtxitem",
             "itemid": "23097173"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_assembly_mpx_ghost_ship_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_assembly_mpx_ghost_ship_mtxitem",
             "itemid": "20651974"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_deadend_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_deadend_mtxitem",
             "itemid": "22156514"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_analog_mayan_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_analog_mayan_mtxitem",
             "itemid": "29611570"
         },
         {
-            "var_4a4bc969": "#emblems_ghostship_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ghostship_s5_animated_mtxitem",
             "itemid": "20125899"
         },
         {
-            "var_4a4bc969": "#callingcards_ghostship_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ghostship_s5_animated_mtxitem",
             "itemid": "21252277"
         }
     ],
-    "itemname": "#hash_7569025942b46383",
-    "var_375a1747": "#hash_37ec9c956952fdd9",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5012_aug_master_ghost",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5012_aug_master_ghost",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5012_aug_master_ghost_mtxbundle",
-    "var_a788fada": "#hash_251a3ffa75723330",
-    "titlestring": "#hash_102fd38c65195cbb",
-    "var_566825be": "#hash_3f5a5c656818e6fc",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5012_aug_master_ghost_small",
+    "titlestring": "localized18#hash_102fd38c65195cbb",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5012_aug_master_ghost",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7c429a665d9bea7f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7c429a665d9bea7f",
+    "hash_db3e02ab": 2000,
     "itemid": "20039552"
 }

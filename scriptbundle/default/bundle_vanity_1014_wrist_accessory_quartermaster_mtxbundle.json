@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_horex_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_horex_01_mtxitem",
             "itemid": "32585877"
         },
         {
-            "var_4a4bc969": "#callingcards_quartermaster_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_quartermaster_mtxitem",
             "itemid": "22973849"
         },
         {
-            "var_4a4bc969": "#emblems_quartermaster_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_quartermaster_mtxitem",
             "itemid": "19674797"
         },
         {
-            "var_4a4bc969": "#t9_charm_ammo_box_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_ammo_box_mtxitem",
             "itemid": "19338228"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_quartermaster_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_quartermaster_mtxitem",
             "itemid": "24288894"
         }
     ],
-    "itemname": "#hash_26c716ac4c00145e",
-    "var_375a1747": "#hash_3c3682b76cb69608",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_vanity_1014_wrist_accessory_quartermaster",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_vanity_1014_wrist_accessory_quartermaster",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_1014_wrist_accessory_quartermaster_mtxbundle",
-    "titlestring": "#hash_452d0c68548a7fe9",
-    "var_566825be": "#hash_79dcabadbdaa9ead",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_452d0c68548a7fe9",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_vanity_1014_wrist_accessory_quartermaster",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_5e097e5dcf922e9",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_5e097e5dcf922e9",
+    "hash_db3e02ab": 2000,
     "itemid": "24820564"
 }

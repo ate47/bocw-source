@@ -1,48 +1,51 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_636b21a3ea84d0fe"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_blueprint_2047_tr_powerburst_street_racer"
         },
         {
-            "var_fe10649e": "#hash_313f5948332bfdf1"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_blueprint_2047_tr_powerburst_street_racer_02"
         },
         {
-            "var_fe10649e": "#hash_313f5848332bfc3e"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_blueprint_2047_tr_powerburst_street_racer_03"
         },
         {
-            "var_fe10649e": "#hash_313f5b48332c0157"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_blueprint_2047_tr_powerburst_street_racer_04"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_powerburst_cb_racer02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_racer02_mtxitem",
             "itemid": "24707125"
         },
         {
-            "var_4a4bc969": "#smg_capacity_bp_racer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_racer_mtxitem",
             "itemid": "22807005"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_car_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_car_mtxitem",
             "itemid": "19607923"
         },
         {
-            "var_4a4bc969": "#t9_charm_spinning_rim_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_spinning_rim_mtxitem",
             "itemid": "24625737"
         }
     ],
-    "itemname": "#hash_4dab2eadd5568858",
-    "var_375a1747": "#hash_636b21a3ea84d0fe",
-    "var_3040f0d1": "#hash_636b21a3ea84d0fe",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 31,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2047_tr_powerburst_street_racer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2047_tr_powerburst_street_racer",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_bundle_blueprint_2047_tr_powerburst_street_racer",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 31,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2047_tr_powerburst_street_racer_mtxbundle",
-    "var_a788fada": "#hash_4a18e55322b74dc3",
-    "titlestring": "#hash_2c1a919d9a9ff20a",
-    "var_566825be": "#hash_17ad947f0c8997ab",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2047_tr_powerburst_street_racer_small",
+    "titlestring": "localized18#hash_2c1a919d9a9ff20a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2047_tr_powerburst_street_racer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1a72e171b6f6bf86",
-    "var_db3e02ab": 350,
+    "hash_f3c937a9": "localized18#hash_1a72e171b6f6bf86",
+    "hash_db3e02ab": 350,
     "itemid": "23488508"
 }

@@ -1,59 +1,64 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_ger_pl_maxis_berlin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_maxis_berlin_mtxitem",
             "itemid": "32856883"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_pl_maxis_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_pl_maxis_mtxitem",
             "itemid": "27568255"
         },
         {
-            "var_4a4bc969": "#loot_smg_accurate_bp_maxpurp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_accurate_bp_maxpurp_mtxitem",
             "itemid": "32275985"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_maxpurp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_maxpurp_mtxitem",
             "itemid": "31132801"
         },
         {
-            "var_4a4bc969": "#special_nailgun_bp_maxpurp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#special_nailgun_bp_maxpurp_mtxitem",
             "itemid": "32770136"
         },
         {
-            "var_4a4bc969": "#execution_172_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_172_mtxitem",
             "itemid": "17867585"
         },
         {
-            "var_4a4bc969": "#t9_charm_phonebooth_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_phonebooth_mtxitem",
             "itemid": "18045787"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_16_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_16_s6_mtxitem",
             "itemid": "23975082"
         },
         {
-            "var_4a4bc969": "#emblems_vts_final_07_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_final_07_s6_animated_mtxitem",
             "itemid": "29896098"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_maxis_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_maxis_mtxitem",
             "itemid": "32232119"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_storm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_storm_mtxitem",
             "itemid": "21288944"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_4d67ca7205d4ca51",
-    "var_375a1747": "#hash_41b483902350b7ab",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7013_maxis_fire_berlin_tracer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7013_maxis_fire_berlin_tracer_mtxbundle",
-    "var_a788fada": "#hash_48a4e67856f84794",
-    "titlestring": "#hash_2e8ca0cbb187a26",
-    "var_566825be": "#hash_74b451e623c41260",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7013_maxis_fire_berlin_tracer_small",
+    "titlestring": "localized18#hash_2e8ca0cbb187a26",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7013_maxis_fire_berlin_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_59eba3ebd9e2203a",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_59eba3ebd9e2203a",
+    "hash_db3e02ab": 2000,
     "itemid": "20612255"
 }

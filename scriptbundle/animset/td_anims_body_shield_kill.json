@@ -1,0 +1,47 @@
+{
+    "animset": [
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_1384a2406c48c29f"
+                }
+            ],
+            "name": "drop",
+            "blend": 0.1,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_134c276097bfb7ce"
+                }
+            ],
+            "name": "drop",
+            "blend": 0.1,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_114593dcd8cbfbae"
+                }
+            ],
+            "name": "drop_dead",
+            "blend": 0.1,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_7ea7a92aa5914faf"
+                }
+            ],
+            "name": "drop_dead",
+            "blend": 0.1,
+            "animname": "generic"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "animset",
+    "name": "td_anims_body_shield_kill"
+}

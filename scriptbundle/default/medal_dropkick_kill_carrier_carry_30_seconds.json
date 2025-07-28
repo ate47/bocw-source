@@ -1,10 +1,10 @@
 {
-    "description": "#hash_74b0cdb38977c308",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_74b0cdb38977c308",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_dropkick_kill_carrier_carry_30_seconds",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_3103a123961a2c5e",
-    "var_8645ce54": "#hash_90bd2dcdd467180",
-    "iconlarge": "#hash_76fddbba635a9eae"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_3103a123961a2c5e",
+    "stringref": "localized18#hash_90bd2dcdd467180",
+    "iconlarge": "image#hash_76fddbba635a9eae"
 }

@@ -1,14 +1,24 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#callingcards_crmsendit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_crmsendit_mtxitem",
             "itemid": "25688172"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_1a341c1e5728af8c",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "cdl_crm_incentive_s1_2_callingcard_mtxentitlement",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "32022100"
 }

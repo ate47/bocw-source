@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_44a21994e89e1124",
-    "var_ce1913bd": "fta_",
+    "displaynameshort": "localized18#hash_44a21994e89e1124",
+    "hash_ce1913bd": "fta_",
     "name": "faction_wz_team3",
-    "displayname": "#hash_7927681cb92ef869",
-    "icon": "#hash_4d600b1e281e66d3",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "blops_commander_mi6",
+    "displayname": "localized18#hash_7927681cb92ef869",
+    "icon": "image#ui_icon_fireteam_logo_lancer",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&blops_commander_mi6",
     "color": "WarzoneCustomTeam3"
 }

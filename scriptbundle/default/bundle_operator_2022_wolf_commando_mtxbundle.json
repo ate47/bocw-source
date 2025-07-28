@@ -1,56 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_deltaforce_jungle_warfare_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_deltaforce_jungle_warfare_mtxitem",
             "itemid": "32593419"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_deltaforce_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_deltaforce_mtxitem",
             "itemid": "22503750"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_bope_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_bope_mtxitem",
             "itemid": "24098404"
         },
         {
-            "var_4a4bc969": "#loot_shotgun_fullauto_bp_maelstrom_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_shotgun_fullauto_bp_maelstrom_mtxitem",
             "itemid": "18739370"
         },
         {
-            "var_4a4bc969": "#knife_combat_bp_bope_mtxitem",
+            "hash_4a4bc969": "scriptbundle#knife_combat_bp_bope_mtxitem",
             "itemid": "27771037"
         },
         {
-            "var_4a4bc969": "#execution_201_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_201_mtxitem",
             "itemid": "26224832"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_bope_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_bope_01_mtxitem",
             "itemid": "21598556"
         },
         {
-            "var_4a4bc969": "#t9_charm_jungle_trap_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_jungle_trap_mtxitem",
             "itemid": "29406562"
         },
         {
-            "var_4a4bc969": "#emblems_kknife_002_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_kknife_002_mtxitem",
             "itemid": "26681964"
         },
         {
-            "var_4a4bc969": "#callingcards_wolfmm_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_wolfmm_animated_mtxitem",
             "itemid": "25525762"
         }
     ],
-    "itemname": "#hash_56e0f07f34f25b25",
-    "var_375a1747": "#hash_68ae4a8b749619c7",
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2022_wolf_commando",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2022_wolf_commando",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2022_wolf_commando_mtxbundle",
-    "var_a788fada": "#hash_597b54fa3c4da472",
-    "titlestring": "#hash_75b5ea8ec468f73f",
-    "var_566825be": "#hash_3d9bf5c5997601fe",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2022_wolf_commando_small",
+    "titlestring": "localized18#hash_75b5ea8ec468f73f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2022_wolf_commando",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_635f456d897cf1fb",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_635f456d897cf1fb",
+    "hash_db3e02ab": 2000,
     "itemid": "31598104"
 }

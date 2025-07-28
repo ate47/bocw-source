@@ -12637,7 +12637,7 @@ version hash_e78cebb6a9e16755 {
     };
 
     // bitSize: 0x1f80, members: 10
-    struct hash_4a97637df8b04150 {
+    struct progressiondata {
         // offset: 0x0, bitSize: 0x240(0x48 Byte(s)), array:0x12(hti:0xffff)
         int xp[18];
         // offset: 0x240, bitSize: 0xd80(0x1b0 Byte(s)), array:0x12(hti:0xffff)
@@ -13539,7 +13539,7 @@ version hash_e78cebb6a9e16755 {
     // offset: 0x2f40, bitSize: 0x100(0x20 Byte(s))
     hash_b0c13f3a45ff021 hash_b0c13f3a45ff021;
     // offset: 0x3040, bitSize: 0x1f80(0x3f0 Byte(s))
-    hash_4a97637df8b04150 progression;
+    progressiondata progression;
     // offset: 0x4fc0, bitSize: 0x3c20(0x784 Byte(s))
     weapon_challenges weapon_challenges;
     // offset: 0x8be0, bitSize: 0x4d0(0x9a Byte(s))

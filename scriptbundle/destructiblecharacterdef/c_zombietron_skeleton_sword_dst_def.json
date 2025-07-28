@@ -1,0 +1,47 @@
+{
+    "#hash_76602986": [
+        {
+            "hittag": "tag_weapon_right"
+        }
+    ],
+    "#hash_fbda37f8": [
+        {
+            "hittag": "tag_weapon_left"
+        }
+    ],
+    "#hash_f1b8a55a": [
+        {
+            "hittag": "j_helmet"
+        }
+    ],
+    "#hash_ad295a27": [
+        {
+            "hittag": "j_helmet"
+        },
+        {
+            "hittag": "j_head"
+        }
+    ],
+    "hash_ce6ea3fa": "model#c_t8_zmb_dlc2_skeleton_helmet",
+    "hash_aa7fbf8b": "tag_weapon_right",
+    "hash_20a1cc0c": 0.1,
+    "hash_5fb501b2": -0.2,
+    "hash_5e937f7f": 1,
+    "configstringfiletype": "scriptbundle",
+    "hash_c83371f4": "model#c_t8_zmb_dlc2_skeleton_sword",
+    "type": "destructiblecharacterdef",
+    "hash_9fdd055b": "j_head",
+    "vmtype": "both",
+    "hash_eb82184d": "tag_weapon_left",
+    "hash_446db2da": "tag_weapon_right",
+    "name": "c_zombietron_skeleton_sword_dst_def",
+    "hash_4d756ec6": "model#c_t8_zmb_dlc2_skeleton_helmet",
+    "hash_2ee3ede": "model#c_t8_zmb_dlc2_skeleton_shield",
+    "piececount": 3,
+    "hash_54cd7df6": "tag_weapon_left",
+    "hash_38afe706": "model#c_t8_zmb_dlc2_skeleton_shield",
+    "hash_19e4a0d": "model#c_t8_zmb_dlc2_skeleton_sword",
+    "hash_56d63213": "j_head",
+    "hash_7ef10841": 1,
+    "hash_7fb809b3": 0.2
+}

@@ -1,110 +1,117 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_562e366d5e90a63d",
-            "var_5d4b5964": 1.92
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 1.92
         },
         {
             "soundevent": "#hash_50fc50ff5af72ce",
-            "var_5d4b5964": 8.47,
-            "var_36bf8e05": "#hash_b1bc83d38b849df"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 8.47,
+            "hash_36bf8e05": "localized19#hash_b1bc83d38b849df"
         },
         {
             "soundevent": "#hash_7663f91b5f985478",
-            "var_f35c5951": 0.3,
-            "var_5d4b5964": 3.61,
-            "var_36bf8e05": "#hash_702b819571ad58d3"
+            "hash_f35c5951": 0.3,
+            "hash_5d4b5964": 3.61,
+            "hash_36bf8e05": "localized19#hash_702b819571ad58d3"
         },
         {
             "soundevent": "#hash_7663fc1b5f985991",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 2.28,
-            "var_36bf8e05": "#hash_121fd398aad26d70"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 2.28,
+            "hash_36bf8e05": "localized19#hash_121fd398aad26d70"
         },
         {
             "soundevent": "#hash_50fc40ff5af711b",
-            "var_f35c5951": 0.25,
-            "var_5d4b5964": 10.22,
-            "var_36bf8e05": "#hash_3cb65facee65124"
+            "hash_f35c5951": 0.25,
+            "hash_5d4b5964": 10.22,
+            "hash_36bf8e05": "localized19#hash_3cb65facee65124"
         },
         {
             "soundevent": "#hash_7663fe1b5f985cf7",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 4.22,
-            "var_36bf8e05": "#hash_72dee1621a402672"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 4.22,
+            "hash_36bf8e05": "localized19#hash_72dee1621a402672"
         },
         {
             "soundevent": "#hash_50fca0ff5af7b4d",
-            "var_f35c5951": 0.1,
-            "var_5d4b5964": 4.59,
-            "var_36bf8e05": "#hash_4f383e626823849a"
+            "hash_f35c5951": 0.1,
+            "hash_5d4b5964": 4.59,
+            "hash_36bf8e05": "localized19#hash_4f383e626823849a"
         },
         {
             "soundevent": "#hash_7664001b5f98605d",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 4.99,
-            "var_36bf8e05": "#hash_63a649f1a58365bc"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 4.99,
+            "hash_36bf8e05": "localized19#hash_63a649f1a58365bc"
         },
         {
             "soundevent": "#hash_50fc80ff5af77e7",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 6.46,
-            "var_36bf8e05": "#hash_581201d256f89040"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 6.46,
+            "hash_36bf8e05": "localized19#hash_581201d256f89040"
         },
         {
             "soundevent": "#hash_50fbd0ff5af6536",
-            "var_f35c5951": 0.15,
-            "var_5d4b5964": 3,
-            "var_36bf8e05": "#hash_19248d00f3d66c07"
+            "hash_f35c5951": 0.15,
+            "hash_5d4b5964": 3,
+            "hash_36bf8e05": "localized19#hash_19248d00f3d66c07"
         },
         {
             "soundevent": "#hash_7663f11b5f9846e0",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 1.64,
-            "var_36bf8e05": "#hash_4626df62f1340afb"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 1.64,
+            "hash_36bf8e05": "localized19#hash_4626df62f1340afb"
         },
         {
             "soundevent": "#hash_443491836fd73658",
-            "var_f35c5951": 0.25,
-            "var_5d4b5964": 4.25,
-            "var_36bf8e05": "#hash_422151f6fae053ed"
+            "hash_f35c5951": 0.25,
+            "hash_5d4b5964": 4.25,
+            "hash_36bf8e05": "localized19#hash_422151f6fae053ed"
         },
         {
             "soundevent": "#hash_443492836fd7380b",
-            "var_f35c5951": 0.9,
-            "var_5d4b5964": 8.38,
-            "var_36bf8e05": "#hash_2e3bcc719a3b09c0"
+            "hash_f35c5951": 0.9,
+            "hash_5d4b5964": 8.38,
+            "hash_36bf8e05": "localized19#hash_2e3bcc719a3b09c0"
         },
         {
             "soundevent": "#hash_4942401e79234c29",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 10.09,
-            "var_36bf8e05": "#hash_402967e15609e90e"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 10.09,
+            "hash_36bf8e05": "localized19#hash_402967e15609e90e"
         },
         {
             "soundevent": "#hash_49423f1e79234a76",
-            "var_5d4b5964": 7.29,
-            "var_36bf8e05": "#hash_3f87c78d721d046f"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 7.29,
+            "hash_36bf8e05": "localized19#hash_3f87c78d721d046f"
         },
         {
             "soundevent": "#hash_134f08d7ba4aac26",
-            "var_5d4b5964": 2.08
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 2.08
         }
     ],
-    "description": "#hash_234cf717c7d17983",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_483fb768867494d5",
+    "description": "localized19#hash_234cf717c7d17983",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "hash_824079e7": "#survival",
+    "uimodel": "model#hash_483fb768867494d5",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 5,
-    "var_ad4ad686": "#dark_aether",
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_darkaether_radio_12",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_6dcf5dbb8948e4c9",
-    "var_6073bf8f": "#hash_30acea553928ba42"
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_6dcf5dbb8948e4c9",
+    "hash_4efbbcfe": 0,
+    "hash_6073bf8f": "model#hash_30acea553928ba42"
 }

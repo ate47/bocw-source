@@ -1,42 +1,52 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter1_default_mtxitem",
+            "hash_4a4bc969": "scriptbundle#mtx_outfit_prt_mp_gen_starter1_default_mtxitem",
             "itemid": "32022739"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter1_mtxitem",
             "itemid": "31474701"
         },
         {
-            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter2_default_mtxitem",
+            "hash_4a4bc969": "scriptbundle#mtx_outfit_prt_mp_gen_starter2_default_mtxitem",
             "itemid": "20329255"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter2_mtxitem",
             "itemid": "19048863"
         },
         {
-            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter4_default_mtxitem",
+            "hash_4a4bc969": "scriptbundle#mtx_outfit_prt_mp_gen_starter4_default_mtxitem",
             "itemid": "24249088"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter4_mtxitem",
             "itemid": "31249471"
         },
         {
-            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter5_default_mtxitem",
+            "hash_4a4bc969": "scriptbundle#mtx_outfit_prt_mp_gen_starter5_default_mtxitem",
             "itemid": "25076252"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter5_mtxitem",
             "itemid": "31383564"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_5c5fa773f66005e5",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "login_ae_product_mtxentitlement",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "21477295"
 }

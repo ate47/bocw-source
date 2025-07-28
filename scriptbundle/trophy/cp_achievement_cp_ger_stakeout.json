@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_2b2dfb9ec0fc0de4",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_2b2dfb9ec0fc0de4",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_2196e721fa297822",
-    "image": "#hash_65df4621d89924dc",
+    "hash_4a95afca": "image#hash_2196e721fa297822",
+    "image": "image#hash_65df4621d89924dc",
     "name": "cp_achievement_cp_ger_stakeout",
-    "title": "#hash_7034c7950ab0149c"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_7034c7950ab0149c",
+    "hash_621379a": 0
 }

@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_funnybone_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_funnybone_mtxitem",
             "itemid": "33121233"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_big_joke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_big_joke_mtxitem",
             "itemid": "30524708"
         },
         {
-            "var_4a4bc969": "#ar_fasthandling_bp_joke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fasthandling_bp_joke_mtxitem",
             "itemid": "27238695"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_digital_big_joke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_digital_big_joke_mtxitem",
             "itemid": "32991103"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_big_joke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_heli_gunship_hind_mpx_big_joke_mtxitem",
             "itemid": "20374410"
         },
         {
-            "var_4a4bc969": "#reticle_84_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_84_mtxitem",
             "itemid": "24953828"
         },
         {
-            "var_4a4bc969": "#emblems_s3_vts_final_27_v2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_vts_final_27_v2_mtxitem",
             "itemid": "24385598"
         }
     ],
-    "itemname": "#hash_31cc21748a6157f1",
-    "var_375a1747": "#hash_2b9db522a83b6c13",
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_3056_portnova_clown_heist",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_3056_portnova_clown_heist",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_3056_portnova_clown_heist_mtxbundle",
-    "var_a788fada": "#hash_3fb9547fd9dd7a2c",
-    "titlestring": "#hash_5d5dceebe186e951",
-    "var_566825be": "#hash_17a28e9ecebfe678",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_3056_portnova_clown_heist_small",
+    "titlestring": "localized18#hash_5d5dceebe186e951",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_3056_portnova_clown_heist",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_143f65d3a92f851",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_143f65d3a92f851",
+    "hash_db3e02ab": 2000,
     "itemid": "28500075"
 }

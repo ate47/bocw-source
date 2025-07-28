@@ -1,0 +1,17 @@
+{
+    "description": "localized19#hash_7bbf4fb093381ec7",
+    "tagname": "mdl_cp_takedown_item_08",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_takedown_matchbook_01",
+    "type": "collectible",
+    "name": "p9_cp_takedown_08",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_81f1affb17b1c23",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_2ceed02ec55982bf",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "hash_3935a020": "ss",
+    "thumbnail": "image#evidenceboard_review_takedown_matchbook"
+}

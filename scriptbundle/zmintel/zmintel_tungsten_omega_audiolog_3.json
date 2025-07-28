@@ -1,73 +1,77 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_1325c39aa7b910d7",
-            "var_f35c5951": 3,
-            "var_5d4b5964": 6.36,
-            "var_36bf8e05": "#hash_5b7076c40ec5d3fe"
+            "hash_f35c5951": 3,
+            "hash_5d4b5964": 6.36,
+            "hash_36bf8e05": "localized19#hash_5b7076c40ec5d3fe"
         },
         {
             "soundevent": "#hash_1325c29aa7b90f24",
-            "var_f35c5951": 4,
-            "var_5d4b5964": 11.09,
-            "var_36bf8e05": "#hash_318175d2e9af44fb"
+            "hash_f35c5951": 4,
+            "hash_5d4b5964": 11.09,
+            "hash_36bf8e05": "localized19#hash_318175d2e9af44fb"
         },
         {
             "soundevent": "#hash_1325c59aa7b9143d",
-            "var_f35c5951": 4.5,
-            "var_5d4b5964": 9.83,
-            "var_36bf8e05": "#hash_2d9e3868e155e18"
+            "hash_f35c5951": 4.5,
+            "hash_5d4b5964": 9.83,
+            "hash_36bf8e05": "localized19#hash_2d9e3868e155e18"
         },
         {
             "soundevent": "#hash_1325c49aa7b9128a",
-            "var_f35c5951": 5,
-            "var_5d4b5964": 17.39,
-            "var_36bf8e05": "#hash_66c62e5eecc31d85"
+            "hash_f35c5951": 5,
+            "hash_5d4b5964": 17.39,
+            "hash_36bf8e05": "localized19#hash_66c62e5eecc31d85"
         },
         {
             "soundevent": "#hash_1325bf9aa7b90a0b",
-            "var_f35c5951": 3.5,
-            "var_5d4b5964": 15,
-            "var_36bf8e05": "#hash_659b0d4a97f79a5a"
+            "hash_f35c5951": 3.5,
+            "hash_5d4b5964": 15,
+            "hash_36bf8e05": "localized19#hash_659b0d4a97f79a5a"
         },
         {
             "soundevent": "#hash_1325be9aa7b90858",
-            "var_f35c5951": 3.4,
-            "var_5d4b5964": 13.46,
-            "var_36bf8e05": "#hash_7daa01afce3cbac7"
+            "hash_f35c5951": 3.4,
+            "hash_5d4b5964": 13.46,
+            "hash_36bf8e05": "localized19#hash_7daa01afce3cbac7"
         },
         {
             "soundevent": "#hash_1325c19aa7b90d71",
-            "var_f35c5951": 1.8,
-            "var_5d4b5964": 3.58,
-            "var_36bf8e05": "#hash_25073e2b6ececda4"
+            "hash_f35c5951": 1.8,
+            "hash_5d4b5964": 3.58,
+            "hash_36bf8e05": "localized19#hash_25073e2b6ececda4"
         },
         {
             "soundevent": "#hash_1325c09aa7b90bbe",
-            "var_f35c5951": 0.4,
-            "var_5d4b5964": 4.2,
-            "var_36bf8e05": "#hash_a428a3a98c1bec1"
+            "hash_f35c5951": 0.4,
+            "hash_5d4b5964": 4.2,
+            "hash_36bf8e05": "localized19#hash_a428a3a98c1bec1"
         },
         {
             "soundevent": "#hash_293180c2dc2312c0",
-            "var_5d4b5964": 1.66
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 1.66
         }
     ],
-    "description": "#hash_b80018e6aed4ca7",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#exploration",
-    "model": "#hash_20f9a15d3e077602",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_7af8f043b1133323",
+    "description": "localized19#hash_b80018e6aed4ca7",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#exploration",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_reel_to_reel_audio_recorder_01",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#hash_7af8f043b1133323",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 6,
-    "var_ad4ad686": "#omega",
+    "hash_ad4ad686": "#omega",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_tungsten_omega_audiolog_3",
-    "var_9be0526e": "#audiolog",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#tape",
-    "title": "#hash_4a520a8b951aab9d",
+    "hash_9be0526e": "#audiolog",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#tape",
+    "title": "localized19#hash_4a520a8b951aab9d",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_tungsten"
 }

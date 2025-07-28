@@ -4,13 +4,16 @@
             "filters": "#multiplayer"
         }
     ],
-    "description": "#hash_33548ea90cd56aae",
-    "var_86b354f": 30,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Silver",
+    "description": "localized18#hash_33548ea90cd56aae",
+    "hash_86b354f": 30,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Silver",
     "type": "trophy",
-    "var_4a95afca": "#hash_23741479b62da3d4",
-    "image": "#hash_6494a07ebba0dc6b",
+    "hash_4a95afca": "image#hash_23741479b62da3d4",
+    "image": "image#hash_6494a07ebba0dc6b",
     "name": "mp_achievement_scorestreak_kills",
-    "title": "#hash_278de01a18f0e19e"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_278de01a18f0e19e",
+    "hash_621379a": 0
 }

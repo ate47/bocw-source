@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_3ce54ff9328a4b17",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_3ce54ff9328a4b17",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_10ae5cbd6a753639",
-    "image": "#hash_656925bd51f5e2f7",
+    "hash_4a95afca": "image#hash_10ae5cbd6a753639",
+    "image": "image#hash_656925bd51f5e2f7",
     "name": "cp_achievement_cp_rus_duga",
-    "title": "#hash_1004a0cdcf4f27ad"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_1004a0cdcf4f27ad",
+    "hash_621379a": 0
 }

@@ -1,10 +1,14 @@
 {
-    "hinttext": "#hash_47953193b6483ff4",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_47953193b6483ff4",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "gts_pvp_only",
-    "displayname": "#hash_36bb6b193fbf5f34",
-    "var_9de86f42": 2,
+    "displayname": "localized18#hash_36bb6b193fbf5f34",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "pvpOnly",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

@@ -1,50 +1,54 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_4de2b2a02d9919bb"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7006_miami_driving_tracer"
         },
         {
-            "var_fe10649e": "#hash_69a604ca49826d9f"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7006_miami_driving_tracer_01"
         },
         {
-            "var_fe10649e": "#hash_69a605ca49826f52"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7006_miami_driving_tracer_02"
         },
         {
-            "var_fe10649e": "#hash_69a606ca49827105"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7006_miami_driving_tracer_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_semiauto_bp_mdriving_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_semiauto_bp_mdriving_mtxitem",
             "itemid": "30591861"
         },
         {
-            "var_4a4bc969": "#tr_fastburst_bp_mdriving_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_fastburst_bp_mdriving_mtxitem",
             "itemid": "28403255"
         },
         {
-            "var_4a4bc969": "#callingcards_companion_launch5_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_companion_launch5_s6_mtxitem",
             "itemid": "21015908"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_80_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_80_s6_mtxitem",
             "itemid": "23646932"
         },
         {
-            "var_4a4bc969": "#emblems_r8g11_34_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g11_34_s6_mtxitem",
             "itemid": "23347963"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_2dd86e8d3cdda675",
-    "var_375a1747": "#hash_4de2b2a02d9919bb",
-    "var_8ee7db29": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_7006_miami_driving_tracer",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_7006_miami_driving_tracer_mtxbundle",
-    "var_a788fada": "#hash_34dbdf8470ae5392",
-    "titlestring": "#hash_251716ec1d286050",
-    "var_566825be": "#hash_6c5a6497c2dabede",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_7006_miami_driving_tracer_small",
+    "titlestring": "localized18#hash_251716ec1d286050",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_7006_miami_driving_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_fec1c958d731718",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_fec1c958d731718",
+    "hash_db3e02ab": 750,
     "itemid": "22858620"
 }

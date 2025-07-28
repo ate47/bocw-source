@@ -1,11 +1,11 @@
 {
-    "description": "#hash_2cc5221b1f2b67dc",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_2cc5221b1f2b67dc",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_napalm_strike_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_7773eae05f34b8fd",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_firestarter",
     "statname": "#kills",
-    "var_8645ce54": "#hash_612c083a6d37fb14",
-    "iconlarge": "#hash_45b3a025cdc50dc1"
+    "stringref": "localized18#hash_612c083a6d37fb14",
+    "iconlarge": "image#ui_icon_medal_firestarter_large"
 }

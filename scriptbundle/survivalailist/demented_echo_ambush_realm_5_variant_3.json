@@ -1,23 +1,23 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "default_zombies_realm_5",
-            "var_a949845f": 12,
-            "var_857deb66": 100
+            "entryname": "scriptbundle&default_zombies_realm_5",
+            "hash_a949845f": 12,
+            "hash_857deb66": 100
         },
         {
-            "entryname": "survival_ai_avogadro",
-            "var_a949845f": 3,
-            "var_857deb66": 50
+            "entryname": "scriptbundle&survival_ai_avogadro",
+            "hash_a949845f": 3,
+            "hash_857deb66": 50
         },
         {
-            "entryname": "inf_elites",
-            "var_a949845f": 1,
-            "var_857deb66": 50
+            "entryname": "scriptbundle&inf_elites",
+            "hash_a949845f": 1,
+            "hash_857deb66": 50
         }
     ],
-    "var_d961aeb3": 0.2,
-    "var_922067c4": "scriptbundle",
+    "hash_d961aeb3": 0.2,
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "demented_echo_ambush_realm_5_variant_3"
 }

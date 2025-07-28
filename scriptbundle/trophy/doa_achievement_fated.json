@@ -4,13 +4,16 @@
             "filters": "#zombie"
         }
     ],
-    "description": "#hash_5d40fb28c7902a11",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_5d40fb28c7902a11",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_7600d16465688df3",
-    "image": "#hash_767bf124ea32dbd8",
+    "hash_4a95afca": "image#hash_7600d16465688df3",
+    "image": "image#hash_767bf124ea32dbd8",
     "name": "doa_achievement_fated",
-    "title": "#hash_7370749ef647dc3f"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_7370749ef647dc3f",
+    "hash_621379a": 0
 }

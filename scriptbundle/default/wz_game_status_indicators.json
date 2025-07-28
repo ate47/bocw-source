@@ -1,0 +1,20 @@
+{
+    "#hash_5a10cde6": [
+        {
+            "indicator": "playersalive"
+        },
+        {
+            "indicator": "cleanups"
+        },
+        {
+            "indicator": "kills"
+        }
+    ],
+    "hash_e41e73bc": "image#uie_ui_icon_wz_hud_portal_lives_left",
+    "name": "wz_game_status_indicators",
+    "hash_64c41c9": "image#uie_ui_hud_scoreinfo_player",
+    "iconcleanups": "image#hash_3ab0071e32222406",
+    "iconcash": "image#ui_icon_wz_hud_cash",
+    "hash_41b27c8f": "image#hash_1b6c19cf40dfe0fe",
+    "hash_7a5e8f79": "image#uie_ui_hud_wz_hud_core_spectate_eyeball"
+}

@@ -1,0 +1,23 @@
+{
+    "vehicleenteranim": "anim#hash_20b903ea9bb4803b",
+    "fireadditiveanim": "playeranim#hash_203856d5f9076c13",
+    "configstringfiletype": "scriptbundle",
+    "hash_5dbdd77c": 20,
+    "hash_5becf9b5": -90,
+    "hash_e6fe69e8": 20,
+    "leftstraightanim": "playeranim#hash_1d43f0758760f777",
+    "type": "turretanims",
+    "hash_faf96846": 90,
+    "hash_9323d5c1": "playeranim#hash_373c5adbdbc24284",
+    "centerstraightanim": "playeranim#hash_73e9b3ad5747db84",
+    "vmtype": "none",
+    "hash_1f5b775e": 30000,
+    "name": "player_turret_hemtt_driver_anims",
+    "aimpitchangleu": 90,
+    "aimpitchangled": 90,
+    "hash_9b47c071": "playeranim#hash_373c5adbdbc24284",
+    "rightstraightanim": "playeranim#hash_5bf2c4e76cf61268",
+    "aimyawangler": 35,
+    "aimyawanglel": 35,
+    "hash_76635d45": 1
+}

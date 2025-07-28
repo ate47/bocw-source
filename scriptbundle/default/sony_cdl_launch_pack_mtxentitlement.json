@@ -1,72 +1,82 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_cdl_home_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_cdl_home_sy_mtxitem",
             "itemid": "20593200"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_mtxitem",
             "itemid": "31358670"
         },
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_cdl_away_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_cdl_away_sy_mtxitem",
             "itemid": "21677239"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
             "itemid": "24054907"
         },
         {
-            "var_4a4bc969": "#callingcards_egochall_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_egochall_sy_base_mtxitem",
             "itemid": "25992726"
         },
         {
-            "var_4a4bc969": "#callingcards_itsmyyear_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_itsmyyear_sy_base_mtxitem",
             "itemid": "29200544"
         },
         {
-            "var_4a4bc969": "#emblems_fa_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_fa_sy_base_mtxitem",
             "itemid": "23495515"
         },
         {
-            "var_4a4bc969": "#emblems_getthatbag_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_getthatbag_sy_base_mtxitem",
             "itemid": "22701968"
         },
         {
-            "var_4a4bc969": "#emblems_runitback_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_runitback_sy_base_mtxitem",
             "itemid": "29552405"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_flex_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_flex_sy_base_mtxitem",
             "itemid": "32406842"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_main_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_main_sy_base_mtxitem",
             "itemid": "18304062"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_slayer_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_slayer_sy_base_mtxitem",
             "itemid": "28134647"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_sub_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_sub_sy_base_mtxitem",
             "itemid": "19933808"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_camper_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_camper_sy_base_mtxitem",
             "itemid": "26292386"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_eae8f932d55106",
-    "var_247d9ed7": "cdl_launch_pack",
-    "var_208d76b5": "#hash_af73b676817bf12",
-    "var_70f66e54": "#hash_64de843c0ea161db",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "cdl_launch_pack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_cdl_launch_pack",
+    "hash_70f66e54": "#hash_64de843c0ea161db",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "sony_cdl_launch_pack_mtxentitlement",
-    "var_566825be": "#hash_308a2c47e3953232",
-    "var_4af381c": 2000,
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_cdl_launch_pack",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#orbis",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#orbis",
     "itemid": "29575293",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

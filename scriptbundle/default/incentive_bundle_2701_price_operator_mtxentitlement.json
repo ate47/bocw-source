@@ -1,23 +1,32 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_uk_pl_price_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_price_mtxitem",
             "itemid": "28595391"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_price_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_price_mtxitem",
             "itemid": "31683170"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_1a95a6d20b16eddf",
-    "description": "#hash_2ba71de28ceda1df",
-    "var_87756eb4": 1,
-    "var_375a1747": "#hash_591b2d42abb52a08",
+    "description": "localized18#hash_2ba71de28ceda1df",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 1,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_375a1747": "image#hash_591b2d42abb52a08",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "incentive_bundle_2701_price_operator_mtxentitlement",
-    "var_90708fcf": "#hash_1f427b5aaa57264c",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_90708fcf": "localized18#hash_1f427b5aaa57264c",
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "24193034",
-    "var_7c846082": "#hash_39bc24db0771eb04"
+    "hash_7c846082": "localized18#hash_39bc24db0771eb04"
 }

@@ -1,145 +1,173 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#kills",
-            "displayname": "#aar/kills",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/kills",
+            "actionutility": "#NONE",
             "identifier": "blackout"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#damage",
-            "displayname": "#aar/damage",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/damage",
+            "actionutility": "#NONE",
             "identifier": "blackout"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#hash_67538d47ebe8b32",
-            "displayname": "#hash_5ac781e043eb6ac4",
-            "actionutility": "#none",
+            "displayname": "localized19#hash_5ac781e043eb6ac4",
+            "actionutility": "#NONE",
             "identifier": "bounty"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#hash_67538d47ebe8b32",
-            "displayname": "#aar/cash",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/cash",
+            "actionutility": "#NONE",
             "identifier": "bounty"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#hash_67538d47ebe8b32",
-            "displayname": "#hash_312d135a50f00bc3",
-            "actionutility": "#none",
+            "displayname": "localized19#hash_312d135a50f00bc3",
+            "actionutility": "#NONE",
             "identifier": "notbounty"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#score",
-            "displayname": "#aar/score",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/score",
+            "actionutility": "#NONE",
             "identifier": "notbounty"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#objective",
-            "displayname": "#aar/objective",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/objective",
+            "actionutility": "#NONE",
             "identifier": "objectivetype"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#hash_4cafba86772e8350",
-            "displayname": "#aar/objective",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/objective",
+            "actionutility": "#NONE",
             "identifier": "ctf"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#damage",
-            "displayname": "#aar/damage",
-            "actionutility": "#none"
+            "displayname": "localized19#aar/damage",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#ekia_ratio",
-            "displayname": "#hash_6fc92b031c85115a",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_6fc92b031c85115a",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#ekia",
-            "displayname": "#mpui/ekia",
-            "actionutility": "#none"
+            "displayname": "localized19#mpui/ekia",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 1,
+            "hash_82ead409": 1,
             "type": "#hash_64cea0a233aaf306",
-            "displayname": "#hash_39f34f3a8bd173f7",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_39f34f3a8bd173f7",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#hash_67538d47ebe8b32",
-            "displayname": "#hash_312d135a50f00bc3",
-            "actionutility": "#none",
+            "displayname": "localized19#hash_312d135a50f00bc3",
+            "actionutility": "#NONE",
             "identifier": "notbounty"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#score",
-            "displayname": "#aar/score",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/score",
+            "actionutility": "#NONE",
             "identifier": "notbounty"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#objective",
-            "displayname": "#aar/objective",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/objective",
+            "actionutility": "#NONE",
             "identifier": "objectivetype"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#hash_4cafba86772e8350",
-            "displayname": "#aar/objective",
-            "actionutility": "#none",
+            "displayname": "localized19#aar/objective",
+            "actionutility": "#NONE",
             "identifier": "ctf"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#damage",
-            "displayname": "#aar/damage",
-            "actionutility": "#none"
+            "displayname": "localized19#aar/damage",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#ekia_ratio",
-            "displayname": "#hash_6fc92b031c85115a",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_6fc92b031c85115a",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#ekia",
-            "displayname": "#mpui/ekia",
-            "actionutility": "#none"
+            "displayname": "localized19#mpui/ekia",
+            "actionutility": "#NONE"
         },
         {
-            "var_82ead409": 3,
+            "hash_82ead409": 3,
             "type": "#hash_64cea0a233aaf306",
-            "displayname": "#hash_39f34f3a8bd173f7",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_39f34f3a8bd173f7",
+            "actionutility": "#NONE"
         }
     ],
-    "var_72ef398b": 1,
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
     "typetable": "#hash_d2cf38bd612343d",
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_62a68a39": 1,
-    "var_a77ed948": "#aarutility",
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 1,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#aarutility",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
     "name": "aar_stat_type_header",
-    "var_d7ecf096": 1,
-    "var_1084c16f": 1
+    "hash_d7ecf096": 1,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 1,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
 }

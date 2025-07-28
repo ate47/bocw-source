@@ -1,0 +1,19 @@
+{
+    "damageevaded": "#hash_1b71b9d19d8741d8",
+    "configstringfiletype": "scriptbundle",
+    "killgroundvehicle": "#hash_75a9a3699e4cfa0e",
+    "type": "mpdialog_scorestreak",
+    "damaged": "#hash_27623885044457df",
+    "killmultiple": "#hash_4d28333e9060e49b",
+    "killaircraft": "#hash_3163f92742e289bf",
+    "hash_bf56c3a5": "#hash_46d9b13053731479",
+    "evasiveaction": "#hash_6b8c39e37799c52d",
+    "vmtype": "both",
+    "timecheck": "#hash_4fcb1639977dd89e",
+    "name": "cdp_pilot2_kls_attack_chopper",
+    "arrive": "#hash_9e9c56d737c1edb",
+    "timeout": "#hash_2975eb5699538352",
+    "kill1": "#hash_64ed7d2fe73985c0",
+    "kill3": "#hash_64ed7f2fe7398926",
+    "kill2": "#hash_64ed802fe7398ad9"
+}

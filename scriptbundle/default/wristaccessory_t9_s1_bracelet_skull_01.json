@@ -1,9 +1,10 @@
 {
-    "description": "#hash_34eba9f9a16face",
+    "description": "localized18#hash_34eba9f9a16face",
     "image": "ui_icon_wrist_accessories_bracelet_skull_01",
+    "hash_9b474412": 0,
     "name": "wristaccessory_t9_s1_bracelet_skull_01",
-    "var_6855e4be": "#wristaccessory_t9_s1_bracelet_skull_01_mtxitem",
-    "displayname": "#hash_3ab8fef1b96cd17e",
-    "var_8d478ea4": "#hash_77c0d653ff6715bc",
-    "var_d27eb4c6": "#hash_3e3d47220303a97"
+    "hash_6855e4be": "#wristaccessory_t9_s1_bracelet_skull_01_mtxitem",
+    "displayname": "localized18#hash_3ab8fef1b96cd17e",
+    "hash_8d478ea4": "model#wrist_watch_t9_s1_bracelet_skull_01_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s1_bracelet_skull_01_world"
 }

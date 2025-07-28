@@ -1,7 +1,7 @@
 {
     "destroyed": "#hash_526b9ca767bc054f",
     "ready": "#hash_24b7e4f6cdd3ddb1",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "mpdialog_scorestreak",
     "vmtype": "both",
     "timecheck": "#hash_780a16863213279e",

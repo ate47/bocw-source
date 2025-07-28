@@ -1,0 +1,10 @@
+{
+    "description": "localized18#hash_ad1e6cce0c4eb73",
+    "UnlockMap": "cp_rus_siege",
+    "configstringfiletype": "scriptbundle",
+    "type": "cinematic",
+    "cinematicname": "cp_rus_siege_loadingmovie",
+    "name": "cp_rus_siege_loadingmovie",
+    "title": "localized18#hash_24568c6df236ca74",
+    "previewimage": "image#img_menu_cp_preview_rus_siege"
+}

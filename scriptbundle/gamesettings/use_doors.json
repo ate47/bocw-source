@@ -1,9 +1,13 @@
 {
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "use_doors",
-    "displayname": "#hash_243d89217c18bb4f",
-    "var_9de86f42": 2,
+    "displayname": "localized18#hash_243d89217c18bb4f",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "use_doors",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

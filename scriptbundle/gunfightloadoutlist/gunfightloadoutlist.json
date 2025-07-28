@@ -1,0 +1,19 @@
+{
+    "#hash_d6f55369": [
+        {
+            "loadout": "scriptbundle&mp_gunfight_loadout_default"
+        },
+        {
+            "loadout": "scriptbundle&mp_gunfight_loadout_snipers"
+        },
+        {
+            "loadout": "scriptbundle&mp_gunfight_loadouts_blueprints"
+        },
+        {
+            "loadout": "scriptbundle&mp_gunfight_loadout_melee"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "gunfightloadoutlist",
+    "name": "gunfightloadoutlist"
+}

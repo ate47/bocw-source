@@ -1,24 +1,28 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#t9_charm_bowling_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bowling_mtxitem",
             "itemid": "20360959"
         },
         {
-            "var_4a4bc969": "#player_xp_token_common_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_common_mtxitem",
             "itemid": "30886333"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_757de4729f8e1f7c",
-    "var_375a1747": "#hash_2656ae3f2f3b9ea2",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_3101_season_3",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_free_3101_season_3_mtxbundle",
-    "var_a788fada": "#hash_ce76f75af9368c5",
-    "titlestring": "#hash_5639ad901f43658d",
-    "var_566825be": "#hash_69f33baa0ad7f91d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_free_3101_season_3_small",
+    "titlestring": "localized18#hash_5639ad901f43658d",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_3101_season_3",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_62910789186b8c5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_62910789186b8c5",
+    "hash_db3e02ab": 2000,
     "itemid": "24910510"
 }

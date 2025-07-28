@@ -1,24 +1,30 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
-            "soundevent": "#hash_7a604f110b32858b"
+            "soundevent": "#hash_7a604f110b32858b",
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 0
         }
     ],
-    "description": "#hash_1bcaa6b157c079f7",
-    "itemspawnentry": "#item_zmintel_silver_requiem_artifact_1",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#ww_quest",
-    "model": "#hash_2363f109ef931e51",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_782a3ddb452965ee",
+    "description": "localized19#hash_1bcaa6b157c079f7",
+    "itemspawnentry": "scriptbundle#item_zmintel_silver_requiem_artifact_1",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#ww_quest",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_ieu_remote",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#p9_zm_ndu_ieu_remote_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
-    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "season": 0,
+    "hash_ad4ad686": "#requiem",
     "soundloop": "#hash_6098b72d515f39d5",
     "name": "zmintel_silver_requiem_artifact_1",
-    "var_9be0526e": "#artifact",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "title": "#hash_d2dc22eb7a741cd",
-    "var_265ab5cb": "#hash_2de1e7a326a9e6db",
+    "hash_9be0526e": "#artifact",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "title": "localized19#hash_d2dc22eb7a741cd",
+    "hash_4efbbcfe": 0,
+    "hash_265ab5cb": "image#ui_icon_inventory_p9_zm_ndu_ieu_remote_color_t9",
     "mapname": "#zm_silver"
 }

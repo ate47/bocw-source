@@ -1,38 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_light_bp_beachcomber_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_beachcomber_mtxitem",
             "itemid": "31249630"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_beachcomber_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_beachcomber_mtxitem",
             "itemid": "20138531"
         },
         {
-            "var_4a4bc969": "#t9_charm_boogie_board_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_boogie_board_mtxitem",
             "itemid": "31002445"
         },
         {
-            "var_4a4bc969": "#callingcards_killersurf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_killersurf_mtxitem",
             "itemid": "32486626"
         },
         {
-            "var_4a4bc969": "#emblems_killersurf_flipbook_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_killersurf_flipbook_mtxitem",
             "itemid": "32055691"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_killersurf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_killersurf_mtxitem",
             "itemid": "29821357"
         }
     ],
-    "itemname": "#hash_372fbf9f4e30824c",
-    "var_375a1747": "#hash_1d36fbbac60137b6",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1039_lmg_light_killer_surf",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1039_lmg_light_killer_surf",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1039_lmg_light_killer_surf_mtxbundle",
-    "titlestring": "#hash_7a3b55d9e305ba8c",
-    "var_566825be": "#hash_7d5e9cfd7fa4ee19",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_7a3b55d9e305ba8c",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1039_lmg_light_killer_surf",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_39424e887fd7a1fc",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_39424e887fd7a1fc",
+    "hash_db3e02ab": 2000,
     "itemid": "25595990"
 }

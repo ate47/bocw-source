@@ -1,9 +1,9 @@
 {
     "mod": "MOD_EXECUTION",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_execution",
-    "displayname": "#hash_18ba5e1570f95bcd",
-    "icon": "#ui_icon_meansofdeath_assassinate",
-    "iconlarge": "#ui_icon_meansofdeath_assassinate_xl"
+    "displayname": "localized18#hash_18ba5e1570f95bcd",
+    "icon": "image#ui_icon_meansofdeath_assassinate",
+    "iconlarge": "image#ui_icon_meansofdeath_assassinate_xl"
 }

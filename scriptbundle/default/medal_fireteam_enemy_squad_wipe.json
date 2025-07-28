@@ -1,11 +1,11 @@
 {
-    "description": "#hash_310f9ed7204801a4",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_310f9ed7204801a4",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_fireteam_enemy_squad_wipe",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_30a149021454ab6",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_squad_wipe",
     "statname": "#hash_1cfa004323a2ffe6",
-    "var_8645ce54": "#hash_599e8d5f9eb0565c",
-    "iconlarge": "#hash_6901132858516726"
+    "stringref": "localized18#hash_599e8d5f9eb0565c",
+    "iconlarge": "image#ui_icon_medal_squad_wipe_large"
 }

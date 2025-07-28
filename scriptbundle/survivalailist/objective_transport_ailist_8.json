@@ -1,47 +1,47 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_zombie",
-            "var_a949845f": -1,
-            "var_857deb66": 20
+            "entryname": "scriptbundle&survival_ai_zombie",
+            "hash_a949845f": -1,
+            "hash_857deb66": 20
         },
         {
-            "entryname": "survival_ai_zombie_armor_medium",
-            "var_a949845f": -1,
-            "var_857deb66": 29
+            "entryname": "scriptbundle&survival_ai_zombie_armor_medium",
+            "hash_a949845f": -1,
+            "hash_857deb66": 29
         },
         {
-            "entryname": "survival_ai_zombie_armor_heavy",
-            "var_a949845f": -1,
-            "var_857deb66": 29
+            "entryname": "scriptbundle&survival_ai_zombie_armor_heavy",
+            "hash_a949845f": -1,
+            "hash_857deb66": 29
         },
         {
-            "entryname": "survival_ai_mimic",
-            "var_a949845f": -1,
-            "var_857deb66": 4
+            "entryname": "scriptbundle&survival_ai_mimic",
+            "hash_a949845f": -1,
+            "hash_857deb66": 4
         },
         {
-            "entryname": "survival_ai_raz",
-            "var_a949845f": -1,
-            "var_857deb66": 4
+            "entryname": "scriptbundle&survival_ai_raz",
+            "hash_a949845f": -1,
+            "hash_857deb66": 4
         },
         {
-            "entryname": "survival_ai_steiner",
-            "var_a949845f": -1,
-            "var_857deb66": 4
+            "entryname": "scriptbundle&survival_ai_steiner",
+            "hash_a949845f": -1,
+            "hash_857deb66": 4
         },
         {
-            "entryname": "survival_ai_mechz",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_mechz",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_abomination",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_abomination",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "objective_transport_ailist_8"
 }

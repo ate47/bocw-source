@@ -1,78 +1,94 @@
 {
     "rewards": [
         {
-            "unlockdescription": "#hash_7295e89e5fb6c8e4",
+            "unlockdescription": "localized18#hash_7295e89e5fb6c8e4",
             "rewardtype": "#craftbackground",
-            "image": "#hash_591cb8065a9e3572",
-            "imagelarge": "#hash_591cb8065a9e3572",
-            "var_b4ab831a": "#hash_7e8b3d3c7514b77b",
+            "codpoints": 0,
+            "image": "image#ui_icon_callingcards_aerobics_061",
+            "imagelarge": "image#ui_icon_callingcards_aerobics_061",
+            "hash_b4ab831a": "#callingcards_aerobics_061",
             "stattype": "#common",
-            "var_7a2c1108": "#hash_4bc19862bca83e33",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5677d9133114a8ac"
+            "hash_7a2c1108": "localized18#hash_4bc19862bca83e33",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5677d9133114a8ac"
         },
         {
-            "unlockdescription": "#hash_2198a5c6f1b54287",
+            "unlockdescription": "localized18#hash_2198a5c6f1b54287",
             "rewardtype": "#arcadegame",
-            "var_b4ab831a": "#robot_tank_game",
+            "codpoints": 0,
+            "hash_b4ab831a": "#robot_tank_game",
             "stattype": "#common",
-            "var_7a2c1108": "#hash_4bc19862bca83e33",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4941bc4d64a8e38"
+            "hash_7a2c1108": "localized18#hash_4bc19862bca83e33",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4941bc4d64a8e38"
         },
         {
-            "unlockdescription": "#hash_3d73f59eff86458b",
+            "unlockdescription": "localized18#hash_3d73f59eff86458b",
             "rewardtype": "#wristaccessory",
-            "var_b4ab831a": "#wristaccessory_t9_s2_analog_caiman",
+            "codpoints": 0,
+            "hash_b4ab831a": "#wristaccessory_t9_s2_analog_caiman",
             "stattype": "#common",
-            "var_7a2c1108": "#hash_4bc19862bca83e33",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_47351685227336cc"
+            "hash_7a2c1108": "localized18#hash_4bc19862bca83e33",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_47351685227336cc"
         },
         {
-            "unlockdescription": "#hash_5db07e990fde08dd",
+            "unlockdescription": "localized18#hash_5db07e990fde08dd",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_62c8eeffccb660f6",
-            "imagelarge": "#hash_62c8eeffccb660f6",
-            "var_b4ab831a": "#hash_7345a613f023b561",
+            "codpoints": 0,
+            "image": "image#ui_icon_stickers_tankgirl_013",
+            "imagelarge": "image#ui_icon_stickers_tankgirl_013",
+            "hash_b4ab831a": "#paintjob_stickers_tankgirl_013",
             "stattype": "#common",
-            "var_7a2c1108": "#hash_4bc19862bca83e33",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3d48d424c78e2c71"
+            "hash_7a2c1108": "localized18#hash_4bc19862bca83e33",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3d48d424c78e2c71"
         },
         {
-            "unlockdescription": "#hash_764b1d4067aea03b",
+            "unlockdescription": "localized18#hash_764b1d4067aea03b",
             "rewardtype": "#craftbackground",
-            "image": "#hash_42ba01890ea46f6",
-            "imagelarge": "#hash_42ba01890ea46f6",
-            "var_b4ab831a": "#hash_7700c2b9376b0d15",
-            "var_7a2c1108": "#hash_1bfee839b3986c80",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_341d75738a58c294"
+            "codpoints": 0,
+            "image": "image#ui_icon_callingcards_blackops_02",
+            "imagelarge": "image#ui_icon_callingcards_blackops_02",
+            "hash_b4ab831a": "#callingcards_blackops_02",
+            "hash_7a2c1108": "localized18#hash_1bfee839b3986c80",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_341d75738a58c294"
         },
         {
-            "unlockdescription": "#hash_4808e4fc4276a90b",
+            "unlockdescription": "localized18#hash_4808e4fc4276a90b",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_8346a65d752aadf",
-            "imagelarge": "#hash_8346a65d752aadf",
-            "var_b4ab831a": "#hash_997d7351c83ede6",
-            "var_7a2c1108": "#hash_1bfee839b3986c80",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_17b5e73b9a9626e3"
+            "codpoints": 0,
+            "image": "image#ui_icon_stickers_ahwk_33",
+            "imagelarge": "image#ui_icon_stickers_ahwk_33",
+            "hash_b4ab831a": "#paintjob_stickers_ahwk_33",
+            "hash_7a2c1108": "localized18#hash_1bfee839b3986c80",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_17b5e73b9a9626e3"
         },
         {
-            "unlockdescription": "#hash_4c8aec02eacb2506",
+            "unlockdescription": "localized18#hash_4c8aec02eacb2506",
             "rewardtype": "#weaponblueprint",
-            "var_b4ab831a": "#hash_1c7cbe3acf0c1e8f",
-            "var_7a2c1108": "#hash_4bc19862bca83e33",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5eed955767f06002"
+            "codpoints": 0,
+            "hash_b4ab831a": "#tr_precisionsemi_bp_ivory",
+            "hash_7a2c1108": "localized18#hash_4bc19862bca83e33",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5eed955767f06002"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "challengerewards",
-    "var_5f0dd656": 2,
-    "var_4e39981b": 2,
+    "hash_5f0dd656": 2,
+    "hash_4e39981b": 2,
+    "hash_faec2a7f": 0,
     "name": "challengerewards_leagueplay_placement",
-    "sessionmode": "1"
+    "sessionmode": "1",
+    "hash_91a1cb16": 0
 }

@@ -1,0 +1,154 @@
+{
+    "objects": [
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_788369cdbc1bf537",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_5235710985ac1742",
+            "position": "driver",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_58f3e6afc17957a5"
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_788369cdbc1bf537",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_642a84711f1eebe",
+            "position": "passenger1",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_58f3e6afc17957a5"
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_788369cdbc1bf537",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_7eb36ecd8d6aef84",
+            "position": "crew1",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_68f9e65f9ac8c257",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_301e5bda97f85e24",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_6a321ad402203757",
+            "position": "crew2",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_68f9e75f9ac8c40a",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_301e5bda97f85e24",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_7ee7409635ec0188",
+            "position": "gunner1",
+            "exithighlandanim": "anim#hash_87f59150570ebf9",
+            "exithighanim": "anim#hash_f64dc458399f55f",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_301e5bda97f85e24",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_c00f477229fe51a",
+            "position": "gunner2",
+            "exithighlandanim": "anim#hash_87f59150570ebf9",
+            "exithighanim": "anim#hash_f64dc458399f55f",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_301e5bda97f85e24",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#hash_4827e521fc4dfe67",
+            "position": "crew3",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_68f9e75f9ac8c40a",
+            "valid": 1
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_788369cdbc1bf537",
+            "fastrope": 0,
+            "aligntag": "tag_body_animate",
+            "rideanim": "anim#ai_swat_rifle_ent_litlbird_rappel_stn_base_01_idle",
+            "position": "crew4",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_68f9e65f9ac8c257",
+            "valid": 1
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_3d6bb8e8fa94e833"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_24e0629f30d0185e"
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "model": "model#veh_t9_mil_us_helicopter_large_static",
+    "type": "vehicleriders",
+    "hash_4301b21d": 8,
+    "vmtype": "both",
+    "dropspeed": 350,
+    "name": "veh_t9_mil_us_helicopter_large_riders",
+    "highexitlandheight": 32
+}

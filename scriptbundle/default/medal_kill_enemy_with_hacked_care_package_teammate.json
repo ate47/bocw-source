@@ -1,10 +1,10 @@
 {
-    "description": "#hash_75102ba88d56df84",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_75102ba88d56df84",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_kill_enemy_with_hacked_care_package_teammate",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_5adabcecc38dc7fe",
-    "var_8645ce54": "#hash_40fc14e1de822ffc",
-    "iconlarge": "#hash_1d93a78baa18a40e"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_bait_taken",
+    "stringref": "localized18#hash_40fc14e1de822ffc",
+    "iconlarge": "image#ui_icon_medal_bait_taken_large"
 }

@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_as_long_as_men_there_will_be_war",
-    "quote": "#hash_6eb8f75389e7ea09",
-    "author": "#hash_55029251f18892e2"
+    "quote": "localized18#hash_6eb8f75389e7ea09",
+    "author": "localized18#hash_55029251f18892e2"
 }

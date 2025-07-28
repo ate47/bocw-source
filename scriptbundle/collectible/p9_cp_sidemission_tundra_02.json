@@ -1,0 +1,22 @@
+{
+    "description": "localized19#hash_7b2d2347157c2990",
+    "tagname": "mdl_cp_sidemission_tundra_item_02",
+    "UnlockMap": "cp_rus_yamantau",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_red_circus_kraus_casette_tape_01",
+    "type": "collectible",
+    "callback": "red_circus_audio_tape",
+    "hash_34754728": "localized19#hash_1c8813eba3d3c667",
+    "hash_444770d3": "image#evidence_splash_op_red_circus_kraus_casette_tape",
+    "name": "p9_cp_sidemission_tundra_02",
+    "UnlockType": 3,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_3bbbc4206095c848",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_293293f1d2d8b2fa",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 5,
+    "hint": "localized19#hash_71e909a2d60eeb0c",
+    "thumbnail": "image#evidenceboard_review_red_circus_kraus_casette_tape"
+}

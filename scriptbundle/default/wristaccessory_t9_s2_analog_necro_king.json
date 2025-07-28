@@ -1,10 +1,10 @@
 {
-    "description": "#hash_81d108fe38a4d89",
+    "description": "localized18#hash_81d108fe38a4d89",
     "image": "ui_icon_wrist_accessories_watch_analog_necro_king_1",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s2_analog_necro_king",
-    "var_6855e4be": "#wristaccessory_t9_s2_analog_necro_king_mtxitem",
-    "displayname": "#hash_7e5f2f7eb1989d97",
-    "var_8d478ea4": "#hash_7ae0a010dda04fbf",
-    "var_d27eb4c6": "#hash_7807920227ff9152"
+    "hash_6855e4be": "#wristaccessory_t9_s2_analog_necro_king_mtxitem",
+    "displayname": "localized18#hash_7e5f2f7eb1989d97",
+    "hash_8d478ea4": "model#wrist_watch_t9_s2_analog_necro_king_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s2_analog_necro_king_world"
 }

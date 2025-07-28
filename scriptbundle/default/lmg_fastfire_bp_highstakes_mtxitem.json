@@ -1,47 +1,55 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_7c8c8418505cabc3"
+            "hash_fe10649e": "image#hash_7c8c8418505cabc3"
         },
         {
-            "var_fe10649e": "#hash_30791e0623aee92"
+            "hash_fe10649e": "image#hash_30791e0623aee92"
         },
         {
-            "var_fe10649e": "#hash_30792e0623af045"
+            "hash_fe10649e": "image#hash_30792e0623af045"
         },
         {
-            "var_fe10649e": "#hash_3078be0623ae460"
+            "hash_fe10649e": "image#hash_3078be0623ae460"
         }
     ],
-    "var_c1b2a9f": [
+    "#hash_c1b2a9f": [
         {
-            "var_fe10649e": "#hash_2e238e10198188df"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_lmg_fastfire_bp_highstakes"
         },
         {
-            "var_fe10649e": "#hash_3cad6c3502c8b176"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_lmg_fastfire_bp_highstakes_2"
         },
         {
-            "var_fe10649e": "#hash_3cad6d3502c8b329"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_lmg_fastfire_bp_highstakes_3"
         },
         {
-            "var_fe10649e": "#hash_3cad6e3502c8b4dc"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_lmg_fastfire_bp_highstakes_4"
         }
     ],
-    "itemname": "#hash_403bc9b4b787684d",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_2e238e10198188df",
-    "var_4f3108ff": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_7c8c8418505cabc3",
+    "itemname": "#lmg_fastfire_bp_highstakes",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#ui_icon_mtx_tier_lmg_fastfire_bp_highstakes",
+    "hash_4f3108ff": 1,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#hash_7c8c8418505cabc3",
+    "release": 0,
     "season": 4,
-    "var_46300498": 1,
-    "var_8ee7db29": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 1,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#lmg_fastfire_t9",
+    "hash_b6d84534": 0,
     "name": "lmg_fastfire_bp_highstakes_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 750,
-    "var_700702e5": 750,
-    "rarity": 5,
+    "hash_db3e02ab": 750,
+    "hash_700702e5": 750,
+    "rarity": "enum:5",
+    "hash_84dc7961": 0,
     "itemid": "19578398",
-    "blueprint": "#hash_403bc9b4b787684d"
+    "blueprint": "#lmg_fastfire_bp_highstakes"
 }

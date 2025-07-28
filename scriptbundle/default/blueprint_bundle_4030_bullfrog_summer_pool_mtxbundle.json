@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_capacity_bp_summer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_summer_mtxitem",
             "itemid": "22091635"
         },
         {
-            "var_4a4bc969": "#shotgun_fullauto_bp_summer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_fullauto_bp_summer_mtxitem",
             "itemid": "33276591"
         },
         {
-            "var_4a4bc969": "#t9_charm_fun_beach_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_fun_beach_mtxitem",
             "itemid": "31927736"
         },
         {
-            "var_4a4bc969": "#emblems_r8g_10212_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g_10212_animated_mtxitem",
             "itemid": "24275047"
         },
         {
-            "var_4a4bc969": "#callingcards_splash_wave_final_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_splash_wave_final_mtxitem",
             "itemid": "31568104"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_splashwave_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_splashwave_mtxitem",
             "itemid": "28265804"
         }
     ],
-    "itemname": "#hash_9f572ba49983ffe",
-    "var_375a1747": "#hash_312d248fbabc4490",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4030_bullfrog_summer_pool",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4030_bullfrog_summer_pool",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4030_bullfrog_summer_pool_mtxbundle",
-    "var_a788fada": "#hash_15f7a0c950013f09",
-    "titlestring": "#hash_6079995b9503ff2",
-    "var_566825be": "#hash_6356a3fc32788701",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4030_bullfrog_summer_pool_small",
+    "titlestring": "localized18#hash_6079995b9503ff2",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4030_bullfrog_summer_pool",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_22e46b8942923e2e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_22e46b8942923e2e",
+    "hash_db3e02ab": 2000,
     "itemid": "21981860"
 }

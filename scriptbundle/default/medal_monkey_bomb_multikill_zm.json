@@ -1,9 +1,9 @@
 {
-    "description": "#hash_453318bc93184da0",
+    "description": "localized18#hash_453318bc93184da0",
     "widget": "#badasserymedal",
     "name": "medal_monkey_bomb_multikill_zm",
-    "iconsmall": "#hash_6906e9c9b2d45ba5",
+    "iconsmall": "image#ui_icon_medal_zm_monkeyshines",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_7fc277c8c4442c78",
-    "iconlarge": "#hash_22b0f0cdd8d08fe9"
+    "stringref": "localized18#hash_7fc277c8c4442c78",
+    "iconlarge": "image#ui_icon_medal_zm_monkeyshines_large"
 }

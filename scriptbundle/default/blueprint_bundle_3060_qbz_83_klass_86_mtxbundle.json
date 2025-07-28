@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_milboots_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_milboots_mtxitem",
             "itemid": "18138472"
         },
         {
-            "var_4a4bc969": "#callingcards_3060_boot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_3060_boot_mtxitem",
             "itemid": "20884315"
         },
         {
-            "var_4a4bc969": "#emblem_3060_boot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_3060_boot_mtxitem",
             "itemid": "25848068"
         }
     ],
-    "itemname": "#hash_41938888e1975c29",
-    "var_375a1747": "#hash_756d0a4c39a3df77",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3060_qbz_83_klass_86",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3060_qbz_83_klass_86",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3060_qbz_83_klass_86_mtxbundle",
-    "var_a788fada": "#hash_3545e39b6bc689fc",
-    "titlestring": "#hash_3a3bef0391b860b4",
-    "var_566825be": "#hash_9088ded003acd88",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3060_qbz_83_klass_86_small",
+    "titlestring": "localized18#hash_3a3bef0391b860b4",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3060_qbz_83_klass_86",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_628aaef2904ac4a4",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_628aaef2904ac4a4",
+    "hash_db3e02ab": 2000,
     "itemid": "24503168"
 }

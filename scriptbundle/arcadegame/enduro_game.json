@@ -1,0 +1,20 @@
+{
+    "description": "localized18#hash_59815ec282d28579",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_4c2e9093271dddde",
+    "hash_3552049b": 1,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 2,
+    "hash_76e12fbf": "image#uie_arcade_large_enduro",
+    "hash_9864ed1": 0,
+    "name": "enduro_game",
+    "displayname": "localized18#hash_7fad616958a48aa7",
+    "filename": "#hash_493d1af20c779bfc",
+    "action": "localized18#hash_7cf25edc74bbc2ec",
+    "hash_dcc4bcb0": 0,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_enduro",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_enduro",
+    "hash_48152d43": 0
+}

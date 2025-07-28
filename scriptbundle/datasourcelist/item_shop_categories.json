@@ -1,0 +1,481 @@
+{
+    "#hash_bb7dcd09": [
+        {
+            "hash_5ed80a9c": "#featured",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/store_featured",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_featured"
+        },
+        {
+            "hash_5ed80a9c": "#operator",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_4402cd2d69c1f7d9",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_operator"
+        },
+        {
+            "hash_5ed80a9c": "#weapon",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_7dc3cccc88e9b974",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_weapon"
+        },
+        {
+            "hash_5ed80a9c": "#hash_595f8e8825cc5305",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5d791b94a8e20306",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_jfy"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3e9468baae562715",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_dbf39ddc84910e7",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_franchisestore"
+        },
+        {
+            "hash_5ed80a9c": "#hash_653a047610ef252d",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec78672793e4da",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_1"
+        },
+        {
+            "hash_5ed80a9c": "#hash_653a017610ef2014",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec78672793e4da",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_2"
+        },
+        {
+            "hash_5ed80a9c": "#hash_653a027610ef21c7",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec78672793e4da",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_3"
+        },
+        {
+            "hash_5ed80a9c": "#hash_6539ff7610ef1cae",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec78672793e4da",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_44606ccbd331b16f",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_464d6006ffea5de4",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_7185b494956c53b0",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_2044dfc09287ea55",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_launch_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_4cc0fd7603804e08",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec77672793e327",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02_1"
+        },
+        {
+            "hash_5ed80a9c": "#hash_4cc1007603805321",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec77672793e327",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02_2"
+        },
+        {
+            "hash_5ed80a9c": "#hash_4cc0ff760380516e",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5497a9c54052c021",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02_3"
+        },
+        {
+            "hash_5ed80a9c": "#hash_4cc1027603805687",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5497aac54052c1d4",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02_4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_76dfa70042383202",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_929ba4474afe8bd",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_52e4e6c6a81df594",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_44bbc4bfbf7bbdcd",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_75_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_70a6309ec64a8c0a",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_11fbde3173e9f0b7",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01_75"
+        },
+        {
+            "hash_5ed80a9c": "#hash_17a26a00543d2ec1",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_29fa3b4486c0b2b2",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02_mid"
+        },
+        {
+            "hash_5ed80a9c": "#s01",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec78672793e4da",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s01"
+        },
+        {
+            "hash_5ed80a9c": "#s02",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec77672793e327",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s02"
+        },
+        {
+            "hash_5ed80a9c": "#s03",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec76672793e174",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03"
+        },
+        {
+            "hash_5ed80a9c": "#s04",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec75672793dfc1",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s04"
+        },
+        {
+            "hash_5ed80a9c": "#s05",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec74672793de0e",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s05"
+        },
+        {
+            "hash_5ed80a9c": "#s06",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec73672793dc5b",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s06"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3d601c6f1e4ec3a",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5ad1b91a21738cb9",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03_mid"
+        },
+        {
+            "hash_5ed80a9c": "#hash_bd7e448bacaef",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_15c9d9287e21c970",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s04_mid"
+        },
+        {
+            "hash_5ed80a9c": "#hash_692863d600e3e3d8",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_14ce2f5312c26507",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s05_mid"
+        },
+        {
+            "hash_5ed80a9c": "#hash_21f1c9f6e0d1d91d",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_6293c9231357efde",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s06_mid"
+        },
+        {
+            "hash_5ed80a9c": "#hash_5f6840c6dcc14a15",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3671361a0c5ade4a",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_5fc320e4371d3ed0",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_716a3428690a943b",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s04_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_4864bed5eedd6713",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_71557852fe6f3f58",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s05_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_42c266f6f2e2d2a6",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3577823255e7da1",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s06_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_356032f3b6c9e195",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_53c032d3a450f440",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cod_2021"
+        },
+        {
+            "hash_5ed80a9c": "#hash_53369776068971f6",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec76672793e174",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03_2"
+        },
+        {
+            "hash_5ed80a9c": "#tracer",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_769d505f5793e852",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_tracer"
+        },
+        {
+            "hash_5ed80a9c": "#mastercraft",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_530a10fb47bfffcc",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_mastercraft"
+        },
+        {
+            "hash_5ed80a9c": "#hash_6aa4754a02b06382",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_653de51814e79989",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_masked_op"
+        },
+        {
+            "hash_5ed80a9c": "#special",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1705bd8caf36bae2",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_special"
+        },
+        {
+            "hash_5ed80a9c": "#hash_4109fdc714b82c31",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_14152d19b10618a2",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03_tra"
+        },
+        {
+            "hash_5ed80a9c": "#hash_6ffdf28d1c3730bc",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3c1ee42104323f55",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03_mc"
+        },
+        {
+            "hash_5ed80a9c": "#hash_2f03a7c70a506a38",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_22fd719a6b98a0f",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s03_rea"
+        },
+        {
+            "hash_5ed80a9c": "#hash_39e3ae75f8612a0b",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ec75672793dfc1",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s04_2"
+        },
+        {
+            "hash_5ed80a9c": "#hash_420c4575fcdbdd60",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3a6b9fc531724f63",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s05_2"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3c887e687b9e1e86",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_71d5e4da8bea3ebf",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_upsell_2021"
+        },
+        {
+            "hash_5ed80a9c": "#hash_736b2ab19b5ef11e",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ca686e0a20dc1dd",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_s05_mid_igs"
+        },
+        {
+            "hash_5ed80a9c": "#hash_30c1e67345f08170",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1c65085c012c5974",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cw_year_2"
+        },
+        {
+            "hash_5ed80a9c": "#bp_vault",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_577ca951c402fcad",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_bp_vault"
+        },
+        {
+            "hash_5ed80a9c": "#hash_225d22ff524b8027",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_2ef2a8bba5024a94",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_holiday_sale"
+        },
+        {
+            "hash_5ed80a9c": "#hash_bff56da4b41948",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_361fbc07ebcf67dc",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cw_year_2_s2"
+        },
+        {
+            "hash_5ed80a9c": "#hash_bff86da4b41e61",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_361fbf07ebcf6cf5",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cw_year_2_s1"
+        },
+        {
+            "hash_5ed80a9c": "#hash_bff66da4b41afb",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_361fbd07ebcf698f",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cw_year_2_s3"
+        },
+        {
+            "hash_5ed80a9c": "#hash_bffb6da4b4237a",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_361fba07ebcf6476",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cw_year_2_s4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_bffc6da4b4252d",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_361fbb07ebcf6629",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_cw_year_2_s5"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3c887d687b9e1cd3",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_d25e56ba3faa3e2",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#item_shop_category_datasource_upsell_2022"
+        }
+    ],
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 1,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
+    "type": "datasourcelist",
+    "hash_5497949f": 1,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
+    "name": "item_shop_categories",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0,
+    "hash_748e79a5": "scriptbundle#hash_d5c0d8b9a45fe40"
+}

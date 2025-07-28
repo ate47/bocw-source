@@ -1,70 +1,79 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_68c72b085827d373"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5007_stone_ultraskin_unkillable"
         },
         {
-            "var_fe10649e": "#hash_7ac98646a35e6af7"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5007_stone_ultraskin_unkillable_01"
         },
         {
-            "var_fe10649e": "#hash_7ac98746a35e6caa"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5007_stone_ultraskin_unkillable_02"
         },
         {
-            "var_fe10649e": "#hash_7ac98846a35e6e5d"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5007_stone_ultraskin_unkillable_03"
         }
     ],
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter3_stone_bollocks_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter3_stone_bollocks_sy_mtxitem",
             "itemid": "31017930"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter3_mtxitem",
             "itemid": "21293402"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_bwarrior_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_bwarrior_sy_mtxitem",
             "itemid": "19412427"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_warrior_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_warrior_sy_mtxitem",
             "itemid": "29873406"
         },
         {
-            "var_4a4bc969": "#t9_charm_casket_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_casket_sy_mtxitem",
             "itemid": "19063689"
         },
         {
-            "var_4a4bc969": "#emblems_unkillable_s5_base_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_unkillable_s5_base_sy_mtxitem",
             "itemid": "32857165"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_07_s5_anmiated_base_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_07_s5_anmiated_base_sy_mtxitem",
             "itemid": "27619373"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_unkillable_s5_base_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_unkillable_s5_base_sy_mtxitem",
             "itemid": "21470699"
         },
         {
-            "var_4a4bc969": "#cod_points_2400_mtxitem"
+            "hash_4a4bc969": "scriptbundle#cod_points_2400_mtxitem"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_1097aff128a02072",
-    "var_247d9ed7": "firstparty_bundle_5007_chem_pro_pack",
-    "var_208d76b5": "#hash_68c72b085827d373",
-    "var_3040f0d1": "#hash_68c72b085827d373",
-    "var_70f66e54": "#hash_4d9c43b337c9afe3",
-    "var_8ee7db29": 1,
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_5007_chem_pro_pack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_operator_bundle_5007_stone_ultraskin_unkillable",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_5007_stone_ultraskin_unkillable",
+    "hash_70f66e54": "#hash_4d9c43b337c9afe3",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5007_stone_ultraskin_unkillable_sy_mtxentitlement",
-    "var_a788fada": "#hash_5e0da0d2cca10170",
-    "titlestring": "#hash_1f357ec507d86e55",
-    "var_566825be": "#hash_79fc4c2cc144fd3c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5007_stone_ultraskin_unkillable_small",
+    "titlestring": "localized18#hash_1f357ec507d86e55",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5007_stone_ultraskin_unkillable",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_f3c937a9": "#hash_9c9222f8dbfe10d",
-    "var_db3e02ab": 500,
-    "var_4e46b1b3": "#orbis",
+    "hash_f3c937a9": "localized18#hash_9c9222f8dbfe10d",
+    "hash_db3e02ab": 500,
+    "hash_4e46b1b3": "#orbis",
     "itemid": "32950725",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

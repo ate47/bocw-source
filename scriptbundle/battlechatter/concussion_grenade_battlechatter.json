@@ -1,9 +1,9 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "battlechatter",
-    "var_2c07bbf1": "eq_concussion_threat",
+    "hash_2c07bbf1": "eq_concussion_threat",
     "vmtype": "both",
     "usealias": "eq_concussion_use",
     "name": "concussion_grenade_battlechatter",
-    "var_382f662": 1
+    "hash_382f662": 1
 }

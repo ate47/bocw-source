@@ -1,79 +1,84 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_fin_pl_wraith_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_fin_pl_wraith_mtxitem",
             "itemid": "29184728"
         },
         {
-            "var_4a4bc969": "#prt_mp_fin_wraith_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_fin_wraith_mtxitem",
             "itemid": "21568824"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter5_powers_dust_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter5_powers_dust_mtxitem",
             "itemid": "28959666"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter5_mtxitem",
             "itemid": "31383564"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter5_powers_gun_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter5_powers_gun_mtxitem",
             "itemid": "21949385"
         },
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_starter3_stone_seige_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_starter3_stone_seige_mtxitem",
             "itemid": "26992398"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter3_mtxitem",
             "itemid": "21293402"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_maverick_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_maverick_mtxitem",
             "itemid": "30089796"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_gigawatt_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_gigawatt_mtxitem",
             "itemid": "30235509"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter1_hunter_rescue_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter1_hunter_rescue_mtxitem",
             "itemid": "26176132"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter1_mtxitem",
             "itemid": "31474701"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter1_hunter_frontline_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter1_hunter_frontline_mtxitem",
             "itemid": "23758463"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter4_song_counter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter4_song_counter_mtxitem",
             "itemid": "32857016"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter4_mtxitem",
             "itemid": "31249471"
         },
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter4_song_tiger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter4_song_tiger_mtxitem",
             "itemid": "25060718"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_53c2d2b7d12b4617",
-    "var_375a1747": "#hash_170ead8fd712379",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7504_vault_nato_warsaw_03",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7504_vault_nato_warsaw_03_mtxbundle",
-    "var_a788fada": "#hash_2b181ee27535c12",
-    "titlestring": "#hash_4eaadaa505d1eba1",
-    "var_566825be": "#hash_25b4fd8ff90c0b5e",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7504_vault_nato_warsaw_03_small",
+    "titlestring": "localized18#hash_4eaadaa505d1eba1",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7504_vault_nato_warsaw_03",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_730c7a60a421f161",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_730c7a60a421f161",
+    "hash_db3e02ab": 2000,
     "itemid": "22953673"
 }

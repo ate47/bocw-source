@@ -1,0 +1,80 @@
+{
+    "#hash_37f7b010": [
+        {
+            "Comment": "#hash_3eb6ca6919bc4458",
+            "animation": "playeranim#hash_451b34296ad73722",
+            "weapon": "#shotgun_pump_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_3eb6ca6919bc4458",
+            "animation": "playeranim#hash_26ccf949b7054b3",
+            "weapon": "#shotgun_pump_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_442260cbc61fabd",
+            "animation": "playeranim#hash_451b34296ad73722",
+            "weapon": "#shotgun_semiauto_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_442260cbc61fabd",
+            "animation": "playeranim#hash_26ccf949b7054b3",
+            "weapon": "#shotgun_semiauto_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_d9b8694b4de1d58",
+            "animation": "playeranim#hash_bb45a60c513d689",
+            "weapon": "#launcher_freefire_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_d9b8694b4de1d58",
+            "animation": "playeranim#hash_26ccf949b7054b3",
+            "weapon": "#launcher_freefire_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_687f4d3f4bc4d7d6",
+            "animation": "playeranim#hash_451b34296ad73722",
+            "weapon": "#tr_damagesemi_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_687f4d3f4bc4d7d6",
+            "animation": "playeranim#hash_26ccf949b7054b3",
+            "weapon": "#tr_damagesemi_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_37d7ecb1ae42b8f6",
+            "animation": "playeranim#hash_451b34296ad73722",
+            "weapon": "#smg_handling_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_37d7ecb1ae42b8f6",
+            "animation": "playeranim#hash_26ccf949b7054b3",
+            "weapon": "#smg_handling_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_19a223bacd970f3d",
+            "animation": "playeranim#hash_451b34296ad73722",
+            "weapon": "#tr_precisionsemi_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_19a223bacd970f3d",
+            "animation": "playeranim#hash_26ccf949b7054b3",
+            "weapon": "#tr_precisionsemi_t9",
+            "gender": "female"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "sceneweaponvariantanim",
+    "vmtype": "Both",
+    "name": "scene_frontend_t9_character_wpnvariants_char_cust_post_turn_idle"
+}

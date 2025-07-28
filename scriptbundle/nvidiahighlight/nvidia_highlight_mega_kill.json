@@ -1,13 +1,14 @@
 {
-    "var_a5595a3c": 5000,
-    "var_bae1b00c": 16,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_92a2f4cc": "MW_Highlights",
+    "hash_a5595a3c": 5000,
+    "hash_bae1b00c": 16,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_92a2f4cc": "MW_Highlights",
     "type": "nvidiahighlight",
-    "var_7c5d9e9b": 2,
-    "var_c00b3c0b": "mega_kill",
+    "hash_7c5d9e9b": 2,
+    "hash_c00b3c0b": "mega_kill",
     "name": "nvidia_highlight_mega_kill",
-    "var_4e0cc20b": 1,
-    "var_f75c413c": "medal_multikill_6",
-    "var_cbd5111b": -24000
+    "hash_4e0cc20b": 1,
+    "hash_6b3ed02e": 0,
+    "medalref": "medal_multikill_6",
+    "hash_cbd5111b": -24000
 }

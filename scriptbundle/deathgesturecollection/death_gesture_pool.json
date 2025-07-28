@@ -1,0 +1,145 @@
+{
+    "collections": [
+        {
+            "crouch": [
+                {
+                    "gesture": "ges_playerdeath_crouch_a"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_b"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_d"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_h"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_i"
+                }
+            ],
+            "stand": [
+                {
+                    "gesture": "ges_playerdeath_standing_a"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_b"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_d"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_h"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_i"
+                }
+            ],
+            "prone": [
+                {
+                    "gesture": "ges_playerdeath_prone_a"
+                },
+                {
+                    "gesture": "ges_playerdeath_prone_c"
+                },
+                {
+                    "gesture": "ges_playerdeath_prone_d"
+                }
+            ],
+            "hash_9af99f2f": 1
+        },
+        {
+            "crouch": [
+                {
+                    "gesture": "ges_playerdeath_crouch_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_i"
+                }
+            ],
+            "stand": [
+                {
+                    "gesture": "ges_playerdeath_standing_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_i"
+                }
+            ],
+            "prone": [
+                {
+                    "gesture": "ges_playerdeath_prone_a"
+                },
+                {
+                    "gesture": "ges_playerdeath_prone_c"
+                }
+            ],
+            "weapon": "eq_spy_camera",
+            "hash_9af99f2f": 0
+        },
+        {
+            "crouch": [
+                {
+                    "gesture": "ges_playerdeath_crouch_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_i"
+                }
+            ],
+            "stand": [
+                {
+                    "gesture": "ges_playerdeath_standing_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_i"
+                }
+            ],
+            "prone": [
+                {
+                    "gesture": "ges_playerdeath_prone_a"
+                },
+                {
+                    "gesture": "ges_playerdeath_prone_c"
+                },
+                {
+                    "gesture": "ges_playerdeath_prone_d"
+                }
+            ],
+            "weapon": "knife_loadout",
+            "hash_9af99f2f": 0
+        },
+        {
+            "crouch": [
+                {
+                    "gesture": "ges_playerdeath_crouch_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_crouch_i"
+                }
+            ],
+            "stand": [
+                {
+                    "gesture": "ges_playerdeath_standing_f"
+                },
+                {
+                    "gesture": "ges_playerdeath_standing_i"
+                }
+            ],
+            "prone": [
+                {
+                    "gesture": "ges_playerdeath_prone_c"
+                }
+            ],
+            "weapon": "special_recurvebow_t9",
+            "hash_9af99f2f": 0
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "deathgesturecollection",
+    "name": "death_gesture_pool"
+}

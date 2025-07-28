@@ -1,10 +1,14 @@
 {
-    "hinttext": "#hash_616989f8b3f6d89c",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_616989f8b3f6d89c",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "decay_captured_zones",
-    "displayname": "#hash_2a544e69c44e16ac",
-    "var_9de86f42": 2,
+    "displayname": "localized18#menu/zone_decay",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "decayCapturedZones",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

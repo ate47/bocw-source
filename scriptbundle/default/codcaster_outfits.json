@@ -1,0 +1,58 @@
+{
+    "#hash_189aaf3": [
+        {
+            "teamname": "#hash_29263c8a882c99e5",
+            "hash_91c3a45c": "#hash_5f94654b178f661"
+        },
+        {
+            "teamname": "#hash_6f3b5d7916ab6229",
+            "hash_91c3a45c": "#hash_5c6ad3afeb5e609"
+        },
+        {
+            "teamname": "#hash_7fb5045dd9aaa6d9",
+            "hash_91c3a45c": "#hash_4f07c2801c5422b9"
+        },
+        {
+            "teamname": "#hash_2401ff8cbe2bdd13",
+            "hash_91c3a45c": "#hash_2922b195caf4c0fb"
+        },
+        {
+            "teamname": "#hash_37eaa846402867d7",
+            "hash_91c3a45c": "#hash_3db9d7cf4d4eb6c3"
+        },
+        {
+            "teamname": "#hash_722e864632d1516a",
+            "hash_91c3a45c": "#hash_198bea950830bb5c"
+        },
+        {
+            "teamname": "#hash_1d6146e965566977",
+            "hash_91c3a45c": "#hash_6f5ae4f6bb020467"
+        },
+        {
+            "teamname": "#hash_1898e8419d776984",
+            "hash_91c3a45c": "#hash_3990dc655a8bec2"
+        },
+        {
+            "teamname": "#surge",
+            "hash_91c3a45c": "#hash_253cf9d74ebcb199"
+        },
+        {
+            "teamname": "#ultra",
+            "hash_91c3a45c": "#hash_580b1243beb4a015"
+        },
+        {
+            "teamname": "#thieves",
+            "hash_91c3a45c": "#hash_2e4aca27aaff1913"
+        },
+        {
+            "teamname": "#optic",
+            "hash_91c3a45c": "#hash_77912cc33f176f2c"
+        },
+        {
+            "teamname": "#cdl",
+            "hash_91c3a45c": "#hash_20ae075ec2bdefcc"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "name": "codcaster_outfits"
+}

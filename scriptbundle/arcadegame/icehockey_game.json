@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_69210bf485d8938f",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_788c2c5a1d1dbed4",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 2,
+    "hash_76e12fbf": "image#uie_arcade_large_icehockey",
+    "hash_9864ed1": 0,
+    "name": "icehockey_game",
+    "hash_6855e4be": "#icehockey_game_mtxitem",
+    "displayname": "localized18#hash_6d53082fd31b48c5",
+    "filename": "#hash_17f839121758889b",
+    "action": "localized18#hash_58d50629f1a4f574",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_icehockey",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_icehockey",
+    "hash_48152d43": 0
+}

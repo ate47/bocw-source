@@ -1,55 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_standard_bp_titanium_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_standard_bp_titanium_mtxitem",
             "itemid": "20417829"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_voodoo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_voodoo_mtxitem",
             "itemid": "18411411"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_blackthroat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_blackthroat_mtxitem",
             "itemid": "21401337"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_go_bananas_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_go_bananas_mtxitem",
             "itemid": "20721218"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_ufo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_ufo_mtxitem",
             "itemid": "23741611"
         },
         {
-            "var_4a4bc969": "#ar_mobility_bp_spirit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_spirit_mtxitem",
             "itemid": "20918470"
         },
         {
-            "var_4a4bc969": "#ar_mobility_bp_arcticwind_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_arcticwind_mtxitem",
             "itemid": "26673104"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_spirit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_spirit_mtxitem",
             "itemid": "31550348"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_aconstrictor_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_aconstrictor_mtxitem",
             "itemid": "19583081"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_reactor_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_reactor_mtxitem",
             "itemid": "23923244"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_24d27dfb5f2fac04",
-    "var_375a1747": "#hash_3a2a44677fb942d6",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_7505_vault_ar_pack",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_7505_vault_ar_pack_mtxbundle",
-    "var_a788fada": "#hash_5461fd6872412061",
-    "titlestring": "#hash_276755cac3e4b4b2",
-    "var_566825be": "#hash_6cfa5b6a92f6d5f9",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_7505_vault_ar_pack_small",
+    "titlestring": "localized18#hash_276755cac3e4b4b2",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_7505_vault_ar_pack",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_187a04793a13a1ee",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_187a04793a13a1ee",
+    "hash_db3e02ab": 2000,
     "itemid": "32177847"
 }

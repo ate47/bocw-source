@@ -1,10 +1,10 @@
 {
-    "description": "#hash_789040b01af9a479",
+    "description": "localized18#hash_789040b01af9a479",
     "image": "ui_icon_wrist_accessories_s6_analog_scream",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s6_analog_scream",
-    "var_6855e4be": "#wristaccessory_t9_s6_analog_scream_mtxitem",
-    "displayname": "#hash_4f06287b2f939fa7",
-    "var_8d478ea4": "#hash_2a6f99f1c857ef8b",
-    "var_d27eb4c6": "#hash_193f06e9899ad83e"
+    "hash_6855e4be": "#wristaccessory_t9_s6_analog_scream_mtxitem",
+    "displayname": "localized18#hash_4f06287b2f939fa7",
+    "hash_8d478ea4": "model#wrist_watch_t9_s6_analog_scream_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s6_analog_scream_world"
 }

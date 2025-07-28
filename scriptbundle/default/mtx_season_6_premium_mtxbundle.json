@@ -1,39 +1,42 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#battle_pass_token_mtxitem",
+            "hash_4a4bc969": "scriptbundle#battle_pass_token_mtxitem",
             "itemid": "24926821"
         },
         {
-            "var_4a4bc969": "#tier_skip_20_mtxitem"
+            "hash_4a4bc969": "scriptbundle#tier_skip_20_mtxitem"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_bulldozer_panda_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_bulldozer_panda_mtxitem",
             "itemid": "23000652"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_bulldozer_mtxitem",
             "itemid": "20317561"
         },
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_bulldozer_panda_variant01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_bulldozer_panda_variant01_mtxitem",
             "itemid": "23074215"
         },
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_bulldozer_panda_variant02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_bulldozer_panda_variant02_mtxitem",
             "itemid": "27223779"
         }
     ],
-    "var_2264d693": 1,
+    "hash_2264d693": 1,
     "itemname": "#hash_497f10337dcf3b3f",
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "mtx_season_6_premium_mtxbundle",
-    "titlestring": "#hash_314c839c7470fc00",
-    "var_566825be": "#hash_7d5c1b47ea94922f",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_314c839c7470fc00",
+    "hash_566825be": "image#ui_icon_mtx_titles_placeholder",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7d7ec5899f818d22",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7d7ec5899f818d22",
+    "hash_db3e02ab": 2000,
     "itemid": "29092999"
 }

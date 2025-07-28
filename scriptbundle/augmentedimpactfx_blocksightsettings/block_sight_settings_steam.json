@@ -1,0 +1,32 @@
+{
+    "settings": [
+        {
+            "lerp_time": 0,
+            "time": 0,
+            "forward_offset": 0,
+            "radius": 0.1,
+            "z_offset": 0,
+            "hash_6e390e3c": 0
+        },
+        {
+            "lerp_time": 0.5,
+            "time": 1,
+            "forward_offset": 55,
+            "radius": 20,
+            "z_offset": 0,
+            "hash_6e390e3c": 1
+        },
+        {
+            "lerp_time": 1,
+            "time": 0,
+            "forward_offset": 90,
+            "radius": 0,
+            "z_offset": 0,
+            "hash_6e390e3c": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "augmentedimpactfx_blocksightsettings",
+    "name": "block_sight_settings_steam",
+    "delay": 0.1
+}

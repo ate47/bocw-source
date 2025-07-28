@@ -1,9 +1,9 @@
 {
-    "description": "#hash_70f723dc9e5e20b2",
+    "description": "localized18#hash_70f723dc9e5e20b2",
     "widget": "#badasserymedal",
     "name": "medal_death_machine_multikill_zm",
-    "iconsmall": "#hash_55ea6a6486497b85",
+    "iconsmall": "image#ui_icon_medal_zm_harvest",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_2e34e944c36003e2",
-    "iconlarge": "#hash_26b23fa2cd4c7309"
+    "stringref": "localized18#hash_2e34e944c36003e2",
+    "iconlarge": "image#ui_icon_medal_zm_harvest_large"
 }

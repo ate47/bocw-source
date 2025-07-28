@@ -1,31 +1,35 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_handling_bp_achill_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_achill_mtxitem",
             "itemid": "26933756"
         },
         {
-            "var_4a4bc969": "#t9_charm_zamboni_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_zamboni_mtxitem",
             "itemid": "25437882"
         },
         {
-            "var_4a4bc969": "#callingcards_snowshovel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_snowshovel_mtxitem",
             "itemid": "27294767"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_snowshovel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_snowshovel_mtxitem",
             "itemid": "22998689"
         }
     ],
-    "itemname": "#hash_3f056bc5428f1a70",
-    "var_375a1747": "#hash_27ca2f05fa89904e",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1050_smg_handling_snow_shovel",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1050_smg_handling_snow_shovel",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1050_smg_handling_snow_shovel_mtxbundle",
-    "titlestring": "#hash_82520ef5350b281",
-    "var_566825be": "#hash_536ee2e2b3d7a147",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_82520ef5350b281",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1050_smg_handling_snow_shovel",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_175da00774a3ef41",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_175da00774a3ef41",
+    "hash_db3e02ab": 2000,
     "itemid": "30392686"
 }

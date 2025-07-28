@@ -1,10 +1,10 @@
 {
-    "description": "#hash_1e06041e6600aa6d",
+    "description": "localized18#hash_1e06041e6600aa6d",
     "image": "ui_icon_wrist_accessories_watch_analog_white_tiger_1",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s2_analog_white_tiger",
-    "var_6855e4be": "#wristaccessory_t9_s2_analog_white_tiger_mtxitem",
-    "displayname": "#hash_682e8d02c4d94d7b",
-    "var_8d478ea4": "#hash_4c839aac6462dacf",
-    "var_d27eb4c6": "#hash_602051ff80bfd702"
+    "hash_6855e4be": "#wristaccessory_t9_s2_analog_white_tiger_mtxitem",
+    "displayname": "localized18#hash_682e8d02c4d94d7b",
+    "hash_8d478ea4": "model#hash_4c839aac6462dacf",
+    "hash_d27eb4c6": "model#hash_602051ff80bfd702"
 }

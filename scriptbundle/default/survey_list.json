@@ -1,243 +1,257 @@
 {
     "zm_postmatch_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_d31e0a3c384e23b",
-            "var_308a9b83": 1,
+            "description": "localized18#hash_d31e0a3c384e23b",
+            "hash_80ddf16e": 0,
+            "surveychance": 1,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_65a6559952b87ab0",
+            "title": "localized18#hash_65a6559952b87ab0",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],
     "wz_postmatch_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_13a2e7af5557b887",
-            "var_308a9b83": 0.5,
+            "description": "localized18#hash_13a2e7af5557b887",
+            "hash_80ddf16e": 0,
+            "surveychance": 0.5,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_440a6c04a27fe250",
+            "title": "localized18#hash_440a6c04a27fe250",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],
     "mp_intro_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_58e24cd38cd1d20d",
-            "var_308a9b83": 1,
+            "description": "localized18#hash_58e24cd38cd1d20d",
+            "hash_80ddf16e": 0,
+            "surveychance": 1,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_7130895060cfded6",
+            "title": "localized18#hash_7130895060cfded6",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],
     "arena_postmatch_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_37b740169f628273",
-            "var_308a9b83": 0.5,
+            "description": "localized18#hash_37b740169f628273",
+            "hash_80ddf16e": 0,
+            "surveychance": 0.5,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_c9c78e169bcd076",
+            "title": "localized18#hash_c9c78e169bcd076",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],
     "mp_postmatch_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_54167161ad885f13",
-            "var_80ddf16e": 1,
-            "var_308a9b83": 0.5,
+            "description": "localized18#hash_54167161ad885f13",
+            "hash_80ddf16e": 1,
+            "surveychance": 0.5,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_5de3a5cedeb0d3b8",
-            "var_33ba47f0": 501,
+            "title": "localized18#hash_5de3a5cedeb0d3b8",
+            "hash_33ba47f0": 501,
             "enabled": 1
         }
     ],
     "zm_intro_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_a77d3d06eb40a65",
-            "var_308a9b83": 1,
+            "description": "localized18#hash_a77d3d06eb40a65",
+            "hash_80ddf16e": 0,
+            "surveychance": 1,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_380a0eaf6220607e",
+            "title": "localized18#hash_380a0eaf6220607e",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],
     "arena_intro_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_2a88bdf212b6ff6d",
-            "var_308a9b83": 1,
+            "description": "localized18#hash_2a88bdf212b6ff6d",
+            "hash_80ddf16e": 0,
+            "surveychance": 1,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_7de72c11a18dc504",
+            "title": "localized18#hash_7de72c11a18dc504",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],
     "wz_intro_surveys": [
         {
-            "var_41a0e674": [
+            "#hash_41a0e674": [
                 {
-                    "description": "#hash_a2ffe30bbb062d5"
+                    "description": "localized18#hash_a2ffe30bbb062d5"
                 },
                 {
-                    "description": "#hash_a2ffb30bbb05dbc"
+                    "description": "localized18#hash_a2ffb30bbb05dbc"
                 },
                 {
-                    "description": "#hash_a2ffc30bbb05f6f"
+                    "description": "localized18#hash_a2ffc30bbb05f6f"
                 },
                 {
-                    "description": "#hash_a2ff930bbb05a56"
+                    "description": "localized18#hash_a2ff930bbb05a56"
                 },
                 {
-                    "description": "#hash_a2ffa30bbb05c09"
+                    "description": "localized18#hash_a2ffa30bbb05c09"
                 },
                 {
-                    "description": "#hash_a2ff730bbb056f0"
+                    "description": "localized18#hash_a2ff730bbb056f0"
                 }
             ],
-            "description": "#hash_4218a1d3b7a25bc9",
-            "var_308a9b83": 1,
+            "description": "localized18#hash_4218a1d3b7a25bc9",
+            "hash_80ddf16e": 0,
+            "surveychance": 1,
             "devonly": 1,
             "randomizebuttonorder": 1,
-            "title": "#hash_4b5964d0ada3421e",
+            "title": "localized18#hash_4b5964d0ada3421e",
+            "hash_33ba47f0": 0,
             "enabled": 1
         }
     ],

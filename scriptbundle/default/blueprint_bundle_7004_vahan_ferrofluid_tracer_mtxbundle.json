@@ -1,62 +1,66 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_12521235775943e9"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7004_vahan_ferrofluid_tracer"
         },
         {
-            "var_fe10649e": "#hash_3650afbc3b931665"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7004_vahan_ferrofluid_tracer_01"
         },
         {
-            "var_fe10649e": "#hash_3650acbc3b93114c"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7004_vahan_ferrofluid_tracer_02"
         },
         {
-            "var_fe10649e": "#hash_3650adbc3b9312ff"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_7004_vahan_ferrofluid_tracer_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_soviet_bp_ferrofluid_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_soviet_bp_ferrofluid_mtxitem",
             "itemid": "23595328"
         },
         {
-            "var_4a4bc969": "#lmg_light_bp_ferfluid_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_ferfluid_mtxitem",
             "itemid": "25365626"
         },
         {
-            "var_4a4bc969": "#loot_smg_spray_bp_ferfluid_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_spray_bp_ferfluid_mtxitem",
             "itemid": "30443059"
         },
         {
-            "var_4a4bc969": "#t9_charm_magnet_w_bullets_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_magnet_w_bullets_mtxitem",
             "itemid": "24307724"
         },
         {
-            "var_4a4bc969": "#callingcards_ferroskull_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ferroskull_animated_mtxitem",
             "itemid": "29503759"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_ferroskull_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_ferroskull_mtxitem",
             "itemid": "30363405"
         },
         {
-            "var_4a4bc969": "#reticle_140_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_140_mtxitem",
             "itemid": "21060846"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_ferrofluid_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_ferrofluid_mtxitem",
             "itemid": "27977729"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_46303e0a03d2f2d7",
-    "var_375a1747": "#hash_12521235775943e9",
-    "var_8ee7db29": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_7004_vahan_ferrofluid_tracer",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_7004_vahan_ferrofluid_tracer_mtxbundle",
-    "var_a788fada": "#hash_88b6d4f73c2aa5a",
-    "titlestring": "#hash_34fa0edf4da85e1e",
-    "var_566825be": "#hash_431cc478de88be66",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_7004_vahan_ferrofluid_tracer_small",
+    "titlestring": "localized18#hash_34fa0edf4da85e1e",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_7004_vahan_ferrofluid_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2720af3d60ff2bd2",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_2720af3d60ff2bd2",
+    "hash_db3e02ab": 750,
     "itemid": "27805770"
 }

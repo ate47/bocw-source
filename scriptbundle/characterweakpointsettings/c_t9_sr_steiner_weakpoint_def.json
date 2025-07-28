@@ -1,7 +1,7 @@
 {
     "weakpoints": [
         {
-            "var_60790e23": [
+            "#hash_60790e23": [
                 {
                     "hitloc": "head"
                 },
@@ -12,15 +12,17 @@
                     "hitloc": "helmet"
                 }
             ],
-            "var_3765e777": 1,
-            "var_641ce20e": 1,
+            "hash_3765e777": 1,
+            "hash_641ce20e": 1,
+            "hash_8223b0cf": 0,
             "type": "#weakpoint",
             "activebydefault": 1,
+            "hitradius": 0,
             "health": 1
         }
     ],
-    "var_922067c4": "scriptbundle",
-    "model": "#hash_6e9f056c769f2820",
+    "configstringfiletype": "scriptbundle",
+    "model": "model#c_zom_test_body1",
     "type": "characterweakpointsettings",
     "name": "c_t9_sr_steiner_weakpoint_def"
 }

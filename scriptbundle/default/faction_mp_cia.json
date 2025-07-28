@@ -1,11 +1,11 @@
 {
-    "displaynameshort": "#hash_edccefe94375e18",
-    "var_306f8f14": "#superfaction_nato",
+    "displaynameshort": "localized18#hash_edccefe94375e18",
+    "superfaction": "scriptbundle#superfaction_nato",
     "name": "faction_mp_cia",
-    "displayname": "#mpui/allies",
-    "icon": "#hash_161126c9696c4977",
-    "iconsmall": "#hash_366cae2ba96a7c6f",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "blops_commander_cia",
+    "displayname": "localized18#mpui/allies",
+    "icon": "image#ui_icon_factions_cia",
+    "iconsmall": "image#ui_icon_factions_cia_small",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&blops_commander_cia",
     "color": "FriendlyBlue"
 }

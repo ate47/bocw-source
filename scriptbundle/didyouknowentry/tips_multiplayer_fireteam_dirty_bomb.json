@@ -1,88 +1,92 @@
 {
     "tips": [
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_47a2c003a048e814",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_47a2c003a048e814",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_508390bc1bcd41db",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_508390bc1bcd41db",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_3d8882ad2370a0a1",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_3d8882ad2370a0a1",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_507b4d81a804773b",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_507b4d81a804773b",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4894fcf5395794da",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4894fcf5395794da",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_54fb65756eb748ad",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_54fb65756eb748ad",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_3d7e6d8556e6092f",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_3d7e6d8556e6092f",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1d120248ab7fdfce",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1d120248ab7fdfce",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_626323c19fb012bd",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_626323c19fb012bd",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_5a91ba577324e35a",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5a91ba577324e35a",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_775abf287ad2d0d5",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_775abf287ad2d0d5",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_692ac5a67309f4d5",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_692ac5a67309f4d5",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6ab36fc85279e038",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6ab36fc85279e038",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 0,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_multiplayer_fireteam_dirty_bomb",
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#none"
+    "hash_e0d5cde7": 0,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#NONE",
+    "hash_b96cb18c": 0
 }

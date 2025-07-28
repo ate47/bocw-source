@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_bunny_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_bunny_mtxitem",
             "itemid": "28625041"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_pink_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_pink_mtxitem",
             "itemid": "19933965"
         },
         {
-            "var_4a4bc969": "#smg_capacity_bp_pink_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_pink_mtxitem",
             "itemid": "25060024"
         },
         {
-            "var_4a4bc969": "#emblems_easter_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_easter_animated_mtxitem",
             "itemid": "21161852"
         },
         {
-            "var_4a4bc969": "#callingcards_easter_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_easter_animated_mtxitem",
             "itemid": "30966346"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_easter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_easter_mtxitem",
             "itemid": "32342632"
         },
         {
-            "var_4a4bc969": "#t9_charm_bomb_eggs_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bomb_eggs_mtxitem",
             "itemid": "30353722"
         }
     ],
-    "itemname": "#hash_5a8f1a92accd2377",
-    "var_375a1747": "#hash_176ea8815eef3c01",
-    "var_579fd6c3": 10,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2079_easter",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2079_easter",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 10,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2079_easter_mtxbundle",
-    "var_a788fada": "#hash_7bbc5a0506f93924",
-    "titlestring": "#hash_14f30d8845d2d03b",
-    "var_566825be": "#hash_152cfeab858a316c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_7bbc5a0506f93924",
+    "titlestring": "localized18#hash_14f30d8845d2d03b",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2079_easter",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_521420ce11bba1ff",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_521420ce11bba1ff",
+    "hash_db3e02ab": 2000,
     "itemid": "27187549"
 }

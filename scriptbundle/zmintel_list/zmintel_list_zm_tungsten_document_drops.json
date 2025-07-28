@@ -1,0 +1,71 @@
+{
+    "#hash_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_requiem_document_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_8"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_9"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_4"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_6"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_5"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_requiem_document_4"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_omega_document_7"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_requiem_document_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_requiem_document_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_requiem_document_5"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_requiem_document_6"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_tungsten_maxis_document_1"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_zm_tungsten_document_drops"
+}

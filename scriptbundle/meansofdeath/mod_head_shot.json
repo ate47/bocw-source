@@ -1,9 +1,9 @@
 {
     "mod": "MOD_HEAD_SHOT",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_head_shot",
-    "displayname": "#hash_874506d3bfcc38c",
-    "icon": "#ui_icon_meansofdeath_headshot",
-    "iconlarge": "#ui_icon_meansofdeath_headshot_xl"
+    "displayname": "localized18#hash_874506d3bfcc38c",
+    "icon": "image#ui_icon_meansofdeath_headshot",
+    "iconlarge": "image#ui_icon_meansofdeath_headshot_xl"
 }

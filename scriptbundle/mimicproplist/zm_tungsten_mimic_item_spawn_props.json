@@ -1,0 +1,139 @@
+{
+    "#hash_e451a3f7": [
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#ammo_item_survival_large",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#self_revive_sr_item",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#scrap_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#black_hole_bomb_item_t9_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#scrap_rare_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#frag_t9_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#semtex_t9_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#cymbal_monkey_t9_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#decoy_t9_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#satchel_charge_t9_item_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        },
+        {
+            "rattle_sound": "amb_rattle_barrel",
+            "hash_dcb0ac7c": "scriptbundle#armor_item_lv1_t9_sr",
+            "roll": 0,
+            "hash_f0c39cc2": 0,
+            "yaw": 0,
+            "offset_z": 0,
+            "offset_y": 0,
+            "offset_x": 0,
+            "hash_83556f31": 0,
+            "pitch": 0
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "mimicproplist",
+    "name": "zm_tungsten_mimic_item_spawn_props"
+}

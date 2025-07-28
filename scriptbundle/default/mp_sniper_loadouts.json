@@ -18,7 +18,7 @@
                     "talent": "#talent_tracker"
                 },
                 {
-                    "talent": "#hash_72c04b85952128e4"
+                    "talent": "#talent_spycraft"
                 }
             ],
             "primaryattachments": [
@@ -46,12 +46,14 @@
                     "bonuscard": "#bonuscard_perk_1_greed"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_1da4b72876d2f887",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1da4b72876d2f887",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_standard_t9",
             "specialgrenade": "#listening_device",
-            "secondary": "#bare_hands"
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "talents": [
@@ -107,12 +109,14 @@
                     "bonuscard": "#hash_639ebbcda56447e7"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_1da4b82876d2fa3a",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1da4b82876d2fa3a",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_powersemi_t9",
             "specialgrenade": "#gadget_jammer",
-            "secondary": "#sniper_quickscope_t9"
+            "secondary": "#sniper_quickscope_t9",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "talents": [
@@ -157,12 +161,14 @@
                     "bonuscard": "#bonuscard_primary_gunfighter"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_1da4b92876d2fbed",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1da4b92876d2fbed",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_quickscope_t9",
             "specialgrenade": "#missile_turret",
-            "secondary": "#bare_hands"
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "talents": [
@@ -179,7 +185,7 @@
                     "talent": "#hash_7321f9058ee65217"
                 },
                 {
-                    "talent": "#hash_1942ae235ffc270f"
+                    "talent": "#talent_logistics"
                 },
                 {
                     "talent": "#talent_gungho"
@@ -207,12 +213,14 @@
                     "bonuscard": "#bonuscard_perk_1_greed"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_1da4b22876d2f008",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1da4b22876d2f008",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_standard_t9",
             "specialgrenade": "#tear_gas",
-            "secondary": "#bare_hands"
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "talents": [
@@ -257,12 +265,14 @@
                     "bonuscard": "#bonuscard_primary_gunfighter"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_1da4b32876d2f1bb",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_1da4b32876d2f1bb",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_quickscope_t9",
             "specialgrenade": "#gadget_supplypod",
-            "secondary": "#bare_hands"
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         }
     ],
     "killstreaks": [

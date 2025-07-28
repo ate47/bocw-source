@@ -1,7 +1,7 @@
 {
-    "displaynameshort": "#hash_3e283ea5896dd5a6",
+    "displaynameshort": "localized18#hash_3e283ea5896dd5a6",
     "name": "faction_cp",
-    "displayname": "#hash_3e283ea5896dd5a6",
-    "var_42185d9b": "White",
+    "displayname": "localized18#hash_3e283ea5896dd5a6",
+    "hash_42185d9b": "White",
     "color": "White"
 }

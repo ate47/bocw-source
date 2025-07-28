@@ -1,0 +1,35 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_36025996ff862f3f",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_712a5e45e06074",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 1,
+            "MaskText": 0,
+            "DrawByLine": 1
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "computerscreencontentlists",
+    "name": "cp_computer_init_screensaver_cia"
+}

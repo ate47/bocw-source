@@ -1,60 +1,64 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter3_stone_stoned_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter3_stone_stoned_mtxitem",
             "itemid": "27775001"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter3_mtxitem",
             "itemid": "21293402"
         },
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_420_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_420_mtxitem",
             "itemid": "19698392"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_zweed_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_zweed_mtxitem",
             "itemid": "19246525"
         },
         {
-            "var_4a4bc969": "#t9_charm_420_rim_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_420_rim_mtxitem",
             "itemid": "25521219"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_analog_420_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_analog_420_mtxitem",
             "itemid": "23003476"
         },
         {
-            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_420weed_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_civ_ru_sedan_80s_mpx_420weed_mtxitem",
             "itemid": "31611805"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_one_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_one_mtxitem",
             "itemid": "25812943"
         },
         {
-            "var_4a4bc969": "#emblems_weed_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_weed_animated_mtxitem",
             "itemid": "29070002"
         },
         {
-            "var_4a4bc969": "#callingcards_weed_locs_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_weed_locs_animated_mtxitem",
             "itemid": "24928340"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_weed_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_weed_mtxitem",
             "itemid": "32675540"
         }
     ],
-    "itemname": "#hash_4ee29ab85254656b",
-    "var_375a1747": "#hash_3053d35452801779",
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_3019_weed_tracer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_3019_weed_tracer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_3019_weed_tracer_mtxbundle",
-    "var_a788fada": "#hash_794e6fb3d52bccb6",
-    "titlestring": "#hash_7ed3edda7b45b17c",
-    "var_566825be": "#hash_492637f02ab34dde",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_794e6fb3d52bccb6",
+    "titlestring": "localized18#hash_7ed3edda7b45b17c",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_3019_weed_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_54fd59d39ce85cec",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_54fd59d39ce85cec",
+    "hash_db3e02ab": 2000,
     "itemid": "32731061"
 }

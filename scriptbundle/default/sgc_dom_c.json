@@ -1,0 +1,11 @@
+{
+    "titlealt": "localized19#hash_4d309910414b0ea3",
+    "type": "#callout",
+    "hash_17d07d2d": "gesture_table&gestable_command_defending",
+    "name": "sgc_dom_c",
+    "hash_24d23b21": 0,
+    "hash_1c9900c6": 0,
+    "title": "localized19#hash_65df1236b4d023e7",
+    "gestablecallout": "gesture_table&gestable_command_attacking",
+    "objective": "dom_c"
+}

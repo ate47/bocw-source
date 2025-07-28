@@ -1,27 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#paragon_mp_t7_10_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paragon_mp_t7_10_mtxitem",
             "itemid": "20896082"
         },
         {
-            "var_4a4bc969": "#mp_paragon_t7_10_large_mtxitem",
+            "hash_4a4bc969": "scriptbundle#mp_paragon_t7_10_large_mtxitem",
             "itemid": "30550586"
         },
         {
-            "var_4a4bc969": "#paintjob_mp_paragon_t7_10_large_sticker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_mp_paragon_t7_10_large_sticker_mtxitem",
             "itemid": "33279326"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_65ba993247f8dfb0",
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "paragon_mp_t7_10_bundle_mtxbundle",
-    "titlestring": "#hash_314c839c7470fc00",
-    "var_566825be": "#hash_7d5c1b47ea94922f",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_314c839c7470fc00",
+    "hash_566825be": "image#ui_icon_mtx_titles_placeholder",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7d7ec5899f818d22",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7d7ec5899f818d22",
+    "hash_db3e02ab": 2000,
     "itemid": "30203757"
 }

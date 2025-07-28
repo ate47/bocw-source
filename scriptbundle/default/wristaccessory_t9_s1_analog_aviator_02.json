@@ -1,10 +1,10 @@
 {
-    "description": "#hash_16b6ab20d46809b6",
+    "description": "localized18#hash_16b6ab20d46809b6",
     "image": "ui_icon_wrist_accessories_aviator_02",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s1_analog_aviator_02",
-    "var_6855e4be": "#wristaccessory_t9_s1_analog_aviator_02_mtxitem",
-    "displayname": "#hash_5507a5bbe7a8a2c6",
-    "var_8d478ea4": "#hash_511e28ba6869f9dc",
-    "var_d27eb4c6": "#hash_5b07c0ccc5d7b437"
+    "hash_6855e4be": "#wristaccessory_t9_s1_analog_aviator_02_mtxitem",
+    "displayname": "localized18#hash_5507a5bbe7a8a2c6",
+    "hash_8d478ea4": "model#wrist_watch_t9_s1_analog_aviator_02_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s1_analog_aviator_02_world"
 }

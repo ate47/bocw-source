@@ -1,11 +1,11 @@
 {
-    "description": "#hash_1ad482b28f82dc6b",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_1ad482b28f82dc6b",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_driver_weapon_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_652ca5af8fdf8d1b",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_freelancer",
     "statname": "#hash_368d390a483d963a",
-    "var_8645ce54": "#hash_5ba1ef48f5f3d751",
-    "iconlarge": "#hash_21e96fe3ed1954bb"
+    "stringref": "localized18#hash_5ba1ef48f5f3d751",
+    "iconlarge": "image#ui_icon_medal_freelancer_large"
 }

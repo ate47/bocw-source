@@ -1,14 +1,14 @@
 {
-    "var_850c7b7e": "#hash_6ca3b94fbf4e05b6",
-    "var_8cc62966": "#hash_2d91808e0f6897fc",
-    "var_29170640": "#hash_70b4712617244260",
-    "label": "#hash_2171a5404aa7a7fa",
-    "var_921a9ffa": "#hash_372d1d875cb464ec",
+    "hash_850c7b7e": "#hash_6ca3b94fbf4e05b6",
+    "hash_8cc62966": "localized18#hash_2d91808e0f6897fc",
+    "hash_29170640": "localized18#hash_70b4712617244260",
+    "label": "localized18#hash_2171a5404aa7a7fa",
+    "hash_921a9ffa": "#hash_372d1d875cb464ec",
     "name": "battletrack_waw_hellsgate",
-    "var_6855e4be": "#battletrack_pack_season5_wawmixtape_mtxitem",
-    "var_eeb46e85": "#hash_14e32a81a7c40de3",
+    "hash_6855e4be": "#battletrack_pack_season5_wawmixtape_mtxitem",
+    "hash_eeb46e85": "#hash_14e32a81a7c40de3",
     "soundalias": "#hash_2972e197c3f364a4",
-    "title": "#hash_3d8af5ca0cb89450",
-    "var_b8146aa6": "#hash_7b17daf604523b7b",
-    "var_9bf5cf77": 1
+    "title": "localized18#hash_3d8af5ca0cb89450",
+    "hash_b8146aa6": "localized18#hash_7b17daf604523b7b",
+    "hash_9bf5cf77": 1
 }

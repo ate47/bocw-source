@@ -1,0 +1,115 @@
+{
+    "weapondamagescaleoverrides": [
+        {
+            "hash_fe55d685": "#hero_hammer_lv1_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_hammer_lv1",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_hammer_lv2_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_hammer_lv2",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_hammer_lv3_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_hammer_lv3",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_chakram_lv1_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_chakram_lv1",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_chakram_lv2_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_chakram_lv2",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_chakram_lv3_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_chakram_lv3",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_sword_pistol_lv1_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_sword_pistol_lv1",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_sword_pistol_lv2_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_sword_pistol_lv2",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_sword_pistol_lv3_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_sword_pistol_lv3",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_scepter_lv1_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_scepter_lv1",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_scepter_lv2_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_scepter_lv2",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_scepter_lv3_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#hero_scepter_lv3",
+            "weakpointdamagescale": 0.5,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.5
+        }
+    ],
+    "hash_604a84a1": 1,
+    "hash_10460f1e": 0,
+    "configstringfiletype": "scriptbundle",
+    "maxhealth": 1,
+    "hash_a3160086": 50,
+    "hash_7b22b800": 0,
+    "instakilldamagescale": 0.1,
+    "name": "zm_towers_boss_settings",
+    "weakpointdamagescale": 1,
+    "hash_97b22faa": 1,
+    "damagescale": 0.1,
+    "category": "#boss",
+    "hash_854eebd": 0,
+    "stunduration": 0,
+    "animationspeed": 1
+}

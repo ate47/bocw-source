@@ -1,0 +1,43 @@
+{
+    "#hash_37f7b010": [
+        {
+            "Comment": "#hash_646ad1beaf483af8",
+            "animation": "playeranim#hash_4722acfc8276b806",
+            "weapon": "#shotgun_pump_t9"
+        },
+        {
+            "Comment": "#hash_58340667c23b719d",
+            "animation": "playeranim#hash_4722acfc8276b806",
+            "weapon": "#shotgun_semiauto_t9"
+        },
+        {
+            "Comment": "#hash_2e6e2ea171e92b38",
+            "animation": "playeranim#hash_4722acfc8276b806",
+            "weapon": "#launcher_freefire_t9"
+        },
+        {
+            "Comment": "#hash_3980fae4858dd836",
+            "animation": "playeranim#hash_4722acfc8276b806",
+            "weapon": "#tr_damagesemi_t9"
+        },
+        {
+            "Comment": "#hash_75aa1f88abf8b1d6",
+            "animation": "playeranim#hash_4722acfc8276b806",
+            "weapon": "#smg_handling_t9"
+        },
+        {
+            "Comment": "#hash_15e6515d9360ba1d",
+            "animation": "playeranim#hash_4722acfc8276b806",
+            "weapon": "#tr_precisionsemi_t9"
+        },
+        {
+            "Comment": "#hash_388670785f20835",
+            "animation": "playeranim#hash_2cbca88a214194b3",
+            "weapon": "#special_nailgun_t9"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "sceneweaponvariantanim",
+    "vmtype": "Both",
+    "name": "scene_frontend_t9_wpnvariants_char_cust_conf_mp_usa_hero_adler"
+}

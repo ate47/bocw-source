@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_light_bp_cmachine_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_cmachine_mtxitem",
             "itemid": "26221447"
         },
         {
-            "var_4a4bc969": "#t9_charm_cement_mixer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_cement_mixer_mtxitem",
             "itemid": "18862569"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_vts_final_05_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_vts_final_05_mtxitem",
             "itemid": "19584634"
         }
     ],
-    "itemname": "#hash_4d7a10d467a28a5c",
-    "var_375a1747": "#hash_5800003531685146",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3079_m60_tower_patrol",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3079_m60_tower_patrol",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3079_m60_tower_patrol_mtxbundle",
-    "var_a788fada": "#hash_30a1e8507d770e6f",
-    "titlestring": "#hash_3f467f86051f542a",
-    "var_566825be": "#hash_41151815e6ed6b77",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3079_m60_tower_patrol_small",
+    "titlestring": "localized18#hash_3f467f86051f542a",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3079_m60_tower_patrol",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_60dca7732eb706a6",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_60dca7732eb706a6",
+    "hash_db3e02ab": 2000,
     "itemid": "23778832"
 }

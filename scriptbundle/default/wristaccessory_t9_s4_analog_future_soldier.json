@@ -1,11 +1,11 @@
 {
-    "var_9fc71d24": "#hash_7a3c509a1de951ec",
-    "description": "#hash_3c3bc15fe2da9dde",
+    "hash_9fc71d24": "model#hash_7a3c509a1de951ec",
+    "description": "localized18#hash_3c3bc15fe2da9dde",
     "image": "ui_icon_wrist_accessories_s4_analog_future_soldier",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s4_analog_future_soldier",
-    "var_6855e4be": "#wristaccessory_t9_s4_analog_future_soldier_mtxitem",
-    "displayname": "#hash_5852bb4e5f1ec2ee",
-    "var_8d478ea4": "#hash_614558cf74d0dcf8",
-    "var_d27eb4c6": "#hash_1e15aa90469db013"
+    "hash_6855e4be": "#wristaccessory_t9_s4_analog_future_soldier_mtxitem",
+    "displayname": "localized18#hash_5852bb4e5f1ec2ee",
+    "hash_8d478ea4": "model#wrist_watch_t9_s4_analog_future_soldier_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s4_analog_future_soldier_world"
 }

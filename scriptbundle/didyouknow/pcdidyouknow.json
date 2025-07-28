@@ -1,188 +1,197 @@
 {
     "koth": [
         {
-            "didyouknowentry": "#tips_multiplayer_koth",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_koth",
             "weight": 1
         }
     ],
-    "var_afca0ba5": [
+    "#hash_afca0ba5": [
         {
-            "didyouknowentry": "#tips_zombies_onslaught_holiday",
+            "didyouknowentry": "scriptbundle#tips_zombies_onslaught_holiday",
             "weight": 51
         }
     ],
     "control": [
         {
-            "didyouknowentry": "#tips_multiplayer_control",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_control",
             "weight": 1
         }
     ],
     "sd": [
         {
-            "didyouknowentry": "#tips_multiplayer_sd",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_sd",
             "weight": 1
         }
     ],
     "conf": [
         {
-            "didyouknowentry": "#tips_multiplayer_conf",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_conf",
             "weight": 1
         }
     ],
     "zonslaught": [
         {
-            "didyouknowentry": "#tips_zombies_onslaught",
+            "didyouknowentry": "scriptbundle#tips_zombies_onslaught",
             "weight": 50
         }
     ],
     "pc_gamepad": [
         {
-            "didyouknowentry": "#tips_pc_gamepad",
+            "didyouknowentry": "scriptbundle#tips_pc_gamepad",
             "weight": 1
         }
     ],
     "ball": [
         {
-            "didyouknowentry": "#tips_multiplayer_ball"
+            "didyouknowentry": "scriptbundle#tips_multiplayer_ball",
+            "weight": 0
         }
     ],
     "zholiday": [
         {
-            "didyouknowentry": "#tips_zombies_zholiday",
+            "didyouknowentry": "scriptbundle#tips_zombies_zholiday",
             "weight": 51
         }
     ],
     "league": [
         {
-            "didyouknowentry": "#tips_multiplayer_league",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_league",
             "weight": 1
         }
     ],
     "tdm_bb": [
         {
-            "didyouknowentry": "#tips_multiplayer_tdm_bb",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_tdm_bb",
             "weight": 1
         }
     ],
     "dom_bb": [
         {
-            "didyouknowentry": "#tips_multiplayer_dom_bb",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_dom_bb",
             "weight": 1
         }
     ],
     "zsurvival": [
         {
-            "didyouknowentry": "#tips_zombies_survival",
+            "didyouknowentry": "scriptbundle#tips_zombies_survival",
             "weight": 50
         },
         {
-            "didyouknowentry": "#tips_zombies_shared",
+            "didyouknowentry": "scriptbundle#tips_zombies_shared",
             "weight": 50
         }
     ],
     "zcranked": [
         {
-            "didyouknowentry": "#tips_zombies_cranked",
+            "didyouknowentry": "scriptbundle#tips_zombies_cranked",
             "weight": 51
         }
     ],
     "escort": [
         {
-            "didyouknowentry": "#tips_multiplayer_escort"
+            "didyouknowentry": "scriptbundle#tips_multiplayer_escort",
+            "weight": 0
         }
     ],
     "fireteam_dirty_bomb": [
         {
-            "didyouknowentry": "#tips_multiplayer_fireteam_dirty_bomb",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_fireteam_dirty_bomb",
             "weight": 3
         }
     ],
     "multiplayer": [
         {
-            "didyouknowentry": "#tips_multiplayer_shared",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_shared",
             "weight": 1
         }
     ],
     "doa": [
         {
-            "didyouknowentry": "#tips_zombies_doa",
+            "didyouknowentry": "scriptbundle#tips_zombies_doa",
             "weight": 50
         }
     ],
     "dom": [
         {
-            "didyouknowentry": "#tips_multiplayer_dom",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_dom",
             "weight": 1
         }
     ],
     "bounty": [
         {
-            "didyouknowentry": "#tips_multiplayer_bounty"
+            "didyouknowentry": "scriptbundle#tips_multiplayer_bounty",
+            "weight": 0
         }
     ],
     "gun": [
         {
-            "didyouknowentry": "#tips_multiplayer_gun",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_gun",
             "weight": 1
         }
     ],
     "war12v12": [
         {
-            "didyouknowentry": "#tips_multiplayer_war12v12",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_war12v12",
             "weight": 3
         }
     ],
     "vip": [
         {
-            "didyouknowentry": "#tips_multiplayer_vip",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_vip",
             "weight": 3
         }
     ],
     "public": [
         {
-            "didyouknowentry": "#tips_multiplayer_public",
+            "didyouknowentry": "scriptbundle#tips_multiplayer_public",
             "weight": 1
         }
     ],
     "warzone": [
         {
-            "didyouknowentry": "#tips_warzone_shared"
+            "didyouknowentry": "scriptbundle#tips_warzone_shared",
+            "weight": 0
         },
         {
-            "didyouknowentry": "#tips_warzone_redeploymodes"
+            "didyouknowentry": "scriptbundle#tips_warzone_redeploymodes",
+            "weight": 0
         },
         {
-            "didyouknowentry": "#tips_warzone_spectrerising"
+            "didyouknowentry": "scriptbundle#tips_warzone_spectrerising",
+            "weight": 0
         },
         {
-            "didyouknowentry": "#tips_warzone_ambush"
+            "didyouknowentry": "scriptbundle#tips_warzone_ambush",
+            "weight": 0
         },
         {
-            "didyouknowentry": "#tips_warzone_groundwar"
+            "didyouknowentry": "scriptbundle#tips_warzone_groundwar",
+            "weight": 0
         }
     ],
     "zclassic": [
         {
-            "didyouknowentry": "#tips_zombies_classic",
+            "didyouknowentry": "scriptbundle#tips_zombies_classic",
             "weight": 50
         },
         {
-            "didyouknowentry": "#tips_zombies_shared",
+            "didyouknowentry": "scriptbundle#tips_zombies_shared",
             "weight": 50
         }
     ],
     "warzone_hot_pursuit": [
         {
-            "didyouknowentry": "#tips_warzone_hotpursuit"
+            "didyouknowentry": "scriptbundle#tips_warzone_hotpursuit",
+            "weight": 0
         }
     ],
     "infect": [
         {
-            "didyouknowentry": "#tips_zombies_infect",
+            "didyouknowentry": "scriptbundle#tips_zombies_infect",
             "weight": 1
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "didyouknow",
     "name": "pcdidyouknow"
 }

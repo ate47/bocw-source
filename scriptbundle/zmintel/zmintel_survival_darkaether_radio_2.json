@@ -1,51 +1,54 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_4493cbcf983e8cee",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 21.25,
-            "var_36bf8e05": "#hash_1ea23c713bc90397"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 21.25,
+            "hash_36bf8e05": "localized19#hash_1ea23c713bc90397"
         },
         {
             "soundevent": "#hash_4493cccf983e8ea1",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 22.95,
-            "var_36bf8e05": "#hash_3fe052e42a38390e"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 22.95,
+            "hash_36bf8e05": "localized19#hash_3fe052e42a38390e"
         },
         {
             "soundevent": "#hash_4493c9cf983e8988",
-            "var_f35c5951": 0.6,
-            "var_5d4b5964": 12.46,
-            "var_36bf8e05": "#hash_7948bd7607cbb0f5"
+            "hash_f35c5951": 0.6,
+            "hash_5d4b5964": 12.46,
+            "hash_36bf8e05": "localized19#hash_7948bd7607cbb0f5"
         },
         {
             "soundevent": "#hash_4493cacf983e8b3b",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 15.23,
-            "var_36bf8e05": "#hash_5b68739299f72a54"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 15.23,
+            "hash_36bf8e05": "localized19#hash_5b68739299f72a54"
         },
         {
             "soundevent": "#hash_4493cfcf983e93ba",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 11.01,
-            "var_36bf8e05": "#hash_2a13fdeb4ff3d6e3"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 11.01,
+            "hash_36bf8e05": "localized19#hash_2a13fdeb4ff3d6e3"
         }
     ],
-    "description": "#hash_43df84048e2fc09",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_483fb768867494d5",
+    "description": "localized19#hash_43df84048e2fc09",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "hash_824079e7": "#survival",
+    "uimodel": "model#hash_483fb768867494d5",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#dark_aether",
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_darkaether_radio_2",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_5ba4ba1cd9c93d17",
-    "var_3bb3493d": "#hash_36108b7e581c84d3",
-    "var_6073bf8f": "#hash_30acea553928ba42"
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_5ba4ba1cd9c93d17",
+    "hash_4efbbcfe": 0,
+    "hash_3bb3493d": "#hash_36108b7e581c84d3",
+    "hash_6073bf8f": "model#hash_30acea553928ba42"
 }

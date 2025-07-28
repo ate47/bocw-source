@@ -1,64 +1,67 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_4fd19d0ad454d87a"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5006_park_ultraskin_fire_01"
         },
         {
-            "var_fe10649e": "#hash_4fd19c0ad454d6c7"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5006_park_ultraskin_fire_02"
         },
         {
-            "var_fe10649e": "#hash_4fd19b0ad454d514"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5006_park_ultraskin_fire_03"
         },
         {
-            "var_fe10649e": "#hash_4fd19a0ad454d361"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5006_park_ultraskin_fire_04"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_uk_pl_mi6_ignite_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_mi6_ignite_mtxitem",
             "itemid": "32566525"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_fires_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_fires_mtxitem",
             "itemid": "29695404"
         },
         {
-            "var_4a4bc969": "#smg_fastfire_bp_fires_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_fastfire_bp_fires_mtxitem",
             "itemid": "29958260"
         },
         {
-            "var_4a4bc969": "#t9_charm_molotov_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_molotov_mtxitem",
             "itemid": "24846367"
         },
         {
-            "var_4a4bc969": "#emblems_s5_firestarter_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s5_firestarter_animation_mtxitem",
             "itemid": "25447677"
         },
         {
-            "var_4a4bc969": "#callingcards_s5_firestarter_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s5_firestarter_animation_mtxitem",
             "itemid": "24058240"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_firestarter_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_firestarter_s5_mtxitem",
             "itemid": "22821152"
         }
     ],
-    "itemname": "#hash_6c143c3b73e01776",
-    "var_375a1747": "#hash_4fd19d0ad454d87a",
-    "var_3040f0d1": "#hash_4fd19d0ad454d87a",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5006_park_ultraskin_fire",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5006_park_ultraskin_fire_01",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_5006_park_ultraskin_fire_01",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5006_park_ultraskin_fire_mtxbundle",
-    "var_a788fada": "#hash_6cf4f09614849885",
-    "titlestring": "#hash_14e41f062b86b8c6",
-    "var_566825be": "#hash_51887b65a1daf8dd",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5006_park_ultraskin_fire_small",
+    "titlestring": "localized18#hash_14e41f062b86b8c6",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5006_park_ultraskin_fire",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_13edc6018deb78da",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_13edc6018deb78da",
+    "hash_db3e02ab": 750,
     "itemid": "32311484"
 }

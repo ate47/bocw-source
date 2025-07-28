@@ -1,0 +1,122 @@
+{
+    "#hash_bb7dcd09": [
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_273c359fc50dc97",
+            "imagelarge": "image#hash_6ec2f4ff5e715ea6",
+            "displayname": "localized19#hash_4d04677ee31c56df",
+            "actionutility": "#NONE",
+            "identifier": "preorder"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_273c359fc50dc97",
+            "imagelarge": "image#hash_6ec2f4ff5e715ea6",
+            "displayname": "localized19#hash_55b0c505455ce4a3",
+            "actionutility": "#NONE",
+            "identifier": "upgrade"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_273c359fc50dc97",
+            "imagelarge": "image#hash_6ec2f4ff5e715ea6",
+            "displayname": "localized19#hash_426ff29c4df38da7",
+            "actionutility": "#NONE",
+            "identifier": "view"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_273c359fc50dc97",
+            "imagelarge": "image#hash_6ec2f4ff5e715ea6",
+            "displayname": "localized19#menu/store",
+            "actionutility": "#NONE",
+            "identifier": "store"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_273c359fc50dc97",
+            "imagelarge": "image#hash_6ec2f4ff5e715ea6",
+            "displayname": "localized19#hash_106cbd46eb47b2c6",
+            "actionutility": "#NONE",
+            "identifier": "play"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_7042fde1d3612c3",
+            "imagelarge": "image#hash_2665f16e6574d41f",
+            "displayname": "localized19#menu/campaign",
+            "actionutility": "#NONE",
+            "identifier": "sp"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_6f04bde1d25994d",
+            "imagelarge": "image#hash_2a576a9a2e4b2581",
+            "displayname": "localized19#menu/multiplayer",
+            "actionutility": "#NONE",
+            "identifier": "mp"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_7042cde1d360daa",
+            "imagelarge": "image#hash_202d515790a48e30",
+            "displayname": "localized19#hash_ef975b22683b622",
+            "actionutility": "#NONE",
+            "identifier": "cp"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "image": "image#hash_273c359fc50dc97",
+            "imagelarge": "image#hash_6ec2f4ff5e715ea6",
+            "displayname": "localized19#hash_106cbd46eb47b2c6",
+            "actionutility": "#NONE",
+            "identifier": "trial"
+        }
+    ],
+    "hash_6bb475c1": 1,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 1,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 1,
+    "hash_4295e20d": 0,
+    "hash_1af796": 1,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
+    "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 1,
+    "name": "press_start_mode_buttons_mw2",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 1,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 1,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0,
+    "hash_748e79a5": "scriptbundle#hash_1fd34c0c303836ee"
+}

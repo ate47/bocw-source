@@ -1,0 +1,40 @@
+{
+    "1": [
+        {
+            "altarimage": "image#ui_menu_zombies_cac_altar_danu_active",
+            "altarname": "localized18#zombie/danu"
+        },
+        {
+            "altarimage": "image#ui_menu_zombies_cac_altar_ra_active",
+            "altarname": "localized18#zombie/ra"
+        },
+        {
+            "altarimage": "image#uie_ui_menu_zombies_cac_altar_zeus_active",
+            "altarname": "localized18#zombie/zeus"
+        },
+        {
+            "altarimage": "image#ui_menu_zombies_cac_altar_odin_active",
+            "altarname": "localized18#zombie/odin"
+        }
+    ],
+    "0": [
+        {
+            "altarimage": "image#uie_ui_menu_zombies_cac_altar_brew_active",
+            "altarname": "localized18#zombie/brew"
+        },
+        {
+            "altarimage": "image#uie_ui_menu_zombies_cac_altar_cola_active",
+            "altarname": "localized18#zombie/cola"
+        },
+        {
+            "altarimage": "image#uie_ui_menu_zombies_cac_altar_soda_active",
+            "altarname": "localized18#zombie/soda"
+        },
+        {
+            "altarimage": "image#uie_ui_menu_zombies_cac_altar_tonic_active",
+            "altarname": "localized18#zombie/tonic"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "name": "zm_altars_info"
+}

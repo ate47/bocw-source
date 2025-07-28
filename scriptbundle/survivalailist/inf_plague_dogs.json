@@ -1,0 +1,12 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&survival_ai_dog_plague",
+            "hash_a949845f": -1,
+            "hash_857deb66": 10
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "inf_plague_dogs"
+}

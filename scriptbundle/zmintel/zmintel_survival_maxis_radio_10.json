@@ -1,85 +1,89 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_1e5a2c7256498a62",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 1.73,
-            "var_36bf8e05": "#hash_6a2034a95d96f793"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 1.73,
+            "hash_36bf8e05": "localized19#hash_6a2034a95d96f793"
         },
         {
             "soundevent": "#hash_1e5a2d7256498c15",
-            "var_f35c5951": 2,
-            "var_5d4b5964": 6.47,
-            "var_36bf8e05": "#hash_1560d23def8d655a"
+            "hash_f35c5951": 2,
+            "hash_5d4b5964": 6.47,
+            "hash_36bf8e05": "localized19#hash_1560d23def8d655a"
         },
         {
             "soundevent": "#hash_1e5a2a72564986fc",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 4.9,
-            "var_36bf8e05": "#hash_1fa39fe7e7c4cafd"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 4.9,
+            "hash_36bf8e05": "localized19#hash_1fa39fe7e7c4cafd"
         },
         {
             "soundevent": "#hash_1e5a2b72564988af",
-            "var_f35c5951": 1.4,
-            "var_5d4b5964": 5.76,
-            "var_36bf8e05": "#hash_440cf6dd7577bcb4"
+            "hash_f35c5951": 1.4,
+            "hash_5d4b5964": 5.76,
+            "hash_36bf8e05": "localized19#hash_440cf6dd7577bcb4"
         },
         {
             "soundevent": "#hash_1e5a287256498396",
-            "var_f35c5951": 1.2,
-            "var_5d4b5964": 3.01,
-            "var_36bf8e05": "#hash_28e09844f40e4d7f"
+            "hash_f35c5951": 1.2,
+            "hash_5d4b5964": 3.01,
+            "hash_36bf8e05": "localized19#hash_28e09844f40e4d7f"
         },
         {
             "soundevent": "#hash_1e5a297256498549",
-            "var_f35c5951": 0.3,
-            "var_5d4b5964": 11.26,
-            "var_36bf8e05": "#hash_26daf79fce1cf4a6"
+            "hash_f35c5951": 0.3,
+            "hash_5d4b5964": 11.26,
+            "hash_36bf8e05": "localized19#hash_26daf79fce1cf4a6"
         },
         {
             "soundevent": "#hash_1e5a267256498030",
-            "var_f35c5951": 2,
-            "var_5d4b5964": 2.89,
-            "var_36bf8e05": "#hash_5a60ed107f411339"
+            "hash_f35c5951": 2,
+            "hash_5d4b5964": 2.89,
+            "hash_36bf8e05": "localized19#hash_5a60ed107f411339"
         },
         {
             "soundevent": "#hash_1e5a2772564981e3",
-            "var_f35c5951": 1.6,
-            "var_5d4b5964": 1.51,
-            "var_36bf8e05": "#hash_56814f51fb97be0"
+            "hash_f35c5951": 1.6,
+            "hash_5d4b5964": 1.51,
+            "hash_36bf8e05": "localized19#hash_56814f51fb97be0"
         },
         {
             "soundevent": "#hash_1e5a3472564997fa",
-            "var_f35c5951": 2.2,
-            "var_5d4b5964": 9.45,
-            "var_36bf8e05": "#hash_df77aa7482eb0cb"
+            "hash_f35c5951": 2.2,
+            "hash_5d4b5964": 9.45,
+            "hash_36bf8e05": "localized19#hash_df77aa7482eb0cb"
         },
         {
             "soundevent": "#hash_1e5a3572564999ad",
-            "var_f35c5951": 2,
-            "var_5d4b5964": 1.73,
-            "var_36bf8e05": "#hash_3c205b367c959f92"
+            "hash_f35c5951": 2,
+            "hash_5d4b5964": 1.73,
+            "hash_36bf8e05": "localized19#hash_3c205b367c959f92"
         },
         {
             "soundevent": "#hash_5cc75e489ef922df",
-            "var_5d4b5964": 1.11,
-            "var_36bf8e05": "#hash_47014b4cd7be6c96"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 1.11,
+            "hash_36bf8e05": "localized19#hash_47014b4cd7be6c96"
         }
     ],
-    "description": "#hash_58948f3f0a4683d9",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "model": "#hash_2a2df769d600b242",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_7dcfe35ccda755f1",
+    "description": "localized19#hash_58948f3f0a4683d9",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_radio_transmissions",
+    "hash_824079e7": "#survival",
+    "uimodel": "model#p9_zm_ndu_radio_transmissions_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 6,
-    "var_ad4ad686": "#maxis",
+    "hash_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_maxis_radio_10",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_3e6df42baa94ef47"
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_3e6df42baa94ef47",
+    "hash_4efbbcfe": 0
 }

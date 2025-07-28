@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_226f72ec4afe482c",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_5c8442d8f96a674f",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_hero",
+    "hash_9864ed1": 0,
+    "name": "hero_game",
+    "hash_6855e4be": "#hero_game_mtxitem",
+    "displayname": "localized18#hash_603405dcfe19a604",
+    "filename": "#hash_52ddb4c73a001975",
+    "action": "localized18#hash_77d50d0837caba99",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_hero",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_hero",
+    "hash_48152d43": 0
+}

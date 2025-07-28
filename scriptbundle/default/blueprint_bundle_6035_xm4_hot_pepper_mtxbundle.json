@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mercenary_bp_carolina_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_carolina_mtxitem",
             "itemid": "18106196"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_carolina_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_carolina_mtxitem",
             "itemid": "33354818"
         },
         {
-            "var_4a4bc969": "#t9_charm_carolina_reaper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_carolina_reaper_mtxitem",
             "itemid": "29781452"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_carolina_reaper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_carolina_reaper_mtxitem",
             "itemid": "26508591"
         },
         {
-            "var_4a4bc969": "#callingcards_chilireaper_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_chilireaper_s6_animated_mtxitem",
             "itemid": "27839746"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_chilireaper_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_chilireaper_s6_mtxitem",
             "itemid": "28783550"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_744220041a5d416b",
-    "var_375a1747": "#hash_6edbab42266f273d",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6035_xm4_hot_pepper",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6035_xm4_hot_pepper_mtxbundle",
-    "var_a788fada": "#hash_20b0d12733a64a88",
-    "titlestring": "#hash_2108b088594cee47",
-    "var_566825be": "#hash_64136579e8a34274",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6035_xm4_hot_pepper_small",
+    "titlestring": "localized18#hash_2108b088594cee47",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6035_xm4_hot_pepper",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7f9f47412dcb05a3",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7f9f47412dcb05a3",
+    "hash_db3e02ab": 2000,
     "itemid": "20491919"
 }

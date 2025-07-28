@@ -1,0 +1,2543 @@
+{
+    "defaultloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#suppressed2"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#handle"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reddot"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#stalker2"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {},
+                {},
+                {}
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_standard_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_heavy_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#compensator2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                }
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_damagesemi_t9",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#holo"
+                },
+                {
+                    "attachment": "#mixmuzzle"
+                },
+                {
+                    "attachment": "#fastreload2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#barrel2"
+                }
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_light_t9",
+            "secondary": "#pistol_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {}
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#mixmuzzle"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#sprintout2"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#mixunder"
+                }
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_quickscope_t9",
+            "secondary": "#shotgun_pump_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {},
+                {},
+                {},
+                {},
+                {}
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#sprintout2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#suppressed2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {},
+                {},
+                {}
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_handling_t9",
+            "secondary": "#shotgun_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "secondaryattachments": [
+                {},
+                {},
+                {}
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#dw"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#pistol_semiauto_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixmuzzle"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_longburst_t9",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#hatchet",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {}
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#ir"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_powerburst_t9",
+            "secondary": "#launcher_freefire_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#dw"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#mixclip"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#pistol_burst_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_precisionsemi_t9",
+            "secondary": "#special_grenadelauncher_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#dw"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#pistol_revolver_t9",
+            "secondary": "#knife_loadout",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixclip"
+                },
+                {
+                    "attachment": "#mixhandle"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope4x"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_powersemi_t9",
+            "secondary": "#pistol_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_burst_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_fastfire_t9",
+            "secondary": "#launcher_freefire_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#speedgrip"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#stalker2"
+                },
+                {
+                    "attachment": "#suppressed2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_precisionsemi_t9",
+            "secondary": "#smg_capacity_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#hatchet",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_damage_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#hatchet",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#fastreload2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixhandle"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#ir"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_accurate_t9",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#suppressed2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#barrel2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixstock"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_mobility_t9",
+            "secondary": "#shotgun_pump_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#heavy2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_standard_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#heavy"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_accurate_t9",
+            "secondary": "#pistol_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_slowfire_t9",
+            "secondary": "#special_grenadelauncher_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#tactical"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#compensator"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_standard_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_standard_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#suppressed"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_fastfire_t9",
+            "secondary": "#pistol_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#dw"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_damage_t9",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex3"
+                },
+                {
+                    "attachment": "#mixhandle"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#stalker"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_accurate_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_mobility_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_heavy_t9",
+            "secondary": "#shotgun_pump_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#dw"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixbody2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_handling_t9",
+            "secondary": "#pistol_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixbody"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_capacity_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope3x"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_burst_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#handle"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#dualoptic"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixhandle"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_standard_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#sprintout"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_light_t9",
+            "secondary": "#shotgun_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#mixclip"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#holo"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#speedgrip"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#suppressed2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_accurate_t9",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip2"
+                },
+                {
+                    "attachment": "#sprintout2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reddot"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#grip"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_slowfire_t9",
+            "secondary": "#shotgun_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#hatchet",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#speedgrip"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#suppressed2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_damagesemi_t9",
+            "secondary": "#smg_standard_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_longburst_t9",
+            "secondary": "#ar_fastfire_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#suppressed2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#holo"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_powerburst_t9",
+            "secondary": "#smg_heavy_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#smoothzoom"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#mixclip"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_quickscope_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#hatchet",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_powersemi_t9",
+            "secondary": "#smg_burst_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo3"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixmuzzle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_standard_t9",
+            "secondary": "#smg_handling_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixbody2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_heavy_t9",
+            "secondary": "#special_crossbow_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_fastburst_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_fastburst_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_fastburst_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#hatchet",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#ir"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_fastburst_t9",
+            "secondary": "#pistol_revolver_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#holo"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_fastburst_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#pistol_semiauto_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#mixbarrel2"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_accurate_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_accurate_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_spray_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_stimshot",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#steadyaim"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_spray_t9",
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_molotov",
+            "secondarygrenade": "#nightingale",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_spray_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        }
+    ],
+    "#hash_2f9f5375": [
+        {
+            "talents": [
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixmuzzle"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#mixhandle"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot1",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_accurate_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        }
+    ],
+    "defaultcustomloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#stalker"
+                },
+                {
+                    "attachment": "#mixclip"
+                },
+                {
+                    "attachment": "#compensator"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot1",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_standard_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot2",
+            "hash_26b5c8ef": -1,
+            "primary": "#smg_standard_t9",
+            "secondary": "#launcher_standard_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#suppressed"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_gearhound"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot3",
+            "hash_26b5c8ef": -1,
+            "primary": "#tr_longburst_t9",
+            "secondary": "#pistol_semiauto_t9",
+            "hash_285151c1": 1,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 1
+        },
+        {
+            "secondaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#stalker"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#heavy"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#suppressed"
+                }
+            ],
+            "bonuscards": [
+                {}
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot4",
+            "hash_26b5c8ef": -1,
+            "primary": "#lmg_accurate_t9",
+            "secondary": "#shotgun_pump_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {},
+                {},
+                {}
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#suppressed2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#barrel"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#suppressed"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#sprintout"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_lawbreaker"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot5",
+            "hash_26b5c8ef": -1,
+            "primary": "#sniper_standard_t9",
+            "secondary": "#smg_handling_t9",
+            "hash_285151c1": 0,
+            "primarygrenade": "#satchel_charge",
+            "secondarygrenade": "#eq_slow_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "talents": [
+                {},
+                {},
+                {}
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#holo"
+                },
+                {
+                    "attachment": "#stalker2"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#mixhandle"
+                },
+                {
+                    "attachment": "#barrel"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_gearhound"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot6",
+            "hash_26b5c8ef": -1,
+            "primary": "#ar_damage_t9",
+            "secondary": "#launcher_standard_t9",
+            "hash_285151c1": 1,
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete",
+            "hash_1c89585f": 1
+        }
+    ],
+    "killstreaks": [
+        {
+            "killstreak": "#uav"
+        },
+        {
+            "killstreak": "#planemortar"
+        },
+        {
+            "killstreak": "#helicopter_comlink"
+        }
+    ],
+    "name": "mp_gunfight_loadout_default",
+    "sessionmode": "mp"
+}

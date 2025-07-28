@@ -1,0 +1,213 @@
+{
+    "lightgroups_1_slots": [
+        {
+            "fx": "fx#hash_60596eda3f29751e",
+            "tag": "tag_fx_headlight_left"
+        },
+        {
+            "fx": "fx#hash_60596eda3f29751e",
+            "tag": "tag_fx_headlight_right"
+        },
+        {
+            "fx": "fx#hash_4c790711468c1b49",
+            "tag": "tag_fx_foglight_right"
+        },
+        {
+            "fx": "fx#hash_4c790711468c1b49",
+            "tag": "tag_fx_foglight_left"
+        }
+    ],
+    "#hash_aaf4ef8c": [
+        {
+            "hash_f08513a": "tag_gunner_turret2_d0"
+        },
+        {
+            "hash_f08513a": "tag_gunner_barrel2_d0"
+        }
+    ],
+    "#hash_98404a23": [
+        {
+            "hash_f08513a": "tag_gunner_turret3_d0"
+        },
+        {
+            "hash_f08513a": "tag_gunner_barrel3_d0"
+        }
+    ],
+    "#setup_lgt_glowyriver": [
+        {
+            "hash_f08513a": "tag_gunner_turret1_d0"
+        },
+        {
+            "hash_f08513a": "tag_gunner_barrel1_d0"
+        }
+    ],
+    "#hash_b3fbebad": [
+        {
+            "hash_e9927fbf": "tag_fx_exp_front",
+            "hash_82aeef56": "fx#hash_930bed3693ed92e",
+            "hash_ad486dc4": 0
+        },
+        {
+            "hash_e9927fbf": "tag_fx_exp_back",
+            "hash_82aeef56": "fx#hash_930bed3693ed92e",
+            "hash_ad486dc4": 0.2
+        },
+        {
+            "hash_e9927fbf": "tag_fx_under_side_l",
+            "hash_82aeef56": "fx#hash_1802acb5f5b7f048",
+            "hash_ad486dc4": 0.2
+        },
+        {
+            "hash_e9927fbf": "tag_fx_under_side_r",
+            "hash_82aeef56": "fx#hash_1802acb5f5b7f048",
+            "hash_ad486dc4": 0.3
+        }
+    ],
+    "#hash_24cedff1": [
+        {
+            "hash_77369946": "tag_fx_under_front",
+            "hash_b1f96a68": 0,
+            "hash_d6402306": "fx#hash_5ce7063d84f5e584"
+        },
+        {
+            "hash_77369946": "tag_fx_under_back",
+            "hash_b1f96a68": 0,
+            "hash_d6402306": "fx#hash_14228687720a6e78"
+        },
+        {
+            "hash_77369946": "tag_fx_under_side_l",
+            "hash_b1f96a68": 0,
+            "hash_d6402306": "fx#hash_8364904a498301b"
+        },
+        {
+            "hash_77369946": "tag_fx_under_side_r",
+            "hash_b1f96a68": 0,
+            "hash_d6402306": "fx#hash_8364904a498301b"
+        },
+        {
+            "hash_77369946": "tag_fx_wheel_well_fl",
+            "hash_b1f96a68": 0,
+            "hash_d6402306": "fx#hash_4c47d684e87e3a30"
+        }
+    ],
+    "hash_325c5c2e": 0,
+    "hash_8c1562f4": 0,
+    "hash_27bed4cd": 0,
+    "hash_77c7a074": 400,
+    "hash_efc15586": 10,
+    "hash_e1d36c37": 300,
+    "turret_fire_burst_max": 5,
+    "hash_2c69a255": 5,
+    "damagestate_lv3_tag1": "tag_body_animate",
+    "hash_93360fe": 10,
+    "hash_22b9bee1": 0,
+    "forwardjukeengagementheightmax": 300,
+    "damagestate_lv1_ratio": 0.75,
+    "hash_95ebe8e0": 0,
+    "hash_2ade16ee": 450,
+    "hash_c15b13ab": 500,
+    "hash_9cdbf8c1": 1000,
+    "hash_7e3165c1": 80,
+    "hash_b50854b0": 0,
+    "hash_7fa25761": 10,
+    "hash_68c74e4f": 5,
+    "configstringfiletype": "scriptbundle",
+    "damagestate_lv1_tag1": "tag_body_animate",
+    "vehicletype": "none",
+    "hash_e08bc957": 3,
+    "max_duration": 30,
+    "damagestate_lv1_fx1": "fx#hash_491f5bd2678c3c0b",
+    "hash_e9898330": "pingvehicle",
+    "hash_c8e63b66": 0,
+    "hash_db1cdfd3": 0,
+    "hash_9da864ef": 0,
+    "hash_48e6bb6d": 0,
+    "hash_b60405d": 0,
+    "hash_e48ff2b9": 0,
+    "hash_6fe0095f": 0,
+    "hash_8b56c04c": 0,
+    "damagestate_lv4_ratio": 0.75,
+    "damagestate_lv2_ratio": 0.5,
+    "hash_c5e4c9ab": 200,
+    "hash_62181a6": 0,
+    "defaultmovespeed": 37,
+    "type": "vehiclecustomsettings",
+    "hash_3bd38bbc": "fx#hash_18d16e81732db747",
+    "max_move_dist": 100,
+    "empdowntime": 10,
+    "all_knowing": 1,
+    "hash_745d947e": 350,
+    "hash_e17f8be8": 0,
+    "hash_941aa303": 150,
+    "forwardjukeengagementdistmin": 500,
+    "forwardjukeengagementdistmax": 1000,
+    "vmtype": "both",
+    "hash_8ba38506": 0,
+    "attackdamage": 1000,
+    "hash_e9ebd61b": 500,
+    "hash_2627e80a": 0,
+    "hash_9eff22ee": 5,
+    "hash_99955aeb": 150,
+    "engagementdistmin": 500,
+    "engagementdistmax": 1000,
+    "damagestate_lv2_numslots": 1,
+    "near_goal_notify_dist": 80,
+    "damagestate_lv3_numslots": 1,
+    "engagementheightmax": 300,
+    "hash_23061240": 40,
+    "hash_c3b80adc": 0,
+    "name": "player_ground_vehicle_settings_btr40",
+    "hash_e7260470": 65,
+    "damagestate_lv1_numslots": 1,
+    "rocketcooldown": 5,
+    "targeting_radius": 200,
+    "meleedist": 50,
+    "damage_radius": 150,
+    "jump_height": 40,
+    "miniguncooldown": 5,
+    "scanning_speedscale": 0.01,
+    "spawn_count": 4,
+    "max_kill_count": 3,
+    "hash_274be2d6": 15,
+    "hash_c4d22a09": 300,
+    "hash_2c001f55": 150,
+    "hash_804ce8e7": 1,
+    "damagestate_lv2_tag1": "tag_body_animate",
+    "hash_b0d7c1ed": 10,
+    "hash_83f24ed5": "tag_body",
+    "damagestate_lv3_sound": "veh_dmg_health_drop",
+    "hash_3285f09a": 1000,
+    "damagestate_lv3_ratio": 0.25,
+    "damagestate_lv3_fx1": "fx#hash_491f5dd2678c3f71",
+    "hash_7454f5d3": 5,
+    "damagestate_lv2_sound": "veh_dmg_health_drop",
+    "hash_c694bbbf": 90,
+    "hash_33fed96b": 0,
+    "hash_3abce6e7": 0,
+    "hash_a552bc15": 0,
+    "hash_b417599e": 0,
+    "hash_26e0bf13": 0,
+    "hash_484c8206": 0,
+    "hash_5f0faf8c": 0,
+    "hash_6cfc4b65": 0,
+    "damagestate_lv2_fx1": "fx#hash_491f5cd2678c3dbe",
+    "gunner_turret_on_target_range": 5,
+    "ismovingplatform": 1,
+    "hash_efbfa41e": 1000,
+    "hash_e0c78652": 10,
+    "max_path_fail_count": 10,
+    "hash_aef0d42": 150,
+    "lifetime": 5,
+    "hash_f72c3104": 30,
+    "detonation_distance": 64,
+    "hash_17285e43": 0,
+    "aim_assist": 1,
+    "turret_cooldown_max": 5,
+    "hash_bd5d8569": 0,
+    "friendly_fire": 1,
+    "damagestate_lv1_sound": "veh_dmg_health_drop",
+    "repath_range": 60,
+    "lightgroups_numgroups": 3,
+    "hash_a255d709": 5,
+    "hash_167e340": 50
+}

@@ -1,0 +1,27 @@
+{
+    "#hash_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_platinum_omega_radio_01"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_platinum_omega_radio_02"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_platinum_omega_radio_03"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_platinum_omega_radio_04"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_platinum_omega_radio_05"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_zm_platinum_radio_transmissions_omega"
+}

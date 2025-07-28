@@ -1,35 +1,45 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_wsow_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_wsow_pc_mtxitem",
             "itemid": "32643629"
         },
         {
-            "var_4a4bc969": "#loot_smg_fastfire_bp_wsow_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_fastfire_bp_wsow_pc_mtxitem",
             "itemid": "23171550"
         },
         {
-            "var_4a4bc969": "#t9_charm_crown_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_crown_pc_mtxitem",
             "itemid": "29935560"
         },
         {
-            "var_4a4bc969": "#callingcards_flexkillcam_s5_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_flexkillcam_s5_base_pc_mtxitem",
             "itemid": "21527212"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_23fd86b290f46d8e",
-    "var_247d9ed7": "firstparty_bundle_5605_wsow_pack",
-    "var_208d76b5": "#hash_22810d64ecea2ed4",
-    "var_70f66e54": "#hash_32cd87d6ded353eb",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_5605_wsow_pack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_firstparty_bundle_5605_wsow_pack",
+    "hash_70f66e54": "#hash_32cd87d6ded353eb",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "firstparty_bundle_5605_wsow_pack_pc_mtxentitlement",
-    "var_a788fada": "#hash_97028e8eee0fb91",
-    "titlestring": "#hash_38ab2f0b5c00b481",
-    "var_566825be": "#hash_620f0965c9776169",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_firstparty_bundle_5605_wsow_pack_small",
+    "titlestring": "localized18#hash_38ab2f0b5c00b481",
+    "hash_566825be": "image#ui_icon_mtx_titles_firstparty_bundle_5605_wsow_pack",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_f3c937a9": "#hash_6fb7f68967606141",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#pc",
+    "hash_f3c937a9": "localized18#hash_6fb7f68967606141",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#pc",
     "itemid": "31108212",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

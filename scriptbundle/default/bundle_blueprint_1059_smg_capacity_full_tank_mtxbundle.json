@@ -1,26 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_capacity_bp_fulltank_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_fulltank_mtxitem",
             "itemid": "23711852"
         },
         {
-            "var_4a4bc969": "#t9_charm_gas_can_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_gas_can_mtxitem",
             "itemid": "26796304"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_fulltank_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_fulltank_mtxitem",
             "itemid": "24334756"
         }
     ],
-    "itemname": "#hash_3a052cb3fbee0e49",
-    "var_375a1747": "#hash_2528bebd3a93095b",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1059_smg_capacity_full_tank",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1059_smg_capacity_full_tank",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1059_smg_capacity_full_tank_mtxbundle",
-    "titlestring": "#hash_37a839f7366b2e3a",
-    "var_566825be": "#hash_4ea1cfe20e4bb8b6",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_37a839f7366b2e3a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1059_smg_capacity_full_tank",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_46a5eccdb74abc36",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_46a5eccdb74abc36",
+    "hash_db3e02ab": 2000,
     "itemid": "22859572"
 }

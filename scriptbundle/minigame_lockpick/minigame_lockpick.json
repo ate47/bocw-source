@@ -1,0 +1,7 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "type": "minigame_lockpick",
+    "name": "minigame_lockpick",
+    "gameobject": "scriptbundle&cp_gameobject_minigame_lockpick",
+    "hash_b263f6a2": "scriptbundle&cp_minigames_lockpick_list"
+}

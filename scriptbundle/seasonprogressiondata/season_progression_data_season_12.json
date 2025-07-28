@@ -1,6 +1,6 @@
 {
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "seasonprogressiondata",
     "name": "season_progression_data_season_12",
-    "var_888af08e": "#base"
+    "hash_888af08e": "#base"
 }

@@ -1,0 +1,17 @@
+{
+    "hash_4dbc4aee": "localized19#hash_377ddf19a98123d4",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "result": "weapon#ww_ray_rifle_t9",
+    "type": "craftblueprint",
+    "hash_e414062": -12,
+    "component01": "weapon#hash_6220375dfba5cf7d",
+    "name": "zblueprint_gold_wonderweapon",
+    "displayname": "WonderWeapon",
+    "hash_391591d0": "localized19#hash_72888641cefa07bf",
+    "postcraft": "one_time_craft",
+    "hash_abd9b2d0": "localized19#hash_72888641cefa07bf",
+    "componentcount": 1,
+    "takecomponents": 1,
+    "hash_c028dcfe": 0,
+    "hash_318c150c": "SECTION_QUESTS"
+}

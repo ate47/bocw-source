@@ -1,26 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_capacity_bp_hanukkah_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_hanukkah_mtxitem",
             "itemid": "28821883"
         },
         {
-            "var_4a4bc969": "#t9_charm_olive_crown_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_olive_crown_mtxitem",
             "itemid": "24576061"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_greece_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_greece_mtxitem",
             "itemid": "22882471"
         }
     ],
-    "itemname": "#hash_40c9efc186caf51d",
-    "var_375a1747": "#hash_b359b8b92f80c87",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1030_smg_burst_loose_ends",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1030_smg_burst_loose_ends",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1030_smg_burst_loose_ends_mtxbundle",
-    "titlestring": "#hash_58bf8468c510af8b",
-    "var_566825be": "#hash_23abb3e9a98d246e",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_58bf8468c510af8b",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1030_smg_burst_loose_ends",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_68ee870220b6060f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_68ee870220b6060f",
+    "hash_db3e02ab": 2000,
     "itemid": "28681846"
 }

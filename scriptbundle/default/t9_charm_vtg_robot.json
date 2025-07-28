@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_116d5c008a6651e5",
-    "description": "#hash_798af94d31a6e671",
+    "hash_ff3063df": "model#attach_t9_charm_vtg_robot",
+    "description": "localized18#hash_798af94d31a6e671",
     "name": "t9_charm_vtg_robot",
-    "var_6855e4be": "#t9_charm_vtg_robot_mtxitem",
-    "displayname": "#hash_143fec6be0c103df",
+    "hash_6855e4be": "#t9_charm_vtg_robot_mtxitem",
+    "displayname": "localized18#hash_143fec6be0c103df",
     "icon": "ui_icon_weapon_charms_t9_vtg_robot",
-    "var_ef5ad2b3": "#hash_116d5c008a6651e5"
+    "hash_ef5ad2b3": "model#attach_t9_charm_vtg_robot"
 }

@@ -1,41 +1,44 @@
 {
     "tips": [
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4fee8544ba64deaa",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4fee8544ba64deaa",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6cd6c8b7d0d3d70b",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6cd6c8b7d0d3d70b",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_285a2e07f7f100d4",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_285a2e07f7f100d4",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_15063eb52163aeb3",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_15063eb52163aeb3",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1e1a836bf9bb2b8c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1e1a836bf9bb2b8c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 0,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_warzone_redeploymodes",
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#deathcirclerespawn",
-    "var_b96cb18c": 1
+    "hash_e0d5cde7": 0,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#deathcirclerespawn",
+    "hash_b96cb18c": 1
 }

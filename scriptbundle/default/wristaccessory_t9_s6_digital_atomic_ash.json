@@ -1,11 +1,11 @@
 {
-    "var_999715d2": "#hash_fb2bc7bd3c73560",
-    "description": "#hash_5c42f6c54f4443be",
+    "hash_999715d2": "#hash_fb2bc7bd3c73560",
+    "description": "localized18#hash_5c42f6c54f4443be",
     "image": "ui_icon_wrist_accessories_s6_digital_atomic_ash",
-    "var_9b474412": 5,
+    "hash_9b474412": 5,
     "name": "wristaccessory_t9_s6_digital_atomic_ash",
-    "var_6855e4be": "#wristaccessory_t9_s6_digital_atomic_ash_mtxitem",
-    "displayname": "#hash_1aacf01f4e6bb90e",
-    "var_8d478ea4": "#hash_75fc27946486890",
-    "var_d27eb4c6": "#hash_2613756d190799ab"
+    "hash_6855e4be": "#wristaccessory_t9_s6_digital_atomic_ash_mtxitem",
+    "displayname": "localized18#hash_1aacf01f4e6bb90e",
+    "hash_8d478ea4": "model#wrist_watch_t9_s6_digital_atomic_ash_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s6_digital_atomic_ash_world"
 }

@@ -1,43 +1,75 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "var_5ed80a9c": "#hash_50796ec982d4d464",
+            "hash_5ed80a9c": "#bootcamp",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_676df7e1f27afe7d",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_676df7e1f27afe7d",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_1fa37750ac00527a",
-            "type": "#none",
-            "displayname": "#hash_70f09882e8b4145d",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#fieldspecialist",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_70f09882e8b4145d",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_5340b7cee5d20e44",
-            "type": "#none",
-            "displayname": "#hash_25325638041313a3",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#eliteoperator",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_25325638041313a3",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_3b9c07d0dbe8aade",
-            "type": "#none",
-            "displayname": "#hash_2a757ced9cfa82e5",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#countermeasures",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_2a757ced9cfa82e5",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_8b36f2555cecc77",
-            "type": "#none",
-            "displayname": "#hash_7f22a373f452866c",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#grizzledveteran",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_7f22a373f452866c",
+            "actionutility": "#NONE"
         }
     ],
-    "var_72ef398b": 1,
-    "var_d7f79634": 1,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_e19b7aba": 1,
-    "var_a77ed948": "#none",
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 1,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
     "name": "career_tabs_mp",
-    "var_50340f4": 1,
-    "var_8b233d0b": 1
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 1,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 1,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
 }

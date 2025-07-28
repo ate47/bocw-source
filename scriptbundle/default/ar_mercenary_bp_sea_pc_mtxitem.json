@@ -1,20 +1,31 @@
 {
     "entitlementlist": [
         {
-            "var_386af035": "#bnet_ultimate_edition_items_mtxentitlement"
+            "hash_386af035": "#bnet_ultimate_edition_items_mtxentitlement"
         }
     ],
-    "itemname": "#hash_6ffbd7a2f59c40b0",
-    "var_e9d9a8d0": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_46300498": 1,
+    "itemname": "#ar_mercenary_bp_sea_pc",
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
+    "season": 0,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#ar_standard_t9",
+    "hash_b6d84534": 0,
     "name": "ar_mercenary_bp_sea_pc_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 3,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:3",
+    "hash_84dc7961": 0,
     "itemid": "18841212",
-    "blueprint": "#hash_6ffbd7a2f59c40b0"
+    "blueprint": "#ar_mercenary_bp_sea_pc"
 }

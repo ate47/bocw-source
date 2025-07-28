@@ -1,22 +1,32 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#operator_bundle_6006_naga_war_ghost_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6006_naga_war_ghost_mtxbundle"
         }
     ],
-    "itemname": "#hash_7db27c4c61f8bd85",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_5497f07c7786d1e7",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "itemname": "#loot_shotgun_fullauto_bp_bronze",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#ui_icon_mtx_tier_loot_shotgun_fullauto_bp_bronze",
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 6,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#shotgun_fullauto_t9",
+    "hash_b6d84534": 0,
     "name": "loot_shotgun_fullauto_bp_bronze_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 4,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:4",
+    "hash_84dc7961": 0,
     "itemid": "32954817",
-    "blueprint": "#hash_7db27c4c61f8bd85"
+    "blueprint": "#loot_shotgun_fullauto_bp_bronze"
 }

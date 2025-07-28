@@ -1,0 +1,49 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_222e625da7967462",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_34ae2e2ef95b350d",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 1,
+            "MaskText": 0,
+            "DrawByLine": 0
+        },
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 0,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_3bc9a97897d70663",
+            "DrawByLineScreenMax": 0,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 1,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 1
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "computerscreencontentlists",
+    "name": "cp_rus_kgb_activation_keycard_info"
+}

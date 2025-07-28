@@ -1,39 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_rus_pl_kgb_urban_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_rus_pl_kgb_urban_mtxitem",
             "itemid": "25485580"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_czar_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_czar_mtxitem",
             "itemid": "27767368"
         },
         {
-            "var_4a4bc969": "#reticle_37_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_37_mtxitem",
             "itemid": "21735300"
         },
         {
-            "var_4a4bc969": "#emblems_themessenger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_themessenger_mtxitem",
             "itemid": "24985710"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_kremlin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_kremlin_mtxitem",
             "itemid": "19520362"
         }
     ],
-    "itemname": "#hash_7af932a3cb87597f",
-    "var_375a1747": "#hash_7c28cc92a6dea5b9",
-    "var_579fd6c3": 26,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1046_kgb_the_messenger",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1046_kgb_the_messenger",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 26,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1046_kgb_the_messenger_mtxbundle",
-    "titlestring": "#hash_4a2252d79b123c06",
-    "var_566825be": "#hash_68da82b461c6e3b4",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_4a2252d79b123c06",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1046_kgb_the_messenger",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_45a224e21621831a",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_45a224e21621831a",
+    "hash_db3e02ab": 2000,
     "itemid": "19819082"
 }

@@ -1,80 +1,84 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_40260fac9feeb72"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6007_em2_sultan_wrath"
         },
         {
-            "var_fe10649e": "#hash_1a544aa2c3ae087c"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6007_em2_sultan_wrath_01"
         },
         {
-            "var_fe10649e": "#hash_1a544da2c3ae0d95"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6007_em2_sultan_wrath_02"
         },
         {
-            "var_fe10649e": "#hash_1a544ca2c3ae0be2"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_6007_em2_sultan_wrath_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#loot_ar_british_bp_sultan_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ar_british_bp_sultan_mtxitem",
             "itemid": "20702088"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_sultan_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_sultan_mtxitem",
             "itemid": "25831935"
         },
         {
-            "var_4a4bc969": "#c_t9_eg_pl_quicksand_slither_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_eg_pl_quicksand_slither_mtxitem",
             "itemid": "24067866"
         },
         {
-            "var_4a4bc969": "#prt_mp_eg_quicksand_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_eg_quicksand_mtxitem",
             "itemid": "33165094"
         },
         {
-            "var_4a4bc969": "#operator_mission_6007_mtxitem",
+            "hash_4a4bc969": "scriptbundle#operator_mission_6007_mtxitem",
             "itemid": "23706659"
         },
         {
-            "var_4a4bc969": "#operator_mission_6007_unlock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#operator_mission_6007_unlock_mtxitem",
             "itemid": "18352985"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_digital_sultan_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_digital_sultan_mtxitem",
             "itemid": "33541927"
         },
         {
-            "var_4a4bc969": "#t9_charm_incense_burner_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_incense_burner_mtxitem",
             "itemid": "29542080"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_sultans_wrath_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_sultans_wrath_mtxitem",
             "itemid": "29782461"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_comehome_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_comehome_mtxitem",
             "itemid": "26456911"
         },
         {
-            "var_4a4bc969": "#emblems_sultans_wrath_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_sultans_wrath_s6_animated_mtxitem",
             "itemid": "18711475"
         },
         {
-            "var_4a4bc969": "#callingcards_sultans_wrath_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_sultans_wrath_s6_animated_mtxitem",
             "itemid": "25479653"
         }
     ],
-    "itemname": "#hash_c51144076dbbb2c",
-    "var_375a1747": "#hash_40260fac9feeb72",
-    "var_3040f0d1": "#hash_264ec59961186d96",
-    "var_8ee7db29": 1,
-    "var_fc891f35": "18352985",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_6007_em2_sultan_wrath",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6007_em2_sultan_wrath",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_6007_em2_sultan_wrath_icon",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_fc891f35": "18352985",
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6007_em2_sultan_wrath_mtxbundle",
-    "var_a788fada": "#hash_30ec722131186c1",
-    "titlestring": "#hash_7f965575f83b06ca",
-    "var_566825be": "#hash_51bcb4e4cced5519",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6007_em2_sultan_wrath_small",
+    "titlestring": "localized18#hash_7f965575f83b06ca",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6007_em2_sultan_wrath",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_624908101a161f46",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_624908101a161f46",
+    "hash_db3e02ab": 750,
     "itemid": "29147042"
 }

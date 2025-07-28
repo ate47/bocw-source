@@ -1,0 +1,9 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "weapon": "weapon#tear_gas",
+    "type": "spyskill",
+    "hash_a99abf33": "tear_gas",
+    "name": "spyskill_tear_gas",
+    "cooldown": 65,
+    "hash_e1bfe02c": 23
+}

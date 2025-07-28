@@ -1,0 +1,10 @@
+{
+    "description": "localized18#hash_3280e922a8a6259a",
+    "UnlockMap": "cp_takedown",
+    "configstringfiletype": "scriptbundle",
+    "type": "cinematic",
+    "cinematicname": "cp_takedown_loadingmovie",
+    "name": "cp_takedown_loadingmovie",
+    "title": "localized18#hash_4bbff07efa092967",
+    "previewimage": "image#img_menu_cp_preview_takedown"
+}

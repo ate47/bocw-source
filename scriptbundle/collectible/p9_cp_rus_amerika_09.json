@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_2fcb7bc56870b5da",
+    "tagname": "mdl_cp_rus_amerika_item_09",
+    "UnlockMap": "cp_rus_amerika",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_at_infil_plan_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_amerika_09",
+    "UnlockType": 1,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_38ef2c24135dddc6",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_34a72947e9a31f4",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_amerika_infil_plan"
+}

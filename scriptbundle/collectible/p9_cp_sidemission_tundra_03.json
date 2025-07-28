@@ -1,0 +1,22 @@
+{
+    "description": "localized19#hash_22ad2df62b10f37b",
+    "tagname": "mdl_cp_sidemission_tundra_item_03",
+    "UnlockMap": "cp_ger_stakeout",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_red_circus_kraus_ledger_01",
+    "type": "collectible",
+    "callback": "red_circus_kraus_ledger",
+    "hash_34754728": "localized19#hash_1c8813eba3d3c667",
+    "hash_444770d3": "image#evidence_splash_op_red_circus_kraus_ledger",
+    "name": "p9_cp_sidemission_tundra_03",
+    "UnlockType": 3,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_5fe01ee3330904bf",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_1bc02e9ac6401c5b",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 3,
+    "hint": "localized19#hash_71e909a2d60eeb0c",
+    "thumbnail": "image#evidenceboard_review_red_circus_kraus_ledger"
+}

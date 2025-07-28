@@ -1,11 +1,11 @@
 {
-    "description": "#hash_6c18fff2b6b47d12",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_6c18fff2b6b47d12",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_golden_ammo_multikill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_d9fef5ee9494ba3",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_pure_gold",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_6fdbaa724f43d324",
-    "iconlarge": "#hash_58c0b3422c78fb03"
+    "stringref": "localized18#hash_6fdbaa724f43d324",
+    "iconlarge": "image#ui_icon_medal_pure_gold_large"
 }

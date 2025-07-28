@@ -1,11 +1,14 @@
 {
-    "var_70dda4c0": 1,
-    "hinttext": "#hash_7f009ff4b58ebe50",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 1,
+    "hinttext": "localized18#hash_7f009ff4b58ebe50",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "bot_autofill_team10",
-    "displayname": "#hash_d0db2968deac448",
-    "var_9de86f42": 2,
+    "displayname": "localized18#hash_d0db2968deac448",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "bot_autofill_team10",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

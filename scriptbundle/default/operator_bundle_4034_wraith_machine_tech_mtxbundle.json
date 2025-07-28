@@ -1,56 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_fin_pl_wraith_havoc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_fin_pl_wraith_havoc_mtxitem",
             "itemid": "27743617"
         },
         {
-            "var_4a4bc969": "#prt_mp_fin_wraith_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_fin_wraith_mtxitem",
             "itemid": "21568824"
         },
         {
-            "var_4a4bc969": "#sniper_powersemi_bp_improvt_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_powersemi_bp_improvt_mtxitem",
             "itemid": "33363262"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_improvt_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_improvt_mtxitem",
             "itemid": "25055451"
         },
         {
-            "var_4a4bc969": "#execution_134_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_134_mtxitem",
             "itemid": "31875334"
         },
         {
-            "var_4a4bc969": "#emblems_r8g_10021_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g_10021_animated_mtxitem",
             "itemid": "19865561"
         },
         {
-            "var_4a4bc969": "#callingcards_machinetek_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_machinetek_animated_mtxitem",
             "itemid": "18577082"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_analog_sleek_assassin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_analog_sleek_assassin_mtxitem",
             "itemid": "29173901"
         },
         {
-            "var_4a4bc969": "#t9_charm_throw_knife_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_throw_knife_mtxitem",
             "itemid": "23544315"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_12_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_12_mtxitem",
             "itemid": "26009904"
         }
     ],
-    "itemname": "#hash_4d17a7d1598a0fb1",
-    "var_375a1747": "#hash_6940f2eef3544db7",
-    "var_579fd6c3": 38,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4034_wraith_machine_tech",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4034_wraith_machine_tech",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 38,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4034_wraith_machine_tech_mtxbundle",
-    "var_a788fada": "#hash_2f9c6f6b53ba6966",
-    "titlestring": "#hash_46b1adc9a920a456",
-    "var_566825be": "#hash_5c0c8b72bc6db0f2",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4034_wraith_machine_tech_small",
+    "titlestring": "localized18#hash_46b1adc9a920a456",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4034_wraith_machine_tech",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3acf420530ac566a",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3acf420530ac566a",
+    "hash_db3e02ab": 2000,
     "itemid": "32083742"
 }

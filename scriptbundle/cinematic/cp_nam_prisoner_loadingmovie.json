@@ -1,0 +1,10 @@
+{
+    "description": "localized18#hash_530a273965ad73f0",
+    "UnlockMap": "cp_nam_prisoner",
+    "configstringfiletype": "scriptbundle",
+    "type": "cinematic",
+    "cinematicname": "cp_nam_prisoner_loadingmovie",
+    "name": "cp_nam_prisoner_loadingmovie",
+    "title": "localized18#hash_4d7985d92f78fa19",
+    "previewimage": "image#hash_7268c0ac8dd7773"
+}

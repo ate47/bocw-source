@@ -1,11 +1,11 @@
 {
-    "description": "#hash_328927f8324bc052",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_328927f8324bc052",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_attack_chopper_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_ac2cef3ed383370",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_hot_lead",
     "statname": "#kills",
-    "var_8645ce54": "#hash_17e991ecc40a75c2",
-    "iconlarge": "#hash_787850e0fc15c62c"
+    "stringref": "localized18#hash_17e991ecc40a75c2",
+    "iconlarge": "image#ui_icon_medal_hot_lead_large"
 }

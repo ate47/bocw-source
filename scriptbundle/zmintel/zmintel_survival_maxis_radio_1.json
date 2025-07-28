@@ -1,44 +1,47 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_37b324e63d1aac93",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 7.36,
-            "var_36bf8e05": "#hash_1e9d7aafc52663c8"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 7.36,
+            "hash_36bf8e05": "localized19#hash_1e9d7aafc52663c8"
         },
         {
             "soundevent": "#hash_37b323e63d1aaae0",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 11.31,
-            "var_36bf8e05": "#hash_1abe53d7233b4601"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 11.31,
+            "hash_36bf8e05": "localized19#hash_1abe53d7233b4601"
         },
         {
             "soundevent": "#hash_37b326e63d1aaff9",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 4.03,
-            "var_36bf8e05": "#hash_11c65f7273879b4e"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 4.03,
+            "hash_36bf8e05": "localized19#hash_11c65f7273879b4e"
         },
         {
             "soundevent": "#hash_37b325e63d1aae46",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 9.07,
-            "var_36bf8e05": "#hash_68bdcdd87c332507"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 9.07,
+            "hash_36bf8e05": "localized19#hash_68bdcdd87c332507"
         }
     ],
-    "description": "#hash_4a62d21fb8348087",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "model": "#hash_2a2df769d600b242",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_7dcfe35ccda755f1",
+    "description": "localized19#hash_4a62d21fb8348087",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_radio_transmissions",
+    "hash_824079e7": "#survival",
+    "uimodel": "model#p9_zm_ndu_radio_transmissions_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#maxis",
+    "hash_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_maxis_radio_1",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_26c1edadb5723c3d"
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_26c1edadb5723c3d",
+    "hash_4efbbcfe": 0
 }

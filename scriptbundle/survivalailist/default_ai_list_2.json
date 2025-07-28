@@ -1,12 +1,12 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "default_zombies_realm_3",
-            "var_a949845f": -1,
-            "var_857deb66": 10
+            "entryname": "scriptbundle&default_zombies_realm_3",
+            "hash_a949845f": -1,
+            "hash_857deb66": 10
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "default_ai_list_2"
 }

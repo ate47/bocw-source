@@ -1,0 +1,8 @@
+{
+    "msarate": 1.1,
+    "configstringfiletype": "scriptbundle",
+    "type": "mission_settings",
+    "mstype": "escort",
+    "vmtype": "both",
+    "name": "mission_settings_escort"
+}

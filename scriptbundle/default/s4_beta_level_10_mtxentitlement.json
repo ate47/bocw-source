@@ -1,19 +1,27 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#tier_skip_3_mtxitem"
+            "hash_4a4bc969": "scriptbundle#tier_skip_3_mtxitem"
         }
     ],
-    "var_2264d693": 1,
+    "hash_2264d693": 1,
     "itemname": "#hash_400a4bac304d3350",
-    "description": "#hash_7f2525803c959169",
-    "var_375a1747": "#hash_db6383cd4463f86",
-    "var_637c8edf": 1,
+    "description": "localized18#hash_7f2525803c959169",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_375a1747": "image#hash_db6383cd4463f86",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_99071a5f": 0,
     "name": "s4_beta_level_10_mtxentitlement",
-    "var_90708fcf": "#hash_1f864b1d9922e40c",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_90708fcf": "localized18#hash_1f864b1d9922e40c",
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "18901933",
-    "var_7c846082": "#hash_39bc24db0771eb04"
+    "hash_7c846082": "localized18#hash_39bc24db0771eb04"
 }

@@ -1,15 +1,20 @@
 {
-    "hinttext": "#hash_72fd816e956fe087",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_72fd816e956fe087",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value3": "2",
     "value1": "0",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "zm_zombiespread",
-    "displayname": "#hash_5469d52f29775c3d",
-    "var_9600a8ab": "#hash_4bf2d101b5a0c299",
-    "var_71b6e020": "#hash_118e4d7cfa60ba63",
-    "var_bd2ff709": "#hash_1ba60b6389d20648",
-    "var_9de86f42": 3,
-    "setting": "zmZombieSpread"
+    "displayname": "localized18#hash_5469d52f29775c3d",
+    "label1": "localized18#hash_4bf2d101b5a0c299",
+    "label3": "localized18#hash_118e4d7cfa60ba63",
+    "label2": "localized18#hash_1ba60b6389d20648",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
+    "setting": "zmZombieSpread",
+    "isenableddisabled": 0
 }

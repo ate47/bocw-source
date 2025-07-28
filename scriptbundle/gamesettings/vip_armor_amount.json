@@ -1,15 +1,20 @@
 {
-    "hinttext": "#hash_68a8df0c6f834fc9",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_68a8df0c6f834fc9",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value3": "2",
     "value1": "0.5",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "vip_armor_amount",
-    "displayname": "#hash_6c6fb77c8f30f3d7",
-    "var_9600a8ab": "#hash_4205c7a769782d25",
-    "var_71b6e020": "#hash_19776a8385677401",
-    "var_bd2ff709": "#hash_6aff23ff8a1a36ef",
-    "var_9de86f42": 3,
-    "setting": "vipVipArmorAmount"
+    "displayname": "localized18#hash_6c6fb77c8f30f3d7",
+    "label1": "localized18#hash_4205c7a769782d25",
+    "label3": "localized18#hash_19776a8385677401",
+    "label2": "localized18#hash_6aff23ff8a1a36ef",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
+    "setting": "vipVipArmorAmount",
+    "isenableddisabled": 0
 }

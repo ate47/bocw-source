@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_sons_bury_their_fathers",
-    "quote": "#hash_209d630b9a319c6",
-    "author": "#hash_79479e0bc9e14ff"
+    "quote": "localized18#hash_209d630b9a319c6",
+    "author": "localized18#hash_79479e0bc9e14ff"
 }

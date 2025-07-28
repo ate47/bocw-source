@@ -1,62 +1,97 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "description": "#hash_493f55c5bcd04d88",
+            "description": "localized19#hash_493f55c5bcd04d88",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_5d139efb4bd189ff",
-            "displayname": "#hash_6e6bb3b84944841c",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_ruby_2",
+            "displayname": "localized19#hash_6e6bb3b84944841c",
+            "actionutility": "#NONE"
         },
         {
-            "description": "#hash_6e56c9b849324d74",
+            "description": "localized19#hash_6e56c9b849324d74",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_5d139dfb4bd1884c",
-            "displayname": "#hash_6e6bb3b84944841c",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_ruby_3",
+            "displayname": "localized19#hash_6e6bb3b84944841c",
+            "actionutility": "#NONE"
         },
         {
-            "description": "#hash_5ca2f8ae33b766d5",
+            "description": "localized19#hash_5ca2f8ae33b766d5",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_585c4dc403f8d48a",
-            "displayname": "#hash_6e6bb3b84944841c",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_skull_top5",
+            "displayname": "localized19#hash_6e6bb3b84944841c",
+            "actionutility": "#NONE"
         },
         {
-            "description": "#hash_257048d9800418d4",
+            "description": "localized19#hash_257048d9800418d4",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_7a54e8332414acc6",
-            "displayname": "#hash_29af90da2b0692ac",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_skull_victory",
+            "displayname": "localized19#hash_29af90da2b0692ac",
+            "actionutility": "#NONE"
         },
         {
-            "description": "#hash_257048d9800418d4",
+            "description": "localized19#hash_257048d9800418d4",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_14e1c233fa650916",
-            "displayname": "#hash_29b992da2b0eea97",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_skull_hot_streak",
+            "displayname": "localized19#hash_29b992da2b0eea97",
+            "actionutility": "#NONE"
         },
         {
-            "description": "#hash_257048d9800418d4",
+            "description": "localized19#hash_257048d9800418d4",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_7aaddcb47e3a5b2b",
-            "displayname": "#hash_29b68cda2b0caa8e",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_skull_blazing",
+            "displayname": "localized19#hash_29b68cda2b0caa8e",
+            "actionutility": "#NONE"
         },
         {
-            "description": "#hash_257048d9800418d4",
+            "description": "localized19#hash_257048d9800418d4",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_36ebfcd9fe6ecf94",
-            "displayname": "#hash_29ac8ada2b0452a3",
-            "actionutility": "#none"
+            "image": "image#ui_icon_emblems_crown_gold",
+            "displayname": "localized19#hash_29ac8ada2b0452a3",
+            "actionutility": "#NONE"
         }
     ],
-    "var_88c0037d": 1,
-    "var_72ef398b": 1,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_abba0658": 1,
-    "var_a77ed948": "#none",
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 1,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 1,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
     "name": "leagueplay_placement_reward_stream",
-    "var_6ff29b97": 1,
-    "var_748e79a5": "#hash_4131675d96a3aac8"
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 1,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0,
+    "hash_748e79a5": "scriptbundle#hash_4131675d96a3aac8"
 }

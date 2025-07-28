@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter3_stone_storefront_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter3_stone_storefront_mtxitem",
             "itemid": "18859803"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter3_mtxitem",
             "itemid": "21293402"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_cdummy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_cdummy_mtxitem",
             "itemid": "27434415"
         },
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_cdummy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_cdummy_mtxitem",
             "itemid": "32371133"
         },
         {
-            "var_4a4bc969": "#t9_charm_punch_bot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_punch_bot_mtxitem",
             "itemid": "19919258"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_bracelet_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_bracelet_01_mtxitem",
             "itemid": "24770699"
         },
         {
-            "var_4a4bc969": "#execution_158_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_158_mtxitem",
             "itemid": "21268841"
         },
         {
-            "var_4a4bc969": "#emblems_test_procedure_001_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_test_procedure_001_mtxitem",
             "itemid": "33491669"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_test_procedure_001_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_test_procedure_001_mtxitem",
             "itemid": "26632773"
         }
     ],
-    "itemname": "#hash_356562edc22b1560",
-    "var_375a1747": "#hash_26b372a24b807fa6",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_3066_stone_big_dummy",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_3066_stone_big_dummy",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_3066_stone_big_dummy_mtxbundle",
-    "var_a788fada": "#hash_379af5e4b6d878f7",
-    "titlestring": "#hash_7835eadd1b50ddf6",
-    "var_566825be": "#hash_663392fab238e17f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_3066_stone_big_dummy_small",
+    "titlestring": "localized18#hash_7835eadd1b50ddf6",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_3066_stone_big_dummy",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_73287b43a354080a",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_73287b43a354080a",
+    "hash_db3e02ab": 2000,
     "itemid": "24290163"
 }

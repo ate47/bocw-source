@@ -2,2288 +2,3122 @@
     "rewards": [
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_275f09a286f64531",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_65c83c5e46c88196"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_containmentzone_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_65c83c5e46c88196"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_stitch_spectre_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6e9f9d0d3ae59765"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_stitch_spectre_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6e9f9d0d3ae59765"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_3a851f5cee46ac05",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_200b9eaa7df992a8"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_urban_infiltration",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_200b9eaa7df992a8"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_stitch_marine_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_42c4c610ae16bd73"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_stitch_marine_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_42c4c610ae16bd73"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_2fa65a54cb6c7f32",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_185c3c78ebc24268"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_redroom_004",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_185c3c78ebc24268"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_maverick_pitcher_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6735e4eb7d54b9f4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_maverick_pitcher_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6735e4eb7d54b9f4"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_344a81fdcfb0e4c2",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_529cb0a2c0619c09"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_blackops_01",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_529cb0a2c0619c09"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_maverick_jackal_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_44655b9f24b38f68"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_maverick_jackal_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_44655b9f24b38f68"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6c674aabc979306c",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6f4a03c7df254b96"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_urban_infiltration_final_r2",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6f4a03c7df254b96"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_traveler_windbreaker_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_19868ed34c58dae"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_traveler_windbreaker_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_19868ed34c58dae"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5b5ec1d50e7e42ce",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1030d5aac01a491e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_closeairsupport_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1030d5aac01a491e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_traveler_summit_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_396f347b1d4c7db7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_traveler_summit_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_396f347b1d4c7db7"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_5c68bfa885e9866f",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1aa963d190a41652"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_stonecoldkiller_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1aa963d190a41652"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_cub_pl_sicario_miami_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_496927d497fdf692"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_cub_pl_sicario_miami_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_496927d497fdf692"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_6e81d512d911cde2",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6189a4d9159c681f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps1_000f",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6189a4d9159c681f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_cub_pl_sicario_urbano_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_723bd70b9a80a581"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_cub_pl_sicario_urbano_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_723bd70b9a80a581"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7a596b9059e25a45",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3a8433be848d44c5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_competetiveedge_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3a8433be848d44c5"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_badblood_commando_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_63b656007f0362c4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_badblood_commando_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_63b656007f0362c4"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_689f06cbac0fd34b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4dd8ba4e6feef49"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_competetiveedge_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4dd8ba4e6feef49"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_badblood_glamour_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_51450dcbfe052908"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_badblood_glamour_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_51450dcbfe052908"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6e3051c2baf39072",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3cbe820401e3d5c6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_clean_up_crew_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3cbe820401e3d5c6"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_cia_grit_street_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4dcf9dfecdf28746"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_cia_grit_street_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4dcf9dfecdf28746"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_51f23402aa95e485",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4cb341530c521448"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_clean_up_crew_final_40",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4cb341530c521448"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_cia_grit_blockparty_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4bf0f3e0bc9b7391"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_cia_grit_blockparty_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4bf0f3e0bc9b7391"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7776351b32f07c2d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1cd9a591d101dca"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_fieldmedic_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1cd9a591d101dca"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_kgb_burglar_duck_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_691a382cfa94a2e7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_kgb_burglar_duck_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_691a382cfa94a2e7"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_38811ab4267e8ecf",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5bdb4dad0048aead"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_fieldmedic_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5bdb4dad0048aead"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_kgb_burglar_blizzard_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_34001d400c0aa7bb"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_kgb_burglar_blizzard_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_34001d400c0aa7bb"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_692879a5dea98cd",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_315afd945b989705"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_eyesontarget_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_315afd945b989705"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_ger_pl_west_raider_bruiser_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_15fb183dc7fd005f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_ger_pl_west_raider_bruiser_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_15fb183dc7fd005f"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_65287fd1c5181c4b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5d209f828d9bbd96"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_explosive_whisperer",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5d209f828d9bbd96"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_ger_pl_west_raider_wildcat_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_fac49b9c9fcdb8d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_ger_pl_west_raider_wildcat_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_fac49b9c9fcdb8d"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_31fc1c838cf8f313",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_62a87fc76f3eca12"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_unkillable",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_62a87fc76f3eca12"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_woods_eagleclaw_undergrowth_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_41fbdc6f4aa1a875"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_woods_eagleclaw_undergrowth_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_41fbdc6f4aa1a875"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_3e406669dd0ced85",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_522dfb6da6f47203"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_unkillable",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_522dfb6da6f47203"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_woods_eagleclaw_metro_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_9a724d151675675"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_woods_eagleclaw_metro_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_9a724d151675675"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_f6a6b273df6f789",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_436fffdd733392ba"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_explosive_whisperer",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_436fffdd733392ba"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_ger_pl_west_gsg9_3_wachter_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_33a592ef2526f0a2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_ger_pl_west_gsg9_3_wachter_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_33a592ef2526f0a2"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_35485f8d1dd96066",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2cceb05c88366b28"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_bornforbattle",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2cceb05c88366b28"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_ger_pl_west_gsg9_3_munchen_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3704dab636d3e04e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_ger_pl_west_gsg9_3_munchen_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3704dab636d3e04e"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_2339504f84c4aafb",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_64d78a0e86ba8b55"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps1_007",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_64d78a0e86ba8b55"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_bloodhound_dusk_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7f05b25034ae349f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_bloodhound_dusk_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7f05b25034ae349f"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_42dc4ae622d156d1",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3d7d26fa33ba6f97"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps1_90",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3d7d26fa33ba6f97"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_bloodhound_glitz_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_47c20b0aa74ca0c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_bloodhound_glitz_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_47c20b0aa74ca0c"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_53dc5e278d158565",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_76c2a7d61abd306d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps1_100b",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_76c2a7d61abd306d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_stitch_prisoner_punk_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3ef216ff42894960"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_stitch_prisoner_punk_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3ef216ff42894960"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_23ac561bcc4826a2",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1519552f0db891c2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps1_100m",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1519552f0db891c2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_stitch_prisoner_stripes_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_55becb3a18f3c612"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_stitch_prisoner_stripes_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_55becb3a18f3c612"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_3a0efd7f33e1100d",
-            "var_270fa547": "#hash_359f26f3fe7b3e34"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_om_releaseagent_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_359f26f3fe7b3e34"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_stitch_urban_mtxitem",
-            "var_270fa547": "#hash_15e38ff835419f29"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_stitch_urban_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_15e38ff835419f29"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5f682be6c705766f",
-            "var_270fa547": "#hash_3a4cc9109fa72702"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_releaseagent_final",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3a4cc9109fa72702"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_stitch_undercover_mtxitem",
-            "var_270fa547": "#hash_6a3b487c924d7081"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_stitch_undercover_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_6a3b487c924d7081"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_233cc14f84c7a0d5",
-            "var_270fa547": "#hash_1dbfc19533279bd1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps1_016",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_1dbfc19533279bd1"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_cub_pl_dgi_sicario_eldoctor_mtxitem",
-            "var_270fa547": "#hash_48e4f004511eee67"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_cub_pl_dgi_sicario_eldoctor_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_48e4f004511eee67"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_51eb2802aa8fb173",
-            "var_270fa547": "#hash_195bc77f835411ca"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_om_clean_up_crew_final_20",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_195bc77f835411ca"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_cub_pl_dgi_sicario_santeria_mtxitem",
-            "var_270fa547": "#hash_78b5865817a3c321"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_cub_pl_dgi_sicario_santeria_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_78b5865817a3c321"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_369cff787e94c0fb",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_760f298458773e70"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character01_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_760f298458773e70"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_lao_pl_serpent_cobalt_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_172b3bc29a9fabde"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_lao_pl_serpent_cobalt_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_172b3bc29a9fabde"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_c167d745aa99230",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4cf0323c7ecb3711"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_marquee_03",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4cf0323c7ecb3711"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_lao_pl_serpent_ashen_scale_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3704dbb636d3e201"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_lao_pl_serpent_ashen_scale_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3704dbb636d3e201"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6a2528f790387f86",
-            "var_270fa547": "#hash_c564d52a7c51ad4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps2_zmserpent_mm",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_c564d52a7c51ad4"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_lao_pl_serpent_crimson_code_mtxitem",
-            "var_270fa547": "#hash_3822203fc7c2eadf"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_lao_pl_serpent_crimson_code_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3822203fc7c2eadf"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5ad4caf3d4784970",
-            "var_270fa547": "#hash_3b13dc0e3c4bb2a2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_43",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3b13dc0e3c4bb2a2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_lao_pl_serpent_rattlesnake_mtxitem",
-            "var_270fa547": "#hash_6b9b36fedfb95f3c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_lao_pl_serpent_rattlesnake_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_6b9b36fedfb95f3c"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_50660fac70925cde",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1d73823f33cb13ff"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character04",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1d73823f33cb13ff"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_survivor_solstice_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_50ce2207b80f9fa5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_survivor_solstice_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_50ce2207b80f9fa5"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5adedef3d480bff1",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1d965783ae1b802"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_17",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1d965783ae1b802"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_survivor_autumn_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3c511176cb6b5853"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_survivor_autumn_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3c511176cb6b5853"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_50697dac70954d9f",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_94d913babcd584"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character14",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_94d913babcd584"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter1_hunter_rescue_lethal_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_79914da435788fe4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter1_hunter_rescue_lethal_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_79914da435788fe4"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5e5cc9a3f5f4531d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_345a3aa1489f6839"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_r82_29",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_345a3aa1489f6839"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter1_hunter_rescue_charge_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6e9e59a789ec1e80"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter1_hunter_rescue_charge_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6e9e59a789ec1e80"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_506979ac709546d3",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_26e871c3fec523d3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character10",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_26e871c3fec523d3"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_renegade_gonefishin_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3dd233c2a2cb7eec"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_renegade_gonefishin_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3dd233c2a2cb7eec"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5ad4d5f3d4785c21",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_19b522874d71d0c2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_48",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_19b522874d71d0c2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_renegade_asphalt_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_16b2c41d0ccb0961"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_renegade_asphalt_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_16b2c41d0ccb0961"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_312304dea251e774",
-            "var_270fa547": "#hash_1aba6fb35597bd85"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_monkeys_167",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_1aba6fb35597bd85"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_renegade_goblin_mtxitem",
-            "var_270fa547": "#hash_59d8674357c2b6de"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_renegade_goblin_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_59d8674357c2b6de"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_3c4a7ab4d0014e3c",
-            "var_270fa547": "#hash_5e89396e6f618c5a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_hellhoundshield_002",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_5e89396e6f618c5a"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_adler_renegade_redshirt_mtxitem",
-            "var_270fa547": "#hash_2d868c0eda640cc6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_adler_renegade_redshirt_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2d868c0eda640cc6"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_3818ee0856478791",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_534a88a25d5f0737"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_foresthunt_76",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_534a88a25d5f0737"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter3_stone_seige_breach_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5df87ce6dd360abf"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter3_stone_seige_breach_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5df87ce6dd360abf"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_61927a0338295a9e",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4de1ffd2115bd019"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_r8g11_14",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4de1ffd2115bd019"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter3_stone_seige_clear_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_24f356ecf6fb6c0e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter3_stone_seige_clear_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_24f356ecf6fb6c0e"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_50660bac70925612",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_46faf6240c2fe71a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character08",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_46faf6240c2fe71a"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_deltaforce_urgentfury_ranger_scout_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_32a02036b210e14d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_deltaforce_urgentfury_ranger_scout_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_32a02036b210e14d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5adedbf3d480bad8",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_31d5721ee9793424"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_14",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_31d5721ee9793424"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_deltaforce_urgentfury_airborne_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_21792d157fabd319"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_deltaforce_urgentfury_airborne_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_21792d157fabd319"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_506978ac70954520",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4da14f9b7ebe092d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character11",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4da14f9b7ebe092d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_kgb_thekid_treehugger_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7d6a0749d37a5428"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_kgb_thekid_treehugger_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7d6a0749d37a5428"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5ad4cdf3d4784e89",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_ad0d6648c240285"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_40",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_ad0d6648c240285"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_kgb_thekid_militia_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_48f5753f9361f31"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_kgb_thekid_militia_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_48f5753f9361f31"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_50660cac709257c5",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_300c58880c01bf58"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character09",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_300c58880c01bf58"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_gigawhen_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4f45ca1828646934"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_gigawhen_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4f45ca1828646934"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_48774a92a8e7c4ef",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1fc3943adb73363f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_fenrir",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1fc3943adb73363f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_gigawho_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_40c77418f9182719"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_gigawho_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_40c77418f9182719"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_50697aac70954886",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_26f3858ac994b858"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character13",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_26f3858ac994b858"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_dust_military_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5f8a23bbf07a8769"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_dust_military_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5f8a23bbf07a8769"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5adee0f3d480c357",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_37e5b09fc86a64e7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_11",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_37e5b09fc86a64e7"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_dust_urban_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_74b19794b9a484d9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_dust_urban_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_74b19794b9a484d9"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_506610ac70925e91",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4c52eb020ea39538"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character05",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4c52eb020ea39538"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter2_vargas_steel_tourist_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_437000dd7333946d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter2_vargas_steel_tourist_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_437000dd7333946d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5ad4d0f3d47853a2",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_191b00b02f6c4144"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_45",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_191b00b02f6c4144"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_steel_bunker_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_49b83486e6f9bc38"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_steel_bunker_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_49b83486e6f9bc38"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_50660dac70925978",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3c5a82d06549abcc"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character06",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3c5a82d06549abcc"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter4_song_counter_skirmish_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_36dfb920467c2f92"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter4_song_counter_skirmish_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_36dfb920467c2f92"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_351893d979a67e39",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7d65f6cc85a27569"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_hotinh",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7d65f6cc85a27569"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter4_song_counter_jinx_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1e44ac63ebde7a17"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter4_song_counter_jinx_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1e44ac63ebde7a17"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_5898e1dfeb68e1d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_43a02e8eda81d313"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_character07_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_43a02e8eda81d313"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_lao_pl_serpent_warlord_infiltrator_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_18c0785801027269"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_lao_pl_serpent_warlord_infiltrator_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_18c0785801027269"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_597e8b89e84d50c5",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_47d74e5c1e3b9691"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zheng",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_47d74e5c1e3b9691"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_lao_pl_serpent_warlord_tiger_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1a31e9546b33c22d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_lao_pl_serpent_warlord_tiger_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1a31e9546b33c22d"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_64898da8415ecd38",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_51035ce3c359156"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_wraith_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_51035ce3c359156"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fin_pl_wraith_variant03_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1ca13a22c5b59987"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fin_pl_wraith_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1ca13a22c5b59987"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_21169e1261cbd8a6",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_65ae5dabb9c13a06"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_wraith",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_65ae5dabb9c13a06"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fin_pl_wraith_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_54e3f535b083802e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fin_pl_wraith_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_54e3f535b083802e"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_1ce6ce57df203f50",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_58ce82019e4dfd1c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_beck",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_58ce82019e4dfd1c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_ger_pl_west_gsg9_hardhat_v1_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_38bc3cf519198f90"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_ger_pl_west_gsg9_hardhat_v1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_38bc3cf519198f90"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_68766e2753f33196",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_68179bba77f0a8aa"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_beck",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_68179bba77f0a8aa"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_ger_pl_west_gsg9_hardhat_v2_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_9cb2805c8c9d8fb"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_ger_pl_west_gsg9_hardhat_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_9cb2805c8c9d8fb"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_65a1dde0a06b34b7",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1bc5843853724fa9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_park",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1bc5843853724fa9"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3d11f2e0b14e9cac"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3d11f2e0b14e9cac"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_763a2699aaa4c659",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1a2391c6ff1cc84"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_park",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1a2391c6ff1cc84"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6b344091a61ea57a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6b344091a61ea57a"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_2ea10fc8d690f792",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6d6935026ede6415"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_song",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6d6935026ede6415"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_song_tiger_blue_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4a20ff7cceff217c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_song_tiger_blue_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4a20ff7cceff217c"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_52bb14a4af96bff4",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_14821486655da5ec"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_song",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_14821486655da5ec"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_song_tiger_tan_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_607598d00d891bd0"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_song_tiger_tan_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_607598d00d891bd0"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_475e30e48d9b301d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_258a142c083b632f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_vargas",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_258a142c083b632f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_bunker_alt1_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_661621bdcf8b9cf3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_bunker_alt1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_661621bdcf8b9cf3"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_10770dda3c8a69c7",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_62c4816f8e75e33"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_vargas",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_62c4816f8e75e33"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_bunker_alt2_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_26ab65b8fbfeab28"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_bunker_alt2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_26ab65b8fbfeab28"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4dc1b93b5808bf2d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_13789554a310aa8f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_powers",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_13789554a310aa8f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_gun_v1_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_39d29f9c4fe7e54e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_gun_v1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_39d29f9c4fe7e54e"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_30efbb594422a22f",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_382ca9fc9d4af1ee"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_powers",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_382ca9fc9d4af1ee"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_gun_v2_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_266899c5f3b4e93f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_gun_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_266899c5f3b4e93f"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6d992ffd720735f9",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2b2887daddeb75a7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_hunter",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2b2887daddeb75a7"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter1_hunter_frontline_fall_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_414c5885507e9aa6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter1_hunter_frontline_fall_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_414c5885507e9aa6"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_6beeadb0b3996ff7",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_16e0efab9e84e9d2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_hunter_01",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_16e0efab9e84e9d2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter1_hunter_frontline_winter_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1fad18ffd7086c2a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter1_hunter_frontline_winter_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1fad18ffd7086c2a"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_1806df270a6a80f2",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1a83f392aff69fc3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zenya",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1a83f392aff69fc3"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fra_pl_dgse_mademoiselle_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1f8dde89d75659ab"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fra_pl_dgse_mademoiselle_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1f8dde89d75659ab"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_53e5c2a6a8cfb420",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3b463a7a4b6fb7d7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zenya",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3b463a7a4b6fb7d7"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fra_pl_dgse_mademoiselle_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3ecd1137e44e6325"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fra_pl_dgse_mademoiselle_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3ecd1137e44e6325"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_2307ac0b66ab9c3a",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_71804c7bbbaad1f6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_garcia",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_71804c7bbbaad1f6"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_cub_pl_dgi_slasher_winter_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_304caa23a8e24278"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_cub_pl_dgi_slasher_winter_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_304caa23a8e24278"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_60583137bfcd9bd0",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1e0aca21e6c6e00c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_garcia",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1e0aca21e6c6e00c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_cub_pl_dgi_slasher_brown_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_73a57f5f2565ac51"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_cub_pl_dgi_slasher_brown_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_73a57f5f2565ac51"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4df9f527eb06bc26",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5fb1bddfef22fc62"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_whitequeen_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5fb1bddfef22fc62"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fin_pl_wraith_white_queen_sandstorm_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4c84965d6d12a705"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fin_pl_wraith_white_queen_sandstorm_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4c84965d6d12a705"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_3e2fb8f3919ca7a0",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_37ca29310542d08e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_whitequeen",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_37ca29310542d08e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fin_pl_wraith_white_queen_furious_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_17973dab722356fe"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fin_pl_wraith_white_queen_furious_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_17973dab722356fe"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_65dd98596ca0570a",
-            "var_270fa547": "#hash_70a2e253d4eafa89"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiewraith",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_70a2e253d4eafa89"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fin_pl_wraith_variant01_mtxitem",
-            "var_270fa547": "#hash_453743f534bcb9db"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fin_pl_wraith_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_453743f534bcb9db"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_13061430c4024fe0",
-            "var_270fa547": "#hash_63e05acfb272a296"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombiewraith",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_63e05acfb272a296"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_fin_pl_wraith_variant04_mtxitem",
-            "var_270fa547": "#hash_4c0d9457aef9aed2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_fin_pl_wraith_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4c0d9457aef9aed2"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4ec3094bd953808d",
-            "var_270fa547": "#hash_2f835612b65f4272"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiepark",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2f835612b65f4272"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant03_mtxitem",
-            "var_270fa547": "#hash_e822c99f16c5e3a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_e822c99f16c5e3a"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_684352fbf518959b",
-            "var_270fa547": "#hash_6a861f1323ce4ae9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombiepark",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_6a861f1323ce4ae9"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant04_mtxitem",
-            "var_270fa547": "#hash_e9b414f0e35b790"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_uk_pl_mi6_coal_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_e9b414f0e35b790"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_3a801946ef041fab",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_315eb81146ec9089"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_woods",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_315eb81146ec9089"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_woods_whirlwind_fire_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1464eb72733fe9f8"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_woods_whirlwind_fire_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1464eb72733fe9f8"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_2b61fad3fc976c21",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_690dea6b04058192"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_woods",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_690dea6b04058192"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_woods_whirlwind_air_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1cf4be42778c8b60"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_woods_whirlwind_air_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1cf4be42778c8b60"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7b9335c8b9e9241b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4d1dfcd775e80c6d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_sims",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4d1dfcd775e80c6d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_cia_advisor_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_492f50ceea7d2d5c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_cia_advisor_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_492f50ceea7d2d5c"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_40ada6a4a528b685",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_73653f3482eed5a1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_sims",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_73653f3482eed5a1"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_cia_advisor_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_447f0767a3441ea1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_cia_advisor_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_447f0767a3441ea1"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7cca7386d8e11703",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_403bf319c5b8aa47"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_deathstalker_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_403bf319c5b8aa47"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_sa_pl_deathstalker_urban_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2fe91bb302563c57"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_sa_pl_deathstalker_urban_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2fe91bb302563c57"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_24a73bf1d1300eeb",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6cff9f8c30192558"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_deathstalker",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6cff9f8c30192558"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_sa_pl_deathstalker_scorpion_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1cf4c542778c9745"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_sa_pl_deathstalker_scorpion_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1cf4c542778c9745"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_70be9613ee90c9da",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4c3c3affa43f9f08"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_portnova",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4c3c3affa43f9f08"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_kgb_smoker_blitz_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3b46377a4b6fb2be"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_kgb_smoker_blitz_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3b46377a4b6fb2be"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_4d5bbe98e31c35a0",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7db4297dc4736e7f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_portnova",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7db4297dc4736e7f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_rus_pl_kgb_smoker_ridge_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6eea40459827b86"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_rus_pl_kgb_smoker_ridge_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6eea40459827b86"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6ebc976ca003c184",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_66f86d062e57a06b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_baker",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_66f86d062e57a06b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_navyseal_bluedevil_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1b9a630b78eba522"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_navyseal_bluedevil_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1b9a630b78eba522"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_41a88989161c2c9e",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_512b329b0603295f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_baker",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_512b329b0603295f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_navyseal_bluedevil_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3f9ba286e92137dd"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_navyseal_bluedevil_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3f9ba286e92137dd"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_b40e2c45b63ac3d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_10f2c3998c0efe9c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_powers",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_10f2c3998c0efe9c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant04_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_690de56b04057913"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_690de56b04057913"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_500d73a311957187",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5f61b89b6d2a2ad3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_powers",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5f61b89b6d2a2ad3"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_33fd6fbea2e1d112"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_33fd6fbea2e1d112"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_249c2281cb9824aa",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_173e56cb34460575"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_garcia",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_173e56cb34460575"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_cub_pl_dgi_flick_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6d692e026ede5830"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_cub_pl_dgi_flick_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6d692e026ede5830"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_15b72880b777a41a",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3bd72103b95eb93e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_garcia_s4",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3bd72103b95eb93e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_cub_pl_dgi_flick_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_19cdb54bb392db3f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_cub_pl_dgi_flick_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_19cdb54bb392db3f"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_457e6b914f993b02",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2bd95491d08078a3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_song",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2bd95491d08078a3"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5ca3004cfbc713c4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5ca3004cfbc713c4"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_59d4627ddfdbce9c",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_12a1bb4be79bb684"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_song",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_12a1bb4be79bb684"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_70d4e38a66f99086"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_70d4e38a66f99086"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_2c5f9369b7d6aa11",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_392ee0534adcefe8"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_adler",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_392ee0534adcefe8"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_adler_vbss_variant_01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4b735f945ca5d5b5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_adler_vbss_variant_01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4b735f945ca5d5b5"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_460e5ef0a1eac433",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1970343201f6d4b2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_adler",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1970343201f6d4b2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_adler_vbss_variant_02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_500ec14cbdae7c8a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_adler_vbss_variant_02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_500ec14cbdae7c8a"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4705a6d90994b4d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_26aa9cf1b9f61e70"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_vargas",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_26aa9cf1b9f61e70"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_47aa6679efd7b139"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_47aa6679efd7b139"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_d4d958f4d60c58f",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3b25d69f938af30c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_vargas",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3b25d69f938af30c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5bfd15fb1c1fb736"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5bfd15fb1c1fb736"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7ceb39a919ce9707",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_46a88cf34bc4309f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_park",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_46a88cf34bc4309f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_uk_pl_mi6_fob_v1_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6b018ac14c58cef1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_uk_pl_mi6_fob_v1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6b018ac14c58cef1"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5e2ed471eff38191",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_718f05b5fd44a07e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_park",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_718f05b5fd44a07e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_uk_pl_mi6_fob_v2_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_cce5e38ca00479d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_uk_pl_mi6_fob_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_cce5e38ca00479d"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_1d3ab74af94bdce9",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_71b8e34a1ad838f8"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_hunter",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_71b8e34a1ad838f8"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter1_hunter_dash_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1464f272733ff5dd"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter1_hunter_dash_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1464f272733ff5dd"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5e3d90e7b578e41b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_61993e47134677e2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_hunter",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_61993e47134677e2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter1_hunter_dash_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_69a54125cf436285"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter1_hunter_dash_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_69a54125cf436285"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_ed8f7cd97c2b824",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_36a1f1959ae7445e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_zeyna",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_36a1f1959ae7445e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_fra_pl_dgse_dakar_bandlands_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6b343b91a61e9cfb"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_fra_pl_dgse_dakar_bandlands_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6b343b91a61e9cfb"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_38b771a34eb74f5a",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2d553b0cd6606d50"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_zeyna",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2d553b0cd6606d50"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_fra_pl_dgse_dakar_proven_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_681796ba77f0a02b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_fra_pl_dgse_dakar_proven_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_681796ba77f0a02b"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_165783e5998398d3",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3a2c1b5b8901cb5b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_deathstalker2_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3a2c1b5b8901cb5b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_sa_pl_deathstalker_snake_water_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_383d73e35a0c6d17"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_sa_pl_deathstalker_snake_water_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_383d73e35a0c6d17"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_6beaec098cef62bb",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4f81cd91028ce8d2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_deathstalkerfinalform",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4f81cd91028ce8d2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_sa_pl_deathstalker_snake_copper_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2744901d51719355"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_sa_pl_deathstalker_snake_copper_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2744901d51719355"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_5e93edefa495050f",
-            "var_270fa547": "#hash_2dd97472bfdc1750"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_deathstalkerzombie",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2dd97472bfdc1750"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_sa_pl_deathstalker_hyena_mtxitem",
-            "var_270fa547": "#hash_4de87f4ac352d31c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_sa_pl_deathstalker_hyena_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4de87f4ac352d31c"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_87f112d56d7e9c1",
-            "var_270fa547": "#hash_70f048948f3fb670"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_zombiedeathstalker",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_70f048948f3fb670"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_sa_pl_deathstalker_shaman_mtxitem",
-            "var_270fa547": "#hash_793cb36230ece12"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_sa_pl_deathstalker_shaman_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_793cb36230ece12"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_1e5e0be8af1c48cb",
-            "var_270fa547": "#hash_2291cc79d49e6296"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_zombiepowers",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2291cc79d49e6296"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant02_mtxitem",
-            "var_270fa547": "#hash_71fb6d66e0007d1d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_71fb6d66e0007d1d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_657c18c83765b451",
-            "var_270fa547": "#hash_7571a5aebc58c0df"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_zombiepowers",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_7571a5aebc58c0df"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant03_mtxitem",
-            "var_270fa547": "#hash_3c1a94bb292d8e96"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter5_powers_cameroon_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3c1a94bb292d8e96"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_fa607f05ac2eab",
-            "var_270fa547": "#hash_5d5cac785e5018aa"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_zombie_song",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_5d5cac785e5018aa"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant03_mtxitem",
-            "var_270fa547": "#hash_4bcd9e9baf9fef9d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4bcd9e9baf9fef9d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_7cafb893c4e652e6",
-            "var_270fa547": "#hash_2ab68853897a8d0c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_zombiesong",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2ab68853897a8d0c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant04_mtxitem",
-            "var_270fa547": "#hash_184d672dc3614f1f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_song_busted_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_184d672dc3614f1f"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_1b7b97f6fca4e47",
-            "var_270fa547": "#hash_398fdc7794697d06"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bps4_vargaszombie",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_398fdc7794697d06"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant03_mtxitem",
-            "var_270fa547": "#hash_59685457ec89f211"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_59685457ec89f211"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_54c2bb944f620f89",
-            "var_270fa547": "#hash_20ef0c16d41d9cd2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_bps4_zombievargas",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_20ef0c16d41d9cd2"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant04_mtxitem",
-            "var_270fa547": "#hash_38a132ff33294724"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_stovepipe_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_38a132ff33294724"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_cub_pl_dgi_rebel_leader_v1_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_46a88bf34bc42eec"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_cub_pl_dgi_rebel_leader_v1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_46a88bf34bc42eec"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_36cb27955f07d672",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_661627bdcf8ba725"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_garcia_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_661627bdcf8ba725"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_cub_pl_dgi_rebel_leader_v2_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_58e366e5dfa6f45c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_cub_pl_dgi_rebel_leader_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_58e366e5dfa6f45c"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4a8ef0c78dcf4d43",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_a77c3dd233743eb"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_garcia_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_a77c3dd233743eb"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_jpn_pl_kitsune_bosozoku_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_62c4e16f8e76865"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_jpn_pl_kitsune_bosozoku_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_62c4e16f8e76865"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_2d7ee646436992f",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_13789354a310a729"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_kitsune_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_13789354a310a729"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_jpn_pl_kitsune_code_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_75c3033c8b4cabc7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_jpn_pl_kitsune_code_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_75c3033c8b4cabc7"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7f2f77c3949568f0",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4605553e8458607e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_kitsune_s5_animation",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4605553e8458607e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_woods_payback_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_173e55cb344603c2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_woods_payback_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_173e55cb344603c2"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_27e7218cd5607fba",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4c84905d6d129cd3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_woods_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4c84905d6d129cd3"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4beb59c0659128f8",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_51037ce3c3594bc"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_woods_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_51037ce3c3594bc"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_woods_payback_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2cd7f6dca1ce1d14"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_woods_payback_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2cd7f6dca1ce1d14"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_autumn_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1c68fbe2a42d2b26"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_autumn_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1c68fbe2a42d2b26"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_6b1f19b0b2e8d840",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3b46387a4b6fb471"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_hunter_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3b46387a4b6fb471"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_8d3d5c653b9c3d2",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_70d4e48a66f99239"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_hunter_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_70d4e48a66f99239"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_pitch_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4aec80d782b89cf5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_pitch_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4aec80d782b89cf5"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_ger_pl_west_stalker_tan_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_67e2e956f75df47a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_ger_pl_west_stalker_tan_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_67e2e956f75df47a"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_22fc3657cc561e50",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3035a5f29811a3f9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_beck_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3035a5f29811a3f9"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_75680b292a63dc4d",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_12b2c63ec1a158f5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_beck_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_12b2c63ec1a158f5"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_ger_pl_west_stalker_blue_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_258a122c083b5fc9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_ger_pl_west_stalker_blue_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_258a122c083b5fc9"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_392ee1534adcf19b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_392ee1534adcf19b"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_24892623ab1e1002",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2fe91ab302563aa4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_stone_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2fe91ab302563aa4"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_69c16acdcebdfe55",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_19cdb44bb392d98c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_stone_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_19cdb44bb392d98c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1cf4c442778c9592"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1cf4c442778c9592"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_frogman_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_37adf828f2a9ecfe"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_frogman_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_37adf828f2a9ecfe"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_7fc3b879f08a5f47",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5f4b951cc4725fe2"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_baker_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5f4b951cc4725fe2"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_c0d8931bc20a469",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1464f172733ff42a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_baker_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1464f172733ff42a"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_frogman_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_24b8c6ce81fdead6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_frogman_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_24b8c6ce81fdead6"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_9cb2e05c8c9e32d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_9cb2e05c8c9e32d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_2dac406c0607b511",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5ca3014cfbc71577"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_zombiepowers_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5ca3014cfbc71577"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_5e8cb9df03d3f27e",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_2757aee498da350f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_powers_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_2757aee498da350f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_65ae5fabb9c13d6c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_65ae5fabb9c13d6c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter4_song_observer_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_61a2b2e6028a56e8"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter4_song_observer_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_61a2b2e6028a56e8"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_63d8983e7c14dda9",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_73579fbf50ae9cb6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_song_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_73579fbf50ae9cb6"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7989cab9f61a8a7b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_48c09600fe06dba9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_song_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_48c09600fe06dba9"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_gen_pl_starter4_song_observer_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_500ec24cbdae7e3d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_gen_pl_starter4_song_observer_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_500ec24cbdae7e3d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_major_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_10f2c4998c0f004f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_major_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_10f2c4998c0f004f"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_7e0ba0636d3c261c",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6d692f026ede59e3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_vargas_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6d692f026ede59e3"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4d40fbf424a048ee",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6bf229eca4bb8729"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_vargas_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6bf229eca4bb8729"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_major_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6b343a91a61e9b48"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter2_vargas_major_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6b343a91a61e9b48"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_deltaforce_halo_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4ef7534ca1c8f27b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_deltaforce_halo_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4ef7534ca1c8f27b"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_55f7ee9532f4ba22",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5f20e4f510b85f5e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_wolf_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5f20e4f510b85f5e"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_1e8f63ec750449c0",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_479a90d3f970186d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_wolf_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_479a90d3f970186d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_deltaforce_halo_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3837599602e870c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_deltaforce_halo_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3837599602e870c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_jpn_pl_kitsune_ultra_kogane_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_457a3db89d8cbef7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_jpn_pl_kitsune_ultra_kogane_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_457a3db89d8cbef7"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_3570f03b40b02149",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_47aa6579efd7af86"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_r8g_1026_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_47aa6579efd7af86"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7eabebce3646ea55",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_681795ba77f09e78"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_kitsunefinalform_s5_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_681795ba77f09e78"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_jpn_pl_kitsune_ultra_shinrei_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_369bb5d15d4b680d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_jpn_pl_kitsune_ultra_shinrei_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_369bb5d15d4b680d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_jpn_pl_kitsune_kunoichi_mtxitem",
-            "var_270fa547": "#hash_2d451e3bdc5fc297"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_jpn_pl_kitsune_kunoichi_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2d451e3bdc5fc297"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_98211e924270d36",
-            "var_270fa547": "#hash_39c86e169b57d8b5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_kitsunefinalformzombie",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_39c86e169b57d8b5"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7b21217d9fa1d6af",
-            "var_270fa547": "#hash_6d52ae8b2b73008b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_kitsunezombie_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_6d52ae8b2b73008b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_jpn_pl_kitsune_gothic_mtxitem",
-            "var_270fa547": "#hash_232f596c7bb640f4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_jpn_pl_kitsune_gothic_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_232f596c7bb640f4"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_riptide_mtxitem",
-            "var_270fa547": "#hash_3c55e3e2a9134760"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_riptide_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3c55e3e2a9134760"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_4dead6d78530ef5e",
-            "var_270fa547": "#hash_18b0754477746c0e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombiehunter_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_18b0754477746c0e"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4539d5e17114e06c",
-            "var_270fa547": "#hash_3c5a993c0208d6a6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiehunter_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3c5a993c0208d6a6"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_arid_mtxitem",
-            "var_270fa547": "#hash_5e9fbf4fb934f162"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter1_hunger_eagle_eye_arid_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_5e9fbf4fb934f162"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_variant03_mtxitem",
-            "var_270fa547": "#hash_76b222292bb7ea6a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_76b222292bb7ea6a"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_c5cc707b24bda75",
-            "var_270fa547": "#hash_17759c33232585f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_stonezombie_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_17759c33232585f"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_31b7a243a6e77043",
-            "var_270fa547": "#hash_453e998083809449"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_stonezombie_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_453e998083809449"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_vampire_mtxitem",
-            "var_270fa547": "#hash_7fa0fb7abd1293d1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter3_stone_insurgent_vampire_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_7fa0fb7abd1293d1"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant03_mtxitem",
-            "var_270fa547": "#hash_768adb0a89648a89"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_768adb0a89648a89"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_55ebbb1db7546387",
-            "var_270fa547": "#hash_d89d61477cee38f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombiemodevargas_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_d89d61477cee38f"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6cc4bb9d17161de8",
-            "var_270fa547": "#hash_79af8de54e6f5a0a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiepowers_s5",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_79af8de54e6f5a0a"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant04_mtxitem",
-            "var_270fa547": "#hash_42ad6596af9cd4d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_driver_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_42ad6596af9cd4d"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#battlepass_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_76bf58f08a08d598",
-            "var_4e61005b": "#operator_mission_5013_unlock_mtxitem"
+            "codpoints": 0,
+            "hash_b4ab831a": "#battlepass_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_76bf58f08a08d598",
+            "hash_4e61005b": "#operator_mission_5013_unlock_mtxitem"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_cub_pl_dgi_lucha_v2_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_76bf5bf08a08dab1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_cub_pl_dgi_lucha_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_76bf5bf08a08dab1"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#player_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_76bf5af08a08d8fe"
+            "codpoints": 0,
+            "hash_b4ab831a": "#player_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_76bf5af08a08d8fe"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 300,
-            "var_b4ab831a": "#cod_points_300_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_76bf5df08a08de17"
+            "hash_b4ab831a": "#cod_points_300_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_76bf5df08a08de17"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#weapon_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_734f1d49f5395c1",
-            "var_4e61005b": "#operator_mission_5018_unlock_mtxitem"
+            "codpoints": 0,
+            "hash_b4ab831a": "#weapon_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_734f1d49f5395c1",
+            "hash_4e61005b": "#operator_mission_5018_unlock_mtxitem"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_734eed49f5390a8"
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_734eed49f5390a8"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_navyseal_hopper_v2_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_734efd49f53925b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_navyseal_hopper_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_734efd49f53925b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 200,
-            "var_b4ab831a": "#cod_points_200_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_734f4d49f539ada"
+            "hash_b4ab831a": "#cod_points_200_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_734f4d49f539ada"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_777767b99c350232",
-            "var_4e61005b": "#operator_mission_5026_unlock_mtxitem"
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_777767b99c350232",
+            "hash_4e61005b": "#operator_mission_5026_unlock_mtxitem"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#battlepass_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_777766b99c35007f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#battlepass_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_777766b99c35007f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_ger_pl_west_professor_v2_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_777765b99c34fecc"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_ger_pl_west_professor_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_777765b99c34fecc"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 200,
-            "var_b4ab831a": "#cod_points_200_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_777764b99c34fd19"
+            "hash_b4ab831a": "#cod_points_200_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_777764b99c34fd19"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_mason_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_64f7d07880a0dc03"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_mason_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_64f7d07880a0dc03"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_79dbcffcf081877e",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3b46357a4b6faf58"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_mason_v2_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3b46357a4b6faf58"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_70fcff891e5eed53",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_64d75a7ec139fdf7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_mason_s6_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_64d75a7ec139fdf7"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_mason_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_27448e1d51718fef"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_mason_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_27448e1d51718fef"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3cd0e341588351df"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3cd0e341588351df"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_2197507d0867dbcc",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1970323201f6d14c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_portnova_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1970323201f6d14c"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6b35d6afaef80d46",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1355b2bc41e3a3d6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_portnova_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1355b2bc41e3a3d6"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_380d0317d7caf20"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_380d0317d7caf20"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_179742ab72235f7d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_179742ab72235f7d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_52cf8711d6ad703",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_173e54cb3446020f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_sims_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_173e54cb3446020f"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_5c91277a4b5f0b01",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6016b0a57e1cd493"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_sims_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6016b0a57e1cd493"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_10e2902d2d4ffcc"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_10e2902d2d4ffcc"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_stealth_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5004dee0210ef879"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_stealth_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5004dee0210ef879"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5eac4a5040cee08e",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4234fb2534d8a2d7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_powers_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4234fb2534d8a2d7"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_5e8cb8df03d3f0cb",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5bfd13fb1c1fb3d0"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_powers_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5bfd13fb1c1fb3d0"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_stealth_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_3eab9afb4f03dab0"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter5_powers_stealth_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_3eab9afb4f03dab0"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_515c3ec5c8a5d793"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_515c3ec5c8a5d793"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_27e7208cd5607e07",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_38d5b7c2db747144"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_woods_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_38d5b7c2db747144"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4beb5cc065912e11",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_61993c471346747c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_woods_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_61993c471346747c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6bf226eca4bb8210"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6bf226eca4bb8210"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_ger_pl_west_stronghold_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_73d936b41c0e7db3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_ger_pl_west_stronghold_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_73d936b41c0e7db3"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_4b421dc9707156ba",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5f4b941cc4725e2f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_beck_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5f4b941cc4725e2f"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_ger_pl_west_stronghold_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_392ee2534adcf34e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_ger_pl_west_stronghold_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_392ee2534adcf34e"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_756808292a63d734",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_24b8c5ce81fde923"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_beck_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_24b8c5ce81fde923"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_uk_pl_mi6_checker_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_71b8e54a1ad83c5e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_uk_pl_mi6_checker_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_71b8e54a1ad83c5e"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_7bc57bbb401f3b3f",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_a367df14eae87f0"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_park_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_a367df14eae87f0"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_654a61c5e3a91ba5",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_16e0a7b81c1be41e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_park_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_16e0a7b81c1be41e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_uk_pl_mi6_checker_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_42d584c6dc3908bb"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_uk_pl_mi6_checker_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_42d584c6dc3908bb"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_navyseal_grip_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_565dc844d8939160"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_navyseal_grip_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_565dc844d8939160"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_7fc3b979f08a60fa",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_15512193d31af0cc"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_baker_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_15512193d31af0cc"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_c0d8631bc209f50",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4f81cb91028ce56c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_baker_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4f81cb91028ce56c"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_navyseal_grip_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7ef1a1bd8a7aaea7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_navyseal_grip_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7ef1a1bd8a7aaea7"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_dagger_v1_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_5149c3617e49007f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_dagger_v1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_5149c3617e49007f"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_c1e6ff4f7580eab",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_21a608644ae7afcc"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_song_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_21a608644ae7afcc"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7989cbb9f61a8c2e",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1464f072733ff277"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_song_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1464f072733ff277"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_gen_pl_starter4_dagger_v2_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_36a1ef959ae740f8"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_gen_pl_starter4_dagger_v2_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_36a1ef959ae740f8"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_rus_pl_spetsnaz_afghan_sniper_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_41d7899e04e68759"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_rus_pl_spetsnaz_afghan_sniper_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_41d7899e04e68759"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7a7a2620b9e2bafe",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_44978e0160dc6c6"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_bulldozer2_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_44978e0160dc6c6"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_f858bbb7984edb3",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_16e0ecab9e84e4b9"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblem_bulldozer_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_16e0ecab9e84e4b9"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_rus_pl_spetsnaz_afghan_sniper_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6b343d91a61ea061"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_rus_pl_spetsnaz_afghan_sniper_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6b343d91a61ea061"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_mason_ultra_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_10f2c5998c0f0202"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_mason_ultra_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_10f2c5998c0f0202"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_5a5add5b629b6037",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1fad15ffd7086711"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_ultramason_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1fad15ffd7086711"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4747dc779fb84f9b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1c68fae2a42d2973"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_ultramason_s6_animated",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1c68fae2a42d2973"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_mason_ultra_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_778662db221c6d9f"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_mason_ultra_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_778662db221c6d9f"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#battlepass_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_24abaa59aafa466b",
-            "var_4e61005b": "#operator_mission_6007_unlock_mtxitem"
+            "codpoints": 0,
+            "hash_b4ab831a": "#battlepass_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_24abaa59aafa466b",
+            "hash_4e61005b": "#operator_mission_6007_unlock_mtxitem"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_eg_pl_quicksand_slither_1_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_24abab59aafa481e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_eg_pl_quicksand_slither_1_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_24abab59aafa481e"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#player_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_24abac59aafa49d1"
+            "codpoints": 0,
+            "hash_b4ab831a": "#player_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_24abac59aafa49d1"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 300,
-            "var_b4ab831a": "#cod_points_300_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_24abad59aafa4b84"
+            "hash_b4ab831a": "#cod_points_300_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_24abad59aafa4b84"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#weapon_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3d9159bfdb045054",
-            "var_4e61005b": "#operator_mission_6014_unlock_mtxitem"
+            "codpoints": 0,
+            "hash_b4ab831a": "#weapon_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3d9159bfdb045054",
+            "hash_4e61005b": "#operator_mission_6014_unlock_mtxitem"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3d915cbfdb04556d"
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3d915cbfdb04556d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_usa_pl_weaver_sons_of_orda_pulsar_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3d915bbfdb0453ba"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_usa_pl_weaver_sons_of_orda_pulsar_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3d915bbfdb0453ba"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 200,
-            "var_b4ab831a": "#cod_points_200_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3d9156bfdb044b3b"
+            "hash_b4ab831a": "#cod_points_200_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3d9156bfdb044b3b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3a26c6202d86ed8d",
-            "var_4e61005b": "#operator_mission_6025_unlock_mtxitem"
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3a26c6202d86ed8d",
+            "hash_4e61005b": "#operator_mission_6025_unlock_mtxitem"
         },
         {
             "rewardtype": "#xptoken",
-            "var_b4ab831a": "#battlepass_xp_token_legendary",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3a26c3202d86e874"
+            "codpoints": 0,
+            "hash_b4ab831a": "#battlepass_xp_token_legendary",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3a26c3202d86e874"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#c_t9_esp_pl_goe_bomber_dusty_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3a26c4202d86ea27"
-        },
-        {
-            "rewardtype": "#hash_178ab01368762c8b",
-            "codpoints": 200,
-            "var_b4ab831a": "#cod_points_200_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_3a26c1202d86e50e"
-        },
-        {
-            "rewardtype": "#hash_178ab01368762c8b",
-            "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_7208e21496453ace",
-            "var_4e61005b": "#operator_mission_6018_unlock_mtxitem"
-        },
-        {
-            "rewardtype": "#hash_178ab01368762c8b",
-            "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_7208e1149645391b"
-        },
-        {
-            "rewardtype": "#hash_178ab01368762c8b",
-            "codpoints": 100,
-            "var_b4ab831a": "#cod_points_100_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_7208e01496453768"
+            "codpoints": 0,
+            "hash_b4ab831a": "#c_t9_esp_pl_goe_bomber_dusty_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3a26c4202d86ea27"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
             "codpoints": 200,
-            "var_b4ab831a": "#cod_points_200_mtxitem",
-            "var_57554d43": -1,
-            "var_270fa547": "#hash_7208e7149645434d"
+            "hash_b4ab831a": "#cod_points_200_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_3a26c1202d86e50e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_mason_variant03_mtxitem",
-            "var_270fa547": "#hash_7157c967c371c77c"
+            "codpoints": 100,
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_7208e21496453ace",
+            "hash_4e61005b": "#operator_mission_6018_unlock_mtxitem"
+        },
+        {
+            "rewardtype": "#hash_178ab01368762c8b",
+            "codpoints": 100,
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_7208e1149645391b"
+        },
+        {
+            "rewardtype": "#hash_178ab01368762c8b",
+            "codpoints": 100,
+            "hash_b4ab831a": "#cod_points_100_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_7208e01496453768"
+        },
+        {
+            "rewardtype": "#hash_178ab01368762c8b",
+            "codpoints": 200,
+            "hash_b4ab831a": "#cod_points_200_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": -1,
+            "hash_270fa547": "#hash_7208e7149645434d"
+        },
+        {
+            "rewardtype": "#hash_178ab01368762c8b",
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_mason_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_7157c967c371c77c"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_425dcaa038207c47",
-            "var_270fa547": "#hash_aaa9c900cdfefaa"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombiemode_mason_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_aaa9c900cdfefaa"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_6a7525d22d3e9453",
-            "var_270fa547": "#hash_1b4587ccc6718a54"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiemason_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_1b4587ccc6718a54"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_mason_variant04_mtxitem",
-            "var_270fa547": "#hash_4b723faebc6cb297"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_mason_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4b723faebc6cb297"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant03_mtxitem",
-            "var_270fa547": "#hash_1dce8a1f4224e648"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_1dce8a1f4224e648"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_3c5459ad2ccaaf4c",
-            "var_270fa547": "#hash_4fda6c4372b053eb"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombiesims_00_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4fda6c4372b053eb"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_20591dba3af1a77",
-            "var_270fa547": "#hash_5819ea0165c41e4"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiesims_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_5819ea0165c41e4"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant04_mtxitem",
-            "var_270fa547": "#hash_4d5ecc0ade47e69b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_cia_captain_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4d5ecc0ade47e69b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant03_mtxitem",
-            "var_270fa547": "#hash_1b510c3803746a43"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_1b510c3803746a43"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_2439fb143c78a00e",
-            "var_270fa547": "#hash_1c411a909421fc85"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_zombie_woods_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_1c411a909421fc85"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_4ed9d92dfda8648b",
-            "var_270fa547": "#hash_7c2104436691d80d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_zombiewoods_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_7c2104436691d80d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant04_mtxitem",
-            "var_270fa547": "#hash_518010f809e66024"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_woods_haha_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_518010f809e66024"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant03_mtxitem",
-            "var_270fa547": "#hash_3c096a414d5b9096"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant03_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3c096a414d5b9096"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_4cd7a56378818019",
-            "var_270fa547": "#hash_c602b888cc99522"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_vts_final_16_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_c602b888cc99522"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_598eb004d14df32f",
-            "var_270fa547": "#hash_4124fad6c16b36d3"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_vts_15_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_4124fad6c16b36d3"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant04_mtxitem",
-            "var_270fa547": "#hash_120456cb37b4ac3b"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_rus_pl_kgb_infantry_variant04_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_120456cb37b4ac3b"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_adler_control_variant01_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1239a476be0ab35d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_adler_control_variant01_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1239a476be0ab35d"
         },
         {
             "rewardtype": "#crafticon",
-            "var_b4ab831a": "#hash_60ac045828485cb1",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6be4fc5f3e98048c"
+            "codpoints": 0,
+            "hash_b4ab831a": "#emblems_adler_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6be4fc5f3e98048c"
         },
         {
             "rewardtype": "#craftbackground",
-            "var_b4ab831a": "#hash_7fd40e8448448b67",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7adb8f843b82a52a"
+            "codpoints": 0,
+            "hash_b4ab831a": "#callingcards_adler_s6",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7adb8f843b82a52a"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#po_c_t9_usa_pl_adler_control_variant02_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_50513027398440db"
+            "codpoints": 0,
+            "hash_b4ab831a": "#po_c_t9_usa_pl_adler_control_variant02_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_50513027398440db"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "challengerewards",
-    "var_5f0dd656": 5,
-    "var_4e39981b": 5,
-    "var_faec2a7f": 6,
+    "hash_5f0dd656": 5,
+    "hash_4e39981b": 5,
+    "hash_faec2a7f": 6,
     "name": "challengerewards_operator_missions",
     "sessionmode": "4",
-    "var_91a1cb16": 6
+    "hash_91a1cb16": 6
 }

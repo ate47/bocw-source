@@ -1,10 +1,11 @@
 {
-    "var_50c23eb3": [
+    "#hash_50c23eb3": [
         {
-            "track": "#battletrack_cdl_theme"
+            "track": "scriptbundle#battletrack_cdl_theme"
         }
     ],
     "name": "battletrack_pack_season4_inaugural_cdl_theme",
-    "var_6855e4be": "#battletrack_pack_season4_inaugural_cdl_theme_mtxitem",
-    "title": "#hash_3ae63b63a5a0a7ad"
+    "hash_6855e4be": "#battletrack_pack_season4_inaugural_cdl_theme_mtxitem",
+    "title": "localized18#hash_3ae63b63a5a0a7ad",
+    "hash_9bf5cf77": 0
 }

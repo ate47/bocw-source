@@ -2,94 +2,104 @@
     "itemlist": [
         {
             "minweight": 100,
-            "var_a6762160": "#level_2_resource_list",
+            "itementry": "scriptbundle#level_2_resource_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#level_3_resource_list",
+            "itementry": "scriptbundle#level_3_resource_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#zm_equipment_list",
+            "itementry": "scriptbundle#zm_equipment_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#zm_equipment_list",
+            "itementry": "scriptbundle#zm_equipment_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#level_3_bonus_item_list",
+            "itementry": "scriptbundle#level_3_bonus_item_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#gold_chest_guns_level_3",
+            "itementry": "scriptbundle#gold_chest_guns_level_3",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#armor_shard_item_sr",
+            "itementry": "scriptbundle#armor_shard_item_sr",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#level_3_gun_list",
+            "itementry": "scriptbundle#level_3_gun_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#gold_chest_guns_level_3",
+            "itementry": "scriptbundle#gold_chest_guns_level_3",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#level_3_gun_list",
+            "itementry": "scriptbundle#level_3_gun_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#zm_food_parent_list",
+            "itementry": "scriptbundle#zm_food_parent_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#zm_food_parent_list",
+            "itementry": "scriptbundle#zm_food_parent_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#zm_food_parent_list",
+            "itementry": "scriptbundle#zm_food_parent_list",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#zm_food_parent_list",
+            "itementry": "scriptbundle#zm_food_parent_list",
             "maxweight": 100,
             "available": 1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "boss_zombie_level1_parent_list_sr_food",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

@@ -1,12 +1,12 @@
 {
     "effectcount": 2,
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "fxcharacterdef",
-    "var_70f592cb": "#hash_257a34362b1de6bf",
+    "hash_70f592cb": "fx#hash_257a34362b1de6bf",
     "vmtype": "client",
     "name": "fxd9_zm_char_raz",
-    "var_a0d91763": "j_head",
-    "var_a28ba60a": 6,
-    "var_c7a3c7dd": "#hash_6b50fbb75f3dc9a3",
-    "var_edb57500": "tag_flash"
+    "hash_a0d91763": "j_head",
+    "hash_a28ba60a": 6,
+    "hash_c7a3c7dd": "fx#hash_6b50fbb75f3dc9a3",
+    "hash_edb57500": "tag_flash"
 }

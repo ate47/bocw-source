@@ -1,19 +1,24 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#plaque_attack_game_mtxitem",
+            "hash_4a4bc969": "scriptbundle#plaque_attack_game_mtxitem",
             "itemid": "19895467"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_495e18b725744aaa",
-    "var_375a1747": "#hash_620955a49061b3ac",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_retro_game_3112_season_3",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_free_retro_game_6112_season_6_mtxbundle",
-    "var_a788fada": "#hash_5689bba5cba6be9d",
-    "titlestring": "#hash_492e3d9c23f00000",
-    "var_566825be": "#hash_36aa6553216e6b15",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_free_retro_game_3112_season_3_small",
+    "titlestring": "localized18#hash_492e3d9c23f00000",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_retro_game_3112_season_3",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_28175113e3377577",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_28175113e3377577",
+    "hash_db3e02ab": 2000,
     "itemid": "31402105"
 }

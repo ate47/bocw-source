@@ -1,163 +1,71 @@
 {
     "shieldpieces": [
         {
-            "pieceimage": "#hash_1b229fb956e499eb"
+            "hash_7db3435c": 0,
+            "pieceimage": "image#hash_1b229fb956e499eb"
         },
         {
-            "pieceimage": "#hash_1b22a0b956e49b9e"
+            "hash_7db3435c": 0,
+            "pieceimage": "image#hash_1b22a0b956e49b9e"
         },
         {
-            "pieceimage": "#hash_1b22a1b956e49d51"
+            "hash_7db3435c": 0,
+            "pieceimage": "image#hash_1b22a1b956e49d51"
         }
     ],
     "quests": [
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_7c956bf644f7325f"
-                                }
-                            ],
-                            "clientfield": "#hash_689d93f2ecc4ae51"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_521194dbb618f4ea"
-                                }
-                            ],
-                            "clientfield": "#hash_689d90f2ecc4a938"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_458505b4c76c75d9"
-                                }
-                            ],
-                            "clientfield": "#hash_689d91f2ecc4aaeb"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_701b1597c64bd5f2"
-                                }
-                            ],
-                            "clientfield": "#hash_689d96f2ecc4b36a"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_tungsten_papquest",
-            "var_bb5d23fb": "#hash_7ce9d377c43726f6"
+            "hash_bb5d23fb": "localized18#hash_7ce9d377c43726f6"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_26d9419fc22d3bd"
-                                }
-                            ],
-                            "clientfield": "#hash_2d5a3bb1a97e6bcc"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_7e810698cc202f14"
-                                }
-                            ],
-                            "clientfield": "#hash_2d5a3eb1a97e70e5"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_5309e710ac188c54"
-                                }
-                            ],
-                            "clientfield": "#hash_2d5a3db1a97e6f32"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_tungsten_wwquest",
-            "var_bb5d23fb": "#hash_6528170aae755061"
+            "hash_bb5d23fb": "localized18#hash_6528170aae755061"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_13a1c2b2dadff41"
-                                },
-                                {
-                                    "stageimage": "#hash_13a192b2dadfa28"
-                                },
-                                {
-                                    "stageimage": "#hash_13a1a2b2dadfbdb"
-                                },
-                                {
-                                    "stageimage": "#hash_13a1f2b2dae045a"
-                                }
-                            ],
-                            "clientfield": "#hash_4273532945cef4b0"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_3e9a1e51b3f085f3"
-                                }
-                            ],
-                            "clientfield": "#hash_4273562945cef9c9"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_3792ecbcc8dbfc7a"
-                                }
-                            ],
-                            "clientfield": "#hash_4273552945cef816"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_tungsten_mainquest",
-            "var_a0ebe517": "#hash_291214f93e458ccb",
-            "var_bb5d23fb": "#hash_766e10bd5d82a835"
+            "hash_a0ebe517": "#hash_291214f93e458ccb",
+            "hash_bb5d23fb": "localized18#hash_766e10bd5d82a835"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_2027a5395a7afb8a"
-                                }
-                            ],
-                            "var_7db3435c": 1,
-                            "clientfield": "#hash_41af1cdc14b54320"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_tungsten_sidequest",
-            "var_bb5d23fb": "#hash_260561f6c70b531e"
+            "hash_bb5d23fb": "localized18#hash_260561f6c70b531e"
         }
     ],
     "objprogitems": [
         {
-            "description": "#hash_336cbe1bb6ff213"
+            "description": "localized18#hash_336cbe1bb6ff213"
         }
     ],
-    "objectivebackground": "#ui_icon_inventory_zm_red_artifact_sentinel",
-    "var_922067c4": "scriptbundle",
+    "objectivebackground": "image#ui_icon_inventory_zm_red_artifact_sentinel",
+    "configstringfiletype": "scriptbundle",
+    "hash_3e38620e": 0,
     "type": "zminventory",
-    "name": "zm_inventory_tungsten"
+    "name": "zm_inventory_tungsten",
+    "hash_f3d39d90": 0,
+    "hash_38b9613": 0
 }

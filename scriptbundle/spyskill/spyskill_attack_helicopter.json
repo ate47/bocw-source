@@ -1,0 +1,10 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "scorestreak": "killstreak_helicopter_comlink",
+    "type": "spyskill",
+    "hash_a99abf33": "attack_helicopter",
+    "name": "spyskill_attack_helicopter",
+    "hash_a58f84b8": 12,
+    "cooldown": 120,
+    "hash_e1bfe02c": 25
+}

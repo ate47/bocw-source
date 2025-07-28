@@ -1,9 +1,9 @@
 {
     "mod": "MOD_MELEE_WEAPON_BUTT",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_melee_weapon_butt",
-    "displayname": "#hash_6aa46dc01ddaa598",
-    "icon": "#ui_icon_meansofdeath_melee_weapon_butt",
-    "iconlarge": "#ui_icon_meansofdeath_melee_weapon_butt_xl"
+    "displayname": "localized18#hash_6aa46dc01ddaa598",
+    "icon": "image#ui_icon_meansofdeath_melee_weapon_butt",
+    "iconlarge": "image#ui_icon_meansofdeath_melee_weapon_butt_xl"
 }

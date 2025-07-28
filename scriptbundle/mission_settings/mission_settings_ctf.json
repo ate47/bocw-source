@@ -1,0 +1,8 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "type": "mission_settings",
+    "mstype": "ctf",
+    "msbatterycount": 2,
+    "vmtype": "both",
+    "name": "mission_settings_ctf"
+}

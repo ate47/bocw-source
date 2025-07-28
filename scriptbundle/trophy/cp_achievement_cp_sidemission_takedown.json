@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_68358d8be573a5f2",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_68358d8be573a5f2",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_75f5dd2535db61fb",
-    "image": "#hash_31adfe25576c8ec1",
+    "hash_4a95afca": "image#hash_75f5dd2535db61fb",
+    "image": "image#hash_31adfe25576c8ec1",
     "name": "cp_achievement_cp_sidemission_takedown",
-    "title": "#hash_659318f25218c422"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_659318f25218c422",
+    "hash_621379a": 0
 }

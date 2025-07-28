@@ -1,31 +1,61 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "var_5ed80a9c": "#hash_45ee6a533aa4da04",
-            "type": "#none",
-            "displayname": "#hash_42c601f893ed0a20",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#hash_45ee6a533aa4da04",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_42c601f893ed0a20",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_766fe8f6dc41a427",
-            "type": "#none",
-            "displayname": "#hash_797dbaf969420034",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#hash_766fe8f6dc41a427",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_797dbaf969420034",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_1e8b51bcf589ea0c",
-            "type": "#none",
-            "displayname": "#hash_45bd3d4b3a64e355",
-            "actionutility": "#none"
+            "hash_5ed80a9c": "#hash_1e8b51bcf589ea0c",
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_45bd3d4b3a64e355",
+            "actionutility": "#NONE"
         }
     ],
-    "var_72ef398b": 1,
-    "var_d7f79634": 1,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_e19b7aba": 1,
-    "var_a77ed948": "#none",
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 1,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
     "name": "challenges_career_zm",
-    "var_50340f4": 1,
-    "var_8b233d0b": 1
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 1,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 1,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
 }

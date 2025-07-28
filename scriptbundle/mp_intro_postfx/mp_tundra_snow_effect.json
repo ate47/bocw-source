@@ -1,0 +1,9 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "hash_51388671": 1,
+    "type": "mp_intro_postfx",
+    "vmtype": "both",
+    "name": "mp_tundra_snow_effect",
+    "uniqueid": "mp_tundra_snow_effect",
+    "hash_aaf5aae7": "pstfx_camera_snow_sprite"
+}

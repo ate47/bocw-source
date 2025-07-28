@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_victory_is_always_possible",
-    "quote": "#hash_16589ae4da7012d5",
-    "author": "#hash_2ac4acce05a93d99"
+    "quote": "localized18#hash_16589ae4da7012d5",
+    "author": "localized18#hash_2ac4acce05a93d99"
 }

@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_power_tests_a_mans_character",
-    "quote": "#hash_bf981577c4700a0",
-    "author": "#hash_7709360fe2ebed72"
+    "quote": "localized18#hash_bf981577c4700a0",
+    "author": "localized18#hash_7709360fe2ebed72"
 }

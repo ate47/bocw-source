@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_accurate_bp_dragon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_dragon_mtxitem",
             "itemid": "29852511"
         },
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_necroking_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_necroking_mtxitem",
             "itemid": "26036272"
         },
         {
-            "var_4a4bc969": "#t9_charm_dragon_claw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_dragon_claw_mtxitem",
             "itemid": "20095577"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_snowmobile_mpx_necro_dragon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_snowmobile_mpx_necro_dragon_mtxitem",
             "itemid": "18422082"
         },
         {
-            "var_4a4bc969": "#callingcards_necroking_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_necroking_animated_mtxitem",
             "itemid": "26753349"
         },
         {
-            "var_4a4bc969": "#emblem_marquee_07_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_marquee_07_mtxitem",
             "itemid": "29913558"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_analog_necro_king_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_analog_necro_king_mtxitem",
             "itemid": "22956047"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_necroking_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_necroking_mtxitem",
             "itemid": "32163051"
         }
     ],
-    "itemname": "#hash_23840bfcbfa144bb",
-    "var_375a1747": "#hash_47896b99458e3c75",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_mastercraft_2042_ar_accurate_necroking",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_mastercraft_2042_ar_accurate_necroking",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "bundle_mastercraft_2042_ar_accurate_necroking_mtxbundle",
-    "var_a788fada": "#hash_305e5be541704e4e",
-    "titlestring": "#hash_7dc26af032b55ddd",
-    "var_566825be": "#hash_2abe817b4e694e46",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_305e5be541704e4e",
+    "titlestring": "localized18#hash_7dc26af032b55ddd",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_mastercraft_2042_ar_accurate_necroking",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_20cf473e642bdf95",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_20cf473e642bdf95",
+    "hash_db3e02ab": 2000,
     "itemid": "32003908"
 }

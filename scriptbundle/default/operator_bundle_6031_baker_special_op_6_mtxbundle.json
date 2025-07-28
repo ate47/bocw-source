@@ -1,60 +1,65 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_frank_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_frank_mtxitem",
             "itemid": "18629679"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#ar_slowfire_bp_donnie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowfire_bp_donnie_mtxitem",
             "itemid": "20650822"
         },
         {
-            "var_4a4bc969": "#smg_cqb_bp_donnie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_cqb_bp_donnie_mtxitem",
             "itemid": "32171286"
         },
         {
-            "var_4a4bc969": "#sniper_accurate_bp_donnie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_accurate_bp_donnie_mtxitem",
             "itemid": "20594436"
         },
         {
-            "var_4a4bc969": "#t9_charm_jet_engine_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_jet_engine_mtxitem",
             "itemid": "31396217"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_donnie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_donnie_mtxitem",
             "itemid": "23589676"
         },
         {
-            "var_4a4bc969": "#execution_199_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_199_mtxitem",
             "itemid": "20570020"
         },
         {
-            "var_4a4bc969": "#emblems_ddarko_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ddarko_s6_mtxitem",
             "itemid": "19569104"
         },
         {
-            "var_4a4bc969": "#callingcards_ddarko_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ddarko_s6_mtxitem",
             "itemid": "26048220"
         },
         {
-            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_legendary_mtxitem",
             "itemid": "32109261"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_15055f06b16d0f5e",
     "timername": "#hash_124f8a9fdbd04535",
-    "var_375a1747": "#hash_51344beb9f6f4690",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6031_baker_special_op_6",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6031_baker_special_op_6_mtxbundle",
-    "var_a788fada": "#hash_1a594d48df4540a3",
-    "titlestring": "#hash_32f9cb25efe4aee3",
-    "var_566825be": "#hash_333ead29c17214b",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6031_baker_special_op_6_small",
+    "titlestring": "localized18#hash_32f9cb25efe4aee3",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6031_baker_special_op_6",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_146b3cd112665d87",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_146b3cd112665d87",
+    "hash_db3e02ab": 2000,
     "itemid": "26990166"
 }

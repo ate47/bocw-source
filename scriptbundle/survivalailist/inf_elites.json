@@ -1,22 +1,22 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_abomination",
-            "var_a949845f": -1,
-            "var_857deb66": 1
+            "entryname": "scriptbundle&survival_ai_abomination",
+            "hash_a949845f": -1,
+            "hash_857deb66": 1
         },
         {
-            "entryname": "survival_ai_steiner",
-            "var_a949845f": -1,
-            "var_857deb66": 1
+            "entryname": "scriptbundle&survival_ai_steiner",
+            "hash_a949845f": -1,
+            "hash_857deb66": 1
         },
         {
-            "entryname": "survival_ai_mechz",
-            "var_a949845f": -1,
-            "var_857deb66": 1
+            "entryname": "scriptbundle&survival_ai_mechz",
+            "hash_a949845f": -1,
+            "hash_857deb66": 1
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "inf_elites"
 }

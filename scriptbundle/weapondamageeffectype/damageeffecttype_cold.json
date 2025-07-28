@@ -1,0 +1,12 @@
+{
+    "durations": [
+        {
+            "duration": 1,
+            "archetype": "human",
+            "effecttype": "cold"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "weapondamageeffectype",
+    "name": "damageeffecttype_cold"
+}

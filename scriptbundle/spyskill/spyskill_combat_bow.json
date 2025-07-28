@@ -1,0 +1,10 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "scorestreak": "killstreak_sparrow",
+    "type": "spyskill",
+    "hash_a99abf33": "combat_bow",
+    "name": "spyskill_combat_bow",
+    "hash_a58f84b8": 5,
+    "cooldown": 90,
+    "hash_e1bfe02c": 24
+}

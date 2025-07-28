@@ -1,0 +1,17 @@
+{
+    "description": "localized19#hash_4fe55f05b899982c",
+    "tagname": "mdl_cp_takedown_item_09",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_takedown_map_street_01",
+    "type": "collectible",
+    "hash_34754728": "localized19#hash_7f4487a7da679130",
+    "name": "p9_cp_takedown_09",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_17221d1a23e8abc",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_5b229797d06774be",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_takedown_apartment"
+}

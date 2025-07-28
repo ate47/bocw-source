@@ -1,38 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_standard_bp_urbangold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_urbangold_mtxitem",
             "itemid": "19468404"
         },
         {
-            "var_4a4bc969": "#smg_standard_bp_urbangold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_bp_urbangold_mtxitem",
             "itemid": "28867554"
         },
         {
-            "var_4a4bc969": "#t9_charm_gold_bar_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_gold_bar_mtxitem",
             "itemid": "24210932"
         },
         {
-            "var_4a4bc969": "#emblems_gilded3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_gilded3_mtxitem",
             "itemid": "20861672"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_fancy_gold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_fancy_gold_mtxitem",
             "itemid": "31863582"
         },
         {
-            "var_4a4bc969": "#callingcards_gilded_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_gilded_mtxitem",
             "itemid": "22320709"
         }
     ],
-    "itemname": "#hash_4118e450546b80ac",
-    "var_375a1747": "#hash_529784ed6e57d9da",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1015_smg_standard_black_gold_1",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1015_smg_standard_black_gold_1",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1015_smg_standard_black_gold_1_mtxbundle",
-    "titlestring": "#hash_429236279c82b67a",
-    "var_566825be": "#hash_6c3a042d944651f9",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_429236279c82b67a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1015_smg_standard_black_gold_1",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_373aba81e63bd76",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_373aba81e63bd76",
+    "hash_db3e02ab": 2000,
     "itemid": "25013569"
 }

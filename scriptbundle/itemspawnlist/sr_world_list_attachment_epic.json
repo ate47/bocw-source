@@ -2,100 +2,110 @@
     "itemlist": [
         {
             "minweight": 10,
-            "var_a6762160": "#barrel2_t9_item_sr",
+            "itementry": "scriptbundle#barrel2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#extclip2_t9_item_sr",
+            "itementry": "scriptbundle#extclip2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#grip2_t9_item_sr",
+            "itementry": "scriptbundle#grip2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#handle2_t9_item_sr",
+            "itementry": "scriptbundle#handle2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#mixclip2_t9_item_sr",
+            "itementry": "scriptbundle#mixclip2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#quickdraw2_t9_item_sr",
+            "itementry": "scriptbundle#quickdraw2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#compensator2_t9_item_sr",
+            "itementry": "scriptbundle#compensator2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#stalker2_t9_item_sr",
+            "itementry": "scriptbundle#stalker2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#steadyaim2_t9_item_sr",
+            "itementry": "scriptbundle#steadyaim2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#suppressed2_t9_item_sr",
+            "itementry": "scriptbundle#suppressed2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#mixbarrel2_t9_item_sr",
+            "itementry": "scriptbundle#mixbarrel2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#heavy2_t9_item_sr",
+            "itementry": "scriptbundle#heavy2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#fastreload2_t9_item_sr",
+            "itementry": "scriptbundle#fastreload2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#sprintout2_t9_item_sr",
+            "itementry": "scriptbundle#sprintout2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         },
         {
             "minweight": 10,
-            "var_a6762160": "#mixstock2_t9_item_sr",
+            "itementry": "scriptbundle#mixstock2_t9_item_sr",
             "maxweight": 10,
             "available": -1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "sr_world_list_attachment_epic",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

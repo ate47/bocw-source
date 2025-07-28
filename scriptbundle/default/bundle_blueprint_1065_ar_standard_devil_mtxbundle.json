@@ -1,39 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_standard_bp_devilwoman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_standard_bp_devilwoman_mtxitem",
             "itemid": "27406254"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_devilwoman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_devilwoman_mtxitem",
             "itemid": "19620534"
         },
         {
-            "var_4a4bc969": "#t9_charm_pitchfork_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_pitchfork_mtxitem",
             "itemid": "19199984"
         },
         {
-            "var_4a4bc969": "#emblems_devilsdeparted_flipbook_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_devilsdeparted_flipbook_mtxitem",
             "itemid": "25407241"
         },
         {
-            "var_4a4bc969": "#callingcards_devilsdeparted_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_devilsdeparted_mtxitem",
             "itemid": "30521494"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_hellsoldier_005_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_hellsoldier_005_mtxitem",
             "itemid": "19052988"
         }
     ],
-    "itemname": "#hash_7f20e4d3041d5785",
-    "var_375a1747": "#hash_56c03148c24c801b",
-    "var_579fd6c3": 26,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1065_ar_standard_devil",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1065_ar_standard_devil",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 26,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1065_ar_standard_devil_mtxbundle",
-    "titlestring": "#hash_3a9fc54a5bff813d",
-    "var_566825be": "#hash_73ea4836e80eaa94",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_3a9fc54a5bff813d",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1065_ar_standard_devil",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_24d664fdb2de2cf5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_24d664fdb2de2cf5",
+    "hash_db3e02ab": 2000,
     "itemid": "33336817"
 }

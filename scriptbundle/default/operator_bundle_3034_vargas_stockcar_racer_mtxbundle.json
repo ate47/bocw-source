@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter2_vargas_finishline_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter2_vargas_finishline_mtxitem",
             "itemid": "23128405"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter2_mtxitem",
             "itemid": "19048863"
         },
         {
-            "var_4a4bc969": "#ar_mobility_bp_fastlane_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_fastlane_mtxitem",
             "itemid": "30121405"
         },
         {
-            "var_4a4bc969": "#execution_112_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_112_mtxitem",
             "itemid": "31227379"
         },
         {
-            "var_4a4bc969": "#reticle_83_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_83_mtxitem",
             "itemid": "23025675"
         }
     ],
-    "itemname": "#hash_27824999b00660fd",
-    "var_375a1747": "#hash_430d4cc801324c4f",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_3034_vargas_stockcar_racer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_3034_vargas_stockcar_racer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_3034_vargas_stockcar_racer_mtxbundle",
-    "var_a788fada": "#hash_36bb1e4351235336",
-    "titlestring": "#hash_43d4cfb98b2a4359",
-    "var_566825be": "#hash_40039d9179ba7c02",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_3034_vargas_stockcar_racer_small",
+    "titlestring": "localized18#hash_43d4cfb98b2a4359",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_3034_vargas_stockcar_racer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_33eb43511f579099",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_33eb43511f579099",
+    "hash_db3e02ab": 2000,
     "itemid": "28533045"
 }

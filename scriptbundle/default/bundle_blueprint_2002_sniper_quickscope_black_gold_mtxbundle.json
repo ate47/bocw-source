@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_somberv_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_somberv_mtxitem",
             "itemid": "26915521"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_valya_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_valya_mtxitem",
             "itemid": "25025786"
         },
         {
-            "var_4a4bc969": "#t9_charm_gold_card_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_gold_card_mtxitem",
             "itemid": "30299115"
         },
         {
-            "var_4a4bc969": "#emblems_gilded2_09_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_gilded2_09_mtxitem",
             "itemid": "31127805"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_analog_black_gold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_analog_black_gold_mtxitem",
             "itemid": "31604996"
         },
         {
-            "var_4a4bc969": "#callingcards_gilded2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_gilded2_mtxitem",
             "itemid": "25718511"
         }
     ],
-    "itemname": "#hash_43cb1a57b13df02f",
-    "var_375a1747": "#hash_59faa55e11b46759",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2002_sniper_quickscope_black_gold",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2002_sniper_quickscope_black_gold",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2002_sniper_quickscope_black_gold_mtxbundle",
-    "var_a788fada": "#hash_35bc76c5d8ee3a98",
-    "titlestring": "#hash_74bc973c19d05469",
-    "var_566825be": "#hash_392a818c00d6884",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2002_sniper_quickscope_black_gold_small",
+    "titlestring": "localized18#hash_74bc973c19d05469",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2002_sniper_quickscope_black_gold",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_32da291858607369",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_32da291858607369",
+    "hash_db3e02ab": 2000,
     "itemid": "19805261"
 }

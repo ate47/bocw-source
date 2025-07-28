@@ -1,13 +1,13 @@
 {
     "effectcount": 3,
-    "var_922067c4": "scriptbundle",
-    "var_702e93ea": "j_ball_ri",
+    "configstringfiletype": "scriptbundle",
+    "hash_702e93ea": "j_ball_ri",
     "type": "fxcharacterdef",
-    "var_70f592cb": "#hash_626740c005d67454",
+    "hash_70f592cb": "fx#hash_626740c005d67454",
     "vmtype": "client",
     "name": "fxd9_zm_char_orda",
-    "var_a0d91763": "j_spine4",
-    "var_c7a3c7dd": "#hash_4cf72ebcdb9f164b",
-    "var_bae031ea": "#hash_626740c005d67454",
-    "var_edb57500": "j_ball_le"
+    "hash_a0d91763": "j_spine4",
+    "hash_c7a3c7dd": "fx#hash_4cf72ebcdb9f164b",
+    "hash_bae031ea": "fx#hash_626740c005d67454",
+    "hash_edb57500": "j_ball_le"
 }

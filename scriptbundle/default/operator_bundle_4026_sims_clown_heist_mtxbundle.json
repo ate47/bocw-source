@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_cia_big_joke3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_cia_big_joke3_mtxitem",
             "itemid": "21806826"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_cia_mtxitem",
             "itemid": "20084886"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_pollock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_pollock_mtxitem",
             "itemid": "21096598"
         },
         {
-            "var_4a4bc969": "#pistol_revolver_bp_pollock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_revolver_bp_pollock_mtxitem",
             "itemid": "18935539"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_digital_big_joke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_digital_big_joke_mtxitem",
             "itemid": "27601186"
         },
         {
-            "var_4a4bc969": "#reticle_100_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_100_mtxitem",
             "itemid": "30055733"
         },
         {
-            "var_4a4bc969": "#emblems_bankrobbery_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_bankrobbery_mtxitem",
             "itemid": "21203729"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_mpx_big_joke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_tactical_raft_mpx_big_joke_mtxitem",
             "itemid": "18675305"
         }
     ],
-    "itemname": "#hash_53963956eef6e394",
-    "var_375a1747": "#hash_417b2a5ade67b24a",
-    "var_579fd6c3": 45,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4026_sims_clown_heist",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4026_sims_clown_heist",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 45,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4026_sims_clown_heist_mtxbundle",
-    "var_a788fada": "#hash_7e445fea9ec1eb3d",
-    "titlestring": "#hash_25d1d5c92ffef3c9",
-    "var_566825be": "#hash_3500e86b72ad91f5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4026_sims_clown_heist_small",
+    "titlestring": "localized18#hash_25d1d5c92ffef3c9",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4026_sims_clown_heist",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4c8bbd47750bcac9",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4c8bbd47750bcac9",
+    "hash_db3e02ab": 2000,
     "itemid": "31811278"
 }

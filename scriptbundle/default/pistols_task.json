@@ -1,9 +1,9 @@
 {
     "callingtask": "#kills_pistol",
-    "var_922067c4": "scriptbundle",
-    "image": "#ui_icon_zm_callings_pistol",
+    "configstringfiletype": "scriptbundle",
+    "image": "image#ui_icon_zm_callings_pistol",
     "dailytarget": 500,
     "name": "pistols_task",
-    "taskname": "#hash_5ae1f8d5b0301198",
-    "descsimple": "#hash_1f3a2d066852fcbb"
+    "taskname": "localized18#hash_5ae1f8d5b0301198",
+    "descsimple": "localized18#hash_1f3a2d066852fcbb"
 }

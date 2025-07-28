@@ -1,7 +1,7 @@
 {
     "name": "para_default",
-    "parachute": "#parachute",
+    "parachute": "weapon#parachute",
     "icon": "loot_ui_icon_jumppacks_parachute_default",
     "largeicon": "loot_ui_icon_jumppacks_parachute_default_large",
-    "parachutelit": "#wpn_t8_bo_parachute_world"
+    "parachutelit": "model#wpn_t8_bo_parachute_world"
 }

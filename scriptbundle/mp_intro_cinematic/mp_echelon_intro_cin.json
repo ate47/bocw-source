@@ -1,10 +1,12 @@
 {
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_30a9de1": "cin_mp_echelon_cia",
-    "var_704cf864": "cin_mp_echelon_kgb",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_30a9de1": "cin_mp_echelon_cia",
+    "hash_704cf864": "cin_mp_echelon_kgb",
     "type": "mp_intro_cinematic",
     "vmtype": "Both",
+    "blackscreentime": 0,
     "name": "mp_echelon_intro_cin",
-    "var_a3282882": "mainscene_01",
-    "var_70e6c400": "mainscene_00"
+    "hash_a3282882": "mainscene_01",
+    "hash_70e6c400": "mainscene_00",
+    "hash_73a4076": 0
 }

@@ -1,68 +1,71 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_559728fd81e5501d"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5011_xm4_master_reactive_0"
         },
         {
-            "var_fe10649e": "#hash_559727fd81e54e6a"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5011_xm4_master_reactive_1"
         },
         {
-            "var_fe10649e": "#hash_559726fd81e54cb7"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5011_xm4_master_reactive_2"
         },
         {
-            "var_fe10649e": "#hash_559725fd81e54b04"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5011_xm4_master_reactive_3"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mercenary_bp_wonder_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_wonder_mtxitem",
             "itemid": "19853494"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_wonder_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_wonder_mtxitem",
             "itemid": "33073261"
         },
         {
-            "var_4a4bc969": "#t9_charm_moth_skull_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_moth_skull_mtxitem",
             "itemid": "21240822"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s5_digital_wonderland_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s5_digital_wonderland_mtxitem",
             "itemid": "24111213"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_snowmobile_assembly_mpx_wonderland_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_snowmobile_assembly_mpx_wonderland_mtxitem",
             "itemid": "26152029"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_csquares_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_csquares_mtxitem",
             "itemid": "22803211"
         },
         {
-            "var_4a4bc969": "#emblems_aliceland_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_aliceland_s5_animated_mtxitem",
             "itemid": "30949460"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_vts_27_final_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_vts_27_final_s5_animated_mtxitem",
             "itemid": "28711007"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r8g11_21_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r8g11_21_s5_mtxitem",
             "itemid": "22051229"
         }
     ],
-    "itemname": "#hash_3c07ff20697bfb38",
-    "var_375a1747": "#hash_559728fd81e5501d",
-    "var_3040f0d1": "#hash_559728fd81e5501d",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5011_xm4_master_reactive",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5011_xm4_master_reactive_0",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_blueprint_bundle_5011_xm4_master_reactive_0",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5011_xm4_master_reactive_mtxbundle",
-    "var_a788fada": "#hash_1ede31b30ebb0f6d",
-    "titlestring": "#hash_77034eb23f3a72d2",
-    "var_566825be": "#hash_565dd38ba25853a5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5011_xm4_master_reactive_small",
+    "titlestring": "localized18#hash_77034eb23f3a72d2",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5011_xm4_master_reactive",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_48b685c17e30fc0e",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_48b685c17e30fc0e",
+    "hash_db3e02ab": 750,
     "itemid": "21658288"
 }

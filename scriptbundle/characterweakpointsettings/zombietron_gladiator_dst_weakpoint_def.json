@@ -1,0 +1,90 @@
+{
+    "weakpoints": [
+        {
+            "#hash_60790e23": [
+                {
+                    "hitloc": "helmet"
+                }
+            ],
+            "hash_641ce20e": 1,
+            "hash_8223b0cf": 0,
+            "type": "#armor",
+            "hash_51e8b151": "j_head",
+            "activebydefault": 1,
+            "hitradius": 15,
+            "health": 0.33
+        },
+        {
+            "#hash_60790e23": [
+                {
+                    "hitloc": "head"
+                }
+            ],
+            "hash_8223b0cf": 3,
+            "type": "#weakpoint",
+            "hash_51e8b151": "j_head",
+            "hitradius": 15,
+            "health": 1
+        },
+        {
+            "#hash_60790e23": [
+                {
+                    "hitloc": "left_arm_upper"
+                }
+            ],
+            "hash_641ce20e": 1,
+            "hash_8223b0cf": 0,
+            "type": "#armor",
+            "hash_910e2f9b": "j_clavicle_le",
+            "hash_51e8b151": "tag_pauldron_le",
+            "activebydefault": 1,
+            "hitradius": 15,
+            "health": 0.2
+        },
+        {
+            "#hash_60790e23": [
+                {
+                    "hitloc": "right_arm_upper"
+                }
+            ],
+            "hash_641ce20e": 1,
+            "hash_8223b0cf": 0,
+            "type": "#armor",
+            "hash_910e2f9b": "j_clavicle_ri",
+            "hash_51e8b151": "tag_pauldron_ri",
+            "activebydefault": 1,
+            "hitradius": 15,
+            "health": 0.2
+        },
+        {
+            "#hash_60790e23": [
+                {
+                    "hitloc": "left_arm_lower"
+                }
+            ],
+            "hash_8223b0cf": 2,
+            "type": "#weakpoint",
+            "hash_910e2f9b": "j_clavicle_le",
+            "hash_51e8b151": "j_shoulder_le",
+            "hitradius": 15,
+            "health": 0.1
+        },
+        {
+            "#hash_60790e23": [
+                {
+                    "hitloc": "right_arm_lower"
+                }
+            ],
+            "hash_8223b0cf": 2,
+            "type": "#weakpoint",
+            "hash_910e2f9b": "j_clavicle_ri",
+            "hash_51e8b151": "j_shoulder_ri",
+            "hitradius": 15,
+            "health": 0.1
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "model": "model#c_t8_zmb_dlc0_zombie_gladiator_body1",
+    "type": "characterweakpointsettings",
+    "name": "zombietron_gladiator_dst_weakpoint_def"
+}

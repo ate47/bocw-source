@@ -1,74 +1,78 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_6ed0da1843a4977c",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 2.88,
-            "var_36bf8e05": "#hash_60707729e6ead4a1"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 2.88,
+            "hash_36bf8e05": "localized19#hash_60707729e6ead4a1"
         },
         {
             "soundevent": "#hash_6ed0db1843a4992f",
-            "var_f35c5951": 1.5,
-            "var_5d4b5964": 6.7,
-            "var_36bf8e05": "#hash_718aa11a6f40d330"
+            "hash_f35c5951": 1.5,
+            "hash_5d4b5964": 6.7,
+            "hash_36bf8e05": "localized19#hash_718aa11a6f40d330"
         },
         {
             "soundevent": "#hash_6ed0dc1843a49ae2",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 5.44,
-            "var_36bf8e05": "#hash_21eadbdd76a55d53"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 5.44,
+            "hash_36bf8e05": "localized19#hash_21eadbdd76a55d53"
         },
         {
             "soundevent": "#hash_6ed0dd1843a49c95",
-            "var_f35c5951": 1.8,
-            "var_5d4b5964": 8.94,
-            "var_36bf8e05": "#hash_7ad0735062264b2a"
+            "hash_f35c5951": 1.8,
+            "hash_5d4b5964": 8.94,
+            "hash_36bf8e05": "localized19#hash_7ad0735062264b2a"
         },
         {
             "soundevent": "#hash_6ed0d61843a490b0",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 1.02,
-            "var_36bf8e05": "#hash_5942334d29580855"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 1.02,
+            "hash_36bf8e05": "localized19#hash_5942334d29580855"
         },
         {
             "soundevent": "#hash_6ed0d71843a49263",
-            "var_f35c5951": 1.2,
-            "var_5d4b5964": 11.24,
-            "var_36bf8e05": "#hash_4083193710df7d74"
+            "hash_f35c5951": 1.2,
+            "hash_5d4b5964": 11.24,
+            "hash_36bf8e05": "localized19#hash_4083193710df7d74"
         },
         {
             "soundevent": "#hash_6ed0d81843a49416",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 9.83,
-            "var_36bf8e05": "#hash_6bd98d8369a86467"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 9.83,
+            "hash_36bf8e05": "localized19#hash_6bd98d8369a86467"
         },
         {
             "soundevent": "#hash_6ed0d91843a495c9",
-            "var_f35c5951": 1.3,
-            "var_5d4b5964": 2.79,
-            "var_36bf8e05": "#hash_2838f1b30f73821e"
+            "hash_f35c5951": 1.3,
+            "hash_5d4b5964": 2.79,
+            "hash_36bf8e05": "localized19#hash_2838f1b30f73821e"
         },
         {
             "soundevent": "#hash_6ed0e21843a4a514",
-            "var_5d4b5964": 8.23,
-            "var_36bf8e05": "#hash_64324f777cb3f979"
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 8.23,
+            "hash_36bf8e05": "localized19#hash_64324f777cb3f979"
         }
     ],
-    "description": "#hash_6d2fd22ab120cfe7",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#exploration",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_39975151641c4544",
+    "description": "localized19#hash_6d2fd22ab120cfe7",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#exploration",
+    "hash_4138e7ed": 0,
+    "hash_824079e7": "#survival",
+    "uimodel": "model#hash_39975151641c4544",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 6,
-    "var_ad4ad686": "#dark_aether",
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_5b635b73ab6ca33f",
     "name": "zmintel_survival_darkaether_audiolog_9",
-    "var_9be0526e": "#audiolog",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#tape",
-    "title": "#hash_7e85c052b37efdd",
-    "var_3bb3493d": "#hash_69961fd0eb3f974c",
-    "var_6073bf8f": "#hash_4042063c893f7f3a"
+    "hash_9be0526e": "#audiolog",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#tape",
+    "title": "localized19#hash_7e85c052b37efdd",
+    "hash_4efbbcfe": 0,
+    "hash_3bb3493d": "#hash_69961fd0eb3f974c",
+    "hash_6073bf8f": "model#p9_sur_machine_computer_screen_no_play_prog"
 }

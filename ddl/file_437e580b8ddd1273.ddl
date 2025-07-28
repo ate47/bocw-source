@@ -154,7 +154,7 @@ version hash_6d241d5b5c13c1fb {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -181,7 +181,7 @@ version hash_6d241d5b5c13c1fb {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -215,9 +215,9 @@ version hash_6d241d5b5c13c1fb {
     // root: bitSize: 0x38e8, members: 8
 
     // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
-    uint hash_375e93395e4f1f12;
+    uint allies_score;
     // offset: 0x20, bitSize: 0x20(0x4 Byte(s))
-    uint hash_209155237819d179;
+    uint axis_score;
     // offset: 0x40, bitSize: 0x40(0x8 Byte(s))
     xhash game_type;
     // offset: 0x80, bitSize: 0x10(0x2 Byte(s))
@@ -380,7 +380,7 @@ version hash_eeeb0f7c0161b250 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -407,7 +407,7 @@ version hash_eeeb0f7c0161b250 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -441,9 +441,9 @@ version hash_eeeb0f7c0161b250 {
     // root: bitSize: 0x38e8, members: 8
 
     // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
-    uint hash_375e93395e4f1f12;
+    uint allies_score;
     // offset: 0x20, bitSize: 0x20(0x4 Byte(s))
-    uint hash_209155237819d179;
+    uint axis_score;
     // offset: 0x40, bitSize: 0x40(0x8 Byte(s))
     xhash game_type;
     // offset: 0x80, bitSize: 0x10(0x2 Byte(s))
@@ -606,7 +606,7 @@ version hash_d50969c39a99923f {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -633,7 +633,7 @@ version hash_d50969c39a99923f {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -667,9 +667,9 @@ version hash_d50969c39a99923f {
     // root: bitSize: 0x38e8, members: 8
 
     // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
-    uint hash_375e93395e4f1f12;
+    uint allies_score;
     // offset: 0x20, bitSize: 0x20(0x4 Byte(s))
-    uint hash_209155237819d179;
+    uint axis_score;
     // offset: 0x40, bitSize: 0x40(0x8 Byte(s))
     xhash game_type;
     // offset: 0x80, bitSize: 0x10(0x2 Byte(s))

@@ -2383,7 +2383,7 @@ version hash_d1f294a075785edd {
         // offset: 0x5138, bitSize: 0x18(0x3 Byte(s))
         hash_285aa5a19a4bbb20 hash_58ce82019e4dfd1c;
         // offset: 0x5150, bitSize: 0x18(0x3 Byte(s))
-        hash_6c116eea1f7184ec accuracy;
+        hash_6c116eea1f7184ec Accuracy;
         // offset: 0x5168, bitSize: 0x10(0x2 Byte(s))
         hash_298a7e7626f32fe0 hash_16e0a7b81c1be41e;
         // offset: 0x5178, bitSize: 0x30(0x6 Byte(s))
@@ -4315,7 +4315,7 @@ version hash_d1f294a075785edd {
     // bitSize: 0x20, members: 4
     struct hash_25a11738b4152d0e {
         // offset: 0x0, bitSize: 0x8(0x1 Byte(s))
-        byte a;
+        byte A;
         // offset: 0x8, bitSize: 0x8(0x1 Byte(s))
         byte b;
         // offset: 0x10, bitSize: 0x8(0x1 Byte(s))
@@ -6324,14 +6324,14 @@ version hash_d1f294a075785edd {
 
     // idx 0x39 members: 0x8
     enum zm_character_customization {
-        prt_zm_dempsey, // 0x0
-        prt_zm_nikolai, // 0x1
-        prt_zm_richtofen_ofc, // 0x2
-        prt_zm_takeo, // 0x3
-        prt_zm_dempsey_ofc, // 0x4
-        prt_zm_nikolai_ofc, // 0x5
-        prt_zm_richtofen, // 0x6
-        prt_zm_takeo_ofc // 0x7
+        hash_1aa57ef704f24fa5, // 0x0
+        hash_22e6f7e13c3a99ef, // 0x1
+        hash_2bcebdf1bef33311, // 0x2
+        hash_305f156156d37e34, // 0x3
+        hash_36bc80636f0fdac4, // 0x4
+        hash_46b92e1337b43236, // 0x5
+        hash_59f3598ad57dadd8, // 0x6
+        hash_6df0037e3f390b15 // 0x7
     };
 
     // idx 0x3a members: 0xc

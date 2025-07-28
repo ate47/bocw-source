@@ -1,60 +1,65 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_mcclane_preset_1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_mcclane_preset_1_mtxitem",
             "itemid": "19354518"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_mcclane_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_mcclane_mtxitem",
             "itemid": "25407396"
         },
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_dh_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_dh_mtxitem",
             "itemid": "21095354"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_dh_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_dh_mtxitem",
             "itemid": "30052134"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_dieh_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_dieh_mtxitem",
             "itemid": "27620656"
         },
         {
-            "var_4a4bc969": "#execution_174_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_174_mtxitem",
             "itemid": "25881272"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_analog_mctag_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_analog_mctag_mtxitem",
             "itemid": "24255409"
         },
         {
-            "var_4a4bc969": "#t9_charm_police_badge_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_police_badge_mtxitem",
             "itemid": "24988998"
         },
         {
-            "var_4a4bc969": "#emblems_diehardbundle_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_diehardbundle_animated_mtxitem",
             "itemid": "18238210"
         },
         {
-            "var_4a4bc969": "#callingcards_diehard_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_diehard_animated_mtxitem",
             "itemid": "31499492"
         },
         {
-            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_legendary_mtxitem",
             "itemid": "32109261"
         }
     ],
-    "itemname": "#hash_376b3af7aa8e60a1",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3901_special_op_2_dh",
     "timername": "#hash_41188478ee762b77",
-    "var_375a1747": "#hash_2a74fd5d8e990dbf",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3901_special_op_2_dh",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3901_special_op_2_dh_mtxbundle",
-    "var_a788fada": "#hash_5a511e9faa748cc0",
-    "titlestring": "#hash_12cd4321b969d756",
-    "var_566825be": "#hash_4818f3072cefb98c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3901_special_op_2_dh_small",
+    "titlestring": "localized18#hash_12cd4321b969d756",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3901_special_op_2_dh",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_49a8ae59716ab16a",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_49a8ae59716ab16a",
+    "hash_db3e02ab": 2000,
     "itemid": "24793949"
 }

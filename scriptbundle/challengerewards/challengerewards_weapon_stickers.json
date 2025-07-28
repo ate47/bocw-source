@@ -1,178 +1,228 @@
 {
     "rewards": [
         {
-            "unlockdescription": "#hash_1488b821812f67af",
+            "unlockdescription": "localized18#hash_1488b821812f67af",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_47fca50269df283b",
-            "var_b4ab831a": "#hash_6d811293dd604103",
-            "var_57554d43": 1,
-            "var_270fa547": "#weapons_mastery"
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_darkmatter_mp",
+            "hash_b4ab831a": "#paintjob_stickers_darkmatter_mp",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#weapons_mastery"
         },
         {
-            "unlockdescription": "#hash_12b6e1062094a4f7",
+            "unlockdescription": "localized18#hash_12b6e1062094a4f7",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_47c9900269b3aaf3",
-            "var_b4ab831a": "#hash_6d4e0d93dd34deeb",
-            "var_270fa547": "#weapons_mastery"
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_darkmatter_zm",
+            "hash_b4ab831a": "#hash_6d4e0d93dd34deeb",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#weapons_mastery"
         },
         {
-            "unlockdescription": "#hash_4dd786986af52964",
+            "unlockdescription": "localized18#hash_4dd786986af52964",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_4c9f91130128f8a5",
-            "var_b4ab831a": "#hash_5d77638e4dc29b90",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7f0ce2a2e0a76e67"
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_launcher_melee_specials_mp",
+            "hash_b4ab831a": "#paintjob_stickers_launcher_melee_specials_mp",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7f0ce2a2e0a76e67"
         },
         {
-            "unlockdescription": "#hash_7644b5f06538b404",
+            "unlockdescription": "localized18#hash_7644b5f06538b404",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_4ccb8413014e1d79",
-            "var_b4ab831a": "#hash_5dc5808e4e04ee28",
-            "var_270fa547": "#hash_7f0ce2a2e0a76e67"
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_launcher_melee_specials_zm",
+            "hash_b4ab831a": "#hash_5dc5808e4e04ee28",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_7f0ce2a2e0a76e67"
         },
         {
-            "unlockdescription": "#hash_541e695a3a0634da",
+            "unlockdescription": "localized18#hash_541e695a3a0634da",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_46ed1593bc948e5a",
-            "var_b4ab831a": "#hash_37249823b8317012",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_assault_rifles_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_assault_rifles_mp",
             "stattype": "#weapon_assault",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_5057a7d3afa8f04e",
+            "unlockdescription": "localized18#hash_5057a7d3afa8f04e",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_46c11a93bc6f5bee",
-            "var_b4ab831a": "#hash_36f8ad23b80c58d6",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_assault_rifles_zm",
+            "hash_b4ab831a": "#hash_36f8ad23b80c58d6",
             "stattype": "#weapon_assault",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_66036262325ba404",
+            "unlockdescription": "localized18#hash_66036262325ba404",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_227b284bffd8ecad",
-            "var_b4ab831a": "#hash_40ee3643851d5c95",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_smgs_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_smgs_mp",
             "stattype": "#weapon_smg",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_810848b65cf84cc",
+            "unlockdescription": "localized18#hash_810848b65cf84cc",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_223b0b4bffa2d771",
-            "var_b4ab831a": "#hash_40ae494384e798e9",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_smgs_zm",
+            "hash_b4ab831a": "#hash_40ae494384e798e9",
             "stattype": "#weapon_smg",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_5333624af9185521",
+            "unlockdescription": "localized18#hash_5333624af9185521",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_65b5b2614e7ed7bc",
-            "var_b4ab831a": "#hash_f9684c07fbbcf74",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_lmgs_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_lmgs_mp",
             "stattype": "#weapon_lmg",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_5aff22925ceb57d9",
+            "unlockdescription": "localized18#hash_5aff22925ceb57d9",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_65e8a7614eaa1ea4",
-            "var_b4ab831a": "#hash_fc969c07fe6fb2c",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_lmgs_zm",
+            "hash_b4ab831a": "#hash_fc969c07fe6fb2c",
             "stattype": "#weapon_lmg",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_22b14603d3ebbf74",
+            "unlockdescription": "localized18#hash_22b14603d3ebbf74",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_5c059fbb5bdfd595",
-            "var_b4ab831a": "#hash_22e8f1b6370a0f1d",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_snipers_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_snipers_mp",
             "stattype": "#weapon_sniper",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_59bbce904a3d297c",
+            "unlockdescription": "localized18#hash_59bbce904a3d297c",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_5bc5b2bb5baa11e9",
-            "var_b4ab831a": "#hash_2314f4b6372f4f21",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_snipers_zm",
+            "hash_b4ab831a": "#hash_2314f4b6372f4f21",
             "stattype": "#weapon_sniper",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_26dd374945409583",
+            "unlockdescription": "localized18#hash_26dd374945409583",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_14c6f19d54e3ea4a",
-            "var_b4ab831a": "#hash_2b6132bc99a04652",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_shotguns_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_shotguns_mp",
             "stattype": "#weapon_cqb",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_611a43a0666dfbd7",
+            "unlockdescription": "localized18#hash_611a43a0666dfbd7",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_1507d69d551b535e",
-            "var_b4ab831a": "#hash_2b3447bc99797c16",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_shotguns_zm",
+            "hash_b4ab831a": "#hash_2b3447bc99797c16",
             "stattype": "#weapon_cqb",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_5c788465d3198936",
+            "unlockdescription": "localized18#hash_5c788465d3198936",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_70af410d52098c52",
-            "var_b4ab831a": "#hash_797b6774c2d41aaa",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_tactical_rifles_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_tactical_rifles_mp",
             "stattype": "#weapon_tactical",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_17b3a2d661fa435a",
+            "unlockdescription": "localized18#hash_17b3a2d661fa435a",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_7082560d51e2c216",
-            "var_b4ab831a": "#hash_79bc4c74c30b83be",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_tactical_rifles_zm",
+            "hash_b4ab831a": "#hash_79bc4c74c30b83be",
             "stattype": "#weapon_tactical",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_5a81c37c9395a738",
+            "unlockdescription": "localized18#hash_5a81c37c9395a738",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_3cd7ac42b3c557d5",
-            "var_b4ab831a": "#hash_559a0349fb853ad",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_pistols_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_pistols_mp",
             "stattype": "#weapon_pistol",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_2a82b8fbabdb2cf0",
+            "unlockdescription": "localized18#hash_2a82b8fbabdb2cf0",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_3c96bf42b38de129",
-            "var_b4ab831a": "#hash_51983349f823e71",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_pistols_zm",
+            "hash_b4ab831a": "#hash_51983349f823e71",
             "stattype": "#weapon_pistol",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_188f5c13c48ef817",
+            "unlockdescription": "localized18#hash_188f5c13c48ef817",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_70a7cceb7d2dd1f",
-            "var_b4ab831a": "#hash_734a30df0bd7effe",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_launcher_mp",
+            "hash_b4ab831a": "#paintjob_stickers_diamond_launchers_mp",
             "stattype": "#weapon_launcher",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#challenges_completed"
         },
         {
-            "unlockdescription": "#hash_218ec5c92c6ef9cb",
+            "unlockdescription": "localized18#hash_218ec5c92c6ef9cb",
             "rewardtype": "#craftweaponsticker",
-            "image": "#hash_6bc6fceb790a5b7",
-            "var_b4ab831a": "#hash_73031ddf0b9bcd12",
+            "codpoints": 0,
+            "image": "image#ui_icon_emblem_identity_diamond_launcher_zm",
+            "hash_b4ab831a": "#hash_73031ddf0b9bcd12",
             "stattype": "#weapon_launcher",
-            "var_270fa547": "#hash_7fce4a14fec05da1"
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#challenges_completed"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "challengerewards",
-    "var_5f0dd656": 4,
-    "var_4e39981b": 2,
-    "var_faec2a7f": 2,
+    "hash_5f0dd656": 4,
+    "hash_4e39981b": 2,
+    "hash_faec2a7f": 2,
     "name": "challengerewards_weapon_stickers",
     "sessionmode": "-1",
-    "var_91a1cb16": 2
+    "hash_91a1cb16": 2
 }

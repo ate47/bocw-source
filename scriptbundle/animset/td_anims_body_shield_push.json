@@ -1,0 +1,92 @@
+{
+    "animset": [
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_291b72cdba8fb709"
+                },
+                {
+                    "xanim": "anim#hash_291b6fcdba8fb1f0"
+                }
+            ],
+            "name": "bounce_front",
+            "blend": 0.1,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_747c86342001d9b5"
+                },
+                {
+                    "xanim": "anim#hash_747c83342001d49c"
+                }
+            ],
+            "name": "bounce_back",
+            "blend": 0.1,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_fa00eb90a4ca265"
+                }
+            ],
+            "name": "fall_back",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_6b6698be11c12459"
+                }
+            ],
+            "name": "fall_front",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_29bf5545726227c7"
+                }
+            ],
+            "name": "fall_left",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_141848aacae198f0"
+                }
+            ],
+            "name": "fall_right",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_6f95d45e8480bce5"
+                },
+                {
+                    "xanim": "anim#hash_6f95d15e8480b7cc"
+                },
+                {
+                    "xanim": "anim#hash_6f95d25e8480b97f"
+                },
+                {
+                    "xanim": "anim#hash_6f95cf5e8480b466"
+                }
+            ],
+            "name": "push",
+            "blend": 0.1,
+            "animname": "generic"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "animset",
+    "name": "td_anims_body_shield_push"
+}

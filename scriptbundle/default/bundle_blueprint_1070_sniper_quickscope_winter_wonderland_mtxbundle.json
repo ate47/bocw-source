@@ -1,26 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_holiday_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_holiday_mtxitem",
             "itemid": "24999138"
         },
         {
-            "var_4a4bc969": "#t9_charm_kawaiideer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_kawaiideer_mtxitem",
             "itemid": "20791485"
         },
         {
-            "var_4a4bc969": "#callingcards_northpole_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_northpole_mtxitem",
             "itemid": "21193314"
         }
     ],
-    "itemname": "#hash_60022c4b24faf32d",
-    "var_375a1747": "#hash_2533d587d60ff83",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1070_sniper_quickscope_winter_wonderland",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1070_sniper_quickscope_winter_wonderland",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1070_sniper_quickscope_winter_wonderland_mtxbundle",
-    "titlestring": "#hash_46265fbaff2322bf",
-    "var_566825be": "#hash_393fac2a73116aa0",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_46265fbaff2322bf",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1070_sniper_quickscope_winter_wonderland",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3665b43b0e15a17b",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3665b43b0e15a17b",
+    "hash_db3e02ab": 2000,
     "itemid": "26291731"
 }

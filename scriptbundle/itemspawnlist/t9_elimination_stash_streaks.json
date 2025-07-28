@@ -1,0 +1,65 @@
+{
+    "itemlist": [
+        {
+            "minweight": 0,
+            "itementry": "scriptbundle#scorestreak_harp_t9_item",
+            "maxweight": 0,
+            "available": -1
+        },
+        {
+            "minweight": 7,
+            "itementry": "scriptbundle#scorestreak_jet_fighter_sweep_t9_item",
+            "maxweight": 7,
+            "available": -1
+        },
+        {
+            "minweight": 12,
+            "itementry": "scriptbundle#scorestreak_uav_t9_item",
+            "maxweight": 12,
+            "available": -1
+        },
+        {
+            "minweight": 7,
+            "itementry": "scriptbundle#scorestreak_hand_cannon_t9_item",
+            "maxweight": 7,
+            "available": -1
+        },
+        {
+            "minweight": 9,
+            "itementry": "scriptbundle#scorestreak_explosive_bow_t9_item",
+            "maxweight": 9,
+            "available": -1
+        },
+        {
+            "minweight": 12,
+            "itementry": "scriptbundle#scorestreak_rcxd_t9_item",
+            "maxweight": 12,
+            "available": -1
+        },
+        {
+            "minweight": 7,
+            "itementry": "scriptbundle#scorestreak_sentry_turret_t9_item",
+            "maxweight": 7,
+            "available": -1
+        }
+    ],
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
+    "name": "t9_elimination_stash_streaks",
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_4f220d03": 1,
+    "hash_dc91e192": 0,
+    "supplystash": 1
+}

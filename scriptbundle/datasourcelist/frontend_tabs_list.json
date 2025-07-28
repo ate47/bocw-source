@@ -1,0 +1,226 @@
+{
+    "#hash_bb7dcd09": [
+        {
+            "hash_5ed80a9c": "#directorselect",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_39175275143500d3",
+            "hash_1a50db25": "#directorselect",
+            "actionutility": "#NONE",
+            "identifier": "modeselect"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5d7df8ad7167b198",
+            "hash_1a50db25": "#hash_64b051716c8b1dc1",
+            "actionutility": "#NONE",
+            "identifier": "serverbrowser"
+        },
+        {
+            "hash_5ed80a9c": "#vsbots",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_7900ca7c7432cb7",
+            "hash_1a50db25": "#hash_575c60f5c924d2d8",
+            "actionutility": "#NONE",
+            "identifier": "vsbots"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/play",
+            "hash_1a50db25": "#hash_5699c76e2b6150f8",
+            "actionutility": "#NONE",
+            "identifier": "lobby"
+        },
+        {
+            "hash_5ed80a9c": "#cdl_hub",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/play",
+            "hash_1a50db25": "#hash_120ccc81160310fb",
+            "actionutility": "#NONE",
+            "identifier": "cdl_hub"
+        },
+        {
+            "hash_5ed80a9c": "#hash_56527b57d58c2c6a",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_5446f78c99f399a3",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_50292f79f4b68138",
+            "hash_1a50db25": "#hash_20d3687c7d4371af",
+            "actionutility": "#NONE",
+            "identifier": "seasonal_event_S3"
+        },
+        {
+            "hash_5ed80a9c": "#hash_56527b57d58c2c6a",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_5446f78c99f399a3",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_6f92c783fa764882",
+            "hash_1a50db25": "#hash_3db0ce89c1b5331f",
+            "actionutility": "#NONE",
+            "identifier": "seasonal_event_S3_5"
+        },
+        {
+            "hash_5ed80a9c": "#hash_56527b57d58c2c6a",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_5446f78c99f399a3",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5c0e5943c313fb36",
+            "hash_1a50db25": "#hash_20d3657c7d436c96",
+            "actionutility": "#NONE",
+            "identifier": "seasonal_event_S4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_56527b57d58c2c6a",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_5446f78c99f399a3",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_50860414f0683965",
+            "hash_1a50db25": "#hash_2ad38089b69610d5",
+            "actionutility": "#NONE",
+            "identifier": "seasonal_event_S5_5"
+        },
+        {
+            "hash_5ed80a9c": "#hash_56527b57d58c2c6a",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_5446f78c99f399a3",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_2e44c1449f680fa4",
+            "hash_1a50db25": "#hash_20d3637c7d436930",
+            "actionutility": "#NONE",
+            "identifier": "seasonal_event_S6"
+        },
+        {
+            "hash_5ed80a9c": "#loadout_room",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/weapons",
+            "hash_1a50db25": "#directorcommonsafeareabottomandleft",
+            "actionutility": "#NONE",
+            "identifier": "Loadout",
+            "breadcrumb": "#hash_12fa39303b86cba5"
+        },
+        {
+            "hash_5ed80a9c": "#character_room",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_7ef33a39d1ed5236",
+            "hash_1a50db25": "#hash_2d02fee6af5000c3",
+            "actionutility": "#NONE",
+            "identifier": "character",
+            "breadcrumb": "#hash_3fb01828418b7a12"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3262189f972fcd0e",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_7d1aea6d8a227ff0",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_79eb21b8f84a0e77",
+            "hash_1a50db25": "#hash_862dcc6388004a0",
+            "actionutility": "#NONE",
+            "identifier": "battlepass"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_99cd580a52b2e53",
+            "hash_1a50db25": "#hash_547fec8dc9fc39f3",
+            "actionutility": "#NONE",
+            "identifier": "challenges"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_7b90053b544e8238",
+            "hash_1a50db25": "#barracks",
+            "actionutility": "#NONE",
+            "identifier": "barracks",
+            "breadcrumb": "#hash_1f723ee53c37e6c6"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3262189f972fcd0e",
+            "hash_82ead409": 0,
+            "hash_8354cfaa": "#hash_7d1aea6d8a227ff0",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/store",
+            "hash_1a50db25": "#hash_564528f5bbe532ab",
+            "actionutility": "#NONE",
+            "identifier": "itemshop"
+        },
+        {
+            "hash_5ed80a9c": "#store",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_dbf39ddc84910e7",
+            "hash_1a50db25": "#hash_6979c7b32c781e5f",
+            "actionutility": "#NONE",
+            "identifier": "store"
+        },
+        {
+            "hash_5ed80a9c": "#cp_story",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_36a7613d91021904",
+            "hash_1a50db25": "#hash_3d6cb1133dd5b4c6",
+            "actionutility": "#NONE",
+            "identifier": "cp_story"
+        },
+        {
+            "hash_5ed80a9c": "#cp_evidence",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5f77e77ff9e3a3b2",
+            "hash_1a50db25": "#hash_12224f4d179e8bc0",
+            "actionutility": "#NONE",
+            "identifier": "cp_evidence"
+        },
+        {
+            "hash_5ed80a9c": "#cp_cinematics",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_71548ef2a50bb31",
+            "hash_1a50db25": "#hash_56a989e8efa2f123",
+            "actionutility": "#NONE",
+            "identifier": "cp_cinematics"
+        }
+    ],
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 1,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 1,
+    "hash_62a68a39": 1,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
+    "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
+    "name": "frontend_tabs_list",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 1,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
+}

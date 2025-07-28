@@ -1,56 +1,23 @@
 {
     "wonderweaponphases": [
         {
-            "components": [
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_704c4a0b391c38d6"
-                        },
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_274f96c2323265fd"
-                        }
-                    ],
-                    "clientfield": "#hash_2e341f321b2ab3da"
-                },
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_4d6c10213f266446"
-                        },
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_234f402ed80ac54d"
-                        }
-                    ],
-                    "clientfield": "#hash_240dcac486ef946a"
-                },
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_a157fc0ead8fb24"
-                        }
-                    ],
-                    "clientfield": "#hash_7b8f7131712d7564"
-                }
-            ]
+            "subs": "<invalid:0x0>"
         }
     ],
     "shieldpieces": [
         {
-            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
+            "hash_7db3435c": 0,
+            "pieceimage": "image#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed7d3c1ea3e1b8"
         },
         {
-            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
+            "hash_7db3435c": 0,
+            "pieceimage": "image#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed803c1ea3e6d1"
         },
         {
-            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
+            "hash_7db3435c": 0,
+            "pieceimage": "image#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed7f3c1ea3e51e"
         }
     ],
@@ -58,117 +25,57 @@
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_3976028e08aefd91"
-                                }
-                            ],
-                            "clientfield": "#hash_1f87150a0632f418"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_61b73326d5f47810"
-                                }
-                            ],
-                            "clientfield": "#hash_1f87180a0632f931"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_531c94beccacef8c"
-                                }
-                            ],
-                            "clientfield": "#hash_1f87170a0632f77e"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_mq_aetherscope",
-            "var_a0ebe517": "#hash_1ca4c39373eb4bdf",
-            "var_bb5d23fb": "#hash_14929302dd34fb90"
+            "hash_a0ebe517": "#hash_1ca4c39373eb4bdf",
+            "hash_bb5d23fb": "localized18#hash_14929302dd34fb90"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_29952045f8804440"
-                                }
-                            ],
-                            "clientfield": "#hash_6df578dd42812c70"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_5f7bd05915dc4411"
-                                }
-                            ],
-                            "clientfield": "#hash_1b836a89598ddaa4"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_57beeb5d0783c84a"
-                                }
-                            ],
-                            "clientfield": "#hash_2d5b26565a3e1ea1"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_mq_item",
-            "var_a0ebe517": "#hash_1ca4c49373eb4d92",
-            "var_bb5d23fb": "#hash_3fdd6c78a4f4256f"
+            "hash_a0ebe517": "#hash_1ca4c49373eb4d92",
+            "hash_bb5d23fb": "localized18#hash_3fdd6c78a4f4256f"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_8eafe1525de2154"
-                                }
-                            ],
-                            "clientfield": "#hash_6de5cab1fba28d40"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_2de1e7a326a9e6db"
-                                }
-                            ],
-                            "clientfield": "#hash_1ec8e7f21f81afb0"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_ww_item",
-            "var_a0ebe517": "#hash_1ca4c59373eb4f45",
-            "var_bb5d23fb": "#hash_48a98f1907099371"
+            "hash_a0ebe517": "#hash_1ca4c59373eb4f45",
+            "hash_bb5d23fb": "localized18#hash_48a98f1907099371"
         }
     ],
     "packapunchitems": [
         {
             "stages": [
                 {
-                    "stageimage": "#hash_7dd33a96083ebc49"
+                    "stageimage": "image#ui_icon_inventory_p9_sur_machine_weapon_mid_color_t9"
                 }
             ],
+            "hash_7db3435c": 0,
             "clientfield": "#hash_77bc2e157f9d438e"
         }
     ],
-    "objectivebackground": "#ui_icon_inventory_zm_red_artifact_sentinel",
-    "var_922067c4": "scriptbundle",
-    "var_6d1d6580": "#hash_75cbce196912130e",
+    "objectivebackground": "image#ui_icon_inventory_zm_red_artifact_sentinel",
+    "configstringfiletype": "scriptbundle",
+    "hash_3e38620e": 0,
+    "hash_6d1d6580": "localized18#hash_75cbce196912130e",
     "type": "zminventory",
-    "var_b10f2611": "#hash_7407af233550196d",
+    "hash_b10f2611": "#hash_7407af233550196d",
     "name": "zm_inventory_silver",
-    "var_88c17f11": "#sentinel_artifact",
-    "var_45dbf920": "#hash_5350ddb77ac9317f"
+    "hash_88c17f11": "#sentinel_artifact",
+    "hash_45dbf920": "localized18#hash_5350ddb77ac9317f",
+    "hash_f3d39d90": 0,
+    "hash_38b9613": 0
 }

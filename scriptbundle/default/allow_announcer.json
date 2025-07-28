@@ -1,7 +1,12 @@
 {
-    "hinttext": "#hash_73c2e805bd1d7d02",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#menu/announcer_hint",
+    "hash_5a6dee5a": 0,
     "name": "allow_announcer",
-    "displayname": "#hash_15c6be752542ed1e",
+    "displayname": "localized18#menu/announcer",
+    "hash_54e336e4": 0,
+    "optionscount": 0,
+    "hash_765cfd09": 0,
     "setting": "allowAnnouncer",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

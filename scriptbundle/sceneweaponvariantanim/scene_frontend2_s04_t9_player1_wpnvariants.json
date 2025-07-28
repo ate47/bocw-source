@@ -1,0 +1,257 @@
+{
+    "#hash_37f7b010": [
+        {
+            "Comment": "#hash_4f451403c5ec043c",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#shotgun_pump_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_687f4d3f4bc4d7d6",
+            "animation": "playeranim#hash_763c9803b4ea8214",
+            "weapon": "#tr_damagesemi_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#Aug",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#tr_powerburst_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_4e62fdb80ae5892d",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#tr_precisionsemi_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#fara",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#ar_slowhandling_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_442260cbc61fabd",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#shotgun_semiauto_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_5ab941bd19d1e415",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#sniper_cannon_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_711cbbcc7d975843",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#sniper_quickscope_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_5cdf001f6b760ad",
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#shotgun_fullauto_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_5eb1970a0f628f46",
+            "animation": "playeranim#hash_763c9803b4ea8214",
+            "weapon": "#ar_accurate_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_40ac857cf6434950",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#shotgun_pump_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_79864b142d2343ba",
+            "animation": "playeranim#hash_34990de9ad9c7e45",
+            "weapon": "#tr_damagesemi_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_250cd5609efcf3b8",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#tr_powerburst_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_e75f4c9e07e0921",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#tr_precisionsemi_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_3dc0846951a2e581",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#ar_slowhandling_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_654704e9ad387eb9",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#shotgun_semiauto_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_5b01eaecbb1e4d41",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#sniper_cannon_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_4f5b7244ced5fcaf",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#sniper_quickscope_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_459f33b6b91dc0e1",
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#shotgun_fullauto_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_401427ea96f3e112",
+            "animation": "playeranim#hash_34990de9ad9c7e45",
+            "weapon": "#ar_accurate_t9",
+            "gender": "female"
+        },
+        {
+            "Comment": "#hash_11eb8ea52aa22cf1",
+            "animation": "playeranim#hash_45fbf265aceb2a72",
+            "weapon": "#smg_fastfire_t9",
+            "gender": "male"
+        },
+        {
+            "Comment": "#hash_2f10a0d934d616dd",
+            "animation": "playeranim#hash_aa646121e19d94d",
+            "weapon": "#smg_fastfire_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_7ee9624fb944be18",
+            "weapon": "#lmg_accurate_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_4bcdb4ee50b793ef",
+            "weapon": "#lmg_accurate_t9",
+            "gender": "female"
+        },
+        {
+            "weaponlist": [
+                {
+                    "weapon": "#ar_accurate_t9"
+                },
+                {
+                    "weapon": "#ar_damage_t9"
+                },
+                {
+                    "weapon": "#ar_fastfire_t9"
+                },
+                {
+                    "weapon": "#ar_fasthandling_t9"
+                },
+                {
+                    "weapon": "#ar_mobility_t9"
+                },
+                {
+                    "weapon": "#ar_slowfire_t9"
+                },
+                {
+                    "weapon": "#ar_slowhandling_t9"
+                },
+                {
+                    "weapon": "#ar_standard_t9"
+                },
+                {
+                    "weapon": "#lmg_accurate_t9"
+                },
+                {
+                    "weapon": "#lmg_fastfire_t9"
+                },
+                {
+                    "weapon": "#lmg_light_t9"
+                },
+                {
+                    "weapon": "#lmg_slowfire_t9"
+                },
+                {
+                    "weapon": "#smg_accurate_t9"
+                },
+                {
+                    "weapon": "#smg_burst_t9"
+                },
+                {
+                    "weapon": "#smg_capacity_t9"
+                },
+                {
+                    "weapon": "#smg_fastfire_t9"
+                },
+                {
+                    "weapon": "#smg_handling_t9"
+                },
+                {
+                    "weapon": "#smg_heavy_t9"
+                },
+                {
+                    "weapon": "#smg_spray_t9"
+                },
+                {
+                    "weapon": "#smg_standard_t9"
+                },
+                {
+                    "weapon": "#sniper_accurate_t9"
+                },
+                {
+                    "weapon": "#sniper_cannon_t9"
+                },
+                {
+                    "weapon": "#sniper_powersemi_t9"
+                },
+                {
+                    "weapon": "#sniper_quickscope_t9"
+                },
+                {
+                    "weapon": "#sniper_standard_t9"
+                },
+                {
+                    "weapon": "#tr_damagesemi_t9"
+                },
+                {
+                    "weapon": "#tr_fastburst_t9"
+                },
+                {
+                    "weapon": "#tr_longburst_t9"
+                },
+                {
+                    "weapon": "#tr_powerburst_t9"
+                },
+                {
+                    "weapon": "#tr_precisionsemi_t9"
+                }
+            ],
+            "animation": "playeranim#hash_6f39c68f22bdb4c1",
+            "gender": "male",
+            "charactername": "HEROES/USA_RAMBO"
+        },
+        {
+            "animation": "playeranim#hash_78d18f054f4f8935",
+            "weapon": "#ar_slowfire_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_dfd41ab9cde54c4",
+            "weapon": "#ar_slowfire_t9",
+            "gender": "female"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "sceneweaponvariantanim",
+    "vmtype": "Both",
+    "name": "scene_frontend2_s04_t9_player1_wpnvariants"
+}

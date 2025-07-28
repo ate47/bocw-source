@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_6feb9c11cf34b9a4",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_19bdbb721492ffa7",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_demon_attack",
+    "hash_9864ed1": 0,
+    "name": "demon_attack_game",
+    "hash_6855e4be": "#demon_attack_game_mtxitem",
+    "displayname": "localized18#hash_3780dcffcc123e5c",
+    "filename": "#hash_4d1ca5dd1c74382d",
+    "action": "localized18#hash_9b2436ba5cc1f9f",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_demon_attack",
+    "hash_8b592b62": "image#hash_221291a44ce944e3",
+    "hash_48152d43": 0
+}

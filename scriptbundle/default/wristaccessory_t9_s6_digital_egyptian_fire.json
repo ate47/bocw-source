@@ -1,11 +1,11 @@
 {
-    "var_999715d2": "#hash_5a9696b43960693b",
-    "description": "#hash_d90816a500306c6",
+    "hash_999715d2": "#hash_5a9696b43960693b",
+    "description": "localized18#hash_d90816a500306c6",
     "image": "ui_icon_wrist_accessories_s6_digital_egyptian_fire",
-    "var_9b474412": 2,
+    "hash_9b474412": 2,
     "name": "wristaccessory_t9_s6_digital_egyptian_fire",
-    "var_6855e4be": "#wristaccessory_t9_s6_digital_egyptian_fire_mtxitem",
-    "displayname": "#hash_71e9cdfceb777ab6",
-    "var_8d478ea4": "#hash_4206c7c2cd1817b8",
-    "var_d27eb4c6": "#hash_48ac7a657d63eed3"
+    "hash_6855e4be": "#wristaccessory_t9_s6_digital_egyptian_fire_mtxitem",
+    "displayname": "localized18#hash_71e9cdfceb777ab6",
+    "hash_8d478ea4": "model#wrist_watch_t9_s6_digital_egyptian_fire_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s6_digital_egyptian_fire_world"
 }

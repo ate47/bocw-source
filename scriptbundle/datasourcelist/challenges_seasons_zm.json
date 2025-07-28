@@ -1,49 +1,82 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "var_5ed80a9c": "#zm_tungsten",
+            "hash_5ed80a9c": "#zm_tungsten",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_6e439a9e3820f679",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_6e439a9e3820f679",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#zm_platinum",
+            "hash_5ed80a9c": "#zm_platinum",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_4b54a214b3b33171",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_4b54a214b3b33171",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#zm_gold",
+            "hash_5ed80a9c": "#zm_gold",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_787ef2505473c3b7",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_787ef2505473c3b7",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_1515dc70f4e1041e",
+            "hash_5ed80a9c": "#hash_1515dc70f4e1041e",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_27561de03d38d8db",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_27561de03d38d8db",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_37d54a9181d3a53e",
+            "hash_5ed80a9c": "#hash_37d54a9181d3a53e",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_2005d7250fd7d04f",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_2005d7250fd7d04f",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_7b48091c3d08eba5",
+            "hash_5ed80a9c": "#hash_7b48091c3d08eba5",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_4668be3ee82650fc",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_4668be3ee82650fc",
+            "actionutility": "#NONE"
         }
     ],
-    "var_72ef398b": 1,
-    "var_d7f79634": 1,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_e19b7aba": 1,
-    "var_a77ed948": "#none",
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 1,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
     "name": "challenges_seasons_zm",
-    "var_50340f4": 1,
-    "var_8b233d0b": 1
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 1,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 1,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
 }

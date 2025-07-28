@@ -1,0 +1,18 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&survival_ai_dog_molotov",
+            "hash_a949845f": 2,
+            "hash_857deb66": 100
+        },
+        {
+            "entryname": "scriptbundle&default_zombies_realm_2",
+            "hash_a949845f": 4,
+            "hash_857deb66": 1
+        }
+    ],
+    "hash_d961aeb3": 0.2,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "fire_dogs_and_zombies_realm_2_active"
+}

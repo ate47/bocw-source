@@ -1,0 +1,17 @@
+{
+    "hash_fb8bfacd": 2,
+    "hash_11f91d6a": "image#hash_211900dca270dce9",
+    "configstringfiletype": "scriptbundle",
+    "hash_5d66bb63": "localized18#hash_3c0f13d289c30c66",
+    "type": "resistance",
+    "hash_a079a0f6": "none",
+    "hash_215422c5": "poison",
+    "hash_3311c640": "burn",
+    "hash_45d2ebc2": "none",
+    "hash_57618ec7": "none",
+    "hash_6aa3b54b": "none",
+    "hash_7cedd9df": "none",
+    "hash_8e287c54": "none",
+    "hash_3cf30434": "localized18#hash_ef3f10f4e17596",
+    "name": "mp_resist_radiation"
+}

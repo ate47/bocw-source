@@ -1,0 +1,23 @@
+{
+    "#hash_37f7b010": [
+        {
+            "Comment": "#hash_646ad1beaf483af8",
+            "animation": "playeranim#hash_750b6c974a89ae05",
+            "weapon": "#shotgun_pump_t9"
+        },
+        {
+            "Comment": "#hash_58340667c23b719d",
+            "animation": "playeranim#hash_750b6c974a89ae05",
+            "weapon": "#shotgun_semiauto_t9"
+        },
+        {
+            "Comment": "#hash_2e6e2ea171e92b38",
+            "animation": "playeranim#hash_750b6c974a89ae05",
+            "weapon": "#launcher_freefire_t9"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "sceneweaponvariantanim",
+    "vmtype": "Both",
+    "name": "scene_frontend_t9_wpnvariants_char_cust_conf"
+}

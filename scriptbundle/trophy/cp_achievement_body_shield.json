@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_6bb5c881dd08a63a",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_6bb5c881dd08a63a",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_77ebb38e7571bc34",
-    "image": "#hash_234bfa8e8e07f25e",
+    "hash_4a95afca": "image#hash_77ebb38e7571bc34",
+    "image": "image#hash_234bfa8e8e07f25e",
     "name": "cp_achievement_body_shield",
-    "title": "#hash_28b4dcbe5d47178a"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_28b4dcbe5d47178a",
+    "hash_621379a": 0
 }

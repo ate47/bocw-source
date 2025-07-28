@@ -1,40 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_batts_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_batts_mtxitem",
             "itemid": "25771811"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_batts_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_batts_mtxitem",
             "itemid": "30812200"
         },
         {
-            "var_4a4bc969": "#callingcards_blacksmith2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_blacksmith2_mtxitem",
             "itemid": "28719376"
         },
         {
-            "var_4a4bc969": "#emblems_blacksmith2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_blacksmith2_mtxitem",
             "itemid": "19317759"
         },
         {
-            "var_4a4bc969": "#t9_charm_steelskull_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_steelskull_mtxitem",
             "itemid": "20230731"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_blacksmith2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_blacksmith2_mtxitem",
             "itemid": "30116372"
         }
     ],
-    "itemname": "#hash_488299085a0ac6db",
-    "var_375a1747": "#hash_608ccd1b093e29e9",
-    "var_579fd6c3": 26,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2902_blacksmith_battery_2",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2902_blacksmith_battery_2",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 26,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2902_blacksmith_battery_2_mtxbundle",
-    "var_a788fada": "#hash_5726805e8ef2cf5c",
-    "titlestring": "#hash_dd3e16f4c81db5a",
-    "var_566825be": "#hash_400014af9bf7c228",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2902_blacksmith_battery_2_small",
+    "titlestring": "localized18#hash_dd3e16f4c81db5a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2902_blacksmith_battery_2",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1a5335a2c9dfee56",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1a5335a2c9dfee56",
+    "hash_db3e02ab": 2000,
     "itemid": "25085444"
 }

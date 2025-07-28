@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_399d93b0aaf4a1d",
-    "description": "#hash_f5ed5a7a9ac5431",
+    "hash_ff3063df": "model#attach_t9_charm_sunglasses",
+    "description": "localized18#hash_f5ed5a7a9ac5431",
     "name": "t9_charm_sunglasses",
-    "var_6855e4be": "#t9_charm_sunglasses_mtxitem",
-    "displayname": "#hash_1c87e88df6d2d29f",
+    "hash_6855e4be": "#t9_charm_sunglasses_mtxitem",
+    "displayname": "localized18#hash_1c87e88df6d2d29f",
     "icon": "ui_icon_weapon_charms_sunglasses",
-    "var_ef5ad2b3": "#hash_399d93b0aaf4a1d"
+    "hash_ef5ad2b3": "model#attach_t9_charm_sunglasses"
 }

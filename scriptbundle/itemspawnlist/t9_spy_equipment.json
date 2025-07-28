@@ -1,0 +1,51 @@
+{
+    "itemlist": [
+        {
+            "minweight": 8,
+            "itementry": "scriptbundle#frag_t9_item_spy",
+            "maxweight": 8,
+            "available": 2
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#hatchet_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 4,
+            "itementry": "scriptbundle#concussion_t9_item_spy",
+            "maxweight": 4,
+            "available": 1
+        },
+        {
+            "minweight": 4,
+            "itementry": "scriptbundle#flashbang_t9_item_spy",
+            "maxweight": 4,
+            "available": 1
+        },
+        {
+            "minweight": 4,
+            "itementry": "scriptbundle#smoke_t9_item_spy",
+            "maxweight": 4,
+            "available": 1
+        }
+    ],
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
+    "name": "t9_spy_equipment",
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
+}

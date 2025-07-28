@@ -1,0 +1,15 @@
+{
+    "hash_4dbc4aee": "localized19#hash_4450ee339f496f59",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "result": "weapon#hash_42b14769a6933558",
+    "type": "craftblueprint",
+    "hash_e414062": -12,
+    "component01": "weapon#hash_55d5ffe6012bb154",
+    "name": "zblueprint_platinum_uranium_device",
+    "displayname": "Uranium Device",
+    "postcraft": "one_time_craft",
+    "componentcount": 1,
+    "takecomponents": 1,
+    "hash_c028dcfe": 0,
+    "hash_318c150c": "SECTION_QUESTS"
+}

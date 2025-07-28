@@ -1,8 +1,12 @@
 {
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 0,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_multiplayer_conf",
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#none"
+    "hash_e0d5cde7": 0,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#NONE",
+    "hash_b96cb18c": 0
 }

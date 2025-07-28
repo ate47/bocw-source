@@ -2,88 +2,98 @@
     "itemlist": [
         {
             "minweight": 5,
-            "var_a6762160": "#cymbal_monkey_t9_item_sr",
+            "itementry": "scriptbundle#cymbal_monkey_t9_item_sr",
             "maxweight": 5,
             "available": 1
         },
         {
             "minweight": 65,
-            "var_a6762160": "#resource_item_medium_harvesting_sr",
+            "itementry": "scriptbundle#resource_item_medium_harvesting_sr",
             "maxweight": 65,
             "available": 1
         },
         {
             "minweight": 6,
-            "var_a6762160": "#resource_item_harvesting_sr",
+            "itementry": "scriptbundle#resource_item_harvesting_sr",
             "maxweight": 6,
             "available": 1
         },
         {
             "minweight": 3,
-            "var_a6762160": "#brainrot_item_sr",
+            "itementry": "scriptbundle#brainrot_item_sr",
             "maxweight": 3,
             "available": 1
         },
         {
             "minweight": 3,
-            "var_a6762160": "#cryofreeze_item_sr",
+            "itementry": "scriptbundle#cryofreeze_item_sr",
             "maxweight": 3,
             "available": 1
         },
         {
             "minweight": 3,
-            "var_a6762160": "#deadwire_item_sr",
+            "itementry": "scriptbundle#deadwire_item_sr",
             "maxweight": 3,
             "available": 1
         },
         {
             "minweight": 3,
-            "var_a6762160": "#napalmburst_item_sr",
+            "itementry": "scriptbundle#napalmburst_item_sr",
             "maxweight": 3,
             "available": 1
         },
         {
             "minweight": 3,
-            "var_a6762160": "#shatterblast_item_sr",
+            "itementry": "scriptbundle#shatterblast_item_sr",
             "maxweight": 3,
             "available": 1
         },
         {
             "minweight": 1,
-            "var_a6762160": "#aether_tool_item_sr",
+            "itementry": "scriptbundle#aether_tool_item_sr",
             "maxweight": 1,
             "available": 1
         },
         {
             "minweight": 2,
-            "var_a6762160": "#item_survival_scorestreak_artillery_strike",
+            "itementry": "scriptbundle#item_survival_scorestreak_artillery_strike",
             "maxweight": 2,
             "available": 1
         },
         {
             "minweight": 2,
-            "var_a6762160": "#item_survival_scorestreak_chopper_gunner",
+            "itementry": "scriptbundle#item_survival_scorestreak_chopper_gunner",
             "maxweight": 2,
             "available": 1
         },
         {
             "minweight": 2,
-            "var_a6762160": "#item_survival_scorestreak_napalm_strike",
+            "itementry": "scriptbundle#item_survival_scorestreak_napalm_strike",
             "maxweight": 2,
             "available": 1
         },
         {
             "minweight": 2,
-            "var_a6762160": "#item_survival_scorestreak_ultimate_turret",
+            "itementry": "scriptbundle#item_survival_scorestreak_ultimate_turret",
             "maxweight": 2,
             "available": 1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "secure_bonus_drop_list",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_cub_pl_dgi_jack_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_cub_pl_dgi_jack_base_mtxitem",
             "itemid": "28586769"
         },
         {
-            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_cub_dgi_mtxitem",
             "itemid": "21801561"
         },
         {
-            "var_4a4bc969": "#loot_smg_accurate_joke4_solo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_accurate_joke4_solo_mtxitem",
             "itemid": "19823584"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_joke4_solo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_joke4_solo_mtxitem",
             "itemid": "27353511"
         },
         {
-            "var_4a4bc969": "#melee_cane_bp_joke_solo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_cane_bp_joke_solo_mtxitem",
             "itemid": "24058561"
         },
         {
-            "var_4a4bc969": "#t9_charm_money_clip_joke_solo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_money_clip_joke_solo_mtxitem",
             "itemid": "18701493"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_big_joke4_solo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_big_joke4_solo_mtxitem",
             "itemid": "26598216"
         },
         {
-            "var_4a4bc969": "#emblems_big_jokeiv_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_big_jokeiv_s6_animated_mtxitem",
             "itemid": "25475256"
         },
         {
-            "var_4a4bc969": "#callingcards_big_jokeiv_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_big_jokeiv_s6_animated_mtxitem",
             "itemid": "18414285"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_63590cbbc81c6eab",
-    "var_375a1747": "#hash_5974b90aec4a0049",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6017_garcia_joke_iv",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6017_garcia_joke_iv_mtxbundle",
-    "var_a788fada": "#hash_5cb3b5a23ad51f9e",
-    "titlestring": "#hash_1c8a6bba2e075a2f",
-    "var_566825be": "#hash_192764ef7dc319ca",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6017_garcia_joke_iv_small",
+    "titlestring": "localized18#hash_1c8a6bba2e075a2f",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6017_garcia_joke_iv",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_626030709507fceb",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_626030709507fceb",
+    "hash_db3e02ab": 2000,
     "itemid": "25282840"
 }

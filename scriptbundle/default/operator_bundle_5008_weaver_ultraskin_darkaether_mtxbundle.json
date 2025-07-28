@@ -1,72 +1,75 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_b51aaa9c659c814"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5008_weaver_ultraskin_darkaether_00"
         },
         {
-            "var_fe10649e": "#hash_b51aba9c659c9c7"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5008_weaver_ultraskin_darkaether_01"
         },
         {
-            "var_fe10649e": "#hash_b51aca9c659cb7a"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5008_weaver_ultraskin_darkaether_02"
         },
         {
-            "var_fe10649e": "#hash_b51ada9c659cd2d"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_5008_weaver_ultraskin_darkaether_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_weaver_rebirth_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_weaver_rebirth_mtxitem",
             "itemid": "32964128"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_weaver_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_weaver_mtxitem",
             "itemid": "19882636"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_darkaether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_darkaether_mtxitem",
             "itemid": "31702460"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_darkaether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_darkaether_mtxitem",
             "itemid": "22827511"
         },
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_darkaether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_darkaether_mtxitem",
             "itemid": "28170157"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s5_digital_dark_weaver_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s5_digital_dark_weaver_mtxitem",
             "itemid": "32273799"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_assembly_mpx_dark_aether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_tank_t72_assembly_mpx_dark_aether_mtxitem",
             "itemid": "28517543"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_deadagain_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_deadagain_mtxitem",
             "itemid": "30147049"
         },
         {
-            "var_4a4bc969": "#execution_160_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_160_mtxitem",
             "itemid": "31302588"
         },
         {
-            "var_4a4bc969": "#emblems_mulekick_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_mulekick_s5_mtxitem",
             "itemid": "29095210"
         }
     ],
-    "itemname": "#hash_49bbdbde26f80dd5",
-    "var_375a1747": "#hash_b51aaa9c659c814",
-    "var_3040f0d1": "#hash_b51aaa9c659c814",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5008_weaver_ultraskin_darkaether",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5008_weaver_ultraskin_darkaether_00",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_5008_weaver_ultraskin_darkaether_00",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5008_weaver_ultraskin_darkaether_mtxbundle",
-    "var_a788fada": "#hash_745b5f9150ea916",
-    "titlestring": "#hash_24e5905e11350dcc",
-    "var_566825be": "#hash_285576d34f603f22",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5008_weaver_ultraskin_darkaether_small",
+    "titlestring": "localized18#hash_24e5905e11350dcc",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5008_weaver_ultraskin_darkaether",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_40535959e1f1f33c",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_40535959e1f1f33c",
+    "hash_db3e02ab": 750,
     "itemid": "25873346"
 }

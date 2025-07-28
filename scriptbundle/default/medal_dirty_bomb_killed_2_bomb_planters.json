@@ -1,10 +1,10 @@
 {
-    "description": "#hash_61220811fe397ab8",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_61220811fe397ab8",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_dirty_bomb_killed_2_bomb_planters",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_12280c37e5ee8527",
-    "var_8645ce54": "#hash_756ebcee840a7290",
-    "iconlarge": "#hash_7d61b036d74e27f7"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_arms_control",
+    "stringref": "localized18#hash_756ebcee840a7290",
+    "iconlarge": "image#ui_icon_medal_arms_control_large"
 }

@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_accurate_cb_ratrod_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_cb_ratrod_mtxitem",
             "itemid": "24798416"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_ratrod_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_ratrod_mtxitem",
             "itemid": "30763008"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_digital_mini_map_hot_rod_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_digital_mini_map_hot_rod_mtxitem",
             "itemid": "27629684"
         },
         {
-            "var_4a4bc969": "#t9_charm_8_ball_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_8_ball_mtxitem",
             "itemid": "24386385"
         },
         {
-            "var_4a4bc969": "#emblems_ratrod_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ratrod_animated_mtxitem",
             "itemid": "28092530"
         },
         {
-            "var_4a4bc969": "#callingcards_ratrod_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ratrod_animated_mtxitem",
             "itemid": "26220961"
         },
         {
-            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_hotrod_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_civ_ru_sedan_80s_mpx_hotrod_mtxitem",
             "itemid": "20912348"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_carr_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_carr_mtxitem",
             "itemid": "31614243"
         }
     ],
-    "itemname": "#hash_723573daec4c6b68",
-    "var_375a1747": "#hash_650c0ac7239380ea",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4007_stoner_63_hotrod_racer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4007_stoner_63_hotrod_racer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4007_stoner_63_hotrod_racer_mtxbundle",
-    "var_a788fada": "#hash_4a4e71f41ad19cab",
-    "titlestring": "#hash_7c5b25287847c190",
-    "var_566825be": "#hash_d8c4c92fb334cd3",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4007_stoner_63_hotrod_racer_small",
+    "titlestring": "localized18#hash_7c5b25287847c190",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4007_stoner_63_hotrod_racer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3025e3fe2369c558",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3025e3fe2369c558",
+    "hash_db3e02ab": 2000,
     "itemid": "25009591"
 }

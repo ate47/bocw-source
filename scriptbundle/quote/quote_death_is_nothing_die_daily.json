@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_death_is_nothing_die_daily",
-    "quote": "#hash_1fc956cc5642424b",
-    "author": "#hash_63ab71c957f7ca17"
+    "quote": "localized18#hash_1fc956cc5642424b",
+    "author": "localized18#hash_63ab71c957f7ca17"
 }

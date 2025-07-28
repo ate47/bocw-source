@@ -1,0 +1,18 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&survival_ai_raz",
+            "hash_a949845f": 2,
+            "hash_857deb66": 10000
+        },
+        {
+            "entryname": "scriptbundle&default_zombies_realm_3",
+            "hash_a949845f": 5,
+            "hash_857deb66": 1
+        }
+    ],
+    "hash_d961aeb3": 0.25,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "raz_and_zombies_realm_3"
+}

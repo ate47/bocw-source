@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_modernp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_modernp_mtxitem",
             "itemid": "18807658"
         },
         {
-            "var_4a4bc969": "#pistol_revolver_bp_modernp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_revolver_bp_modernp_mtxitem",
             "itemid": "19217436"
         },
         {
-            "var_4a4bc969": "#t9_charm_post_modern_pop_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_post_modern_pop_mtxitem",
             "itemid": "31229365"
         },
         {
-            "var_4a4bc969": "#emblems_postmodernart_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_postmodernart_animated_mtxitem",
             "itemid": "19221159"
         },
         {
-            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_postmodern_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_civ_ru_sedan_80s_mpx_postmodern_mtxitem",
             "itemid": "33201709"
         },
         {
-            "var_4a4bc969": "#callingcards_cigarette_42_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cigarette_42_mtxitem",
             "itemid": "28381589"
         }
     ],
-    "itemname": "#hash_483aab9bdcef08e0",
-    "var_375a1747": "#hash_1b88f8d0f3d0651a",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4046_ak_47_post_modern",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4046_ak_47_post_modern",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4046_ak_47_post_modern_mtxbundle",
-    "var_a788fada": "#hash_5f36234d967c8a25",
-    "titlestring": "#hash_3eb945736aca456b",
-    "var_566825be": "#hash_1f65892ff9af90bd",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4046_ak_47_post_modern_small",
+    "titlestring": "localized18#hash_3eb945736aca456b",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4046_ak_47_post_modern",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2dacb4b9f16a1aef",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2dacb4b9f16a1aef",
+    "hash_db3e02ab": 2000,
     "itemid": "20212363"
 }

@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_psa_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_psa_mtxitem",
             "itemid": "18510110"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_psa_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_psa_mtxitem",
             "itemid": "21731778"
         },
         {
-            "var_4a4bc969": "#smg_accurate_bp_bod_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_accurate_bp_bod_mtxitem",
             "itemid": "20764905"
         },
         {
-            "var_4a4bc969": "#t9_charm_frying_pan_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_frying_pan_mtxitem",
             "itemid": "27196477"
         },
         {
-            "var_4a4bc969": "#emblems_flamingskullheadgrid_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_flamingskullheadgrid_mtxitem",
             "itemid": "27921944"
         },
         {
-            "var_4a4bc969": "#callingcards_public_service_announcement_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_public_service_announcement_s6_mtxitem",
             "itemid": "19954926"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_flamingskullheadgrid_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_flamingskullheadgrid_s6_mtxitem",
             "itemid": "25863991"
         }
     ],
-    "itemname": "#hash_781989a81722e8db",
-    "var_375a1747": "#hash_671d168bab973e5d",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_6030_ak_47_psa_pressure",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6030_ak_47_psa_pressure",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6030_ak_47_psa_pressure_mtxbundle",
-    "var_a788fada": "#hash_630ddc3b470ee178",
-    "titlestring": "#hash_730cd20d682be07c",
-    "var_566825be": "#hash_61b14dc82d64b1a4",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6030_ak_47_psa_pressure_small",
+    "titlestring": "localized18#hash_730cd20d682be07c",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6030_ak_47_psa_pressure",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_68bad899a382d3ec",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_68bad899a382d3ec",
+    "hash_db3e02ab": 2000,
     "itemid": "28321525"
 }

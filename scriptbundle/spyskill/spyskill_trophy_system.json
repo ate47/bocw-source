@@ -1,0 +1,9 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "weapon": "weapon#trophy_system_spy",
+    "type": "spyskill",
+    "hash_a99abf33": "trophy_system",
+    "name": "spyskill_trophy_system",
+    "cooldown": 25,
+    "hash_e1bfe02c": 33
+}

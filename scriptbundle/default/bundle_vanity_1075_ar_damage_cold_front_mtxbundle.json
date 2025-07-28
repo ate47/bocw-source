@@ -1,42 +1,47 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_arctic_chill_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_arctic_chill_mtxitem",
             "itemid": "26036738"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_ssovel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_ssovel_mtxitem",
             "itemid": "33463530"
         },
         {
-            "var_4a4bc969": "#t9_charm_icebreaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_icebreaker_mtxitem",
             "itemid": "24301570"
         },
         {
-            "var_4a4bc969": "#callingcards_coldfront_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_coldfront_mtxitem",
             "itemid": "31571172"
         },
         {
-            "var_4a4bc969": "#emblems_coldfront_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_coldfront_mtxitem",
             "itemid": "19990129"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_aviator_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_aviator_02_mtxitem",
             "itemid": "24556574"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_coldfront_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_coldfront_mtxitem",
             "itemid": "18333537"
         }
     ],
-    "itemname": "#hash_3500715f3e12be14",
-    "var_375a1747": "#hash_1db3b91ec260061e",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_vanity_1075_ar_damage_cold_front",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_vanity_1075_ar_damage_cold_front",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_1075_ar_damage_cold_front_mtxbundle",
-    "titlestring": "#hash_c7c0199ff2c8d4",
-    "var_566825be": "#hash_7ba790144e0f4191",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_c7c0199ff2c8d4",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_vanity_1075_ar_damage_cold_front",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_41ccd412d25f1bc4",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_41ccd412d25f1bc4",
+    "hash_db3e02ab": 2000,
     "itemid": "26047774"
 }

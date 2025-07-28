@@ -1,10 +1,10 @@
 {
-    "var_e12298c9": [
+    "#hash_e12298c9": [
         {
-            "var_73507b34": "#superfaction_nato"
+            "hash_73507b34": "scriptbundle#superfaction_nato"
         },
         {
-            "var_73507b34": "#superfaction_warsaw_pact"
+            "hash_73507b34": "scriptbundle#superfaction_warsaw_pact"
         }
     ],
     "name": "superfactions_core"

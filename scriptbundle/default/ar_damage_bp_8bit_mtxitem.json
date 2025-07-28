@@ -1,22 +1,32 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#blueprint_bundle_5028_ak_47_8bit_russia_mtxbundle"
+            "hash_8bd0af73": "#blueprint_bundle_5028_ak_47_8bit_russia_mtxbundle"
         }
     ],
-    "itemname": "#hash_76ff8ccdeb1bd6a9",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_61526598ca9cdb3f",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "itemname": "#ar_damage_bp_8bit",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#ui_icon_mtx_tier_ar_damage_bp_8bit",
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 5,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#ar_damage_t9",
+    "hash_b6d84534": 0,
     "name": "ar_damage_bp_8bit_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 3,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:3",
+    "hash_84dc7961": 0,
     "itemid": "20108070",
-    "blueprint": "#hash_76ff8ccdeb1bd6a9"
+    "blueprint": "#ar_damage_bp_8bit"
 }

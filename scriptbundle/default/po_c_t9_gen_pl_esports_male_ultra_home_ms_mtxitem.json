@@ -1,22 +1,32 @@
 {
     "entitlementlist": [
         {
-            "var_386af035": "#cdl_team_pack_01_ultra_ms_mtxentitlement"
+            "hash_386af035": "#cdl_team_pack_01_ultra_ms_mtxentitlement"
         }
     ],
-    "itemname": "#hash_19f7fb5e1d131005",
-    "var_e9d9a8d0": 1,
-    "var_be574bd8": "#hash_19f7fb5e1d131005",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "itemname": "#po_c_t9_gen_pl_esports_male_ultra_home_ms",
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_be574bd8": "#po_c_t9_gen_pl_esports_male_ultra_home_ms",
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 1,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "bodytype": "#hash_6effd80a46dfe4e8",
+    "hash_b6d84534": 0,
     "name": "po_c_t9_gen_pl_esports_male_ultra_home_ms_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#character_outfit",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 2,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:2",
+    "hash_84dc7961": 0,
     "itemid": "23447032",
     "outfit": "#hash_b56d8b3e95ee51f"
 }

@@ -4,13 +4,16 @@
             "filters": "#multiplayer"
         }
     ],
-    "description": "#hash_1f886acc3bc0a8fe",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_1f886acc3bc0a8fe",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_1670445122c866ce",
-    "image": "#hash_64c73df53615f43d",
+    "hash_4a95afca": "image#hash_1670445122c866ce",
+    "image": "image#hash_64c73df53615f43d",
     "name": "mp_achievement_eliminations",
-    "title": "#hash_23164475e055a44e"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_23164475e055a44e",
+    "hash_621379a": 0
 }

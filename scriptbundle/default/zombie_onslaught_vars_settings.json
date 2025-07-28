@@ -1,0 +1,223 @@
+{
+    "#hash_b39946c5": [
+        {
+            "round": 1
+        },
+        {
+            "round": 8
+        },
+        {
+            "round": 15
+        },
+        {
+            "round": 22
+        },
+        {
+            "round": 27
+        },
+        {
+            "round": 30
+        },
+        {
+            "round": 36
+        },
+        {
+            "round": 41
+        },
+        {
+            "round": 48
+        },
+        {
+            "round": 55
+        },
+        {
+            "round": 62
+        },
+        {
+            "round": 69
+        },
+        {
+            "round": 76
+        },
+        {
+            "round": 83
+        },
+        {
+            "round": 90
+        }
+    ],
+    "difficultysettings": [
+        {
+            "hash_539d49a1": 1,
+            "hash_8cb6013d": 13,
+            "hash_d3001509": 35,
+            "hash_f40fa2be": 30,
+            "hash_dd67fc96": 30,
+            "hash_9e2df5e5": 0.1,
+            "hash_e8996012": 1,
+            "hash_2defce07": 75,
+            "hash_edc0d364": 200,
+            "hash_68f07704": 0.08,
+            "hash_ecafcfe9": 2,
+            "hash_75236df1": 3,
+            "hash_e97877db": 6,
+            "hash_bc2d6211": 12,
+            "hash_415b24aa": 0,
+            "hash_6de8fcc4": 0,
+            "hash_6e13b2b7": 0,
+            "hash_5a60ae8": 1,
+            "hash_4a94ab75": 0.75,
+            "hash_b84141ad": 15000,
+            "hash_d2a37ad0": 100,
+            "hash_5e295f7d": 9,
+            "hash_93820904": 1,
+            "hash_e134c623": 22,
+            "hash_8c9f998a": 6,
+            "hash_3c177b07": 1,
+            "hash_792e5fa0": 1,
+            "hash_38e75b4c": 12,
+            "hash_73b26261": 2,
+            "hash_24d886f5": 0.35,
+            "hash_a93b7e4f": 0
+        },
+        {
+            "hash_539d49a1": 1,
+            "hash_8cb6013d": 10,
+            "hash_d3001509": 35,
+            "hash_f40fa2be": 30,
+            "hash_dd67fc96": 30,
+            "hash_9e2df5e5": 0.15,
+            "hash_e8996012": 1,
+            "hash_2defce07": 45,
+            "hash_edc0d364": 150,
+            "hash_68f07704": 0.1,
+            "hash_ecafcfe9": 4,
+            "hash_75236df1": 2,
+            "hash_e97877db": 6,
+            "hash_bc2d6211": 10,
+            "hash_415b24aa": 0.025,
+            "hash_6de8fcc4": 0,
+            "hash_6e13b2b7": 0,
+            "hash_5a60ae8": 1,
+            "hash_4a94ab75": 0.75,
+            "hash_b84141ad": 15000,
+            "hash_d2a37ad0": 100,
+            "hash_5e295f7d": 9,
+            "hash_93820904": 1,
+            "hash_e134c623": 24,
+            "hash_8c9f998a": 6,
+            "hash_3c177b07": 1,
+            "hash_792e5fa0": 1,
+            "hash_38e75b4c": 10,
+            "hash_73b26261": 2,
+            "hash_24d886f5": 0.5,
+            "hash_a93b7e4f": 0
+        },
+        {
+            "hash_539d49a1": 1.25,
+            "hash_8cb6013d": 10,
+            "hash_d3001509": 35,
+            "hash_f40fa2be": 30,
+            "hash_dd67fc96": 30,
+            "hash_9e2df5e5": 0.15,
+            "hash_e8996012": 1,
+            "hash_2defce07": 100,
+            "hash_edc0d364": 150,
+            "hash_68f07704": 0.1,
+            "hash_ecafcfe9": 4,
+            "hash_75236df1": 2,
+            "hash_e97877db": 6,
+            "hash_bc2d6211": 10,
+            "hash_415b24aa": 0.025,
+            "hash_6de8fcc4": 0,
+            "hash_6e13b2b7": 0,
+            "hash_5a60ae8": 1,
+            "hash_4a94ab75": 0.75,
+            "hash_b84141ad": 15000,
+            "hash_d2a37ad0": 100,
+            "hash_5e295f7d": 9,
+            "hash_93820904": 1,
+            "hash_e134c623": 24,
+            "hash_8c9f998a": 6,
+            "hash_3c177b07": 1,
+            "hash_792e5fa0": 1,
+            "hash_38e75b4c": 10,
+            "hash_73b26261": 2,
+            "hash_24d886f5": 0.5,
+            "hash_a93b7e4f": 0
+        },
+        {
+            "hash_539d49a1": 1.5,
+            "hash_8cb6013d": 2,
+            "hash_d3001509": 5,
+            "hash_f40fa2be": 20,
+            "hash_dd67fc96": 20,
+            "hash_9e2df5e5": 0.33,
+            "hash_e8996012": 1,
+            "hash_2defce07": 250,
+            "hash_edc0d364": 50,
+            "hash_68f07704": 0.21,
+            "hash_ecafcfe9": 5,
+            "hash_75236df1": 3,
+            "hash_e97877db": 4,
+            "hash_bc2d6211": 8,
+            "hash_415b24aa": 0.075,
+            "hash_6de8fcc4": 0,
+            "hash_6e13b2b7": 0.2,
+            "hash_5a60ae8": 1,
+            "hash_4a94ab75": 4,
+            "hash_b84141ad": 15000,
+            "hash_d2a37ad0": 400,
+            "hash_5e295f7d": 5,
+            "hash_93820904": 1,
+            "hash_e134c623": 42,
+            "hash_8c9f998a": 19,
+            "hash_3c177b07": 1,
+            "hash_792e5fa0": 1,
+            "hash_38e75b4c": 8,
+            "hash_73b26261": 8,
+            "hash_24d886f5": 0.6,
+            "hash_a93b7e4f": 0
+        }
+    ],
+    "hash_c2b35bc5": 30,
+    "hash_629f7daa": 1,
+    "hash_ae3f41e0": 24,
+    "hash_d9a798b0": 27,
+    "hash_c2746a4a": 16,
+    "hash_a8bb36d8": 18,
+    "hash_5fe12525": 21,
+    "hash_bd48955e": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_1c4757c1": 0,
+    "hash_c9ca5291": -1000,
+    "hash_388eb2fd": 1,
+    "hash_86036d4": 50,
+    "hash_e1b7f6c8": 90,
+    "hash_54e1d605": 0,
+    "name": "zombie_onslaught_vars_settings",
+    "hash_59ffe642": 20,
+    "hash_4447bad2": 23,
+    "hash_167fdf43": 14,
+    "hash_20daf3f9": 17,
+    "hash_d968651d": 12,
+    "hash_37f4ff3e": 4,
+    "hash_f02d07a4": 30,
+    "hash_23244f59": 60,
+    "hash_37d2cb01": 280,
+    "hash_d996cae": 0,
+    "hash_b2f1a4e9": 0,
+    "hash_ca3c1d57": 0,
+    "hash_4a0240f3": 30,
+    "hash_bb2f1a7c": 0,
+    "hash_282fb094": 30,
+    "hash_b0874dd1": 30,
+    "hash_1e290818": 7,
+    "hash_1a3fd396": 4,
+    "hash_1037e7d": 2000,
+    "hash_db686493": 10,
+    "hash_f9a5cccc": 0,
+    "hash_efb01ee5": 30,
+    "hash_7c95cc24": 15,
+    "hash_3238aebf": 350
+}

@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_679cda35ebac79e6",
-    "description": "#hash_561a4b2cc1953638",
+    "hash_ff3063df": "model#attach_t9_charm_tombstone",
+    "description": "localized18#hash_561a4b2cc1953638",
     "name": "t9_charm_tombstone",
-    "var_6855e4be": "#t9_charm_tombstone_mtxitem",
-    "displayname": "#hash_2ae028d6e35ae110",
+    "hash_6855e4be": "#t9_charm_tombstone_mtxitem",
+    "displayname": "localized18#hash_2ae028d6e35ae110",
     "icon": "ui_icon_weapon_charms_tombstone",
-    "var_ef5ad2b3": "#hash_679cda35ebac79e6"
+    "hash_ef5ad2b3": "model#attach_t9_charm_tombstone"
 }

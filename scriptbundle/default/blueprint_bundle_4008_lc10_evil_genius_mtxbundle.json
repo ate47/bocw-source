@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_accurate_bp_evil_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_accurate_bp_evil_mtxitem",
             "itemid": "30481531"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_evil_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_evil_mtxitem",
             "itemid": "30242803"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_digital_evil_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_digital_evil_mtxitem",
             "itemid": "28036231"
         },
         {
-            "var_4a4bc969": "#t9_charm_lightbulb_brain_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_lightbulb_brain_mtxitem",
             "itemid": "29626791"
         },
         {
-            "var_4a4bc969": "#emblems_hammerhead_a_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_hammerhead_a_animated_mtxitem",
             "itemid": "23101001"
         },
         {
-            "var_4a4bc969": "#callingcards_evil_genius_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_evil_genius_animated_mtxitem",
             "itemid": "31547713"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_evil_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_mpx_evil_mtxitem",
             "itemid": "22201090"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_damn_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_damn_mtxitem",
             "itemid": "29621333"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_3_mtxitem",
             "itemid": "32326098"
         }
     ],
-    "itemname": "#hash_8f814edd00eff6a",
-    "var_375a1747": "#hash_6937e3e4536c7b78",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4008_lc10_evil_genius",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4008_lc10_evil_genius",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4008_lc10_evil_genius_mtxbundle",
-    "var_a788fada": "#hash_39f67bab19753911",
-    "titlestring": "#hash_5c9663d9c8b72701",
-    "var_566825be": "#hash_47eda39519f98ae9",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4008_lc10_evil_genius_small",
+    "titlestring": "localized18#hash_5c9663d9c8b72701",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4008_lc10_evil_genius",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4243fd57030edfc1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4243fd57030edfc1",
+    "hash_db3e02ab": 2000,
     "itemid": "18171102"
 }

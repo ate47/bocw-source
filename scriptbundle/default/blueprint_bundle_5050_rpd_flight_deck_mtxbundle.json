@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_light_bp_warship_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_warship_mtxitem",
             "itemid": "30972606"
         },
         {
-            "var_4a4bc969": "#t9_charm_buoy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_buoy_mtxitem",
             "itemid": "32670727"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_46_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_46_s5_mtxitem",
             "itemid": "19261049"
         }
     ],
-    "itemname": "#hash_74cb35b1755ffcb6",
-    "var_375a1747": "#hash_746e3a24ae1322b8",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5050_rpd_flight_deck",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5050_rpd_flight_deck",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5050_rpd_flight_deck_mtxbundle",
-    "var_a788fada": "#hash_431f1a8e877532cb",
-    "titlestring": "#hash_58a6bfff62730dcd",
-    "var_566825be": "#hash_69e26efb3148aa33",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5050_rpd_flight_deck_small",
+    "titlestring": "localized18#hash_58a6bfff62730dcd",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5050_rpd_flight_deck",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7325baffce5d9e05",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7325baffce5d9e05",
+    "hash_db3e02ab": 2000,
     "itemid": "25865240"
 }

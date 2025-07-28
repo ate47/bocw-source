@@ -1,6 +1,6 @@
 {
     "targetlost": "#hash_5d3cb9f884d05ff0",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "mpdialog_scorestreak",
     "killmultiple": "#hash_3a93fdf0f7f41a9a",
     "killaircraft": "#hash_6e698f5fb0bb4ca7",

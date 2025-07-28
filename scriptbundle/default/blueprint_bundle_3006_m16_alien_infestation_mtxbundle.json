@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_longburst_bp_infest_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_infest_mtxitem",
             "itemid": "30131283"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_infest_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_infest_mtxitem",
             "itemid": "30552617"
         },
         {
-            "var_4a4bc969": "#t9_charm_spyplane_infected_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_spyplane_infected_mtxitem",
             "itemid": "33224163"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_assembly_mpx_infestation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_assembly_mpx_infestation_mtxitem",
             "itemid": "20934733"
         },
         {
-            "var_4a4bc969": "#callingcards_infestation_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_infestation_animated_mtxitem",
             "itemid": "23772756"
         },
         {
-            "var_4a4bc969": "#emblems_infestation_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_infestation_animated_mtxitem",
             "itemid": "19874077"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_digital_heart_rate_alien_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_digital_heart_rate_alien_mtxitem",
             "itemid": "29636231"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_tomb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_tomb_mtxitem",
             "itemid": "30270704"
         }
     ],
-    "itemname": "#hash_466a25b7e7e3f159",
-    "var_375a1747": "#hash_5c01e1048afbabeb",
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3006_m16_alien_infestation",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3006_m16_alien_infestation",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3006_m16_alien_infestation_mtxbundle",
-    "var_a788fada": "#hash_37cdc74768aa2dc",
-    "titlestring": "#hash_29f43458690213c4",
-    "var_566825be": "#hash_69ace7a13ca31a8",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3006_m16_alien_infestation_small",
+    "titlestring": "localized18#hash_29f43458690213c4",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3006_m16_alien_infestation",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3f49478df608e1f4",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3f49478df608e1f4",
+    "hash_db3e02ab": 2000,
     "itemid": "31719885"
 }

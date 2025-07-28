@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_longburst_bp_arvnr1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_arvnr1_mtxitem",
             "itemid": "19355354"
         },
         {
-            "var_4a4bc969": "#t9_charm_bottle_cap_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bottle_cap_mtxitem",
             "itemid": "31421504"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_08_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_08_animated_mtxitem",
             "itemid": "20303759"
         },
         {
-            "var_4a4bc969": "#emblems_80salbum_03_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_80salbum_03_animated_mtxitem",
             "itemid": "25312803"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_129cef7b3cb8d836",
-    "var_375a1747": "#hash_13f45cbb10122aba",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_2105_season_2",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_2100_community_event_mtxbundle",
-    "var_a788fada": "#hash_696e06139b3c322d",
-    "titlestring": "#hash_57e3e257a27a3c04",
-    "var_566825be": "#hash_55b613a3d209ca65",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_free_2105_season_2_small",
+    "titlestring": "localized18#hash_57e3e257a27a3c04",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_2105_season_2",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_380df02c9aa18334",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_380df02c9aa18334",
+    "hash_db3e02ab": 2000,
     "itemid": "25618103"
 }

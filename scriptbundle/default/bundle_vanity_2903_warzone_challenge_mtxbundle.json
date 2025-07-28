@@ -1,96 +1,100 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_standard_bp_teal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_teal_mtxitem",
             "itemid": "19967070"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_teal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_teal_mtxitem",
             "itemid": "28975511"
         },
         {
-            "var_4a4bc969": "#t9_charm_gas_mask_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_gas_mask_mtxitem",
             "itemid": "20317983"
         },
         {
-            "var_4a4bc969": "#t9_charm_bleach_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bleach_mtxitem",
             "itemid": "19957062"
         },
         {
-            "var_4a4bc969": "#t9_charm_stitched_dollhead_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_stitched_dollhead_mtxitem",
             "itemid": "18262163"
         },
         {
-            "var_4a4bc969": "#t9_charm_hellscream_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_hellscream_mtxitem",
             "itemid": "24068519"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_analog_dark_aether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_analog_dark_aether_mtxitem",
             "itemid": "23529540"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_06_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_06_mtxitem",
             "itemid": "33345076"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_03_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_03_mtxitem",
             "itemid": "27228166"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_04_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_04_mtxitem",
             "itemid": "23798500"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_01_mtxitem",
             "itemid": "32203563"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_02_mtxitem",
             "itemid": "20418616"
         },
         {
-            "var_4a4bc969": "#callingcards_vts_05_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vts_05_mtxitem",
             "itemid": "29332656"
         },
         {
-            "var_4a4bc969": "#emblems_vts_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_01_mtxitem",
             "itemid": "19480017"
         },
         {
-            "var_4a4bc969": "#emblems_vts_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_02_mtxitem",
             "itemid": "25412827"
         },
         {
-            "var_4a4bc969": "#emblems_vts_03_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_03_mtxitem",
             "itemid": "18207257"
         },
         {
-            "var_4a4bc969": "#emblems_vts_04_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_04_mtxitem",
             "itemid": "31258193"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_vts_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_vts_01_mtxitem",
             "itemid": "25036104"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_vts_03_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_vts_03_mtxitem",
             "itemid": "26200323"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_vts_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_vts_02_mtxitem",
             "itemid": "30170790"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_60122b0e1b253e5f",
-    "var_375a1747": "#hash_1aad1f09a437fac1",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_vanity_2903_warzone_challenge",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_2903_warzone_challenge_mtxbundle",
-    "var_a788fada": "#hash_57d27bcf5eff6dc4",
-    "titlestring": "#hash_314c839c7470fc00",
-    "var_566825be": "#hash_761e87f6e1ad710c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_57d27bcf5eff6dc4",
+    "titlestring": "localized18#hash_314c839c7470fc00",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_vanity_2903_warzone_challenge",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7d7ec5899f818d22",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7d7ec5899f818d22",
+    "hash_db3e02ab": 2000,
     "itemid": "21253881"
 }

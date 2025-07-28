@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#loot_sniper_cannon_bp_aces_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_sniper_cannon_bp_aces_mtxitem",
             "itemid": "26539381"
         },
         {
-            "var_4a4bc969": "#t9_charm_mill_dollar_chip_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_mill_dollar_chip_mtxitem",
             "itemid": "20076419"
         },
         {
-            "var_4a4bc969": "#dice_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#dice_animated_mtxitem",
             "itemid": "18203423"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_30_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_30_mtxitem",
             "itemid": "22204066"
         }
     ],
-    "itemname": "#hash_59b185a3f2114e1",
-    "var_375a1747": "#hash_28d10de2fef93c3b",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_vanity_2061_sniper_cannon_poker",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_vanity_2061_sniper_cannon_poker",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_2061_sniper_cannon_poker_mtxbundle",
-    "var_a788fada": "#hash_4a76bb97245b2306",
-    "titlestring": "#hash_8d52934c3d62fea",
-    "var_566825be": "#hash_186cd4da960a0652",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_vanity_2061_sniper_cannon_poker_small",
+    "titlestring": "localized18#hash_8d52934c3d62fea",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_vanity_2061_sniper_cannon_poker",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2728578a10f02666",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2728578a10f02666",
+    "hash_db3e02ab": 2000,
     "itemid": "19990138"
 }

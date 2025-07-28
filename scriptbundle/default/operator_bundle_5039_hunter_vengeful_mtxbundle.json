@@ -1,55 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter1_hunter_killer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter1_hunter_killer_mtxitem",
             "itemid": "30426184"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter1_mtxitem",
             "itemid": "31474701"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_hollywood_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_hollywood_mtxitem",
             "itemid": "27092726"
         },
         {
-            "var_4a4bc969": "#sniper_accurate_bp_hollywood_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_accurate_bp_hollywood_mtxitem",
             "itemid": "33205776"
         },
         {
-            "var_4a4bc969": "#melee_machete_bp_hollywood_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_machete_bp_hollywood_mtxitem",
             "itemid": "26274691"
         },
         {
-            "var_4a4bc969": "#t9_charm_cheetah_pin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_cheetah_pin_mtxitem",
             "itemid": "31370001"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s5_analog_blood_fancy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s5_analog_blood_fancy_mtxitem",
             "itemid": "33188899"
         },
         {
-            "var_4a4bc969": "#execution_081_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_081_mtxitem",
             "itemid": "29524212"
         },
         {
-            "var_4a4bc969": "#emblems_hollywood_bad_guy_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_hollywood_bad_guy_s5_mtxitem",
             "itemid": "30749157"
         },
         {
-            "var_4a4bc969": "#callingcards_hollywood_bad_guy_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_hollywood_bad_guy_s5_animated_mtxitem",
             "itemid": "22969802"
         }
     ],
-    "itemname": "#hash_136f5268752e441e",
-    "var_375a1747": "#hash_6f57af72f98335ac",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5039_hunter_vengeful",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5039_hunter_vengeful",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5039_hunter_vengeful_mtxbundle",
-    "var_a788fada": "#hash_5571bcd2de32a9cd",
-    "titlestring": "#hash_41ff179c697ec3f0",
-    "var_566825be": "#hash_157f39d3903a2cc5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5039_hunter_vengeful_small",
+    "titlestring": "localized18#hash_41ff179c697ec3f0",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5039_hunter_vengeful",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_775fab9f278d80b8",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_775fab9f278d80b8",
+    "hash_db3e02ab": 2000,
     "itemid": "21687584"
 }

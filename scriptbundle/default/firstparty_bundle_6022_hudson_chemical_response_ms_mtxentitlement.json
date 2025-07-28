@@ -1,50 +1,60 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_hudson_hazmat_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_hudson_hazmat_ms_mtxitem",
             "itemid": "23898513"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_hudson_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_hudson_mtxitem",
             "itemid": "22860165"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_hudson_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_hudson_ms_mtxitem",
             "itemid": "26953018"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_hudson_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_hudson_ms_mtxitem",
             "itemid": "33244471"
         },
         {
-            "var_4a4bc969": "#t9_charm_chemical_barrel_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_chemical_barrel_ms_mtxitem",
             "itemid": "28073340"
         },
         {
-            "var_4a4bc969": "#emblems_containment_breach_s6_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_containment_breach_s6_base_ms_mtxitem",
             "itemid": "27223475"
         },
         {
-            "var_4a4bc969": "#callingcards_containment_breach_s6_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_containment_breach_s6_base_ms_mtxitem",
             "itemid": "32855865"
         },
         {
-            "var_4a4bc969": "#cod_points_2400_mtxitem"
+            "hash_4a4bc969": "scriptbundle#cod_points_2400_mtxitem"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_48a8f92c815fd483",
-    "var_247d9ed7": "firstparty_bundle_6022_breach_pro_pack",
-    "var_208d76b5": "#hash_6b666ddfcf146444",
-    "var_70f66e54": "#hash_201d6ee45337bb8",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_6022_breach_pro_pack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_firstparty_bundle_6022_hudson_chemical_response",
+    "hash_70f66e54": "#hash_201d6ee45337bb8",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "firstparty_bundle_6022_hudson_chemical_response_ms_mtxentitlement",
-    "var_a788fada": "#hash_238b3cb38078a953",
-    "titlestring": "#hash_1b1920f032a44353",
-    "var_566825be": "#hash_46ced500c4fe2b7b",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_firstparty_bundle_6022_hudson_chemical_response_small",
+    "titlestring": "localized18#hash_1b1920f032a44353",
+    "hash_566825be": "image#ui_icon_mtx_titles_firstparty_bundle_6022_hudson_chemical_response",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_f3c937a9": "#hash_1677e8e2dfc35cf7",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#durango",
+    "hash_f3c937a9": "localized18#hash_1677e8e2dfc35cf7",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#durango",
     "itemid": "28272565",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

@@ -1,0 +1,66 @@
+{
+    "pain_anims": [
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain01_torso_f"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain02_torso_f"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain03_torso_b"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain01_head_f"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain02_head_f"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain03_head_f"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain01_torso_l"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain01_torso_r"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain02_torso_l"
+        },
+        {
+            "xanim": "anim#sdr_com_m60_turret_pain02_torso_r"
+        }
+    ],
+    "rightdownanim": "anim#hash_3286bc2120fc681f",
+    "hash_68792705": "anim#hash_665d9d861aa59694",
+    "leftdownanim": "anim#hash_3286be2120fc6b85",
+    "vehicleenteranim": "anim#hash_3a89f90878271fbe",
+    "fireadditiveanim": "anim#hash_c01f0d1184938b",
+    "configstringfiletype": "scriptbundle",
+    "hash_5dbdd77c": 20,
+    "hash_5becf9b5": -90,
+    "hash_df656183": 1,
+    "hash_e6fe69e8": 20,
+    "leftstraightanim": "anim#hash_3286b92120fc6306",
+    "leftupanim": "anim#hash_3286b82120fc6153",
+    "type": "turretanims",
+    "hash_faf96846": 90,
+    "hash_1effd5ec": "anim#hash_5f23578616f5b9ac",
+    "hash_9323d5c1": "anim#hash_3a89fb0878272324",
+    "hash_6f03306d": "anim#hash_2aa553a190af549e",
+    "centerstraightanim": "anim#hash_665d9d861aa59694",
+    "vmtype": "none",
+    "centerdownanim": "anim#hash_7f0b46f806c53306",
+    "hash_1f5b775e": 30000,
+    "name": "turret_m60_anims",
+    "centerupanim": "anim#hash_5f23578616f5b9ac",
+    "rightupanim": "anim#hash_3286c62120fc791d",
+    "aimpitchangleu": 25,
+    "aimpitchangled": 25,
+    "hash_9b47c071": "anim#hash_3a89fd087827268a",
+    "hash_6cc04240": "anim#hash_7f0b46f806c53306",
+    "rightstraightanim": "anim#hash_3286b72120fc5fa0",
+    "aimyawangler": 45,
+    "aimyawanglel": 45,
+    "hash_76635d45": 1
+}

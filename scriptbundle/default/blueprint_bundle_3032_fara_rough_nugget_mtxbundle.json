@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_somberv_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_somberv_mtxitem",
             "itemid": "20042800"
         },
         {
-            "var_4a4bc969": "#smg_capacity_bp_somberv_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_somberv_mtxitem",
             "itemid": "24389140"
         },
         {
-            "var_4a4bc969": "#t9_charm_scorpion_gold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_scorpion_gold_mtxitem",
             "itemid": "24989122"
         },
         {
-            "var_4a4bc969": "#emblems_gildedageiv_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_gildedageiv_animated_mtxitem",
             "itemid": "31278896"
         },
         {
-            "var_4a4bc969": "#callingcards_gilded4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_gilded4_mtxitem",
             "itemid": "22495712"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_gildedageiv_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_gildedageiv_mtxitem",
             "itemid": "25442411"
         }
     ],
-    "itemname": "#hash_29dfb666b3c695e",
-    "var_375a1747": "#hash_5d27f9b0c0beee98",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3032_fara_rough_nugget",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3032_fara_rough_nugget",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3032_fara_rough_nugget_mtxbundle",
-    "var_a788fada": "#hash_33b11c4ee5c8e2cb",
-    "titlestring": "#hash_72190859e5d738f7",
-    "var_566825be": "#hash_978be8a0bb9da33",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3032_fara_rough_nugget_small",
+    "titlestring": "localized18#hash_72190859e5d738f7",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3032_fara_rough_nugget",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_831f8d61b1ea513",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_831f8d61b1ea513",
+    "hash_db3e02ab": 2000,
     "itemid": "33174654"
 }

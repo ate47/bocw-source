@@ -1,22 +1,31 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#battlepass_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#battlepass_xp_token_legendary_mtxitem",
             "itemid": "19658426"
         },
         {
-            "var_4a4bc969": "#battlepass_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#battlepass_xp_token_legendary_mtxitem",
             "itemid": "19658426"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_448210df69276e85",
-    "description": "#hash_7f2525803c959169",
-    "var_87756eb4": 1,
-    "var_375a1747": "#hash_1324c908aa106cf3",
+    "description": "localized18#hash_7f2525803c959169",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 1,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_375a1747": "image#ui_menu_incentive_generic",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "2fa_signup_bonus_mtxentitlement",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "28508155",
-    "var_7c846082": "#hash_f00c770b923deb6"
+    "hash_7c846082": "localized18#hash_f00c770b923deb6"
 }

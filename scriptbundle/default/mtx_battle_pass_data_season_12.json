@@ -1,6 +1,6 @@
 {
-    "var_e4771b8b": "mtx_global_purchase_confirmed",
+    "hash_e4771b8b": "mtx_global_purchase_confirmed",
     "name": "mtx_battle_pass_data_season_12",
-    "var_6e830db8": "#hash_5699cf97056edbc2",
-    "seasonname": "#hash_392b3dd73504516"
+    "hash_6e830db8": "localized18#hash_5699cf97056edbc2",
+    "seasonname": "localized18#hash_392b3dd73504516"
 }

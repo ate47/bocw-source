@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_2031c30fc06251a4",
-    "var_ce1913bd": "fta_",
+    "displaynameshort": "localized18#hash_2031c30fc06251a4",
+    "hash_ce1913bd": "fta_",
     "name": "faction_wz_team10",
-    "displayname": "#hash_757079a9e1393ce9",
-    "icon": "#hash_65346e4a80345ba8",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "cdp_commander_dgi",
+    "displayname": "localized18#hash_757079a9e1393ce9",
+    "icon": "image#ui_icon_fireteam_logo_talon",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&cdp_commander_dgi",
     "color": "White"
 }

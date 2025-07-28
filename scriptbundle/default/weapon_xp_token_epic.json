@@ -1,10 +1,11 @@
 {
     "achievementname": "t9_activate_weapon_xp_token_epic",
     "name": "weapon_xp_token_epic",
-    "var_6855e4be": "#weapon_xp_token_epic_mtxitem",
-    "title": "#hash_1d3e25c8d0402efa",
+    "hash_6855e4be": "#weapon_xp_token_epic_mtxitem",
+    "title": "localized18#hash_1d3e25c8d0402efa",
     "category": "#weapon",
-    "icon": "#hash_3ee892fc0431947f",
-    "subtitle": "#hash_3a5b9e15a45132e1",
-    "rarity": 3
+    "icon": "image#ui_icon_2xp_weapon_epic_large",
+    "subtitle": "localized18#hash_3a5b9e15a45132e1",
+    "hash_66251d82": 0,
+    "rarity": "enum:3"
 }

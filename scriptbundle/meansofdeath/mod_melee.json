@@ -1,9 +1,9 @@
 {
     "mod": "MOD_MELEE",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_melee",
-    "displayname": "#hash_7efc95e2aceb4d73",
-    "icon": "#ui_icon_meansofdeath_melee",
-    "iconlarge": "#ui_icon_meansofdeath_melee_xl"
+    "displayname": "localized18#ui/mod_melee",
+    "icon": "image#ui_icon_meansofdeath_melee",
+    "iconlarge": "image#ui_icon_meansofdeath_melee_xl"
 }

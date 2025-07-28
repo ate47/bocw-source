@@ -1,22 +1,22 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_zombie",
-            "var_a949845f": -1,
-            "var_857deb66": 90
+            "entryname": "scriptbundle&survival_ai_zombie",
+            "hash_a949845f": -1,
+            "hash_857deb66": 90
         },
         {
-            "entryname": "survival_ai_mimic",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_mimic",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_raz",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_raz",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "objective_hvt_flood_ailist_2"
 }

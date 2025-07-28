@@ -1,23 +1,33 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#blueprint_bundle_7506_vault_smg_pack_mtxbundle"
+            "hash_8bd0af73": "#blueprint_bundle_7506_vault_smg_pack_mtxbundle"
         }
     ],
-    "itemname": "#hash_6ce32b6464ddcce6",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_70b60f7542367564",
+    "itemname": "#smg_handling_bp_density",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#ui_icon_mtx_tier_smg_handling_bp_density",
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
     "weapon": "#smg_handling_t9",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_5e5d3c95e0333c58",
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_smg_handling_bp_density",
+    "release": 0,
     "season": 1,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#smg_handling_t9",
+    "hash_b6d84534": 0,
     "name": "smg_handling_bp_density_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 2,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:2",
+    "hash_84dc7961": 0,
     "itemid": "23813545",
-    "blueprint": "#hash_6ce32b6464ddcce6"
+    "blueprint": "#smg_handling_bp_density"
 }

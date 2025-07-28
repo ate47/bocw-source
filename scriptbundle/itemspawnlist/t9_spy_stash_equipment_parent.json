@@ -1,0 +1,44 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#t9_spy_equipment",
+            "maxweight": 100,
+            "available": 2
+        },
+        {
+            "minweight": 0,
+            "itementry": "scriptbundle#t9_spy_crate_weapons",
+            "maxweight": 60,
+            "available": 1
+        },
+        {
+            "minweight": 17,
+            "itementry": "scriptbundle#stimshot_t9_item_spy",
+            "maxweight": 17,
+            "available": 1
+        }
+    ],
+    "hash_136dd314": 30,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_7fb0967b": 768,
+    "hash_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 90,
+    "hash_9b009839": -1,
+    "hash_c95558ce": "image#ui_icon_inventory_dirty_bomb_container_t9",
+    "hash_dc7ffbef": 1,
+    "name": "t9_spy_stash_equipment_parent",
+    "displayname": "localized19#hash_4557b5c323458188",
+    "hash_56257910": -90,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_4f220d03": 1,
+    "hash_dc91e192": 0,
+    "supplystash": 1
+}

@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_skeleton_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_skeleton_mtxitem",
             "itemid": "26025896"
         },
         {
-            "var_4a4bc969": "#t9_charm_ornate_lock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_ornate_lock_mtxitem",
             "itemid": "27700200"
         },
         {
-            "var_4a4bc969": "#callingcards_skeketon_key_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_skeketon_key_s5_mtxitem",
             "itemid": "26757603"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_15_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_15_s5_mtxitem",
             "itemid": "23521755"
         }
     ],
-    "itemname": "#hash_48e6db52e5dcc62a",
-    "var_375a1747": "#hash_1a5be03dad5c61e8",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5052_pelington_703_skeleton_key",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5052_pelington_703_skeleton_key",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5052_pelington_703_skeleton_key_mtxbundle",
-    "var_a788fada": "#hash_8d4402a57d10289",
-    "titlestring": "#hash_51b1846c1c875f47",
-    "var_566825be": "#hash_58c17aee87c26681",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5052_pelington_703_skeleton_key_small",
+    "titlestring": "localized18#hash_51b1846c1c875f47",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5052_pelington_703_skeleton_key",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_69ce94983a342ea3",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_69ce94983a342ea3",
+    "hash_db3e02ab": 2000,
     "itemid": "31236357"
 }

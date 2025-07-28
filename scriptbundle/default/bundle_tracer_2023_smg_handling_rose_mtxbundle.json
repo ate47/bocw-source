@@ -1,55 +1,59 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_5e07b144aa8bf917"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_tracer_2023_smg_handling_rose"
         },
         {
-            "var_fe10649e": "#hash_a296847dcfad77e"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_tracer_2023_smg_handling_rose_02"
         },
         {
-            "var_fe10649e": "#hash_a296947dcfad931"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_tracer_2023_smg_handling_rose_03"
         },
         {
-            "var_fe10649e": "#hash_a296a47dcfadae4"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_tracer_2023_smg_handling_rose_04"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_handling_bp_heartbreak_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_heartbreak_mtxitem",
             "itemid": "31165716"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_heartbreak_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_heartbreak_mtxitem",
             "itemid": "19296072"
         },
         {
-            "var_4a4bc969": "#t9_charm_heartbreaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_heartbreaker_mtxitem",
             "itemid": "32042604"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_mpx_heartbreaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_tank_t72_mpx_heartbreaker_mtxitem",
             "itemid": "19485015"
         },
         {
-            "var_4a4bc969": "#emblems_rosetracer_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_rosetracer_animated_mtxitem",
             "itemid": "31863067"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_heartbreaker_08_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_heartbreaker_08_mtxitem",
             "itemid": "28058674"
         }
     ],
-    "itemname": "#hash_5f7c45c178a81531",
-    "var_375a1747": "#hash_5e07b144aa8bf917",
-    "var_3040f0d1": "#hash_5e07b144aa8bf917",
-    "var_8ee7db29": 1,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_tracer_2023_smg_handling_rose",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_tracer_2023_smg_handling_rose",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_bundle_tracer_2023_smg_handling_rose",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_tracer_2023_smg_handling_rose_mtxbundle",
-    "var_a788fada": "#hash_2cbe9e0cf2b4140e",
-    "titlestring": "#hash_51918fcbf1f5bac8",
-    "var_566825be": "#hash_47681caa87d43866",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_2cbe9e0cf2b4140e",
+    "titlestring": "localized18#hash_51918fcbf1f5bac8",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_tracer_2023_smg_handling_rose",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3bdf3abe73e82810",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_3bdf3abe73e82810",
+    "hash_db3e02ab": 750,
     "itemid": "19628973"
 }

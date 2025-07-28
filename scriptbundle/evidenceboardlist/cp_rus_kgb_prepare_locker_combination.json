@@ -1,0 +1,31 @@
+{
+    "#hash_ca65c53": [
+        {
+            "hash_509412f0": 1,
+            "initial_value": 0
+        },
+        {
+            "hash_509412f0": 6,
+            "initial_value": 0
+        },
+        {
+            "hash_509412f0": 7,
+            "initial_value": 0
+        },
+        {
+            "hash_509412f0": 5,
+            "initial_value": 0
+        },
+        {
+            "hash_509412f0": 6,
+            "initial_value": 0
+        },
+        {
+            "hash_509412f0": 0,
+            "initial_value": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "evidenceboardlist",
+    "name": "cp_rus_kgb_prepare_locker_combination"
+}

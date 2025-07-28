@@ -1,13 +1,13 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_raz",
-            "var_a949845f": 2,
-            "var_857deb66": 100
+            "entryname": "scriptbundle&survival_ai_raz",
+            "hash_a949845f": 2,
+            "hash_857deb66": 100
         }
     ],
-    "var_d961aeb3": 0.3,
-    "var_922067c4": "scriptbundle",
+    "hash_d961aeb3": 0.3,
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "horde_hunt_realm_1_leader_2"
 }

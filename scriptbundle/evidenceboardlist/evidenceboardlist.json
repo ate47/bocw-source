@@ -1,0 +1,863 @@
+{
+    "#hash_c8099c2": [
+        {
+            "#hash_bd48fa38": [
+                {
+                    "hash_3a61b479": "cp_nic_revolucion"
+                },
+                {
+                    "hash_3a61b479": "cp_takedown"
+                },
+                {
+                    "hash_3a61b479": "cp_nam_armada"
+                }
+            ],
+            "hash_4c5c8430": "#post_takedown"
+        },
+        {
+            "#hash_bd48fa38": [
+                {
+                    "hash_3a61b479": "cp_nic_revolucion"
+                },
+                {
+                    "hash_3a61b479": "cp_takedown"
+                },
+                {
+                    "hash_3a61b479": "cp_nam_armada"
+                },
+                {
+                    "hash_3a61b479": "cp_ger_stakeout"
+                }
+            ],
+            "hash_4c5c8430": "#post_armada"
+        },
+        {
+            "#hash_bd48fa38": [
+                {
+                    "hash_3a61b479": "cp_nic_revolucion"
+                },
+                {
+                    "hash_3a61b479": "cp_takedown"
+                },
+                {
+                    "hash_3a61b479": "cp_nam_armada"
+                },
+                {
+                    "hash_3a61b479": "cp_ger_stakeout"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_amerika"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_yamantau"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_kgb"
+                }
+            ],
+            "hash_4c5c8430": "#post_yamantau"
+        },
+        {
+            "#hash_bd48fa38": [
+                {
+                    "hash_3a61b479": "cp_nic_revolucion"
+                },
+                {
+                    "hash_3a61b479": "cp_takedown"
+                },
+                {
+                    "hash_3a61b479": "cp_nam_armada"
+                },
+                {
+                    "hash_3a61b479": "cp_ger_stakeout"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_amerika"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_yamantau"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_kgb"
+                }
+            ],
+            "hash_4c5c8430": "#post_kgb"
+        },
+        {
+            "#hash_bd48fa38": [
+                {
+                    "hash_3a61b479": "cp_nic_revolucion"
+                },
+                {
+                    "hash_3a61b479": "cp_takedown"
+                },
+                {
+                    "hash_3a61b479": "cp_nam_armada"
+                },
+                {
+                    "hash_3a61b479": "cp_ger_stakeout"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_amerika"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_yamantau"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_kgb"
+                }
+            ],
+            "hash_4c5c8430": "#post_cuba"
+        },
+        {
+            "#hash_bd48fa38": [
+                {
+                    "hash_3a61b479": "cp_nic_revolucion"
+                },
+                {
+                    "hash_3a61b479": "cp_takedown"
+                },
+                {
+                    "hash_3a61b479": "cp_nam_armada"
+                },
+                {
+                    "hash_3a61b479": "cp_ger_stakeout"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_amerika"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_yamantau"
+                },
+                {
+                    "hash_3a61b479": "cp_rus_kgb"
+                }
+            ],
+            "hash_4c5c8430": "#post_prisoner"
+        }
+    ],
+    "#hash_48be729c": [
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_69b028e51ad76b9b",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_69b029e51ad76d4e",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 3,
+                    "title": "localized19#hash_69b02ae51ad76f01",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 4,
+                    "title": "localized19#hash_69b02be51ad770b4",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_06"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_09"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_08"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_takedown_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_takedown",
+            "hash_4ff3b76c": "mdl_label_cp_takedown",
+            "hash_212ee626": "eboard_cp_takedown_icon_alert",
+            "hash_f8097243": "eboard_cp_takedown_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_711c13dc": "model#p9_sr_evidence_takedown_title_label_01",
+            "AlignRight": 1,
+            "hash_2dd3e7b0": "localized19#hash_2cfa8ae7b63d5902",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_takedown_focus",
+            "hash_653c7d7d": "model#hash_b7b4e7adbf3a331",
+            "hash_8f98dad8": "shot_eboard_takedown_attract",
+            "hash_47b1727b": "localized19#hash_4ec673b0df198fce",
+            "levelname": "localized19#hash_5502f240830c56e8",
+            "hash_839276ad": "model#hash_3977b47e8a17e9f6",
+            "LevelPresence": "localized19#hash_8053004b97c355",
+            "hash_2200aced": 1981
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_51331a3d78570673",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_51331b3d78570826",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_06"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nam_armada_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_nam_armada",
+            "hash_4ff3b76c": "mdl_label_cp_nam_armada",
+            "hash_212ee626": "eboard_cp_nam_armada_icon_alert",
+            "hash_f8097243": "eboard_cp_nam_armada_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_711c13dc": "model#p9_sr_evidence_armada_title_label_01",
+            "AlignRight": 1,
+            "hash_2dd3e7b0": "localized19#hash_5fd4e3202141c03a",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_armada_focus",
+            "hash_653c7d7d": "model#hash_3164c6726cb0b6f0",
+            "hash_8f98dad8": "shot_eboard_armada_attract",
+            "hash_47b1727b": "localized19#hash_3300d964c5057666",
+            "levelname": "localized19#hash_78b9f9d7130bb760",
+            "hash_839276ad": "model#hash_59ded4d02fbad24b",
+            "LevelPresence": "localized19#hash_2b0b79f974a033c3",
+            "hash_2200aced": 1968
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_1d093662a1c7d5c5",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_1d093362a1c7d0ac",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 3,
+                    "title": "localized19#hash_1d093462a1c7d25f",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 4,
+                    "title": "localized19#hash_1d093162a1c7cd46",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 5,
+                    "title": "localized19#hash_1d093262a1c7cef9",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 6,
+                    "title": "localized19#hash_1d092f62a1c7c9e0",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 7,
+                    "title": "localized19#hash_1d093062a1c7cb93",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_06"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_08"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_ger_stakeout_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_ger_stakeout",
+            "hash_4ff3b76c": "mdl_label_cp_ger_stakeout",
+            "hash_212ee626": "eboard_cp_ger_stakeout_icon_alert",
+            "hash_f8097243": "eboard_cp_ger_stakeout_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_711c13dc": "model#p9_sr_evidence_stakeout_title_label_01",
+            "AlignRight": 0,
+            "hash_2dd3e7b0": "localized19#hash_435c79c50d00ca8c",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_stakeout_focus",
+            "hash_653c7d7d": "model#hash_3b5f4c7bae685108",
+            "hash_8f98dad8": "shot_eboard_stakeout_attract",
+            "hash_47b1727b": "localized19#hash_4b31f7691f99b34",
+            "levelname": "localized19#hash_36ba37df673ec926",
+            "hash_839276ad": "model#hash_55a36b81927a99e3",
+            "LevelPresence": "localized19#hash_2b0b79f974a033c3",
+            "hash_2200aced": 1981
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_4a53acf35cf9717",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_4a53bcf35cf98ca",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 3,
+                    "title": "localized19#hash_4a53ccf35cf9a7d",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 4,
+                    "title": "localized19#hash_4a535cf35cf8e98",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_11"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_09"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_08"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_10"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_06"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_amerika_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_rus_amerika",
+            "hash_4ff3b76c": "mdl_label_cp_rus_amerika",
+            "hash_212ee626": "eboard_cp_rus_amerika_icon_alert",
+            "hash_f8097243": "eboard_cp_rus_amerika_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_711c13dc": "model#p9_sr_evidence_at_title_label_01",
+            "AlignRight": 1,
+            "hash_2dd3e7b0": "localized19#hash_436505aeb8e306f6",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_amerika_focus",
+            "hash_653c7d7d": "model#hash_7ba32bcda73daa27",
+            "hash_8f98dad8": "shot_eboard_amerika_attract",
+            "hash_47b1727b": "localized19#hash_49e10f0e22c0c32a",
+            "levelname": "localized19#hash_32ce08177b27e0c",
+            "hash_839276ad": "model#hash_1441368c1721670",
+            "LevelPresence": "localized19#hash_2b0b79f974a033c3",
+            "hash_2200aced": 1981
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_3a14cf8b864e03b7",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_3a14d08b864e056a",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 3,
+                    "title": "localized19#hash_3a14d18b864e071d",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 4,
+                    "title": "localized19#hash_3a14ca8b864dfb38",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_06"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_yamantau_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_rus_yamantau",
+            "hash_4ff3b76c": "mdl_label_cp_rus_yamantau",
+            "hash_212ee626": "eboard_cp_rus_yamantau_icon_alert",
+            "hash_f8097243": "eboard_cp_rus_yamantau_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_711c13dc": "model#p9_sr_evidence_yamantau_title_label_01",
+            "AlignRight": 0,
+            "hash_2dd3e7b0": "localized19#hash_198ada650d99896",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_yamantau_focus",
+            "hash_653c7d7d": "model#hash_17e2d6a67061b026",
+            "hash_8f98dad8": "shot_eboard_yamantau_attract",
+            "hash_47b1727b": "localized19#hash_5931f057e39caf4a",
+            "levelname": "localized19#hash_63ea6e0627a7c36c",
+            "hash_839276ad": "model#hash_767fa04daf009c75",
+            "LevelPresence": "localized19#hash_7cb9ddf761f99f21",
+            "hash_2200aced": 1981
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_21d9a208d61d1443",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_21d9a308d61d15f6",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 3,
+                    "title": "localized19#hash_21d9a408d61d17a9",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 4,
+                    "title": "localized19#hash_21d9a508d61d195c",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_09"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_12"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_08"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_10"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_rus_kgb_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_rus_kgb",
+            "hash_4ff3b76c": "mdl_label_cp_rus_kgb",
+            "hash_212ee626": "eboard_cp_rus_kgb_icon_alert",
+            "hash_f8097243": "eboard_cp_rus_kgb_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_711c13dc": "model#p9_sr_evidence_kgb_title_label_01",
+            "AlignRight": 0,
+            "hash_2dd3e7b0": "localized19#hash_2b270772da74472a",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_kgb_focus",
+            "hash_653c7d7d": "model#hash_60ac464891b7d968",
+            "hash_8f98dad8": "shot_eboard_kgb_attract",
+            "hash_47b1727b": "localized19#hash_41e1ee38fda3e056",
+            "levelname": "localized19#hash_c04257d3766bd0",
+            "hash_839276ad": "model#hash_29903a7ab4b9a43",
+            "LevelPresence": "localized19#hash_15b0cea815e9f65d",
+            "hash_2200aced": 1981
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_6bc035c68f9f215b",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 2,
+                    "title": "localized19#hash_6bc036c68f9f230e",
+                    "IsPrimaryObjective": 0
+                },
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 3,
+                    "title": "localized19#hash_6bc037c68f9f24c1",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_06"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_07"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_nic_revolucion_08"
+                }
+            ],
+            "hash_8ca1d4a": "cp_nic_revolucion",
+            "hash_4ff3b76c": "mdl_label_cp_nic_revolucion",
+            "hash_212ee626": "eboard_cp_nic_revolucion_icon_alert",
+            "hash_f8097243": "eboard_cp_nic_revolucion_icon_breadcrumb",
+            "isSideMission": 0,
+            "hash_c8c2549a": "localized19#hash_61b2c34f05aeeff5",
+            "hash_711c13dc": "model#p9_sr_evidence_perseus_title_label_01",
+            "AlignRight": 0,
+            "hash_2dd3e7b0": "localized19#hash_20eb83c70e6c4042",
+            "hash_bd8e2ffe": "localized19#hash_72f94a500bcdceb1",
+            "hash_e4f432d9": 1,
+            "hash_89616eaa": "shot_eboard_revolucion_focus",
+            "hash_d7ba74ee": "cp_rus_kgb",
+            "hash_653c7d7d": "model#p9_sr_evidence_perseus_title_label_01_active",
+            "hash_8f98dad8": "shot_eboard_revolucion_attract",
+            "hash_47b1727b": "localized19#hash_3803693a81baec0e",
+            "levelname": "localized19#hash_4de560b1cbbfbb88",
+            "hash_839276ad": "model#hash_777c705387743aec",
+            "hash_c4ac97e4": "localized19#hash_3c2ae1d9035a4e4b",
+            "LevelPresence": "localized19#hash_2b0b79f974a033c3",
+            "hash_2200aced": 1981
+        },
+        {
+            "intro_vo": [
+                {
+                    "vox": "vox_cp_chao_01000_sims_solistenupanexc_c5"
+                },
+                {
+                    "vox": "vox_cp_chao_01000_sims_werecentlyacqui_2c"
+                },
+                {
+                    "vox": "vox_cp_chao_01000_sims_weknowwherealdr_8d"
+                },
+                {
+                    "vox": "vox_cp_chao_01000_sims_youmayfindsomei_fb"
+                }
+            ],
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_37ac5853a6957263",
+                    "IsPrimaryObjective": 1
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_takedown_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_takedown_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_takedown_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_takedown_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_takedown_05"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_takedown_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_sidemission_takedown",
+            "hash_4ff3b76c": "mdl_label_cp_sidemission_takedown",
+            "hash_212ee626": "eboard_cp_sidemission_takedown_icon_alert",
+            "hash_f8097243": "eboard_cp_sidemission_takedown_icon_breadcrumb",
+            "isSideMission": 1,
+            "hash_711c13dc": "model#p9_sr_evidence_op_chaos_title_label_01",
+            "AlignRight": 0,
+            "hash_2dd3e7b0": "localized19#hash_422d8025794702ca",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_chaos_focus",
+            "hash_653c7d7d": "model#hash_4effe2e7eab5163a",
+            "hash_8f98dad8": "shot_eboard_chaos_attract",
+            "hash_47b1727b": "localized19#hash_568952a384f3a876",
+            "levelname": "localized19#hash_7f4487a7da679130",
+            "hash_839276ad": "model#hash_b6b179967621e71",
+            "LevelPresence": "localized19#hash_8053004b97c355",
+            "hash_2200aced": 1981
+        },
+        {
+            "intro_vo": [
+                {
+                    "vox": "vox_cp_sh0_02000_sims_mi6hasspentthel_d8"
+                },
+                {
+                    "vox": "vox_cp_sh0_02000_sims_theseagentscoul_cb"
+                },
+                {
+                    "vox": "vox_cp_sh0_02000_sims_duringarecentop_d7"
+                },
+                {
+                    "vox": "vox_cp_sh0_02000_sims_wehaverudnikspo_d3"
+                },
+                {
+                    "vox": "vox_cp_sh0_02000_sims_checkoutourlist_24"
+                }
+            ],
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_16f2981446d1ec38",
+                    "IsPrimaryObjective": 1
+                }
+            ],
+            "collectiblelist": [
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_tundra_01"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_tundra_02"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_tundra_03"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_tundra_04"
+                },
+                {
+                    "collectible": "scriptbundle#p9_cp_sidemission_tundra_cluster"
+                }
+            ],
+            "hash_8ca1d4a": "cp_sidemission_tundra",
+            "hash_4ff3b76c": "mdl_label_cp_sidemission_tundra",
+            "hash_212ee626": "eboard_cp_sidemission_tundra_icon_alert",
+            "hash_f8097243": "eboard_cp_sidemission_tundra_icon_breadcrumb",
+            "isSideMission": 1,
+            "hash_711c13dc": "model#p9_sr_evidence_op_red_circus_title_label_01",
+            "AlignRight": 0,
+            "hash_2dd3e7b0": "localized19#hash_fc80ffc928f1ab7",
+            "hash_e4f432d9": 0,
+            "hash_89616eaa": "shot_eboard_redcircus_focus",
+            "hash_653c7d7d": "model#hash_744783e6910b1857",
+            "hash_8f98dad8": "shot_eboard_redcircus_attract",
+            "hash_47b1727b": "localized19#hash_25a986dad8f82f49",
+            "levelname": "localized19#hash_1c8813eba3d3c667",
+            "hash_839276ad": "model#hash_7121a2e3da2a74a0",
+            "LevelPresence": "localized19#hash_8053004b97c355",
+            "hash_2200aced": 1981
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_6cee23f63dd2c1ed",
+                    "IsPrimaryObjective": 1
+                }
+            ],
+            "hash_8ca1d4a": "cp_nam_prisoner",
+            "isSideMission": 0,
+            "AlignRight": 0,
+            "hash_e4f432d9": 0,
+            "hash_2200aced": 0
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_3c8ca3abfb206b53",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 1,
+                    "itemindex": 2,
+                    "title": "localized19#hash_3645b394c58be95c",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 1,
+                    "itemindex": 3,
+                    "title": "localized19#hash_3eea8dbb59df295e",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "hash_8ca1d4a": "cp_ger_hub8",
+            "isSideMission": 0,
+            "AlignRight": 0,
+            "hash_e4f432d9": 0,
+            "hash_2200aced": 0
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 1,
+                    "itemindex": 1,
+                    "title": "localized19#hash_71c2b34ba2bc6430",
+                    "IsPrimaryObjective": 1
+                },
+                {
+                    "IsEvilObjective": 1,
+                    "itemindex": 2,
+                    "title": "localized19#hash_71c2b64ba2bc6949",
+                    "IsPrimaryObjective": 0
+                }
+            ],
+            "hash_8ca1d4a": "cp_rus_duga",
+            "isSideMission": 0,
+            "AlignRight": 0,
+            "hash_e4f432d9": 0,
+            "hash_2200aced": 0
+        },
+        {
+            "#hash_4458275e": [
+                {
+                    "IsEvilObjective": 0,
+                    "itemindex": 1,
+                    "title": "localized19#hash_5513f3984adbf7e0",
+                    "IsPrimaryObjective": 1
+                }
+            ],
+            "hash_8ca1d4a": "cp_rus_siege",
+            "isSideMission": 0,
+            "AlignRight": 0,
+            "hash_e4f432d9": 0,
+            "hash_2200aced": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "evidenceboardlist",
+    "name": "evidenceboardlist"
+}

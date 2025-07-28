@@ -1,0 +1,22 @@
+{
+    "fireadditiveanim": "playeranim#hash_203856d5f9076c13",
+    "configstringfiletype": "scriptbundle",
+    "hash_5dbdd77c": 20,
+    "hash_5becf9b5": -90,
+    "hash_e6fe69e8": 20,
+    "leftstraightanim": "playeranim#hash_75a5d99ad9e4ae11",
+    "type": "turretanims",
+    "hash_faf96846": 90,
+    "hash_9323d5c1": "playeranim#hash_57e2e1d0ca38035a",
+    "centerstraightanim": "playeranim#hash_5b7f6293bfc58106",
+    "vmtype": "none",
+    "hash_1f5b775e": 30000,
+    "name": "player_turret_gaz66_driver_anims",
+    "aimpitchangleu": 90,
+    "aimpitchangled": 90,
+    "hash_9b47c071": "playeranim#hash_57e2e1d0ca38035a",
+    "rightstraightanim": "playeranim#hash_85884a3e58a2f2",
+    "aimyawangler": 35,
+    "aimyawanglel": 35,
+    "hash_76635d45": 1
+}

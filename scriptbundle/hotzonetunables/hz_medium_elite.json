@@ -1,0 +1,47 @@
+{
+    "#hash_1d67b7db": [
+        {
+            "hash_210a8489": "scriptbundle&default_zombies_realm_1"
+        },
+        {
+            "hash_210a8489": "scriptbundle&default_zombies_realm_2"
+        },
+        {
+            "hash_210a8489": "scriptbundle&default_zombies_realm_3"
+        },
+        {
+            "hash_210a8489": "scriptbundle&default_zombies_realm_4"
+        },
+        {
+            "hash_210a8489": "scriptbundle&default_zombies_realm_5"
+        }
+    ],
+    "#hash_d5ae73b2": [
+        {
+            "hash_210a8489": "scriptbundle&inf_raz"
+        },
+        {
+            "hash_210a8489": "scriptbundle&inf_elites"
+        },
+        {
+            "hash_210a8489": "scriptbundle&inf_elites"
+        },
+        {
+            "hash_210a8489": "scriptbundle&inf_elites"
+        },
+        {
+            "hash_210a8489": "scriptbundle&inf_elites"
+        }
+    ],
+    "num_spawn_points": 1,
+    "hash_4dc06056": 0.01,
+    "hash_d961aeb3": 0,
+    "hash_a1208a9a": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e4de985f": 1,
+    "hash_b8fc9deb": 0,
+    "type": "hotzonetunables",
+    "name": "hz_medium_elite",
+    "hash_735d3a6b": 1,
+    "wander_radius": 128
+}

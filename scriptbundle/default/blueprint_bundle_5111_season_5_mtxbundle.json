@@ -1,23 +1,28 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#t9_charm_g_gnome_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_g_gnome_mtxitem",
             "itemid": "30719762"
         },
         {
-            "var_4a4bc969": "#weapon_xp_token_common_mtxitem",
+            "hash_4a4bc969": "scriptbundle#weapon_xp_token_common_mtxitem",
             "itemid": "27032621"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_4b01500a47e03e3a",
-    "var_375a1747": "#hash_14937e2d49afdd04",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5102_season_5",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5111_season_5_mtxbundle",
-    "var_a788fada": "#hash_27292b91427965fd",
-    "titlestring": "#hash_2f2b95febfa114f3",
-    "var_566825be": "#hash_41175960cd2377b5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5102_season_5_small",
+    "titlestring": "localized18#hash_2f2b95febfa114f3",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5102_season_5",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_39cebc7812658997",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_39cebc7812658997",
+    "hash_db3e02ab": 2000,
     "itemid": "21480084"
 }

@@ -1,0 +1,18 @@
+{
+    "vehicleenteranim": "anim#hash_70ac6a745ce2f1df",
+    "configstringfiletype": "scriptbundle",
+    "hash_5dbdd77c": 20,
+    "hash_5becf9b5": -90,
+    "hash_e6fe69e8": 20,
+    "type": "turretanims",
+    "hash_faf96846": 90,
+    "hash_9323d5c1": "playeranim#hash_3b3f5f3a1e78315a",
+    "centerstraightanim": "playeranim#hash_15ec6956c9619b06",
+    "vmtype": "none",
+    "hash_1f5b775e": 30000,
+    "name": "player_heavy_helicopter_pilot",
+    "aimpitchangleu": 90,
+    "aimpitchangled": 90,
+    "hash_9b47c071": "playeranim#hash_3b3f5f3a1e78315a",
+    "hash_76635d45": 1
+}

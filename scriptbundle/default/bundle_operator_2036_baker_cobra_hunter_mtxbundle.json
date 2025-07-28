@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_hunter_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_hunter_mtxitem",
             "itemid": "26204175"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_ghost_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_ghost_mtxitem",
             "itemid": "28191627"
         },
         {
-            "var_4a4bc969": "#emblems_snakeshield_007_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_snakeshield_007_animated_mtxitem",
             "itemid": "20830999"
         },
         {
-            "var_4a4bc969": "#reticle_63_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_63_mtxitem",
             "itemid": "24854700"
         },
         {
-            "var_4a4bc969": "#callingcards_character12_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_character12_mtxitem",
             "itemid": "29595278"
         }
     ],
-    "itemname": "#hash_62310d396a025137",
-    "var_375a1747": "#hash_67cb1b9869f6f199",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2036_baker_cobra_hunter",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2036_baker_cobra_hunter",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2036_baker_cobra_hunter_mtxbundle",
-    "var_a788fada": "#hash_573c05aabc7f0ed2",
-    "titlestring": "#hash_187c7b1cd0503d42",
-    "var_566825be": "#hash_63359063f6f5a51e",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2036_baker_cobra_hunter_small",
+    "titlestring": "localized18#hash_187c7b1cd0503d42",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2036_baker_cobra_hunter",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_570b167b351f37be",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_570b167b351f37be",
+    "hash_db3e02ab": 2000,
     "itemid": "24147594"
 }

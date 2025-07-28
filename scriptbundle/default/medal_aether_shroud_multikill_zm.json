@@ -1,9 +1,9 @@
 {
-    "description": "#hash_1d02922dc36a5d51",
+    "description": "localized18#hash_1d02922dc36a5d51",
     "widget": "#badasserymedal",
     "name": "medal_aether_shroud_multikill_zm",
-    "iconsmall": "#hash_23e6ba0dc43aec2b",
+    "iconsmall": "image#ui_icon_medal_zm_hide_and_seek",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_7863ea97b50ab07f",
-    "iconlarge": "#hash_1971abcc9618380b"
+    "stringref": "localized18#hash_7863ea97b50ab07f",
+    "iconlarge": "image#ui_icon_medal_zm_hide_and_seek_large"
 }

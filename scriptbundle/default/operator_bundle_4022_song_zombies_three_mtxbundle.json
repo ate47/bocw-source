@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter4_song_backflip_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter4_song_backflip_mtxitem",
             "itemid": "25451209"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter4_mtxitem",
             "itemid": "31249471"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_tchern_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_tchern_mtxitem",
             "itemid": "31125215"
         },
         {
-            "var_4a4bc969": "#lmg_light_bp_tchern_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_tchern_mtxitem",
             "itemid": "21582732"
         },
         {
-            "var_4a4bc969": "#t9_charm_tiger_head_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_tiger_head_mtxitem",
             "itemid": "21747525"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r8g_15_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r8g_15_mtxitem",
             "itemid": "33385288"
         }
     ],
-    "itemname": "#hash_3d52c60f6c7c67ca",
-    "var_375a1747": "#hash_4f2b152f5718f250",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4022_song_zombies_three",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4022_song_zombies_three",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4022_song_zombies_three_mtxbundle",
-    "var_a788fada": "#hash_31a0686510cfe9c3",
-    "titlestring": "#hash_772ac2b5408956d",
-    "var_566825be": "#hash_717e8dac574713ab",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4022_song_zombies_three_small",
+    "titlestring": "localized18#hash_772ac2b5408956d",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4022_song_zombies_three",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2abdd6cf640484a5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2abdd6cf640484a5",
+    "hash_db3e02ab": 2000,
     "itemid": "26163276"
 }

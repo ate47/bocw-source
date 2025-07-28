@@ -1,9 +1,9 @@
 {
-    "description": "#hash_63c8f03bcdcea88f",
+    "description": "localized18#hash_63c8f03bcdcea88f",
     "widget": "#badasserymedal",
     "name": "medal_concussion_grenade_multikill_zm",
-    "iconsmall": "#hash_3d12fe180f1ba6e2",
+    "iconsmall": "image#ui_icon_medal_zm_finished",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_39dd38572ca66fc5",
-    "iconlarge": "#hash_6a8d342afe771062"
+    "stringref": "localized18#hash_39dd38572ca66fc5",
+    "iconlarge": "image#ui_icon_medal_zm_finished_large"
 }

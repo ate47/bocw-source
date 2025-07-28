@@ -1,0 +1,108 @@
+{
+    "#hash_bb7dcd09": [
+        {
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1f7e78acab4cf7a",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_winconditions"
+        },
+        {
+            "hash_82ead409": 3,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1f7e78acab4cf7a",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_winconditions"
+        },
+        {
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1a58fd81a00e0031",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_advanced"
+        },
+        {
+            "hash_82ead409": 3,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1a58fd81a00e0031",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_advanced"
+        },
+        {
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_6fdfa2bc5130962a",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_spawn",
+            "assetref": "#hash_1e2b8d2d3ab47434"
+        },
+        {
+            "hash_82ead409": 3,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_6fdfa2bc5130962a",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_spawn",
+            "assetref": "#hash_1e2b8d2d3ab47434"
+        },
+        {
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/gameplay",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_gameplay",
+            "assetref": "#hash_70982e1c9d180d09"
+        },
+        {
+            "hash_82ead409": 3,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/gameplay",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_gameplay",
+            "assetref": "#hash_70982e1c9d180d09"
+        },
+        {
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/general",
+            "actionutility": "#NONE",
+            "hash_4e4109db": "scriptbundle#editcustomgames_settings_zm_general",
+            "assetref": "#gsol_zm_general"
+        }
+    ],
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
+    "type": "datasourcelist",
+    "hash_5497949f": 1,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
+    "name": "editcustomgames_settings_game_categories",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 1,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 1
+}

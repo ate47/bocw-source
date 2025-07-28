@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_real_war_never_in_books",
-    "quote": "#hash_4b3943519a3ea80",
-    "author": "#hash_b5400e9dac595ff"
+    "quote": "localized18#hash_4b3943519a3ea80",
+    "author": "localized18#hash_b5400e9dac595ff"
 }

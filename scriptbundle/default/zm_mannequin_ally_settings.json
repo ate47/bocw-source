@@ -1,22 +1,25 @@
 {
-    "var_15c336d1": [
+    "#hash_15c336d1": [
         {
             "start_round": 1,
-            "var_928e93a0": 1
+            "hash_928e93a0": 1
         }
     ],
-    "var_604a84a1": 1,
+    "hash_604a84a1": 1,
+    "hash_10460f1e": 0,
     "scoreevent": "#hash_74cf811cb0b52ac6",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "maxhealth": 1,
-    "var_a3160086": 50,
-    "var_7b22b800": 1,
-    "var_fc420d71": 1,
+    "hash_a3160086": 50,
+    "hash_7b22b800": 1,
+    "instakilldamagescale": 1,
     "name": "zm_mannequin_ally_settings",
-    "var_628192b0": 1,
-    "var_97b22faa": 1,
+    "weakpointdamagescale": 1,
+    "hash_97b22faa": 1,
     "damagescale": 1,
     "category": "#normal",
-    "var_dc706c6c": "#hash_74cf811cb0b52ac6",
-    "var_450edb3b": 1
+    "hash_854eebd": 0,
+    "stunduration": 0,
+    "hash_dc706c6c": "#hash_74cf811cb0b52ac6",
+    "animationspeed": 1
 }

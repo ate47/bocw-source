@@ -1,53 +1,53 @@
 {
-    "var_9aa52b6d": [
+    "#hash_9aa52b6d": [
         {
-            "itemname": "#hash_796d4d971c081d6c",
-            "var_5ec2d292": 5
+            "itemname": "localized18#hash_796d4d971c081d6c",
+            "hash_5ec2d292": 5
         },
         {
-            "itemname": "#hash_2d8a8287dc880c1",
-            "var_5ec2d292": 18
+            "itemname": "localized18#hash_2d8a8287dc880c1",
+            "hash_5ec2d292": 18
         },
         {
-            "itemname": "#hash_2a2d30868eed2d64",
-            "var_5ec2d292": 35
+            "itemname": "localized18#hash_2a2d30868eed2d64",
+            "hash_5ec2d292": 35
         },
         {
-            "itemname": "#hash_3d2db6cf7305240c",
-            "var_5ec2d292": 55
+            "itemname": "localized18#hash_3d2db6cf7305240c",
+            "hash_5ec2d292": 55
         },
         {
-            "itemname": "#hash_2666c77b06e3ef6f",
-            "var_5ec2d292": 85
+            "itemname": "localized18#hash_2666c77b06e3ef6f",
+            "hash_5ec2d292": 85
         },
         {
-            "itemname": "#hash_282319c9f6d42586",
-            "var_5ec2d292": 89
+            "itemname": "localized18#hash_282319c9f6d42586",
+            "hash_5ec2d292": 89
         },
         {
-            "itemname": "#hash_31435f08c8f66de8",
-            "var_5ec2d292": 95
+            "itemname": "localized18#hash_31435f08c8f66de8",
+            "hash_5ec2d292": 95
         },
         {
-            "itemname": "#hash_e835f6ea5395ab",
-            "var_5ec2d292": 100
+            "itemname": "localized18#hash_e835f6ea5395ab",
+            "hash_5ec2d292": 100
         }
     ],
-    "var_5393a4bb": "#hash_72aa9611b0b55479",
-    "var_35ad2f6d": "#hash_67df9e2889fd8dda",
-    "var_8322c847": "#hash_2f22f51a29e9c6c3",
-    "var_b24ffe02": "#hash_3e2b36f3a80ea849",
-    "var_9e8da4c6": "#hash_137d6dd32bb3e011",
-    "var_e4771b8b": "mtx_global_purchase_confirmed",
+    "hash_5393a4bb": "localized18#hash_72aa9611b0b55479",
+    "hash_35ad2f6d": "image#hash_67df9e2889fd8dda",
+    "hash_8322c847": "image#hash_2f22f51a29e9c6c3",
+    "hash_b24ffe02": "image#hash_3e2b36f3a80ea849",
+    "hash_9e8da4c6": "image#hash_137d6dd32bb3e011",
+    "hash_e4771b8b": "mtx_global_purchase_confirmed",
     "name": "mtx_battle_pass_data_season_1",
-    "var_42c48b92": "#hash_2173a8241ba06b10",
-    "var_21e49ac6": "mtx_global_battlepass_purchase",
-    "var_6e830db8": "#hash_4a8badc20f0684d8",
-    "seasonname": "#hash_210df362349a88f5",
-    "var_261476a2": "#hash_480556f18dc857a",
-    "var_d580508b": "#hash_5ed4dd11363109c",
-    "var_e4ec2ee1": "#hash_67df9e2889fd8dda",
-    "var_419b5c0b": "#hash_4d91610a5c1d1956",
-    "var_22155959": "mtx_global_tier_purchase",
-    "var_a7d281c0": "#hash_2173ab241ba07029"
+    "hash_42c48b92": "image#hash_2173a8241ba06b10",
+    "hash_21e49ac6": "mtx_global_battlepass_purchase",
+    "hash_6e830db8": "localized18#hash_4a8badc20f0684d8",
+    "seasonname": "localized18#hash_210df362349a88f5",
+    "hash_261476a2": "image#hash_480556f18dc857a",
+    "hash_d580508b": "image#hash_5ed4dd11363109c",
+    "hash_e4ec2ee1": "image#hash_67df9e2889fd8dda",
+    "hash_419b5c0b": "localized18#hash_4d91610a5c1d1956",
+    "hash_22155959": "mtx_global_tier_purchase",
+    "hash_a7d281c0": "image#hash_2173ab241ba07029"
 }

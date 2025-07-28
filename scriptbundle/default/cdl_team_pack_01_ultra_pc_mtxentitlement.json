@@ -1,58 +1,68 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_ultra_home_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_ultra_home_pc_mtxitem",
             "itemid": "27702491"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_mtxitem",
             "itemid": "31358670"
         },
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_ultra_away_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_ultra_away_pc_mtxitem",
             "itemid": "28493654"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
             "itemid": "24054907"
         },
         {
-            "var_4a4bc969": "#camo_t9_cdl_tor_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#camo_t9_cdl_tor_pc_mtxitem",
             "itemid": "25098491"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_esports_ultra_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_esports_ultra_pc_mtxitem",
             "itemid": "25300960"
         },
         {
-            "var_4a4bc969": "#t9_charm_sneaker_ultra_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sneaker_ultra_pc_mtxitem",
             "itemid": "21667396"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_tor_alt_1_pc_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_cdl_teamsticker_tor_alt_1_pc_base_mtxitem",
             "itemid": "26154111"
         },
         {
-            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_tor_1_pc_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cdl_teamcallingcards_tor_1_pc_base_mtxitem",
             "itemid": "18483824"
         },
         {
-            "var_4a4bc969": "#emblems_cdl_teamemblem_010_ultra_alt_1_pc_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_cdl_teamemblem_010_ultra_alt_1_pc_base_mtxitem",
             "itemid": "21709080"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_7df7ad76dd7880eb",
-    "var_247d9ed7": "cdl_team_pack_01_ultra",
-    "var_208d76b5": "#hash_1a6548d029ea314f",
-    "var_70f66e54": "#hash_6335a71419f475e9",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "cdl_team_pack_01_ultra",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_cdl_team_pack_01_ultra",
+    "hash_70f66e54": "#hash_6335a71419f475e9",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "cdl_team_pack_01_ultra_pc_mtxentitlement",
-    "var_a788fada": "#hash_4fdb683cc01249b1",
-    "titlestring": "#hash_6346791b1b36bf45",
-    "var_566825be": "#hash_20970d81a5654449",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_ultra_small",
+    "titlestring": "localized18#hash_6346791b1b36bf45",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_ultra",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#pc",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#pc",
     "itemid": "22033217",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

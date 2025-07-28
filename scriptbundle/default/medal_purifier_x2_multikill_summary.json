@@ -1,11 +1,11 @@
 {
-    "description": "#hash_41afc1948219ec6e",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_41afc1948219ec6e",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_purifier_x2_multikill_summary",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_58a3ee18b57b29f4",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_overdone",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_4b47cdbde3e08096",
-    "iconlarge": "#hash_2d30338dab2d7760"
+    "stringref": "localized18#hash_4b47cdbde3e08096",
+    "iconlarge": "image#ui_icon_medal_overdone_large"
 }

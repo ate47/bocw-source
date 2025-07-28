@@ -1,50 +1,60 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_sa_pl_deathstalker_bearclaw_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_sa_pl_deathstalker_bearclaw_pc_mtxitem",
             "itemid": "29731613"
         },
         {
-            "var_4a4bc969": "#prt_mp_sa_deathstalker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_sa_deathstalker_mtxitem",
             "itemid": "23499344"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_boar_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_boar_pc_mtxitem",
             "itemid": "26151852"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_boar_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_boar_pc_mtxitem",
             "itemid": "31808525"
         },
         {
-            "var_4a4bc969": "#t9_charm_deer_skull_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_deer_skull_pc_mtxitem",
             "itemid": "17954782"
         },
         {
-            "var_4a4bc969": "#callingcards_bearclaw_s5_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_bearclaw_s5_base_pc_mtxitem",
             "itemid": "18232099"
         },
         {
-            "var_4a4bc969": "#emblems_deathstalkerzombie_s5_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_deathstalkerzombie_s5_base_pc_mtxitem",
             "itemid": "17940526"
         },
         {
-            "var_4a4bc969": "#cod_points_1100_mtxitem"
+            "hash_4a4bc969": "scriptbundle#cod_points_1100_mtxitem"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_1596cfb547ec91b4",
-    "var_247d9ed7": "firstparty_bundle_5101_elite_pro_pack",
-    "var_208d76b5": "#hash_2b69d3613ff63eb2",
-    "var_70f66e54": "#hash_1d8c09069f42a39b",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_5101_elite_pro_pack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_firstparty_bundle_5101_elite_pro_pack",
+    "hash_70f66e54": "#hash_1d8c09069f42a39b",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "firstparty_bundle_5101_elite_pro_pack_pc_mtxentitlement",
-    "var_a788fada": "#hash_70a3f0fb9584bb01",
-    "titlestring": "#hash_1aa0728255e41abc",
-    "var_566825be": "#hash_1117d642da2a8f59",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_firstparty_bundle_5101_elite_pro_pack_small",
+    "titlestring": "localized18#hash_1aa0728255e41abc",
+    "hash_566825be": "image#ui_icon_mtx_titles_firstparty_bundle_5101_elite_pro_pack",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_f3c937a9": "#hash_6cdd867c55d6a82c",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#pc",
+    "hash_f3c937a9": "localized18#hash_6cdd867c55d6a82c",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#pc",
     "itemid": "28797025",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

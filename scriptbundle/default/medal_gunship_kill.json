@@ -1,11 +1,11 @@
 {
-    "description": "#hash_6354495f973953ec",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_6354495f973953ec",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_gunship_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_3515cb69fe3965bb",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_dead_from_above",
     "statname": "#kills",
-    "var_8645ce54": "#hash_3df5a1a28d5767c4",
-    "iconlarge": "#hash_17500959d7de8c1b"
+    "stringref": "localized18#medal/gunship_kill",
+    "iconlarge": "image#ui_icon_medal_dead_from_above_large"
 }

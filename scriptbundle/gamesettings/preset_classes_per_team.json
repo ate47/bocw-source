@@ -1,13 +1,18 @@
 {
-    "hinttext": "#hash_626df564f7d5ebf",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_626df564f7d5ebf",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value1": "0",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "preset_classes_per_team",
-    "displayname": "#hash_55f65c54d7c6959",
-    "var_9600a8ab": "#menu/global",
-    "var_bd2ff709": "#hash_1b0d0e388c66e5fa",
-    "var_9de86f42": 2,
-    "setting": "presetClassesPerTeam"
+    "displayname": "localized18#hash_55f65c54d7c6959",
+    "label1": "localized18#menu/global",
+    "label2": "localized18#menu/per_team",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
+    "setting": "presetClassesPerTeam",
+    "isenableddisabled": 0
 }

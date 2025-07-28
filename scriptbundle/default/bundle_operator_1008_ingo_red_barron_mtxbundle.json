@@ -1,42 +1,47 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_ger_pl_west_bomber_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_west_bomber_mtxitem",
             "itemid": "27101498"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_west_mtxitem",
             "itemid": "31131649"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_redbaron_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_redbaron_mtxitem",
             "itemid": "22021413"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_rbaron_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_rbaron_mtxitem",
             "itemid": "30239569"
         },
         {
-            "var_4a4bc969": "#reticle_29_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_29_mtxitem",
             "itemid": "32198051"
         },
         {
-            "var_4a4bc969": "#t9_charm_red_baron_biplane_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_red_baron_biplane_mtxitem",
             "itemid": "21839215"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_redbaron_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_redbaron_mtxitem",
             "itemid": "22696280"
         }
     ],
-    "itemname": "#hash_732c76e7940c863",
-    "var_375a1747": "#hash_3eb384a449409c6d",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1008_ingo_red_barron",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1008_ingo_red_barron",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1008_ingo_red_barron_mtxbundle",
-    "titlestring": "#hash_1c57e2e17d56f1f8",
-    "var_566825be": "#hash_29bab1e481076edc",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_1c57e2e17d56f1f8",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1008_ingo_red_barron",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_11042dad140235c0",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_11042dad140235c0",
+    "hash_db3e02ab": 2000,
     "itemid": "29492819"
 }

@@ -1,0 +1,54 @@
+{
+    "#hash_189aaf3": [
+        {
+            "teamname": "#hash_29263c8a882c99e5",
+            "hash_91c3a45c": "#camo_t9_cdl_dal_pc"
+        },
+        {
+            "teamname": "#hash_6f3b5d7916ab6229",
+            "hash_91c3a45c": "#camo_t9_cdl_atl_pc"
+        },
+        {
+            "teamname": "#hash_7fb5045dd9aaa6d9",
+            "hash_91c3a45c": "#camo_t9_cdl_la_gor_pc"
+        },
+        {
+            "teamname": "#hash_2401ff8cbe2bdd13",
+            "hash_91c3a45c": "#camo_t9_cdl_par_pc"
+        },
+        {
+            "teamname": "#hash_37eaa846402867d7",
+            "hash_91c3a45c": "#camo_t9_cdl_fl_pc"
+        },
+        {
+            "teamname": "#hash_722e864632d1516a",
+            "hash_91c3a45c": "#camo_t9_cdl_minn_pc"
+        },
+        {
+            "teamname": "#hash_1d6146e965566977",
+            "hash_91c3a45c": "#camo_t9_cdl_lon_pc"
+        },
+        {
+            "teamname": "#hash_1898e8419d776984",
+            "hash_91c3a45c": "#camo_t9_cdl_nyc_pc"
+        },
+        {
+            "teamname": "#surge",
+            "hash_91c3a45c": "#camo_t9_cdl_sea_pc"
+        },
+        {
+            "teamname": "#ultra",
+            "hash_91c3a45c": "#camo_t9_cdl_tor_pc"
+        },
+        {
+            "teamname": "#thieves",
+            "hash_91c3a45c": "#camo_t9_cdl_la_optic_pc"
+        },
+        {
+            "teamname": "#optic",
+            "hash_91c3a45c": "#camo_t9_cdl_chi_pc"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "name": "codcaster_weapon_camos"
+}

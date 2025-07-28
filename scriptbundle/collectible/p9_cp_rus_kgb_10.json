@@ -1,0 +1,17 @@
+{
+    "description": "localized19#hash_7c7eec5861838e44",
+    "tagname": "mdl_cp_rus_kgb_item_10",
+    "UnlockMap": "cp_rus_kgb",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_kgb_work_order_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_kgb_10",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_52765e6fc86ecf54",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_4eb5c637b3dfefc6",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_kgb_workorder"
+}

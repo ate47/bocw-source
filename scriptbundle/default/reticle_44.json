@@ -1,7 +1,7 @@
 {
     "filter": "#loot",
-    "image": "#hash_7d0d8996e1bea937",
+    "image": "image#hash_7d0d8996e1bea937",
     "name": "reticle_44",
-    "var_6855e4be": "#reticle_44_mtxitem",
-    "displayname": "#hash_6185eccd52ae4715"
+    "hash_6855e4be": "#reticle_44_mtxitem",
+    "displayname": "localized18#hash_6185eccd52ae4715"
 }

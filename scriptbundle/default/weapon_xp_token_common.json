@@ -1,10 +1,11 @@
 {
     "achievementname": "t9_activate_weapon_xp_token_common",
     "name": "weapon_xp_token_common",
-    "var_6855e4be": "#weapon_xp_token_common_mtxitem",
-    "title": "#hash_1d3e25c8d0402efa",
+    "hash_6855e4be": "#weapon_xp_token_common_mtxitem",
+    "title": "localized18#hash_1d3e25c8d0402efa",
     "category": "#weapon",
-    "icon": "#hash_1c11bfac54d12317",
-    "subtitle": "#hash_93b03f7105e4e50",
-    "rarity": 1
+    "icon": "image#ui_icon_2xp_weapon_common_large",
+    "subtitle": "localized18#hash_93b03f7105e4e50",
+    "hash_66251d82": 0,
+    "rarity": "enum:1"
 }

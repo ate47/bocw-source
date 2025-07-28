@@ -1,10 +1,11 @@
 {
     "achievementname": "t9_activate_battlepass_xp_token_legendary",
     "name": "battlepass_xp_token_legendary",
-    "var_6855e4be": "#battlepass_xp_token_legendary_mtxitem",
-    "title": "#hash_1a35b3c76cbc88e2",
-    "category": "#hash_1c5d758624c9b051",
-    "icon": "#hash_4ea64f5e9fc4a53c",
-    "subtitle": "#hash_c394297a97684c3",
-    "rarity": 4
+    "hash_6855e4be": "#battlepass_xp_token_legendary_mtxitem",
+    "title": "localized18#hash_1a35b3c76cbc88e2",
+    "category": "#battle_pass",
+    "icon": "image#ui_icon_2xpbp_legendary_large",
+    "subtitle": "localized18#hash_c394297a97684c3",
+    "hash_66251d82": 0,
+    "rarity": "enum:4"
 }

@@ -1,42 +1,47 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_solitude_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_solitude_mtxitem",
             "itemid": "29888707"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_jungle_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_jungle_mtxitem",
             "itemid": "19668815"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_digital_zm_heart_rate_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_digital_zm_heart_rate_01_mtxitem",
             "itemid": "25652135"
         },
         {
-            "var_4a4bc969": "#reticle_33_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_33_mtxitem",
             "itemid": "19193524"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_zombiebaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_zombiebaker_mtxitem",
             "itemid": "18775090"
         },
         {
-            "var_4a4bc969": "#t9_charm_zombiehand_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_zombiehand_mtxitem",
             "itemid": "24552179"
         }
     ],
-    "itemname": "#hash_6929b9f167c69176",
-    "var_375a1747": "#hash_551ab4e8e6598810",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1034_baker_zombies_2",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1034_baker_zombies_2",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1034_baker_zombies_2_mtxbundle",
-    "titlestring": "#hash_668c7be00045fb6f",
-    "var_566825be": "#hash_5c62b268f1dd3d3d",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_668c7be00045fb6f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1034_baker_zombies_2",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3080d017925d902b",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3080d017925d902b",
+    "hash_db3e02ab": 2000,
     "itemid": "24709269"
 }

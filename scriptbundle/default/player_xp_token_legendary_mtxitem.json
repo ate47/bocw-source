@@ -1,143 +1,153 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#bundle_free_3107_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3107_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_3103_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3103_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#blueprint_bundle_3901_special_op_2_dh_mtxbundle"
+            "hash_8bd0af73": "#blueprint_bundle_3901_special_op_2_dh_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
         },
         {
-            "var_8bd0af73": "#blueprint_bundle_5902_special_op_4_jd_mtxbundle"
+            "hash_8bd0af73": "#blueprint_bundle_5902_special_op_4_jd_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_6020_special_op_5_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6020_special_op_5_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_6021_portnova_necromancer_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6021_portnova_necromancer_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_6031_baker_special_op_6_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6031_baker_special_op_6_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_6103_season_six_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_6103_season_six_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_free_6107_season_six_mtxbundle"
+            "hash_8bd0af73": "#bundle_free_6107_season_six_mtxbundle"
         }
     ],
     "entitlementlist": [
         {
-            "var_386af035": "#xb1_code_pack_mtxentitlement"
+            "hash_386af035": "#xb1_code_pack_mtxentitlement"
         },
         {
-            "var_386af035": "#studio_launch_incentives_mtxentitlement"
+            "hash_386af035": "#studio_launch_incentives_mtxentitlement"
         },
         {
-            "var_386af035": "#studio_launch_incentives_mtxentitlement"
+            "hash_386af035": "#studio_launch_incentives_mtxentitlement"
         },
         {
-            "var_386af035": "#studio_launch_incentives_mtxentitlement"
+            "hash_386af035": "#studio_launch_incentives_mtxentitlement"
         },
         {
-            "var_386af035": "#studio_launch_incentives_mtxentitlement"
+            "hash_386af035": "#studio_launch_incentives_mtxentitlement"
         },
         {
-            "var_386af035": "#studio_launch_incentives_mtxentitlement"
+            "hash_386af035": "#studio_launch_incentives_mtxentitlement"
         },
         {
-            "var_386af035": "#sony_psplus_season_03_mtxentitlement"
+            "hash_386af035": "#sony_psplus_season_03_mtxentitlement"
         },
         {
-            "var_386af035": "#sony_psplus_season_01_mtxentitlement"
+            "hash_386af035": "#sony_psplus_season_01_mtxentitlement"
         },
         {
-            "var_386af035": "#ps4_code_pack_mtxentitlement"
+            "hash_386af035": "#ps4_code_pack_mtxentitlement"
         },
         {
-            "var_386af035": "#bnet_test_code_pack_mtxentitlement"
+            "hash_386af035": "#bnet_test_code_pack_mtxentitlement"
         },
         {
-            "var_386af035": "#bnet_code_pack_mtxentitlement"
+            "hash_386af035": "#bnet_code_pack_mtxentitlement"
         },
         {
-            "var_386af035": "#atvi_player_xp_token_60_mins_mtxentitlement"
+            "hash_386af035": "#atvi_player_xp_token_60_mins_mtxentitlement"
         },
         {
-            "var_386af035": "#sony_psplus_season_04_mtxentitlement"
+            "hash_386af035": "#sony_psplus_season_04_mtxentitlement"
         },
         {
-            "var_386af035": "#sony_psplus_season_05_mtxentitlement"
+            "hash_386af035": "#sony_psplus_season_05_mtxentitlement"
         },
         {
-            "var_386af035": "#twitch_prime_wsow_bundle_5603_mtxentitlement"
+            "hash_386af035": "#twitch_prime_wsow_bundle_5603_mtxentitlement"
         },
         {
-            "var_386af035": "#twitch_prime_bundle_6403_duos_mtxentitlement"
+            "hash_386af035": "#twitch_prime_bundle_6403_duos_mtxentitlement"
         },
         {
-            "var_386af035": "#sony_psplus_season_06_mtxentitlement"
+            "hash_386af035": "#sony_psplus_season_06_mtxentitlement"
         },
         {
-            "var_386af035": "#twitch_prime_bundle_6503_dec_mtxentitlement"
+            "hash_386af035": "#twitch_prime_bundle_6503_dec_mtxentitlement"
         },
         {
-            "var_386af035": "#steam_code_pack_mtxentitlement"
+            "hash_386af035": "#steam_code_pack_mtxentitlement"
         }
     ],
-    "var_247df572": [
+    "#hash_247df572": [
         {
-            "var_9eb58a68": "#hash_50bb24d2892402a7",
-            "var_40006035": 1
+            "hash_9eb58a68": "image#ui_icon_mtx_billboards_player_xp_token_legendary",
+            "hash_40006035": 1
         },
         {
-            "var_9eb58a68": "#hash_21c8383de2e9a089",
-            "var_40006035": 2
+            "hash_9eb58a68": "image#ui_icon_mtx_billboards_player_xp_token_legendary_s2",
+            "hash_40006035": 2
         },
         {
-            "var_9eb58a68": "#hash_21c8373de2e99ed6",
-            "var_40006035": 3
+            "hash_9eb58a68": "image#ui_icon_mtx_billboards_player_xp_token_legendary_s3",
+            "hash_40006035": 3
         },
         {
-            "var_9eb58a68": "#hash_21c83a3de2e9a3ef",
-            "var_40006035": 4
+            "hash_9eb58a68": "image#ui_icon_mtx_billboards_player_xp_token_legendary_s4",
+            "hash_40006035": 4
         },
         {
-            "var_9eb58a68": "#hash_21c8393de2e9a23c",
-            "var_40006035": 5
+            "hash_9eb58a68": "image#ui_icon_mtx_billboards_player_xp_token_legendary_s5",
+            "hash_40006035": 5
         },
         {
-            "var_9eb58a68": "#hash_21c83c3de2e9a755",
-            "var_40006035": 6
+            "hash_9eb58a68": "image#ui_icon_mtx_billboards_player_xp_token_legendary_s6",
+            "hash_40006035": 6
         }
     ],
     "itemname": "#player_xp_token_legendary",
-    "var_e9d9a8d0": 1,
-    "var_728341a": 1,
-    "var_46300498": 1,
-    "var_b6d84534": 1,
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "release": 0,
+    "season": 0,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
+    "hash_b6d84534": 1,
     "name": "player_xp_token_legendary_mtxitem",
-    "category": "#hash_7c692b8eb31f67eb",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 4,
+    "hash_f3d04949": 0,
+    "category": "#xp_token",
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:4",
+    "hash_84dc7961": 0,
     "itemid": "32109261",
-    "var_75b1b276": "#player_xp_token_legendary"
+    "xp_token": "#player_xp_token_legendary"
 }

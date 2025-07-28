@@ -1,0 +1,59 @@
+{
+    "#hash_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_4"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_5"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_6"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_7"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_8"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_9"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_10"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_11"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_12"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_requiem_radio_13"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_gold_radio_transmissions_requiem"
+}

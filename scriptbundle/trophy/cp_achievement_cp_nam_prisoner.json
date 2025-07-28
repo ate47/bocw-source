@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_17aec3baf2ecc3c6",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_17aec3baf2ecc3c6",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_50270c17cdba1467",
-    "image": "#hash_471ae517c87e271d",
+    "hash_4a95afca": "image#hash_50270c17cdba1467",
+    "image": "image#hash_471ae517c87e271d",
     "name": "cp_achievement_cp_nam_prisoner",
-    "title": "#hash_6ebd71b202fcd9b6"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_6ebd71b202fcd9b6",
+    "hash_621379a": 0
 }

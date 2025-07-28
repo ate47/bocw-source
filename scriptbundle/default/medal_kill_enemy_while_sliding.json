@@ -1,10 +1,10 @@
 {
-    "description": "#hash_29c79c4462cc283",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_29c79c4462cc283",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_kill_enemy_while_sliding",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_18820905ea0ff385",
-    "var_8645ce54": "#hash_52c4ee4c526647c9",
-    "iconlarge": "#hash_52167fac7d4d2b09"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_low_blow",
+    "stringref": "localized18#hash_52c4ee4c526647c9",
+    "iconlarge": "image#ui_icon_medal_low_blow_large"
 }

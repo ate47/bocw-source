@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_bowling_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_bowling_mtxitem",
             "itemid": "25699655"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_bowling_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_bowling_mtxitem",
             "itemid": "26767666"
         },
         {
-            "var_4a4bc969": "#t9_charm_bowling_tv_dmg_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bowling_tv_dmg_mtxitem",
             "itemid": "27593701"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_make_it_rain_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_make_it_rain_mtxitem",
             "itemid": "23487182"
         },
         {
-            "var_4a4bc969": "#reticle_132_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_132_mtxitem",
             "itemid": "26909594"
         },
         {
-            "var_4a4bc969": "#emblems_bowling_league_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_bowling_league_animated_mtxitem",
             "itemid": "23360479"
         },
         {
-            "var_4a4bc969": "#callingcards_bowling_league_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_bowling_league_animated_mtxitem",
             "itemid": "32396760"
         }
     ],
-    "itemname": "#hash_2a116f4900c9f6f8",
-    "var_375a1747": "#hash_db45b332e695cf6",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_6012_ffar_1_bowling_league",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6012_ffar_1_bowling_league",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6012_ffar_1_bowling_league_mtxbundle",
-    "var_a788fada": "#hash_ced0844d9fa3345",
-    "titlestring": "#hash_78cf72bc42946f04",
-    "var_566825be": "#hash_4dc3d3835169179d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6012_ffar_1_bowling_league_small",
+    "titlestring": "localized18#hash_78cf72bc42946f04",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6012_ffar_1_bowling_league",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_382bda4986e8de34",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_382bda4986e8de34",
+    "hash_db3e02ab": 2000,
     "itemid": "27029390"
 }

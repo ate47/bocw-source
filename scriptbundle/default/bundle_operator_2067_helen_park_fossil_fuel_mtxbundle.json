@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_uk_pl_mi6_racer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_mi6_racer_mtxitem",
             "itemid": "22944586"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_avalanche_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_avalanche_mtxitem",
             "itemid": "23078898"
         },
         {
-            "var_4a4bc969": "#t9_charm_aboot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_aboot_mtxitem",
             "itemid": "27270493"
         },
         {
-            "var_4a4bc969": "#reticle_69_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_69_mtxitem",
             "itemid": "30059588"
         }
     ],
-    "itemname": "#hash_4f026b5069e195a",
-    "var_375a1747": "#hash_2259a5aa9042fbc4",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2067_helen_park_fossil_fuel",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2067_helen_park_fossil_fuel",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2067_helen_park_fossil_fuel_mtxbundle",
-    "var_a788fada": "#hash_e040c1687f1ea03",
-    "titlestring": "#hash_47183c052f4d5000",
-    "var_566825be": "#hash_5f8a75e1590e80eb",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2067_helen_park_fossil_fuel_small",
+    "titlestring": "localized18#hash_47183c052f4d5000",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2067_helen_park_fossil_fuel",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6cf1043bc54a8e88",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6cf1043bc54a8e88",
+    "hash_db3e02ab": 2000,
     "itemid": "31282919"
 }

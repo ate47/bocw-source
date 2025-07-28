@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_handling_bp_miami_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_miami_mtxitem",
             "itemid": "22899714"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_miami_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_miami_mtxitem",
             "itemid": "26482089"
         },
         {
-            "var_4a4bc969": "#t9_charm_grenade_drink_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_grenade_drink_mtxitem",
             "itemid": "19811949"
         },
         {
-            "var_4a4bc969": "#emblems_r8g_05_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g_05_s5_animated_mtxitem",
             "itemid": "20304572"
         },
         {
-            "var_4a4bc969": "#callingcards_vice_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vice_s5_mtxitem",
             "itemid": "20271528"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_24_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_24_s5_mtxitem",
             "itemid": "21907848"
         }
     ],
-    "itemname": "#hash_8f7b0e92b0c4af6",
-    "var_375a1747": "#hash_6cf2411eea1051e4",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5041_milano_821_neon_lights",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5041_milano_821_neon_lights",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5041_milano_821_neon_lights_mtxbundle",
-    "var_a788fada": "#hash_6ecd37527c167de5",
-    "titlestring": "#hash_5a29e0759a9e6357",
-    "var_566825be": "#hash_6f6900854828bf7d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5041_milano_821_neon_lights_small",
+    "titlestring": "localized18#hash_5a29e0759a9e6357",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5041_milano_821_neon_lights",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_10d7a6374b736173",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_10d7a6374b736173",
+    "hash_db3e02ab": 2000,
     "itemid": "32026798"
 }

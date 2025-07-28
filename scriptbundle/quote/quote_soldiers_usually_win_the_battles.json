@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_soldiers_usually_win_the_battles",
-    "quote": "#hash_2bed33d6457e7599",
-    "author": "#hash_63ab71c957f7ca17"
+    "quote": "localized18#hash_2bed33d6457e7599",
+    "author": "localized18#hash_63ab71c957f7ca17"
 }

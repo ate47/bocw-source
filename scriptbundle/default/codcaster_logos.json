@@ -1,0 +1,36 @@
+{
+    "#hash_9c660728": [
+        {
+            "hash_14a695f8": "image#ui_icon_factions_cia_small",
+            "name": "localized19#mpui/allies",
+            "icon": "image#ui_icon_factions_cia"
+        },
+        {
+            "hash_14a695f8": "image#ui_icon_factions_kgb_small",
+            "name": "localized19#mpui/axis",
+            "icon": "image#ui_icon_factions_kgb"
+        },
+        {
+            "hash_14a695f8": "image#ui_icon_factions_hva_small",
+            "name": "localized19#hash_1eb351ff2af2728b",
+            "icon": "image#ui_icon_factions_hva"
+        },
+        {
+            "hash_14a695f8": "image#ui_icon_factions_mi6_small",
+            "name": "localized19#hash_498379501c40d668",
+            "icon": "image#ui_icon_factions_mi6"
+        },
+        {
+            "hash_14a695f8": "image#ui_icon_factions_dgi_small",
+            "name": "localized19#hash_2bcc04b6f32e9201",
+            "icon": "image#ui_icon_factions_dgi"
+        },
+        {
+            "hash_14a695f8": "image#ui_icon_factions_bnd_small",
+            "name": "localized19#hash_298226c3193fe756",
+            "icon": "image#ui_icon_factions_bnd"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "name": "codcaster_logos"
+}

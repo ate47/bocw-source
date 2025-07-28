@@ -1,0 +1,21 @@
+{
+    "description": "localized19#hash_1a57900bd1d3027a",
+    "tagname": "mdl_cp_sidemission_takedown_item_03",
+    "UnlockMap": "cp_ger_stakeout",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_chaos_tape_reel_01",
+    "type": "collectible",
+    "callback": "chaos_radio_broadcast",
+    "hash_444770d3": "image#evidence_splash_op_chaos_tape_reel_01",
+    "name": "p9_cp_sidemission_takedown_03",
+    "UnlockType": 3,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_1e750e36b785f666",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_2bc9af94ff627014",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 2,
+    "hint": "localized19#hash_71e909a2d60eeb0c",
+    "thumbnail": "image#hash_7af1f6a9054ffe88"
+}

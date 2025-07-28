@@ -1,48 +1,53 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_heavy_bp_dinotoy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_dinotoy_mtxitem",
             "itemid": "31029990"
         },
         {
-            "var_4a4bc969": "#special_grenadelauncher_bp_oozeball_mtxitem",
+            "hash_4a4bc969": "scriptbundle#special_grenadelauncher_bp_oozeball_mtxitem",
             "itemid": "29756897"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_digital_first_spy_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_digital_first_spy_01_mtxitem",
             "itemid": "31331806"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_oozie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_heli_gunship_hind_mpx_oozie_mtxitem",
             "itemid": "23551026"
         },
         {
-            "var_4a4bc969": "#t9_charm_action_fig_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_action_fig_mtxitem",
             "itemid": "23599074"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_oozie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_oozie_mtxitem",
             "itemid": "29478040"
         },
         {
-            "var_4a4bc969": "#callingcards_oozie_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_oozie_mtxitem",
             "itemid": "21276538"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_treyarch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_treyarch_mtxitem",
             "itemid": "27906979"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_23fd90f8adde223b",
-    "var_c919e644": "#hash_7856aeaedca9aebf",
-    "var_375a1747": "#hash_2a1154fa04478d89",
+    "parenttag": "#bundle_mastercraft_1042_smg_heavy_oozie",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_mastercraft_1042_smg_heavy_oozie_alt",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_mastercraft_1042_smg_heavy_oozie_alt_mtxbundle",
-    "var_a788fada": "#hash_29817152caafc596",
-    "titlestring": "#hash_487db196844d84a2",
-    "var_566825be": "#hash_1576c7204b514c7a",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_mastercraft_1042_smg_heavy_oozie_small_alt",
+    "titlestring": "localized18#hash_487db196844d84a2",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_mastercraft_1042_smg_heavy_oozie_alt",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_13ac24f42bf4591e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_13ac24f42bf4591e",
+    "hash_db3e02ab": 2000,
     "itemid": "19355819"
 }

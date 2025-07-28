@@ -1,0 +1,10 @@
+{
+    "description": "localized18#hash_7a1f8753dbce357c",
+    "UnlockMap": "cp_ger_stakeout",
+    "configstringfiletype": "scriptbundle",
+    "type": "cinematic",
+    "cinematicname": "cp_ger_stakeout_loadingmovie",
+    "name": "cp_ger_stakeout_loadingmovie",
+    "title": "localized18#hash_1c40f6e39851c97d",
+    "previewimage": "image#img_menu_cp_preview_ger_stakeout"
+}

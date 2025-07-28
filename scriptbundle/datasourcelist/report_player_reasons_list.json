@@ -1,54 +1,88 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "var_5ed80a9c": "#hash_26f0e1165551968d",
-            "description": "#menu/new",
+            "hash_5ed80a9c": "#hash_26f0e1165551968d",
+            "description": "localized19#menu/new",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_42955894d6cd9f8c",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_42955894d6cd9f8c",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_500968c472030a8c",
-            "description": "#menu/new",
+            "hash_5ed80a9c": "#hash_500968c472030a8c",
+            "description": "localized19#menu/new",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_530047eeaa2f5363",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_530047eeaa2f5363",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#cheating",
-            "description": "#hash_60e3c15a99f65706",
+            "hash_5ed80a9c": "#cheating",
+            "description": "localized19#hash_60e3c15a99f65706",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_72519b57188045c6",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_72519b57188045c6",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#boosting",
-            "description": "#hash_1f85e8086f061446",
+            "hash_5ed80a9c": "#boosting",
+            "description": "localized19#hash_1f85e8086f061446",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_fe4aa96e0028906",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_fe4aa96e0028906",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_51dc68162734e604",
-            "description": "#menu/new",
+            "hash_5ed80a9c": "#hash_51dc68162734e604",
+            "description": "localized19#menu/new",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_18d88375db2b77b6",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_18d88375db2b77b6",
+            "actionutility": "#NONE"
         },
         {
-            "var_5ed80a9c": "#hash_b7db942de181dd0",
-            "description": "#menu/new",
+            "hash_5ed80a9c": "#hash_b7db942de181dd0",
+            "description": "localized19#menu/new",
+            "hash_82ead409": 0,
             "type": "#hash_798212a6fd4ab166",
-            "displayname": "#hash_395dc56db3f9ec1",
-            "actionutility": "#none"
+            "displayname": "localized19#hash_395dc56db3f9ec1",
+            "actionutility": "#NONE"
         }
     ],
-    "var_88c0037d": 1,
-    "var_72ef398b": 1,
-    "var_d7f79634": 1,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_1af796": 1,
-    "var_a77ed948": "#none",
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 1,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 1,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
-    "name": "report_player_reasons_list"
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
+    "name": "report_player_reasons_list",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
 }

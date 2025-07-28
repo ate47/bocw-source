@@ -1,0 +1,10 @@
+{
+    "description": "localized18#hash_2a2e71264c7f466e",
+    "UnlockMap": "cp_nam_armada",
+    "configstringfiletype": "scriptbundle",
+    "type": "cinematic",
+    "cinematicname": "cp_nam_armada_loadingmovie",
+    "name": "cp_nam_armada_loadingmovie",
+    "title": "localized18#hash_c4e93e4fe990203",
+    "previewimage": "image#img_menu_cp_preview_nam_armada"
+}

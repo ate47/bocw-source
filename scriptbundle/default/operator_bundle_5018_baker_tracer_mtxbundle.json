@@ -1,65 +1,70 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_hopper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_hopper_mtxitem",
             "itemid": "18827634"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#operator_mission_5018_mtxitem",
+            "hash_4a4bc969": "scriptbundle#operator_mission_5018_mtxitem",
             "itemid": "17912511"
         },
         {
-            "var_4a4bc969": "#operator_mission_5018_unlock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#operator_mission_5018_unlock_mtxitem",
             "itemid": "32425035"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_motocross_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_motocross_mtxitem",
             "itemid": "29413896"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_motocross_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_motocross_mtxitem",
             "itemid": "19818947"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_motocross_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_motocross_mtxitem",
             "itemid": "24049228"
         },
         {
-            "var_4a4bc969": "#t9_charm_motorbike_helmet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_motorbike_helmet_mtxitem",
             "itemid": "26128760"
         },
         {
-            "var_4a4bc969": "#execution_181_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_181_mtxitem",
             "itemid": "22955071"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_bubble_gum_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_bubble_gum_mtxitem",
             "itemid": "31391025"
         },
         {
-            "var_4a4bc969": "#emblems_dismemberment_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_dismemberment_s5_animated_mtxitem",
             "itemid": "26322312"
         },
         {
-            "var_4a4bc969": "#callingcards_dismemberment_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_dismemberment_s5_animated_mtxitem",
             "itemid": "30736992"
         }
     ],
-    "itemname": "#hash_560cb822cd097b",
-    "var_375a1747": "#hash_74a08fcdb77ab881",
-    "var_3040f0d1": "#hash_4c7567e87f9aad37",
-    "var_fc891f35": "32425035",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5018_baker_tracer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5018_baker_tracer",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_5018_baker_tracer_icon",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_fc891f35": "32425035",
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5018_baker_tracer_mtxbundle",
-    "var_a788fada": "#hash_6f469e56088307be",
-    "titlestring": "#hash_fc0fe88b0969b69",
-    "var_566825be": "#hash_7df8cd3882e6d72a",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5018_baker_tracer_small",
+    "titlestring": "localized18#hash_fc0fe88b0969b69",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5018_baker_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_45dfc4271c704269",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_45dfc4271c704269",
+    "hash_db3e02ab": 2000,
     "itemid": "20799502"
 }

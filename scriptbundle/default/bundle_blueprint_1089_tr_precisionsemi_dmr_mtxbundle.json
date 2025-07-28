@@ -1,27 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_precisionsemi_bp_deadeye_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_bp_deadeye_mtxitem",
             "itemid": "28081025"
         },
         {
-            "var_4a4bc969": "#t9_charm_apple_arrow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_apple_arrow_mtxitem",
             "itemid": "19181087"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_dmrifle_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_dmrifle_mtxitem",
             "itemid": "18787019"
         }
     ],
-    "itemname": "#hash_289b9e0ca2cf3b46",
-    "var_375a1747": "#hash_2c103ba4fed122f0",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1089_tr_precisionsemi_dmr",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1089_tr_precisionsemi_dmr",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1089_tr_precisionsemi_dmr_mtxbundle",
-    "titlestring": "#hash_74f5472627ce0177",
-    "var_566825be": "#hash_4d73ca9ff7705cdd",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_74f5472627ce0177",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1089_tr_precisionsemi_dmr",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7eaea946eaa44993",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7eaea946eaa44993",
+    "hash_db3e02ab": 2000,
     "itemid": "29491170"
 }

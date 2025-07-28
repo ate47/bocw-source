@@ -1,10 +1,14 @@
 {
-    "hinttext": "#hash_56b4b91bdbe9dd24",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#menu/headshotsonly_hint",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "only_headshots",
-    "displayname": "#hash_4bedc13a6fa34084",
-    "var_9de86f42": 2,
+    "displayname": "localized18#menu/headshotsonly",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "onlyHeadshots",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

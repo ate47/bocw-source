@@ -1,15 +1,20 @@
 {
-    "hinttext": "#hash_7c73c79e34d2f44a",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_7c73c79e34d2f44a",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value3": "2",
     "value1": "0",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "enemy_carrier_visible",
-    "displayname": "#hash_1094bfda4b223c96",
-    "var_9600a8ab": "#hash_94eb0e3329edf5f",
-    "var_71b6e020": "#menu/delayed",
-    "var_bd2ff709": "#menu/enabled",
-    "var_9de86f42": 3,
-    "setting": "enemyCarrierVisible"
+    "displayname": "localized18#menu/enemy_carrier",
+    "label1": "localized18#menu/disabled",
+    "label3": "localized18#menu/delayed",
+    "label2": "localized18#menu/enabled",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
+    "setting": "enemyCarrierVisible",
+    "isenableddisabled": 0
 }

@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_starter5_powers_swift_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_starter5_powers_swift_mtxitem",
             "itemid": "18802465"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter5_mtxitem",
             "itemid": "31383564"
         },
         {
-            "var_4a4bc969": "#ar_fasthandling_bp_silverstreak_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fasthandling_bp_silverstreak_mtxitem",
             "itemid": "21736751"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_lfg_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_lfg_mtxitem",
             "itemid": "20872433"
         },
         {
-            "var_4a4bc969": "#reticle_124_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_124_mtxitem",
             "itemid": "23288860"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_truck_light_assembly_mpx_newsman_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_truck_light_assembly_mpx_newsman_mtxitem",
             "itemid": "32742650"
         },
         {
-            "var_4a4bc969": "#emblems_vts_20_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_20_s5_animated_mtxitem",
             "itemid": "26422991"
         },
         {
-            "var_4a4bc969": "#callingcards_news_02_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_news_02_s5_mtxitem",
             "itemid": "30187061"
         }
     ],
-    "itemname": "#hash_1c979cceb50315ff",
-    "var_375a1747": "#hash_62a85ffda14a52bd",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5038_powers_combat_journalist",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5038_powers_combat_journalist",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5038_powers_combat_journalist_mtxbundle",
-    "var_a788fada": "#hash_2c9c213c23272c46",
-    "titlestring": "#hash_5de60ae2829711a7",
-    "var_566825be": "#hash_182f303f055df892",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5038_powers_combat_journalist_small",
+    "titlestring": "localized18#hash_5de60ae2829711a7",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5038_powers_combat_journalist",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3e5f07953b4cb703",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3e5f07953b4cb703",
+    "hash_db3e02ab": 2000,
     "itemid": "32025194"
 }

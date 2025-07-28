@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_1bebc90f074f4190",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_1bebc90f074f4190",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_42db54e96b90d7c0",
-    "image": "#hash_29ae73e95d896caa",
+    "hash_4a95afca": "image#hash_42db54e96b90d7c0",
+    "image": "image#hash_29ae73e95d896caa",
     "name": "cp_achievement_cp_nam_armada",
-    "title": "#hash_5b294ebbfedb7888"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_5b294ebbfedb7888",
+    "hash_621379a": 0
 }

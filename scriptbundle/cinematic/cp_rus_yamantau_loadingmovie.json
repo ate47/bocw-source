@@ -1,0 +1,10 @@
+{
+    "description": "localized18#hash_77aa4e964b3d76fa",
+    "UnlockMap": "cp_rus_yamantau",
+    "configstringfiletype": "scriptbundle",
+    "type": "cinematic",
+    "cinematicname": "cp_rus_yamantau_loadingmovie",
+    "name": "cp_rus_yamantau_loadingmovie",
+    "title": "localized18#hash_ff4fc5761c58e47",
+    "previewimage": "image#img_menu_cp_preview_rus_yamantau"
+}

@@ -4,13 +4,16 @@
             "filters": "#zombie"
         }
     ],
-    "description": "#hash_72c80970102a0748",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_72c80970102a0748",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_4c63ab605d8dd056",
-    "image": "#hash_442a1adad6543635",
+    "hash_4a95afca": "image#hash_4c63ab605d8dd056",
+    "image": "image#hash_442a1adad6543635",
     "name": "doa_achievement_5_piece",
-    "title": "#hash_3c71b9c3b4bf20c0"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_3c71b9c3b4bf20c0",
+    "hash_621379a": 0
 }

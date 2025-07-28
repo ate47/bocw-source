@@ -1,24 +1,29 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
-            "soundevent": "#hash_7a604f110b32858b"
+            "soundevent": "#hash_7a604f110b32858b",
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 0
         }
     ],
-    "description": "#hash_194bee5b7bf7389",
-    "itemspawnentry": "#item_zmintel_gold_omega_artifact_1",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#ww_quest",
-    "model": "#hash_59fe28273eedc6e3",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_7aa6c8be0958c638",
+    "description": "localized19#hash_194bee5b7bf7389",
+    "itemspawnentry": "scriptbundle#item_zmintel_gold_omega_artifact_1",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#ww_quest",
+    "hash_4138e7ed": 0,
+    "model": "model#hash_59fe28273eedc6e3",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#hash_7aa6c8be0958c638",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#omega",
+    "hash_ad4ad686": "#omega",
     "soundloop": "#hash_6098b72d515f39d5",
     "name": "zmintel_gold_omega_artifact_1",
-    "var_9be0526e": "#artifact",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "title": "#hash_c6150f6db74bf97",
+    "hash_9be0526e": "#artifact",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "title": "localized19#hash_c6150f6db74bf97",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_gold"
 }

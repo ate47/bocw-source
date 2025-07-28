@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_950471088e02e12",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_7de91199f31cd49d",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "select": "localized18#hash_6a2930381af54270",
+    "hash_76e12fbf": "image#uie_arcade_large_barnstorming",
+    "hash_9864ed1": 0,
+    "name": "barnstorming_game",
+    "displayname": "localized18#hash_3ef3adc4a877cc82",
+    "filename": "#hash_5ef65b2228f44de6",
+    "action": "localized18#hash_5dabbd6c7eb44b01",
+    "hash_dcc4bcb0": 0,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_barnstorming",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_barnstorming",
+    "hash_48152d43": 1
+}

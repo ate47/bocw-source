@@ -1,10 +1,10 @@
 {
-    "description": "#hash_6a4d4905e1725a47",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_6a4d4905e1725a47",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_land_mine_destroyed_vehicle",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_33561a85e5c3a45a",
-    "var_8645ce54": "#hash_3a2b738e96f4cbfd",
-    "iconlarge": "#hash_746668836bde87fa"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_speed_bump",
+    "stringref": "localized18#hash_3a2b738e96f4cbfd",
+    "iconlarge": "image#ui_icon_medal_speed_bump_large"
 }

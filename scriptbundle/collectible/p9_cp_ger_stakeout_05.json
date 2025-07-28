@@ -1,0 +1,20 @@
+{
+    "description": "localized19#hash_33c783b07898571e",
+    "hash_812bb4e9": "localized19#hash_2ef358743484e7d1",
+    "tagname": "mdl_cp_ger_stakeout_item_05",
+    "UnlockMap": "cp_ger_stakeout",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#hash_1ff8b34d5fa0a58e",
+    "type": "collectible",
+    "name": "p9_cp_ger_stakeout_05",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_73099d51d58172a2",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_644b88c8ce2adf00",
+    "hash_434e678e": 1,
+    "hash_f3575c58": 1,
+    "hash_305bd749": "localized19#hash_660b543d56f2e771",
+    "thumbnail": "image#evidenceboard_review_stakeout_newspaper_clip",
+    "hash_5eeb1ad0": "localized19#hash_40f074e3ffd8bff0"
+}

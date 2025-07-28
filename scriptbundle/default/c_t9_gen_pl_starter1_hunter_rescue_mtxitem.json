@@ -1,25 +1,35 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#hash_b5b28407b7178a"
+            "hash_8bd0af73": "#hash_b5b28407b7178a"
         },
         {
-            "var_8bd0af73": "#operator_bundle_7504_vault_nato_warsaw_03_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_7504_vault_nato_warsaw_03_mtxbundle"
         }
     ],
-    "itemname": "#hash_51f38727ae44ae60",
-    "var_e9d9a8d0": 1,
-    "var_be574bd8": "#hash_51f38727ae44ae60",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_2d7d45d5cbddac2e",
+    "itemname": "#c_t9_gen_pl_starter1_hunter_rescue",
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_be574bd8": "#c_t9_gen_pl_starter1_hunter_rescue",
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#hash_2d7d45d5cbddac2e",
+    "release": 0,
     "season": 2,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "bodytype": "#hash_3556c22faf877d4d",
+    "hash_b6d84534": 0,
     "name": "c_t9_gen_pl_starter1_hunter_rescue_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#character_outfit",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 2,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:2",
+    "hash_84dc7961": 0,
     "itemid": "26176132",
     "outfit": "#hash_2ac23b28729481b8"
 }

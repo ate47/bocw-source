@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_ger_pl_west_swat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_west_swat_mtxitem",
             "itemid": "27834480"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_west_mtxitem",
             "itemid": "31131649"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_nocturne_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_nocturne_mtxitem",
             "itemid": "30294912"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_bullshark_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_bullshark_mtxitem",
             "itemid": "26220783"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_marquee_09_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_marquee_09_mtxitem",
             "itemid": "31787665"
         },
         {
-            "var_4a4bc969": "#t9_charm_bfetish_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bfetish_mtxitem",
             "itemid": "25540236"
         }
     ],
-    "itemname": "#hash_67c60ca4ee3754d3",
-    "var_375a1747": "#hash_4e133391fcdead39",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2027_ingo_silent_approach",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2027_ingo_silent_approach",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2027_ingo_silent_approach_mtxbundle",
-    "var_a788fada": "#hash_6cf2e054e31e3486",
-    "titlestring": "#hash_30574aed65389d54",
-    "var_566825be": "#hash_1d4f8e0e47d1a3d2",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2027_ingo_silent_approach_small",
+    "titlestring": "localized18#hash_30574aed65389d54",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2027_ingo_silent_approach",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6ec665454dc66c44",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6ec665454dc66c44",
+    "hash_db3e02ab": 2000,
     "itemid": "33159149"
 }

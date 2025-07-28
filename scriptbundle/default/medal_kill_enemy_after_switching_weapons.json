@@ -1,10 +1,10 @@
 {
-    "description": "#hash_2cff14ba9df89d5a",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_2cff14ba9df89d5a",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_kill_enemy_after_switching_weapons",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_2773770bf0073935",
-    "var_8645ce54": "#hash_1757a9e5e0d0a56a",
-    "iconlarge": "#hash_5ff68af98fb4eef9"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_hot_swap",
+    "stringref": "localized18#hash_1757a9e5e0d0a56a",
+    "iconlarge": "image#ui_icon_medal_hot_swap_large"
 }

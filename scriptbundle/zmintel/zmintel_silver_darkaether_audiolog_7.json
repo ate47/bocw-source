@@ -1,41 +1,43 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_3b19f1979eda0c46",
-            "var_f35c5951": 0.51,
-            "var_5d4b5964": 19.75,
-            "var_36bf8e05": "#hash_479bf47b0c3d45f3"
+            "hash_f35c5951": 0.51,
+            "hash_5d4b5964": 19.75,
+            "hash_36bf8e05": "localized19#hash_479bf47b0c3d45f3"
         },
         {
             "soundevent": "#hash_3b19f2979eda0df9",
-            "var_f35c5951": 20.38,
-            "var_5d4b5964": 22.25,
-            "var_36bf8e05": "#hash_707a3fd9335af9a2"
+            "hash_f35c5951": 20.38,
+            "hash_5d4b5964": 22.25,
+            "hash_36bf8e05": "localized19#hash_707a3fd9335af9a2"
         },
         {
             "soundevent": "#hash_3b19ef979eda08e0",
-            "var_f35c5951": 43,
-            "var_5d4b5964": 18.33,
-            "var_36bf8e05": "#hash_321c24f4f887732d"
+            "hash_f35c5951": 43,
+            "hash_5d4b5964": 18.33,
+            "hash_36bf8e05": "localized19#hash_321c24f4f887732d"
         }
     ],
-    "description": "#hash_54eef83ee5922540",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#exploration",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_39975151641c4544",
-    "var_2a12d36": 1,
+    "description": "localized19#hash_54eef83ee5922540",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#exploration",
+    "hash_4138e7ed": 0,
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#hash_39975151641c4544",
+    "hash_2a12d36": 1,
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#dark_aether",
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_5b635b73ab6ca33f",
     "name": "zmintel_silver_darkaether_audiolog_7",
-    "var_9be0526e": "#audiolog",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#tape",
-    "title": "#hash_517020781b7a58",
-    "var_3bb3493d": "#hash_34f8625325c66604",
+    "hash_9be0526e": "#audiolog",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#tape",
+    "title": "localized19#hash_517020781b7a58",
+    "hash_4efbbcfe": 0,
+    "hash_3bb3493d": "#hash_34f8625325c66604",
     "mapname": "#zm_silver",
-    "var_6073bf8f": "#hash_4042063c893f7f3a"
+    "hash_6073bf8f": "model#p9_sur_machine_computer_screen_no_play_prog"
 }

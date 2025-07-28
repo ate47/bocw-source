@@ -1,346 +1,356 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#callingcards_s3_atlantafaze_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_atlantafaze_base_ms_mtxitem",
             "itemid": "28650959"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_dallasempire_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_dallasempire_base_ms_mtxitem",
             "itemid": "21775603"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_floridamutineers_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_floridamutineers_base_ms_mtxitem",
             "itemid": "26576212"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_lagorillas_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_lagorillas_base_ms_mtxitem",
             "itemid": "21912179"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_lathieves_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_lathieves_base_ms_mtxitem",
             "itemid": "27766498"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_londonroyalravens_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_londonroyalravens_base_ms_mtxitem",
             "itemid": "22928472"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_nyxl_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_nyxl_base_ms_mtxitem",
             "itemid": "32098101"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_opticchi_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_opticchi_base_ms_mtxitem",
             "itemid": "19501618"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_parislegion_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_parislegion_base_ms_mtxitem",
             "itemid": "27551210"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_rokkr_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_rokkr_base_ms_mtxitem",
             "itemid": "23205727"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_surge_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_surge_base_ms_mtxitem",
             "itemid": "20766195"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_torontoultra_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_torontoultra_base_ms_mtxitem",
             "itemid": "29532497"
         },
         {
-            "var_4a4bc969": "#emblems_s3_atlantafaze_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_atlantafaze_base_ms_mtxitem",
             "itemid": "29056810"
         },
         {
-            "var_4a4bc969": "#emblems_s3_empire_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_empire_base_ms_mtxitem",
             "itemid": "31890790"
         },
         {
-            "var_4a4bc969": "#emblems_s3_floridamutineers_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_floridamutineers_base_ms_mtxitem",
             "itemid": "24874543"
         },
         {
-            "var_4a4bc969": "#emblems_s3_lagorrilas_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_lagorrilas_base_ms_mtxitem",
             "itemid": "25723361"
         },
         {
-            "var_4a4bc969": "#emblems_s3_lathieves_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_lathieves_base_ms_mtxitem",
             "itemid": "27729886"
         },
         {
-            "var_4a4bc969": "#emblems_s3_londonroyalravens_v2_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_londonroyalravens_v2_base_ms_mtxitem",
             "itemid": "26911878"
         },
         {
-            "var_4a4bc969": "#emblems_s3_newyorkemblem_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_newyorkemblem_base_ms_mtxitem",
             "itemid": "23379733"
         },
         {
-            "var_4a4bc969": "#emblems_s3_opticchi_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_opticchi_base_ms_mtxitem",
             "itemid": "26145415"
         },
         {
-            "var_4a4bc969": "#emblems_s3_parislegion_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_parislegion_base_ms_mtxitem",
             "itemid": "29498063"
         },
         {
-            "var_4a4bc969": "#emblems_s3_rokkrope_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_rokkrope_base_ms_mtxitem",
             "itemid": "23763026"
         },
         {
-            "var_4a4bc969": "#emblems_s3_surge_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_surge_base_ms_mtxitem",
             "itemid": "18321940"
         },
         {
-            "var_4a4bc969": "#emblems_s3_torontoultra_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_torontoultra_base_ms_mtxitem",
             "itemid": "22243923"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_empire_crimsix_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_empire_crimsix_base_ms_mtxitem",
             "itemid": "18386946"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_empire_huke_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_empire_huke_base_ms_mtxitem",
             "itemid": "28138991"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_empire_illey_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_empire_illey_base_ms_mtxitem",
             "itemid": "28653336"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_empire_shotzzy_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_empire_shotzzy_base_ms_mtxitem",
             "itemid": "29060307"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_faze_abezy_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_faze_abezy_base_ms_mtxitem",
             "itemid": "19403240"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_faze_arcitys_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_faze_arcitys_base_ms_mtxitem",
             "itemid": "19607654"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_faze_cellium_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_faze_cellium_base_ms_mtxitem",
             "itemid": "19032874"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_faze_sib_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_faze_sib_base_ms_mtxitem",
             "itemid": "32891911"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_faze_simp_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_faze_simp_base_ms_mtxitem",
             "itemid": "23928424"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_apathy_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_guerrillas_apathy_base_ms_mtxitem",
             "itemid": "31990040"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_assault_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_guerrillas_assault_base_ms_mtxitem",
             "itemid": "22271822"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_cheen_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_guerrillas_cheen_base_ms_mtxitem",
             "itemid": "23673457"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_mental_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_guerrillas_mental_base_ms_mtxitem",
             "itemid": "20971370"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_silly_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_guerrillas_silly_base_ms_mtxitem",
             "itemid": "31964411"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_vivid_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_guerrillas_vivid_base_ms_mtxitem",
             "itemid": "30558288"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_legion_aqua_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_legion_aqua_base_ms_mtxitem",
             "itemid": "27439935"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_legion_classic_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_legion_classic_base_ms_mtxitem",
             "itemid": "22102834"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_legion_fire_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_legion_fire_base_ms_mtxitem",
             "itemid": "30495271"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_legion_skrapz_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_legion_skrapz_base_ms_mtxitem",
             "itemid": "27755529"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_havok_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_mutineers_havok_base_ms_mtxitem",
             "itemid": "19090605"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_owakening_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_mutineers_owakening_base_ms_mtxitem",
             "itemid": "18271858"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_skyz_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_mutineers_skyz_base_ms_mtxitem",
             "itemid": "20314580"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_slacked_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_mutineers_slacked_base_ms_mtxitem",
             "itemid": "27585233"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_accuracy_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_rokkr_accuracy_base_ms_mtxitem",
             "itemid": "32096195"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_attach_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_rokkr_attach_base_ms_mtxitem",
             "itemid": "27951116"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_majormaniak_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_rokkr_majormaniak_base_ms_mtxitem",
             "itemid": "29212310"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_priestahh_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_rokkr_priestahh_base_ms_mtxitem",
             "itemid": "27195778"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_alexx_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_royalravens_alexx_base_ms_mtxitem",
             "itemid": "28590527"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_dylan_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_royalravens_dylan_base_ms_mtxitem",
             "itemid": "23840349"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_seany_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_royalravens_seany_base_ms_mtxitem",
             "itemid": "32069632"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_zer0_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_royalravens_zer0_base_ms_mtxitem",
             "itemid": "31210142"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_subliners_clayster_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_subliners_clayster_base_ms_mtxitem",
             "itemid": "31791844"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_subliners_hydra_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_subliners_hydra_base_ms_mtxitem",
             "itemid": "22071034"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_subliners_mack_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_subliners_mack_base_ms_mtxitem",
             "itemid": "32725957"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_subliners_zoomaa_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_subliners_zoomaa_base_ms_mtxitem",
             "itemid": "23112629"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_surge_gunless_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_surge_gunless_base_ms_mtxitem",
             "itemid": "31459954"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_surge_loony_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_surge_loony_base_ms_mtxitem",
             "itemid": "20122083"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_surge_nubzy_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_surge_nubzy_base_ms_mtxitem",
             "itemid": "24549032"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_surge_octane_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_surge_octane_base_ms_mtxitem",
             "itemid": "18427232"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_surge_prestinni_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_surge_prestinni_base_ms_mtxitem",
             "itemid": "29624748"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_thieves_drazah_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_thieves_drazah_base_ms_mtxitem",
             "itemid": "32096980"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_thieves_kenny_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_thieves_kenny_base_ms_mtxitem",
             "itemid": "23008996"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_thieves_slasher_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_thieves_slasher_base_ms_mtxitem",
             "itemid": "25057014"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_thieves_temp_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_thieves_temp_base_ms_mtxitem",
             "itemid": "23554210"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_thieves_tjhaly_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_thieves_tjhaly_base_ms_mtxitem",
             "itemid": "21461178"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_ultra_bance_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_ultra_bance_base_ms_mtxitem",
             "itemid": "23441960"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_ultra_cammy_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_ultra_cammy_base_ms_mtxitem",
             "itemid": "32227012"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_ultra_cleanx_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_ultra_cleanx_base_ms_mtxitem",
             "itemid": "30841872"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_ultra_insight_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_ultra_insight_base_ms_mtxitem",
             "itemid": "19966309"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_ultra_methodz_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_ultra_methodz_base_ms_mtxitem",
             "itemid": "24735974"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_empire_felo_2_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_empire_felo_2_base_ms_mtxitem",
             "itemid": "29259734"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_legion_theory_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_legion_theory_base_ms_mtxitem",
             "itemid": "19412306"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_neptune_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_mutineers_neptune_base_ms_mtxitem",
             "itemid": "26946089"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_saintt_2_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_rokkr_saintt_2_base_ms_mtxitem",
             "itemid": "19218204"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_afro_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_royalravens_afro_base_ms_mtxitem",
             "itemid": "24830192"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_parasite_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_royalravens_parasite_base_ms_mtxitem",
             "itemid": "32431346"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_subliners_asim_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_subliners_asim_base_ms_mtxitem",
             "itemid": "22656240"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_subliners_diamondcon_base_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_subliners_diamondcon_base_ms_mtxitem",
             "itemid": "28739659"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_5ef1e0d463875bbb",
-    "var_247d9ed7": "firstparty_bundle_3306_cdl_team_supporter",
-    "var_208d76b5": "#hash_36423ef7c554d708",
-    "var_70f66e54": "#hash_60ba6395d2ccfafa",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_3306_cdl_team_supporter",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_firstparty_bundle_3306_cdl_team_supporter",
+    "hash_70f66e54": "#hash_60ba6395d2ccfafa",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "firstparty_bundle_3306_cdl_team_supporter_ms_mtxentitlement",
-    "var_a788fada": "#hash_68cafa759ab69b57",
-    "titlestring": "#hash_5512e7d79ac5bab9",
-    "var_566825be": "#hash_1606ea9f2df5819f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_firstparty_bundle_3306_cdl_team_supporter_small",
+    "titlestring": "localized18#hash_5512e7d79ac5bab9",
+    "hash_566825be": "image#ui_icon_mtx_titles_firstparty_bundle_3306_cdl_team_supporter",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#durango",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#durango",
     "itemid": "32414650",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

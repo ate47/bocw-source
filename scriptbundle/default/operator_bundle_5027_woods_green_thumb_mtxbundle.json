@@ -1,44 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_dope_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_dope_mtxitem",
             "itemid": "20299041"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_woods_mtxitem",
             "itemid": "28004165"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_spacehead_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_spacehead_mtxitem",
             "itemid": "28981319"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_spacehead_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_spacehead_mtxitem",
             "itemid": "24912910"
         },
         {
-            "var_4a4bc969": "#t9_charm_sloth_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sloth_mtxitem",
             "itemid": "28952166"
         },
         {
-            "var_4a4bc969": "#emblem_mtx_tracerpack_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_mtx_tracerpack_s5_mtxitem",
             "itemid": "30090966"
         },
         {
-            "var_4a4bc969": "#callingcards_bigtokes_002_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_bigtokes_002_s5_mtxitem",
             "itemid": "29670951"
         }
     ],
-    "itemname": "#hash_34584b61085bd857",
-    "var_375a1747": "#hash_6449b8ed09f4f585",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5027_woods_green_thumb",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5027_woods_green_thumb",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5027_woods_green_thumb_mtxbundle",
-    "var_a788fada": "#hash_77ce06bbcff7d13c",
-    "titlestring": "#hash_6c4922f7b8609637",
-    "var_566825be": "#hash_54c71681ecee3ec8",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5027_woods_green_thumb_small",
+    "titlestring": "localized18#hash_6c4922f7b8609637",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5027_woods_green_thumb",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_57ef207bd868fe53",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_57ef207bd868fe53",
+    "hash_db3e02ab": 2000,
     "itemid": "28436594"
 }

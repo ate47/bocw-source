@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_smoulder_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_smoulder_mtxitem",
             "itemid": "29663737"
         },
         {
-            "var_4a4bc969": "#t9_charm_longship_fire_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_longship_fire_mtxitem",
             "itemid": "20005154"
         },
         {
-            "var_4a4bc969": "#callingcards_kamehameha_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_kamehameha_mtxitem",
             "itemid": "21884956"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_vts_final_11_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_vts_final_11_mtxitem",
             "itemid": "21180963"
         }
     ],
-    "itemname": "#hash_7ba2c20abeefe1d4",
-    "var_375a1747": "#hash_1fcaf505a31453aa",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4057_ffar_1_lava_flow",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4057_ffar_1_lava_flow",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4057_ffar_1_lava_flow_mtxbundle",
-    "var_a788fada": "#hash_789b4d4c1ec4ebc7",
-    "titlestring": "#hash_3ccec29151376c81",
-    "var_566825be": "#hash_14f100b87a9713cf",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4057_ffar_1_lava_flow_small",
+    "titlestring": "localized18#hash_3ccec29151376c81",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4057_ffar_1_lava_flow",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_596cdbe08adf5941",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_596cdbe08adf5941",
+    "hash_db3e02ab": 2000,
     "itemid": "32977222"
 }

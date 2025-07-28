@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_cub_pl_dgi_el_jefe_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_cub_pl_dgi_el_jefe_mtxitem",
             "itemid": "18419074"
         },
         {
-            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_cub_dgi_mtxitem",
             "itemid": "21801561"
         },
         {
-            "var_4a4bc969": "#ar_fastfire_bp_guerilla_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_guerilla_mtxitem",
             "itemid": "31651249"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_deepblue_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_deepblue_mtxitem",
             "itemid": "19275326"
         },
         {
-            "var_4a4bc969": "#reticle_101_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_101_mtxitem",
             "itemid": "33355309"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_truck_light_assembly_mpx_bartender_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_truck_light_assembly_mpx_bartender_mtxitem",
             "itemid": "20064688"
         },
         {
-            "var_4a4bc969": "#emblems_tourguide_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_tourguide_animated_mtxitem",
             "itemid": "33226669"
         },
         {
-            "var_4a4bc969": "#callingcards_cuba_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cuba_mtxitem",
             "itemid": "23636576"
         }
     ],
-    "itemname": "#hash_36d6c9462e8d5fa7",
-    "var_375a1747": "#hash_530b1861a4228b11",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4035_garcia_tour_guide",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4035_garcia_tour_guide",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4035_garcia_tour_guide_mtxbundle",
-    "var_a788fada": "#hash_1bbf017b3b679310",
-    "titlestring": "#hash_20b071934cddede5",
-    "var_566825be": "#hash_58eafb17ff2b09c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4035_garcia_tour_guide_small",
+    "titlestring": "localized18#hash_20b071934cddede5",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4035_garcia_tour_guide",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_73212510bf84b79d",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_73212510bf84b79d",
+    "hash_db3e02ab": 2000,
     "itemid": "29064642"
 }

@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_ac2a84ade73c6ee",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_ac2a84ade73c6ee",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_23050bf33e96af30",
-    "image": "#hash_9d82af3308f441a",
+    "hash_4a95afca": "image#hash_23050bf33e96af30",
+    "image": "image#hash_9d82af3308f441a",
     "name": "cp_achievement_red_door",
-    "title": "#hash_39a59ffb38153dde"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_39a59ffb38153dde",
+    "hash_621379a": 0
 }

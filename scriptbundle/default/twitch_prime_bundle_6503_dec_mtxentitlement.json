@@ -1,28 +1,36 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#callingcards_wherewedroppin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_wherewedroppin_mtxitem",
             "itemid": "27988356"
         },
         {
-            "var_4a4bc969": "#emblems_r8g11_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g11_s6_mtxitem",
             "itemid": "28766078"
         },
         {
-            "var_4a4bc969": "#weapon_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#weapon_xp_token_legendary_mtxitem",
             "itemid": "19262075"
         },
         {
-            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_legendary_mtxitem",
             "itemid": "32109261"
         }
     ],
-    "var_2264d693": 1,
+    "hash_2264d693": 1,
     "itemname": "#hash_7b70ad79c132cd07",
-    "var_637c8edf": 1,
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_99071a5f": 0,
     "name": "twitch_prime_bundle_6503_dec_mtxentitlement",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "31039501"
 }

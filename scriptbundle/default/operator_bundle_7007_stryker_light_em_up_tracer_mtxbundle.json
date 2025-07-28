@@ -1,62 +1,66 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_6d738ac73f5fb56a"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7007_stryker_light_em_up_tracer"
         },
         {
-            "var_fe10649e": "#hash_5b57d829a21687f4"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7007_stryker_light_em_up_tracer_01"
         },
         {
-            "var_fe10649e": "#hash_5b57db29a2168d0d"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7007_stryker_light_em_up_tracer_02"
         },
         {
-            "var_fe10649e": "#hash_5b57da29a2168b5a"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7007_stryker_light_em_up_tracer_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_surge_meta_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_surge_meta_mtxitem",
             "itemid": "29244411"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_surge_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_surge_mtxitem",
             "itemid": "19197415"
         },
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_lightup_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_lightup_mtxitem",
             "itemid": "30140871"
         },
         {
-            "var_4a4bc969": "#loot_shotgun_fullauto_bp_lightup_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_shotgun_fullauto_bp_lightup_mtxitem",
             "itemid": "28642939"
         },
         {
-            "var_4a4bc969": "#t9_charm_teacher_toy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_teacher_toy_mtxitem",
             "itemid": "29173964"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_edutain_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_edutain_mtxitem",
             "itemid": "25445666"
         },
         {
-            "var_4a4bc969": "#callingcards_light_em_up_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_light_em_up_animated_mtxitem",
             "itemid": "19794968"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_22_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_22_s6_mtxitem",
             "itemid": "19233548"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_13b467f0e85c6738",
-    "var_375a1747": "#hash_6d738ac73f5fb56a",
-    "var_8ee7db29": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7007_stryker_light_em_up_tracer",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7007_stryker_light_em_up_tracer_mtxbundle",
-    "var_a788fada": "#hash_74de6b3eb4a9f03d",
-    "titlestring": "#hash_f81f0da94deaa87",
-    "var_566825be": "#hash_c8ef225393dbef5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7007_stryker_light_em_up_tracer_small",
+    "titlestring": "localized18#hash_f81f0da94deaa87",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7007_stryker_light_em_up_tracer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3f4b5097de0c9ae3",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_3f4b5097de0c9ae3",
+    "hash_db3e02ab": 750,
     "itemid": "24153582"
 }

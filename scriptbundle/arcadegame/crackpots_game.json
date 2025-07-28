@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_13192fb1e0d551da",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_65ed1b3b0a5c2b05",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_crackpots",
+    "hash_9864ed1": 0,
+    "name": "crackpots_game",
+    "hash_6855e4be": "#crackpots_game_mtxitem",
+    "displayname": "localized18#hash_4ae7bae7691906ea",
+    "filename": "#hash_549074f8e71d4126",
+    "action": "localized18#hash_de91e7faf4165b9",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_crackpots",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_crackpots",
+    "hash_48152d43": 0
+}

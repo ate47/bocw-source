@@ -1,10 +1,11 @@
 {
     "achievementname": "t9_activate_player_xp_token_rare",
     "name": "player_xp_token_rare",
-    "var_6855e4be": "#player_xp_token_rare_mtxitem",
-    "title": "#hash_148a7be8d542b25d",
+    "hash_6855e4be": "#player_xp_token_rare_mtxitem",
+    "title": "localized18#hash_148a7be8d542b25d",
     "category": "#player",
-    "icon": "#hash_32249a195e7de2d5",
-    "subtitle": "#hash_4883d8486beb877d",
-    "rarity": 2
+    "icon": "image#ui_icon_2xp_rare_large",
+    "subtitle": "localized18#hash_4883d8486beb877d",
+    "hash_66251d82": 0,
+    "rarity": "enum:2"
 }

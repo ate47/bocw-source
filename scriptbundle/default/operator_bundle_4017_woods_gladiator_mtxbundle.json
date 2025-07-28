@@ -1,55 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_conquer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_conquer_mtxitem",
             "itemid": "27980564"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_woods_mtxitem",
             "itemid": "28004165"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_gladia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_gladia_mtxitem",
             "itemid": "28257002"
         },
         {
-            "var_4a4bc969": "#lmg_light_bp_gladia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_gladia_mtxitem",
             "itemid": "24334385"
         },
         {
-            "var_4a4bc969": "#melee_wakizashi_bp_gladiator_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_wakizashi_bp_gladiator_mtxitem",
             "itemid": "20791958"
         },
         {
-            "var_4a4bc969": "#t9_charm_bear_claw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bear_claw_mtxitem",
             "itemid": "18161634"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_nuke_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_mpx_nuke_mtxitem",
             "itemid": "18608563"
         },
         {
-            "var_4a4bc969": "#execution_113_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_113_mtxitem",
             "itemid": "21091994"
         },
         {
-            "var_4a4bc969": "#callingcards_s4_gladiator_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s4_gladiator_animation_mtxitem",
             "itemid": "29015345"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s4_gladiator_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s4_gladiator_mtxitem",
             "itemid": "25051198"
         }
     ],
-    "itemname": "#hash_6cb081206149915c",
-    "var_375a1747": "#hash_1ff2e69f15325336",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4017_woods_gladiator",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4017_woods_gladiator",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4017_woods_gladiator_mtxbundle",
-    "var_a788fada": "#hash_7abe85898d426417",
-    "titlestring": "#hash_26d5b00b54a91e1d",
-    "var_566825be": "#hash_71d20fac303b3f5f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4017_woods_gladiator_small",
+    "titlestring": "localized18#hash_26d5b00b54a91e1d",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4017_woods_gladiator",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2e9ee905d4b061d5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2e9ee905d4b061d5",
+    "hash_db3e02ab": 2000,
     "itemid": "18847918"
 }

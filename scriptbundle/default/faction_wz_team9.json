@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_7dbb5614f6dfd422",
-    "var_ce1913bd": "fta_",
+    "displaynameshort": "localized18#hash_7dbb5614f6dfd422",
+    "hash_ce1913bd": "fta_",
     "name": "faction_wz_team9",
-    "displayname": "#hash_570ac460b1c0ee6f",
-    "icon": "#hash_3720fef04f7d5b2b",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "cdp_commander_hva",
+    "displayname": "localized18#hash_570ac460b1c0ee6f",
+    "icon": "image#ui_icon_fireteam_logo_raider",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&cdp_commander_hva",
     "color": "White"
 }

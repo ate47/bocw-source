@@ -5,590 +5,1641 @@
                 {
                     "entry": [
                         {
-                            "anim": "#hash_3f401209baafdac3",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_3f401209baafdac3",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh010",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh010"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_3f401509baafdfdc",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_3f401509baafdfdc",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh015",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_6c27263fb5c05125",
-                    "var_a190f06e": "#hash_7e555880d410cb15",
+                    "hash_51c09589": "playeranim#hash_6c27263fb5c05125",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_7e555880d410cb15",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh015",
-                    "var_389b3f9b": "#hash_3d010f9d2d23a052",
-                    "var_bb64ee8c": "#hash_54909785016ba31e"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_3d010f9d2d23a052",
+                    "hash_bb64ee8c": "playeranim#hash_54909785016ba31e",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_3f35a009baa6c488",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_3f35a009baa6c488",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh020",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_673cdc9894e48401",
-                    "var_a190f06e": "#hash_36e81d2c8c3a77b1",
-                    "var_91ecd04": "#hash_573c2ec012e07e31",
+                    "hash_51c09589": "playeranim#hash_673cdc9894e48401",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_36e81d2c8c3a77b1",
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_573c2ec012e07e31",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh020",
-                    "var_389b3f9b": "#hash_5d915e2919d27a26",
-                    "var_bb64ee8c": "#hash_379181b1185603ca"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_5d915e2919d27a26",
+                    "hash_bb64ee8c": "playeranim#hash_379181b1185603ca",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_3f392609baa9de11",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_3f392609baa9de11",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh030",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_46e0eb905ca5ef1e",
+                    "hash_51c09589": "playeranim#hash_46e0eb905ca5ef1e",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh030"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_3f4a2409bab84dde",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_3f4a2409bab84dde",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh040",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_50ee9f14cde0a36b",
-                    "var_91ecd04": "#hash_4e7d4985fd28517f",
-                    "var_dee605a0": "#hash_64a124ee30172ff4",
+                    "hash_51c09589": "playeranim#hash_50ee9f14cde0a36b",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_4e7d4985fd28517f",
+                    "hash_dee605a0": "playeranim#hash_64a124ee30172ff4",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh040",
-                    "var_389b3f9b": "#hash_577cce8ac0282f0c",
-                    "var_bb64ee8c": "#hash_6601ed3bd57e72e0"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_577cce8ac0282f0c",
+                    "hash_bb64ee8c": "playeranim#hash_6601ed3bd57e72e0",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "var_6d72caf2": 1,
-            "model": "#hash_225b7a1c33079fb1",
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 1,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "character#hash_225b7a1c33079fb1",
+            "hash_8a65366f": 0,
             "type": "player",
-            "var_1af33af1": 1,
-            "var_db255011": 1,
+            "hash_1af33af1": 1,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
+            "forcenocull": 0,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
+            "usefakeactor": 0,
             "name": "player1",
-            "var_1a95895f": 1
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 1,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         },
         {
             "shots": [
                 {
                     "entry": [
                         {
-                            "anim": "#hash_70bb532f697330ea",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_70bb532f697330ea",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh010",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh010"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_70bb502f69732bd1",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_70bb502f69732bd1",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh015",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_25c1d090d1fbb9de",
-                    "var_a190f06e": "#hash_78058d6109ad7bd4",
+                    "hash_51c09589": "playeranim#hash_25c1d090d1fbb9de",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_78058d6109ad7bd4",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh015",
-                    "var_389b3f9b": "#hash_4238b4977cd72821",
-                    "var_bb64ee8c": "#hash_3028643bf08c2d13"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_4238b4977cd72821",
+                    "hash_bb64ee8c": "playeranim#hash_3028643bf08c2d13",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_70b7cd2f69701761",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_70b7cd2f69701761",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh020",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_3444f6c6c42b86e",
-                    "var_a190f06e": "#hash_55af2b77b8dd2c4",
-                    "var_91ecd04": "#hash_41b1e31356d7c05a",
+                    "hash_51c09589": "playeranim#hash_3444f6c6c42b86e",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_55af2b77b8dd2c4",
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_41b1e31356d7c05a",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh020",
-                    "var_389b3f9b": "#hash_2f05c194377de491",
-                    "var_bb64ee8c": "#hash_4b7320ba43408e03"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_2f05c194377de491",
+                    "hash_bb64ee8c": "playeranim#hash_4b7320ba43408e03",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_70b4472f696cfdd8",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_70b4472f696cfdd8",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh030",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh030"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_70cc512f6981a0b7",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_70cc512f6981a0b7",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh040",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_6e16792908962178",
-                    "var_91ecd04": "#hash_16fdae01d1447558",
-                    "var_dee605a0": "#hash_4e6536fb6c98be1b",
+                    "hash_51c09589": "playeranim#hash_6e16792908962178",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_16fdae01d1447558",
+                    "hash_dee605a0": "playeranim#hash_4e6536fb6c98be1b",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh040",
-                    "var_389b3f9b": "#hash_fb74c059c1226cf",
-                    "var_bb64ee8c": "#hash_6ea19004dc3b3739"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_fb74c059c1226cf",
+                    "hash_bb64ee8c": "playeranim#hash_6ea19004dc3b3739",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "var_6d72caf2": 1,
-            "model": "#hash_225b7a1c33079fb1",
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 1,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "character#hash_225b7a1c33079fb1",
+            "hash_8a65366f": 0,
             "type": "player",
-            "var_db255011": 1,
+            "hash_1af33af1": 0,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
+            "forcenocull": 0,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
+            "usefakeactor": 0,
             "name": "player2",
-            "var_1a95895f": 1
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 1,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         },
         {
             "shots": [
                 {
                     "entry": [
                         {
-                            "anim": "#hash_33df95eb2bb93781",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_33df95eb2bb93781",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh010",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh010"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_33df98eb2bb93c9a",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_33df98eb2bb93c9a",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh015",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_6a143b26b937377",
-                    "var_a190f06e": "#hash_17255b33830705df",
+                    "hash_51c09589": "playeranim#hash_6a143b26b937377",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_17255b33830705df",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh015",
-                    "var_389b3f9b": "#hash_166208c489cbb980",
-                    "var_bb64ee8c": "#hash_7b2f1e7fd80d2adc"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_166208c489cbb980",
+                    "hash_bb64ee8c": "playeranim#hash_7b2f1e7fd80d2adc",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_33e29beb2bbb778a",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_33e29beb2bbb778a",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh020",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_3cffd776fab11427",
-                    "var_a190f06e": "#hash_fb2b08e13fb4a2f",
-                    "var_91ecd04": "#hash_204d4b7c2b0babd3",
+                    "hash_51c09589": "playeranim#hash_3cffd776fab11427",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_fb2b08e13fb4a2f",
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_204d4b7c2b0babd3",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh020",
-                    "var_389b3f9b": "#hash_7d9a6f39962c410",
-                    "var_bb64ee8c": "#hash_6410e14c5b4c72c"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_7d9a6f39962c410",
+                    "hash_bb64ee8c": "playeranim#hash_6410e14c5b4c72c",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_33e601eb2bbe5ab3",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_33e601eb2bbe5ab3",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh030",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh030"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_33e987eb2bc1743c",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_33e987eb2bc1743c",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh040",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_290a1fdb940c94c5",
-                    "var_91ecd04": "#hash_1bdb9c885365e6d",
-                    "var_dee605a0": "#hash_43ce286f176566be",
+                    "hash_51c09589": "playeranim#hash_290a1fdb940c94c5",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_1bdb9c885365e6d",
+                    "hash_dee605a0": "playeranim#hash_43ce286f176566be",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh040",
-                    "var_389b3f9b": "#hash_32e5c0f3d4a082f2",
-                    "var_bb64ee8c": "#hash_1248889532586a3e"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_32e5c0f3d4a082f2",
+                    "hash_bb64ee8c": "playeranim#hash_1248889532586a3e",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "var_6d72caf2": 1,
-            "model": "#hash_225b7a1c33079fb1",
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 1,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "character#hash_225b7a1c33079fb1",
+            "hash_8a65366f": 0,
             "type": "player",
-            "var_db255011": 1,
+            "hash_1af33af1": 0,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
+            "forcenocull": 0,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
+            "usefakeactor": 0,
             "name": "player3",
-            "var_1a95895f": 1
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 1,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         },
         {
             "shots": [
                 {
                     "entry": [
                         {
-                            "anim": "#hash_5367d09ff399abf0",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_5367d09ff399abf0",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh010",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh010"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_5367d59ff399b46f",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_5367d59ff399b46f",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh015",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_28e37ecc209c5dc0",
-                    "var_a190f06e": "#hash_600834194423fa86",
+                    "hash_51c09589": "playeranim#hash_28e37ecc209c5dc0",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_600834194423fa86",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh015",
-                    "var_389b3f9b": "#hash_b93747fdc4e4cb7",
-                    "var_bb64ee8c": "#hash_1a0d44246f57611"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_b93747fdc4e4cb7",
+                    "hash_bb64ee8c": "playeranim#hash_1a0d44246f57611",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_5371e29ff3a21f0b",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_5371e29ff3a21f0b",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh020",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_7841dee41a1d060c",
-                    "var_a190f06e": "#hash_60ac2f611300e482",
+                    "hash_51c09589": "playeranim#hash_7841dee41a1d060c",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_60ac2f611300e482",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh020",
-                    "var_389b3f9b": "#hash_c772fd66cb24ceb",
-                    "var_bb64ee8c": "#hash_4920cfb6dfa6adad"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_c772fd66cb24ceb",
+                    "hash_bb64ee8c": "playeranim#hash_4920cfb6dfa6adad",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_536edc9ff39fdf02",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_536edc9ff39fdf02",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh030",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh030"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_5378ee9ff3a8521d",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_5378ee9ff3a8521d",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh040",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_960a572e43b952a",
-                    "var_91ecd04": "#hash_3fc441e2518d6dce",
-                    "var_dee605a0": "#hash_238baee18cb07285",
+                    "hash_51c09589": "playeranim#hash_960a572e43b952a",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_3fc441e2518d6dce",
+                    "hash_dee605a0": "playeranim#hash_238baee18cb07285",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh040",
-                    "var_389b3f9b": "#hash_71c081c7e59dd935",
-                    "var_bb64ee8c": "#hash_641727102cba6bef"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_71c081c7e59dd935",
+                    "hash_bb64ee8c": "playeranim#hash_641727102cba6bef",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "var_6d72caf2": 1,
-            "model": "#hash_225b7a1c33079fb1",
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 1,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "character#hash_225b7a1c33079fb1",
+            "hash_8a65366f": 0,
             "type": "player",
-            "var_db255011": 1,
+            "hash_1af33af1": 0,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
+            "forcenocull": 0,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
+            "usefakeactor": 0,
             "name": "player4",
-            "var_1a95895f": 1
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 1,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         },
         {
             "shots": [
                 {
                     "entry": [
                         {
-                            "anim": "#hash_56821fe6c7144ed7",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_56821fe6c7144ed7",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh010",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh010"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_56821ae6c7144658",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_56821ae6c7144658",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh015",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_7d4a45ad6a3bcb91",
-                    "var_a190f06e": "#hash_9f2127b71743861",
+                    "hash_51c09589": "playeranim#hash_7d4a45ad6a3bcb91",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_9f2127b71743861",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh015",
-                    "var_389b3f9b": "#hash_112f869819f5e356",
-                    "var_bb64ee8c": "#hash_100d8f7824008ba"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_112f869819f5e356",
+                    "hash_bb64ee8c": "playeranim#hash_100d8f7824008ba",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_56780de6c70bdbbc",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_56780de6c70bdbbc",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh020",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_36e560d9dd074345",
-                    "var_a190f06e": "#hash_2e33a1d9d878feb5",
+                    "hash_51c09589": "playeranim#hash_36e560d9dd074345",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "hash_a190f06e": "playeranim#hash_2e33a1d9d878feb5",
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh020",
-                    "var_389b3f9b": "#hash_541498a784ae0d72",
-                    "var_bb64ee8c": "#hash_1a3c4193417675be"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_541498a784ae0d72",
+                    "hash_bb64ee8c": "playeranim#hash_1a3c4193417675be",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_567b93e6c70ef545",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_567b93e6c70ef545",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh030",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
-                    "name": "sh030"
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_567121e6c705df0a",
-                            "var_71bac06": "anim"
+                            "anim": "playeranim#hash_567121e6c705df0a",
+                            "entrytype": "anim"
                         },
                         {
-                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
-                            "var_71bac06": "cameraswitcher"
+                            "cameraswitcher": "xcam&c_cin_zm_silver_intro_sh040",
+                            "entrytype": "cameraswitcher"
                         }
                     ],
-                    "var_51c09589": "#hash_4adb187543abc2a7",
-                    "var_91ecd04": "#hash_320fc0e180ed1e53",
-                    "var_dee605a0": "#hash_27ad38ea6af1c490",
+                    "hash_51c09589": "playeranim#hash_4adb187543abc2a7",
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_91ecd04": "playeranim#hash_320fc0e180ed1e53",
+                    "hash_dee605a0": "playeranim#hash_27ad38ea6af1c490",
+                    "hash_d49adf2f": 0,
                     "hidestowedweapon": 1,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
                     "name": "sh040",
-                    "var_389b3f9b": "#hash_29087ea749704e90",
-                    "var_bb64ee8c": "#hash_e34c712d4d2d2ac"
+                    "hash_b538acac": 0,
+                    "hash_389b3f9b": "playeranim#hash_29087ea749704e90",
+                    "hash_bb64ee8c": "playeranim#hash_e34c712d4d2d2ac",
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "var_6d72caf2": 1,
-            "model": "#hash_225b7a1c33079fb1",
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 1,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "character#hash_225b7a1c33079fb1",
+            "hash_8a65366f": 0,
             "type": "player",
-            "var_db255011": 1,
+            "hash_1af33af1": 0,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
+            "forcenocull": 0,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
+            "usefakeactor": 0,
             "name": "player5",
-            "var_1a95895f": 1
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 1,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         },
         {
             "shots": [
                 {
                     "entry": [
                         {
-                            "anim": "#hash_73d6b08b5ec1a9e1",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_73d6b08b5ec1a9e1",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh010"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_73d6b38b5ec1aefa",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_73d6b38b5ec1aefa",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh015"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh015",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_73da368b5ec4c36a",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_73da368b5ec4c36a",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh020"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh020",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_73dd9c8b5ec7a693",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_73dd9c8b5ec7a693",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh030"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_73e1228b5ecac01c",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_73e1228b5ecac01c",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh040"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh040",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "model": 0,
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 0,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "vehicle#hash_437293ae239af1ab",
+            "hash_8a65366f": 0,
             "type": "vehicle",
+            "hash_1af33af1": 0,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
             "forcenocull": 1,
-            "var_db255011": 1,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
             "deletewhenfinished": 1,
-            "name": "helicopter"
+            "usefakeactor": 0,
+            "name": "helicopter",
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 0,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         },
         {
             "shots": [
                 {
                     "entry": [
                         {
-                            "anim": "#hash_2ac22239546ffe2c",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_2ac22239546ffe2c",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh010"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh010",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_2ac21f39546ff913",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_2ac21f39546ff913",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh015"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh015",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_2acc343954787147",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_2acc343954787147",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh020"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh020",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_2ac8ae39547557be",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_2ac8ae39547557be",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh030"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh030",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 },
                 {
                     "entry": [
                         {
-                            "anim": "#hash_2ab7b0395466e7f1",
-                            "var_71bac06": "anim"
+                            "anim": "anim#hash_2ab7b0395466e7f1",
+                            "entrytype": "anim"
                         }
                     ],
-                    "name": "sh040"
+                    "hash_ab59a015": 0,
+                    "damagethreshold": 0,
+                    "lerptime": 0,
+                    "hash_d49adf2f": 0,
+                    "hidestowedweapon": 0,
+                    "hash_441cbab8": 0,
+                    "spacermin": 0,
+                    "spacermax": 0,
+                    "hash_751fe16b": 0,
+                    "name": "sh040",
+                    "hash_b538acac": 0,
+                    "hash_3ee70278": 0,
+                    "blend": 0,
+                    "hash_1a95895f": 0,
+                    "hash_16999a5d": 0,
+                    "hash_29563fd6": 0,
+                    "hash_eb00c330": 0,
+                    "cameratweenout": 0,
+                    "diewhenfinished": 0,
+                    "hash_3a0a7985": 0,
+                    "hash_6d62f1ae": 0,
+                    "hash_be60a82b": 0,
+                    "hash_922b4fc5": 0,
+                    "hash_3e692842": 0,
+                    "cameratween": 0
                 }
             ],
-            "model": "#hash_3ca1ea9d84ee22b4",
+            "touchtriggers": 0,
+            "hash_a8972ec6": 0,
+            "hash_5829ce6b": 0,
+            "hash_69db1665": 0,
+            "hash_6d72caf2": 0,
+            "skipdeathanim": 0,
+            "hash_9de1f44c": 0,
+            "lerptime": 0,
+            "model": "character#hash_3ca1ea9d84ee22b4",
+            "hash_8a65366f": 0,
             "type": "prop",
-            "var_db255011": 1,
+            "hash_1af33af1": 0,
+            "hash_a1c5c678": 0,
+            "hidestowedweapon": 0,
+            "forcenocull": 0,
+            "hash_7bd2bb58": 0,
+            "hash_9ecb812d": 0,
+            "hash_6e141fdb": 0,
+            "hash_671e284a": 0,
+            "hash_db255011": 1,
+            "hash_9b604b8d": 0,
             "deletewhenfinished": 1,
-            "name": "helicopter_pilot"
+            "usefakeactor": 0,
+            "name": "helicopter_pilot",
+            "hash_b538acac": 0,
+            "hash_2baad8fc": 0,
+            "hash_69aabff2": 0,
+            "hash_186d089d": 0,
+            "hash_1a95895f": 0,
+            "hash_16999a5d": 0,
+            "hash_29563fd6": 0,
+            "hash_eb00c330": 0,
+            "cameratweenout": 0,
+            "hash_be60a82b": 0,
+            "hash_922b4fc5": 0,
+            "hash_3e692842": 0,
+            "preserveangle": 0,
+            "autocenter": 0,
+            "cameratween": 0
         }
     ],
+    "hash_e3b54868": 0,
     "scenetype": "scene",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
+    "looping": 0,
     "devstate": "placeholder",
     "type": "scene",
     "name": "cin_zm_silver_intro",
     "dontsync": 1,
     "disablesceneskipping": 1,
-    "var_a6da2039": "cin_zm_silver_intro",
+    "hash_5fb58492": 0,
+    "hash_241c5f3c": 0,
+    "hash_a6da2039": "streamerhint&cin_zm_silver_intro",
     "aligntarget": "tag_align_intro_start",
+    "hash_16999a5d": 0,
+    "hash_29563fd6": 0,
+    "hash_eb00c330": 0,
     "ignorestreamer": 1,
-    "team": "allies"
+    "team": "allies",
+    "hash_be60a82b": 0,
+    "hash_922b4fc5": 0,
+    "hash_3e692842": 0
 }

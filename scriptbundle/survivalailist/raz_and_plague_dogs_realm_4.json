@@ -1,0 +1,28 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&survival_ai_raz",
+            "hash_a949845f": 2,
+            "hash_857deb66": 10000
+        },
+        {
+            "entryname": "scriptbundle&survival_ai_dog_plague",
+            "hash_a949845f": 2,
+            "hash_857deb66": 1
+        },
+        {
+            "entryname": "scriptbundle&default_zombies_realm_4",
+            "hash_a949845f": 2,
+            "hash_857deb66": 1
+        },
+        {
+            "entryname": "scriptbundle&inf_specials",
+            "hash_a949845f": 1,
+            "hash_857deb66": 1
+        }
+    ],
+    "hash_d961aeb3": 0.25,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "raz_and_plague_dogs_realm_4"
+}

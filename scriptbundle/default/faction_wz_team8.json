@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_7100699c24433e11",
-    "var_ce1913bd": "ftb_",
+    "displaynameshort": "localized18#hash_7100699c24433e11",
+    "hash_ce1913bd": "ftb_",
     "name": "faction_wz_team8",
-    "displayname": "#hash_13bc58734e8f03bc",
-    "icon": "#hash_29013c362702a4ad",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "cdp_commander_kgb",
+    "displayname": "localized18#hash_13bc58734e8f03bc",
+    "icon": "image#ui_icon_fireteam_logo_warden",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&cdp_commander_kgb",
     "color": "White"
 }

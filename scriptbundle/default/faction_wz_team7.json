@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_229c56bd024d9e18",
-    "var_ce1913bd": "fta_",
+    "displaynameshort": "localized18#hash_229c56bd024d9e18",
+    "hash_ce1913bd": "fta_",
     "name": "faction_wz_team7",
-    "displayname": "#hash_6e1c3e519fb10135",
-    "icon": "#hash_2dc2822150e97ae2",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "cdp_commander_kgb",
+    "displayname": "localized18#hash_6e1c3e519fb10135",
+    "icon": "image#ui_icon_fireteam_logo_tempest",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&cdp_commander_kgb",
     "color": "White"
 }

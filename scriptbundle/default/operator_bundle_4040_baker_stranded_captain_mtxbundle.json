@@ -1,42 +1,47 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_grunge_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_grunge_mtxitem",
             "itemid": "20072796"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_rthunder_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_rthunder_mtxitem",
             "itemid": "33090833"
         },
         {
-            "var_4a4bc969": "#reticle_96_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_96_mtxitem",
             "itemid": "18438617"
         },
         {
-            "var_4a4bc969": "#execution_125_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_125_mtxitem",
             "itemid": "22521662"
         },
         {
-            "var_4a4bc969": "#t9_charm_ship_bottle_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_ship_bottle_mtxitem",
             "itemid": "18877299"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_bracelet_weathered_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_bracelet_weathered_mtxitem",
             "itemid": "27401147"
         }
     ],
-    "itemname": "#hash_3e5087caf41cdb8c",
-    "var_375a1747": "#hash_76d9faffc7717c6e",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4040_baker_stranded_captain",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4040_baker_stranded_captain",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4040_baker_stranded_captain_mtxbundle",
-    "titlestring": "#hash_6082f425d43bc775",
-    "var_566825be": "#hash_c371e859dac6bf9",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_6082f425d43bc775",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4040_baker_stranded_captain",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_17250b9ee62f2b2d",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_17250b9ee62f2b2d",
+    "hash_db3e02ab": 2000,
     "itemid": "30763389"
 }

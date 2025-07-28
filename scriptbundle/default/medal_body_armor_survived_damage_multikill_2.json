@@ -1,11 +1,11 @@
 {
-    "description": "#hash_5613e80716ccce49",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_5613e80716ccce49",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_body_armor_survived_damage_multikill_2",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_3aea880b728782ca",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_extra_padding",
     "statname": "#hash_e970dce71c27a65",
-    "var_8645ce54": "#hash_67a63dbb0c9e8357",
-    "iconlarge": "#hash_1a235cf0cfe33f2a"
+    "stringref": "localized18#hash_67a63dbb0c9e8357",
+    "iconlarge": "image#ui_icon_medal_extra_padding_large"
 }

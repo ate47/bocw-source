@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_bulldozer_toxin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_bulldozer_toxin_mtxitem",
             "itemid": "25952996"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_bulldozer_mtxitem",
             "itemid": "20317561"
         },
         {
-            "var_4a4bc969": "#smg_fastfire_bp_cshinobi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_fastfire_bp_cshinobi_mtxitem",
             "itemid": "26630605"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_zslayer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_zslayer_mtxitem",
             "itemid": "22815013"
         },
         {
-            "var_4a4bc969": "#t9_charm_bskull_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bskull_mtxitem",
             "itemid": "23340760"
         },
         {
-            "var_4a4bc969": "#execution_025_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_025_mtxitem",
             "itemid": "29840706"
         },
         {
-            "var_4a4bc969": "#emblem_marquee_07_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_marquee_07_animated_mtxitem",
             "itemid": "25901980"
         },
         {
-            "var_4a4bc969": "#callingcards_zombiedozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_zombiedozer_mtxitem",
             "itemid": "33432526"
         }
     ],
-    "itemname": "#hash_67eea72aaca611d5",
-    "var_375a1747": "#hash_5c39f216456e09fb",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2033_bulldozer_zombie_dozer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2033_bulldozer_zombie_dozer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2033_bulldozer_zombie_dozer_mtxbundle",
-    "var_a788fada": "#hash_5354fb161d36343c",
-    "titlestring": "#hash_3770af0ab249ba35",
-    "var_566825be": "#hash_4dfe6d5a6ff7b9c8",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2033_bulldozer_zombie_dozer_small",
+    "titlestring": "localized18#hash_3770af0ab249ba35",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2033_bulldozer_zombie_dozer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_272959109d93f4ed",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_272959109d93f4ed",
+    "hash_db3e02ab": 2000,
     "itemid": "28285210"
 }

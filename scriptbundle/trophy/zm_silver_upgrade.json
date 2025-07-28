@@ -4,13 +4,16 @@
             "filters": "#zombie"
         }
     ],
-    "description": "#hash_1bac9d745dcbe11a",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_1bac9d745dcbe11a",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_5c61ce54cf6e9f32",
-    "image": "#hash_602125223291f7d1",
+    "hash_4a95afca": "image#hash_5c61ce54cf6e9f32",
+    "image": "image#hash_602125223291f7d1",
     "name": "zm_silver_upgrade",
-    "title": "#hash_2dfeb5b08fc5b52a"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_2dfeb5b08fc5b52a",
+    "hash_621379a": 0
 }

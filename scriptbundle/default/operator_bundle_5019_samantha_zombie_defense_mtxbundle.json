@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_ger_pl_maxis_scythe_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_maxis_scythe_mtxitem",
             "itemid": "22623623"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_pl_maxis_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_pl_maxis_mtxitem",
             "itemid": "27568255"
         },
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_gmaxis_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_gmaxis_mtxitem",
             "itemid": "32985740"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_gmaxis_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_gmaxis_mtxitem",
             "itemid": "33472901"
         },
         {
-            "var_4a4bc969": "#t9_charm_deadshot_perk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_deadshot_perk_mtxitem",
             "itemid": "31651473"
         },
         {
-            "var_4a4bc969": "#execution_154_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_154_mtxitem",
             "itemid": "26760789"
         },
         {
-            "var_4a4bc969": "#emblems_vts_final_06_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_final_06_s5_animated_mtxitem",
             "itemid": "22736021"
         },
         {
-            "var_4a4bc969": "#callingcards_zombie_demon_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_zombie_demon_s5_mtxitem",
             "itemid": "32108428"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_vts_final_01_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_vts_final_01_s5_mtxitem",
             "itemid": "26812852"
         }
     ],
-    "itemname": "#hash_206ddb50fa5d9106",
-    "var_375a1747": "#hash_9dfbd6c6c043764",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5019_samantha_zombie_defense",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5019_samantha_zombie_defense",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5019_samantha_zombie_defense_mtxbundle",
-    "var_a788fada": "#hash_1740d7521ee43871",
-    "titlestring": "#hash_d262847f88ed1fa",
-    "var_566825be": "#hash_699ffbef41f5f009",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5019_samantha_zombie_defense_small",
+    "titlestring": "localized18#hash_d262847f88ed1fa",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5019_samantha_zombie_defense",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4372d7e95ddadcf6",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4372d7e95ddadcf6",
+    "hash_db3e02ab": 2000,
     "itemid": "30633530"
 }

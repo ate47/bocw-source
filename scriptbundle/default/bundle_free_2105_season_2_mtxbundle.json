@@ -1,23 +1,27 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_armyrv_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_armyrv_mtxitem",
             "itemid": "21697154"
         },
         {
-            "var_4a4bc969": "#weapon_xp_token_common_mtxitem",
+            "hash_4a4bc969": "scriptbundle#weapon_xp_token_common_mtxitem",
             "itemid": "27032621"
         }
     ],
-    "itemname": "#hash_22b63575fae8a31c",
-    "var_375a1747": "#hash_7092c29646337289",
-    "var_637c8edf": 1,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_free_2105_season_2",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_2106_season_2",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_free_2105_season_2_mtxbundle",
-    "titlestring": "#hash_67dc9f9769ac011f",
-    "var_566825be": "#hash_58b7d7eb758bbf56",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_67dc9f9769ac011f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_2106_season_2",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1d0d5b3e217b16db",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1d0d5b3e217b16db",
+    "hash_db3e02ab": 2000,
     "itemid": "27027347"
 }

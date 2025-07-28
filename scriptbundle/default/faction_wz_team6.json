@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_51d21c9416da0dcf",
-    "var_ce1913bd": "ftb_",
+    "displaynameshort": "localized18#hash_51d21c9416da0dcf",
+    "hash_ce1913bd": "ftb_",
     "name": "faction_wz_team6",
-    "displayname": "#hash_2fa10e3574b5b6e2",
-    "icon": "#hash_51823079d83abf8d",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "blops_commander_bnd",
+    "displayname": "localized18#hash_2fa10e3574b5b6e2",
+    "icon": "image#ui_icon_fireteam_logo_saber",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&blops_commander_bnd",
     "color": "WarzoneCustomTeam6"
 }

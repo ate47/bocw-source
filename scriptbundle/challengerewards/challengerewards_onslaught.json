@@ -2,72 +2,101 @@
     "rewards": [
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_5dafbe3b9f549bc5",
-            "imagelarge": "#hash_5dafbe3b9f549bc5",
-            "var_b4ab831a": "#hash_2c12b240dbf2eb43",
-            "var_270fa547": "#hash_12ebd02003c58809"
+            "codpoints": 0,
+            "image": "image#hash_5dafbe3b9f549bc5",
+            "imagelarge": "image#hash_5dafbe3b9f549bc5",
+            "hash_b4ab831a": "#hash_2c12b240dbf2eb43",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_12ebd02003c58809"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_16add9ae60fbb6c6",
-            "imagelarge": "#hash_16add9ae60fbb6c6",
-            "var_b4ab831a": "#hash_2e2d3119c7eba908",
-            "var_270fa547": "#hash_40c259a28bc275ba"
+            "codpoints": 0,
+            "image": "image#hash_16add9ae60fbb6c6",
+            "imagelarge": "image#hash_16add9ae60fbb6c6",
+            "hash_b4ab831a": "#hash_2e2d3119c7eba908",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_40c259a28bc275ba"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_5cd02fd1fcb79e94",
-            "imagelarge": "#hash_5cd02fd1fcb79e94",
-            "var_b4ab831a": "#hash_11d84f8e6fcacfea",
-            "var_270fa547": "#hash_203f53d43e7b5525"
+            "codpoints": 0,
+            "image": "image#hash_5cd02fd1fcb79e94",
+            "imagelarge": "image#hash_5cd02fd1fcb79e94",
+            "hash_b4ab831a": "#hash_11d84f8e6fcacfea",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_203f53d43e7b5525"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_76b4beba6c438524",
-            "imagelarge": "#hash_76b4beba6c438524",
-            "var_b4ab831a": "#hash_6af8c0811b92773e",
-            "var_270fa547": "#hash_558f7942e2401eff"
+            "codpoints": 0,
+            "image": "image#hash_76b4beba6c438524",
+            "imagelarge": "image#hash_76b4beba6c438524",
+            "hash_b4ab831a": "#sniper_standard_bp_moa_sy",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_558f7942e2401eff"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_6ace651bdb8e5366",
-            "imagelarge": "#hash_6ace651bdb8e5366",
-            "var_b4ab831a": "#hash_4e9d98373f0a4679",
-            "var_270fa547": "#hash_2d6bcee038d7e728"
+            "codpoints": 0,
+            "image": "image#hash_6ace651bdb8e5366",
+            "imagelarge": "image#hash_6ace651bdb8e5366",
+            "hash_b4ab831a": "#hash_4e9d98373f0a4679",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_2d6bcee038d7e728"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_badfcb5517009b2",
-            "imagelarge": "#hash_badfcb5517009b2",
-            "var_b4ab831a": "#hash_787b86aaa73d9c8b",
-            "var_270fa547": "#hash_45b90af94bc28199"
+            "codpoints": 0,
+            "image": "image#hash_badfcb5517009b2",
+            "imagelarge": "image#hash_badfcb5517009b2",
+            "hash_b4ab831a": "#ar_accurate_bp_geo_sy",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_45b90af94bc28199"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_54b2e52488c7004e",
-            "imagelarge": "#hash_54b2e52488c7004e",
-            "var_b4ab831a": "#hash_2a8c492edec37cbe",
-            "var_270fa547": "#hash_3551fbb8f9272df6"
+            "codpoints": 0,
+            "image": "image#hash_54b2e52488c7004e",
+            "imagelarge": "image#hash_54b2e52488c7004e",
+            "hash_b4ab831a": "#lmg_slowfire_bp_chemburn_sy",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3551fbb8f9272df6"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_3b9a6f3adbcd4299",
-            "imagelarge": "#hash_3b9a6f3adbcd4299",
-            "var_b4ab831a": "#hash_2f41b7a5b905080a",
-            "var_270fa547": "#hash_5a234b7c00ae1ae4"
+            "codpoints": 0,
+            "image": "image#hash_3b9a6f3adbcd4299",
+            "imagelarge": "image#hash_3b9a6f3adbcd4299",
+            "hash_b4ab831a": "#ar_damage_bp_s05challenge_sy",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_5a234b7c00ae1ae4"
         },
         {
             "rewardtype": "#weaponblueprint",
-            "image": "#hash_7ea2c2c6372f9418",
-            "imagelarge": "#hash_7ea2c2c6372f9418",
-            "var_b4ab831a": "#hash_6917afb842d5d2d9",
-            "var_270fa547": "#hash_7aecddb420d2f602"
+            "codpoints": 0,
+            "image": "image#hash_7ea2c2c6372f9418",
+            "imagelarge": "image#hash_7ea2c2c6372f9418",
+            "hash_b4ab831a": "#ar_fasthandling_bp_charged_sy",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_7aecddb420d2f602"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "challengerewards",
-    "var_faec2a7f": 3,
+    "hash_5f0dd656": 0,
+    "hash_4e39981b": 0,
+    "hash_faec2a7f": 3,
     "name": "challengerewards_onslaught",
     "sessionmode": "0",
-    "var_91a1cb16": 3
+    "hash_91a1cb16": 3
 }

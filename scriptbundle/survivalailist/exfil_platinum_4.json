@@ -1,0 +1,28 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&platinum_ai_zombie",
+            "hash_a949845f": 25,
+            "hash_857deb66": 70
+        },
+        {
+            "entryname": "scriptbundle&platinum_ai_zombie_heavy",
+            "hash_a949845f": 20,
+            "hash_857deb66": 25
+        },
+        {
+            "entryname": "scriptbundle&platinum_ai_tormentor",
+            "hash_a949845f": 10,
+            "hash_857deb66": 5
+        },
+        {
+            "entryname": "scriptbundle&platinum_ai_disciple",
+            "hash_a949845f": 2,
+            "hash_857deb66": 1000
+        }
+    ],
+    "hash_d961aeb3": 0.3,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "exfil_platinum_4"
+}

@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_frost_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_frost_mtxitem",
             "itemid": "23706210"
         },
         {
-            "var_4a4bc969": "#loot_smg_fastfire_bp_frost_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_fastfire_bp_frost_mtxitem",
             "itemid": "31563004"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_digital_frost_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_digital_frost_mtxitem",
             "itemid": "21140076"
         },
         {
-            "var_4a4bc969": "#t9_charm_penguin_w_gun_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_penguin_w_gun_mtxitem",
             "itemid": "31060118"
         },
         {
-            "var_4a4bc969": "#reticle_133_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_133_mtxitem",
             "itemid": "32551108"
         },
         {
-            "var_4a4bc969": "#emblems_antarctica_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_antarctica_s6_mtxitem",
             "itemid": "26402434"
         },
         {
-            "var_4a4bc969": "#callingcards_ateam_137_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ateam_137_s6_mtxitem",
             "itemid": "19856897"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_antarctica_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_antarctica_s6_mtxitem",
             "itemid": "33025158"
         }
     ],
-    "itemname": "#hash_e98c40954447feb",
-    "var_375a1747": "#hash_3c81b3c103443c1d",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_6029_fara_antarctica",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6029_fara_antarctica",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6029_fara_antarctica_mtxbundle",
-    "var_a788fada": "#hash_37be63ac9a324686",
-    "titlestring": "#hash_1b85e02335ea5182",
-    "var_566825be": "#hash_16bc0b9edc9645d2",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6029_fara_antarctica_small",
+    "titlestring": "localized18#hash_1b85e02335ea5182",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6029_fara_antarctica",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_419b8f1beac3dcfe",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_419b8f1beac3dcfe",
+    "hash_db3e02ab": 2000,
     "itemid": "29450325"
 }

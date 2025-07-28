@@ -1,0 +1,113 @@
+{
+    "objects": [
+        {
+            "exitgroundanim": "anim#hash_7db43d2e8ca7d1af",
+            "ridedeathanim": "anim#hash_6d174ce9de5410c6",
+            "fastrope": 0,
+            "aligntag": "tag_driver",
+            "rideanim": "anim#hash_145a9f9e3f71ce2f",
+            "startanim": "anim#hash_5c9889f17bfc0d7b",
+            "position": "driver",
+            "stopanim": "anim#hash_2e2334694efbc849"
+        },
+        {
+            "exitgroundanim": "anim#hash_ef04b400f270617",
+            "ridedeathanim": "anim#hash_6817fa2d2d333140",
+            "fastrope": 0,
+            "aligntag": "tag_passenger1",
+            "rideanim": "anim#hash_68c12bf4004d7014",
+            "position": "passenger1"
+        },
+        {
+            "exitgroundanim": "anim#hash_42717ad09688171a",
+            "ridedeathanim": "anim#hash_6aa1bc461e052e23",
+            "fastrope": 0,
+            "aligntag": "tag_passenger2",
+            "rideanim": "anim#hash_68c12bf4004d7014",
+            "position": "gunner1"
+        },
+        {
+            "exitgroundanim": "anim#hash_42717ad09688171a",
+            "ridedeathanim": "anim#hash_6aa1bc461e052e23",
+            "fastrope": 0,
+            "aligntag": "tag_passenger3",
+            "rideanim": "anim#hash_68c12bf4004d7014",
+            "position": "gunner2",
+            "valid": 1
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "model": "model#veh_mphd_uaz_base",
+    "type": "vehicleriders",
+    "hash_4301b21d": 4,
+    "vmtype": "both",
+    "dropspeed": 250,
+    "name": "veh_mil_ru_fav_heavy_riders",
+    "highexitlandheight": 32
+}

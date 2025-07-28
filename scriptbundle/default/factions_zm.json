@@ -1,15 +1,15 @@
 {
     "faction": [
         {
-            "var_d2446fa0": "#faction_zm"
+            "hash_d2446fa0": "scriptbundle#faction_zm"
         },
         {
-            "var_d2446fa0": "#faction_zm_allies"
+            "hash_d2446fa0": "scriptbundle#faction_zm_allies"
         },
         {
-            "var_d2446fa0": "#faction_zm_axis"
+            "hash_d2446fa0": "scriptbundle#faction_zm_axis"
         }
     ],
-    "var_49ab12c7": "#faction_codcaster",
+    "hash_49ab12c7": "scriptbundle#faction_codcaster",
     "name": "factions_zm"
 }

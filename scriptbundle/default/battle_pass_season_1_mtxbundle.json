@@ -1,20 +1,24 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#battle_pass_token_mtxitem",
+            "hash_4a4bc969": "scriptbundle#battle_pass_token_mtxitem",
             "itemid": "24926821"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_2bc48a1e874ad3",
-    "var_375a1747": "#hash_cd1a0fcd8112a95",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_battlepass_s01",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "battle_pass_season_1_mtxbundle",
-    "var_a788fada": "#hash_5c2ee08b9850514d",
-    "titlestring": "#hash_79eb21b8f84a0e77",
-    "var_566825be": "#hash_6af084c12611045",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_battlepass_01_small",
+    "titlestring": "localized18#hash_79eb21b8f84a0e77",
+    "hash_566825be": "image#ui_icon_mtx_titles_battlepass_01",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6b0c12e5cf7df606",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6b0c12e5cf7df606",
+    "hash_db3e02ab": 2000,
     "itemid": "22939990"
 }

@@ -1,10 +1,10 @@
 {
-    "description": "#hash_492505bfd8cd68ec",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_492505bfd8cd68ec",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_vip_defended",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_5389b1ef90d04b31",
-    "var_8645ce54": "#hash_1ea56e559a2c8ec4",
-    "iconlarge": "#hash_4d491f3c8ba078f5"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_earning_your_paycheck",
+    "stringref": "localized18#hash_1ea56e559a2c8ec4",
+    "iconlarge": "image#ui_icon_medal_earning_your_paycheck_large"
 }

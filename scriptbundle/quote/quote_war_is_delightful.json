@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_war_is_delightful",
-    "quote": "#hash_5f85a6d97d4f7097",
-    "author": "#hash_12dbf3056a8d9813"
+    "quote": "localized18#hash_5f85a6d97d4f7097",
+    "author": "localized18#hash_12dbf3056a8d9813"
 }

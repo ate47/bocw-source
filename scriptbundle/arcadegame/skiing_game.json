@@ -1,0 +1,22 @@
+{
+    "description": "localized18#hash_25708225710b319",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_3da7281e52a4727e",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 2,
+    "select": "localized18#hash_39daa79bd2005538",
+    "hash_76e12fbf": "image#uie_arcade_large_skiing",
+    "hash_9864ed1": 0,
+    "name": "skiing_game",
+    "hash_6855e4be": "#skiing_game_mtxitem",
+    "displayname": "localized18#hash_4d4f7fce89c7687",
+    "filename": "#hash_73bf2b1a926cb5c4",
+    "action": "localized18#hash_b44628789ff39a7",
+    "hash_dcc4bcb0": 0,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_1fe119f9d26eda88",
+    "previewimage": "image#uie_arcade_icon_skiing",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_skiing",
+    "hash_48152d43": 1
+}

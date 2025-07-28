@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_navyseal_dissident_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_navyseal_dissident_mtxitem",
             "itemid": "19262918"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#emblems_brawler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_brawler_mtxitem",
             "itemid": "22917478"
         },
         {
-            "var_4a4bc969": "#execution_036_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_036_mtxitem",
             "itemid": "22265871"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_brawler_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_brawler_01_mtxitem",
             "itemid": "33121477"
         }
     ],
-    "itemname": "#hash_5fb406b0809d4091",
-    "var_375a1747": "#hash_22506128397487b3",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1010_baker_the_brawler",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1010_baker_the_brawler",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1010_baker_the_brawler_mtxbundle",
-    "titlestring": "#hash_4a5d26c3a8de990d",
-    "var_566825be": "#hash_12928af4030be6c6",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_4a5d26c3a8de990d",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1010_baker_the_brawler",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4f2432293a6a3045",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4f2432293a6a3045",
+    "hash_db3e02ab": 2000,
     "itemid": "29229340"
 }

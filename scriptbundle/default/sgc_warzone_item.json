@@ -1,0 +1,9 @@
+{
+    "type": "#callout",
+    "name": "sgc_warzone_item",
+    "hash_24d23b21": 0,
+    "hash_1c9900c6": 0,
+    "title": "localized19#hash_52e9e8e985489587",
+    "gametype": "#warzone",
+    "gestablecallout": "gesture_table&gestable_battle_cry"
+}

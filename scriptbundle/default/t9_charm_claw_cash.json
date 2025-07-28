@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_53ac77b87c077cba",
-    "description": "#hash_1eee9fef700dfc2c",
+    "hash_ff3063df": "model#attach_t9_charm_claw_cash",
+    "description": "localized18#hash_1eee9fef700dfc2c",
     "name": "t9_charm_claw_cash",
-    "var_6855e4be": "#t9_charm_claw_cash_mtxitem",
-    "displayname": "#hash_19322472f31f6204",
+    "hash_6855e4be": "#t9_charm_claw_cash_mtxitem",
+    "displayname": "localized18#hash_19322472f31f6204",
     "icon": "ui_icon_weapon_charms_t9_claw_cash",
-    "var_ef5ad2b3": "#hash_53ac77b87c077cba"
+    "hash_ef5ad2b3": "model#attach_t9_charm_claw_cash"
 }

@@ -1,0 +1,24 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_f49bdf40": "localized19#hash_161a41404b4b6e01",
+            "hash_c9d25687": "localized19#hash_3d5c298aa3ea3c44"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_161a3e404b4b68e8",
+            "hash_c9d25687": "localized19#hash_327e3137c9454e53"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_161a3f404b4b6a9b",
+            "hash_c9d25687": "localized19#hash_5fded55fb0adb202"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_161a44404b4b731a",
+            "hash_c9d25687": "localized19#hash_5dd9fdaba1a02771"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "notedisplaycontentlists",
+    "name": "cp_rus_kgb_prisoner_note_list",
+    "hash_85ca818b": "image#hash_23cdf9c7f1901372"
+}

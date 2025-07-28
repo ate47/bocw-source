@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_powersemi_bp_biggame_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_powersemi_bp_biggame_mtxitem",
             "itemid": "26796447"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_mvs_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_mvs_mtxitem",
             "itemid": "30199483"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_redwave_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_redwave_mtxitem",
             "itemid": "32256479"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_resp_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_resp_mtxitem",
             "itemid": "21135268"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_tunnel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_tunnel_mtxitem",
             "itemid": "17940631"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_gunzroses_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_gunzroses_mtxitem",
             "itemid": "18867019"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_elegant_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_elegant_mtxitem",
             "itemid": "22496554"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_ghostwood_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_ghostwood_mtxitem",
             "itemid": "27393727"
         },
         {
-            "var_4a4bc969": "#sniper_powersemi_stalker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_powersemi_stalker_mtxitem",
             "itemid": "21617237"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_24b0289657060754",
-    "var_375a1747": "#hash_2c7c6f978514938e",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_7508_vault_sniper_sg_pack",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_7508_vault_sniper_sg_pack_mtxbundle",
-    "var_a788fada": "#hash_5b41f2489316db4f",
-    "titlestring": "#hash_7e20cae78105c76d",
-    "var_566825be": "#hash_ba61ccc37f17b17",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_7508_vault_sniper_sg_pack_small",
+    "titlestring": "localized18#hash_7e20cae78105c76d",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_7508_vault_sniper_sg_pack",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6510bf274f10a6a5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6510bf274f10a6a5",
+    "hash_db3e02ab": 2000,
     "itemid": "20799193"
 }

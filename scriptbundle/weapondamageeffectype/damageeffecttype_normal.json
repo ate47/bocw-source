@@ -1,0 +1,12 @@
+{
+    "durations": [
+        {
+            "duration": 1,
+            "archetype": "human",
+            "effecttype": "normal"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "weapondamageeffectype",
+    "name": "damageeffecttype_normal"
+}

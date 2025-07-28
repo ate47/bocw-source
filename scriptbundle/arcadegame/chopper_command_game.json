@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_704c51a49a155173",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_3c4dfdd46c745320",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "select": "localized18#hash_6a2930381af54270",
+    "hash_76e12fbf": "image#uie_arcade_large_chopper_command",
+    "hash_9864ed1": 0,
+    "name": "chopper_command_game",
+    "displayname": "localized18#hash_7c2c5064a47c95d9",
+    "filename": "#hash_75923ccbcb4aeae2",
+    "action": "localized18#hash_40c7237c771b42d",
+    "hash_dcc4bcb0": 0,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_chopper_command",
+    "hash_8b592b62": "image#hash_65ab9735fd973bb0",
+    "hash_48152d43": 1
+}

@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_5d25f23c7dedbdeb",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_5b717f6cc3549258",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_keystonekapers",
+    "hash_9864ed1": 0,
+    "name": "keystonekapers_game",
+    "hash_6855e4be": "#keystonekapers_game_mtxitem",
+    "displayname": "localized18#hash_d1b666ba6fe67d1",
+    "filename": "#hash_772a615cec45562c",
+    "action": "localized18#hash_4d2492d30ce09791",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_keystonekapers",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_keystonekapers",
+    "hash_48152d43": 0
+}

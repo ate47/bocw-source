@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_uk_pl_mi6_snapshot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_uk_pl_mi6_snapshot_mtxitem",
             "itemid": "23607476"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_skybird_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_heli_gunship_hind_mpx_skybird_mtxitem",
             "itemid": "26179179"
         },
         {
-            "var_4a4bc969": "#execution_136_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_136_mtxitem",
             "itemid": "19889316"
         },
         {
-            "var_4a4bc969": "#emblems_eagle_016_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_eagle_016_mtxitem",
             "itemid": "25605456"
         }
     ],
-    "itemname": "#hash_7de154e51cbf8b20",
-    "var_375a1747": "#hash_4575a6c24de29e52",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1077_park_pilot",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1077_park_pilot",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1077_park_pilot_mtxbundle",
-    "titlestring": "#hash_5c47f42421810e32",
-    "var_566825be": "#hash_2a0873bf360a6c71",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_5c47f42421810e32",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1077_park_pilot",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3340bed1c09c8f6e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3340bed1c09c8f6e",
+    "hash_db3e02ab": 2000,
     "itemid": "22308908"
 }

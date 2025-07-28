@@ -1,10 +1,10 @@
 {
-    "description": "#hash_1a88646fd8678344",
+    "description": "localized18#hash_1a88646fd8678344",
     "image": "ui_icon_wrist_accessories_watch_cdl_faze_1",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_esports_faze_ms",
-    "var_6855e4be": "#wristaccessory_t9_esports_faze_ms_mtxitem",
-    "displayname": "#hash_744f1678910155bc",
-    "var_8d478ea4": "#hash_4f80c906780b8be3",
-    "var_d27eb4c6": "#hash_ecc11b59807908c"
+    "hash_6855e4be": "#wristaccessory_t9_esports_faze_ms_mtxitem",
+    "displayname": "localized18#hash_744f1678910155bc",
+    "hash_8d478ea4": "model#c_t9_gen_pl_esports_watch_faze_ms",
+    "hash_d27eb4c6": "model#hash_ecc11b59807908c"
 }

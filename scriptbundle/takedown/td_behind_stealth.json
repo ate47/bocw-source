@@ -1,0 +1,31 @@
+{
+    "Scenes": [
+        {
+            "scene": "scriptbundle&td_scene_stealth_behind_a"
+        },
+        {
+            "scene": "scriptbundle&td_scene_stealth_behind_b"
+        },
+        {
+            "scene": "scriptbundle&td_scene_stealth_behind_c"
+        }
+    ],
+    "sprint": 1,
+    "stancecrouch": 1,
+    "configstringfiletype": "scriptbundle",
+    "type": "takedown",
+    "yaw": 180,
+    "stancestand": 1,
+    "hash_72a597df": 1,
+    "name": "td_behind_stealth",
+    "maxheight": 30,
+    "traceheight": 16,
+    "trace": 1,
+    "notslide": 1,
+    "maxrange": 150,
+    "action": "takedown",
+    "yawrange": 60,
+    "prompt": "localized19#hash_6d8033f0ef3722c9",
+    "minheight": -40,
+    "notsprint": 1
+}

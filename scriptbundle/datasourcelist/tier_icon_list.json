@@ -1,38 +1,70 @@
 {
-    "var_bb7dcd09": [
+    "#hash_bb7dcd09": [
         {
-            "type": "#none",
-            "displayname": "#hash_63cc221b7f8c89ec",
-            "actionutility": "#none"
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_63cc221b7f8c89ec",
+            "actionutility": "#NONE"
         },
         {
-            "type": "#none",
-            "displayname": "#hash_63cc231b7f8c8b9f",
-            "actionutility": "#none"
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_63cc231b7f8c8b9f",
+            "actionutility": "#NONE"
         },
         {
-            "type": "#none",
-            "displayname": "#hash_63cc241b7f8c8d52",
-            "actionutility": "#none"
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_63cc241b7f8c8d52",
+            "actionutility": "#NONE"
         },
         {
-            "type": "#none",
-            "displayname": "#hash_63cc251b7f8c8f05",
-            "actionutility": "#none"
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_63cc251b7f8c8f05",
+            "actionutility": "#NONE"
         },
         {
-            "type": "#none",
-            "displayname": "#hash_63cc1e1b7f8c8320",
-            "actionutility": "#none"
+            "hash_82ead409": 0,
+            "type": "#NONE",
+            "displayname": "localized19#hash_63cc1e1b7f8c8320",
+            "actionutility": "#NONE"
         }
     ],
-    "var_ef6b707": 1,
-    "var_c5a72a50": 1,
-    "var_72ef398b": 1,
-    "var_1f745188": 1,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_4295e20d": 1,
-    "var_a77ed948": "#none",
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 1,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 1,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 1,
+    "hash_d7f79634": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 1,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 0,
     "type": "datasourcelist",
-    "name": "tier_icon_list"
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
+    "name": "tier_icon_list",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 0,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
 }

@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_standard_bp_space_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_space_mtxitem",
             "itemid": "18669300"
         },
         {
-            "var_4a4bc969": "#ar_accurate_bp_space_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_space_mtxitem",
             "itemid": "28380266"
         },
         {
-            "var_4a4bc969": "#loot_smg_spray_bp_space_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_spray_bp_space_mtxitem",
             "itemid": "28818969"
         },
         {
-            "var_4a4bc969": "#t9_charm_space_helmet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_space_helmet_mtxitem",
             "itemid": "32086815"
         },
         {
-            "var_4a4bc969": "#reticle_107_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_107_mtxitem",
             "itemid": "21877206"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_analog_spaceship_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_analog_spaceship_mtxitem",
             "itemid": "33296299"
         },
         {
-            "var_4a4bc969": "#emblems_spacebattles_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_spacebattles_animated_mtxitem",
             "itemid": "24214970"
         },
         {
-            "var_4a4bc969": "#callingcards_oldschooltvshow_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_oldschooltvshow_animated_mtxitem",
             "itemid": "21603076"
         }
     ],
-    "itemname": "#hash_588c3ff24029b3ad",
-    "var_375a1747": "#hash_4787d5dca105fb8f",
-    "var_579fd6c3": 45,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4061_lw3_tundra_space_battle",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4061_lw3_tundra_space_battle",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 45,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4061_lw3_tundra_space_battle_mtxbundle",
-    "var_a788fada": "#hash_78e3f02c3db34208",
-    "titlestring": "#hash_4eac98c4586c2f0c",
-    "var_566825be": "#hash_2f7351888b3f5f4",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4061_lw3_tundra_space_battle_small",
+    "titlestring": "localized18#hash_4eac98c4586c2f0c",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4061_lw3_tundra_space_battle",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6428abd80e42927c",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6428abd80e42927c",
+    "hash_db3e02ab": 2000,
     "itemid": "19085289"
 }

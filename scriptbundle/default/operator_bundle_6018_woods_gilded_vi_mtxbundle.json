@@ -1,65 +1,70 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_dapper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_dapper_mtxitem",
             "itemid": "24410143"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_woods_mtxitem",
             "itemid": "28004165"
         },
         {
-            "var_4a4bc969": "#operator_mission_6018_mtxitem",
+            "hash_4a4bc969": "scriptbundle#operator_mission_6018_mtxitem",
             "itemid": "24657413"
         },
         {
-            "var_4a4bc969": "#operator_mission_6018_unlock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#operator_mission_6018_unlock_mtxitem",
             "itemid": "22688802"
         },
         {
-            "var_4a4bc969": "#smg_handling_bp_gilded_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_gilded_mtxitem",
             "itemid": "21453362"
         },
         {
-            "var_4a4bc969": "#ar_british_bp_gilded_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_british_bp_gilded_mtxitem",
             "itemid": "18703319"
         },
         {
-            "var_4a4bc969": "#pistol_fullauto_bp_gilded_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_fullauto_bp_gilded_mtxitem",
             "itemid": "18507980"
         },
         {
-            "var_4a4bc969": "#execution_098_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_098_mtxitem",
             "itemid": "31979891"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_gilded_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_gilded_mtxitem",
             "itemid": "29240557"
         },
         {
-            "var_4a4bc969": "#t9_charm_teabag_gold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_teabag_gold_mtxitem",
             "itemid": "20849861"
         },
         {
-            "var_4a4bc969": "#emblems_gildedagevii_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_gildedagevii_s6_animated_mtxitem",
             "itemid": "30631643"
         },
         {
-            "var_4a4bc969": "#callingcards_gilded_agevii_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_gilded_agevii_s6_animated_mtxitem",
             "itemid": "28269889"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_122ed122838d61d9",
-    "var_375a1747": "#hash_24dfb52e55ddcb5b",
-    "var_3040f0d1": "#hash_4b57186dd6281a7d",
-    "var_fc891f35": "22688802",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6018_woods_gilded_vi",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_operator_bundle_6018_woods_gilded_vi_icon",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_fc891f35": "22688802",
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6018_woods_gilded_vi_mtxbundle",
-    "var_a788fada": "#hash_9d9a82b76ac3302",
-    "titlestring": "#hash_56e6e2757f2c530a",
-    "var_566825be": "#hash_1a11f319728cb50e",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6018_woods_gilded_vi_small",
+    "titlestring": "localized18#hash_56e6e2757f2c530a",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6018_woods_gilded_vi",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_719aec3c7e3e5886",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_719aec3c7e3e5886",
+    "hash_db3e02ab": 2000,
     "itemid": "26969487"
 }

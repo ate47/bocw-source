@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter4_song_bloom_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter4_song_bloom_mtxitem",
             "itemid": "30973940"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter4_mtxitem",
             "itemid": "31249471"
         },
         {
-            "var_4a4bc969": "#smg_accurate_bp_grunge_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_accurate_bp_grunge_mtxitem",
             "itemid": "26865539"
         },
         {
-            "var_4a4bc969": "#t9_charm_shark_pick_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_shark_pick_mtxitem",
             "itemid": "32535650"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s3_vts_final_18_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s3_vts_final_18_mtxitem",
             "itemid": "18068118"
         },
         {
-            "var_4a4bc969": "#emblems_punktrasher_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_punktrasher_mtxitem",
             "itemid": "25718997"
         },
         {
-            "var_4a4bc969": "#callingcards_wm_gothpunk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_wm_gothpunk_mtxitem",
             "itemid": "29630033"
         },
         {
-            "var_4a4bc969": "#reticle_81_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_81_mtxitem",
             "itemid": "30291946"
         }
     ],
-    "itemname": "#hash_3977141cc78ef2bd",
-    "var_375a1747": "#hash_47814a5d17239a7",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3023_song_punk_thrasher",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3023_song_punk_thrasher",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3023_song_punk_thrasher_mtxbundle",
-    "var_a788fada": "#hash_16f1a902f4e6fd8a",
-    "titlestring": "#hash_7f1a56677e85b8d",
-    "var_566825be": "#hash_52a72536aff538d6",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3023_song_punk_thrasher_small",
+    "titlestring": "localized18#hash_7f1a56677e85b8d",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3023_song_punk_thrasher",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6f93ecb7a857ec5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6f93ecb7a857ec5",
+    "hash_db3e02ab": 2000,
     "itemid": "29006657"
 }

@@ -1,56 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_spetsnaz_chernobyl_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_spetsnaz_chernobyl_mtxitem",
             "itemid": "19929240"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_spetsnaz_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_spetsnaz_mtxitem",
             "itemid": "31261283"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_chems_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_chems_mtxitem",
             "itemid": "27459172"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_nest_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_nest_mtxitem",
             "itemid": "27039523"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_digital_radiation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_digital_radiation_mtxitem",
             "itemid": "28230331"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_death_grip_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_death_grip_mtxitem",
             "itemid": "33149128"
         },
         {
-            "var_4a4bc969": "#t9_charm_waste_barrel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_waste_barrel_mtxitem",
             "itemid": "29308007"
         },
         {
-            "var_4a4bc969": "#emblems_s3_vts_final_22_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_vts_final_22_animation_mtxitem",
             "itemid": "29236997"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_vts_11_final_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_vts_11_final_animated_mtxitem",
             "itemid": "32980943"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_mpx_chernobyl_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_tank_t72_mpx_chernobyl_mtxitem",
             "itemid": "28028827"
         }
     ],
-    "itemname": "#hash_25686194c551e975",
-    "var_375a1747": "#hash_5124dca9e4c3434f",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_3002_spetsnaz_radioactive_leak",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_3002_spetsnaz_radioactive_leak",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_3002_spetsnaz_radioactive_leak_mtxbundle",
-    "var_a788fada": "#hash_4bbe83631119edc6",
-    "titlestring": "#hash_3128bbb53629b7b8",
-    "var_566825be": "#hash_1f091aec952c612",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_3002_spetsnaz_radioactive_leak_small",
+    "titlestring": "localized18#hash_3128bbb53629b7b8",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_3002_spetsnaz_radioactive_leak",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_847c3433be2bf80",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_847c3433be2bf80",
+    "hash_db3e02ab": 2000,
     "itemid": "19145149"
 }

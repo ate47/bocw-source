@@ -2,58 +2,68 @@
     "itemlist": [
         {
             "minweight": 50,
-            "var_a6762160": "#armor_item_medium",
+            "itementry": "scriptbundle#armor_item_medium",
             "maxweight": 50,
             "available": 1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#armor_item_large",
+            "itementry": "scriptbundle#armor_item_large",
             "maxweight": 50,
             "available": 1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#health_item_large",
+            "itementry": "scriptbundle#health_item_large",
             "maxweight": 50,
             "available": 1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#smg_standard_t9_item",
-            "var_3f8c08e3": "#ammo_small_caliber_item_t9",
+            "itementry": "scriptbundle#smg_standard_t9_item",
+            "childitementry_1": "scriptbundle#ammo_small_caliber_item_t9",
             "maxweight": 50,
             "available": 1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#smg_capacity_t9_item",
-            "var_3f8c08e3": "#ammo_small_caliber_item_t9",
+            "itementry": "scriptbundle#smg_capacity_t9_item",
+            "childitementry_1": "scriptbundle#ammo_small_caliber_item_t9",
             "maxweight": 50,
             "available": 1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#lmg_slowfire_t9_item",
-            "var_3f8c08e3": "#ammo_large_caliber_item_t9",
+            "itementry": "scriptbundle#lmg_slowfire_t9_item",
+            "childitementry_1": "scriptbundle#ammo_large_caliber_item_t9",
             "maxweight": 50,
             "available": 1
         },
         {
             "minweight": 50,
-            "var_a6762160": "#sniper_powersemi_t9_item",
-            "var_3f8c08e3": "#ammo_sniper_item_t9",
+            "itementry": "scriptbundle#sniper_powersemi_t9_item",
+            "childitementry_1": "scriptbundle#ammo_sniper_item_t9",
             "maxweight": 50,
             "available": 1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_7fb0967b": 12000,
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_7fb0967b": 12000,
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "supply_stash_slot2",
-    "var_fde72c94": 100,
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0,
     "supplystash": 1
 }

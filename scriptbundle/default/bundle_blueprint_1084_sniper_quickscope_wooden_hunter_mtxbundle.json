@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_collectors_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_collectors_mtxitem",
             "itemid": "18960562"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_collect_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_collect_mtxitem",
             "itemid": "30171766"
         },
         {
-            "var_4a4bc969": "#knife_combat_bp_wooden_mtxitem",
+            "hash_4a4bc969": "scriptbundle#knife_combat_bp_wooden_mtxitem",
             "itemid": "30771461"
         },
         {
-            "var_4a4bc969": "#t9_charm_hunting_dog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_hunting_dog_mtxitem",
             "itemid": "28404474"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_naturalhunter2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_naturalhunter2_mtxitem",
             "itemid": "30170827"
         }
     ],
-    "itemname": "#hash_52e30fbd5c38aca7",
-    "var_375a1747": "#hash_1e7a6c093aca7d39",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1084_sniper_quickscope_wooden_hunter",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1084_sniper_quickscope_wooden_hunter",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1084_sniper_quickscope_wooden_hunter_mtxbundle",
-    "titlestring": "#hash_4b5039ad98510964",
-    "var_566825be": "#hash_4502d4e576f0cfae",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_4b5039ad98510964",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1084_sniper_quickscope_wooden_hunter",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_d1b98919a53a94",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_d1b98919a53a94",
+    "hash_db3e02ab": 2000,
     "itemid": "19077354"
 }

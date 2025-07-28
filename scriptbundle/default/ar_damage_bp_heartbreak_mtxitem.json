@@ -1,22 +1,32 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#bundle_tracer_2023_smg_handling_rose_mtxbundle"
+            "hash_8bd0af73": "#bundle_tracer_2023_smg_handling_rose_mtxbundle"
         }
     ],
-    "itemname": "#hash_2006feb37249a2d",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_2bfd7c511f696767",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "itemname": "#ar_damage_bp_heartbreak",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#ui_icon_mtx_tier_ar_damage_bp_heartbreak",
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 2,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#ar_damage_t9",
+    "hash_b6d84534": 0,
     "name": "ar_damage_bp_heartbreak_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 4,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:4",
+    "hash_84dc7961": 0,
     "itemid": "19296072",
-    "blueprint": "#hash_2006feb37249a2d"
+    "blueprint": "#ar_damage_bp_heartbreak"
 }

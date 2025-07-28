@@ -2,43 +2,56 @@
     "itemlist": [
         {
             "minweight": 200,
-            "var_a6762160": "#ar_accurate_t9_item",
-            "var_3f8c08e3": "#ammo_ar_item_t9",
+            "itementry": "scriptbundle#ar_accurate_t9_item",
+            "childitementry_1": "scriptbundle#ammo_ar_item_t9",
             "maxweight": 200,
             "available": -1
         },
         {
             "minweight": 200,
-            "var_a6762160": "#ar_fastfire_t9_item",
-            "var_3f8c08e3": "#ammo_ar_item_t9",
-            "maxweight": 200
+            "itementry": "scriptbundle#ar_fastfire_t9_item",
+            "childitementry_1": "scriptbundle#ammo_ar_item_t9",
+            "maxweight": 200,
+            "available": 0
         },
         {
             "minweight": 200,
-            "var_a6762160": "#ar_damage_t9_item",
-            "var_3f8c08e3": "#ammo_ar_item_t9",
-            "maxweight": 200
+            "itementry": "scriptbundle#ar_damage_t9_item",
+            "childitementry_1": "scriptbundle#ammo_ar_item_t9",
+            "maxweight": 200,
+            "available": 0
         },
         {
             "minweight": 200,
-            "var_a6762160": "#ar_mobility_t9_item",
-            "var_3f8c08e3": "#ammo_ar_item_t9",
-            "maxweight": 200
+            "itementry": "scriptbundle#ar_mobility_t9_item",
+            "childitementry_1": "scriptbundle#ammo_ar_item_t9",
+            "maxweight": 200,
+            "available": 0
         },
         {
             "minweight": 150,
-            "var_a6762160": "#ar_standard_t9_item",
-            "var_3f8c08e3": "#ammo_ar_item_t9",
-            "maxweight": 150
+            "itementry": "scriptbundle#ar_standard_t9_item",
+            "childitementry_1": "scriptbundle#ammo_ar_item_t9",
+            "maxweight": 150,
+            "available": 0
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_7fb0967b": 200,
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_7fb0967b": 200,
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
-    "var_dc7ffbef": 1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 1,
     "name": "t9_guns_ars",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

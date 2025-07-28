@@ -1,46 +1,56 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_mach1_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_mach1_pc_mtxitem",
             "itemid": "20495289"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_carbonchrome_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_carbonchrome_pc_mtxitem",
             "itemid": "24408245"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_carbonchrome_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_carbonchrome_pc_mtxitem",
             "itemid": "29506343"
         },
         {
-            "var_4a4bc969": "#callingcards_blkchrome_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_blkchrome_base_pc_mtxitem",
             "itemid": "21350417"
         },
         {
-            "var_4a4bc969": "#emblems_blkchrome_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_blkchrome_base_pc_mtxitem",
             "itemid": "23795527"
         },
         {
-            "var_4a4bc969": "#cod_points_2400_mtxitem"
+            "hash_4a4bc969": "scriptbundle#cod_points_2400_mtxitem"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_29258f713f4e834b",
-    "var_247d9ed7": "firstparty_bundle_4062_portnova_pro_pack",
-    "var_208d76b5": "#hash_4fc1285704095c9f",
-    "var_70f66e54": "#hash_72a569a4f6a0212f",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_4062_portnova_pro_pack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_firstparty_bundle_4062_portnova_pro_pack",
+    "hash_70f66e54": "#hash_72a569a4f6a0212f",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "firstparty_bundle_4062_portnova_pro_pack_pc_mtxentitlement",
-    "var_a788fada": "#hash_7ebc7f24f82fa05a",
-    "titlestring": "#hash_6912cd7d2f109c39",
-    "var_566825be": "#hash_5bce7cc1ab8d6466",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_firstparty_bundle_4062_portnova_pro_pack_small",
+    "titlestring": "localized18#hash_6912cd7d2f109c39",
+    "hash_566825be": "image#ui_icon_mtx_titles_firstparty_bundle_4062_portnova_pro_pack",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_f3c937a9": "#hash_111d5f769b2c779",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#pc",
+    "hash_f3c937a9": "localized18#hash_111d5f769b2c779",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#pc",
     "itemid": "21635790",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

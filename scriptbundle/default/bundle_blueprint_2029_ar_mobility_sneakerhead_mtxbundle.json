@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_sneaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_sneaker_mtxitem",
             "itemid": "24300710"
         },
         {
-            "var_4a4bc969": "#smg_burst_bp_sneaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_sneaker_mtxitem",
             "itemid": "19095334"
         },
         {
-            "var_4a4bc969": "#emblem_sneakerhead_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_sneakerhead_animated_mtxitem",
             "itemid": "28134659"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_sneakerhead_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_sneakerhead_mtxitem",
             "itemid": "19403605"
         },
         {
-            "var_4a4bc969": "#callingcards_sneakerhead_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_sneakerhead_mtxitem",
             "itemid": "30391571"
         },
         {
-            "var_4a4bc969": "#t9_charm_hoop_mage_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_hoop_mage_mtxitem",
             "itemid": "29187295"
         }
     ],
-    "itemname": "#hash_3cf95f2d51cd98f9",
-    "var_375a1747": "#hash_4d6afbff66c7e32b",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2029_ar_mobility_sneakerhead",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2029_ar_mobility_sneakerhead",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2029_ar_mobility_sneakerhead_mtxbundle",
-    "var_a788fada": "#hash_747b47b8808a75f4",
-    "titlestring": "#hash_4f97bd2e7563f6fe",
-    "var_566825be": "#hash_1266df7bcc01bfbc",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_747b47b8808a75f4",
+    "titlestring": "localized18#hash_4f97bd2e7563f6fe",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2029_ar_mobility_sneakerhead",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_55a006663b8dd7b2",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_55a006663b8dd7b2",
+    "hash_db3e02ab": 2000,
     "itemid": "25695586"
 }

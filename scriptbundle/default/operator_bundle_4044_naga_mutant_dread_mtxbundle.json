@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_lao_pl_serpent_haggler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_lao_pl_serpent_haggler_mtxitem",
             "itemid": "21705090"
         },
         {
-            "var_4a4bc969": "#prt_mp_lao_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_lao_mtxitem",
             "itemid": "30933020"
         },
         {
-            "var_4a4bc969": "#tr_precisionsemi_bp_mutant_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_bp_mutant_mtxitem",
             "itemid": "25565828"
         },
         {
-            "var_4a4bc969": "#shotgun_fullauto_bp_mutant_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_fullauto_bp_mutant_mtxitem",
             "itemid": "25151851"
         },
         {
-            "var_4a4bc969": "#reticle_104_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_104_mtxitem",
             "itemid": "30908504"
         },
         {
-            "var_4a4bc969": "#execution_032_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_032_mtxitem",
             "itemid": "29771667"
         },
         {
-            "var_4a4bc969": "#emblem_r82_7_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_r82_7_animated_mtxitem",
             "itemid": "19086255"
         },
         {
-            "var_4a4bc969": "#callingcards_skate_114_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_skate_114_animated_mtxitem",
             "itemid": "27092311"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_119_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_119_mtxitem",
             "itemid": "28573238"
         }
     ],
-    "itemname": "#hash_2688fae73a24008e",
-    "var_375a1747": "#hash_68326ff2a724596c",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4044_naga_mutant_dread",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4044_naga_mutant_dread",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4044_naga_mutant_dread_mtxbundle",
-    "var_a788fada": "#hash_5cce9cbd641f5d31",
-    "titlestring": "#hash_2bd891d86f54fcb1",
-    "var_566825be": "#hash_7f805fdb756f3c9",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4044_naga_mutant_dread_small",
+    "titlestring": "localized18#hash_2bd891d86f54fcb1",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4044_naga_mutant_dread",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_43b0c629b733b4b1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_43b0c629b733b4b1",
+    "hash_db3e02ab": 2000,
     "itemid": "26988181"
 }

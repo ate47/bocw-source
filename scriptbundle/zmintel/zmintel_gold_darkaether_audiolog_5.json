@@ -1,64 +1,67 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_2e6fbfbd19e2894d",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 12.03,
-            "var_36bf8e05": "#hash_30f320b41a6417e0"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 12.03,
+            "hash_36bf8e05": "localized19#hash_30f320b41a6417e0"
         },
         {
             "soundevent": "#hash_2e6fbebd19e2879a",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 11.71,
-            "var_36bf8e05": "#hash_34f41ed88ee1dcdd"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 11.71,
+            "hash_36bf8e05": "localized19#hash_34f41ed88ee1dcdd"
         },
         {
             "soundevent": "#hash_2e6fbdbd19e285e7",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 8.49,
-            "var_36bf8e05": "#hash_39fd1a285042c176"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 8.49,
+            "hash_36bf8e05": "localized19#hash_39fd1a285042c176"
         },
         {
             "soundevent": "#hash_2e6fbcbd19e28434",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 12.1,
-            "var_36bf8e05": "#hash_5a365e39d34a359b"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 12.1,
+            "hash_36bf8e05": "localized19#hash_5a365e39d34a359b"
         },
         {
             "soundevent": "#hash_2e6fbbbd19e28281",
-            "var_f35c5951": 0.7,
-            "var_5d4b5964": 8.51,
-            "var_36bf8e05": "#hash_633809c236d6b664"
+            "hash_f35c5951": 0.7,
+            "hash_5d4b5964": 8.51,
+            "hash_36bf8e05": "localized19#hash_633809c236d6b664"
         },
         {
             "soundevent": "#hash_2e6fbabd19e280ce",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 5.31,
-            "var_36bf8e05": "#hash_159bf130dee967f1"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 5.31,
+            "hash_36bf8e05": "localized19#hash_159bf130dee967f1"
         },
         {
             "soundevent": "#hash_2e6fb9bd19e27f1b",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 8.28,
-            "var_36bf8e05": "#hash_426823ba96cb586a"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 8.28,
+            "hash_36bf8e05": "localized19#hash_426823ba96cb586a"
         }
     ],
-    "description": "#hash_b4936a52484eeab",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#exploration",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_39975151641c4544",
+    "description": "localized19#hash_b4936a52484eeab",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#exploration",
+    "hash_4138e7ed": 0,
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#hash_39975151641c4544",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#dark_aether",
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_5b635b73ab6ca33f",
     "name": "zmintel_gold_darkaether_audiolog_5",
-    "var_9be0526e": "#audiolog",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#tape",
-    "title": "#hash_75f257117318f891",
-    "var_3bb3493d": "#hash_65ac83fdbb97a0ef",
+    "hash_9be0526e": "#audiolog",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#tape",
+    "title": "localized19#hash_75f257117318f891",
+    "hash_4efbbcfe": 0,
+    "hash_3bb3493d": "#hash_65ac83fdbb97a0ef",
     "mapname": "#zm_gold",
-    "var_6073bf8f": "#hash_4042063c893f7f3a"
+    "hash_6073bf8f": "model#p9_sur_machine_computer_screen_no_play_prog"
 }

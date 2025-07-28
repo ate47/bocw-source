@@ -1,7 +1,7 @@
 {
     "weakpoints": [
         {
-            "var_60790e23": [
+            "#hash_60790e23": [
                 {
                     "hitloc": "helmet"
                 },
@@ -12,13 +12,15 @@
                     "hitloc": "neck"
                 }
             ],
-            "var_3765e777": 1,
-            "var_641ce20e": 1,
+            "hash_3765e777": 1,
+            "hash_641ce20e": 1,
+            "hash_8223b0cf": 0,
             "type": "#weakpoint",
+            "hitradius": 0,
             "health": 1
         },
         {
-            "var_60790e23": [
+            "#hash_60790e23": [
                 {
                     "hitloc": "helmet"
                 },
@@ -29,17 +31,19 @@
                     "hitloc": "neck"
                 }
             ],
-            "var_8b732142": 1,
-            "var_641ce20e": 1,
+            "hash_8b732142": 1,
+            "hash_641ce20e": 1,
+            "hash_8223b0cf": 0,
             "type": "#armor",
-            "var_b98c4585": 1,
-            "var_f371ebb0": "helmet",
+            "hash_b98c4585": 1,
+            "hash_f371ebb0": "helmet",
             "activebydefault": 1,
+            "hitradius": 0,
             "health": 0.05
         }
     ],
-    "var_922067c4": "scriptbundle",
-    "model": "#hash_28773e96cb142220",
+    "configstringfiletype": "scriptbundle",
+    "model": "model#c_zom_zod_zombie_body1",
     "type": "characterweakpointsettings",
     "name": "c_t9_soa_weakpoint_def"
 }

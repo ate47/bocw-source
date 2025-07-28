@@ -1,45 +1,55 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#tr_longburst_bp_code_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_code_ms_mtxitem",
             "itemid": "24828452"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_code_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_code_ms_mtxitem",
             "itemid": "28981302"
         },
         {
-            "var_4a4bc969": "#t9_charm_dogtags_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_dogtags_ms_mtxitem",
             "itemid": "23810555"
         },
         {
-            "var_4a4bc969": "#callingcards_code_pack_ms_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_code_pack_ms_base_mtxitem",
             "itemid": "18530995"
         },
         {
-            "var_4a4bc969": "#emblems_code_pack_ms_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_code_pack_ms_base_mtxitem",
             "itemid": "31986648"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_code_pack_ms_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_code_pack_ms_base_mtxitem",
             "itemid": "24196125"
         },
         {
-            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_legendary_mtxitem",
             "itemid": "32109261"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_669e45e64807ce2e",
-    "var_247d9ed7": "codepack",
-    "var_208d76b5": "#hash_2b8563123a2df5b6",
-    "var_70f66e54": "#hash_7f446519515c65c7",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "codepack",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_code",
+    "hash_70f66e54": "#hash_7f446519515c65c7",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "xb1_code_pack_mtxentitlement",
-    "titlestring": "#hash_5a4c4b429b49c19a",
-    "var_566825be": "#hash_7e82483667bae056",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_5a4c4b429b49c19a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_code",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#durango",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#durango",
     "itemid": "33041793",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

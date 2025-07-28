@@ -1,64 +1,67 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_5c98a76a26930bab"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4011_g11_reactive_one"
         },
         {
-            "var_fe10649e": "#hash_347f0f0d436f9b82"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4011_g11_reactive_one_02"
         },
         {
-            "var_fe10649e": "#hash_347f100d436f9d35"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4011_g11_reactive_one_03"
         },
         {
-            "var_fe10649e": "#hash_347f090d436f9150"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4011_g11_reactive_one_04"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_fastburst_bp_chewing_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_fastburst_bp_chewing_mtxitem",
             "itemid": "26997697"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_chewing_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_chewing_mtxitem",
             "itemid": "21635991"
         },
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_chewing_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_chewing_mtxitem",
             "itemid": "19082635"
         },
         {
-            "var_4a4bc969": "#t9_charm_sci_fi_vr_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sci_fi_vr_mtxitem",
             "itemid": "20328571"
         },
         {
-            "var_4a4bc969": "#reticle_105_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_105_mtxitem",
             "itemid": "19507121"
         },
         {
-            "var_4a4bc969": "#callingcards_s4_wm_moto01_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s4_wm_moto01_animated_mtxitem",
             "itemid": "23585103"
         },
         {
-            "var_4a4bc969": "#callingcards_s4_wm_moto02_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s4_wm_moto02_animated_mtxitem",
             "itemid": "25985679"
         },
         {
-            "var_4a4bc969": "#emblems_s4_face_star_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s4_face_star_animated_mtxitem",
             "itemid": "33539879"
         }
     ],
-    "itemname": "#hash_4697b41158e74b01",
-    "var_375a1747": "#hash_5c98a76a26930bab",
-    "var_3040f0d1": "#hash_5c98a76a26930bab",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 27,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4011_g11_reactive_one",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4011_g11_reactive_one",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_blueprint_bundle_4011_g11_reactive_one",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 27,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4011_g11_reactive_one_mtxbundle",
-    "var_a788fada": "#hash_52b51a3ef276cfee",
-    "titlestring": "#hash_2f990264eca65cf3",
-    "var_566825be": "#hash_25169eaa6655069a",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4011_g11_reactive_one_small",
+    "titlestring": "localized18#hash_2f990264eca65cf3",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4011_g11_reactive_one",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_23093baaf6429197",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_23093baaf6429197",
+    "hash_db3e02ab": 750,
     "itemid": "18450493"
 }

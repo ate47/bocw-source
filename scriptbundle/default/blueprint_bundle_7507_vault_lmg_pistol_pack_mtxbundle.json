@@ -1,55 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_reactor_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_reactor_mtxitem",
             "itemid": "21432374"
         },
         {
-            "var_4a4bc969": "#lmg_light_bp_trawler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_trawler_mtxitem",
             "itemid": "23700024"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_mvs_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_mvs_mtxitem",
             "itemid": "22150861"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_street_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_street_mtxitem",
             "itemid": "33431590"
         },
         {
-            "var_4a4bc969": "#lmg_light_bp_armyrv_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_armyrv_mtxitem",
             "itemid": "33222103"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_midnight_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_midnight_mtxitem",
             "itemid": "24640576"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_souleat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_souleat_mtxitem",
             "itemid": "27452847"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_sheriff_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_sheriff_mtxitem",
             "itemid": "24546423"
         },
         {
-            "var_4a4bc969": "#pistol_revolver_bp_winters_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_revolver_bp_winters_mtxitem",
             "itemid": "18906924"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_tunnel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_tunnel_mtxitem",
             "itemid": "26020638"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_7e455c6c21d94ab1",
-    "var_375a1747": "#hash_7f88d5ded5f706b",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_7507_vault_lmg_pistol_pack",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_7507_vault_lmg_pistol_pack_mtxbundle",
-    "var_a788fada": "#hash_607f9b606b08a150",
-    "titlestring": "#hash_4be721c042566f54",
-    "var_566825be": "#hash_9ca90d09f2f0adc",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_7507_vault_lmg_pistol_pack_small",
+    "titlestring": "localized18#hash_4be721c042566f54",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_7507_vault_lmg_pistol_pack",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_270619ba4bd62e44",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_270619ba4bd62e44",
+    "hash_db3e02ab": 2000,
     "itemid": "18167738"
 }

@@ -1,9 +1,9 @@
 {
-    "displaynameshort": "#hash_140b03794839f4ca",
-    "var_ce1913bd": "ftb_",
+    "displaynameshort": "localized18#hash_140b03794839f4ca",
+    "hash_ce1913bd": "ftb_",
     "name": "faction_wz_team12",
-    "displayname": "#hash_454adb9c5ae7f8e7",
-    "icon": "#hash_6343e950628925af",
-    "var_42185d9b": "White",
+    "displayname": "localized18#hash_454adb9c5ae7f8e7",
+    "icon": "image#ui_icon_fireteam_logo_ogre",
+    "hash_42185d9b": "White",
     "color": "White"
 }

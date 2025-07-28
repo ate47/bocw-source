@@ -1,43 +1,54 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_mtxbundle"
         },
         {
-            "var_8bd0af73": "#mtx_season_6_premium_ps_mtxbundle"
+            "hash_8bd0af73": "#mtx_season_6_premium_ps_mtxbundle"
         },
         {
-            "var_8bd0af73": "#mtx_season_6_premium_mtxbundle"
+            "hash_8bd0af73": "#mtx_season_6_premium_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2080_bulldozer_hockey_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2080_bulldozer_hockey_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2033_bulldozer_zombie_dozer_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2033_bulldozer_zombie_dozer_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1031_bulldozer_bulldozer_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1031_bulldozer_bulldozer_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_alt_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_alt_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_4033_bulldozer_big_bad_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_4033_bulldozer_big_bad_mtxbundle"
         },
         {
-            "var_8bd0af73": "#season_6_battle_pass_promo_operator_bundle_mtxbundle"
+            "hash_8bd0af73": "#season_6_battle_pass_promo_operator_bundle_mtxbundle"
         }
     ],
     "itemname": "#hash_5462e18ed384e309",
-    "var_e9d9a8d0": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_46300498": 1,
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
+    "season": 0,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "bodytype": "#hash_5462e18ed384e309",
+    "hash_b6d84534": 0,
     "name": "prt_mp_usa_bulldozer_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#operator",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 9,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:9",
+    "hash_84dc7961": 0,
     "itemid": "20317561"
 }

@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_afcf6730d04c3ea",
+    "tagname": "mdl_cp_nic_revolucion_item_07",
+    "UnlockMap": "cp_rus_yamantau",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_perseus_dot_matrix_printout_01",
+    "type": "collectible",
+    "name": "p9_cp_nic_revolucion_07",
+    "UnlockType": 2,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_2b4696a567087dd6",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_4bf2aef0a22d26e4",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#hash_1a7cb49438c44274"
+}

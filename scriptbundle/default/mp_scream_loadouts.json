@@ -1,0 +1,47 @@
+{
+    "defaultloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_quartermaster"
+                },
+                {
+                    "talent": "#talent_tracker"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_3f8604d8c7cdd0a2",
+            "hash_26b5c8ef": -1,
+            "secondary": "#hash_28fdaa999c8aa3af",
+            "hash_285151c1": 1,
+            "primarygrenade": "#hatchet",
+            "hash_1c89585f": 1
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                }
+            ],
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_4f47aaf7a027c7ca",
+            "hash_26b5c8ef": -1,
+            "hash_285151c1": 0,
+            "secondarygrenade": "#eq_flash_grenade",
+            "hash_1c89585f": 0
+        },
+        {
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#menu/default",
+            "hash_26b5c8ef": -1,
+            "secondary": "#bare_hands",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
+        }
+    ],
+    "name": "mp_scream_loadouts",
+    "sessionmode": "mp"
+}

@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#melee_axe_bp_berserker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_axe_bp_berserker_mtxitem",
             "itemid": "18712985"
         },
         {
-            "var_4a4bc969": "#execution_042_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_042_mtxitem",
             "itemid": "22911242"
         },
         {
-            "var_4a4bc969": "#emblems_vts_29_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_vts_29_s6_mtxitem",
             "itemid": "23285835"
         },
         {
-            "var_4a4bc969": "#callingcards_zombie_skull_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_zombie_skull_s6_mtxitem",
             "itemid": "31930179"
         },
         {
-            "var_4a4bc969": "#t9_charm_turkey_leg_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_turkey_leg_mtxitem",
             "itemid": "32543587"
         }
     ],
-    "itemname": "#hash_6e0e09ebbf958617",
-    "var_375a1747": "#hash_52bbe5893887fd45",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_6003_double_bladed_axe_berserker",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6003_double_bladed_axe_berserker",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6003_double_bladed_axe_berserker_mtxbundle",
-    "var_a788fada": "#hash_43b0e631e09fe5ba",
-    "titlestring": "#hash_4092f761b7a5b02e",
-    "var_566825be": "#hash_4eef637467c9b086",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6003_double_bladed_axe_berserker_small",
+    "titlestring": "localized18#hash_4092f761b7a5b02e",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6003_double_bladed_axe_berserker",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_460ddbd8b0b1a7a2",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_460ddbd8b0b1a7a2",
+    "hash_db3e02ab": 2000,
     "itemid": "21702073"
 }

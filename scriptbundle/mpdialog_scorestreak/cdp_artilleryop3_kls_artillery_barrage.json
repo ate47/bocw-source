@@ -1,0 +1,12 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_582708fcf4112e0f",
+    "hitconfirmed_p0": "#hash_6338ca29ebdedc5d",
+    "vmtype": "both",
+    "name": "cdp_artilleryop3_kls_artillery_barrage",
+    "kill1": "#hash_db62583b9e12c5c",
+    "kill3": "#hash_db62783b9e12fc2",
+    "kill2": "#hash_db62883b9e13175",
+    "killnone": "#hash_5d79c2153255925b"
+}

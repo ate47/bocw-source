@@ -1,8 +1,8 @@
 {
-    "description": "#hash_1d093fe61062af40",
+    "description": "localized18#hash_1d093fe61062af40",
     "widget": "#badasserymedal",
     "name": "medal_mangler_arm_cannon_kill_zm",
-    "iconsmall": "#hash_30cf5fbebb8a4fe3",
-    "var_8645ce54": "#hash_7fa5ae242eb9e858",
-    "iconlarge": "#hash_96816fc4075e743"
+    "iconsmall": "image#ui_icon_medal_zm_disarmed",
+    "stringref": "localized18#hash_7fa5ae242eb9e858",
+    "iconlarge": "image#ui_icon_medal_zm_disarmed_large"
 }

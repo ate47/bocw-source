@@ -1,13 +1,13 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "default_zombies_realm_3",
-            "var_a949845f": 8,
-            "var_857deb66": 100
+            "entryname": "scriptbundle&default_zombies_realm_3",
+            "hash_a949845f": 8,
+            "hash_857deb66": 100
         }
     ],
-    "var_d961aeb3": 0.35,
-    "var_922067c4": "scriptbundle",
+    "hash_d961aeb3": 0.35,
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "horde_hunt_realm_3_ambush_2"
 }

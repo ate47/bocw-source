@@ -1,51 +1,55 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_fra_pl_dgse_gign_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_fra_pl_dgse_gign_mtxitem",
             "itemid": "24978033"
         },
         {
-            "var_4a4bc969": "#prt_mp_fra_dgse_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_fra_dgse_mtxitem",
             "itemid": "18057790"
         },
         {
-            "var_4a4bc969": "#lmg_light_bp_gambit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_light_bp_gambit_mtxitem",
             "itemid": "21766115"
         },
         {
-            "var_4a4bc969": "#smg_standard_bp_gambit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_bp_gambit_mtxitem",
             "itemid": "18522050"
         },
         {
-            "var_4a4bc969": "#knife_combat_bp_switchblade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#knife_combat_bp_switchblade_mtxitem",
             "itemid": "28543435"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_digital_gambit_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_digital_gambit_01_mtxitem",
             "itemid": "26728429"
         },
         {
-            "var_4a4bc969": "#execution_029_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_029_mtxitem",
             "itemid": "29641086"
         },
         {
-            "var_4a4bc969": "#t9_charm_bulldog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bulldog_mtxitem",
             "itemid": "22276088"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_zeynabulldog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_zeynabulldog_mtxitem",
             "itemid": "25808601"
         }
     ],
-    "itemname": "#hash_d3055e8a4ceedf6",
-    "var_375a1747": "#hash_3e1c50a290c96c78",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1063_awa_punk",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1063_awa_punk",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1063_awa_punk_mtxbundle",
-    "titlestring": "#hash_72dd068330d63493",
-    "var_566825be": "#hash_36cf2304883d017b",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_72dd068330d63493",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1063_awa_punk",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_17bedb8665b96c37",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_17bedb8665b96c37",
+    "hash_db3e02ab": 2000,
     "itemid": "18580953"
 }

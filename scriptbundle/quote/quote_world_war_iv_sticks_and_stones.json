@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_world_war_iv_sticks_and_stones",
-    "quote": "#hash_74ecb3da55cd2b31",
-    "author": "#hash_55029251f18892e2"
+    "quote": "localized18#hash_74ecb3da55cd2b31",
+    "author": "localized18#hash_55029251f18892e2"
 }

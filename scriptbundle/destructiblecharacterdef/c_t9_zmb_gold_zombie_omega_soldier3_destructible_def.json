@@ -1,0 +1,29 @@
+{
+    "#hash_9ff63c42": [
+        {
+            "hitlocation": "head"
+        },
+        {
+            "hitlocation": "torso_upper"
+        },
+        {
+            "hitlocation": "neck"
+        }
+    ],
+    "hash_aa7fbf8b": "j_helmet",
+    "hash_5fb501b2": 0.1,
+    "hash_27d9120b": 0.5,
+    "hash_5e937f7f": 0.1,
+    "configstringfiletype": "scriptbundle",
+    "hash_c83371f4": "model#hash_7153974d7fc42de2",
+    "type": "destructiblecharacterdef",
+    "hash_cb768102": "helmet",
+    "vmtype": "both",
+    "hash_a8452c1c": 0.01,
+    "name": "c_t9_zmb_gold_zombie_omega_soldier3_destructible_def",
+    "hash_4d756ec6": "model#c_t9_zmb_ndu_zombie_honorguard_hat",
+    "hash_5b8369a": "j_helmet",
+    "piececount": 1,
+    "hash_19e4a0d": "model#hash_7153974d7fc42de2",
+    "hash_b935d8b7": "helmet"
+}

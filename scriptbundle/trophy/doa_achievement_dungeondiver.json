@@ -4,13 +4,16 @@
             "filters": "#zombie"
         }
     ],
-    "description": "#hash_355ddbc51bf66133",
-    "var_86b354f": 30,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Silver",
+    "description": "localized18#hash_355ddbc51bf66133",
+    "hash_86b354f": 30,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Silver",
     "type": "trophy",
-    "var_4a95afca": "#hash_55e866ab85c59363",
-    "image": "#hash_6212e154185eaf48",
+    "hash_4a95afca": "image#hash_55e866ab85c59363",
+    "image": "image#hash_6212e154185eaf48",
     "name": "doa_achievement_dungeondiver",
-    "title": "#hash_3607d2d06489f699"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_3607d2d06489f699",
+    "hash_621379a": 0
 }

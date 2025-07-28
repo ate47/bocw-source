@@ -1,38 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_longburst_bp_peace_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_peace_mtxitem",
             "itemid": "24024761"
         },
         {
-            "var_4a4bc969": "#ar_mobility_bp_peace_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_peace_mtxitem",
             "itemid": "22409809"
         },
         {
-            "var_4a4bc969": "#t9_charm_daisy_flwr_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_daisy_flwr_mtxitem",
             "itemid": "29158277"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_peacemaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_peacemaker_mtxitem",
             "itemid": "26753290"
         },
         {
-            "var_4a4bc969": "#callingcards_peacemaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_peacemaker_mtxitem",
             "itemid": "33530318"
         },
         {
-            "var_4a4bc969": "#emblems_peacemaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_peacemaker_mtxitem",
             "itemid": "26956084"
         }
     ],
-    "itemname": "#hash_62e678536efee053",
-    "var_375a1747": "#hash_2cd33edee8ed0079",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1069_tr_longburst_peaceful_warrior",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1069_tr_longburst_peaceful_warrior",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1069_tr_longburst_peaceful_warrior_mtxbundle",
-    "titlestring": "#hash_3cd28efb9656e1f1",
-    "var_566825be": "#hash_7b820dba5f93565a",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_3cd28efb9656e1f1",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1069_tr_longburst_peaceful_warrior",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_51d3894c727fdaf1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_51d3894c727fdaf1",
+    "hash_db3e02ab": 2000,
     "itemid": "23927924"
 }

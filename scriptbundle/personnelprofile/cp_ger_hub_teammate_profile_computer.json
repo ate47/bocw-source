@@ -1,0 +1,98 @@
+{
+    "profiles": [
+        {
+            "ref_name": "bio_perseus",
+            "hash_d4beb13": "localized19#hash_42f8b7203f68bcbe",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_CLASSIFIED",
+            "hash_24cb87ef": "localized19#hash_42f8b7203f68bcbe",
+            "hash_ba5fd550": "image#hash_8c84bbac536de7",
+            "hash_bc8da67d": "localized19#hash_42f8b7203f68bcbe",
+            "hash_34d094eb": "localized19#hash_42f8b7203f68bcbe",
+            "occupation": "localized19#hash_42f8b7203f68bcbe",
+            "hash_bf761850": "localized19#hash_42f8b7203f68bcbe",
+            "hash_bd730750": "localized19#hash_42f8b7203f68bcbe",
+            "hash_705af76d": "localized19#hash_42f8b7203f68bcbe"
+        },
+        {
+            "ref_name": "bio_adler",
+            "hash_d4beb13": "localized19#hash_71b2e8152feaa762",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_GENDER_MALE",
+            "hash_24cb87ef": "localized19#hash_79e16c423470da31",
+            "hash_ba5fd550": "image#hash_446dbdcd2ad90f14",
+            "hash_bc8da67d": "localized19#hash_2cc7d62c07fb1a10",
+            "hash_34d094eb": "localized19#hash_5418c9eed80f6fdf",
+            "occupation": "localized19#hash_7453174a957aa194",
+            "hash_bf761850": "localized19#hash_178f7acf6dbc8637",
+            "hash_bd730750": "localized19#hash_42f8b7203f68bcbe",
+            "hash_705af76d": "localized19#hash_223a9a8f17e0f05"
+        },
+        {
+            "ref_name": "bio_lazar",
+            "hash_d4beb13": "localized19#hash_52274e26505ad76e",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_CLASSIFIED",
+            "hash_24cb87ef": "localized19#hash_472b70daf0681151",
+            "hash_ba5fd550": "image#hash_3431e6cf9806cb64",
+            "hash_bc8da67d": "localized19#hash_b36403e0102c9e0",
+            "hash_34d094eb": "localized19#hash_5da5045d1f472a33",
+            "occupation": "localized19#hash_6417404d02a85de4",
+            "hash_bf761850": "localized19#hash_3f8fc5d26e5082db",
+            "hash_bd730750": "localized19#hash_75185ec95a7401ca",
+            "hash_705af76d": "localized19#hash_7b1670d4cdb513a5"
+        },
+        {
+            "ref_name": "bio_mason",
+            "hash_d4beb13": "localized19#hash_6ee25e2ac092fb28",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_GENDER_MALE",
+            "hash_24cb87ef": "localized19#hash_e4c02989ad47387",
+            "hash_ba5fd550": "image#hash_47fb5ed3bb26375a",
+            "hash_bc8da67d": "localized19#hash_4144d6805431a696",
+            "hash_34d094eb": "localized19#hash_4fb8a402c6e0b035",
+            "occupation": "localized19#hash_77e0b85125c7c9da",
+            "hash_bf761850": "localized19#hash_14a8e5737e0a1aed",
+            "hash_bd730750": "localized19#hash_53ac24ba150def24",
+            "hash_705af76d": "localized19#hash_6c94087a74ceb51b"
+        },
+        {
+            "ref_name": "bio_park",
+            "hash_d4beb13": "localized19#hash_13b299baa5f33452",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_GENDER_FEMALE",
+            "hash_24cb87ef": "localized19#hash_24e9e822d4a656a7",
+            "hash_ba5fd550": "image#hash_41ec3ab03be2e364",
+            "hash_bc8da67d": "localized19#hash_28a925c9f2abdfe0",
+            "hash_34d094eb": "localized19#hash_45c322997f6d2ad",
+            "occupation": "localized19#hash_e4deceac8c8c6e4",
+            "hash_bf761850": "localized19#hash_349033abf8e0c615",
+            "hash_bd730750": "localized19#hash_42d2bb20d3dbd4ae",
+            "hash_705af76d": "localized19#hash_36c5ca631b66b98b"
+        },
+        {
+            "ref_name": "bio_sims",
+            "hash_d4beb13": "localized19#hash_1cf6e9ae6fcfb726",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_GENDER_MALE",
+            "hash_24cb87ef": "localized19#hash_11cd20060682368b",
+            "hash_ba5fd550": "image#hash_1ed762c7d1bbd5a0",
+            "hash_bc8da67d": "localized19#hash_3be0fde6c0e6e2e4",
+            "hash_34d094eb": "localized19#hash_1b7b022f5c9d5631",
+            "occupation": "localized19#hash_6b3915025ea1b920",
+            "hash_bf761850": "localized19#hash_2ac3c3b82e907349",
+            "hash_bd730750": "localized19#hash_78b14b15d99e09da",
+            "hash_705af76d": "localized19#hash_55ecc24b82373b17"
+        },
+        {
+            "ref_name": "bio_woods",
+            "hash_d4beb13": "localized19#hash_43448f93fd90c3e0",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_GENDER_MALE",
+            "hash_24cb87ef": "localized19#hash_43fe7186e113d07b",
+            "hash_ba5fd550": "image#hash_36e186c482062f36",
+            "hash_bc8da67d": "localized19#hash_503f0002b09e5c3a",
+            "hash_34d094eb": "localized19#hash_23b0e35fc3c1f80d",
+            "occupation": "localized19#hash_66c6e041eca7c1b6",
+            "hash_bf761850": "localized19#hash_7f97ac73d1530b95",
+            "hash_bd730750": "localized19#hash_9625d37df5dd6b4",
+            "hash_705af76d": "localized19#hash_564c7271a52d067"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "personnelprofile",
+    "name": "cp_ger_hub_teammate_profile_computer"
+}

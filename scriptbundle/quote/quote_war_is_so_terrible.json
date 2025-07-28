@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_war_is_so_terrible",
-    "quote": "#hash_257c20846d409ae9",
-    "author": "#hash_137ebe4137de5cc4"
+    "quote": "localized18#hash_257c20846d409ae9",
+    "author": "localized18#hash_137ebe4137de5cc4"
 }

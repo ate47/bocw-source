@@ -1,11 +1,11 @@
 {
-    "description": "#hash_1c60b0c841c505fb",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_1c60b0c841c505fb",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_lightning_strike_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_6ac29e969316a15b",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_strike_delivered",
     "statname": "#kills",
-    "var_8645ce54": "#hash_3d6884b374316b01",
-    "iconlarge": "#hash_437fce0b455ca7fb"
+    "stringref": "localized18#hash_3d6884b374316b01",
+    "iconlarge": "image#ui_icon_medal_strike_delivered_large"
 }

@@ -1,10 +1,14 @@
 {
-    "hinttext": "#hash_4ed5c2ec5c21018a",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#menu/battlechatter_hint",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "allow_battle_chatter",
-    "displayname": "#hash_e5b6096c58beed6",
-    "var_9de86f42": 2,
+    "displayname": "localized18#menu/battlechatter",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "allowBattleChatter",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

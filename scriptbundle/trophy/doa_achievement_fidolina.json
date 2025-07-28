@@ -4,13 +4,16 @@
             "filters": "#zombie"
         }
     ],
-    "description": "#hash_635274e43e90aef7",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_635274e43e90aef7",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_3abc1d53b3fcd42c",
-    "image": "#hash_127a0111d7cbc253",
+    "hash_4a95afca": "image#hash_3abc1d53b3fcd42c",
+    "image": "image#hash_127a0111d7cbc253",
     "name": "doa_achievement_fidolina",
-    "title": "#hash_32d31b829df9c8cd"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_32d31b829df9c8cd",
+    "hash_621379a": 0
 }

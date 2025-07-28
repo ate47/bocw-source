@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#emblems_rabbit_ambush_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_rabbit_ambush_s5_mtxitem",
             "itemid": "23794272"
         },
         {
-            "var_4a4bc969": "#emblems_running_around_mooncake_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_running_around_mooncake_s5_mtxitem",
             "itemid": "28912319"
         },
         {
-            "var_4a4bc969": "#callingcards_battle_under_moon_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_battle_under_moon_s5_mtxitem",
             "itemid": "27183259"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_rabbit_operators_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_rabbit_operators_s5_mtxitem",
             "itemid": "22995586"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_591e5a94d3b6f363",
-    "var_375a1747": "#hash_131ad27cd9bd6a5d",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5903_free_autumn",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5903_free_autumn_mtxbundle",
-    "var_a788fada": "#hash_7b11b251c009f08a",
-    "titlestring": "#hash_9d43fe434330eb2",
-    "var_566825be": "#hash_49136efbe887c3d6",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5903_free_autumn_small",
+    "titlestring": "localized18#hash_9d43fe434330eb2",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5903_free_autumn",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_752aa8148f21abee",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_752aa8148f21abee",
+    "hash_db3e02ab": 2000,
     "itemid": "25553911"
 }

@@ -1,11 +1,11 @@
 {
-    "var_999715d2": "#hash_52a8b1b049609e4b",
-    "description": "#hash_6358375b95d60a9a",
+    "hash_999715d2": "#hash_52a8b1b049609e4b",
+    "description": "localized18#hash_6358375b95d60a9a",
     "image": "ui_icon_wrist_accessories_s3_digital_heart_rate_alien",
-    "var_9b474412": 4,
+    "hash_9b474412": 4,
     "name": "wristaccessory_t9_s3_digital_heart_rate_alien",
-    "var_6855e4be": "#wristaccessory_t9_s3_digital_heart_rate_alien_mtxitem",
-    "displayname": "#hash_3dfa597138725daa",
-    "var_8d478ea4": "#hash_2d727ba132bac1f0",
-    "var_d27eb4c6": "#hash_4c2babeda6b62a8b"
+    "hash_6855e4be": "#wristaccessory_t9_s3_digital_heart_rate_alien_mtxitem",
+    "displayname": "localized18#hash_3dfa597138725daa",
+    "hash_8d478ea4": "model#wrist_watch_t9_s3_digital_heart_rate_alien_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s3_digital_heart_rate_alien_world"
 }

@@ -1,0 +1,10 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "scorestreak": "killstreak_annihilator",
+    "type": "spyskill",
+    "hash_a99abf33": "hand_cannon",
+    "name": "spyskill_hand_cannon",
+    "hash_a58f84b8": 5,
+    "cooldown": 60,
+    "hash_e1bfe02c": 34
+}

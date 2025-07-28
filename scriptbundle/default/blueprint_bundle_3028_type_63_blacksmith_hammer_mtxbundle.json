@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_batts_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_batts_mtxitem",
             "itemid": "25109008"
         },
         {
-            "var_4a4bc969": "#shotgun_pump_bp_battery_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_battery_mtxitem",
             "itemid": "33416684"
         },
         {
-            "var_4a4bc969": "#t9_charm_lucky_horseshoe_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_lucky_horseshoe_mtxitem",
             "itemid": "18947075"
         },
         {
-            "var_4a4bc969": "#emblems_s3_vts_final_18_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_vts_final_18_animated_mtxitem",
             "itemid": "21786801"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_hammer_mace_flail_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_hammer_mace_flail_mtxitem",
             "itemid": "27373373"
         }
     ],
-    "itemname": "#hash_3abfff3c89fe0550",
-    "var_375a1747": "#hash_1dc112d6acb3081e",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3028_type_63_blacksmith_hammer",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3028_type_63_blacksmith_hammer",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3028_type_63_blacksmith_hammer_mtxbundle",
-    "var_a788fada": "#hash_e1009e2d57fd36d",
-    "titlestring": "#hash_46221ef6af2d2ae8",
-    "var_566825be": "#hash_4f30cd93f66337a5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3028_type_63_blacksmith_hammer_small",
+    "titlestring": "localized18#hash_46221ef6af2d2ae8",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3028_type_63_blacksmith_hammer",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6508e8e14f359330",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6508e8e14f359330",
+    "hash_db3e02ab": 2000,
     "itemid": "22278153"
 }

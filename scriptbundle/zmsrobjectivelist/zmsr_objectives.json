@@ -1,18 +1,18 @@
 {
-    "var_be78e8da": [
+    "#hash_be78e8da": [
         {
-            "var_e014f23a": [
+            "#hash_e014f23a": [
                 {
-                    "variantname": "#hash_6603dbcf5b7eec59"
+                    "variantname": "#defend_alt"
                 },
                 {
-                    "variantname": "#hash_60673e8a67b28631"
+                    "variantname": "#defend_prime"
                 }
             ],
             "objectivename": "#defend"
         },
         {
-            "var_e014f23a": [
+            "#hash_e014f23a": [
                 {
                     "variantname": "#hash_3a562a601777fa88"
                 },
@@ -23,9 +23,9 @@
             "objectivename": "#holdout"
         },
         {
-            "var_e014f23a": [
+            "#hash_e014f23a": [
                 {
-                    "variantname": "#hash_45f927c8af6cf356"
+                    "variantname": "#hunt_mechz"
                 },
                 {
                     "variantname": "#hunt_raz"
@@ -43,7 +43,7 @@
             "objectivename": "#hunt"
         },
         {
-            "var_e014f23a": [
+            "#hash_e014f23a": [
                 {
                     "variantname": "#payload_noteleport"
                 },
@@ -54,12 +54,12 @@
             "objectivename": "#payload"
         },
         {
-            "var_e014f23a": [
+            "#hash_e014f23a": [
                 {
                     "variantname": "#retrieval_alt"
                 },
                 {
-                    "variantname": "#hash_1890a723bc26c833"
+                    "variantname": "#retrieval_prime"
                 }
             ],
             "objectivename": "#retrieval"
@@ -71,12 +71,12 @@
             "objectivename": "#transport"
         }
     ],
-    "var_f9b18059": [
+    "#hash_f9b18059": [
         {
             "objectivename": "#exfil"
         },
         {
-            "var_e014f23a": [
+            "#hash_e014f23a": [
                 {
                     "variantname": "#reveal"
                 },
@@ -87,7 +87,7 @@
             "objectivename": "#ee"
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "zmsrobjectivelist",
     "name": "zmsr_objectives"
 }

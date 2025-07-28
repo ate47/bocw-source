@@ -1,0 +1,20 @@
+{
+    "description": "localized18#hash_1cf121c4765e8ff5",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_198f2c4c4ef1e442",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_fishing_derby",
+    "hash_9864ed1": 0,
+    "name": "fishing_game",
+    "displayname": "localized18#hash_5ecdaae0a700a623",
+    "filename": "#hash_7ce69dd8b071ec65",
+    "action": "localized18#hash_63fd67c6e9aa0a1",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_fishing_derby",
+    "hash_8b592b62": "image#hash_1f4f84e249b8ce40",
+    "hash_48152d43": 1
+}

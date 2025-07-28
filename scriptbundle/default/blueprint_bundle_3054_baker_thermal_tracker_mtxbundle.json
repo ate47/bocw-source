@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_strike_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_strike_mtxitem",
             "itemid": "27892107"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_achill_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_achill_mtxitem",
             "itemid": "23515749"
         },
         {
-            "var_4a4bc969": "#t9_charm_thermo_tac_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_thermo_tac_mtxitem",
             "itemid": "25221015"
         },
         {
-            "var_4a4bc969": "#emblems_s3_vts_final_28_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_vts_final_28_mtxitem",
             "itemid": "29066956"
         }
     ],
-    "itemname": "#hash_46efc5a53c3b5869",
-    "var_375a1747": "#hash_78d3f305cff16953",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3054_baker_thermal_tracker",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3054_baker_thermal_tracker",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3054_baker_thermal_tracker_mtxbundle",
-    "var_a788fada": "#hash_7bb43977ec0c3d40",
-    "titlestring": "#hash_361ba4540b9a2c8b",
-    "var_566825be": "#hash_78deddb484e8ee0c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3054_baker_thermal_tracker_small",
+    "titlestring": "localized18#hash_361ba4540b9a2c8b",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3054_baker_thermal_tracker",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_99ab51ad900db0f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_99ab51ad900db0f",
+    "hash_db3e02ab": 2000,
     "itemid": "24478735"
 }

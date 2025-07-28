@@ -1,23 +1,29 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
-            "soundevent": "#hash_7a604f110b32858b"
+            "soundevent": "#hash_7a604f110b32858b",
+            "hash_f35c5951": 0,
+            "hash_5d4b5964": 0
         }
     ],
-    "description": "#hash_2bd5b92ccc33d0da",
-    "itemspawnentry": "#item_zmintel_silver_darkaether_artifact_3",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#ww_quest",
-    "model": "#hash_3fc9c93f558f206b",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_a1c88c70c46d5b0",
+    "description": "localized19#hash_2bd5b92ccc33d0da",
+    "itemspawnentry": "scriptbundle#item_zmintel_silver_darkaether_artifact_3",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#ww_quest",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_dark_aether_crystals_small",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#p9_zm_ndu_dark_aether_crystals_small_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
-    "var_ad4ad686": "#dark_aether",
+    "season": 0,
+    "hash_ad4ad686": "#dark_aether",
     "soundloop": "#hash_6098b72d515f39d5",
     "name": "zmintel_silver_darkaether_artifact_3",
-    "var_9be0526e": "#artifact",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "title": "#hash_69364657a8e13bea",
+    "hash_9be0526e": "#artifact",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "title": "localized19#hash_69364657a8e13bea",
+    "hash_4efbbcfe": 0,
     "mapname": "#zm_silver"
 }

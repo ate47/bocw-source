@@ -1,0 +1,236 @@
+{
+    "#hash_5a062218": [
+        {
+            "announcement": "localized19#hash_20f6e830967c008f",
+            "delay": 3.5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#hash_5959cda41cb7f190",
+            "delay": 3.5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#hash_5c3d481e648655cd",
+            "delay": 3.5,
+            "priority": 50
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#team name"
+                },
+                {
+                    "parametertype": "#hash_2e98c7aa016487ce"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_bomb_planted",
+            "delay": 5,
+            "priority": 100
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#player name"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_defusing",
+            "delay": 3.5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#codcaster/an_hardpoint_new",
+            "delay": 3.5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#hash_2fc2d3b5ce14ddb9",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "announcement": "localized19#hash_4f19f398c0bddf5c",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "announcement": "localized19#codcaster/an_ctf_pickup",
+            "delay": 3.5,
+            "priority": 80
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#team name"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_ctf_captured",
+            "delay": 5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#codcaster/an_ctf_killcarrier",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "announcement": "localized19#codcaster/an_ctf_return",
+            "delay": 3.5,
+            "priority": 60
+        },
+        {
+            "announcement": "localized19#hash_3632d27cec99b46e",
+            "delay": 3.5,
+            "priority": 30
+        },
+        {
+            "announcement": "localized19#hash_16620b98386e49e4",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#hash_2e98c7aa016487ce"
+                }
+            ],
+            "announcement": "localized19#hash_43b7769694185b80",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#player name"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_bomb_pickup",
+            "delay": 3.5,
+            "priority": 30
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#player name"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_last_player_standing",
+            "delay": 3.5,
+            "priority": 80
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#player name"
+                },
+                {
+                    "parametertype": "#hash_6a7d83195e647e4a"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_killstreak",
+            "delay": 3.5,
+            "priority": 60
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#player name"
+                },
+                {
+                    "parametertype": "#hash_6a7d83195e647e4a"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_multikill",
+            "delay": 3.5,
+            "priority": 50
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#hash_2e98c7aa016487ce"
+                }
+            ],
+            "announcement": "localized19#hash_4703a5c10af7c5fa",
+            "delay": 3.5,
+            "priority": 80
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#scorestreak"
+                }
+            ],
+            "announcement": "localized19#hash_709c9f798d0e02e4",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#player name"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_first_blood",
+            "delay": 3.5,
+            "priority": 60
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#team name"
+                },
+                {
+                    "parametertype": "#hash_2e98c7aa016487ce"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_control_progress",
+            "delay": 3.5,
+            "priority": 50
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#team name"
+                }
+            ],
+            "announcement": "localized19#codcaster/an_all_norespawns",
+            "delay": 5,
+            "priority": 75
+        },
+        {
+            "announcement": "localized19#hash_20eb21b355414bb4",
+            "delay": 3.5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#hash_1a96c1697352ae01",
+            "delay": 3.5,
+            "priority": -1
+        },
+        {
+            "parameters": [
+                {
+                    "parametertype": "#team name"
+                },
+                {
+                    "parametertype": "#hash_2e98c7aa016487ce"
+                }
+            ],
+            "announcement": "localized19#hash_1d81ec5984d0234",
+            "delay": 5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#hash_7f5e25e88c37e494",
+            "delay": 5,
+            "priority": 100
+        },
+        {
+            "announcement": "localized19#hash_28d15bd85e626514",
+            "delay": 5,
+            "priority": 100
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "name": "codcaster_announcements"
+}

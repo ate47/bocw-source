@@ -1,0 +1,12 @@
+{
+    "durations": [
+        {
+            "duration": 1,
+            "archetype": "human",
+            "effecttype": "foam"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "weapondamageeffectype",
+    "name": "damageeffecttype_foam"
+}

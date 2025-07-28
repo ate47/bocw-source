@@ -1,58 +1,68 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_empire_home_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_empire_home_ms_mtxitem",
             "itemid": "26656962"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_mtxitem",
             "itemid": "31358670"
         },
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_empire_away_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_empire_away_ms_mtxitem",
             "itemid": "27072668"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
             "itemid": "24054907"
         },
         {
-            "var_4a4bc969": "#camo_t9_cdl_dal_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#camo_t9_cdl_dal_ms_mtxitem",
             "itemid": "21729769"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_esports_empire_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_esports_empire_ms_mtxitem",
             "itemid": "24588529"
         },
         {
-            "var_4a4bc969": "#t9_charm_sneaker_empire_ms_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sneaker_empire_ms_mtxitem",
             "itemid": "23569542"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_dal_1_ms_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_cdl_teamsticker_dal_1_ms_base_mtxitem",
             "itemid": "22609983"
         },
         {
-            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_dal_1_ms_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cdl_teamcallingcards_dal_1_ms_base_mtxitem",
             "itemid": "24630409"
         },
         {
-            "var_4a4bc969": "#emblems_cdl_teamemblem_010_dal_1_ms_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_cdl_teamemblem_010_dal_1_ms_base_mtxitem",
             "itemid": "26436193"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_180925a825791f1e",
-    "var_247d9ed7": "cdl_team_pack_01_empire",
-    "var_208d76b5": "#hash_2076527f625b5ba3",
-    "var_70f66e54": "#hash_50ddc2c34399c336",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "cdl_team_pack_01_empire",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_cdl_team_pack_01_empire",
+    "hash_70f66e54": "#hash_50ddc2c34399c336",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "cdl_team_pack_01_empire_ms_mtxentitlement",
-    "var_a788fada": "#hash_2a708aa328bdb089",
-    "titlestring": "#hash_71d95bec404c14b5",
-    "var_566825be": "#hash_1c896a82f1048481",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_empire_small",
+    "titlestring": "localized18#hash_71d95bec404c14b5",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_empire",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#durango",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#durango",
     "itemid": "33295040",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

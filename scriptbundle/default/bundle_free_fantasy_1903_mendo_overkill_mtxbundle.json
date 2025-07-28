@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_cub_pl_dgi_commando_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_cub_pl_dgi_commando_mtxitem",
             "itemid": "31495039"
         },
         {
-            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_cub_dgi_mtxitem",
             "itemid": "21801561"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_overkill_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_overkill_mtxitem",
             "itemid": "29893741"
         },
         {
-            "var_4a4bc969": "#special_grenade_launcher_bp_shadow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#special_grenade_launcher_bp_shadow_mtxitem",
             "itemid": "23556147"
         },
         {
-            "var_4a4bc969": "#callingcards_overkillfantasy_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_overkillfantasy_animated_mtxitem",
             "itemid": "30476692"
         },
         {
-            "var_4a4bc969": "#emblems_overkillfantasy_05_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_overkillfantasy_05_animated_mtxitem",
             "itemid": "23133193"
         },
         {
-            "var_4a4bc969": "#t9_charm_ammo_m79_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_ammo_m79_mtxitem",
             "itemid": "27887558"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_overkillfantasy_03_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_overkillfantasy_03_mtxitem",
             "itemid": "33087304"
         }
     ],
-    "itemname": "#hash_a26a2fb89d53446",
-    "var_375a1747": "#hash_7e59d9d1fbf33808",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_free_fantasy_1903_mendo_overkill",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_fantasy_1903_mendo_overkill",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_free_fantasy_1903_mendo_overkill_mtxbundle",
-    "var_a788fada": "#hash_3594f7de66608503",
-    "titlestring": "#hash_6272c2673db07148",
-    "var_566825be": "#hash_27e1d48e701f220b",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_3594f7de66608503",
+    "titlestring": "localized18#hash_6272c2673db07148",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_fantasy_1903_mendo_overkill",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3d37669f0821ca90",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3d37669f0821ca90",
+    "hash_db3e02ab": 2000,
     "itemid": "22482578"
 }

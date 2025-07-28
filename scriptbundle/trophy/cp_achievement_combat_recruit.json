@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_5b02393ccacfe1d9",
-    "var_86b354f": 30,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Silver",
+    "description": "localized18#hash_5b02393ccacfe1d9",
+    "hash_86b354f": 30,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Silver",
     "type": "trophy",
-    "var_4a95afca": "#hash_7cb921b4826457eb",
-    "image": "#hash_3870c2b4a3f4ab31",
+    "hash_4a95afca": "image#hash_7cb921b4826457eb",
+    "image": "image#hash_3870c2b4a3f4ab31",
     "name": "cp_achievement_combat_recruit",
-    "title": "#hash_1444392ca3a57947"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_1444392ca3a57947",
+    "hash_621379a": 0
 }

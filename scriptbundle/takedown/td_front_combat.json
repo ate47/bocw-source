@@ -1,0 +1,42 @@
+{
+    "Scenes": [
+        {
+            "scene": "scriptbundle&td_scene_combat_front_a"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_front_b"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_front_c"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_front_d"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_front_e"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_front_f"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_front_g"
+        }
+    ],
+    "sprint": 1,
+    "stancecrouch": 1,
+    "configstringfiletype": "scriptbundle",
+    "type": "takedown",
+    "stancestand": 1,
+    "name": "td_front_combat",
+    "maxheight": 30,
+    "combat": 1,
+    "traceheight": 16,
+    "trace": 1,
+    "notslide": 1,
+    "maxrange": 150,
+    "action": "takedown",
+    "yawrange": 120,
+    "prompt": "localized19#hash_6a4c1594be34b79f",
+    "minheight": -40,
+    "notsprint": 1
+}

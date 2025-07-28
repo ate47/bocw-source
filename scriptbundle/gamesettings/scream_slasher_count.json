@@ -1,14 +1,19 @@
 {
-    "hinttext": "#hash_707c5e9b7f399e71",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_707c5e9b7f399e71",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value3": "2",
     "value1": "0",
     "type": "gamesettings",
-    "label": "#menu/noloc",
+    "label": "localized18#menu/noloc",
+    "hash_5a6dee5a": 0,
     "name": "scream_slasher_count",
-    "displayname": "#hash_544ac945e666e267",
-    "var_9600a8ab": "#menu/default",
-    "var_9de86f42": 3,
-    "setting": "screamSlasherCount"
+    "displayname": "localized18#hash_544ac945e666e267",
+    "label1": "localized18#menu/default",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
+    "setting": "screamSlasherCount",
+    "isenableddisabled": 0
 }

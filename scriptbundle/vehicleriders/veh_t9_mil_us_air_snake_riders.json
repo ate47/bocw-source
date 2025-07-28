@@ -1,0 +1,112 @@
+{
+    "objects": [
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_788369cdbc1bf537",
+            "fastrope": 0,
+            "aligntag": "tag_driver",
+            "rideanim": "anim#hash_7b142c80925464f7",
+            "position": "driver",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_58f3e6afc17957a5"
+        },
+        {
+            "exitgroundanim": "anim#hash_77ded07b5617fb30",
+            "exithighloopanim": "anim#hash_788369cdbc1bf537",
+            "fastrope": 0,
+            "aligntag": "tag_gunner1",
+            "rideanim": "anim#hash_29d69327be8e3138",
+            "position": "passenger1",
+            "exithighlandanim": "anim#hash_77ded07b5617fb30",
+            "exithighanim": "anim#hash_58f3e6afc17957a5"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_58f3e6afc17957a5"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_43e17a5e3392f278"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_43e17a5e3392f278"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_f64dc458399f55f"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_37f1a6f045ffd429"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_2cd15b05049c6ac"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_3d6bb8e8fa94e833"
+        },
+        {
+            "fastrope": 0,
+            "exithighanim": "anim#hash_24e0629f30d0185e"
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "model": "model#veh_t9_mil_us_air_snake",
+    "type": "vehicleriders",
+    "hash_4301b21d": 2,
+    "vmtype": "both",
+    "dropspeed": 350,
+    "name": "veh_t9_mil_us_air_snake_riders",
+    "highexitlandheight": 32
+}

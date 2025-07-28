@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_there_is_nothing_impossible_to_him_willing_to_try",
-    "quote": "#hash_12b10feffc31b8e4",
-    "author": "#hash_1337a1882a1c00a1"
+    "quote": "localized18#hash_12b10feffc31b8e4",
+    "author": "localized18#hash_1337a1882a1c00a1"
 }

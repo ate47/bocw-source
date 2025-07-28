@@ -1,30 +1,35 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_rus_pl_kgb_tacticalgoth_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_rus_pl_kgb_tacticalgoth_mtxitem",
             "itemid": "30474531"
         },
         {
-            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_rus_kgb_mtxitem",
             "itemid": "29488041"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_fav_light_mpx_dominator_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_fav_light_mpx_dominator_mtxitem",
             "itemid": "21054965"
         },
         {
-            "var_4a4bc969": "#t9_charm_gothamulet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_gothamulet_mtxitem",
             "itemid": "20524633"
         }
     ],
-    "itemname": "#hash_40185fe893671aff",
-    "var_375a1747": "#hash_a59b0ab926cc3fd",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1086_kgb_punk_goth",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1086_kgb_punk_goth",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1086_kgb_punk_goth_mtxbundle",
-    "titlestring": "#hash_295dadb81c0af3c2",
-    "var_566825be": "#hash_4698cdd252ba08b4",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_295dadb81c0af3c2",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1086_kgb_punk_goth",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_5863425bc958da3e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_5863425bc958da3e",
+    "hash_db3e02ab": 2000,
     "itemid": "30397418"
 }

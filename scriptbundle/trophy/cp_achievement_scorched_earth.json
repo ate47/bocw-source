@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_585e91e6eff2628c",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_585e91e6eff2628c",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_2628539759aa592b",
-    "image": "#hash_61dff4977b3aac71",
+    "hash_4a95afca": "image#hash_2628539759aa592b",
+    "image": "image#hash_61dff4977b3aac71",
     "name": "cp_achievement_scorched_earth",
-    "title": "#hash_6eaa2a8cd7d63e24"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_6eaa2a8cd7d63e24",
+    "hash_621379a": 0
 }

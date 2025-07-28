@@ -2,133 +2,173 @@
     "rewards": [
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_cub_dgi",
-            "imagelarge": "#ui_icon_operators_cub_dgi",
-            "var_b4ab831a": "#hash_4cc3c84feeb4b041",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_730e8686137b90ed"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_cub_dgi",
+            "imagelarge": "image#ui_icon_operators_cub_dgi",
+            "hash_b4ab831a": "#hash_4cc3c84feeb4b041",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_730e8686137b90ed"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_cub_dgi_infiltration_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_730e8686137b90ed"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_cub_dgi_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_730e8686137b90ed"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_usa_navy_seal",
-            "imagelarge": "#ui_icon_operators_usa_navy_seal",
-            "var_b4ab831a": "#hash_3d3ba2ecf4d30874",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1593f24b861eb245"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_usa_navy_seal",
+            "imagelarge": "image#ui_icon_operators_usa_navy_seal",
+            "hash_b4ab831a": "#hash_3d3ba2ecf4d30874",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1593f24b861eb245"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_usa_navy_seal_infiltration_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_1593f24b861eb245"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_usa_navy_seal_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_1593f24b861eb245"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_usa_cia_sog",
-            "imagelarge": "#ui_icon_operators_usa_cia_sog",
-            "var_b4ab831a": "#hash_10d99c51363d023b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_450f99ce50083544"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_usa_cia_sog",
+            "imagelarge": "image#ui_icon_operators_usa_cia_sog",
+            "hash_b4ab831a": "#hash_10d99c51363d023b",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_450f99ce50083544"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_usa_cia_infiltration_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_450f99ce50083544"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_usa_cia_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_450f99ce50083544"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_rus_kgb",
-            "imagelarge": "#ui_icon_operators_rus_kgb",
-            "var_b4ab831a": "#hash_35640e9ffafb0a55",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4808274db2565c0d"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_rus_kgb",
+            "imagelarge": "image#ui_icon_operators_rus_kgb",
+            "hash_b4ab831a": "#hash_35640e9ffafb0a55",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4808274db2565c0d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_rus_kgb_infiltration_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4808274db2565c0d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_rus_kgb_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4808274db2565c0d"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_usa_hero_woods",
-            "imagelarge": "#ui_icon_operators_usa_hero_woods",
-            "var_b4ab831a": "#hash_70a73affe7ecd67a",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6f392a12f973aea5"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_usa_hero_woods",
+            "imagelarge": "image#ui_icon_operators_usa_hero_woods",
+            "hash_b4ab831a": "#hash_70a73affe7ecd67a",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6f392a12f973aea5"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_usa_woods_infiltration_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_6f392a12f973aea5"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_usa_woods_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_6f392a12f973aea5"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_usa_hero_adler",
-            "imagelarge": "#ui_icon_operators_usa_hero_adler",
-            "var_b4ab831a": "#hash_46ddf1f925e6a50b",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4693318a66e8a0b7"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_usa_hero_adler",
+            "imagelarge": "image#ui_icon_operators_usa_hero_adler",
+            "hash_b4ab831a": "#hash_46ddf1f925e6a50b",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4693318a66e8a0b7"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_usa_hero_adler_infiltration_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_4693318a66e8a0b7"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_usa_hero_adler_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_4693318a66e8a0b7"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_gen_starter3",
-            "imagelarge": "#ui_icon_operators_gen_starter3",
-            "var_b4ab831a": "#hash_1c4d491d9ce522d7",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7397ba07e9e0325d"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_gen_starter3",
+            "imagelarge": "image#ui_icon_operators_gen_starter3",
+            "hash_b4ab831a": "#hash_1c4d491d9ce522d7",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7397ba07e9e0325d"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_prt_mp_gen_starter3_default_mtxitem",
-            "var_57554d43": 1,
-            "var_270fa547": "#hash_7397ba07e9e0325d"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_prt_mp_gen_starter3_default_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 1,
+            "hash_270fa547": "#hash_7397ba07e9e0325d"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_beck",
-            "imagelarge": "#ui_icon_operators_beck",
-            "var_b4ab831a": "#hash_7a22dc6feec296b4",
-            "var_270fa547": "#hash_3171d9bb6e1519ac"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_beck",
+            "imagelarge": "image#ui_icon_operators_beck",
+            "hash_b4ab831a": "#hash_7a22dc6feec296b4",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3171d9bb6e1519ac"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_ger_west_infiltration_mtxitem",
-            "var_270fa547": "#hash_3171d9bb6e1519ac"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_ger_west_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3171d9bb6e1519ac"
         },
         {
             "rewardtype": "#playerroletemplate",
-            "image": "#ui_icon_operators_park",
-            "imagelarge": "#ui_icon_operators_park",
-            "var_b4ab831a": "#hash_7f9f7a55a86777c3",
-            "var_270fa547": "#hash_3c8e09a04082db5e"
+            "codpoints": 0,
+            "image": "image#ui_icon_operators_park",
+            "imagelarge": "image#ui_icon_operators_park",
+            "hash_b4ab831a": "#hash_7f9f7a55a86777c3",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3c8e09a04082db5e"
         },
         {
             "rewardtype": "#hash_178ab01368762c8b",
-            "var_b4ab831a": "#mtx_outfit_mp_uk_mi6_infiltration_mtxitem",
-            "var_270fa547": "#hash_3c8e09a04082db5e"
+            "codpoints": 0,
+            "hash_b4ab831a": "#mtx_outfit_mp_uk_mi6_infiltration_mtxitem",
+            "hash_cfa37e8e": 0,
+            "hash_57554d43": 0,
+            "hash_270fa547": "#hash_3c8e09a04082db5e"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "challengerewards",
-    "var_5f0dd656": 5,
-    "var_4e39981b": 5,
-    "var_faec2a7f": 6,
+    "hash_5f0dd656": 5,
+    "hash_4e39981b": 5,
+    "hash_faec2a7f": 6,
     "name": "challengerewards_operator_skins",
     "sessionmode": "4",
-    "var_91a1cb16": 6
+    "hash_91a1cb16": 6
 }

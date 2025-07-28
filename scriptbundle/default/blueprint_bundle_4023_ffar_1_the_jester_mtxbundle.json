@@ -1,38 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_opulence_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_opulence_mtxitem",
             "itemid": "24493965"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_opulence_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_opulence_mtxitem",
             "itemid": "29456205"
         },
         {
-            "var_4a4bc969": "#t9_charm_king_crown_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_king_crown_mtxitem",
             "itemid": "25411594"
         },
         {
-            "var_4a4bc969": "#emblems_s4_the_jester_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s4_the_jester_mtxitem",
             "itemid": "32715152"
         },
         {
-            "var_4a4bc969": "#callingcards_s4_the_jester_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s4_the_jester_mtxitem",
             "itemid": "20903984"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s4_jester_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s4_jester_mtxitem",
             "itemid": "33327850"
         }
     ],
-    "itemname": "#hash_3d4f993904058263",
-    "var_375a1747": "#hash_51f97ed5eded4a65",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4023_ffar_1_the_jester",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4023_ffar_1_the_jester",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4023_ffar_1_the_jester_mtxbundle",
-    "titlestring": "#hash_74797545258496fe",
-    "var_566825be": "#hash_4a60b9bd57442fae",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_74797545258496fe",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4023_ffar_1_the_jester",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_538cd2834e9177b2",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_538cd2834e9177b2",
+    "hash_db3e02ab": 2000,
     "itemid": "25976289"
 }

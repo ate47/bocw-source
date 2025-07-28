@@ -1,50 +1,55 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_bulldozer_forged_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_bulldozer_forged_mtxitem",
             "itemid": "20447006"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_bulldozer_mtxitem",
             "itemid": "20317561"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_armored_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_armored_mtxitem",
             "itemid": "32405037"
         },
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_armored_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_armored_mtxitem",
             "itemid": "23356316"
         },
         {
-            "var_4a4bc969": "#t9_charm_rappelling_soldier_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_rappelling_soldier_mtxitem",
             "itemid": "25585704"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_analog_future_soldier_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_analog_future_soldier_mtxitem",
             "itemid": "18651743"
         },
         {
-            "var_4a4bc969": "#execution_065_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_065_mtxitem",
             "itemid": "26514133"
         },
         {
-            "var_4a4bc969": "#emblem_s4_bigbadmaskguy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_s4_bigbadmaskguy_mtxitem",
             "itemid": "27307680"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_vts_s4_final_08_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_vts_s4_final_08_mtxitem",
             "itemid": "29044472"
         }
     ],
-    "itemname": "#hash_c8a249953b2dc8a",
-    "var_375a1747": "#hash_6362e66dcbbc24ec",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4033_bulldozer_big_bad",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4033_bulldozer_big_bad",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4033_bulldozer_big_bad_mtxbundle",
-    "titlestring": "#hash_1f341e6fdf2f29db",
-    "var_566825be": "#hash_18b11ed6fcd1654d",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_1f341e6fdf2f29db",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4033_bulldozer_big_bad",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3a92e94926c0ef9f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3a92e94926c0ef9f",
+    "hash_db3e02ab": 2000,
     "itemid": "32100018"
 }

@@ -1,15 +1,20 @@
 {
-    "hinttext": "#hash_67da33e5b2c08cc1",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_67da33e5b2c08cc1",
+    "configstringfiletype": "scriptbundle",
     "value2": "2",
     "value3": "1",
     "value1": "0",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "random_objective_locations",
-    "displayname": "#hash_766bba2ccc0f4317",
-    "var_9600a8ab": "#menu/linear",
-    "var_71b6e020": "#hash_2a0c72a43293dde0",
-    "var_bd2ff709": "#hash_1396b0c702a81da0",
-    "var_9de86f42": 3,
-    "setting": "randomObjectiveLocations"
+    "displayname": "localized18#hash_766bba2ccc0f4317",
+    "label1": "localized18#menu/linear",
+    "label3": "localized18#menu/random",
+    "label2": "localized18#hash_1396b0c702a81da0",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
+    "setting": "randomObjectiveLocations",
+    "isenableddisabled": 0
 }

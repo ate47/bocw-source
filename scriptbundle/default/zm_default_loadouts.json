@@ -18,11 +18,13 @@
                     "attachment": "#handle"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_79fb37771b897822",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_79fb37771b897822",
+            "hash_26b5c8ef": -1,
             "primary": "#smg_standard_t9",
-            "specialgrenade": "#hash_41adc0ca9daf6e9d"
+            "specialgrenade": "#energy_mine",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "primaryattachments": [
@@ -42,11 +44,13 @@
                     "attachment": "#handle2"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_79fb35771b8974bc",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_79fb35771b8974bc",
+            "hash_26b5c8ef": -1,
             "primary": "#pistol_semiauto_t9",
-            "specialgrenade": "#hash_2d88b4c5217c7e7c"
+            "specialgrenade": "#aether_shroud",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "primaryattachments": [
@@ -66,11 +70,13 @@
                     "attachment": "#mixhandle"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_79fb38771b8979d5",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_79fb38771b8979d5",
+            "hash_26b5c8ef": -1,
             "primary": "#shotgun_pump_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "primaryattachments": [
@@ -90,11 +96,13 @@
                     "attachment": "#stalker"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_79fb32771b896fa3",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_79fb32771b896fa3",
+            "hash_26b5c8ef": -1,
             "primary": "#tr_longburst_t9",
-            "specialgrenade": "#hash_7b5a77a85b0ffab7"
+            "specialgrenade": "#heal_aoe",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
             "primaryattachments": [
@@ -114,92 +122,116 @@
                     "attachment": "#stalker2"
                 }
             ],
-            "var_4c0d0c4b": -1,
-            "customclassname": "#hash_79fb31771b896df0",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#hash_79fb31771b896df0",
+            "hash_26b5c8ef": -1,
             "primary": "#ar_standard_t9",
-            "specialgrenade": "#hash_1d9cb9dbd298acba"
+            "specialgrenade": "#ring_of_fire",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         }
     ],
-    "var_2f9f5375": [
+    "#hash_2f9f5375": [
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot1",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot1",
+            "hash_26b5c8ef": -1,
             "primary": "#ar_standard_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         }
     ],
     "defaultcustomloadouts": [
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot1",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot1",
+            "hash_26b5c8ef": -1,
             "primary": "#ar_standard_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot2",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot2",
+            "hash_26b5c8ef": -1,
             "primary": "#smg_standard_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot3",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot3",
+            "hash_26b5c8ef": -1,
             "primary": "#lmg_accurate_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot4",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot4",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_quickscope_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot5",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot5",
+            "hash_26b5c8ef": -1,
             "primary": "#tr_damagesemi_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot6",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot6",
+            "hash_26b5c8ef": -1,
             "primary": "#ar_damage_t9",
-            "specialgrenade": "#frost_blast"
+            "specialgrenade": "#frost_blast",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot7",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot7",
+            "hash_26b5c8ef": -1,
             "primary": "#smg_handling_t9",
-            "specialgrenade": "#hash_41adc0ca9daf6e9d"
+            "specialgrenade": "#energy_mine",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot8",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot8",
+            "hash_26b5c8ef": -1,
             "primary": "#smg_heavy_t9",
-            "specialgrenade": "#hash_2d88b4c5217c7e7c"
+            "specialgrenade": "#aether_shroud",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot9",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot9",
+            "hash_26b5c8ef": -1,
             "primary": "#sniper_standard_t9",
-            "specialgrenade": "#hash_7b5a77a85b0ffab7"
+            "specialgrenade": "#heal_aoe",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         },
         {
-            "var_4c0d0c4b": -1,
-            "customclassname": "#class/slot10",
-            "var_26b5c8ef": -1,
+            "hash_4c0d0c4b": -1,
+            "customclassname": "localized18#class/slot10",
+            "hash_26b5c8ef": -1,
             "primary": "#ar_mobility_t9",
-            "specialgrenade": "#hash_1d9cb9dbd298acba"
+            "specialgrenade": "#ring_of_fire",
+            "hash_285151c1": 0,
+            "hash_1c89585f": 0
         }
     ],
     "name": "zm_default_loadouts",

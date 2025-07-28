@@ -2,40 +2,50 @@
     "itemlist": [
         {
             "minweight": 200,
-            "var_a6762160": "#ar_accurate_t9_item_sr",
+            "itementry": "scriptbundle#ar_accurate_t9_item_sr",
             "maxweight": 200,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#launcher_standard_t9_item_sr",
+            "itementry": "scriptbundle#launcher_standard_t9_item_sr",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 300,
-            "var_a6762160": "#smg_standard_t9_item_sr",
+            "itementry": "scriptbundle#smg_standard_t9_item_sr",
             "maxweight": 300,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#tr_longburst_t9_item_sr",
+            "itementry": "scriptbundle#tr_longburst_t9_item_sr",
             "maxweight": 100,
             "available": 1
         },
         {
             "minweight": 100,
-            "var_a6762160": "#sniper_quickscope_t9_item_sr",
+            "itementry": "scriptbundle#sniper_quickscope_t9_item_sr",
             "maxweight": 100,
             "available": 1
         }
     ],
-    "var_136dd314": 40,
-    "var_922067c4": "scriptbundle",
-    "var_e9898330": "pingitemcontainer",
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
     "type": "itemspawnlist",
-    "var_9b009839": -1,
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
     "name": "sr_objective_rewards_guns_tier_1",
-    "var_fde72c94": 100
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
 }

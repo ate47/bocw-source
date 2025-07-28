@@ -1,58 +1,68 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_royalravens_home_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_royalravens_home_sy_mtxitem",
             "itemid": "31245639"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_mtxitem",
             "itemid": "31358670"
         },
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_royalravens_away_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_royalravens_away_sy_mtxitem",
             "itemid": "26772235"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
             "itemid": "24054907"
         },
         {
-            "var_4a4bc969": "#camo_t9_cdl_lon_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#camo_t9_cdl_lon_sy_mtxitem",
             "itemid": "32715246"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_esports_royalravens_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_esports_royalravens_sy_mtxitem",
             "itemid": "20844741"
         },
         {
-            "var_4a4bc969": "#t9_charm_sneaker_royalravens_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sneaker_royalravens_sy_mtxitem",
             "itemid": "22591999"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_lon_1_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_cdl_teamsticker_lon_1_sy_base_mtxitem",
             "itemid": "26641647"
         },
         {
-            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_lon_1_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cdl_teamcallingcards_lon_1_sy_base_mtxitem",
             "itemid": "25234533"
         },
         {
-            "var_4a4bc969": "#emblems_cdl_teamemblem_010_lon_1_sy_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_cdl_teamemblem_010_lon_1_sy_base_mtxitem",
             "itemid": "19646893"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_32dea61e2a5c2a77",
-    "var_247d9ed7": "cdl_team_pack_01_ravens",
-    "var_208d76b5": "#hash_4c52e163d0df1e8c",
-    "var_70f66e54": "#hash_64de893c0ea16a5a",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "cdl_team_pack_01_ravens",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_cdl_team_pack_01_ravens",
+    "hash_70f66e54": "#hash_64de893c0ea16a5a",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "cdl_team_pack_01_ravens_sy_mtxentitlement",
-    "var_a788fada": "#hash_78ae78bf2057b9da",
-    "titlestring": "#hash_3e619e55a2b5fd1a",
-    "var_566825be": "#hash_3d4a38df7c2249e6",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_ravens_small",
+    "titlestring": "localized18#hash_3e619e55a2b5fd1a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_ravens",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#orbis",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#orbis",
     "itemid": "29438980",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

@@ -357,9 +357,9 @@ version hash_c84754b26a4ce009 {
         // offset: 0x78, bitSize: 0x18(0x3 Byte(s))
         hash_6c116eea1f7184ec hash_7bf29fa438d54aad;
         // offset: 0x90, bitSize: 0x18(0x3 Byte(s))
-        hash_6c116eea1f7184ec hash_33c456702a75cdeb;
+        hash_6c116eea1f7184ec critical_hits;
         // offset: 0xa8, bitSize: 0x18(0x3 Byte(s))
-        hash_6c116eea1f7184ec hash_45814ac55657fc62;
+        hash_6c116eea1f7184ec elite_kills;
         // offset: 0xc0, bitSize: 0x18(0x3 Byte(s))
         hash_6c116eea1f7184ec hash_15009978a744ee16;
         // offset: 0xd8, bitSize: 0x18(0x3 Byte(s))
@@ -947,7 +947,7 @@ version hash_c84754b26a4ce009 {
         // offset: 0x1470, bitSize: 0x18(0x3 Byte(s))
         hash_6c116eea1f7184ec ammo_purchased;
         // offset: 0x1488, bitSize: 0x28(0x5 Byte(s))
-        hash_2b6b162a9af31225 hash_45814ac55657fc62;
+        hash_2b6b162a9af31225 elite_kills;
         // offset: 0x14b0, bitSize: 0x18(0x3 Byte(s))
         hash_6c116eea1f7184ec hash_5e8b4c7f1e47be33;
         // offset: 0x14c8, bitSize: 0x38(0x7 Byte(s))
@@ -1441,7 +1441,7 @@ version hash_c84754b26a4ce009 {
         // offset: 0x2f50, bitSize: 0x28(0x5 Byte(s))
         hash_2b6b162a9af31225 hash_40199f1bfb79141d;
         // offset: 0x2f78, bitSize: 0x18(0x3 Byte(s))
-        hash_6c116eea1f7184ec accuracy;
+        hash_6c116eea1f7184ec Accuracy;
         // offset: 0x2f90, bitSize: 0x8(0x1 Byte(s))
         bitstat hash_4b37fc756befb798;
         // offset: 0x2f98, bitSize: 0x20(0x4 Byte(s))
@@ -3465,7 +3465,7 @@ version hash_c84754b26a4ce009 {
     };
 
     // bitSize: 0x28, members: 4
-    struct hash_18720d43cfb3094d {
+    struct faction_s {
         // offset: 0x0, bitSize: 0x18(0x3 Byte(s)), array:0x3(hti:0x1b)
         hash_2550e60e3a5fc33f rewards[hash_2b912aa49fb2e683];
         // offset: 0x18, bitSize: 0x8(0x1 Byte(s))
@@ -3477,7 +3477,7 @@ version hash_c84754b26a4ce009 {
     // bitSize: 0x1010, members: 5
     struct hash_2bf2e4a130fa6bec {
         // offset: 0x0, bitSize: 0xa0(0x14 Byte(s)), array:0x4(hti:0x1c)
-        hash_18720d43cfb3094d factions[factionid];
+        faction_s factions[factionid];
         // offset: 0xa0, bitSize: 0x8(0x1 Byte(s))
         factionid hash_7e597fbe41270a4d;
         // offset: 0xa8, bitSize: 0xf60(0x1ec Byte(s)), array:0xc(hti:0xffff)
@@ -3657,7 +3657,7 @@ version hash_c84754b26a4ce009 {
     // bitSize: 0x20, members: 4
     struct hash_25a11738b4152d0e {
         // offset: 0x0, bitSize: 0x8(0x1 Byte(s))
-        byte a;
+        byte A;
         // offset: 0x8, bitSize: 0x8(0x1 Byte(s))
         byte b;
         // offset: 0x10, bitSize: 0x8(0x1 Byte(s))
@@ -3894,7 +3894,7 @@ version hash_c84754b26a4ce009 {
         tr_damagesemi_t9, // 0x7d
         feature_cac, // 0x7e
         shotgun_pump_t9, // 0x7f
-        hash_55569355da0f0f68, // 0x80
+        frenzied_guard, // 0x80
         ar_slowfire_t9, // 0x81
         tr_powerburst_t9, // 0x82
         ray_gun_mk2, // 0x83
@@ -4130,7 +4130,7 @@ version hash_c84754b26a4ce009 {
         energy_mine_3, // 0x2e
         energy_mine_1, // 0x2f
         eq_acid_bomb, // 0x30
-        hash_55569355da0f0f68, // 0x31
+        frenzied_guard, // 0x31
         eq_slow_grenade, // 0x32
         toxic_growth, // 0x33
         eq_molotov, // 0x34
@@ -4372,7 +4372,7 @@ version hash_c84754b26a4ce009 {
         ammomod_cryofreeze, // 0x0
         hash_21b7d195b8d4a27, // 0x1
         talent_phdslider, // 0x2
-        hash_47d7a8105237c88, // 0x3
+        talent_juggernog, // 0x3
         hash_493bd7854fb851e, // 0x4
         hash_79a6c34737083a5, // 0x5
         hash_7e834844e770d24, // 0x6
@@ -4411,7 +4411,7 @@ version hash_c84754b26a4ce009 {
         hash_410dfd547f9de5d1, // 0x27
         energy_mine, // 0x28
         talent_elemental_pop, // 0x29
-        hash_55569355da0f0f68, // 0x2a
+        frenzied_guard, // 0x2a
         hash_56bc9a0fc8b4accb, // 0x2b
         hash_576e8ab23ae39ae7, // 0x2c
         talent_speedcola, // 0x2d
@@ -4797,7 +4797,7 @@ version hash_c84754b26a4ce009 {
     // offset: 0x11b350, bitSize: 0x80f0(0x101e Byte(s))
     hash_2584f92704256892 playercalling;
     // offset: 0x123440, bitSize: 0x260(0x4c Byte(s))
-    doastats hash_64fd75a9ce18b89f;
+    doastats doaglobalstats;
     // offset: 0x1236a0, bitSize: 0x68(0xd Byte(s))
     hash_60f6edbfd3c6553b hash_18e3320ccf4091e5;
     // offset: 0x123708, bitSize: 0x400(0x80 Byte(s)), array:0x10(hti:0xffff)

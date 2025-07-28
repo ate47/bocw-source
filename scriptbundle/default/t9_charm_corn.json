@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_6551691bb66ca1f1",
-    "description": "#hash_1c2defa57b9db7bd",
+    "hash_ff3063df": "model#attach_t9_charm_corn",
+    "description": "localized18#hash_1c2defa57b9db7bd",
     "name": "t9_charm_corn",
-    "var_6855e4be": "#t9_charm_corn_mtxitem",
-    "displayname": "#hash_21cc0d8d6be6fd6b",
+    "hash_6855e4be": "#t9_charm_corn_mtxitem",
+    "displayname": "localized18#hash_21cc0d8d6be6fd6b",
     "icon": "ui_icon_weapon_charms_corn",
-    "var_ef5ad2b3": "#hash_6551691bb66ca1f1"
+    "hash_ef5ad2b3": "model#attach_t9_charm_corn"
 }

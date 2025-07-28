@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_bulldozer_panda_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_bulldozer_panda_mtxitem",
             "itemid": "23000652"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_bulldozer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_bulldozer_mtxitem",
             "itemid": "20317561"
         },
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_bulldozer_panda_variant01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_bulldozer_panda_variant01_mtxitem",
             "itemid": "23074215"
         },
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_bulldozer_panda_variant02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_bulldozer_panda_variant02_mtxitem",
             "itemid": "27223779"
         },
         {
-            "var_4a4bc969": "#tier_skip_20_mtxitem"
+            "hash_4a4bc969": "scriptbundle#tier_skip_20_mtxitem"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_7b549658b06c835e",
-    "var_375a1747": "#hash_6eebfcbe5a88314c",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_season_6_battle_pass_promo_operator_bundle",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "season_6_battle_pass_promo_operator_bundle_mtxbundle",
-    "var_a788fada": "#hash_a0b31d8a0c74fcd",
-    "titlestring": "#hash_2bd5c1c34d058eaa",
-    "var_566825be": "#hash_eb0648db62402c5",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_season_6_battle_pass_promo_operator_bundle_small",
+    "titlestring": "localized18#hash_2bd5c1c34d058eaa",
+    "hash_566825be": "image#ui_icon_mtx_titles_season_6_battle_pass_promo_operator_bundle",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_32100d99d4b90d26",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_32100d99d4b90d26",
+    "hash_db3e02ab": 2000,
     "itemid": "25037535"
 }

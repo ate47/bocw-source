@@ -1,9 +1,9 @@
 {
-    "wingsuit": "wing_default",
+    "wingsuit": "scriptbundle&wing_default",
     "name": "jmpkt_default",
-    "displayname": "#menu/default",
-    "var_4fa85a25": "dfxt_default",
-    "parachute": "para_default",
-    "var_ab31d27": "#hash_35a39bc3f886ad68",
-    "var_98b76f73": "#hash_3ea1815421ad705"
+    "displayname": "localized18#menu/default",
+    "hash_4fa85a25": "scriptbundle&dfxt_default",
+    "parachute": "scriptbundle&para_default",
+    "hash_ab31d27": "model#wpn_t9_eqp_parachute_world",
+    "hash_98b76f73": "model#wpn_t9_eqp_parachute_view"
 }

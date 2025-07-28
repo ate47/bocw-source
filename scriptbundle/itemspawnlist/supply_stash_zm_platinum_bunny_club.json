@@ -1,0 +1,87 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#level_1_resource_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#level_2_resource_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 50,
+            "itementry": "scriptbundle#level_3_resource_list",
+            "maxweight": 50,
+            "available": 1
+        },
+        {
+            "minweight": 50,
+            "itementry": "scriptbundle#level_4_resource_list",
+            "maxweight": 50,
+            "available": 1
+        },
+        {
+            "minweight": 50,
+            "itementry": "scriptbundle#level_5_resource_list",
+            "maxweight": 50,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#level_6_resource_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 50,
+            "itementry": "scriptbundle#supply_stash_zm_silver_dance_party_equipment_list",
+            "maxweight": 50,
+            "available": 1
+        },
+        {
+            "minweight": 50,
+            "itementry": "scriptbundle#supply_stash_zm_silver_dance_party_equipment_list",
+            "maxweight": 50,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#supply_stash_zm_platinum_bunny_club_level_6_gun_chance",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#scrap_rare_item_sr",
+            "maxweight": 100,
+            "available": 2
+        },
+        {
+            "minweight": 100,
+            "itementry": "scriptbundle#item_survival_juggernog",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
+    "name": "supply_stash_zm_platinum_bunny_club",
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
+}

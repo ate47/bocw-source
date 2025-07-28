@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter3_stone_jammy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter3_stone_jammy_mtxitem",
             "itemid": "24316813"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter3_mtxitem",
             "itemid": "21293402"
         },
         {
-            "var_4a4bc969": "#callingcards_s5_stone_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s5_stone_mtxitem",
             "itemid": "24170470"
         },
         {
-            "var_4a4bc969": "#emblems_21_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_21_s5_mtxitem",
             "itemid": "31241748"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_vts_final_07_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_vts_final_07_s5_mtxitem",
             "itemid": "18421943"
         }
     ],
-    "itemname": "#hash_3450e9eb13f356e3",
-    "var_375a1747": "#hash_3621b26ace1591d9",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5049_stone_masked_overlord",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5049_stone_masked_overlord",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5049_stone_masked_overlord_mtxbundle",
-    "var_a788fada": "#hash_7e625a1c55d6b210",
-    "titlestring": "#hash_4902b2997f705def",
-    "var_566825be": "#hash_55b5f269ee92c79c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5049_stone_masked_overlord_small",
+    "titlestring": "localized18#hash_4902b2997f705def",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5049_stone_masked_overlord",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6642a8d6e57c7eab",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6642a8d6e57c7eab",
+    "hash_db3e02ab": 2000,
     "itemid": "19303674"
 }

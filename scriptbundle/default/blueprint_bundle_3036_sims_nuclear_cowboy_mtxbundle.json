@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_cia_snatch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_cia_snatch_mtxitem",
             "itemid": "30291587"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_cia_mtxitem",
             "itemid": "20084886"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_nuclear_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_nuclear_mtxitem",
             "itemid": "21078364"
         },
         {
-            "var_4a4bc969": "#tr_precisionsemi_bp_wandering_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_bp_wandering_mtxitem",
             "itemid": "19896860"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_zombieslayer_002_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_zombieslayer_002_mtxitem",
             "itemid": "27200530"
         }
     ],
-    "itemname": "#hash_273c437d240213d2",
-    "var_375a1747": "#hash_1173c132d964e174",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3036_sims_nuclear_cowboy",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3036_sims_nuclear_cowboy",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3036_sims_nuclear_cowboy_mtxbundle",
-    "var_a788fada": "#hash_7cadf2f57a5530b7",
-    "titlestring": "#hash_30718525ffdff713",
-    "var_566825be": "#hash_4f162caebda303f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3036_sims_nuclear_cowboy_small",
+    "titlestring": "localized18#hash_30718525ffdff713",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3036_sims_nuclear_cowboy",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4f93e828a5d4bab7",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4f93e828a5d4bab7",
+    "hash_db3e02ab": 2000,
     "itemid": "21862648"
 }

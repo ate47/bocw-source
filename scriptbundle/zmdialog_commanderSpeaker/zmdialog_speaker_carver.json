@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "zmdialog_commanderSpeaker",
     "name": "zmdialog_speaker_carver",
-    "displayname": "#hash_23cf5e60f46e02bb",
-    "var_bb29ec62": "#hash_65641d94f7d6bd67"
+    "displayname": "localized18#hash_23cf5e60f46e02bb",
+    "displayimage": "image#zm_hud_commander_carver"
 }

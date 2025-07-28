@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_1afe8875551e332",
-    "var_86b354f": 30,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Silver",
+    "description": "localized18#hash_1afe8875551e332",
+    "hash_86b354f": 30,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Silver",
     "type": "trophy",
-    "var_4a95afca": "#hash_4bdc2ea15c55fe77",
-    "image": "#hash_42d007a1571a112d",
+    "hash_4a95afca": "image#hash_4bdc2ea15c55fe77",
+    "image": "image#hash_42d007a1571a112d",
     "name": "cp_achievement_scorched_earth2",
-    "title": "#hash_61646352c10b7f62"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_61646352c10b7f62",
+    "hash_621379a": 0
 }

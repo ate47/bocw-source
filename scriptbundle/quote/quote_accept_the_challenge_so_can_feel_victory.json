@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_accept_the_challenge_so_can_feel_victory",
-    "quote": "#hash_737b592f96f93b84",
-    "author": "#hash_634634cfd78bd43d"
+    "quote": "localized18#hash_737b592f96f93b84",
+    "author": "localized18#hash_634634cfd78bd43d"
 }

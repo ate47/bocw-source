@@ -1,10 +1,14 @@
 {
-    "hinttext": "#hash_1ee60c43757662c4",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_1ee60c43757662c4",
+    "configstringfiletype": "scriptbundle",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "score_reset_on_death",
-    "displayname": "#hash_199f1ece5f588e4",
-    "var_9de86f42": 2,
+    "displayname": "localized18#hash_199f1ece5f588e4",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
     "setting": "scoreResetOnDeath",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

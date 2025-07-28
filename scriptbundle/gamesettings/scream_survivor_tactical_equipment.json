@@ -1,14 +1,19 @@
 {
-    "hinttext": "#hash_3d9daa04336c9f0",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_3d9daa04336c9f0",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value3": "2",
     "value1": "0",
     "type": "gamesettings",
-    "label": "#menu/noloc",
+    "label": "localized18#menu/noloc",
+    "hash_5a6dee5a": 0,
     "name": "scream_survivor_tactical_equipment",
-    "displayname": "#hash_2bc11c12852c88c0",
-    "var_9600a8ab": "#hash_94eb0e3329edf5f",
-    "var_9de86f42": 3,
-    "setting": "screamSurvivorTacticalEquipment"
+    "displayname": "localized18#hash_2bc11c12852c88c0",
+    "label1": "localized18#menu/disabled",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
+    "setting": "screamSurvivorTacticalEquipment",
+    "isenableddisabled": 0
 }

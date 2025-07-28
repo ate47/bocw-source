@@ -1,34 +1,39 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_accurate_bp_opulence_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_opulence_mtxitem",
             "itemid": "30723811"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_opulence_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_opulence_mtxitem",
             "itemid": "25660848"
         },
         {
-            "var_4a4bc969": "#t9_charm_knight_helmet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_knight_helmet_mtxitem",
             "itemid": "21321841"
         },
         {
-            "var_4a4bc969": "#callingcards_whitegold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_whitegold_mtxitem",
             "itemid": "32907788"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_whiteandgold_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_whiteandgold_mtxitem",
             "itemid": "24770122"
         }
     ],
-    "itemname": "#hash_316f0c5b31fcc58",
-    "var_375a1747": "#hash_54e224c101e2059e",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1074_ar_accurate_royal_flush",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1074_ar_accurate_royal_flush",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1074_ar_accurate_royal_flush_mtxbundle",
-    "titlestring": "#hash_33941b930914381b",
-    "var_566825be": "#hash_2df30655e419209d",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_33941b930914381b",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1074_ar_accurate_royal_flush",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4e167639e42db7df",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4e167639e42db7df",
+    "hash_db3e02ab": 2000,
     "itemid": "32653833"
 }

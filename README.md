@@ -22,4 +22,10 @@ Pools dumped:
 | stringtable       | 63  | `/`                      |
 | ddl               | 66  | `/ddl/`                  |
 | scriptparsetree   | 68  | `/`                      |
+| script_using      | 70  | `/tables/usings/common/` |
+| script_using_cp   | 71  | `/tables/usings/cp/`     |
+| script_using_mp   | 72  | `/tables/usings/mp/`     |
+| script_using_wz   | 73  | `/tables/usings/wz/`     |
+| script_using_zm   | 74  | `/tables/usings/zm/`     |
 | scriptbundle      | 87  | `/scriptbundle/`         |
+| bgcache           | 109 | `/tables/bgcache/`       |

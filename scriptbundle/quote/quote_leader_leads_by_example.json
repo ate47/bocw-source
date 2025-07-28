@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_leader_leads_by_example",
-    "quote": "#hash_2b935ea495a61209",
-    "author": "#hash_2551258f55a72a7c"
+    "quote": "localized18#hash_2b935ea495a61209",
+    "author": "localized18#hash_2551258f55a72a7c"
 }

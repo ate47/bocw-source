@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_aether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_aether_mtxitem",
             "itemid": "30169267"
         },
         {
-            "var_4a4bc969": "#melee_machete_bp_daether_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_machete_bp_daether_mtxitem",
             "itemid": "30253991"
         },
         {
-            "var_4a4bc969": "#execution_139_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_139_mtxitem",
             "itemid": "18106524"
         },
         {
-            "var_4a4bc969": "#t9_charm_wpn_chalkoutline_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_wpn_chalkoutline_mtxitem",
             "itemid": "20919829"
         },
         {
-            "var_4a4bc969": "#callingcards_s3_vts_28_final_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s3_vts_28_final_mtxitem",
             "itemid": "21923335"
         }
     ],
-    "itemname": "#hash_1f52fa03de45bf9b",
-    "var_375a1747": "#hash_1e364b821697145d",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3022_gallo_sa12_aether_weapons",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3022_gallo_sa12_aether_weapons",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3022_gallo_sa12_aether_weapons_mtxbundle",
-    "var_a788fada": "#hash_e0de88c90155876",
-    "titlestring": "#hash_7af85d5a9e40d99e",
-    "var_566825be": "#hash_81756d44331d542",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3022_gallo_sa12_aether_weapons_small",
+    "titlestring": "localized18#hash_7af85d5a9e40d99e",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3022_gallo_sa12_aether_weapons",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_242db1ea05f7ab52",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_242db1ea05f7ab52",
+    "hash_db3e02ab": 2000,
     "itemid": "18930135"
 }

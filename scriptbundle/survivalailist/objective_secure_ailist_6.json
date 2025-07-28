@@ -1,67 +1,67 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_zombie",
-            "var_a949845f": -1,
-            "var_857deb66": 28
+            "entryname": "scriptbundle&survival_ai_zombie",
+            "hash_a949845f": -1,
+            "hash_857deb66": 28
         },
         {
-            "entryname": "survival_ai_zombie_armor_medium",
-            "var_a949845f": -1,
-            "var_857deb66": 27
+            "entryname": "scriptbundle&survival_ai_zombie_armor_medium",
+            "hash_a949845f": -1,
+            "hash_857deb66": 27
         },
         {
-            "entryname": "survival_ai_dog_molotov",
-            "var_a949845f": 4,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_dog_molotov",
+            "hash_a949845f": 4,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_dog_plague",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_dog_plague",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_avogadro",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_avogadro",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_mimic",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_mimic",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_raz",
-            "var_a949845f": -1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&survival_ai_raz",
+            "hash_a949845f": -1,
+            "hash_857deb66": 5
         },
         {
-            "entryname": "survival_ai_disciple",
-            "var_a949845f": -1,
-            "var_857deb66": 3
+            "entryname": "scriptbundle&survival_ai_disciple",
+            "hash_a949845f": -1,
+            "hash_857deb66": 3
         },
         {
-            "entryname": "survival_ai_zombie_armor_heavy",
-            "var_a949845f": -1,
-            "var_857deb66": 14
+            "entryname": "scriptbundle&survival_ai_zombie_armor_heavy",
+            "hash_a949845f": -1,
+            "hash_857deb66": 14
         },
         {
-            "entryname": "survival_ai_mechz",
-            "var_a949845f": -1,
-            "var_857deb66": 1
+            "entryname": "scriptbundle&survival_ai_mechz",
+            "hash_a949845f": -1,
+            "hash_857deb66": 1
         },
         {
-            "entryname": "survival_ai_steiner",
-            "var_a949845f": -1,
-            "var_857deb66": 1
+            "entryname": "scriptbundle&survival_ai_steiner",
+            "hash_a949845f": -1,
+            "hash_857deb66": 1
         },
         {
-            "entryname": "survival_ai_abomination",
-            "var_a949845f": -1,
-            "var_857deb66": 3
+            "entryname": "scriptbundle&survival_ai_abomination",
+            "hash_a949845f": -1,
+            "hash_857deb66": 3
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "objective_secure_ailist_6"
 }

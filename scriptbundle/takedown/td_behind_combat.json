@@ -1,0 +1,28 @@
+{
+    "Scenes": [
+        {
+            "scene": "scriptbundle&td_scene_combat_behind_a"
+        },
+        {
+            "scene": "scriptbundle&td_scene_combat_behind_b"
+        }
+    ],
+    "sprint": 1,
+    "stancecrouch": 1,
+    "configstringfiletype": "scriptbundle",
+    "type": "takedown",
+    "yaw": 180,
+    "stancestand": 1,
+    "name": "td_behind_combat",
+    "maxheight": 30,
+    "combat": 1,
+    "traceheight": 16,
+    "trace": 1,
+    "notslide": 1,
+    "maxrange": 150,
+    "action": "takedown",
+    "yawrange": 60,
+    "prompt": "localized19#hash_6a4c1594be34b79f",
+    "minheight": -40,
+    "notsprint": 1
+}

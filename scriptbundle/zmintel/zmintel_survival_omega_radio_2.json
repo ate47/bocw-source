@@ -1,57 +1,60 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_21a6f5ad2b0cb93b",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 13.87,
-            "var_36bf8e05": "#hash_67095600118e1f30"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 13.87,
+            "hash_36bf8e05": "localized19#hash_67095600118e1f30"
         },
         {
             "soundevent": "#hash_4927acd60d5073c7",
-            "var_f35c5951": 0.6,
-            "var_5d4b5964": 9.1,
-            "var_36bf8e05": "#hash_7dc71f93b5156ca2"
+            "hash_f35c5951": 0.6,
+            "hash_5d4b5964": 9.1,
+            "hash_36bf8e05": "localized19#hash_7dc71f93b5156ca2"
         },
         {
             "soundevent": "#hash_21a6f7ad2b0cbca1",
-            "var_f35c5951": 0.9,
-            "var_5d4b5964": 19.63,
-            "var_36bf8e05": "#hash_5940fb78321989e2"
+            "hash_f35c5951": 0.9,
+            "hash_5d4b5964": 19.63,
+            "hash_36bf8e05": "localized19#hash_5940fb78321989e2"
         },
         {
             "soundevent": "#hash_4927aed60d50772d",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 4.99,
-            "var_36bf8e05": "#hash_6e98881f91a074ac"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 4.99,
+            "hash_36bf8e05": "localized19#hash_6e98881f91a074ac"
         },
         {
             "soundevent": "#hash_21a6f9ad2b0cc007",
-            "var_f35c5951": 0.8,
-            "var_5d4b5964": 12.67,
-            "var_36bf8e05": "#hash_44ef412148e2fa74"
+            "hash_f35c5951": 0.8,
+            "hash_5d4b5964": 12.67,
+            "hash_36bf8e05": "localized19#hash_44ef412148e2fa74"
         },
         {
             "soundevent": "#hash_4927a8d60d506cfb",
-            "var_f35c5951": 0.5,
-            "var_5d4b5964": 0.83,
-            "var_36bf8e05": "#hash_52d2ea2e6791c826"
+            "hash_f35c5951": 0.5,
+            "hash_5d4b5964": 0.83,
+            "hash_36bf8e05": "localized19#hash_52d2ea2e6791c826"
         }
     ],
-    "description": "#hash_5e47e04b6d18075",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "model": "#hash_4fe193b7484608f8",
-    "var_824079e7": "#survival",
-    "uimodel": "#hash_10f65ca45f134f57",
+    "description": "localized19#hash_5e47e04b6d18075",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_radio_transmissions_o",
+    "hash_824079e7": "#survival",
+    "uimodel": "model#p9_zm_ndu_radio_transmissions_o_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#omega",
+    "hash_ad4ad686": "#omega",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_omega_radio_2",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_10e5313b84709ba3",
-    "var_3bb3493d": "#hash_372fdda197853d7f"
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_10e5313b84709ba3",
+    "hash_4efbbcfe": 0,
+    "hash_3bb3493d": "#hash_372fdda197853d7f"
 }

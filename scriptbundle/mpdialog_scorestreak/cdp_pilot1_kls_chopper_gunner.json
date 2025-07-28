@@ -1,0 +1,16 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "damaged": "#hash_49bbbfae68652024",
+    "killmultiple": "#hash_49f6f4fbc96c479f",
+    "vmtype": "both",
+    "timecheck": "#hash_2c20c46c91d8ad0a",
+    "name": "cdp_pilot1_kls_chopper_gunner",
+    "arrive": "#hash_47128d8d3406f5af",
+    "hash_6f9447b2": "#hash_57ea73accd9a67a5",
+    "hash_b6b855f9": "#hash_57ea70accd9a628c",
+    "timeout": "#hash_50f0ce9ff964278e",
+    "kill1": "#hash_295070c0eafd99ac",
+    "kill3": "#hash_295072c0eafd9d12",
+    "kill2": "#hash_295073c0eafd9ec5"
+}

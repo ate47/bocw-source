@@ -1,20 +1,30 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#bundle_blueprint_1082_sniper_quickscope_eye_relief_mtxbundle"
+            "hash_8bd0af73": "#bundle_blueprint_1082_sniper_quickscope_eye_relief_mtxbundle"
         }
     ],
-    "itemname": "#hash_31e566ba1811993d",
-    "var_e9d9a8d0": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "itemname": "#callingcards_eyerelief",
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 1,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
+    "hash_b6d84534": 0,
     "name": "callingcards_eyerelief_mtxitem",
-    "calling_card": "#hash_31e566ba1811993d",
+    "calling_card": "#callingcards_eyerelief",
+    "hash_f3d04949": 0,
     "category": "#calling_card",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 3,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:3",
+    "hash_84dc7961": 0,
     "itemid": "31667508"
 }

@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_6a7e60eb0f372cb",
-    "var_ce1913bd": "ftb_",
+    "displaynameshort": "localized18#hash_6a7e60eb0f372cb",
+    "hash_ce1913bd": "ftb_",
     "name": "faction_wz_team2",
-    "displayname": "#hash_a253e43a96c8736",
-    "icon": "#hash_1fe79981ccf309c6",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "blops_commander_cia",
+    "displayname": "localized18#hash_a253e43a96c8736",
+    "icon": "image#ui_icon_fireteam_logo_legion",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&blops_commander_cia",
     "color": "EnemyOrange"
 }

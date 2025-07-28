@@ -1,11 +1,11 @@
 {
-    "description": "#hash_a704f794cb833d5",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_a704f794cb833d5",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_gunfight_kill_both_enemies_by_yourself",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_6b53ecdac67112b5",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_all_mine",
     "statname": "#hash_75477f88c5551f60",
-    "var_8645ce54": "#hash_6dbe8f17bacf0743",
-    "iconlarge": "#hash_26e912de6cff5c79"
+    "stringref": "localized18#hash_6dbe8f17bacf0743",
+    "iconlarge": "image#ui_icon_medal_all_mine_large"
 }

@@ -1,13 +1,18 @@
 {
-    "hinttext": "#hash_9b43d7913bd9f5d",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_9b43d7913bd9f5d",
+    "configstringfiletype": "scriptbundle",
     "value2": "16",
     "value1": "50",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "server_msec",
-    "displayname": "#hash_3dbc57e3099e1693",
-    "var_9600a8ab": "#menu/normal",
-    "var_bd2ff709": "#menu/fast",
-    "var_9de86f42": 2,
-    "setting": "servermsec"
+    "displayname": "localized18#menu/server_rate",
+    "label1": "localized18#menu/normal",
+    "label2": "localized18#menu/fast",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
+    "setting": "servermsec",
+    "isenableddisabled": 0
 }

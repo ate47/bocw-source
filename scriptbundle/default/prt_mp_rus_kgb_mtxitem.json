@@ -1,84 +1,95 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#operator_bundle_3056_portnova_clown_heist_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_3056_portnova_clown_heist_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_tracer_1009_smg_standard_tracer_pack_red_alt_mtxbundle"
+            "hash_8bd0af73": "#bundle_tracer_1009_smg_standard_tracer_pack_red_alt_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_tracer_1009_smg_standard_tracer_pack_red_mtxbundle"
+            "hash_8bd0af73": "#bundle_tracer_1009_smg_standard_tracer_pack_red_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2076_kgb_bullseye_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2076_kgb_bullseye_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2035_kgb_bomb_squad_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2035_kgb_bomb_squad_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1086_kgb_punk_goth_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1086_kgb_punk_goth_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1066_kgb_disavowed_assassin_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1066_kgb_disavowed_assassin_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1046_kgb_the_messenger_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1046_kgb_the_messenger_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_mastercraft_2072_sniper_quickscope_demonic_mtxbundle"
+            "hash_8bd0af73": "#bundle_mastercraft_2072_sniper_quickscope_demonic_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_fantasy_1052_kgb_longshot_mtxbundle"
+            "hash_8bd0af73": "#bundle_fantasy_1052_kgb_longshot_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_blueprint_2079_easter_mtxbundle"
+            "hash_8bd0af73": "#bundle_blueprint_2079_easter_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_4031_portnova_aerobics_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_4031_portnova_aerobics_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_5022_portnova_survivor_scavenger_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5022_portnova_survivor_scavenger_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_5037_portnova_cyber_fighter_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5037_portnova_cyber_fighter_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_5047_portnova_carrion_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5047_portnova_carrion_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_6019_portnova_delight_iii_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6019_portnova_delight_iii_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_6021_portnova_necromancer_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6021_portnova_necromancer_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_7502_vault_nato_warsaw_01_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_7502_vault_nato_warsaw_01_mtxbundle"
         }
     ],
     "entitlementlist": [
         {
-            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_sy_mtxentitlement"
+            "hash_386af035": "#firstparty_bundle_4062_portnova_pro_pack_sy_mtxentitlement"
         },
         {
-            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_ms_mtxentitlement"
+            "hash_386af035": "#firstparty_bundle_4062_portnova_pro_pack_ms_mtxentitlement"
         },
         {
-            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_pc_mtxentitlement"
+            "hash_386af035": "#firstparty_bundle_4062_portnova_pro_pack_pc_mtxentitlement"
         },
         {
-            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_steam_mtxentitlement"
+            "hash_386af035": "#firstparty_bundle_4062_portnova_pro_pack_steam_mtxentitlement"
         }
     ],
     "itemname": "#hash_35640e9ffafb0a55",
-    "var_e9d9a8d0": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_46300498": 1,
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
+    "season": 0,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "bodytype": "#hash_35640e9ffafb0a55",
+    "hash_b6d84534": 0,
     "name": "prt_mp_rus_kgb_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#operator",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 9,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:9",
+    "hash_84dc7961": 0,
     "itemid": "29488041"
 }

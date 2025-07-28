@@ -1,0 +1,80 @@
+{
+    "#hash_bb7dcd09": [
+        {
+            "hash_5ed80a9c": "#hash_2dd0c454ac02b65a",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_1cd0333bf45af6a3",
+            "actionutility": "#hash_520d1815e1d95f30",
+            "action": "#hash_7eb8e33fe9451ec4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_7d74bc5f7604f52e",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_111cf7b88d647093",
+            "actionutility": "#hash_520d1815e1d95f30",
+            "action": "#hash_7eb8e33fe9451ec4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_240768341277796e",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_bb7aa7a26f39dfa",
+            "actionutility": "#hash_520d1815e1d95f30",
+            "action": "#hash_7eb8e33fe9451ec4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_2a8d1d8bd5aa93f",
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_15ef6eb75a6160ab",
+            "actionutility": "#hash_520d1815e1d95f30",
+            "action": "#hash_7eb8e33fe9451ec4"
+        },
+        {
+            "hash_5ed80a9c": "#hash_202e17d9ce77e6f6",
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_6e884be22c439d3",
+            "actionutility": "#hash_7ea7bec2790b6d89",
+            "action": "#hash_202e17d9ce77e6f6"
+        }
+    ],
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "hash_2f050ffa": 0,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 0,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 1,
+    "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 0,
+    "name": "editcustomgames_screens",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 1,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 0,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0
+}

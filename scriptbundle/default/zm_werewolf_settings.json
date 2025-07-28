@@ -1,0 +1,60 @@
+{
+    "#hash_5c3586f3": [
+        {
+            "dropid": "#full_ammo",
+            "dropchance": 0
+        },
+        {
+            "dropid": "#fire_sale",
+            "dropchance": 0
+        },
+        {
+            "dropid": "#nuke",
+            "dropchance": 0
+        }
+    ],
+    "weapondamagescaleoverrides": [
+        {
+            "hash_fe55d685": "#ww_crossbow_impaler_t8_zm",
+            "instakilldamagescale": 0,
+            "weaponid": "#ww_crossbow_impaler_t8",
+            "weakpointdamagescale": 16,
+            "hash_97b22faa": 0,
+            "damagescale": 8
+        }
+    ],
+    "hash_4ee21d7c": 0.25,
+    "hash_604a84a1": 1,
+    "hash_10460f1e": 1,
+    "scoreevent": "#kill_werewolf",
+    "hash_e5f93adc": 550,
+    "hash_6d4b0dd6": 4,
+    "configstringfiletype": "scriptbundle",
+    "hash_bd87ef4d": 10,
+    "hash_96b9b674": 25,
+    "maxhealth": 1,
+    "hash_fe050356": 15,
+    "chargemeleedist": 350,
+    "hash_a3160086": 50,
+    "hash_2a25aee8": 200,
+    "hash_ed83d6e9": 550,
+    "hash_d9838997": 75,
+    "hash_d781a7cc": 100,
+    "hash_7b22b800": 0,
+    "instakilldamagescale": 1,
+    "hash_e2b09972": 0.867,
+    "hash_e49498dc": 120,
+    "hash_8c0e8cfb": 80,
+    "name": "zm_werewolf_settings",
+    "hash_179988df": 100,
+    "weakpointdamagescale": 2,
+    "hash_97b22faa": 2,
+    "damagescale": 0.5,
+    "category": "#elite",
+    "hash_854eebd": 0,
+    "hash_3c41cb92": 60,
+    "stunduration": 3,
+    "hash_362e4d4c": 12.5,
+    "normalmeleedist": 120,
+    "animationspeed": 1
+}

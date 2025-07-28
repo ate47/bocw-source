@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_accurate_bp_coyote_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_coyote_mtxitem",
             "itemid": "28861202"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_coyote_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_coyote_mtxitem",
             "itemid": "26785972"
         },
         {
-            "var_4a4bc969": "#t9_charm_metaltalon_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_metaltalon_mtxitem",
             "itemid": "24767063"
         },
         {
-            "var_4a4bc969": "#emblems_coyote_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_coyote_animated_mtxitem",
             "itemid": "32088563"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_bombs_away_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_mpx_bombs_away_mtxitem",
             "itemid": "18894551"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_ahwk_21_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_ahwk_21_mtxitem",
             "itemid": "28517571"
         }
     ],
-    "itemname": "#hash_75ec32ac975f63cd",
-    "var_375a1747": "#hash_d1c5050e07ca23f",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3080_krig_6_coyote_mesa",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3080_krig_6_coyote_mesa",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3080_krig_6_coyote_mesa_mtxbundle",
-    "var_a788fada": "#hash_f9a3aaefdee81be",
-    "titlestring": "#hash_3b691ac9af41649e",
-    "var_566825be": "#hash_2e3579aaddfe212a",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3080_krig_6_coyote_mesa_small",
+    "titlestring": "localized18#hash_3b691ac9af41649e",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3080_krig_6_coyote_mesa",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_527f6efd15989e52",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_527f6efd15989e52",
+    "hash_db3e02ab": 2000,
     "itemid": "33030145"
 }

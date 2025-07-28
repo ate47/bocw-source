@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_40e14d00089e4d39",
+    "tagname": "mdl_cp_rus_amerika_item_04",
+    "UnlockMap": "cp_rus_amerika",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_at_film_cannister_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_amerika_04",
+    "UnlockType": 2,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_4108f460d15d1cf9",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_7e969c2c93ff15c9",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_amerika_film_canniseters"
+}

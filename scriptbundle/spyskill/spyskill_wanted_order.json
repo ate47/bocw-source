@@ -1,0 +1,10 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "scorestreak": "killstreak_spy_wanted_order",
+    "type": "spyskill",
+    "hash_a99abf33": "spy_wanted_order",
+    "name": "spyskill_wanted_order",
+    "hash_a58f84b8": 60,
+    "cooldown": 90,
+    "hash_e1bfe02c": 35
+}

@@ -1,11 +1,11 @@
 {
-    "description": "#hash_50131cf10fd1e0f",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_50131cf10fd1e0f",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_killstreak_10",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_4381448d98703227",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_merciless",
     "statname": "#hash_64f04c6f982fed06",
-    "var_8645ce54": "#hash_37a1e701eb895c45",
-    "iconlarge": "#hash_3da86698befbacf7"
+    "stringref": "localized18#medal/killstreak_10",
+    "iconlarge": "image#ui_icon_medal_merciless_large"
 }

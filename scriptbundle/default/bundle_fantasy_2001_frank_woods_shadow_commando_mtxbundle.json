@@ -1,55 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_rogue_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_rogue_mtxitem",
             "itemid": "21751566"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_woods_mtxitem",
             "itemid": "28004165"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_shadow_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_shadow_mtxitem",
             "itemid": "25160381"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_predator_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_predator_mtxitem",
             "itemid": "33058887"
         },
         {
-            "var_4a4bc969": "#execution_110_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_110_mtxitem",
             "itemid": "25106553"
         },
         {
-            "var_4a4bc969": "#emblems_shadow_commando_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_shadow_commando_mtxitem",
             "itemid": "30569598"
         },
         {
-            "var_4a4bc969": "#callingcards_shadow_commando_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_shadow_commando_mtxitem",
             "itemid": "18839442"
         },
         {
-            "var_4a4bc969": "#reticle_57_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_57_mtxitem",
             "itemid": "18833120"
         },
         {
-            "var_4a4bc969": "#t9_charm_glowsticks_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_glowsticks_mtxitem",
             "itemid": "23633082"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_shadow_commando_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_shadow_commando_mtxitem",
             "itemid": "25591725"
         }
     ],
-    "itemname": "#hash_3a1fa043725fe162",
-    "var_375a1747": "#hash_5573473cfe398c7c",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_fantasy_2001_frank_woods_shadow_commando",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_fantasy_2001_frank_woods_shadow_commando",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_fantasy_2001_frank_woods_shadow_commando_mtxbundle",
-    "var_a788fada": "#hash_8820ba15c623367",
-    "titlestring": "#hash_29446cf17b0fbc3c",
-    "var_566825be": "#hash_89ba3c04f2d023f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_8820ba15c623367",
+    "titlestring": "localized18#hash_29446cf17b0fbc3c",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_fantasy_2001_frank_woods_shadow_commando",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_19b92d91e4f69dac",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_19b92d91e4f69dac",
+    "hash_db3e02ab": 2000,
     "itemid": "28882535"
 }

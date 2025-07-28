@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_5c310f1dbc77303c",
+    "tagname": "mdl_cp_rus_amerika_item_07",
+    "UnlockMap": "cp_rus_amerika",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_at_weather_plan_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_amerika_07",
+    "UnlockType": 1,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_48f09d7bf90c32cc",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_293e07335dbfc72e",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_amerika_film_weather_doc"
+}

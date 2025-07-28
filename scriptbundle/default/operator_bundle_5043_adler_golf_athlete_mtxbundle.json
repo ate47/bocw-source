@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_adler_slayer_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_adler_slayer_mtxitem",
             "itemid": "22267369"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_hero_adler_mtxitem",
             "itemid": "31112941"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_prof_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_prof_mtxitem",
             "itemid": "24731690"
         },
         {
-            "var_4a4bc969": "#t9_charm_target_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_target_mtxitem",
             "itemid": "28223300"
         },
         {
-            "var_4a4bc969": "#reticle_119_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_119_mtxitem",
             "itemid": "24863285"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s5_bracelet_sliver_chain_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s5_bracelet_sliver_chain_mtxitem",
             "itemid": "23917081"
         }
     ],
-    "itemname": "#hash_3f61de626355ef8d",
-    "var_375a1747": "#hash_24737db4bde5c2b",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5043_adler_golf_athlete",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5043_adler_golf_athlete",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5043_adler_golf_athlete_mtxbundle",
-    "var_a788fada": "#hash_62a4c5187ffed790",
-    "titlestring": "#hash_15130291e6ed519d",
-    "var_566825be": "#hash_40b31432d488191c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5043_adler_golf_athlete_small",
+    "titlestring": "localized18#hash_15130291e6ed519d",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5043_adler_golf_athlete",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_50a342ff2134d955",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_50a342ff2134d955",
+    "hash_db3e02ab": 2000,
     "itemid": "33027694"
 }

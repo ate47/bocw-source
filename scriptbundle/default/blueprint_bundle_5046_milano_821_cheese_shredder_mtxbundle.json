@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_handling_bp_cheese_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_cheese_mtxitem",
             "itemid": "31666032"
         },
         {
-            "var_4a4bc969": "#emblems_say_cheese_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_say_cheese_s5_animated_mtxitem",
             "itemid": "26329759"
         },
         {
-            "var_4a4bc969": "#t9_charm_reaching_rat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_reaching_rat_mtxitem",
             "itemid": "19717365"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_say_cheese_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_say_cheese_s5_mtxitem",
             "itemid": "30999812"
         }
     ],
-    "itemname": "#hash_5cac02414f0fb596",
-    "var_375a1747": "#hash_3623038a42f938c8",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5046_milano_821_cheese_shredder",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5046_milano_821_cheese_shredder",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5046_milano_821_cheese_shredder_mtxbundle",
-    "var_a788fada": "#hash_7974f7daa0cd5a85",
-    "titlestring": "#hash_303f2959bb7577ca",
-    "var_566825be": "#hash_10053e4486f9cadd",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5046_milano_821_cheese_shredder_small",
+    "titlestring": "localized18#hash_303f2959bb7577ca",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5046_milano_821_cheese_shredder",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4c785567267f4846",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4c785567267f4846",
+    "hash_db3e02ab": 2000,
     "itemid": "18959596"
 }

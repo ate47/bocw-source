@@ -1,10 +1,10 @@
 {
-    "description": "#hash_1d36be53c1f05fd5",
+    "description": "localized18#hash_1d36be53c1f05fd5",
     "image": "ui_icon_wrist_accessories_s3_analog_caiman",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s2_analog_caiman",
-    "var_6855e4be": "#wristaccessory_t9_s2_analog_caiman_mtxitem",
-    "displayname": "#hash_68828df9a3f7eb43",
-    "var_8d478ea4": "#hash_55015771b338861b",
-    "var_d27eb4c6": "#hash_13747106d449276e"
+    "hash_6855e4be": "#wristaccessory_t9_s2_analog_caiman_mtxitem",
+    "displayname": "localized18#hash_68828df9a3f7eb43",
+    "hash_8d478ea4": "model#wrist_watch_t9_s2_analog_caiman_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s2_analog_caiman_world"
 }

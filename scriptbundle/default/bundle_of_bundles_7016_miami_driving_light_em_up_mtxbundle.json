@@ -1,84 +1,86 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_7114a1f303bc5876"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_of_bundles_7016_miami_driving_light_em_up"
         },
         {
-            "var_fe10649e": "#hash_6904dd5c8f1841f0"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_of_bundles_7016_miami_driving_light_em_up_01"
         },
         {
-            "var_fe10649e": "#hash_6904e05c8f184709"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_of_bundles_7016_miami_driving_light_em_up_02"
         },
         {
-            "var_fe10649e": "#hash_6904df5c8f184556"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_bundle_of_bundles_7016_miami_driving_light_em_up_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_surge_meta_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_surge_meta_mtxitem",
             "itemid": "29244411"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_surge_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_surge_mtxitem",
             "itemid": "19197415"
         },
         {
-            "var_4a4bc969": "#ar_slowhandling_bp_lightup_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_slowhandling_bp_lightup_mtxitem",
             "itemid": "30140871"
         },
         {
-            "var_4a4bc969": "#smg_semiauto_bp_mdriving_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_semiauto_bp_mdriving_mtxitem",
             "itemid": "30591861"
         },
         {
-            "var_4a4bc969": "#tr_fastburst_bp_mdriving_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_fastburst_bp_mdriving_mtxitem",
             "itemid": "28403255"
         },
         {
-            "var_4a4bc969": "#loot_shotgun_fullauto_bp_lightup_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_shotgun_fullauto_bp_lightup_mtxitem",
             "itemid": "28642939"
         },
         {
-            "var_4a4bc969": "#t9_charm_teacher_toy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_teacher_toy_mtxitem",
             "itemid": "29173964"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_edutain_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_edutain_mtxitem",
             "itemid": "25445666"
         },
         {
-            "var_4a4bc969": "#callingcards_light_em_up_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_light_em_up_animated_mtxitem",
             "itemid": "19794968"
         },
         {
-            "var_4a4bc969": "#callingcards_companion_launch5_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_companion_launch5_s6_mtxitem",
             "itemid": "21015908"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_80_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_80_s6_mtxitem",
             "itemid": "23646932"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_22_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_22_s6_mtxitem",
             "itemid": "19233548"
         },
         {
-            "var_4a4bc969": "#emblems_r8g11_34_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g11_34_s6_mtxitem",
             "itemid": "23347963"
         }
     ],
-    "var_2264d693": 1,
+    "hash_2264d693": 1,
     "itemname": "#hash_7ed218358661b84",
-    "var_375a1747": "#hash_7114a1f303bc5876",
-    "var_8ee7db29": 1,
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_of_bundles_7016_miami_driving_light_em_up",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_of_bundles_7016_miami_driving_light_em_up_mtxbundle",
-    "var_a788fada": "#hash_36da6dea20c5d0a7",
-    "titlestring": "#hash_3468bf2314c828f1",
-    "var_566825be": "#hash_2acf012aac408aef",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_of_bundles_7016_miami_driving_light_em_up_small",
+    "titlestring": "localized18#hash_3468bf2314c828f1",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_of_bundles_7016_miami_driving_light_em_up",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_c9b93420da2a9f1",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_c9b93420da2a9f1",
+    "hash_db3e02ab": 750,
     "itemid": "17792251"
 }

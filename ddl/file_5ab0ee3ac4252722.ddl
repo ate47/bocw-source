@@ -114,7 +114,7 @@ version hash_baa7c808a4a30cfc {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -141,7 +141,7 @@ version hash_baa7c808a4a30cfc {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7

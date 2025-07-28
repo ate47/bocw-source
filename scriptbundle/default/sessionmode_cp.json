@@ -2,6 +2,6 @@
     "defaultgametype": "coop",
     "abbreviation": "cp",
     "name": "sessionmode_cp",
-    "displayname": "#menu/campaign",
+    "displayname": "localized18#menu/campaign",
     "defaultmap": "cp_takedown"
 }

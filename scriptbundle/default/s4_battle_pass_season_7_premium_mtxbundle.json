@@ -1,23 +1,26 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#s4_battle_pass_token_mtxitem",
+            "hash_4a4bc969": "scriptbundle#s4_battle_pass_token_mtxitem",
             "itemid": "33984432"
         },
         {
-            "var_4a4bc969": "#s4_tier_skip_20_mtxitem"
+            "hash_4a4bc969": "scriptbundle#s4_tier_skip_20_mtxitem"
         }
     ],
-    "var_2264d693": 1,
+    "hash_2264d693": 1,
     "itemname": "#hash_73bf138d81a3ee85",
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "s4_battle_pass_season_7_premium_mtxbundle",
-    "titlestring": "#hash_2ad5064229762d10",
-    "var_566825be": "#hash_7d5c1b47ea94922f",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_2ad5064229762d10",
+    "hash_566825be": "image#ui_icon_mtx_titles_placeholder",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4236754aceef9cd5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4236754aceef9cd5",
+    "hash_db3e02ab": 2000,
     "itemid": "33704433"
 }

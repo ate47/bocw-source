@@ -1,38 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_cia_logger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_cia_logger_mtxitem",
             "itemid": "25449595"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_cia_mtxitem",
             "itemid": "20084886"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_analog_private_eye_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_analog_private_eye_01_mtxitem",
             "itemid": "21309315"
         },
         {
-            "var_4a4bc969": "#execution_018_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_018_mtxitem",
             "itemid": "27831818"
         },
         {
-            "var_4a4bc969": "#emblems_precisepattern_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_precisepattern_mtxitem",
             "itemid": "27401456"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_mpx_lumberjack_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_tank_t72_mpx_lumberjack_mtxitem",
             "itemid": "27244274"
         }
     ],
-    "itemname": "#hash_5a5941976816210",
-    "var_375a1747": "#hash_343d4f76c9d97f9e",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_1067_sims_pattern_precision",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_1067_sims_pattern_precision",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_1067_sims_pattern_precision_mtxbundle",
-    "titlestring": "#hash_348489b716cd7677",
-    "var_566825be": "#hash_56191de462b2f295",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_348489b716cd7677",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_1067_sims_pattern_precision",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_505cec33db035693",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_505cec33db035693",
+    "hash_db3e02ab": 2000,
     "itemid": "28996164"
 }

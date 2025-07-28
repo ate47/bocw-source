@@ -1,0 +1,18 @@
+{
+    "description": "localized19#hash_67e6e1c982af1bd0",
+    "tagname": "mdl_cp_nic_revolucion_item_05",
+    "UnlockMap": "cp_ger_stakeout",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_perseus_photo_greenlight_core_01",
+    "type": "collectible",
+    "name": "p9_cp_nic_revolucion_05",
+    "UnlockType": 2,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_46bac633742d2a88",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_83fc78824a1203a",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#hash_7991d3bdc28ba0d7"
+}

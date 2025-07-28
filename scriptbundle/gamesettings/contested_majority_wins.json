@@ -1,16 +1,20 @@
 {
-    "hinttext": "#hash_1540da05463fa10e",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_1540da05463fa10e",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value3": "2",
     "value1": "0.5",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "contested_majority_wins",
-    "displayname": "#hash_1b3fdbbdfaf4c6be",
-    "var_9600a8ab": "#hash_4205c7a769782d25",
-    "var_71b6e020": "#hash_19776a8385677401",
-    "var_bd2ff709": "#hash_6aff23ff8a1a36ef",
-    "var_9de86f42": 3,
+    "displayname": "localized18#hash_1b3fdbbdfaf4c6be",
+    "label1": "localized18#hash_4205c7a769782d25",
+    "label3": "localized18#hash_19776a8385677401",
+    "label2": "localized18#hash_6aff23ff8a1a36ef",
+    "hash_54e336e4": 0,
+    "optionscount": 3,
+    "hash_765cfd09": 0,
     "setting": "gameobjectsContestedMajorityWins",
-    "var_82c732a7": 1
+    "isenableddisabled": 1
 }

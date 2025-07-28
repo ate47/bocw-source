@@ -1,0 +1,13 @@
+{
+    "destroyed": "#hash_1fe4d90c38baea17",
+    "ready": "#hash_d99fa582402d2b9",
+    "beinghacked": "#being_hacked",
+    "configstringfiletype": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "vmtype": "both",
+    "name": "cdp_taacom_kls_sentrygun",
+    "firewallbeinghacked": "#hash_75a5bdbf8055f031",
+    "timeout": "#timeout",
+    "firewallhacked": "#hacked_fw",
+    "hacked": "#hacked"
+}

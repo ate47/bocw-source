@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_woods_sandstorm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_woods_sandstorm_mtxitem",
             "itemid": "20647178"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_woods_mtxitem",
             "itemid": "28004165"
         },
         {
-            "var_4a4bc969": "#ar_mobility_bp_commando_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_commando_mtxitem",
             "itemid": "30821146"
         },
         {
-            "var_4a4bc969": "#loot_shotgun_fullauto_bp_commando_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_shotgun_fullauto_bp_commando_mtxitem",
             "itemid": "21116632"
         },
         {
-            "var_4a4bc969": "#t9_charm_aviator_goggles_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_aviator_goggles_mtxitem",
             "itemid": "31668875"
         },
         {
-            "var_4a4bc969": "#emblems_zmbiplane_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_zmbiplane_animated_mtxitem",
             "itemid": "21181517"
         },
         {
-            "var_4a4bc969": "#callingcards_zmbiplane_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_zmbiplane_animated_mtxitem",
             "itemid": "33014033"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_zombiepilot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_zombiepilot_mtxitem",
             "itemid": "30746049"
         }
     ],
-    "itemname": "#hash_4596c2898e1dc906",
-    "var_375a1747": "#hash_405081b5537510b8",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4021_woods_zombies_two",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4021_woods_zombies_two",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4021_woods_zombies_two_mtxbundle",
-    "var_a788fada": "#hash_7e5dbdc713f02505",
-    "titlestring": "#hash_14106c3131de0db0",
-    "var_566825be": "#hash_2e50559a3c26e95d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4021_woods_zombies_two_small",
+    "titlestring": "localized18#hash_14106c3131de0db0",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4021_woods_zombies_two",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1d92b7608889e178",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1d92b7608889e178",
+    "hash_db3e02ab": 2000,
     "itemid": "22239217"
 }

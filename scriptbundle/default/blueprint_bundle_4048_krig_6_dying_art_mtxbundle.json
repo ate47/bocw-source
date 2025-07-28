@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_accurate_bp_royal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_royal_mtxitem",
             "itemid": "22510590"
         },
         {
-            "var_4a4bc969": "#emblems_dyingart_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_dyingart_mtxitem",
             "itemid": "25904123"
         },
         {
-            "var_4a4bc969": "#t9_charm_bullet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bullet_mtxitem",
             "itemid": "19546557"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_dyingart_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_dyingart_mtxitem",
             "itemid": "30723682"
         }
     ],
-    "itemname": "#hash_58549830390a6d37",
-    "var_375a1747": "#hash_d611d3ff40fb0f9",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4048_krig_6_dying_art",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4048_krig_6_dying_art",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4048_krig_6_dying_art_mtxbundle",
-    "var_a788fada": "#hash_2c2018cb6cc6c14c",
-    "titlestring": "#hash_13419539433762fd",
-    "var_566825be": "#hash_1581eedef82d8a58",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4048_krig_6_dying_art_small",
+    "titlestring": "localized18#hash_13419539433762fd",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4048_krig_6_dying_art",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6013da1d895f77b5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6013da1d895f77b5",
+    "hash_db3e02ab": 2000,
     "itemid": "32425904"
 }

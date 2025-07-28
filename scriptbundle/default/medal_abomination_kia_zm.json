@@ -1,8 +1,8 @@
 {
-    "description": "#hash_386ca20e5f96a755",
+    "description": "localized18#hash_386ca20e5f96a755",
     "widget": "#badasserymedal",
     "name": "medal_abomination_kia_zm",
-    "iconsmall": "#hash_500f03ffecfd4971",
-    "var_8645ce54": "#hash_784b5ddcad735dc3",
-    "iconlarge": "#hash_51419a02970e5135"
+    "iconsmall": "image#ui_icon_medal_zm_abomination",
+    "stringref": "localized18#hash_784b5ddcad735dc3",
+    "iconlarge": "image#ui_icon_medal_zm_abomination_large"
 }

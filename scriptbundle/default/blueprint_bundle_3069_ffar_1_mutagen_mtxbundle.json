@@ -1,28 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_medical_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_medical_mtxitem",
             "itemid": "21758740"
         },
         {
-            "var_4a4bc969": "#t9_charm_bullet_med_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bullet_med_mtxitem",
             "itemid": "29396587"
         },
         {
-            "var_4a4bc969": "#emblems_mutagen_001_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_mutagen_001_mtxitem",
             "itemid": "30764907"
         }
     ],
-    "itemname": "#hash_4983145c52476118",
-    "var_375a1747": "#hash_6edb80476c5bbe46",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3069_ffar_1_mutagen",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3069_ffar_1_mutagen",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3069_ffar_1_mutagen_mtxbundle",
-    "var_a788fada": "#hash_3d8e43366509737",
-    "titlestring": "#hash_5e88883b7a7e3a63",
-    "var_566825be": "#hash_65514c8fcc84cabf",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3069_ffar_1_mutagen_small",
+    "titlestring": "localized18#hash_5e88883b7a7e3a63",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3069_ffar_1_mutagen",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6984df8183fb6d07",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6984df8183fb6d07",
+    "hash_db3e02ab": 2000,
     "itemid": "18938918"
 }

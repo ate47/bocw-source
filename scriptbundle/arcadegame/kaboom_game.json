@@ -1,0 +1,20 @@
+{
+    "description": "localized18#hash_7736014fa7c035e1",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_4f97b1ca2195c726",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_kaboom",
+    "hash_9864ed1": 0,
+    "name": "kaboom_game",
+    "displayname": "localized18#hash_563d88b9f075892f",
+    "filename": "#hash_1cf3d7b113663498",
+    "action": "localized18#hash_2d2e1ac4d181aa2",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 1,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_kaboom",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_kaboom",
+    "hash_48152d43": 1
+}

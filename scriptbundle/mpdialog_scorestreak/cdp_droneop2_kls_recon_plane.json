@@ -1,0 +1,9 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "vmtype": "both",
+    "timecheck": "#hash_2fe27c37eb22d214",
+    "name": "cdp_droneop2_kls_recon_plane",
+    "arrive": "#hash_7d96bc64d0f858f9",
+    "timeout": "#hash_4d7d32694ead20f8"
+}

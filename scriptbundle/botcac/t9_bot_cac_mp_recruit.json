@@ -1,0 +1,86 @@
+{
+    "secondaryweapons": [
+        {
+            "name": "pistol_burst_t9"
+        },
+        {
+            "name": "pistol_revolver_t9"
+        },
+        {
+            "name": "pistol_semiauto_t9"
+        },
+        {
+            "name": "shotgun_pump_t9"
+        },
+        {
+            "name": "shotgun_semiauto_t9"
+        }
+    ],
+    "primaryweapons": [
+        {
+            "name": "ar_accurate_t9"
+        },
+        {
+            "name": "ar_damage_t9"
+        },
+        {
+            "name": "ar_fastfire_t9"
+        },
+        {
+            "name": "ar_mobility_t9"
+        },
+        {
+            "name": "ar_standard_t9"
+        },
+        {
+            "name": "lmg_accurate_t9"
+        },
+        {
+            "name": "lmg_light_t9"
+        },
+        {
+            "name": "lmg_slowfire_t9"
+        },
+        {
+            "name": "smg_burst_t9"
+        },
+        {
+            "name": "smg_capacity_t9"
+        },
+        {
+            "name": "smg_handling_t9"
+        },
+        {
+            "name": "smg_heavy_t9"
+        },
+        {
+            "name": "smg_standard_t9"
+        },
+        {
+            "name": "tr_damagesemi_t9"
+        },
+        {
+            "name": "tr_longburst_t9"
+        },
+        {
+            "name": "tr_powerburst_t9"
+        },
+        {
+            "name": "tr_precisionsemi_t9"
+        }
+    ],
+    "killstreaks": [
+        {
+            "name": "uav"
+        },
+        {
+            "name": "remote_missile"
+        }
+    ],
+    "secondaryattachments": "acog barrel compensator custom1 elo extclip fastreload grip handle heavy holo light quickdraw reddot reflex speedgrip sprintout stalker steadyaim",
+    "configstringfiletype": "scriptbundle",
+    "type": "botcac",
+    "vmtype": "server",
+    "name": "t9_bot_cac_mp_recruit",
+    "primaryattachments": "acog barrel compensator custom1 elo extclip fastreload grip handle heavy holo light quickdraw reddot reflex speedgrip sprintout stalker steadyaim"
+}

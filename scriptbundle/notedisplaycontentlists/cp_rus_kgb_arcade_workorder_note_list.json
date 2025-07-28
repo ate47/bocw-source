@@ -1,0 +1,24 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_f49bdf40": "localized19#hash_236365268e46002c",
+            "hash_c9d25687": "localized19#hash_d20fb2dc652a367"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_236368268e460545",
+            "hash_c9d25687": "localized19#hash_7a2dcd91357428c8"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_236367268e460392",
+            "hash_c9d25687": "localized19#hash_7fd6623ee2159109"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_236362268e45fb13",
+            "hash_c9d25687": "localized19#hash_24da76abfe28a57a"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "notedisplaycontentlists",
+    "name": "cp_rus_kgb_arcade_workorder_note_list",
+    "hash_85ca818b": "image#hash_23cdf9c7f1901372"
+}

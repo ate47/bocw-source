@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_make_other_bastard_die",
-    "quote": "#hash_4f576e09edc7c073",
-    "author": "#hash_634634cfd78bd43d"
+    "quote": "localized18#hash_4f576e09edc7c073",
+    "author": "localized18#hash_634634cfd78bd43d"
 }

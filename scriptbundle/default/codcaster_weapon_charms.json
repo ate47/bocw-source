@@ -1,0 +1,54 @@
+{
+    "#hash_189aaf3": [
+        {
+            "teamname": "#hash_29263c8a882c99e5",
+            "hash_91c3a45c": "#t9_charm_sneaker_empire_pc"
+        },
+        {
+            "teamname": "#hash_6f3b5d7916ab6229",
+            "hash_91c3a45c": "#t9_charm_sneaker_faze_pc"
+        },
+        {
+            "teamname": "#hash_7fb5045dd9aaa6d9",
+            "hash_91c3a45c": "#t9_charm_sneaker_guerillas_pc"
+        },
+        {
+            "teamname": "#hash_2401ff8cbe2bdd13",
+            "hash_91c3a45c": "#t9_charm_sneaker_legion_pc"
+        },
+        {
+            "teamname": "#hash_37eaa846402867d7",
+            "hash_91c3a45c": "#t9_charm_sneaker_mutineers_pc"
+        },
+        {
+            "teamname": "#hash_722e864632d1516a",
+            "hash_91c3a45c": "#t9_charm_sneaker_rokkr_pc"
+        },
+        {
+            "teamname": "#hash_1d6146e965566977",
+            "hash_91c3a45c": "#t9_charm_sneaker_royalravens_pc"
+        },
+        {
+            "teamname": "#hash_1898e8419d776984",
+            "hash_91c3a45c": "#t9_charm_sneaker_subliners_pc"
+        },
+        {
+            "teamname": "#surge",
+            "hash_91c3a45c": "#t9_charm_sneaker_surge_pc"
+        },
+        {
+            "teamname": "#ultra",
+            "hash_91c3a45c": "#t9_charm_sneaker_ultra_pc"
+        },
+        {
+            "teamname": "#thieves",
+            "hash_91c3a45c": "#t9_charm_sneaker_thieves_pc"
+        },
+        {
+            "teamname": "#optic",
+            "hash_91c3a45c": "#t9_charm_sneaker_optic_pc"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "name": "codcaster_weapon_charms"
+}

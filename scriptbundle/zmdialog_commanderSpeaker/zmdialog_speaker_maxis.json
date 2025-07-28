@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "zmdialog_commanderSpeaker",
     "name": "zmdialog_speaker_maxis",
-    "displayname": "#hash_5801a9adde9ff6dc",
-    "var_bb29ec62": "#hash_381483f973801a1a"
+    "displayname": "localized18#hash_5801a9adde9ff6dc",
+    "displayimage": "image#zm_hud_commander_sam_maxis"
 }

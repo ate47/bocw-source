@@ -1,11 +1,11 @@
 {
-    "displaynameshort": "#hash_4f0230e283fd4bcc",
-    "var_306f8f14": "#superfaction_warsaw_pact",
+    "displaynameshort": "localized18#hash_4f0230e283fd4bcc",
+    "superfaction": "scriptbundle#superfaction_warsaw_pact",
     "name": "faction_mp_dgi",
-    "displayname": "#hash_2bcc04b6f32e9201",
-    "icon": "#hash_5c321fc9496dac9c",
-    "iconsmall": "#hash_67361caf72b1af10",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "cdp_commander_dgi",
+    "displayname": "localized18#hash_2bcc04b6f32e9201",
+    "icon": "image#ui_icon_factions_dgi",
+    "iconsmall": "image#ui_icon_factions_dgi_small",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&cdp_commander_dgi",
     "color": "EnemyOrange"
 }

@@ -1,10 +1,10 @@
 {
-    "description": "#hash_6645db9d81db7bc1",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_6645db9d81db7bc1",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_multikill_2",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_7afd4d9af53e9413",
-    "var_8645ce54": "#hash_1a098793ba2c604f",
-    "iconlarge": "#hash_1599f13132e6a973"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_doublekill",
+    "stringref": "localized18#medal/multikill_2",
+    "iconlarge": "image#ui_icon_medal_doublekill_large"
 }

@@ -1,40 +1,43 @@
 {
-    "var_1ad142ee": [
+    "#hash_1ad142ee": [
         {
             "soundevent": "#hash_26be2f176e48a892",
-            "var_f35c5951": 1.5,
-            "var_5d4b5964": 9.73,
-            "var_36bf8e05": "#hash_277c18276626cf79"
+            "hash_f35c5951": 1.5,
+            "hash_5d4b5964": 9.73,
+            "hash_36bf8e05": "localized19#hash_277c18276626cf79"
         },
         {
             "soundevent": "#hash_26be30176e48aa45",
-            "var_f35c5951": 1.5,
-            "var_5d4b5964": 13.41,
-            "var_36bf8e05": "#hash_1983e3812ebc8ef8"
+            "hash_f35c5951": 1.5,
+            "hash_5d4b5964": 13.41,
+            "hash_36bf8e05": "localized19#hash_1983e3812ebc8ef8"
         },
         {
             "soundevent": "#hash_26be2d176e48a52c",
-            "var_f35c5951": 1,
-            "var_5d4b5964": 10.54,
-            "var_36bf8e05": "#hash_6f9da9a85795e5a7"
+            "hash_f35c5951": 1,
+            "hash_5d4b5964": 10.54,
+            "hash_36bf8e05": "localized19#hash_6f9da9a85795e5a7"
         }
     ],
-    "description": "#hash_15cc7b864cda9658",
-    "var_922067c4": "scriptbundle",
-    "var_7b26d0bb": "#radio",
-    "model": "#hash_4fe193b7484608f8",
-    "var_824079e7": "#rbz",
-    "uimodel": "#hash_10f65ca45f134f57",
+    "description": "localized19#hash_15cc7b864cda9658",
+    "configstringfiletype": "scriptbundle",
+    "hash_7b26d0bb": "#radio",
+    "hash_4138e7ed": 0,
+    "model": "model#p9_zm_ndu_radio_transmissions_o",
+    "hash_824079e7": "#rbz",
+    "uimodel": "model#p9_zm_ndu_radio_transmissions_o_inspect",
+    "hash_2a12d36": 0,
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#omega",
+    "hash_ad4ad686": "#omega",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_gold_omega_radio_3",
-    "var_9be0526e": "#hash_20ea75a25d912949",
-    "var_83e219de": "#hash_7f8d279a04b6d201",
-    "var_53be913a": 5,
-    "var_348b91fd": "#radio",
-    "title": "#hash_48b3935e4bbeacf0",
-    "var_3bb3493d": "#hash_26d0818307e1cd5b",
+    "hash_9be0526e": "#hash_20ea75a25d912949",
+    "hash_83e219de": "#release_initial",
+    "hash_53be913a": 5,
+    "hash_348b91fd": "#radio",
+    "title": "localized19#hash_48b3935e4bbeacf0",
+    "hash_4efbbcfe": 0,
+    "hash_3bb3493d": "#hash_26d0818307e1cd5b",
     "mapname": "#zm_gold"
 }

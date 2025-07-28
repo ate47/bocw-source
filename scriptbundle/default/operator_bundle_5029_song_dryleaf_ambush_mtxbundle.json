@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_gen_pl_starter4_song_flare_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_gen_pl_starter4_song_flare_mtxitem",
             "itemid": "27196287"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter4_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter4_mtxitem",
             "itemid": "31249471"
         },
         {
-            "var_4a4bc969": "#ar_fasthandling_bp_leaf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fasthandling_bp_leaf_mtxitem",
             "itemid": "28026666"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_leaf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_leaf_mtxitem",
             "itemid": "17816355"
         },
         {
-            "var_4a4bc969": "#t9_charm_stick_man_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_stick_man_mtxitem",
             "itemid": "31819880"
         },
         {
-            "var_4a4bc969": "#emblems_leafsoldier_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_leafsoldier_animated_mtxitem",
             "itemid": "18195474"
         },
         {
-            "var_4a4bc969": "#callingcards_expedition_145_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_expedition_145_s5_animated_mtxitem",
             "itemid": "20772465"
         }
     ],
-    "itemname": "#hash_474f73cdc613c644",
-    "var_375a1747": "#hash_38aa2e200a3a698e",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_5029_song_dryleaf_ambush",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_5029_song_dryleaf_ambush",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_5029_song_dryleaf_ambush_mtxbundle",
-    "var_a788fada": "#hash_31c93719e562c4ab",
-    "titlestring": "#hash_39dd85a77918eab1",
-    "var_566825be": "#hash_37827d7ded8db4d3",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_5029_song_dryleaf_ambush_small",
+    "titlestring": "localized18#hash_39dd85a77918eab1",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_5029_song_dryleaf_ambush",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4e8c41997be7b2b1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4e8c41997be7b2b1",
+    "hash_db3e02ab": 2000,
     "itemid": "26746703"
 }

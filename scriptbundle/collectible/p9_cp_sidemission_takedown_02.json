@@ -1,0 +1,22 @@
+{
+    "description": "localized19#hash_4d6f2680e96216ad",
+    "tagname": "mdl_cp_sidemission_takedown_item_02",
+    "UnlockMap": "cp_takedown",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_chaos_coded_message_01",
+    "type": "collectible",
+    "callback": "chaos_coded_message",
+    "hash_34754728": "localized19#hash_7f4487a7da679130",
+    "hash_444770d3": "image#evidence_splash_op_chaos_coded_msg",
+    "name": "p9_cp_sidemission_takedown_02",
+    "UnlockType": 3,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_57a99872e3420ef5",
+    "hash_4efbbcfe": 45,
+    "subtitle": "localized19#hash_79f13821f354fb65",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "hint": "localized19#hash_71e909a2d60eeb0c",
+    "thumbnail": "image#hash_5d2cd1115c8e2394"
+}

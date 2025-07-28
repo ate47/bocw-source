@@ -1,30 +1,35 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_taffy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_taffy_mtxitem",
             "itemid": "30739787"
         },
         {
-            "var_4a4bc969": "#smg_standard_bp_taffy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_bp_taffy_mtxitem",
             "itemid": "22968203"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_lolipop_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_lolipop_mtxitem",
             "itemid": "24953309"
         },
         {
-            "var_4a4bc969": "#t9_charm_candy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_candy_mtxitem",
             "itemid": "26129841"
         }
     ],
-    "itemname": "#hash_a4ac7e80b0540c1",
-    "var_375a1747": "#hash_5c974352b0e46aaf",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1058_shotgun_semiauto_junk_food",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1058_shotgun_semiauto_junk_food",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1058_shotgun_semiauto_junk_food_mtxbundle",
-    "titlestring": "#hash_7f896da32fa1e0a9",
-    "var_566825be": "#hash_72b8b2671828091e",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_7f896da32fa1e0a9",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1058_shotgun_semiauto_junk_food",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2b712ec7310f15a9",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2b712ec7310f15a9",
+    "hash_db3e02ab": 2000,
     "itemid": "26211717"
 }

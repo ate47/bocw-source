@@ -1,8 +1,8 @@
 {
-    "filter": "#hash_4742349d01c06f47",
-    "unlockdescription": "#hash_3391d1ac80a8ee9b",
-    "image": "#hash_1cc26ff06a728b10",
+    "filter": "#camo_mp",
+    "unlockdescription": "localized18#hash_3391d1ac80a8ee9b",
+    "image": "image#menu_camo_tier3_mp_03_pattern",
     "name": "camo_tier3_mp_03",
-    "displayname": "#hash_3391d3ac80a8f201",
+    "displayname": "localized18#hash_3391d3ac80a8f201",
     "category": "#tier3"
 }

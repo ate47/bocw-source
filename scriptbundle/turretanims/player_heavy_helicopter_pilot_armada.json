@@ -1,0 +1,15 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "hash_5dbdd77c": 20,
+    "hash_5becf9b5": -90,
+    "hash_e6fe69e8": 20,
+    "type": "turretanims",
+    "hash_faf96846": 90,
+    "centerstraightanim": "playeranim#hash_15ec6956c9619b06",
+    "vmtype": "none",
+    "hash_1f5b775e": 30000,
+    "name": "player_heavy_helicopter_pilot_armada",
+    "aimpitchangleu": 90,
+    "aimpitchangled": 90,
+    "hash_76635d45": 1
+}

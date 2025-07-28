@@ -1,5 +1,5 @@
 {
-    "var_90c1e665": [
+    "#hash_90c1e665": [
         {
             "option": "time_limit"
         },
@@ -26,7 +26,7 @@
             "option": "round_score_limit"
         }
     ],
-    "var_7999bb68": [
+    "#hash_7999bb68": [
         {
             "option": "time_limit"
         },
@@ -37,7 +37,7 @@
             "option": "round_limit"
         }
     ],
-    "var_e6d34cd3": [
+    "#hash_e6d34cd3": [
         {
             "option": "time_limit_spy"
         },
@@ -61,7 +61,7 @@
             "option": "time_limit"
         }
     ],
-    "var_8aa86f1": [
+    "#hash_8aa86f1": [
         {
             "option": "capture_time_gunfight"
         },
@@ -108,7 +108,7 @@
             "option": "score_limit_sd_dem"
         }
     ],
-    "var_8bcda90c": [
+    "#hash_8bcda90c": [
         {
             "option": "time_limit"
         },
@@ -124,7 +124,7 @@
             "option": "setbacks"
         }
     ],
-    "var_a9103606": [
+    "#hash_a9103606": [
         {
             "option": "time_limit"
         },
@@ -197,7 +197,7 @@
             "option": "carrier_drop_bomb"
         }
     ],
-    "var_a2c65d84": [
+    "#hash_a2c65d84": [
         {
             "option": "time_limit"
         },
@@ -213,7 +213,7 @@
             "option": "score_limit"
         }
     ],
-    "var_69c8768f": [
+    "#hash_69c8768f": [
         {
             "option": "time_limit"
         },
@@ -282,7 +282,7 @@
             "option": "round_limit"
         }
     ],
-    "var_de1a1600": [
+    "#hash_de1a1600": [
         {
             "option": "capture_time"
         },
@@ -298,7 +298,7 @@
             "option": "score_limit"
         }
     ],
-    "var_78c973cb": [
+    "#hash_78c973cb": [
         {
             "option": "scream_slasher_count"
         },
@@ -351,7 +351,7 @@
             "option": "team_score_per_kill"
         }
     ],
-    "var_a80f223b": [
+    "#hash_a80f223b": [
         {
             "option": "time_limit"
         },
@@ -409,7 +409,7 @@
             "option": "time_limit"
         }
     ],
-    "var_f8d7705e": [
+    "#hash_f8d7705e": [
         {
             "option": "vip_health"
         },
@@ -417,7 +417,7 @@
             "option": "vip_armor_amount"
         }
     ],
-    "var_860c7de2": [
+    "#hash_860c7de2": [
         {
             "option": "auto_destroy_time"
         },
@@ -460,7 +460,7 @@
             "option": "ball_count"
         }
     ],
-    "var_abf03063": [
+    "#hash_abf03063": [
         {
             "option": "auto_destroy_time"
         },
@@ -488,7 +488,7 @@
             "option": "score_limit"
         }
     ],
-    "var_a70f745b": [
+    "#hash_a70f745b": [
         {
             "option": "time_limit"
         },
@@ -499,7 +499,7 @@
             "option": "round_win_limit"
         }
     ],
-    "var_cbfaf3bb": [
+    "#hash_cbfaf3bb": [
         {
             "option": "time_limit"
         },
@@ -510,7 +510,7 @@
             "option": "round_win_limit"
         }
     ],
-    "var_57764f66": [
+    "#hash_57764f66": [
         {
             "option": "bomb_timer"
         },
@@ -582,7 +582,7 @@
             "option": "control_overtime"
         }
     ],
-    "var_a714a44f": [
+    "#hash_a714a44f": [
         {
             "option": "capture_time"
         },
@@ -611,7 +611,7 @@
             "option": "control_overtime"
         }
     ],
-    "var_921a9b62": [
+    "#hash_921a9b62": [
         {
             "option": "time_limit"
         },
@@ -655,7 +655,7 @@
             "option": "silent_plant"
         }
     ],
-    "var_d13d8942": [
+    "#hash_d13d8942": [
         {
             "option": "round_limit_spy"
         },
@@ -725,7 +725,7 @@
             "option": "enemy_carrier_visible"
         }
     ],
-    "var_3d6d60f8": [
+    "#hash_3d6d60f8": [
         {
             "option": "carrier_armor_dropkick"
         },
@@ -736,7 +736,7 @@
             "option": "wave_respawn_delay_dropkick"
         }
     ],
-    "var_d634142c": [
+    "#hash_d634142c": [
         {
             "option": "capture_time"
         },
@@ -765,7 +765,7 @@
             "option": "control_overtime"
         }
     ],
-    "var_9754ec2c": [
+    "#hash_9754ec2c": [
         {
             "option": "time_limit_seconds"
         },
@@ -813,7 +813,7 @@
             "option": "time_pauses_when_in_zone"
         }
     ],
-    "var_4cf0e973": [
+    "#hash_4cf0e973": [
         {
             "option": "time_limit"
         },
@@ -870,7 +870,7 @@
             "option": "robot_speed"
         }
     ],
-    "var_9d6012ed": [
+    "#hash_9d6012ed": [
         {
             "option": "bomb_timer"
         },

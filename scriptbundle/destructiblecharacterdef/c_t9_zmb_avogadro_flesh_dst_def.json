@@ -1,5 +1,5 @@
 {
-    "var_5846ac5e": [
+    "#hash_5846ac5e": [
         {
             "hitlocation": "head"
         },
@@ -10,30 +10,30 @@
             "hitlocation": "torso_upper"
         }
     ],
-    "var_9ff63c42": [
+    "#hash_9ff63c42": [
         {
             "hitlocation": "torso_lower"
         }
     ],
-    "var_ce6ea3fa": "#hash_3a484701a0ae0157",
-    "var_a246b2f7": "#hash_2f93bb8672eec8b1",
-    "var_5fb501b2": 0.1,
-    "var_27d9120b": 0.5,
-    "var_5e937f7f": 0.1,
-    "var_922067c4": "scriptbundle",
-    "var_c83371f4": "#c_t9_zmb_avogadro_ribcage",
+    "hash_ce6ea3fa": "model#c_t9_zmb_avogadro_flesh_headtop",
+    "hash_a246b2f7": "fx#hash_2f93bb8672eec8b1",
+    "hash_5fb501b2": 0.1,
+    "hash_27d9120b": 0.5,
+    "hash_5e937f7f": 0.1,
+    "configstringfiletype": "scriptbundle",
+    "hash_c83371f4": "model#c_t9_zmb_avogadro_ribcage",
     "type": "destructiblecharacterdef",
-    "var_9fdd055b": "tag_sync",
-    "var_cb768102": "torso_upper",
+    "hash_9fdd055b": "tag_sync",
+    "hash_cb768102": "torso_upper",
     "vmtype": "both",
-    "var_a8452c1c": 0.01,
+    "hash_a8452c1c": 0.01,
     "name": "c_t9_zmb_avogadro_flesh_dst_def",
-    "var_4d756ec6": "#hash_3a484701a0ae0157",
-    "var_29a9a307": "evt_robot_destruct_piece_lrg",
-    "var_5b8369a": "j_spine4",
-    "var_b0b6f73d": "tag_helmet",
+    "hash_4d756ec6": "model#c_t9_zmb_avogadro_flesh_headtop",
+    "hash_29a9a307": "evt_robot_destruct_piece_lrg",
+    "hash_5b8369a": "j_spine4",
+    "hash_b0b6f73d": "tag_helmet",
     "piececount": 2,
-    "var_c3a6fb5e": "helmet",
-    "var_b935d8b7": "body_armor",
-    "var_635c3fce": "helmet"
+    "hash_c3a6fb5e": "helmet",
+    "hash_b935d8b7": "body_armor",
+    "hash_635c3fce": "helmet"
 }

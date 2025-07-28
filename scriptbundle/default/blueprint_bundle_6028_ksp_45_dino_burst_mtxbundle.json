@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_burst_bp_dino_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_dino_mtxitem",
             "itemid": "26307832"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_dino_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_dino_mtxitem",
             "itemid": "25513425"
         },
         {
-            "var_4a4bc969": "#t9_charm_plastic_dinosaur_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_plastic_dinosaur_mtxitem",
             "itemid": "26139449"
         },
         {
-            "var_4a4bc969": "#reticle_139_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_139_mtxitem",
             "itemid": "31693495"
         },
         {
-            "var_4a4bc969": "#emblems_dinocomic_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_dinocomic_s6_mtxitem",
             "itemid": "23087806"
         },
         {
-            "var_4a4bc969": "#callingcards_dinocomic_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_dinocomic_s6_mtxitem",
             "itemid": "25429915"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_20_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_20_s6_mtxitem",
             "itemid": "22756545"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_7372179cd0705f79",
-    "var_375a1747": "#hash_7855954556f1fc0f",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6028_ksp_45_dino_burst",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6028_ksp_45_dino_burst_mtxbundle",
-    "var_a788fada": "#hash_3ea9926f045de96c",
-    "titlestring": "#hash_934b1c3b5de79b1",
-    "var_566825be": "#hash_4a34b4934b12a5b8",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6028_ksp_45_dino_burst_small",
+    "titlestring": "localized18#hash_934b1c3b5de79b1",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6028_ksp_45_dino_burst",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_645cf4426f7e89b1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_645cf4426f7e89b1",
+    "hash_db3e02ab": 2000,
     "itemid": "31937994"
 }

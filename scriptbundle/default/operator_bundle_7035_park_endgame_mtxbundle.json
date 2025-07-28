@@ -1,74 +1,78 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_8976b0b46506bbb"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7035_park_endgame"
         },
         {
-            "var_fe10649e": "#hash_3ac3a18cad52339f"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7035_park_endgame_01"
         },
         {
-            "var_fe10649e": "#hash_3ac3a28cad523552"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7035_park_endgame_02"
         },
         {
-            "var_fe10649e": "#hash_3ac3a38cad523705"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_operator_bundle_7035_park_endgame_03"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_uk_pl_mi6_aftermath_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_uk_pl_mi6_aftermath_mtxitem",
             "itemid": "32508567"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_mi6_mtxitem",
             "itemid": "23374822"
         },
         {
-            "var_4a4bc969": "#smg_semiauto_bp_endgame_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_semiauto_bp_endgame_mtxitem",
             "itemid": "25796640"
         },
         {
-            "var_4a4bc969": "#sniper_quickscope_bp_endgame_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_quickscope_bp_endgame_mtxitem",
             "itemid": "25183003"
         },
         {
-            "var_4a4bc969": "#t9_charm_origami_sculpture_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_origami_sculpture_mtxitem",
             "itemid": "20114075"
         },
         {
-            "var_4a4bc969": "#reticle_146_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_146_mtxitem",
             "itemid": "30151937"
         },
         {
-            "var_4a4bc969": "#execution_075_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_075_mtxitem",
             "itemid": "20900437"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_party_popper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_party_popper_mtxitem",
             "itemid": "23165027"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_analog_sleek_assassin_endgame_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_analog_sleek_assassin_endgame_mtxitem",
             "itemid": "21732490"
         },
         {
-            "var_4a4bc969": "#callingcards_park_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_park_animated_mtxitem",
             "itemid": "21219150"
         },
         {
-            "var_4a4bc969": "#emblems_park_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_park_animated_mtxitem",
             "itemid": "18856305"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_53313236deada315",
-    "var_375a1747": "#hash_8976b0b46506bbb",
-    "var_8ee7db29": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7035_park_endgame",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7035_park_endgame_mtxbundle",
-    "var_a788fada": "#hash_60887352b5b2d7c0",
-    "titlestring": "#hash_41b882ff19838306",
-    "var_566825be": "#hash_3c0a711c57385c8c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7035_park_endgame_small",
+    "titlestring": "localized18#hash_41b882ff19838306",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7035_park_endgame",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6a2ed7b144521a",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_6a2ed7b144521a",
+    "hash_db3e02ab": 750,
     "itemid": "26988160"
 }

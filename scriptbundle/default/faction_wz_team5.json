@@ -1,10 +1,10 @@
 {
-    "displaynameshort": "#hash_3fb233765284844e",
-    "var_ce1913bd": "fta_",
+    "displaynameshort": "localized18#hash_3fb233765284844e",
+    "hash_ce1913bd": "fta_",
     "name": "faction_wz_team5",
-    "displayname": "#hash_5c72f256e396d703",
-    "icon": "#hash_2b8fb15317ad4b49",
-    "var_42185d9b": "White",
-    "var_ccc3e5ba": "blops_commander_bnd",
+    "displayname": "localized18#hash_5c72f256e396d703",
+    "icon": "image#ui_icon_fireteam_logo_valkyrie",
+    "hash_42185d9b": "White",
+    "hash_ccc3e5ba": "scriptbundle&blops_commander_bnd",
     "color": "WarzoneCustomTeam5"
 }

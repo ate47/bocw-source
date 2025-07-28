@@ -1,47 +1,55 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_330441df0a4659c2"
+            "hash_fe10649e": "image#hash_330441df0a4659c2"
         },
         {
-            "var_fe10649e": "#hash_a612461b9f4e102"
+            "hash_fe10649e": "image#hash_a612461b9f4e102"
         },
         {
-            "var_fe10649e": "#hash_a612361b9f4df4f"
+            "hash_fe10649e": "image#hash_a612361b9f4df4f"
         },
         {
-            "var_fe10649e": "#hash_a612261b9f4dd9c"
+            "hash_fe10649e": "image#hash_a612261b9f4dd9c"
         }
     ],
-    "var_c1b2a9f": [
+    "#hash_c1b2a9f": [
         {
-            "var_fe10649e": "#hash_3c8ff1e17507e5d6"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_loot_ar_british_bp_eclipse"
         },
         {
-            "var_fe10649e": "#hash_105b56f189de8dce"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_loot_ar_british_bp_eclipse_1"
         },
         {
-            "var_fe10649e": "#hash_105b55f189de8c1b"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_loot_ar_british_bp_eclipse_2"
         },
         {
-            "var_fe10649e": "#hash_105b54f189de8a68"
+            "hash_fe10649e": "image#ui_icon_mtx_tier_loot_ar_british_bp_eclipse_3"
         }
     ],
-    "itemname": "#hash_264acbab902ee3c",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_3c8ff1e17507e5d6",
-    "var_4f3108ff": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_330441df0a4659c2",
+    "itemname": "#loot_ar_british_bp_eclipse",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#ui_icon_mtx_tier_loot_ar_british_bp_eclipse",
+    "hash_4f3108ff": 1,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#hash_330441df0a4659c2",
+    "release": 0,
     "season": 5,
-    "var_46300498": 1,
-    "var_8ee7db29": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 1,
+    "hash_7f1fd6e2": 0,
     "baseweapon": "#ar_british_t9",
+    "hash_b6d84534": 0,
     "name": "loot_ar_british_bp_eclipse_mtxitem",
+    "hash_f3d04949": 0,
     "category": "#blueprint",
-    "var_db3e02ab": 750,
-    "var_700702e5": 750,
-    "rarity": 5,
+    "hash_db3e02ab": 750,
+    "hash_700702e5": 750,
+    "rarity": "enum:5",
+    "hash_84dc7961": 0,
     "itemid": "21375660",
-    "blueprint": "#hash_264acbab902ee3c"
+    "blueprint": "#loot_ar_british_bp_eclipse"
 }

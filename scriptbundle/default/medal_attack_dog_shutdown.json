@@ -1,10 +1,10 @@
 {
-    "description": "#hash_1e365fee1097639d",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_1e365fee1097639d",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_attack_dog_shutdown",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_1577ad23665ef59",
-    "var_8645ce54": "#hash_597c8b08cfbefe45",
-    "iconlarge": "#hash_5855abad233d35fd"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_destroy_mantis",
+    "stringref": "localized18#medal/killed_dog",
+    "iconlarge": "image#ui_icon_medal_destroy_mantis_large"
 }

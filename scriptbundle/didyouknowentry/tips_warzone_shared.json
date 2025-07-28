@@ -1,495 +1,509 @@
 {
     "tips": [
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_54c634dd7806f89a",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_54c634dd7806f89a",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_2ad9f35311973b6e",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablelv1armor"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_2ad9f35311973b6e",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablelv1armor"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_603dc2dfa7dbe844",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablelv2armor"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_603dc2dfa7dbe844",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablelv2armor"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_29358064f509fe2e",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablearmorplate"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_29358064f509fe2e",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablearmorplate"
         },
         {
-            "var_32b88539": "#hash_594ad982a1697e06",
-            "var_9e589ff4": 1,
-            "tip": "#hash_89191b4581f8996",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablearmorplate"
+            "hash_32b88539": "localized18#hash_594ad982a1697e06",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_89191b4581f8996",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablearmorplate"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_7755f3b6bbca1218",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablearmorplate"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_7755f3b6bbca1218",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablearmorplate"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_3ceb31a2750c9636",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablegrapple"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_3ceb31a2750c9636",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablegrapple"
         },
         {
-            "var_32b88539": "#hash_5f99ba6a8b23196",
-            "var_9e589ff4": 1,
-            "tip": "#hash_46db75d1f0ab4506",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_5f99ba6a8b23196",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_46db75d1f0ab4506",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_13a0704ec2260405",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablebackpack"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_13a0704ec2260405",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablebackpack"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_9c9a5086ce9e6bf",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_9c9a5086ce9e6bf",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_3b27ce1f6e24731c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_3b27ce1f6e24731c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_63a0c43563631808",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_63a0c43563631808",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_77bc43e0e5be5a9a",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_77bc43e0e5be5a9a",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_5092ed22b5020d1c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5092ed22b5020d1c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_378980f3f9c96381",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_378980f3f9c96381",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_2f602e39c6903765",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_2f602e39c6903765",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_176e44a8b0ba69c6",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_176e44a8b0ba69c6",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_2535f7f7f7557df6",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_2535f7f7f7557df6",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "tip": "#hash_4583fdd9c5aca831",
-            "var_81294378": "#hash_7c28707b48c6683",
-            "var_88ff5fc3": "#friendlyfiretype"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_4583fdd9c5aca831",
+            "hash_81294378": "#hash_7c28707b48c6683",
+            "hash_88ff5fc3": "#friendlyfiretype"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4e72ead175fc0d6a",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablelv3armor"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4e72ead175fc0d6a",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablelv3armor"
         },
         {
-            "var_32b88539": "#hash_754ef88963c6421f",
-            "var_9e589ff4": 1,
-            "tip": "#hash_38ffc9d7df5a83f9",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_754ef88963c6421f",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_38ffc9d7df5a83f9",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_8220e460f61f3ad",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_8220e460f61f3ad",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_152b47406fdbbf10",
-            "var_81294378": "#hash_2f63b34c8601a6e1",
-            "var_88ff5fc3": "#maxteamplayers"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_152b47406fdbbf10",
+            "hash_81294378": "#>",
+            "hash_88ff5fc3": "#maxteamplayers"
         },
         {
-            "var_32b88539": "#hash_39c7174d9c1022dc",
-            "tip": "#hash_4883c49f79846c76",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_7ab50d87c8c3f430"
+            "hash_32b88539": "localized18#hash_39c7174d9c1022dc",
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_4883c49f79846c76",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_7ab50d87c8c3f430"
         },
         {
-            "var_32b88539": "#hash_17d138cf46e17c1e",
-            "var_9e589ff4": 1,
-            "tip": "#hash_63fe7866d7a9b223",
-            "var_81294378": "#hash_2f63b34c8601a6e1",
-            "var_88ff5fc3": "#maxteamplayers"
+            "hash_32b88539": "localized18#hash_17d138cf46e17c1e",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_63fe7866d7a9b223",
+            "hash_81294378": "#>",
+            "hash_88ff5fc3": "#maxteamplayers"
         },
         {
-            "var_32b88539": "#hash_2fac251e5843ed98",
-            "var_9e589ff4": 1,
-            "tip": "#hash_30697073854cd75c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_2fac251e5843ed98",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_30697073854cd75c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "tip": "#hash_661074fb6d6028e",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_7ab50d87c8c3f430"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_661074fb6d6028e",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_7ab50d87c8c3f430"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_c37c6fa11da5c29",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenableoperatorweapons"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_c37c6fa11da5c29",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenableoperatorweapons"
         },
         {
-            "tip": "#hash_31ce48030c262991",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_2dfa5ead1138e3e1"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_31ce48030c262991",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_2dfa5ead1138e3e1"
         },
         {
-            "tip": "#hash_58e8a36cbdb2dba4",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_2dfa5ead1138e3e1"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_58e8a36cbdb2dba4",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_2dfa5ead1138e3e1"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_5891e6797350f2cc",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5891e6797350f2cc",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_32b88539": "#hash_6822ae411181a8ad",
-            "tip": "#hash_7d0c804d495522ec",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_f8d49188f175aaf"
+            "hash_32b88539": "localized18#hash_6822ae411181a8ad",
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_7d0c804d495522ec",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_f8d49188f175aaf"
         },
         {
-            "var_32b88539": "#hash_75dbd420d4328fe5",
-            "var_9e589ff4": 1,
-            "tip": "#hash_e4d6ff249592723",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenableperkoutlander"
+            "hash_32b88539": "localized18#hash_75dbd420d4328fe5",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_e4d6ff249592723",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenableperkoutlander"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6cac57bef23c9286",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablespraycans"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6cac57bef23c9286",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablespraycans"
         },
         {
-            "var_32b88539": "#hash_57d33ebee61af9e4",
-            "var_9e589ff4": 1,
-            "tip": "#hash_5f47a7e694983b18",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_57d33ebee61af9e4",
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5f47a7e694983b18",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_26f9164e455d7993",
-            "var_81294378": "#hash_2f63b34c8601a6e1",
-            "var_88ff5fc3": "#maxteamplayers"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_26f9164e455d7993",
+            "hash_81294378": "#>",
+            "hash_88ff5fc3": "#maxteamplayers"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1a4535fd793bbde5",
-            "var_81294378": "#hash_2f63b34c8601a6e1",
-            "var_88ff5fc3": "#maxteamplayers"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1a4535fd793bbde5",
+            "hash_81294378": "#>",
+            "hash_88ff5fc3": "#maxteamplayers"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4b4489b09c5c0e16",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenableperkdeadsilence"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4b4489b09c5c0e16",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenableperkdeadsilence"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1902e19511ca70ba",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1902e19511ca70ba",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_2a3d14006d7c8a1f",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablesuppressor"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_2a3d14006d7c8a1f",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablesuppressor"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_650cd7ccbce23e40",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenabletrophysystem"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_650cd7ccbce23e40",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenabletrophysystem"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6cf8bad15ac8ab60",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6cf8bad15ac8ab60",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1263eb0f94cda14c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1263eb0f94cda14c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4eb639c2c36e188c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4eb639c2c36e188c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_8d9ad8786f64233",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzzombies"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_8d9ad8786f64233",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzzombies"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_49e37fc2b2aa9c91",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzzombies"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_49e37fc2b2aa9c91",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzzombies"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_23121c1e0f75f995",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzzombies"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_23121c1e0f75f995",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzzombies"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_68094a17d5437f1d",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablecymbalmonkey"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_68094a17d5437f1d",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablecymbalmonkey"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_40704d34c1b5166d",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzzombies"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_40704d34c1b5166d",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzzombies"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4321418afe0b5629",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzzombies"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4321418afe0b5629",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzzombies"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6bfcb3ff1ce768d0",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6bfcb3ff1ce768d0",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "tip": "#hash_5c89241149e70f99",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzambush"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_5c89241149e70f99",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzambush"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_46d027b661beb5dd",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablesparrow"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_46d027b661beb5dd",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablesparrow"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_416a88a205000f9",
-            "var_81294378": "#hash_2f63b34c8601a6e1",
-            "var_88ff5fc3": "#maxteamplayers"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_416a88a205000f9",
+            "hash_81294378": "#>",
+            "hash_88ff5fc3": "#maxteamplayers"
         },
         {
-            "tip": "#hash_7ae4e87652fc781d",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzambush"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_7ae4e87652fc781d",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzambush"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4ee94e033f9c9357",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4ee94e033f9c9357",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_561243e78d46bea8",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_561243e78d46bea8",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "tip": "#hash_2c12ced03a114027",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzambush"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_2c12ced03a114027",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzambush"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6ef98d6a6dcd09a1",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6ef98d6a6dcd09a1",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_5cc655ebd989dc74",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablelasersight"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5cc655ebd989dc74",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablelasersight"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_33d4f434530c9e32",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablemolotov"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_33d4f434530c9e32",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablemolotov"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_6de77378d8f05022",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablecombataxe"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_6de77378d8f05022",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablecombataxe"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_350a8698262e62c0",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_350a8698262e62c0",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_32b88539": "#hash_53c3af6aff54e01d",
-            "var_9e589ff4": 1,
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_53c3af6aff54e01d",
+            "hash_9e589ff4": 1,
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_32b88539": "#hash_c26053c1a1adff9",
-            "var_9e589ff4": 1,
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_c26053c1a1adff9",
+            "hash_9e589ff4": 1,
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_32b88539": "#hash_2d30432414856190",
-            "var_9e589ff4": 1,
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_2d30432414856190",
+            "hash_9e589ff4": 1,
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_32b88539": "#hash_3034c3bbad6e9482",
-            "var_9e589ff4": 1,
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_3034c3bbad6e9482",
+            "hash_9e589ff4": 1,
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_32b88539": "#hash_29d07a7636378d5c",
-            "var_9e589ff4": 1,
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_32b88539": "localized18#hash_29d07a7636378d5c",
+            "hash_9e589ff4": 1,
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_5c49d150f67ee7fe",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5c49d150f67ee7fe",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_76524388386630a3",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenabledart"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_76524388386630a3",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenabledart"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1c93fa2161e98e8b",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenabledart"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1c93fa2161e98e8b",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenabledart"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_1df57148deb588c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenabledart"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_1df57148deb588c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenabledart"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_69f0cc6e80e49f7c",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenabledart"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_69f0cc6e80e49f7c",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenabledart"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_acf57aad2c08af5",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_acf57aad2c08af5",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_7ad1f090c743e771",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablebarricade"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_7ad1f090c743e771",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablebarricade"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_5fe42ffc87c8d97f",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_5fe42ffc87c8d97f",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_4242fd97c1766012",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#wzenablesensordart"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_4242fd97c1766012",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#wzenablesensordart"
         },
         {
-            "var_9e589ff4": 1,
-            "tip": "#hash_63bf97c2a3574ac6",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#none"
+            "hash_9e589ff4": 1,
+            "tip": "localized18#hash_63bf97c2a3574ac6",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#NONE"
         },
         {
-            "tip": "#hash_646960ec94c29cbc",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_2dfa5ead1138e3e1"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_646960ec94c29cbc",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_2dfa5ead1138e3e1"
         },
         {
-            "tip": "#hash_74b70f9a97624660",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_2dfa5ead1138e3e1"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_74b70f9a97624660",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_2dfa5ead1138e3e1"
         },
         {
-            "tip": "#hash_307110ad27ecebc0",
-            "var_81294378": "#==",
-            "var_88ff5fc3": "#hash_2dfa5ead1138e3e1"
+            "hash_9e589ff4": 0,
+            "tip": "localized18#hash_307110ad27ecebc0",
+            "hash_81294378": "#==",
+            "hash_88ff5fc3": "#hash_2dfa5ead1138e3e1"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_dd2bf7bd": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_d545fbe1": 0,
+    "hash_dd2bf7bd": 1,
     "type": "didyouknowentry",
-    "var_9e589ff4": 1,
+    "hash_9e589ff4": 1,
     "name": "tips_warzone_shared",
-    "var_e0d5cde7": 1,
-    "var_81294378": "#==",
-    "var_88ff5fc3": "#none"
+    "hash_e0d5cde7": 1,
+    "hash_81294378": "#==",
+    "hash_88ff5fc3": "#NONE",
+    "hash_b96cb18c": 0
 }

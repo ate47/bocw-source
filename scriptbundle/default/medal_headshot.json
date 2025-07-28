@@ -1,11 +1,11 @@
 {
-    "description": "#hash_449a2ad6d18fce69",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_449a2ad6d18fce69",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_headshot",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_4c94b86ab8269b68",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_headshot",
     "statname": "#headshots",
-    "var_8645ce54": "#hash_4591dd5d6cabbd37",
-    "iconlarge": "#hash_2047c58c14d620a4"
+    "stringref": "localized18#medal/headshot",
+    "iconlarge": "image#ui_icon_medal_headshot_large"
 }

@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_fin_pl_wraith_freya_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_fin_pl_wraith_freya_mtxitem",
             "itemid": "26131376"
         },
         {
-            "var_4a4bc969": "#prt_mp_fin_wraith_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_fin_wraith_mtxitem",
             "itemid": "21568824"
         },
         {
-            "var_4a4bc969": "#loot_shotgun_leveraction_bp_freya_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_shotgun_leveraction_bp_freya_mtxitem",
             "itemid": "31666576"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_freya_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_freya_mtxitem",
             "itemid": "27147951"
         },
         {
-            "var_4a4bc969": "#t9_charm_drinking_horn_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_drinking_horn_mtxitem",
             "itemid": "31057219"
         },
         {
-            "var_4a4bc969": "#callingcards_vikings_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_vikings_s6_mtxitem",
             "itemid": "31711932"
         },
         {
-            "var_4a4bc969": "#reticle_141_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_141_mtxitem",
             "itemid": "22362435"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_3c838188bd86b5bf",
-    "var_375a1747": "#hash_f7d43a8bf21079",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7010_wraith_freya",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7010_wraith_freya_mtxbundle",
-    "var_a788fada": "#hash_10b88eae8d689eba",
-    "titlestring": "#hash_76b7b684b45cef0f",
-    "var_566825be": "#hash_b9ab7f1aee03186",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7010_wraith_freya_small",
+    "titlestring": "localized18#hash_76b7b684b45cef0f",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7010_wraith_freya",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6bc81d881eb025cb",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6bc81d881eb025cb",
+    "hash_db3e02ab": 2000,
     "itemid": "23475296"
 }

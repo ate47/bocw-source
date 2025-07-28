@@ -1,0 +1,22 @@
+{
+    "description": "localized19#hash_77c49f5f174765dd",
+    "tagname": "mdl_cp_sidemission_tundra_item_01",
+    "UnlockMap": "cp_rus_kgb",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_op_red_circus_calculator_watch_01",
+    "type": "collectible",
+    "callback": "red_circus_dead_drop_list",
+    "hash_34754728": "localized19#hash_1c8813eba3d3c667",
+    "hash_444770d3": "image#evidence_splash_op_red_circus_calculator_watch",
+    "name": "p9_cp_sidemission_tundra_01",
+    "UnlockType": 3,
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_ea960d1846dc225",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_29888a7de462ccb5",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 6,
+    "hint": "localized19#hash_71e909a2d60eeb0c",
+    "thumbnail": "image#hash_57aa6806f5e99da"
+}

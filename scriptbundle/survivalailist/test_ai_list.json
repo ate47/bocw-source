@@ -1,22 +1,22 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "test_mechz_list",
-            "var_a949845f": 1,
-            "var_857deb66": 10
+            "entryname": "scriptbundle&test_mechz_list",
+            "hash_a949845f": 1,
+            "hash_857deb66": 10
         },
         {
-            "entryname": "test_raz_list",
-            "var_a949845f": 1,
-            "var_857deb66": 50
+            "entryname": "scriptbundle&test_raz_list",
+            "hash_a949845f": 1,
+            "hash_857deb66": 50
         },
         {
-            "entryname": "test_avo_list",
-            "var_a949845f": 1,
-            "var_857deb66": 40
+            "entryname": "scriptbundle&test_avo_list",
+            "hash_a949845f": 1,
+            "hash_857deb66": 40
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "test_ai_list"
 }

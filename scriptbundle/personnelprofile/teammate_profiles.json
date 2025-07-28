@@ -1,0 +1,23 @@
+{
+    "profiles": [
+        {
+            "ref_name": "adler",
+            "hash_d4beb13": "localized19#hash_3308c1748e534266",
+            "hash_a06feee9": "localized19#hash_5e05c9ef4ee4476d",
+            "hash_755218ae": "localized19#hash_19b0b1938721713a",
+            "gender": "CPUI/PERSONNEL_PROFILE_OPTION_GENDER_MALE",
+            "hash_9c7eba22": "localized19#hash_2b64225f849632d7",
+            "hash_e47799ef": "localized19#hash_66a7ca444a36d10a",
+            "hash_ff3aefaf": "localized19#hash_2c64f8a3ab2df176",
+            "hash_bc8da67d": "localized19#hash_e8e90a9885150ad",
+            "hash_34d094eb": "localized19#hash_2a75d59bea50f0fc",
+            "alias": "localized19#hash_2017c22f190ac1bc",
+            "occupation": "localized19#hash_326ac1d12fe3e93a",
+            "hash_bf761850": "localized19#hash_e8e90a9885150ad",
+            "hash_705af76d": "localized19#hash_4146f33f5abdb2d5"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "personnelprofile",
+    "name": "teammate_profiles"
+}

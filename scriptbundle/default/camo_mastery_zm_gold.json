@@ -1,7 +1,7 @@
 {
     "filter": "#camo_zm",
-    "image": "#hash_75b561439d507883",
+    "image": "image#menu_camo_mastery_zm_gold_pattern",
     "name": "camo_mastery_zm_gold",
-    "displayname": "#hash_4321e0497aa03fd6",
+    "displayname": "localized18#hash_4321e0497aa03fd6",
     "category": "#mastery"
 }

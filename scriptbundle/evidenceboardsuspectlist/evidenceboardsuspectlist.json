@@ -1,0 +1,166 @@
+{
+    "locations": [
+        {
+            "hash_2f94fe81": "localized19#hash_45c53c7f435d02db",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c53b7f435d0128"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23d61bf3cbcbd8"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1bf7f4359f89d",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1be7f4359f6ea",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b37f4359e439"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23d71bf3cbcd8b",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23d81bf3cbcf3e"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b67f4359e952",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b07f4359df20"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23d21bf3cbc50c"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c53e7f435d0641"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23dd1bf3cbd7bd"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23d31bf3cbc6bf",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23dc1bf3cbd60a"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b27f4359e286"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b57f4359e79f"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23d91bf3cbd0f1",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b47f4359e5ec",
+            "hash_59a4d624": 1
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b77f4359eb05"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_4f23db1bf3cbd457"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c53d7f435d048e"
+        },
+        {
+            "hash_2f94fe81": "localized19#hash_45c1b17f4359e0d3",
+            "hash_59a4d624": 1
+        }
+    ],
+    "#hash_c363cb12": [
+        {
+            "gender": 0,
+            "dateofbirth": "localized19#hash_1dba6f93d6787591",
+            "name": "localized19#hash_11ef6288fd399fb3",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_superty",
+            "thumbnail": "image#evidenceboard_suspect_3_thumbnail"
+        },
+        {
+            "gender": 1,
+            "dateofbirth": "localized19#hash_2193ed5ac092abc3",
+            "name": "localized19#hash_5c60e8e22166eefd",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_sinclair",
+            "thumbnail": "image#evidenceboard_suspect_1_thumbnail"
+        },
+        {
+            "gender": 0,
+            "dateofbirth": "localized19#hash_110c09770226badc",
+            "name": "localized19#hash_35d8fbe57b7bc110",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_spray",
+            "thumbnail": "image#evidenceboard_suspect_4_thumbnail"
+        },
+        {
+            "gender": 0,
+            "dateofbirth": "localized19#hash_dfe872f93c63f78",
+            "name": "localized19#hash_53ee28847670353c",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_lee",
+            "thumbnail": "image#evidenceboard_suspect_8_thumbnail"
+        },
+        {
+            "gender": 0,
+            "dateofbirth": "localized19#hash_456ada69550673f",
+            "name": "localized19#hash_6e634644006a7709",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_dunn",
+            "thumbnail": "image#evidenceboard_suspect_5_thumbnail"
+        },
+        {
+            "gender": 1,
+            "dateofbirth": "localized19#hash_2824f78a63242b9d",
+            "name": "localized19#hash_1f9ca6798e4353cf",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_miller",
+            "thumbnail": "image#evidenceboard_suspect_7_thumbnail"
+        },
+        {
+            "gender": 1,
+            "dateofbirth": "localized19#hash_2f865bb105b7103a",
+            "name": "localized19#hash_16c43e9c082eae7e",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_koberstein",
+            "thumbnail": "image#evidenceboard_suspect_6_thumbnail"
+        },
+        {
+            "gender": 0,
+            "dateofbirth": "localized19#hash_537ecb692af2554e",
+            "name": "localized19#hash_554de8845dd5c872",
+            "collectible": "scriptbundle#p9_cp_sidemission_tundra_photo_kreeger",
+            "thumbnail": "image#evidenceboard_suspect_2_thumbnail"
+        }
+    ],
+    "agents": [
+        {
+            "hash_12e0f108": "localized19#hash_243cc7656b7fb584",
+            "hash_be82420e": "vox_cp_sh0_02300_rmc1_thelastreportfr_91",
+            "alias": "localized19#hash_251bb84810776f10",
+            "hash_aa6ddc85": "vox_cp_sh0_02300_rmc1_thelastreportfr_78",
+            "hash_389ce4eb": "localized19#hash_271b10496619545d"
+        },
+        {
+            "hash_12e0f108": "localized19#hash_6be1245776b4f1d5",
+            "hash_be82420e": "vox_cp_sh0_02300_rmc1_strongmanisconc_8c",
+            "alias": "localized19#hash_251bbb4810777429",
+            "hash_aa6ddc85": "vox_cp_sh0_02300_rmc1_strongmanisconc_00",
+            "hash_389ce4eb": "localized19#hash_f30202e8a935458"
+        },
+        {
+            "hash_12e0f108": "localized19#hash_4ae343cf08912766",
+            "hash_be82420e": "vox_cp_sh0_02300_rmc1_jugglerisworrie_fe",
+            "alias": "localized19#hash_251bba4810777276",
+            "hash_aa6ddc85": "vox_cp_sh0_02300_rmc1_jugglerisworrie_67",
+            "hash_389ce4eb": "localized19#hash_d213ca6c471b8eb"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "evidenceboardsuspectlist",
+    "name": "evidenceboardsuspectlist"
+}

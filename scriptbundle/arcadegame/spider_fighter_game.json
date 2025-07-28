@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_41031499d55a0381",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_557b14c6d27f16c6",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_spider_fighter",
+    "hash_9864ed1": 0,
+    "name": "spider_fighter_game",
+    "hash_6855e4be": "#spider_fighter_game_mtxitem",
+    "displayname": "localized18#hash_5a78530eb11f780f",
+    "filename": "#hash_91028bc68937542",
+    "action": "localized18#hash_40c7237c771b42d",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_spider_fighter",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_spiderfighter",
+    "hash_48152d43": 0
+}

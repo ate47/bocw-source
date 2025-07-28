@@ -83,7 +83,7 @@ version hash_d1a4c33f37e092ec {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -164,7 +164,7 @@ version hash_d1a4c33f37e092ec {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -191,7 +191,7 @@ version hash_d1a4c33f37e092ec {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -1097,7 +1097,7 @@ version hash_d1a4c33f37e092ec {
     // root: bitSize: 0x14c8, members: 16
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -1207,7 +1207,7 @@ version hash_165f6f59a3215e21 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -1280,7 +1280,7 @@ version hash_165f6f59a3215e21 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -1307,7 +1307,7 @@ version hash_165f6f59a3215e21 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -1830,7 +1830,7 @@ version hash_165f6f59a3215e21 {
     // root: bitSize: 0xf28, members: 10
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x8(0x1 Byte(s))
@@ -1928,7 +1928,7 @@ version hash_11092e88349b34c6 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -2001,7 +2001,7 @@ version hash_11092e88349b34c6 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -2028,7 +2028,7 @@ version hash_11092e88349b34c6 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -2547,7 +2547,7 @@ version hash_11092e88349b34c6 {
     // root: bitSize: 0xf38, members: 10
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x8(0x1 Byte(s))
@@ -2645,7 +2645,7 @@ version hash_f950b412816f249 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -2718,7 +2718,7 @@ version hash_f950b412816f249 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -2745,7 +2745,7 @@ version hash_f950b412816f249 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -3263,7 +3263,7 @@ version hash_f950b412816f249 {
     // root: bitSize: 0xf38, members: 10
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x8(0x1 Byte(s))
@@ -3361,7 +3361,7 @@ version hash_eea2fad280179af7 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -3434,7 +3434,7 @@ version hash_eea2fad280179af7 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -3461,7 +3461,7 @@ version hash_eea2fad280179af7 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -3986,7 +3986,7 @@ version hash_eea2fad280179af7 {
     // root: bitSize: 0xf38, members: 10
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x8(0x1 Byte(s))
@@ -4084,7 +4084,7 @@ version hash_fd45dd6c1f21e6ba {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -4157,7 +4157,7 @@ version hash_fd45dd6c1f21e6ba {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -4184,7 +4184,7 @@ version hash_fd45dd6c1f21e6ba {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -4709,7 +4709,7 @@ version hash_fd45dd6c1f21e6ba {
     // root: bitSize: 0x1018, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x40(0x8 Byte(s))
@@ -4817,7 +4817,7 @@ version hash_57f43e5be7c4c3e3 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -4890,7 +4890,7 @@ version hash_57f43e5be7c4c3e3 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -4917,7 +4917,7 @@ version hash_57f43e5be7c4c3e3 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -5442,7 +5442,7 @@ version hash_57f43e5be7c4c3e3 {
     // root: bitSize: 0x1018, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x40(0x8 Byte(s))
@@ -5550,7 +5550,7 @@ version hash_623dcecd4d55dc2e {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -5623,7 +5623,7 @@ version hash_623dcecd4d55dc2e {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -5650,7 +5650,7 @@ version hash_623dcecd4d55dc2e {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -6171,7 +6171,7 @@ version hash_623dcecd4d55dc2e {
     // root: bitSize: 0xf18, members: 10
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x8(0x1 Byte(s))
@@ -6269,7 +6269,7 @@ version hash_2eb0f12619a922d4 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -6350,7 +6350,7 @@ version hash_2eb0f12619a922d4 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -6377,7 +6377,7 @@ version hash_2eb0f12619a922d4 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -6902,7 +6902,7 @@ version hash_2eb0f12619a922d4 {
     // root: bitSize: 0x1108, members: 14
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x40(0x8 Byte(s))
@@ -7008,7 +7008,7 @@ version hash_ca3f5f40f5e1298e {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -7089,7 +7089,7 @@ version hash_ca3f5f40f5e1298e {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -7116,7 +7116,7 @@ version hash_ca3f5f40f5e1298e {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -7641,7 +7641,7 @@ version hash_ca3f5f40f5e1298e {
     // root: bitSize: 0x10a8, members: 14
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -7747,7 +7747,7 @@ version hash_448e06a831010042 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -7828,7 +7828,7 @@ version hash_448e06a831010042 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -7855,7 +7855,7 @@ version hash_448e06a831010042 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -8380,7 +8380,7 @@ version hash_448e06a831010042 {
     // root: bitSize: 0x10a8, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -8488,7 +8488,7 @@ version hash_e82d1dc4e9726507 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -8569,7 +8569,7 @@ version hash_e82d1dc4e9726507 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -8596,7 +8596,7 @@ version hash_e82d1dc4e9726507 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -9356,7 +9356,7 @@ version hash_e82d1dc4e9726507 {
     // root: bitSize: 0x10a8, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -9464,7 +9464,7 @@ version hash_c609e2723cd3edda {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -9545,7 +9545,7 @@ version hash_c609e2723cd3edda {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -9572,7 +9572,7 @@ version hash_c609e2723cd3edda {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -10338,7 +10338,7 @@ version hash_c609e2723cd3edda {
     // root: bitSize: 0x10c8, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -10446,7 +10446,7 @@ version hash_9c9691b67925ad90 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -10527,7 +10527,7 @@ version hash_9c9691b67925ad90 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -10554,7 +10554,7 @@ version hash_9c9691b67925ad90 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -11335,7 +11335,7 @@ version hash_9c9691b67925ad90 {
     // root: bitSize: 0x10c8, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -11443,7 +11443,7 @@ version hash_1b31e34d198f79a {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -11524,7 +11524,7 @@ version hash_1b31e34d198f79a {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -11551,7 +11551,7 @@ version hash_1b31e34d198f79a {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -12338,7 +12338,7 @@ version hash_1b31e34d198f79a {
     // root: bitSize: 0x10f0, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -12446,7 +12446,7 @@ version hash_26502c28606c184e {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -12527,7 +12527,7 @@ version hash_26502c28606c184e {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -12554,7 +12554,7 @@ version hash_26502c28606c184e {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -13344,7 +13344,7 @@ version hash_26502c28606c184e {
     // root: bitSize: 0x1100, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -13454,7 +13454,7 @@ version hash_fe439eb67e4c3e93 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -13535,7 +13535,7 @@ version hash_fe439eb67e4c3e93 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -13562,7 +13562,7 @@ version hash_fe439eb67e4c3e93 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -14353,7 +14353,7 @@ version hash_fe439eb67e4c3e93 {
     // root: bitSize: 0x1100, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -14463,7 +14463,7 @@ version hash_6185cd8330af328b {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -14544,7 +14544,7 @@ version hash_6185cd8330af328b {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -14571,7 +14571,7 @@ version hash_6185cd8330af328b {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -15365,7 +15365,7 @@ version hash_6185cd8330af328b {
     // root: bitSize: 0x1110, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -15475,7 +15475,7 @@ version hash_b2ae33815424e85 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -15556,7 +15556,7 @@ version hash_b2ae33815424e85 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -15583,7 +15583,7 @@ version hash_b2ae33815424e85 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -16379,7 +16379,7 @@ version hash_b2ae33815424e85 {
     // root: bitSize: 0x1110, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -16489,7 +16489,7 @@ version hash_27bd1c36c54125ec {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -16570,7 +16570,7 @@ version hash_27bd1c36c54125ec {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -16597,7 +16597,7 @@ version hash_27bd1c36c54125ec {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -17399,7 +17399,7 @@ version hash_27bd1c36c54125ec {
     // root: bitSize: 0x1120, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -17509,7 +17509,7 @@ version hash_ed62ccf1bed1dc95 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -17590,7 +17590,7 @@ version hash_ed62ccf1bed1dc95 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -17617,7 +17617,7 @@ version hash_ed62ccf1bed1dc95 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -18422,7 +18422,7 @@ version hash_ed62ccf1bed1dc95 {
     // root: bitSize: 0x1120, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -18532,7 +18532,7 @@ version hash_b8143132c54c3b3 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -18613,7 +18613,7 @@ version hash_b8143132c54c3b3 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -18640,7 +18640,7 @@ version hash_b8143132c54c3b3 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -19455,7 +19455,7 @@ version hash_b8143132c54c3b3 {
     // root: bitSize: 0x1120, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -19565,7 +19565,7 @@ version hash_35783ad22425f64b {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -19646,7 +19646,7 @@ version hash_35783ad22425f64b {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -19673,7 +19673,7 @@ version hash_35783ad22425f64b {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -20491,7 +20491,7 @@ version hash_35783ad22425f64b {
     // root: bitSize: 0x1130, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -20601,7 +20601,7 @@ version hash_7a1dd4839a8b1106 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -20682,7 +20682,7 @@ version hash_7a1dd4839a8b1106 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -20709,7 +20709,7 @@ version hash_7a1dd4839a8b1106 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -21539,7 +21539,7 @@ version hash_7a1dd4839a8b1106 {
     // root: bitSize: 0x1178, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -21649,7 +21649,7 @@ version hash_27842e24678832ac {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -21730,7 +21730,7 @@ version hash_27842e24678832ac {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -21757,7 +21757,7 @@ version hash_27842e24678832ac {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -22599,7 +22599,7 @@ version hash_27842e24678832ac {
     // root: bitSize: 0x11b8, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -22709,7 +22709,7 @@ version hash_704275f9cfc438db {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -22790,7 +22790,7 @@ version hash_704275f9cfc438db {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -22817,7 +22817,7 @@ version hash_704275f9cfc438db {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -23662,7 +23662,7 @@ version hash_704275f9cfc438db {
     // root: bitSize: 0x11c8, members: 15
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -23772,7 +23772,7 @@ version hash_c54d8441ae6c9436 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -23853,7 +23853,7 @@ version hash_c54d8441ae6c9436 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -23880,7 +23880,7 @@ version hash_c54d8441ae6c9436 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -24737,7 +24737,7 @@ version hash_c54d8441ae6c9436 {
     // root: bitSize: 0x1308, members: 16
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -24849,7 +24849,7 @@ version hash_6be5e74d03d50e5f {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -24930,7 +24930,7 @@ version hash_6be5e74d03d50e5f {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -24957,7 +24957,7 @@ version hash_6be5e74d03d50e5f {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -25815,7 +25815,7 @@ version hash_6be5e74d03d50e5f {
     // root: bitSize: 0x1308, members: 16
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -25927,7 +25927,7 @@ version hash_f81394e6be06f336 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -26008,7 +26008,7 @@ version hash_f81394e6be06f336 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -26035,7 +26035,7 @@ version hash_f81394e6be06f336 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -26920,7 +26920,7 @@ version hash_f81394e6be06f336 {
     // root: bitSize: 0x1360, members: 16
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -27032,7 +27032,7 @@ version hash_96b27b3d37415215 {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -27113,7 +27113,7 @@ version hash_96b27b3d37415215 {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -27140,7 +27140,7 @@ version hash_96b27b3d37415215 {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -28031,7 +28031,7 @@ version hash_96b27b3d37415215 {
     // root: bitSize: 0x1380, members: 16
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))
@@ -28143,7 +28143,7 @@ version hash_208201f60115072c {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -28224,7 +28224,7 @@ version hash_208201f60115072c {
     // idx 0x1 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -28251,7 +28251,7 @@ version hash_208201f60115072c {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -29154,7 +29154,7 @@ version hash_208201f60115072c {
     // root: bitSize: 0x14b8, members: 16
 
     // offset: 0x0, bitSize: 0x6d8(0xdb Byte(s))
-    hash_6580ccf5f8a0ef6 dml;
+    region_info dml;
     // offset: 0x6d8, bitSize: 0x318(0x63 Byte(s)), array:0x3(hti:0xffff)
     lootcontracts loot_contracts[3];
     // offset: 0x9f0, bitSize: 0x20(0x4 Byte(s))

@@ -1,10 +1,10 @@
 {
-    "description": "#hash_363f54402fbc8b89",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_363f54402fbc8b89",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_prop_survived",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_1dce88a2694075d",
-    "var_8645ce54": "#hash_67292af24742c797",
-    "iconlarge": "#hash_78bd97874f92261"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_1dce88a2694075d",
+    "stringref": "localized18#medal/prop_survived",
+    "iconlarge": "image#hash_78bd97874f92261"
 }

@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_6e7439219e64f275",
-    "description": "#hash_7ee28b11795cf0cd",
+    "hash_ff3063df": "model#attach_t9_charm_g_gnome_lep",
+    "description": "localized18#hash_7ee28b11795cf0cd",
     "name": "t9_charm_g_gnome_lep",
-    "var_6855e4be": "#t9_charm_g_gnome_lep_mtxitem",
-    "displayname": "#hash_5ff0687ed8cec91b",
+    "hash_6855e4be": "#t9_charm_g_gnome_lep_mtxitem",
+    "displayname": "localized18#hash_5ff0687ed8cec91b",
     "icon": "ui_icon_weapon_charms_t9_g_gnome_lep",
-    "var_ef5ad2b3": "#hash_6e7439219e64f275"
+    "hash_ef5ad2b3": "model#attach_t9_charm_g_gnome_lep"
 }

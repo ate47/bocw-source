@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_precisionsemi_bp_8bit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_precisionsemi_bp_8bit_mtxitem",
             "itemid": "20301633"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_8bit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_8bit_mtxitem",
             "itemid": "18412201"
         },
         {
-            "var_4a4bc969": "#t9_charm_eagle_8_bit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_eagle_8_bit_mtxitem",
             "itemid": "33470676"
         },
         {
-            "var_4a4bc969": "#emblems_independenceday_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_independenceday_animated_mtxitem",
             "itemid": "18235050"
         },
         {
-            "var_4a4bc969": "#fav_light_wz_assembly_mpx_8bit_mtxitem",
+            "hash_4a4bc969": "scriptbundle#fav_light_wz_assembly_mpx_8bit_mtxitem",
             "itemid": "25338565"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_independenceday_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_independenceday_mtxitem",
             "itemid": "19185167"
         }
     ],
-    "itemname": "#hash_3a8d27eca3a4c1f8",
-    "var_375a1747": "#hash_36fdf36e6a4be7c2",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4029_dmr_14_8bit_freedom",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4029_dmr_14_8bit_freedom",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4029_dmr_14_8bit_freedom_mtxbundle",
-    "var_a788fada": "#hash_559d030723257761",
-    "titlestring": "#hash_767347e2a2165ac8",
-    "var_566825be": "#hash_191b3d884375e4f9",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4029_dmr_14_8bit_freedom_small",
+    "titlestring": "localized18#hash_767347e2a2165ac8",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4029_dmr_14_8bit_freedom",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_39cc06db86ebc810",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_39cc06db86ebc810",
+    "hash_db3e02ab": 2000,
     "itemid": "18076214"
 }

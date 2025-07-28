@@ -1,0 +1,32 @@
+{
+    "collectible": [
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_01"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_02"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_03"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_04"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_05"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_06"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_07"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_08"
+        },
+        {
+            "collectible": "scriptbundle#p9_cp_takedown_09"
+        }
+    ],
+    "name": "cp_takedown_collectibles"
+}

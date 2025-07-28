@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_slowfire_bp_notcryo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_slowfire_bp_notcryo_mtxitem",
             "itemid": "33422133"
         },
         {
-            "var_4a4bc969": "#smg_standard_bp_cryo_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_bp_cryo_mtxitem",
             "itemid": "22260149"
         },
         {
-            "var_4a4bc969": "#t9_charm_methane_molecule_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_methane_molecule_mtxitem",
             "itemid": "30870794"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_coldfusion_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_coldfusion_02_mtxitem",
             "itemid": "27722668"
         },
         {
-            "var_4a4bc969": "#callingcards_coldfusion_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_coldfusion_mtxitem",
             "itemid": "30522768"
         },
         {
-            "var_4a4bc969": "#emblems_coldfusion_04_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_coldfusion_04_mtxitem",
             "itemid": "29486578"
         }
     ],
-    "itemname": "#hash_5e73ae7926f43de7",
-    "var_375a1747": "#hash_45f3b47ea88c68cd",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_dismemberment_2058_lmg_slowfire_cold_fusion",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_dismemberment_2058_lmg_slowfire_cold_fusion",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_dismemberment_2058_lmg_slowfire_cold_fusion_mtxbundle",
-    "var_a788fada": "#hash_3878e3d5f1d88cb4",
-    "titlestring": "#hash_1d201ebc7910a44a",
-    "var_566825be": "#hash_7cce2c8c8f6dca40",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_dismemberment_2058_lmg_slowfire_cold_fusion_small",
+    "titlestring": "localized18#hash_1d201ebc7910a44a",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_dismemberment_2058_lmg_slowfire_cold_fusion",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2c872f50c6f730c6",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2c872f50c6f730c6",
+    "hash_db3e02ab": 2000,
     "itemid": "32337702"
 }

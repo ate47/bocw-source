@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#knife_ballistic_bp_spycraft_mtxitem",
+            "hash_4a4bc969": "scriptbundle#knife_ballistic_bp_spycraft_mtxitem",
             "itemid": "26349667"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_digital_inteculo_spycraft_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_digital_inteculo_spycraft_mtxitem",
             "itemid": "33508890"
         },
         {
-            "var_4a4bc969": "#execution_147_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_147_mtxitem",
             "itemid": "23531955"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_quiet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_quiet_mtxitem",
             "itemid": "23462790"
         },
         {
-            "var_4a4bc969": "#emblems_penknife_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_penknife_mtxitem",
             "itemid": "25475161"
         },
         {
-            "var_4a4bc969": "#callingcards_penknife_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_penknife_mtxitem",
             "itemid": "30401741"
         }
     ],
-    "itemname": "#hash_4da5afe7ece313b7",
-    "var_375a1747": "#hash_6f6584e1ac1389e1",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3004_ballistic_knife_russian_schematic",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3004_ballistic_knife_russian_schematic",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3004_ballistic_knife_russian_schematic_mtxbundle",
-    "var_a788fada": "#hash_1aec195358adc7d6",
-    "titlestring": "#hash_664a8ef0dbd78ca2",
-    "var_566825be": "#hash_68f983c3ef232ae2",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3004_ballistic_knife_russian_schematic_small",
+    "titlestring": "localized18#hash_664a8ef0dbd78ca2",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3004_ballistic_knife_russian_schematic",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_62aa101ff3e0211e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_62aa101ff3e0211e",
+    "hash_db3e02ab": 2000,
     "itemid": "28847250"
 }

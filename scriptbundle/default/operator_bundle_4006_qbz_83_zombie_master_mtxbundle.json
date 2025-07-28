@@ -1,55 +1,59 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_firestorm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_firestorm_mtxitem",
             "itemid": "25289717"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_firestorm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_firestorm_mtxitem",
             "itemid": "20843732"
         },
         {
-            "var_4a4bc969": "#c_t9_ger_pl_maxis_traveler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_ger_pl_maxis_traveler_mtxitem",
             "itemid": "26077362"
         },
         {
-            "var_4a4bc969": "#prt_mp_ger_pl_maxis_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_ger_pl_maxis_mtxitem",
             "itemid": "27568255"
         },
         {
-            "var_4a4bc969": "#t9_charm_fire_crystal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_fire_crystal_mtxitem",
             "itemid": "31155221"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_analog_fire_storm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_analog_fire_storm_mtxitem",
             "itemid": "29234035"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_mpx_firestorm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_mpx_firestorm_mtxitem",
             "itemid": "28484963"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_lost_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_lost_mtxitem",
             "itemid": "18726301"
         },
         {
-            "var_4a4bc969": "#emblem_s4_phoenix_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_s4_phoenix_animation_mtxitem",
             "itemid": "30198763"
         },
         {
-            "var_4a4bc969": "#callingcards_s4_phoenix_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s4_phoenix_animation_mtxitem",
             "itemid": "26581675"
         }
     ],
-    "itemname": "#hash_71cd54c0663b79fd",
-    "var_375a1747": "#hash_317c6b5cc007723f",
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4006_qbz_83_zombie_master",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4006_qbz_83_zombie_master",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4006_qbz_83_zombie_master_mtxbundle",
-    "titlestring": "#hash_637431e58a432bc7",
-    "var_566825be": "#hash_3662dd2c7e02c19c",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_637431e58a432bc7",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4006_qbz_83_zombie_master",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_47ca3a9eedafb723",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_47ca3a9eedafb723",
+    "hash_db3e02ab": 2000,
     "itemid": "29568502"
 }

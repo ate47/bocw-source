@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_341fc6901c7a61af",
-    "description": "#hash_bfd4e2622f93053",
+    "hash_ff3063df": "model#attach_t9_charm_bwidow",
+    "description": "localized18#hash_bfd4e2622f93053",
     "name": "t9_charm_bwidow",
-    "var_6855e4be": "#t9_charm_bwidow_mtxitem",
-    "displayname": "#hash_3eeae0b282873f79",
+    "hash_6855e4be": "#t9_charm_bwidow_mtxitem",
+    "displayname": "localized18#hash_3eeae0b282873f79",
     "icon": "ui_icon_weapon_charms_bwidow",
-    "var_ef5ad2b3": "#hash_341fc6901c7a61af"
+    "hash_ef5ad2b3": "model#attach_t9_charm_bwidow"
 }

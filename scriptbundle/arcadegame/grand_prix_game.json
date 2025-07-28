@@ -1,0 +1,21 @@
+{
+    "description": "localized18#hash_16cbba1a7c5322c4",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_4f9f96998211d2c7",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "select": "localized18#hash_39daa79bd2005538",
+    "hash_76e12fbf": "image#uie_arcade_large_grand_prix",
+    "hash_9864ed1": 0,
+    "name": "grand_prix_game",
+    "displayname": "localized18#hash_261258654735903c",
+    "filename": "#hash_5b758397cd5e655f",
+    "action": "localized18#hash_7cf25edc74bbc2ec",
+    "hash_dcc4bcb0": 0,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_grand_prix",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_grandprix",
+    "hash_48152d43": 1
+}

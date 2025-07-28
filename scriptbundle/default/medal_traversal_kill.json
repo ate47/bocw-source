@@ -1,10 +1,10 @@
 {
-    "description": "#hash_341aa7641da2900a",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_341aa7641da2900a",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_traversal_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_18d39d29097bb88e",
-    "var_8645ce54": "#hash_13aa42d1978b663a",
-    "iconlarge": "#hash_392d032c60d4c25e"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_multi_tasker",
+    "stringref": "localized18#medal/traversal_kill",
+    "iconlarge": "image#ui_icon_medal_multi_tasker_large"
 }

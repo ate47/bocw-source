@@ -1,18 +1,28 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_adler_game_fuel_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_adler_game_fuel_mtxitem",
             "itemid": "24010313"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_hero_adler_mtxitem",
             "itemid": "31112941"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_85537372eb63ddb",
+    "hash_183c2fe1": 0,
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "incentive_gamefuel_skin_mtxentitlement",
-    "var_4af381c": 2000,
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
+    "hash_db3e02ab": 2000,
     "itemid": "23439272"
 }

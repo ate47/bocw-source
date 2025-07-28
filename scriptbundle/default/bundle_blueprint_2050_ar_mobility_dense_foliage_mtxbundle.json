@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_dfoilage_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_dfoilage_mtxitem",
             "itemid": "27394621"
         },
         {
-            "var_4a4bc969": "#t9_charm_snake_bat_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_snake_bat_mtxitem",
             "itemid": "28653166"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r8_86_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r8_86_mtxitem",
             "itemid": "32267237"
         }
     ],
-    "itemname": "#hash_1fa935bb5c417063",
-    "var_375a1747": "#hash_1dde6df0188dd841",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2050_ar_mobility_dense_foliage",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2050_ar_mobility_dense_foliage",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2050_ar_mobility_dense_foliage_mtxbundle",
-    "var_a788fada": "#hash_25a7961e3b0f1a3e",
-    "titlestring": "#hash_780d3c6a49935922",
-    "var_566825be": "#hash_21b48dd38f077daa",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2050_ar_mobility_dense_foliage_small",
+    "titlestring": "localized18#hash_780d3c6a49935922",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2050_ar_mobility_dense_foliage",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_40a5b626a75ba99e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_40a5b626a75ba99e",
+    "hash_db3e02ab": 2000,
     "itemid": "27823613"
 }

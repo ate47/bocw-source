@@ -1,0 +1,10 @@
+{
+    "titlealt": "localized19#hash_6101245aedfeb933",
+    "type": "#callout",
+    "name": "sgc_escort_flank",
+    "hash_24d23b21": 0,
+    "hash_1c9900c6": 0,
+    "title": "localized19#hash_76ef9d69c4b43d8a",
+    "gestablecallout": "gesture_table&gestable_command_flanking",
+    "objective": "escort_robot"
+}

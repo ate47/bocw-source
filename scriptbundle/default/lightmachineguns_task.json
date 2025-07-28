@@ -1,9 +1,9 @@
 {
     "callingtask": "#kills_lmg",
-    "var_922067c4": "scriptbundle",
-    "image": "#hash_1d0433c7fa9c72ee",
+    "configstringfiletype": "scriptbundle",
+    "image": "image#ui_icon_zm_calling_tasks_lmg",
     "dailytarget": 750,
     "name": "lightmachineguns_task",
-    "taskname": "#hash_3f9b926a5033b166",
-    "descsimple": "#hash_36fb3075fb836d51"
+    "taskname": "localized18#hash_3f9b926a5033b166",
+    "descsimple": "localized18#hash_36fb3075fb836d51"
 }

@@ -1,10 +1,10 @@
 {
-    "description": "#hash_69d93ff210045d12",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_69d93ff210045d12",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_warthog_killjoy",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_598b52180bd02b41",
-    "var_8645ce54": "#hash_40ca0c32f4fa9182",
-    "iconlarge": "#hash_5bc1d08da0fbb4c5"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_598b52180bd02b41",
+    "stringref": "localized18#medal/warthog_killjoy",
+    "iconlarge": "image#hash_5bc1d08da0fbb4c5"
 }

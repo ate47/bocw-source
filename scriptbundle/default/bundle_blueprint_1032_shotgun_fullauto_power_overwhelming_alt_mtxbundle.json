@@ -1,32 +1,37 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#shotgun_fullauto_bp_blue_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_fullauto_bp_blue_mtxitem",
             "itemid": "19504365"
         },
         {
-            "var_4a4bc969": "#t9_charm_tesla_ball_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_tesla_ball_mtxitem",
             "itemid": "29427315"
         },
         {
-            "var_4a4bc969": "#emblems_poweroverwhelming_flipbook_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_poweroverwhelming_flipbook_animation_mtxitem",
             "itemid": "29959107"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_poweroverwhelming_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_poweroverwhelming_mtxitem",
             "itemid": "30408175"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_39916857178c8e14",
-    "var_c919e644": "#hash_7d335817928a2dd0",
-    "var_375a1747": "#hash_454edf560293b8f6",
+    "parenttag": "#bundle_blueprint_1032_shotgun_fullauto_power_overwhelming",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1032_shotgun_fullauto_power_overwhelming_alt",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1032_shotgun_fullauto_power_overwhelming_alt_mtxbundle",
-    "var_a788fada": "#hash_3b3a9b47ff1e1995",
-    "titlestring": "#hash_1af009afd6c51",
-    "var_566825be": "#hash_41feac470138f43d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_3b3a9b47ff1e1995",
+    "titlestring": "localized18#hash_1af009afd6c51",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1032_shotgun_fullauto_power_overwhelming_alt",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6097c84482482351",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6097c84482482351",
+    "hash_db3e02ab": 2000,
     "itemid": "32669068"
 }

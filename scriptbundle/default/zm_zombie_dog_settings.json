@@ -1,0 +1,49 @@
+{
+    "#hash_15c336d1": [
+        {
+            "start_round": 1,
+            "hash_928e93a0": 25
+        },
+        {
+            "start_round": 11,
+            "hash_928e93a0": 50
+        },
+        {
+            "start_round": 16,
+            "hash_928e93a0": 100
+        },
+        {
+            "start_round": 21,
+            "hash_928e93a0": 275
+        },
+        {
+            "start_round": 26,
+            "hash_928e93a0": 600
+        },
+        {
+            "start_round": 31,
+            "hash_928e93a0": 750
+        },
+        {
+            "start_round": 36,
+            "hash_928e93a0": 450
+        }
+    ],
+    "hash_604a84a1": 1,
+    "hash_10460f1e": 1,
+    "scoreevent": "#hash_20b3941538a2ee2e",
+    "configstringfiletype": "scriptbundle",
+    "maxhealth": 12000,
+    "hash_a3160086": 50,
+    "hash_7b22b800": 1,
+    "instakilldamagescale": 1,
+    "name": "zm_zombie_dog_settings",
+    "weakpointdamagescale": 1,
+    "hash_97b22faa": 1,
+    "damagescale": 1,
+    "category": "#normal",
+    "hash_854eebd": 0,
+    "stunduration": 5,
+    "hash_dc706c6c": "#hash_2a171d94f6a3f44",
+    "animationspeed": 1
+}

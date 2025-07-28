@@ -1,11 +1,11 @@
 {
-    "description": "#hash_3ee27299043666c7",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_3ee27299043666c7",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_satchel_charge_multikill_2",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_52cca293a6284fdc",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_roadkill",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_4646bd36bc6bf57d",
-    "iconlarge": "#hash_502dcbbb1c42b5e8"
+    "stringref": "localized18#hash_4646bd36bc6bf57d",
+    "iconlarge": "image#ui_icon_medal_roadkill_large"
 }

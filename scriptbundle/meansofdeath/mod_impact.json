@@ -1,9 +1,9 @@
 {
     "mod": "MOD_IMPACT",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_impact",
-    "displayname": "#hash_394a326a7d3d139f",
-    "icon": "#ui_icon_meansofdeath_impact",
-    "iconlarge": "#ui_icon_meansofdeath_impact_xl"
+    "displayname": "localized18#ui/mod_impact",
+    "icon": "image#ui_icon_meansofdeath_impact",
+    "iconlarge": "image#ui_icon_meansofdeath_impact_xl"
 }

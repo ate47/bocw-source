@@ -1,16 +1,17 @@
 {
     "weakpoints": [
         {
-            "var_3765e777": 1,
+            "hash_3765e777": 1,
+            "hash_8223b0cf": 0,
             "type": "#weakpoint",
-            "var_51e8b151": "tag_weakpoint_mouth",
+            "hash_51e8b151": "tag_weakpoint_mouth",
             "activebydefault": 1,
-            "var_b7fbe51b": 12,
+            "hitradius": 12,
             "health": 1
         }
     ],
-    "var_922067c4": "scriptbundle",
-    "model": "#hash_70d3e417c1bd921f",
+    "configstringfiletype": "scriptbundle",
+    "model": "model#c_t9_zmb_mimic1",
     "type": "characterweakpointsettings",
     "name": "c_t9_mimic_weakpoint_def"
 }

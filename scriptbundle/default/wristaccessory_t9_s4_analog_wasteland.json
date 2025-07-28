@@ -1,10 +1,10 @@
 {
-    "description": "#hash_7e9647a785549339",
+    "description": "localized18#hash_7e9647a785549339",
     "image": "ui_icon_wrist_accessories_s4_analog_wasteland",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s4_analog_wasteland",
-    "var_6855e4be": "#wristaccessory_t9_s4_analog_wasteland_mtxitem",
-    "displayname": "#hash_e72be23b98b5167",
-    "var_8d478ea4": "#hash_74ea60f6270998eb",
-    "var_d27eb4c6": "#hash_5988d356717e131e"
+    "hash_6855e4be": "#wristaccessory_t9_s4_analog_wasteland_mtxitem",
+    "displayname": "localized18#hash_e72be23b98b5167",
+    "hash_8d478ea4": "model#wrist_watch_t9_s4_analog_wasteland_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s4_analog_wasteland_world"
 }

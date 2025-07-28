@@ -1,0 +1,15 @@
+{
+    "targetlost": "#hash_4b473376a9fbbcb8",
+    "configstringfiletype": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_38985d00c26b642",
+    "killaircraft": "#hash_1c33183d92cc150f",
+    "vmtype": "both",
+    "name": "cdp_pilot2_kls_jetfighter",
+    "arrive": "#hash_1bcf0f152313c8f9",
+    "activatecounter": "#hash_6f2bc62d1ec56779",
+    "kill1": "#hash_3f134d40aa93e518",
+    "kill3": "#hash_3412c16acbc11c9c",
+    "kill2": "#hash_6a151440c2da603e",
+    "killnone": "#hash_634c8cd68acd43b6"
+}

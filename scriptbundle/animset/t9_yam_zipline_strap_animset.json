@@ -1,0 +1,57 @@
+{
+    "animset": [
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_43c9382605ffb300"
+                }
+            ],
+            "name": "attach",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_1fe2661115c7754c"
+                }
+            ],
+            "name": "idle",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_4c6338d5e80b5d3e"
+                }
+            ],
+            "name": "detach",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_46e2a871ce60446c"
+                }
+            ],
+            "name": "fall_loop",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_6e16960bb92c3eb9"
+                }
+            ],
+            "name": "fall_land",
+            "blend": 0.2,
+            "animname": "generic"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "animset",
+    "name": "t9_yam_zipline_strap_animset"
+}

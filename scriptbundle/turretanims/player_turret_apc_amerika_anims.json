@@ -1,0 +1,18 @@
+{
+    "fireadditiveanim": "playeranim#hash_715ba7704c82a830",
+    "configstringfiletype": "scriptbundle",
+    "hash_5dbdd77c": 20,
+    "hash_5becf9b5": -90,
+    "hash_e6fe69e8": 20,
+    "type": "turretanims",
+    "hash_faf96846": 90,
+    "centerstraightanim": "playeranim#hash_7ce26cf817764f30",
+    "vmtype": "none",
+    "centerdownanim": "playeranim#hash_628c8d4c0bb23156",
+    "hash_1f5b775e": 30000,
+    "name": "player_turret_apc_amerika_anims",
+    "centerupanim": "playeranim#hash_36a3cb77c76b85a3",
+    "aimpitchangleu": 25,
+    "aimpitchangled": 20,
+    "hash_76635d45": 1
+}

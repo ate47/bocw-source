@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_fastburst_bp_wood_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_fastburst_bp_wood_mtxitem",
             "itemid": "22219585"
         },
         {
-            "var_4a4bc969": "#t9_charm_elk_head_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_elk_head_mtxitem",
             "itemid": "33503614"
         },
         {
-            "var_4a4bc969": "#execution_146_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_146_mtxitem",
             "itemid": "30412547"
         },
         {
-            "var_4a4bc969": "#emblems_oilrig_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_oilrig_animated_mtxitem",
             "itemid": "30786237"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_oilrig_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_oilrig_mtxitem",
             "itemid": "27148402"
         }
     ],
-    "itemname": "#hash_169ab095113b7048",
-    "var_375a1747": "#hash_201e54dc87c818e2",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3020_g11_refinery",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3020_g11_refinery",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3020_g11_refinery_mtxbundle",
-    "var_a788fada": "#hash_2483cad385b15703",
-    "titlestring": "#hash_6b1565676dc0dbd0",
-    "var_566825be": "#hash_183363cddb7155eb",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3020_g11_refinery_small",
+    "titlestring": "localized18#hash_6b1565676dc0dbd0",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3020_g11_refinery",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_cf91f42326b9698",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_cf91f42326b9698",
+    "hash_db3e02ab": 2000,
     "itemid": "24096241"
 }

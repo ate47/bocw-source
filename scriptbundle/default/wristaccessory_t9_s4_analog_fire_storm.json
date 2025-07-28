@@ -1,12 +1,12 @@
 {
-    "var_9fc71d24": "#hash_f99e3b58a894a4",
-    "var_999715d2": "#hash_46dbc059f271ee78",
-    "description": "#hash_77a58dc52397b01e",
+    "hash_9fc71d24": "model#hash_f99e3b58a894a4",
+    "hash_999715d2": "#hash_46dbc059f271ee78",
+    "description": "localized18#hash_77a58dc52397b01e",
     "image": "ui_icon_wrist_accessories_s4_analog_fire_storm",
-    "var_9b474412": 6,
+    "hash_9b474412": 6,
     "name": "wristaccessory_t9_s4_analog_fire_storm",
-    "var_6855e4be": "#wristaccessory_t9_s4_analog_fire_storm_mtxitem",
-    "displayname": "#hash_4d687e0f713572e",
-    "var_8d478ea4": "#hash_5f316c66378c30a0",
-    "var_d27eb4c6": "#hash_3aa95ab573f10d5b"
+    "hash_6855e4be": "#wristaccessory_t9_s4_analog_fire_storm_mtxitem",
+    "displayname": "localized18#hash_4d687e0f713572e",
+    "hash_8d478ea4": "model#wrist_watch_t9_s4_analog_fire_storm_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s4_analog_fire_storm_world"
 }

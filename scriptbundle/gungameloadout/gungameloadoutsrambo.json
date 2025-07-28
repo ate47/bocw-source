@@ -1,0 +1,74 @@
+{
+    "#hash_4509f8e": [
+        {
+            "tiers": [
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {},
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {},
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                },
+                {
+                    "subs": "<invalid:0x0>"
+                }
+            ],
+            "hash_b1538731": "Rambo"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "gungameloadout",
+    "name": "gungameloadoutsrambo"
+}

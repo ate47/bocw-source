@@ -1,0 +1,10 @@
+{
+    "configstringfiletype": "scriptbundle",
+    "scorestreak": "killstreak_counteruav",
+    "type": "spyskill",
+    "hash_a99abf33": "counter_spy_plane",
+    "name": "spyskill_counter_spy_plane",
+    "hash_a58f84b8": 20,
+    "cooldown": 75,
+    "hash_e1bfe02c": 22
+}

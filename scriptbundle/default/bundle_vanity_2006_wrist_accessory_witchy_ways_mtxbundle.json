@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#wristaccessory_t9_s1_digital_zm_heart_rate_black_02_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s1_digital_zm_heart_rate_black_02_mtxitem",
             "itemid": "24847644"
         },
         {
-            "var_4a4bc969": "#execution_064_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_064_mtxitem",
             "itemid": "32281923"
         },
         {
-            "var_4a4bc969": "#emblems_volatile_11_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_volatile_11_mtxitem",
             "itemid": "20294811"
         }
     ],
-    "itemname": "#hash_4560275b6b5690a3",
-    "var_375a1747": "#hash_6679e52713f67e51",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_vanity_2006_wrist_accessory_witchy_ways",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_vanity_2006_wrist_accessory_witchy_ways",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_vanity_2006_wrist_accessory_witchy_ways_mtxbundle",
-    "var_a788fada": "#hash_52940f65f95bc34c",
-    "titlestring": "#hash_79ecb1976e246d8d",
-    "var_566825be": "#hash_62c0530951fa9c58",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_vanity_2006_wrist_accessory_witchy_ways_small",
+    "titlestring": "localized18#hash_79ecb1976e246d8d",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_vanity_2006_wrist_accessory_witchy_ways",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_7c1dc35bb5d180c5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_7c1dc35bb5d180c5",
+    "hash_db3e02ab": 2000,
     "itemid": "18359685"
 }

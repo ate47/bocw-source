@@ -1,88 +1,99 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#operator_bundle_3068_park_cyborg_droid_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_3068_park_cyborg_droid_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2067_helen_park_fossil_fuel_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2067_helen_park_fossil_fuel_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2043_helen_park_powder_pink_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2043_helen_park_powder_pink_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2037_helen_park_cavalrys_finest_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2037_helen_park_cavalrys_finest_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_2018_helen_park_nightshade_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_2018_helen_park_nightshade_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1077_park_pilot_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1077_park_pilot_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1064_park_graffiti_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1064_park_graffiti_mtxbundle"
         },
         {
-            "var_8bd0af73": "#hash_54ad10e5155c6644"
+            "hash_8bd0af73": "#hash_54ad10e5155c6644"
         },
         {
-            "var_8bd0af73": "#bundle_operator_1025_park_bank_heist_mtxbundle"
+            "hash_8bd0af73": "#bundle_operator_1025_park_bank_heist_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_holiday_1054_park_shooter_shooter_mtxbundle"
+            "hash_8bd0af73": "#bundle_holiday_1054_park_shooter_shooter_mtxbundle"
         },
         {
-            "var_8bd0af73": "#bundle_fantasy_1002_park_rifleman_mtxbundle"
+            "hash_8bd0af73": "#bundle_fantasy_1002_park_rifleman_mtxbundle"
         },
         {
-            "var_8bd0af73": "#blueprint_bundle_3021_park_wasteland_warrior_mtxbundle"
+            "hash_8bd0af73": "#blueprint_bundle_3021_park_wasteland_warrior_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_4009_ksp_45_golden_propsector_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_4009_ksp_45_golden_propsector_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_4024_park_anime_decals_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_4024_park_anime_decals_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_4037_park_euro_soccer_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_4037_park_euro_soccer_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_5004_cane_melee_one_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5004_cane_melee_one_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_5006_park_ultraskin_fire_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5006_park_ultraskin_fire_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_5042_park_field_marksman_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5042_park_field_marksman_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_6010_ak_74u_standoff_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_6010_ak_74u_standoff_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_7502_vault_nato_warsaw_01_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_7502_vault_nato_warsaw_01_mtxbundle"
         },
         {
-            "var_8bd0af73": "#operator_bundle_7035_park_endgame_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_7035_park_endgame_mtxbundle"
         }
     ],
     "entitlementlist": [
         {
-            "var_386af035": "#s01_preseason_login_bonus_mtxentitlement"
+            "hash_386af035": "#s01_preseason_login_bonus_mtxentitlement"
         },
         {
-            "var_386af035": "#sony_psplus_season_04_mtxentitlement"
+            "hash_386af035": "#sony_psplus_season_04_mtxentitlement"
         }
     ],
     "itemname": "#hash_7f9f7a55a86777c3",
-    "var_e9d9a8d0": 1,
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
-    "var_46300498": 1,
+    "hash_e9d9a8d0": 1,
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
+    "season": 0,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
     "bodytype": "#hash_7f9f7a55a86777c3",
+    "hash_b6d84534": 0,
     "name": "prt_mp_uk_mi6_mtxitem",
-    "var_c89f0785": "#hash_2c79ea24ab1a2ba",
+    "hash_c89f0785": "localized18#null/empty",
+    "hash_f3d04949": 0,
     "category": "#operator",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 9,
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:9",
+    "hash_84dc7961": 0,
     "itemid": "23374822"
 }

@@ -1,68 +1,71 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_42ce961c675d510e"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4016_ak_74u_containminated_water"
         },
         {
-            "var_fe10649e": "#hash_a81eb0145ecd181"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4016_ak_74u_containminated_water_02"
         },
         {
-            "var_fe10649e": "#hash_a81ea0145eccfce"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4016_ak_74u_containminated_water_03"
         },
         {
-            "var_fe10649e": "#hash_a81ed0145ecd4e7"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_4016_ak_74u_containminated_water_04"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_uk_pl_sas_gridlock_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_sas_gridlock_mtxitem",
             "itemid": "21947677"
         },
         {
-            "var_4a4bc969": "#prt_mp_uk_sas_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_sas_mtxitem",
             "itemid": "27107479"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_blade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_blade_mtxitem",
             "itemid": "27279494"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_blade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_blade_mtxitem",
             "itemid": "17872798"
         },
         {
-            "var_4a4bc969": "#pistol_burst_cb_blade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_cb_blade_mtxitem",
             "itemid": "32244914"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s4_digital_blade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s4_digital_blade_mtxitem",
             "itemid": "21092229"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_mpx_sunburst_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_boat_pgb_mpx_sunburst_mtxitem",
             "itemid": "26840476"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_wawg_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_wawg_mtxitem",
             "itemid": "23120691"
         },
         {
-            "var_4a4bc969": "#execution_061_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_061_mtxitem",
             "itemid": "30281339"
         }
     ],
-    "itemname": "#hash_b2062e877dfbc24",
-    "var_375a1747": "#hash_42ce961c675d510e",
-    "var_3040f0d1": "#hash_42ce961c675d510e",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 54,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_4016_ak_74u_containminated_water",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_4016_ak_74u_containminated_water",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_blueprint_bundle_4016_ak_74u_containminated_water",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 54,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_4016_ak_74u_containminated_water_mtxbundle",
-    "var_a788fada": "#hash_1edf7ae4aaf76029",
-    "titlestring": "#hash_2fe78bee89bedae",
-    "var_566825be": "#hash_50e303c83f2e4661",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_4016_ak_74u_containminated_water_small",
+    "titlestring": "localized18#hash_2fe78bee89bedae",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_4016_ak_74u_containminated_water",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_e38cf3670965922",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_e38cf3670965922",
+    "hash_db3e02ab": 750,
     "itemid": "25031678"
 }

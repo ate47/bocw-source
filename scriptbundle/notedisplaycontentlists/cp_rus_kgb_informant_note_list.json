@@ -1,0 +1,28 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_f49bdf40": "localized19#hash_79a1b9f20dca7043",
+            "hash_c9d25687": "localized19#hash_33383e35c9fbb6ea"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_79a1baf20dca71f6",
+            "hash_c9d25687": "localized19#hash_28719a9fbec553ad"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_79a1bbf20dca73a9",
+            "hash_c9d25687": "localized19#hash_4bbfabfa7ce5f0ac"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_79a1bcf20dca755c",
+            "hash_c9d25687": "localized19#hash_7b5fe0aff3c0b5d7"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_79a1bdf20dca770f",
+            "hash_c9d25687": "localized19#hash_1ed526d5e03880a6"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "notedisplaycontentlists",
+    "name": "cp_rus_kgb_informant_note_list",
+    "hash_85ca818b": "image#hash_678192b7091ec852"
+}

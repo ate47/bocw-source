@@ -1,0 +1,9 @@
+{
+    "type": "#callout",
+    "name": "sgc_koth_attacking",
+    "hash_24d23b21": 0,
+    "hash_1c9900c6": 0,
+    "title": "localized19#hash_3656cf7975588ed1",
+    "gametype": "#koth",
+    "gestablecallout": "gesture_table&gestable_command_attacking"
+}

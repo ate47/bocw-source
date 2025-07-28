@@ -1,42 +1,47 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_camera_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_camera_mtxitem",
             "itemid": "29865114"
         },
         {
-            "var_4a4bc969": "#loot_smg_fastfire_bp_camera_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_fastfire_bp_camera_mtxitem",
             "itemid": "22458003"
         },
         {
-            "var_4a4bc969": "#callingcards_camera_gun_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_camera_gun_mtxitem",
             "itemid": "25668694"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_finger_frame_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_finger_frame_mtxitem",
             "itemid": "18978324"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r82_24_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r82_24_mtxitem",
             "itemid": "30695836"
         },
         {
-            "var_4a4bc969": "#t9_charm_popcorn_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_popcorn_mtxitem",
             "itemid": "26761053"
         },
         {
-            "var_4a4bc969": "#emblems_camera_gun_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_camera_gun_01_mtxitem",
             "itemid": "33014529"
         }
     ],
-    "itemname": "#hash_41f62acfe2ff2ee5",
-    "var_375a1747": "#hash_1cb0f82142f6dd63",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_2020_qbz_83_camera_gun",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_2020_qbz_83_camera_gun",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_2020_qbz_83_camera_gun_mtxbundle",
-    "titlestring": "#hash_247f2c7d15cdb4a5",
-    "var_566825be": "#hash_483406d830121290",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_247f2c7d15cdb4a5",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_2020_qbz_83_camera_gun",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3876b6d675b3645d",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3876b6d675b3645d",
+    "hash_db3e02ab": 2000,
     "itemid": "24730570"
 }

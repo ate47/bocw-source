@@ -1,26 +1,31 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_burst_bp_kwanzaa_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_burst_bp_kwanzaa_mtxitem",
             "itemid": "29520325"
         },
         {
-            "var_4a4bc969": "#t9_charm_corn_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_corn_mtxitem",
             "itemid": "30344982"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_fallharvest_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_fallharvest_mtxitem",
             "itemid": "22126263"
         }
     ],
-    "itemname": "#hash_69ab4709719c18c2",
-    "var_375a1747": "#hash_7a52b7c110c8d32c",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1051_smg_capacity_bogged_down",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1051_smg_capacity_bogged_down",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1051_smg_capacity_bogged_down_mtxbundle",
-    "titlestring": "#hash_3f3eb5719da75312",
-    "var_566825be": "#hash_56e0b7965efcebc5",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_3f3eb5719da75312",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1051_smg_capacity_bogged_down",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_222227967b6dc64e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_222227967b6dc64e",
+    "hash_db3e02ab": 2000,
     "itemid": "20452601"
 }

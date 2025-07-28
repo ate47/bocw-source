@@ -1,9 +1,9 @@
 {
     "callingtask": "#headshots",
-    "var_922067c4": "scriptbundle",
-    "image": "#hash_57e7a4cc138e1d85",
+    "configstringfiletype": "scriptbundle",
+    "image": "image#ui_icon_zm_calling_tasks_headshots",
     "dailytarget": 300,
     "name": "headhunter_task",
-    "taskname": "#hash_187aad79c5ab44c",
-    "descsimple": "#hash_6902d4dc8a715a7f"
+    "taskname": "localized18#hash_187aad79c5ab44c",
+    "descsimple": "localized18#hash_6902d4dc8a715a7f"
 }

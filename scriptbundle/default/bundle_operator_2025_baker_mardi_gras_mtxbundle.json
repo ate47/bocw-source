@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_usa_pl_navyseal_breaker_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_navyseal_breaker_mtxitem",
             "itemid": "22586319"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_navy_seal_mtxitem",
             "itemid": "20822559"
         },
         {
-            "var_4a4bc969": "#reticle_45_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_45_mtxitem",
             "itemid": "19530902"
         },
         {
-            "var_4a4bc969": "#execution_002_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_002_mtxitem",
             "itemid": "29763656"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_carnival_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_carnival_mtxitem",
             "itemid": "28674829"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_bracelet_mardi_gras_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_bracelet_mardi_gras_mtxitem",
             "itemid": "25530055"
         },
         {
-            "var_4a4bc969": "#t9_charm_jester_mask_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_jester_mask_mtxitem",
             "itemid": "32498868"
         }
     ],
-    "itemname": "#hash_706e7c0a2f8cd576",
-    "var_375a1747": "#hash_3927bf2b40d317c",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_operator_2025_baker_mardi_gras",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_operator_2025_baker_mardi_gras",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_operator_2025_baker_mardi_gras_mtxbundle",
-    "var_a788fada": "#hash_1a9cb4bf584f8e2f",
-    "titlestring": "#hash_bd77ef7e6c6e2b2",
-    "var_566825be": "#hash_7ac75c67df519437",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_operator_2025_baker_mardi_gras_small",
+    "titlestring": "localized18#hash_bd77ef7e6c6e2b2",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_operator_2025_baker_mardi_gras",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_603a50043c03dfee",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_603a50043c03dfee",
+    "hash_db3e02ab": 2000,
     "itemid": "30614068"
 }

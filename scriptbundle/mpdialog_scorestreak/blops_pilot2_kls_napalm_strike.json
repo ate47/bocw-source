@@ -1,6 +1,6 @@
 {
     "wavestartfinal": "#hash_2bd7e51846b80660",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "mpdialog_scorestreak",
     "vmtype": "both",
     "name": "blops_pilot2_kls_napalm_strike",

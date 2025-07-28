@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_58cecb26ed9eb671",
-    "description": "#hash_4b4dd3a45aed2375",
+    "hash_ff3063df": "model#attach_t9_charm_bpanda",
+    "description": "localized18#hash_4b4dd3a45aed2375",
     "name": "t9_charm_bpanda",
-    "var_6855e4be": "#t9_charm_bpanda_mtxitem",
-    "displayname": "#hash_429d36a6251e5ca3",
+    "hash_6855e4be": "#t9_charm_bpanda_mtxitem",
+    "displayname": "localized18#hash_429d36a6251e5ca3",
     "icon": "ui_icon_weapon_charms_bpanda",
-    "var_ef5ad2b3": "#hash_58cecb26ed9eb671"
+    "hash_ef5ad2b3": "model#attach_t9_charm_bpanda"
 }

@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_capacity_bp_monte_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_capacity_bp_monte_mtxitem",
             "itemid": "20938053"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_monte_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_monte_mtxitem",
             "itemid": "28925637"
         },
         {
-            "var_4a4bc969": "#t9_charm_aztec_god_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_aztec_god_mtxitem",
             "itemid": "20739709"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_montezuma_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_jetski_mpx_montezuma_mtxitem",
             "itemid": "18249383"
         },
         {
-            "var_4a4bc969": "#callingcards_aztecassault_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_aztecassault_animated_mtxitem",
             "itemid": "24508986"
         },
         {
-            "var_4a4bc969": "#emblems_marquee_04_zuma_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_marquee_04_zuma_animated_mtxitem",
             "itemid": "24924538"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s2_digital_jade_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s2_digital_jade_mtxitem",
             "itemid": "21765022"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_paradol_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_paradol_mtxitem",
             "itemid": "18329971"
         }
     ],
-    "itemname": "#hash_63e3fbb421d29a37",
-    "var_375a1747": "#hash_16e8757c933b12b9",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#bundle_mastercraft_2012_smg_capacity_aztec",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_mastercraft_2012_smg_capacity_aztec",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "bundle_mastercraft_2012_smg_capacity_aztec_mtxbundle",
-    "var_a788fada": "#hash_76ae4d112be905e0",
-    "titlestring": "#hash_69b52dbd4d85dba0",
-    "var_566825be": "#hash_63d8b98d4c483698",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#hash_76ae4d112be905e0",
+    "titlestring": "localized18#hash_69b52dbd4d85dba0",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_mastercraft_2012_smg_capacity_aztec",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_23c6ca4786f1b328",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_23c6ca4786f1b328",
+    "hash_db3e02ab": 2000,
     "itemid": "32353244"
 }

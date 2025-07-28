@@ -1,58 +1,68 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_guerillas_home_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_guerillas_home_pc_mtxitem",
             "itemid": "33233172"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_mtxitem",
             "itemid": "31358670"
         },
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_guerillas_away_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_esports_male_guerillas_away_pc_mtxitem",
             "itemid": "27618398"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
             "itemid": "24054907"
         },
         {
-            "var_4a4bc969": "#camo_t9_cdl_la_gor_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#camo_t9_cdl_la_gor_pc_mtxitem",
             "itemid": "19904677"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_esports_guerillas_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_esports_guerillas_pc_mtxitem",
             "itemid": "29186802"
         },
         {
-            "var_4a4bc969": "#t9_charm_sneaker_guerillas_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_sneaker_guerillas_pc_mtxitem",
             "itemid": "29759317"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_la_g_1_pc_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_cdl_teamsticker_la_g_1_pc_base_mtxitem",
             "itemid": "19387942"
         },
         {
-            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_la_g_1_pc_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cdl_teamcallingcards_la_g_1_pc_base_mtxitem",
             "itemid": "21207496"
         },
         {
-            "var_4a4bc969": "#emblems_cdl_teamemblem_010_la_g_1_pc_base_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_cdl_teamemblem_010_la_g_1_pc_base_mtxitem",
             "itemid": "25911851"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_2048c66d6ad79511",
-    "var_247d9ed7": "cdl_team_pack_01_guerrillas",
-    "var_208d76b5": "#hash_1b75ff1e20f4c679",
-    "var_70f66e54": "#hash_1c6a5d0b1cac4af9",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "cdl_team_pack_01_guerrillas",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_cdl_team_pack_01_guerrillas",
+    "hash_70f66e54": "#hash_1c6a5d0b1cac4af9",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "cdl_team_pack_01_guerrillas_pc_mtxentitlement",
-    "var_a788fada": "#hash_191cd2cacb0dcb90",
-    "titlestring": "#hash_4cccce304dcbdf97",
-    "var_566825be": "#hash_22fc6f2aacaead1c",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_guerilla_small",
+    "titlestring": "localized18#hash_4cccce304dcbdf97",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_cdl_guerilla",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#pc",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#pc",
     "itemid": "31098779",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

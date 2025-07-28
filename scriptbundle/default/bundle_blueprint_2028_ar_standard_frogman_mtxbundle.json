@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mercenary_bp_frog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_frog_mtxitem",
             "itemid": "28602156"
         },
         {
-            "var_4a4bc969": "#shotgun_semiauto_bp_frogmen_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_semiauto_bp_frogmen_mtxitem",
             "itemid": "23170385"
         },
         {
-            "var_4a4bc969": "#t9_charm_bullet_collision_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bullet_collision_mtxitem",
             "itemid": "28665387"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_mpx_frogmen_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_boat_tactical_raft_mpx_frogmen_mtxitem",
             "itemid": "26646264"
         },
         {
-            "var_4a4bc969": "#emblems_r82_1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r82_1_mtxitem",
             "itemid": "24167318"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_27_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_27_mtxitem",
             "itemid": "31924232"
         }
     ],
-    "itemname": "#hash_23bb472f986d4301",
-    "var_375a1747": "#hash_45c3fc290be37e93",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2028_ar_standard_frogman",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2028_ar_standard_frogman",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2028_ar_standard_frogman_mtxbundle",
-    "var_a788fada": "#hash_1329c9e29115cfe0",
-    "titlestring": "#hash_6290f414a3e7f56d",
-    "var_566825be": "#hash_1055e5f4bc2da7ec",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2028_ar_standard_frogman_small",
+    "titlestring": "localized18#hash_6290f414a3e7f56d",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2028_ar_standard_frogman",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_2cd10ab25100e4a5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_2cd10ab25100e4a5",
+    "hash_db3e02ab": 2000,
     "itemid": "22661840"
 }

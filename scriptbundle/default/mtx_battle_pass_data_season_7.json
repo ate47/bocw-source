@@ -1,32 +1,32 @@
 {
-    "var_c6169187": [
+    "#hash_c6169187": [
         {
-            "var_f8641e3": "#s4_polina_j_mtxitem"
+            "hash_f8641e3": "#s4_polina_j_mtxitem"
         }
     ],
-    "var_5393a4bb": "#hash_58f5face8f7da03a",
-    "var_5a7ab7ae": "#hash_57daa8ed61ad656d",
-    "var_99594ca4": "#hash_4cf1fc14c7d9835f",
-    "var_35ad2f6d": "#hash_234c97aad08968fa",
-    "var_8322c847": "#hash_79d1b2242812079f",
-    "var_b24ffe02": "#hash_221bf4ececa5ec77",
-    "var_9e8da4c6": "#hash_3c82c50d59d24b91",
-    "var_97f0d3bb": "#hash_602bb4e35d4f9702",
-    "var_e4771b8b": "mtx_global_purchase_confirmed",
+    "hash_5393a4bb": "localized18#hash_58f5face8f7da03a",
+    "hash_5a7ab7ae": "localized18#hash_57daa8ed61ad656d",
+    "hash_99594ca4": "localized18#hash_4cf1fc14c7d9835f",
+    "hash_35ad2f6d": "image#hash_234c97aad08968fa",
+    "hash_8322c847": "image#hash_79d1b2242812079f",
+    "hash_b24ffe02": "image#hash_221bf4ececa5ec77",
+    "hash_9e8da4c6": "image#hash_3c82c50d59d24b91",
+    "hash_97f0d3bb": "localized18#hash_602bb4e35d4f9702",
+    "hash_e4771b8b": "mtx_global_purchase_confirmed",
     "name": "mtx_battle_pass_data_season_7",
-    "var_42c48b92": "#hash_16cd8e9054c5c5af",
-    "var_21e49ac6": "mtx_global_battlepass_purchase_S7",
-    "var_1496e997": "#hash_2c9b571c0dab61d8",
-    "var_6e830db8": "#hash_2237d7dec8d5aab2",
-    "seasonname": "#hash_245f4a141323c8ff",
-    "var_261476a2": "#hash_234c97aad08968fa",
-    "var_d580508b": "#hash_1b2a97b3a35a2a7e",
-    "var_e4ec2ee1": "#hash_234c97aad08968fa",
-    "var_419b5c0b": "#hash_4cf1fc14c7d9835f",
-    "var_1a8f344c": "#s4_battle_pass_season_7_premium_mtxbundle",
-    "var_e0d52f49": "#hash_69e7d09c453fb9ae",
-    "var_22155959": "mtx_global_tier_purchase_S7",
-    "var_a7d281c0": "#hash_5401c36b6b827a72",
-    "var_6d7e036e": "#hash_4236754aceef9cd5",
-    "var_a43221e0": "#hash_58f5face8f7da03a"
+    "hash_42c48b92": "image#hash_16cd8e9054c5c5af",
+    "hash_21e49ac6": "mtx_global_battlepass_purchase_S7",
+    "hash_1496e997": "image#hash_2c9b571c0dab61d8",
+    "hash_6e830db8": "localized18#hash_2237d7dec8d5aab2",
+    "seasonname": "localized18#hash_245f4a141323c8ff",
+    "hash_261476a2": "image#hash_234c97aad08968fa",
+    "hash_d580508b": "image#hash_1b2a97b3a35a2a7e",
+    "hash_e4ec2ee1": "image#hash_234c97aad08968fa",
+    "hash_419b5c0b": "localized18#hash_4cf1fc14c7d9835f",
+    "hash_1a8f344c": "#s4_battle_pass_season_7_premium_mtxbundle",
+    "hash_e0d52f49": "localized18#hash_69e7d09c453fb9ae",
+    "hash_22155959": "mtx_global_tier_purchase_S7",
+    "hash_a7d281c0": "image#hash_5401c36b6b827a72",
+    "hash_6d7e036e": "localized18#hash_4236754aceef9cd5",
+    "hash_a43221e0": "localized18#hash_58f5face8f7da03a"
 }

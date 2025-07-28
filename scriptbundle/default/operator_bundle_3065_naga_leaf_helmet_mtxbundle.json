@@ -1,52 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_lao_pl_serpent_overgrowth_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_lao_pl_serpent_overgrowth_mtxitem",
             "itemid": "26900691"
         },
         {
-            "var_4a4bc969": "#prt_mp_lao_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_lao_mtxitem",
             "itemid": "30933020"
         },
         {
-            "var_4a4bc969": "#ar_fasthandling_bp_longshot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fasthandling_bp_longshot_mtxitem",
             "itemid": "19412375"
         },
         {
-            "var_4a4bc969": "#smg_standard_bp_znaga_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_bp_znaga_mtxitem",
             "itemid": "31463296"
         },
         {
-            "var_4a4bc969": "#t9_charm_tombstone_perk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_tombstone_perk_mtxitem",
             "itemid": "30321957"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_analog_zombie_naga_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_analog_zombie_naga_mtxitem",
             "itemid": "26085312"
         },
         {
-            "var_4a4bc969": "#execution_138_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_138_mtxitem",
             "itemid": "19839040"
         },
         {
-            "var_4a4bc969": "#emblems_s3_vts_final_30_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s3_vts_final_30_mtxitem",
             "itemid": "27584168"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_zombieslayer2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_zombieslayer2_mtxitem",
             "itemid": "27507080"
         }
     ],
-    "itemname": "#hash_4bbfef1f263cf708",
-    "var_375a1747": "#hash_63494e1e07f51256",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_3065_naga_leaf_helmet",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_3065_naga_leaf_helmet",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_3065_naga_leaf_helmet_mtxbundle",
-    "var_a788fada": "#hash_1858fe9437125901",
-    "titlestring": "#hash_634b9fab4770011f",
-    "var_566825be": "#hash_16d5f9d6dc951d59",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_3065_naga_leaf_helmet_small",
+    "titlestring": "localized18#hash_634b9fab4770011f",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_3065_naga_leaf_helmet",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_4a1df6b41a1f16db",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_4a1df6b41a1f16db",
+    "hash_db3e02ab": 2000,
     "itemid": "19869761"
 }

@@ -1,0 +1,231 @@
+{
+    "animset": [
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_4eceb3236f073ec1"
+                }
+            ],
+            "name": "loop",
+            "blend": 0.2,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_ea48174621ad9a4"
+                }
+            ],
+            "name": "loop",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_68302b4f29b9ccc0"
+                }
+            ],
+            "name": "loop_walk",
+            "blend": 0.2,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_4dfeea535fbeab15"
+                }
+            ],
+            "name": "loop_walk",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_6f01addd9c658b77"
+                },
+                {
+                    "xanim": "anim#hash_248ee428a1ac9254"
+                },
+                {
+                    "xanim": "anim#hash_ea1095fb0db6835"
+                }
+            ],
+            "name": "pain",
+            "blend": 0,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_376395157a9cc1f6"
+                },
+                {
+                    "xanim": "anim#hash_2cf22e5d2bb0511"
+                },
+                {
+                    "xanim": "anim#hash_7b10a5e5b8737990"
+                }
+            ],
+            "name": "pain",
+            "blend": 0,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_2bb3948861ea7eaa"
+                },
+                {
+                    "xanim": "anim#hash_77ffd5ab5b32859"
+                },
+                {
+                    "xanim": "anim#hash_6572e0685afd6c48"
+                }
+            ],
+            "name": "ads_pain",
+            "blend": 0,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_50f90bb69271a043"
+                },
+                {
+                    "xanim": "anim#hash_44d47539822283ec"
+                },
+                {
+                    "xanim": "anim#hash_3aa4d7020ba18d2d"
+                }
+            ],
+            "name": "ads_pain",
+            "blend": 0,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_21e3201781e5c93c"
+                }
+            ],
+            "name": "ads_in",
+            "blend": 0.1,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_452bd45713c67129"
+                }
+            ],
+            "name": "ads_in",
+            "blend": 0.1,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_2f15eafa31048d9c"
+                }
+            ],
+            "name": "ads_loop",
+            "blend": 0.2,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_141c9b7124f9889"
+                }
+            ],
+            "name": "ads_loop",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_36813cea59b77e01"
+                }
+            ],
+            "name": "ads_loop_walk",
+            "blend": 0.2,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_784402e51429abe4"
+                }
+            ],
+            "name": "ads_loop_walk",
+            "blend": 0.2,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_4e5e6e1f0a2e075e"
+                }
+            ],
+            "name": "ads_out",
+            "blend": 0.1,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_18debf222dce5aff"
+                }
+            ],
+            "name": "ads_out",
+            "blend": 0.1,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_301ae5f0ccac0669"
+                }
+            ],
+            "name": "kick",
+            "blend": 0,
+            "animname": "generic"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_5a880733e87c1f7c"
+                }
+            ],
+            "name": "kick",
+            "blend": 0,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_5155c8df71c14af4"
+                }
+            ],
+            "name": "exit_static",
+            "blend": 0.1,
+            "animname": "player"
+        },
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_2c30079c9fec94b1"
+                }
+            ],
+            "name": "exit_static",
+            "blend": 0.1,
+            "animname": "generic"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "animset",
+    "name": "td_anims_body_shield"
+}

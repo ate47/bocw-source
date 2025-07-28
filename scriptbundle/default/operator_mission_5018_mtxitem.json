@@ -1,21 +1,31 @@
 {
-    "var_e1f3b51": [
+    "bundlelist": [
         {
-            "var_8bd0af73": "#operator_bundle_5018_baker_tracer_mtxbundle"
+            "hash_8bd0af73": "#operator_bundle_5018_baker_tracer_mtxbundle"
         }
     ],
     "itemname": "#hash_1a6de636631a7a81",
-    "var_e9d9a8d0": 1,
-    "var_5173e89a": "#hash_3836f8bbfbe4f9fb",
-    "var_728341a": 1,
-    "var_375a1747": "#hash_723cb9895d45a32c",
+    "hash_e9d9a8d0": 1,
+    "hash_5173e89a": "image#hash_3836f8bbfbe4f9fb",
+    "hash_4f3108ff": 0,
+    "hash_841f8748": 0,
+    "hash_5c813d34": 0,
+    "hash_728341a": 1,
+    "quantity": 0,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_placeholder",
+    "release": 0,
     "season": 5,
-    "var_46300498": 1,
+    "hash_46300498": 1,
+    "hash_8ee7db29": 0,
+    "hash_7f1fd6e2": 0,
+    "hash_b6d84534": 0,
     "name": "operator_mission_5018_mtxitem",
-    "var_c89f0785": "#hash_fc0fe88b0969b69",
-    "category": "#hash_1050e5e050547d18",
-    "var_db3e02ab": 2000,
-    "var_700702e5": 2000,
-    "rarity": 4,
+    "hash_c89f0785": "localized18#hash_fc0fe88b0969b69",
+    "hash_f3d04949": 0,
+    "category": "#operator_mission",
+    "hash_db3e02ab": 2000,
+    "hash_700702e5": 2000,
+    "rarity": "enum:4",
+    "hash_84dc7961": 0,
     "itemid": "17912511"
 }

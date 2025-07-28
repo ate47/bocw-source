@@ -1,0 +1,265 @@
+{
+    "weapondamagescaleoverrides": [
+        {
+            "hash_fe55d685": "#launcher_standard_t8_upgraded_zm",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#launcher_standard_t8_upgraded",
+            "weakpointdamagescale": 0.3,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.3
+        },
+        {
+            "hash_fe55d685": "#hero_hammer_lv1_zm",
+            "instakilldamagescale": 0.65,
+            "weaponid": "#hero_hammer_lv1",
+            "weakpointdamagescale": 0.65,
+            "hash_97b22faa": 0.7,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_hammer_lv2_zm",
+            "instakilldamagescale": 0.65,
+            "weaponid": "#hero_hammer_lv2",
+            "weakpointdamagescale": 0.65,
+            "hash_97b22faa": 0.7,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_hammer_lv3_zm",
+            "instakilldamagescale": 0.65,
+            "weaponid": "#hero_hammer_lv3",
+            "weakpointdamagescale": 0.65,
+            "hash_97b22faa": 0.7,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_chakram_lv1_zm",
+            "instakilldamagescale": 0.7,
+            "weaponid": "#hero_chakram_lv1",
+            "weakpointdamagescale": 0.7,
+            "hash_97b22faa": 0.9,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_chakram_lv2_zm",
+            "instakilldamagescale": 0.7,
+            "weaponid": "#hero_chakram_lv2",
+            "weakpointdamagescale": 0.7,
+            "hash_97b22faa": 0.9,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_chakram_lv3_zm",
+            "instakilldamagescale": 0.7,
+            "weaponid": "#hero_chakram_lv3",
+            "weakpointdamagescale": 0.7,
+            "hash_97b22faa": 0.9,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_sword_pistol_lv1_zm",
+            "instakilldamagescale": 0.6,
+            "weaponid": "#hero_sword_pistol_lv1",
+            "weakpointdamagescale": 0.6,
+            "hash_97b22faa": 0.7,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_sword_pistol_lv2_zm",
+            "instakilldamagescale": 0.6,
+            "weaponid": "#hero_sword_pistol_lv2",
+            "weakpointdamagescale": 0.6,
+            "hash_97b22faa": 0.7,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_sword_pistol_lv3_zm",
+            "instakilldamagescale": 0.6,
+            "weaponid": "#hero_sword_pistol_lv3",
+            "weakpointdamagescale": 0.6,
+            "hash_97b22faa": 0.7,
+            "damagescale": 0.5
+        },
+        {
+            "hash_fe55d685": "#hero_scepter_lv1_zm",
+            "instakilldamagescale": 0.15,
+            "weaponid": "#hero_scepter_lv1",
+            "weakpointdamagescale": 0.15,
+            "hash_97b22faa": 0.2,
+            "damagescale": 0.12
+        },
+        {
+            "hash_fe55d685": "#hero_scepter_lv2_zm",
+            "instakilldamagescale": 0.15,
+            "weaponid": "#hero_scepter_lv2",
+            "weakpointdamagescale": 0.15,
+            "hash_97b22faa": 0.2,
+            "damagescale": 0.12
+        },
+        {
+            "hash_fe55d685": "#hero_scepter_lv3_zm",
+            "instakilldamagescale": 0.15,
+            "weaponid": "#hero_scepter_lv3",
+            "weakpointdamagescale": 0.15,
+            "hash_97b22faa": 0.2,
+            "damagescale": 0.12
+        },
+        {
+            "hash_fe55d685": "#hash_5b10080871ad106c",
+            "instakilldamagescale": 0.5,
+            "weaponid": "#gun_mini_turret",
+            "weakpointdamagescale": 0.25,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.1
+        },
+        {
+            "hash_fe55d685": "#ww_hand_c_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_c",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_c_uncharged_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_c_uncharged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#hash_2fc08852f394e718",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_c_charged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_c_upgraded_zm",
+            "instakilldamagescale": 0.3,
+            "weaponid": "#ww_hand_c_upgraded",
+            "weakpointdamagescale": 0.3,
+            "hash_97b22faa": 0.4,
+            "damagescale": 0.2
+        },
+        {
+            "hash_fe55d685": "#ww_hand_h_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_h",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_h_uncharged_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_h_uncharged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#hash_3d78330214d4d0cf",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_h_charged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_h_upgraded_zm",
+            "instakilldamagescale": 0.4,
+            "weaponid": "#ww_hand_h_upgraded",
+            "weakpointdamagescale": 0.4,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.2
+        },
+        {
+            "hash_fe55d685": "#ww_hand_g_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_g",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_g_uncharged_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_g_uncharged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#hash_5998a631b4da4974",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_g_charged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_g_upgraded_zm",
+            "instakilldamagescale": 0.3,
+            "weaponid": "#ww_hand_g_upgraded",
+            "weakpointdamagescale": 0.4,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.3
+        },
+        {
+            "hash_fe55d685": "#ww_hand_o_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_o",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_o_uncharged_zm",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_o_uncharged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#hash_1aee4b7139b0db1c",
+            "instakilldamagescale": 0.2,
+            "weaponid": "#ww_hand_o_charged",
+            "weakpointdamagescale": 0.2,
+            "hash_97b22faa": 0.25,
+            "damagescale": 0.15
+        },
+        {
+            "hash_fe55d685": "#ww_hand_o_upgraded_zm",
+            "instakilldamagescale": 0.4,
+            "weaponid": "#ww_hand_o_upgraded",
+            "weakpointdamagescale": 0.4,
+            "hash_97b22faa": 0.5,
+            "damagescale": 0.3
+        }
+    ],
+    "hash_604a84a1": 1,
+    "hash_10460f1e": 1,
+    "hash_1be2be91": 150,
+    "scoreevent": "#main_ee",
+    "configstringfiletype": "scriptbundle",
+    "maxhealth": 1,
+    "hash_a3160086": 50,
+    "hash_7b22b800": 0,
+    "instakilldamagescale": 1,
+    "name": "zm_gegenees_settings",
+    "hash_dbb3ef3d": 300,
+    "weakpointdamagescale": 1,
+    "hash_97b22faa": 2,
+    "hash_3422adfd": 1.5,
+    "damagescale": 0.2,
+    "category": "#elite",
+    "hash_854eebd": 0,
+    "hash_ef908ac8": 64,
+    "stunduration": 1,
+    "hash_5d9f2696": 1,
+    "animationspeed": 1
+}

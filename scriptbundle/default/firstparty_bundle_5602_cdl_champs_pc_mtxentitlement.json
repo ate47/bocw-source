@@ -1,51 +1,61 @@
 {
-    "var_279a3ec8": [
+    "#hash_279a3ec8": [
         {
-            "var_4a4bc969": "#ar_damage_bp_champs_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_champs_pc_mtxitem",
             "itemid": "26120912"
         },
         {
-            "var_4a4bc969": "#sniper_standard_bp_viewer_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#sniper_standard_bp_viewer_pc_mtxitem",
             "itemid": "21771671"
         },
         {
-            "var_4a4bc969": "#t9_charm_league_cdl_champs_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_league_cdl_champs_pc_mtxitem",
             "itemid": "29325787"
         },
         {
-            "var_4a4bc969": "#emblems_betteronlan_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_betteronlan_base_pc_mtxitem",
             "itemid": "20228857"
         },
         {
-            "var_4a4bc969": "#emblems_onlinewarrior_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_onlinewarrior_base_pc_mtxitem",
             "itemid": "19495298"
         },
         {
-            "var_4a4bc969": "#callingcards_cdlchampionship2021_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_cdlchampionship2021_base_pc_mtxitem",
             "itemid": "28857442"
         },
         {
-            "var_4a4bc969": "#callingcards_onlychamps_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_onlychamps_base_pc_mtxitem",
             "itemid": "17900845"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_2021ring_base_pc_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_2021ring_base_pc_mtxitem",
             "itemid": "33303047"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_3ab692312f76df0d",
-    "var_247d9ed7": "firstparty_bundle_5602_cdl_champs",
-    "var_208d76b5": "#hash_330193fdf4fbc7f5",
-    "var_70f66e54": "#hash_1d8508069f3c833a",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "firstparty_bundle_5602_cdl_champs",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_firstparty_bundle_5602_cdl_champs",
+    "hash_70f66e54": "#hash_1d8508069f3c833a",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_99071a5f": 0,
     "name": "firstparty_bundle_5602_cdl_champs_pc_mtxentitlement",
-    "var_a788fada": "#hash_1778e0378752b82a",
-    "titlestring": "#hash_357ed461b1862d28",
-    "var_566825be": "#hash_1168ab05e2f95cb6",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_firstparty_bundle_5602_cdl_champs_small",
+    "titlestring": "localized18#hash_357ed461b1862d28",
+    "hash_566825be": "image#ui_icon_mtx_titles_firstparty_bundle_5602_cdl_champs",
+    "hash_8f48f07d": 0,
+    "hash_4af381c": 2000,
     "category": "#entitlement",
-    "var_f3c937a9": "#hash_3b4300a7eecca070",
-    "var_db3e02ab": 2000,
-    "var_4e46b1b3": "#pc",
+    "hash_f3c937a9": "localized18#hash_3b4300a7eecca070",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#pc",
     "itemid": "20030121",
-    "var_a592ce5": 1
+    "hash_a592ce5": 1
 }

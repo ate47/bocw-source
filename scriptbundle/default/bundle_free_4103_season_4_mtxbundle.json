@@ -1,22 +1,27 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#callingcards_dragon_shavrin_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_dragon_shavrin_mtxitem",
             "itemid": "33123178"
         },
         {
-            "var_4a4bc969": "#player_xp_token_common_mtxitem",
+            "hash_4a4bc969": "scriptbundle#player_xp_token_common_mtxitem",
             "itemid": "30886333"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_6655d3020fa5a366",
-    "var_375a1747": "#hash_6bb59ad1c373b848",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_4103_season_4",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_free_4103_season_4_mtxbundle",
-    "titlestring": "#hash_67dc9f9769ac011f",
-    "var_566825be": "#hash_3bf331d875b76c6f",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_67dc9f9769ac011f",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_4103_season_4",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1d0d5b3e217b16db",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1d0d5b3e217b16db",
+    "hash_db3e02ab": 2000,
     "itemid": "26418704"
 }

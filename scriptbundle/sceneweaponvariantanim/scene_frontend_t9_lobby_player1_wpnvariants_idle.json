@@ -1,0 +1,258 @@
+{
+    "#hash_37f7b010": [
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#shotgun_pump_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#shotgun_pump_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#shotgun_semiauto_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#shotgun_semiauto_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#smg_handling_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#smg_handling_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#smg_burst_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#smg_burst_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#tr_precisionsemi_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#tr_precisionsemi_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#tr_damagesemi_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#tr_damagesemi_t9",
+            "gender": "female"
+        },
+        {},
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#launcher_freefire_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#launcher_freefire_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_64ade81665bae26",
+            "weapon": "#ar_accurate_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_254e536da2ddf775",
+            "weapon": "#ar_accurate_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_62cd3c74193d4569",
+            "weapon": "#ar_mobility_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_6b1a88a1ceacc5ea",
+            "weapon": "#ar_mobility_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_d8f1b51d4b163e3",
+            "weapon": "#smg_heavy_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7af413dc4ee47258",
+            "weapon": "#smg_heavy_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6333cf11bb978ace",
+            "weapon": "#smg_capacity_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_64c6f45828a2dde7",
+            "weapon": "#smg_capacity_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_1dfb476e5f38bdfb",
+            "weapon": "#sniper_quickscope_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_727b41e6bde0ded8",
+            "weapon": "#sniper_quickscope_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_304a2b55b0a4fe06",
+            "weapon": "#lmg_slowfire_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_4d92ea6d53f3575",
+            "weapon": "#lmg_slowfire_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#melee_sledgehammer_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#melee_sledgehammer_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_61f4b0ad62cae51d",
+            "weapon": "#sniper_standard_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_25afbe68572f007c",
+            "weapon": "#sniper_standard_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_683248ff99801d64",
+            "weapon": "#ar_damage_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_55651a5ce6e0283d",
+            "weapon": "#ar_damage_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_5a9fb9e11e130430",
+            "weapon": "#lmg_accurate_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_2e03879a73d3f4b9",
+            "weapon": "#lmg_accurate_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_3050b955b0aa5afe",
+            "weapon": "#sniper_powersemi_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_4b734a6d5225941",
+            "weapon": "#sniper_powersemi_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_51d0ec557b5cb9e6",
+            "weapon": "#ar_standard_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_2a1a45a73309c0fd",
+            "weapon": "#ar_standard_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_48cda8f8660de8fa",
+            "weapon": "#ar_fastfire_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_210b9243fd031233",
+            "weapon": "#ar_fastfire_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#ar_fasthandling_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#ar_fasthandling_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_5dc3f656264ba7b9",
+            "weapon": "#smg_fastfire_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_490d692bb32fdbc2",
+            "weapon": "#smg_fastfire_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_5407ab99d05ecfa8",
+            "weapon": "#smg_standard_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_3f74077b15a8ab1d",
+            "weapon": "#smg_standard_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#shotgun_fullauto_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#shotgun_fullauto_t9",
+            "gender": "female"
+        },
+        {
+            "animation": "playeranim#hash_6350aa517667a98d",
+            "weapon": "#ar_fasthandling_t9",
+            "gender": "male"
+        },
+        {
+            "animation": "playeranim#hash_7501d72a2c9aed46",
+            "weapon": "#ar_fasthandling_t9",
+            "gender": "female"
+        }
+    ],
+    "type": "sceneweaponvariantanim",
+    "vmtype": "Both",
+    "name": "scene_frontend_t9_lobby_player1_wpnvariants_idle"
+}

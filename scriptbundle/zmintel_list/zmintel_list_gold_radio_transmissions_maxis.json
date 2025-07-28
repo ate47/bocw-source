@@ -1,0 +1,43 @@
+{
+    "#hash_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_4"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_5"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_6"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_7"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_8"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "hash_cb9cd317": "scriptbundle#zmintel_gold_maxis_radio_9"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_gold_radio_transmissions_maxis"
+}

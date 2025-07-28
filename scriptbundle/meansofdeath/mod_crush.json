@@ -1,9 +1,9 @@
 {
     "mod": "MOD_CRUSH",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_crush",
-    "displayname": "#hash_407564ab1150d1dc",
-    "icon": "#ui_icon_meansofdeath_crushed",
-    "iconlarge": "#ui_icon_meansofdeath_crushed_xl"
+    "displayname": "localized18#ui/mod_crush",
+    "icon": "image#ui_icon_meansofdeath_crushed",
+    "iconlarge": "image#ui_icon_meansofdeath_crushed_xl"
 }

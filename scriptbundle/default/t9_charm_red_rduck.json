@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_55228b80207c479a",
-    "description": "#hash_66a3809c7786c904",
+    "hash_ff3063df": "model#attach_t9_charm_red_rduck",
+    "description": "localized18#hash_66a3809c7786c904",
     "name": "t9_charm_red_rduck",
-    "var_6855e4be": "#t9_charm_red_rduck_mtxitem",
-    "displayname": "#hash_4f00e8f5687e187c",
+    "hash_6855e4be": "#t9_charm_red_rduck_mtxitem",
+    "displayname": "localized18#hash_4f00e8f5687e187c",
     "icon": "ui_icon_weapon_charms_red_rduck",
-    "var_ef5ad2b3": "#hash_55228b80207c479a"
+    "hash_ef5ad2b3": "model#attach_t9_charm_red_rduck"
 }

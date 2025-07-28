@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_accurate_bp_sweet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_accurate_bp_sweet_mtxitem",
             "itemid": "23792731"
         },
         {
-            "var_4a4bc969": "#tr_powerburst_cb_bp_sweet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_powerburst_cb_bp_sweet_mtxitem",
             "itemid": "30504215"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_sweet_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_sweet_mtxitem",
             "itemid": "29749897"
         },
         {
-            "var_4a4bc969": "#t9_charm_popsicle_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_popsicle_mtxitem",
             "itemid": "24059434"
         },
         {
-            "var_4a4bc969": "#emblems_r8g_04_s5_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_r8g_04_s5_animated_mtxitem",
             "itemid": "30926277"
         },
         {
-            "var_4a4bc969": "#callingcards_sweetie_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_sweetie_s5_mtxitem",
             "itemid": "27316268"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_sweetie_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_sweetie_s5_mtxitem",
             "itemid": "18642543"
         }
     ],
-    "itemname": "#hash_685e247e89843ecf",
-    "var_375a1747": "#hash_23c0a735e03a4949",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5034_lc10_sugar_rush",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5034_lc10_sugar_rush",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5034_lc10_sugar_rush_mtxbundle",
-    "var_a788fada": "#hash_6da886bc887dff76",
-    "titlestring": "#hash_2d39123ee8f317db",
-    "var_566825be": "#hash_3c96eee6add7b442",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5034_lc10_sugar_rush_small",
+    "titlestring": "localized18#hash_2d39123ee8f317db",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5034_lc10_sugar_rush",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_456e64b8eb74ed9f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_456e64b8eb74ed9f",
+    "hash_db3e02ab": 2000,
     "itemid": "28062205"
 }

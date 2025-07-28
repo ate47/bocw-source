@@ -1,35 +1,40 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#lmg_accurate_bp_bayou_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_bayou_mtxitem",
             "itemid": "32897083"
         },
         {
-            "var_4a4bc969": "#melee_bat_bp_bayou_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_bat_bp_bayou_mtxitem",
             "itemid": "29454556"
         },
         {
-            "var_4a4bc969": "#t9_charm_bundle_dynamite_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bundle_dynamite_mtxitem",
             "itemid": "20365301"
         },
         {
-            "var_4a4bc969": "#execution_082_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_082_mtxitem",
             "itemid": "32916445"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_r8g11_10_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_r8g11_10_s5_mtxitem",
             "itemid": "30799828"
         }
     ],
-    "itemname": "#hash_22a8d6f2ab480fa",
-    "var_375a1747": "#hash_2bd939578792b3ac",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5020_stoner_63_wrecking_crew",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5020_stoner_63_wrecking_crew",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5020_stoner_63_wrecking_crew_mtxbundle",
-    "var_a788fada": "#hash_79c080feeee0308f",
-    "titlestring": "#hash_446096543dc039aa",
-    "var_566825be": "#hash_6c60ca6df60b857",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5020_stoner_63_wrecking_crew_small",
+    "titlestring": "localized18#hash_446096543dc039aa",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5020_stoner_63_wrecking_crew",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_75f25219c98b2026",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_75f25219c98b2026",
+    "hash_db3e02ab": 2000,
     "itemid": "31373677"
 }

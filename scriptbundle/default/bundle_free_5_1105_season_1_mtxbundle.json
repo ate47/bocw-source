@@ -1,30 +1,35 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#tr_longburst_bp_verde_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_verde_mtxitem",
             "itemid": "19063332"
         },
         {
-            "var_4a4bc969": "#callingcards_redmissile_080_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_redmissile_080_mtxitem",
             "itemid": "32859214"
         },
         {
-            "var_4a4bc969": "#emblems_redmissile_64_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_redmissile_64_mtxitem",
             "itemid": "18952637"
         },
         {
-            "var_4a4bc969": "#weapon_xp_token_common_mtxitem",
+            "hash_4a4bc969": "scriptbundle#weapon_xp_token_common_mtxitem",
             "itemid": "27032621"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_58af21583ead0da8",
-    "var_375a1747": "#hash_6c79c57a1a18ff9a",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_free_5_1105_season_1",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_free_5_1105_season_1_mtxbundle",
-    "titlestring": "#hash_7bcf17260f30ae84",
-    "var_566825be": "#hash_3bce31d994032115",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_7bcf17260f30ae84",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_free_5_1105_season_1",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_a99f6fa365001b4",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_a99f6fa365001b4",
+    "hash_db3e02ab": 2000,
     "itemid": "21303656"
 }

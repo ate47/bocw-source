@@ -1,0 +1,12 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&platinum_ai_zombie",
+            "hash_a949845f": -1,
+            "hash_857deb66": 100
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "default_zombies_platinum"
+}

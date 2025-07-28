@@ -1,0 +1,17 @@
+{
+    "description": "localized19#hash_4e5e3d39bb18cb9e",
+    "tagname": "mdl_cp_rus_kgb_item_01",
+    "UnlockMap": "cp_rus_kgb",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_kgb_photo_lubyanka_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_kgb_01",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_1a2c4fecacc98b22",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_5b095a403f223c80",
+    "hash_434e678e": 0,
+    "hash_f3575c58": 1,
+    "thumbnail": "image#evidenceboard_review_kgb_photo_lubyanka"
+}

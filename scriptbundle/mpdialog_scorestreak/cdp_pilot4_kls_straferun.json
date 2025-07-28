@@ -1,0 +1,17 @@
+{
+    "wavestartfinal": "#hash_6e858d3f698aff2a",
+    "configstringfiletype": "scriptbundle",
+    "killgroundvehicle": "#hash_46b199f60e845f39",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_24bc78fd3f295528",
+    "killaircraft": "#hash_2374df43633ff5f8",
+    "hitconfirmed_p0": "#hash_6bdf7f3522e3ebca",
+    "vmtype": "both",
+    "name": "cdp_pilot4_kls_straferun",
+    "arrive": "#hash_73c3a2b56031f71e",
+    "wavestart": "#hash_76479e83f8dff2e3",
+    "kill1": "#hash_3fd014edf484b639",
+    "kill3": "#hash_3fd012edf484b2d3",
+    "kill2": "#hash_3fd011edf484b120",
+    "killnone": "#hash_234723e07b1c93c8"
+}

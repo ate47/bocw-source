@@ -1,0 +1,93 @@
+{
+    "objects": [
+        {
+            "fastrope": 0,
+            "aligntag": "tag_driver",
+            "position": "driver",
+            "valid": 1
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        },
+        {
+            "fastrope": 0
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "model": "model#veh_t9_mil_us_turret_lmg_stationary_cp",
+    "type": "vehicleriders",
+    "hash_4301b21d": 1,
+    "vmtype": "both",
+    "dropspeed": 250,
+    "name": "veh_t9_turret_m60_riders",
+    "highexitlandheight": 32
+}

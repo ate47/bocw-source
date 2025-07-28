@@ -1,0 +1,38 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_f49bdf40": "localized19#hash_37e529e49526b214"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5b02f01877aaea6a",
+            "hash_c9d25687": "localized19#hash_1df623193230a741"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5b02ef1877aae8b7",
+            "hash_c9d25687": "localized19#hash_75f8685c9e6b332e"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5b02ee1877aae704",
+            "hash_c9d25687": "localized19#hash_6a92d99f2b66bc9f"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5b02ed1877aae551",
+            "hash_c9d25687": "localized19#hash_6ba4a18232eabb14"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5b02ec1877aae39e",
+            "hash_c9d25687": "localized19#hash_7095917e6c6c5e15"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5b02eb1877aae1eb",
+            "hash_c9d25687": "localized19#hash_e58dd461e2c0c92"
+        },
+        {
+            "hash_f49bdf40": "localized19#hash_5070257a2279a12d"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "notedisplaycontentlists",
+    "name": "cp_ger_stakeout_note_list",
+    "hash_85ca818b": "image#hash_64eae28eaf38f33d"
+}

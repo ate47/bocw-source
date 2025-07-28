@@ -1,48 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#shotgun_pump_bp_nucleard_mtxitem",
+            "hash_4a4bc969": "scriptbundle#shotgun_pump_bp_nucleard_mtxitem",
             "itemid": "22058710"
         },
         {
-            "var_4a4bc969": "#ar_damage_bp_moonshine_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_moonshine_mtxitem",
             "itemid": "28341029"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_digital_magic8_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_digital_magic8_mtxitem",
             "itemid": "23621191"
         },
         {
-            "var_4a4bc969": "#t9_charm_martini_bomb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_martini_bomb_mtxitem",
             "itemid": "33515815"
         },
         {
-            "var_4a4bc969": "#veh_t9_snowmobile_assembly_mpx_nuke_punk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_snowmobile_assembly_mpx_nuke_punk_mtxitem",
             "itemid": "33063217"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_well_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_well_mtxitem",
             "itemid": "28008965"
         },
         {
-            "var_4a4bc969": "#emblems_moonshiner_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_moonshiner_animated_mtxitem",
             "itemid": "30013433"
         },
         {
-            "var_4a4bc969": "#callingcards_moonshiner_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_moonshiner_animated_mtxitem",
             "itemid": "32105830"
         }
     ],
-    "itemname": "#hash_3d4c0c818c8f290a",
-    "var_375a1747": "#hash_6a505734b58e875c",
-    "var_579fd6c3": 50,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3007_hauer_77_steampunk",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3007_hauer_77_steampunk",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 50,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3007_hauer_77_steampunk_mtxbundle",
-    "var_a788fada": "#hash_1b3af3e523b7db01",
-    "titlestring": "#hash_1654030b941a720b",
-    "var_566825be": "#hash_3ad785cf3af6af59",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3007_hauer_77_steampunk_small",
+    "titlestring": "localized18#hash_1654030b941a720b",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3007_hauer_77_steampunk",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_20c393a460d1548f",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_20c393a460d1548f",
+    "hash_db3e02ab": 2000,
     "itemid": "23657404"
 }

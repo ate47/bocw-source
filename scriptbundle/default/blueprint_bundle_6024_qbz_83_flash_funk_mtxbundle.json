@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_flashf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_flashf_mtxitem",
             "itemid": "24664572"
         },
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_flashf_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_flashf_mtxitem",
             "itemid": "26551677"
         },
         {
-            "var_4a4bc969": "#t9_charm_boss_chalice_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_boss_chalice_mtxitem",
             "itemid": "27491871"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_assembly_mpx_flash_funk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_ru_tank_t72_assembly_mpx_flash_funk_mtxitem",
             "itemid": "32460981"
         },
         {
-            "var_4a4bc969": "#emblems_tacticalfunk_s6_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_tacticalfunk_s6_animated_mtxitem",
             "itemid": "24407201"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_tacticalfunk_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_tacticalfunk_s6_mtxitem",
             "itemid": "29072443"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_2d5f5ddd08b99d76",
-    "var_375a1747": "#hash_4e54cbcd5e157c58",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6024_qbz_83_flash_funk",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6024_qbz_83_flash_funk_mtxbundle",
-    "var_a788fada": "#hash_7d88c92f16413427",
-    "titlestring": "#hash_709db52489c0dffd",
-    "var_566825be": "#hash_1c44a9b0a1930a6f",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6024_qbz_83_flash_funk_small",
+    "titlestring": "localized18#hash_709db52489c0dffd",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6024_qbz_83_flash_funk",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_c0083641aa4cb5",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_c0083641aa4cb5",
+    "hash_db3e02ab": 2000,
     "itemid": "22176078"
 }

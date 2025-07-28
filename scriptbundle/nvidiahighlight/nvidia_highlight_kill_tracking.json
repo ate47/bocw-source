@@ -1,12 +1,13 @@
 {
-    "var_a5595a3c": 5000,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_92a2f4cc": "NvidiaTracking",
+    "hash_a5595a3c": 5000,
+    "hash_bae1b00c": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_92a2f4cc": "NvidiaTracking",
     "type": "nvidiahighlight",
-    "var_7c5d9e9b": 16,
-    "var_c00b3c0b": "kill_tracking",
+    "hash_7c5d9e9b": 16,
+    "hash_c00b3c0b": "kill_tracking",
     "name": "nvidia_highlight_kill_tracking",
-    "var_4e0cc20b": 2,
-    "var_6b3ed02e": 1,
-    "var_cbd5111b": -5000
+    "hash_4e0cc20b": 2,
+    "hash_6b3ed02e": 1,
+    "hash_cbd5111b": -5000
 }

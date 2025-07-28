@@ -1,0 +1,69 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#shotgun_pump_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#tr_damagesemi_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#special_crossbow_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#sniper_standard_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#sniper_quickscope_sp_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#shotgun_semiauto_bp1_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#smg_heavy_bp_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "itementry": "scriptbundle#lmg_light_bp_t9_item_spy",
+            "maxweight": 1,
+            "available": 1
+        }
+    ],
+    "hash_136dd314": 40,
+    "hash_3d685b35": 0,
+    "configstringfiletype": "scriptbundle",
+    "hash_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "vehiclespawner": 0,
+    "hash_c52545f8": 0,
+    "hash_9b80f2b0": 0,
+    "hash_713a9e24": 0,
+    "hash_9b009839": -1,
+    "hash_dc7ffbef": 0,
+    "name": "t9_spy_deaddrop_weapon",
+    "hash_56257910": 0,
+    "hash_eec6a9b": 0,
+    "hash_24681596": 0,
+    "supplystashweight": 100,
+    "hash_dc91e192": 0
+}

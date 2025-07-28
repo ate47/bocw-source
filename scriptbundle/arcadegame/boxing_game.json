@@ -1,0 +1,20 @@
+{
+    "description": "localized18#hash_af0a2e5bac21e75",
+    "configstringfiletype": "scriptbundle",
+    "hash_303ce84a": "localized18#hash_1f84e30ba73f36c2",
+    "hash_3552049b": 0,
+    "type": "arcadegame",
+    "hash_a9bbbfb4": 1,
+    "hash_76e12fbf": "image#uie_arcade_large_boxing",
+    "hash_9864ed1": 0,
+    "name": "boxing_game",
+    "displayname": "localized18#hash_68021d744780e5a3",
+    "filename": "#hash_3ecc9ad919de7120",
+    "action": "localized18#hash_43184ef7017e127f",
+    "hash_dcc4bcb0": 1,
+    "hash_c4763a6d": 0,
+    "start": "localized18#hash_6b936ed63a65fd33",
+    "previewimage": "image#uie_arcade_icon_boxing",
+    "hash_8b592b62": "image#uie_icon_arcade_splash_boxing",
+    "hash_48152d43": 1
+}

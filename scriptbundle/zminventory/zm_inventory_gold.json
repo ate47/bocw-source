@@ -1,69 +1,23 @@
 {
     "wonderweaponphases": [
         {
-            "components": [
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_502b3919d8f3ca47"
-                        }
-                    ],
-                    "clientfield": "#hash_5d24d46e696a9fd1"
-                },
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_3735ec0293decec8"
-                        },
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_7d68ffec0ef019ad"
-                        }
-                    ],
-                    "clientfield": "#hash_36dcff5d560ebdf2"
-                },
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_16f5e9d1c022cf72"
-                        },
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_320874c0032b5533"
-                        }
-                    ],
-                    "clientfield": "#hash_4214918e34681e5a"
-                },
-                {
-                    "stages": [
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_186bd9c547fcd6c8"
-                        },
-                        {
-                            "numneeded": 1,
-                            "stageimage": "#hash_2aeadbc373e9bed5"
-                        }
-                    ],
-                    "clientfield": "#hash_64ec4aaf73911014"
-                }
-            ]
+            "subs": "<invalid:0x0>"
         }
     ],
     "shieldpieces": [
         {
-            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
+            "hash_7db3435c": 0,
+            "pieceimage": "image#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed7d3c1ea3e1b8"
         },
         {
-            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
+            "hash_7db3435c": 0,
+            "pieceimage": "image#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed803c1ea3e6d1"
         },
         {
-            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
+            "hash_7db3435c": 0,
+            "pieceimage": "image#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed7f3c1ea3e51e"
         }
     ],
@@ -71,130 +25,44 @@
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_16854c417b81db45"
-                                }
-                            ],
-                            "clientfield": "#hash_770dc48645b11519"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_d572441762905e2"
-                                }
-                            ],
-                            "clientfield": "#hash_6dfb2c86406ffc1e"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_7cf54f416d25c340"
-                                }
-                            ],
-                            "clientfield": "#hash_5af00d28eb1b6e90"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_7035704e0871d608"
-                                }
-                            ],
-                            "clientfield": "#hash_3463252589f042b8"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_mq_truth_serum",
-            "var_a0ebe517": "#hash_1ca4c39373eb4bdf",
-            "var_bb5d23fb": "#hash_1b25941644294822"
+            "hash_a0ebe517": "#hash_1ca4c39373eb4bdf",
+            "hash_bb5d23fb": "localized18#hash_1b25941644294822"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_1faa8938274f4a3a"
-                                }
-                            ],
-                            "clientfield": "#hash_6ded46343cad4c61"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_e37b3687a648cfb"
-                                }
-                            ],
-                            "clientfield": "#hash_68710dddf2ce34c5"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_1423b88182607bff"
-                                }
-                            ],
-                            "clientfield": "#hash_3dbda17facd5a63e"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_mq_item",
-            "var_a0ebe517": "#hash_1ca4c49373eb4d92",
-            "var_bb5d23fb": "#hash_33742d94a71eeba0"
+            "hash_a0ebe517": "#hash_1ca4c49373eb4d92",
+            "hash_bb5d23fb": "localized18#hash_33742d94a71eeba0"
         },
         {
             "phases": [
                 {
-                    "items": [
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_3a5d1efe02edcb55"
-                                },
-                                {
-                                    "stageimage": "#hash_60ff371d3bb50f38"
-                                }
-                            ],
-                            "clientfield": "#hash_41f1735c1f1772a1"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_3a5d1efe02edcb55"
-                                },
-                                {
-                                    "stageimage": "#hash_60ff371d3bb50f38"
-                                }
-                            ],
-                            "clientfield": "#hash_41f1705c1f176d88"
-                        },
-                        {
-                            "stages": [
-                                {
-                                    "stageimage": "#hash_3a5d1efe02edcb55"
-                                },
-                                {
-                                    "stageimage": "#hash_60ff371d3bb50f38"
-                                }
-                            ],
-                            "clientfield": "#hash_41f1715c1f176f3b"
-                        }
-                    ]
+                    "subs": "<invalid:0x0>"
                 }
             ],
+            "hash_7db3435c": 0,
             "name": "zm_ww_item",
-            "var_a0ebe517": "#hash_1ca4c59373eb4f45",
-            "var_bb5d23fb": "#hash_ec0d5b840194ba0"
+            "hash_a0ebe517": "#hash_1ca4c59373eb4f45",
+            "hash_bb5d23fb": "localized18#hash_ec0d5b840194ba0"
         }
     ],
-    "objectivebackground": "#ui_icon_inventory_zm_red_artifact_sentinel",
-    "var_922067c4": "scriptbundle",
+    "objectivebackground": "image#ui_icon_inventory_zm_red_artifact_sentinel",
+    "configstringfiletype": "scriptbundle",
+    "hash_3e38620e": 0,
     "type": "zminventory",
     "name": "zm_inventory_gold",
-    "var_88c17f11": "#sentinel_artifact",
-    "var_45dbf920": "#hash_42bfa3b504480e94"
+    "hash_88c17f11": "#sentinel_artifact",
+    "hash_45dbf920": "localized18#hash_42bfa3b504480e94",
+    "hash_f3d39d90": 0,
+    "hash_38b9613": 0
 }

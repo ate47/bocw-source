@@ -1,11 +1,11 @@
 {
-    "description": "#hash_30471aadcb893f9c",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_30471aadcb893f9c",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_kill_enemy_while_capping_dom",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_b5cdf3d984d9ef9",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_assault",
     "statname": "#hash_61cf0b4451d9ff9b",
-    "var_8645ce54": "#hash_74c273f18b5b72a7",
-    "iconlarge": "#hash_bbfd7f8b068865d"
+    "stringref": "localized18#hash_74c273f18b5b72a7",
+    "iconlarge": "image#ui_icon_medal_assault_large"
 }

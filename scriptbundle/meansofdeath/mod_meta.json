@@ -1,9 +1,9 @@
 {
     "mod": "MOD_META",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_meta",
-    "displayname": "#hash_3a1244b1128d71d0",
-    "icon": "#ui_icon_meansofdeath_suicide",
-    "iconlarge": "#ui_icon_meansofdeath_suicide_xl"
+    "displayname": "localized18#ui/mod_meta",
+    "icon": "image#ui_icon_meansofdeath_suicide",
+    "iconlarge": "image#ui_icon_meansofdeath_suicide_xl"
 }

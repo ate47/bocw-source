@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_788ac806177cc2ec",
-    "var_86b354f": 90,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Gold",
+    "description": "localized18#hash_788ac806177cc2ec",
+    "hash_86b354f": 90,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Gold",
     "type": "trophy",
-    "var_4a95afca": "#hash_1338868d1d69f4f7",
-    "image": "#hash_a2c5f8d182e07ad",
+    "hash_4a95afca": "image#hash_1338868d1d69f4f7",
+    "image": "image#hash_a2c5f8d182e07ad",
     "name": "cp_achievement_combat_hardened",
-    "title": "#hash_3622bf35e8c1ecc4"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_3622bf35e8c1ecc4",
+    "hash_621379a": 0
 }

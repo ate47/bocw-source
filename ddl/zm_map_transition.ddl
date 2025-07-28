@@ -49,7 +49,7 @@ version hash_502418f36914bffe {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -81,7 +81,7 @@ version hash_502418f36914bffe {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -264,7 +264,7 @@ version hash_502418f36914bffe {
     // offset: 0x1378, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1380, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1390, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1890, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -360,7 +360,7 @@ version hash_3e22e5b96769e6b2 {
     // root: bitSize: 0x2f78, members: 4
 
     // offset: 0x0, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x10, bitSize: 0x2f60(0x5ec Byte(s)), array:0x4(hti:0xffff)
     player players[4];
     // offset: 0x2f70, bitSize: 0x1
@@ -394,7 +394,7 @@ version hash_cf3264a2a406a278 {
         // offset: 0x368, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x3a8, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x3a9, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -520,7 +520,7 @@ version hash_cf3264a2a406a278 {
     // offset: 0x30, bitSize: 0x80(0x10 Byte(s))
     objective forcedobjective;
     // offset: 0xb0, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0xc0, bitSize: 0x60(0xc Byte(s)), array:0x6(hti:0x0)
     destination hash_501fca63bac8cf9[hash_3cf9bad1617a0ffd];
     // offset: 0x120, bitSize: 0x4c80(0x990 Byte(s)), array:0x4(hti:0xffff)
@@ -556,7 +556,7 @@ version hash_b540907f21d98f48 {
         // offset: 0x368, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x3a8, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x3a9, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -686,7 +686,7 @@ version hash_b540907f21d98f48 {
     // offset: 0x30, bitSize: 0x80(0x10 Byte(s))
     objective forcedobjective;
     // offset: 0xb0, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0xc0, bitSize: 0x60(0xc Byte(s)), array:0x6(hti:0x0)
     destination hash_501fca63bac8cf9[hash_3cf9bad1617a0ffd];
     // offset: 0x120, bitSize: 0x4d80(0x9b0 Byte(s)), array:0x4(hti:0xffff)
@@ -722,7 +722,7 @@ version hash_d94d5ab568c2c1b1 {
         // offset: 0x368, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x3a8, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x3a9, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -854,7 +854,7 @@ version hash_d94d5ab568c2c1b1 {
     // offset: 0x30, bitSize: 0x80(0x10 Byte(s))
     objective forcedobjective;
     // offset: 0xb0, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0xc0, bitSize: 0x60(0xc Byte(s)), array:0x6(hti:0x0)
     destination hash_501fca63bac8cf9[hash_3cf9bad1617a0ffd];
     // offset: 0x120, bitSize: 0x4e00(0x9c0 Byte(s)), array:0x4(hti:0xffff)
@@ -890,7 +890,7 @@ version hash_bd70bd1cd2ac1c5e {
         // offset: 0x368, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x3a8, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x3a9, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -1008,7 +1008,7 @@ version hash_bd70bd1cd2ac1c5e {
     // offset: 0xcb0, bitSize: 0x360(0x6c Byte(s)), array:0x6(hti:0xffff)
     string(18) hash_60af8d9cfbbe06bd[6];
     // offset: 0x1010, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1020, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1520, bitSize: 0x8(0x1 Byte(s))
@@ -1048,7 +1048,7 @@ version hash_4729ff830416fe84 {
         // offset: 0x368, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x3a8, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x3a9, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -1166,7 +1166,7 @@ version hash_4729ff830416fe84 {
     // offset: 0xcb0, bitSize: 0x360(0x6c Byte(s)), array:0x6(hti:0xffff)
     string(18) hash_60af8d9cfbbe06bd[6];
     // offset: 0x1010, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1020, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1520, bitSize: 0x8(0x1 Byte(s))
@@ -1216,7 +1216,7 @@ version hash_3fc2e79e3fca3702 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -1334,7 +1334,7 @@ version hash_3fc2e79e3fca3702 {
     // offset: 0xcb0, bitSize: 0x360(0x6c Byte(s)), array:0x6(hti:0xffff)
     string(18) hash_60af8d9cfbbe06bd[6];
     // offset: 0x1010, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1020, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1520, bitSize: 0x8(0x1 Byte(s))
@@ -1384,7 +1384,7 @@ version hash_15cf9d15771f11e5 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -1510,7 +1510,7 @@ version hash_15cf9d15771f11e5 {
     // offset: 0x1030, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1038, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1048, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1548, bitSize: 0x8(0x1 Byte(s))
@@ -1560,7 +1560,7 @@ version hash_52a41ff430c195c1 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -1688,7 +1688,7 @@ version hash_52a41ff430c195c1 {
     // offset: 0x1030, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1038, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1048, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1548, bitSize: 0x8(0x1 Byte(s))
@@ -1738,7 +1738,7 @@ version hash_7db54bf1aef5db84 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -1896,7 +1896,7 @@ version hash_7db54bf1aef5db84 {
     // offset: 0x1030, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1038, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1048, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1548, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -1948,7 +1948,7 @@ version hash_7c6f1c6fe711f835 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -2110,7 +2110,7 @@ version hash_7c6f1c6fe711f835 {
     // offset: 0x1030, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1038, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1048, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1548, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -2162,7 +2162,7 @@ version hash_32bd1e8d1d049093 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -2324,7 +2324,7 @@ version hash_32bd1e8d1d049093 {
     // offset: 0x1030, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1038, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1048, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1548, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -2384,7 +2384,7 @@ version hash_959b57a72a8ecb28 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -2549,7 +2549,7 @@ version hash_959b57a72a8ecb28 {
     // offset: 0x1238, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1240, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1250, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1750, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -2609,7 +2609,7 @@ version hash_b2a7759f39966da5 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -2776,7 +2776,7 @@ version hash_b2a7759f39966da5 {
     // offset: 0x1238, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1240, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1250, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1750, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -2836,7 +2836,7 @@ version hash_6abfa8438b631f43 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -3003,7 +3003,7 @@ version hash_6abfa8438b631f43 {
     // offset: 0x1238, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1240, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1250, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1750, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -3069,7 +3069,7 @@ version hash_fa58df819847f261 {
         // offset: 0x3c8, bitSize: 0x40(0x8 Byte(s))
         uint64 hash_17f911763bde5dfe;
         // offset: 0x408, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x409, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -3238,7 +3238,7 @@ version hash_fa58df819847f261 {
     // offset: 0x1238, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1240, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1250, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1750, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -3314,7 +3314,7 @@ version hash_dfa9778bf735bf84 {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -3346,7 +3346,7 @@ version hash_dfa9778bf735bf84 {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -3515,7 +3515,7 @@ version hash_dfa9778bf735bf84 {
     // offset: 0x1238, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1240, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1250, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1750, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -3591,7 +3591,7 @@ version hash_a0aed5d273d9a81e {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -3623,7 +3623,7 @@ version hash_a0aed5d273d9a81e {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -3796,7 +3796,7 @@ version hash_a0aed5d273d9a81e {
     // offset: 0x1258, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1260, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1270, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1770, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -3872,7 +3872,7 @@ version hash_90c10021207ffe15 {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -3904,7 +3904,7 @@ version hash_90c10021207ffe15 {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -4079,7 +4079,7 @@ version hash_90c10021207ffe15 {
     // offset: 0x1258, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1260, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1270, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1770, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -4155,7 +4155,7 @@ version hash_1daa829a1895deaf {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -4187,7 +4187,7 @@ version hash_1daa829a1895deaf {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -4364,7 +4364,7 @@ version hash_1daa829a1895deaf {
     // offset: 0x1258, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1260, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1270, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1770, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -4440,7 +4440,7 @@ version hash_e9b4d75ef1446221 {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -4472,7 +4472,7 @@ version hash_e9b4d75ef1446221 {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -4655,7 +4655,7 @@ version hash_e9b4d75ef1446221 {
     // offset: 0x1258, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1260, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1270, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1770, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -4731,7 +4731,7 @@ version hash_c1ac0f6f8f464b7b {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -4763,7 +4763,7 @@ version hash_c1ac0f6f8f464b7b {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -4950,7 +4950,7 @@ version hash_c1ac0f6f8f464b7b {
     // offset: 0x1258, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1260, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1270, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1770, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)
@@ -5026,7 +5026,7 @@ version hash_5faa99dae364fa4e {
         // offset: 0x40c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x40d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
         // offset: 0x40e, bitSize: 0x1
         bool hash_22de893145a66a64;
     };
@@ -5058,7 +5058,7 @@ version hash_5faa99dae364fa4e {
         // offset: 0x34c, bitSize: 0x1
         bool hash_5b4b4e5cc381eb9b;
         // offset: 0x34d, bitSize: 0x1
-        bool hash_455cfe820071b143;
+        bool isloadoutweapon;
     };
 
     // bitSize: 0x48, members: 2
@@ -5241,7 +5241,7 @@ version hash_5faa99dae364fa4e {
     // offset: 0x1258, bitSize: 0x8(0x1 Byte(s))
     byte hash_44f5d4b321e92263;
     // offset: 0x1260, bitSize: 0x10(0x2 Byte(s))
-    short hash_1601cc3215f4f8b3;
+    short star_rating;
     // offset: 0x1270, bitSize: 0x500(0xa0 Byte(s)), array:0x14(hti:0xffff)
     xhash hash_5eba90da524edc31[20];
     // offset: 0x1770, bitSize: 0x100(0x20 Byte(s)), array:0x10(hti:0x2)

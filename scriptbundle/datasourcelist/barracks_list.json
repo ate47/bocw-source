@@ -1,0 +1,157 @@
+{
+    "#hash_bb7dcd09": [
+        {
+            "hash_5ed80a9c": "#progression",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_6e2c9ff989fce9ed",
+            "hash_1a50db25": "#hash_2f4d87e755191455",
+            "actionutility": "#hash_5012f2530e4e8a52",
+            "action": "#hash_693c7348250801fc"
+        },
+        {
+            "hash_5ed80a9c": "#hash_780bd1daa13236ee",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_7c12362b13be3518",
+            "hash_1a50db25": "#hash_2f4d87e755191455",
+            "actionutility": "#hash_5012f2530e4e8a52",
+            "action": "#hash_693c7348250801fc"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3a448997122bf909",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_2fd05120a967006f",
+            "hash_1a50db25": "#hash_1374bee73c93a780",
+            "actionutility": "#hash_406321a7c9c1f9ed",
+            "action": "#hash_6d3c894a62a3aa0"
+        },
+        {
+            "hash_5ed80a9c": "#hash_3ab1f35344ab668f",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_369748d6f236b847",
+            "hash_1a50db25": "#hash_643fb0816c40f404",
+            "actionutility": "#hash_5012f2530e4e8a52",
+            "action": "#hash_26bb5823050b9d4"
+        },
+        {
+            "hash_5ed80a9c": "#leaderboard",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_5fcaadb087bf022d",
+            "hash_1a50db25": "#hash_473174e834f41fd4",
+            "actionutility": "#hash_4efecf5e6002df6c",
+            "action": "#hash_72126f6601432f8"
+        },
+        {
+            "hash_5ed80a9c": "#zm_intel",
+            "hash_82ead409": 0,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_65d84ad4ac66dfe9",
+            "hash_1a50db25": "#hash_215996d1383d9293",
+            "actionutility": "#hash_3069f93c4e1e6bd8",
+            "action": "#hash_5d1163c1d324d7a0",
+            "breadcrumb": "#hash_273f4be9d5c785eb"
+        },
+        {
+            "hash_5ed80a9c": "#player_details",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_49366c2f1407990d",
+            "hash_1a50db25": "#hash_19ee407025ed42c7",
+            "actionutility": "#hash_5012f2530e4e8a52",
+            "action": "#hash_1c1ff02677ce7de2",
+            "breadcrumb": "#hash_2c09768c4394c0e3"
+        },
+        {
+            "hash_5ed80a9c": "#medals",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_8f69f5bdd4f7c26",
+            "hash_1a50db25": "#hash_244eb1bc957e575a",
+            "actionutility": "#hash_5012f2530e4e8a52",
+            "action": "#hash_7b24b475e7e37321"
+        },
+        {
+            "hash_5ed80a9c": "#hash_b6eef48603db67c",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_4683c0c91d6f33e6",
+            "actionutility": "#hash_5012f2530e4e8a52",
+            "action": "#hash_21dcf27a726253d5"
+        },
+        {
+            "hash_5ed80a9c": "#achievements",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_3ac5278e928b10bb",
+            "actionutility": "#hash_76fd967e1095ac28",
+            "action": "#hash_3bcbbbcc395ffff3"
+        },
+        {
+            "hash_5ed80a9c": "#theater",
+            "hash_82ead409": 1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#menu/theater",
+            "actionutility": "#hash_1a568193b170cb53",
+            "action": "#hash_47cc91fb8bad1970"
+        },
+        {
+            "hash_5ed80a9c": "#arcade",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_75d7a7f155ed7381",
+            "actionutility": "#hash_1a568193b170cb53",
+            "action": "#hash_3143e3e53323de61",
+            "breadcrumb": "#hash_5ee0b61e283d2f1"
+        },
+        {
+            "hash_5ed80a9c": "#hash_68073a3530f225fb",
+            "hash_82ead409": -1,
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "localized19#hash_630a7b89090f3e3d",
+            "actionutility": "#hash_5c48c7fdc61252ec",
+            "action": "#hash_11f12b3243d69080"
+        }
+    ],
+    "hash_6bb475c1": 0,
+    "hash_ef6b707": 0,
+    "hash_88c0037d": 0,
+    "hash_c5a72a50": 0,
+    "hash_72ef398b": 1,
+    "typetable": "#NONE",
+    "hash_2f050ffa": 1,
+    "hash_1f745188": 0,
+    "hash_d7f79634": 1,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_e19b7aba": 0,
+    "hash_abba0658": 1,
+    "hash_feb93de0": 0,
+    "hash_62a68a39": 0,
+    "hash_4295e20d": 0,
+    "hash_1af796": 0,
+    "hash_a77ed948": "#NONE",
+    "hash_5cf4c78e": 1,
+    "type": "datasourcelist",
+    "hash_5497949f": 0,
+    "hash_f45d206f": 0,
+    "hash_fb6daae5": 1,
+    "name": "barracks_list",
+    "hash_d7ecf096": 0,
+    "hash_528e9240": 0,
+    "hash_1084c16f": 1,
+    "hash_501b626b": 0,
+    "hash_f8c3715": 0,
+    "hash_bacb9d8e": 1,
+    "hash_6ff29b97": 0,
+    "hash_912f5388": 0,
+    "hash_50340f4": 0,
+    "hash_dc53f731": 0,
+    "hash_462f901": 0,
+    "hash_8b233d0b": 0,
+    "hash_97284357": 0,
+    "hash_8a9f4f3a": 0,
+    "hash_748e79a5": "scriptbundle#hash_85ce7fc2413331d"
+}

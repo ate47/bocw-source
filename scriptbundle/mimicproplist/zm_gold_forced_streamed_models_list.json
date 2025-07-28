@@ -13,7 +13,7 @@
             "asset": "#hash_5abd729f7a45fe9a"
         }
     ],
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "mimicproplist",
     "name": "zm_gold_forced_streamed_models_list"
 }

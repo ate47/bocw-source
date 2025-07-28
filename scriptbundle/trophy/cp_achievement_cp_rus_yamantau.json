@@ -4,13 +4,16 @@
             "filters": "#campaign"
         }
     ],
-    "description": "#hash_1c9f57e74c2c77aa",
-    "var_86b354f": 15,
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_525bbb8": "Bronze",
+    "description": "localized18#hash_1c9f57e74c2c77aa",
+    "hash_86b354f": 15,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_525bbb8": "Bronze",
     "type": "trophy",
-    "var_4a95afca": "#hash_76d34fbf0ea1bef7",
-    "image": "#hash_6dc728bf0965d1ad",
+    "hash_4a95afca": "image#hash_76d34fbf0ea1bef7",
+    "image": "image#hash_6dc728bf0965d1ad",
     "name": "cp_achievement_cp_rus_yamantau",
-    "title": "#hash_c91922bd27b611a"
+    "hash_805f0c0a": 0,
+    "hash_20cacd58": 0,
+    "title": "localized18#hash_c91922bd27b611a",
+    "hash_621379a": 0
 }

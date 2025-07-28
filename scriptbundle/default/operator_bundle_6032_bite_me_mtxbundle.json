@@ -1,51 +1,56 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#c_t9_jpn_pl_kitsune_biteme_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_jpn_pl_kitsune_biteme_mtxitem",
             "itemid": "32799206"
         },
         {
-            "var_4a4bc969": "#prt_mp_jps_kitsune_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_jps_kitsune_mtxitem",
             "itemid": "32530210"
         },
         {
-            "var_4a4bc969": "#lmg_accurate_bp_bite_mtxitem",
+            "hash_4a4bc969": "scriptbundle#lmg_accurate_bp_bite_mtxitem",
             "itemid": "30921088"
         },
         {
-            "var_4a4bc969": "#pistol_revolver_bp_bite_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_revolver_bp_bite_mtxitem",
             "itemid": "18556977"
         },
         {
-            "var_4a4bc969": "#t9_charm_snake_twoheads_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_snake_twoheads_mtxitem",
             "itemid": "21131821"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s6_analog_bite_me_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s6_analog_bite_me_mtxitem",
             "itemid": "21106897"
         },
         {
-            "var_4a4bc969": "#execution_096_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_096_mtxitem",
             "itemid": "22793242"
         },
         {
-            "var_4a4bc969": "#emblem_kitsunemask_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblem_kitsunemask_s6_mtxitem",
             "itemid": "20431342"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_koifish_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_koifish_s6_mtxitem",
             "itemid": "30954419"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_3e86cbdefefb0dbe",
-    "var_375a1747": "#hash_2c89ec67da0c8008",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_6032_bite_me",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_6032_bite_me_mtxbundle",
-    "var_a788fada": "#hash_731f56b4366c6ed1",
-    "titlestring": "#hash_49adfb847adb653a",
-    "var_566825be": "#hash_59a888b96c5947a9",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_6032_bite_me_small",
+    "titlestring": "localized18#hash_49adfb847adb653a",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_6032_bite_me",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_296156bf85d0fb36",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_296156bf85d0fb36",
+    "hash_db3e02ab": 2000,
     "itemid": "19068165"
 }

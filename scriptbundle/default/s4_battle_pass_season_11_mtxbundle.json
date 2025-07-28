@@ -1,21 +1,24 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#s4_battle_pass_token_mtxitem",
+            "hash_4a4bc969": "scriptbundle#s4_battle_pass_token_mtxitem",
             "itemid": "33984432"
         }
     ],
-    "var_2264d693": 1,
+    "hash_2264d693": 1,
     "itemname": "#hash_5f509baa945f72bc",
-    "var_375a1747": "#hash_23bdc77578bb916",
-    "var_637c8edf": 1,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_s4_battle_pass_season_11",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "s4_battle_pass_season_11_mtxbundle",
-    "var_a788fada": "#hash_85a4d70f3e3378b",
-    "titlestring": "#hash_79eb21b8f84a0e77",
-    "var_566825be": "#hash_1723be799c0c42f3",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_s4_battle_pass_season_11_small",
+    "titlestring": "localized18#hash_79eb21b8f84a0e77",
+    "hash_566825be": "image#ui_icon_mtx_titles_s4_battle_pass_season_11",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6b0c12e5cf7df606",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_6b0c12e5cf7df606",
+    "hash_db3e02ab": 2000,
     "itemid": "33989438"
 }

@@ -1,0 +1,23 @@
+{
+    "#hash_210a8489": [
+        {
+            "entryname": "scriptbundle&avogadro_or_disciple",
+            "hash_a949845f": 3,
+            "hash_857deb66": 10000
+        },
+        {
+            "entryname": "scriptbundle&inf_fire_dogs",
+            "hash_a949845f": -1,
+            "hash_857deb66": 1
+        },
+        {
+            "entryname": "scriptbundle&inf_specials",
+            "hash_a949845f": 1,
+            "hash_857deb66": 10000
+        }
+    ],
+    "hash_d961aeb3": 0.1,
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailist",
+    "name": "avogadros_and_fire_dogs_realm_4"
+}

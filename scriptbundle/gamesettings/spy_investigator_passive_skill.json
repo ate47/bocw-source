@@ -1,13 +1,18 @@
 {
-    "hinttext": "#hash_35efec912e221017",
-    "var_922067c4": "scriptbundle",
+    "hash_70dda4c0": 0,
+    "hinttext": "localized18#hash_35efec912e221017",
+    "configstringfiletype": "scriptbundle",
     "value2": "1",
     "value1": "0",
     "type": "gamesettings",
+    "hash_5a6dee5a": 0,
     "name": "spy_investigator_passive_skill",
-    "displayname": "#hash_4eb344cc30e56ec1",
-    "var_9600a8ab": "#hash_94eb0e3329edf5f",
-    "var_bd2ff709": "#menu/enabled",
-    "var_9de86f42": 2,
-    "setting": "spyModeInvestigatorPassiveSkill"
+    "displayname": "localized18#hash_4eb344cc30e56ec1",
+    "label1": "localized18#menu/disabled",
+    "label2": "localized18#menu/enabled",
+    "hash_54e336e4": 0,
+    "optionscount": 2,
+    "hash_765cfd09": 0,
+    "setting": "spyModeInvestigatorPassiveSkill",
+    "isenableddisabled": 0
 }

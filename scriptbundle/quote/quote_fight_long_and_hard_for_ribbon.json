@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_fight_long_and_hard_for_ribbon",
-    "quote": "#hash_6bb2abb490f6b47b",
-    "author": "#hash_63ab71c957f7ca17"
+    "quote": "localized18#hash_6bb2abb490f6b47b",
+    "author": "localized18#hash_63ab71c957f7ca17"
 }

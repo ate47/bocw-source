@@ -1,0 +1,19 @@
+{
+    "#hash_5fa96b51": [
+        {
+            "hash_1b48d0fc": "#spawner_bo5_zombie_zm_platinum"
+        },
+        {
+            "hash_1b48d0fc": "#spawner_bo5_zombie_zm_platinum_female"
+        },
+        {
+            "hash_1b48d0fc": "#hash_23fa13756529654e"
+        },
+        {
+            "hash_1b48d0fc": "#hash_57861ea96aec0131"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "survivalailistentry",
+    "name": "platinum_ai_zombie"
+}

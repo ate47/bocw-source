@@ -1,10 +1,10 @@
 {
-    "description": "#hash_1176129d74435e4a",
+    "description": "localized18#hash_1176129d74435e4a",
     "image": "ui_icon_wrist_accessories_s3_analog_chrono_sea",
-    "var_9b474412": 1,
+    "hash_9b474412": 1,
     "name": "wristaccessory_t9_s3_analog_chrono_sea",
-    "var_6855e4be": "#wristaccessory_t9_s3_analog_chrono_sea_mtxitem",
-    "displayname": "#hash_3ab818b4325f147a",
-    "var_8d478ea4": "#hash_2754fba91a43faac",
-    "var_d27eb4c6": "#hash_775b96227ae4f967"
+    "hash_6855e4be": "#wristaccessory_t9_s3_analog_chrono_sea_mtxitem",
+    "displayname": "localized18#hash_3ab818b4325f147a",
+    "hash_8d478ea4": "model#wrist_watch_t9_s3_analog_chrono_sea_view",
+    "hash_d27eb4c6": "model#wrist_watch_t9_s3_analog_chrono_sea_world"
 }

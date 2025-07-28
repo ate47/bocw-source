@@ -1,27 +1,32 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_handling_bp_toohot_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_handling_bp_toohot_mtxitem",
             "itemid": "18860266"
         },
         {
-            "var_4a4bc969": "#execution_023_mtxitem",
+            "hash_4a4bc969": "scriptbundle#execution_023_mtxitem",
             "itemid": "25153510"
         },
         {
-            "var_4a4bc969": "#reticle_95_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_95_mtxitem",
             "itemid": "19825985"
         }
     ],
-    "itemname": "#hash_cf49b98384a0040",
-    "var_375a1747": "#hash_6f637416420e8f0e",
+    "hash_2264d693": 0,
+    "itemname": "#operator_bundle_4049_stone_heat_map",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_4049_stone_heat_map",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_4049_stone_heat_map_mtxbundle",
-    "var_a788fada": "#hash_24c914d60e678695",
-    "titlestring": "#hash_170d336a9fc2d78e",
-    "var_566825be": "#hash_2ca65ab4b9e47a2d",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_4049_stone_heat_map_small",
+    "titlestring": "localized18#hash_170d336a9fc2d78e",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_4049_stone_heat_map",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1028efdbb3d90e02",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1028efdbb3d90e02",
+    "hash_db3e02ab": 2000,
     "itemid": "22930456"
 }

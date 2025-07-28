@@ -1,9 +1,9 @@
 {
-    "var_ff3063df": "#hash_2823601b939db791",
-    "description": "#hash_232a697a5cdf83f9",
+    "hash_ff3063df": "model#attach_t9_charm_chip",
+    "description": "localized18#hash_232a697a5cdf83f9",
     "name": "t9_charm_chip",
-    "var_6855e4be": "#t9_charm_chip_mtxitem",
-    "displayname": "#hash_897ac8d5dd89a27",
+    "hash_6855e4be": "#t9_charm_chip_mtxitem",
+    "displayname": "localized18#hash_897ac8d5dd89a27",
     "icon": "ui_icon_weapon_charms_t9_chip",
-    "var_ef5ad2b3": "#hash_2823601b939db791"
+    "hash_ef5ad2b3": "model#attach_t9_charm_chip"
 }

@@ -1,0 +1,20 @@
+{
+    "animset": [
+        {
+            "anims": [
+                {
+                    "xanim": "anim#hash_44274a68ada251b1"
+                },
+                {
+                    "xanim": "anim#hash_2e40088df4ffac38"
+                }
+            ],
+            "name": "drop",
+            "blend": 0.2,
+            "animname": "generic"
+        }
+    ],
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "type": "animset",
+    "name": "td_anims_body_shield_grenade"
+}

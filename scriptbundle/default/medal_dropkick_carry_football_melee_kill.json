@@ -1,10 +1,10 @@
 {
-    "description": "#hash_12f281578a5dbda2",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_12f281578a5dbda2",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_dropkick_carry_football_melee_kill",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_1e14baddd06e72e0",
-    "var_8645ce54": "#hash_2ed2e56929c64632",
-    "iconlarge": "#hash_68657bf77f99d81c"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#hash_1e14baddd06e72e0",
+    "stringref": "localized18#hash_2ed2e56929c64632",
+    "iconlarge": "image#hash_68657bf77f99d81c"
 }

@@ -365,7 +365,7 @@ version hash_e011f44eed413a0a {
     };
 
     // bitSize: 0x6d8, members: 8
-    struct hash_6580ccf5f8a0ef6 {
+    struct region_info {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint asn;
         // offset: 0x20, bitSize: 0x400(0x80 Byte(s))
@@ -413,15 +413,15 @@ version hash_e011f44eed413a0a {
     // bitSize: 0x88, members: 6
     struct hash_2c63a98fdae81bb5 {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
-        int hash_375e93395e4f1f12;
+        int allies_score;
         // offset: 0x20, bitSize: 0x20(0x4 Byte(s))
-        int hash_209155237819d179;
+        int axis_score;
         // offset: 0x40, bitSize: 0x20(0x4 Byte(s))
         uint start_time_ms;
         // offset: 0x60, bitSize: 0x20(0x4 Byte(s))
         uint end_time_ms;
         // offset: 0x80, bitSize: 0x1
-        bool hash_1f2c1112324566e5;
+        bool is_overtime;
     };
 
     // bitSize: 0x798, members: 29
@@ -557,7 +557,7 @@ version hash_e011f44eed413a0a {
         // offset: 0x0, bitSize: 0x20(0x4 Byte(s))
         uint ip;
         // offset: 0x20, bitSize: 0x6d8(0xdb Byte(s))
-        hash_6580ccf5f8a0ef6 dml;
+        region_info dml;
         // offset: 0x6f8, bitSize: 0x40(0x8 Byte(s))
         uint64 dwid;
         // offset: 0x738, bitSize: 0x10(0x2 Byte(s))
@@ -905,7 +905,7 @@ version hash_e011f44eed413a0a {
         // offset: 0x200, bitSize: 0x8(0x1 Byte(s))
         uint:2 spawn_type;
         // offset: 0x208, bitSize: 0x8(0x1 Byte(s))
-        byte hash_35bd3b1cbe489e62;
+        byte attacker_loadout_index;
         // offset: 0x210, bitSize: 0x8(0x1 Byte(s))
         uint:8 victimdecisecondssincelastwallrun;
         // offset: 0x218, bitSize: 0x20(0x4 Byte(s))
@@ -945,7 +945,7 @@ version hash_e011f44eed413a0a {
         // offset: 0x638, bitSize: 0x8(0x1 Byte(s))
         byte multikill;
         // offset: 0x640, bitSize: 0x10(0x2 Byte(s))
-        short hash_3ca62fd7f5d50ede;
+        short attacker_life_index;
         // offset: 0x650, bitSize: 0x60(0xc Byte(s)), array:0x3(hti:0xffff)
         int hash_9677cf4f08d8697[3];
         // offset: 0x6b0, bitSize: 0x8(0x1 Byte(s))
@@ -971,7 +971,7 @@ version hash_e011f44eed413a0a {
         // offset: 0x7d0, bitSize: 0x8(0x1 Byte(s))
         byte assists;
         // offset: 0x7d8, bitSize: 0x20(0x4 Byte(s))
-        uint hash_cc61feedcebaa4d;
+        uint first_damage_delivered_time_ms;
         // offset: 0x7f8, bitSize: 0x8(0x1 Byte(s))
         uint:5 character_outfit;
         // offset: 0x800, bitSize: 0x40(0x8 Byte(s))
@@ -987,7 +987,7 @@ version hash_e011f44eed413a0a {
         // offset: 0x8f8, bitSize: 0x8(0x1 Byte(s))
         uint:8 victimnumberofboostjumps;
         // offset: 0x900, bitSize: 0x20(0x4 Byte(s))
-        uint hash_1167938b851224e;
+        uint first_damage_received_time_ms;
         // offset: 0x920, bitSize: 0x1
         bool died;
         // offset: 0x921, bitSize: 0x1
@@ -1468,7 +1468,7 @@ version hash_e011f44eed413a0a {
     // idx 0x7 members: 0x6
     enum hash_73f7173befdca784 {
         hash_3431756dd03a21c0, // 0x0
-        none, // 0x1
+        NONE, // 0x1
         hash_52d666fca8db781b, // 0x2
         linux, // 0x3
         windows, // 0x4
@@ -1495,7 +1495,7 @@ version hash_e011f44eed413a0a {
         nx, // 0x1
         pc, // 0x2
         hash_c67f31956fdefbf, // 0x3
-        hash_1e620d7931792cb4, // 0x4
+        anaconda, // 0x4
         orbis, // 0x5
         neo, // 0x6
         ios, // 0x7
@@ -1822,7 +1822,7 @@ version hash_e011f44eed413a0a {
         bounce_hatchet_kill, // 0xf2
         death, // 0xf3
         destroyed_plane_mortar, // 0xf4
-        hash_749ea84d7c098477, // 0xf5
+        destroyed_sentry_gun, // 0xf5
         hash_74c93d98bfd57cf1, // 0xf6
         hash_74d4d90db8e3856b, // 0xf7
         kill_enemy_with_gunbutt, // 0xf8
@@ -1893,7 +1893,7 @@ version hash_e011f44eed413a0a {
     // offset: 0x100, bitSize: 0x20(0x4 Byte(s))
     int loadoutversion;
     // offset: 0x120, bitSize: 0x20(0x4 Byte(s))
-    uint hash_375e93395e4f1f12;
+    uint allies_score;
     // offset: 0x140, bitSize: 0x8(0x1 Byte(s))
     byte player_count;
     // offset: 0x148, bitSize: 0x20(0x4 Byte(s))
@@ -1907,7 +1907,7 @@ version hash_e011f44eed413a0a {
     // offset: 0x11ab10, bitSize: 0x20(0x4 Byte(s))
     int server_frame_msec;
     // offset: 0x11ab30, bitSize: 0x20(0x4 Byte(s))
-    uint hash_209155237819d179;
+    uint axis_score;
     // offset: 0x11ab50, bitSize: 0x8(0x1 Byte(s))
     byte hash_5be2776e72fe7105;
     // offset: 0x11ab58, bitSize: 0x380(0x70 Byte(s))
@@ -1991,11 +1991,11 @@ version hash_e011f44eed413a0a {
     // offset: 0x18c028, bitSize: 0x20(0x4 Byte(s))
     int ffotd_version;
     // offset: 0x18c048, bitSize: 0x20(0x4 Byte(s))
-    int hash_7b16fbbf75fe39b3;
+    int round_count;
     // offset: 0x18c068, bitSize: 0x1
     bool hash_30cd270fd17b61b9;
     // offset: 0x18c069, bitSize: 0x1
-    bool hash_706dd6b881aa67f4;
+    bool is_playtest;
     // offset: 0x18c06a, bitSize: 0x1
     bool hash_74d0769494af24a9;
     // offset: 0x18c06b, bitSize: 0x1

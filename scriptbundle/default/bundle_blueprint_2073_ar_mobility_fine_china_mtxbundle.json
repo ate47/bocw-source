@@ -1,31 +1,36 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_mobility_bp_finec2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mobility_bp_finec2_mtxitem",
             "itemid": "26831267"
         },
         {
-            "var_4a4bc969": "#smg_standard_cb_bp_finec1_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_standard_cb_bp_finec1_mtxitem",
             "itemid": "25839695"
         },
         {
-            "var_4a4bc969": "#pistol_semiauto_bp_finechina_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_semiauto_bp_finechina_mtxitem",
             "itemid": "26018791"
         },
         {
-            "var_4a4bc969": "#t9_charm_bcjar_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_bcjar_mtxitem",
             "itemid": "19964482"
         }
     ],
-    "itemname": "#hash_602a10ef72c1d2e1",
-    "var_375a1747": "#hash_6eb88cbef2a6ac77",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_2073_ar_mobility_fine_china",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_2073_ar_mobility_fine_china",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_2073_ar_mobility_fine_china_mtxbundle",
-    "var_a788fada": "#hash_1a628f1cd3fce5aa",
-    "titlestring": "#hash_1484388491500ee9",
-    "var_566825be": "#hash_20faf8fb91c0f636",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_bundle_blueprint_2073_ar_mobility_fine_china_small",
+    "titlestring": "localized18#hash_1484388491500ee9",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_2073_ar_mobility_fine_china",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_1bb14a8ed08ff9e9",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_1bb14a8ed08ff9e9",
+    "hash_db3e02ab": 2000,
     "itemid": "17894677"
 }

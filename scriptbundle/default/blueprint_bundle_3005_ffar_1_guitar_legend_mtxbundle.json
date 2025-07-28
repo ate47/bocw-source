@@ -1,56 +1,60 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fastfire_bp_ultrafunk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fastfire_bp_ultrafunk_mtxitem",
             "itemid": "20270783"
         },
         {
-            "var_4a4bc969": "#pistol_burst_bp_ultrafunk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_burst_bp_ultrafunk_mtxitem",
             "itemid": "19222166"
         },
         {
-            "var_4a4bc969": "#c_t9_usa_pl_deltaforce_dynamite_mtxitem",
+            "hash_4a4bc969": "scriptbundle#c_t9_usa_pl_deltaforce_dynamite_mtxitem",
             "itemid": "18287991"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_deltaforce_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_deltaforce_mtxitem",
             "itemid": "22503750"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s3_digital_ultrafunk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s3_digital_ultrafunk_mtxitem",
             "itemid": "23400923"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_ultra_funk_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_ultra_funk_mtxitem",
             "itemid": "26816492"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_vulture_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_vulture_mtxitem",
             "itemid": "25727640"
         },
         {
-            "var_4a4bc969": "#t9_charm_space_blob_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_space_blob_mtxitem",
             "itemid": "30926110"
         },
         {
-            "var_4a4bc969": "#emblems_ultrafunk_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_ultrafunk_animated_mtxitem",
             "itemid": "21876280"
         },
         {
-            "var_4a4bc969": "#callingcards_ultrafunk_animated_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_ultrafunk_animated_mtxitem",
             "itemid": "31600702"
         }
     ],
-    "itemname": "#hash_5f85fc6bfa2965f1",
-    "var_375a1747": "#hash_347b16c5fe03cad7",
-    "var_579fd6c3": 25,
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3005_ffar_1_guitar_legend",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3005_ffar_1_guitar_legend",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 25,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3005_ffar_1_guitar_legend_mtxbundle",
-    "var_a788fada": "#hash_1a9dbc3211a2dc0e",
-    "titlestring": "#hash_3d962da36a072ed1",
-    "var_566825be": "#hash_60e61193c30808fa",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3005_ffar_1_guitar_legend_small",
+    "titlestring": "localized18#hash_3d962da36a072ed1",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3005_ffar_1_guitar_legend",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_186cd4e6c26371d1",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_186cd4e6c26371d1",
+    "hash_db3e02ab": 2000,
     "itemid": "29518124"
 }

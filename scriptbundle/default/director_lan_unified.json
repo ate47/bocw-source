@@ -1,5 +1,5 @@
 {
-    "var_a37441f7": [
+    "#hash_a37441f7": [
         {
             "overrides": [
                 {
@@ -19,10 +19,10 @@
                     "value": "1"
                 }
             ],
-            "var_7cad6f74": 1
+            "hash_7cad6f74": 1
         }
     ],
-    "var_16c83fbf": [
+    "#hash_16c83fbf": [
         {
             "overrides": [
                 {
@@ -41,7 +41,8 @@
                     "key": "#maxlocalclients",
                     "value": "2"
                 }
-            ]
+            ],
+            "mainmode": 0
         },
         {
             "overrides": [
@@ -61,25 +62,30 @@
             "mainmode": 2
         }
     ],
+    "hasmigration": 0,
     "lobbymode": 1,
     "id": 11,
     "backtarget": "main",
+    "hash_32aac4c1": 0,
     "maxlocalclientsnetwork": 2,
     "mainmode": 4,
-    "var_d16ccae8": 1,
+    "hash_d16ccae8": 1,
     "isprivate": 1,
     "showteams": 1,
+    "lobbytype": 0,
     "menumusic": "lobby_mp",
     "room": "#lobby_pose",
-    "var_7f60c82f": 24,
-    "kicker": "#hash_5dd231fd15db7531",
+    "hash_7f60c82f": 24,
+    "kicker": "localized18#hash_5dd231fd15db7531",
+    "isadvertised": 0,
     "maxclients": 26,
     "name": "director_lan_unified",
     "networkmode": 1,
     "errtarget": "director_lan_unified",
     "egamemodes": 1,
-    "var_ec76767d": 1,
-    "title": "#hash_2a7ea41e7491c0be",
-    "var_f68d7d0": 4,
+    "hash_ec76767d": 1,
+    "title": "localized18#hash_2a7ea41e7491c0be",
+    "hash_f68d7d0": 4,
+    "isgame": 0,
     "maxlocalclients": 2
 }

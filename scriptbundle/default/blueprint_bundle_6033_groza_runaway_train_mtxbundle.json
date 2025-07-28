@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_fasthandling_bp_tiger_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fasthandling_bp_tiger_mtxitem",
             "itemid": "23872907"
         },
         {
-            "var_4a4bc969": "#tr_damagesemi_bp_onyx_sy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_damagesemi_bp_onyx_sy_mtxitem",
             "itemid": "25661779"
         },
         {
-            "var_4a4bc969": "#t9_charm_red_anvil_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_red_anvil_mtxitem",
             "itemid": "18925946"
         },
         {
-            "var_4a4bc969": "#emblems_s6_vts_final_01_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s6_vts_final_01_mtxitem",
             "itemid": "26660317"
         },
         {
-            "var_4a4bc969": "#callingcards_western_1_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_western_1_s6_mtxitem",
             "itemid": "18234775"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_s6_reaper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_s6_reaper_mtxitem",
             "itemid": "24321202"
         }
     ],
-    "itemname": "#hash_e56d9def3974f2f",
-    "var_375a1747": "#hash_fda8b9ba1c877ad",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_6033_groza_runaway_train",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_6033_groza_runaway_train",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_6033_groza_runaway_train_mtxbundle",
-    "var_a788fada": "#hash_48d9f959725df7b6",
-    "titlestring": "#hash_118f2f30741217a9",
-    "var_566825be": "#hash_16553ae8830e4482",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_6033_groza_runaway_train_small",
+    "titlestring": "localized18#hash_118f2f30741217a9",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_6033_groza_runaway_train",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_e2c98b8ff9554a9",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_e2c98b8ff9554a9",
+    "hash_db3e02ab": 2000,
     "itemid": "31033113"
 }

@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_usa_pl_mason_headgame_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_usa_pl_mason_headgame_mtxitem",
             "itemid": "28141830"
         },
         {
-            "var_4a4bc969": "#prt_mp_usa_mason_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_usa_mason_mtxitem",
             "itemid": "23064223"
         },
         {
-            "var_4a4bc969": "#ar_fasthandling_bp_snavy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_fasthandling_bp_snavy_mtxitem",
             "itemid": "21149043"
         },
         {
-            "var_4a4bc969": "#callingcards_sovietnavy_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_sovietnavy_s6_mtxitem",
             "itemid": "24585590"
         },
         {
-            "var_4a4bc969": "#emblems_sovietnavy_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_sovietnavy_s6_mtxitem",
             "itemid": "30445847"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_navy_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_navy_mtxitem",
             "itemid": "29060735"
         },
         {
-            "var_4a4bc969": "#vehiclehorn_macabre_mtxitem",
+            "hash_4a4bc969": "scriptbundle#vehiclehorn_macabre_mtxitem",
             "itemid": "20219705"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_16eb3967d8d4a192",
-    "var_375a1747": "#hash_5893e2caf9f7087c",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7008_mason_headgame",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7008_mason_headgame_mtxbundle",
-    "var_a788fada": "#hash_673b8713c952dfc3",
-    "titlestring": "#hash_24058cb9619f9e52",
-    "var_566825be": "#hash_6ac6b0be2911b9ab",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7008_mason_headgame_small",
+    "titlestring": "localized18#hash_24058cb9619f9e52",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7008_mason_headgame",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_437f6375d9dcab8e",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_437f6375d9dcab8e",
+    "hash_db3e02ab": 2000,
     "itemid": "30266047"
 }

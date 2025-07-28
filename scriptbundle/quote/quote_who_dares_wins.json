@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_who_dares_wins",
-    "quote": "#hash_6c3e07743beb9873",
-    "author": "#hash_6e3e8915a0f8a32c"
+    "quote": "localized18#hash_6c3e07743beb9873",
+    "author": "localized18#hash_6e3e8915a0f8a32c"
 }

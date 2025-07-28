@@ -1,0 +1,21 @@
+{
+    "#hash_df2d0a90": [
+        {
+            "hash_4cae1b36": 0,
+            "hash_fce3a1c3": 1,
+            "HideCursor": 1,
+            "hash_e2b21dfe": 1,
+            "hash_dabbb2e7": "uin_cp_screentext_auto_main",
+            "hash_f49bdf40": "localized19#hash_141cdbb0f52eb1b2",
+            "DrawByLineScreenMax": 14,
+            "ShowNewLineMarker": 0,
+            "RemoveCursorOnComplete": 0,
+            "FlashHighlight": 0,
+            "MaskText": 0,
+            "DrawByLine": 1
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "type": "computerscreencontentlists",
+    "name": "cp_computer_init_database"
+}

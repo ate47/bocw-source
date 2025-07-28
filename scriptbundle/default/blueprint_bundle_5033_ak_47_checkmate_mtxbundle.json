@@ -1,47 +1,52 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_damage_bp_checkmate_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_damage_bp_checkmate_mtxitem",
             "itemid": "18213404"
         },
         {
-            "var_4a4bc969": "#smg_heavy_bp_checkmate_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_heavy_bp_checkmate_mtxitem",
             "itemid": "22373686"
         },
         {
-            "var_4a4bc969": "#wristaccessory_t9_s5_digital_checkmate_mtxitem",
+            "hash_4a4bc969": "scriptbundle#wristaccessory_t9_s5_digital_checkmate_mtxitem",
             "itemid": "28689914"
         },
         {
-            "var_4a4bc969": "#t9_charm_c_king_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_c_king_mtxitem",
             "itemid": "21648001"
         },
         {
-            "var_4a4bc969": "#reticle_117_mtxitem",
+            "hash_4a4bc969": "scriptbundle#reticle_117_mtxitem",
             "itemid": "30397526"
         },
         {
-            "var_4a4bc969": "#emblems_chess_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_chess_animation_mtxitem",
             "itemid": "21857713"
         },
         {
-            "var_4a4bc969": "#callingcards_chess_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_chess_animation_mtxitem",
             "itemid": "33513218"
         },
         {
-            "var_4a4bc969": "#paintjob_sticker_chess_s5_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_sticker_chess_s5_mtxitem",
             "itemid": "31415296"
         }
     ],
-    "itemname": "#hash_616d5514447838f0",
-    "var_375a1747": "#hash_6cd41c574bdf990a",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_5033_ak_47_checkmate",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5033_ak_47_checkmate",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5033_ak_47_checkmate_mtxbundle",
-    "var_a788fada": "#hash_255eeaed29f2cc55",
-    "titlestring": "#hash_54b6a198b2e49256",
-    "var_566825be": "#hash_2f7511a23eeb58ed",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5033_ak_47_checkmate_small",
+    "titlestring": "localized18#hash_54b6a198b2e49256",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5033_ak_47_checkmate",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_45aabd74f560546a",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_45aabd74f560546a",
+    "hash_db3e02ab": 2000,
     "itemid": "25171051"
 }

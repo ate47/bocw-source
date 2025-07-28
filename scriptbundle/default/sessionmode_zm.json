@@ -2,7 +2,7 @@
     "defaultgametype": "zclassic",
     "abbreviation": "zm",
     "name": "sessionmode_zm",
-    "selectdescription": "#hash_24ce227bd4bc0d62",
-    "displayname": "#menu/zombies",
+    "selectdescription": "localized18#menu/zombies_desc",
+    "displayname": "localized18#menu/zombies",
     "defaultmap": "zm_silver"
 }

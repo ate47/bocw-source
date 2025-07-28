@@ -1,10 +1,10 @@
 {
-    "description": "#hash_3f447ff66e48ce76",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_3f447ff66e48ce76",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_war_machine_shutdown",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_508ac2c52019e77a",
-    "var_8645ce54": "#hash_6d988be914d18c86",
-    "iconlarge": "#hash_5d3676060e20d8da"
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_fragged",
+    "stringref": "localized18#hash_6d988be914d18c86",
+    "iconlarge": "image#ui_icon_medal_fragged_large"
 }

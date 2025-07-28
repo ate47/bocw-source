@@ -1,0 +1,11 @@
+{
+    "destroyedalias": "eq_rc_copter_dstr",
+    "configstringfiletype": "scriptbundle",
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_rc_copter_use",
+    "name": "rc_copter_bundle",
+    "hash_931a4bf8": "eq_rc_copter_use_fail",
+    "hash_ff5e0d8e": "eq_rc_copter_threat",
+    "hash_382f662": 1
+}

@@ -1,10 +1,10 @@
 {
-    "var_e3a1f150": "#hash_19d1837e76acb586",
-    "var_922067c4": "SCRIPTBUNDLE",
-    "var_b76da14c": "#hash_634b4c2fd1e51083",
+    "hash_e3a1f150": "localized18#hash_19d1837e76acb586",
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_b76da14c": "image#hash_634b4c2fd1e51083",
     "type": "seasonprogressiondata",
-    "var_7cd5088b": "#hash_1346247645a7db52",
+    "hash_7cd5088b": "image#hash_1346247645a7db52",
     "name": "season_progression_data_season_7",
-    "var_888af08e": "#epic",
-    "var_c22a0b19": "#hash_646549ef73acfbee"
+    "hash_888af08e": "#epic",
+    "blueprintname": "localized18#hash_646549ef73acfbee"
 }

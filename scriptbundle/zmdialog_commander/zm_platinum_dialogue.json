@@ -1,0 +1,4325 @@
+{
+    "conversations": [
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3c8fde1ccaebaaf1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.44
+                }
+            ],
+            "conversationname": "#hash_217f4452a6e06da9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_11d923fa841e58b0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.82
+                }
+            ],
+            "conversationname": "#hash_3dc7d852b78c466e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_267e311093e5516b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.48
+                }
+            ],
+            "conversationname": "#hash_1aabe12b0ab19447"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_61997a4b9fae2d67",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.7
+                }
+            ],
+            "conversationname": "#hash_14775652e8aa245f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_7d30f7d14d9138e9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.42
+                }
+            ],
+            "conversationname": "#hash_7ef001da3f74b99d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_f7975e76be58e23",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.8
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_f7974e76be58c70",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.78
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_f7977e76be59189",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.54
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_6d1dc76713be9417"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_29fd5b88480374f3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.27
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_29fd5a8848037340",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.85
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_29fd5d8848037859",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.25
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#zber_env_grdtwr"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_d8e22f465a750fc",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.29
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_d8e23f465a752af",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.75
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_d8e24f465a75462",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.77
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_7c88946ff25a6dce"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_c80e4445ba49cfe",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.27
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_c80e5445ba49eb1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.2
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_c80e2445ba49998",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.35
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_21d230cd0a3e869c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_12c4f36e83255d6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.7
+                }
+            ],
+            "conversationname": "#hash_387618beab8c7d53"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_13894bf86cf36075",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.01
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_13894af86cf35ec2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.48
+                }
+            ],
+            "conversationname": "#hash_5a6a6ac1e4b191f0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_6c4e13e285ebd200",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.12
+                }
+            ],
+            "conversationname": "#hash_68a2e9d096306add"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_3440bfa300c1db5c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.19
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_3440c0a300c1dd0f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.8
+                }
+            ],
+            "conversationname": "#hash_1089531c15a25b49"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_62700a9fc407ef03",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.49
+                }
+            ],
+            "conversationname": "#hash_3b6d2388441ce1e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_cabe752864cf57e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.66
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_cabe852864cf731",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.41
+                }
+            ],
+            "conversationname": "#hash_2db3270545be6ebb"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2d3322ca13bebab9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.43
+                }
+            ],
+            "conversationname": "#hash_58cbe67a3ba15518"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_6751a6f577e9ac2a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.79
+                }
+            ],
+            "conversationname": "#hash_71d363ea721abe1b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_5251d2e1d210942b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.99
+                }
+            ],
+            "conversationname": "#hash_512284bfa65c300a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_3b52ec6c1d500ab4",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.94
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_3b52ed6c1d500c67",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.9
+                }
+            ],
+            "conversationname": "#hash_66e219bb0d39232d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_9703c42c3a1a4f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.39
+                }
+            ],
+            "conversationname": "#hash_35a8ac9eb9602e46"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_43d2668d142b095a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.67
+                }
+            ],
+            "conversationname": "#hash_32ce177603dafe63"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_cbcaa70a0a3fb0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 0
+                }
+            ],
+            "conversationname": "#hash_53f9875d28c8bfbf"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_292888af15d929d7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 0
+                }
+            ],
+            "conversationname": "#hash_20c0e48f1e0e4c50"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_349586905a1a1922",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 0
+                }
+            ],
+            "conversationname": "#hash_26906723151cbe5d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2161bcbfa104edb7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.88
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2161bbbfa104ec04",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.96
+                }
+            ],
+            "conversationname": "#hash_275d6cc0ac1ba552"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_38d831c8c6929bc",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.38
+                }
+            ],
+            "conversationname": "#hash_51eddf5f164e57e9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_cdad7d5c43fb3d5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.46
+                }
+            ],
+            "conversationname": "#hash_90563b9eb413420"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7dc786b76b0f9041",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.35
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7dc785b76b0f8e8e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.26
+                }
+            ],
+            "conversationname": "#hash_10755ff5ba12a79c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_4d1ac2c195279882",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.83
+                }
+            ],
+            "conversationname": "#hash_1202b1361212289f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_55a522ee7482497",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.14
+                }
+            ],
+            "conversationname": "#hash_771f8ca4d68499d2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_140821b6a375136b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.63
+                }
+            ],
+            "conversationname": "#hash_30450cd7f60caef6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_54546e5f5d48cda4",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.08
+                }
+            ],
+            "conversationname": "#hash_1599afd38d318341"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5312e07e672c3d69",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.84
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5312df7e672c3bb6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.57
+                }
+            ],
+            "conversationname": "#hash_17ef1f65745ee5a4"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_15e3f581b08e82a2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.51
+                }
+            ],
+            "conversationname": "#hash_77168bbceab4e3e3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_6dca2ae3eb1f54f1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.14
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_6dca29e3eb1f533e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.24
+                }
+            ],
+            "conversationname": "#hash_faf46fed2aadac0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_4fb691f1ec68e48",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.71
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_4fb6a1f1ec68ffb",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.61
+                }
+            ],
+            "conversationname": "#hash_226f57782def289"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_33ea79eb74ed4451",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.58
+                }
+            ],
+            "conversationname": "#hash_573fe434821b648c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2d79b180b38fdb12",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.2
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2d79b280b38fdcc5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.01
+                }
+            ],
+            "conversationname": "#hash_5ad94441c06f7c4f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_4868d70ca914aae7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.35
+                }
+            ],
+            "conversationname": "#hash_1262e66a00be5402"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_274ec121e97ca93b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.33
+                }
+            ],
+            "conversationname": "#hash_288ce76bd71c8fe6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_32085e1e4689e774",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.32
+                }
+            ],
+            "conversationname": "#hash_cb4484e2ff016b1"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_36d1d7447cc72ff9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.55
+                }
+            ],
+            "conversationname": "#hash_33f29e43ff4d3454"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_79f29c5b76a80792",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.78
+                }
+            ],
+            "conversationname": "#hash_4646264f92dab633"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_26a161c5d7ed021",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.67
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_26a151c5d7ece6e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.67
+                }
+            ],
+            "conversationname": "#hash_32ab1907b51edc50"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_b305c529584cf78",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.48
+                }
+            ],
+            "conversationname": "#hash_7c3a8df22823dd19"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1f81b3cd432947d4",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.75
+                }
+            ],
+            "conversationname": "#hash_69733ed0c9747e4d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5dbed37b865e53ef",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.06
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5dbed27b865e523c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.5
+                }
+            ],
+            "conversationname": "#hash_cbba73729129c66"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7e6f1d9471e6827a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.35
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7e6f1e9471e6842d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.37
+                }
+            ],
+            "conversationname": "#hash_acea7520342fc03"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_58eb9499dcb2814e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.23
+                }
+            ],
+            "conversationname": "#hash_549bb4c91da221df"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_6230a1b79f32cab1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.85
+                }
+            ],
+            "conversationname": "#hash_4bdf74663292c2f0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_20a5f6ff053af1ac",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.46
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_20a5f7ff053af35f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.55
+                }
+            ],
+            "conversationname": "#hash_75d5ff55475c70fd"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2d6cb6f44a938a57",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.38
+                }
+            ],
+            "conversationname": "#hash_7f5cfc9cab81eff2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_50b0ba8c15049d5c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.6
+                }
+            ],
+            "conversationname": "#hash_4f2a0ccb08449109"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_58884a21497ed075",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.06
+                }
+            ],
+            "conversationname": "#hash_5cb25e5258107940"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_551051896642a0d3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.61
+                }
+            ],
+            "conversationname": "#hash_30f9f5fd3af0134a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1c1764b878ee43b8",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.57
+                }
+            ],
+            "conversationname": "#hash_2baee4267b0056b1"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_144739d2b64ec08d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.57
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_144738d2b64ebeda",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.28
+                }
+            ],
+            "conversationname": "#hash_73d5094f57c50194"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_89369c2a80029a9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.17
+                }
+            ],
+            "conversationname": "#hash_5bd603446f578b68"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_3ad5ed9a40c0e126",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.65
+                }
+            ],
+            "conversationname": "#hash_38f141943f84ad97"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_4b76a2a4aba945ab",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.83
+                }
+            ],
+            "conversationname": "#hash_4e0da8bc8fe2f61a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_59d29a2e5b876a84",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.81
+                }
+            ],
+            "conversationname": "#hash_6f9876f2c7047631"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_29f43f374e522fff",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.44
+                }
+            ],
+            "conversationname": "#hash_21cafd0f13677a7a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_7150f5669bd517ce",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.34
+                }
+            ],
+            "conversationname": "#hash_3cd3a276d7493ccb"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_15ac1ae84d7fadec",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.55
+                }
+            ],
+            "conversationname": "#hash_644b989f5dc8d25c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_308c1b4088817b05",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.4
+                }
+            ],
+            "conversationname": "#hash_3726ef08ff13c1b4"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_6d535668c35d99fa",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.13
+                }
+            ],
+            "conversationname": "#hash_9068345422c727b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_2b4005e93cf28f53",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.55
+                }
+            ],
+            "conversationname": "#hash_506fea281c4cc812"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_3f8d38b56fbbabb6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.93
+                }
+            ],
+            "conversationname": "#hash_218bdeb6d24f8cb7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_1d22c8de8f44211",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.97
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_1d22b8de8f4405e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.93
+                }
+            ],
+            "conversationname": "#hash_6713647939893ef0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_6a3d66e368a615d0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.55
+                }
+            ],
+            "conversationname": "#hash_645d190137417b41"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_219ac0597e0587de",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.25
+                }
+            ],
+            "conversationname": "#hash_56cd56654ca608ab"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_4456533487c025d9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.86
+                }
+            ],
+            "conversationname": "#hash_733889fb5ce8064"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_703b14aa40841038",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.87
+                }
+            ],
+            "conversationname": "#hash_523823f401edfb5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_31c8706ecec57d3e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.91
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_31c8716ecec57ef1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.96
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_31c86e6ecec579d8",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.24
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_31c86f6ecec57b8b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.6
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_1c80b5cb9894342c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_37e72ff3c282c35",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.22
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_5fdc7f002165fdf9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.7
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_5fdc7c002165f8e0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.1
+                }
+            ],
+            "conversationname": "#hash_679912719a3f7674"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_4791a916276fe996",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.83
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_4791aa16276feb49",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.3
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_7c48fe758e56e6fb",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.57
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_7c48fd758e56e548",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.98
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_7c4904758e56f12d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.5
+                }
+            ],
+            "conversationname": "#hash_679915719a3f7b8d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1887585f4be88a1b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.36
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_57729e86a95ebd93",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 12.99
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_57729f86a95ebf46",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.41
+                }
+            ],
+            "conversationname": "#hash_679914719a3f79da"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_7d86a12c4c82b567",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 13.4
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_41eab8151f89bb7c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.94
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_41eabb151f89c095",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.76
+                }
+            ],
+            "conversationname": "#hash_674a8a7199fc6e0b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_4473a99747aad580",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 12.42
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_613a920996af5e63",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.47
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_613a930996af6016",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.78
+                }
+            ],
+            "conversationname": "#hash_674a8b7199fc6fbe"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_d71492a0f9a2bc5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.72
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_9f5e7ef0daf273e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.2
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_9f5e6ef0daf258b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.57
+                }
+            ],
+            "conversationname": "#hash_674a8c7199fc7171"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2b6e6219c2d7df66",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.94
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2b6e6319c2d7e119",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.49
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_614904e688a57896",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.81
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_614905e688a57a49",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.46
+                }
+            ],
+            "conversationname": "#hash_6740967199f42dea"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_15905d30ac0b20b5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 13.31
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_41f929f2117fd3fc",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.75
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_41f92cf2117fd915",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.61
+                }
+            ],
+            "conversationname": "#hash_6740957199f42c37"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_20cf9ab26dc95f9c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 14.53
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_4b2567f3894fd5c9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.17
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_4b2564f3894fd0b0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.37
+                }
+            ],
+            "conversationname": "#hash_6740947199f42a84"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_f5195ba9f8d2d3a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.06
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_f5196ba9f8d2eed",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.52
+                }
+            ],
+            "conversationname": "#hash_4d822d9f3de42689"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_355891ae4b9f579",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.4
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_355881ae4b9f3c6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.73
+                }
+            ],
+            "conversationname": "#hash_4d822a9f3de42170"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_3266566bd5588194",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.5
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_3266576bd5588347",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.09
+                }
+            ],
+            "conversationname": "#hash_4d822b9f3de42323"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_342c6991ba0c8858",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.5
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_342c6a91ba0c8a0b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.39
+                }
+            ],
+            "conversationname": "#hash_4d3aad9f3da74a66"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_933a5665c96cbdf",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.81
+                }
+            ],
+            "conversationname": "#hash_4d3aac9f3da748b3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_67d20ab25d32090a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.89
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_67d20bb25d320abd",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.88
+                }
+            ],
+            "conversationname": "#hash_4d3aab9f3da74700"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_6b7f63435d65e89d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.74
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_6b7f62435d65e6ea",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.77
+                }
+            ],
+            "conversationname": "#hash_4d60319f3dc746ef"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_9a42e394dd0d4ee",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_9a42f394dd0d6a1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.5
+                }
+            ],
+            "conversationname": "#hash_4d60329f3dc748a2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_646a92ba815ae79f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.7
+                }
+            ],
+            "conversationname": "#hash_4d60339f3dc74a55"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3b44995abf6bbca0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.24
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3b449a5abf6bbe53",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.39
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3b449b5abf6bc006",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.71
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3b449c5abf6bc1b9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.94
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3b449d5abf6bc36c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.43
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_6df2bb54b89deb9a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_cc402fb1a134516",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.54
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_cc403fb1a1346c9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.26
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_cc400fb1a1341b0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.87
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_63d1033093cd628b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_2b43dae1fdb676d4",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.48
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_2b43dbe1fdb67887",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.93
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_2b43dce1fdb67a3a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.25
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_3c927ab2e4f4063e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_6450be943cbf9037",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.05
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_6450bd943cbf8e84",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.84
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_6450c0943cbf939d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.44
+                }
+            ],
+            "conversationname": "#hash_240976e7a83baa19"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_5255bbc9c9f5cf11",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.52
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_5255bac9c9f5cd5e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.8
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_5255b9c9c9f5cbab",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.31
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_48d352fb283c95cd"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_78144a67591cf766",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.9
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_78144b67591cf919",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.64
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_78144867591cf400",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.88
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_1481781a98de3ff0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_5f245235b254cb19",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.98
+                },
+                {
+                    "soundevent": "#hash_5f245135b254c966",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.74
+                },
+                {
+                    "soundevent": "#hash_5f245035b254c7b3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.07
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_13c1bc4fb548c57b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_2f069932ad0794ff",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.05
+                },
+                {
+                    "soundevent": "#hash_2f069832ad07934c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.51
+                },
+                {
+                    "soundevent": "#hash_2f069b32ad079865",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.26
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_40ccfaa0881dc05"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_1ffff7cedc84930d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.63
+                },
+                {
+                    "soundevent": "#hash_1ffff6cedc84915a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.14
+                },
+                {
+                    "soundevent": "#hash_1ffff5cedc848fa7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.7
+                },
+                {
+                    "soundevent": "#hash_1ffff4cedc848df4",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.4
+                },
+                {
+                    "soundevent": "#hash_1ffff3cedc848c41",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.7
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_298a33a558526bce"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58785f76d174b7c0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.48
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786076d174b973",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.82
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786176d174bb26",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.08
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786276d174bcd9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.5
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786376d174be8c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.84
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786476d174c03f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.33
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786576d174c1f2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.61
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786676d174c3a5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.16
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786776d174c558",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.38
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58786876d174c70b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.02
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_b710973bfe77e06"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2a882fcf64dab444",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.65
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2a8830cf64dab5f7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.07
+                }
+            ],
+            "conversationname": "#hash_253b4ad2f1c726c7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_37f7aae2176cc71f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.7
+                }
+            ],
+            "conversationname": "#hash_253b4bd2f1c7287a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_6bc760bf9598acaa",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.97
+                }
+            ],
+            "conversationname": "#hash_253b4cd2f1c72a2d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_77aba07648645d3e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.23
+                }
+            ],
+            "conversationname": "#hash_456525933756ae59"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_409bc2dbc230cde1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.44
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_409bc1dbc230cc2e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.91
+                }
+            ],
+            "conversationname": "#hash_456522933756a940"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_779ea348fa42511c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.45
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_779ea448fa4252cf",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 0.6
+                }
+            ],
+            "conversationname": "#hash_456523933756aaf3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2eeda64a07bbb7e7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.66
+                }
+            ],
+            "conversationname": "#hash_2569b41becd226e3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_338bde09fc84732c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.84
+                }
+            ],
+            "conversationname": "#hash_2569b51becd22896"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_7980b157da17245",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.97
+                }
+            ],
+            "conversationname": "#hash_2569b61becd22a49"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_f6bf4d3a62e9cdb",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.1
+                }
+            ],
+            "conversationname": "#hash_12f57fa94e2ecb4b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2a3b7fdf60bac980",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.06
+                }
+            ],
+            "conversationname": "#hash_12f580a94e2eccfe"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5176b7f547c257f5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.59
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5176b6f547c25642",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.35
+                }
+            ],
+            "conversationname": "#hash_12f581a94e2eceb1"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5cd3b712a2343751",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.74
+                }
+            ],
+            "conversationname": "#hash_6598d5bdcc96685d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_714d9fbd7b62a76e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.17
+                }
+            ],
+            "conversationname": "#hash_6598d2bdcc966344"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_1d5e67b57c56d1b3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.93
+                }
+            ],
+            "conversationname": "#hash_6598d3bdcc9664f7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_178ea2819d5f595c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.23
+                }
+            ],
+            "conversationname": "#hash_28afd49c1c66c2a7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_744a9ee9d2ee4657",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.97
+                }
+            ],
+            "conversationname": "#hash_28afd59c1c66c45a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_5ce60c7db13d3d26",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.34
+                }
+            ],
+            "conversationname": "#hash_28afd69c1c66c60d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_15ac1be84d7faf9f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.99
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_15ac1ae84d7fadec",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.55
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_15ac1de84d7fb305",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.72
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_61cbf0e277aaa14f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_fd69ba1986c6760",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.55
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_fd69ca1986c6913",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.21
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_fd69da1986c6ac6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.7
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_3ad54f48955b4c2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_5c9ebd3b5a891474",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 28.63
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_5c9ebe3b5a891627",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 20.16
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_5c9ebf3b5a8917da",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 25.6
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_120c5fda40c0db87"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_146b8490736534e8",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.27
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_146b85907365369b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.46
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_146b86907365384e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.91
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_2acb5d04af94b8a7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_831bbc54718281",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.97
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_6802170e343d4125",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.55
+                }
+            ],
+            "conversationname": "#hash_3314244e71b59b92"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_7cd305481b270315",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.49
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_8485fef21bd344e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.21
+                }
+            ],
+            "conversationname": "#hash_5f4fe1fad61c9bf6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2354bdb3cbd1cea",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.57
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_46e1edfecf6dae7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.68
+                }
+            ],
+            "conversationname": "#hash_3779f3fb1a0e80d0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_4e2563c6cb921232",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.7
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_4e2564c6cb9213e5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.91
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_329b2dee7817bd2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_1bd066662938fb72",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.56
+                }
+            ],
+            "conversationname": "#hash_63f8e9ce1d46be36"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_4f2c18e65590af89",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.52
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_4f2c17e65590add6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.5
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_38bbfbce5e53c710"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1087d1bc622298a2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.31
+                }
+            ],
+            "conversationname": "#hash_7bfd671b90f3911e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_6fd99e64b4b934a2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.39
+                }
+            ],
+            "conversationname": "#hash_68ed9238ee4a3182"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_1a8059ed8f266d59",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.08
+                }
+            ],
+            "conversationname": "#hash_2c170dd1cd5ca69c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_63aa9b255b3d9930",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.82
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_63aa9c255b3d9ae3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.14
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_46993634718abc05"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_3bf8f304a5d1798c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.02
+                }
+            ],
+            "conversationname": "#hash_62714f511d585e97"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_17e0d2f5bb0fe3f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.61
+                }
+            ],
+            "conversationname": "#hash_2b464da207069e61"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1dc8a114a575820b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 13.16
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1dc8a014a5758058",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.55
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1dc8a314a5758571",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.21
+                }
+            ],
+            "conversationname": "#hash_29c271427905b478"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_10ae9688d7b1b082",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 13.29
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_10ae9788d7b1b235",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.23
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_10ae9488d7b1ad1c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.43
+                }
+            ],
+            "conversationname": "#hash_1d6788395bd8d618"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_556896ff782a9349",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 13.53
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_556895ff782a9196",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.96
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_556894ff782a8fe3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.75
+                }
+            ],
+            "conversationname": "#hash_4c8152aadcfa6966"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_22496cd971f50560",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.69
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_22496dd971f50713",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.52
+                }
+            ],
+            "conversationname": "#hash_52c90cddb9738224"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_7a861319d979feba",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.52
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_7a861419d97a006d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.92
+                }
+            ],
+            "conversationname": "#hash_590f5cdd2c6c300b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_20d511089813131",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.83
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_20d501089812f7e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.85
+                }
+            ],
+            "conversationname": "#hash_291c7b384bf4d115"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_7f2d1a72ede303d6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.06
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_7f2d1b72ede30589",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.07
+                }
+            ],
+            "conversationname": "#hash_291c78384bf4cbfc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_3c3b3dea208086f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.81
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_3c3b2dea20806bc",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 15
+                }
+            ],
+            "conversationname": "#hash_291c79384bf4cdaf"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_5c9b57bf0ee7f46c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 16.83
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_5c9b58bf0ee7f61f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.6
+                }
+            ],
+            "conversationname": "#hash_291c76384bf4c896"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7955ca0ec133b45e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.43
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7955cb0ec133b611",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.59
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7955c80ec133b0f8",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.25
+                }
+            ],
+            "conversationname": "#hash_4aebf204fbcf87fe"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5b2534e2fa72ee86",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.6
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5b2535e2fa72f039",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.3
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5b2532e2fa72eb20",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.23
+                }
+            ],
+            "conversationname": "#hash_111abcde6cef3de2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_11324031814248e5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.13
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_11323f3181424732",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.46
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_11323e318142457f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.12
+                }
+            ],
+            "conversationname": "#hash_50de3877491e89fc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_12f0eb8640596ed5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 21.59
+                }
+            ],
+            "conversationname": "#hash_5bedd2c98101df8"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7987a1c192f6f099",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.3
+                }
+            ],
+            "conversationname": "#hash_724bc51ed8a6d610"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1e3ed6f8824e205a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.18
+                }
+            ],
+            "conversationname": "#hash_724bc81ed8a6db29"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5b03742f9a5d314f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.38
+                }
+            ],
+            "conversationname": "#hash_724bc71ed8a6d976"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_33e4990edba31c83",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.39
+                }
+            ],
+            "conversationname": "#hash_7218cd1ed87b8a0f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5b54e12185d08dc",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.61
+                }
+            ],
+            "conversationname": "#hash_7218ce1ed87b8bc2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_65a549196b6482a1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.88
+                }
+            ],
+            "conversationname": "#hash_7218cf1ed87b8d75"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_38e3191e73710aaa",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.2
+                }
+            ],
+            "conversationname": "#hash_71f3491ed85b8d86"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_7ec494f30f461939",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.75
+                }
+            ],
+            "conversationname": "#hash_71f3481ed85b8bd3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_46bbd5c7f8987350",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.06
+                }
+            ],
+            "conversationname": "#hash_71f3471ed85b8a20"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_35ef44b7cac4c52",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.9
+                }
+            ],
+            "conversationname": "#hash_1e01aae8800d1ca1"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_74b60bc8d2587191",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.83
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_74b60ac8d2586fde",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.79
+                }
+            ],
+            "conversationname": "#hash_1e01a7e8800d1788"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_3785d11b5b7dce2c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.57
+                }
+            ],
+            "conversationname": "#hash_1e01a8e8800d193b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_2b386cd1773e1a50",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.72
+                }
+            ],
+            "conversationname": "#hash_1e272ae8802d125e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5a5ee7a750acca77",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.22
+                }
+            ],
+            "conversationname": "#hash_1e2729e8802d10ab"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_37776391ded61ac2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.55
+                }
+            ],
+            "conversationname": "#hash_1e2728e8802d0ef8"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_1db2c0fdce716965",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.49
+                }
+            ],
+            "conversationname": "#hash_1e162ee8801ea5f7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_605ee6f0b9cc21d6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.54
+                }
+            ],
+            "conversationname": "#hash_1e162fe8801ea7aa"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_1a1797096d30ad07",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.3
+                }
+            ],
+            "conversationname": "#hash_1e1630e8801ea95d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_2dd5b0e37e08896f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.23
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_2dd5afe37e0887bc",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.65
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_2dd5b2e37e088cd5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.02
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_2fea7bbdbfbd0787"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_72caef16ec479729",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.88
+                },
+                {
+                    "soundevent": "#hash_72caee16ec479576",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.45
+                },
+                {
+                    "soundevent": "#hash_72caed16ec4793c3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.52
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_1a72a536793ddbd9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_3a3bde94a53a7e97",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.71
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_25fbd70ab3cb5cae"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_7f1ee3174b590cb7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.07
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5c01a53e7bb39f3a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2113aad572ff8d50",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.01
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_591ca7d674f9935d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_6020b67ed6713ab1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.23
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_6731916f2afde9c4"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_2694144868e6349e",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.03
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_42358e9b37f2c6a3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_60c82a2e1df7768b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.54
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_2c9b4db7e9839a2e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_e1fb00e59b8b5f0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.51
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5d22e878d6cd628d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_1ad41fe3804cc14a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.18
+                }
+            ],
+            "conversationname": "#hash_68ab9f0c36416c48"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_8d606927d927ceb",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.82
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_54f487d8106f373a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_18da473da57637b0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.12
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_96db47c5ddc1021"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_71289f1cf00a180c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.43
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_9d530d5ec32639"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_36adb947a5e99cbf",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.42
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_12c19ed9e18d4f32"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_497b5335b89d4fc9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.67
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_bba407eda3f8960"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5b41266b4abb2c7d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.29
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_21c67c77b76857c0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_18ac3357269f9f42",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.73
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_49a1624a0e90b90f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_f95293d56ad2a70",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.37
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_3c619799df8ba691"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_3449b40a03ecae57",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.85
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_3a0c547a36ec4f6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_780d795431fc9ee3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.08
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_45a1d5b0e553241e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_448071c6292f5000",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.11
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_3db2eb481a0aa5d5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_29997756b4e3ecef",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.22
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_49d3f96f6a6e6ece"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_3c654352a6496f6a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.88
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_4cf52ca184834c9f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_46743ed172ac1924",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.09
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_71582579e7e6fe65"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_63c0a94ea08fda78",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.35
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_237623ec491acae1"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_7f47864550edfe97",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.39
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_7026737a4beae432"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_437b3d6f8bbc5e5d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.14
+                }
+            ],
+            "conversationname": "#hash_38ce1c21182830fb"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_16bdff4dc5f10cc9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.17
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_2645f6e9271b67bc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_5b46c3bf057ab9c3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.61
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_6dd8107d7d4be51a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_3a722f66f0843060",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.39
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5ea900fa65bdb2dd"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_76d80a9364bd13e1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.73
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_3e145fbf82a71fb0"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_2b9bcd778e995278",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.26
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_594245d604f94a91"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_137ba01d6037609f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.79
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_20817383c8dc68f6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_5f4250a327a1d19c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.36
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_5f4251a327a1d34f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 26.86
+                }
+            ],
+            "conversationname": "#hash_6f7cb8413e2000a9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1b51c4aecc750244",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.81
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5f7a32cb0430f601"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_855d56a33afa758",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.81
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_48b33c727a49699"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_5c35ec39aa444483",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.46
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_68ce1d2887e23512"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1a9b85004a8ab964",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.09
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1a9b86004a8abb17",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.16
+                }
+            ],
+            "conversationname": "#hash_5e8542658edacead"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5e625092c7dcca78",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.37
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5e625192c7dccc2b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.57
+                }
+            ],
+            "conversationname": "#hash_6c59ac6720d2d66d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_9042239548720a3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.32
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_904213954871ef0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.08
+                }
+            ],
+            "conversationname": "#hash_6f5ff1857de22c4e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "soundevent": "#hash_1f340ae00b2b66d9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 12.1
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_6a3f13ad41165e98"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2e85349d49dfeb92",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.74
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2e85359d49dfed45",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.82
+                }
+            ],
+            "conversationname": "#hash_2a6029fef1c248b3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_39face5ee9877d2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.18
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5475d34796c5269f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_35485f66197e9769",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.38
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_35485e66197e95b6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.9
+                }
+            ],
+            "conversationname": "#hash_5c67482b81e0f79c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7b15f72339a6208f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.85
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_33b6ea0a5d53e44a"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_6d0d3a0297157acf",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.57
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_72bd704c14fbb9e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_19ccae81c57958",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.66
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_522c6b8bc3982639"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_7f67370e3593f1d1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.39
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5fc72fe9909cc2dc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_765057ae72eaf165",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.76
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_14188c019b87e7b4"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_3358797c2969185a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.56
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_17829f5c298ad14b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_4b815f8f5913a0b1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.46
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5eb31befc4de6e94"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_4b6a0d5335cc9302",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.33
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_6e62d27439afa30b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5459232fc770d74",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.43
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_5459332fc770f27",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.27
+                }
+            ],
+            "conversationname": "#hash_66b9ca9746b1a7c9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_772fbaa6d139fec8",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.43
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_772fbba6d13a007b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.35
+                }
+            ],
+            "conversationname": "#hash_4ff91cef9472701"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_5a65d91da90ac313",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.2
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_5a65d81da90ac160",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 1.6
+                }
+            ],
+            "conversationname": "#hash_65fbb1333240ffca"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_21492c6712d4b257",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.47
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_22d2fdb187779de2"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_456b288e9e1b2d77",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.75
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_2990b350a6495116"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_2fc2ce25a930b310",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.84
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_477451c1672542a1"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_6816a20a5f9bd1ae",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 21.87
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_6816a30a5f9bd361",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.67
+                }
+            ],
+            "conversationname": "#hash_53a286f7a3206d5b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_2b6dc1764b908bcd",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.64
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_55c9141820434128"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_gorev",
+                    "soundevent": "#hash_5962b16eba224279",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.36
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_722dd01148508ee8"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_jager",
+                    "soundevent": "#hash_4eeae778aa2dc1a6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.91
+                }
+            ],
+            "hash_824bf975": "#timeline",
+            "conversationname": "#hash_5678f101bc349747"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58215322bdff2b7d",
+                    "hash_f35c5951": 1,
+                    "hash_5d4b5964": 5.53
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_58215222bdff29ca",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.96
+                }
+            ],
+            "conversationname": "#hash_63c9f49151520cdc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_3aa1245c98d8d194",
+                    "hash_f35c5951": 2,
+                    "hash_5d4b5964": 7.23
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_4c55fe1180fbf52f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 20.46
+                }
+            ],
+            "conversationname": "#hash_63c9f791515211f5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_54a1afc3a585410d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 9.19
+                }
+            ],
+            "conversationname": "#hash_63c9f69151521042"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_1b6e2f0ab9c8a261",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.92
+                }
+            ],
+            "conversationname": "#hash_6a3c2b16f9b14049"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_ade759845f6ba40",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 11.61
+                }
+            ],
+            "conversationname": "#hash_1d28a188911484ab"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_peck_platinum_eye_patch",
+                    "soundevent": "#hash_653b939549502ed7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.84
+                }
+            ],
+            "conversationname": "#hash_1630afbf9f79a2e5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_4e46f8e11dafa8b0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.37
+                }
+            ],
+            "conversationname": "#hash_51ad5c339f77cd75"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_4e46f9e11dafaa63",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.97
+                }
+            ],
+            "conversationname": "#hash_51ad59339f77c85c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_4e46fae11dafac16",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.31
+                }
+            ],
+            "conversationname": "#hash_51ad5a339f77ca0f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_4e46fbe11dafadc9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.08
+                }
+            ],
+            "conversationname": "#hash_51ad57339f77c4f6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_4e46fce11dafaf7c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.27
+                }
+            ],
+            "conversationname": "#hash_51ad58339f77c6a9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6539048a28384079",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.03
+                }
+            ],
+            "conversationname": "#hash_3c8f024226212542"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6539038a28383ec6",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.97
+                }
+            ],
+            "conversationname": "#hash_3c8f01422621238f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6539028a28383d13",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.82
+                }
+            ],
+            "conversationname": "#hash_3c8f0042262121dc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6539018a28383b60",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.93
+                }
+            ],
+            "conversationname": "#hash_3c8eff4226212029"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6539088a28384745",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.5
+                }
+            ],
+            "conversationname": "#hash_3c8efe4226211e76"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6e5961d3bdd30ae4",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.61
+                }
+            ],
+            "conversationname": "#hash_73b5f09f00741c93"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6e5962d3bdd30c97",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.48
+                }
+            ],
+            "conversationname": "#hash_73b5f19f00741e46"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6e5963d3bdd30e4a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.5
+                }
+            ],
+            "conversationname": "#hash_73b5f29f00741ff9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6e5964d3bdd30ffd",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.82
+                }
+            ],
+            "conversationname": "#hash_73b5f39f007421ac"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_6e595dd3bdd30418",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.2
+                }
+            ],
+            "conversationname": "#hash_73b5f49f0074235f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_2d26f2745bbc698d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.59
+                }
+            ],
+            "conversationname": "#hash_16cba1f9b1bbbd44"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_2d26f1745bbc67da",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.65
+                }
+            ],
+            "conversationname": "#hash_16cba4f9b1bbc25d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_2d26f0745bbc6627",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.57
+                }
+            ],
+            "conversationname": "#hash_16cba3f9b1bbc0aa"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_2d26ef745bbc6474",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.74
+                }
+            ],
+            "conversationname": "#hash_16cb9ef9b1bbb82b"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_2d26ee745bbc62c1",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.01
+                }
+            ],
+            "conversationname": "#hash_16cb9df9b1bbb678"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_3f8a6f9406a55ba5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.16
+                }
+            ],
+            "conversationname": "#hash_e6c5cf563e1288f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_3f8a6e9406a559f2",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.56
+                }
+            ],
+            "conversationname": "#hash_e6c5df563e12a42"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_3f8a6d9406a5583f",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.46
+                }
+            ],
+            "conversationname": "#hash_e6c5ef563e12bf5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_3f8a6c9406a5568c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.03
+                }
+            ],
+            "conversationname": "#hash_e6c57f563e12010"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_3f8a6b9406a554d9",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.58
+                }
+            ],
+            "conversationname": "#hash_e6c58f563e121c3"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_e418247542115d7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 10.35
+                }
+            ],
+            "conversationname": "#hash_184c91473c4bb97f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_11987c5a8b879b0",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.38
+                }
+            ],
+            "conversationname": "#hash_184c92473c4bbb32"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_3f9f1c472f863859",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.21
+                }
+            ],
+            "conversationname": "#hash_184c93473c4bbce5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_55fabfd9919b945a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.83
+                }
+            ],
+            "conversationname": "#hash_184c8c473c4bb100"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_156a078369ef1735",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.22
+                }
+            ],
+            "conversationname": "#hash_1477c5d7a170020d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_156a068369ef1582",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.52
+                }
+            ],
+            "conversationname": "#hash_1477c2d7a16ffcf4"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_156a058369ef13cf",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.78
+                }
+            ],
+            "conversationname": "#hash_1477c3d7a16ffea7"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_156a048369ef121c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.78
+                }
+            ],
+            "conversationname": "#hash_1477c0d7a16ff98e"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_156a038369ef1069",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.67
+                }
+            ],
+            "conversationname": "#hash_1477c1d7a16ffb41"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_56c50ff676e072e7",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.95
+                }
+            ],
+            "conversationname": "#hash_84460d980b60b43"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_56c50ef676e07134",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 6.1
+                }
+            ],
+            "conversationname": "#hash_84461d980b60cf6"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_56c511f676e0764d",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.91
+                }
+            ],
+            "conversationname": "#hash_84462d980b60ea9"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_56c510f676e0749a",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 7.04
+                }
+            ],
+            "conversationname": "#hash_84463d980b6105c"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_56c50bf676e06c1b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.88
+                }
+            ],
+            "conversationname": "#hash_84464d980b6120f"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_45357b5ef4a7f519",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.61
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_45357a5ef4a7f366",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.84
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_4535795ef4a7f1b3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.29
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_4535785ef4a7f000",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 3.52
+                },
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_45357f5ef4a7fbe5",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.12
+                }
+            ],
+            "hash_824bf975": "#random_select",
+            "conversationname": "#hash_34d837587d5fd543"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_40c2d1dab6488dec",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.85
+                }
+            ],
+            "conversationname": "#hash_b28b35a5978f9a5"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_7010f08b498a4c9b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.02
+                }
+            ],
+            "conversationname": "#hash_17fe96f75c962f2d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_kravchenko",
+                    "soundevent": "#hash_50d8220349486e48",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.07
+                }
+            ],
+            "conversationname": "#hash_234d7fd9f78df07"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_7a383d81594c90e3",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.31
+                }
+            ],
+            "conversationname": "#hash_47de9a985959c315"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_7a383c81594c8f30",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.57
+                }
+            ],
+            "conversationname": "#hash_47de97985959bdfc"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_7a383f81594c9449",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.78
+                }
+            ],
+            "conversationname": "#hash_47de98985959bfaf"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_7a383e81594c9296",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 8.41
+                }
+            ],
+            "conversationname": "#hash_47de95985959ba96"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina_corrupted",
+                    "soundevent": "#hash_7a384181594c97af",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.82
+                }
+            ],
+            "conversationname": "#hash_47de96985959bc49"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_valentina",
+                    "soundevent": "#hash_765957be605dd2b",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.44
+                }
+            ],
+            "conversationname": "#hash_4858259cfe2d3330"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_f1fff79ff09c1ff",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 2.26
+                }
+            ],
+            "conversationname": "#hash_13a0617d003e207d"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_50cf89fe6c7a0530",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 4.2
+                }
+            ],
+            "conversationname": "#hash_4786036bfc148c46"
+        },
+        {
+            "#hash_aa02f35a": [
+                {
+                    "hash_aebcb4b1": "scriptbundle#zmdialog_speaker_klaus",
+                    "soundevent": "#hash_a3c7d39640ea63c",
+                    "hash_f35c5951": 0,
+                    "hash_5d4b5964": 5.87
+                }
+            ],
+            "conversationname": "#hash_14a83a45f51bf71a"
+        }
+    ],
+    "hash_d151963a": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_a6771c69": 0,
+    "hash_32dea10a": 0,
+    "hash_613e6426": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_5aec0335": 0,
+    "hash_7abbf041": 0,
+    "hash_b8225124": 0,
+    "hash_ada3f7c": 0,
+    "hash_6daff7ef": "scriptbundle#zmdialog_speaker_valentina",
+    "hash_5321e44f": 0,
+    "hash_b3cb6222": 0,
+    "hash_e2be447d": 0,
+    "hash_6ea62": 0,
+    "hash_af695653": "#hash_8a24b00ae5e4ec6",
+    "hash_b6dea6d4": 0,
+    "hash_748d269": 0,
+    "hash_31fd12fb": 0,
+    "hash_5b5ef366": 0,
+    "hash_200842dd": 0,
+    "hash_25611034": 0,
+    "hash_9acaa62b": 0,
+    "hash_8c969ce2": 0,
+    "hash_cc47ae64": 0,
+    "hash_82d14e90": 0,
+    "hash_64248d62": "#hash_51471d863319f1d5",
+    "hash_140d06eb": 0,
+    "hash_216028d0": 0,
+    "hash_33e7945e": 0,
+    "hash_5f4dfcbe": 0,
+    "hash_fd4ae367": 0,
+    "hash_69e2c246": 0,
+    "hash_20a8f9b4": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_93b2c5ab": 0,
+    "hash_dec5fe86": 4.95,
+    "hash_3b6474b0": 0,
+    "hash_a129131c": 0,
+    "hash_22d34cfd": 0,
+    "hash_1901c70b": 0,
+    "hash_633c6bfc": 0,
+    "hash_57040d51": 0,
+    "hash_e850993b": 0,
+    "hash_af937d91": 0,
+    "hash_5461c225": 0,
+    "configstringfiletype": "SCRIPTBUNDLE",
+    "hash_344c063d": 0,
+    "hash_21de8e28": 0,
+    "hash_ad11d341": 0,
+    "hash_d66ac8ee": 0,
+    "hash_5b10ae5a": 0,
+    "hash_5293f361": "#hash_3e8a89eb7aaaab1c",
+    "hash_677437e3": 0,
+    "hash_d15a0421": 0,
+    "hash_58da336f": 2.94,
+    "hash_b5350031": 0,
+    "hash_132b7e46": 0,
+    "hash_d0d3a2a4": 0,
+    "hash_8eb3d1": 0,
+    "hash_c5040dfb": 0,
+    "hash_366db4c1": 0,
+    "hash_1e94b3c6": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_2d1d32db": 0,
+    "hash_d0cb679a": 0,
+    "hash_c5c1b40f": 0,
+    "hash_1b1bc929": 5.06,
+    "hash_d7479a65": 0,
+    "hash_404d900d": 0,
+    "hash_540835ef": "#hash_6bc3d34bab5257cd",
+    "type": "zmdialog_commander",
+    "hash_102aef1f": 0,
+    "hash_f2133c2a": 0,
+    "hash_4740a7c4": 0,
+    "hash_c4f17591": 0,
+    "hash_eae686c": 0,
+    "hash_d218b07b": 0,
+    "hash_252cce96": "scriptbundle#zmdialog_speaker_valentina",
+    "hash_b1a8e60d": "#hash_ab770dc7986d52a",
+    "hash_37da754f": 0,
+    "hash_a998ab4b": 0,
+    "hash_e79d74b9": 0,
+    "hash_c64ad4ce": 0,
+    "hash_48e41c51": 0,
+    "hash_962936f1": 0,
+    "hash_739bac07": 0,
+    "hash_72a54467": 0,
+    "hash_1f1903ad": 0,
+    "hash_7af6f55c": 0,
+    "hash_74cdf1f": 0,
+    "hash_6a53e613": 0,
+    "hash_c6b140a9": 0,
+    "hash_949db131": 0,
+    "hash_5686ab6c": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_aca4ff2d": 0,
+    "hash_b868c7ce": 0,
+    "hash_92d5cfeb": 0,
+    "hash_91cb47cf": 0,
+    "hash_b1569a61": 0,
+    "hash_b5e0894": 0,
+    "hash_b33df319": 0,
+    "hash_7aacef2f": 0,
+    "hash_74d6862c": 0,
+    "hash_e30e7046": 0,
+    "hash_64c1ba5e": 0,
+    "hash_a271ba70": 0,
+    "hash_30ed9f9b": 0,
+    "hash_f29a749a": 0,
+    "hash_82b8180f": 0,
+    "hash_f2aad779": 0,
+    "hash_5f3898a": "#hash_113ed5676b918302",
+    "hash_2e3a1eb0": 0,
+    "hash_feeb4222": 0,
+    "hash_397b5d17": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_34bac33a": 0,
+    "hash_366df4b3": 0,
+    "hash_3d6cfdd9": 0,
+    "hash_31f1ad42": 0,
+    "hash_f4d5d9ae": "scriptbundle#zmdialog_speaker_kravchenko",
+    "hash_77f75a13": "scriptbundle#zmdialog_speaker_valentina",
+    "hash_d403610f": 0,
+    "hash_82992411": 0,
+    "hash_ba8c6a53": 0,
+    "hash_8ce5e1fd": 0,
+    "hash_f5ab7dcf": 0,
+    "hash_d781c2f5": 0,
+    "hash_3cce4d98": 0,
+    "hash_ef1637e7": 0,
+    "hash_d18add7a": 0,
+    "hash_8c0c835e": 6.02,
+    "hash_5e63f39b": 0,
+    "hash_cd47f341": "#hash_3f9496bbec884a1e",
+    "hash_765178a9": 0,
+    "hash_6863d28a": 0,
+    "hash_813c862c": 0,
+    "hash_daa1db3f": 0,
+    "hash_7470bc05": 0,
+    "hash_b4006170": 0,
+    "hash_1c550ed1": 5.38,
+    "hash_5210b70b": 0,
+    "hash_af67dd7e": 0,
+    "hash_d93f9dde": 0,
+    "hash_5097e47b": 0,
+    "hash_ed21c2db": 0,
+    "hash_cdeb45c6": 0,
+    "hash_50041482": "#hash_7c549ad5a60ba54b",
+    "hash_e3d12bd7": 0,
+    "hash_caa0bfb3": 0,
+    "hash_fcd1b56": 0,
+    "hash_7b4ffaa3": 0,
+    "hash_40027711": 0,
+    "name": "zm_platinum_dialogue",
+    "hash_6bcc3eb": 0,
+    "hash_c46f3226": 5.38,
+    "hash_f56941ef": 0,
+    "hash_5a3b695d": 0,
+    "hash_b2be1852": 0,
+    "hash_c14e2258": 0,
+    "hash_c9f6cb59": 6.02,
+    "hash_ac6be024": 0,
+    "hash_127d708d": 0,
+    "hash_7ad7dec6": 5.44,
+    "hash_f851e66f": 0,
+    "hash_a9100d81": 0,
+    "hash_7df59090": 0,
+    "hash_79195941": 0,
+    "hash_3b935b21": 0,
+    "hash_14dcd10b": 0,
+    "hash_328ea9e1": 0,
+    "hash_3df5fd3f": "#hash_3dd5d4e16a12cad",
+    "hash_b66eca49": 0,
+    "hash_2dec4f66": "scriptbundle#zmdialog_speaker_valentina",
+    "hash_d7b106eb": 0,
+    "hash_dc8aa185": 0,
+    "hash_78e7a40d": 0,
+    "hash_f7c1d8f0": 0,
+    "hash_9b469873": 3.22,
+    "hash_fd1d8944": "scriptbundle#zmdialog_speaker_valentina",
+    "hash_cb0ca1b0": 0,
+    "hash_2d6b54f0": 0,
+    "hash_f8ecd1fc": 0,
+    "hash_f76ad468": 0,
+    "hash_d67228c2": "#hash_6bc3d34bab5257cd",
+    "hash_3a9bddb8": 0,
+    "hash_9de7a831": 0,
+    "hash_9dd5608a": 0,
+    "hash_5d13110e": 0,
+    "hash_7b51d97b": 0,
+    "hash_7ae4fa36": 0,
+    "hash_4a603f5d": 0,
+    "hash_f373c455": 0,
+    "hash_d361f99b": 0,
+    "hash_5e6e0f6e": 0,
+    "hash_c95df376": 0,
+    "hash_b335c3cd": 6.76,
+    "hash_9716a7ee": 0,
+    "hash_9d745a31": 0,
+    "hash_138654be": 0,
+    "hash_a2d976f5": 0,
+    "hash_14be5b23": 0,
+    "hash_b072d266": 0,
+    "hash_42cabd1b": 0,
+    "hash_7f78f3f8": 0,
+    "hash_74a0459d": 0,
+    "hash_71f78f57": 7.04,
+    "hash_6cd04a4e": 0,
+    "hash_8f0b8b61": "scriptbundle#zmdialog_speaker_valentina",
+    "hash_ad27fdca": 0,
+    "hash_7f3ba0df": 0,
+    "hash_5d4da232": 0,
+    "hash_306cba36": 0,
+    "hash_9b17d4d9": 0,
+    "hash_df216611": 0,
+    "hash_f7b5f82a": 0,
+    "hash_3f74057b": 0,
+    "hash_5493c7d0": 0,
+    "hash_8b182982": 0,
+    "hash_9a77e216": 0,
+    "hash_2f7d018d": 0,
+    "hash_4221c8a8": 0,
+    "hash_828d426d": 0,
+    "hash_f7091327": 0,
+    "hash_4fe4d9b2": 0,
+    "hash_61e05934": 0,
+    "hash_f232becc": 0,
+    "hash_1665bd66": 0,
+    "hash_7a660b2d": 0,
+    "hash_36c4edc0": "#hash_765957be605dd2b",
+    "gametype": "rbz",
+    "hash_fb92f63": 0,
+    "hash_9a18d1d3": "#hash_ab770dc7986d52a",
+    "hash_11b48f85": 0,
+    "hash_9d6d9329": 0,
+    "hash_f889c06e": 0,
+    "hash_9edcd5a8": 0,
+    "hash_82e79d66": 0,
+    "hash_deeba3a7": 0,
+    "hash_6c67e45a": 0,
+    "hash_46b3adad": 0,
+    "hash_5db8ee96": 0,
+    "hash_a7414493": 0,
+    "hash_c8978b": 0,
+    "hash_13b6038e": 5.38,
+    "hash_1fb468a": 9.47,
+    "hash_524fa37d": 0,
+    "hash_33f735f8": 0,
+    "hash_c0958c6f": 0,
+    "hash_eeb32431": 0,
+    "hash_a669055f": 0,
+    "hash_11c6b77c": 0,
+    "hash_7ee86172": 0,
+    "hash_f0c2ca79": 0,
+    "hash_206149d7": 0,
+    "hash_cac0730d": 0,
+    "hash_28e7805c": 0,
+    "hash_b2365": 0,
+    "hash_afa9c84f": 0,
+    "hash_53b98c2c": "#hash_55dda9fe413d067d",
+    "hash_a93ac1bf": 0,
+    "hash_19becf0": 0,
+    "hash_c5eaa5c1": 0,
+    "hash_1e2b1d5a": 0,
+    "hash_2332818a": 0,
+    "hash_1679f229": 0,
+    "hash_34f9670": 0,
+    "hash_20ad910f": 0,
+    "hash_15daf514": 0,
+    "hash_3bb31c7f": 0,
+    "hash_4c2bc6c6": 0,
+    "hash_5aeaadbb": 0
+}

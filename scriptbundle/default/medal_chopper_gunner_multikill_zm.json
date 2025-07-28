@@ -1,9 +1,9 @@
 {
-    "description": "#hash_7efaaa29e08a4285",
+    "description": "localized18#hash_7efaaa29e08a4285",
     "widget": "#badasserymedal",
     "name": "medal_chopper_gunner_multikill_zm",
-    "iconsmall": "#hash_56a067b60554803",
+    "iconsmall": "image#ui_icon_medal_zm_guns_blazing",
     "statname": "#hash_7bf29fa438d54aad",
-    "var_8645ce54": "#hash_326a3822cd7e18d3",
-    "iconlarge": "#hash_151385a83895a1a3"
+    "stringref": "localized18#hash_326a3822cd7e18d3",
+    "iconlarge": "image#ui_icon_medal_zm_guns_blazing_large"
 }

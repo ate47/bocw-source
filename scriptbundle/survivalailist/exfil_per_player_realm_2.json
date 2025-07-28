@@ -1,17 +1,17 @@
 {
-    "var_210a8489": [
+    "#hash_210a8489": [
         {
-            "entryname": "survival_ai_zombie",
-            "var_a949845f": -1,
-            "var_857deb66": 20
+            "entryname": "scriptbundle&survival_ai_zombie",
+            "hash_a949845f": -1,
+            "hash_857deb66": 20
         },
         {
-            "entryname": "inf_dogs",
-            "var_a949845f": 1,
-            "var_857deb66": 5
+            "entryname": "scriptbundle&inf_dogs",
+            "hash_a949845f": 1,
+            "hash_857deb66": 5
         }
     ],
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "survivalailist",
     "name": "exfil_per_player_realm_2"
 }

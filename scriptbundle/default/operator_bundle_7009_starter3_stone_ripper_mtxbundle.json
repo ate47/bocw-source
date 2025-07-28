@@ -1,43 +1,48 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#po_c_t9_gen_pl_starter3_stone_ripper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#po_c_t9_gen_pl_starter3_stone_ripper_mtxitem",
             "itemid": "25303654"
         },
         {
-            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "hash_4a4bc969": "scriptbundle#prt_mp_gen_starter3_mtxitem",
             "itemid": "21293402"
         },
         {
-            "var_4a4bc969": "#loot_smg_season6_bp_ripper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_smg_season6_bp_ripper_mtxitem",
             "itemid": "23331330"
         },
         {
-            "var_4a4bc969": "#loot_shotgun_leveraction_bp_ripper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_shotgun_leveraction_bp_ripper_mtxitem",
             "itemid": "28297065"
         },
         {
-            "var_4a4bc969": "#melee_axe_bp_ripper_mtxitem",
+            "hash_4a4bc969": "scriptbundle#melee_axe_bp_ripper_mtxitem",
             "itemid": "24043339"
         },
         {
-            "var_4a4bc969": "#t9_charm_oil_lantern_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_oil_lantern_mtxitem",
             "itemid": "32276241"
         },
         {
-            "var_4a4bc969": "#callingcards_jack_the_ripper_s6_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_jack_the_ripper_s6_mtxitem",
             "itemid": "26106497"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_3cc1272fcca2775",
-    "var_375a1747": "#hash_5fc89a2a057a4cfb",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_operator_bundle_7009_starter3_stone_ripper",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "operator_bundle_7009_starter3_stone_ripper_mtxbundle",
-    "var_a788fada": "#hash_6ccb89597581f91a",
-    "titlestring": "#hash_6eed22af7bcfd9c1",
-    "var_566825be": "#hash_551c3af007dcd26",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_operator_bundle_7009_starter3_stone_ripper_small",
+    "titlestring": "localized18#hash_6eed22af7bcfd9c1",
+    "hash_566825be": "image#ui_icon_mtx_titles_operator_bundle_7009_starter3_stone_ripper",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_192ccf3514d92181",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_192ccf3514d92181",
+    "hash_db3e02ab": 2000,
     "itemid": "33537405"
 }

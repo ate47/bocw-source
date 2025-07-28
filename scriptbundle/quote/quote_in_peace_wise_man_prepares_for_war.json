@@ -1,7 +1,7 @@
 {
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "quote",
     "name": "quote_in_peace_wise_man_prepares_for_war",
-    "quote": "#hash_2c082fd7e81e49b5",
-    "author": "#hash_2333b51c3e52c2b"
+    "quote": "localized18#hash_2c082fd7e81e49b5",
+    "author": "localized18#hash_2333b51c3e52c2b"
 }

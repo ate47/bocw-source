@@ -1,38 +1,43 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#ar_accurate_bp_reaperb_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_accurate_bp_reaperb_mtxitem",
             "itemid": "27623378"
         },
         {
-            "var_4a4bc969": "#t9_charm_skull_sgl_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_skull_sgl_mtxitem",
             "itemid": "27378911"
         },
         {
-            "var_4a4bc969": "#emblems_deathstouch_flipbook_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_deathstouch_flipbook_mtxitem",
             "itemid": "31011658"
         },
         {
-            "var_4a4bc969": "#callingcards_deathstouch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_deathstouch_mtxitem",
             "itemid": "31123236"
         },
         {
-            "var_4a4bc969": "#emblems_deathstouch2_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_deathstouch2_mtxitem",
             "itemid": "24477371"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_deathstouch_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_deathstouch_mtxitem",
             "itemid": "31043507"
         }
     ],
-    "itemname": "#hash_7f0232ea59819a0d",
-    "var_375a1747": "#hash_7bc5f77e34f399bf",
+    "hash_2264d693": 0,
+    "itemname": "#bundle_blueprint_1005_ar_accurate_deaths_touch",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_bundle_blueprint_1005_ar_accurate_deaths_touch",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "bundle_blueprint_1005_ar_accurate_deaths_touch_mtxbundle",
-    "titlestring": "#hash_60bdc401131401b3",
-    "var_566825be": "#hash_4c2590e8f7902e3e",
-    "var_4af381c": 2000,
+    "titlestring": "localized18#hash_60bdc401131401b3",
+    "hash_566825be": "image#ui_icon_mtx_titles_bundle_blueprint_1005_ar_accurate_deaths_touch",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_61d29d3ab9d42957",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_61d29d3ab9d42957",
+    "hash_db3e02ab": 2000,
     "itemid": "20697856"
 }

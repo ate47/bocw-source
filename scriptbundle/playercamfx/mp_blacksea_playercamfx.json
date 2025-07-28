@@ -1,9 +1,9 @@
 {
-    "var_922067c4": "SCRIPTBUNDLE",
+    "configstringfiletype": "SCRIPTBUNDLE",
     "type": "playercamfx",
     "vmtype": "Client",
-    "var_472be987": 0.1,
-    "var_bce2eec7": 0.1,
+    "hash_472be987": 0.1,
+    "hash_bce2eec7": 0.1,
     "name": "mp_blacksea_playercamfx",
-    "var_39b6fcfb": "#hash_9badf63f92c1cf7"
+    "hash_39b6fcfb": "fx#hash_9badf63f92c1cf7"
 }

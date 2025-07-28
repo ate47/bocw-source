@@ -1,9 +1,9 @@
 {
     "mod": "MOD_EXPLOSIVE",
-    "var_922067c4": "scriptbundle",
+    "configstringfiletype": "scriptbundle",
     "type": "meansofdeath",
     "name": "mod_explosive",
-    "displayname": "#hash_44e3d47c862ff18c",
-    "icon": "#ui_icon_meansofdeath_explosive_death",
-    "iconlarge": "#ui_icon_meansofdeath_explosive_death_xl"
+    "displayname": "localized18#ui/mod_explosive",
+    "icon": "image#ui_icon_meansofdeath_explosive_death",
+    "iconlarge": "image#ui_icon_meansofdeath_explosive_death_xl"
 }

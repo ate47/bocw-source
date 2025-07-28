@@ -1,52 +1,55 @@
 {
-    "var_501d85c9": [
+    "#hash_501d85c9": [
         {
-            "var_fe10649e": "#hash_2b3c8d320fec39d6"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5017_kiparis_reactive_0"
         },
         {
-            "var_fe10649e": "#hash_2b3c8e320fec3b89"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5017_kiparis_reactive_1"
         },
         {
-            "var_fe10649e": "#hash_2b3c8b320fec3670"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5017_kiparis_reactive_2"
         },
         {
-            "var_fe10649e": "#hash_2b3c8c320fec3823"
+            "hash_fe10649e": "image#ui_icon_mtx_billboards_blueprint_bundle_5017_kiparis_reactive_3"
         }
     ],
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#smg_cqb_bp_mind_mtxitem",
+            "hash_4a4bc969": "scriptbundle#smg_cqb_bp_mind_mtxitem",
             "itemid": "26700036"
         },
         {
-            "var_4a4bc969": "#tr_longburst_bp_mind_mtxitem",
+            "hash_4a4bc969": "scriptbundle#tr_longburst_bp_mind_mtxitem",
             "itemid": "29863379"
         },
         {
-            "var_4a4bc969": "#loot_ges_mtx_t9_mic_drop_mtxitem",
+            "hash_4a4bc969": "scriptbundle#loot_ges_mtx_t9_mic_drop_mtxitem",
             "itemid": "29529264"
         },
         {
-            "var_4a4bc969": "#emblems_s5_mindwipe_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_s5_mindwipe_animation_mtxitem",
             "itemid": "28282224"
         },
         {
-            "var_4a4bc969": "#callingcards_s5_mindwipe_animation_mtxitem",
+            "hash_4a4bc969": "scriptbundle#callingcards_s5_mindwipe_animation_mtxitem",
             "itemid": "32228322"
         }
     ],
+    "hash_2264d693": 0,
     "itemname": "#hash_4ee1d742a34154af",
-    "var_375a1747": "#hash_2b3c8d320fec39d6",
-    "var_3040f0d1": "#hash_2b3c8d320fec39d6",
-    "var_8ee7db29": 1,
-    "var_579fd6c3": 31,
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_5017_kiparis_reactive_0",
+    "hash_3040f0d1": "image#ui_icon_mtx_billboards_blueprint_bundle_5017_kiparis_reactive_0",
+    "hash_8ee7db29": 1,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 31,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_5017_kiparis_reactive_mtxbundle",
-    "var_a788fada": "#hash_119f82ad56cd7fbc",
-    "titlestring": "#hash_532192743c2f83e8",
-    "var_566825be": "#hash_96f4b9aa3856148",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_5017_kiparis_reactive_small",
+    "titlestring": "localized18#hash_532192743c2f83e8",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_5017_kiparis_reactive",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_6d3308804e916430",
-    "var_db3e02ab": 750,
+    "hash_f3c937a9": "localized18#hash_6d3308804e916430",
+    "hash_db3e02ab": 750,
     "itemid": "24874987"
 }

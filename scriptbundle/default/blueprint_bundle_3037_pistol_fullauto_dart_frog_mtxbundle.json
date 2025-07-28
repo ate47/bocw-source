@@ -1,39 +1,44 @@
 {
-    "var_712c1974": [
+    "#hash_712c1974": [
         {
-            "var_4a4bc969": "#pistol_fullauto_bp_poison_mtxitem",
+            "hash_4a4bc969": "scriptbundle#pistol_fullauto_bp_poison_mtxitem",
             "itemid": "26139238"
         },
         {
-            "var_4a4bc969": "#ar_mercenary_bp_poison_mtxitem",
+            "hash_4a4bc969": "scriptbundle#ar_mercenary_bp_poison_mtxitem",
             "itemid": "21117607"
         },
         {
-            "var_4a4bc969": "#t9_charm_glowworm_mtxitem",
+            "hash_4a4bc969": "scriptbundle#t9_charm_glowworm_mtxitem",
             "itemid": "28023961"
         },
         {
-            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_assembly_mpx_poison_frog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#veh_t9_mil_us_boat_pgb_assembly_mpx_poison_frog_mtxitem",
             "itemid": "24191876"
         },
         {
-            "var_4a4bc969": "#emblems_dartfrog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#emblems_dartfrog_mtxitem",
             "itemid": "24307451"
         },
         {
-            "var_4a4bc969": "#paintjob_stickers_dartfrog_mtxitem",
+            "hash_4a4bc969": "scriptbundle#paintjob_stickers_dartfrog_mtxitem",
             "itemid": "28326089"
         }
     ],
-    "itemname": "#hash_171835bd544de879",
-    "var_375a1747": "#hash_5935fc8c6f3d758b",
+    "hash_2264d693": 0,
+    "itemname": "#blueprint_bundle_3037_pistol_fullauto_dart_frog",
+    "hash_375a1747": "image#ui_icon_mtx_billboards_blueprint_bundle_3037_pistol_fullauto_dart_frog",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 0,
+    "hash_579fd6c3": 0,
+    "hash_99071a5f": 0,
     "name": "blueprint_bundle_3037_pistol_fullauto_dart_frog_mtxbundle",
-    "var_a788fada": "#hash_4fcfd4ed7814cb8",
-    "titlestring": "#hash_6f4cbccde32583ac",
-    "var_566825be": "#hash_134521af923e4e4",
-    "var_4af381c": 2000,
+    "hash_a788fada": "image#ui_icon_mtx_titles_blueprint_bundle_3037_pistol_fullauto_dart_frog_small",
+    "titlestring": "localized18#hash_6f4cbccde32583ac",
+    "hash_566825be": "image#ui_icon_mtx_titles_blueprint_bundle_3037_pistol_fullauto_dart_frog",
+    "hash_4af381c": 2000,
     "category": "#bundle",
-    "var_f3c937a9": "#hash_3c2ae95f2de8901c",
-    "var_db3e02ab": 2000,
+    "hash_f3c937a9": "localized18#hash_3c2ae95f2de8901c",
+    "hash_db3e02ab": 2000,
     "itemid": "28876863"
 }

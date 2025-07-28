@@ -1,0 +1,107 @@
+{
+    "secondaryweapons": [
+        {
+            "name": "launcher_standard_t9"
+        },
+        {
+            "name": "pistol_burst_t9"
+        },
+        {
+            "name": "pistol_revolver_t9"
+        },
+        {
+            "name": "pistol_semiauto_t9"
+        },
+        {
+            "name": "shotgun_pump_t9"
+        },
+        {
+            "name": "shotgun_semiauto_t9"
+        }
+    ],
+    "primaryweapons": [
+        {
+            "name": "ar_accurate_t9"
+        },
+        {
+            "name": "ar_damage_t9"
+        },
+        {
+            "name": "ar_fastfire_t9"
+        },
+        {
+            "name": "ar_mobility_t9"
+        },
+        {
+            "name": "ar_standard_t9"
+        },
+        {
+            "name": "lmg_accurate_t9"
+        },
+        {
+            "name": "lmg_light_t9"
+        },
+        {
+            "name": "lmg_slowfire_t9"
+        },
+        {
+            "name": "smg_burst_t9"
+        },
+        {
+            "name": "smg_capacity_t9"
+        },
+        {
+            "name": "smg_handling_t9"
+        },
+        {
+            "name": "smg_heavy_t9"
+        },
+        {
+            "name": "smg_standard_t9"
+        },
+        {
+            "name": "tr_damagesemi_t9"
+        },
+        {
+            "name": "tr_longburst_t9"
+        },
+        {
+            "name": "tr_powerburst_t9"
+        },
+        {
+            "name": "tr_precisionsemi_t9"
+        }
+    ],
+    "#hash_137939d4": [
+        {
+            "name": "gadget_supplypod"
+        },
+        {},
+        {}
+    ],
+    "#hash_414c7d4d": [
+        {
+            "name": "frag_grenade"
+        }
+    ],
+    "killstreaks": [
+        {
+            "name": "uav"
+        },
+        {
+            "name": "remote_missile"
+        },
+        {
+            "name": "counteruav"
+        },
+        {
+            "name": "planemortar"
+        }
+    ],
+    "secondaryattachments": "acog barrel compensator custom1 elo elo2 extclip fastreload grip handle heavy holo light quickdraw reddot reflex reflex2 speedgrip sprintout stalker steadyaim suppressed",
+    "configstringfiletype": "scriptbundle",
+    "type": "botcac",
+    "vmtype": "server",
+    "name": "t9_bot_cac_mp_regular",
+    "primaryattachments": "acog barrel compensator custom1 elo elo2 extclip fastreload grip handle heavy holo light quickdraw reddot reflex reflex2 speedgrip sprintout stalker steadyaim suppressed"
+}

@@ -1,0 +1,20 @@
+{
+    "description": "localized19#hash_79b4b263e29bcff9",
+    "hash_812bb4e9": "localized19#hash_d6353cf9bc9dc46",
+    "tagname": "mdl_cp_rus_kgb_item_08",
+    "UnlockMap": "cp_rus_kgb",
+    "configstringfiletype": "scriptbundle",
+    "hash_4138e7ed": 45,
+    "uimodel": "model#p9_sr_evidence_kgb_moscow_newspaper_01",
+    "type": "collectible",
+    "name": "p9_cp_rus_kgb_08",
+    "hash_4292acd3": 1,
+    "title": "localized19#hash_617ca3159a5e8b9",
+    "hash_4efbbcfe": 0,
+    "subtitle": "localized19#hash_716ae57f183fab89",
+    "hash_434e678e": 1,
+    "hash_f3575c58": 1,
+    "hash_305bd749": "localized19#hash_bee6cf06ac03174",
+    "thumbnail": "image#evidenceboard_review_kgb_newspaper",
+    "hash_5eeb1ad0": "localized19#hash_401c1aaa97d7aeaf"
+}

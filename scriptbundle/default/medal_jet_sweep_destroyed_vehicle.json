@@ -1,11 +1,11 @@
 {
-    "description": "#hash_40c8c1161344578",
-    "backingsmall": "#$whitetransparent",
+    "description": "localized18#hash_40c8c1161344578",
+    "backingsmall": "image#$whitetransparent",
     "widget": "#badasserymedal",
     "name": "medal_jet_sweep_destroyed_vehicle",
-    "backinglarge": "#$whitetransparent",
-    "iconsmall": "#hash_1b403ded045df814",
+    "backinglarge": "image#$whitetransparent",
+    "iconsmall": "image#ui_icon_medal_air_superiority",
     "statname": "#destructions",
-    "var_8645ce54": "#hash_2d6e97c36ede9d50",
-    "iconlarge": "#hash_551e691e18b574c0"
+    "stringref": "localized18#hash_2d6e97c36ede9d50",
+    "iconlarge": "image#ui_icon_medal_air_superiority_large"
 }
