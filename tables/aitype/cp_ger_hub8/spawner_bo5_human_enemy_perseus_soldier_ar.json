@@ -1,0 +1,126 @@
+{
+    "name": "#spawner_bo5_human_enemy_perseus_soldier_ar",
+    "animTree": "spawner_bo5_human_enemy_perseus_soldier_ar",
+    "typeSuffix": "_assault",
+    "spawnerType": "vox_rus",
+    "species": "#human",
+    "archeType": "#human",
+    "scoreType": "#hash_75bd31c6a2b41518",
+    "movementType": "#human",
+    "fireMode": "BURST",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 0.7,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": false,
+    "ignoreVortices": false,
+    "usesCovernodes": true,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 60,
+            "unk1c": 30,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 1,
+            "penetrationPenalty": 100,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#human_friendly",
+        "#human_enemy"
+    ],
+    "primaryWeapons": [
+        "#ar_accurate_t9",
+        "#ar_damage_t9"
+    ],
+    "sideArm": "#pistol_semiauto_t9",
+    "grenadeWeapon": "#frag_grenade",
+    "ammoPouch": "#scavenger_item",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents",
+    "assassinationBundle": "#aiassassination_human",
+    "aivsaiMeleeBundles": [
+        "#aivsaimelee_humanvshuman"
+    ],
+    "aiFxBundle": "#c_54i_grunt_fx_table",
+    "aiSettingsBundle": "#human_settings",
+    "aimTable": "#hash_dc579d217e02a4f6",
+    "shootTable": "#hash_8c8375c60209bbe5",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_8401026b712601fb"
+    ],
+    "animSelectorTable": "#hash_f37b97914360d5e3",
+    "animStateMachine": "#hash_f37b8e914360c698",
+    "behaviorTree": "#hash_840bfb6b712ffd9b",
+    "footstepTable": "#hash_b008da66d91b8ad7",
+    "footstepScriptCallback": false,
+    "footstepFXTable1": "#player_footstep",
+    "footstepFXTable2": "#player_footstep",
+    "tacticalModeIcon": "#t7_hud_waypoints_compassping_friendly_mp",
+    "character": [
+        "#hash_694961f4bfd39de0"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "j_helmet",
+        "tag_aim",
+        "tag_eye",
+        "tag_origin",
+        "tag_weapon_right"
+    ]
+}

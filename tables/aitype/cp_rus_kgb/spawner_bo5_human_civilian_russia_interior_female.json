@@ -1,0 +1,120 @@
+{
+    "name": "#spawner_bo5_human_civilian_russia_interior_female",
+    "animTree": "spawner_bo5_human_civilian_russia_interior_female",
+    "typeSuffix": "_assault",
+    "spawnerType": "vox_ax",
+    "species": "#human",
+    "archeType": "#civilian",
+    "scoreType": "#hash_75bd31c6a2b41518",
+    "movementType": "#civilian",
+    "fireMode": "BURST",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 0.1,
+    "favorSpecialTraversalFactor": 0.1,
+    "ignoresDamageHitLocations": false,
+    "ignoreVortices": false,
+    "usesCovernodes": true,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 1,
+            "penetrationPenalty": 100,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#human_friendly",
+        "#human_enemy"
+    ],
+    "grenadeWeapon": "#molotov_fire",
+    "grenadeAmmo": 0,
+    "traversalExtents": "#default_traversal_extents",
+    "assassinationBundle": "#aiassassination_human",
+    "aiFxBundle": "#c_54i_grunt_fx_table",
+    "aimTable": "#hash_578c25ce38a4aa12",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_f768adcbb11ef04"
+    ],
+    "animSelectorTable": "#hash_58716911df8a8b26",
+    "animStateMachine": "#hash_58718211df8ab5a1",
+    "behaviorTree": "#hash_f6ba1dcbb080e94",
+    "footstepTable": "#hash_53d712fcf1fcc6e9",
+    "footstepScriptCallback": false,
+    "footstepFXTable1": "#player_footstep",
+    "footstepFXTable2": "#player_footstep",
+    "tacticalModeIcon": "#t7_hud_waypoints_compassping_friendly_mp",
+    "character": [
+        "#hash_6bf28e8d3470cbbd",
+        "#hash_6bf28d8d3470ca0a",
+        "#hash_63ca6f8d2ff6e450",
+        "#hash_63ca708d2ff6e603",
+        "#hash_5c7b588d2c34fb3b",
+        "#hash_1748798d4cfe110e",
+        "#hash_711be886ebe36c42",
+        "#hash_711be786ebe36a8f"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "j_helmet",
+        "tag_eye",
+        "tag_origin"
+    ]
+}

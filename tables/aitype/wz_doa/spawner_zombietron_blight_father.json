@@ -1,0 +1,120 @@
+{
+    "name": "#spawner_zombietron_blight_father",
+    "animTree": "spawner_zombietron_blight_father",
+    "typeSuffix": "_zombie",
+    "spawnerType": "bfather",
+    "tag2": "j_spine4",
+    "tag3": "j_spine2",
+    "weakPointsTags": [
+        "tag_eggsack_weakspot_le",
+        "tag_eggsack_weakspot_ri",
+        "tag_mouth_weakspot_deadshot"
+    ],
+    "species": "#zombie",
+    "archeType": "#blight_father",
+    "scoreType": "#none",
+    "movementType": "#blight_father",
+    "fireMode": "FULLAUTO",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 1,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": true,
+    "ignoreVortices": false,
+    "usesCovernodes": false,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#none",
+        "#none"
+    ],
+    "meleeWeapon": "#hash_785a80c66151bc91",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents_zm",
+    "aiFxBundle": "#fxb8_zm_char_blightfather",
+    "aiNotetrackBoneMappingBundle": "#blightfather_footstep_notetrack_bones",
+    "aiWeakpointSettings": "#zombietron_blightfather_weakpoint_def",
+    "aiSettingsBundle": "#zm_blight_father_settings",
+    "aimTable": "#soldier_aim",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_7643c5b7276c0a5"
+    ],
+    "animSelectorTable": "#hash_65074637ffd733d",
+    "animStateMachine": "#hash_6507b637ffd7f22",
+    "behaviorTree": "#hash_760455b7272e719",
+    "footstepTable": "#hash_4a8a756c16c89404",
+    "footstepScriptCallback": true,
+    "footstepFXTable1": "#hash_36a0995dddf6bde9",
+    "footstepFXTable2": "#hash_48c266414feaddbc",
+    "tacticalModeIcon": "#hash_d7984a4da2e7458a",
+    "character": [
+        "#hash_62a01287ae653ec6"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "tag_origin"
+    ]
+}

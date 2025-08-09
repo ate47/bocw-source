@@ -1,0 +1,79 @@
+{
+    "name": "#spawner_bo5_human_enemy_vc_ar",
+    "fireMode": "FULLAUTO",
+    "team": "FREE",
+    "burstCountMin": 0,
+    "burstCountMax": 0,
+    "fireIntervalmin": 0,
+    "fireIntervalmax": 0,
+    "favorTraversalFactor": 0,
+    "favorSpecialTraversalFactor": 0,
+    "ignoresDamageHitLocations": false,
+    "ignoreVortices": false,
+    "usesCovernodes": false,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 0,
+            "unk14": 0,
+            "maxTurnRateAngle": 0,
+            "unk1c": 0,
+            "unk10": 0,
+            "sensorSize": 0,
+            "collisionPenalty": 0,
+            "dodgingPenalty": 0,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 0,
+            "velocityHysteresis": 0
+        },
+        {
+            "turnRate": 0,
+            "unk14": 0,
+            "maxTurnRateAngle": 0,
+            "unk1c": 0,
+            "unk10": 0,
+            "sensorSize": 0,
+            "collisionPenalty": 0,
+            "dodgingPenalty": 0,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 0,
+            "velocityHysteresis": 0
+        },
+        {
+            "turnRate": 0,
+            "unk14": 0,
+            "maxTurnRateAngle": 0,
+            "unk1c": 0,
+            "unk10": 0,
+            "sensorSize": 0,
+            "collisionPenalty": 0,
+            "dodgingPenalty": 0,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 0,
+            "velocityHysteresis": 0
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 0,
+    "flankingAngle": 0,
+    "demoLockOn": {
+        "highlightDistance": 0,
+        "views": [
+            {
+                "heightOffset": 0,
+                "pitchMin": 0,
+                "pitchMax": 0
+            },
+            {
+                "heightOffset": 0,
+                "pitchMin": 0,
+                "pitchMax": 0
+            }
+        ]
+    },
+    "grenadeAmmo": 0,
+    "animMappingTableDefault": 0,
+    "footstepScriptCallback": false,
+    "nameHashed": false,
+    "noCosmeticBones": false
+}

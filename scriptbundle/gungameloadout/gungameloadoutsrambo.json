@@ -3,66 +3,224 @@
         {
             "tiers": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#pistol_semiauto_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 1,
+                            "attachments": "suppressed2 mixbarrel2 mixhandle2 mixbody2 fastreload2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#pistol_revolver_t9_dw",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 10,
+                            "attachments": "heavy2 mixhandle extclip2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#special_crossbow_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#shotgun_pump_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 19,
+                            "attachments": "compensator2 barrel2 speedgrip2 mixstock mixclip2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#shotgun_fullauto_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 1,
+                            "attachments": "extclip2 stalker2 quickdraw2 speedgrip elo"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#hero_pineapplegun",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 },
                 {},
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#smg_standard_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 20,
+                            "attachments": "elo2 mixstock2 quickdraw speedgrip compensator"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#smg_spray_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0,
+                            "attachments": "compensator2 mixunder2 light sprintout extclip2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#sig_lmg",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 },
                 {},
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#ar_fastfire_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 22,
+                            "attachments": "grip2 extclip holo suppressed2 quickdraw"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#ar_damage_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 1,
+                            "blueprintindex": 27
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#sig_bow_flame",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#tr_longburst_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0,
+                            "attachments": "ir compensator2 grip2 heavy2 quickdraw2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#tr_damagesemi_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 2,
+                            "attachments": "acog mixbody barrel grip handle"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#lmg_accurate_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 11,
+                            "attachments": "scope4x extclip2 heavy grip2 light2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#lmg_slowfire_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 1,
+                            "blueprintindex": 8
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#sniper_accurate_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0,
+                            "attachments": "scope3x mixbarrel2 handle2 mixstock2 extclip2"
+                        },
+                        {
+                            "weapon": "weapon#sniper_cannon_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 4,
+                            "attachments": "compensator2 heavy2 quickdraw2 extclip2"
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#launcher_freefire_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#knife_loadout",
+                            "camoindex": 0,
+                            "hash_b704d026": 1,
+                            "blueprintindex": 8
+                        }
+                    ]
                 },
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#special_ballisticknife_t9_dw",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 }
             ],
             "hash_b1538731": "Rambo"

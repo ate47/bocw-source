@@ -1,0 +1,111 @@
+{
+    "name": "#spawner_zombietron_hat_clone",
+    "animTree": "spawner_zombietron_hat_clone",
+    "typeSuffix": "_assault",
+    "spawnerType": "vox_ax",
+    "species": "#human",
+    "archeType": "#human",
+    "scoreType": "#none",
+    "movementType": "#human",
+    "fireMode": "BURST",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 1,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": false,
+    "ignoreVortices": false,
+    "usesCovernodes": true,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 160,
+            "unk14": 55,
+            "maxTurnRateAngle": 90,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#none",
+        "#none"
+    ],
+    "meleeWeapon": "#hash_1a0357f4a1beefd7",
+    "ammoPouch": "#hash_61e0f5df72dad39f",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents_zm",
+    "assassinationBundle": "#aiassassination_human",
+    "aiFxBundle": "#c_54i_grunt_fx_table",
+    "aimTable": "#soldier_aim",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_31596ca10bfdf73d"
+    ],
+    "animSelectorTable": "#hash_58f1d2a760913b55",
+    "animStateMachine": "#hash_58f1c9a760912c0a",
+    "behaviorTree": "#hash_315585a10bfa38e1",
+    "footstepTable": "#hash_b008da66d91b8ad7",
+    "footstepScriptCallback": false,
+    "footstepFXTable1": "#player_footstep",
+    "footstepFXTable2": "#player_footstep",
+    "character": [
+        "#hash_171256f36bcbe2ac"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "tag_origin"
+    ]
+}

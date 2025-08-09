@@ -3,7 +3,26 @@
         {
             "tiers": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "options": [
+                        {
+                            "weapon": "weapon#pistol_semiauto_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        },
+                        {
+                            "weapon": "weapon#pistol_revolver_t9",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        },
+                        {
+                            "weapon": "weapon#hero_annihilator_oic",
+                            "camoindex": 0,
+                            "hash_b704d026": 0,
+                            "blueprintindex": 0
+                        }
+                    ]
                 }
             ],
             "hash_b1538731": "oic"

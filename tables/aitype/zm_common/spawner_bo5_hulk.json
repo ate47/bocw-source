@@ -1,0 +1,122 @@
+{
+    "name": "#spawner_bo5_hulk",
+    "animTree": "spawner_bo5_hulk",
+    "typeSuffix": "_suppressor",
+    "spawnerType": "vox_ax",
+    "tag1": "j_weakpoint",
+    "species": "#zombie",
+    "archeType": "#hulk",
+    "scoreType": "#none",
+    "movementType": "#human",
+    "fireMode": "FULLAUTO",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 0.1,
+    "favorSpecialTraversalFactor": 0.2,
+    "ignoresDamageHitLocations": true,
+    "ignoreVortices": false,
+    "usesCovernodes": true,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 50,
+            "unk14": 20,
+            "maxTurnRateAngle": 90,
+            "unk1c": 90,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 150,
+            "unk14": 55,
+            "maxTurnRateAngle": 180,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 500,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 1,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 0,
+            "velocityHysteresis": 0.01
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "unk880": "#hash_5df52c0e133d3e52",
+    "spawnInfluencers": [
+        "#human_friendly",
+        "#human_enemy"
+    ],
+    "meleeWeapon": "#zombie_ai_defaultmelee",
+    "grenadeAmmo": 0,
+    "traversalExtents": "#hulk_traversal_extents_zm",
+    "assassinationBundle": "#aiassassination_human",
+    "aivsaiMeleeBundles": [
+        "#aivsaimelee_humanvshuman"
+    ],
+    "aiFxBundle": "#c_54i_grunt_fx_table",
+    "aiWeakpointSettings": "#c_t9_hulking_summoner_weakpoint_def",
+    "aiSettingsBundle": "#zm_hulk_settings",
+    "aimTable": "#soldier_aim",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_17460b827bd8c0e8"
+    ],
+    "animSelectorTable": "#hash_64891eb8711b8692",
+    "animStateMachine": "#hash_648937b8711bb10d",
+    "behaviorTree": "#hash_173b02827bceaa18",
+    "footstepTable": "#hash_b008da66d91b8ad7",
+    "footstepScriptCallback": true,
+    "footstepFXTable1": "#player_footstep",
+    "footstepFXTable2": "#player_footstep",
+    "tacticalModeIcon": "#uie_ui_icon_minimap_zm_ai_boss",
+    "character": [
+        "#hash_3f7d02ef04eb901a"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "j_helmet",
+        "tag_aim",
+        "tag_eye",
+        "tag_origin",
+        "tag_weapon_right"
+    ]
+}

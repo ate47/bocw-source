@@ -1,7 +1,46 @@
 {
     "wonderweaponphases": [
         {
-            "subs": "<invalid:0x0>"
+            "components": [
+                {
+                    "stages": [
+                        {
+                            "numneeded": 1,
+                            "stageimage": "image#ui_icon_inventory_p7_chemistry_kit_flask_color_t9"
+                        },
+                        {
+                            "numneeded": 1,
+                            "stageimage": "image#ui_icon_inventory_p7_chemistry_kit_filled_flask_color_t9"
+                        }
+                    ],
+                    "hash_7db3435c": 0,
+                    "clientfield": "#hash_2e341f321b2ab3da"
+                },
+                {
+                    "stages": [
+                        {
+                            "numneeded": 1,
+                            "stageimage": "image#ui_icon_inventory_p9_zm_ndu_gas_canister_color_t9"
+                        },
+                        {
+                            "numneeded": 1,
+                            "stageimage": "image#ui_icon_inventory_p9_zm_ndu_gas_canister_filled_color_t9"
+                        }
+                    ],
+                    "hash_7db3435c": 0,
+                    "clientfield": "#hash_240dcac486ef946a"
+                },
+                {
+                    "stages": [
+                        {
+                            "numneeded": 1,
+                            "stageimage": "image#ui_icon_inventory_p9_zm_ndu_fuse_color_t9"
+                        }
+                    ],
+                    "hash_7db3435c": 0,
+                    "clientfield": "#hash_7b8f7131712d7564"
+                }
+            ]
         }
     ],
     "shieldpieces": [
@@ -25,7 +64,35 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_aetherscope_decoder_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_1f87150a0632f418"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_aetherscope_radio_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_1f87180a0632f931"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_aetherscope_antenna_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_1f87170a0632f77e"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -36,7 +103,35 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_blank_book_closed_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_6df578dd42812c70"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p8_sta_pegboard_tools_wrench_01_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_1b836a89598ddaa4"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_family_photo_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_2d5b26565a3e1ea1"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -47,7 +142,26 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_ieu_keycard_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_6de5cab1fba28d40"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_ieu_remote_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_1ec8e7f21f81afb0"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,

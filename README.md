@@ -16,6 +16,7 @@ All the dumped files are using the correct name, if a file name is unknown, the 
 Pools dumped:
 | name              | id  |        path              |
 |-------------------|-----|--------------------------|
+| aitype            | 56  | `/tables/aitype/`        |
 | rawfile           | 59  | `/`                      |
 | rawfilepreproc    | 60  | `/`                      |
 | rawtextfile       | 61  | `/`                      |
@@ -27,5 +28,6 @@ Pools dumped:
 | script_using_mp   | 72  | `/tables/usings/mp/`     |
 | script_using_wz   | 73  | `/tables/usings/wz/`     |
 | script_using_zm   | 74  | `/tables/usings/zm/`     |
+| keyvaluepairs     | 75  | `/tables/keyvaluepairs/` |
 | scriptbundle      | 87  | `/scriptbundle/`         |
 | bgcache           | 109 | `/tables/bgcache/`       |

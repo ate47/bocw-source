@@ -1,1 +1,41 @@
-{}
+{
+    "#hash_279a3ec8": [
+        {
+            "hash_4a4bc969": "scriptbundle#loot_smg_spray_bp_betty_sy_mtxitem",
+            "itemid": "18405251"
+        },
+        {
+            "hash_4a4bc969": "scriptbundle#c_t9_uk_pl_kingsley_mtxitem",
+            "itemid": "18406709"
+        },
+        {
+            "hash_4a4bc969": "scriptbundle#prt_mp_uk_kingsley_mtxitem",
+            "itemid": "27515815"
+        }
+    ],
+    "hash_2264d693": 0,
+    "itemname": "#hash_5833660586decf2e",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "upsell_2021_crossgen",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_upsell_2021_crossgen",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_99071a5f": 0,
+    "name": "upsell_2021_crossgen_sy_mtxentitlement",
+    "hash_a788fada": "image#ui_icon_mtx_titles_upsell_2021_crossgen_small",
+    "titlestring": "localized18#hash_53c5af43a5d26f30",
+    "hash_566825be": "image#ui_icon_mtx_titles_upsell_2021_crossgen",
+    "hash_8f48f07d": 0,
+    "hash_f6dfb67d": "#hash_1748d88519b6ba9b",
+    "hash_4af381c": 2000,
+    "category": "#entitlement",
+    "hash_f3c937a9": "localized18#hash_75585e7ea6dc96f8",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#orbis",
+    "itemid": "29042378",
+    "hash_a592ce5": 1
+}

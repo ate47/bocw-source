@@ -17,7 +17,26 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_fuse_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_20cb8163974cc355"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#ui_icon_inventory_p9_zm_ndu_fuse_color_t9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_20cb7e63974cbe3c"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -28,7 +47,35 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_169e60ad60763b00"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_6a83f912cd01808c"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_7c901cedbaecbf3d"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_4b03961693d6a43a"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_c51fda27683c4bd"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_4a43375d671f2e30"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -39,7 +86,35 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_4f32ffb2aa2a83de"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_173db580493ec8a"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_22862b437e9ce985"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_4749f9e54d740283"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_1324ce96ee4a838f"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_405c5ffdf1a21f59"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -50,7 +125,59 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_39f275c146c77bc3"
+                                },
+                                {
+                                    "stageimage": "image#hash_10b0f7eefeb0d811"
+                                },
+                                {
+                                    "stageimage": "image#hash_1979a64ed9770a35"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_37b4a47a5369363"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_6e03308daa957947"
+                                },
+                                {
+                                    "stageimage": "image#hash_10099d61317a2598"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_714ec3e0f9a114cb"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_6e03308daa957947"
+                                },
+                                {
+                                    "stageimage": "image#hash_10099d61317a2598"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_714ec4e0f9a1167e"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_6e03308daa957947"
+                                },
+                                {
+                                    "stageimage": "image#hash_10099d61317a2598"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_714ec5e0f9a11831"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,

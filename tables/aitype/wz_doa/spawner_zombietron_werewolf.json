@@ -1,0 +1,117 @@
+{
+    "name": "#spawner_zombietron_werewolf",
+    "animTree": "spawner_zombietron_werewolf",
+    "typeSuffix": "none",
+    "spawnerType": "werewolf",
+    "tag2": "j_spine4",
+    "weakPointsTags": [
+        "tag_chest_ws",
+        "tag_back_ws"
+    ],
+    "species": "#zombie",
+    "archeType": "#werewolf",
+    "scoreType": "#none",
+    "movementType": "#werewolf",
+    "fireMode": "FULLAUTO",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 1,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": true,
+    "ignoreVortices": false,
+    "usesCovernodes": true,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#none",
+        "#none"
+    ],
+    "meleeWeapon": "#hash_6ae62a2047afd283",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents_zm",
+    "aiFxBundle": "#fxb8_zm_char_werewolf",
+    "aiWeakpointSettings": "#c_t8_zmb_werewolf_weakpoint_def",
+    "aiSettingsBundle": "#zm_werewolf_settings",
+    "aimTable": "#soldier_aim",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_488935668eadb393"
+    ],
+    "animSelectorTable": "#hash_6f3fb044717f791b",
+    "animStateMachine": "#hash_6f3f9744717f4ea0",
+    "behaviorTree": "#hash_48933e668eb61763",
+    "footstepTable": "#hash_3c252cf9e804a75b",
+    "footstepScriptCallback": true,
+    "footstepFXTable1": "#zm_werewolf_footstep",
+    "footstepFXTable2": "#zm_werewolf_footstep",
+    "tacticalModeIcon": "#hash_d7984a4da2e7458a",
+    "character": [
+        "#hash_6c8eb522a6734069"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "tag_origin"
+    ]
+}

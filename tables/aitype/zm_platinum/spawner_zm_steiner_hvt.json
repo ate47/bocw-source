@@ -1,0 +1,129 @@
+{
+    "name": "#spawner_zm_steiner_hvt",
+    "animTree": "spawner_zm_steiner_hvt",
+    "typeSuffix": "_zombie",
+    "spawnerType": "zombie",
+    "species": "#zombie",
+    "archeType": "#zombie_steiner",
+    "scoreType": "#hash_5605f3a585b3ef9f",
+    "movementType": "#zombie",
+    "fireMode": "FULLAUTO",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 0.5,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": true,
+    "ignoreVortices": false,
+    "usesCovernodes": false,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#none",
+        "#none"
+    ],
+    "meleeWeapon": "#hash_4c5ba7e23de64021",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents_zm",
+    "aiNamesLocalized": "#steiner_hvt_names",
+    "aiFxBundle": "#c_54i_steiner_fx_table",
+    "aiWeakpointSettings": "#c_t9_sr_steiner_weakpoint_def",
+    "aiSettingsBundle": "#zm_steiner_hvt_settings",
+    "aimTable": "#soldier_aim",
+    "animMappingTableDefault": 1,
+    "animMappingTables": [
+        "#hash_4f4b50aaea06e5b2",
+        "#hash_2dc199a9b23732c9"
+    ],
+    "animSelectorTable": "#hash_441ce46ba9ec31f4",
+    "animStateMachine": "#hash_441ccd6ba9ec0adf",
+    "behaviorTree": "#hash_4f4f67aaea0af59e",
+    "footstepTable": "#hash_6cc632b524abe81c",
+    "footstepScriptCallback": true,
+    "footstepFXTable1": "#hash_180f2adb032461d8",
+    "footstepFXTable2": "#hash_180f2adb032461d8",
+    "tacticalModeIcon": "#uie_ui_icon_minimap_zm_ai_elite",
+    "character": [
+        "#hash_cc54a14ef6eee9"
+    ],
+    "nameHashed": true,
+    "randomNames": [
+        "#hash_50cbd0a3fa72163b",
+        "#hash_50cbcfa3fa721488",
+        "#hash_50cbd2a3fa7219a1",
+        "#hash_50cbd1a3fa7217ee",
+        "#hash_50cbd4a3fa721d07",
+        "#hash_50cbd3a3fa721b54",
+        "#hash_50cbd6a3fa72206d",
+        "#hash_50cbd5a3fa721eba",
+        "#hash_50cbcea3fa7212d5",
+        "#hash_50cbcda3fa721122",
+        "#hash_3c7a90a28fe9e631",
+        "#hash_3c7a8fa28fe9e47e",
+        "#hash_3c7a8da28fe9e118"
+    ],
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "tag_origin"
+    ]
+}

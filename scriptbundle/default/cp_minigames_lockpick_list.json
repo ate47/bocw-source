@@ -1,1 +1,12 @@
-{}
+{
+    "#hash_b263f6a2": [
+        {
+            "minigame": "data_lockpick_round"
+        },
+        {
+            "minigame": "data_lockpick_rectangle"
+        }
+    ],
+    "configstringfiletype": "scriptbundle",
+    "name": "cp_minigames_lockpick_list"
+}

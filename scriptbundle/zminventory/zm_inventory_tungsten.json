@@ -17,7 +17,44 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_7c956bf644f7325f"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_689d93f2ecc4ae51"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_521194dbb618f4ea"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_689d90f2ecc4a938"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_458505b4c76c75d9"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_689d91f2ecc4aaeb"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_701b1597c64bd5f2"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_689d96f2ecc4b36a"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -27,7 +64,35 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_26d9419fc22d3bd"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_2d5a3bb1a97e6bcc"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_7e810698cc202f14"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_2d5a3eb1a97e70e5"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_5309e710ac188c54"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_2d5a3db1a97e6f32"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -37,7 +102,44 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_13a1c2b2dadff41"
+                                },
+                                {
+                                    "stageimage": "image#hash_13a192b2dadfa28"
+                                },
+                                {
+                                    "stageimage": "image#hash_13a1a2b2dadfbdb"
+                                },
+                                {
+                                    "stageimage": "image#hash_13a1f2b2dae045a"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_4273532945cef4b0"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_3e9a1e51b3f085f3"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_4273562945cef9c9"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_3792ecbcc8dbfc7a"
+                                }
+                            ],
+                            "hash_7db3435c": 0,
+                            "clientfield": "#hash_4273552945cef816"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,
@@ -48,7 +150,17 @@
         {
             "phases": [
                 {
-                    "subs": "<invalid:0x0>"
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "stageimage": "image#hash_2027a5395a7afb8a"
+                                }
+                            ],
+                            "hash_7db3435c": 1,
+                            "clientfield": "#hash_41af1cdc14b54320"
+                        }
+                    ]
                 }
             ],
             "hash_7db3435c": 0,

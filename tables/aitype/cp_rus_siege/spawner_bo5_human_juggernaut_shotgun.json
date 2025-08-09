@@ -1,0 +1,127 @@
+{
+    "name": "#spawner_bo5_human_juggernaut_shotgun",
+    "animTree": "spawner_bo5_human_juggernaut_shotgun",
+    "typeSuffix": "_assault",
+    "spawnerType": "vox_jugg",
+    "species": "#human",
+    "archeType": "#human",
+    "scoreType": "#human_lmg",
+    "movementType": "#human",
+    "fireMode": "SINGLE_SHOT",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 0,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 0.8,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": false,
+    "ignoreVortices": false,
+    "usesCovernodes": false,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 1,
+            "penetrationPenalty": 100,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 150,
+            "unk14": 55,
+            "maxTurnRateAngle": 180,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 500,
+            "collisionPenalty": 3,
+            "dodgingPenalty": 1,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 0,
+            "velocityHysteresis": 0.01
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "spawnInfluencers": [
+        "#human_friendly",
+        "#human_enemy"
+    ],
+    "primaryWeapons": [
+        "#hash_3140acb46e8a7fc4"
+    ],
+    "sideArm": "#pistol_semiauto_t9",
+    "grenadeWeapon": "#hash_3b8965a9728db4e1",
+    "ammoPouch": "#scavenger_item",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents",
+    "assassinationBundle": "#aiassassination_human",
+    "aivsaiMeleeBundles": [
+        "#aivsaimelee_humanvshuman"
+    ],
+    "aiFxBundle": "#c_54i_grunt_fx_table",
+    "aiSettingsBundle": "#juggernaut_settings",
+    "aimTable": "#hash_dc579d217e02a4f6",
+    "shootTable": "#hash_8c8375c60209bbe5",
+    "animMappingTableDefault": 2,
+    "animMappingTables": [
+        "#hash_8401026b712601fb",
+        "#hash_72346ab25ab55fcd",
+        "#hash_45d6e2bde1ed5e4"
+    ],
+    "animSelectorTable": "#hash_f37b97914360d5e3",
+    "animStateMachine": "#hash_f37b8e914360c698",
+    "behaviorTree": "#hash_723063b25ab16b11",
+    "footstepTable": "#hash_b008da66d91b8ad7",
+    "footstepScriptCallback": false,
+    "footstepFXTable1": "#player_footstep",
+    "footstepFXTable2": "#player_footstep",
+    "tacticalModeIcon": "#t7_hud_waypoints_compassping_friendly_mp",
+    "character": [
+        "#hash_4dd6c29106b05433"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "j_helmet",
+        "tag_aim",
+        "tag_eye",
+        "tag_origin",
+        "tag_weapon_right"
+    ]
+}

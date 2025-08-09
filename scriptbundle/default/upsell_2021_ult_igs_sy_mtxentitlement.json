@@ -1,1 +1,33 @@
-{}
+{
+    "#hash_279a3ec8": [
+        {
+            "hash_4a4bc969": "scriptbundle#placeholder_item_mtxitem",
+            "itemid": "27076632"
+        }
+    ],
+    "hash_2264d693": 0,
+    "itemname": "#hash_1133cc64b60cc825",
+    "hash_183c2fe1": 0,
+    "hash_247d9ed7": "upsell_2021_ult_igs",
+    "hash_87756eb4": 0,
+    "hash_af8e0086": 0,
+    "hash_6110b230": 0,
+    "hash_d307be82": 0,
+    "hash_208d76b5": "image#ui_icon_mtx_billboards_upsell_2021_ult_igs",
+    "hash_8ee7db29": 0,
+    "hash_637c8edf": 1,
+    "hash_99071a5f": 0,
+    "name": "upsell_2021_ult_igs_sy_mtxentitlement",
+    "hash_a788fada": "image#ui_icon_mtx_titles_upsell_2021_ult_igs_small",
+    "titlestring": "localized18#hash_1326bb3dda145ceb",
+    "hash_566825be": "image#ui_icon_mtx_titles_upsell_2021_ult_igs",
+    "hash_8f48f07d": 0,
+    "hash_f6dfb67d": "#hash_1748d88519b6ba9b",
+    "hash_4af381c": 2000,
+    "category": "#entitlement",
+    "hash_f3c937a9": "localized18#hash_62677461a696566f",
+    "hash_db3e02ab": 2000,
+    "hash_4e46b1b3": "#orbis",
+    "itemid": "25518844",
+    "hash_a592ce5": 1
+}

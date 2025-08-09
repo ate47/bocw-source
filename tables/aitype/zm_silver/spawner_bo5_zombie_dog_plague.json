@@ -1,0 +1,112 @@
+{
+    "name": "#spawner_bo5_zombie_dog_plague",
+    "animTree": "spawner_bo5_zombie_dog_plague",
+    "typeSuffix": "_zombie_dog",
+    "spawnerType": "hellhound",
+    "species": "#dog",
+    "archeType": "#zombie_dog",
+    "scoreType": "#hash_2a5479b83161cb35",
+    "movementType": "#zombie_dog",
+    "fireMode": "FULLAUTO",
+    "team": "FREE",
+    "burstCountMin": 3,
+    "burstCountMax": 6,
+    "fireIntervalmin": 100,
+    "fireIntervalmax": 250,
+    "favorTraversalFactor": 0.5,
+    "favorSpecialTraversalFactor": 1,
+    "ignoresDamageHitLocations": true,
+    "ignoreVortices": false,
+    "usesCovernodes": false,
+    "accurateFire": false,
+    "steering": [
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        },
+        {
+            "turnRate": 220,
+            "unk14": 55,
+            "maxTurnRateAngle": 35,
+            "unk1c": 0,
+            "unk10": 900,
+            "sensorSize": 300,
+            "collisionPenalty": 1,
+            "dodgingPenalty": 0.7,
+            "penetrationPenalty": 0,
+            "sidednessChangingPenalty": 1,
+            "velocityHysteresis": 0.1
+        }
+    ],
+    "canFlank": false,
+    "flankingScoreScale": 1,
+    "flankingAngle": 70,
+    "demoLockOn": {
+        "highlightDistance": 100,
+        "views": [
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            },
+            {
+                "heightOffset": 8,
+                "pitchMin": 0,
+                "pitchMax": 60
+            }
+        ]
+    },
+    "unk880": "#hash_4bbac8e4d8c6b8e3",
+    "spawnInfluencers": [
+        "#none",
+        "#none"
+    ],
+    "meleeWeapon": "#dog_ai_defaultmelee",
+    "grenadeAmmo": 2,
+    "traversalExtents": "#default_traversal_extents_zm",
+    "aiFxBundle": "#fxb9_zm_char_hound_plague",
+    "aiSettingsBundle": "#zm_zombie_dog_plague_settings",
+    "aimTable": "#soldier_aim",
+    "animMappingTableDefault": 0,
+    "animMappingTables": [
+        "#hash_174455717e07d94f"
+    ],
+    "animSelectorTable": "#hash_128ab7b228b631d5",
+    "animStateMachine": "#hash_128aaeb228b6228a",
+    "behaviorTree": "#hash_52e035d318352861",
+    "footstepTable": "#hash_5a1e981fbbd333cf",
+    "footstepScriptCallback": false,
+    "footstepFXTable1": "#hash_33ef22f6909ac0c6",
+    "footstepFXTable2": "#hash_33ef22f6909ac0c6",
+    "tacticalModeIcon": "#hash_8213020dd75a312f",
+    "character": [
+        "#c_t9_zmb_hellhound_crawler"
+    ],
+    "nameHashed": false,
+    "noCosmeticBones": true,
+    "requiredBones": [
+        "tag_origin"
+    ]
+}
